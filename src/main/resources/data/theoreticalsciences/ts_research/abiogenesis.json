@@ -1,0 +1,59 @@
+{
+  "title": "Abiogenesis",
+  "description": "Where chemistry becomes life. Unlocks the Abiogenesis Crucible and the Spark of Life.",
+  "icon": "theoreticalsciences:abiogenesis_crucible",
+  "x": 17,
+  "y": 15,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:directed_evolution",
+    "theoreticalsciences:simulation_hypothesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:telomerase_complex",
+      "count": 2
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "Self-copying molecules of length L compete: the master sequence (fraction x_0, fitness f_0) is copied without any error with probability q^L, while the population as a whole is held constant by diluting everything at the mean fitness. Write the rate of change of the master sequence's fraction, ignoring back-mutation, with the mean fitness written as a ratio of sums over all sequence types j.",
+    "name": "Quasispecies equation (Eigen's error threshold)",
+    "lhs": "d ( x _ 0 , t )",
+    "form": "x _ 0 * ( f _ 0 * q ^ L - sumk ( j , f _ j * x _ j ) / sumk ( j , x _ j ) )",
+    "expr": "ln ( s ) / ( 1 - q )",
+    "ask": "The master survives only if q^L > 1/s, where s is its fitness advantage over the mutant cloud; for q near 1 this means L < ln s/(1 \u2212 q). Find the longest genome that can be kept.",
+    "vars": {
+      "x": "fraction of each sequence type",
+      "t": "time",
+      "f": "fitness (replication rate)",
+      "q": "per-base copying fidelity",
+      "L": "genome length",
+      "j": "sequence type",
+      "s": "selective advantage of the master"
+    },
+    "given": {
+      "s": 10,
+      "q": 0.99
+    },
+    "unit": "bases",
+    "method": "Growth is fitness times error-free copying; dilution removes each type at the population's average fitness. Find when the master's growth rate stays above the mutants' at steady state.",
+    "distractors": [
+      "+",
+      "exp",
+      "N"
+    ],
+    "vary": {
+      "s": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "q": [
+        0.594,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

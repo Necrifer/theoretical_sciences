@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:analysis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:complex_plane",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:foam_substrate",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:schrodinger_limit",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:wavefunction",
+      "count": 2
+    }
+  ],
+  "energy": 65536,
+  "duration": 375,
+  "research": "theoreticalsciences:quantum_foam",
+  "scaled": 6,
+  "environment": {
+    "vacuum_min": 1
+  },
+  "optional_inputs": [
+    {
+      "item": "nuclearcraft:elite_processor",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,60 @@
+{
+  "title": "Complex Analysis",
+  "description": "Add the square root of minus one and every polynomial has its roots. Fourier series and fractals follow.",
+  "icon": "theoreticalsciences:complex_plane",
+  "x": 4,
+  "y": 8,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:real_analysis",
+    "theoreticalsciences:tachyonics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:real_continuum",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A complex number has modulus r and argument \u03b8, and you want every complex w with w\u207f equal to it. Write the k-th such root in polar form, remembering that the argument is only defined up to whole turns of 2\u03c0.",
+    "name": "De Moivre formula for the n-th roots",
+    "lhs": "w _ k",
+    "form": "root ( n , r ) * exp ( i * ( \u03b8 + 2 * \u03c0 * k ) / n )",
+    "expr": "r ^ ( 1 / n ) * sin ( ( \u03b8 + 2 * \u03c0 * k ) / n )",
+    "ask": "Find the imaginary part of the root w\u2081 (k = @{k}) of the cube roots (n = 3) of the number with r = @{r} and \u03b8 = 0.",
+    "vars": {
+      "w": "a root",
+      "k": "root index, 0 \u2026 n\u22121",
+      "n": "order of the root",
+      "r": "modulus of the number",
+      "\u03b8": "argument of the number",
+      "i": "imaginary unit"
+    },
+    "given": {
+      "r": 8,
+      "n": 3,
+      "\u03b8": 0,
+      "k": 1
+    },
+    "unit": "",
+    "method": "Write the number as r\u00b7e^{i(\u03b8+2\u03c0k)}, take the n-th root of the modulus and divide the argument by n.",
+    "distractors": [
+      "2",
+      "ln",
+      "-"
+    ],
+    "vary": {
+      "r": [
+        7.0,
+        9.0,
+        1.0
+      ],
+      "k": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

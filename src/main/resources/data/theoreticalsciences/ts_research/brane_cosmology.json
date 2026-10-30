@@ -1,0 +1,53 @@
+{
+  "title": "Brane Cosmology",
+  "description": "Our universe is a membrane floating in the Bulk. The Brane Shifter can take you there.",
+  "icon": "theoreticalsciences:brane_shifter",
+  "x": 10,
+  "y": -2,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:hyperdimensional_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 16
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "Our universe is a 4D membrane at one end of a fifth dimension y running from \u2212\u03c0r to \u03c0r, and the 5D metric shrinks the 4D part by a warp factor e^(\u22122k|y|). The 5D gravity strength M\u00b3 is turned into the 4D one by integrating the action over y: the volume element contributes e^(\u22124k|y|) and the 4D curvature term e^(+2k|y|). Write the effective 4D Planck mass squared.",
+    "name": "Randall\u2013Sundrum warped extra dimension (effective 4D gravity scale)",
+    "lhs": "M _ P ^ 2",
+    "form": "M ^ 3 * int ( - \u03c0 * r , \u03c0 * r , exp ( - 4 * k * abs ( y ) ) * exp ( 2 * k * abs ( y ) ) , y )",
+    "expr": "m0 * exp ( - k * \u03c0 * r )",
+    "ask": "The integral gives (M\u00b3/k)(1 \u2212 e^(\u22122k\u03c0r)) \u2248 M\u00b3/k, so M and k are of order the Planck scale - yet a mass m0 on the far brane at |y| = \u03c0r appears to us reduced by the warp factor e^(\u2212k\u03c0r). Find the apparent mass (GeV) of m0 = 1.22e19 GeV for k = 1 and r = @{r} (in units of 1/k).",
+    "vars": {
+      "M": "5D gravity scale (M_P: 4D Planck mass)",
+      "P": "label: Planck",
+      "r": "radius of the extra dimension",
+      "k": "curvature scale of the bulk",
+      "y": "coordinate along the fifth dimension",
+      "m0": "mass parameter on the hidden brane"
+    },
+    "given": {
+      "m0": 1.22e+19,
+      "k": 1,
+      "r": 11.5
+    },
+    "unit": "GeV",
+    "method": "Reduce the 5D action \u222bd\u2074x dy \u221a\u2212G M\u00b3 R over y: \u221a\u2212G carries four powers of the warp factor e^(\u2212k|y|), the inverse metric in R removes two. Integrate the leftover exponential over both halves of the orbifold.",
+    "distractors": [
+      "\u039b",
+      "sinh",
+      "2"
+    ],
+    "vary": {
+      "r": [
+        9.7,
+        13.3,
+        0.1
+      ]
+    }
+  }
+}

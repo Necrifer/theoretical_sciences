@@ -1,0 +1,47 @@
+{
+  "title": "Number Systems",
+  "description": "Zero, and \"the next one\". From two rules, all of arithmetic. Unlocks the Peano Arithmetic Engine.",
+  "icon": "theoreticalsciences:natural_number_lattice",
+  "x": 1,
+  "y": 7,
+  "insight": 10,
+  "requires": [
+    "theoreticalsciences:quantum_foundations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Starting from zero and the rule 'take the next one', add up the first n counting numbers. Write the sum forwards and backwards underneath itself, so that each term k is paired with its mirror partner, and express the total as half of a sum of those pairs.",
+    "name": "Gauss pairing (sum of the first n naturals)",
+    "lhs": "sum ( k , 1 , n , k )",
+    "form": "1 / 2 * sum ( k , 1 , n , k + ( n + 1 - k ) )",
+    "expr": "n * ( n + 1 ) / 2",
+    "ask": "Every pair adds up to n + 1, and there are n pairs. Find the sum of the first n naturals for the value given.",
+    "vars": {
+      "k": "running counting number",
+      "n": "how many numbers are added"
+    },
+    "given": {
+      "n": 100
+    },
+    "unit": "",
+    "method": "Write the series once forwards and once backwards; the k-th terms of the two copies add to a constant. Two copies make twice the sum.",
+    "distractors": [
+      "2",
+      "m",
+      "-"
+    ],
+    "vary": {
+      "n": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

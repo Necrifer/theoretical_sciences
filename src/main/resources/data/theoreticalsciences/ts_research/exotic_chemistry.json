@@ -1,0 +1,49 @@
+{
+  "title": "Exotic Chemistry",
+  "description": "Chemistry with muons, positrons and antimatter instead of electrons. Unlocks positronium hydride and muonic catalysts.",
+  "icon": "theoreticalsciences:positronium_hydride",
+  "x": 9,
+  "y": 12,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:antimatter",
+    "theoreticalsciences:particle_physics",
+    "theoreticalsciences:supramolecular_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A negative particle of mass m orbits a nucleus of mass M; both circle their common centre of mass. Replace the orbiting mass by the effective mass of the two-body problem and write the radius of the lowest orbit, from the balance of the electrostatic attraction with the quantised angular momentum.",
+    "name": "Bohr radius with reduced mass",
+    "lhs": "a",
+    "form": "4 * \u03c0 * \u03b50 * \u0127 ^ 2 / ( m * M / ( m + M ) * e ^ 2 )",
+    "expr": "a0 / m * ( 1 + m / M )",
+    "ask": "Masses measured in electron masses make this a0\u00b7(1 + m/M)/m. Find the orbit radius of muonic hydrogen (a muon around a proton).",
+    "vars": {
+      "a": "radius of the lowest orbit",
+      "\u03b50": "vacuum permittivity",
+      "\u0127": "reduced Planck constant",
+      "m": "orbiting particle mass (electron masses)",
+      "M": "nucleus mass (electron masses)",
+      "e": "elementary charge",
+      "a0": "ordinary Bohr radius (fm)"
+    },
+    "given": {
+      "a0": 52917.7,
+      "m": 206.77,
+      "M": 1836.15
+    },
+    "unit": "fm",
+    "method": "Separate centre-of-mass and relative motion: the relative coordinate moves like one particle of mass mM/(m+M). Then set m v r = \u0127 and m v\u00b2/r equal to the Coulomb force.",
+    "distractors": [
+      "c",
+      "\u03bc0",
+      "-"
+    ]
+  }
+}

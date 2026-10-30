@@ -1,0 +1,73 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.6,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 13136956,
+    "fog_color": 6961696,
+    "water_color": 13660208,
+    "water_fog_color": 5908496,
+    "grass_color": 11559104,
+    "foliage_color": 11559104,
+    "ambient_sound": "minecraft:ambient.crimson_forest.loop",
+    "music": {
+      "sound": "theoreticalsciences:music.antiverse",
+      "min_delay": 1200,
+      "max_delay": 3600,
+      "replace_current_music": true
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:electric_spark"
+      },
+      "probability": 0.002
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:annihilator",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "theoreticalsciences:positronium_skitterer",
+        "weight": 12,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
+    "ambient": [
+      {
+        "type": "theoreticalsciences:antihydrogen_wisp",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:anomaly_vault_antiverse"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_antiiron",
+      "theoreticalsciences:ore_antigold",
+      "theoreticalsciences:ore_anticarbon",
+      "theoreticalsciences:ore_antisilicon",
+      "theoreticalsciences:ore_antihydrogen_ice"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

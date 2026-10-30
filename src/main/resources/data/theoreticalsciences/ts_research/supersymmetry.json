@@ -1,0 +1,56 @@
+{
+  "title": "Supersymmetry",
+  "description": "Every boson has a fermion twin. The lightest of them is dark matter.",
+  "icon": "theoreticalsciences:superpartner_shard",
+  "x": 9,
+  "y": 5,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:standard_model",
+    "theoreticalsciences:dark_sector",
+    "theoreticalsciences:quantum_field_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:standard_model_matrix",
+      "count": 1
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Stable heavy particles of number density n fill the early universe, which expands at rate H. They annihilate in pairs with velocity-averaged cross-section \u03c3v and are re-created from the thermal bath, which by itself would hold the equilibrium density n_eq. Write the rate of change of n including dilution by expansion in three dimensions.",
+    "name": "Boltzmann equation for relic abundance (thermal freeze-out)",
+    "lhs": "d ( n , t )",
+    "form": "- 3 * H * n - avg ( \u03c3 * v ) * ( n ^ 2 - n _ eq ^ 2 )",
+    "expr": "0.3 / ( s * h ^ 2 )",
+    "ask": "Solving it through freeze-out gives \u03a9h\u00b2 \u2248 0.1 \u00d7 (3e-26 cm\u00b3/s)/\u27e8\u03c3v\u27e9. With \u27e8\u03c3v\u27e9 = s \u00d7 1e-26 cm\u00b3/s for s = @{s} and Hubble parameter h = 0.7, find the relic density \u03a9.",
+    "vars": {
+      "n": "number density",
+      "t": "time",
+      "H": "expansion rate",
+      "\u03c3": "annihilation cross-section",
+      "v": "relative speed",
+      "eq": "label: thermal equilibrium",
+      "s": "\u27e8\u03c3v\u27e9 in units of 1e-26 cm\u00b3/s",
+      "h": "dimensionless Hubble parameter"
+    },
+    "given": {
+      "s": 2,
+      "h": 0.7
+    },
+    "unit": "",
+    "method": "Volume dilution gives \u22123Hn; annihilation goes as n\u00b2, and inverse production must cancel it exactly when n = n_eq.",
+    "distractors": [
+      "2",
+      "+",
+      "\u039b"
+    ],
+    "vary": {
+      "s": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

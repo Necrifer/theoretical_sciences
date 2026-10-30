@@ -1,0 +1,135 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:exotic_matter_crystal",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:negative_mass_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:massless_alloy",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:magnetic_monopole",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:cosmic_string_segment",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:omega_one",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:wave_packet",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:russell_paradox_set",
+      "count": 64
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:false_vacuum",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:antiwater",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:exotic_matter_singularity",
+      "count": 1
+    }
+  ],
+  "energy": 268435456,
+  "duration": 6000,
+  "research": "theoreticalsciences:conceptual_singularities",
+  "scaled": 32,
+  "physics": {
+    "vars": {
+      "qb": 0.25
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 0.99,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "cataclysm:monstrous_eye",
+      "count": 32
+    },
+    {
+      "item": "oritech:prometheum_ingot",
+      "count": 32
+    },
+    {
+      "item": "advanced_ae:quantum_processor",
+      "count": 32
+    },
+    {
+      "item": "avaritia:neutron_ingot",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclear_radiation:molten_corium",
+      "amount": 32000
+    },
+    {
+      "fluid": "nuclearcraft:molten_berkelium_248",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

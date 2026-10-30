@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:causality_loop",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:paradox_residue",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:closed_timelike_curve",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:bootstrap_artifact",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:closed_timelike_curve",
+      "count": 1
+    }
+  ],
+  "energy": 4194304,
+  "duration": 1200,
+  "research": "theoreticalsciences:causality_violation",
+  "physics": {
+    "windows": [
+      {
+        "q": "loop",
+        "min": 10.0,
+        "max": 60.0
+      }
+    ]
+  }
+}

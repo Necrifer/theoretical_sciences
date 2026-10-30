@@ -1,0 +1,55 @@
+{
+  "title": "Room-Temperature Superconductivity",
+  "description": "Cooper pairs that hold together at room temperature, inside a hydrogen-rich framework.",
+  "icon": "theoreticalsciences:room_temperature_superconductor",
+  "x": 10,
+  "y": 11,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:supramolecular_chemistry",
+    "theoreticalsciences:mass_manipulation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metal_organic_framework",
+      "count": 2
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Electrons near the Fermi surface attract each other through lattice vibrations, but only within the Debye energy \u0127\u03c9D of it, with dimensionless coupling \u03bb. At the critical temperature the pairing gap just vanishes, and the self-consistency condition reduces to an integral over the electron energy \u03be weighted by the thermal occupation factor. Write that condition.",
+    "name": "BCS gap equation at the critical temperature",
+    "lhs": "1",
+    "form": "\u03bb * int ( 0 , \u0127 * \u03c9 _ D , tanh ( \u03be / ( 2 * kB * Tc ) ) / \u03be , \u03be )",
+    "expr": "1.13 * \u0398 * exp ( - 1 / \u03bb )",
+    "ask": "For weak coupling the integral gives kB Tc = 1.13 \u0127\u03c9D e^(\u22121/\u03bb). Find Tc (K) for a hydride with Debye temperature \u0398 = \u0127\u03c9D/kB = 1800 K and \u03bb = @{\u03bb}.",
+    "vars": {
+      "\u03bb": "electron\u2013phonon coupling",
+      "\u0127": "reduced Planck constant",
+      "\u03c9": "frequency (\u03c9_D the Debye frequency)",
+      "D": "label: Debye",
+      "\u03be": "electron energy from the Fermi level",
+      "kB": "Boltzmann constant",
+      "Tc": "critical temperature",
+      "\u0398": "Debye temperature"
+    },
+    "given": {
+      "\u0398": 1800,
+      "\u03bb": 0.5
+    },
+    "unit": "K",
+    "method": "Set the gap to zero in the self-consistent gap equation; the thermal factor 1 \u2212 2f(\u03be) becomes tanh(\u03be/2kBT). For \u03bb \u226a 1 the integral is \u2248 ln(1.13\u0127\u03c9D/kBTc).",
+    "distractors": [
+      "cosh",
+      "T",
+      "2"
+    ],
+    "vary": {
+      "\u03bb": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

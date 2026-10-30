@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:wormhole_transit",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:multiverse_shard",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:pulsar_timing_crystal",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:multiverse_shard",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:exotic_matter_crystal",
+      "count": 4
+    }
+  ],
+  "energy": 8388608,
+  "duration": 1600,
+  "research": "theoreticalsciences:traversable_wormholes",
+  "physics": {
+    "windows": [
+      {
+        "q": "b0",
+        "min": 200.0,
+        "max": 1000.0
+      },
+      {
+        "q": "tt",
+        "min": 1.0,
+        "max": 30.0
+      }
+    ]
+  }
+}

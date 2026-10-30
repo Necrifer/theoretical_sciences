@@ -1,0 +1,99 @@
+{
+  "type": "theoreticalsciences:universe_forging",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:heat_death_remnant",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:tidal_alloy_scrap",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_lattice",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:einstein_rosen_core",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:antihydrogen_crystal",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:baryogenesis_seed",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:tesseract_lens",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:frozen_photon",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:inflaton_field",
+      "amount": 512000
+    },
+    {
+      "fluid": "theoreticalsciences:metallic_hydrogen",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 64000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:universe_seed",
+      "count": 1
+    }
+  ],
+  "energy": 8388608,
+  "duration": 4800,
+  "research": "theoreticalsciences:cosmogenesis",
+  "scaled": 16,
+  "physics": {
+    "windows": [
+      {
+        "q": "ns",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "gtceu:quantum_processor_computer",
+      "count": 16
+    },
+    {
+      "item": "ufo:enriched_neutronium_sphere",
+      "count": 16
+    },
+    {
+      "item": "draconicevolution:chaos_shard",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:molten_berkelium_248",
+      "amount": 16000
+    },
+    {
+      "fluid": "nuclear_radiation:molten_corium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

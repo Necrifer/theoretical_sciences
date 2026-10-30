@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:lithography",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:metamaterial_sheet"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cherenkov_wafer",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 1600
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:qubit_array_wafer",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:femtoengineering",
+  "scaled": 4,
+  "expanded": true
+}

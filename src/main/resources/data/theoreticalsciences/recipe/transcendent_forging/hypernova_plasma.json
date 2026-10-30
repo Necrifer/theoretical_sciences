@@ -1,0 +1,131 @@
+{
+  "type": "theoreticalsciences:transcendent_forging",
+  "min_tier": 4,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:hypernova_alloy_ingot",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:quark_star_core",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:pentaquark_shard",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:gravitational_wave_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:spacetime_alloy_ingot",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:boltzmann_brain",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:brane_tension_fiber",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:primordial_ejecta",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:qubit_die",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:tidal_alloy_scrap",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:imaginary_unit",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:residual_starlight",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 512000
+    },
+    {
+      "fluid": "theoreticalsciences:antihydrogen",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:carborane_superacid",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 128000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hypernova_plasma",
+      "amount": 2000
+    },
+    {
+      "id": "theoreticalsciences:dimensional_residue",
+      "amount": 500
+    }
+  ],
+  "energy": 4194304,
+  "duration": 2500,
+  "research": "theoreticalsciences:stellar_transcendence",
+  "scaled": 32,
+  "physics": {
+    "vars": {
+      "EG": 22460.0,
+      "Cf": 3.2e-17,
+      "Ef": 8.7,
+      "fch": 1.0,
+      "Zf": 3.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 150.0,
+        "max": 300.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "cataclysm:abyss_eye",
+      "count": 32
+    },
+    {
+      "item": "gtceu:quantum_processor_computer",
+      "count": 32
+    },
+    {
+      "item": "fdbosses:eye_of_chesed",
+      "count": 32
+    },
+    {
+      "item": "draconicevolution:chaos_shard",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "avaritia_integration:molten_neutron",
+      "amount": 32000
+    },
+    {
+      "fluid": "nuclear_radiation:molten_corium",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

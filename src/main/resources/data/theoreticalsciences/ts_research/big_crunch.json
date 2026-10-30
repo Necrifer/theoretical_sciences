@@ -1,0 +1,47 @@
+{
+  "title": "The Big Crunch & the Big Bounce",
+  "description": "Enough matter, or dark energy that decays, and the expansion stops and reverses: everything falls back into a crunch. Quantum geometry may refuse the singularity - at the Planck density gravity repels, and the crunch bounces into a new expansion. Unlocks the Bounce Core.",
+  "icon": "theoreticalsciences:bounce_core",
+  "x": 12,
+  "y": -8,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:cosmic_eschatology",
+    "theoreticalsciences:compact_stars",
+    "theoreticalsciences:quantum_gravity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neutronium_block",
+      "count": 8
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "Quantum geometry modifies the expansion of the universe near the Planck scale: the square of the Hubble rate is the classical 8\u03c0G\u03c1/3 multiplied by a factor that vanishes when the density \u03c1 reaches a critical density, and the curvature k of a closed universe adds its usual term. Write the corrected expansion rate.",
+    "name": "Effective Friedmann equation of loop quantum cosmology (the Big Bounce)",
+    "lhs": "H ^ 2",
+    "form": "8 * \u03c0 * G / 3 * \u03c1 * ( 1 - \u03c1 / \u03c1 _ c ) - k / a ^ 2",
+    "expr": "sqrt ( 2 * \u03c0 * G * \u03c1 / 3 )",
+    "ask": "At \u03c1 = \u03c1_c the expansion stops and the collapse bounces. For k = 0 the expansion is fastest at \u03c1 = \u03c1_c/2, where H\u00b2 = 2\u03c0G\u03c1_c/3. With G = 1 and \u03c1_c = \u03c1 (Planck units), find the largest Hubble rate.",
+    "vars": {
+      "H": "Hubble rate",
+      "G": "gravitational constant",
+      "\u03c1": "density (critical density in step 2)",
+      "c": "critical (bounce)",
+      "k": "spatial curvature",
+      "a": "scale factor"
+    },
+    "given": {
+      "G": 1,
+      "\u03c1": 0.41
+    },
+    "unit": "Planck units",
+    "method": "The correction is quadratic in \u03c1: put x = \u03c1/\u03c1_c and find where x(1 \u2212 x) is largest.",
+    "distractors": [
+      "\u039b",
+      "2",
+      "exp"
+    ]
+  }
+}

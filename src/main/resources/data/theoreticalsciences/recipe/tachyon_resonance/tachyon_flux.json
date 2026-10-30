@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:tachyon_resonance",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_boule",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 8000
+    },
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 8000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:tachyon_flux",
+      "amount": 1000
+    }
+  ],
+  "energy": 1024,
+  "duration": 250,
+  "research": "theoreticalsciences:tachyonics",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "malum:malignant_pewter_ingot",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

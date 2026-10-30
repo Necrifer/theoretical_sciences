@@ -1,0 +1,48 @@
+{
+  "title": "Matrioshka Brain",
+  "description": "Wrap a star in nested shells of computronium and let it think.",
+  "icon": "theoreticalsciences:computronium_block",
+  "x": 12,
+  "y": 2,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:superintelligence",
+    "theoreticalsciences:dyson_sphere"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superintelligence_core",
+      "count": 1
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "A star of luminosity L is enclosed by computing shells; the outermost, of radius R, radiates everything to space as a black body. Every erased bit must leave as entropy, at kB ln 2 per bit, and black-body radiation of power L at temperature T carries entropy 4L/(3T) per second. Write the maximum rate of bit erasures, with the shell temperature fixed by radiative balance.",
+    "name": "Landauer-limited computation of a stellar shell",
+    "lhs": "d ( N , t )",
+    "form": "4 * L / ( 3 * kB * ln ( 2 ) * ( L / ( 4 * \u03c0 * R ^ 2 * \u03c3 ) ) ^ ( 1 / 4 ) )",
+    "expr": "ln ( 4 * L / ( 3 * kB * ln ( 2 ) * ( L / ( 4 * \u03c0 * R ^ 2 * \u03c3 ) ) ^ 0.25 ) ) / ln ( 10 )",
+    "ask": "Find log\u2081\u2080 of the erasure rate (bits per second) for the Sun (L = 3.828e26 W) inside a shell at R = 1 AU = 1.496e11 m.",
+    "vars": {
+      "N": "number of bits erased",
+      "t": "time",
+      "L": "stellar luminosity",
+      "kB": "Boltzmann constant",
+      "R": "outer shell radius",
+      "\u03c3": "radiation constant of a black body"
+    },
+    "given": {
+      "L": 3.828e+26,
+      "kB": 1.380649e-23,
+      "R": 149600000000.0,
+      "\u03c3": 5.67e-08
+    },
+    "unit": "log\u2081\u2080(bits/s)",
+    "method": "Radiative balance L = 4\u03c0R\u00b2\u03c3T\u2074 gives T. The entropy outflow of thermal radiation is (4/3)L/T; divide by the entropy kB ln 2 per erased bit.",
+    "distractors": [
+      "h",
+      "3",
+      "exp"
+    ]
+  }
+}

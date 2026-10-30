@@ -1,0 +1,61 @@
+{
+  "title": "Systems: The Microenvironment & Invasion Fronts",
+  "description": "No anomaly grows alone. It recruits blood vessels and stroma, signals to the cells around it, and invades as a travelling front whose speed is set by how fast it grows and how far it diffuses - the same mathematics as a cellular automaton spreading on a grid. Unlocks the Tumour Microenvironment Organoid.",
+  "icon": "theoreticalsciences:microenvironment_organoid",
+  "x": 17,
+  "y": 8,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:immune_evasion",
+    "theoreticalsciences:self_replication"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metastatic_spore",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:quine_replicator",
+      "count": 2
+    }
+  ],
+  "time": 1560,
+  "puzzle": {
+    "goal": "Anomalous cells of density u diffuse through tissue with diffusivity D and divide at a rate r while there is room, up to a carrying density K. Write how the density changes in space and time: diffusion plus self-limiting growth.",
+    "name": "Fisher\u2013KPP reaction\u2013diffusion equation (a travelling invasion front)",
+    "lhs": "pd ( u , t )",
+    "form": "D * lap ( u ) + r * u * ( 1 - u / K )",
+    "expr": "2 * sqrt ( D * r )",
+    "ask": "Started from a small seed, the anomaly invades as a front that settles to the speed c = 2\u221a(Dr). With D in mm\u00b2/day and r per day, find the speed of the front in mm/day.",
+    "vars": {
+      "u": "density of anomalous cells",
+      "t": "time",
+      "D": "diffusivity",
+      "r": "growth rate",
+      "K": "carrying density"
+    },
+    "given": {
+      "D": 0.05,
+      "r": 0.2
+    },
+    "unit": "mm/day",
+    "method": "Linearise at the leading edge (u small) and look for a front u \u221d e^{\u2212\u03bb(x \u2212 ct)}: c = D\u03bb + r/\u03bb, smallest at \u03bb = \u221a(r/D).",
+    "distractors": [
+      "v",
+      "exp",
+      "2"
+    ],
+    "vary": {
+      "D": [
+        0.03,
+        0.07,
+        0.0001
+      ],
+      "r": [
+        0.12,
+        0.28,
+        0.001
+      ]
+    }
+  }
+}

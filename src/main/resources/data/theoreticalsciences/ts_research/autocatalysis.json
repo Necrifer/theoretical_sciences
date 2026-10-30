@@ -1,0 +1,56 @@
+{
+  "title": "Origins: Molecules That Copy Themselves",
+  "description": "A reaction whose product speeds up its own making grows exponentially and can oscillate, flare and spread as a wave. A prion does it with shape alone: a misfolded protein that refolds the healthy ones it touches. Unlocks Autocatalytic Broth and the Prion Lattice.",
+  "icon": "theoreticalsciences:prion_lattice",
+  "x": 15,
+  "y": 7,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:anomalous_phenomena",
+    "theoreticalsciences:island_of_stability",
+    "theoreticalsciences:supramolecular_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:anomaly_specimen",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 4
+    }
+  ],
+  "time": 1200,
+  "puzzle": {
+    "goal": "Two reagents A and B are fed in at constant concentration. A makes an intermediate X; B turns X into Y; X decays; and - the autocatalytic step - two X and one Y make three X, so X catalyses its own production. In dimensionless units with every rate constant 1, write how fast X changes.",
+    "name": "Brusselator (autocatalytic chemical oscillator), the X equation",
+    "lhs": "d ( X , t )",
+    "form": "A - ( B + 1 ) * X + X ^ 2 * Y",
+    "expr": "1 + A ^ 2",
+    "ask": "The steady state is X = A, Y = B/A. It loses stability - and the mixture starts to oscillate on its own, a chemical clock - once B exceeds 1 + A\u00b2. Find that critical B for the A below.",
+    "vars": {
+      "X": "autocatalytic intermediate",
+      "Y": "second intermediate",
+      "A": "feed concentration of the first reagent",
+      "B": "feed concentration of the second reagent",
+      "t": "time"
+    },
+    "given": {
+      "A": 1.5
+    },
+    "unit": "",
+    "method": "Add up the four steps: A \u2192 X adds A, B + X \u2192 Y removes BX, X \u2192 product removes X, 2X + Y \u2192 3X adds X\u00b2Y.",
+    "distractors": [
+      "k",
+      "2",
+      "exp"
+    ],
+    "vary": {
+      "A": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

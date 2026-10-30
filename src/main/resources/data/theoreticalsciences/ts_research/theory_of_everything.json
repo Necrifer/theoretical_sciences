@@ -1,0 +1,80 @@
+{
+  "title": "Theory of Everything",
+  "description": "Quantum fields, gravity, strings and the Standard Model as one theory.",
+  "icon": "theoreticalsciences:theory_of_everything",
+  "x": 16,
+  "y": 3,
+  "insight": 500,
+  "requires": [
+    "theoreticalsciences:conceptual_singularities",
+    "theoreticalsciences:grand_unification",
+    "theoreticalsciences:general_relativity",
+    "theoreticalsciences:m_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:m_theory_core",
+      "count": 1
+    }
+  ],
+  "time": 2640,
+  "puzzle": {
+    "goal": "Write one action for everything known: spacetime curvature with a vacuum energy, the gauge fields with field strength F_\u03bc\u03bd, matter fermions \u03c8 moving through the gauge-covariant derivative D_\u03bc, and the scalar field \u03c6 whose potential has its minimum at |\u03c6| = v. Integrate the sum of all their Lagrangian densities over spacetime with the invariant volume factor built from the metric determinant g.",
+    "name": "Einstein\u2013Hilbert + Standard Model action (core theory)",
+    "lhs": "S",
+    "form": "int ( sqrt ( - g ) * ( c ^ 4 / ( 16 * \u03c0 * G ) * ( R - 2 * \u039b ) - 1 / 4 * F _ \u03bc\u03bd * F ^ \u03bc\u03bd + bar ( \u03c8 ) * ( i * \u0127 * c * \u03b3 ^ \u03bc * D _ \u03bc - m * c ^ 2 ) * \u03c8 + abs ( D _ \u03bc * \u03c6 ) ^ 2 - \u03bb * ( abs ( \u03c6 ) ^ 2 - v ^ 2 ) ^ 2 ) , x )",
+    "expr": "1 / \u03b1 + b / ( 2 * \u03c0 ) * ln ( Q / M )",
+    "ask": "The couplings in this action run with energy. At one loop 1/\u03b1(Q) = 1/\u03b1(M) + b/(2\u03c0)\u00b7ln(Q/M). Starting from the strong coupling \u03b1 = 0.118 at M = 91.19 GeV with b = @{b}, find 1/\u03b1 at the unification scale Q = @{Q} GeV.",
+    "vars": {
+      "S": "action",
+      "g": "determinant of the metric",
+      "c": "speed of light",
+      "G": "gravitational constant",
+      "R": "scalar curvature",
+      "\u039b": "cosmological constant",
+      "F": "gauge field strength",
+      "\u03bc\u03bd": "spacetime index pair",
+      "\u03c8": "fermion field (\u03c8\u0304 its Dirac adjoint)",
+      "i": "imaginary unit",
+      "\u0127": "reduced Planck constant",
+      "\u03b3": "gamma matrices",
+      "\u03bc": "spacetime index",
+      "D": "gauge-covariant derivative",
+      "m": "fermion mass",
+      "\u03c6": "Higgs field",
+      "\u03bb": "Higgs self-coupling",
+      "v": "vacuum expectation value of \u03c6",
+      "x": "spacetime coordinates (d\u2074x)",
+      "\u03b1": "strong coupling at M",
+      "b": "one-loop beta coefficient",
+      "Q": "high energy scale (GeV)",
+      "M": "Z boson mass scale (GeV)"
+    },
+    "given": {
+      "\u03b1": 0.118,
+      "b": 7,
+      "Q": 2e+16,
+      "M": 91.19
+    },
+    "unit": "",
+    "method": "Gravity enters as curvature R \u2212 2\u039b, gauge fields as \u2212\u00bcF\u00b2, fermions through the Dirac operator, the scalar through |D\u03c6|\u00b2 minus a double-well potential; \u221a\u2212g makes the volume element invariant.",
+    "distractors": [
+      "8",
+      "e",
+      "\u03c3",
+      "+"
+    ],
+    "vary": {
+      "b": [
+        4.0,
+        10.0,
+        1.0
+      ],
+      "Q": [
+        1.2e+16,
+        2.8e+16,
+        100000000000000.0
+      ]
+    }
+  }
+}

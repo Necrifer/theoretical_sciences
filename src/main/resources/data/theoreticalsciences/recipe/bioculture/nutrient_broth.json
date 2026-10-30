@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:bioculture",
+  "item_inputs": [
+    {
+      "item": "minecraft:sugar",
+      "count": 24
+    },
+    {
+      "item": "minecraft:bone_meal",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:fractured_essence",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:warm_helium",
+      "amount": 8000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "energy": 4096,
+  "duration": 375,
+  "research": "theoreticalsciences:molecular_biology",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "mekanism:alloy_reinforced",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

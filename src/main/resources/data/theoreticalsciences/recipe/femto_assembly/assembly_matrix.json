@@ -1,0 +1,87 @@
+{
+  "type": "theoreticalsciences:femto_assembly",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photonic_processor",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:chronosteel_ingot",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:quantum_processor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_lattice",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:femto_capacitor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:proof_fragment",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:assembly_matrix",
+      "count": 4
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:femtoengineering",
+  "scaled": 8,
+  "physics": {
+    "windows": [
+      {
+        "q": "sig",
+        "min": 0.0,
+        "max": 60.0
+      }
+    ]
+  },
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 16000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "iceandfire:dragonsteel_lightning_ingot",
+      "count": 16
+    },
+    {
+      "item": "bigreactors:ridiculite_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:helium_3",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

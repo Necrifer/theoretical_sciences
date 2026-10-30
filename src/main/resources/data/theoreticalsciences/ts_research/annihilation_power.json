@@ -1,0 +1,52 @@
+{
+  "title": "Annihilation Power",
+  "description": "Matter plus antimatter equals pure energy. Dilithium keeps it from equalling a crater.",
+  "icon": "theoreticalsciences:annihilation_core",
+  "x": 4,
+  "y": 2,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:antimatter"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A particle and its antiparticle, each of rest mass m, meet with momenta p\u20d71 and p\u20d72 and annihilate completely into radiation. A reactor converts a fraction \u03b7 of the radiation into useful energy. Write the useful energy as the sum of the two particles' total relativistic energies.",
+    "name": "Annihilation energy from the energy\u2013momentum relation",
+    "lhs": "E",
+    "form": "\u03b7 * ( sqrt ( p _ 1 ^ 2 * c ^ 2 + m ^ 2 * c ^ 4 ) + sqrt ( p _ 2 ^ 2 * c ^ 2 + m ^ 2 * c ^ 4 ) )",
+    "expr": "2 * \u03b7 * m * c ^ 2 / 1000000",
+    "ask": "In a trap both particles are essentially at rest. Find the useful energy in MJ when 1 \u03bcg (1e-9 kg) of antimatter annihilates with 1 \u03bcg of matter at efficiency \u03b7 = @{\u03b7}.",
+    "vars": {
+      "E": "useful energy",
+      "\u03b7": "reactor efficiency",
+      "p": "momentum (p\u2081 of the particle, p\u2082 of the antiparticle)",
+      "m": "rest mass of each",
+      "c": "speed of light"
+    },
+    "given": {
+      "\u03b7": 0.5,
+      "m": 1e-09,
+      "c": 300000000
+    },
+    "unit": "MJ",
+    "method": "Each particle's total energy follows from E\u00b2 = p\u00b2c\u00b2 + m\u00b2c\u2074; all of it is converted to photons, so add both energies and apply the efficiency.",
+    "distractors": [
+      "v",
+      "h",
+      "-"
+    ],
+    "vary": {
+      "\u03b7": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

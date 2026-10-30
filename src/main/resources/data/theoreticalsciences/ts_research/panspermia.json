@@ -1,0 +1,84 @@
+{
+  "title": "Panspermia",
+  "description": "Life carried between worlds - and between universes. Unlocks panspermia seeds and the omnicellular genome.",
+  "icon": "theoreticalsciences:panspermia_seed",
+  "x": 19,
+  "y": 15,
+  "insight": 450,
+  "requires": [
+    "theoreticalsciences:abiogenesis",
+    "theoreticalsciences:multiverse",
+    "theoreticalsciences:island_of_stability"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:spark_of_life",
+      "count": 1
+    }
+  ],
+  "time": 2280,
+  "puzzle": {
+    "goal": "Spores ride inside a rock between worlds for time t. Radiation at dose rate R is attenuated by the rock (absorption coefficient \u03bc, depth x), and a spore dies only when all m of its sensitive targets are hit, each target surviving a dose D with probability exp(\u2212D/D0). Write the surviving fraction after the journey.",
+    "name": "Multi-target survival model (radiation dose)",
+    "lhs": "N / N _ 0",
+    "form": "1 - ( 1 - exp ( - int ( 0 , t , R * exp ( - \u03bc * x ) , s ) / D _ 0 ) ) ^ m",
+    "expr": "N0 * ( 1 - ( 1 - exp ( - R * t * exp ( - k ) / D0 ) ) ^ m )",
+    "ask": "With a constant dose rate the dose is R\u00b7t\u00b7e^(\u2212\u03bcx). Find how many of N0 spores survive, with shielding \u03bcx = k.",
+    "vars": {
+      "N": "surviving spores",
+      "N0": "initial spores",
+      "t": "journey time (years)",
+      "R": "dose rate (Gy/year)",
+      "\u03bc": "absorption coefficient",
+      "x": "depth in the rock",
+      "s": "time during the journey",
+      "D": "dose",
+      "D0": "characteristic dose per target (Gy)",
+      "m": "number of targets",
+      "k": "shielding \u03bcx"
+    },
+    "given": {
+      "N0": 1000000,
+      "R": 0.1,
+      "t": 100000,
+      "k": 2,
+      "D0": 1000,
+      "m": 3
+    },
+    "unit": "spores",
+    "method": "Accumulate the dose by integrating the shielded dose rate over time; a target survives with exp(\u2212D/D0), and the spore dies only if every target is hit.",
+    "distractors": [
+      "+",
+      "ln",
+      "2",
+      "\u03bb"
+    ],
+    "vary": {
+      "N0": [
+        600000.0,
+        1400000.0,
+        10000.0
+      ],
+      "R": [
+        0.06,
+        0.14,
+        0.001
+      ],
+      "t": [
+        60000.0,
+        140000.0,
+        1.0
+      ],
+      "k": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "D0": [
+        600.0,
+        1400.0,
+        1.0
+      ]
+    }
+  }
+}

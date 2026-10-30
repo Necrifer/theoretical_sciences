@@ -1,0 +1,65 @@
+{
+  "title": "Assembly Lines",
+  "description": "Attoscale components and the Femtoscale Assembly Line - the only way to build high-tier processors.",
+  "icon": "theoreticalsciences:topological_processor",
+  "x": 7,
+  "y": -3,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:plasma_metallurgy",
+    "theoreticalsciences:topology",
+    "theoreticalsciences:femtoengineering"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chronosteel_ingot",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A line of k stations processes components one after another; station s takes time t_s. The first component must pass through every station, and after that a new component leaves each time the slowest station, with time \u03c4, finishes one. Write the total time to finish N components.",
+    "name": "Pipeline makespan (fill time plus bottleneck throughput)",
+    "lhs": "T",
+    "form": "sum ( s , 1 , k , t _ s ) + ( N - 1 ) * \u03c4",
+    "expr": "( k + N - 1 ) * t",
+    "ask": "If every station takes the same time t, the total is (k + N \u2212 1)\u00b7t. Find T for k = @{k} stations, N = @{N} components and t = @{t} s.",
+    "vars": {
+      "T": "total time",
+      "s": "station index",
+      "k": "number of stations",
+      "t": "time per station",
+      "N": "number of components",
+      "\u03c4": "time of the slowest station"
+    },
+    "given": {
+      "k": 8,
+      "N": 1000,
+      "t": 0.5
+    },
+    "unit": "s",
+    "method": "Fill the line once (sum of the station times), then one more component per bottleneck cycle for the remaining N \u2212 1.",
+    "distractors": [
+      "2",
+      "+",
+      "n"
+    ],
+    "vary": {
+      "k": [
+        5.0,
+        11.0,
+        1.0
+      ],
+      "N": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "t": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:antiproton_deceleration",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cpt_mirror"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:antiproton_bundle",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 64000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antihydrogen_crystal",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:antihelium_nucleus",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 900,
+  "research": "theoreticalsciences:cpt_symmetry",
+  "unscaled": true
+}

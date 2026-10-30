@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:omnipotence_shard"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.the_sundering"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.the_sundering.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "parent": "theoreticalsciences:research/beyond_the_omega",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

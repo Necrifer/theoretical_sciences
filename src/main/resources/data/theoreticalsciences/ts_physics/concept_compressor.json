@@ -1,0 +1,106 @@
+{
+  "params": [
+    {
+      "id": "R",
+      "unit": "bit/symbol",
+      "min": 0,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.6
+    },
+    {
+      "id": "n",
+      "unit": "symbols",
+      "min": 10,
+      "max": 1000000,
+      "step": 10,
+      "default": 1000
+    },
+    {
+      "id": "Bh",
+      "unit": "T",
+      "min": 0,
+      "max": 150,
+      "step": 0.1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "qb": 0.1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "H",
+      "unit": "bit/symbol",
+      "expr": "-(qb*ln(qb) + (1-qb)*ln(1-qb))/0.693147*(1+0.01*d)",
+      "formula": "H = \u2212q log q \u2212 (1\u2212q) log(1\u2212q)"
+    },
+    {
+      "id": "Vd",
+      "unit": "bit\u00b2",
+      "expr": "qb*(1-qb)*(ln((1-qb)/qb)/0.693147)^2",
+      "formula": "V = q(1\u2212q)\u00b7log\u00b2((1\u2212q)/q)"
+    },
+    {
+      "id": "gap",
+      "unit": "bit",
+      "expr": "R - H",
+      "formula": "R \u2212 H"
+    },
+    {
+      "id": "lgPe",
+      "unit": "log\u2081\u2080",
+      "expr": "-n*pos(gap)^2/(2*Vd)/2.302585",
+      "formula": "P_e \u2248 exp(\u2212n(R\u2212H)\u00b2/2V)"
+    },
+    {
+      "id": "ratio",
+      "unit": "",
+      "expr": "1/R",
+      "formula": "1/R"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "shannon",
+      "kind": "stop",
+      "expr": "gap",
+      "formula": "R > H"
+    },
+    {
+      "id": "store",
+      "kind": "stop",
+      "expr": "Bh - 5*R*10",
+      "formula": "B \u2265 50 T\u00b7R"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bh)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "clamp(3*(1000/n)^0.3, 0, 4)",
+  "rate_formula": "rate = 3\u00b7(1000/n)^0.3",
+  "heat": "10 + 0.1*Bh",
+  "idle_heat": "3",
+  "quench_energy": "5*Bh^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

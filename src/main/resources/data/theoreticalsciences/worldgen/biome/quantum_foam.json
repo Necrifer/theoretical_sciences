@@ -1,0 +1,73 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 662056,
+    "fog_color": 794672,
+    "water_color": 8450303,
+    "water_fog_color": 794672,
+    "ambient_sound": "minecraft:ambient.soul_sand_valley.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:end_rod"
+      },
+      "probability": 0.01
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.quantum_foam",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:planck_mite",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "theoreticalsciences:vacuum_drifter",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "ambient": [
+      {
+        "type": "theoreticalsciences:virtual_pair",
+        "weight": 12,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [
+      "theoreticalsciences:foam_boundary_layers"
+    ],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:anomaly_vault_quantum_foam"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_virtual_quark",
+      "theoreticalsciences:ore_virtual_graviton",
+      "theoreticalsciences:ore_virtual_photon",
+      "theoreticalsciences:ore_virtual_monopole",
+      "theoreticalsciences:foam_bubbles"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:causality_loop",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:pocket_universe",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:closed_timelike_curve",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pocket_universe",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:closed_timelike_curve",
+      "count": 1
+    }
+  ],
+  "energy": 67108864,
+  "duration": 3600,
+  "research": "theoreticalsciences:causality_violation",
+  "physics": {
+    "windows": [
+      {
+        "q": "loop",
+        "min": 60.0,
+        "max": 600.0
+      }
+    ]
+  }
+}

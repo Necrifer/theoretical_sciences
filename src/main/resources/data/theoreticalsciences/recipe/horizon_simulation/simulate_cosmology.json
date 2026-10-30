@@ -1,0 +1,76 @@
+{
+  "type": "theoreticalsciences:horizon_simulation",
+  "min_tier": 5,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:universe_seed",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:horizon_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:primordial_ash",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:transcendent_plasma",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_spacetime",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pocket_universe",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:heat_death_remnant",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:cosmological_constant",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:spin_foam_lattice",
+      "count": 16
+    },
+    {
+      "id": "theoreticalsciences:graviton_crystal",
+      "count": 16
+    },
+    {
+      "id": "theoreticalsciences:horizon_shard",
+      "count": 16
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:inflaton_field",
+      "amount": 8000
+    },
+    {
+      "id": "theoreticalsciences:false_vacuum",
+      "amount": 4000
+    }
+  ],
+  "energy": 268435456,
+  "duration": 2400,
+  "research": "theoreticalsciences:horizon_simulation",
+  "physics": {
+    "windows": [
+      {
+        "q": "ks",
+        "min": 0.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

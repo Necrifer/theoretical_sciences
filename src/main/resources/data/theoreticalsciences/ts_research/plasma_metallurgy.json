@@ -1,0 +1,52 @@
+{
+  "title": "Plasma Metallurgy",
+  "description": "Alloys forged in stellar plasma: Chronosteel and Exotic Solder. Unlocks the Stellar Plasma Crucible.",
+  "icon": "theoreticalsciences:chronosteel_ingot",
+  "x": 6,
+  "y": -3,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:particle_physics",
+    "theoreticalsciences:chronodynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:quantum_processor",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Particles in a hot plasma share energy according to a thermal weight e^(\u2212\u03b2E), with \u03b2 = 1/(kB T), and a density of states proportional to \u221aE for free motion in three dimensions. Write the mean energy per particle by differentiating the logarithm of the partition integral with respect to \u03b2.",
+    "name": "Equipartition of energy (from the partition function)",
+    "lhs": "avg ( E )",
+    "form": "- pd ( ln ( int ( 0 , \u221e , sqrt ( E ) * exp ( - \u03b2 * E ) , E ) ) , \u03b2 )",
+    "expr": "3 / 2 * kB * T",
+    "ask": "The integral is (\u221a\u03c0/2)\u03b2^(\u22123/2), so the result is (3/2)kB T. Find the mean energy (eV) of a particle in the plasma below.",
+    "vars": {
+      "E": "particle energy",
+      "\u03b2": "inverse temperature 1/(kB T)",
+      "kB": "Boltzmann constant (eV/K)",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "kB": 8.617e-05,
+      "T": 15000000
+    },
+    "unit": "eV",
+    "method": "Weighted averages of E follow from the logarithmic derivative of the normalising integral: d(ln Z)/d\u03b2 = \u2212\u27e8E\u27e9.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "kB",
+      "T"
+    ],
+    "vary": {
+      "T": [
+        9000000.0,
+        21000000.0,
+        100000.0
+      ]
+    }
+  }
+}

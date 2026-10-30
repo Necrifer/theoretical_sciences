@@ -1,0 +1,88 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "min_tier": 2,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:femto_capacitor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:fractal_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:femto_inductor",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:warm_helium",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:neutrino_flux",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:glueball_core",
+      "count": 1
+    }
+  ],
+  "energy": 131072,
+  "duration": 900,
+  "research": "theoreticalsciences:accelerator_physics",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "m": 0.000511,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 4.0,
+        "max": 6.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "mysticalextendedtier:lightium_ingot",
+      "count": 16
+    },
+    {
+      "item": "iceandfire:dragonsteel_lightning_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:flibe_hot_molten_salt",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

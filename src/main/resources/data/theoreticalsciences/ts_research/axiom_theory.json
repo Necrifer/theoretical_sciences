@@ -1,0 +1,57 @@
+{
+  "title": "Axiom Theory",
+  "description": "Beneath the source code of reality lie its axioms - and axioms can be distilled, edited and broken. Unlocks the Axiom Distiller.",
+  "icon": "theoreticalsciences:axiom_fragment",
+  "x": 17,
+  "y": -1,
+  "insight": 450,
+  "requires": [
+    "theoreticalsciences:incompleteness",
+    "theoreticalsciences:paradox_engineering"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:godel_sentence",
+      "count": 1
+    }
+  ],
+  "time": 2280,
+  "puzzle": {
+    "goal": "Encode a proof - a sequence of m formulas, formula j being a string of n_j symbols with codes a_jk - as one whole number. Encode each formula as a product of successive primes p_k raised to the symbol codes; then encode the sequence the same way, with successive primes raised to the formulas' own numbers.",
+    "name": "G\u00f6del numbering of a proof (prime-power encoding)",
+    "lhs": "N",
+    "form": "prod ( j , 1 , m , p _ j ^ prod ( k , 1 , n _ j , p _ k ^ ( a _ ( j * k ) ) ) )",
+    "expr": "2 ^ a * 3 ^ b * 5 ^ c",
+    "ask": "Find the number of a single formula of three symbols whose codes are a = 3, b = @{b} and c = 2 (the inner product, with primes 2, 3, 5).",
+    "vars": {
+      "N": "the number encoding the proof",
+      "j": "formula index",
+      "m": "number of formulas",
+      "p": "the j-th or k-th prime",
+      "k": "symbol position",
+      "n": "length of formula j",
+      "a": "symbol code (a_jk; in step 2 the first code)",
+      "b": "second symbol code",
+      "c": "third symbol code"
+    },
+    "given": {
+      "a": 3,
+      "b": 1,
+      "c": 2
+    },
+    "unit": "",
+    "method": "Unique prime factorisation makes the encoding reversible: read off exponents to recover each symbol, then each formula.",
+    "distractors": [
+      "e",
+      "+",
+      "q"
+    ],
+    "vary": {
+      "b": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

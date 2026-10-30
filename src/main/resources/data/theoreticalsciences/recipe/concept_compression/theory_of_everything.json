@@ -1,0 +1,140 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:standard_model_singularity",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:dimensional_singularity",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:spacetime_singularity",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:quantum_singularity",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:grand_unified_core",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:m_theory_core",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:einstein_field_core",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:e8_lattice",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:path_integral",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:penteract_lattice",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:bootstrap_artifact",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:russell_paradox_set",
+      "count": 64
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_energy",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:schrodinger_limit",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:autocatalytic_broth",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:theory_of_everything",
+      "count": 1
+    }
+  ],
+  "energy": 536870912,
+  "duration": 12000,
+  "research": "theoreticalsciences:theory_of_everything",
+  "scaled": 32,
+  "environment": {
+    "gravity_min": 100,
+    "dimensions_min": 11,
+    "vacuum_min": 2
+  },
+  "physics": {
+    "vars": {
+      "qb": 0.01
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 9.9,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "cataclysm:void_eye",
+      "count": 32
+    },
+    {
+      "item": "iceandfire:hydra_heart",
+      "count": 32
+    },
+    {
+      "item": "cataclysm:monstrous_eye",
+      "count": 32
+    },
+    {
+      "item": "cataclysm:void_core",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:white_dwarf_fragment_fluid",
+      "amount": 32000
+    },
+    {
+      "fluid": "ufo:neutron_star_fragment_fluid",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

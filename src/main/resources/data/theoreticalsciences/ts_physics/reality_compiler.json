@@ -1,0 +1,94 @@
+{
+  "params": [
+    {
+      "id": "dist",
+      "unit": "",
+      "min": 3,
+      "max": 61,
+      "step": 2,
+      "default": 5
+    },
+    {
+      "id": "fq",
+      "unit": "GHz",
+      "min": 1,
+      "max": 20,
+      "step": 0.01,
+      "default": 5
+    },
+    {
+      "id": "clk",
+      "unit": "MHz",
+      "min": 0.1,
+      "max": 100,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "id": "NL",
+      "unit": "",
+      "min": 1,
+      "max": 1000,
+      "step": 1,
+      "default": 50
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "pth",
+      "unit": "",
+      "expr": "exp(-0.048*fq/T)",
+      "formula": "p_th = e^(\u2212hf/kT)"
+    },
+    {
+      "id": "pg",
+      "unit": "",
+      "expr": "1e-4*(1 + clk/10)*(1 + 0.2*abs(d))",
+      "formula": "p_g"
+    },
+    {
+      "id": "pp",
+      "unit": "",
+      "expr": "pg + pth",
+      "formula": "p = p_g + p_th"
+    },
+    {
+      "id": "lgpL",
+      "unit": "log\u2081\u2080",
+      "expr": "log10(0.1) + (dist + 1)/2*log10(pp/0.01)",
+      "formula": "p_L = 0.1(p/p_th)^((d+1)/2)"
+    },
+    {
+      "id": "Nphys",
+      "unit": "",
+      "expr": "2*dist^2*NL",
+      "formula": "N = 2d\u00b2\u00b7N_L"
+    },
+    {
+      "id": "Pq",
+      "unit": "kW",
+      "expr": "1e-5*Nphys*sqrt(clk)*(fq/5)",
+      "formula": "P \u221d N\u00b7\u221af_clk\u00b7f_q"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "threshold",
+      "kind": "stop",
+      "expr": "0.01 - pp",
+      "formula": "p < 1%"
+    }
+  ],
+  "rate": "clamp(clk*NL/(5*dist), 0, 4)",
+  "rate_formula": "rate = f_clk\u00b7N_L/(5d)",
+  "heat": "Pq",
+  "idle_heat": "0.05",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 5,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:graviton_field_projector"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.field_engineering"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.field_engineering.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/hyperdimensional_geometry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

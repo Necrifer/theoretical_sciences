@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:electrolytic_cell"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.electrochemistry"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.electrochemistry.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/chemical_bonding",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 657440,
+    "fog_color": 1313840,
+    "water_color": 8450303,
+    "water_fog_color": 1313840,
+    "ambient_sound": "minecraft:ambient.warped_forest.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:enchant"
+      },
+      "probability": 0.01
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.transfinite_hierarchy",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:ordinal_hound",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "creature": [
+      {
+        "type": "theoreticalsciences:hilbert_bellhop",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ],
+    "ambient": [
+      {
+        "type": "theoreticalsciences:hypercube_drifter",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:hilbert_hotel",
+      "theoreticalsciences:tesseract_frame",
+      "theoreticalsciences:hopf_rings",
+      "theoreticalsciences:ordinal_spire",
+      "theoreticalsciences:anomaly_vault_transfinite_strata"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_ordinal",
+      "theoreticalsciences:ore_cardinal",
+      "theoreticalsciences:ore_hyperspherical"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

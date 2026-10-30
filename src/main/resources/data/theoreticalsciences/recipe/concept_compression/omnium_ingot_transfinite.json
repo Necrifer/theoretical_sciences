@@ -1,0 +1,136 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "min_tier": 5,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:omniscience_catalyst",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:cosmic_neutronium_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:hypernova_alloy_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:absolute_infinity",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:cosmic_flux_coupler",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:unified_notes_2",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:femto_inductor",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:absolute_notes_3",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:netherite_singularity",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:law_crystal",
+      "count": 32
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:primordial_law",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:transcendent_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:hypernova_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:dimensional_residue",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:residual_starlight",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:autocatalytic_broth",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:omnium_ingot",
+      "count": 4
+    }
+  ],
+  "energy": 2147483647,
+  "duration": 15000,
+  "research": "theoreticalsciences:omnilex",
+  "scaled": 32,
+  "physics": {
+    "vars": {
+      "qb": 0.04
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 3.3,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "cataclysm:abyss_eye",
+      "count": 32
+    },
+    {
+      "item": "iceandfire:ice_dragon_heart",
+      "count": 32
+    },
+    {
+      "item": "mysticalextendedtier:ornium_ingot",
+      "count": 32
+    },
+    {
+      "item": "projecte:red_matter",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "dimdoors:eternal_fluid",
+      "amount": 32000
+    },
+    {
+      "fluid": "ufo:uu_matter_fluid",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

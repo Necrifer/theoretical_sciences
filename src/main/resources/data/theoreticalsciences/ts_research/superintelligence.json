@@ -1,0 +1,71 @@
+{
+  "title": "Superintelligence",
+  "description": "A mind that improves itself. Computronium becomes possible.",
+  "icon": "theoreticalsciences:superintelligence_core",
+  "x": 10,
+  "y": 3,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:general_intelligence",
+    "theoreticalsciences:hyperdimensional_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:general_ai_core",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A mind improves itself at a rate that grows faster than its current capability: dI/dt = k\u00b7I^(1+\u03b5) with \u03b5 > 0. Separate the variables and write the moment t_s at which I becomes infinite, starting from capability I0 at time t0.",
+    "name": "Finite-time blow-up of super-linear self-improvement (hyperbolic growth)",
+    "lhs": "t _ s",
+    "form": "t0 + int ( I0 , \u221e , 1 / ( k * I ^ ( 1 + \u03b5 ) ) , I )",
+    "expr": "t0 + 1 / ( k * \u03b5 * I0 ^ \u03b5 )",
+    "ask": "The integral equals 1/(k \u03b5 I0^\u03b5). Find the blow-up time for the values given.",
+    "vars": {
+      "t": "time",
+      "s": "singularity (blow-up)",
+      "t0": "start time (years)",
+      "I0": "starting capability",
+      "I": "capability",
+      "k": "improvement rate constant",
+      "\u03b5": "excess of the growth exponent over 1"
+    },
+    "given": {
+      "t0": 2,
+      "k": 0.05,
+      "\u03b5": 0.5,
+      "I0": 4
+    },
+    "unit": "years",
+    "method": "Divide both sides by k\u00b7I^(1+\u03b5) and integrate dt on one side and dI on the other; the I-integral converges at infinity because the exponent exceeds 1.",
+    "distractors": [
+      "exp",
+      "r",
+      "-"
+    ],
+    "vary": {
+      "t0": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "k": [
+        0.03,
+        0.07,
+        0.0001
+      ],
+      "\u03b5": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "I0": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

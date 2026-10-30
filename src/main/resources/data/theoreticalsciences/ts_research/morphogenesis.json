@@ -1,0 +1,66 @@
+{
+  "title": "Morphogenesis",
+  "description": "How a blob of identical cells paints itself into a body: reaction and diffusion. Unlocks Turing morphogens.",
+  "icon": "theoreticalsciences:turing_morphogen",
+  "x": 13,
+  "y": 15,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:synthetic_biology",
+    "theoreticalsciences:complex_analysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:synthetic_cell",
+      "count": 2
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "An activator molecule a spreads by diffusion, catalyses its own production (in proportion to a\u00b2 and inhibited by a second molecule h, with saturation \u03ba at high a), decays at rate \u03bc, and is also produced at a small basal rate. Write the rate of change of the activator concentration.",
+    "name": "Gierer\u2013Meinhardt activator equation (Turing-type reaction\u2013diffusion)",
+    "lhs": "pd ( a , t )",
+    "form": "D _ a * lap ( a ) + \u03c1 * a ^ 2 / ( h * ( 1 + \u03ba * a ^ 2 ) ) - \u03bc * a + \u03c1 _ 0",
+    "expr": "exp ( - x * sqrt ( \u03bc / D ) )",
+    "ask": "Far from the source, where production is negligible, the steady state obeys D\u2207\u00b2a = \u03bca, solved by a = a0\u00b7e^(\u2212x\u221a(\u03bc/D)). Find a/a0 at x = @{x} \u00b5m for D = @{D} \u00b5m\u00b2/s and \u03bc = @{\u03bc} /s.",
+    "vars": {
+      "a": "activator concentration (D_a its diffusion constant)",
+      "t": "time",
+      "D": "diffusion constant",
+      "\u03c1": "autocatalytic production rate (\u03c1\u2080 basal production)",
+      "h": "inhibitor concentration",
+      "\u03ba": "saturation constant",
+      "\u03bc": "decay rate",
+      "x": "distance from the source"
+    },
+    "given": {
+      "x": 50,
+      "\u03bc": 0.001,
+      "D": 10
+    },
+    "unit": "",
+    "method": "Add up the processes acting on a: diffusion (Laplacian), autocatalysis divided by inhibition and saturation, linear decay and a constant source.",
+    "distractors": [
+      "v",
+      "c",
+      "2"
+    ],
+    "vary": {
+      "x": [
+        30.0,
+        70.0,
+        1.0
+      ],
+      "\u03bc": [
+        0.00059,
+        0.0014,
+        1e-05
+      ],
+      "D": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

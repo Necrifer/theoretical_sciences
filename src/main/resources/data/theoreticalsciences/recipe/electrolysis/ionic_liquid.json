@@ -1,0 +1,30 @@
+{
+  "type": "theoreticalsciences:electrolysis",
+  "item_inputs": [
+    {
+      "item": "minecraft:quartz",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:coherent_wiring_harness",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 16000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ionic_liquid",
+      "amount": 1000
+    }
+  ],
+  "energy": 8192,
+  "duration": 200,
+  "research": "theoreticalsciences:electrochemistry",
+  "scaled": 4,
+  "expanded": true
+}

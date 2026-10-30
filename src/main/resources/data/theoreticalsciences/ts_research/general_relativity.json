@@ -1,0 +1,48 @@
+{
+  "title": "General Relativity",
+  "description": "Gravity is the curvature of spacetime. Metrics, curvature and Einstein's field equations.",
+  "icon": "theoreticalsciences:einstein_field_core",
+  "x": 8,
+  "y": 6,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:special_relativity",
+    "theoreticalsciences:singularity_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metric_tensor",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "The curvature of spacetime, built from the metric g_\u03bc\u03bd and its derivatives (Ricci tensor and Ricci scalar), must be sourced by the energy and momentum of matter, T_\u03bc\u03bd, with a coupling fixed so that weak fields reproduce Newtonian gravity; a constant vacuum energy may also contribute in proportion to the metric. Write the source side of the field equations.",
+    "name": "Einstein field equations with cosmological constant",
+    "lhs": "R _ \u03bc\u03bd - 1 / 2 * R * g _ \u03bc\u03bd",
+    "form": "8 * \u03c0 * G / c ^ 4 * T _ \u03bc\u03bd - \u039b * g _ \u03bc\u03bd",
+    "expr": "2 * G * M / c ^ 2",
+    "ask": "The vacuum spherically symmetric solution has g_tt = \u2212(1 \u2212 rs/r) with rs = 2GM/c\u00b2. Find rs (m) for the Sun, M = 1.989e30 kg.",
+    "vars": {
+      "R": "Ricci tensor / scalar",
+      "g": "metric tensor",
+      "G": "gravitational constant",
+      "c": "speed of light",
+      "T": "stress\u2013energy tensor",
+      "\u039b": "cosmological constant",
+      "M": "mass"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+30,
+      "c": 299792458
+    },
+    "unit": "m",
+    "method": "Require the field equation to be a rank-2 tensor equation whose divergence vanishes (energy conservation) and whose weak-field limit is \u2207\u00b2\u03a6 = 4\u03c0G\u03c1; this fixes the 8\u03c0G/c\u2074 coupling.",
+    "distractors": [
+      "\u0127",
+      "2",
+      "+"
+    ]
+  }
+}

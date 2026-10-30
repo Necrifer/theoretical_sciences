@@ -1,0 +1,84 @@
+{
+  "title": "Electrochemistry",
+  "description": "Chemistry is electrons moving; push them with a voltage. Unlocks the Electrolytic Cell.",
+  "icon": "theoreticalsciences:electrolytic_cell",
+  "x": 3,
+  "y": 12,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:chemical_bonding",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A zinc electrode in zinc ions is wired to a copper electrode in copper ions; two electrons pass per reaction. Write the cell voltage when the ion activities are not standard, correcting the standard voltage by the thermal energy per transferred charge times the logarithm of the reaction quotient.",
+    "name": "Nernst equation (Daniell cell)",
+    "lhs": "E",
+    "form": "E _ 0 - R * T / ( n * F ) * ln ( a _ Z / a _ C )",
+    "expr": "E0 - R * T / ( n * F ) * ln ( aZ / aC )",
+    "ask": "Find the cell voltage with the activities below.",
+    "vars": {
+      "E": "cell voltage (V)",
+      "E0": "standard cell voltage (V)",
+      "R": "gas constant (J/mol K)",
+      "T": "temperature (K)",
+      "n": "electrons per reaction",
+      "F": "Faraday constant (C/mol)",
+      "a": "ion activity",
+      "Z": "zinc ion",
+      "C": "copper ion",
+      "aZ": "zinc ion activity",
+      "aC": "copper ion activity"
+    },
+    "given": {
+      "E0": 1.1,
+      "R": 8.314,
+      "T": 298,
+      "n": 2,
+      "F": 96485,
+      "aZ": 1,
+      "aC": 0.01
+    },
+    "unit": "V",
+    "method": "The free energy of the reaction is \u2212nFE, and it shifts from its standard value by RT ln Q; divide through by \u2212nF.",
+    "distractors": [
+      "+",
+      "exp",
+      "NA",
+      "e"
+    ],
+    "vary": {
+      "E0": [
+        0.66,
+        1.54,
+        0.01
+      ],
+      "T": [
+        179.0,
+        417.0,
+        1.0
+      ],
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "aZ": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "aC": [
+        0.006,
+        0.014,
+        0.0001
+      ]
+    }
+  }
+}

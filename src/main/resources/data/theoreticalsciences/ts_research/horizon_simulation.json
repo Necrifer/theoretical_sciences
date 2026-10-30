@@ -1,0 +1,61 @@
+{
+  "title": "Horizon Simulation",
+  "description": "A black hole is the densest possible computer. Feed it a star and it will simulate one. Unlocks the Eye of the Event Horizon.",
+  "icon": "theoreticalsciences:horizon_shard",
+  "x": 15,
+  "y": 2,
+  "insight": 420,
+  "requires": [
+    "theoreticalsciences:stellar_transcendence",
+    "theoreticalsciences:cosmogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hypernova_alloy_ingot",
+      "count": 4
+    }
+  ],
+  "time": 2100,
+  "puzzle": {
+    "goal": "A black hole is grown from nothing by adding mass m slowly; each addition dE = c\u00b2 dm is absorbed at the hole's thermal temperature \u0127c\u00b3/(8\u03c0G kB m), so its entropy rises by dE/T. Integrate up to the final mass M and convert the entropy into a number of bits.",
+    "name": "Black-hole information capacity (Bekenstein\u2013Hawking from the first law)",
+    "lhs": "N",
+    "form": "1 / ( kB * ln ( 2 ) ) * int ( 0 , M , c ^ 2 / ( \u0127 * c ^ 3 / ( 8 * \u03c0 * G * kB * m ) ) , m )",
+    "expr": "\u03c0 * r ^ 2 / ( l ^ 2 * ln ( 2 ) )",
+    "ask": "The integral gives S = 4\u03c0G kB M\u00b2/(\u0127c) = \u03c0 kB rs\u00b2/l\u00b2, with rs = 2GM/c\u00b2 and l the Planck length. Find the number of bits for a horizon radius of r = @{r} Planck lengths.",
+    "vars": {
+      "N": "number of bits stored",
+      "kB": "Boltzmann constant",
+      "M": "final mass",
+      "m": "mass so far",
+      "c": "speed of light",
+      "\u0127": "reduced Planck constant",
+      "G": "gravitational constant",
+      "r": "horizon radius",
+      "l": "Planck length"
+    },
+    "given": {
+      "r": 10000,
+      "l": 1
+    },
+    "unit": "bits",
+    "method": "Use dS = dE/T with the temperature of a hole of mass m, integrate from 0 to M, and divide by kB ln 2 per bit.",
+    "distractors": [
+      "4",
+      "h",
+      "V"
+    ],
+    "vary": {
+      "r": [
+        6000.0,
+        14000.0,
+        1.0
+      ],
+      "l": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

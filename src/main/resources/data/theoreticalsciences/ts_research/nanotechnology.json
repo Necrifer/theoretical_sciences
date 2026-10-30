@@ -1,0 +1,65 @@
+{
+  "title": "Molecular Nanotechnology",
+  "description": "Assemblers that build anything atom by atom - including copies of themselves.",
+  "icon": "theoreticalsciences:nanite_swarm",
+  "x": 4,
+  "y": 4,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:thermodynamics_of_information",
+    "theoreticalsciences:metamaterials"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:maxwell_demon_chip",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Self-replicating assemblers each build a copy of themselves every \u03c4 hours, but the feedstock can only support K of them. Write the growth rate of the population N: doubling growth when there are few, slowing to zero as the population fills the capacity.",
+    "name": "Logistic growth of self-replicators",
+    "lhs": "d ( N , t )",
+    "form": "ln ( 2 ) / \u03c4 * N * ( 1 - N / K )",
+    "expr": "K / ( 1 + ( K / N0 - 1 ) * exp ( - ln ( 2 ) * t / \u03c4 ) )",
+    "ask": "The solution is N = K / (1 + (K/N0 \u2212 1)\u00b72^(\u2212t/\u03c4)). Starting from N0 assemblers, find how many exist after time t.",
+    "vars": {
+      "N": "number of assemblers",
+      "t": "time (h)",
+      "\u03c4": "doubling time (h)",
+      "K": "carrying capacity",
+      "N0": "initial number"
+    },
+    "given": {
+      "K": 1000000,
+      "N0": 1,
+      "\u03c4": 0.5,
+      "t": 10
+    },
+    "unit": "assemblers",
+    "method": "Pure doubling every \u03c4 is exponential growth at rate ln2/\u03c4; multiply by the fraction of capacity still free.",
+    "distractors": [
+      "exp",
+      "2",
+      "+",
+      "M"
+    ],
+    "vary": {
+      "K": [
+        600000.0,
+        1400000.0,
+        10000.0
+      ],
+      "\u03c4": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "t": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

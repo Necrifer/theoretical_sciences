@@ -1,0 +1,62 @@
+{
+  "title": "Stellar Engineering",
+  "description": "Ignite a captive star from white-hole ejecta.",
+  "icon": "theoreticalsciences:stellar_core",
+  "x": 9,
+  "y": 1,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:white_holes",
+    "theoreticalsciences:stellar_evolution"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hawking_emitter",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A captive star of radius R radiates as a black body at surface temperature T. Write its total power output, divided by 4\u03c0\u00b2R\u00b2, as the integral over all frequencies of the spectral radiance of thermal radiation (photon modes, each occupied according to Bose statistics).",
+    "name": "Stefan\u2013Boltzmann law (integrated Planck spectrum)",
+    "lhs": "L / ( 4 * \u03c0 ^ 2 * R ^ 2 )",
+    "form": "int ( 0 , \u221e , 2 * h * \u03bd ^ 3 / c ^ 2 / ( exp ( h * \u03bd / ( kB * T ) ) - 1 ) , \u03bd )",
+    "expr": "R ^ 2 * ( T / Ts ) ^ 4",
+    "ask": "The integral equals \u03c3T\u2074/\u03c0, so L = 4\u03c0R\u00b2\u03c3T\u2074. In solar units (R in solar radii, Ts = solar surface temperature), find the luminosity in solar luminosities.",
+    "vars": {
+      "L": "luminosity",
+      "R": "stellar radius (solar radii)",
+      "h": "Planck constant",
+      "\u03bd": "frequency",
+      "c": "speed of light",
+      "kB": "Boltzmann constant",
+      "T": "surface temperature (K)",
+      "Ts": "solar surface temperature (K)"
+    },
+    "given": {
+      "R": 2,
+      "T": 8000,
+      "Ts": 5772
+    },
+    "unit": "L\u2609",
+    "method": "Integrate the radiance of every frequency; substitute x = h\u03bd/kBT to pull out T\u2074.",
+    "distractors": [
+      "8",
+      "\u03c3",
+      "+",
+      "\u03bb"
+    ],
+    "vary": {
+      "R": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "T": [
+        4800.0,
+        11200.0,
+        1.0
+      ]
+    }
+  }
+}

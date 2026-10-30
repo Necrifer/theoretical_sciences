@@ -1,0 +1,113 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "min_tier": 2,
+  "chances": [
+    1.0,
+    0.25
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:cosmic_string_segment",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:exotic_matter_crystal",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:wave_packet",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:molecular_orbital_lattice",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:topological_processor",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:ionic_liquid",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:spacetime_alloy_ingot",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:spacetime_slag",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dimensional_residue",
+      "amount": 500
+    }
+  ],
+  "energy": 1048576,
+  "duration": 1800,
+  "research": "theoreticalsciences:hyperdimensional_geometry",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 25.0,
+        "max": 40.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "avaritia:crystal_matrix_ingot",
+      "count": 16
+    },
+    {
+      "item": "enderio:prescient_crystal",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:helium_3",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

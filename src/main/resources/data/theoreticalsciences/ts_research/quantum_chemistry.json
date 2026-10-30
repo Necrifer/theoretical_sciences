@@ -1,0 +1,59 @@
+{
+  "title": "Quantum Chemistry",
+  "description": "Solve the Schr\u00f6dinger equation for a molecule and you have its chemistry. Unlocks orbital lattices and chiral crystals.",
+  "icon": "theoreticalsciences:molecular_orbital_lattice",
+  "x": 4,
+  "y": 11,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:chemical_bonding",
+    "theoreticalsciences:quantum_entanglement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A single electron of mass m is bound to a proton by the electrostatic attraction. Write the stationary wave equation: the kinetic-energy operator plus the potential energy acting on the wavefunction \u03c8, which must equal E times \u03c8.",
+    "name": "Time-independent Schr\u00f6dinger equation for hydrogen",
+    "lhs": "E * \u03c8",
+    "form": "- \u0127 ^ 2 / ( 2 * m ) * lap ( \u03c8 ) - e ^ 2 / ( 4 * \u03c0 * \u03b50 * r ) * \u03c8",
+    "expr": "- m * e ^ 4 / ( 8 * \u03b50 ^ 2 * h ^ 2 * n ^ 2 * e )",
+    "ask": "Its bound solutions have energies E_n = \u2212m e\u2074/(8 \u03b50\u00b2 h\u00b2 n\u00b2). Find the energy of the n = @{n} level in electronvolts (divide the joules by e).",
+    "vars": {
+      "E": "energy eigenvalue",
+      "\u03c8": "electron wavefunction",
+      "\u0127": "reduced Planck constant",
+      "h": "Planck constant",
+      "m": "electron mass",
+      "e": "elementary charge",
+      "\u03b50": "vacuum permittivity",
+      "r": "distance from the proton",
+      "n": "principal quantum number"
+    },
+    "given": {
+      "m": 9.109e-31,
+      "e": 1.602e-19,
+      "\u03b50": 8.854e-12,
+      "h": 6.626e-34,
+      "n": 2
+    },
+    "unit": "eV",
+    "method": "Replace momentum by \u2212i\u0127\u2207 in the classical energy p\u00b2/2m + V, with V the Coulomb potential energy of two opposite charges.",
+    "distractors": [
+      "\u03bc0",
+      "c",
+      "3"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

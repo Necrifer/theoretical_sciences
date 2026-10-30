@@ -1,0 +1,62 @@
+{
+  "title": "Nucleosynthesis",
+  "description": "Every element heavier than helium was made in a star. Iron is where fusion stops; supernovae make the rest.",
+  "icon": "theoreticalsciences:r_process_cluster",
+  "x": 9,
+  "y": 3,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:stellar_evolution"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:white_dwarf_core",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Inside a star at temperature T, two nuclei of reduced mass \u03bc must tunnel through their Coulomb barrier to fuse. Their cross-section is S(E)/E times a tunnelling factor exp(\u2212\u221a(E_G/E)). Average the cross-section times relative speed over the thermal distribution of energies E.",
+    "name": "Thermonuclear reaction rate with the Gamow peak",
+    "lhs": "avg ( \u03c3 * v )",
+    "form": "sqrt ( 8 / ( \u03c0 * \u03bc ) ) * ( kB * T ) ^ ( - 3 / 2 ) * int ( 0 , \u221e , S * exp ( - E / ( kB * T ) - sqrt ( E _ G / E ) ) , E )",
+    "expr": "( EG * kT ^ 2 / 4 ) ^ ( 1 / 3 )",
+    "ask": "The integrand peaks sharply where E/kT + \u221a(EG/E) is smallest, at E0 = (EG(kT)\u00b2/4)^(1/3). Find this peak energy for proton-proton fusion in the Sun's core.",
+    "vars": {
+      "\u03c3": "fusion cross-section",
+      "v": "relative speed",
+      "\u03bc": "reduced mass",
+      "kB": "Boltzmann constant",
+      "T": "temperature",
+      "S": "astrophysical S-factor (slowly varying)",
+      "E": "relative kinetic energy",
+      "G": "label: Coulomb barrier",
+      "EG": "barrier-penetration energy (keV)",
+      "kT": "thermal energy (keV)"
+    },
+    "given": {
+      "EG": 493,
+      "kT": 1.29
+    },
+    "unit": "keV",
+    "method": "Multiply the cross-section by the speed and the thermal distribution of energies; the tunnelling and thermal factors combine into one exponential.",
+    "distractors": [
+      "2",
+      "+",
+      "\u0127",
+      "c"
+    ],
+    "vary": {
+      "EG": [
+        296.0,
+        690.0,
+        1.0
+      ],
+      "kT": [
+        0.77,
+        1.81,
+        0.01
+      ]
+    }
+  }
+}

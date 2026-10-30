@@ -1,0 +1,107 @@
+{
+  "type": "theoreticalsciences:stellar_compression",
+  "chances": [
+    1.0,
+    0.1
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:infall_rock",
+      "count": 192
+    },
+    {
+      "item": "theoreticalsciences:neutronium_plate",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:cosmic_board",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:self_healing_polymer",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:virtual_graviton",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:atto_capacitor",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:silicon_life_spore",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:phantom_energy_cell",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:carborane_superacid",
+      "amount": 32000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 8
+    },
+    {
+      "id": "theoreticalsciences:frozen_photon",
+      "count": 1
+    }
+  ],
+  "energy": 524288,
+  "duration": 525,
+  "research": "theoreticalsciences:black_hole_interior",
+  "scaled": 12,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgrho",
+        "min": 11.5,
+        "max": 14.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "iceandfire:dragonsteel_lightning_ingot",
+      "count": 24
+    },
+    {
+      "item": "neoecoae:energized_superconductive_ingot",
+      "count": 24
+    },
+    {
+      "item": "divinerpg:arcanium",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "enderio:dew_of_the_void",
+      "amount": 24000
+    },
+    {
+      "fluid": "avaritia_integration:molten_crystal_matrix",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

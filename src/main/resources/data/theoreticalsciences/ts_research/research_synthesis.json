@@ -1,0 +1,63 @@
+{
+  "title": "Research Synthesis",
+  "description": "Teach a machine to study. Unlocks the Research Nexus and Empirical Dossiers; later dossiers come with later research.",
+  "icon": "theoreticalsciences:research_nexus",
+  "x": 5,
+  "y": 5,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:general_intelligence",
+    "theoreticalsciences:assembly_lines"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:quantum_processor",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A machine gets faster with practice: every time its cumulative number of completed tasks doubles, the time per task is multiplied by the progress ratio r. The first task took T1. Write the total time to complete the first n tasks as a sum, with the exponent of the task number expressed through logarithms.",
+    "name": "Wright's learning curve (cumulative time)",
+    "lhs": "T",
+    "form": "sum ( k , 1 , n , T _ 1 * k ^ ( log ( r ) / log ( 2 ) ) )",
+    "expr": "T1 * n ^ ( 1 + ln ( r ) / ln ( 2 ) ) / ( 1 + ln ( r ) / ln ( 2 ) )",
+    "ask": "Approximate the sum by the integral \u222b\u2080\u207f T1 k^(\u2212b) dk = T1 n^(1\u2212b)/(1\u2212b), with b = \u2212log\u2082 r. Find the total time (hours) for n = @{n} tasks, T1 = @{T1} h and r = @{r}.",
+    "vars": {
+      "T": "total time (T\u2081 first task)",
+      "k": "task number",
+      "n": "number of tasks",
+      "r": "progress ratio per doubling",
+      "T1": "time of the first task"
+    },
+    "given": {
+      "T1": 100,
+      "n": 8,
+      "r": 0.8
+    },
+    "unit": "h",
+    "method": "If each doubling multiplies the time by r, the k-th task takes T1\u00b7r^(log\u2082 k) = T1\u00b7k^(log\u2082 r). Add the tasks one by one.",
+    "distractors": [
+      "exp",
+      "b",
+      "-"
+    ],
+    "vary": {
+      "T1": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "n": [
+        5.0,
+        11.0,
+        1.0
+      ],
+      "r": [
+        0.48,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

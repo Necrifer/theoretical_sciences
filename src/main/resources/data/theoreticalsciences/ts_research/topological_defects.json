@@ -1,0 +1,56 @@
+{
+  "title": "Origins: Broken Symmetry",
+  "description": "When a field cools and must choose between equal vacua, distant regions choose differently - and where they meet, the old symmetry is trapped in a wall, a string or a knot that cannot be smoothed away. Pockets of false vacuum survive the same way. Unlocks the Topological Defect Core.",
+  "icon": "theoreticalsciences:topological_defect_core",
+  "x": 15,
+  "y": 5,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:anomalous_phenomena",
+    "theoreticalsciences:vacuum_decay"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:anomaly_specimen",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:metastable_vacuum_lattice",
+      "count": 2
+    }
+  ],
+  "time": 1200,
+  "puzzle": {
+    "goal": "A real scalar field \u03c6 in one dimension has a potential with two equal minima, at \u03c6 = \u00b1v, and a coupling \u03bb: the symmetry \u03c6 \u2192 \u2212\u03c6 is broken by whichever vacuum it falls into. Far to the left it sits at \u2212v, far to the right at +v, and in between it must climb over the hill. Write the total energy of that static configuration: gradient energy plus potential, along the whole line.",
+    "name": "energy of a kink (domain wall) of a spontaneously broken Z\u2082 symmetry",
+    "lhs": "E",
+    "form": "int ( - \u221e , \u221e , 1 / 2 * d ( \u03c6 , x ) ^ 2 + \u03bb / 4 * ( \u03c6 ^ 2 - v ^ 2 ) ^ 2 , x )",
+    "expr": "2 * sqrt ( 2 ) / 3 * sqrt ( \u03bb ) * v ^ 3",
+    "ask": "The minimum-energy solution is \u03c6 = v\u00b7tanh(v x \u221a(\u03bb/2)), and its energy is E = (2\u221a2/3)\u00b7\u221a\u03bb\u00b7v\u00b3. Find it for the coupling and vacuum value given (natural units).",
+    "vars": {
+      "E": "energy of the defect",
+      "\u03c6": "scalar field",
+      "x": "position",
+      "\u03bb": "quartic coupling",
+      "v": "vacuum value of the field"
+    },
+    "given": {
+      "\u03bb": 0.5,
+      "v": 2
+    },
+    "unit": "natural units",
+    "method": "Energy = \u222b[\u00bd\u03c6'\u00b2 + V(\u03c6)]dx with V = (\u03bb/4)(\u03c6\u00b2 \u2212 v\u00b2)\u00b2. The minimising solution has \u00bd\u03c6'\u00b2 = V, so d\u03c6/dx = \u221a(2V): change the integral to one over \u03c6 from \u2212v to v.",
+    "distractors": [
+      "t",
+      "exp",
+      "3"
+    ],
+    "vary": {
+      "\u03bb": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

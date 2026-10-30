@@ -1,0 +1,122 @@
+{
+  "params": [
+    {
+      "id": "rinj",
+      "unit": "M",
+      "min": 1.0,
+      "max": 2.5,
+      "step": 0.005,
+      "default": 1.6
+    },
+    {
+      "id": "mdot",
+      "unit": "g/s",
+      "min": 0,
+      "max": 1000,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "id": "tau",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.3
+    },
+    {
+      "id": "Bh",
+      "unit": "T",
+      "min": 0,
+      "max": 20,
+      "step": 0.05,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [
+    {
+      "id": "a",
+      "unit": "",
+      "init": "0.9",
+      "ddt": "0.003*tau*(1+0.2*d)*(1 - a) - 2e-3*eta*mdot/100 - 1e-4*a*Bh^2",
+      "min": -0.5,
+      "max": 0.998,
+      "out_of_range": "damage"
+    }
+  ],
+  "derived": [
+    {
+      "id": "rp",
+      "unit": "M",
+      "expr": "1 + sqrt(pos(1 - a^2))",
+      "formula": "r\u208a = M + \u221a(M\u00b2 \u2212 a\u00b2)"
+    },
+    {
+      "id": "etamax",
+      "unit": "",
+      "expr": "0.5*(sqrt(2/rp) - 1)",
+      "formula": "\u03b7_max = \u00bd(\u221a(2M/r\u208a) \u2212 1)"
+    },
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "etamax*clamp((2 - rinj)/(2 - rp + 1e-9), 0, 1)",
+      "formula": "\u03b7 \u2248 \u03b7_max\u00b7(2M \u2212 r)/(2M \u2212 r\u208a)"
+    },
+    {
+      "id": "Pp",
+      "unit": "TW",
+      "expr": "eta*mdot*1e-3*8.988e16/1e12",
+      "formula": "P = \u03b7\u00b7\u1e41c\u00b2"
+    },
+    {
+      "id": "Pbz",
+      "unit": "TW",
+      "expr": "50*a^2*Bh^2",
+      "formula": "P_BZ \u221d a\u00b2B\u00b2"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "horizon",
+      "kind": "stop",
+      "expr": "rinj - rp - 0.01",
+      "formula": "r > r\u208a"
+    },
+    {
+      "id": "ergo",
+      "kind": "stop",
+      "expr": "2 - rinj",
+      "formula": "r < 2M"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bh)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "(Pp + Pbz)/500",
+  "rate_formula": "output = (P_Penrose + P_BZ) / 500 TW",
+  "heat": "8 + 0.005*(Pp+Pbz)",
+  "idle_heat": "3",
+  "quench_energy": "40*Bh^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

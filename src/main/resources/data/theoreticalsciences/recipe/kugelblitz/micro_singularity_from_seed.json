@@ -1,0 +1,89 @@
+{
+  "type": "theoreticalsciences:kugelblitz",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:kugelblitz_seed",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:up_down_quarks",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_lattice",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:atto_inductor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:void_essence",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:ionic_liquid",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:micro_singularity",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hawking_radiation",
+      "amount": 500
+    }
+  ],
+  "energy": 524288,
+  "duration": 1200,
+  "research": "theoreticalsciences:singularity_physics",
+  "scaled": 8,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgM",
+        "min": 8.7,
+        "max": 9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "mekanism:pellet_polonium",
+      "count": 16
+    },
+    {
+      "item": "botania:gaia_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "oritech:still_molten_adamant",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

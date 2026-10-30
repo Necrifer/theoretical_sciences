@@ -1,0 +1,55 @@
+{
+  "title": "Thermodynamics of Information",
+  "description": "Information is physical. A demon that knows which molecules are fast can sort them and reverse entropy.",
+  "icon": "theoreticalsciences:maxwell_demon_chip",
+  "x": 2,
+  "y": 4,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A one-bit memory holds 0 with probability p and 1 with probability 1 \u2212 p. Resetting it to a definite 0 removes its statistical entropy, which must be dumped as heat into surroundings at temperature T. Write the minimum work needed for the reset as a sum over the two states.",
+    "name": "Landauer's bound (Gibbs\u2013Shannon entropy of a bit)",
+    "lhs": "W",
+    "form": "- kB * T * sum ( j , 1 , 2 , p _ j * ln ( p _ j ) )",
+    "expr": "- T * ( p * ln ( p ) + ( 1 - p ) * ln ( 1 - p ) )",
+    "ask": "Find W/kB (in kelvin) for erasing a bit that reads 0 with probability p = @{p}, at T = @{T} K.",
+    "vars": {
+      "W": "minimum work to reset the bit",
+      "T": "temperature of the surroundings",
+      "j": "index over the two states",
+      "p": "probability of a state (p_j); in the numeric step, probability of 0"
+    },
+    "given": {
+      "T": 300,
+      "p": 0.25
+    },
+    "unit": "K (W/kB)",
+    "method": "The entropy of a distribution is \u2212kB \u03a3 p ln p; after the reset it is zero. The second law demands at least T \u0394S of heat into the surroundings, supplied as work.",
+    "distractors": [
+      "log",
+      "N",
+      "h"
+    ],
+    "vary": {
+      "T": [
+        180.0,
+        420.0,
+        1.0
+      ],
+      "p": [
+        0.15,
+        0.35,
+        0.001
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "type": "theoreticalsciences:omnilex_simulation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tree_simulacrum",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:ocean_simulacrum",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:primordial_law",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tree_simulacrum",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:ocean_simulacrum",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:omega_point",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:absolute_infinity",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:primordial_law",
+      "amount": 4000
+    }
+  ],
+  "energy": 1073741824,
+  "duration": 24000,
+  "research": "theoreticalsciences:omnilex",
+  "physics": {
+    "windows": [
+      {
+        "q": "lam",
+        "min": 0.5,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "params": [
+    {
+      "id": "R5",
+      "unit": "fm",
+      "min": 0.0001,
+      "max": 100,
+      "step": 0.0001,
+      "default": 1
+    },
+    {
+      "id": "al",
+      "unit": "\u00b0",
+      "min": 0,
+      "max": 90,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "id": "be",
+      "unit": "\u00b0",
+      "min": 0,
+      "max": 90,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "id": "Bs",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "m1",
+      "unit": "GeV",
+      "expr": "0.1973/R5",
+      "formula": "m\u2081 = \u0127c/R\u2085"
+    },
+    {
+      "id": "lgm1",
+      "unit": "log\u2081\u2080 GeV",
+      "expr": "log10(m1)",
+      "formula": "log\u2081\u2080 m\u2081"
+    },
+    {
+      "id": "ar",
+      "unit": "rad",
+      "expr": "(al + 0.5*d)*0.0174533",
+      "formula": "\u03b1",
+      "show": false
+    },
+    {
+      "id": "Vp",
+      "unit": "",
+      "expr": "abs(sin(ar)) + abs(cos(ar)*sin(be*0.0174533)) + abs(cos(ar)*cos(be*0.0174533))",
+      "formula": "V = \u03a3|n\u1d62|  (Cauchy projection formula)"
+    },
+    {
+      "id": "Bneed",
+      "unit": "T",
+      "expr": "1 + 2*log10(m1 + 1)",
+      "formula": "B \u2265 1 + 2\u00b7log\u2081\u2080(1 + m\u2081)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "radion",
+      "kind": "stop",
+      "expr": "Bs - Bneed",
+      "formula": "B \u2265 B_needed"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bs)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "8 + 0.5*Bs",
+  "idle_heat": "3",
+  "quench_energy": "40*Bs^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

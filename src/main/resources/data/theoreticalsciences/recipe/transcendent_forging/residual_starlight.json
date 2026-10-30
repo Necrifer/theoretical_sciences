@@ -1,0 +1,127 @@
+{
+  "type": "theoreticalsciences:transcendent_forging",
+  "min_tier": 3,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:magnetar_shard",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:pentaquark_shard",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:gravitational_wave_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:raw_antiiron",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:cosmological_constant",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:atto_inductor",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:silicon_life_spore",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:r_process_cluster",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:hyperdimensional_logic_wafer",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_boule",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:hawking_radiation",
+      "amount": 512000
+    },
+    {
+      "fluid": "theoreticalsciences:strange_matter",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:causal_solder",
+      "amount": 128000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:residual_starlight",
+      "amount": 2000
+    }
+  ],
+  "energy": 1048576,
+  "duration": 1500,
+  "research": "theoreticalsciences:stellar_transcendence",
+  "scaled": 32,
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 15.0,
+        "max": 30.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "draconicevolution:chaos_shard",
+      "count": 32
+    },
+    {
+      "item": "fdbosses:eye_of_chesed",
+      "count": 32
+    },
+    {
+      "item": "cataclysm:void_eye",
+      "count": 32
+    },
+    {
+      "item": "oritech:prometheum_ingot",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "oritech:still_strange_matter",
+      "amount": 32000
+    },
+    {
+      "fluid": "nuclearcraft:molten_curium_247",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Beyond the Omega",
+  "description": "With the Proof of Everything, the Omnilex Engine can be pushed past the possible - into the Transcendental.",
+  "icon": "theoreticalsciences:proof_of_everything",
+  "x": 22,
+  "y": 1,
+  "insight": 2500,
+  "requires": [
+    "theoreticalsciences:conquered_alpha_omega"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:omega_point",
+      "count": 4
+    }
+  ],
+  "time": 23190,
+  "hidden": true,
+  "puzzle": {
+    "goal": "Everything, in one line. Write the single action density from which every law you have met follows: the curvature of spacetime and the energy of its vacuum; the three gauge forces; matter fields moving through them; a field filling space whose potential has its minimum away from zero, and the couplings through which matter feels it; a dark scalar that only gravity sees; the pressure of hot matter in chemical equilibrium (temperature times entropy, plus every species' chemical potential times its number density, minus the energy density); and the thermodynamic price of every bit of information erased.",
+    "name": "The Omnilex Lagrangian - the Standard Model with gravity, the dark sector, thermodynamics, chemistry and information",
+    "lhs": "\u2112",
+    "form": "( R - 2 * \u039b ) / ( 16 * \u03c0 * G ) - 1 / 4 * F _ \u03bc\u03bd ^ a * F _ a ^ \u03bc\u03bd + i * bar ( \u03c8 ) * \u03b3 ^ \u03bc * D _ \u03bc * \u03c8 + dag ( D _ \u03bc * \u03c6 ) * D ^ \u03bc * \u03c6 - \u03bb * ( dag ( \u03c6 ) * \u03c6 - v ^ 2 / 2 ) ^ 2 - ( bar ( \u03c8 ) _ i * y _ ij * \u03c8 _ j * \u03c6 + hc ( ) ) + 1 / 2 * \u2202 _ \u03bc * \u03c7 * \u2202 ^ \u03bc * \u03c7 - 1 / 2 * m\u03c7 ^ 2 * \u03c7 ^ 2 + T * s + sumk ( k , \u03bcc _ k * n _ k ) - u - kB * T * ln ( 2 ) * \u03c1I",
+    "expr": "sqrt ( 2 * \u03bb ) * v",
+    "ask": "The scalar's potential is smallest where \u03c6\u2020\u03c6 = v\u00b2/2; small ripples about that minimum are a particle of mass m = \u221a(2\u03bb)\u00b7v. With the measured self-coupling and vacuum value given, find that mass in GeV.",
+    "vars": {
+      "R": "Ricci scalar - the curvature of spacetime",
+      "\u039b": "cosmological constant - the energy of the vacuum",
+      "G": "gravitational constant",
+      "F": "gauge field strength of the strong, weak and electromagnetic forces",
+      "a": "gauge (colour / isospin / hypercharge) index",
+      "\u03bc\u03bd": "spacetime index pair",
+      "\u03c8": "the matter (fermion) fields",
+      "\u03b3": "Dirac gamma matrices",
+      "D": "gauge-covariant derivative",
+      "\u03bc": "spacetime index",
+      "\u03c6": "the scalar (Higgs) doublet",
+      "\u03bb": "scalar self-coupling",
+      "v": "vacuum expectation value of the scalar",
+      "y": "Yukawa coupling matrix (sets every matter particle's mass)",
+      "ij": "generation indices",
+      "\u03c7": "the dark scalar field",
+      "m\u03c7": "dark scalar mass",
+      "\u2202": "partial derivative",
+      "T": "temperature",
+      "s": "entropy density",
+      "\u03bcc": "chemical potential",
+      "k": "species index",
+      "n": "number density",
+      "u": "energy density",
+      "kB": "Boltzmann constant",
+      "\u03c1I": "density of erased information (bits per volume per time)",
+      "i": "imaginary unit",
+      "\u2112": "the action density"
+    },
+    "given": {
+      "\u03bb": 0.129,
+      "v": 246.22
+    },
+    "unit": "GeV",
+    "method": "Assemble it sector by sector: curvature over 16\u03c0G; \u2212\u00bc of the squared field strength; the Dirac kinetic term; the covariant kinetic term and quartic potential of the scalar; the Yukawa couplings plus their conjugate; a free massive scalar; the fluid pressure from Euler's relation p = Ts + \u03a3\u03bcn \u2212 u; and a Landauer term kT ln 2 per erased bit.",
+    "distractors": [
+      "8",
+      "\u03b2",
+      "\u03c9",
+      "\u0393",
+      "+",
+      "3"
+    ]
+  }
+}

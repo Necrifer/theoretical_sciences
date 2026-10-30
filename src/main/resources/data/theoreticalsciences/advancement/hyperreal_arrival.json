@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:axiom_key"
+    },
+    "title": "Beyond Reality",
+    "description": "Breach every law of physics and mathematics and enter Hyperdimensional Reality Space",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:root",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "theoreticalsciences:hyperdimensional_reality"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

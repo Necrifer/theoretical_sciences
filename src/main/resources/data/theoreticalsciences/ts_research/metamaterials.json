@@ -1,0 +1,68 @@
+{
+  "title": "Metamaterials",
+  "description": "Engineered structures with a negative refractive index.",
+  "icon": "theoreticalsciences:metamaterial_sheet",
+  "x": 3,
+  "y": 0,
+  "insight": 15,
+  "requires": [
+    "theoreticalsciences:cryogenics",
+    "theoreticalsciences:quantum_entanglement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A lattice of thin wires behaves like a dilute electron plasma for microwaves, and an array of split rings acts as tiny resonant LC circuits that respond to the magnetic field. Write the relative permittivity of the lossless wire plasma and the relative permeability of the ring array (a resonance at \u03c90 with filling factor F), and combine them into the refractive index, choosing the root that keeps energy flowing away from the source when both are negative.",
+    "name": "Double-negative index of a Drude\u2013Lorentz wire / split-ring medium",
+    "lhs": "n",
+    "form": "- sqrt ( ( 1 - \u03c9 _ p ^ 2 / \u03c9 ^ 2 ) * ( 1 - F * \u03c9 ^ 2 / ( \u03c9 ^ 2 - \u03c9 _ 0 ^ 2 ) ) )",
+    "expr": "- sqrt ( ( 1 - wp ^ 2 / w ^ 2 ) * ( 1 - F * w ^ 2 / ( w ^ 2 - w0 ^ 2 ) ) )",
+    "ask": "Find the refractive index n (a negative number) at the frequency below.",
+    "vars": {
+      "n": "refractive index",
+      "\u03c9": "wave angular frequency",
+      "p": "label: plasma",
+      "0": "label: ring resonance",
+      "F": "filling factor of the split rings",
+      "wp": "plasma frequency of the wires (GHz)",
+      "w": "wave frequency (GHz)",
+      "w0": "ring resonance frequency (GHz)"
+    },
+    "given": {
+      "wp": 10,
+      "w": 5,
+      "F": 0.5,
+      "w0": 4
+    },
+    "unit": "",
+    "method": "A free-electron plasma gives \u03b5 = 1 \u2212 \u03c9p\u00b2/\u03c9\u00b2; a driven resonator gives \u03bc = 1 \u2212 F\u03c9\u00b2/(\u03c9\u00b2 \u2212 \u03c90\u00b2). n\u00b2 = \u03b5\u03bc; when \u03b5 and \u03bc are both negative the phase velocity is opposite to the energy flow, so take the negative root.",
+    "distractors": [
+      "+",
+      "\u03b50",
+      "\u03bc0",
+      "c"
+    ],
+    "vary": {
+      "wp": [
+        9.0,
+        11.0,
+        1.0
+      ],
+      "w": [
+        4.0,
+        6.0,
+        1.0
+      ],
+      "w0": [
+        3.0,
+        5.0,
+        1.0
+      ]
+    }
+  }
+}

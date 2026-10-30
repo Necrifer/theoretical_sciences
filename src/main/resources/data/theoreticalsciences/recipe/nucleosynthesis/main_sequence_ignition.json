@@ -1,0 +1,56 @@
+{
+  "type": "theoreticalsciences:nucleosynthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:protostar_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:penrose_spindle",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nebular_gas",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 64000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_core",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_plasma",
+      "amount": 1000
+    }
+  ],
+  "energy": 262144,
+  "duration": 2400,
+  "research": "theoreticalsciences:stellar_evolution",
+  "scaled": 8,
+  "optional_inputs": [
+    {
+      "item": "enderio:end_steel_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "oritech:still_molten_adamant",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

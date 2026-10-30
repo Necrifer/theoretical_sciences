@@ -1,0 +1,56 @@
+{
+  "title": "Real Analysis",
+  "description": "Limits, continuity and the completion of the rationals into the reals. Unlocks the Analytic Continuator.",
+  "icon": "theoreticalsciences:real_continuum",
+  "x": 3,
+  "y": 7,
+  "insight": 25,
+  "requires": [
+    "theoreticalsciences:platonic_realm",
+    "theoreticalsciences:metamaterials"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:transcendental_crystal",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Add a, then a\u00b7r, then a\u00b7r\u00b2, and so on, stopping after the N-th power. The value of the infinite series is defined as what these partial sums approach as N grows without bound. Write that value.",
+    "name": "Geometric series as a limit of partial sums",
+    "lhs": "S",
+    "form": "lim ( N , \u221e , sum ( k , 0 , N , a * r ^ k ) )",
+    "expr": "a / ( 1 - r )",
+    "ask": "For |r| < 1 the partial sum a(1 \u2212 r^(N+1))/(1 \u2212 r) converges. Find S for a = 3 and r = @{r}.",
+    "vars": {
+      "S": "sum of the series",
+      "N": "last power included",
+      "k": "summation index",
+      "a": "first term",
+      "r": "common ratio"
+    },
+    "given": {
+      "a": 3,
+      "r": 0.4
+    },
+    "unit": "",
+    "method": "Multiply the partial sum by r and subtract it from itself to get a closed form, then let N \u2192 \u221e.",
+    "distractors": [
+      "1",
+      "n",
+      "-"
+    ],
+    "vary": {
+      "r": [
+        0.24,
+        0.56,
+        0.001
+      ]
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "title": "Leptogenesis",
+  "description": "Matter and antimatter should have annihilated perfectly. They did not: heavy neutrinos decayed out of equilibrium, unequally to leptons and antileptons, and sphalerons turned the excess into baryons - one in a billion. Unlocks the Baryon Asymmetry Crystal.",
+  "icon": "theoreticalsciences:baryon_asymmetry_crystal",
+  "x": 12,
+  "y": -7,
+  "insight": 190,
+  "requires": [
+    "theoreticalsciences:reheating",
+    "theoreticalsciences:neutrino_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    }
+  ],
+  "time": 720,
+  "puzzle": {
+    "goal": "How rare are baryons? Count the photons: a black-body gas at temperature T has, per unit volume, an integral over energy of E\u00b2 times the Bose-Einstein occupation 1/(e^{E/k_BT} \u2212 1), times the density of states for two polarisations, 1/\u03c0\u00b2 (units \u0127 = c = 1). Write the number density of photons.",
+    "name": "Photon number density of black-body radiation (the baryon-to-photon ratio)",
+    "lhs": "n _ \u03b3",
+    "form": "1 / \u03c0 ^ 2 * int ( 0 , \u221e , E ^ 2 / ( exp ( E / ( kB * T ) ) - 1 ) , E )",
+    "expr": "1000 * n / ( 20.29 * T ^ 3 )",
+    "ask": "The integral gives n_\u03b3 = 2\u03b6(3)(k_BT)\u00b3/\u03c0\u00b2 \u2248 20.29\u00b7T\u00b3 photons per cm\u00b3 (T in kelvin). Today T = @{T} K. With n \u00d7 10\u207b\u2077 baryons per cm\u00b3, find the baryon-to-photon ratio \u03b7 = n_B/n_\u03b3 in units of 10\u207b\u00b9\u2070.",
+    "vars": {
+      "n": "baryon number density (10\u207b\u2077 cm\u207b\u00b3)",
+      "\u03b3": "photons",
+      "E": "photon energy",
+      "kB": "Boltzmann constant",
+      "T": "temperature of the radiation"
+    },
+    "given": {
+      "n": 2.5,
+      "T": 2.725
+    },
+    "unit": "10\u207b\u00b9\u2070",
+    "method": "Integrate the occupation number over momentum space: d\u00b3p/(2\u03c0)\u00b3 times two polarisations is E\u00b2dE/\u03c0\u00b2. The integral of x\u00b2/(e\u02e3 \u2212 1) is 2\u03b6(3).",
+    "distractors": [
+      "+",
+      "\u0127",
+      "ln"
+    ],
+    "vary": {
+      "n": [
+        1.5,
+        3.5,
+        0.01
+      ],
+      "T": [
+        1.63,
+        3.82,
+        0.01
+      ]
+    }
+  }
+}

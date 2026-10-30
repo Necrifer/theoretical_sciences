@@ -1,0 +1,55 @@
+{
+  "title": "Heat Death",
+  "description": "The likeliest end of all: endless expansion to maximum entropy. Stars burn out, protons decay, black holes evaporate, and an empty de Sitter space is left, glowing at the temperature of its own horizon. Unlocks the Entropy Horizon.",
+  "icon": "theoreticalsciences:heat_death_ember",
+  "x": 13,
+  "y": -8,
+  "insight": 240,
+  "requires": [
+    "theoreticalsciences:proton_decay",
+    "theoreticalsciences:black_hole_era"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:evaporation_flash",
+      "count": 2
+    }
+  ],
+  "time": 990,
+  "puzzle": {
+    "goal": "A universe that expands forever on vacuum energy approaches empty space with a cosmic horizon at distance c/H. That horizon has an entropy like a black hole's: Boltzmann's constant times its area A in Planck units, divided by four. Write the entropy of the horizon, with the area of a sphere of radius c/H written out.",
+    "name": "de Sitter horizon entropy (the maximum entropy of a universe)",
+    "lhs": "S",
+    "form": "kB * c ^ 3 / ( 4 * G * \u0127 ) * 4 * \u03c0 * ( c / H ) ^ 2",
+    "expr": "\u03c0 * c ^ 5 / ( G * \u0127 * H ^ 2 ) / 10",
+    "ask": "That is S/k_B = \u03c0c\u2075/(G\u0127H\u00b2): the most entropy the universe can ever hold. With c in 10\u2078, G in 10\u207b\u00b9\u00b9, \u0127 in 10\u207b\u00b3\u2074 SI units and H in 10\u207b\u00b9\u2078 s\u207b\u00b9, find S/k_B in units of 10\u00b9\u00b2\u00b2 (its horizon glows at \u0127H/(2\u03c0k_B) \u2248 3\u00d710\u207b\u00b3\u2070 K).",
+    "vars": {
+      "S": "horizon entropy",
+      "kB": "Boltzmann constant",
+      "c": "speed of light",
+      "G": "gravitational constant",
+      "\u0127": "reduced Planck constant",
+      "H": "final Hubble rate"
+    },
+    "given": {
+      "c": 2.998,
+      "G": 6.674,
+      "\u0127": 1.0546,
+      "H": 2.2
+    },
+    "unit": "10\u00b9\u00b2\u00b2",
+    "method": "The entropy of any horizon is k_B\u00b7A/(4\u2113_P\u00b2) with \u2113_P\u00b2 = G\u0127/c\u00b3. The cosmic horizon is a sphere of radius c/H.",
+    "distractors": [
+      "T",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "H": [
+        1.32,
+        3.08,
+        0.01
+      ]
+    }
+  }
+}

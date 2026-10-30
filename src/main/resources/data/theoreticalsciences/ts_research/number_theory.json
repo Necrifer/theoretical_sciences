@@ -1,0 +1,52 @@
+{
+  "title": "Number Theory",
+  "description": "Primes, modular forms and the Riemann zeta function - the hardest problems in mathematics are about whole numbers.",
+  "icon": "theoreticalsciences:riemann_zeta_crystal",
+  "x": 5,
+  "y": 9,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:complex_analysis",
+    "theoreticalsciences:formal_logic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:prime_shard",
+      "count": 16
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Every whole number factors into primes in exactly one way. Use that to rewrite the series of 1/n\u02e2 over all positive integers as a product, one factor for each prime p_k, where each factor is the geometric series of all powers of that prime.",
+    "name": "Euler product formula for the zeta function",
+    "lhs": "sum ( n , 1 , \u221e , 1 / n ^ s )",
+    "form": "prod ( k , 1 , \u221e , sum ( m , 0 , \u221e , p _ k ^ ( - m * s ) ) )",
+    "expr": "x / ln ( x )",
+    "ask": "The pole of this function at s = 1, and the absence of zeros on the line Re s = 1, give the prime count \u03c0(x) \u2248 x / ln x. Estimate the number of primes below x = @{x}.",
+    "vars": {
+      "n": "positive integer",
+      "s": "exponent (complex, Re s > 1)",
+      "k": "prime index",
+      "p": "the k-th prime p_k",
+      "m": "power of the prime",
+      "x": "upper bound of the count"
+    },
+    "given": {
+      "x": 1000000
+    },
+    "unit": "primes",
+    "method": "Multiply out the product: choosing one power from each prime's series gives each integer's factorisation exactly once.",
+    "distractors": [
+      "1",
+      "-",
+      "q"
+    ],
+    "vary": {
+      "x": [
+        600000.0,
+        1400000.0,
+        10000.0
+      ]
+    }
+  }
+}

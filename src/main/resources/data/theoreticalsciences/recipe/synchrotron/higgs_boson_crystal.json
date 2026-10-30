@@ -1,0 +1,92 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "min_tier": 3,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:gauge_boson_cluster",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:bottom_top_quarks",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:higgs_field_capacitor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:derivative_operator",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:casimir_plate",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:causal_shield_lattice",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:hawking_absorber_plate",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:higgs_boson_crystal",
+      "count": 1
+    }
+  ],
+  "energy": 524288,
+  "duration": 1500,
+  "research": "theoreticalsciences:standard_model",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "m": 0.10566,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 62.0,
+        "max": 63.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "cataclysm:witherite_ingot",
+      "count": 16
+    },
+    {
+      "item": "extendedae:entro_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "mysticalagradditions:molten_supremium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

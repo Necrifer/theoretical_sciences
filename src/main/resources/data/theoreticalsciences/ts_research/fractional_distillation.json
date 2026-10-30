@@ -1,0 +1,66 @@
+{
+  "title": "Fractional Distillation",
+  "description": "High-tier processes leave Dimensional Residue. Distil it back into useful matter in the Fractionation Spire.",
+  "icon": "theoreticalsciences:dimensional_residue_cell",
+  "x": 10,
+  "y": -3,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:hyperdimensional_geometry",
+    "theoreticalsciences:assembly_lines"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:topological_processor",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A column separates two components of a residue at total reflux; the light one is \u03b1 times as volatile as the heavy one. At the top its mole fraction is x_D, at the bottom x_B. Each ideal stage multiplies the light/heavy ratio by \u03b1: write the minimum number of ideal stages needed.",
+    "name": "Fenske equation",
+    "lhs": "N",
+    "form": "ln ( x _ D / ( 1 - x _ D ) * ( 1 - x _ B ) / x _ B ) / ln ( \u03b1 )",
+    "expr": "ln ( xD / ( 1 - xD ) * ( 1 - xB ) / xB ) / ln ( \u03b1 )",
+    "ask": "Find the minimum number of ideal stages for the separation below.",
+    "vars": {
+      "N": "minimum number of ideal stages",
+      "x": "mole fraction of the light component",
+      "D": "distillate (top)",
+      "B": "bottoms",
+      "\u03b1": "relative volatility",
+      "xD": "light fraction at the top",
+      "xB": "light fraction at the bottom"
+    },
+    "given": {
+      "xD": 0.99,
+      "xB": 0.01,
+      "\u03b1": 2.5
+    },
+    "unit": "stages",
+    "method": "The separation factor (light/heavy at top divided by light/heavy at bottom) equals \u03b1 to the power N; take logarithms.",
+    "distractors": [
+      "exp",
+      "+",
+      "y",
+      "2"
+    ],
+    "vary": {
+      "xD": [
+        0.594,
+        0.999,
+        0.001
+      ],
+      "xB": [
+        0.006,
+        0.014,
+        0.0001
+      ],
+      "\u03b1": [
+        1.5,
+        3.5,
+        0.01
+      ]
+    }
+  }
+}

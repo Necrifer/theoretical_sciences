@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:metastable_vacuum_lattice"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.vacuum_stability"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.vacuum_stability.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/cosmic_inflation",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

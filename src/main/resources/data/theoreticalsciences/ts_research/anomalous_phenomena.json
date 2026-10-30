@@ -1,0 +1,51 @@
+{
+  "title": "Abnormality & Infection",
+  "description": "Every science has its anomalies: effects that the laws we know cannot explain, systems that copy themselves and refuse to die. Containment failures leave them lying around. Study them properly - how they arise, spread, interact with the normal world, and how they can finally be explained. Unlocks the Anomaly Containment Ward and Contained Anomaly Specimens.",
+  "icon": "theoreticalsciences:anomaly_specimen",
+  "x": 14,
+  "y": 8,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:field_engineering",
+    "theoreticalsciences:simulation_hypothesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fractured_essence",
+      "count": 16
+    }
+  ],
+  "time": 1080,
+  "puzzle": {
+    "goal": "Before calling anything abnormal you must know what normal looks like. A quantity measured many times scatters around its mean \u03bc with spread \u03c3, its values distributed as the bell-shaped density exp(\u2212(x \u2212 \u03bc)\u00b2/2\u03c3\u00b2)/(\u03c3\u221a(2\u03c0)). Write the probability that a single measurement lies more than k standard deviations from the mean, on either side.",
+    "name": "two-sided tail of the Gaussian distribution (the significance of a deviation)",
+    "lhs": "P",
+    "form": "2 * int ( \u03bc + k * \u03c3 , \u221e , 1 / ( \u03c3 * sqrt ( 2 * \u03c0 ) ) * exp ( - ( x - \u03bc ) ^ 2 / ( 2 * \u03c3 ^ 2 ) ) , x )",
+    "expr": "sqrt ( 2 / \u03c0 ) * exp ( - k ^ 2 / 2 ) / k * 10000000",
+    "ask": "For large k the integral is close to \u221a(2/\u03c0)\u00b7e^{\u2212k\u00b2/2}/k. Physics calls a result a discovery at k = @{k}: find the chance of a deviation that large by accident, in units of 10\u207b\u2077.",
+    "vars": {
+      "P": "probability of a deviation of k \u03c3 or more",
+      "\u03bc": "mean",
+      "k": "number of standard deviations",
+      "\u03c3": "standard deviation",
+      "x": "measured value"
+    },
+    "given": {
+      "k": 5
+    },
+    "unit": "10\u207b\u2077",
+    "method": "The two tails are equal by symmetry: integrate one from \u03bc + k\u03c3 to infinity and double it. Substitute u = (x \u2212 \u03bc)/\u03c3; for large u the tail integral of e^{\u2212u\u00b2/2} is e^{\u2212k\u00b2/2}/k.",
+    "distractors": [
+      "\u03bd",
+      "ln",
+      "3"
+    ],
+    "vary": {
+      "k": [
+        4.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

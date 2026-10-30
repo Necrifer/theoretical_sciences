@@ -1,0 +1,52 @@
+{
+  "title": "Incompleteness",
+  "description": "Any system strong enough to describe arithmetic contains truths it can never prove - reality included.",
+  "icon": "theoreticalsciences:godel_sentence",
+  "x": 16,
+  "y": -2,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:transfinite_mathematics",
+    "theoreticalsciences:category_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:aleph_null_shard",
+      "count": 2
+    }
+  ],
+  "time": 1950,
+  "puzzle": {
+    "goal": "To let arithmetic talk about itself, every proof is turned into a single number. Symbol j of formula k has code c_kj; each formula becomes the product of successive primes raised to its codes, and the proof becomes the product of successive primes raised to those formula numbers. Write the logarithm of the proof's number for a proof of m formulas, formula k having n_k symbols.",
+    "name": "G\u00f6del numbering of a proof",
+    "lhs": "ln ( G )",
+    "form": "sum ( k , 1 , m , ln ( p _ k ) * prod ( j , 1 , n _ k , p _ j ^ c _ kj ) )",
+    "expr": "( 2 ^ a * 3 ^ b ) * ln ( 2 ) + 2 ^ c * ln ( 3 )",
+    "ask": "A two-line proof: formula 1 has codes (a, b), formula 2 has the single code c. Find ln G.",
+    "vars": {
+      "G": "number of the whole proof",
+      "k": "formula index",
+      "m": "number of formulas",
+      "p": "the primes 2, 3, 5, ...",
+      "j": "symbol index",
+      "n": "number of symbols",
+      "c": "symbol code",
+      "kj": "symbol j of formula k",
+      "a": "code of symbol 1 of formula 1",
+      "b": "code of symbol 2 of formula 1"
+    },
+    "given": {
+      "a": 1,
+      "b": 2,
+      "c": 3
+    },
+    "unit": "",
+    "method": "Unique prime factorisation makes the encoding reversible; the logarithm turns the outer product into a sum.",
+    "distractors": [
+      "+",
+      "exp",
+      "q",
+      "2"
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:protostar_core",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:red_giant_envelope",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:white_dwarf_core",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:stellar_iron_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:supernova_remnant",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:r_process_cluster",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:magnetar_shard",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:quark_star_core",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:muonic_catalyst",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:russell_paradox_set",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:fractal_core",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:nebular_gas",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:raw_star_matter",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:relativity_breakdown",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:schrodinger_limit",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:hypernova_plasma",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_singularity",
+      "count": 1
+    }
+  ],
+  "energy": 268435456,
+  "duration": 6000,
+  "research": "theoreticalsciences:conceptual_singularities",
+  "scaled": 32,
+  "physics": {
+    "vars": {
+      "qb": 0.2
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 1.11,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "cataclysm:enderite_ingot",
+      "count": 32
+    },
+    {
+      "item": "ufo:enriched_neutronium_sphere",
+      "count": 32
+    },
+    {
+      "item": "iceandfire:hydra_heart",
+      "count": 32
+    },
+    {
+      "item": "projectexpansion:magenta_matter",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:molten_berkelium_248",
+      "amount": 32000
+    },
+    {
+      "fluid": "nuclearcraft:molten_curium_247",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

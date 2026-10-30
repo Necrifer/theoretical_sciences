@@ -1,0 +1,170 @@
+{
+  "type": "theoreticalsciences:horizon_simulation",
+  "min_tier": 4,
+  "chances": [
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    0.5,
+    1.0
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:micro_singularity",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:eigenstate_lattice",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:cosmic_string_segment",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:de_sitter_horizon_shard",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:g2_manifold",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:true_vacuum_seed",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:mobius_strip",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:stress_energy_tensor",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:photonic_board",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:primordial_ejecta",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_solder",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:relativity_breakdown",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:dimensional_residue",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:schrodinger_limit",
+      "amount": 256000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:neutronium_ingot",
+      "count": 64
+    },
+    {
+      "id": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 64
+    },
+    {
+      "id": "theoreticalsciences:magnetar_shard",
+      "count": 8
+    },
+    {
+      "id": "theoreticalsciences:quark_star_core",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:pulsar_timing_crystal",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:horizon_shard",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:metallic_hydrogen",
+      "amount": 8000
+    },
+    {
+      "id": "theoreticalsciences:hawking_radiation",
+      "amount": 4000
+    },
+    {
+      "id": "theoreticalsciences:raw_star_matter",
+      "amount": 2000
+    }
+  ],
+  "energy": 16777216,
+  "duration": 3600,
+  "research": "theoreticalsciences:horizon_simulation",
+  "scaled": 64,
+  "physics": {
+    "windows": [
+      {
+        "q": "eisco",
+        "min": 0.15,
+        "max": 0.2
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "mysticalextendedtier:ouranium_ingot",
+      "count": 32
+    },
+    {
+      "item": "ufo:cosmic_string_component_matrix",
+      "count": 32
+    },
+    {
+      "item": "ufo:charged_enriched_neutronium_sphere",
+      "count": 32
+    },
+    {
+      "item": "advanced_ae:quantum_core",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "avaritia_integration:molten_infinity",
+      "amount": 32000
+    },
+    {
+      "fluid": "ufo:pulsar_fragment_fluid",
+      "amount": 32000
+    },
+    {
+      "fluid": "ufo:primordial_matter_fluid",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

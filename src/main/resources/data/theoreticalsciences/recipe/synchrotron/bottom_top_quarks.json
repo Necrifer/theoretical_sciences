@@ -1,0 +1,88 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "min_tier": 2,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:strange_charm_quarks",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:pentaquark_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:topological_logic_wafer",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:maxwell_demon_chip",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:metal_organic_framework",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:photonic_board",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:arrow_of_time_shard",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:carborane_superacid",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:bottom_top_quarks",
+      "count": 1
+    }
+  ],
+  "energy": 131072,
+  "duration": 900,
+  "research": "theoreticalsciences:standard_model",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "m": 0.938,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 500.0,
+        "max": 700.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "iceandfire:dragonsteel_fire_ingot",
+      "count": 16
+    },
+    {
+      "item": "enderio:prescient_crystal",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:gelid_cryotheum",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

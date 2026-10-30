@@ -1,0 +1,52 @@
+{
+  "title": "Entangled Logistics",
+  "description": "Two particles, one state - and so one channel. Unlocks Entangled Relays, Transceivers and the Entanglement Tuner.",
+  "icon": "theoreticalsciences:entangled_relay",
+  "x": 4,
+  "y": 3,
+  "insight": 25,
+  "requires": [
+    "theoreticalsciences:quantum_entanglement",
+    "theoreticalsciences:femtoengineering"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Alice measures one particle of an entangled pair with one of two settings A or X; Bob measures the other with B or Y. Each outcome is \u00b11. Combine the four expectation values of the products of outcomes into the single correlation quantity that any local classical model keeps between \u22122 and 2.",
+    "name": "CHSH inequality (Bell test)",
+    "lhs": "S",
+    "form": "avg ( A * B ) - avg ( A * Y ) + avg ( X * B ) + avg ( X * Y )",
+    "expr": "2 * sqrt ( 2 ) * V",
+    "ask": "With optimal settings a pure entangled state reaches 2\u221a2; a noisy (Werner) state of visibility V reaches 2\u221a2\u00b7V. Find S for the visibility below.",
+    "vars": {
+      "S": "correlation value",
+      "A": "Alice's first setting (\u00b11 outcome)",
+      "X": "Alice's second setting",
+      "B": "Bob's first setting",
+      "Y": "Bob's second setting",
+      "V": "visibility of the shared state"
+    },
+    "given": {
+      "V": 0.9
+    },
+    "unit": "",
+    "method": "Classically each outcome is fixed in advance, so A(B \u2212 Y) + X(B + Y) is always \u00b12. Average each product separately; exactly one of the four terms enters with the opposite sign.",
+    "distractors": [
+      "Z",
+      "-",
+      "C"
+    ],
+    "vary": {
+      "V": [
+        0.54,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

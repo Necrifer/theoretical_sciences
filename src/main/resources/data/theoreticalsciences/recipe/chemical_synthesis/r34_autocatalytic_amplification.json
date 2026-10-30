@@ -1,0 +1,28 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst"
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:autocatalytic_broth",
+      "amount": 4000
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 16000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:autocatalytic_broth",
+      "amount": 12000
+    }
+  ],
+  "energy": 65536,
+  "duration": 400,
+  "research": "theoreticalsciences:autocatalysis",
+  "unscaled": true
+}

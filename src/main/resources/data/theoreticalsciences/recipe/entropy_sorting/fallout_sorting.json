@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:entropy_sorting",
+  "chances": [
+    1.0,
+    0.1
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fractured_essence",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:molecular_orbital_lattice",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:strange_matter_pellet",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 250
+    }
+  ],
+  "energy": 32768,
+  "duration": 300,
+  "research": "theoreticalsciences:thermodynamics_of_information",
+  "scaled": 4,
+  "expanded": true
+}

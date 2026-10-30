@@ -1,0 +1,70 @@
+{
+  "title": "Targeted Therapy",
+  "description": "Kill the anomaly, spare the normal: CRISPR-written triggers that make only anomalous cells accept apoptosis, CAR-T cells taught to hunt one marker, and dose split into fractions the normal tissue can repair between. Unlocks the Anomaly Resolution Engine, the Apoptosis Trigger and CAR-T Cell Culture.",
+  "icon": "theoreticalsciences:apoptosis_trigger",
+  "x": 20,
+  "y": 10,
+  "insight": 450,
+  "requires": [
+    "theoreticalsciences:containment_protocols",
+    "theoreticalsciences:clonal_evolution"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:resistant_clone",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:recombinant_dna",
+      "count": 8
+    }
+  ],
+  "time": 2280,
+  "puzzle": {
+    "goal": "An anomaly has N\u2080 cells able to regrow it. It is dosed in n equal fractions of D; each fraction lets each cell survive with probability exp(\u2212\u03b1D \u2212 \u03b2D\u00b2). It is resolved only if not one cell survives, and the survivors are rare, independent events. Write the probability of resolution.",
+    "name": "tumour control probability (linear-quadratic cell kill, Poisson statistics)",
+    "lhs": "P",
+    "form": "exp ( - N _ 0 * exp ( - n * ( \u03b1 * D + \u03b2 * D ^ 2 ) ) )",
+    "expr": "exp ( - N * exp ( - n * ( \u03b1 * D + \u03b2 * D ^ 2 ) ) )",
+    "ask": "Find the probability of resolution for 10\u2079 clonogens, @{n} fractions of 2 Gy, \u03b1 = 0.3 Gy\u207b\u00b9 and \u03b2 = @{\u03b2} Gy\u207b\u00b2.",
+    "vars": {
+      "P": "probability of resolution",
+      "N": "number of clonogenic cells",
+      "n": "number of fractions",
+      "\u03b1": "linear sensitivity (per Gy)",
+      "\u03b2": "quadratic sensitivity (per Gy\u00b2)",
+      "D": "dose per fraction (Gy)"
+    },
+    "given": {
+      "N": 1000000000,
+      "n": 30,
+      "\u03b1": 0.3,
+      "\u03b2": 0.03,
+      "D": 2
+    },
+    "unit": "",
+    "method": "The expected number of survivors is N\u2080 times the survival per fraction to the n-th power. For rare independent survivors the chance of none is e^{\u2212mean}.",
+    "distractors": [
+      "\u03b3",
+      "t",
+      "ln"
+    ],
+    "vary": {
+      "N": [
+        850000000.0,
+        1150000000.0,
+        10000000.0
+      ],
+      "n": [
+        26.0,
+        34.0,
+        1.0
+      ],
+      "\u03b2": [
+        0.0254,
+        0.0345,
+        0.0001
+      ]
+    }
+  }
+}

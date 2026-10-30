@@ -1,0 +1,92 @@
+{
+  "params": [
+    {
+      "id": "Pl",
+      "unit": "W",
+      "min": 0,
+      "max": 100,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "lam",
+      "unit": "nm",
+      "min": 200,
+      "max": 2000,
+      "step": 1,
+      "default": 1064
+    },
+    {
+      "id": "Bt",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "kap",
+      "unit": "pN/nm",
+      "expr": "(50*Pl*(1064/lam)^3 + 2*Bt^2)*(1+0.03*d)",
+      "formula": "\u03ba \u221d P/\u03bb\u00b3 + B\u00b2"
+    },
+    {
+      "id": "Tt",
+      "unit": "K",
+      "expr": "T + 0.05*Pl",
+      "formula": "T_trap = T + absorbed light"
+    },
+    {
+      "id": "sig",
+      "unit": "pm",
+      "expr": "sqrt(1.381e-23*Tt/(kap*1e-3))*1e12",
+      "formula": "\u03c3 = \u221a(kT/\u03ba)"
+    },
+    {
+      "id": "dmg",
+      "unit": "",
+      "expr": "Pl*(400/lam)^3/5",
+      "formula": "\u221d P/\u03bb\u00b3"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "photo",
+      "kind": "wear",
+      "expr": "1 - dmg",
+      "formula": "damage < 1"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bt)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "clamp(kap/200, 0, 4)",
+  "rate_formula": "rate = \u03ba/200",
+  "heat": "2 + 0.3*Pl + 0.2*Bt",
+  "idle_heat": "2",
+  "quench_energy": "40*Bt^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

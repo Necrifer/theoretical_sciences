@@ -1,0 +1,93 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:pixel_tracker_module",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:chiral_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:topological_wafer",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:casimir_plate",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:strange_matter_pellet",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:strange_matter",
+      "amount": 100
+    }
+  ],
+  "energy": 32768,
+  "duration": 450,
+  "research": "theoreticalsciences:accelerator_physics",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "m": 0.938,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 20.0,
+        "max": 40.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "avaritia:crystal_matrix_ingot",
+      "count": 16
+    },
+    {
+      "item": "mekanism:ultimate_control_circuit",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "oritech:still_molten_adamant",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

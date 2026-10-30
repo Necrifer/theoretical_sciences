@@ -1,0 +1,62 @@
+{
+  "title": "Vacuum Stability",
+  "description": "What could stop a universe from starting at all? A vacuum energy a little larger and it would fly apart before stars formed; a Higgs coupling a little smaller and the vacuum would be unstable. Ours sits, by measurement, at the edge: metastable. Unlocks the Metastable Vacuum Lattice.",
+  "icon": "theoreticalsciences:metastable_vacuum_lattice",
+  "x": 11,
+  "y": -5,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:cosmic_inflation",
+    "theoreticalsciences:standard_model"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:higgs_field_capacitor",
+      "count": 4
+    }
+  ],
+  "time": 660,
+  "puzzle": {
+    "goal": "The quartic coupling \u03bb of the Higgs field is not a constant: it runs with the energy scale \u03bc. The top quark, with Yukawa coupling y, dominates the running and drives \u03bb down logarithmically from its value \u03bb\u2080 at the top mass m. Write \u03bb at scale \u03bc in this top-dominated approximation.",
+    "name": "Top-loop running of the scalar quartic coupling (renormalisation group)",
+    "lhs": "\u03bb",
+    "form": "\u03bb _ 0 - 3 * y ^ 4 / ( 8 * \u03c0 ^ 2 ) * ln ( \u03bc / m )",
+    "expr": "m * exp ( 8 * \u03c0 ^ 2 * \u03bb / ( 3 * y ^ 4 ) ) / 1000",
+    "ask": "The vacuum becomes unstable where \u03bb(\u03bc) = 0, at \u03bc = m\u00b7exp(8\u03c0\u00b2\u03bb\u2080/(3y\u2074)). With \u03bb\u2080 = \u03bb, y and m (GeV) given, find that scale in TeV (with every other loop included it moves to about 10\u00b9\u2070 GeV - our vacuum is metastable).",
+    "vars": {
+      "\u03bb": "Higgs quartic coupling (at the top mass)",
+      "y": "top Yukawa coupling",
+      "\u03bc": "renormalisation scale",
+      "m": "top quark mass (GeV)"
+    },
+    "given": {
+      "\u03bb": 0.126,
+      "y": 0.94,
+      "m": 173
+    },
+    "unit": "TeV",
+    "method": "The top loop gives d\u03bb/d ln \u03bc = \u22123y\u2074/(8\u03c0\u00b2). Hold y fixed and integrate from ln m to ln \u03bc.",
+    "distractors": [
+      "exp",
+      "G",
+      "+"
+    ],
+    "vary": {
+      "\u03bb": [
+        0.094,
+        0.158,
+        0.001
+      ],
+      "y": [
+        0.705,
+        0.999,
+        0.001
+      ],
+      "m": [
+        130.0,
+        216.0,
+        1.0
+      ]
+    }
+  }
+}

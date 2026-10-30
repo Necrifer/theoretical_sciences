@@ -1,0 +1,55 @@
+{
+  "title": "White Holes",
+  "description": "The time-reverse of a black hole: a horizon nothing can enter.",
+  "icon": "theoreticalsciences:white_hole_fragment",
+  "x": 8,
+  "y": 0,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:singularity_physics",
+    "theoreticalsciences:chronodynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "Matter is thrown outward from a horizon that nothing can enter - the time-reverse of matter falling in from rest far away. Using the conserved energy E per unit rest mass (E = c for a particle at rest at infinity) and angular momentum L per unit mass, write the squared radial velocity (per unit proper time) as a function of r.",
+    "name": "Schwarzschild radial geodesic (white-hole ejection)",
+    "lhs": "tdot ( r ) ^ 2",
+    "form": "E ^ 2 - ( 1 - r _ s / r ) * ( c ^ 2 + L ^ 2 / r ^ 2 )",
+    "expr": "c * sqrt ( rs / r )",
+    "ask": "For radial motion (L = 0) with E = c the result is c\u00b7\u221a(rs/r). Find the ejection speed at the radius below.",
+    "vars": {
+      "r": "radial coordinate",
+      "E": "conserved energy per unit rest mass, divided by c",
+      "rs": "horizon radius",
+      "s": "label: horizon",
+      "c": "speed of light (km/s)",
+      "L": "angular momentum per unit mass"
+    },
+    "given": {
+      "c": 299792,
+      "rs": 3,
+      "r": 12
+    },
+    "unit": "km/s",
+    "method": "Combine the conserved energy and angular momentum with the four-velocity normalisation; solve for the radial rate.",
+    "distractors": [
+      "2",
+      "G",
+      "M",
+      "+"
+    ],
+    "vary": {
+      "r": [
+        7.0,
+        17.0,
+        1.0
+      ]
+    }
+  }
+}

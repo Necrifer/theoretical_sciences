@@ -1,0 +1,101 @@
+{
+  "type": "theoreticalsciences:dark_energy_extraction",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:cosmic_lens",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:supernova_remnant",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:graviton_wisp_core",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:spacetime_alloy_singularity",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:kaluza_klein_shard",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:wave_packet",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:dilaton_crystal",
+      "count": 16
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cosmological_constant",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_energy",
+      "amount": 1000
+    }
+  ],
+  "energy": 2097152,
+  "duration": 1600,
+  "research": "theoreticalsciences:dark_energy",
+  "scaled": 16,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgu",
+        "min": -0.3,
+        "max": 0.3
+      }
+    ]
+  },
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:neutrino_flux",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:dimensional_residue",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 64000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "draconicevolution:chaos_shard",
+      "count": 16
+    },
+    {
+      "item": "iceandfire:ice_dragon_heart",
+      "count": 16
+    },
+    {
+      "item": "iceandfire:hydra_heart",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:molten_berkelium_248",
+      "amount": 16000
+    },
+    {
+      "fluid": "ufo:uu_matter_fluid",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

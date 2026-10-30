@@ -1,0 +1,60 @@
+{
+  "title": "Field Engineering",
+  "description": "Gravity, dimension, time and the vacuum are all fields - and fields can be projected. Unlocks the Field Projectors, the Graviton Harness and the Chronal Anchor.",
+  "icon": "theoreticalsciences:graviton_field_projector",
+  "x": 11,
+  "y": 8,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:general_relativity",
+    "theoreticalsciences:hyperdimensional_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:graviton_crystal",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A field projector must reproduce the gravitational field of an arbitrary mass distribution of density \u03c1 filling a volume V. Add up the inverse-square pull of every mass element at source point s on a test point r, as a vector.",
+    "name": "Newtonian gravitational field of a mass distribution",
+    "lhs": "vec ( g )",
+    "form": "- G * iiint ( \u03c1 * ( vec ( r ) - vec ( s ) ) / norm ( vec ( r ) - vec ( s ) ) ^ 3 , V )",
+    "expr": "G * M / r ^ 2",
+    "ask": "Outside a spherical body the integral reduces to that of a point mass M. Find the field strength at the surface of the Earth.",
+    "vars": {
+      "g": "gravitational field",
+      "G": "gravitational constant",
+      "\u03c1": "mass density",
+      "r": "field point / distance (m)",
+      "s": "source point",
+      "V": "volume of the source",
+      "M": "total mass (kg)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 5.972e+24,
+      "r": 6371000.0
+    },
+    "unit": "m/s\u00b2",
+    "method": "A mass element \u03c1 dV at s pulls toward itself along the unit vector (s \u2212 r)/|r \u2212 s| with strength G \u03c1 dV/|r \u2212 s|\u00b2; superpose all elements.",
+    "distractors": [
+      "c",
+      "2",
+      "+"
+    ],
+    "vary": {
+      "M": [
+        3.58e+24,
+        8.37e+24,
+        1e+22
+      ],
+      "r": [
+        3820000.0,
+        8920000.0,
+        10000.0
+      ]
+    }
+  }
+}

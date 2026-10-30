@@ -1,0 +1,79 @@
+{
+  "keys": [
+    {
+      "name": "result",
+      "role": "output",
+      "type": "item_stack"
+    },
+    {
+      "name": "core",
+      "role": "input",
+      "type": "ingredient"
+    },
+    {
+      "name": "pedestals",
+      "role": "input",
+      "type": {
+        "type": "list",
+        "component": "ingredient"
+      }
+    },
+    {
+      "name": "energy",
+      "role": "other",
+      "type": {
+        "type": "long",
+        "min": 0
+      },
+      "optional": 0,
+      "function_names": [
+        "energy",
+        "fe"
+      ]
+    },
+    {
+      "name": "duration",
+      "role": "other",
+      "type": {
+        "type": "int",
+        "min": 1
+      },
+      "optional": 200,
+      "function_names": [
+        "duration",
+        "time"
+      ]
+    },
+    {
+      "name": "tier",
+      "role": "other",
+      "type": {
+        "type": "int",
+        "min": 1,
+        "max": 3
+      },
+      "optional": 1,
+      "function_names": [
+        "tier"
+      ]
+    },
+    {
+      "name": "research",
+      "role": "other",
+      "type": "optional_string",
+      "optional": "",
+      "function_names": [
+        "research"
+      ]
+    }
+  ],
+  "constructors": [
+    {
+      "keys": [
+        "result",
+        "core",
+        "pedestals"
+      ]
+    }
+  ]
+}

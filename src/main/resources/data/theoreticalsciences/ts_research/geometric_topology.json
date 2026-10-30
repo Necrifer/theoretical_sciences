@@ -1,0 +1,62 @@
+{
+  "title": "Geometric Topology",
+  "description": "Surfaces with one side and bottles with no inside.",
+  "icon": "theoreticalsciences:klein_bottle",
+  "x": 7,
+  "y": 9,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:calculus",
+    "theoreticalsciences:topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:mobius_strip",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A compact orientable surface S with b boundary circles carries Gaussian curvature K, and its boundary curves bend within the surface with geodesic curvature \u03ba. The total curvature integrated over the surface plus along the boundary is 2\u03c0 times a topological invariant, 2 \u2212 2g \u2212 b. Solve that for the number of handles g.",
+    "name": "Gauss\u2013Bonnet theorem (genus from total curvature)",
+    "lhs": "g",
+    "form": "( 2 - b ) / 2 - 1 / ( 4 * \u03c0 ) * ( iint ( K , S ) + oint ( \u03ba , s ) )",
+    "expr": "( 2 - V + E - F ) / 2",
+    "ask": "For a closed surface (b = 0) the total curvature equals 2\u03c0(V \u2212 E + F) for any triangulation. Find the genus of a closed surface triangulated with V = @{V}, E = @{E}, F = 24.",
+    "vars": {
+      "g": "genus (number of handles)",
+      "b": "number of boundary circles",
+      "K": "Gaussian curvature",
+      "S": "the surface",
+      "\u03ba": "geodesic curvature of the boundary",
+      "s": "arc length along the boundary",
+      "V": "vertices",
+      "E": "edges",
+      "F": "faces"
+    },
+    "given": {
+      "V": 10,
+      "E": 36,
+      "F": 24
+    },
+    "unit": "handles",
+    "method": "Triangulate the surface; inside each geodesic triangle the curvature equals the angle excess. Summing over triangles turns the total into V \u2212 E + F, and each handle or hole lowers it by 2 or 1.",
+    "distractors": [
+      "\u03c7",
+      "3",
+      "+"
+    ],
+    "vary": {
+      "V": [
+        8.0,
+        12.0,
+        1.0
+      ],
+      "E": [
+        31.0,
+        41.0,
+        1.0
+      ]
+    }
+  }
+}

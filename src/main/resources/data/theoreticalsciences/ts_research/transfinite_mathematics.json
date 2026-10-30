@@ -1,0 +1,44 @@
+{
+  "title": "Transfinite Mathematics",
+  "description": "Cantor proved that some infinities are bigger than others. Build them. Unlocks the Cantor Diagonalizer.",
+  "icon": "theoreticalsciences:aleph_null_shard",
+  "x": 15,
+  "y": -1,
+  "insight": 350,
+  "requires": [
+    "theoreticalsciences:simulation_hypothesis",
+    "theoreticalsciences:set_theory",
+    "theoreticalsciences:number_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:source_code_fragment",
+      "count": 2
+    }
+  ],
+  "time": 1620,
+  "puzzle": {
+    "goal": "A finite set S has n elements. Its subsets can be counted by size: there are 'n choose j' subsets with exactly j elements. The set of all subsets is itself a set, whose subsets can be counted the same way. Write how many more subsets the set of all subsets has than S itself has, counting both by size.",
+    "name": "Cantor's theorem for finite sets (power-set cardinality)",
+    "lhs": "N",
+    "form": "sum ( k , 0 , sum ( j , 0 , n , binom ( n , j ) ) , binom ( sum ( j , 0 , n , binom ( n , j ) ) , k ) ) - sum ( j , 0 , n , binom ( n , j ) )",
+    "expr": "2 ^ 2 ^ n - 2 ^ n",
+    "ask": "Each sum is a binomial expansion of (1 + 1)^m = 2^m. Find N for a 4-element set.",
+    "vars": {
+      "N": "|P(P(S))| \u2212 |P(S)|",
+      "n": "number of elements of S",
+      "j": "size of a subset of S",
+      "k": "size of a subset of the power set"
+    },
+    "given": {
+      "n": 4
+    },
+    "unit": "",
+    "method": "Count subsets by their size with binomial coefficients; the inner count is the size of the power set, which becomes the n of the outer count.",
+    "distractors": [
+      "1",
+      "+",
+      "m"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "type": "theoreticalsciences:omnilex_simulation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tree_simulacrum",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:ocean_simulacrum",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:omnium_ingot",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:axiom_key",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:primordial_law",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_energy",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:omnilex",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:axiom_key",
+      "count": 1
+    }
+  ],
+  "energy": 500000000,
+  "duration": 6000,
+  "research": "theoreticalsciences:omnilex",
+  "physics": {
+    "windows": [
+      {
+        "q": "nb",
+        "min": 5.0,
+        "max": 6.0
+      }
+    ]
+  }
+}

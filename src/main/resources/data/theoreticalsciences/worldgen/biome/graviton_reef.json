@@ -1,0 +1,64 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 659504,
+    "fog_color": 528424,
+    "water_color": 8011007,
+    "water_fog_color": 1706032,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:portal"
+      },
+      "probability": 0.006
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.the_bulk",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:graviton_wisp",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "theoreticalsciences:brane_strider",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:anomaly_vault_graviton_reef"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_void_lattice",
+      "theoreticalsciences:ore_kaluza_klein",
+      "theoreticalsciences:ore_dilaton"
+    ],
+    [],
+    [],
+    [
+      "theoreticalsciences:graviton_reef",
+      "theoreticalsciences:crystal_spire"
+    ],
+    []
+  ]
+}

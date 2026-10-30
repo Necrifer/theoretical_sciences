@@ -1,0 +1,64 @@
+{
+  "title": "The Island of Stability",
+  "description": "Past the end of the periodic table, magic numbers promise superheavy nuclei that last. Unlocks the Nuclide Forge.",
+  "icon": "theoreticalsciences:unbihexium_ingot",
+  "x": 12,
+  "y": 12,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:exotic_chemistry",
+    "theoreticalsciences:nucleosynthesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:r_process_cluster",
+      "count": 4
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "Treat a nucleus of Z protons and A nucleons as a charged liquid drop. Its binding energy gains a fixed amount per nucleon from the bulk, loses some from the surface (\u221d A^(2/3)), from the mutual repulsion of the protons (\u221d Z(Z\u22121)/A^(1/3)) and from any imbalance between neutrons and protons (\u221d (A \u2212 2Z)\u00b2/A), plus a small pairing correction. Write the binding energy.",
+    "name": "Semi-empirical mass formula (Bethe\u2013Weizs\u00e4cker liquid drop)",
+    "lhs": "B",
+    "form": "a _ V * A - a _ S * A ^ ( 2 / 3 ) - a _ C * Z * ( Z - 1 ) / A ^ ( 1 / 3 ) - a _ A * ( A - 2 * Z ) ^ 2 / A + \u03b4",
+    "expr": "Z ^ 2 / A / ( 2 * aS / aC )",
+    "ask": "Fission sets in when the Coulomb term outgrows twice the surface term; the fissility is x = (aC Z\u00b2/A^(1/3)) / (2 aS A^(2/3)). Find x for flerovium-298 (Z = 114, A = 298) with aS = @{aS} MeV and aC = @{aC} MeV.",
+    "vars": {
+      "B": "binding energy",
+      "a": "coefficient (a_V volume, a_S surface, a_C Coulomb, a_A asymmetry)",
+      "V": "label: volume",
+      "S": "label: surface",
+      "C": "label: Coulomb",
+      "A": "mass number (also label: asymmetry)",
+      "Z": "proton number",
+      "\u03b4": "pairing term",
+      "aS": "surface coefficient (MeV)",
+      "aC": "Coulomb coefficient (MeV)"
+    },
+    "given": {
+      "Z": 114,
+      "A": 298,
+      "aS": 17.8,
+      "aC": 0.711
+    },
+    "unit": "",
+    "method": "Volume energy \u221d A; the surface \u221d R\u00b2 \u221d A^(2/3); Coulomb energy of a uniformly charged sphere \u221d Z(Z\u22121)/R; the Pauli principle penalises N \u2260 Z quadratically.",
+    "distractors": [
+      "N",
+      "4",
+      "exp"
+    ],
+    "vary": {
+      "aS": [
+        10.6,
+        25.0,
+        0.1
+      ],
+      "aC": [
+        0.426,
+        0.996,
+        0.001
+      ]
+    }
+  }
+}

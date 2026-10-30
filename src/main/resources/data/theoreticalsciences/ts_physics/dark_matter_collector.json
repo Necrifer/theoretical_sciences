@@ -1,0 +1,132 @@
+{
+  "params": [
+    {
+      "id": "A",
+      "unit": "",
+      "min": 1,
+      "max": 240,
+      "step": 1,
+      "default": 131
+    },
+    {
+      "id": "Eth",
+      "unit": "keV",
+      "min": 0.01,
+      "max": 100,
+      "step": 0.01,
+      "default": 5
+    },
+    {
+      "id": "Md",
+      "unit": "t",
+      "min": 0.001,
+      "max": 100,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "Bsh",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "mx": 100
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "mN",
+      "unit": "GeV",
+      "expr": "0.9315*A",
+      "formula": "m_N = 0.9315\u00b7A"
+    },
+    {
+      "id": "mu",
+      "unit": "GeV",
+      "expr": "mx*mN/(mx + mN)",
+      "formula": "\u00b5 = m_\u03c7m_N/(m_\u03c7 + m_N)"
+    },
+    {
+      "id": "Emax",
+      "unit": "keV",
+      "expr": "2*mu^2*(2.6e-3)^2/mN*1e6",
+      "formula": "E_max = 2\u00b5\u00b2v_max\u00b2/m_N"
+    },
+    {
+      "id": "E0",
+      "unit": "keV",
+      "expr": "2*mu^2*(7.74e-4)^2/mN*1e6",
+      "formula": "E\u2080 = 2\u00b5\u00b2v\u2080\u00b2/m_N"
+    },
+    {
+      "id": "S",
+      "unit": "/day",
+      "expr": "0.02*Md*A^2*(mu/0.9)^2/mx*exp(-Eth/E0)",
+      "formula": "S \u221d M\u00b7A\u00b2\u00b5\u00b2/m_\u03c7\u00b7e^(\u2212E/E\u2080)"
+    },
+    {
+      "id": "Bk",
+      "unit": "/day",
+      "expr": "50*Md*exp(-Eth/3)*(1 + 0.3*d)/(1 + Bsh)",
+      "formula": "B \u221d M\u00b7e^(\u2212E/3 keV)"
+    },
+    {
+      "id": "dE",
+      "unit": "keV",
+      "expr": "0.5*T^2.5",
+      "formula": "\u0394E \u221d T^(5/2)"
+    },
+    {
+      "id": "snr",
+      "unit": "\u03c3",
+      "expr": "S/sqrt(Bk + 1)",
+      "formula": "S/\u221aB"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "kinematic",
+      "kind": "stop",
+      "expr": "Emax - Eth",
+      "formula": "E_th < E_max"
+    },
+    {
+      "id": "noise",
+      "kind": "stop",
+      "expr": "Eth - 5*dE",
+      "formula": "E_th > 5\u0394E"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bsh)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "clamp(snr/3, 0, 4)",
+  "rate_formula": "rate = significance / 3\u03c3",
+  "heat": "3 + 0.2*Md",
+  "idle_heat": "1",
+  "quench_energy": "20*Bsh^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

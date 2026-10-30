@@ -1,0 +1,80 @@
+{
+  "params": [
+    {
+      "id": "r1",
+      "unit": "AU",
+      "min": 0.01,
+      "max": 10,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "Nsh",
+      "unit": "",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "id": "fd",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "T1",
+      "unit": "K",
+      "expr": "278.6/sqrt(r1)*(1+0.01*d)",
+      "formula": "T\u2081 = 278.6 K/\u221a(r/AU)"
+    },
+    {
+      "id": "Tout",
+      "unit": "K",
+      "expr": "max(T, T1*exp(-0.5*Nsh))",
+      "formula": "T_out = max(T_coolant, T\u2081e^(\u2212N/2))"
+    },
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "1 - Tout/T1",
+      "formula": "\u03b7 = 1 \u2212 T_out/T\u2081"
+    },
+    {
+      "id": "lgops",
+      "unit": "log\u2081\u2080 /s",
+      "expr": "log10(3.828e26*fd*pos(eta)/(1.381e-23*Tout*0.6931) + 1)",
+      "formula": "N = \u03b7L/(kT\u00b7ln2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "melt",
+      "kind": "damage",
+      "expr": "1500 - T1",
+      "formula": "T\u2081 < 1500 K"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "600 - T",
+      "formula": "T < 600 K"
+    }
+  ],
+  "rate": "clamp(fd*eta*1.5, 0, 4)",
+  "rate_formula": "rate = 1.5\u00b7duty\u00b7\u03b7",
+  "heat": "5 + 30*fd*(1 - eta)",
+  "idle_heat": "2",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

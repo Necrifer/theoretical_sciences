@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:mass_modulation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:error_correction_lattice",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 32000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:massless_alloy",
+      "count": 2
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:mass_manipulation",
+  "scaled": 8,
+  "optional_inputs": [
+    {
+      "item": "iceandfire:dragonsteel_fire_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:cryomisi",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

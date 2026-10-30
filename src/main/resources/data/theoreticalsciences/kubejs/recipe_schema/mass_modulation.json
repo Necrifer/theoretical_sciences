@@ -1,0 +1,307 @@
+{
+  "keys": [
+    {
+      "name": "item_outputs",
+      "role": "output",
+      "type": {
+        "type": "list",
+        "component": "item_stack"
+      },
+      "optional": []
+    },
+    {
+      "name": "item_inputs",
+      "role": "input",
+      "type": {
+        "type": "list",
+        "component": "flat_sized_ingredient"
+      },
+      "optional": []
+    },
+    {
+      "name": "fluid_inputs",
+      "role": "input",
+      "type": {
+        "type": "list",
+        "component": "flat_sized_fluid_ingredient"
+      },
+      "optional": []
+    },
+    {
+      "name": "energy",
+      "role": "other",
+      "type": {
+        "type": "int",
+        "min": 0
+      },
+      "optional": 256,
+      "function_names": [
+        "energy",
+        "fe"
+      ]
+    },
+    {
+      "name": "duration",
+      "role": "other",
+      "type": {
+        "type": "int",
+        "min": 1
+      },
+      "optional": 200,
+      "function_names": [
+        "duration",
+        "time"
+      ]
+    },
+    {
+      "name": "research",
+      "role": "other",
+      "type": "optional_string",
+      "optional": "",
+      "function_names": [
+        "research"
+      ]
+    },
+    {
+      "name": "catalysts",
+      "role": "input",
+      "type": {
+        "type": "list",
+        "component": "ingredient"
+      },
+      "optional": [],
+      "function_names": [
+        "catalysts",
+        "catalyst"
+      ]
+    },
+    {
+      "name": "chances",
+      "role": "other",
+      "type": {
+        "type": "list",
+        "component": "float"
+      },
+      "optional": [],
+      "function_names": [
+        "chances"
+      ]
+    },
+    {
+      "name": "min_tier",
+      "role": "other",
+      "type": {
+        "type": "int",
+        "min": 0
+      },
+      "optional": 0,
+      "function_names": [
+        "minTier",
+        "min_tier",
+        "tier"
+      ]
+    },
+    {
+      "name": "optional_inputs",
+      "role": "input",
+      "default_optional": true,
+      "function_names": [
+        "optionalInputs",
+        "optional_inputs"
+      ],
+      "type": {
+        "type": "list",
+        "component": {
+          "type": "custom_object",
+          "keys": [
+            {
+              "name": "item",
+              "component": "string"
+            },
+            {
+              "name": "count",
+              "component": "positive_int",
+              "optional": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "optional_fluid_inputs",
+      "role": "input",
+      "default_optional": true,
+      "function_names": [
+        "optionalFluidInputs",
+        "optional_fluid_inputs"
+      ],
+      "type": {
+        "type": "list",
+        "component": {
+          "type": "custom_object",
+          "keys": [
+            {
+              "name": "fluid",
+              "component": "string"
+            },
+            {
+              "name": "amount",
+              "component": "positive_int",
+              "optional": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "physics",
+      "role": "other",
+      "default_optional": true,
+      "function_names": [
+        "physics"
+      ],
+      "type": {
+        "type": "custom_object",
+        "keys": [
+          {
+            "name": "vars",
+            "component": {
+              "type": "map",
+              "key": "string",
+              "component": "double"
+            },
+            "optional": true
+          },
+          {
+            "name": "windows",
+            "component": {
+              "type": "list",
+              "component": {
+                "type": "custom_object",
+                "keys": [
+                  {
+                    "name": "q",
+                    "component": "string"
+                  },
+                  {
+                    "name": "min",
+                    "component": "double",
+                    "optional": true
+                  },
+                  {
+                    "name": "max",
+                    "component": "double",
+                    "optional": true
+                  }
+                ]
+              }
+            },
+            "optional": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "environment",
+      "role": "other",
+      "default_optional": true,
+      "function_names": [
+        "environment",
+        "env"
+      ],
+      "type": {
+        "type": "custom_object",
+        "keys": [
+          {
+            "name": "gravity_min",
+            "component": "double",
+            "optional": true
+          },
+          {
+            "name": "gravity_max",
+            "component": "double",
+            "optional": true
+          },
+          {
+            "name": "dimensions_min",
+            "component": "int",
+            "optional": true
+          },
+          {
+            "name": "time_min",
+            "component": "double",
+            "optional": true
+          },
+          {
+            "name": "time_max",
+            "component": "double",
+            "optional": true
+          },
+          {
+            "name": "vacuum_min",
+            "component": "int",
+            "optional": true
+          },
+          {
+            "name": "dimensions",
+            "component": {
+              "type": "list",
+              "component": "string"
+            },
+            "optional": true
+          },
+          {
+            "name": "biomes",
+            "component": {
+              "type": "list",
+              "component": "string"
+            },
+            "optional": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "scaled",
+      "role": "other",
+      "type": "double",
+      "default_optional": true,
+      "function_names": [
+        "scaled"
+      ]
+    },
+    {
+      "name": "secret",
+      "role": "other",
+      "type": "boolean",
+      "default_optional": true,
+      "function_names": [
+        "secret"
+      ]
+    },
+    {
+      "name": "insight_per_run",
+      "role": "other",
+      "type": {
+        "type": "int",
+        "min": 0,
+        "max": 1000000
+      },
+      "default_optional": true,
+      "function_names": [
+        "insightPerRun",
+        "insight_per_run",
+        "insight"
+      ]
+    }
+  ],
+  "constructors": [
+    {
+      "keys": [
+        "item_outputs",
+        "item_inputs",
+        "fluid_inputs"
+      ]
+    }
+  ]
+}

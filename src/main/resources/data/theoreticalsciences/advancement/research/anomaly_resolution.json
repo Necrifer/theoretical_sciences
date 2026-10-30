@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:resolved_anomaly"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.anomaly_resolution"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.anomaly_resolution.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/theory_of_everything",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

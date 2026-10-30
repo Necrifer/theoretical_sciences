@@ -1,0 +1,223 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "T",
+      "min": 0,
+      "max": 60,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "V",
+      "unit": "MV",
+      "min": 0,
+      "max": 1000,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "G",
+      "unit": "T/m",
+      "min": 0,
+      "max": 400,
+      "step": 0.5,
+      "default": 20
+    },
+    {
+      "id": "I",
+      "unit": "mA",
+      "min": 0,
+      "max": 500,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "m": 0.938,
+    "q": 1
+  },
+  "consts": [
+    {
+      "id": "rho",
+      "expr": "120"
+    },
+    {
+      "id": "Lc",
+      "expr": "20"
+    },
+    {
+      "id": "Lq",
+      "expr": "1.0"
+    },
+    {
+      "id": "ap",
+      "expr": "0.03"
+    },
+    {
+      "id": "en",
+      "expr": "2e-06"
+    },
+    {
+      "id": "mp",
+      "expr": "m"
+    },
+    {
+      "id": "qe",
+      "expr": "q"
+    }
+  ],
+  "states": [],
+  "derived": [
+    {
+      "id": "Bf",
+      "unit": "T",
+      "expr": "B*(1+0.004*d)",
+      "formula": "B_eff = B\u00b7(1 + \u03b4_field)"
+    },
+    {
+      "id": "p",
+      "unit": "GeV/c",
+      "expr": "0.2998*qe*Bf*rho",
+      "formula": "p = 0.2998\u00b7q\u00b7B\u00b7\u03c1"
+    },
+    {
+      "id": "E",
+      "unit": "GeV",
+      "expr": "sqrt(p^2+mp^2)",
+      "formula": "E = \u221a(p\u00b2 + m\u00b2)"
+    },
+    {
+      "id": "Ek",
+      "unit": "GeV",
+      "expr": "E - mp",
+      "formula": "E_k = E \u2212 m"
+    },
+    {
+      "id": "gam",
+      "unit": "",
+      "expr": "E/mp",
+      "formula": "\u03b3 = E/m"
+    },
+    {
+      "id": "bet",
+      "unit": "c",
+      "expr": "p/E",
+      "formula": "\u03b2 = p/E"
+    },
+    {
+      "id": "U0",
+      "unit": "GeV",
+      "expr": "6.034e-18*qe^2*gam^4*bet^3/rho",
+      "formula": "U\u2080 = 6.03\u00d710\u207b\u00b9\u2078\u00b7q\u00b2\u00b7\u03b3\u2074\u00b7\u03b2\u00b3/\u03c1"
+    },
+    {
+      "id": "Psr",
+      "unit": "MW",
+      "expr": "U0*I",
+      "formula": "P = U\u2080\u00b7I"
+    },
+    {
+      "id": "kq",
+      "unit": "1/m\u00b2",
+      "expr": "0.2998*qe*G/p",
+      "formula": "k = 0.2998\u00b7q\u00b7G/p"
+    },
+    {
+      "id": "x",
+      "unit": "",
+      "expr": "Lc*kq*Lq/4",
+      "formula": "sin(\u03bc/2) = L\u00b7k\u00b7l_q/4",
+      "show": false
+    },
+    {
+      "id": "mu",
+      "unit": "\u00b0",
+      "expr": "114.592*atan(x/sqrt(pos(1-x^2)))",
+      "formula": "\u03bc = 2\u00b7asin(L\u00b7k\u00b7l_q/4)"
+    },
+    {
+      "id": "bmax",
+      "unit": "m",
+      "expr": "Lc*(1+x)/(2*x*sqrt(pos(1-x^2)))",
+      "formula": "\u03b2_max = L(1+sin(\u03bc/2))/sin \u03bc"
+    },
+    {
+      "id": "sig",
+      "unit": "mm",
+      "expr": "1000*sqrt(bmax*en/(gam*bet))",
+      "formula": "\u03c3 = \u221a(\u03b2_max\u00b7\u03b5_n/(\u03b2\u03b3))"
+    },
+    {
+      "id": "Bpole",
+      "unit": "T",
+      "expr": "G*ap",
+      "formula": "B_pole = G\u00b7a"
+    },
+    {
+      "id": "dQ",
+      "unit": "",
+      "expr": "0.004*I*qe^2/(mp*bet^2*gam^3)",
+      "formula": "\u0394Q \u221d I\u00b7q\u00b2/(m\u00b7\u03b2\u00b2\u00b7\u03b3\u00b3)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "rf",
+      "kind": "stop",
+      "expr": "qe*V/1000 - U0",
+      "formula": "q\u00b7V \u2265 U\u2080"
+    },
+    {
+      "id": "focus_lo",
+      "kind": "stop",
+      "expr": "x - 0.02",
+      "formula": "sin(\u03bc/2) > 0"
+    },
+    {
+      "id": "focus_hi",
+      "kind": "stop",
+      "expr": "0.98 - x",
+      "formula": "sin(\u03bc/2) < 1"
+    },
+    {
+      "id": "space_charge",
+      "kind": "stop",
+      "expr": "0.25 - dQ",
+      "formula": "\u0394Q < 0.25"
+    },
+    {
+      "id": "aperture",
+      "kind": "wear",
+      "expr": "ap*1000 - 6*sig",
+      "formula": "6\u03c3 < 30 mm"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (max(Bf, Bpole))",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "I/100*2*x*sqrt(pos(1-x^2))",
+  "rate_formula": "rate = I/100 mA \u00b7 sin \u03bc",
+  "heat": "4 + 10*Psr + 0.0004*I*Ek",
+  "idle_heat": "3",
+  "quench_energy": "60*B^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

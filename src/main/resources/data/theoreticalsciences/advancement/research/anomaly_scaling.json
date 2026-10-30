@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:anomaly_catalogue"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.anomaly_scaling"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.anomaly_scaling.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/symbiosis_parasitism",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

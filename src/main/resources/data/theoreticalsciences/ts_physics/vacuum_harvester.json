@@ -1,0 +1,107 @@
+{
+  "params": [
+    {
+      "id": "nu",
+      "unit": "",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "default": 50,
+      "bind": "setting"
+    },
+    {
+      "id": "eps",
+      "unit": "",
+      "min": 0,
+      "max": 0.01,
+      "step": 1e-05,
+      "default": 0.0001
+    },
+    {
+      "id": "lgQ",
+      "unit": "log\u2081\u2080",
+      "min": 3,
+      "max": 11,
+      "step": 0.01,
+      "default": 6
+    },
+    {
+      "id": "Bm",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Gp",
+      "unit": "",
+      "expr": "eps*10^lgQ/4*(1+0.02*d)",
+      "formula": "G = \u03b5Q/4"
+    },
+    {
+      "id": "Nph",
+      "unit": "",
+      "expr": "Gp^2/pos(1 - Gp^2)",
+      "formula": "N = G\u00b2/(1 \u2212 G\u00b2)"
+    },
+    {
+      "id": "Qmax",
+      "unit": "log\u2081\u2080",
+      "expr": "log10(1e11/(1 + 1e4*exp(-17.67/T)))",
+      "formula": "Q_max \u221d 1/R_s(T)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "avalanche",
+      "kind": "quench",
+      "expr": "0.98 - Gp",
+      "formula": "\u03b5Q/4 < 1"
+    },
+    {
+      "id": "qreach",
+      "kind": "stop",
+      "expr": "Qmax - lgQ",
+      "formula": "Q \u2264 Q_max(T)"
+    },
+    {
+      "id": "drive",
+      "kind": "stop",
+      "expr": "0.002*Bm - eps",
+      "formula": "\u03b5 \u2264 0.002\u00b7B"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bm)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "clamp(Nph/2, 0, 4)",
+  "rate_formula": "rate = N/2",
+  "heat": "5 + 1000*eps*Bm",
+  "idle_heat": "2",
+  "quench_energy": "30*Bm^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

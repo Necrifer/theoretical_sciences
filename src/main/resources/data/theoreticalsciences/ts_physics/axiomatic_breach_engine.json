@@ -1,0 +1,99 @@
+{
+  "params": [
+    {
+      "id": "sig",
+      "unit": "TeV\u00b3",
+      "min": 0.001,
+      "max": 10,
+      "step": 1e-05,
+      "default": 1
+    },
+    {
+      "id": "de",
+      "unit": "TeV\u2074",
+      "min": 0.001,
+      "max": 10,
+      "step": 0.0001,
+      "default": 1
+    },
+    {
+      "id": "Bb",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "dee",
+      "unit": "TeV\u2074",
+      "expr": "de*(1+0.002*d)",
+      "formula": "\u0394\u03b5",
+      "show": false
+    },
+    {
+      "id": "Rc",
+      "unit": "m",
+      "expr": "3*sig/dee*1.973e-19",
+      "formula": "R_c = 3\u03c3/\u0394\u03b5"
+    },
+    {
+      "id": "Bact",
+      "unit": "",
+      "expr": "27*pi^2*sig^4/(2*dee^3)",
+      "formula": "B = 27\u03c0\u00b2\u03c3\u2074/(2\u0394\u03b5\u00b3)"
+    },
+    {
+      "id": "lgN",
+      "unit": "log\u2081\u2080",
+      "expr": "log10(dee) - Bact/2.302585 + 83.3",
+      "formula": "N = \u0394\u03b5\u00b7e^(\u2212B)\u00b7V\u00b7t"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "quench",
+      "expr": "3 - lgN",
+      "formula": "log N < 3"
+    },
+    {
+      "id": "barrier",
+      "kind": "stop",
+      "expr": "Bb - 2*sig",
+      "formula": "B \u2265 2 T\u00b7\u03c3"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bb)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "20 + 0.5*Bb",
+  "idle_heat": "4",
+  "quench_energy": "60*Bb^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

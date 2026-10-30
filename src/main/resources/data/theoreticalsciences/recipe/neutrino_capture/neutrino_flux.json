@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:neutrino_capture",
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:neutrino_flux",
+      "amount": 100
+    }
+  ],
+  "energy": 4096,
+  "duration": 250,
+  "research": "theoreticalsciences:neutrino_physics",
+  "scaled": 6,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cryocooler_unit",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 8000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "mekanism:elite_control_circuit",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,84 @@
+{
+  "type": "theoreticalsciences:horizon_simulation",
+  "min_tier": 5,
+  "chances": [
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    1.0,
+    1.0
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:cosmic_string_segment",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:raw_star_matter",
+      "amount": 4000
+    },
+    {
+      "fluid": "theoreticalsciences:residual_starlight",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:white_hole_fragment",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:micro_singularity",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:cosmic_string_segment",
+      "count": 8
+    },
+    {
+      "id": "theoreticalsciences:multiverse_shard",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:exotic_matter_crystal",
+      "count": 32
+    },
+    {
+      "id": "theoreticalsciences:horizon_shard",
+      "count": 4
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:exotic_matter",
+      "amount": 8000
+    },
+    {
+      "id": "theoreticalsciences:dark_energy",
+      "amount": 4000
+    },
+    {
+      "id": "theoreticalsciences:liquid_spacetime",
+      "amount": 1000
+    }
+  ],
+  "energy": 67108864,
+  "duration": 1600,
+  "research": "theoreticalsciences:horizon_simulation",
+  "physics": {
+    "windows": [
+      {
+        "q": "OmH",
+        "min": 0.3,
+        "max": 0.4
+      }
+    ]
+  }
+}

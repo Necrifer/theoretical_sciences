@@ -1,0 +1,47 @@
+{
+  "title": "Nanochemistry",
+  "description": "Carbon one atom thick, rolled, folded and caged. Unlocks graphene, nanotubes and buckyballs.",
+  "icon": "theoreticalsciences:graphene_sheet",
+  "x": 6,
+  "y": 11,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:quantum_chemistry",
+    "theoreticalsciences:nanotechnology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:molecular_orbital_lattice",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A nanotube is a strip of graphene rolled up so that the lattice vector n a\u20d71 + m a\u20d72 wraps exactly once around the circumference. The two lattice basis vectors of graphene have equal length and meet at 60\u00b0. Write the diameter of the tube using the dot product of the wrapping vector with itself.",
+    "name": "Carbon tube diameter from the chiral vector (n, m)",
+    "lhs": "D",
+    "form": "sqrt ( ( n * vec ( a _ 1 ) + m * vec ( a _ 2 ) ) \u00b7 ( n * vec ( a _ 1 ) + m * vec ( a _ 2 ) ) ) / \u03c0",
+    "expr": "a * sqrt ( n ^ 2 + n * m + m ^ 2 ) / \u03c0",
+    "ask": "With |a\u20d71| = |a\u20d72| = a and a\u20d71\u00b7a\u20d72 = a\u00b2/2 the diameter is a\u221a(n\u00b2 + nm + m\u00b2)/\u03c0. Find d (nm) for a (10,10) armchair tube with a = 0.246 nm.",
+    "vars": {
+      "n": "first chiral index",
+      "m": "second chiral index",
+      "a": "graphene lattice vector (length a)",
+      "1": "label: first basis vector",
+      "2": "label: second basis vector",
+      "D": "tube diameter"
+    },
+    "given": {
+      "a": 0.246,
+      "n": 10,
+      "m": 10
+    },
+    "unit": "nm",
+    "method": "The circumference is the length of the wrapping vector; expand its square with the dot product of the two basis vectors. Diameter = circumference / \u03c0.",
+    "distractors": [
+      "3",
+      "2",
+      "r"
+    ]
+  }
+}

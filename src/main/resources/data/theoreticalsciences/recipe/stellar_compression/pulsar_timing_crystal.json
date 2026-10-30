@@ -1,0 +1,104 @@
+{
+  "type": "theoreticalsciences:stellar_compression",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:magnetar_shard",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_quartz_block",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:higgs_catalyst",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:spacetime_alloy_ingot",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:antiquark_shard",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:stellar_iron_ingot",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:neutrino_flux",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:hawking_radiation",
+      "amount": 32000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pulsar_timing_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 1048576,
+  "duration": 1050,
+  "research": "theoreticalsciences:compact_stars",
+  "scaled": 12,
+  "physics": {
+    "windows": [
+      {
+        "q": "f",
+        "min": 300.0,
+        "max": 716.0
+      },
+      {
+        "q": "lgrho",
+        "min": 17.0,
+        "max": 18.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "neoecoae:energized_superconductive_ingot",
+      "count": 24
+    },
+    {
+      "item": "cataclysm:witherite_ingot",
+      "count": 24
+    },
+    {
+      "item": "gtceu:quantum_processor_assembly",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:gelid_cryotheum",
+      "amount": 24000
+    },
+    {
+      "fluid": "mysticalagradditions:molten_supremium",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

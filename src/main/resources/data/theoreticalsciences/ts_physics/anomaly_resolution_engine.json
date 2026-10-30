@@ -1,0 +1,78 @@
+{
+  "params": [
+    {
+      "id": "D",
+      "unit": "Gy",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "default": 2
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "default": 33
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "al",
+      "unit": "Gy\u207b\u00b9",
+      "expr": "0.3*(1 + 0.05*d)",
+      "formula": "\u03b1 = 0.3\u00b7(1 + 0.05\u00b7d)"
+    },
+    {
+      "id": "lk",
+      "unit": "",
+      "expr": "n*(al*D + 0.03*D^2)",
+      "formula": "ln(1/S) = n(\u03b1D + \u03b2D\u00b2)"
+    },
+    {
+      "id": "tcp",
+      "unit": "",
+      "expr": "exp(-1e9*exp(-lk))",
+      "formula": "TCP = exp(\u2212N\u2080\u00b7e^{\u2212n(\u03b1D + \u03b2D\u00b2)})"
+    },
+    {
+      "id": "bed",
+      "unit": "Gy",
+      "expr": "n*D*(1 + D/3)",
+      "formula": "BED\u2083 = nD(1 + D/3)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "survive",
+      "kind": "stop",
+      "expr": "tcp - 0.5",
+      "formula": "TCP \u2265 50%"
+    },
+    {
+      "id": "toxic",
+      "kind": "damage",
+      "expr": "120 - bed",
+      "formula": "BED\u2083 < 120 Gy"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "1300 - T",
+      "formula": "T < 1300 K"
+    }
+  ],
+  "rate": "clamp(2*tcp, 0, 2)",
+  "rate_formula": "rate = 2\u00b7TCP",
+  "heat": "0.3 + 0.008*bed",
+  "idle_heat": "0.3",
+  "quench_energy": "0",
+  "kappa": 50,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

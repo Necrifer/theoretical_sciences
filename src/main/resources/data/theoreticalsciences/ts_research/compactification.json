@@ -1,0 +1,63 @@
+{
+  "title": "Compactification",
+  "description": "Where are the extra dimensions? Rolled up too small to see. Unlocks the Compactification Lathe.",
+  "icon": "theoreticalsciences:compactified_circle",
+  "x": 12,
+  "y": -3,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:brane_cosmology",
+    "theoreticalsciences:string_theory",
+    "theoreticalsciences:abstract_algebra"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:kaluza_klein_shard",
+      "count": 8
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A massless field lives in five dimensions, one of which is curled into a circle of radius R. Its momentum around the circle can only take whole-number values n of \u0127/R. Seen from four dimensions, write the energy of each mode with ordinary momentum p, including a rest mass m it may also have.",
+    "name": "Kaluza\u2013Klein mass tower",
+    "lhs": "E ^ 2",
+    "form": "p ^ 2 * c ^ 2 + m ^ 2 * c ^ 4 + ( n * \u0127 * c / R ) ^ 2",
+    "expr": "n * hc / R / 1000",
+    "ask": "For a massless field at rest, the n-th mode has E = n\u0127c/R. Find the first excitation in GeV for the radius below.",
+    "vars": {
+      "E": "energy",
+      "p": "four-dimensional momentum",
+      "c": "speed of light",
+      "m": "rest mass",
+      "n": "mode number",
+      "\u0127": "reduced Planck constant",
+      "R": "radius of the extra dimension (fm)",
+      "hc": "\u0127c (MeV fm)"
+    },
+    "given": {
+      "n": 1,
+      "hc": 197.327,
+      "R": 0.001
+    },
+    "unit": "GeV",
+    "method": "Periodicity around the circle quantises the extra momentum component; the five-dimensional energy-momentum relation then looks like a mass in four dimensions.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "-",
+      "L"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "R": [
+        0.00059,
+        0.0014,
+        1e-05
+      ]
+    }
+  }
+}

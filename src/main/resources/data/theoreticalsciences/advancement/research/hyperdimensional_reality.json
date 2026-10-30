@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:bubble_universe_sample"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.hyperdimensional_reality"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.hyperdimensional_reality.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/reality_breach",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

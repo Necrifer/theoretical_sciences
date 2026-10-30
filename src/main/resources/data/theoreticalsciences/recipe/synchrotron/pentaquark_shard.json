@@ -1,0 +1,99 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "chances": [
+    1.0,
+    0.15
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:tachyon_klystron",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:scintillator_crystal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cosmic_record_fragment",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:transcendental_crystal",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:ionic_liquid",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pentaquark_shard",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:magnetic_monopole",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:accelerator_physics",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "m": 0.938,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 80.0,
+        "max": 120.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "oritech:adamant_ingot",
+      "count": 16
+    },
+    {
+      "item": "neoecoae:energized_superconductive_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:blutonium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

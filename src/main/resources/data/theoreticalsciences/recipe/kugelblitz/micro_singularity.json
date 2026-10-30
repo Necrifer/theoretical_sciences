@@ -1,0 +1,89 @@
+{
+  "type": "theoreticalsciences:kugelblitz",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:tachyon_klystron",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:topological_wafer",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:quantum_processor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:topological_boule",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:quadrupole_pole_tip",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:micro_singularity",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hawking_radiation",
+      "amount": 250
+    }
+  ],
+  "energy": 524288,
+  "duration": 1800,
+  "research": "theoreticalsciences:singularity_physics",
+  "scaled": 8,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgM",
+        "min": 8.7,
+        "max": 9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "ae2:singularity",
+      "count": 16
+    },
+    {
+      "item": "mysticalextendedtier:lightium_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:cryomisi",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

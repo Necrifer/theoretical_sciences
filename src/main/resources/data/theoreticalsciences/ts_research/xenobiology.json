@@ -1,0 +1,52 @@
+{
+  "title": "Xenobiology",
+  "description": "Life in other dimensions does not use DNA. Unlocks xenogenome work, Xenoplasm and silicon life.",
+  "icon": "theoreticalsciences:xenogenome_sample",
+  "x": 13,
+  "y": 14,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:synthetic_biology",
+    "theoreticalsciences:brane_cosmology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 16
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "An alien genome is a string of L letters drawn from an alphabet of b chemically distinct bases, base j appearing with probability p_j. Write the information it can store, in bits: the length times the average surprise per letter, built from the probabilities and their logarithms, converted from natural units to bits.",
+    "name": "Shannon entropy of a genome sequence",
+    "lhs": "I",
+    "form": "- L * sum ( j , 1 , b , p _ j * ln ( p _ j ) / ln ( 2 ) )",
+    "expr": "L * ln ( b ) / ln ( 2 )",
+    "ask": "For equally likely bases p_j = 1/b this becomes L\u00b7log\u2082 b. Find the information in bits of a @{L}-letter genome over an 8-letter alphabet.",
+    "vars": {
+      "I": "information (bits)",
+      "L": "genome length",
+      "b": "alphabet size",
+      "j": "base index",
+      "p": "probability of base j"
+    },
+    "given": {
+      "L": 100,
+      "b": 8
+    },
+    "unit": "bits",
+    "method": "Average \u2212log\u2082 p_j over the alphabet; log\u2082 p = ln p / ln 2; multiply by the number of letters.",
+    "distractors": [
+      "exp",
+      "4",
+      "N"
+    ],
+    "vary": {
+      "L": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

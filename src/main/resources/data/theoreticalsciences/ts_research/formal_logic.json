@@ -1,0 +1,42 @@
+{
+  "title": "Formal Logic",
+  "description": "Axioms, inference rules, proofs. Unlocks the Formal Proof Assistant and the Empty Set.",
+  "icon": "theoreticalsciences:axiom_schema",
+  "x": 2,
+  "y": 9,
+  "insight": 15,
+  "requires": [
+    "theoreticalsciences:number_systems",
+    "theoreticalsciences:quantum_entanglement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A truth function of n propositional variables is fixed by its truth table, which has 2\u207f rows. Count all possible truth functions by grouping them according to how many rows are true: choose which k of the rows are true, and add over every possible k.",
+    "name": "Counting Boolean functions (binomial sum over truth tables)",
+    "lhs": "N",
+    "form": "sum ( k , 0 , 2 ^ n , binom ( 2 ^ n , k ) )",
+    "expr": "2 ^ 2 ^ n",
+    "ask": "The binomial sum collapses to 2^(2\u207f). Find how many distinct truth functions exist on n = 3 variables.",
+    "vars": {
+      "N": "number of distinct truth functions",
+      "n": "number of propositional variables",
+      "k": "number of true rows"
+    },
+    "given": {
+      "n": 3
+    },
+    "unit": "functions",
+    "method": "Each subset of the 2\u207f rows is the set of rows where the function is true; count subsets of each size with a binomial coefficient.",
+    "distractors": [
+      "1",
+      "3",
+      "m"
+    ]
+  }
+}

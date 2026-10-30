@@ -1,0 +1,69 @@
+{
+  "title": "Systems: Epidemics, Percolation & Phase Transitions",
+  "description": "Between hosts, an infection is a reproduction number. Above R = 1 it spreads through a population; below it, it dies out - a phase transition, the same as water freezing or a fluid percolating through porous rock. Unlocks the Contagion Network Map.",
+  "icon": "theoreticalsciences:contagion_network_map",
+  "x": 18,
+  "y": 9,
+  "insight": 360,
+  "requires": [
+    "theoreticalsciences:invasion_fronts",
+    "theoreticalsciences:clonal_evolution"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:microenvironment_organoid",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:resistant_clone",
+      "count": 2
+    }
+  ],
+  "time": 1680,
+  "puzzle": {
+    "goal": "A population of N is split into the susceptible S, the infected I and the recovered. Infected hosts meet others at random and transmit at a rate \u03b2 per contact with a susceptible; they recover at a rate \u03b3 and die of other causes at a rate \u03bc. Write how the number of infected changes.",
+    "name": "Kermack\u2013McKendrick SIR model with vital dynamics, the infected equation",
+    "lhs": "d ( I , t )",
+    "form": "\u03b2 * S * I / N - ( \u03b3 + \u03bc ) * I",
+    "expr": "1 - ( \u03b3 + \u03bc ) / \u03b2",
+    "ask": "At the start S \u2248 N, and the infection grows only if R\u2080 = \u03b2/(\u03b3 + \u03bc) is above 1 - a phase transition. It stops spreading once a fraction 1 \u2212 1/R\u2080 is immune. Find that herd-immunity threshold.",
+    "vars": {
+      "I": "number infected",
+      "t": "time",
+      "\u03b2": "transmission rate",
+      "S": "number susceptible",
+      "N": "population",
+      "\u03b3": "recovery rate",
+      "\u03bc": "background death rate"
+    },
+    "given": {
+      "\u03b2": 0.6,
+      "\u03b3": 0.2,
+      "\u03bc": 0.01
+    },
+    "unit": "",
+    "method": "New infections come from S\u00b7I contacts, a fraction I/N of each susceptible's meetings; infected leave by recovery or death.",
+    "distractors": [
+      "R",
+      "exp",
+      "k"
+    ],
+    "vary": {
+      "\u03b2": [
+        0.36,
+        0.84,
+        0.001
+      ],
+      "\u03b3": [
+        0.12,
+        0.28,
+        0.001
+      ],
+      "\u03bc": [
+        0.006,
+        0.014,
+        0.0001
+      ]
+    }
+  }
+}

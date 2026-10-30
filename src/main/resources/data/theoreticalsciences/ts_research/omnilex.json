@@ -1,0 +1,66 @@
+{
+  "title": "The Omnilex",
+  "description": "Understand the Tree and the Ocean well enough to simulate them, and you control both. Unlocks the Omnilex Engine - the final machine.",
+  "icon": "theoreticalsciences:omnilex",
+  "x": 20,
+  "y": -1,
+  "insight": 1000,
+  "requires": [
+    "theoreticalsciences:hyperdimensional_reality",
+    "theoreticalsciences:theory_of_everything"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:law_crystal",
+      "count": 8
+    }
+  ],
+  "time": 6720,
+  "puzzle": {
+    "goal": "To predict everything, add up every possible history. Slice the time from start to end into N steps of length \u03b5; at each intermediate step the particle of mass m may be at any position x_k. Weight each zig-zag path by the phase e^{iS/\u0127}, where S is the discretised action (kinetic minus potential energy V_k at each slice, times \u03b5), integrate over all intermediate positions with the proper normalising factor per slice, and let the slicing become infinitely fine.",
+    "name": "Feynman path integral (time-sliced propagator)",
+    "lhs": "K",
+    "form": "lim ( N , \u221e , ( m / ( 2 * \u03c0 * i * \u0127 * \u03b5 ) ) ^ ( N / 2 ) * int ( exp ( i / \u0127 * sum ( k , 0 , N - 1 , \u03b5 * ( m / 2 * ( ( x _ ( k + 1 ) - x _ k ) / \u03b5 ) ^ 2 - V _ k ) ) ) , x ) )",
+    "expr": "m * L ^ 2 / ( 2 * \u0127 * T )",
+    "ask": "For a free particle the sum over paths gives K = \u221a(m/(2\u03c0i\u0127T))\u00b7e^{imL\u00b2/(2\u0127T)}: only the classical path's phase survives. Find that phase mL\u00b2/(2\u0127T) in radians for an electron (m = 9.109e-31 kg) crossing L = @{L} m in T = @{T} s, with \u0127 = 1.055e-34 J s.",
+    "vars": {
+      "K": "propagator \u27e8x_N, t_N | x_0, t_0\u27e9",
+      "N": "number of time slices",
+      "m": "particle mass",
+      "i": "imaginary unit",
+      "\u0127": "reduced Planck constant",
+      "\u03b5": "time step",
+      "k": "slice index",
+      "x": "positions x_k (integrated over every intermediate one)",
+      "V": "potential energy V_k = V(x_k)",
+      "L": "distance travelled (m)",
+      "T": "total time (s)"
+    },
+    "given": {
+      "m": 9.109e-31,
+      "L": 1e-06,
+      "T": 1e-09,
+      "\u0127": 1.055e-34
+    },
+    "unit": "rad",
+    "method": "Split e^{\u2212iHT/\u0127} into N factors, insert a complete set of position states between each pair, and do the Gaussian momentum integral at each slice.",
+    "distractors": [
+      "h",
+      "+",
+      "\u039b",
+      "3"
+    ],
+    "vary": {
+      "L": [
+        5.9e-07,
+        1.4e-06,
+        1e-08
+      ],
+      "T": [
+        6e-10,
+        1.4e-09,
+        1e-11
+      ]
+    }
+  }
+}

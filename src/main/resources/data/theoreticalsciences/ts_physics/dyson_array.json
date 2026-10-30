@@ -1,0 +1,72 @@
+{
+  "params": [
+    {
+      "id": "r",
+      "unit": "AU",
+      "min": 0.005,
+      "max": 5,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "cov",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Teq",
+      "unit": "K",
+      "expr": "394.1/sqrt(r)*(1+0.01*d)",
+      "formula": "T = (L/(4\u03c0r\u00b2\u03c3))^(1/4)"
+    },
+    {
+      "id": "flux",
+      "unit": "W/m\u00b2",
+      "expr": "1361/r^2",
+      "formula": "F = L/(4\u03c0r\u00b2)"
+    },
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "pos(1 - T/Teq)",
+      "formula": "\u03b7 = 1 \u2212 T_cold/T_hot"
+    },
+    {
+      "id": "Pu",
+      "unit": "W/m\u00b2",
+      "expr": "flux*cov*eta",
+      "formula": "F\u00b7duty\u00b7\u03b7"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "melt",
+      "kind": "damage",
+      "expr": "2000 - Teq",
+      "formula": "T < 2000 K"
+    },
+    {
+      "id": "carnot",
+      "kind": "stop",
+      "expr": "eta - 0.01",
+      "formula": "T_cold < T_hot"
+    }
+  ],
+  "rate": "Pu/(0.3*1361)",
+  "rate_formula": "output = useful flux / (30% of 1 AU)",
+  "heat": "10 + 15*cov*(1 - eta)*min(flux/1361, 20)",
+  "idle_heat": "2",
+  "quench_energy": "0",
+  "kappa": 200,
+  "heat_capacity": 200,
+  "timescale": 1,
+  "rate_max": 4
+}

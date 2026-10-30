@@ -1,0 +1,126 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.01,
+      "default": 3
+    },
+    {
+      "id": "Vt",
+      "unit": "V",
+      "min": 0,
+      "max": 1000,
+      "step": 0.1,
+      "default": 50
+    },
+    {
+      "id": "lgne",
+      "unit": "log\u2081\u2080 m\u207b\u00b3",
+      "min": 10,
+      "max": 16,
+      "step": 0.01,
+      "default": 13
+    },
+    {
+      "id": "Prf",
+      "unit": "kW",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "Tm": 0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "wc",
+      "unit": "rad/s",
+      "expr": "9.58e7*B",
+      "formula": "\u03c9_c = qB/m"
+    },
+    {
+      "id": "wz",
+      "unit": "rad/s",
+      "expr": "sqrt(9.58e7*Vt/(0.005^2))",
+      "formula": "\u03c9_z = \u221a(qV/(md\u00b2))"
+    },
+    {
+      "id": "stab",
+      "unit": "",
+      "expr": "1 - 2*wz^2/(wc^2 + 1e-9)",
+      "formula": "1 \u2212 2\u03c9_z\u00b2/\u03c9_c\u00b2"
+    },
+    {
+      "id": "Te",
+      "unit": "K",
+      "expr": "T*(1 + 0.1*abs(d))",
+      "formula": "T_e"
+    },
+    {
+      "id": "lgBr",
+      "unit": "log\u2081\u2080 m\u207b\u00b3",
+      "expr": "log10(4.86e12*B^2 + 1)",
+      "formula": "n_B = \u03b5\u2080B\u00b2/(2m_e)"
+    },
+    {
+      "id": "lgrec",
+      "unit": "log\u2081\u2080 /s",
+      "expr": "-11.22 - 4.5*log10(Te/4.2) + 2*(lgne - 6)",
+      "formula": "\u0393 \u221d n_e\u00b2\u00b7T^(\u22129/2)"
+    },
+    {
+      "id": "Tpool",
+      "unit": "K",
+      "expr": "T + 40*Prf",
+      "formula": "T_pool"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "trap",
+      "kind": "stop",
+      "expr": "stab",
+      "formula": "\u03c9_c\u00b2 > 2\u03c9_z\u00b2"
+    },
+    {
+      "id": "brillouin",
+      "kind": "stop",
+      "expr": "lgBr - lgne",
+      "formula": "n_e < \u03b5\u2080B\u00b2/2m_e"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (B)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "clamp((lgrec - 2)/1.5, 0, 4)",
+  "rate_formula": "rate = (log \u0393 \u2212 2)/1.5",
+  "heat": "6 + 0.4*Prf + 0.3*B",
+  "idle_heat": "2",
+  "quench_energy": "60*B^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,46 @@
+{
+  "title": "Dyson Swarm",
+  "description": "Millions of statites harvesting starlight.",
+  "icon": "theoreticalsciences:dyson_swarm_satellite",
+  "x": 10,
+  "y": 1,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:stellar_engineering"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:solar_statite",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A collector far from a star sees its disc fill a cone of half-angle \u03b8_s around the line of sight. Every direction inside that cone delivers the star's surface radiance B. Write the power per unit area falling on a collector facing the star by integrating the radiance, projected onto the collector's normal, over the solid angle of the cone.",
+    "name": "Irradiance from a uniform stellar disc (radiance integrated over solid angle)",
+    "lhs": "F",
+    "form": "int ( 0 , 2 * \u03c0 , int ( 0 , \u03b8 _ s , B * cos ( \u03b8 ) * sin ( \u03b8 ) , \u03b8 ) , \u03c6 )",
+    "expr": "L / ( 4 * \u03c0 * r ^ 2 )",
+    "ask": "The integral gives \u03c0B\u00b7sin\u00b2\u03b8_s = \u03c3T\u2074(R/r)\u00b2 = L/(4\u03c0r\u00b2). Find the flux at r = 1.496e11 m from a star of luminosity L = 3.828e26 W.",
+    "vars": {
+      "F": "flux (irradiance)",
+      "\u03b8": "angle from the line of sight",
+      "\u03c6": "azimuth around the line of sight",
+      "s": "label: the edge of the stellar disc",
+      "B": "surface radiance of the star",
+      "L": "luminosity (W)",
+      "r": "distance (m)"
+    },
+    "given": {
+      "L": 3.828e+26,
+      "r": 149600000000.0
+    },
+    "unit": "W/m\u00b2",
+    "method": "In spherical angles the solid-angle element is sin\u03b8 d\u03b8 d\u03c6; the flat collector picks up a cos\u03b8 projection factor.",
+    "distractors": [
+      "4",
+      "tan",
+      "T"
+    ]
+  }
+}

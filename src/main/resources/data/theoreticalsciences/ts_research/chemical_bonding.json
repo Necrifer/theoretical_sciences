@@ -1,0 +1,55 @@
+{
+  "title": "Chemical Bonding",
+  "description": "Atoms share electrons because a shared wavefunction has lower energy. Unlocks the Chemical Reactor.",
+  "icon": "theoreticalsciences:chemical_reactor",
+  "x": 2,
+  "y": 11,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:quantum_foundations",
+    "theoreticalsciences:number_systems"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Two identical atoms A and B each hold one orbital, \u03c6 on A and \u03c7 on B. Try the shared trial wave \u03c6 + \u03c7 and compute its energy as the expectation value of the Hamiltonian H divided by the norm of the trial wave. Using the symmetry of the two atoms, write the energy in terms of the on-site integral \u27e8\u03c6|H|\u03c6\u27e9, the hopping integral \u27e8\u03c6|H|\u03c7\u27e9 and the overlap \u27e8\u03c6|\u03c7\u27e9.",
+    "name": "Bonding-orbital energy of the LCAO (H\u00fcckel-type) variational treatment",
+    "lhs": "E",
+    "form": "( mel ( \u03c6 , H , \u03c6 ) + mel ( \u03c6 , H , \u03c7 ) ) / ( 1 + braket ( \u03c6 , \u03c7 ) )",
+    "expr": "\u03b1 - ( \u03b1 + \u03b2 ) / ( 1 + S )",
+    "ask": "With \u03b1 = \u27e8\u03c6|H|\u03c6\u27e9 = \u221213.6 eV, \u03b2 = \u27e8\u03c6|H|\u03c7\u27e9 = \u221210 eV and overlap S = @{S}, find how far the bonding orbital lies below a lone atomic orbital: \u03b1 \u2212 E.",
+    "vars": {
+      "E": "energy of the bonding (shared) orbital",
+      "\u03c6": "orbital on atom A (normalised)",
+      "\u03c7": "orbital on atom B (normalised)",
+      "H": "the molecule's Hamiltonian",
+      "\u03b1": "on-site (Coulomb) integral \u27e8\u03c6|H|\u03c6\u27e9",
+      "\u03b2": "hopping (resonance) integral \u27e8\u03c6|H|\u03c7\u27e9",
+      "S": "overlap \u27e8\u03c6|\u03c7\u27e9"
+    },
+    "given": {
+      "\u03b1": -13.6,
+      "\u03b2": -10,
+      "S": 0.25
+    },
+    "unit": "eV",
+    "method": "Expand \u27e8\u03c6+\u03c7|H|\u03c6+\u03c7\u27e9 / \u27e8\u03c6+\u03c7|\u03c6+\u03c7\u27e9; with normalised, identical orbitals the numerator is 2(\u03b1+\u03b2) and the denominator 2(1+S).",
+    "distractors": [
+      "2",
+      "-",
+      "\u03c8"
+    ],
+    "vary": {
+      "S": [
+        0.15,
+        0.35,
+        0.001
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Boltzmann Brains & Poincar\u00e9 Recurrence",
+  "description": "A dead universe is not quite dead. In a finite system at equilibrium every state comes back, given time, and fluctuations out of equilibrium happen by pure chance - a star, a planet, a brain. Unlocks the Boltzmann Fluctuation.",
+  "icon": "theoreticalsciences:boltzmann_fluctuation",
+  "x": 14,
+  "y": -8,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:heat_death",
+    "theoreticalsciences:thermodynamics_of_information"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:heat_death_ember",
+      "count": 4
+    }
+  ],
+  "time": 1080,
+  "puzzle": {
+    "goal": "A small part of a universe at equilibrium, at temperature T, can fluctuate by chance into a state with a little more energy (by \u0394_E) and a little less entropy (by \u0394_S) than it should have. The probability falls off exponentially in the free energy the fluctuation needs, measured in units of k_BT. Write the probability.",
+    "name": "Einstein\u2013Boltzmann fluctuation formula",
+    "lhs": "P",
+    "form": "exp ( - ( \u0394 _ E - T * \u0394 _ S ) / ( kB * T ) )",
+    "expr": "S / ln ( 10 )",
+    "ask": "A brain-sized fluctuation that costs no energy but lowers the entropy by S \u00d7 10\u2075\u2070 k_B has 1/P = 10^X. Find X in units of 10\u2075\u2070. (A whole universe returns, by Poincar\u00e9 recurrence, after about e^{10\u00b9\u00b2\u00b2} years - far longer.)",
+    "vars": {
+      "P": "probability",
+      "\u0394": "change",
+      "E": "energy",
+      "S": "entropy (10\u2075\u2070 k_B in step 2)",
+      "T": "temperature",
+      "kB": "Boltzmann constant"
+    },
+    "given": {
+      "S": 1.2
+    },
+    "unit": "10\u2075\u2070",
+    "method": "Einstein's fluctuation formula: the probability of a state is e^{S/k_B}; for a subsystem in contact with a bath use the total entropy change, \u0394_S \u2212 \u0394_E/T.",
+    "distractors": [
+      "\u0127",
+      "ln",
+      "2"
+    ]
+  }
+}

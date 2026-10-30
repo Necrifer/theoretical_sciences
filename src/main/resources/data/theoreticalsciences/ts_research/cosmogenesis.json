@@ -1,0 +1,53 @@
+{
+  "title": "Cosmogenesis",
+  "description": "False vacuum decay plus inflation equals a new universe. Then harvest it.",
+  "icon": "theoreticalsciences:pocket_universe",
+  "x": 13,
+  "y": -1,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:multiverse"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:multiverse_shard",
+      "count": 8
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "A scalar field \u03c6 sits in a false vacuum of energy V_f and can tunnel to a lower one by nucleating a bubble. In imaginary time the bubble is O(4)-symmetric, so its Euclidean action is an integral over the radius r with the area 2\u03c0\u00b2r\u00b3 of a 3-sphere. Write the action of the bubble relative to the false vacuum.",
+    "name": "Coleman bounce action (thin-wall false vacuum decay)",
+    "lhs": "B",
+    "form": "2 * \u03c0 ^ 2 * int ( 0 , \u221e , r ^ 3 * ( 1 / 2 * d ( \u03c6 , r ) ^ 2 + V - V _ f ) , r )",
+    "expr": "27 * \u03c0 ^ 2 * \u03c3 ^ 4 / ( 2 * \u03b5 ^ 3 )",
+    "ask": "For a thin wall of tension \u03c3 and vacuum energy difference \u03b5 the action is B(R) = 2\u03c0\u00b2R\u00b3\u03c3 \u2212 \u03c0\u00b2R\u2074\u03b5/2, extremal at R = 3\u03c3/\u03b5, giving B = 27\u03c0\u00b2\u03c3\u2074/(2\u03b5\u00b3). Find B (decay rate \u221d e^(\u2212B)) in natural units.",
+    "vars": {
+      "B": "bounce (tunnelling) action",
+      "r": "Euclidean radius",
+      "\u03c6": "scalar field",
+      "V": "potential energy density",
+      "f": "false vacuum",
+      "\u03c3": "wall tension",
+      "\u03b5": "energy density difference of the two vacua"
+    },
+    "given": {
+      "\u03c3": 2,
+      "\u03b5": 1.5
+    },
+    "unit": "",
+    "method": "Rotate time to imaginary time; the least-action tunnelling path is spherically symmetric in four Euclidean dimensions, so dV\u2084 = 2\u03c0\u00b2r\u00b3dr and the Lagrangian is kinetic plus potential energy.",
+    "distractors": [
+      "4",
+      "+",
+      "\u0127"
+    ],
+    "vary": {
+      "\u03b5": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

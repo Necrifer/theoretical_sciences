@@ -1,0 +1,65 @@
+{
+  "title": "Stellar Evolution",
+  "description": "Stars are born from nebulae, live on the main sequence, swell into giants and die. Unlocks the Nucleosynthesis Chamber.",
+  "icon": "theoreticalsciences:protostar_core",
+  "x": 8,
+  "y": 3,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:dark_sector",
+    "theoreticalsciences:plasma_metallurgy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 16
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A star stays on the main sequence until it has burnt a fraction f of its mass M, and fusing hydrogen releases 0.7% of the burnt mass as energy. Its luminosity scales with mass to the power 3.5 relative to the Sun. Write its main-sequence lifetime as the burnt mass integrated against energy released per unit mass divided by luminosity.",
+    "name": "Stellar lifetime from the mass\u2013luminosity relation",
+    "lhs": "t",
+    "form": "int ( 0 , f * M , 0.007 * c ^ 2 / ( L _ \u2609 * ( M / M _ \u2609 ) ^ 3.5 ) , m )",
+    "expr": "0.007 * f * Ms * c ^ 2 / ( Ls * Gyr ) * M ^ ( - 2.5 )",
+    "ask": "Find the lifetime in billions of years of a star of M = @{M} solar masses with f = @{f}.",
+    "vars": {
+      "t": "main-sequence lifetime",
+      "f": "fraction of the mass burnt",
+      "M": "stellar mass (in the numeric step: in solar masses)",
+      "c": "speed of light",
+      "L": "luminosity (L\u2609 the Sun's)",
+      "m": "burnt mass",
+      "Ms": "solar mass (kg)",
+      "Ls": "solar luminosity (W)",
+      "Gyr": "seconds in a billion years"
+    },
+    "given": {
+      "f": 0.1,
+      "Ms": 1.989e+30,
+      "c": 300000000,
+      "Ls": 3.828e+26,
+      "Gyr": 3.156e+16,
+      "M": 2
+    },
+    "unit": "Gyr",
+    "method": "Energy per burnt mass is 0.007c\u00b2; divide by the (constant) luminosity, which follows L \u221d M^3.5, and integrate over the burnt mass.",
+    "distractors": [
+      "4",
+      "\u03c3",
+      "G"
+    ],
+    "vary": {
+      "f": [
+        0.06,
+        0.14,
+        0.001
+      ],
+      "M": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Dyson Sphere",
+  "description": "Close the swarm into a shell and capture a star's entire output.",
+  "icon": "theoreticalsciences:dyson_shell_segment",
+  "x": 11,
+  "y": 1,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:dyson_swarm"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:higgs_field_capacitor",
+      "count": 2
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A thin closed shell of radius r surrounds a star and absorbs all of its light. In equilibrium the shell radiates the star's whole luminosity from its outer surface only, as a black body at uniform temperature T. Write that luminosity as the radiated flux integrated over the shell in spherical coordinates.",
+    "name": "Radiative equilibrium of a closed shell (Stefan\u2013Boltzmann)",
+    "lhs": "L",
+    "form": "int ( 0 , \u03c0 , int ( 0 , 2 * \u03c0 , \u03c3 * T ^ 4 * r ^ 2 * sin ( \u03b8 ) , \u03c6 ) , \u03b8 )",
+    "expr": "( L * Ls / ( 4 * \u03c0 * ( r * AU ) ^ 2 * \u03c3 ) ) ^ 0.25",
+    "ask": "The integral is 4\u03c0r\u00b2\u03c3T\u2074. Find the equilibrium temperature (K) of a shell at r = @{r} AU around a star of L = @{L} solar luminosities.",
+    "vars": {
+      "L": "stellar luminosity (in the numeric step: in solar luminosities)",
+      "\u03c3": "radiation constant of a black body",
+      "T": "shell temperature",
+      "r": "shell radius (in the numeric step: in AU)",
+      "\u03b8": "polar angle",
+      "\u03c6": "azimuth",
+      "Ls": "solar luminosity (W)",
+      "AU": "astronomical unit (m)"
+    },
+    "given": {
+      "L": 0.5,
+      "Ls": 3.828e+26,
+      "r": 0.7,
+      "AU": 149600000000.0,
+      "\u03c3": 5.67e-08
+    },
+    "unit": "K",
+    "method": "Each area element r\u00b2 sin \u03b8 d\u03b8 d\u03c6 emits \u03c3T\u2074; integrate over the full sphere and set the total equal to the luminosity, then solve for T.",
+    "distractors": [
+      "cos",
+      "3",
+      "kB"
+    ],
+    "vary": {
+      "L": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "r": [
+        0.42,
+        0.98,
+        0.001
+      ]
+    }
+  }
+}

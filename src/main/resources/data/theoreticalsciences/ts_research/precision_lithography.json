@@ -1,0 +1,66 @@
+{
+  "title": "Precision Lithography",
+  "description": "Grow crystal boules, slice them into wafers, engrave them through lenses and cut them into dies. Unlocks the Lattice Growth Vat, Planck-Scale Cutter and Quantum Lithographer.",
+  "icon": "theoreticalsciences:photonic_logic_wafer",
+  "x": 2,
+  "y": -3,
+  "insight": 8,
+  "requires": [
+    "theoreticalsciences:casimir_effect"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Monochromatic light of wavenumber k passes through a slit of width a in a mask and is collected at angle \u03b8. Add up the wavelets from every point x across the opening, each with the phase delay its path picks up, to get the far-field amplitude.",
+    "name": "Fraunhofer slit diffraction (Rayleigh resolution of a lithography lens)",
+    "lhs": "U",
+    "form": "int ( - a / 2 , a / 2 , exp ( - i * k * x * sin ( \u03b8 ) ) , x )",
+    "expr": "k1 * \u03bb / NA",
+    "ask": "The integral gives U = a\u00b7sin \u03b2/\u03b2 with \u03b2 = ka\u00b7sin\u03b8/2, which first vanishes at sin \u03b8 = \u03bb/a. A lens of numerical aperture NA collects sin \u03b8 \u2264 NA, so the finest printable feature is CD = k1\u00b7\u03bb/NA. Find CD (nm) for the immersion scanner below.",
+    "vars": {
+      "U": "far-field amplitude at angle \u03b8",
+      "a": "slit (mask opening) width",
+      "i": "imaginary unit",
+      "k": "wavenumber 2\u03c0/\u03bb",
+      "x": "position across the slit",
+      "\u03b8": "observation angle",
+      "k1": "process factor of the resist",
+      "\u03bb": "wavelength (nm)",
+      "NA": "numerical aperture of the lens"
+    },
+    "given": {
+      "k1": 0.28,
+      "\u03bb": 193,
+      "NA": 1.35
+    },
+    "unit": "nm",
+    "method": "Each point of the opening is a source; its wavelet arrives with phase k\u00b7x\u00b7sin\u03b8 relative to the centre. Integrate the phase factor across the opening, then find the first zero of the result.",
+    "distractors": [
+      "cos",
+      "\u03c0",
+      "\u03bb"
+    ],
+    "vary": {
+      "k1": [
+        0.168,
+        0.392,
+        0.001
+      ],
+      "\u03bb": [
+        116.0,
+        270.0,
+        1.0
+      ],
+      "NA": [
+        0.81,
+        1.89,
+        0.01
+      ]
+    }
+  }
+}

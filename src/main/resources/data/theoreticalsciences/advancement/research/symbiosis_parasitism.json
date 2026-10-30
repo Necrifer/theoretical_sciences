@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:symbiont_culture"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.symbiosis_parasitism"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.symbiosis_parasitism.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/epidemic_dynamics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

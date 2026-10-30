@@ -1,0 +1,58 @@
+{
+  "title": "The Simulation Hypothesis",
+  "description": "If reality is computed, it can be decompiled - and edited.",
+  "icon": "theoreticalsciences:source_code_fragment",
+  "x": 14,
+  "y": 0,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:matrioshka_brain",
+    "theoreticalsciences:cosmogenesis",
+    "theoreticalsciences:causality_violation",
+    "theoreticalsciences:holographic_principle"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:boltzmann_brain",
+      "count": 1
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "Any region that holds information must hold it in physical states, and a finite region with finite energy has finitely many. Write the maximum number of bits that fit in a sphere of radius R as 2\u03c0R/(\u0127c\u00b7ln 2) times its total energy, with that energy written as the volume integral (in spherical shells) of the mass density \u03c1(r) times c\u00b2.",
+    "name": "Bekenstein bound (energy integrated over the region)",
+    "lhs": "I",
+    "form": "2 * \u03c0 * R / ( \u0127 * c * ln ( 2 ) ) * int ( 0 , R , 4 * \u03c0 * r ^ 2 * \u03c1 * c ^ 2 , r )",
+    "expr": "2 * \u03c0 * R * E / ( \u0127c * ln ( 2 ) )",
+    "ask": "With the energy integral done, I = 2\u03c0RE/(\u0127c ln 2). Find the bound for a proton: R = @{R} fm, E = 938.3 MeV and \u0127c = 197.3 MeV fm.",
+    "vars": {
+      "I": "information (bits)",
+      "R": "radius of the region (fm)",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light",
+      "r": "radial coordinate",
+      "\u03c1": "mass density",
+      "E": "total energy (MeV)",
+      "\u0127c": "\u0127 times c (MeV fm)"
+    },
+    "given": {
+      "R": 0.84,
+      "E": 938.3,
+      "\u0127c": 197.3
+    },
+    "unit": "bits",
+    "method": "Entropy over kB is at most 2\u03c0RE/(\u0127c); bits are entropy divided by ln 2; a sphere's volume element is 4\u03c0r\u00b2 dr.",
+    "distractors": [
+      "G",
+      "3",
+      "kB"
+    ],
+    "vary": {
+      "R": [
+        0.504,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

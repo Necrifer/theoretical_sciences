@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:dyson_swarm_satellite"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.dyson_swarm"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.dyson_swarm.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/stellar_engineering",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

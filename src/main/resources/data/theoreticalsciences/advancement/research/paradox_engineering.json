@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:russell_paradox_set"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.paradox_engineering"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.paradox_engineering.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/transfinite_mathematics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

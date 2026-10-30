@@ -1,0 +1,58 @@
+{
+  "title": "Conceptual Singularities",
+  "description": "Compress an entire field of knowledge into one point. Unlocks the Conceptual Singularity Compressor.",
+  "icon": "theoreticalsciences:mathematics_singularity",
+  "x": 15,
+  "y": 3,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:category_theory",
+    "theoreticalsciences:simulation_hypothesis",
+    "theoreticalsciences:transfinite_mathematics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:topos",
+      "count": 1
+    }
+  ],
+  "time": 1950,
+  "puzzle": {
+    "goal": "A source emits N symbols from an alphabet of k letters, letter j with probability pj. For long messages almost every message has letter j appearing N\u00b7pj times; the number of such typical messages is a multinomial coefficient. Write the number of bits per symbol needed to give each typical message its own code word, in the limit of long messages.",
+    "name": "Shannon entropy from typical-sequence counting (source coding)",
+    "lhs": "H",
+    "form": "lim ( N , \u221e , log ( N ! / prod ( j , 1 , k , ( N * p _ j ) ! ) ) / ( N * log ( 2 ) ) )",
+    "expr": "N * ln ( k ) / ln ( 2 )",
+    "ask": "With Stirling's approximation the limit is H = \u2212\u03a3 pj log\u2082 pj, and the message needs N\u00b7H bits. Find the minimum number of bits for N = @{N} symbols drawn uniformly from k = @{k} letters.",
+    "vars": {
+      "H": "bits per symbol",
+      "N": "message length",
+      "j": "letter index",
+      "k": "alphabet size",
+      "p": "letter probability"
+    },
+    "given": {
+      "N": 1000,
+      "k": 26
+    },
+    "unit": "bits",
+    "method": "Count arrangements of a message with fixed letter counts, take log\u2082 to get the bits needed to index them, apply ln n! \u2248 n ln n \u2212 n, and divide by N.",
+    "distractors": [
+      "exp",
+      "ln",
+      "+"
+    ],
+    "vary": {
+      "N": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "k": [
+        16.0,
+        36.0,
+        1.0
+      ]
+    }
+  }
+}

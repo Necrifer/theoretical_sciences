@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:casimir_energy_cell"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.vacuum_energy_storage"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.vacuum_energy_storage.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/cryogenics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

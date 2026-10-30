@@ -1,0 +1,47 @@
+{
+  "title": "Singularity Physics",
+  "description": "Event horizons, Hawking radiation and the Kugelblitz: a black hole made from light alone.",
+  "icon": "theoreticalsciences:micro_singularity",
+  "x": 7,
+  "y": 1,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:dark_sector"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:exotic_matter_crystal",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A probe falls straight towards a non-rotating mass M. In the curved spacetime outside it, the clock rate and radial distances are both modified by the factor (1 \u2212 rs/r). Write the normalisation of the four-velocity (dots are rates per unit of the probe's own time) for purely radial motion; the factor vanishes at the horizon.",
+    "name": "Schwarzschild metric (radial four-velocity normalisation)",
+    "lhs": "c ^ 2",
+    "form": "( 1 - r _ s / r ) * c ^ 2 * tdot ( t ) ^ 2 - tdot ( r ) ^ 2 / ( 1 - r _ s / r )",
+    "expr": "2 * G * M / c ^ 2 / 1000",
+    "ask": "The horizon radius is rs = 2GM/c\u00b2. Find it, in km, for one solar mass.",
+    "vars": {
+      "r": "radial coordinate",
+      "t": "coordinate time",
+      "c": "speed of light (m/s)",
+      "s": "label: horizon",
+      "G": "gravitational constant",
+      "M": "mass (kg)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+30,
+      "c": 299800000.0
+    },
+    "unit": "km",
+    "method": "Proper time is the interval along the path. The time part is weighted by (1 \u2212 rs/r), the radial part by its inverse, with opposite signs.",
+    "distractors": [
+      "2",
+      "+",
+      "\u03b8",
+      "\u03c6"
+    ]
+  }
+}

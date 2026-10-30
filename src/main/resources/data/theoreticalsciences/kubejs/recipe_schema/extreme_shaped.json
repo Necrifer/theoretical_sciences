@@ -1,0 +1,34 @@
+{
+  "keys": [
+    {
+      "name": "result",
+      "role": "output",
+      "type": "item_stack"
+    },
+    {
+      "name": "pattern",
+      "role": "other",
+      "type": {
+        "type": "list",
+        "component": "string"
+      }
+    },
+    {
+      "name": "key",
+      "role": "input",
+      "type": {
+        "type": "pattern",
+        "component": "ingredient"
+      }
+    }
+  ],
+  "constructors": [
+    {
+      "keys": [
+        "result",
+        "pattern",
+        "key"
+      ]
+    }
+  ]
+}

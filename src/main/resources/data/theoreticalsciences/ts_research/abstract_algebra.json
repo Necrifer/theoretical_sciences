@@ -1,0 +1,63 @@
+{
+  "title": "Abstract Algebra",
+  "description": "Quaternions, octonions and spinors: number systems that give up commutativity, then associativity.",
+  "icon": "theoreticalsciences:quaternion_crystal",
+  "x": 6,
+  "y": 8,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:complex_analysis",
+    "theoreticalsciences:particle_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:complex_plane",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Write two four-component numbers as a real part plus a three-vector part, a + u\u20d7 and b + w\u20d7, where the three imaginary units square to \u22121 and anticommute. Multiply them out using vector operations only.",
+    "name": "Quaternion product (Hamilton product in scalar\u2013vector form)",
+    "lhs": "( a + vec ( u ) ) * ( b + vec ( w ) )",
+    "form": "a * b - vec ( u ) \u00b7 vec ( w ) + a * vec ( w ) + b * vec ( u ) + vec ( u ) \u00d7 vec ( w )",
+    "expr": "a * w3 + b * u3 + u1 * w2 - u2 * w1",
+    "ask": "Find the k-component (third vector component) of the product of q\u2081 = 2 + i + 2j + 3k and q\u2082 = 3 + 4i + j + 2k.",
+    "vars": {
+      "a": "real part of the first quaternion",
+      "b": "real part of the second",
+      "u": "vector part of the first",
+      "w": "vector part of the second",
+      "u1": "i-component of u",
+      "u2": "j-component of u",
+      "u3": "k-component of u",
+      "w1": "i-component of w",
+      "w2": "j-component of w",
+      "w3": "k-component of w"
+    },
+    "given": {
+      "a": 2,
+      "b": 3,
+      "u1": 1,
+      "u2": 2,
+      "u3": 3,
+      "w1": 4,
+      "w2": 1,
+      "w3": 2
+    },
+    "unit": "",
+    "method": "Expand the product term by term; for two pure vectors use ij = k, jk = i, ki = j, ji = \u2212k and i\u00b2 = \u22121, and recognise the dot and cross products.",
+    "distractors": [
+      "i",
+      "+",
+      "2"
+    ],
+    "vary": {
+      "w1": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

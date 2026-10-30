@@ -1,0 +1,52 @@
+{
+  "title": "Cosmic Inflation",
+  "description": "Why is the universe so flat, so smooth, and the same in every direction - even regions that could never have touched? Because a scalar field, the inflaton, made space grow by e sixty times over in 10^-32 seconds. Unlocks the Inflation Chamber and Inflaton Condensate.",
+  "icon": "theoreticalsciences:inflaton_condensate",
+  "x": 10,
+  "y": -6,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:big_bang_cosmology",
+    "theoreticalsciences:dark_energy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 8
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "A scalar field \u03c6 with potential V(\u03c6) dominates the universe and rolls so slowly that friction from the expansion balances the slope. Each step d\u03c6 then grows space by dN = H dt e-folds. Using H\u00b2 = V/(3M_P\u00b2) and 3H\u03c6\u0307 = \u2212dV/d\u03c6, write the number of e-folds made while the field rolls from \u03c6 down to where it stops inflating, \u03c6_e.",
+    "name": "e-fold count of slow-roll inflation",
+    "lhs": "N",
+    "form": "1 / M _ P ^ 2 * int ( \u03c6 _ e , \u03c6 , V / d ( V , \u03c6 ) , \u03c6 )",
+    "expr": "( \u03c6 ^ 2 - 2 ) / 4",
+    "ask": "For V = \u00bdm\u00b2\u03c6\u00b2 the integrand is \u03c6/2, so N = (\u03c6\u00b2 \u2212 \u03c6_e\u00b2)/(4M_P\u00b2). Inflation ends when \u03b5 = 1, at \u03c6_e = \u221a2 M_P. With M_P = 1, find N for a start at \u03c6.",
+    "vars": {
+      "N": "number of e-folds",
+      "M": "reduced Planck mass",
+      "P": "Planck",
+      "\u03c6": "inflaton field",
+      "e": "end of inflation",
+      "V": "inflaton potential"
+    },
+    "given": {
+      "\u03c6": 15
+    },
+    "unit": "e-folds",
+    "method": "Write dN = H dt = H d\u03c6/\u03c6\u0307 and replace \u03c6\u0307 by the slow-roll equation; H\u00b2 and V' combine into V/V'.",
+    "distractors": [
+      "H",
+      "exp",
+      "3"
+    ],
+    "vary": {
+      "\u03c6": [
+        9.0,
+        21.0,
+        1.0
+      ]
+    }
+  }
+}

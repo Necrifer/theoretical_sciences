@@ -1,0 +1,54 @@
+{
+  "type": "theoreticalsciences:nucleosynthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:pentaquark_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:gravitic_lens_element",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:red_giant_envelope",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:white_dwarf_core",
+      "count": 1
+    }
+  ],
+  "energy": 262144,
+  "duration": 2400,
+  "research": "theoreticalsciences:stellar_evolution",
+  "scaled": 8,
+  "optional_inputs": [
+    {
+      "item": "projecte:dark_matter",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "avaritia_integration:molten_crystal_matrix",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,57 @@
+{
+  "title": "The Platonic Realm",
+  "description": "If mathematical objects exist somewhere, they exist here. Unlocks the Platonic Compass.",
+  "icon": "theoreticalsciences:platonic_compass",
+  "x": 2,
+  "y": 8,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:number_systems"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "At every vertex of a convex polyhedron the face angles \u03b8_j fall short of a full turn; that shortfall is the vertex's angular deficit. Sum the deficits over all V vertices: the total depends only on the shape's topology, through the number V \u2212 E + F.",
+    "name": "Descartes' theorem on total angular defect (discrete Gauss\u2013Bonnet)",
+    "lhs": "2 * \u03c0 * \u03c7",
+    "form": "sum ( n , 1 , V , 2 * \u03c0 - sumk ( j , \u03b8 _ j ) )",
+    "expr": "4 * \u03c0 / ( 2 * \u03c0 - q * ( p - 2 ) * \u03c0 / p )",
+    "ask": "For a convex solid \u03c7 = 2, so the deficits total 4\u03c0. In a regular solid each vertex joins q regular p-gons (angle (p\u22122)\u03c0/p each). Find the number of vertices V of the dodecahedron (pentagons, three at each vertex).",
+    "vars": {
+      "\u03c7": "Euler characteristic V \u2212 E + F",
+      "n": "vertex number",
+      "V": "number of vertices",
+      "j": "faces meeting at vertex n",
+      "\u03b8": "face angle at the vertex",
+      "p": "sides of each face",
+      "q": "faces meeting at each vertex"
+    },
+    "given": {
+      "p": 5,
+      "q": 3
+    },
+    "unit": "vertices",
+    "method": "Flatten the corners: each vertex's deficit is 2\u03c0 minus its face angles. Count all face angles face by face (each p-gon has angle sum (p\u22122)\u03c0) and use V \u2212 E + F.",
+    "distractors": [
+      "E",
+      "F",
+      "4"
+    ],
+    "vary": {
+      "p": [
+        4.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

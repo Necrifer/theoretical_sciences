@@ -1,0 +1,52 @@
+{
+  "title": "Special Relativity",
+  "description": "The speed of light is the same for everyone - so time and space cannot be. Unlocks the Tensor Calculus Engine.",
+  "icon": "theoreticalsciences:lorentz_transform_crystal",
+  "x": 4,
+  "y": 5,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:tachyonics",
+    "theoreticalsciences:calculus"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:real_continuum",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A body of rest mass m moves at speed v. Write its total energy as the rest-mass energy multiplied by the time-dilation factor, written out in full in terms of v and c.",
+    "name": "Relativistic energy (mass-energy equivalence)",
+    "lhs": "E",
+    "form": "m * c ^ 2 / sqrt ( 1 - v ^ 2 / c ^ 2 )",
+    "expr": "m * c ^ 2 / sqrt ( 1 - v ^ 2 / c ^ 2 )",
+    "ask": "Find the total energy of m = @{m} kg moving at 0.6c, with c in units of 1e8 m/s (so v = 1.8) - the answer is in 1e16 J.",
+    "vars": {
+      "E": "total energy",
+      "m": "rest mass (kg)",
+      "c": "speed of light (1e8 m/s)",
+      "v": "speed (1e8 m/s)"
+    },
+    "given": {
+      "m": 1,
+      "c": 3,
+      "v": 1.8
+    },
+    "unit": "1e16 J",
+    "method": "The energy is the time component of the four-momentum, \u03b3mc\u00b2, with \u03b3 = 1/\u221a(1 \u2212 v\u00b2/c\u00b2).",
+    "distractors": [
+      "+",
+      "4",
+      "p"
+    ],
+    "vary": {
+      "m": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

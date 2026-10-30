@@ -1,0 +1,89 @@
+{
+  "type": "theoreticalsciences:white_hole",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:white_hole_fragment",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:neutronium_block",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:modular_form",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:assembly_matrix",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:kugelblitz_seed",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_antihelium",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_core",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_plasma",
+      "amount": 1000
+    }
+  ],
+  "energy": 2097152,
+  "duration": 3600,
+  "research": "theoreticalsciences:stellar_engineering",
+  "scaled": 8,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgL",
+        "min": 17.5,
+        "max": 18.5
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "mekanism:pellet_polonium",
+      "count": 16
+    },
+    {
+      "item": "iceandfire:dragonsteel_ice_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:flibe_hot_molten_salt",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

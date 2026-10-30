@@ -1,0 +1,48 @@
+{
+  "title": "The Multiverse",
+  "description": "Other branes, other constants, other universes - and a way to reach them.",
+  "icon": "theoreticalsciences:multiverse_shard",
+  "x": 12,
+  "y": -1,
+  "insight": 150,
+  "requires": [
+    "theoreticalsciences:quantum_gravity",
+    "theoreticalsciences:m_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:graviton_crystal",
+      "count": 4
+    }
+  ],
+  "time": 510,
+  "puzzle": {
+    "goal": "A homogeneous universe with scale factor a(t) contains matter-energy of density \u03c1, has spatial curvature k and a constant vacuum energy \u039b. Write the square of its relative expansion rate from energy conservation in general relativity.",
+    "name": "Friedmann equation with cosmological constant",
+    "lhs": "( tdot ( a ) / a ) ^ 2",
+    "form": "8 * \u03c0 * G / 3 * \u03c1 - k * c ^ 2 / a ^ 2 + \u039b * c ^ 2 / 3",
+    "expr": "exp ( 3 * H * t )",
+    "ask": "When \u039b dominates, \u0227/a = H is constant and a \u221d e^{Ht}, so a region's volume - and the number of Hubble volumes it holds - grows as e^{3Ht}. Find that factor after H\u00b7t = 2 (H = 0.5, t = 4 in matching units).",
+    "vars": {
+      "a": "scale factor",
+      "G": "gravitational constant",
+      "\u03c1": "mass density",
+      "k": "spatial curvature (\u22121, 0, +1)",
+      "c": "speed of light",
+      "\u039b": "cosmological constant",
+      "H": "expansion rate",
+      "t": "time"
+    },
+    "given": {
+      "H": 0.5,
+      "t": 4
+    },
+    "unit": "Hubble volumes",
+    "method": "Apply Einstein's equations to the uniform metric (or Newtonian energy of an expanding sphere plus curvature and vacuum terms).",
+    "distractors": [
+      "2",
+      "-",
+      "p"
+    ]
+  }
+}

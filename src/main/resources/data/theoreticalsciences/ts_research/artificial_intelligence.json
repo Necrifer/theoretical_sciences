@@ -1,0 +1,57 @@
+{
+  "title": "Artificial Intelligence",
+  "description": "Photonic neural networks and narrow AI. Unlocks the Neural Synthesizer.",
+  "icon": "theoreticalsciences:narrow_ai_core",
+  "x": 1,
+  "y": 2,
+  "insight": 25,
+  "requires": [
+    "theoreticalsciences:quantum_entanglement",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A neural network outputs raw scores z for each class; they are turned into probabilities by exponentiating and normalising over all classes. Training compares these probabilities with the true labels y (1 for the correct class, 0 otherwise). Write the loss as minus the label-weighted logarithm of the predicted probabilities, summed over classes.",
+    "name": "Cross-entropy loss of a softmax classifier",
+    "lhs": "L",
+    "form": "- sumk ( k , y _ k * ln ( exp ( z _ k ) / sumk ( j , exp ( z _ j ) ) ) )",
+    "expr": "- ln ( exp ( z1 ) / ( exp ( z1 ) + exp ( z2 ) + exp ( z3 ) ) )",
+    "ask": "Class 1 is the correct one (y1 = 1, the others 0). Find the loss for the three scores below.",
+    "vars": {
+      "L": "training loss",
+      "y": "true label of each class (one-hot)",
+      "z": "raw score (logit) of each class",
+      "k": "class index",
+      "j": "class index of the normalising sum",
+      "z1": "score of the correct class",
+      "z2": "score of class 2",
+      "z3": "score of class 3"
+    },
+    "given": {
+      "z1": 2,
+      "z2": 1,
+      "z3": 0
+    },
+    "unit": "nats",
+    "method": "Turn scores into probabilities by exponentiating and dividing by the total; then take minus the logarithm of the probability given to each true label.",
+    "distractors": [
+      "log",
+      "x",
+      "+",
+      "sin"
+    ],
+    "vary": {
+      "z1": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

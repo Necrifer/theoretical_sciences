@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:no_boundary_seed"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.quantum_cosmology"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.quantum_cosmology.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/vacuum_stability",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

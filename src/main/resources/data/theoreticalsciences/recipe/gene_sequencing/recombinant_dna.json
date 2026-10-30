@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:gene_sequencing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:error_correction_lattice",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:recombinant_dna",
+      "count": 2
+    }
+  ],
+  "energy": 16384,
+  "duration": 500,
+  "research": "theoreticalsciences:genomics",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "bigreactors:ludicrite_ingot",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

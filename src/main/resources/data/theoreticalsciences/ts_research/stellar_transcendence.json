@@ -1,0 +1,73 @@
+{
+  "title": "Stellar Transcendence",
+  "description": "Above stellar-core temperatures, matter stops having fixed properties. Unlocks the Transcendent Plasma Forge.",
+  "icon": "theoreticalsciences:hypernova_alloy_ingot",
+  "x": 14,
+  "y": 2,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:simulation_hypothesis",
+    "theoreticalsciences:compact_stars",
+    "theoreticalsciences:accelerator_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:glueball_core",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:hyperon_crystal",
+      "count": 2
+    }
+  ],
+  "time": 1440,
+  "puzzle": {
+    "goal": "In a plasma hotter than any stellar core, atoms lose their electrons. Balance ionisation against recombination in thermal equilibrium: the ratio of ionised to neutral atoms times the electron density is set by the electron's thermal phase-space density, the statistical weights g of the two states, and a Boltzmann factor of the ionisation energy \u03c7.",
+    "name": "Saha ionisation equation",
+    "lhs": "n _ i * n _ e / n _ 0",
+    "form": "2 * g _ 1 / g _ 0 * ( 2 * \u03c0 * m _ e * kB * T / h ^ 2 ) ^ ( 3 / 2 ) * exp ( - \u03c7 / ( kB * T ) )",
+    "expr": "( 2 * \u03c0 * me * kB * T / h ^ 2 ) ^ 1.5 * exp ( - \u03c7 / ( kB * T ) ) / ne",
+    "ask": "For hydrogen 2g1/g0 = 1. Find the ionisation ratio n_i/n_0 at the temperature and electron density below.",
+    "vars": {
+      "n": "number density",
+      "i": "label: ionised",
+      "e": "label: electron",
+      "g": "statistical weight",
+      "m": "mass",
+      "kB": "Boltzmann constant (J/K)",
+      "T": "temperature (K)",
+      "h": "Planck constant",
+      "\u03c7": "ionisation energy (J)",
+      "me": "electron mass (kg)",
+      "ne": "electron density (m\u207b\u00b3)"
+    },
+    "given": {
+      "me": 9.109e-31,
+      "kB": 1.380649e-23,
+      "T": 10000,
+      "h": 6.626e-34,
+      "\u03c7": 2.179e-18,
+      "ne": 1e+20
+    },
+    "unit": "",
+    "method": "Apply the Boltzmann distribution to the ion + free electron state; the free electron's states are counted by phase-space volume divided by h\u00b3.",
+    "distractors": [
+      "3",
+      "\u0127",
+      "+",
+      "\u03bc"
+    ],
+    "vary": {
+      "T": [
+        6000.0,
+        14000.0,
+        1.0
+      ],
+      "ne": [
+        6e+19,
+        1.4e+20,
+        1e+18
+      ]
+    }
+  }
+}

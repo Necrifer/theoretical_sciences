@@ -1,0 +1,46 @@
+{
+  "title": "The Quantum Foam",
+  "description": "Below the Planck length spacetime is a boiling foam where particles borrow existence from the vacuum. Unlocks the Planck Diver and the Vacuum Fluctuation Harvester.",
+  "icon": "theoreticalsciences:planck_diver",
+  "x": 11,
+  "y": -4,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:quantum_gravity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:planck_shard",
+      "count": 4
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "Empty space is a sea of field modes; each mode of wavenumber k keeps a ground-state energy \u00bd\u0127\u03c9 even with no particles present. For a field of mass m, \u03c9 depends on k through the relativistic energy relation. Sum the ground-state energies of all modes per unit volume, counting modes in spherical shells of k-space, up to a cutoff wavenumber k_P where spacetime itself stops being smooth.",
+    "name": "Zero-point vacuum energy density (massive field, Planck cutoff)",
+    "lhs": "u",
+    "form": "int ( 0 , k _ P , 4 * \u03c0 * k ^ 2 / ( 2 * \u03c0 ) ^ 3 * \u0127 / 2 * sqrt ( c ^ 2 * k ^ 2 + m ^ 2 * c ^ 4 / \u0127 ^ 2 ) , k )",
+    "expr": "\u0127 / ( 4 * m * c ^ 2 )",
+    "ask": "The same fluctuations let a particle-antiparticle pair borrow \u0394E = 2mc\u00b2 for \u0394t \u2248 \u0127/(2\u0394E) = \u0127/(4mc\u00b2). Find \u0394t for an electron pair in zeptoseconds, with \u0127 = 658.2 keV\u00b7zs, m = 511 keV/c\u00b2 and c = 1.",
+    "vars": {
+      "u": "vacuum energy density",
+      "k": "mode wavenumber",
+      "P": "label: the cutoff scale",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light",
+      "m": "field (particle) mass"
+    },
+    "given": {
+      "\u0127": 658.2,
+      "m": 511,
+      "c": 1
+    },
+    "unit": "zs",
+    "method": "Modes per unit volume in a shell are 4\u03c0k\u00b2 dk/(2\u03c0)\u00b3; each carries \u00bd\u0127\u03c9 with \u0127\u03c9 = \u221a(\u0127\u00b2c\u00b2k\u00b2 + m\u00b2c\u2074).",
+    "distractors": [
+      "G",
+      "3",
+      "-"
+    ]
+  }
+}

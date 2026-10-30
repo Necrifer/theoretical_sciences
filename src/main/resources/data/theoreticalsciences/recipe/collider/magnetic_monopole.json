@@ -1,0 +1,79 @@
+{
+  "type": "theoreticalsciences:collider",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:coherent_wiring_harness",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:quadrupole_pole_tip",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:photonic_lens",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:noble_gas_clathrate",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:rf_resonator_cell",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetic_monopole",
+      "count": 1
+    }
+  ],
+  "energy": 131072,
+  "duration": 750,
+  "research": "theoreticalsciences:particle_physics",
+  "scaled": 6,
+  "physics": {
+    "vars": {
+      "A": 1.0,
+      "Z": 1.0
+    },
+    "windows": [
+      {
+        "q": "sNN",
+        "min": 2000.0,
+        "max": 3500.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "astralsorcery:celestial_crystal",
+      "count": 24
+    },
+    {
+      "item": "enderio:vibrant_alloy_ingot",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "oritech:still_molten_duratium",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

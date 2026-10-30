@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:phase_transmutation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:magnetic_monopole",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 8000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:higgs_field_capacitor",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 500,
+  "research": "theoreticalsciences:particle_physics",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "nuclearcraft:elite_processor",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

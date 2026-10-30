@@ -1,0 +1,43 @@
+{
+  "title": "Hyperdimensional Geometry",
+  "description": "Tesseracts and Calabi-Yau manifolds: geometry beyond three dimensions.",
+  "icon": "theoreticalsciences:tesseract_core",
+  "x": 9,
+  "y": -1,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:white_holes",
+    "theoreticalsciences:topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superposition_crystal",
+      "count": 4
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "In n dimensions a ball of radius r is a nest of thin spherical shells. The surface area of the unit sphere in n dimensions follows from evaluating the n-dimensional Gaussian integral in Cartesian and in spherical coordinates. Write the volume of the n-ball as an integral over shells of radius \u03c1.",
+    "name": "Hypervolume of an n-ball (shell integral)",
+    "lhs": "V _ n",
+    "form": "int ( 0 , r , 2 * \u03c0 ^ ( n / 2 ) / \u0393 ( n / 2 ) * \u03c1 ^ ( n - 1 ) , \u03c1 )",
+    "expr": "\u03c0 ^ 2 / 2 * r ^ 4",
+    "ask": "The integral is \u03c0^(n/2) r^n / \u0393(n/2 + 1). Find the 4-volume of a 4-ball of radius r = 2 (\u0393(3) = 2).",
+    "vars": {
+      "V": "hypervolume",
+      "n": "number of dimensions",
+      "r": "ball radius",
+      "\u03c1": "radius of a thin shell"
+    },
+    "given": {
+      "r": 2
+    },
+    "unit": "units\u2074",
+    "method": "(\u222be^(\u2212x\u00b2)dx)^n = \u03c0^(n/2) in Cartesian coordinates, and S_(n\u22121)\u222b\u03c1^(n\u22121)e^(\u2212\u03c1\u00b2)d\u03c1 = S_(n\u22121)\u0393(n/2)/2 in spherical ones; equate to get the sphere area, then integrate shells.",
+    "distractors": [
+      "exp",
+      "+",
+      "4"
+    ]
+  }
+}

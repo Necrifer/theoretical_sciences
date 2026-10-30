@@ -1,0 +1,53 @@
+{
+  "title": "Topological Matter",
+  "description": "Phases of matter protected by topology rather than symmetry.",
+  "icon": "theoreticalsciences:topological_insulator",
+  "x": 4,
+  "y": 1,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:metamaterials"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "In a two-dimensional insulator each filled electron band carries a Berry-type curvature \u03a9(k) over crystal momentum space. Write the transverse conductance as the conductance quantum times the integer obtained by integrating that curvature over the whole periodic momentum cell and dividing by 2\u03c0.",
+    "name": "TKNN formula (quantised Hall conductance from the Chern number)",
+    "lhs": "\u03c3",
+    "form": "e ^ 2 / ( 2 * \u03c0 * h ) * iint ( \u03a9 , BZ )",
+    "expr": "\u03bd * e ^ 2 / h",
+    "ask": "The integral is 2\u03c0 times an integer \u03bd. Find the Hall conductance in siemens for \u03bd = @{\u03bd}.",
+    "vars": {
+      "\u03c3": "transverse (Hall) conductance",
+      "e": "elementary charge (C)",
+      "h": "Planck constant (J s)",
+      "\u03a9": "curvature of the filled bands in momentum space",
+      "BZ": "the periodic momentum cell of the crystal",
+      "\u03bd": "the integer topological invariant"
+    },
+    "given": {
+      "\u03bd": 2,
+      "e": 1.602e-19,
+      "h": 6.626e-34
+    },
+    "unit": "S",
+    "method": "The curvature integrated over a closed surface (the momentum torus) is quantised in units of 2\u03c0; multiply by e\u00b2/h.",
+    "distractors": [
+      "\u0127",
+      "4",
+      "c"
+    ],
+    "vary": {
+      "\u03bd": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

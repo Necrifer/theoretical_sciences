@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:chrono_inversion",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:topological_insulator",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:hawking_absorber_plate",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hawking_radiation",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hawking_emitter",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 500,
+  "research": "theoreticalsciences:singularity_physics",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "ae2:cell_component_64k",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

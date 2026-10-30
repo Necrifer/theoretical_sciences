@@ -1,0 +1,76 @@
+{
+  "title": "Supramolecular Chemistry",
+  "description": "Molecules that build themselves into cages, frameworks and machines. Unlocks MOFs, clathrates and self-healing polymers.",
+  "icon": "theoreticalsciences:metal_organic_framework",
+  "x": 8,
+  "y": 11,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:nanochemistry",
+    "theoreticalsciences:topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A host cage and a guest molecule bind in solution. The binding releases enthalpy but costs entropy, as both lose freedom. Write the association constant (per molar concentration) from the enthalpy change, the entropy change and the temperature.",
+    "name": "Gibbs energy of binding (\u0394G\u00b0 = \u0394H\u00b0 \u2212 T\u0394S\u00b0 = \u2212RT ln K)",
+    "lhs": "K",
+    "form": "exp ( - ( \u0394 * H - T * \u0394 * S ) / ( R * T ) ) / c _ 0",
+    "expr": "exp ( - ( dH - T * dS ) / ( R * T ) ) / c0",
+    "ask": "Find the association constant (M\u207b\u00b9) of the host-guest complex below.",
+    "vars": {
+      "K": "association constant",
+      "\u0394": "change on binding",
+      "H": "enthalpy",
+      "S": "entropy",
+      "T": "temperature (K)",
+      "R": "gas constant (J/mol K)",
+      "c": "concentration",
+      "dH": "binding enthalpy (J/mol)",
+      "dS": "binding entropy (J/mol K)",
+      "c0": "standard concentration (1 M)"
+    },
+    "given": {
+      "dH": -40000,
+      "dS": -20,
+      "T": 298,
+      "R": 8.314,
+      "c0": 1
+    },
+    "unit": "M\u207b\u00b9",
+    "method": "The free energy change combines enthalpy and temperature-weighted entropy; equilibrium constants are Boltzmann factors of free energies per mole.",
+    "distractors": [
+      "+",
+      "ln",
+      "U",
+      "kB"
+    ],
+    "vary": {
+      "dH": [
+        -50000.0,
+        -30000.0,
+        1.0
+      ],
+      "dS": [
+        -25.0,
+        -15.0,
+        1.0
+      ],
+      "T": [
+        224.0,
+        372.0,
+        1.0
+      ],
+      "c0": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

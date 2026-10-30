@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:nucleosynthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:neutronium_block",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:prime_shard",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nebular_gas",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:protostar_core",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 1800,
+  "research": "theoreticalsciences:stellar_evolution",
+  "scaled": 8,
+  "optional_inputs": [
+    {
+      "item": "avaritia:crystal_matrix_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:blutonium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

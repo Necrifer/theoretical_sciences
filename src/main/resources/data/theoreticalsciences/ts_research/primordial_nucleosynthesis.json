@@ -1,0 +1,70 @@
+{
+  "title": "Primordial Nucleosynthesis",
+  "description": "For three minutes the whole universe was a fusion reactor. Neutrons froze out at one in six, decayed a little, and were swept into helium-4: a quarter of all matter, as measured. Unlocks Primordial Nucleosynthesis Ash.",
+  "icon": "theoreticalsciences:primordial_ash",
+  "x": 10,
+  "y": -7,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:big_bang_cosmology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:white_dwarf_core",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "One second after the beginning, neutrons and protons stop converting into each other when the weak rate falls below the expansion rate, at temperature T. Their ratio is frozen at the Boltzmann factor of their mass difference Q, and then free neutrons decay with lifetime \u03c4 for a time t until deuterium can survive. Nearly every remaining neutron ends up in helium-4. Write the mass fraction Y of helium.",
+    "name": "Primordial helium abundance (neutron freeze-out)",
+    "lhs": "Y",
+    "form": "2 * exp ( - Q / ( kB * T ) - t / \u03c4 ) / ( 1 + exp ( - Q / ( kB * T ) - t / \u03c4 ) )",
+    "expr": "2 * exp ( - Q / E - t / \u03c4 ) / ( 1 + exp ( - Q / E - t / \u03c4 ) )",
+    "ask": "With Q = @{Q} MeV, freeze-out at k_BT = E, and the neutrons decaying for t seconds before nucleosynthesis, find Y.",
+    "vars": {
+      "Y": "helium-4 mass fraction",
+      "Q": "neutron-proton mass difference",
+      "kB": "Boltzmann constant",
+      "T": "freeze-out temperature",
+      "t": "time until deuterium survives",
+      "\u03c4": "free neutron lifetime",
+      "E": "freeze-out energy k_BT (MeV)"
+    },
+    "given": {
+      "Q": 1.293,
+      "E": 0.75,
+      "t": 180,
+      "\u03c4": 880
+    },
+    "unit": "",
+    "method": "Each helium-4 nucleus holds two neutrons and two protons, so all the neutrons n make a helium mass fraction 2n/(n + p). Divide by p.",
+    "distractors": [
+      "\u0127",
+      "ln",
+      "4"
+    ],
+    "vary": {
+      "Q": [
+        0.77,
+        1.82,
+        0.01
+      ],
+      "E": [
+        0.449,
+        0.999,
+        0.001
+      ],
+      "t": [
+        108.0,
+        252.0,
+        1.0
+      ],
+      "\u03c4": [
+        528.0,
+        1232.0,
+        1.0
+      ]
+    }
+  }
+}

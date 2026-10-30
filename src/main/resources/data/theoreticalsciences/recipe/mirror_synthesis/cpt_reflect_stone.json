@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:mirror_synthesis",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cpt_mirror"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:stone",
+      "count": 384
+    },
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1024000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antistone",
+      "count": 32
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:antiwater",
+      "amount": 8000
+    }
+  ],
+  "energy": 1048576,
+  "duration": 1050,
+  "research": "theoreticalsciences:cpt_symmetry",
+  "unscaled": true
+}

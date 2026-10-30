@@ -1,0 +1,106 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "chances": [
+    0.3
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:dimensional_residue",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_solder",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:spacetime_slag",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_matter",
+      "amount": 400
+    },
+    {
+      "id": "theoreticalsciences:exotic_matter",
+      "amount": 250
+    },
+    {
+      "id": "theoreticalsciences:inflaton_field",
+      "amount": 100
+    },
+    {
+      "id": "theoreticalsciences:chronon_gas",
+      "amount": 200
+    }
+  ],
+  "energy": 524288,
+  "duration": 900,
+  "research": "theoreticalsciences:fractional_distillation",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "al": 1.5,
+      "xF": 0.3,
+      "Tb": 500.0,
+      "dH": 30.0
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.999,
+        "max": 1.0
+      }
+    ]
+  },
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:xenobot_swarm",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:mirror_alloy_ingot",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:white_dwarf_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:tachyon_singularity",
+      "count": 16
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "mysticalextendedtier:lightium_ingot",
+      "count": 16
+    },
+    {
+      "item": "bigreactors:ridiculite_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "mysticalagradditions:molten_supremium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Compact Stars",
+  "description": "Neutron stars, magnetars, pulsars and quark stars - the densest objects short of a singularity.",
+  "icon": "theoreticalsciences:quark_star_core",
+  "x": 9,
+  "y": 2,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:penrose_process",
+    "theoreticalsciences:neutrino_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neutronium_block",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A neutron star with moment of inertia I spins at angular velocity \u03a9. Its magnetic dipole m, tilted by \u03b1 from the rotation axis, radiates electromagnetic waves like a rotating antenna, and that radiated power is drawn from the rotational kinetic energy. Write the rate of change of that energy.",
+    "name": "Magnetic-dipole spin-down of a pulsar",
+    "lhs": "d ( I * \u03a9 ^ 2 / 2 , t )",
+    "form": "- \u03bc0 * m ^ 2 * \u03a9 ^ 4 * sin ( \u03b1 ) ^ 2 / ( 6 * \u03c0 * c ^ 3 )",
+    "expr": "P / ( 2 * Pd ) / 31557600",
+    "ask": "Since d\u03a9/dt \u221d \u2212\u03a9\u00b3, integrating from a fast birth spin gives the characteristic age \u03c4 = P/(2\u1e56). Find it in years for the Crab pulsar (1 yr = 31 557 600 s).",
+    "vars": {
+      "I": "moment of inertia",
+      "\u03a9": "angular velocity",
+      "t": "time",
+      "\u03bc0": "vacuum permeability",
+      "m": "magnetic dipole moment",
+      "\u03b1": "angle between magnetic and spin axes",
+      "c": "speed of light",
+      "P": "spin period (s)",
+      "Pd": "period derivative dP/dt"
+    },
+    "given": {
+      "P": 0.0334,
+      "Pd": 4.21e-13
+    },
+    "unit": "years",
+    "method": "A rotating dipole has a second time derivative of size m\u03a9\u00b2 sin \u03b1; insert it into the power radiated by an accelerated dipole, and set the result equal to minus the change of rotational energy.",
+    "distractors": [
+      "\u03b50",
+      "3",
+      "cos"
+    ],
+    "vary": {
+      "P": [
+        0.02,
+        0.0468,
+        0.0001
+      ],
+      "Pd": [
+        2.52e-13,
+        5.9e-13,
+        1e-15
+      ]
+    }
+  }
+}

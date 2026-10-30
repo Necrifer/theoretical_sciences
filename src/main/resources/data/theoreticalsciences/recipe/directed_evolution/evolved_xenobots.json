@@ -1,0 +1,56 @@
+{
+  "type": "theoreticalsciences:directed_evolution",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:xenobot_swarm",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:silicon_life_spore",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:xenogenome_sample",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:xenobot_swarm",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:silicon_life_spore",
+      "count": 2
+    }
+  ],
+  "energy": 4194304,
+  "duration": 1200,
+  "research": "theoreticalsciences:directed_evolution",
+  "environment": {
+    "time_min": 10
+  },
+  "physics": {
+    "vars": {
+      "Lg": 1000000.0,
+      "vmin": 0.001
+    },
+    "windows": [
+      {
+        "q": "v",
+        "min": 0.001,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

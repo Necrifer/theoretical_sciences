@@ -1,0 +1,31 @@
+{
+  "keys": [
+    {
+      "name": "result",
+      "role": "output",
+      "type": "item_stack"
+    },
+    {
+      "name": "ingredient",
+      "role": "input",
+      "type": "ingredient"
+    },
+    {
+      "name": "count",
+      "role": "other",
+      "type": "positive_int",
+      "function_names": [
+        "count"
+      ]
+    }
+  ],
+  "constructors": [
+    {
+      "keys": [
+        "result",
+        "ingredient",
+        "count"
+      ]
+    }
+  ]
+}

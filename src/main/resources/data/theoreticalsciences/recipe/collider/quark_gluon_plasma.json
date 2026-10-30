@@ -1,0 +1,75 @@
+{
+  "type": "theoreticalsciences:collider",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:dilithium_crystal",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 8000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 1000
+    }
+  ],
+  "energy": 32768,
+  "duration": 500,
+  "research": "theoreticalsciences:particle_physics",
+  "scaled": 6,
+  "physics": {
+    "vars": {
+      "A": 208.0,
+      "Z": 82.0
+    },
+    "windows": [
+      {
+        "q": "sNN",
+        "min": 150.0,
+        "max": 600.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "twilightforest:fiery_ingot",
+      "count": 24
+    },
+    {
+      "item": "spectrum:paltaeria_gem",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:deuterium",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Symbiosis & Parasitism",
+  "description": "Two populations that share a world either compete, prey, or help. A parasite and a symbiont can be the same organism with one interaction coefficient flipped - mitochondria were invaders once. The boundary between anomaly and normality is a sign. Unlocks the Symbiont Culture.",
+  "icon": "theoreticalsciences:symbiont_culture",
+  "x": 18,
+  "y": 11,
+  "insight": 360,
+  "requires": [
+    "theoreticalsciences:clonal_evolution",
+    "theoreticalsciences:epidemic_dynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:resistant_clone",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:xenobot_swarm",
+      "count": 4
+    }
+  ],
+  "time": 1680,
+  "puzzle": {
+    "goal": "Two populations N\u2081 and N\u2082 share a world. Each grows logistically at rate r_i up to its own capacity K_i, and each member of the second population counts as \u03b1 members of the first against that capacity - \u03b1 > 0 is competition, \u03b1 < 0 is help. Write how the first population changes.",
+    "name": "competitive Lotka\u2013Volterra equations (and mutualism)",
+    "lhs": "d ( N _ 1 , t )",
+    "form": "r _ 1 * N _ 1 * ( 1 - ( N _ 1 + \u03b1 * N _ 2 ) / K _ 1 )",
+    "expr": "( K - \u03b1 * L ) / ( 1 - \u03b1 * \u03b2 )",
+    "ask": "The second population has the mirror equation with coefficient \u03b2. They coexist at N\u2081* = (K\u2081 \u2212 \u03b1K\u2082)/(1 \u2212 \u03b1\u03b2). With K\u2081 = K and K\u2082 = L, find N\u2081*.",
+    "vars": {
+      "N": "population",
+      "r": "growth rate",
+      "\u03b1": "effect of population 2 on 1",
+      "K": "carrying capacity (of 1)",
+      "L": "carrying capacity of 2",
+      "\u03b2": "effect of population 1 on 2",
+      "t": "time"
+    },
+    "given": {
+      "K": 100,
+      "L": 80,
+      "\u03b1": 0.5,
+      "\u03b2": 0.4
+    },
+    "unit": "",
+    "method": "Logistic growth r N(1 \u2212 N/K) with the other population added to the crowding term. For the equilibrium set both brackets to zero and solve the pair.",
+    "distractors": [
+      "\u03b3",
+      "exp",
+      "2"
+    ],
+    "vary": {
+      "K": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "L": [
+        48.0,
+        112.0,
+        1.0
+      ],
+      "\u03b1": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "\u03b2": [
+        0.24,
+        0.56,
+        0.001
+      ]
+    }
+  }
+}

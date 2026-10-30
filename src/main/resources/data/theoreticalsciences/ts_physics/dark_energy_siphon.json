@@ -1,0 +1,112 @@
+{
+  "params": [
+    {
+      "id": "a",
+      "unit": "\u00b5m",
+      "min": 0.01,
+      "max": 300,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "A",
+      "unit": "m\u00b2",
+      "min": 0.01,
+      "max": 100,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "f",
+      "unit": "Hz",
+      "min": 0,
+      "max": 1000,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "ks",
+      "unit": "N/m",
+      "min": 1,
+      "max": 1000000000.0,
+      "step": 1,
+      "default": 1000
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ae",
+      "unit": "\u00b5m",
+      "expr": "a*(1+0.005*d)",
+      "formula": "a_eff"
+    },
+    {
+      "id": "Pc",
+      "unit": "Pa",
+      "expr": "1.3e-27/(ae*1e-6)^4",
+      "formula": "P = \u03c0\u00b2\u0127c/(240a\u2074)"
+    },
+    {
+      "id": "u",
+      "unit": "J/m\u00b3",
+      "expr": "Pc/3",
+      "formula": "|u| = \u03c0\u00b2\u0127c/(720a\u2074)"
+    },
+    {
+      "id": "lgu",
+      "unit": "log\u2081\u2080",
+      "expr": "log10(u/6e-10)",
+      "formula": "log\u2081\u2080(|u|/\u03c1_\u039b)"
+    },
+    {
+      "id": "grad",
+      "unit": "N/m",
+      "expr": "4*Pc*A/(ae*1e-6)",
+      "formula": "dF/da = 4PA/a"
+    },
+    {
+      "id": "lamT",
+      "unit": "\u00b5m",
+      "expr": "2.29e3/T",
+      "formula": "\u03bb_T = \u0127c/kT"
+    },
+    {
+      "id": "Pext",
+      "unit": "W",
+      "expr": "u*A*ae*1e-6*f",
+      "formula": "P = |u|\u00b7A\u00b7a\u00b7f"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "pullin",
+      "kind": "quench",
+      "expr": "ks - grad",
+      "formula": "dF/da < k"
+    },
+    {
+      "id": "thermal",
+      "kind": "stop",
+      "expr": "lamT - ae",
+      "formula": "a < \u0127c/kT"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "400 - T",
+      "formula": "T < 400 K"
+    }
+  ],
+  "rate": "clamp(A*f/50, 0, 4)",
+  "rate_formula": "rate = A\u00b7f / 50 m\u00b2/s",
+  "heat": "3 + 0.002*A*f",
+  "idle_heat": "1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

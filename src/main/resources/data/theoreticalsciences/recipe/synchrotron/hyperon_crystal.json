@@ -1,0 +1,104 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "min_tier": 3,
+  "chances": [
+    1.0,
+    0.25
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:transcendental_crystal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:tachyon_klystron",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:photonic_logic_wafer",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:nanite_swarm",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:plasma_nozzle_tip",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:strange_matter",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hyperon_crystal",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:pentaquark_shard",
+      "count": 1
+    }
+  ],
+  "energy": 262144,
+  "duration": 1200,
+  "research": "theoreticalsciences:accelerator_physics",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "m": 0.938,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 1500.0,
+        "max": 2500.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "spectrum:stratine_gem",
+      "count": 16
+    },
+    {
+      "item": "advanced_ae:quantum_alloy",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:blutonium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

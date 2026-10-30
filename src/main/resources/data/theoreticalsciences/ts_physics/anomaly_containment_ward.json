@@ -1,0 +1,72 @@
+{
+  "params": [
+    {
+      "id": "beta",
+      "unit": "day\u207b\u00b9",
+      "min": 0,
+      "max": 4,
+      "step": 0.01,
+      "default": 1.0
+    },
+    {
+      "id": "q",
+      "unit": "day\u207b\u00b9",
+      "min": 0,
+      "max": 4,
+      "step": 0.01,
+      "default": 1.0
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "be",
+      "unit": "day\u207b\u00b9",
+      "expr": "beta*(1 + 0.1*d)",
+      "formula": "\u03b2_eff = \u03b2\u00b7(1 + 0.1\u00b7d)"
+    },
+    {
+      "id": "Re",
+      "unit": "",
+      "expr": "be/(0.4 + q)",
+      "formula": "R = \u03b2/(\u03b3 + q)"
+    },
+    {
+      "id": "act",
+      "unit": "",
+      "expr": "be*Re",
+      "formula": "A = \u03b2\u00b7R"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "breach",
+      "kind": "damage",
+      "expr": "1 - Re",
+      "formula": "R < 1"
+    },
+    {
+      "id": "dormant",
+      "kind": "stop",
+      "expr": "Re - 0.3",
+      "formula": "R \u2265 0.3"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "1300 - T",
+      "formula": "T < 1300 K"
+    }
+  ],
+  "rate": "clamp(act, 0, 3)",
+  "rate_formula": "rate = \u03b2\u00b7R",
+  "heat": "0.4 + 0.25*q",
+  "idle_heat": "0.4",
+  "quench_energy": "0",
+  "kappa": 50,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

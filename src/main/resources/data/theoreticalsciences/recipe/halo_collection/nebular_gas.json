@@ -1,0 +1,71 @@
+{
+  "type": "theoreticalsciences:halo_collection",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:annihilation_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:photonic_die",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:femto_transistor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:quadrupole_pole_tip",
+      "count": 8
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nebular_gas",
+      "amount": 1000
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:stellar_evolution",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "mx": 1000.0
+    }
+  },
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 16000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "ae2:singularity",
+      "count": 16
+    },
+    {
+      "item": "mekanism:pellet_polonium",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "mysticalagradditions:molten_supremium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

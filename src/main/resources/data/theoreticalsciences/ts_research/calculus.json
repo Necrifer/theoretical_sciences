@@ -1,0 +1,50 @@
+{
+  "title": "Calculus",
+  "description": "Infinitesimals, derivatives and integrals - and manifolds, the spaces calculus lives on.",
+  "icon": "theoreticalsciences:integral_operator",
+  "x": 5,
+  "y": 7,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:real_analysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:infinitesimal",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "The slope of a curve at a point is what the slope of a short chord approaches as the chord shrinks. For the power function x^n, write the slope at x as the limit of rise over run as the step \u03b4 goes to zero.",
+    "name": "Derivative as a limit (power rule)",
+    "lhs": "d ( x ^ n , x )",
+    "form": "lim ( \u03b4 , 0 , ( ( x + \u03b4 ) ^ n - x ^ n ) / \u03b4 )",
+    "expr": "n * x ^ ( n - 1 )",
+    "ask": "Expanding the binomial gives n\u00b7x^(n\u22121). Find the slope for the values given.",
+    "vars": {
+      "x": "point on the curve",
+      "n": "exponent",
+      "\u03b4": "small step"
+    },
+    "given": {
+      "n": 3,
+      "x": 2
+    },
+    "unit": "",
+    "method": "Take the change in the function over a small step, divide by the step, and let the step tend to zero.",
+    "distractors": [
+      "1",
+      "\u221e",
+      "+",
+      "y"
+    ],
+    "vary": {
+      "x": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Genomics",
+  "description": "Four letters, three billion of them. Unlocks the Gene Sequencer, recombinant DNA and engineered enzymes.",
+  "icon": "theoreticalsciences:gene_sequencer",
+  "x": 6,
+  "y": 14,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:molecular_biology",
+    "theoreticalsciences:formal_logic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A genome of length G is shredded into N random reads of length L, each placed independently at a uniformly random position. A given base is covered by a read with probability L/G. Write the probability that a given base is covered by exactly k reads.",
+    "name": "Lander\u2013Waterman coverage statistics",
+    "lhs": "P _ k",
+    "form": "binom ( N , k ) * ( L / G ) ^ k * ( 1 - L / G ) ^ ( N - k )",
+    "expr": "1 - exp ( - L * N / G )",
+    "ask": "For many reads this becomes a Poisson distribution of mean C = LN/G, so P\u2080 = e^(\u2212C). Find the fraction of the genome covered at least once for L = @{L} bp, N = @{N} million reads and G = 3000 Mbp (L\u00b7N/G = @{L} \u00d7 @{N} / 3000).",
+    "vars": {
+      "P": "probability",
+      "k": "number of reads covering the base",
+      "N": "number of reads",
+      "L": "read length",
+      "G": "genome length"
+    },
+    "given": {
+      "L": 100,
+      "N": 60,
+      "G": 3000
+    },
+    "unit": "",
+    "method": "Each read is an independent trial that covers the base or not: count the ways to choose which k of the N reads cover it.",
+    "distractors": [
+      "exp",
+      "C",
+      "\u0393"
+    ],
+    "vary": {
+      "L": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "N": [
+        36.0,
+        84.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "title": "Psionics",
+  "description": "Thought, crystallised. A science that should not exist.",
+  "icon": "theoreticalsciences:psionic_crystal",
+  "x": 6,
+  "y": 5,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:general_intelligence"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neural_lattice",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Ions of charge number z in a nerve membrane drift for two reasons: they diffuse down their concentration gradient, and the electric potential V pushes them. Write the ion flux j through the membrane in terms of both gradients (molar quantities).",
+    "name": "Nernst\u2013Planck equation (resting potential)",
+    "lhs": "j",
+    "form": "- D * ( d ( c , x ) + z * F / ( R * T ) * c * d ( V , x ) )",
+    "expr": "R * T / ( z * F ) * ln ( co / ci ) * 1000",
+    "ask": "Setting j = 0 and integrating across the membrane gives the equilibrium potential V = (RT/zF)\u00b7ln(c_out/c_in). Find it (in mV) for potassium in a neuron at body temperature.",
+    "vars": {
+      "j": "ion flux",
+      "D": "diffusion coefficient",
+      "c": "ion concentration",
+      "x": "position across the membrane",
+      "z": "charge number of the ion",
+      "F": "Faraday constant",
+      "R": "gas constant",
+      "T": "temperature",
+      "V": "electric potential",
+      "co": "outside concentration (mM)",
+      "ci": "inside concentration (mM)"
+    },
+    "given": {
+      "R": 8.314,
+      "T": 310,
+      "z": 1,
+      "F": 96485,
+      "co": 5,
+      "ci": 140
+    },
+    "unit": "mV",
+    "method": "Diffusion gives \u2212D dc/dx; the drift velocity in the field is the mobility times the force, and the mobility is D/(RT) per mole (zF per mole of charge).",
+    "distractors": [
+      "kB",
+      "e",
+      "exp"
+    ],
+    "vary": {
+      "T": [
+        186.0,
+        434.0,
+        1.0
+      ],
+      "z": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "co": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "ci": [
+        84.0,
+        196.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:arrow_of_time_shard",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:temporal_knot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:novikov_crystal",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:closed_timelike_curve",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:paradox_residue",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:bootstrap_artifact",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:pulsar_timing_crystal",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:ordinal_shard",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:lorentz_transform_crystal",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:theoretical_dossier",
+      "count": 32
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:causal_solder",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_energy",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:exotic_solder",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:temporal_singularity",
+      "count": 1
+    }
+  ],
+  "energy": 268435456,
+  "duration": 6000,
+  "research": "theoreticalsciences:conceptual_singularities",
+  "scaled": 32,
+  "environment": {
+    "time_max": 0.01
+  },
+  "physics": {
+    "vars": {
+      "qb": 0.03
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 4.12,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "iceandfire:ice_dragon_heart",
+      "count": 32
+    },
+    {
+      "item": "fdbosses:justice_core",
+      "count": 32
+    },
+    {
+      "item": "cataclysm:void_core",
+      "count": 32
+    },
+    {
+      "item": "cataclysm:void_eye",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:uu_matter_fluid",
+      "amount": 32000
+    },
+    {
+      "fluid": "nuclear_radiation:molten_corium",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

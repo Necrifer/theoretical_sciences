@@ -1,0 +1,73 @@
+{
+  "title": "Extremophiles",
+  "description": "Life at the edges: boiling vents, frozen vacuum, radiation. Unlocks tardigrade cultures.",
+  "icon": "theoreticalsciences:tardigrade_culture",
+  "x": 7,
+  "y": 15,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:genomics",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 8
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A reaction proceeds only when molecules reach a short-lived activated complex at the top of the energy barrier. Treat that complex as in equilibrium with the reactants and let it fall apart at the universal frequency kB\u00b7T/h, with a transmission coefficient \u03ba. Write the rate constant in terms of the activation enthalpy and activation entropy (molar).",
+    "name": "Eyring\u2013Polanyi equation (transition-state theory)",
+    "lhs": "k",
+    "form": "\u03ba * kB * T / h * exp ( \u0394 * S / R ) * exp ( - \u0394 * H / ( R * T ) )",
+    "expr": "\u03ba * kB * T / h * exp ( \u0394S / R ) * exp ( - \u0394H / ( R * T ) )",
+    "ask": "Find the rate constant of an enzyme in a hyperthermophile living at 121 \u00b0C (394 K).",
+    "vars": {
+      "k": "rate constant",
+      "\u03ba": "transmission coefficient",
+      "kB": "Boltzmann constant",
+      "T": "temperature",
+      "h": "Planck constant",
+      "\u0394": "change on reaching the activated complex",
+      "S": "molar entropy",
+      "H": "molar enthalpy",
+      "R": "gas constant",
+      "\u0394S": "activation entropy (J/mol/K)",
+      "\u0394H": "activation enthalpy (J/mol)"
+    },
+    "given": {
+      "\u03ba": 1,
+      "kB": 1.381e-23,
+      "T": 394,
+      "h": 6.626e-34,
+      "\u0394S": 10,
+      "R": 8.314,
+      "\u0394H": 100000
+    },
+    "unit": "1/s",
+    "method": "Write the equilibrium constant for forming the activated complex as exp(\u2212\u0394G/RT) with \u0394G = \u0394H \u2212 T\u0394S, and multiply by the rate at which the complex crosses the barrier.",
+    "distractors": [
+      "NA",
+      "ln",
+      "+"
+    ],
+    "vary": {
+      "\u03ba": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "\u0394S": [
+        8.0,
+        12.0,
+        1.0
+      ],
+      "\u0394H": [
+        75000.0,
+        125000.0,
+        1.0
+      ]
+    }
+  }
+}

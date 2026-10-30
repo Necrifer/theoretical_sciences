@@ -1,0 +1,113 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "min_tier": 3,
+  "chances": [
+    1.0,
+    0.5
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_block",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:entangled_bus_bar",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:pentaquark_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:temporal_knot",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:qubit_array_wafer",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:strange_matter",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cosmic_neutronium_ingot",
+      "count": 16
+    },
+    {
+      "id": "theoreticalsciences:spacetime_slag",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dimensional_residue",
+      "amount": 1000
+    }
+  ],
+  "energy": 8388608,
+  "duration": 3600,
+  "research": "theoreticalsciences:stellar_engineering",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 40.0,
+        "max": 60.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "ae2:singularity",
+      "count": 16
+    },
+    {
+      "item": "gtceu:quantum_processor_assembly",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:bose_einstein_condensate",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

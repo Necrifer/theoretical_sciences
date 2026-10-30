@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:baryon_asymmetry_crystal"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.leptogenesis"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.leptogenesis.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/reheating",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "params": [
+    {
+      "id": "Tc",
+      "unit": "K",
+      "min": 200,
+      "max": 2000,
+      "step": 1,
+      "default": 600
+    },
+    {
+      "id": "Rr",
+      "unit": "",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "default": 4
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Tb",
+      "unit": "K",
+      "expr": "600*(1 + 0.15*d)",
+      "formula": "T_b = 600 K\u00b7(1 + 0.15\u00b7d)"
+    },
+    {
+      "id": "S",
+      "unit": "",
+      "expr": "Rr/(Rr + 1)*exp(-abs(Tc - Tb)/300)",
+      "formula": "S = R/(R+1)\u00b7e^(\u2212|T_c\u2212T_b|/300)"
+    },
+    {
+      "id": "Qd",
+      "unit": "kW",
+      "expr": "0.05*Tc*(Rr + 1)",
+      "formula": "Q = 0.05\u00b7T_c\u00b7(R+1)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "flood",
+      "kind": "stop",
+      "expr": "25 - Rr",
+      "formula": "R \u2264 25"
+    },
+    {
+      "id": "weak",
+      "kind": "stop",
+      "expr": "S - 0.2",
+      "formula": "S \u2265 0.2"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "1200 - T",
+      "formula": "T < 1200 K"
+    }
+  ],
+  "rate": "clamp(S*3, 0, 4)",
+  "rate_formula": "rate = 3\u00b7S",
+  "heat": "0.02*Qd",
+  "idle_heat": "0.5",
+  "quench_energy": "0",
+  "kappa": 50,
+  "heat_capacity": 50,
+  "timescale": 1,
+  "rate_max": 4
+}

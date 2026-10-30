@@ -1,0 +1,68 @@
+{
+  "title": "Escape: Evasion, Immortality & Metastasis",
+  "description": "To survive, an anomaly must escape everything built to remove it: hide its markers from the immune system, switch telomerase back on and forget how to age, grow its own blood vessels, and finally leave - slip into the blood and seed itself somewhere new. Unlocks the Immortal Cell Line and the Metastatic Spore.",
+  "icon": "theoreticalsciences:metastatic_spore",
+  "x": 16,
+  "y": 10,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:oncogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:anomalous_strain_culture",
+      "count": 4
+    }
+  ],
+  "time": 1440,
+  "puzzle": {
+    "goal": "A tumour of N cells grows fast while it is small and slows as it outgrows its blood supply: its specific growth rate decays exponentially in time at a rate \u03b1, so that it levels off at a carrying capacity K. Starting from N\u2080 cells, write the number of cells at time t.",
+    "name": "Gompertz law of tumour growth",
+    "lhs": "N",
+    "form": "K * exp ( ln ( N _ 0 / K ) * exp ( - \u03b1 * t ) )",
+    "expr": "K * exp ( ln ( n / K ) * exp ( - \u03b1 * t ) )",
+    "ask": "With K and the starting size n in units of 10\u2079 cells, \u03b1 per month and t in months, find the size of the tumour.",
+    "vars": {
+      "N": "number of tumour cells",
+      "K": "carrying capacity",
+      "\u03b1": "decay rate of the growth rate",
+      "t": "time",
+      "n": "starting number of cells (N\u2080, 10\u2079 cells)"
+    },
+    "given": {
+      "K": 1000,
+      "n": 1,
+      "\u03b1": 0.1,
+      "t": 20
+    },
+    "unit": "10\u2079 cells",
+    "method": "Write d ln N/dt = r e^{\u2212\u03b1t} and integrate; or note that d ln N/dt = \u03b1 ln(K/N), so ln(N/K) itself decays exponentially.",
+    "distractors": [
+      "r",
+      "\u03b2",
+      "2"
+    ],
+    "vary": {
+      "K": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "n": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "\u03b1": [
+        0.06,
+        0.14,
+        0.001
+      ],
+      "t": [
+        12.0,
+        28.0,
+        1.0
+      ]
+    }
+  }
+}

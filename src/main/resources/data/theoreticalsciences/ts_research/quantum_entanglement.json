@@ -1,0 +1,56 @@
+{
+  "title": "Quantum Entanglement",
+  "description": "Spooky action at a distance, put to work. Unlocks qubits and the Quantum Entangler.",
+  "icon": "theoreticalsciences:entangled_photon_pair",
+  "x": 1,
+  "y": 1,
+  "insight": 5,
+  "requires": [
+    "theoreticalsciences:quantum_foundations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Two photons are created in the joint polarisation state (|HH\u27e9 + |VV\u27e9)/\u221a2. One passes a linear polariser at angle \u03b1, the other a polariser at angle \u03b2; a polariser at angle \u03c6 projects onto cos \u03c6|H\u27e9 + sin \u03c6|V\u27e9. Add the probabilities of both-pass and both-blocked (by symmetry they are equal) to write the probability that the two detectors agree.",
+    "name": "Bell-state polariser correlation (cos\u00b2 rule)",
+    "lhs": "P",
+    "form": "2 * abs ( ( cos ( \u03b1 ) * cos ( \u03b2 ) + sin ( \u03b1 ) * sin ( \u03b2 ) ) / sqrt ( 2 ) ) ^ 2",
+    "expr": "cos ( ( a - b ) * \u03c0 / 180 ) ^ 2",
+    "ask": "The bracket is cos(\u03b1 \u2212 \u03b2), so P = cos\u00b2(\u03b1 \u2212 \u03b2). Find the probability that the detectors agree for the polariser angles below (in degrees).",
+    "vars": {
+      "P": "probability that both photons give the same result",
+      "\u03b1": "angle of the first polariser",
+      "\u03b2": "angle of the second polariser",
+      "a": "first polariser angle in degrees",
+      "b": "second polariser angle in degrees"
+    },
+    "given": {
+      "a": 60,
+      "b": 30
+    },
+    "unit": "",
+    "method": "Project the pair state onto \u27e8\u03b1|\u2297\u27e8\u03b2|: the HH and VV parts give cos \u03b1 cos \u03b2 and sin \u03b1 sin \u03b2, each with the 1/\u221a2 of the state. Square the modulus and double it for the both-blocked outcome.",
+    "distractors": [
+      "tan",
+      "\u03b8",
+      "4"
+    ],
+    "vary": {
+      "a": [
+        36.0,
+        84.0,
+        1.0
+      ],
+      "b": [
+        18.0,
+        42.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:contagion_network_map"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.epidemic_dynamics"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.epidemic_dynamics.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/invasion_fronts",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

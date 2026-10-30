@@ -1,0 +1,69 @@
+{
+  "title": "Escape: Clonal Evolution & Resistance",
+  "description": "A tumour is a population, and populations evolve. Every treatment selects the few cells that happen to resist it; they inherit the tumour. Drug resistance is not learned but chosen - by the treatment itself. Unlocks the Resistant Clone Colony.",
+  "icon": "theoreticalsciences:resistant_clone",
+  "x": 17,
+  "y": 10,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:immune_evasion",
+    "theoreticalsciences:self_replication"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:immortal_cell_line",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:metastatic_spore",
+      "count": 2
+    }
+  ],
+  "time": 1560,
+  "puzzle": {
+    "goal": "A tumour holds n clones; clone i makes up a fraction x_i of it and has fitness f_i - its net growth rate under the current treatment. A clone grows in share only if it is fitter than the tumour's average. Write how the fraction of clone i changes.",
+    "name": "replicator equation (selection among competing clones)",
+    "lhs": "d ( x _ i , t )",
+    "form": "x _ i * ( f _ i - sum ( j , 1 , n , x _ j * f _ j ) )",
+    "expr": "x * exp ( s * t ) / ( 1 - x + x * exp ( s * t ) )",
+    "ask": "A resistant clone starts as a fraction x and grows faster than the rest by s per day under treatment; its share is then x e^{st}/(1 \u2212 x + x e^{st}). Find its share after t days.",
+    "vars": {
+      "x": "fraction of the tumour (x in step 2: the resistant clone's starting share)",
+      "i": "clone index",
+      "j": "summation index",
+      "f": "fitness",
+      "n": "number of clones",
+      "t": "time",
+      "s": "fitness advantage of the resistant clone (per day)"
+    },
+    "given": {
+      "x": 0.001,
+      "s": 0.5,
+      "t": 20
+    },
+    "unit": "",
+    "method": "Each clone grows as dN_i/dt = f_i N_i. Differentiate x_i = N_i/\u03a3N_j with the quotient rule; the denominator brings in the mean fitness.",
+    "distractors": [
+      "\u03bc",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "x": [
+        0.00059,
+        0.0014,
+        1e-05
+      ],
+      "s": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "t": [
+        12.0,
+        28.0,
+        1.0
+      ]
+    }
+  }
+}

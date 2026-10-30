@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:quantum_field_lattice"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.quantum_field_theory"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.quantum_field_theory.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/abstract_algebra",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:rift_harvesting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:multiverse_shard",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:graviton_crystal",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:multiverse_shard",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:false_vacuum",
+      "amount": 1000
+    }
+  ],
+  "energy": 4194304,
+  "duration": 1200,
+  "research": "theoreticalsciences:multiverse",
+  "physics": {
+    "windows": [
+      {
+        "q": "lgLam",
+        "min": 9.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

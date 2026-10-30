@@ -1,0 +1,69 @@
+{
+  "title": "Molecular Biology",
+  "description": "Life is chemistry that copies itself. Unlocks the Bioreactor, Nutrient Broth and the Gene Sampler.",
+  "icon": "theoreticalsciences:bioreactor",
+  "x": 4,
+  "y": 14,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:chemical_bonding",
+    "theoreticalsciences:artificial_intelligence"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Self-copying molecules in a sealed vessel multiply in proportion to how many copies already exist, with per-copy rate r. But the vessel holds only enough nucleotides for K copies, so copying slows as the population fills the available capacity. Write the rate of change of the number of copies N.",
+    "name": "Logistic growth equation (Verhulst)",
+    "lhs": "d ( N , t )",
+    "form": "r * N * ( 1 - N / K )",
+    "expr": "K / ( 1 + ( K / N0 - 1 ) * exp ( - r * t ) )",
+    "ask": "The solution is N(t) = K / (1 + (K/N0 \u2212 1)e^{\u2212rt}). Starting from N0 = @{N0} copies with capacity K = @{K} and r = @{r} per hour, find N after t = @{t} hours.",
+    "vars": {
+      "N": "number of copies",
+      "t": "time",
+      "r": "copying rate per copy (1/h)",
+      "K": "carrying capacity",
+      "N0": "starting number of copies"
+    },
+    "given": {
+      "K": 1000,
+      "N0": 10,
+      "r": 0.5,
+      "t": 10
+    },
+    "unit": "copies",
+    "method": "Exponential growth rN multiplied by the fraction of capacity still free, 1 \u2212 N/K.",
+    "distractors": [
+      "2",
+      "+",
+      "g"
+    ],
+    "vary": {
+      "K": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "N0": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "r": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "t": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "params": [
+    {
+      "id": "kr",
+      "unit": "",
+      "min": 0,
+      "max": 20,
+      "step": 0.001,
+      "default": 5
+    },
+    {
+      "id": "k",
+      "unit": "M_Pl",
+      "min": 0.01,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.1
+    },
+    {
+      "id": "dl",
+      "unit": "",
+      "min": -0.01,
+      "max": 0.01,
+      "step": 1e-05,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "w",
+      "unit": "",
+      "expr": "exp(-pi*kr)",
+      "formula": "w = e^(\u2212\u03c0kr)"
+    },
+    {
+      "id": "Lam",
+      "unit": "GeV",
+      "expr": "2.435e18*w",
+      "formula": "\u039b = M_Pl\u00b7e^(\u2212\u03c0kr)"
+    },
+    {
+      "id": "lgLam",
+      "unit": "log\u2081\u2080 GeV",
+      "expr": "log10(Lam)",
+      "formula": "log\u2081\u2080 \u039b"
+    },
+    {
+      "id": "m1",
+      "unit": "GeV",
+      "expr": "3.83*k*Lam",
+      "formula": "m\u2081 = 3.83\u00b7k\u00b7\u039b"
+    },
+    {
+      "id": "L4",
+      "unit": "",
+      "expr": "dl + 0.002*d",
+      "formula": "\u039b\u2084 = \u03b4 + drift"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "flat",
+      "kind": "stop",
+      "expr": "0.0005 - abs(L4)",
+      "formula": "|\u039b\u2084| < 5\u00d710\u207b\u2074"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "500 - T",
+      "formula": "T < 500 K"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "15",
+  "idle_heat": "3",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

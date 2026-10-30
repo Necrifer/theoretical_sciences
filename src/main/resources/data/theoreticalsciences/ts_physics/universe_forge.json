@@ -1,0 +1,127 @@
+{
+  "params": [
+    {
+      "id": "p",
+      "unit": "",
+      "min": 0.25,
+      "max": 4,
+      "step": 0.01,
+      "default": 2
+    },
+    {
+      "id": "Ns",
+      "unit": "",
+      "min": 40,
+      "max": 80,
+      "step": 0.1,
+      "default": 60
+    },
+    {
+      "id": "Nt",
+      "unit": "",
+      "min": 0,
+      "max": 200,
+      "step": 0.1,
+      "default": 70
+    },
+    {
+      "id": "lgm",
+      "unit": "log\u2081\u2080 M_Pl",
+      "min": -8,
+      "max": -1,
+      "step": 0.001,
+      "default": -3
+    },
+    {
+      "id": "Bs",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "pe",
+      "unit": "",
+      "expr": "p + 0.01*d",
+      "formula": "p",
+      "show": false
+    },
+    {
+      "id": "phis",
+      "unit": "M_Pl",
+      "expr": "sqrt(2*pe*Ns + pe^2/4)",
+      "formula": "\u03c6* = \u221a(2pN + p\u00b2/4)"
+    },
+    {
+      "id": "eps",
+      "unit": "",
+      "expr": "pe^2/(2*phis^2)",
+      "formula": "\u03b5 = \u00bd(V\u2032/V)\u00b2"
+    },
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "pe*(pe - 1)/phis^2",
+      "formula": "\u03b7 = V\u2033/V"
+    },
+    {
+      "id": "ns",
+      "unit": "",
+      "expr": "1 - 6*eps + 2*eta",
+      "formula": "n_s = 1 \u2212 6\u03b5 + 2\u03b7"
+    },
+    {
+      "id": "r",
+      "unit": "",
+      "expr": "16*eps",
+      "formula": "r = 16\u03b5"
+    },
+    {
+      "id": "lgAs",
+      "unit": "log\u2081\u2080",
+      "expr": "4*lgm + pe*log10(phis) - log10(24*pi^2*eps)",
+      "formula": "A_s = V/(24\u03c0\u00b2\u03b5)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "horizon",
+      "kind": "stop",
+      "expr": "Nt - Ns",
+      "formula": "N_total \u2265 N*"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bs)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "12 + 0.5*Bs",
+  "idle_heat": "3",
+  "quench_energy": "40*Bs^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

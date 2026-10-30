@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:planck_cutting",
+  "chances": [
+    1.0,
+    0.1
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:topological_boule",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:coherent_wiring_harness",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:topological_wafer",
+      "count": 16
+    },
+    {
+      "id": "theoreticalsciences:spacetime_slag",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 250
+    }
+  ],
+  "energy": 512,
+  "duration": 600,
+  "research": "theoreticalsciences:precision_lithography",
+  "scaled": 4,
+  "expanded": true
+}

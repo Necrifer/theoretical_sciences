@@ -1,0 +1,56 @@
+{
+  "title": "The Casimir Effect",
+  "description": "Two plates in a vacuum attract: empty space is full of energy. Unlocks the Casimir Press and Zero-Point Extractor.",
+  "icon": "theoreticalsciences:casimir_plate",
+  "x": 1,
+  "y": -1,
+  "insight": 5,
+  "requires": [
+    "theoreticalsciences:quantum_foundations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Two uncharged, perfectly conducting plates face each other across a narrow gap in empty space. Only vacuum modes whose half-wavelengths fit the gap survive between them. Sum the zero-point energy \u00bd\u0127\u03c9 of every allowed mode between the plates, subtract the same sum for free space, and write the energy per unit plate area as a function of the gap a.",
+    "name": "Casimir energy (Casimir, 1948)",
+    "lhs": "E / A",
+    "form": "\u0127 * c / ( 2 * \u03c0 ) * sum ( n , 1 , \u221e , int ( 0 , \u221e , k * sqrt ( k ^ 2 + ( n * \u03c0 / a ) ^ 2 ) , k ) ) - \u0127 * c * a / ( 2 * \u03c0 ^ 2 ) * int ( 0 , \u221e , int ( 0 , \u221e , q * sqrt ( q ^ 2 + \u03ba ^ 2 ) , q ) , \u03ba )",
+    "expr": "\u03c0 ^ 2 * \u0127 * c / ( 720 * a ^ 3 )",
+    "ask": "After regularising (the divergent parts cancel), the result is \u2212\u03c0\u00b2\u0127c/(720a\u00b3). Find its magnitude for the gap given, in units where \u0127c = 1.",
+    "vars": {
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light",
+      "a": "plate gap",
+      "n": "mode number across the gap",
+      "k": "wavenumber along the plates",
+      "q": "in-plane wavenumber (free space)",
+      "\u03ba": "wavenumber across the gap (free space)",
+      "E": "vacuum energy between the plates",
+      "A": "plate area"
+    },
+    "given": {
+      "\u0127": 1,
+      "c": 1,
+      "a": 0.5
+    },
+    "unit": "\u0127c per unit area",
+    "method": "Each standing mode across the gap has kz = n\u03c0/a; the energy is a sum over n and an integral over in-plane k. Subtract the continuum and regularise with \u03b6(\u22123) = 1/120.",
+    "distractors": [
+      "4",
+      "\u03bb",
+      "\u03c9"
+    ],
+    "vary": {
+      "a": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

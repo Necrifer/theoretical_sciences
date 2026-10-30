@@ -1,0 +1,53 @@
+{
+  "title": "Self-Reference & Replicators",
+  "description": "A program that prints itself, a machine that builds itself from a description of itself, a virus, a rumour: every replicator holds a copy of its own instructions. Whether its lineage survives is a branching process - it dies out unless each copy makes more than one more. Unlocks the Quine Replicator.",
+  "icon": "theoreticalsciences:quine_replicator",
+  "x": 16,
+  "y": 8,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:autocatalysis",
+    "theoreticalsciences:pathological_objects"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:prion_lattice",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:undecidable_kernel",
+      "count": 2
+    }
+  ],
+  "time": 1440,
+  "puzzle": {
+    "goal": "A replicator - a self-printing program, a virus particle, a rumour - makes k copies of itself with probability p_k before it is destroyed, and every copy does the same independently. The lineage dies out only if every one of the first copy's offspring lineages dies out. Write the equation for the probability q that the lineage eventually dies out.",
+    "name": "extinction probability of a Galton\u2013Watson branching process (generating-function fixed point)",
+    "lhs": "q",
+    "form": "sum ( k , 0 , \u221e , p _ k * q ^ k )",
+    "expr": "1 - ( 1 - p ) / p",
+    "ask": "A replicator that makes either two copies (probability p) or none has q = (1 \u2212 p)/p when p > \u00bd. Find the chance that its lineage escapes destruction forever, 1 \u2212 q.",
+    "vars": {
+      "q": "probability the lineage dies out",
+      "k": "number of copies",
+      "p": "probability of making copies (p_k: of exactly k)"
+    },
+    "given": {
+      "p": 0.6
+    },
+    "unit": "",
+    "method": "Condition on the first generation: with k copies, all k independent lineages must die out, with probability q^k. Sum over k.",
+    "distractors": [
+      "n",
+      "exp",
+      "1"
+    ],
+    "vary": {
+      "p": [
+        0.449,
+        0.75,
+        0.001
+      ]
+    }
+  }
+}

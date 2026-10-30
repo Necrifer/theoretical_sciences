@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:inflaton_condensate"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.cosmic_inflation"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.cosmic_inflation.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/dark_energy",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Dark Energy",
+  "description": "The energy of empty space itself, pushing galaxies apart.",
+  "icon": "theoreticalsciences:cosmological_constant",
+  "x": 12,
+  "y": 0,
+  "insight": 150,
+  "requires": [
+    "theoreticalsciences:traversable_wormholes",
+    "theoreticalsciences:dark_sector"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 2
+    }
+  ],
+  "time": 510,
+  "puzzle": {
+    "goal": "A homogeneous universe expands with scale factor a(t) (a = 1 today). It contains matter diluting as a\u207b\u00b3, radiation as a\u207b\u2074, spatial curvature k, and a constant energy of empty space \u039b. Write the square of the expansion rate in terms of these.",
+    "name": "Friedmann equation with a cosmological constant",
+    "lhs": "( tdot ( a ) / a ) ^ 2",
+    "form": "8 * \u03c0 * G / 3 * ( \u03c1 _ m / a ^ 3 + \u03c1 _ r / a ^ 4 ) - k * c ^ 2 / a ^ 2 + \u039b * c ^ 2 / 3",
+    "expr": "H0 * sqrt ( \u03a9m / a ^ 3 + \u03a9\u039b )",
+    "ask": "For a flat universe with negligible radiation, H = H0\u00b7\u221a(\u03a9m/a\u00b3 + \u03a9\u039b). Find the expansion rate when the universe was half its present size.",
+    "vars": {
+      "a": "scale factor",
+      "G": "gravitational constant",
+      "\u03c1": "density today",
+      "m": "label: matter",
+      "r": "label: radiation",
+      "k": "spatial curvature",
+      "c": "speed of light",
+      "\u039b": "cosmological constant",
+      "H0": "Hubble constant today (km/s/Mpc)",
+      "\u03a9m": "matter density parameter",
+      "\u03a9\u039b": "dark-energy density parameter"
+    },
+    "given": {
+      "H0": 70,
+      "\u03a9m": 0.3,
+      "\u03a9\u039b": 0.7,
+      "a": 0.5
+    },
+    "unit": "km/s/Mpc",
+    "method": "Treat a comoving sphere's kinetic plus gravitational energy, or take the time-time component of the field equations for a homogeneous metric.",
+    "distractors": [
+      "2",
+      "+",
+      "H",
+      "p"
+    ],
+    "vary": {
+      "H0": [
+        42.0,
+        98.0,
+        1.0
+      ],
+      "\u03a9\u039b": [
+        0.42,
+        0.98,
+        0.001
+      ]
+    }
+  }
+}

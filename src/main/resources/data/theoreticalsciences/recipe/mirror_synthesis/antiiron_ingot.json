@@ -1,0 +1,94 @@
+{
+  "type": "theoreticalsciences:mirror_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:raw_antiiron",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:muonic_catalyst",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:femto_inductor",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:assembly_matrix",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:penrose_spindle",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:fourier_series",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_antihelium",
+      "amount": 12800
+    },
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 32000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antiiron_ingot",
+      "count": 2
+    }
+  ],
+  "energy": 4194304,
+  "duration": 525,
+  "research": "theoreticalsciences:mirror_metallurgy",
+  "scaled": 12,
+  "physics": {
+    "vars": {
+      "Tm": 1811.0
+    },
+    "windows": [
+      {
+        "q": "Tpool",
+        "min": 1811.0,
+        "max": 3000.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "draconicevolution:awakened_draconium_ingot",
+      "count": 24
+    },
+    {
+      "item": "cataclysm:cursium_ingot",
+      "count": 24
+    },
+    {
+      "item": "ae2:singularity",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:helium_3",
+      "amount": 24000
+    },
+    {
+      "fluid": "enderio:dew_of_the_void",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

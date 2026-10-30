@@ -1,0 +1,66 @@
+{
+  "title": "Component Tiers",
+  "description": "Better coils run hotter and unlock heavier recipes; better field emitters let a multiblock run more parallels. A structure is only as good as its weakest part.",
+  "icon": "theoreticalsciences:spacetime_alloy_coil_block",
+  "x": 8,
+  "y": -4,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:assembly_lines"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chronosteel_ingot",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A structure is a chain of N parts and fails as soon as its weakest part fails. Part j carries stress \u03c3j; below a threshold stress \u03c3u nothing ever breaks, and above it the probability of surviving falls off as a stretched exponential with scale \u03c30 and modulus m. Write the survival probability of the whole structure.",
+    "name": "Weakest-link (three-parameter Weibull) survival",
+    "lhs": "P",
+    "form": "prod ( j , 1 , N , exp ( - ( ( \u03c3 _ j - \u03c3 _ u ) / \u03c3 _ 0 ) ^ m ) )",
+    "expr": "exp ( - N * ( s - u ) ^ m )",
+    "ask": "If every part carries the same stress the product becomes exp(\u2212N((\u03c3 \u2212 \u03c3u)/\u03c30)^m). Find P for N = @{N}, \u03c3 = @{s} \u03c30, \u03c3u = @{u} \u03c30, m = 3.",
+    "vars": {
+      "P": "survival probability of the structure",
+      "N": "number of parts",
+      "j": "part index",
+      "\u03c3": "stress (\u03c3_j on part j, \u03c3_u threshold, \u03c3_0 scale)",
+      "u": "label: threshold",
+      "m": "Weibull modulus",
+      "s": "stress in units of \u03c30",
+      "0": "label: scale"
+    },
+    "given": {
+      "N": 10,
+      "s": 0.5,
+      "u": 0.1,
+      "m": 3
+    },
+    "unit": "",
+    "method": "The structure survives only if every part does, so multiply the independent part survival probabilities.",
+    "distractors": [
+      "n",
+      "+",
+      "ln"
+    ],
+    "vary": {
+      "N": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "s": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "u": [
+        0.06,
+        0.14,
+        0.001
+      ]
+    }
+  }
+}

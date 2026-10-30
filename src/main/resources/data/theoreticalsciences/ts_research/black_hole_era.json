@@ -1,0 +1,56 @@
+{
+  "title": "The Black Hole Era",
+  "description": "After the protons, only black holes are left, slowly radiating. A black hole of a solar mass needs 10^67 years to evaporate, a supermassive one 10^100 - and then it ends in a flash. Unlocks the Last Flash of a Black Hole.",
+  "icon": "theoreticalsciences:evaporation_flash",
+  "x": 11,
+  "y": -8,
+  "insight": 190,
+  "requires": [
+    "theoreticalsciences:cosmic_eschatology",
+    "theoreticalsciences:singularity_physics",
+    "theoreticalsciences:holographic_principle"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hawking_emitter",
+      "count": 4
+    }
+  ],
+  "time": 720,
+  "puzzle": {
+    "goal": "A black hole radiates as a black body at a temperature inversely proportional to its mass, so it loses mass at a rate dM/dt = \u2212\u0127c\u2074/(15360\u03c0G\u00b2M\u00b2) and gets brighter as it shrinks. Separate the variables and write the total time it needs to radiate away a mass M completely.",
+    "name": "Hawking evaporation time",
+    "lhs": "t",
+    "form": "int ( 0 , M , 15360 * \u03c0 * G ^ 2 * m ^ 2 / ( \u0127 * c ^ 4 ) , m )",
+    "expr": "5120 * \u03c0 * G ^ 2 * M ^ 3 / ( \u0127 * c ^ 4 ) / 3.156",
+    "ask": "The integral is 5120\u03c0G\u00b2M\u00b3/(\u0127c\u2074). For a primordial black hole of M \u00d7 10\u00b9\u2070 kg (G in 10\u207b\u00b9\u00b9, \u0127 in 10\u207b\u00b3\u2074, c in 10\u2078 SI units), find its lifetime in thousands of years.",
+    "vars": {
+      "t": "evaporation time",
+      "M": "initial mass (10\u00b9\u2070 kg)",
+      "m": "mass while evaporating",
+      "G": "gravitational constant",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light"
+    },
+    "given": {
+      "M": 2,
+      "G": 6.674,
+      "\u0127": 1.0546,
+      "c": 2.998
+    },
+    "unit": "thousand years",
+    "method": "dt = \u2212dM/(dM/dt): put the mass-loss rate upside down and integrate from the full mass down to nothing.",
+    "distractors": [
+      "kB",
+      "T",
+      "3"
+    ],
+    "vary": {
+      "M": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

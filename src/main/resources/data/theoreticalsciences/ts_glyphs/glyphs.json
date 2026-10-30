@@ -1,0 +1,1469 @@
+{
+  "!": {
+    "name": "Factorial",
+    "cat": "operators",
+    "meaning": "n! = 1\u00b72\u00b73\u00b7\u00b7\u00b7n: the number of orderings of n things.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "*": {
+    "name": "Product",
+    "cat": "operators",
+    "meaning": "Ordinary multiplication. Printed by writing the factors side by side.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "+": {
+    "name": "Plus",
+    "cat": "operators",
+    "meaning": "Addition; between terms of a sum.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "-": {
+    "name": "Minus",
+    "cat": "operators",
+    "meaning": "Subtraction, or a negative sign.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "/": {
+    "name": "Fraction",
+    "cat": "operators",
+    "meaning": "Division, printed as a fraction bar.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "A": {
+    "name": "A",
+    "cat": "variables",
+    "meaning": "An area, amplitude or vector potential.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "B": {
+    "name": "B",
+    "cat": "variables",
+    "meaning": "A magnetic field.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "BH": {
+    "name": "BH\u207a (protonated base)",
+    "cat": "chemistry",
+    "meaning": "Label for a base B that has accepted a proton, BH\u207a: the conjugate acid of B. Used as a subscript, e.g. c_BH is the concentration of the protonated form.",
+    "unit": "",
+    "unlock": {
+      "research": "electrochemistry"
+    }
+  },
+  "BZ": {
+    "name": "Brillouin zone",
+    "cat": "sets",
+    "meaning": "The repeating cell of crystal momentum space: momenta differing by a reciprocal lattice vector describe the same state, so momentum integrals run over this cell only.",
+    "unit": "",
+    "unlock": {
+      "item": "lattice_seed"
+    }
+  },
+  "C": {
+    "name": "C",
+    "cat": "variables",
+    "meaning": "A capacity, capacitance or constant.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "D": {
+    "name": "D",
+    "cat": "variables",
+    "meaning": "A diffusion constant or a dimension.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "E": {
+    "name": "E",
+    "cat": "variables",
+    "meaning": "An energy, or an electric field.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "F": {
+    "name": "F",
+    "cat": "variables",
+    "meaning": "A force, or a field-strength tensor.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "G": {
+    "name": "Gravitational constant",
+    "cat": "constants",
+    "meaning": "6.674\u00d710\u207b\u00b9\u00b9 N\u00b7m\u00b2/kg\u00b2: the strength of gravity.",
+    "unit": "N\u00b7m\u00b2/kg\u00b2",
+    "unlock": {
+      "item": "degenerate_matter_chunk"
+    }
+  },
+  "H": {
+    "name": "H",
+    "cat": "variables",
+    "meaning": "A Hamiltonian, Hubble rate or enthalpy.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "I": {
+    "name": "I",
+    "cat": "variables",
+    "meaning": "A current or an intensity.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "I0": {
+    "name": "Initial value I\u2080",
+    "cat": "variables",
+    "meaning": "Starting value of a quantity I, e.g. the capability of a learning system or the initial intensity of a beam, at time zero.",
+    "unit": "varies",
+    "unlock": {
+      "research": "artificial_intelligence"
+    }
+  },
+  "Im": {
+    "name": "Imaginary part",
+    "cat": "functions",
+    "meaning": "Im z: the coefficient of i.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "K": {
+    "name": "K",
+    "cat": "variables",
+    "meaning": "A constant, or a kinetic energy.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "L": {
+    "name": "L",
+    "cat": "variables",
+    "meaning": "A length, angular momentum or Lagrangian.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "M": {
+    "name": "M",
+    "cat": "variables",
+    "meaning": "A mass (usually large).",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "N": {
+    "name": "N",
+    "cat": "variables",
+    "meaning": "A number of things.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "NA": {
+    "name": "Avogadro constant",
+    "cat": "constants",
+    "meaning": "6.022\u00d710\u00b2\u00b3 per mole.",
+    "unit": "1/mol",
+    "unlock": {
+      "start": true
+    }
+  },
+  "P": {
+    "name": "P",
+    "cat": "variables",
+    "meaning": "A power, pressure or probability.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "Q": {
+    "name": "Q",
+    "cat": "variables",
+    "meaning": "A heat, charge or quality.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "R": {
+    "name": "Gas constant / radius",
+    "cat": "constants",
+    "meaning": "8.314 J/(mol\u00b7K) - or a radius, as the puzzle says.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "R0": {
+    "name": "R\u2080",
+    "cat": "variables",
+    "meaning": "A reference radius.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "Re": {
+    "name": "Real part",
+    "cat": "functions",
+    "meaning": "Re z: the real component of a complex number.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "S": {
+    "name": "S",
+    "cat": "variables",
+    "meaning": "An entropy or action.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "T": {
+    "name": "T",
+    "cat": "variables",
+    "meaning": "A temperature, period or tension.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "Tc": {
+    "name": "Critical temperature",
+    "cat": "thermo",
+    "meaning": "The temperature below which a material changes phase - e.g. becomes superconducting.",
+    "unit": "K",
+    "unlock": {
+      "research": "casimir_effect"
+    }
+  },
+  "U": {
+    "name": "U",
+    "cat": "variables",
+    "meaning": "An internal energy or potential.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "V": {
+    "name": "V",
+    "cat": "variables",
+    "meaning": "A volume, a potential or a voltage.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "W": {
+    "name": "W",
+    "cat": "variables",
+    "meaning": "Work, or a number of microstates.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "X": {
+    "name": "X",
+    "cat": "variables",
+    "meaning": "A generic quantity.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "Y": {
+    "name": "Y",
+    "cat": "variables",
+    "meaning": "A yield or a hypercharge.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "Z": {
+    "name": "Z",
+    "cat": "variables",
+    "meaning": "A partition function, or an atomic number.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "^": {
+    "name": "Power / superscript",
+    "cat": "operators",
+    "meaning": "Raises to a power, or carries an upper index (tensor components, conjugation labels).",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "_": {
+    "name": "Subscript",
+    "cat": "operators",
+    "meaning": "Attaches a lower index: a component, a species, a particle label.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "a": {
+    "name": "a",
+    "cat": "variables",
+    "meaning": "An acceleration, a distance, a constant.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "abs": {
+    "name": "Absolute value / modulus",
+    "cat": "functions",
+    "meaning": "|x|: size without sign; for a complex number, its distance from 0.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "acomm": {
+    "name": "Anticommutator {A,B}",
+    "cat": "quantum",
+    "meaning": "{A,B} = AB + BA. Fermion fields and gamma matrices obey anticommutators.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "arccos": {
+    "name": "Inverse cosine",
+    "cat": "functions",
+    "meaning": "The angle whose cosine is x.",
+    "unit": "",
+    "unlock": {
+      "item": "spectral_analyzer"
+    }
+  },
+  "arcsin": {
+    "name": "Inverse sine",
+    "cat": "functions",
+    "meaning": "The angle whose sine is x.",
+    "unit": "",
+    "unlock": {
+      "item": "spectral_analyzer"
+    }
+  },
+  "arctan": {
+    "name": "Inverse tangent",
+    "cat": "functions",
+    "meaning": "The angle whose tangent is x.",
+    "unit": "",
+    "unlock": {
+      "item": "spectral_analyzer"
+    }
+  },
+  "arg": {
+    "name": "Argument (phase)",
+    "cat": "functions",
+    "meaning": "arg z: the angle of a complex number from the positive real axis.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "avg": {
+    "name": "Expectation value \u27e8A\u27e9",
+    "cat": "quantum",
+    "meaning": "\u27e8A\u27e9 = \u27e8\u03c8|A|\u03c8\u27e9: the average result of measuring A.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "b": {
+    "name": "b",
+    "cat": "variables",
+    "meaning": "A constant or a distance.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "bar": {
+    "name": "Bar",
+    "cat": "operators",
+    "meaning": "x\u0304: an average, a complex conjugate, an antiparticle, or the Dirac adjoint \u03c8\u0304 = \u03c8\u2020\u03b3\u2070.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "binom": {
+    "name": "Binomial coefficient",
+    "cat": "functions",
+    "meaning": "(n k) = n!/(k!(n\u2212k)!): ways to choose k things from n.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "bra": {
+    "name": "Bra \u27e8\u03c8|",
+    "cat": "quantum",
+    "meaning": "\u27e8\u03c8|: the dual of a state; it eats a ket and returns a number.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "braket": {
+    "name": "Inner product \u27e8\u03c6|\u03c8\u27e9",
+    "cat": "quantum",
+    "meaning": "\u27e8\u03c6|\u03c8\u27e9: the overlap of two states; |\u27e8\u03c6|\u03c8\u27e9|\u00b2 is the probability of finding \u03c8 in \u03c6.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "c": {
+    "name": "Speed of light",
+    "cat": "constants",
+    "meaning": "299 792 458 m/s. The speed of causality.",
+    "unit": "m/s",
+    "unlock": {
+      "start": true
+    }
+  },
+  "comm": {
+    "name": "Commutator [A,B]",
+    "cat": "quantum",
+    "meaning": "[A,B] = AB \u2212 BA: zero if the order of A and B does not matter.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "conj": {
+    "name": "Complex conjugate",
+    "cat": "complex",
+    "meaning": "z*: flip the sign of the imaginary part; z\u00b7z* = |z|\u00b2.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "cos": {
+    "name": "Cosine",
+    "cat": "functions",
+    "meaning": "Ratio of adjacent side to hypotenuse; oscillation a quarter-turn ahead of sine.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "cosh": {
+    "name": "Hyperbolic cosine",
+    "cat": "functions",
+    "meaning": "(e\u02e3 + e\u207b\u02e3)/2: the hanging chain, the rapidity boost.",
+    "unit": "",
+    "unlock": {
+      "item": "spectral_analyzer"
+    }
+  },
+  "curl": {
+    "name": "Curl \u2207\u00d7",
+    "cat": "vectors",
+    "meaning": "\u2207\u00d7F: how much a vector field circulates around a point, and about which axis.",
+    "unit": "",
+    "unlock": {
+      "item": "field_emitter"
+    }
+  },
+  "d": {
+    "name": "Derivative",
+    "cat": "calculus",
+    "meaning": "df/dx: the rate at which f changes as x changes.",
+    "unit": "",
+    "unlock": {
+      "item": "cherenkov_quartz"
+    }
+  },
+  "d2": {
+    "name": "Second derivative",
+    "cat": "calculus",
+    "meaning": "d\u00b2f/dx\u00b2: how the rate of change itself changes - curvature, acceleration.",
+    "unit": "",
+    "unlock": {
+      "item": "cherenkov_quartz"
+    }
+  },
+  "dag": {
+    "name": "Hermitian adjoint \u2020",
+    "cat": "quantum",
+    "meaning": "A\u2020: conjugate transpose. An observable equals its own adjoint.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "dal": {
+    "name": "d'Alembertian \u25a1",
+    "cat": "relativity",
+    "meaning": "\u25a1 = \u2202\u00b2/c\u00b2\u2202t\u00b2 \u2212 \u2207\u00b2: the wave operator of spacetime.",
+    "unit": "",
+    "unlock": {
+      "research": "special_relativity"
+    }
+  },
+  "det": {
+    "name": "Determinant",
+    "cat": "functions",
+    "meaning": "det A: how a matrix scales volume; zero if it squashes space flat.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "div": {
+    "name": "Divergence \u2207\u00b7",
+    "cat": "vectors",
+    "meaning": "\u2207\u00b7F: how much a vector field spreads out of a point (a source) or into it (a sink).",
+    "unit": "",
+    "unlock": {
+      "item": "field_emitter"
+    }
+  },
+  "e": {
+    "name": "Euler's number / charge",
+    "cat": "constants",
+    "meaning": "2.71828..., the base of natural growth - or the elementary charge 1.602\u00d710\u207b\u00b9\u2079 C, as the puzzle says.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "eq": {
+    "name": "Equilibrium (subscript)",
+    "cat": "indices",
+    "meaning": "Subscript 'eq': the value a quantity would have in thermal equilibrium, e.g. n_eq is the equilibrium number density.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "erf": {
+    "name": "Error function",
+    "cat": "functions",
+    "meaning": "erf x = (2/\u221a\u03c0)\u222b\u2080\u02e3 e^(\u2212t\u00b2) dt: the area under a Gaussian.",
+    "unit": "",
+    "unlock": {
+      "item": "natural_number_lattice"
+    }
+  },
+  "exp": {
+    "name": "Exponential",
+    "cat": "functions",
+    "meaning": "e\u02e3: growth whose rate equals its size.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "f": {
+    "name": "f",
+    "cat": "variables",
+    "meaning": "A function or frequency.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "g": {
+    "name": "g",
+    "cat": "variables",
+    "meaning": "A coupling, gravity, a metric or degeneracy.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "gY": {
+    "name": "Hypercharge coupling g_Y",
+    "cat": "constants",
+    "meaning": "Strength of the U(1) hypercharge gauge force (often written g\u2032); together with the weak coupling g it fixes the photon/Z mixing.",
+    "unit": "dimensionless",
+    "unlock": {
+      "research": "particle_physics"
+    }
+  },
+  "grad": {
+    "name": "Gradient \u2207",
+    "cat": "vectors",
+    "meaning": "\u2207f: the vector pointing up the steepest slope of a field, with the slope as its length.",
+    "unit": "",
+    "unlock": {
+      "item": "field_emitter"
+    }
+  },
+  "gs": {
+    "name": "String coupling g_s",
+    "cat": "constants",
+    "meaning": "How strongly strings split and join; it is set by the dilaton field and controls the size of the hidden eleventh dimension.",
+    "unit": "dimensionless",
+    "unlock": {
+      "research": "string_theory"
+    }
+  },
+  "h": {
+    "name": "Planck constant",
+    "cat": "constants",
+    "meaning": "6.626\u00d710\u207b\u00b3\u2074 J\u00b7s: energy per unit frequency of a light quantum.",
+    "unit": "J\u00b7s",
+    "unlock": {
+      "item": "cherenkov_quartz"
+    }
+  },
+  "hat": {
+    "name": "Unit vector / operator hat",
+    "cat": "vectors",
+    "meaning": "x\u0302: a direction of length 1 - or, in quantum mechanics, an operator.",
+    "unit": "",
+    "unlock": {
+      "item": "field_calibrator"
+    }
+  },
+  "hc": {
+    "name": "Hermitian conjugate (+ h.c.)",
+    "cat": "quantum",
+    "meaning": "\"+ h.c.\": add the Hermitian conjugate of everything before it, so the whole is real.",
+    "unit": "",
+    "unlock": {
+      "research": "standard_model"
+    }
+  },
+  "i": {
+    "name": "Imaginary unit",
+    "cat": "complex",
+    "meaning": "i\u00b2 = \u22121. Rotates a complex number by a right angle.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "iiint": {
+    "name": "Volume integral",
+    "cat": "calculus",
+    "meaning": "\u222d_V f dV: integral over a volume.",
+    "unit": "",
+    "unlock": {
+      "item": "containment_field_glass"
+    }
+  },
+  "iint": {
+    "name": "Surface integral",
+    "cat": "calculus",
+    "meaning": "\u222c_S f dA: integral over a surface (flux through it).",
+    "unit": "",
+    "unlock": {
+      "item": "containment_field_glass"
+    }
+  },
+  "ij": {
+    "name": "Index pair",
+    "cat": "indices",
+    "meaning": "Two indices labelling rows and columns of a matrix (e.g. particle generations).",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "int": {
+    "name": "Integral",
+    "cat": "calculus",
+    "meaning": "\u222b f dx: the accumulated total of f over x - the area under its curve; with limits, from a to b.",
+    "unit": "",
+    "unlock": {
+      "item": "degenerate_matter_chunk"
+    }
+  },
+  "j": {
+    "name": "j",
+    "cat": "variables",
+    "meaning": "An index or current density.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "k": {
+    "name": "k",
+    "cat": "variables",
+    "meaning": "An index, a rate constant, a wavenumber or spring constant.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "kB": {
+    "name": "Boltzmann constant",
+    "cat": "constants",
+    "meaning": "1.381\u00d710\u207b\u00b2\u00b3 J/K: energy per kelvin per degree of freedom.",
+    "unit": "J/K",
+    "unlock": {
+      "start": true
+    }
+  },
+  "ket": {
+    "name": "Ket |\u03c8\u27e9",
+    "cat": "quantum",
+    "meaning": "|\u03c8\u27e9: a quantum state - a vector in Hilbert space.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "kj": {
+    "name": "Index pair kj",
+    "cat": "indices",
+    "meaning": "Two indices together, as for a matrix entry: row k, column j (e.g. symbol j of formula k).",
+    "unit": "",
+    "unlock": {
+      "item": "proof_assistant"
+    }
+  },
+  "l": {
+    "name": "l",
+    "cat": "variables",
+    "meaning": "A length or quantum number.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "l11": {
+    "name": "Eleven-dimensional Planck length",
+    "cat": "constants",
+    "meaning": "The length at which gravity in eleven dimensions becomes strong; it fixes the 11-D gravitational coupling 2\u03ba\u00b2 = (2\u03c0)\u2078 l\u2081\u2081\u2079.",
+    "unit": "m",
+    "unlock": {
+      "item": "kaluza_klein_shard"
+    }
+  },
+  "lap": {
+    "name": "Laplacian \u2207\u00b2",
+    "cat": "vectors",
+    "meaning": "\u2207\u00b2f = \u2207\u00b7\u2207f: how much f at a point differs from its average around it. Diffusion, waves, potentials.",
+    "unit": "",
+    "unlock": {
+      "item": "field_emitter"
+    }
+  },
+  "lim": {
+    "name": "Limit",
+    "cat": "calculus",
+    "meaning": "lim_{x\u2192a} f: the value f approaches as x approaches a.",
+    "unit": "",
+    "unlock": {
+      "item": "cherenkov_quartz"
+    }
+  },
+  "ln": {
+    "name": "Natural logarithm",
+    "cat": "functions",
+    "meaning": "The power e must be raised to.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "log": {
+    "name": "Logarithm",
+    "cat": "functions",
+    "meaning": "The power the base must be raised to (base 10 or 2 where stated).",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "ls": {
+    "name": "String length l_s",
+    "cat": "constants",
+    "meaning": "The natural length of a fundamental string, l_s = \u221a\u03b1\u2032; the tension is 1/(2\u03c0 l_s\u00b2).",
+    "unit": "m",
+    "unlock": {
+      "research": "string_theory"
+    }
+  },
+  "m": {
+    "name": "m",
+    "cat": "variables",
+    "meaning": "A mass.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "mel": {
+    "name": "Matrix element \u27e8\u03c6|A|\u03c8\u27e9",
+    "cat": "quantum",
+    "meaning": "The amplitude for A to take \u03c8 to \u03c6.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "m\u03c7": {
+    "name": "Dark scalar mass",
+    "cat": "particles",
+    "meaning": "The mass of the dark-sector particle \u03c7.",
+    "unit": "GeV",
+    "unlock": {
+      "research": "dark_sector"
+    }
+  },
+  "n": {
+    "name": "n",
+    "cat": "variables",
+    "meaning": "A count, a number density, or an integer.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "norm": {
+    "name": "Norm",
+    "cat": "vectors",
+    "meaning": "\u2016v\u2016: the length of a vector or state.",
+    "unit": "",
+    "unlock": {
+      "item": "field_calibrator"
+    }
+  },
+  "oint": {
+    "name": "Closed-loop integral",
+    "cat": "calculus",
+    "meaning": "\u222e f dl: an integral all the way round a closed curve (circulation).",
+    "unit": "",
+    "unlock": {
+      "item": "containment_field_glass"
+    }
+  },
+  "p": {
+    "name": "p",
+    "cat": "variables",
+    "meaning": "A momentum, pressure or probability.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "pd": {
+    "name": "Partial derivative",
+    "cat": "calculus",
+    "meaning": "\u2202f/\u2202x: the rate of change of f with x while every other variable is held fixed.",
+    "unit": "",
+    "unlock": {
+      "item": "dilithium_crystal"
+    }
+  },
+  "pd2": {
+    "name": "Second partial derivative",
+    "cat": "calculus",
+    "meaning": "\u2202\u00b2f/\u2202x\u00b2: curvature of f along x alone.",
+    "unit": "",
+    "unlock": {
+      "item": "dilithium_crystal"
+    }
+  },
+  "pdm": {
+    "name": "Mixed partial derivative",
+    "cat": "calculus",
+    "meaning": "\u2202\u00b2f/\u2202x\u2202y: how the slope along x changes as you move along y.",
+    "unit": "",
+    "unlock": {
+      "item": "dilithium_crystal"
+    }
+  },
+  "prod": {
+    "name": "Product over an index",
+    "cat": "calculus",
+    "meaning": "\u03a0_{k=a}^{b} f: multiply f for every k from a to b.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "q": {
+    "name": "q",
+    "cat": "variables",
+    "meaning": "A charge or a generalised coordinate.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "r": {
+    "name": "r",
+    "cat": "variables",
+    "meaning": "A radius or distance.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "root": {
+    "name": "n-th root",
+    "cat": "functions",
+    "meaning": "\u207f\u221ax = x^(1/n).",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "s": {
+    "name": "s",
+    "cat": "variables",
+    "meaning": "An entropy density, spin or selection coefficient.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "sin": {
+    "name": "Sine",
+    "cat": "functions",
+    "meaning": "Ratio of opposite side to hypotenuse; oscillation.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "sinh": {
+    "name": "Hyperbolic sine",
+    "cat": "functions",
+    "meaning": "(e\u02e3 \u2212 e\u207b\u02e3)/2.",
+    "unit": "",
+    "unlock": {
+      "item": "spectral_analyzer"
+    }
+  },
+  "sqrt": {
+    "name": "Square root",
+    "cat": "functions",
+    "meaning": "\u221ax: the number whose square is x.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "sum": {
+    "name": "Summation",
+    "cat": "calculus",
+    "meaning": "\u03a3_{k=a}^{b} f: add f for every k from a to b.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "sumk": {
+    "name": "Summation over an index",
+    "cat": "calculus",
+    "meaning": "\u03a3_k f: add f over every value of the index k.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "t": {
+    "name": "t",
+    "cat": "variables",
+    "meaning": "Time.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "t0": {
+    "name": "Initial time t\u2080",
+    "cat": "variables",
+    "meaning": "The moment from which time is measured in a problem.",
+    "unit": "s",
+    "unlock": {
+      "start": true
+    }
+  },
+  "tan": {
+    "name": "Tangent",
+    "cat": "functions",
+    "meaning": "sin/cos.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "tanh": {
+    "name": "Hyperbolic tangent",
+    "cat": "functions",
+    "meaning": "sinh/cosh; velocity from rapidity.",
+    "unit": "",
+    "unlock": {
+      "item": "spectral_analyzer"
+    }
+  },
+  "tdot": {
+    "name": "Time derivative dot",
+    "cat": "calculus",
+    "meaning": "\u1e8b = dx/dt (Newton's notation).",
+    "unit": "",
+    "unlock": {
+      "item": "cherenkov_quartz"
+    }
+  },
+  "tr": {
+    "name": "Trace",
+    "cat": "functions",
+    "meaning": "tr A: the sum of the diagonal; basis-independent.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "u": {
+    "name": "u",
+    "cat": "variables",
+    "meaning": "An energy density or velocity.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "v": {
+    "name": "v",
+    "cat": "variables",
+    "meaning": "A velocity or speed.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "vec": {
+    "name": "Vector arrow",
+    "cat": "vectors",
+    "meaning": "x\u20d7: marks a quantity with a direction as well as a size.",
+    "unit": "",
+    "unlock": {
+      "item": "field_calibrator"
+    }
+  },
+  "w": {
+    "name": "w",
+    "cat": "variables",
+    "meaning": "A weight or equation-of-state parameter.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "x": {
+    "name": "x",
+    "cat": "variables",
+    "meaning": "A position or unknown.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "y": {
+    "name": "y",
+    "cat": "variables",
+    "meaning": "A second coordinate or unknown.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "z": {
+    "name": "z",
+    "cat": "variables",
+    "meaning": "A third coordinate, or a complex number.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u00b7": {
+    "name": "Dot product",
+    "cat": "vectors",
+    "meaning": "a\u00b7b = |a||b|cos \u03b8: how much two vectors point the same way; a scalar.",
+    "unit": "",
+    "unlock": {
+      "item": "field_calibrator"
+    }
+  },
+  "\u00d7": {
+    "name": "Cross product",
+    "cat": "vectors",
+    "meaning": "a\u00d7b is perpendicular to both, with length |a||b|sin \u03b8. Order matters: a\u00d7b = \u2212b\u00d7a.",
+    "unit": "",
+    "unlock": {
+      "item": "field_calibrator"
+    }
+  },
+  "\u0127": {
+    "name": "Reduced Planck constant",
+    "cat": "constants",
+    "meaning": "h/2\u03c0 = 1.055\u00d710\u207b\u00b3\u2074 J\u00b7s: the quantum of action.",
+    "unit": "J\u00b7s",
+    "unlock": {
+      "item": "cherenkov_quartz"
+    }
+  },
+  "\u0393": {
+    "name": "Gamma function",
+    "cat": "functions",
+    "meaning": "\u0393(n) = (n\u22121)!, extended to all complex numbers: \u222b\u2080^\u221e t^(z\u22121) e^(\u2212t) dt.",
+    "unit": "",
+    "unlock": {
+      "item": "natural_number_lattice"
+    }
+  },
+  "\u0394": {
+    "name": "\u0394",
+    "cat": "variables",
+    "meaning": "A change or difference.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u039b": {
+    "name": "Cosmological constant",
+    "cat": "constants",
+    "meaning": "The energy of empty space, driving accelerated expansion.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03a6": {
+    "name": "Phi (potential)",
+    "cat": "fields",
+    "meaning": "A scalar potential, most often the electric potential: the potential energy per unit charge. Its negative gradient is the electrostatic field. Also used for magnetic or gravitational flux and potentials.",
+    "unit": "V",
+    "unlock": {
+      "item": "field_emitter"
+    }
+  },
+  "\u03a9": {
+    "name": "Capital omega (angular velocity)",
+    "cat": "variables",
+    "meaning": "Angular velocity of a rotating body (rad/s), e.g. a spinning star; elsewhere a count of microstates or a solid angle.",
+    "unit": "rad/s",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b1": {
+    "name": "Fine-structure constant / angle",
+    "cat": "constants",
+    "meaning": "\u2248 1/137: the strength of electromagnetism - or an angle or rate, as the puzzle says.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b2": {
+    "name": "\u03b2",
+    "cat": "variables",
+    "meaning": "A velocity v/c, or 1/kT.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b3": {
+    "name": "\u03b3",
+    "cat": "variables",
+    "meaning": "The Lorentz factor, a gamma matrix, or a ratio.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b4": {
+    "name": "Delta (small)",
+    "cat": "variables",
+    "meaning": "A small correction or shift, e.g. the pairing term that favours even numbers of protons and neutrons; also the Dirac delta.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b5": {
+    "name": "Epsilon",
+    "cat": "variables",
+    "meaning": "An energy density difference, a permittivity, or a small quantity, depending on context.",
+    "unit": "J/m\u00b3 (as an energy density)",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b50": {
+    "name": "Vacuum permittivity",
+    "cat": "constants",
+    "meaning": "8.854\u00d710\u207b\u00b9\u00b2 F/m: how much the vacuum lets an electric field through.",
+    "unit": "F/m",
+    "unlock": {
+      "item": "dilithium_crystal"
+    }
+  },
+  "\u03b7": {
+    "name": "Eta",
+    "cat": "variables",
+    "meaning": "An efficiency (the fraction of input that becomes useful output, between 0 and 1); also used for the flat Minkowski metric \u03b7_\u03bc\u03bd.",
+    "unit": "dimensionless",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03b8": {
+    "name": "\u03b8",
+    "cat": "variables",
+    "meaning": "An angle.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03ba": {
+    "name": "Kappa",
+    "cat": "variables",
+    "meaning": "A wavenumber, a decay constant or a curvature, depending on context (also the surface gravity of a black hole).",
+    "unit": "1/m (as a wavenumber)",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03bb": {
+    "name": "\u03bb",
+    "cat": "variables",
+    "meaning": "A wavelength, a decay constant, a coupling or an eigenvalue.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03bc": {
+    "name": "\u03bc",
+    "cat": "variables",
+    "meaning": "A reduced mass, chemical potential, or a spacetime index.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03bc0": {
+    "name": "Vacuum permeability",
+    "cat": "constants",
+    "meaning": "1.257\u00d710\u207b\u2076 N/A\u00b2: the magnetic counterpart of \u03b5\u2080; c\u00b2 = 1/(\u03b5\u2080\u03bc\u2080).",
+    "unit": "N/A\u00b2",
+    "unlock": {
+      "item": "dilithium_crystal"
+    }
+  },
+  "\u03bcc": {
+    "name": "Chemical potential",
+    "cat": "chemistry",
+    "meaning": "The free energy added by one more particle of a species; species flow from high to low \u03bc until it is equal everywhere.",
+    "unit": "J/mol",
+    "unlock": {
+      "item": "chemical_reactor"
+    }
+  },
+  "\u03bc\u03bd": {
+    "name": "Spacetime index pair",
+    "cat": "indices",
+    "meaning": "Two spacetime indices, each running over 0 (time) and 1-3 (space). A quantity carrying them, like g_\u03bc\u03bd, is a 4\u00d74 tensor.",
+    "unit": "",
+    "unlock": {
+      "research": "special_relativity"
+    }
+  },
+  "\u03bd": {
+    "name": "\u03bd",
+    "cat": "variables",
+    "meaning": "A frequency.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03be": {
+    "name": "Xi",
+    "cat": "variables",
+    "meaning": "A generic variable; in a metal, the energy of an electron state measured from the Fermi level.",
+    "unit": "J (as an energy)",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c0": {
+    "name": "Pi",
+    "cat": "constants",
+    "meaning": "Circumference over diameter, 3.14159...",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c1": {
+    "name": "\u03c1",
+    "cat": "variables",
+    "meaning": "A density.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c1I": {
+    "name": "Information erasure density",
+    "cat": "thermo",
+    "meaning": "Bits erased per unit volume per unit time. Each costs at least kT ln 2 of free energy.",
+    "unit": "bit/(m\u00b3\u00b7s)",
+    "unlock": {
+      "research": "thermodynamics_of_information"
+    }
+  },
+  "\u03c3": {
+    "name": "Stefan-Boltzmann constant / cross-section / tension",
+    "cat": "constants",
+    "meaning": "5.67\u00d710\u207b\u2078 W/(m\u00b2K\u2074) - or a cross-section, a surface tension or a standard deviation, as the puzzle says.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c4": {
+    "name": "Tau",
+    "cat": "variables",
+    "meaning": "A characteristic time: a lifetime, a doubling time or a time constant.",
+    "unit": "s",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c6": {
+    "name": "\u03c6",
+    "cat": "variables",
+    "meaning": "An angle, a phase, or a scalar field.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c7": {
+    "name": "Chi",
+    "cat": "variables",
+    "meaning": "Greek chi: often a second wavefunction or orbital (alongside \u03c6 and \u03c8), or a susceptibility.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c8": {
+    "name": "\u03c8",
+    "cat": "variables",
+    "meaning": "A wavefunction or a fermion field.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u03c9": {
+    "name": "\u03c9",
+    "cat": "variables",
+    "meaning": "An angular frequency.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u2112": {
+    "name": "Lagrangian density",
+    "cat": "fields",
+    "meaning": "The action per unit volume and time. Nature takes the path where its integral, the action, is stationary - every equation of motion follows.",
+    "unit": "J/m\u00b3",
+    "unlock": {
+      "research": "quantum_field_theory"
+    }
+  },
+  "\u2202": {
+    "name": "Partial derivative \u2202_\u03bc",
+    "cat": "calculus",
+    "meaning": "Written with an index, \u2202_\u03bc means the partial derivative with respect to the coordinate x^\u03bc (time and the three space directions).",
+    "unit": "",
+    "unlock": {
+      "item": "dilithium_crystal"
+    }
+  },
+  "\u221e": {
+    "name": "Infinity",
+    "cat": "constants",
+    "meaning": "Larger than any number; a limit, not a value.",
+    "unit": "",
+    "unlock": {
+      "start": true
+    }
+  },
+  "\u2609": {
+    "name": "Solar",
+    "cat": "constants",
+    "meaning": "Marks a quantity of the Sun: M\u2609 \u2248 1.989\u00d710\u00b3\u2070 kg is the solar mass, L\u2609 \u2248 3.828\u00d710\u00b2\u2076 W the solar luminosity.",
+    "unit": "",
+    "unlock": {
+      "research": "dark_sector"
+    }
+  }
+}

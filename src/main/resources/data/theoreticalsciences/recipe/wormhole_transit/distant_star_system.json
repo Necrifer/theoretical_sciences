@@ -1,0 +1,60 @@
+{
+  "type": "theoreticalsciences:wormhole_transit",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:dilithium_crystal",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 16
+    },
+    {
+      "id": "theoreticalsciences:void_lattice_shard",
+      "count": 8
+    },
+    {
+      "id": "theoreticalsciences:dilithium_crystal",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:magnetar_shard",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:neutrino_flux",
+      "amount": 500
+    }
+  ],
+  "energy": 4194304,
+  "duration": 1200,
+  "research": "theoreticalsciences:traversable_wormholes",
+  "physics": {
+    "windows": [
+      {
+        "q": "tt",
+        "min": 10.0,
+        "max": 60.0
+      },
+      {
+        "q": "b0",
+        "min": 50.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

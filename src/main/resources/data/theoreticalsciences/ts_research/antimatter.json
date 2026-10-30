@@ -1,0 +1,56 @@
+{
+  "title": "Antimatter Containment",
+  "description": "Pair production and Penning traps.",
+  "icon": "theoreticalsciences:antimatter_pellet",
+  "x": 3,
+  "y": 2,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:quantum_entanglement",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "An antiproton of charge q moves with velocity v through a trap made of an electrostatic potential and a strong magnetic field. Write the full force on it in terms of the scalar potential and the vector potential A (from which the magnetic field B is derived), including the magnetic part that bends it into circles.",
+    "name": "Lorentz force (in terms of potentials)",
+    "lhs": "m * d ( vec ( v ) , t )",
+    "form": "q * ( - grad ( \u03a6 ) - pd ( vec ( A ) , t ) + vec ( v ) \u00d7 vec ( B ) )",
+    "expr": "q * B / ( 2 * \u03c0 * m ) / 1000000",
+    "ask": "In a uniform field the magnetic part makes the particle circle at the frequency f = qB/(2\u03c0m). Find it in MHz for an antiproton (charge magnitude q, mass m) in the field given.",
+    "vars": {
+      "m": "particle mass (kg)",
+      "v": "velocity",
+      "t": "time",
+      "q": "charge magnitude (C)",
+      "\u03a6": "electric (scalar) potential",
+      "A": "magnetic vector potential",
+      "B": "magnetic flux density (T)"
+    },
+    "given": {
+      "q": 1.602e-19,
+      "B": 5,
+      "m": 1.6726e-27
+    },
+    "unit": "MHz",
+    "method": "The electric field is minus the gradient of the potential minus the rate of change of the vector potential; the magnetic force is the cross product of velocity and field.",
+    "distractors": [
+      "E",
+      "+",
+      "c",
+      "x"
+    ],
+    "vary": {
+      "B": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

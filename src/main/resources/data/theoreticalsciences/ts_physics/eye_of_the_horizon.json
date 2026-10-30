@@ -1,0 +1,151 @@
+{
+  "params": [
+    {
+      "id": "aS",
+      "unit": "",
+      "min": 0,
+      "max": 1.2,
+      "step": 0.001,
+      "default": 0.5
+    },
+    {
+      "id": "Qc",
+      "unit": "",
+      "min": 0,
+      "max": 1.2,
+      "step": 0.001,
+      "default": 0.1
+    },
+    {
+      "id": "Bf",
+      "unit": "T",
+      "min": 0,
+      "max": 600,
+      "step": 0.5,
+      "default": 50
+    },
+    {
+      "id": "lgM",
+      "unit": "log\u2081\u2080 M\u2609",
+      "min": -6,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ae",
+      "unit": "",
+      "expr": "aS + 0.002*d",
+      "formula": "a",
+      "show": false
+    },
+    {
+      "id": "disc",
+      "unit": "",
+      "expr": "1 - ae^2 - Qc^2",
+      "formula": "1 \u2212 a\u00b2 \u2212 Q\u00b2"
+    },
+    {
+      "id": "rp",
+      "unit": "M",
+      "expr": "1 + sqrt(pos(disc))",
+      "formula": "r\u208a = M + \u221a(M\u00b2 \u2212 a\u00b2 \u2212 Q\u00b2)"
+    },
+    {
+      "id": "rm",
+      "unit": "M",
+      "expr": "1 - sqrt(pos(disc))",
+      "formula": "r\u208b = M \u2212 \u221a(M\u00b2 \u2212 a\u00b2 \u2212 Q\u00b2)"
+    },
+    {
+      "id": "ks",
+      "unit": "1/M",
+      "expr": "(rp - rm)/(2*(rp^2 + ae^2))",
+      "formula": "\u03ba = (r\u208a \u2212 r\u208b)/(2(r\u208a\u00b2 + a\u00b2))"
+    },
+    {
+      "id": "TH",
+      "unit": "K",
+      "expr": "6.17e-8*4*ks/10^lgM",
+      "formula": "T = \u0127\u03ba/(2\u03c0k)"
+    },
+    {
+      "id": "OmH",
+      "unit": "1/M",
+      "expr": "ae/(rp^2 + ae^2)",
+      "formula": "\u03a9_H = a/(r\u208a\u00b2 + a\u00b2)"
+    },
+    {
+      "id": "Z1",
+      "unit": "",
+      "expr": "1 + cbrt(pos(1-ae^2))*(cbrt(1+ae) + cbrt(pos(1-ae)))",
+      "formula": "Bardeen Z\u2081",
+      "show": false
+    },
+    {
+      "id": "Z2",
+      "unit": "",
+      "expr": "sqrt(3*ae^2 + Z1^2)",
+      "formula": "Bardeen Z\u2082",
+      "show": false
+    },
+    {
+      "id": "risco",
+      "unit": "M",
+      "expr": "3 + Z2 - sqrt(pos((3 - Z1)*(3 + Z1 + 2*Z2)))",
+      "formula": "r_ISCO = 3 + Z\u2082 \u2212 \u221a((3 \u2212 Z\u2081)(3 + Z\u2081 + 2Z\u2082))"
+    },
+    {
+      "id": "eisco",
+      "unit": "",
+      "expr": "1 - sqrt(pos(1 - 2/(3*risco)))",
+      "formula": "\u03b7 = 1 \u2212 \u221a(1 \u2212 2/(3r_ISCO))"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "censor",
+      "kind": "quench",
+      "expr": "disc",
+      "formula": "a\u00b2 + Q\u00b2 \u2264 M\u00b2"
+    },
+    {
+      "id": "charge_hold",
+      "kind": "stop",
+      "expr": "Bf - 100*Qc",
+      "formula": "B \u2265 100 T\u00b7Q/M"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bf)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "15 + 0.02*Bf",
+  "idle_heat": "4",
+  "quench_energy": "0.5*Bf^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

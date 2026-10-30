@@ -1,0 +1,47 @@
+{
+  "title": "The Hot Big Bang",
+  "description": "Everything we see was once hotter and denser than the inside of any star, and has been expanding and cooling ever since. The Friedmann equations of general relativity say how fast: by what fills the universe and how it is curved. The first study of the Origin.",
+  "icon": "theoreticalsciences:cosmic_record_fragment",
+  "x": 9,
+  "y": -6,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:general_relativity",
+    "theoreticalsciences:nucleosynthesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metric_tensor",
+      "count": 4
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A homogeneous, isotropic universe is described by one scale factor a(t) that stretches every distance. Put such a space into general relativity: the square of the expansion rate H = (da/dt)/a is set by the density \u03c1 of what fills it, by the curvature k of space, and by a vacuum energy \u039b. Write the square of the expansion rate.",
+    "name": "First Friedmann equation",
+    "lhs": "H ^ 2",
+    "form": "8 * \u03c0 * G / 3 * \u03c1 - k * c ^ 2 / a ^ 2 + \u039b * c ^ 2 / 3",
+    "expr": "100 * 3 * H ^ 2 / ( 8 * \u03c0 * G )",
+    "ask": "A flat universe (k = 0) without \u039b has exactly the critical density \u03c1_c = 3H\u00b2/(8\u03c0G). With H in units of 10\u207b\u00b9\u2078 s\u207b\u00b9 and G in 10\u207b\u00b9\u00b9 SI units, find \u03c1_c in units of 10\u207b\u00b2\u2077 kg/m\u00b3 (about five protons per cubic metre).",
+    "vars": {
+      "H": "Hubble expansion rate (10\u207b\u00b9\u2078 s\u207b\u00b9)",
+      "G": "gravitational constant (10\u207b\u00b9\u00b9 m\u00b3 kg\u207b\u00b9 s\u207b\u00b2)",
+      "\u03c1": "mass density",
+      "k": "spatial curvature (+1, 0, \u22121)",
+      "c": "speed of light",
+      "a": "scale factor",
+      "\u039b": "cosmological constant"
+    },
+    "given": {
+      "H": 2.2,
+      "G": 6.674
+    },
+    "unit": "10\u207b\u00b2\u2077 kg/m\u00b3",
+    "method": "Treat a comoving ball of dust: its kinetic energy per unit mass \u00bd\u0227\u00b2 minus the potential 4\u03c0G\u03c1a\u00b2/3 is constant, and that constant is the curvature. General relativity adds the vacuum term.",
+    "distractors": [
+      "p",
+      "\u0127",
+      "4"
+    ]
+  }
+}

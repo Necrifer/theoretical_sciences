@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:cosmological_constant"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.cosmic_eschatology"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.cosmic_eschatology.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/dark_energy",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

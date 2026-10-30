@@ -1,0 +1,45 @@
+{
+  "title": "Traversable Wormholes",
+  "description": "Black and white holes joined at the throat, propped open with negative mass.",
+  "icon": "theoreticalsciences:wormhole_throat",
+  "x": 10,
+  "y": 0,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:white_holes",
+    "theoreticalsciences:mass_manipulation",
+    "theoreticalsciences:general_relativity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:negative_mass_ingot",
+      "count": 2
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A static, spherically symmetric throat of radius r0 joins two regions of space. Its shape is set by a function b(r) = r0\u00b2/r, and the field equations relate the energy density at radius r to the radial derivative of b. Write the mass density needed.",
+    "name": "Morris\u2013Thorne energy density (Ellis wormhole)",
+    "lhs": "\u03c1",
+    "form": "c ^ 2 * d ( r _ 0 ^ 2 / r , r ) / ( 8 * \u03c0 * G * r ^ 2 )",
+    "expr": "- 1 / ( 8 * \u03c0 * r ^ 2 )",
+    "ask": "The derivative is \u2212r0\u00b2/r\u00b2; at the throat (r = r0), in units G = c = 1, \u03c1 = \u22121/(8\u03c0r0\u00b2). Find it for the throat radius below.",
+    "vars": {
+      "\u03c1": "mass-energy density",
+      "c": "speed of light",
+      "r": "radius",
+      "G": "gravitational constant"
+    },
+    "given": {
+      "r": 0.1
+    },
+    "unit": "geometric units",
+    "method": "Take the time-time component of the field equations for the throat metric ds\u00b2 = \u2212c\u00b2dt\u00b2 + dr\u00b2/(1 \u2212 b/r) + r\u00b2d\u03a9\u00b2.",
+    "distractors": [
+      "2",
+      "-",
+      "M",
+      "4"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_ingot",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:superposition_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:transcendental_crystal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:nanite_swarm",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:rf_resonator_cell",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chronosteel_ingot",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 1000
+    }
+  ],
+  "energy": 32768,
+  "duration": 900,
+  "research": "theoreticalsciences:plasma_metallurgy",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 8.0,
+        "max": 20.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "mekanism:ultimate_control_circuit",
+      "count": 16
+    },
+    {
+      "item": "enderio:prescient_crystal",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:bose_einstein_condensate",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

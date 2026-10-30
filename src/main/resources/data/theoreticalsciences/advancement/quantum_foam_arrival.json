@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:planck_diver"
+    },
+    "title": "Below the Planck Length",
+    "description": "Dive into the Quantum Foam",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/quantum_foam",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "theoreticalsciences:quantum_foam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

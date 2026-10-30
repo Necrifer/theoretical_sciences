@@ -1,0 +1,59 @@
+{
+  "title": "Temporal Mechanics",
+  "description": "The arrow of time, and how to tie it in knots without causing a paradox. Unlocks the Chrono Loom.",
+  "icon": "theoreticalsciences:temporal_knot",
+  "x": 5,
+  "y": -4,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:chronodynamics",
+    "theoreticalsciences:thermodynamics_of_information"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A gas is released into a larger container and its microstates spread out. Before, microstate j had probability q_j; afterwards it has probability p_j. Write the change in entropy as the statistical entropy of the final distribution minus that of the initial one, each built from the probabilities and their logarithms.",
+    "name": "Gibbs entropy change (statistical arrow of time)",
+    "lhs": "\u0394 * S",
+    "form": "- kB * sumk ( j , p _ j * ln ( p _ j ) ) + kB * sumk ( j , q _ j * ln ( q _ j ) )",
+    "expr": "n * R * ln ( V2 / V1 )",
+    "ask": "For an ideal gas filling all accessible states equally, this becomes nR ln(V\u2082/V\u2081). Find the entropy increase when n = @{n} mol expands freely from V\u2081 = 1 L to V\u2082 = 3 L.",
+    "vars": {
+      "\u0394": "change",
+      "S": "entropy",
+      "kB": "Boltzmann constant",
+      "j": "microstate index",
+      "p": "final probability of microstate j",
+      "q": "initial probability of microstate j",
+      "n": "amount of gas (mol)",
+      "R": "gas constant (J/(mol K))",
+      "V1": "initial volume",
+      "V2": "final volume"
+    },
+    "given": {
+      "n": 2,
+      "R": 8.314,
+      "V1": 1,
+      "V2": 3
+    },
+    "unit": "J/K",
+    "method": "Each microstate contributes \u2212kB\u00b7p\u00b7ln p; subtract the initial sum from the final one.",
+    "distractors": [
+      "T",
+      "exp",
+      "N"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

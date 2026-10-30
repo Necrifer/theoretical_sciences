@@ -1,0 +1,62 @@
+{
+  "title": "Protein Folding",
+  "description": "A chain finds its one shape among astronomically many. Unlocks folded protein crystals.",
+  "icon": "theoreticalsciences:folded_protein_crystal",
+  "x": 8,
+  "y": 14,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:genomics",
+    "theoreticalsciences:quantum_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:recombinant_dna",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A protein chain can sit in any of an enormous number of conformations j, each with energy E_j, in contact with a heat bath at temperature T. Write the probability that it is found in its native conformation N, weighting each conformation by its thermal factor and normalising by the sum over all of them.",
+    "name": "Boltzmann probability of the native state (canonical ensemble)",
+    "lhs": "P _ N",
+    "form": "exp ( - E _ N / ( kB * T ) ) / sumk ( j , exp ( - E _ j / ( kB * T ) ) )",
+    "expr": "1 / ( 1 + ( k ^ n - 1 ) * exp ( - x ) )",
+    "ask": "Model the chain as n = @{n} residues with k = 3 states each: the native state lies at energy 0 and the other k\u207f \u2212 1 conformations all lie \u0394 higher, with \u0394/(kB\u00b7T) = x = @{x}. Find the probability of the native state.",
+    "vars": {
+      "P": "probability",
+      "N": "label: the native conformation",
+      "E": "conformation energy",
+      "j": "conformation index",
+      "kB": "Boltzmann constant",
+      "T": "temperature",
+      "k": "states per residue",
+      "n": "number of residues",
+      "x": "energy gap over kB\u00b7T"
+    },
+    "given": {
+      "k": 3,
+      "n": 10,
+      "x": 15
+    },
+    "unit": "",
+    "method": "Each state is weighted by e^{\u2212E/kBT}; dividing by the sum of all weights makes the probabilities add to one.",
+    "distractors": [
+      "+",
+      "ln",
+      "S"
+    ],
+    "vary": {
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "x": [
+        9.0,
+        21.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "params": [
+    {
+      "id": "Bt",
+      "unit": "T",
+      "min": 0,
+      "max": 16,
+      "step": 0.05,
+      "default": 3
+    },
+    {
+      "id": "Ip",
+      "unit": "MA",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "default": 2
+    },
+    {
+      "id": "n",
+      "unit": "10\u00b2\u2070/m\u00b3",
+      "min": 0,
+      "max": 5,
+      "step": 0.01,
+      "default": 0.5
+    },
+    {
+      "id": "Pa",
+      "unit": "MW",
+      "min": 0,
+      "max": 2000,
+      "step": 1,
+      "default": 20
+    }
+  ],
+  "recipe_vars": {
+    "EG": 1180,
+    "Cf": 3.68e-18,
+    "Ef": 17.6,
+    "fch": 0.2,
+    "Zf": 1.0
+  },
+  "consts": [
+    {
+      "id": "R0",
+      "expr": "6.2"
+    },
+    {
+      "id": "a",
+      "expr": "2.0"
+    },
+    {
+      "id": "Vp",
+      "expr": "2*pi^2*R0*a^2*1.7"
+    }
+  ],
+  "states": [
+    {
+      "id": "Tp",
+      "unit": "keV",
+      "init": "0.1",
+      "ddt": "(Pa + Pch - Pbr - W/tauE)/(0.048*n*Vp+0.01)",
+      "min": 0.01,
+      "max": 3000,
+      "out_of_range": "stop"
+    }
+  ],
+  "derived": [
+    {
+      "id": "Zeff",
+      "unit": "",
+      "expr": "Zf*(1+0.15*(d+1))",
+      "formula": "Z_eff"
+    },
+    {
+      "id": "sv",
+      "unit": "m\u00b3/s",
+      "expr": "Cf*Tp^(-2/3)*exp(-3*(EG/(4*Tp))^(1/3))",
+      "formula": "\u27e8\u03c3v\u27e9 = C\u00b7T^(\u22122/3)\u00b7exp(\u22123(E_G/4T)^(1/3))"
+    },
+    {
+      "id": "Pfus",
+      "unit": "MW",
+      "expr": "n^2*sv*Ef*Vp*4.005e20",
+      "formula": "P_fus = \u00bcn\u00b2\u27e8\u03c3v\u27e9E_f\u00b7V"
+    },
+    {
+      "id": "Pch",
+      "unit": "MW",
+      "expr": "fch*Pfus",
+      "formula": "P_\u03b1 = f_ch\u00b7P_fus"
+    },
+    {
+      "id": "Pbr",
+      "unit": "MW",
+      "expr": "5.35e-3*Zeff*n^2*sqrt(Tp)*Vp",
+      "formula": "P_br = 5.35\u00d710\u207b\u00b3\u00b7Z_eff\u00b7n\u00b2\u00b7\u221aT\u00b7V"
+    },
+    {
+      "id": "Ploss",
+      "unit": "MW",
+      "expr": "max(Pa + Pch - Pbr, 0.01)",
+      "formula": "P_L = P_aux + P_\u03b1 \u2212 P_rad",
+      "show": false
+    },
+    {
+      "id": "tauE",
+      "unit": "s",
+      "expr": "0.0562*Ip^0.93*Bt^0.15*(10*n)^0.41*Ploss^(-0.69)*R0^1.97*1.7^0.78*(a/R0)^0.58*1.19",
+      "formula": "\u03c4_E = 0.0562\u00b7I^0.93\u00b7B^0.15\u00b7n^0.41\u00b7P^\u22120.69\u00b7R^1.97\u00b7\u03ba^0.78\u00b7\u03b5^0.58\u00b7M^0.19"
+    },
+    {
+      "id": "W",
+      "unit": "MJ",
+      "expr": "0.048*n*Tp*Vp",
+      "formula": "W = 3nTV"
+    },
+    {
+      "id": "trip",
+      "unit": "10\u00b2\u2070 keV s",
+      "expr": "n*Tp*tauE",
+      "formula": "n\u00b7T\u00b7\u03c4_E"
+    },
+    {
+      "id": "Qf",
+      "unit": "",
+      "expr": "Pfus/max(Pa, 0.1)",
+      "formula": "Q = P_fus/P_aux"
+    },
+    {
+      "id": "beta",
+      "unit": "%",
+      "expr": "8.05*n*Tp/Bt^2",
+      "formula": "\u03b2 = 2\u03bc\u2080p/B\u00b2"
+    },
+    {
+      "id": "blim",
+      "unit": "%",
+      "expr": "2.8*Ip/(a*Bt)",
+      "formula": "\u03b2_max = \u03b2_N\u00b7I/(aB)"
+    },
+    {
+      "id": "nG",
+      "unit": "10\u00b2\u2070/m\u00b3",
+      "expr": "Ip/(pi*a^2)",
+      "formula": "n_G = I/(\u03c0a\u00b2)"
+    },
+    {
+      "id": "q95",
+      "unit": "",
+      "expr": "5*a^2*Bt*(1+1.7^2)/2/(R0*Ip)",
+      "formula": "q = 5a\u00b2B(1+\u03ba\u00b2)/(2RI)"
+    },
+    {
+      "id": "Bpk",
+      "unit": "T",
+      "expr": "Bt*R0/(R0-a-1)",
+      "formula": "B_peak = B\u00b7R/(R \u2212 a \u2212 1 m)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "beta_limit",
+      "kind": "quench",
+      "expr": "blim - beta",
+      "formula": "\u03b2 < \u03b2_N\u00b7I/(aB)"
+    },
+    {
+      "id": "greenwald",
+      "kind": "quench",
+      "expr": "nG - n",
+      "formula": "n < I/(\u03c0a\u00b2)"
+    },
+    {
+      "id": "kink",
+      "kind": "quench",
+      "expr": "q95 - 2",
+      "formula": "q\u2089\u2085 > 2"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bpk)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "(Pch + Pa)/400",
+  "rate_formula": "rate = (P_\u03b1 + P_aux) / 400 MW",
+  "heat": "10 + 0.01*Pfus + 0.02*Pa",
+  "idle_heat": "4",
+  "quench_energy": "20*W",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

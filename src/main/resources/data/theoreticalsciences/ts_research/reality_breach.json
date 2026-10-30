@@ -1,0 +1,58 @@
+{
+  "title": "The Axiomatic Breach",
+  "description": "Break every law of physics and mathematics at once, and step through the hole. Unlocks the Axiomatic Breach Engine and the Axiom Key.",
+  "icon": "theoreticalsciences:axiom_key",
+  "x": 18,
+  "y": -1,
+  "insight": 600,
+  "requires": [
+    "theoreticalsciences:axiom_theory",
+    "theoreticalsciences:conceptual_singularities"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:absolute_infinity",
+      "count": 1
+    }
+  ],
+  "time": 3390,
+  "puzzle": {
+    "goal": "A sphere of radius R holds matter whose energy density falls from u0 at the centre to zero at the edge as 1 \u2212 r\u00b2/R\u00b2. No region can hold more than a fixed amount of information, proportional to its radius times its total energy. Write that maximum, in bits, with the energy built up from thin spherical shells.",
+    "name": "Bekenstein bound",
+    "lhs": "I",
+    "form": "2 * \u03c0 * R / ( \u0127 * c * ln ( 2 ) ) * int ( 0 , R , 4 * \u03c0 * r ^ 2 * \u03c1 _ 0 * c ^ 2 * ( 1 - r ^ 2 / R ^ 2 ) , r )",
+    "expr": "2 * \u03c0 * R / ( hc * ln ( 2 ) ) * 8 * \u03c0 * u * R ^ 3 / 15",
+    "ask": "The integral is 8\u03c0\u03c10c\u00b2R\u00b3/15. For a proton-sized region (R in fm, u = \u03c10c\u00b2 in MeV/fm\u00b3, \u0127c in MeV fm) find the maximum information.",
+    "vars": {
+      "I": "maximum information (bits)",
+      "R": "radius of the region",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light",
+      "r": "shell radius",
+      "\u03c1": "mass density",
+      "u": "central energy density \u03c10c\u00b2 (MeV/fm\u00b3)",
+      "hc": "\u0127c (MeV fm)"
+    },
+    "given": {
+      "R": 0.87,
+      "hc": 197.3,
+      "u": 850
+    },
+    "unit": "bits",
+    "method": "Total energy is the volume integral of the energy density over shells 4\u03c0r\u00b2dr; the entropy bound is 2\u03c0kRE/(\u0127c), and dividing by kB ln 2 converts to bits.",
+    "distractors": [
+      "4",
+      "G",
+      "kB",
+      "+",
+      "3"
+    ],
+    "vary": {
+      "R": [
+        0.522,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

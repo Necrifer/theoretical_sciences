@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:positronium_hydride"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.exotic_chemistry"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.exotic_chemistry.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/supramolecular_chemistry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "params": [
+    {
+      "id": "Rr",
+      "unit": "",
+      "min": 0,
+      "max": 50,
+      "step": 0.01,
+      "default": 3
+    },
+    {
+      "id": "Qr",
+      "unit": "kW",
+      "min": 0,
+      "max": 2000,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "id": "xD",
+      "unit": "",
+      "min": 0.5,
+      "max": 0.999999,
+      "step": 1e-06,
+      "default": 0.95
+    }
+  ],
+  "recipe_vars": {
+    "al": 2.0,
+    "xF": 0.3,
+    "Tb": 400,
+    "dH": 20
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "xFe",
+      "unit": "",
+      "expr": "clamp(xF*(1+0.05*d), 0.001, 0.999)",
+      "formula": "x_F",
+      "show": false
+    },
+    {
+      "id": "Nmin",
+      "unit": "",
+      "expr": "ln((xD/(1-xD))*((1-0.05)/0.05))/ln(al)",
+      "formula": "N_min = ln[(x_D/(1\u2212x_D))((1\u2212x_B)/x_B)] / ln \u03b1"
+    },
+    {
+      "id": "Rmin",
+      "unit": "",
+      "expr": "(xD/xFe - al*(1-xD)/(1-xFe))/(al - 1)",
+      "formula": "R_min = (x_D/x_F \u2212 \u03b1(1\u2212x_D)/(1\u2212x_F))/(\u03b1 \u2212 1)"
+    },
+    {
+      "id": "Xg",
+      "unit": "",
+      "expr": "pos(Rr - Rmin)/(Rr + 1)",
+      "formula": "X = (R \u2212 R_min)/(R + 1)",
+      "show": false
+    },
+    {
+      "id": "Nreq",
+      "unit": "",
+      "expr": "(Nmin + 0.75*(1 - Xg^0.5668))/(1 - 0.75*(1 - Xg^0.5668))",
+      "formula": "Y = 0.75(1 \u2212 X^0.5668),  N = (N_min + Y)/(1 \u2212 Y)"
+    },
+    {
+      "id": "Dr",
+      "unit": "mol/s",
+      "expr": "Qr/((Rr + 1)*dH)",
+      "formula": "D = Q/((R+1)\u0394H_vap)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "pinch",
+      "kind": "stop",
+      "expr": "Rr - Rmin",
+      "formula": "R > R_min"
+    },
+    {
+      "id": "stages",
+      "kind": "stop",
+      "expr": "40 - Nreq",
+      "formula": "N_req \u2264 40"
+    },
+    {
+      "id": "condense",
+      "kind": "stop",
+      "expr": "Tb - T",
+      "formula": "T < T_boil"
+    }
+  ],
+  "rate": "clamp(Dr/0.5, 0, 4)",
+  "rate_formula": "rate = D / 0.5 mol/s",
+  "heat": "Qr",
+  "idle_heat": "0.5",
+  "quench_energy": "0",
+  "kappa": 60,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

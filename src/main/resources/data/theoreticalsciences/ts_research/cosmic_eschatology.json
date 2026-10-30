@@ -1,0 +1,60 @@
+{
+  "title": "Cosmic Eschatology",
+  "description": "How does a universe end? Its fate is written in what fills it: matter decelerates the expansion, dark energy accelerates it, and the equation of state w decides whether it freezes, rips or collapses. The first study of Finality.",
+  "icon": "theoreticalsciences:cosmological_constant",
+  "x": 10,
+  "y": -8,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:big_bang_cosmology",
+    "theoreticalsciences:dark_energy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 4
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "Whether the expansion of a universe speeds up or slows down depends on what fills it. Take the acceleration of the scale factor, d\u00b2a/dt\u00b2, divided by the scale factor itself: ordinary matter and radiation of density \u03c1 and pressure p pull it back, a vacuum energy \u039b pushes it on. Write that relative acceleration.",
+    "name": "Second Friedmann (acceleration) equation",
+    "lhs": "d2 ( a , t ) / a",
+    "form": "- 4 * \u03c0 * G / 3 * ( \u03c1 + 3 * p / c ^ 2 ) + \u039b * c ^ 2 / 3",
+    "expr": "\u039b - \u03a9 / 2",
+    "ask": "In density parameters the deceleration parameter is q = \u03a9_m/2 \u2212 \u03a9_\u039b (q < 0 means acceleration). With \u03a9_m = \u03a9 and \u03a9_\u039b = \u039b given, find \u2212q: how strongly our universe accelerates towards its end.",
+    "vars": {
+      "a": "scale factor",
+      "t": "cosmic time",
+      "G": "gravitational constant",
+      "\u03c1": "density",
+      "p": "pressure",
+      "c": "speed of light",
+      "\u039b": "cosmological constant (\u03a9_\u039b in step 2)",
+      "\u03a9": "matter density parameter"
+    },
+    "given": {
+      "\u039b": 0.685,
+      "\u03a9": 0.315
+    },
+    "unit": "",
+    "method": "Differentiate the first Friedmann equation in time and use energy conservation d\u03c1/dt = \u22123H(\u03c1 + p/c\u00b2).",
+    "distractors": [
+      "k",
+      "H",
+      "2"
+    ],
+    "vary": {
+      "\u039b": [
+        0.411,
+        0.959,
+        0.001
+      ],
+      "\u03a9": [
+        0.189,
+        0.441,
+        0.001
+      ]
+    }
+  }
+}

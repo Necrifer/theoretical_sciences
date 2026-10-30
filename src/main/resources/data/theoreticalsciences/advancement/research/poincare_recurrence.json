@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:boltzmann_fluctuation"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.poincare_recurrence"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.poincare_recurrence.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/heat_death",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

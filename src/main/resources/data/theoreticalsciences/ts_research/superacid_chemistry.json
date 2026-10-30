@@ -1,0 +1,77 @@
+{
+  "title": "Superacids",
+  "description": "Acids a million million times stronger than sulfuric - strong enough to protonate almost anything.",
+  "icon": "theoreticalsciences:chiral_crystal",
+  "x": 5,
+  "y": 12,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:electrochemistry",
+    "theoreticalsciences:particle_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:electride_crystal",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A weakly basic indicator B is dissolved in a superacid and partly protonated to BH\u207a. The acidity is measured by how far the protonation goes. Write the acidity function from the standard free energy of deprotonation of BH\u207a (converted to a base-10 logarithm) plus the log of the ratio of unprotonated to protonated indicator.",
+    "name": "Hammett acidity function",
+    "lhs": "H _ 0",
+    "form": "\u0394 * G / ( R * T * ln ( 10 ) ) + log ( c _ B / c _ BH )",
+    "expr": "dG / ( R * T * ln ( 10 ) ) + ln ( cB / cBH ) / ln ( 10 )",
+    "ask": "Find H0 for an indicator whose deprotonation free energy is given, when it is @{cBH} times more protonated than not.",
+    "vars": {
+      "H": "acidity function",
+      "\u0394": "standard change",
+      "G": "deprotonation free energy of BH\u207a",
+      "R": "gas constant",
+      "T": "temperature (K)",
+      "c": "concentration",
+      "B": "free indicator base",
+      "BH": "protonated indicator",
+      "dG": "standard free energy of deprotonation (J/mol)",
+      "cB": "concentration of B",
+      "cBH": "concentration of BH\u207a"
+    },
+    "given": {
+      "dG": -57620,
+      "R": 8.314,
+      "T": 298,
+      "cB": 1,
+      "cBH": 100
+    },
+    "unit": "",
+    "method": "Write the acid dissociation constant of BH\u207a as a Boltzmann factor of its free energy, take minus its base-10 log, and add the log of the base-to-acid ratio.",
+    "distractors": [
+      "-",
+      "exp",
+      "K",
+      "e"
+    ],
+    "vary": {
+      "dG": [
+        -80668.0,
+        -34572.0,
+        1.0
+      ],
+      "T": [
+        179.0,
+        417.0,
+        1.0
+      ],
+      "cB": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "cBH": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:crystal_growth",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:topological_insulator",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:planck_shard",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rf_resonator_cell",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 250
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:particle_physics",
+  "scaled": 4,
+  "expanded": true
+}

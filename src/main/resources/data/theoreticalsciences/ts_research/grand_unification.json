@@ -1,0 +1,60 @@
+{
+  "title": "Grand Unification",
+  "description": "At high enough energy, three forces become one.",
+  "icon": "theoreticalsciences:grand_unified_core",
+  "x": 11,
+  "y": 5,
+  "insight": 150,
+  "requires": [
+    "theoreticalsciences:supersymmetry",
+    "theoreticalsciences:string_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superpartner_shard",
+      "count": 4
+    }
+  ],
+  "time": 510,
+  "puzzle": {
+    "goal": "A gauge coupling \u03b1 is not constant: quantum loops make it change logarithmically with the energy scale \u03bc. With one-loop coefficient b and two-loop coefficient b_2, the inverse coupling changes by \u2212b/(2\u03c0) \u2212 b_2\u00b7\u03b1/(8\u03c0\u00b2) per unit of ln \u03bc. Integrate from the reference scale M up to Q to get 1/\u03b1 at Q.",
+    "name": "Renormalisation-group running of a gauge coupling (two loops)",
+    "lhs": "1 / \u03b1 _ Q",
+    "form": "1 / \u03b1 _ M - int ( M , Q , ( b / ( 2 * \u03c0 ) + b _ 2 * \u03b1 / ( 8 * \u03c0 ^ 2 ) ) / \u03bc , \u03bc )",
+    "expr": "a - b / ( 2 * \u03c0 ) * ln ( Q / M )",
+    "ask": "Dropping the small two-loop term the integral is (b/2\u03c0)\u00b7ln(Q/M). Find the inverse U(1) coupling at Q = 10\u00b9\u2076 GeV given 1/\u03b1 = @{a} at M = 91.2 GeV and b = @{b}.",
+    "vars": {
+      "\u03b1": "gauge coupling",
+      "Q": "final energy scale (GeV)",
+      "M": "reference energy scale (GeV)",
+      "b": "one-loop coefficient",
+      "\u03bc": "running energy scale",
+      "a": "1/\u03b1 at M"
+    },
+    "given": {
+      "a": 59,
+      "b": 4.1,
+      "Q": 1e+16,
+      "M": 91.2
+    },
+    "unit": "",
+    "method": "Write d\u03b1/d ln \u03bc as a power series in \u03b1, convert it to an equation for 1/\u03b1, and integrate d ln \u03bc = d\u03bc/\u03bc between the two scales.",
+    "distractors": [
+      "e",
+      "ln",
+      "4"
+    ],
+    "vary": {
+      "a": [
+        35.0,
+        83.0,
+        1.0
+      ],
+      "b": [
+        2.45,
+        5.74,
+        0.01
+      ]
+    }
+  }
+}

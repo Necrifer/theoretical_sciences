@@ -1,0 +1,67 @@
+{
+  "title": "The Dark Sector",
+  "description": "Most of the universe's mass does not interact with light. Unlocks the Dark Matter Halo Collector.",
+  "icon": "theoreticalsciences:dark_matter_lens",
+  "x": 6,
+  "y": 1,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:particle_physics",
+    "theoreticalsciences:topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Stars far out in a galaxy orbit at speeds that stay roughly constant with radius, so most of the mass must be invisible. Model the halo with a density that falls as 1/s near the centre and 1/s\u00b3 far out, with scale radius a. Write the squared orbital speed at radius r from the mass enclosed in spherical shells out to r.",
+    "name": "Circular velocity of a Navarro\u2013Frenk\u2013White dark-matter halo",
+    "lhs": "v ^ 2",
+    "form": "G / r * int ( 0 , r , 4 * \u03c0 * s ^ 2 * \u03c1 _ 0 / ( s / a * ( 1 + s / a ) ^ 2 ) , s )",
+    "expr": "sqrt ( 4 * \u03c0 * G * \u03c10 * a ^ 3 * ( ln ( 1 + r / a ) - r / ( a + r ) ) / r ) / 1000",
+    "ask": "The integral gives an enclosed mass 4\u03c0\u03c10a\u00b3[ln(1 + r/a) \u2212 r/(a + r)]. Find the orbital speed in km/s at the radius below.",
+    "vars": {
+      "v": "circular orbital speed",
+      "G": "gravitational constant",
+      "r": "orbit radius (m)",
+      "s": "shell radius",
+      "\u03c1": "halo density",
+      "\u03c10": "characteristic halo density (kg/m\u00b3)",
+      "a": "scale radius (m)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "\u03c10": 5e-22,
+      "a": 6.171e+20,
+      "r": 1.851e+21
+    },
+    "unit": "km/s",
+    "method": "Balance gravity against centripetal acceleration, v\u00b2/r = GM(r)/r\u00b2, and build M(r) by integrating density over thin spherical shells of area 4\u03c0s\u00b2.",
+    "distractors": [
+      "3",
+      "M",
+      "c",
+      "-"
+    ],
+    "vary": {
+      "\u03c10": [
+        2.99e-22,
+        7e-22,
+        1e-24
+      ],
+      "a": [
+        3.7e+20,
+        8.64e+20,
+        1e+18
+      ],
+      "r": [
+        1.11e+21,
+        2.6e+21,
+        1e+19
+      ]
+    }
+  }
+}

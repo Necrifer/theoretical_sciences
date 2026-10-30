@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:transfinite_computation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cantor_key"
+    },
+    {
+      "item": "theoreticalsciences:ordinal_stone"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:stone",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:power_set",
+      "count": 32
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ordinal_stone",
+      "count": 32
+    },
+    {
+      "id": "theoreticalsciences:hypersphere_fragment",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 2000,
+  "research": "theoreticalsciences:transfinite_hierarchy",
+  "unscaled": true
+}

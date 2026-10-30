@@ -1,0 +1,50 @@
+{
+  "title": "CPT Symmetry",
+  "description": "Reverse charge, parity and time together and the laws of physics do not change. Somewhere, then, there is a universe of antimatter. Unlocks the CPT Mirror and the Penning Harness.",
+  "icon": "theoreticalsciences:cpt_mirror",
+  "x": 12,
+  "y": 17,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:antimatter",
+    "theoreticalsciences:special_relativity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "Find the first-order relativistic wave equation for a spin-\u00bd field \u03c8 of mass m: it is linear in the spacetime derivatives \u2202_\u03bc, which are contracted with four matrices \u03b3^\u03bc, and its square must reproduce E\u00b2 = p\u00b2c\u00b2 + m\u00b2c\u2074. Its negative-energy solutions predicted the existence of antimatter. Write the expression that must vanish.",
+    "name": "Dirac equation",
+    "lhs": "0",
+    "form": "i * \u0127 * \u03b3 ^ \u03bc * \u2202 _ \u03bc * \u03c8 - m * c * \u03c8",
+    "expr": "10 * h / ( m * c )",
+    "ask": "An electron and a positron at rest annihilate into two photons, each carrying mc\u00b2, so each has wavelength h/(mc). Find it in pm with h in 1e-34 J s, m in 1e-31 kg and c in 1e8 m/s.",
+    "vars": {
+      "i": "imaginary unit",
+      "\u0127": "reduced Planck constant",
+      "\u03b3": "the four gamma matrices \u03b3^\u03bc",
+      "\u03bc": "spacetime index (summed)",
+      "\u2202": "partial derivative \u2202_\u03bc = \u2202/\u2202x^\u03bc",
+      "\u03c8": "four-component spinor field",
+      "m": "particle mass (1e-31 kg)",
+      "c": "speed of light (1e8 m/s)",
+      "h": "Planck constant (1e-34 J s)"
+    },
+    "given": {
+      "h": 6.626,
+      "m": 9.109,
+      "c": 2.998
+    },
+    "unit": "pm",
+    "method": "Take the square root of the energy-momentum relation with operators E \u2192 i\u0127\u2202_t, p \u2192 \u2212i\u0127\u2207; it only works if the coefficients anticommute, i.e. are matrices.",
+    "distractors": [
+      "\u03bd",
+      "+",
+      "e"
+    ]
+  }
+}

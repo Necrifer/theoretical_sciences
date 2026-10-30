@@ -1,0 +1,56 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 1049604,
+    "fog_color": 2099206,
+    "water_color": 8450303,
+    "water_fog_color": 2099206,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.02
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.black_hole_interior",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:tidal_horror",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [
+      "theoreticalsciences:einstein_rosen_bridge"
+    ],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:anomaly_vault_black_hole_interior"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_tidal",
+      "theoreticalsciences:ore_frozen_light"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

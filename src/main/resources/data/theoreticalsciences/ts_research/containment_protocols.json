@@ -1,0 +1,57 @@
+{
+  "title": "Containment, Study & Isolation",
+  "description": "To study an anomaly you must keep it alive; to keep the world safe you must keep it from spreading. Quarantine is the art of clearing it just faster than it copies itself - R below 1, and not much below. Unlocks the Quarantine Field Matrix.",
+  "icon": "theoreticalsciences:quarantine_field_matrix",
+  "x": 20,
+  "y": 8,
+  "insight": 420,
+  "requires": [
+    "theoreticalsciences:anomaly_scaling"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:anomaly_catalogue",
+      "count": 1
+    }
+  ],
+  "time": 2100,
+  "puzzle": {
+    "goal": "A contained anomalous unit makes new ones at a constant rate \u03b2 while it is active, and stops being active either by clearing itself (rate \u03b3) or by being caught by the quarantine field (rate q), so it is still active a time \u03c4 after it appeared with probability exp(\u2212(\u03b3 + q)\u03c4). Write the expected number of new units it makes in its whole active life.",
+    "name": "effective reproduction number under quarantine (renewal integral)",
+    "lhs": "R _ e",
+    "form": "int ( 0 , \u221e , \u03b2 * exp ( - ( \u03b3 + q ) * \u03c4 ) , \u03c4 )",
+    "expr": "\u03b2 - \u03b3",
+    "ask": "The integral is \u03b2/(\u03b3 + q). Find the smallest quarantine rate q that holds R_e at 1 (containment) for the \u03b2 and \u03b3 given, in units per day.",
+    "vars": {
+      "R": "reproduction number",
+      "e": "effective",
+      "\u03b2": "rate of making new units",
+      "\u03b3": "natural clearance rate",
+      "q": "quarantine rate",
+      "\u03c4": "age of a unit"
+    },
+    "given": {
+      "\u03b2": 0.5,
+      "\u03b3": 0.1
+    },
+    "unit": "per day",
+    "method": "Integrate the rate of making new units times the probability of still being active at each age.",
+    "distractors": [
+      "N",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "\u03b2": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "\u03b3": [
+        0.06,
+        0.14,
+        0.001
+      ]
+    }
+  }
+}

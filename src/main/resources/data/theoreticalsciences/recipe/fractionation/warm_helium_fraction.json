@@ -1,0 +1,81 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:warm_helium",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:synaptic_fluid",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 16000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:superfluid_helium",
+      "amount": 3800
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:fractional_distillation",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "al": 3.0,
+      "xF": 0.15,
+      "Tb": 4.2,
+      "dH": 0.08
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.99,
+        "max": 1.0
+      }
+    ]
+  },
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:narrow_ai_core",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:scintillator_crystal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:real_continuum",
+      "count": 8
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "mysticalextendedtier:lightium_ingot",
+      "count": 16
+    },
+    {
+      "item": "enderio:prescient_crystal",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "avaritia_integration:molten_crystal_matrix",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

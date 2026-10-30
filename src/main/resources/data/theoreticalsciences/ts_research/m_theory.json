@@ -1,0 +1,52 @@
+{
+  "title": "M-Theory",
+  "description": "Strings are the edges of membranes in eleven dimensions.",
+  "icon": "theoreticalsciences:m_brane",
+  "x": 11,
+  "y": -2,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:string_theory",
+    "theoreticalsciences:brane_cosmology",
+    "theoreticalsciences:compactification"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:quantum_string",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "Eleven-dimensional gravity compactified on a circle of radius g_s\u00b7l_s must reproduce ten-dimensional string gravity. The 10-D inverse coupling 1/(2\u03ba\u00b2) = 1/((2\u03c0)\u2077 g_s\u00b2 l_s\u2078) must equal the 11-D one, 1/((2\u03c0)\u2078 l\u2081\u2081\u2079), integrated around the circle's circumference in the extra coordinate y.",
+    "name": "M-theory/type IIA matching (eleven-dimensional Planck length)",
+    "lhs": "1 / ( ( 2 * \u03c0 ) ^ 7 * gs ^ 2 * ls ^ 8 )",
+    "form": "int ( 0 , 2 * \u03c0 * gs * ls , 1 / ( ( 2 * \u03c0 ) ^ 8 * l11 ^ 9 ) , y )",
+    "expr": "gs ^ ( 1 / 3 ) * ls",
+    "ask": "Solving gives l\u2081\u2081 = g_s^(1/3)\u00b7l_s. Find l\u2081\u2081 (in 10\u207b\u00b3\u2074 m) for g_s = @{gs} and l_s = 3\u00d710\u207b\u00b3\u2074 m.",
+    "vars": {
+      "gs": "string coupling",
+      "ls": "string length (10\u207b\u00b3\u2074 m)",
+      "l11": "eleven-dimensional Planck length",
+      "y": "coordinate around the eleventh dimension"
+    },
+    "given": {
+      "gs": 0.125,
+      "ls": 3
+    },
+    "unit": "1e-34 m",
+    "method": "Integrating the 11-D action over the compact coordinate multiplies its coefficient by the circumference 2\u03c0R; equate the coefficients of the 10-D curvature term and solve for l\u2081\u2081.",
+    "distractors": [
+      "G",
+      "11",
+      "c"
+    ],
+    "vary": {
+      "gs": [
+        0.075,
+        0.175,
+        0.001
+      ]
+    }
+  }
+}

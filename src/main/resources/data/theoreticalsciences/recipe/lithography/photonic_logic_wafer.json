@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:lithography",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:photonic_lens"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cherenkov_wafer",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 1600
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:photonic_logic_wafer",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:precision_lithography",
+  "scaled": 4,
+  "expanded": true
+}

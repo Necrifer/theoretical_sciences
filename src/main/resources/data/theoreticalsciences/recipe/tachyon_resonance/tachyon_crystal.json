@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:tachyon_resonance",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:photonic_board",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:warm_helium",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tachyon_crystal",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:tachyon_flux",
+      "amount": 250
+    }
+  ],
+  "energy": 2048,
+  "duration": 375,
+  "research": "theoreticalsciences:tachyonics",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "mekanism:alloy_reinforced",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Neurobiology",
+  "description": "Grow a brain in a dish and ask it what it thinks. Unlocks neural organoids.",
+  "icon": "theoreticalsciences:neural_organoid",
+  "x": 12,
+  "y": 16,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:synthetic_biology",
+    "theoreticalsciences:general_intelligence"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stem_cell_culture",
+      "count": 2
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Ions of valence z and concentration C(x) cross a cell membrane. They drift down their concentration gradient with diffusion constant D, and are also pushed by the electric field from the membrane potential V(x). Write the ion flux j as the sum of both effects, using the thermal energy per mole RT and the charge per mole zF.",
+    "name": "Nernst\u2013Planck equation (electrodiffusion flux)",
+    "lhs": "j",
+    "form": "- D * ( d ( C , x ) + z * F / ( R * T ) * C * d ( V , x ) )",
+    "expr": "R * T / F * ln ( Ci / Co )",
+    "ask": "Setting j = 0 and integrating across the membrane gives the equilibrium potential; for K\u207a (z = 1) its magnitude is (RT/F)\u00b7ln(C_in/C_out). Find it in volts at T = @{T} K with @{Ci} mM inside and 5 mM outside.",
+    "vars": {
+      "j": "ion flux",
+      "D": "diffusion constant",
+      "C": "ion concentration",
+      "x": "position across the membrane",
+      "z": "ion valence",
+      "F": "Faraday constant (C/mol)",
+      "R": "gas constant (J/(mol K))",
+      "T": "temperature (K)",
+      "V": "electric potential",
+      "Ci": "inside concentration (mM)",
+      "Co": "outside concentration (mM)"
+    },
+    "given": {
+      "R": 8.314,
+      "T": 310,
+      "F": 96485,
+      "Ci": 140,
+      "Co": 5
+    },
+    "unit": "V",
+    "method": "Fick's diffusion term \u2212D dC/dx plus electrical drift whose mobility is related to D by the thermal energy RT.",
+    "distractors": [
+      "+",
+      "e",
+      "kB"
+    ],
+    "vary": {
+      "T": [
+        186.0,
+        434.0,
+        1.0
+      ],
+      "Ci": [
+        84.0,
+        196.0,
+        1.0
+      ]
+    }
+  }
+}

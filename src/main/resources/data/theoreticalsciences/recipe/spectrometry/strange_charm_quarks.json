@@ -1,0 +1,54 @@
+{
+  "type": "theoreticalsciences:spectrometry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:error_correction_lattice",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:strange_charm_quarks",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:up_down_quarks",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:strange_matter",
+      "amount": 100
+    }
+  ],
+  "energy": 4096,
+  "duration": 375,
+  "research": "theoreticalsciences:standard_model",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "botania:terrasteel_ingot",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Synthetic Biology",
+  "description": "Write life instead of reading it. Unlocks synthetic cells, xenobots and stem cell cultures.",
+  "icon": "theoreticalsciences:synthetic_cell",
+  "x": 11,
+  "y": 15,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:protein_folding",
+    "theoreticalsciences:nanochemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 4
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "A culture starts with N0 cells that divide every \u03c4 hours, but the vessel can only support K cells: growth slows in proportion to how full it is. Solve the growth equation with this crowding term and write the number of cells at time t, with the growth rate expressed through the doubling time.",
+    "name": "Logistic growth (solution of the Verhulst equation)",
+    "lhs": "N",
+    "form": "K * N _ 0 * exp ( ln ( 2 ) * t / \u03c4 ) / ( K + N _ 0 * ( exp ( ln ( 2 ) * t / \u03c4 ) - 1 ) )",
+    "expr": "K * N0 * exp ( ln ( 2 ) * t / \u03c4 ) / ( K + N0 * ( exp ( ln ( 2 ) * t / \u03c4 ) - 1 ) )",
+    "ask": "Find the number of cells after t = @{t} h, starting from N0 = @{N0} with \u03c4 = @{\u03c4} h and capacity K = @{K}.",
+    "vars": {
+      "N": "number of cells (N\u2080 at the start)",
+      "K": "carrying capacity",
+      "t": "time",
+      "\u03c4": "doubling time",
+      "N0": "initial number of cells"
+    },
+    "given": {
+      "K": 1000000000.0,
+      "N0": 1000,
+      "t": 24,
+      "\u03c4": 2
+    },
+    "unit": "cells",
+    "method": "The rate is dN/dt = (ln2/\u03c4)\u00b7N(1 \u2212 N/K). Separate variables with partial fractions, integrate and solve for N.",
+    "distractors": [
+      "2",
+      "+",
+      "sin"
+    ],
+    "vary": {
+      "K": [
+        600000000.0,
+        1400000000.0,
+        10000000.0
+      ],
+      "N0": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "t": [
+        14.0,
+        34.0,
+        1.0
+      ],
+      "\u03c4": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

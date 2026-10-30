@@ -1,0 +1,53 @@
+{
+  "title": "The Standard Model",
+  "description": "Six quarks, six leptons, four gauge bosons and the Higgs. Unlocks the Particle Spectrometer.",
+  "icon": "theoreticalsciences:standard_model_matrix",
+  "x": 7,
+  "y": 5,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:particle_physics",
+    "theoreticalsciences:accelerator_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "The Higgs doublet carries weak isospin and hypercharge, so its derivative must be made gauge-covariant. Write the covariant derivative D_\u03bc: the ordinary derivative plus couplings to the three weak gauge fields W^a (through the isospin generators \u03c4^a/2, strength g) and to the hypercharge field B (strength g_Y, generator Y/2).",
+    "name": "Electroweak covariant derivative (W and Z masses from symmetry breaking)",
+    "lhs": "D _ \u03bc",
+    "form": "\u2202 _ \u03bc - i * g / 2 * \u03c4 ^ a * W _ \u03bc ^ a - i * gY / 2 * Y * B _ \u03bc",
+    "expr": "sqrt ( g ^ 2 + gY ^ 2 ) * v / 2",
+    "ask": "Putting the Higgs vacuum value v into |D_\u03bc\u03a6|\u00b2 gives m_W = g v/2 and m_Z = \u221a(g\u00b2 + g_Y\u00b2)\u00b7v/2. Find the Z boson mass.",
+    "vars": {
+      "D": "covariant derivative",
+      "\u03bc": "spacetime index",
+      "\u2202": "partial derivative",
+      "i": "imaginary unit",
+      "g": "weak SU(2) coupling",
+      "\u03c4": "Pauli (isospin) matrices",
+      "a": "isospin index 1..3",
+      "W": "weak gauge fields",
+      "gY": "hypercharge coupling",
+      "Y": "hypercharge of the field",
+      "B": "hypercharge gauge field",
+      "v": "Higgs vacuum expectation value (GeV)"
+    },
+    "given": {
+      "g": 0.652,
+      "gY": 0.357,
+      "v": 246
+    },
+    "unit": "GeV",
+    "method": "Demand that the Lagrangian stay unchanged under local SU(2)\u00d7U(1) rotations of the doublet; each generator needs its own gauge field, and the 1/2 comes from the isospin generators being \u03c4/2.",
+    "distractors": [
+      "e",
+      "+",
+      "\u03b3"
+    ]
+  }
+}

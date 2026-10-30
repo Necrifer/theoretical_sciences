@@ -1,0 +1,61 @@
+{
+  "title": "Origins: Pathological Objects",
+  "description": "Mathematics has its monsters too: curves continuous everywhere and smooth nowhere, sets with no size, systems so sensitive that they are deterministic and unpredictable at once, and questions no algorithm can decide. They were never errors - only the parts of the theory that had not been explained yet. Unlocks the Undecidable Kernel.",
+  "icon": "theoreticalsciences:undecidable_kernel",
+  "x": 15,
+  "y": 11,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:anomalous_phenomena",
+    "theoreticalsciences:incompleteness"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:anomaly_specimen",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:godel_sentence",
+      "count": 2
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "Build a curve as a sum of ever faster, ever smaller waves: the n-th term is a cosine whose frequency grows like b\u207f and whose amplitude shrinks like a\u207f, with 0 < a < 1 and ab large. The sum converges everywhere and is continuous, yet it has a corner at every point - a monster that broke the nineteenth-century idea of a function. Write it.",
+    "name": "Weierstrass function (continuous everywhere, differentiable nowhere)",
+    "lhs": "W",
+    "form": "sum ( n , 0 , \u221e , a ^ n * cos ( b ^ n * \u03c0 * x ) )",
+    "expr": "2 + ln ( a ) / ln ( b )",
+    "ask": "Its graph is a fractal: zoom in and it never straightens. Its box-counting dimension is D = 2 + ln a / ln b. Find D for the a and b below.",
+    "vars": {
+      "W": "the curve",
+      "x": "position",
+      "n": "term index",
+      "a": "amplitude ratio (0 < a < 1)",
+      "b": "frequency ratio"
+    },
+    "given": {
+      "a": 0.5,
+      "b": 7
+    },
+    "unit": "",
+    "method": "Each term is bounded by a\u207f, so the series converges uniformly (a continuous limit). The derivative of the n-th term grows like (ab)\u207f, so the differentiated series diverges everywhere.",
+    "distractors": [
+      "sin",
+      "exp",
+      "k"
+    ],
+    "vary": {
+      "a": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "b": [
+        4.0,
+        10.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:quantum_codex"
+    },
+    "title": {
+      "translate": "advancements.theoreticalsciences.root.title"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.root.description"
+    },
+    "background": "theoreticalsciences:textures/gui/advancements/backgrounds/quantum.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ]
+}

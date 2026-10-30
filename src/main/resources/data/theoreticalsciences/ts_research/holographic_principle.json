@@ -1,0 +1,57 @@
+{
+  "title": "The Holographic Principle",
+  "description": "Everything inside a volume is encoded on its boundary - black holes included.",
+  "icon": "theoreticalsciences:holographic_matrix",
+  "x": 8,
+  "y": 4,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:thermodynamics_of_information",
+    "theoreticalsciences:singularity_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hawking_emitter",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "The maximum entropy that fits inside a region is set not by its volume but by the area of its boundary: one quarter of a unit of kB for every Planck area (G\u0127/c\u00b3) of the enclosing surface. Write the entropy of a spherical horizon of radius r by integrating the area element over the sphere.",
+    "name": "Bekenstein\u2013Hawking entropy (area law)",
+    "lhs": "S",
+    "form": "kB * c ^ 3 / ( 4 * G * \u0127 ) * int ( 0 , \u03c0 , int ( 0 , 2 * \u03c0 , r ^ 2 * sin ( \u03b8 ) , \u03c6 ) , \u03b8 )",
+    "expr": "\u03c0 * r ^ 2 / ( l ^ 2 * ln ( 2 ) )",
+    "ask": "The integral gives S = \u03c0kB r\u00b2/l\u00b2, with l the Planck length. Find the information capacity in bits (S/(kB ln 2)) of a horizon of radius r = @{r} Planck lengths.",
+    "vars": {
+      "S": "entropy",
+      "r": "horizon radius",
+      "\u03b8": "polar angle",
+      "\u03c6": "azimuth",
+      "l": "Planck length"
+    },
+    "given": {
+      "r": 1000,
+      "l": 1
+    },
+    "unit": "bits",
+    "method": "Integrate r\u00b2 sin \u03b8 over the sphere to get the area, then divide by four Planck areas (4G\u0127/c\u00b3) and multiply by kB.",
+    "distractors": [
+      "3",
+      "V",
+      "h"
+    ],
+    "vary": {
+      "r": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "l": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

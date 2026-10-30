@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:antimatter_trapping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:dilithium_crystal",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:photonic_logic_wafer",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:annihilation_core",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 750,
+  "research": "theoreticalsciences:annihilation_power",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "ae2:engineering_processor",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

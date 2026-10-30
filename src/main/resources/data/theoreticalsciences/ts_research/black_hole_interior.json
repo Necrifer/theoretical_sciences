@@ -1,0 +1,52 @@
+{
+  "title": "Inside a Black Hole",
+  "description": "What is past the horizon - and, through an Einstein-Rosen bridge, what is past the white hole's. Unlocks the Horizon Diver and the Geodesic Anchor.",
+  "icon": "theoreticalsciences:horizon_diver",
+  "x": 9,
+  "y": 7,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:general_relativity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:kerr_metric_shard",
+      "count": 2
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "A body is at rest at the horizon of a non-rotating black hole of mass M, at radius 2GM/c\u00b2, and falls straight in. Inside the horizon its radial speed obeys (dr/d\u03c4)\u00b2 = c\u00b2(2GM/(c\u00b2r) \u2212 1). Write the proper time from the horizon to the centre as an integral over r.",
+    "name": "Maximal infall proper time inside a Schwarzschild horizon",
+    "lhs": "\u03c4",
+    "form": "int ( 0 , 2 * G * M / c ^ 2 , 1 / ( c * sqrt ( 2 * G * M / ( c ^ 2 * r ) - 1 ) ) , r )",
+    "expr": "\u03c0 * G * M / c ^ 3",
+    "ask": "The integral evaluates to \u03c0 r_s/(2c) = \u03c0GM/c\u00b3. Find it in seconds for M = @{M} kg, with G = 6.674e-11 and c = 2.998e8 (SI).",
+    "vars": {
+      "\u03c4": "proper time",
+      "G": "gravitational constant",
+      "M": "black hole mass (kg)",
+      "c": "speed of light (m/s)",
+      "r": "radial coordinate"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+31,
+      "c": 299800000.0
+    },
+    "unit": "s",
+    "method": "Solve the radial equation for d\u03c4 = dr / |dr/d\u03c4| and integrate from r = 0 to the horizon; substitute r = r_s sin\u00b2(\u03b7/2).",
+    "distractors": [
+      "4",
+      "+",
+      "\u0127"
+    ],
+    "vary": {
+      "M": [
+        1.19e+31,
+        2.79e+31,
+        1e+29
+      ]
+    }
+  }
+}

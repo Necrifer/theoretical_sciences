@@ -1,0 +1,51 @@
+{
+  "title": "Tachyonics",
+  "description": "Hypothetical faster-than-light particles. Their imaginary mass makes them slow down as they gain energy.",
+  "icon": "theoreticalsciences:tachyon_crystal",
+  "x": 4,
+  "y": -1,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:metamaterials"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A hypothetical particle has a mass that is purely imaginary, m = i\u03bc with \u03bc real. Write the square of its energy from the invariant that relates energy, momentum p and mass for any free particle, keeping the imaginary mass explicitly.",
+    "name": "Mass-shell relation for imaginary (tachyonic) mass",
+    "lhs": "E ^ 2",
+    "form": "p ^ 2 * c ^ 2 + ( i * \u03bc ) ^ 2 * c ^ 4",
+    "expr": "1 + ( \u03bc / E ) ^ 2",
+    "ask": "Its speed is v = pc\u00b2/E, so (v/c)\u00b2 = p\u00b2c\u00b2/E\u00b2 = 1 + \u03bc\u00b2c\u2074/E\u00b2. Find (v/c)\u00b2 for a particle with \u03bcc\u00b2 = 3 GeV and E = @{E} GeV (\u03bc and E below are in GeV).",
+    "vars": {
+      "p": "momentum",
+      "c": "speed of light",
+      "i": "imaginary unit",
+      "\u03bc": "real mass scale, m = i\u03bc (here \u03bcc\u00b2 in GeV)",
+      "E": "energy (GeV)"
+    },
+    "given": {
+      "\u03bc": 3,
+      "E": 4
+    },
+    "unit": "(in units of c\u00b2)",
+    "method": "Start from E\u00b2 \u2212 p\u00b2c\u00b2 = m\u00b2c\u2074 and substitute m = i\u03bc; the sign of the mass term flips, so the speed is always above c.",
+    "distractors": [
+      "-",
+      "v",
+      "2"
+    ],
+    "vary": {
+      "E": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

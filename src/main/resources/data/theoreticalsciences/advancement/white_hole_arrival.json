@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:einstein_rosen_core"
+    },
+    "title": "Out the Other Side",
+    "description": "Cross an Einstein-Rosen bridge into a white hole",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/white_holes",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "theoreticalsciences:white_hole_interior"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

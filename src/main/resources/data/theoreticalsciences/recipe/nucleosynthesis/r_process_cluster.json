@@ -1,0 +1,54 @@
+{
+  "type": "theoreticalsciences:nucleosynthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:supernova_remnant",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:sterile_neutrino",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:neutrino_flux",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:ionic_liquid",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:r_process_cluster",
+      "count": 4
+    },
+    {
+      "id": "minecraft:gold_ingot",
+      "count": 8
+    }
+  ],
+  "energy": 262144,
+  "duration": 1200,
+  "research": "theoreticalsciences:nucleosynthesis",
+  "scaled": 8,
+  "optional_inputs": [
+    {
+      "item": "cataclysm:witherite_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:flibe_hot_molten_salt",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

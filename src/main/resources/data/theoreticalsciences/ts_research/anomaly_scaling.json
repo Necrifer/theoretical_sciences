@@ -1,0 +1,63 @@
+{
+  "title": "The Extent of Anomalies",
+  "description": "What can an anomaly do, and how big can it get? Catalogue them, and their sizes - tumours, outbreaks, avalanches, ruptures - follow power laws: most are tiny, a few are vast, and the mean is set by the exponent. Unlocks the Anomaly Catalogue.",
+  "icon": "theoreticalsciences:anomaly_catalogue",
+  "x": 19,
+  "y": 8,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:anomalous_leakage",
+    "theoreticalsciences:epidemic_dynamics",
+    "theoreticalsciences:symbiosis_parasitism"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:law_violation_shard",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:symbiont_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:contagion_network_map",
+      "count": 2
+    }
+  ],
+  "time": 1950,
+  "puzzle": {
+    "goal": "Catalogue anomalies by size - tumours, outbreaks, avalanches, ruptures - and above a smallest size s\u2080 their sizes follow a power law: the probability density falls off as s^(\u2212\u03c4), normalised by (\u03c4 \u2212 1)/s\u2080. Write the mean size of an anomaly.",
+    "name": "mean of a power-law (Pareto) distribution",
+    "lhs": "avg ( s )",
+    "form": "int ( s _ 0 , \u221e , s * ( \u03c4 - 1 ) / s _ 0 * ( s / s _ 0 ) ^ ( - \u03c4 ) , s )",
+    "expr": "s * ( \u03c4 - 1 ) / ( \u03c4 - 2 )",
+    "ask": "For \u03c4 > 2 the integral is s\u2080(\u03c4 \u2212 1)/(\u03c4 \u2212 2); at \u03c4 \u2264 2 it diverges - the largest anomaly dominates everything. With s\u2080 = s, find the mean size.",
+    "vars": {
+      "s": "anomaly size (s\u2080 in step 2: the smallest size)",
+      "\u03c4": "power-law exponent"
+    },
+    "given": {
+      "s": 10,
+      "\u03c4": 2.5
+    },
+    "unit": "",
+    "method": "Substitute u = s/s\u2080: the integrand becomes (\u03c4 \u2212 1)u^{1\u2212\u03c4}, and \u222b\u2081^\u221e u^{1\u2212\u03c4}du = 1/(\u03c4 \u2212 2).",
+    "distractors": [
+      "exp",
+      "ln",
+      "\u03c3"
+    ],
+    "vary": {
+      "s": [
+        8.0,
+        12.0,
+        1.0
+      ],
+      "\u03c4": [
+        1.87,
+        3.13,
+        0.01
+      ]
+    }
+  }
+}

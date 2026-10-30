@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:source_code_fragment"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.simulation_hypothesis"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.simulation_hypothesis.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/matrioshka_brain",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

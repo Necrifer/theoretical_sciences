@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:neutrino_capture",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:degenerate_matter_chunk",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:circuit_substrate",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 24
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sterile_neutrino",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:neutrino_flux",
+      "amount": 250
+    }
+  ],
+  "energy": 16384,
+  "duration": 500,
+  "research": "theoreticalsciences:neutrino_physics",
+  "scaled": 6,
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 8000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "draconicevolution:draconium_core",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

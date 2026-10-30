@@ -1,0 +1,60 @@
+{
+  "title": "Mirror Metallurgy",
+  "description": "Metals that must never touch anything. Unlocks the Mirror Matter Foundry, anti-metals and the Mirror Alloy.",
+  "icon": "theoreticalsciences:mirror_foundry",
+  "x": 16,
+  "y": 17,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:antiatom_chemistry",
+    "theoreticalsciences:plasma_metallurgy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:raw_antiiron",
+      "count": 8
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "An anti-metal must be held without touching anything, so every antinucleus and positron in it is steered by electromagnetic fields alone. Write the relativistic wave equation for a spin-\u00bd particle of charge q and mass m coupled to the four-potential A_\u03bc, with the coupling entering through the derivative.",
+    "name": "Dirac equation with minimal coupling",
+    "lhs": "0",
+    "form": "i * \u0127 * \u03b3 ^ \u03bc * ( \u2202 _ \u03bc + i * q / \u0127 * A _ \u03bc ) * \u03c8 - m * c * \u03c8",
+    "expr": "q * B / ( 2 * \u03c0 * m ) / 1000000",
+    "ask": "In a uniform magnetic field its low-energy solutions are Landau levels spaced by \u0127qB/m: the particle circles at f = qB/(2\u03c0m). Find f in MHz for an antiproton in the trap below.",
+    "vars": {
+      "i": "imaginary unit",
+      "\u0127": "reduced Planck constant",
+      "\u03b3": "Dirac matrices",
+      "\u03bc": "spacetime index 0..3",
+      "\u2202": "partial derivative along a spacetime direction",
+      "q": "charge (magnitude, C)",
+      "A": "electromagnetic four-potential",
+      "\u03c8": "four-component spinor",
+      "m": "mass (kg)",
+      "c": "speed of light",
+      "B": "magnetic field (T)"
+    },
+    "given": {
+      "q": 1.602e-19,
+      "B": 1.9,
+      "m": 1.6726e-27
+    },
+    "unit": "MHz",
+    "method": "Start from the free spinor equation, then replace every derivative by a gauge-covariant derivative that adds the charge times the potential.",
+    "distractors": [
+      "e",
+      "-",
+      "\u03bd",
+      "2"
+    ],
+    "vary": {
+      "B": [
+        1.13,
+        2.66,
+        0.01
+      ]
+    }
+  }
+}

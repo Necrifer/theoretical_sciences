@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:omnilex_simulation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ocean_simulacrum",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:primordial_law",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ocean_simulacrum",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:law_crystal",
+      "count": 8
+    },
+    {
+      "id": "theoreticalsciences:axiom_fragment",
+      "count": 8
+    }
+  ],
+  "energy": 134217728,
+  "duration": 1200,
+  "research": "theoreticalsciences:omnilex",
+  "physics": {
+    "windows": [
+      {
+        "q": "nb",
+        "min": 4.0,
+        "max": 5.0
+      }
+    ]
+  }
+}

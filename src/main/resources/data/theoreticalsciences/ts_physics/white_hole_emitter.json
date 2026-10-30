@@ -1,0 +1,134 @@
+{
+  "params": [
+    {
+      "id": "lgM",
+      "unit": "log\u2081\u2080 kg",
+      "min": 14,
+      "max": 22,
+      "step": 0.01,
+      "default": 17
+    },
+    {
+      "id": "mdot",
+      "unit": "kg/s",
+      "min": 0,
+      "max": 100,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "lgP",
+      "unit": "log\u2081\u2080 Pa",
+      "min": -14,
+      "max": 0,
+      "step": 0.1,
+      "default": -8
+    },
+    {
+      "id": "Bcf",
+      "unit": "T",
+      "min": 0,
+      "max": 30,
+      "step": 0.05,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [
+    {
+      "id": "xacc",
+      "unit": "",
+      "init": "0",
+      "ddt": "(inflow - 0.5*mdot*min(1, 50*xacc))/(1e-6*10^lgM)*1e6",
+      "min": -1,
+      "max": 1,
+      "out_of_range": "quench"
+    }
+  ],
+  "derived": [
+    {
+      "id": "L",
+      "unit": "W",
+      "expr": "0.1*mdot*8.988e16",
+      "formula": "L = 0.1\u00b7\u1e41c\u00b2"
+    },
+    {
+      "id": "lgL",
+      "unit": "log\u2081\u2080 W",
+      "expr": "log10(L+1)",
+      "formula": "log\u2081\u2080 L"
+    },
+    {
+      "id": "LEdd",
+      "unit": "W",
+      "expr": "6.32*10^lgM",
+      "formula": "L_Edd = 4\u03c0GMm_p c/\u03c3_T"
+    },
+    {
+      "id": "edd",
+      "unit": "",
+      "expr": "L/LEdd",
+      "formula": "L/L_Edd"
+    },
+    {
+      "id": "inflow",
+      "unit": "kg/s",
+      "expr": "10^(lgP + 8 + 0.3*d)*(10^(lgM-17))^2",
+      "formula": "\u1e41_in \u221d P\u00b7M\u00b2"
+    },
+    {
+      "id": "prad",
+      "unit": "Pa",
+      "expr": "L/(4*pi*9*2.998e8)",
+      "formula": "p = L/(4\u03c0r\u00b2c)"
+    },
+    {
+      "id": "pmag",
+      "unit": "Pa",
+      "expr": "Bcf^2/(2*1.2566e-6)",
+      "formula": "p = B\u00b2/2\u03bc\u2080"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "eddington",
+      "kind": "wear",
+      "expr": "1 - edd",
+      "formula": "L < L_Edd"
+    },
+    {
+      "id": "blowout",
+      "kind": "quench",
+      "expr": "pmag - prad",
+      "formula": "B\u00b2/2\u03bc\u2080 > L/4\u03c0r\u00b2c"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bcf)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "clamp(mdot, 0, 4)",
+  "rate_formula": "rate = \u1e41 / (1 kg/s)",
+  "heat": "10 + 2e-16*L",
+  "idle_heat": "3",
+  "quench_energy": "500",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

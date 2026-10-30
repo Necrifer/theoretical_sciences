@@ -1,0 +1,91 @@
+{
+  "type": "theoreticalsciences:dark_energy_extraction",
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_energy",
+      "amount": 250
+    }
+  ],
+  "energy": 1048576,
+  "duration": 800,
+  "research": "theoreticalsciences:dark_energy",
+  "scaled": 16,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgu",
+        "min": 6.0,
+        "max": 9.0
+      }
+    ]
+  },
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:moduli_crystal",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:glowstone_singularity",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:virtual_monopole",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:hyperdimensional_boule",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:category_lattice",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:dilaton_crystal",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:schrodinger_limit",
+      "amount": 64000
+    },
+    {
+      "fluid": "theoreticalsciences:synaptic_fluid",
+      "amount": 64000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "avaritia:neutron_ingot",
+      "count": 16
+    },
+    {
+      "item": "rejaopcasingularities:cosmic_singularity",
+      "count": 16
+    },
+    {
+      "item": "mysticalextendedtier:ornium_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:molten_berkelium_248",
+      "amount": 16000
+    },
+    {
+      "fluid": "avaritia_integration:molten_neutron",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

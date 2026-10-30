@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_core",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_plasma",
+      "amount": 4000
+    }
+  ],
+  "energy": 4194304,
+  "duration": 2400,
+  "research": "theoreticalsciences:plasma_metallurgy",
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 15.0,
+        "max": 30.0
+      }
+    ]
+  }
+}

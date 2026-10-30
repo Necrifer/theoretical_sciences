@@ -1,0 +1,68 @@
+{
+  "title": "Vacuum Energy Storage",
+  "description": "Store energy in the difference between two vacua. Unlocks the Energy Cells.",
+  "icon": "theoreticalsciences:casimir_energy_cell",
+  "x": 2,
+  "y": 3,
+  "insight": 15,
+  "requires": [
+    "theoreticalsciences:casimir_effect",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:casimir_plate",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Two parallel conducting plates of area A are let go at a wide gap b and allowed to drift together to a narrow gap a. Between them fewer vacuum modes fit than outside, so the vacuum pushes them together with a pressure that grows as the inverse fourth power of the gap x. Write the energy harvested as the work done by that pressure over the approach.",
+    "name": "Casimir energy extracted (integrated Casimir pressure)",
+    "lhs": "E",
+    "form": "A * int ( a , b , \u03c0 ^ 2 * \u0127 * c / ( 240 * x ^ 4 ) , x )",
+    "expr": "A * \u03c0 ^ 2 * \u0127 * c / 720 * ( 1 / a ^ 3 - 1 / b ^ 3 ) * 1000000000",
+    "ask": "The integral evaluates to \u03c0\u00b2\u0127c/720 \u00b7 (1/a\u00b3 \u2212 1/b\u00b3) per unit area. Find the energy stored for the plates given, in nanojoules.",
+    "vars": {
+      "E": "energy extracted",
+      "A": "plate area (m\u00b2)",
+      "a": "final gap (m)",
+      "b": "initial gap (m)",
+      "x": "gap during the approach",
+      "\u0127": "reduced Planck constant (J s)",
+      "c": "speed of light (m/s)"
+    },
+    "given": {
+      "A": 0.0001,
+      "a": 1e-08,
+      "b": 2e-08,
+      "\u0127": 1.0546e-34,
+      "c": 299800000.0
+    },
+    "unit": "nJ",
+    "method": "Work is pressure times area integrated over the distance moved. Integrate the inverse-fourth-power pressure from the narrow gap to the wide one.",
+    "distractors": [
+      "3",
+      "2",
+      "kB",
+      "T"
+    ],
+    "vary": {
+      "A": [
+        6e-05,
+        0.00014,
+        1e-06
+      ],
+      "a": [
+        6e-09,
+        1.4e-08,
+        1e-10
+      ],
+      "b": [
+        1.2e-08,
+        2.8e-08,
+        1e-10
+      ]
+    }
+  }
+}

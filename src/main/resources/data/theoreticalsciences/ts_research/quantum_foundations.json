@@ -1,0 +1,42 @@
+{
+  "title": "Quantum Foundations",
+  "description": "Everything is a wave until it is measured. Catalogue phenomena with the Spectral Analyzer to begin.",
+  "icon": "theoreticalsciences:qubit",
+  "x": 0,
+  "y": 0,
+  "insight": 5,
+  "requires": [],
+  "cost": [],
+  "time": 0,
+  "puzzle": {
+    "goal": "A particle of mass m moves along a line through a potential V(x), and it is described not by a position but by a complex wave \u03c8(x, t). Write how that wave changes in time: the left side is i\u0127 times its rate of change, the right side is the energy operator acting on it - kinetic energy from the curvature of \u03c8, plus the potential.",
+    "name": "Time-dependent Schr\u00f6dinger equation (one dimension)",
+    "lhs": "i * \u0127 * pd ( \u03c8 , t )",
+    "form": "- \u0127 ^ 2 / ( 2 * m ) * pd2 ( \u03c8 , x ) + V * \u03c8",
+    "expr": "h / ( m * v )",
+    "ask": "For V = 0 a plane wave e^{i(kx\u2212\u03c9t)} solves it with momentum p = \u0127k = mv, so its wavelength is \u03bb = 2\u03c0/k = h/(mv). Find \u03bb in nm for an electron, with h in units of 1e-34 J s, m in 1e-31 kg and v in 1e6 m/s (the unit factors combine to exactly 1 nm).",
+    "vars": {
+      "\u03c8": "the wavefunction \u03c8(x, t)",
+      "\u0127": "reduced Planck constant",
+      "m": "particle mass",
+      "x": "position",
+      "t": "time",
+      "V": "potential energy V(x)",
+      "i": "imaginary unit",
+      "h": "Planck constant (1e-34 J s)",
+      "v": "particle speed (1e6 m/s)"
+    },
+    "given": {
+      "h": 6.626,
+      "m": 9.109,
+      "v": 1
+    },
+    "unit": "nm",
+    "method": "Kinetic energy is p\u00b2/2m with momentum acting as \u2212i\u0127 \u2202/\u2202x, so p\u00b2 becomes \u2212\u0127\u00b2 \u2202\u00b2/\u2202x\u00b2; add the potential energy as a multiplier.",
+    "distractors": [
+      "h",
+      "4",
+      "c"
+    ]
+  }
+}

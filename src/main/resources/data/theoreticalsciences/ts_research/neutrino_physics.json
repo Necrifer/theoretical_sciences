@@ -1,0 +1,70 @@
+{
+  "title": "Neutrino Physics",
+  "description": "Ghost particles, trillions of which pass through you every second.",
+  "icon": "theoreticalsciences:sterile_neutrino",
+  "x": 6,
+  "y": 4,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:particle_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A neutrino is born as a flavour state that is a rotation, by mixing angle \u03b8, of two mass states with squared masses differing by \u0394m\u00b2. Each mass state picks up a phase m\u00b2L/(2E) as it travels a distance L at energy E (natural units). Write the probability that it is detected as the other flavour.",
+    "name": "Two-flavour neutrino oscillation probability",
+    "lhs": "P",
+    "form": "sin ( 2 * \u03b8 ) ^ 2 * sin ( \u0394 * m ^ 2 * L / ( 4 * E ) ) ^ 2",
+    "expr": "sin ( 2 * \u03b8 ) ^ 2 * sin ( 1.267 * dm2 * L / E ) ^ 2",
+    "ask": "In practical units the phase is 1.267 \u0394m\u00b2[eV\u00b2] L[km] / E[GeV]. Find P for \u03b8 = @{\u03b8} rad, \u0394m\u00b2 = @{dm2} eV\u00b2, L = @{L} km and E = @{E} GeV.",
+    "vars": {
+      "P": "flavour-change probability",
+      "\u03b8": "mixing angle",
+      "\u0394": "difference (\u0394m\u00b2 is the difference of the squared masses)",
+      "m": "neutrino mass",
+      "L": "distance travelled",
+      "E": "neutrino energy",
+      "dm2": "mass-squared splitting \u0394m\u00b2 in eV\u00b2"
+    },
+    "given": {
+      "\u03b8": 0.6,
+      "dm2": 0.0025,
+      "L": 250,
+      "E": 1
+    },
+    "unit": "",
+    "method": "Write the flavour state in the mass basis, evolve each component with its own phase, and project onto the other flavour. Only the phase difference survives in |amplitude|\u00b2.",
+    "distractors": [
+      "cos",
+      "2",
+      "\u0127"
+    ],
+    "vary": {
+      "\u03b8": [
+        0.36,
+        0.84,
+        0.001
+      ],
+      "dm2": [
+        0.0015,
+        0.0035,
+        1e-05
+      ],
+      "L": [
+        150.0,
+        350.0,
+        1.0
+      ],
+      "E": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

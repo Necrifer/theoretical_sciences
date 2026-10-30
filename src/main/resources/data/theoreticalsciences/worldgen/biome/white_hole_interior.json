@@ -1,0 +1,56 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 16775408,
+    "fog_color": 16774376,
+    "water_color": 8450303,
+    "water_fog_color": 16774376,
+    "ambient_sound": "minecraft:ambient.warped_forest.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:end_rod"
+      },
+      "probability": 0.02
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.white_hole_interior",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "theoreticalsciences:photon_moth",
+        "weight": 14,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [
+      "theoreticalsciences:einstein_rosen_bridge"
+    ],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:anomaly_vault_white_hole_interior"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_retrocausal",
+      "theoreticalsciences:ore_ejecta"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

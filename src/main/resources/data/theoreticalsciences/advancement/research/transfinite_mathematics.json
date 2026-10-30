@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:aleph_null_shard"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.transfinite_mathematics"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.transfinite_mathematics.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/simulation_hypothesis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "params": [
+    {
+      "id": "I",
+      "unit": "kA",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "f",
+      "unit": "THz",
+      "min": 0,
+      "max": 10,
+      "step": 0.0001,
+      "default": 4
+    },
+    {
+      "id": "Pp",
+      "unit": "GW",
+      "min": 0,
+      "max": 100,
+      "step": 0.1,
+      "default": 5
+    }
+  ],
+  "recipe_vars": {
+    "F0": 4.2
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "B",
+      "unit": "T",
+      "expr": "0.8*I",
+      "formula": "B = 0.8\u00b7I"
+    },
+    {
+      "id": "f0",
+      "unit": "THz",
+      "expr": "F0*(1 + 0.0001*d)",
+      "formula": "f\u2080(1 + 10\u207b\u2074\u00b7d)"
+    },
+    {
+      "id": "Q",
+      "unit": "",
+      "expr": "2000/(1 + abs(d))",
+      "formula": "Q = Q\u2080/(1 + |d|)"
+    },
+    {
+      "id": "x",
+      "unit": "",
+      "expr": "(f - f0)/f0",
+      "formula": "\u03b4 = (f \u2212 f\u2080)/f\u2080"
+    },
+    {
+      "id": "A",
+      "unit": "",
+      "expr": "1/(1 + (2*Q*x)^2)",
+      "formula": "A = 1/(1 + (2Q\u03b4)\u00b2)"
+    },
+    {
+      "id": "Pe",
+      "unit": "GW",
+      "expr": "Pp*A",
+      "formula": "P = P_pump\u00b7A"
+    },
+    {
+      "id": "Pw",
+      "unit": "GW",
+      "expr": "Pp*(1 - A)",
+      "formula": "P_pump\u00b7(1 \u2212 A)"
+    },
+    {
+      "id": "U",
+      "unit": "GJ",
+      "expr": "B^2/(2*1.2566)*0.05",
+      "formula": "U = B\u00b2/2\u00b5\u2080\u00b7V"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "hold",
+      "kind": "stop",
+      "expr": "B - 30",
+      "formula": "B \u2265 30 T"
+    },
+    {
+      "id": "tear",
+      "kind": "damage",
+      "expr": "70 - B",
+      "formula": "B \u2264 70 T"
+    },
+    {
+      "id": "flood",
+      "kind": "wear",
+      "expr": "20 - Pw",
+      "formula": "P_wasted < 20 GW"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "900 - T",
+      "formula": "T < 900 K"
+    }
+  ],
+  "rate": "clamp(Pe/10, 0, 4)",
+  "rate_formula": "rate = P_playback / 10 GW",
+  "heat": "5 + 2*Pw + 0.02*I",
+  "idle_heat": "2",
+  "quench_energy": "U*20",
+  "kappa": 60,
+  "heat_capacity": 80,
+  "timescale": 1,
+  "rate_max": 4
+}

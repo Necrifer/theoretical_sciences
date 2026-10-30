@@ -1,0 +1,68 @@
+{
+  "title": "Baryon Asymmetry",
+  "description": "For every billion antibaryons in the early universe there were a billion and one baryons. We are the one. Unlocks the Baryogenesis Seed.",
+  "icon": "theoreticalsciences:baryogenesis_seed",
+  "x": 18,
+  "y": 17,
+  "insight": 500,
+  "requires": [
+    "theoreticalsciences:mirror_metallurgy",
+    "theoreticalsciences:cosmogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antihelium_nucleus",
+      "count": 2
+    }
+  ],
+  "time": 2640,
+  "puzzle": {
+    "goal": "In the early universe there were slightly more baryons than antibaryons. Measure the surplus per photon: divide the net baryon number density by the photon number density, which is the occupation of thermal photon modes (two polarisations, Bose statistics) at temperature T integrated over all wavenumbers k.",
+    "name": "Baryon-to-photon ratio",
+    "lhs": "\u03b7",
+    "form": "( n _ B - bar ( n ) _ B ) / ( g / ( 2 * \u03c0 ^ 2 ) * int ( 0 , \u221e , k ^ 2 / ( exp ( \u0127 * c * k / ( kB * T ) ) - 1 ) , k ) )",
+    "expr": "dn / ( 2 * Z3 / \u03c0 ^ 2 * ( kB * T / ( \u0127 * c ) ) ^ 3 ) * 10000000000",
+    "ask": "The photon integral gives n\u03b3 = (2\u03b6(3)/\u03c0\u00b2)(kB T/\u0127c)\u00b3 with \u03b6(3) = 1.202. Find \u03b7, in units of 10\u207b\u00b9\u2070, today.",
+    "vars": {
+      "\u03b7": "baryon-to-photon ratio",
+      "n": "number density",
+      "B": "label: baryons",
+      "g": "photon polarisations (2)",
+      "k": "photon wavenumber",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light",
+      "kB": "Boltzmann constant",
+      "T": "photon temperature (K)",
+      "dn": "net baryon density today (m\u207b\u00b3)",
+      "Z3": "\u03b6(3)"
+    },
+    "given": {
+      "dn": 0.25,
+      "Z3": 1.202,
+      "kB": 1.380649e-23,
+      "T": 2.725,
+      "\u0127": 1.0546e-34,
+      "c": 299800000.0
+    },
+    "unit": "10\u207b\u00b9\u2070",
+    "method": "Count photons by integrating the Bose occupation over all modes, 4\u03c0k\u00b2dk/(2\u03c0)\u00b3 per polarisation.",
+    "distractors": [
+      "3",
+      "+",
+      "\u03bc",
+      "\u03bd"
+    ],
+    "vary": {
+      "dn": [
+        0.15,
+        0.35,
+        0.001
+      ],
+      "T": [
+        1.63,
+        3.82,
+        0.01
+      ]
+    }
+  }
+}

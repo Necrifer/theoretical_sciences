@@ -1,0 +1,66 @@
+{
+  "title": "Where Anomaly Meets Normality",
+  "description": "An anomaly in physics is a law that holds classically but fails in the quantum world: a conserved charge that quietly is not. Where a defect touches ordinary space, such failures leak out - local violations the rest of physics must absorb. Unlocks the Local Law Violation.",
+  "icon": "theoreticalsciences:law_violation_shard",
+  "x": 18,
+  "y": 6,
+  "insight": 360,
+  "requires": [
+    "theoreticalsciences:topological_defects",
+    "theoreticalsciences:invasion_fronts"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:topological_defect_core",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:law_crystal",
+      "count": 2
+    }
+  ],
+  "time": 1680,
+  "puzzle": {
+    "goal": "Massless fermions have a chiral charge that the classical equations conserve exactly. Put them in parallel electric and magnetic fields and quantum effects break that conservation: chiral charge appears out of the vacuum at a rate set by the fine-structure constant through e\u00b2, and by the fields' dot product. Write the source of chiral charge per unit volume, with \u0127 and c written out.",
+    "name": "Adler\u2013Bell\u2013Jackiw chiral anomaly",
+    "lhs": "pd ( \u03c1 , t ) + div ( vec ( j ) )",
+    "form": "e ^ 2 / ( 2 * \u03c0 ^ 2 * \u0127 ^ 2 * c ) * vec ( E ) \u00b7 vec ( B )",
+    "expr": "2 * \u03b1 / \u03c0 * E * B",
+    "ask": "In natural units (\u0127 = c = 1, e\u00b2 = 4\u03c0\u03b1) the source is (2\u03b1/\u03c0)\u00b7E\u00b7B for parallel fields. Find it for the fields below.",
+    "vars": {
+      "\u03c1": "chiral charge density",
+      "t": "time",
+      "j": "chiral current",
+      "e": "elementary charge",
+      "E": "electric field",
+      "B": "magnetic field",
+      "\u03b1": "fine-structure constant",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light"
+    },
+    "given": {
+      "\u03b1": 0.0073,
+      "E": 2,
+      "B": 3
+    },
+    "unit": "natural units",
+    "method": "In a magnetic field the fermions fill Landau levels; the lowest one is chiral and one-dimensional. An electric field along B pumps states through it at a rate eE/2\u03c0 per unit length, and the level holds eB/2\u03c0 states per unit area.",
+    "distractors": [
+      "G",
+      "kB",
+      "4"
+    ],
+    "vary": {
+      "\u03b1": [
+        0.00438,
+        0.01022,
+        1e-05
+      ],
+      "E": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

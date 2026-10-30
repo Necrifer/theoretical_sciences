@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:collider",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:standard_model_matrix",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:dark_matter_lens",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:functor_bridge",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:superpartner_shard",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_matter",
+      "amount": 500
+    }
+  ],
+  "energy": 262144,
+  "duration": 800,
+  "research": "theoreticalsciences:supersymmetry",
+  "physics": {
+    "vars": {
+      "A": 1.0,
+      "Z": 1.0
+    },
+    "windows": [
+      {
+        "q": "sNN",
+        "min": 3600.0,
+        "max": 4200.0
+      }
+    ]
+  }
+}

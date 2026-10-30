@@ -1,0 +1,138 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:wavefunction",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:superposition_crystal",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:wave_packet",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:spinor_lattice",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:quantum_field_lattice",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:feynman_diagram",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:quantum_processor",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:eigenstate_lattice",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:undecidable_kernel",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:stress_energy_tensor",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:axiom_fragment",
+      "count": 64
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:transcendent_plasma",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:residual_starlight",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quantum_singularity",
+      "count": 1
+    }
+  ],
+  "energy": 268435456,
+  "duration": 6000,
+  "research": "theoreticalsciences:conceptual_singularities",
+  "scaled": 32,
+  "environment": {
+    "vacuum_min": 3
+  },
+  "physics": {
+    "vars": {
+      "qb": 0.11
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 1.6,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "spectrum:pristine_shooting_star",
+      "count": 32
+    },
+    {
+      "item": "mekanism:pellet_plutonium",
+      "count": 32
+    },
+    {
+      "item": "iceandfire:ice_dragon_heart",
+      "count": 32
+    },
+    {
+      "item": "bigreactors:insanite_ingot",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclear_radiation:molten_corium",
+      "amount": 32000
+    },
+    {
+      "fluid": "ufo:white_dwarf_fragment_fluid",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

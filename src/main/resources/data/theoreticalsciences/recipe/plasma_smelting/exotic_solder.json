@@ -1,0 +1,90 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:exotic_matter_crystal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:noble_gas_clathrate",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:coherent_wiring_harness",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:programmable_matter",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_boule",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:femto_inductor",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 36864
+    },
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:dark_matter",
+      "amount": 16000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:exotic_solder",
+      "amount": 576
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:plasma_metallurgy",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 5.0,
+        "max": 12.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "botania:gaia_ingot",
+      "count": 16
+    },
+    {
+      "item": "mekanism:pellet_polonium",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "enderio:dew_of_the_void",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

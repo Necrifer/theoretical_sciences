@@ -1,0 +1,74 @@
+{
+  "type": "theoreticalsciences:halo_collection",
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_matter",
+      "amount": 250
+    }
+  ],
+  "energy": 16384,
+  "duration": 600,
+  "research": "theoreticalsciences:dark_sector",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "mx": 100.0
+    },
+    "windows": [
+      {
+        "q": "snr",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  },
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:femto_transistor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cosmic_record_fragment",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:void_essence",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_lattice",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:dipole_winding",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 16000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "mekanism:pellet_polonium",
+      "count": 16
+    },
+    {
+      "item": "ae2:singularity",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:gelid_cryotheum",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

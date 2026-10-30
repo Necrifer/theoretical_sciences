@@ -1,0 +1,61 @@
+{
+  "title": "Proton Decay",
+  "description": "Grand unified theories join quarks and leptons, so even a proton can change into a positron and a pion. Its lifetime is at least 10^34 years - and after the last star, the degenerate era ends when every proton is gone. Unlocks Proton Decay Residue.",
+  "icon": "theoreticalsciences:proton_decay_residue",
+  "x": 11,
+  "y": -9,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:cosmic_eschatology",
+    "theoreticalsciences:grand_unification"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superpartner_shard",
+      "count": 4
+    }
+  ],
+  "time": 660,
+  "puzzle": {
+    "goal": "In a theory that unifies the forces, a heavy boson of mass M_X can turn a quark into a lepton. A proton of mass m_p then decays by exchanging it; the rate is the square of the unified coupling \u03b1_G, times m_p\u2075 by dimensional analysis, divided by M_X\u2074, times a hadronic factor A. Write the proton lifetime (units \u0127 = c = 1).",
+    "name": "lifetime of the proton in grand unification (dimension-six decay)",
+    "lhs": "\u03c4",
+    "form": "1 / ( A * \u03b1 _ G ^ 2 * m _ p ^ 5 / M _ X ^ 4 )",
+    "expr": "208.56 * M ^ 4 / ( \u03b1 ^ 2 * m ^ 5 )",
+    "ask": "With A = 1, M_X = M \u00d7 10\u00b9\u2076 GeV, \u03b1_G = \u03b1 and m_p in GeV (1 GeV\u207b\u00b9 = 6.58\u00d710\u207b\u00b2\u2075 s), find \u03c4 in units of 10\u00b3\u2070 years.",
+    "vars": {
+      "\u03c4": "proton lifetime",
+      "A": "hadronic matrix-element factor",
+      "\u03b1": "unified coupling",
+      "G": "grand unified",
+      "m": "proton mass (GeV)",
+      "p": "proton",
+      "M": "X boson mass (10\u00b9\u2076 GeV)",
+      "X": "X boson"
+    },
+    "given": {
+      "M": 1,
+      "\u03b1": 0.025,
+      "m": 0.938
+    },
+    "unit": "10\u00b3\u2070 years",
+    "method": "Like muon decay through a W: the amplitude carries 1/M_X\u00b2, the rate its square, and m_p\u2075 makes the dimensions of a rate.",
+    "distractors": [
+      "\u0127",
+      "exp",
+      "c"
+    ],
+    "vary": {
+      "\u03b1": [
+        0.015,
+        0.035,
+        0.0001
+      ],
+      "m": [
+        0.562,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

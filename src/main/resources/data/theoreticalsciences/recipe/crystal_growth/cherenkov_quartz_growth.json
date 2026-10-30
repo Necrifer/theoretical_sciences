@@ -1,0 +1,34 @@
+{
+  "type": "theoreticalsciences:crystal_growth",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz_block"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:quartz",
+      "count": 16
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cherenkov_quartz",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:precision_lithography",
+  "unscaled": true
+}

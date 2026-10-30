@@ -1,0 +1,54 @@
+{
+  "title": "High-Energy Particle Physics",
+  "description": "Colliders, quark-gluon plasma, strange matter and magnetic monopoles.",
+  "icon": "theoreticalsciences:strange_matter_pellet",
+  "x": 5,
+  "y": 2,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:antimatter"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antimatter_pellet",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A charged particle of charge q flies through an electric field E\u20d7 and a magnetic field B\u20d7 at velocity v\u20d7. Write the rate of change of its relativistic momentum \u03b3mv\u20d7 as the sum of the electric push and the sideways magnetic push.",
+    "name": "Lorentz force law (relativistic)",
+    "lhs": "d ( \u03b3 * m * vec ( v ) , t )",
+    "form": "q * vec ( E ) + q * vec ( v ) \u00d7 vec ( B )",
+    "expr": "p / ( 0.3 * B )",
+    "ask": "In a pure magnetic field the momentum turns on a circle of radius R = p/(qB); for a unit charge with p in GeV/c and B in tesla this is R = p / (0.3 B) metres. Find R for p = @{p} GeV/c protons in an 8.33 T dipole.",
+    "vars": {
+      "\u03b3": "Lorentz factor",
+      "m": "rest mass",
+      "v": "velocity",
+      "t": "time",
+      "q": "charge",
+      "E": "electric field",
+      "B": "magnetic field (T)",
+      "p": "momentum (GeV/c)"
+    },
+    "given": {
+      "p": 7000,
+      "B": 8.33
+    },
+    "unit": "m",
+    "method": "The electric force is qE\u20d7; the magnetic force is the charge times the cross product of velocity with the field.",
+    "distractors": [
+      "\u03c9",
+      "c",
+      "-"
+    ],
+    "vary": {
+      "p": [
+        4200.0,
+        9800.0,
+        1.0
+      ]
+    }
+  }
+}

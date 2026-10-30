@@ -1,0 +1,43 @@
+{
+  "title": "Set Theory",
+  "description": "Everything is a set. Power sets, the continuum, and the axiom of choice.",
+  "icon": "theoreticalsciences:power_set",
+  "x": 4,
+  "y": 10,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:formal_logic",
+    "theoreticalsciences:real_analysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:empty_set",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A set S has n elements. Count its subsets by size with binomial coefficients and add them up. Then the collection of all those subsets is itself a set: count ITS subsets the same way, with the inner count used as the size.",
+    "name": "Cardinality of the iterated power set (binomial sums)",
+    "lhs": "N",
+    "form": "sum ( j , 0 , sum ( k , 0 , n , binom ( n , k ) ) , binom ( sum ( k , 0 , n , binom ( n , k ) ) , j ) )",
+    "expr": "2 ^ ( 2 ^ n )",
+    "ask": "Each binomial sum collapses to a power of two, giving 2^(2\u207f). Find the size of the power set of the power set of a 4-element set.",
+    "vars": {
+      "N": "number of subsets of the set of subsets",
+      "n": "size of S",
+      "k": "size of a subset of S",
+      "j": "size of a set of subsets"
+    },
+    "given": {
+      "n": 4
+    },
+    "unit": "elements",
+    "method": "\u03a3\u2096 C(n,k) counts all subsets; the outer sum does the same for a set whose size is that inner sum.",
+    "distractors": [
+      "1",
+      "2",
+      "m"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Pleroma",
+  "description": "The fullness of everything: every fluid there is, poured together. Unlocks the Pleroma Confluence.",
+  "icon": "theoreticalsciences:pleroma_confluence",
+  "x": 21,
+  "y": -2,
+  "insight": 2000,
+  "requires": [
+    "theoreticalsciences:omnilex"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:omnium_ingot",
+      "count": 1
+    }
+  ],
+  "time": 17160,
+  "puzzle": {
+    "goal": "N different ideal fluids, n_i moles each, with pure-fluid chemical potentials \u03bc_i, are poured together at temperature T. In the mixture each fluid's chemical potential gains R\u00b7T\u00b7ln of its mole fraction. Write the free energy G (at constant temperature and pressure) of the mixture minus that of the separate pure fluids, with each mole fraction written out as a ratio of sums.",
+    "name": "Gibbs energy of ideal mixing",
+    "lhs": "\u0394 * G",
+    "form": "sum ( i , 1 , N , n _ i * ( \u03bc _ i + R * T * ln ( n _ i / sum ( j , 1 , N , n _ j ) ) ) ) - sum ( i , 1 , N , n _ i * \u03bc _ i )",
+    "expr": "- N * R * T * ln ( N ) / 1000",
+    "ask": "With one mole of each fluid every mole fraction is 1/N, so \u0394G = \u2212N\u00b7R\u00b7T\u00b7ln N. Find \u0394G (kJ) when N = @{N} different fluids are mixed at @{T} K.",
+    "vars": {
+      "\u0394": "change on mixing",
+      "G": "Gibbs free energy",
+      "i": "fluid index",
+      "j": "fluid index",
+      "N": "number of fluids",
+      "n": "moles of each fluid",
+      "\u03bc": "chemical potential of the pure fluid",
+      "R": "gas constant",
+      "T": "temperature"
+    },
+    "given": {
+      "N": 1000,
+      "R": 8.314,
+      "T": 300
+    },
+    "unit": "kJ",
+    "method": "The total Gibbs energy is \u03a3 n_i times each species' chemical potential; for an ideal mixture the potential shifts by RT ln x_i, which comes from counting the ways to arrange the molecules.",
+    "distractors": [
+      "kB",
+      "exp",
+      "H"
+    ],
+    "vary": {
+      "N": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "T": [
+        180.0,
+        420.0,
+        1.0
+      ]
+    }
+  }
+}

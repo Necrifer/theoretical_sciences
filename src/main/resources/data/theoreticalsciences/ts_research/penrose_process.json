@@ -1,0 +1,54 @@
+{
+  "title": "The Penrose Process",
+  "description": "Energy can be stolen from a rotating black hole's ergosphere.",
+  "icon": "theoreticalsciences:penrose_spindle",
+  "x": 8,
+  "y": 2,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:singularity_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:magnetic_monopole",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A rotating black hole of mass M and spin parameter a (units G = c = 1) can lose energy to particles split in its ergosphere, but its horizon area may never shrink. The part of the mass that can never be extracted is fixed by the horizon area A = 8\u03c0M(M + \u221a(M\u00b2 \u2212 a\u00b2)), via \u221a(A/16\u03c0). Write the maximum extractable energy.",
+    "name": "Rotational energy of a Kerr black hole (irreducible mass, Christodoulou)",
+    "lhs": "E",
+    "form": "M - sqrt ( M / 2 * ( M + sqrt ( M ^ 2 - a ^ 2 ) ) )",
+    "expr": "M - sqrt ( M / 2 * ( M + sqrt ( M ^ 2 - a ^ 2 ) ) )",
+    "ask": "Find the maximum energy (in solar masses) that can be extracted from a black hole of mass @{M} solar masses with spin parameter a = @{a}.",
+    "vars": {
+      "E": "maximum extractable energy",
+      "M": "black hole mass",
+      "a": "spin parameter J/M"
+    },
+    "given": {
+      "M": 10,
+      "a": 8
+    },
+    "unit": "solar masses",
+    "method": "Find the outer horizon radius as the larger root of r\u00b2 \u2212 2Mr + a\u00b2 = 0, compute the horizon area 4\u03c0(r\u00b2 + a\u00b2), and subtract the mass that area alone pins down from the total mass.",
+    "distractors": [
+      "\u03c0",
+      "4",
+      "+"
+    ],
+    "vary": {
+      "M": [
+        8.0,
+        12.0,
+        1.0
+      ],
+      "a": [
+        6.0,
+        10.0,
+        1.0
+      ]
+    }
+  }
+}

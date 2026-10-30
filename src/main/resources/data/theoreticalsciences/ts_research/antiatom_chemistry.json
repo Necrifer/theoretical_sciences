@@ -1,0 +1,51 @@
+{
+  "title": "Antiatoms",
+  "description": "An antiproton and a positron make antihydrogen - with exactly the same spectrum as hydrogen. Unlocks the Antiproton Decelerator.",
+  "icon": "theoreticalsciences:antiproton_decelerator",
+  "x": 14,
+  "y": 17,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:cpt_symmetry",
+    "theoreticalsciences:exotic_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antihydrogen_crystal",
+      "count": 4
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "An antiproton and a positron are bound by the same Coulomb attraction as a proton and an electron. Treat the two-body problem with the reduced mass of the pair, quantise the angular momentum, and write the energy of the n-th bound level in terms of the masses, the elementary charge, the vacuum permittivity and the Planck constant.",
+    "name": "Bohr levels of (anti)hydrogen with reduced mass",
+    "lhs": "E _ n",
+    "form": "- m _ e * m _ p / ( m _ e + m _ p ) * e ^ 4 / ( 8 * \u03b50 ^ 2 * h ^ 2 * n ^ 2 )",
+    "expr": "R * ( 1 / n1 ^ 2 - 1 / n2 ^ 2 )",
+    "ask": "CPT symmetry makes antihydrogen's levels identical to hydrogen's: E_n = \u2212R/n\u00b2 with R = 13.606 eV. Find the photon energy (eV) of the 2 \u2192 1 transition probed by laser spectroscopy.",
+    "vars": {
+      "E": "energy of level n",
+      "n": "principal quantum number",
+      "m": "mass (m_e positron, m_p antiproton)",
+      "p": "label: (anti)proton",
+      "e": "elementary charge (subscript: electron/positron)",
+      "\u03b50": "vacuum permittivity",
+      "h": "Planck constant",
+      "R": "Rydberg energy",
+      "n1": "lower level",
+      "n2": "upper level"
+    },
+    "given": {
+      "R": 13.606,
+      "n1": 1,
+      "n2": 2
+    },
+    "unit": "eV",
+    "method": "Balance the Coulomb force against the centripetal force of the reduced mass, impose L = n\u0127, then add kinetic and potential energy.",
+    "distractors": [
+      "c",
+      "4",
+      "\u0127"
+    ]
+  }
+}

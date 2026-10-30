@@ -1,0 +1,56 @@
+{
+  "title": "Vacuum Decay",
+  "description": "If our vacuum is only metastable, a bubble of the true vacuum may nucleate somewhere, someday. Its wall sweeps outwards at nearly the speed of light, and inside it the laws of physics are different. There would be no warning. Unlocks the True Vacuum Seed.",
+  "icon": "theoreticalsciences:true_vacuum_seed",
+  "x": 13,
+  "y": -9,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:cosmic_eschatology",
+    "theoreticalsciences:vacuum_stability"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metastable_vacuum_lattice",
+      "count": 2
+    }
+  ],
+  "time": 870,
+  "puzzle": {
+    "goal": "A spherical bubble of a lower-energy vacuum of radius R nucleates inside our vacuum. Its wall costs energy in proportion to its area, with tension \u03c3; its interior releases energy in proportion to its volume, the energy-density difference \u03b5. Write the energy of the bubble.",
+    "name": "Thin-wall energy of a true-vacuum bubble",
+    "lhs": "E",
+    "form": "4 * \u03c0 * R ^ 2 * \u03c3 - 4 / 3 * \u03c0 * R ^ 3 * \u03b5",
+    "expr": "16 * \u03c0 * \u03c3 ^ 3 / ( 3 * \u03b5 ^ 2 )",
+    "ask": "Small bubbles collapse; above the critical radius R_c = 2\u03c3/\u03b5 (where dE/dR = 0) they grow at the speed of light. Find the barrier height E(R_c) = 16\u03c0\u03c3\u00b3/(3\u03b5\u00b2) in natural units.",
+    "vars": {
+      "E": "bubble energy",
+      "R": "bubble radius",
+      "\u03c3": "wall tension",
+      "\u03b5": "vacuum energy difference"
+    },
+    "given": {
+      "\u03c3": 2,
+      "\u03b5": 1.5
+    },
+    "unit": "",
+    "method": "Area 4\u03c0R\u00b2, volume 4\u03c0R\u00b3/3. Set the derivative to zero to find the critical bubble.",
+    "distractors": [
+      "G",
+      "c",
+      "2"
+    ],
+    "vary": {
+      "\u03c3": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "\u03b5": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

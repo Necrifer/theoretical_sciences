@@ -1,0 +1,54 @@
+{
+  "title": "Accelerator Physics",
+  "description": "Bend a beam with dipoles, focus it with quadrupoles, push it with RF cavities - and keep it all at two kelvin in a perfect vacuum. Unlocks the beamline components and the Hyperion Synchrotron.",
+  "icon": "theoreticalsciences:dipole_winding",
+  "x": 7,
+  "y": -4,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:particle_physics",
+    "theoreticalsciences:plasma_metallurgy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A charged particle q of rest mass m moves at speed v near c through a pure magnetic field B. Its relativistic momentum changes only by the magnetic force. Since the speed stays constant, write the rate of change of its velocity vector, with the Lorentz factor written out.",
+    "name": "Lorentz-force equation of motion (relativistic)",
+    "lhs": "d ( vec ( v ) , t )",
+    "form": "q * sqrt ( 1 - v ^ 2 / c ^ 2 ) / m * ( vec ( v ) \u00d7 vec ( B ) )",
+    "expr": "p / ( 0.2998 * B )",
+    "ask": "The particle circles with radius \u03c1 = \u03b3mv/(qB) = p/(qB); for momentum in GeV/c and B in tesla this is \u03c1 = p/(0.2998\u00b7B) metres. Find the bending radius of a @{p} GeV/c proton beam in 8.33 T dipoles.",
+    "vars": {
+      "v": "particle velocity / speed",
+      "t": "time",
+      "q": "particle charge",
+      "c": "speed of light",
+      "m": "rest mass",
+      "B": "magnetic field (T)",
+      "p": "momentum (GeV/c)"
+    },
+    "given": {
+      "p": 7000,
+      "B": 8.33
+    },
+    "unit": "m",
+    "method": "Differentiate p = \u03b3 m v with \u03b3 constant (a magnetic force does no work), set it equal to q v \u00d7 B, and divide by \u03b3 m.",
+    "distractors": [
+      "E",
+      "+",
+      "2"
+    ],
+    "vary": {
+      "p": [
+        4200.0,
+        9800.0,
+        1.0
+      ]
+    }
+  }
+}

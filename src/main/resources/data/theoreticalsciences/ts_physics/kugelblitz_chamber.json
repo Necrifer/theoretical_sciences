@@ -1,0 +1,125 @@
+{
+  "params": [
+    {
+      "id": "lgE",
+      "unit": "log\u2081\u2080 J",
+      "min": 20,
+      "max": 30,
+      "step": 0.01,
+      "default": 25.6
+    },
+    {
+      "id": "Eg",
+      "unit": "GeV",
+      "min": 1,
+      "max": 10000,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "id": "NA",
+      "unit": "",
+      "min": 0.05,
+      "max": 0.95,
+      "step": 0.01,
+      "default": 0.5
+    },
+    {
+      "id": "mdot",
+      "unit": "g/s",
+      "min": 0,
+      "max": 1000000,
+      "step": 0.001,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [
+    {
+      "id": "c2",
+      "expr": "8.988e+16"
+    },
+    {
+      "id": "M0",
+      "expr": "10^lgE/c2"
+    }
+  ],
+  "states": [
+    {
+      "id": "M",
+      "unit": "kg",
+      "init": "M0",
+      "ddt": "mdot/1000*(1+0.05*d) - PH/c2",
+      "min": 1000000.0,
+      "max": 10000000000000.0,
+      "out_of_range": "quench"
+    }
+  ],
+  "derived": [
+    {
+      "id": "M0d",
+      "unit": "kg",
+      "expr": "M0",
+      "formula": "M = E/c\u00b2"
+    },
+    {
+      "id": "rs0",
+      "unit": "m",
+      "expr": "1.485e-27*M0",
+      "formula": "r_s = 2GM/c\u00b2"
+    },
+    {
+      "id": "spot",
+      "unit": "m",
+      "expr": "1.24e-15/(Eg*2*NA)",
+      "formula": "r = \u03bb/(2\u00b7NA)"
+    },
+    {
+      "id": "lgM",
+      "unit": "log\u2081\u2080 kg",
+      "expr": "log10(M)",
+      "formula": "log\u2081\u2080 M"
+    },
+    {
+      "id": "TH",
+      "unit": "K",
+      "expr": "1.227e23/M",
+      "formula": "T_H = \u0127c\u00b3/(8\u03c0GMk)"
+    },
+    {
+      "id": "PH",
+      "unit": "W",
+      "expr": "3.563e32/M^2",
+      "formula": "P = \u0127c\u2076/(15360\u03c0G\u00b2M\u00b2)"
+    },
+    {
+      "id": "mdeq",
+      "unit": "g/s",
+      "expr": "1000*PH/c2",
+      "formula": "\u1e41_eq = P/c\u00b2"
+    },
+    {
+      "id": "life",
+      "unit": "s",
+      "expr": "8.41e-17*M^3",
+      "formula": "t = 5120\u03c0G\u00b2M\u00b3/(\u0127c\u2074)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "hoop",
+      "kind": "stop",
+      "expr": "rs0 - spot",
+      "formula": "r_spot < r_s"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1 (while the hole is held in the window)",
+  "heat": "20 + 1e-14*PH",
+  "idle_heat": "4",
+  "quench_energy": "800",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 300000000.0,
+  "rate_max": 4
+}

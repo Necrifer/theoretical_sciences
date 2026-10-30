@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:vacuum_harvesting",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:planck_diver"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:casimir_plate",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:false_vacuum",
+      "amount": 1024000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:foam_substrate",
+      "count": 16
+    },
+    {
+      "id": "theoreticalsciences:false_vacuum_membrane",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:schrodinger_limit",
+      "amount": 1000
+    },
+    {
+      "id": "theoreticalsciences:relativity_breakdown",
+      "amount": 1000
+    }
+  ],
+  "energy": 1048576,
+  "duration": 800,
+  "research": "theoreticalsciences:quantum_foam",
+  "unscaled": true
+}

@@ -1,0 +1,51 @@
+{
+  "title": "Causality Violation",
+  "description": "Closed timelike curves: send something back to before it was made, and now there are two.",
+  "icon": "theoreticalsciences:closed_timelike_curve",
+  "x": 11,
+  "y": 0,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:traversable_wormholes",
+    "theoreticalsciences:chronodynamics",
+    "theoreticalsciences:temporal_mechanics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 4
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "A signal is sent faster than light: it covers a distance \u0394x in time \u0394t. An observer moves at speed v along the same line. Write the time between emission and reception as that observer measures it, using the full transformation between the two frames with the time-dilation factor written out.",
+    "name": "Lorentz transformation of a time interval",
+    "lhs": "\u0394 * T",
+    "form": "1 / sqrt ( 1 - v ^ 2 / c ^ 2 ) * ( \u0394 * t - v * \u0394 * x / c ^ 2 )",
+    "expr": "( v * \u0394x / c ^ 2 - \u0394t ) / sqrt ( 1 - v ^ 2 / c ^ 2 )",
+    "ask": "When v\u0394x/c\u00b2 > \u0394t the result is negative: the moving observer sees the signal arrive before it was sent. Take c = 1, a signal at three times light speed (\u0394t = 1 s, \u0394x = 3 light-seconds) and v = 0.5; find by how much it arrives before it was sent.",
+    "vars": {
+      "\u0394": "difference",
+      "T": "time in the moving frame",
+      "t": "time in the rest frame",
+      "x": "position in the rest frame",
+      "v": "observer speed",
+      "c": "speed of light",
+      "\u0394t": "interval in the rest frame (s)",
+      "\u0394x": "distance in the rest frame (light-seconds)"
+    },
+    "given": {
+      "v": 0.5,
+      "\u0394x": 3,
+      "\u0394t": 1,
+      "c": 1
+    },
+    "unit": "s",
+    "method": "Mix time and space so that c\u00b2t\u00b2 \u2212 x\u00b2 is unchanged; the relative weight of x in the new time is v/c\u00b2.",
+    "distractors": [
+      "+",
+      "\u03b3",
+      "2"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Mass Manipulation",
+  "description": "Massless matter, negative mass and the inertial dampers every starship needs.",
+  "icon": "theoreticalsciences:negative_mass_ingot",
+  "x": 7,
+  "y": 3,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:particle_physics",
+    "theoreticalsciences:nanotechnology",
+    "theoreticalsciences:quantum_field_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:higgs_field_capacitor",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A free scalar field \u03c6 describes a particle of mass m. Make the wave equation consistent with relativity by turning E\u00b2 = p\u00b2c\u00b2 + m\u00b2c\u2074 into derivatives (E \u2192 i\u0127\u2202/\u2202t, p \u2192 \u2212i\u0127\u2207). Write the second time derivative, divided by c\u00b2, in terms of the three spatial second derivatives and the mass term.",
+    "name": "Klein\u2013Gordon equation (relativistic energy\u2013momentum relation)",
+    "lhs": "1 / c ^ 2 * pd2 ( \u03c6 , t )",
+    "form": "pd2 ( \u03c6 , x ) + pd2 ( \u03c6 , y ) + pd2 ( \u03c6 , z ) - m ^ 2 * c ^ 2 / \u0127 ^ 2 * \u03c6",
+    "expr": "sqrt ( p ^ 2 + m ^ 2 )",
+    "ask": "A plane wave solves it when E\u00b2 = p\u00b2c\u00b2 + m\u00b2c\u2074. Find E (GeV) for p = 3 GeV/c and m = 4 GeV/c\u00b2 in units with c = 1 (set m = 0 to see massless matter).",
+    "vars": {
+      "\u03c6": "scalar field",
+      "t": "time",
+      "x": "first coordinate",
+      "y": "second coordinate",
+      "z": "third coordinate",
+      "m": "particle mass",
+      "c": "speed of light",
+      "\u0127": "reduced Planck constant",
+      "p": "momentum"
+    },
+    "given": {
+      "p": 3,
+      "m": 4
+    },
+    "unit": "GeV",
+    "method": "Square the energy operator and the momentum operator, apply both to \u03c6, and rearrange; \u2207\u00b2 splits into three second partial derivatives.",
+    "distractors": [
+      "+",
+      "i",
+      "E"
+    ]
+  }
+}

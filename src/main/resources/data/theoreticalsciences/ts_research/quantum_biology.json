@@ -1,0 +1,48 @@
+{
+  "title": "Quantum Biology",
+  "description": "Photosynthesis, enzymes and migrating birds all use quantum coherence. Unlocks quantum chlorophyll and magnetoreceptors.",
+  "icon": "theoreticalsciences:quantum_chlorophyll",
+  "x": 10,
+  "y": 14,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:protein_folding",
+    "theoreticalsciences:quantum_entanglement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:folded_protein_crystal",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "An electron of energy E inside a protein meets a region of width L where the potential energy V is higher than E. Inside, its wavefunction decays instead of oscillating, with a local decay rate \u221a(2m(V\u2212E))/\u0127. Write the probability of getting through, accumulating that decay across the barrier.",
+    "name": "WKB tunnelling probability",
+    "lhs": "T",
+    "form": "exp ( - 2 / \u0127 * int ( 0 , L , sqrt ( 2 * m * ( V - E ) ) , x ) )",
+    "expr": "exp ( - 2 * \u03ba * L )",
+    "ask": "For a flat barrier the integral is just \u03ba\u0127L with \u03ba = \u221a(2m(V\u2212E))/\u0127. Find the tunnelling probability through a 0.3 nm protein barrier with \u03ba = 10 nm\u207b\u00b9.",
+    "vars": {
+      "T": "transmission probability",
+      "\u0127": "reduced Planck constant",
+      "L": "barrier width (nm)",
+      "m": "electron mass",
+      "V": "barrier potential energy",
+      "E": "electron energy",
+      "x": "position in the barrier",
+      "\u03ba": "decay constant (nm\u207b\u00b9)"
+    },
+    "given": {
+      "\u03ba": 10,
+      "L": 0.3
+    },
+    "unit": "",
+    "method": "Assume the wavefunction is e^(\u00b1\u222b\u03ba(x)dx) with slowly varying \u03ba; the probability is the squared amplitude ratio, so the exponent doubles.",
+    "distractors": [
+      "h",
+      "+",
+      "4"
+    ]
+  }
+}

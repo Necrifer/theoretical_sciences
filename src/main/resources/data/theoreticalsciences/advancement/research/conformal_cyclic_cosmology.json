@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:aeon_boundary_shard"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.conformal_cyclic_cosmology"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.conformal_cyclic_cosmology.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/heat_death",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

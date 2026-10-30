@@ -1,0 +1,62 @@
+{
+  "type": "theoreticalsciences:pleroma_reconstitution",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:transcendental_echo",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:apeiron_ingot",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:pleroma_crystal",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:logos_thread",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:omnipotence_dust",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:omnium_block",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:pleroma",
+      "amount": 64000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rekindled_spark",
+      "count": 1
+    }
+  ],
+  "energy": 2000000000,
+  "duration": 1200,
+  "research": "theoreticalsciences:the_sundering",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "F0": 4.2
+    },
+    "windows": [
+      {
+        "q": "A",
+        "min": 0.6,
+        "max": 1.01
+      },
+      {
+        "q": "Pe",
+        "min": 10.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

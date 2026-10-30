@@ -1,0 +1,52 @@
+{
+  "title": "Chronodynamics",
+  "description": "If time is quantised, its quanta can be stored.",
+  "icon": "theoreticalsciences:chronon_capacitor",
+  "x": 5,
+  "y": -1,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:tachyonics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "An observable A may depend explicitly on time, and the state evolves under the Hamiltonian H. Write the rate of change of the expectation value \u27e8A\u27e9: one part comes from how A fails to commute with the energy, the other from A's own explicit time dependence.",
+    "name": "Heisenberg equation of motion for expectation values (Ehrenfest form)",
+    "lhs": "d ( avg ( A ) , t )",
+    "form": "i / \u0127 * avg ( comm ( H , A ) ) + avg ( pd ( A , t ) )",
+    "expr": "\u0127 / ( 2 * \u0394t )",
+    "ask": "Combining this with the uncertainty relation \u0394A\u00b7\u0394E \u2265 \u00bd|\u27e8[A,H]\u27e9| gives \u0394E\u00b7\u03c4 \u2265 \u0127/2, where \u03c4 = \u0394A / |d\u27e8A\u27e9/dt| is the time for A to change noticeably. Find the minimum energy spread (eV) of a state that changes in \u03c4 = \u0394t = @{\u0394t} fs, with \u0127 = 0.658 eV fs.",
+    "vars": {
+      "A": "an observable",
+      "H": "Hamiltonian",
+      "\u0127": "reduced Planck constant (eV fs)",
+      "i": "imaginary unit",
+      "t": "time",
+      "\u0394t": "characteristic time of change (fs)"
+    },
+    "given": {
+      "\u0127": 0.658,
+      "\u0394t": 1
+    },
+    "unit": "eV",
+    "method": "Differentiate \u27e8\u03c8|A|\u03c8\u27e9 with the product rule and use i\u0127 \u2202|\u03c8\u27e9/\u2202t = H|\u03c8\u27e9 for the state and its adjoint.",
+    "distractors": [
+      "-",
+      "h",
+      "B"
+    ],
+    "vary": {
+      "\u0394t": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

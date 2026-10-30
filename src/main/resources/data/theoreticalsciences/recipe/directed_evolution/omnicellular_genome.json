@@ -1,0 +1,110 @@
+{
+  "type": "theoreticalsciences:directed_evolution",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:panspermia_seed",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:silicon_life_spore",
+      "count": 96
+    },
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:recombinant_dna",
+      "count": 768
+    },
+    {
+      "item": "theoreticalsciences:spacetime_bearing",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:absolute_dossier",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:antiiron_ingot",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:stellar_singularity",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:dilithium_singularity",
+      "count": 48
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:xenoplasm",
+      "amount": 1024000
+    },
+    {
+      "fluid": "theoreticalsciences:schrodinger_limit",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:transcendent_plasma",
+      "amount": 32000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:omnicellular_genome",
+      "count": 1
+    }
+  ],
+  "energy": 268435456,
+  "duration": 8400,
+  "research": "theoreticalsciences:panspermia",
+  "scaled": 12,
+  "environment": {
+    "time_min": 10
+  },
+  "physics": {
+    "vars": {
+      "Lg": 100000000.0,
+      "vmin": 0.1
+    },
+    "windows": [
+      {
+        "q": "v",
+        "min": 0.1,
+        "max": 1000000000.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "iceandfire:dragonsteel_fire_ingot",
+      "count": 24
+    },
+    {
+      "item": "cataclysm:ignitium_ingot",
+      "count": 24
+    },
+    {
+      "item": "mekanism:alloy_atomic",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "avaritia_integration:molten_crystal_matrix",
+      "amount": 24000
+    },
+    {
+      "fluid": "bigreactors:blutonium",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

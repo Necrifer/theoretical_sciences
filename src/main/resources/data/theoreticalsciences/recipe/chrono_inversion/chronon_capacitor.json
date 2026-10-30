@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:chrono_inversion",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "count": 24
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 8000
+    },
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chronon_capacitor",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:chronon_gas",
+      "amount": 250
+    }
+  ],
+  "energy": 4096,
+  "duration": 500,
+  "research": "theoreticalsciences:chronodynamics",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "nuclearcraft:extreme_plate",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Category Theory",
+  "description": "Objects and arrows. Functors between categories, and toposes - universes with their own logic.",
+  "icon": "theoreticalsciences:topos",
+  "x": 9,
+  "y": 9,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:set_theory",
+    "theoreticalsciences:geometric_topology",
+    "theoreticalsciences:abstract_algebra"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:function_graph",
+      "count": 16
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "In the category of finite sets, an arrow into C from a product A \u00d7 B (or a disjoint union with D) is the same as choosing an element of C independently for every point of the source. Count the arrows from (A \u00d7 B) + D into C as nested products over the points, using cardinalities |X|.",
+    "name": "Exponential law in Set (currying and coproducts: C^(A\u00d7B+D) \u2245 (C^B)^A \u00d7 C^D)",
+    "lhs": "abs ( C ^ ( A \u00d7 B + D ) )",
+    "form": "prod ( x , 1 , abs ( A ) , prod ( y , 1 , abs ( B ) , abs ( C ) ) ) * prod ( z , 1 , abs ( D ) , abs ( C ) )",
+    "expr": "( c ^ b ) ^ a * c ^ k",
+    "ask": "Find the number of morphisms (A \u00d7 B) + D \u2192 C for |A| = 2, |B| = 3, |C| = 2, |D| = 2.",
+    "vars": {
+      "A": "first factor set",
+      "B": "second factor set",
+      "C": "target set",
+      "D": "set adjoined by disjoint union",
+      "x": "point of A",
+      "y": "point of B",
+      "z": "point of D",
+      "a": "|A|",
+      "b": "|B|",
+      "c": "|C|",
+      "k": "|D|"
+    },
+    "given": {
+      "a": 2,
+      "b": 3,
+      "c": 2,
+      "k": 2
+    },
+    "unit": "morphisms",
+    "method": "A function is a choice of image for every point; the points of A \u00d7 B are pairs, so the choices nest, and the points of a disjoint union split into two independent blocks.",
+    "distractors": [
+      "+",
+      "N",
+      "2"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "type": "theoreticalsciences:stellar_compression",
+  "min_tier": 2,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neutronium_block",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:supernova_remnant",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:chronoplastic_gasket",
+      "count": 24
+    },
+    {
+      "item": "theoreticalsciences:hyperdimensional_boule",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:minkowski_lattice",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:topological_logic_wafer",
+      "count": 48
+    },
+    {
+      "item": "theoreticalsciences:quantum_string",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 256000
+    },
+    {
+      "fluid": "theoreticalsciences:nanite_slurry",
+      "amount": 32000
+    },
+    {
+      "fluid": "theoreticalsciences:synaptic_fluid",
+      "amount": 32000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quark_star_core",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:magnetar_shard",
+      "count": 2
+    }
+  ],
+  "energy": 2097152,
+  "duration": 2100,
+  "research": "theoreticalsciences:compact_stars",
+  "scaled": 12,
+  "physics": {
+    "windows": [
+      {
+        "q": "lgrho",
+        "min": 18.0,
+        "max": 19.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "enderio:prescient_crystal",
+      "count": 24
+    },
+    {
+      "item": "cataclysm:witherite_ingot",
+      "count": 24
+    },
+    {
+      "item": "oritech:adamant_ingot",
+      "count": 24
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:blutonium",
+      "amount": 24000
+    },
+    {
+      "fluid": "enderio:dew_of_the_void",
+      "amount": 24000
+    }
+  ],
+  "expanded": true
+}

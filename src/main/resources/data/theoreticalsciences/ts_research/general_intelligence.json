@@ -1,0 +1,79 @@
+{
+  "title": "Artificial General Intelligence",
+  "description": "A mind that can learn anything.",
+  "icon": "theoreticalsciences:general_ai_core",
+  "x": 5,
+  "y": 3,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:artificial_intelligence",
+    "theoreticalsciences:topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neural_lattice",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "An artificial neuron weighs each input x_j by a learned weight w_j, adds a bias b and squashes the total into a firing probability between 0 and 1 with a smooth S-shaped curve. Write its output.",
+    "name": "Logistic (sigmoid) neuron",
+    "lhs": "y",
+    "form": "1 / ( 1 + exp ( - ( sumk ( j , w _ j * x _ j ) + b ) ) )",
+    "expr": "1 / ( 1 + exp ( - ( w1 * x1 + w2 * x2 + b ) ) )",
+    "ask": "Find the output of a two-input neuron with the weights, inputs and bias below.",
+    "vars": {
+      "y": "neuron output",
+      "j": "input index",
+      "w": "weights",
+      "x": "inputs",
+      "b": "bias",
+      "w1": "first weight",
+      "x1": "first input",
+      "w2": "second weight",
+      "x2": "second input"
+    },
+    "given": {
+      "w1": 0.5,
+      "x1": 2,
+      "w2": -1,
+      "x2": 0.5,
+      "b": 0.25
+    },
+    "unit": "",
+    "method": "Form the weighted sum z = \u03a3 w_j x_j + b, then apply the function 1/(1 + e^(\u2212z)), whose output tends to 0 and 1 at the extremes.",
+    "distractors": [
+      "tanh",
+      "-",
+      "ln"
+    ],
+    "vary": {
+      "w1": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "x1": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "w2": [
+        -3.0,
+        -1.0,
+        1.0
+      ],
+      "x2": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "b": [
+        0.15,
+        0.35,
+        0.001
+      ]
+    }
+  }
+}

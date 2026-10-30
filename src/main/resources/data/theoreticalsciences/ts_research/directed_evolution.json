@@ -1,0 +1,60 @@
+{
+  "title": "Directed Evolution",
+  "description": "A million generations in a minute, if time runs fast enough. Unlocks the Evolution Engine and telomerase.",
+  "icon": "theoreticalsciences:evolution_engine",
+  "x": 15,
+  "y": 15,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:xenobiology",
+    "theoreticalsciences:chronodynamics",
+    "theoreticalsciences:morphogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:xenogenome_sample",
+      "count": 4
+    }
+  ],
+  "time": 630,
+  "puzzle": {
+    "goal": "A new mutant with selective advantage s appears in a population of N, starting at frequency p. Random drift and selection act together; in the diffusion limit the chance it ever takes over is a ratio of two integrals of the same weight function, which decays exponentially with the frequency x at rate 4Ns.",
+    "name": "Kimura fixation probability (diffusion approximation)",
+    "lhs": "u",
+    "form": "int ( 0 , p , exp ( - 4 * N * s * x ) , x ) / int ( 0 , 1 , exp ( - 4 * N * s * x ) , x )",
+    "expr": "( 1 - exp ( - 4 * N * s * p ) ) / ( 1 - exp ( - 4 * N * s ) )",
+    "ask": "The integrals give (1 \u2212 e^(\u22124Nsp)) / (1 \u2212 e^(\u22124Ns)). Find the fixation probability of a single new mutant, p = 1/(2N).",
+    "vars": {
+      "u": "probability of fixation",
+      "p": "initial frequency",
+      "N": "population size",
+      "s": "selective advantage",
+      "x": "allele frequency"
+    },
+    "given": {
+      "N": 1000,
+      "s": 0.01,
+      "p": 0.0005
+    },
+    "unit": "",
+    "method": "Solve the backward diffusion equation with absorbing boundaries at 0 and 1: the solution is the integral of exp(\u22122\u222bM/V) from 0 to p, normalised by the same integral to 1.",
+    "distractors": [
+      "2",
+      "+",
+      "t",
+      "ln"
+    ],
+    "vary": {
+      "N": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "s": [
+        0.006,
+        0.014,
+        0.0001
+      ]
+    }
+  }
+}

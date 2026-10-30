@@ -1,0 +1,63 @@
+{
+  "title": "Reheating",
+  "description": "Inflation leaves space empty and cold. When the inflaton reaches the bottom of its potential it oscillates and decays, and its energy becomes a hot plasma of every particle there is: the hot Big Bang begins here. Unlocks Reheating Plasma.",
+  "icon": "theoreticalsciences:reheating_plasma_cell",
+  "x": 11,
+  "y": -6,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:cosmic_inflation",
+    "theoreticalsciences:particle_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 4
+    }
+  ],
+  "time": 630,
+  "puzzle": {
+    "goal": "At the end of inflation the inflaton decays at a rate \u03bb, and its energy turns into a thermal bath of g relativistic species whose energy density is \u03c0\u00b2gT\u2074/30. The decay completes when the expansion rate has fallen to the decay rate, with H\u00b2 = \u03c1/(3M_P\u00b2). Write the temperature the universe is reheated to.",
+    "name": "Reheating temperature",
+    "lhs": "T",
+    "form": "( 90 / ( \u03c0 ^ 2 * g ) ) ^ ( 1 / 4 ) * sqrt ( \u03bb * M _ P )",
+    "expr": "( 90 / ( \u03c0 ^ 2 * g ) ) ^ ( 1 / 4 ) * sqrt ( \u03bb * M )",
+    "ask": "With every Standard Model species in the bath (g = @{g}), a decay rate \u03bb in GeV and M_P = M \u00d7 10\u00b9\u2078 GeV, find the reheating temperature in units of 10\u2079 GeV.",
+    "vars": {
+      "T": "reheating temperature",
+      "g": "number of relativistic degrees of freedom",
+      "\u03bb": "inflaton decay rate",
+      "M": "reduced Planck mass",
+      "P": "Planck"
+    },
+    "given": {
+      "g": 106.75,
+      "\u03bb": 1,
+      "M": 2.435
+    },
+    "unit": "10\u2079 GeV",
+    "method": "Set H = \u03bb, square it, replace H\u00b2 by \u03c1/(3M_P\u00b2) and \u03c1 by the radiation density, and solve for T.",
+    "distractors": [
+      "kB",
+      "3",
+      "exp"
+    ],
+    "vary": {
+      "g": [
+        64.0,
+        150.0,
+        1.0
+      ],
+      "\u03bb": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "M": [
+        1.46,
+        3.41,
+        0.01
+      ]
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "type": "theoreticalsciences:concept_compression",
+  "min_tier": 4,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:omniscience_catalyst",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:cosmic_neutronium_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:hypernova_alloy_ingot",
+      "count": 1024
+    },
+    {
+      "item": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 512
+    },
+    {
+      "item": "theoreticalsciences:cosmic_flux_coupler",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:law_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:temporal_knot",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:unified_notes_1",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:quantum_chlorophyll",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:cognitive_singularity",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:primordial_law",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:transcendent_plasma",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_spacetime",
+      "amount": 2048000
+    },
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:hypernova_plasma",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:residual_starlight",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:omnium_ingot",
+      "count": 1
+    }
+  ],
+  "energy": 1073741824,
+  "duration": 15000,
+  "research": "theoreticalsciences:omnilex",
+  "scaled": 32,
+  "physics": {
+    "vars": {
+      "qb": 0.04
+    },
+    "windows": [
+      {
+        "q": "ratio",
+        "min": 3.3,
+        "max": 1000.0
+      },
+      {
+        "q": "lgPe",
+        "min": -1000.0,
+        "max": -9.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "advanced_ae:quantum_processor",
+      "count": 32
+    },
+    {
+      "item": "fdbosses:eye_of_chesed",
+      "count": 32
+    },
+    {
+      "item": "oritech:prometheum_ingot",
+      "count": 32
+    },
+    {
+      "item": "projectexpansion:magenta_matter",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclearcraft:molten_curium_247",
+      "amount": 32000
+    },
+    {
+      "fluid": "oritech:still_strange_matter",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

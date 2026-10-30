@@ -1,0 +1,90 @@
+{
+  "params": [
+    {
+      "id": "phi",
+      "unit": "M_P",
+      "min": 0,
+      "max": 40,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "Gam",
+      "unit": "GeV",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "phe",
+      "unit": "M_P",
+      "expr": "phi*(1 + 0.03*d)",
+      "formula": "\u03c6 = \u03c6\u2080\u00b7(1 + 0.03\u00b7d)"
+    },
+    {
+      "id": "eps",
+      "unit": "",
+      "expr": "2/(phe^2 + 1e-9)",
+      "formula": "\u03b5 = 2/\u03c6\u00b2"
+    },
+    {
+      "id": "Nf",
+      "unit": "",
+      "expr": "pos(phe^2 - 2)/4",
+      "formula": "N = (\u03c6\u2080\u00b2 \u2212 2)/4"
+    },
+    {
+      "id": "Trh",
+      "unit": "10\u2079 GeV",
+      "expr": "0.5406*sqrt(Gam*2.435)",
+      "formula": "T_rh = (90/\u03c0\u00b2g*)^\u00bc\u00b7\u221a(\u0393\u00b7M_P)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "noinfl",
+      "kind": "stop",
+      "expr": "1 - eps",
+      "formula": "\u03b5 < 1"
+    },
+    {
+      "id": "short",
+      "kind": "stop",
+      "expr": "Nf - 50",
+      "formula": "N \u2265 50"
+    },
+    {
+      "id": "eternal",
+      "kind": "damage",
+      "expr": "30 - phe",
+      "formula": "\u03c6\u2080 < 30 M_P"
+    },
+    {
+      "id": "cold",
+      "kind": "stop",
+      "expr": "Trh - 0.05",
+      "formula": "T_rh > 5\u00d710\u2077 GeV"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "1500 - T",
+      "formula": "T < 1500 K"
+    }
+  ],
+  "rate": "clamp(Nf/60, 0, 2)*clamp(Trh, 0, 2)",
+  "rate_formula": "rate = N/60 \u00b7 T_rh",
+  "heat": "0.5 + 0.4*Trh",
+  "idle_heat": "0.5",
+  "quench_energy": "0",
+  "kappa": 50,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

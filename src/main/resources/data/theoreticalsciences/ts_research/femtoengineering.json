@@ -1,0 +1,58 @@
+{
+  "title": "Femtoengineering",
+  "description": "Components smaller than a proton, soldered with superconductors. Unlocks the Femto Fabricator and the Qubit Processor.",
+  "icon": "theoreticalsciences:femto_transistor",
+  "x": 3,
+  "y": -3,
+  "insight": 15,
+  "requires": [
+    "theoreticalsciences:precision_lithography",
+    "theoreticalsciences:quantum_entanglement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:photonic_processor",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A probe beam scatters off a tiny object whose charge is spread out with density \u03c1 over a volume V, transferring momentum \u0127q. The scattered amplitude is the point-like one times a factor that adds up the phase each piece of the charge contributes. Write that factor, normalised to total charge Q.",
+    "name": "Form factor (Fourier transform of the charge distribution)",
+    "lhs": "F",
+    "form": "1 / Q * iiint ( \u03c1 * exp ( i * ( vec ( q ) \u00b7 vec ( r ) ) ) , V )",
+    "expr": "h * c / d",
+    "ask": "The form factor shows structure only once q \u2248 2\u03c0/d, i.e. when the probe's wavelength reaches the size d. Find the photon energy E = hc/d needed to resolve a structure of d = @{d} fm (h in MeV\u00b7s, c in fm/s).",
+    "vars": {
+      "F": "form factor",
+      "Q": "total charge",
+      "\u03c1": "charge density",
+      "i": "imaginary unit",
+      "q": "momentum transfer wavevector",
+      "r": "position inside the object",
+      "V": "volume of the object",
+      "h": "Planck constant",
+      "c": "speed of light",
+      "d": "size of the structure"
+    },
+    "given": {
+      "h": 4.1357e-21,
+      "c": 2.998e+23,
+      "d": 0.5
+    },
+    "unit": "MeV",
+    "method": "Each volume element at r scatters with an extra phase q\u00b7r; integrate the phase factor weighted by the density and divide by the total.",
+    "distractors": [
+      "k",
+      "\u03bb",
+      "cos"
+    ],
+    "vary": {
+      "d": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

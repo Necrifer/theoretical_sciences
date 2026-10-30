@@ -1,0 +1,46 @@
+{
+  "title": "Conformal Cyclic Cosmology",
+  "description": "At the end of time only massless things remain, and massless things cannot tell an infinite distance from a finite one. Rescale the dead universe and its infinite future becomes the Big Bang of the next aeon. Where Finality ends, Origin begins: make a Universe Seed from the end of a universe.",
+  "icon": "theoreticalsciences:aeon_boundary_shard",
+  "x": 15,
+  "y": -7,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:quantum_cosmology",
+    "theoreticalsciences:heat_death",
+    "theoreticalsciences:cosmogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:de_sitter_horizon_shard",
+      "count": 2
+    }
+  ],
+  "time": 1200,
+  "puzzle": {
+    "goal": "Light does not care about the size of space, only about its shape: it moves through conformal time, the integral of c dt divided by the scale factor a(t). In a universe that ends in pure vacuum energy, a(t) = a\u2080 e^{Ht} grows exponentially forever. Write how much conformal time is left from t\u2080 to the infinite future.",
+    "name": "conformal time to the future boundary of de Sitter space",
+    "lhs": "\u03b7",
+    "form": "int ( t _ 0 , \u221e , c / ( a _ 0 * exp ( H * t ) ) , t )",
+    "expr": "977.8 / ( a * H )",
+    "ask": "The integral is finite: c e^{\u2212Ht\u2080}/(a\u2080H). Measured from now (t\u2080 = 0, a\u2080 = a), and with the Hubble rate H in km/s/Mpc (1/H = 977.8/H Gyr), find the conformal time to the end of time, in Gyr.",
+    "vars": {
+      "\u03b7": "conformal time left",
+      "t": "cosmic time",
+      "c": "speed of light",
+      "a": "scale factor",
+      "H": "Hubble rate (km/s/Mpc)"
+    },
+    "given": {
+      "a": 1,
+      "H": 67.7
+    },
+    "unit": "Gyr",
+    "method": "Change variable to u = e^{\u2212Ht}; an exponential integrand gives an exponential back, and it vanishes at infinity.",
+    "distractors": [
+      "\u03c1",
+      "ln",
+      "2"
+    ]
+  }
+}

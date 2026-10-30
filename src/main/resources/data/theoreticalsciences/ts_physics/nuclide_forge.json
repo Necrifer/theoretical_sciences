@@ -1,0 +1,186 @@
+{
+  "params": [
+    {
+      "id": "V",
+      "unit": "MV",
+      "min": 0,
+      "max": 12,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "phi",
+      "unit": "\u00b0",
+      "min": -90,
+      "max": 0,
+      "step": 1,
+      "default": -30
+    },
+    {
+      "id": "qi",
+      "unit": "e",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "I",
+      "unit": "p\u00b5A",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "id": "Bs",
+      "unit": "T",
+      "min": 0,
+      "max": 20,
+      "step": 0.05,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {
+    "A1": 48,
+    "Z1": 20,
+    "A2": 244,
+    "Z2": 94,
+    "Q": -163,
+    "Eopt": 38
+  },
+  "consts": [
+    {
+      "id": "ncav",
+      "expr": "40"
+    }
+  ],
+  "states": [],
+  "derived": [
+    {
+      "id": "Vf",
+      "unit": "MV",
+      "expr": "V*(1+0.01*d)",
+      "formula": "V_eff = V\u00b7(1 + \u03b4)"
+    },
+    {
+      "id": "Elab",
+      "unit": "MeV",
+      "expr": "ncav*Vf*qi*cos(phi*0.0174533)",
+      "formula": "E_lab = N\u00b7q\u00b7V\u00b7cos \u03c6"
+    },
+    {
+      "id": "Ecm",
+      "unit": "MeV",
+      "expr": "Elab*A2/(A1+A2)",
+      "formula": "E_cm = E_lab\u00b7A_t/(A_p + A_t)"
+    },
+    {
+      "id": "VC",
+      "unit": "MeV",
+      "expr": "1.44*Z1*Z2/(1.16*(cbrt(A1)+cbrt(A2))+2.2)",
+      "formula": "V_C = 1.44\u00b7Z\u2081Z\u2082 / R  (MeV\u00b7fm)"
+    },
+    {
+      "id": "Estar",
+      "unit": "MeV",
+      "expr": "Ecm + Q",
+      "formula": "E* = E_cm + Q"
+    },
+    {
+      "id": "xs",
+      "unit": "",
+      "expr": "exp(-((Estar-Eopt)/5)^2)*step(Ecm-VC)",
+      "formula": "\u03c3/\u03c3_max = e^\u2212((E*\u2212E*_opt)/5)\u00b2"
+    },
+    {
+      "id": "tr",
+      "unit": "",
+      "expr": "clamp(3*sin(-phi*0.0174533), 0, 1)",
+      "formula": "T \u2248 3\u00b7sin|\u03c6|"
+    },
+    {
+      "id": "brho",
+      "unit": "T\u00b7m",
+      "expr": "sqrt(Elab*(Elab+2*A1*931.5))/(299.8*qi)",
+      "formula": "B\u03c1 = p/(q)"
+    },
+    {
+      "id": "fsol",
+      "unit": "m",
+      "expr": "4*brho^2/(Bs^2*0.5)",
+      "formula": "f = 4(B\u03c1)\u00b2/(B\u00b2\u00b7l)"
+    },
+    {
+      "id": "Pcav",
+      "unit": "kW",
+      "expr": "ncav*Vf^2*(140*exp(-17.67/T)/T + 0.002)",
+      "formula": "P \u221d V\u00b2\u00b7R_s,  R_BCS \u221d e^(\u2212\u0394/kT)/T"
+    },
+    {
+      "id": "Pb",
+      "unit": "kW",
+      "expr": "I*Elab/1000",
+      "formula": "P = I\u00b7E"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "nb_cryo",
+      "kind": "stop",
+      "expr": "8.7 - T",
+      "formula": "T < 8.7 K"
+    },
+    {
+      "id": "nb_quench",
+      "kind": "quench",
+      "expr": "9.2 - T",
+      "formula": "T < 9.2 K"
+    },
+    {
+      "id": "phase",
+      "kind": "stop",
+      "expr": "-phi - 2",
+      "formula": "\u03c6 < 0"
+    },
+    {
+      "id": "barrier",
+      "kind": "stop",
+      "expr": "Ecm - VC",
+      "formula": "E_cm \u2265 V_C"
+    },
+    {
+      "id": "focus",
+      "kind": "stop",
+      "expr": "10 - fsol",
+      "formula": "f \u2264 10 m"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bs)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "I*tr*xs/2",
+  "rate_formula": "rate = I\u00b7T\u00b7\u03c3/\u03c3_max / 2",
+  "heat": "Pcav + 0.05*Pb",
+  "idle_heat": "2",
+  "quench_energy": "30*Vf^2*ncav/4",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

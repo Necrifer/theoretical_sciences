@@ -1,0 +1,145 @@
+{
+  "type": "theoreticalsciences:transcendent_forging",
+  "min_tier": 5,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:hypernova_alloy_ingot",
+      "count": 256
+    },
+    {
+      "item": "theoreticalsciences:aleph_null_shard",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:russell_paradox_set",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:cosmic_processor",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:hyperon_crystal",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:grand_unified_core",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:flerovium_ingot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:mirror_alloy_ingot",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:ontological_processor",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:error_correction_lattice",
+      "count": 128
+    },
+    {
+      "item": "theoreticalsciences:boltzmann_fluctuation",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:empirical_dossier",
+      "count": 128
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hypernova_plasma",
+      "amount": 512000
+    },
+    {
+      "fluid": "theoreticalsciences:causal_solder",
+      "amount": 294912
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_spacetime",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:neutrino_flux",
+      "amount": 128000
+    },
+    {
+      "fluid": "theoreticalsciences:antihydrogen",
+      "amount": 128000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:transcendent_plasma",
+      "amount": 250
+    },
+    {
+      "id": "theoreticalsciences:dimensional_residue",
+      "amount": 500
+    }
+  ],
+  "energy": 16777216,
+  "duration": 4000,
+  "research": "theoreticalsciences:stellar_transcendence",
+  "scaled": 32,
+  "environment": {
+    "gravity_min": 1000,
+    "time_min": 10
+  },
+  "physics": {
+    "vars": {
+      "EG": 22460.0,
+      "Cf": 3.2e-17,
+      "Ef": 8.7,
+      "fch": 1.0,
+      "Zf": 3.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 300.0,
+        "max": 600.0
+      }
+    ]
+  },
+  "optional_inputs": [
+    {
+      "item": "fdbosses:fire_and_ice_core",
+      "count": 32
+    },
+    {
+      "item": "projectexpansion:magenta_matter",
+      "count": 32
+    },
+    {
+      "item": "mysticalextendedtier:ornium_ingot",
+      "count": 32
+    },
+    {
+      "item": "iceandfire:fire_dragon_heart",
+      "count": 32
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "nuclear_radiation:molten_corium",
+      "amount": 32000
+    },
+    {
+      "fluid": "mysticalextendedtier:molten_tornium",
+      "amount": 32000
+    }
+  ],
+  "expanded": true
+}

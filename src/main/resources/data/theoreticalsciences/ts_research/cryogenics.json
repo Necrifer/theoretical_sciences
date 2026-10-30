@@ -1,0 +1,56 @@
+{
+  "title": "Cryogenics",
+  "description": "Near absolute zero, matter forgets it is many particles. Superfluids and Bose-Einstein condensates.",
+  "icon": "theoreticalsciences:superfluid_helium_cell",
+  "x": 2,
+  "y": -1,
+  "insight": 10,
+  "requires": [
+    "theoreticalsciences:casimir_effect"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neutronium_plate",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Identical particles with integer spin may pile any number into the same quantum state. In a gas held at temperature T with chemical potential \u03bc, find the mean number of particles occupying a single state of energy \u03b5.",
+    "name": "Bose\u2013Einstein distribution (condensation temperature)",
+    "lhs": "n",
+    "form": "1 / ( exp ( ( \u03b5 - \u03bc ) / ( kB * T ) ) - 1 )",
+    "expr": "2 * \u03c0 * \u0127 ^ 2 / ( m * kB ) * ( N / 2.612 ) ^ ( 2 / 3 )",
+    "ask": "Summing the occupation over all momentum states at \u03bc = 0 gives a maximum density \u03b6(3/2)/\u03bb_T\u00b3 with \u03b6(3/2) = 2.612 and \u03bb_T = \u221a(2\u03c0\u0127\u00b2/(m kB T)); below that temperature the excess condenses. Find the condensation temperature Tc = (2\u03c0\u0127\u00b2/(m kB))\u00b7(N/2.612)^(2/3) for helium-4 at the density of the liquid.",
+    "vars": {
+      "n": "mean occupation number of the state",
+      "\u03b5": "energy of the single-particle state",
+      "\u03bc": "chemical potential",
+      "kB": "Boltzmann constant",
+      "T": "temperature",
+      "\u0127": "reduced Planck constant",
+      "m": "mass of a helium-4 atom",
+      "N": "number density of atoms (m\u207b\u00b3)"
+    },
+    "given": {
+      "\u0127": 1.0546e-34,
+      "m": 6.646e-27,
+      "kB": 1.381e-23,
+      "N": 2.18e+28
+    },
+    "unit": "K",
+    "method": "Maximise the number of ways to distribute particles among states at fixed total energy and number (or sum the geometric series \u03a3 e^(\u2212n(\u03b5\u2212\u03bc)/kBT) over occupation n in the grand canonical ensemble).",
+    "distractors": [
+      "+",
+      "h",
+      "2"
+    ],
+    "vary": {
+      "N": [
+        1.3e+28,
+        3.06e+28,
+        1e+26
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Creation from Nothing",
+  "description": "Before inflation, before time: a closed universe can tunnel into existence from no space at all, or begin without a boundary, its time becoming space near the start like the South Pole of a sphere. Quantum cosmology writes the wave function of the whole universe. Unlocks the No-Boundary Seed.",
+  "icon": "theoreticalsciences:no_boundary_seed",
+  "x": 13,
+  "y": -6,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:reheating",
+    "theoreticalsciences:vacuum_stability",
+    "theoreticalsciences:quantum_gravity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:spin_foam_lattice",
+      "count": 4
+    }
+  ],
+  "time": 870,
+  "puzzle": {
+    "goal": "Quantise a closed universe with only one degree of freedom, its radius a, filled with vacuum energy \u039b. The Hamiltonian constraint becomes a Schr\u00f6dinger-like equation with zero energy for the wave function \u03c8(a) of the whole universe: a kinetic term from the curvature of \u03c8, minus a potential a\u00b2 \u2212 (\u039b/3)a\u2074 that forms a barrier between a = 0 and the classical universe (units with the factor 3\u03c0/2G absorbed). Write it.",
+    "name": "Wheeler\u2013DeWitt equation (closed minisuperspace; tunnelling from nothing)",
+    "lhs": "0",
+    "form": "\u0127 ^ 2 * d2 ( \u03c8 , a ) - ( a ^ 2 - \u039b / 3 * a ^ 4 ) * \u03c8",
+    "expr": "3 / ( 8 * G ^ 2 * \u03c1 )",
+    "ask": "Tunnelling through the barrier from a = 0 (from nothing) has probability P \u221d exp(\u22123/(8G\u00b2\u03c1_V)). With G = 1 and the vacuum energy density \u03c1 in Planck units, find the exponent 3/(8G\u00b2\u03c1).",
+    "vars": {
+      "\u0127": "reduced Planck constant",
+      "\u03c8": "wave function of the universe",
+      "a": "scale factor (radius of the universe)",
+      "\u039b": "cosmological constant",
+      "G": "gravitational constant (Planck units)",
+      "\u03c1": "vacuum energy density (Planck units)"
+    },
+    "given": {
+      "G": 1,
+      "\u03c1": 0.01
+    },
+    "unit": "",
+    "method": "Write the Einstein-Hilbert action for a closed FRW universe, keep only a, form the Hamiltonian and replace the momentum by \u2212i\u0127 d/da. The WKB integral under the barrier gives the exponent.",
+    "distractors": [
+      "t",
+      "\u03c6",
+      "2"
+    ],
+    "vary": {
+      "\u03c1": [
+        0.006,
+        0.014,
+        0.0001
+      ]
+    }
+  }
+}

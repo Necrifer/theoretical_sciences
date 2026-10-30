@@ -1,0 +1,89 @@
+{
+  "params": [
+    {
+      "id": "Tr",
+      "unit": "K",
+      "min": 250,
+      "max": 700,
+      "step": 0.1,
+      "default": 350
+    },
+    {
+      "id": "c",
+      "unit": "mol/L",
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "Fuv",
+      "unit": "W/m\u00b2",
+      "min": 0,
+      "max": 1000,
+      "step": 1,
+      "default": 50
+    }
+  ],
+  "recipe_vars": {
+    "L": 100,
+    "sg": 10
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "kp",
+      "unit": "1/s",
+      "expr": "1e8*exp(-60000/(8.314*Tr))*(1 + Fuv/100)",
+      "formula": "k = A\u00b7e^(\u2212E\u2090/RT)"
+    },
+    {
+      "id": "kh",
+      "unit": "1/s",
+      "expr": "1e10*exp(-80000/(8.314*Tr))",
+      "formula": "k_h = A_h\u00b7e^(\u2212E_h/RT)"
+    },
+    {
+      "id": "Y",
+      "unit": "",
+      "expr": "kp*c/(kp*c + kh)",
+      "formula": "Y = k_p c/(k_p c + k_h)"
+    },
+    {
+      "id": "mu",
+      "unit": "/nt",
+      "expr": "(1e-3 + 2e-5*Fuv + 1e-4*exp((Tr - 400)/40))*(1+0.1*d)",
+      "formula": "\u00b5"
+    },
+    {
+      "id": "Lmax",
+      "unit": "nt",
+      "expr": "ln(sg)/mu",
+      "formula": "L_max = ln \u03c3 / \u00b5"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "eigen",
+      "kind": "stop",
+      "expr": "Lmax - L",
+      "formula": "L < ln \u03c3/\u00b5"
+    },
+    {
+      "id": "cool",
+      "kind": "stop",
+      "expr": "Tr - T",
+      "formula": "T_r \u2265 T_coolant"
+    }
+  ],
+  "rate": "clamp(4*Y*min(1, Fuv/50), 0, 4)",
+  "rate_formula": "rate = 4\u00b7Y\u00b7min(1, F/50)",
+  "heat": "2 + 0.01*Fuv + 0.05*pos(Tr - 300)",
+  "idle_heat": "1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

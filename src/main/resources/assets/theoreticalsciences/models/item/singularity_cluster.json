@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "theoreticalsciences:item/singularity_cluster",
+    "layer1": "theoreticalsciences:item/singularity_cluster_glow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "theoreticalsciences:cluster_level": 0.15
+      },
+      "model": "theoreticalsciences:item/singularity_cluster_2"
+    },
+    {
+      "predicate": {
+        "theoreticalsciences:cluster_level": 0.25
+      },
+      "model": "theoreticalsciences:item/singularity_cluster_3"
+    }
+  ]
+}

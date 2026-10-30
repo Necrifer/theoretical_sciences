@@ -1,0 +1,41 @@
+{
+  "title": "The Transfinite Hierarchy",
+  "description": "Ordinals count past infinity; cardinals measure it. Both have a place of their own - with the objects of higher dimensions. Unlocks the Cantor Key and the Ordinal Recursor.",
+  "icon": "theoreticalsciences:cantor_key",
+  "x": 15,
+  "y": -3,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:transfinite_mathematics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:aleph_null_shard",
+      "count": 2
+    }
+  ],
+  "time": 1950,
+  "puzzle": {
+    "goal": "An n-dimensional hypercube has 2^(n\u2212k) \u00b7 (n choose k) faces of dimension k: choose which k coordinates vary and fix the others at 0 or 1. Its boundary is made of all faces of dimension below n. Write the alternating sum of face counts over the boundary, with the binomial coefficient written in factorials.",
+    "name": "Euler characteristic of the boundary of the n-cube (f-vector of the hypercube)",
+    "lhs": "\u03c7",
+    "form": "sum ( k , 0 , n - 1 , ( - 1 ) ^ k * 2 ^ ( n - k ) * n ! / ( k ! * ( n - k ) ! ) )",
+    "expr": "n * ( n - 1 ) * 2 ^ ( n - 3 )",
+    "ask": "For k = 2 the face count simplifies to n(n\u22121)\u00b72^(n\u22123). Find the number of square faces of the 5-dimensional hypercube (penteract).",
+    "vars": {
+      "\u03c7": "Euler characteristic of the boundary",
+      "k": "face dimension",
+      "n": "dimension of the cube"
+    },
+    "given": {
+      "n": 5
+    },
+    "unit": "squares",
+    "method": "A k-face is fixed by choosing the k free coordinates (n choose k) and fixing each of the other n \u2212 k at one of two values; alternate signs by dimension.",
+    "distractors": [
+      "+",
+      "1",
+      "3"
+    ]
+  }
+}

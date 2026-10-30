@@ -1,0 +1,60 @@
+{
+  "title": "Quantum Field Theory",
+  "description": "Particles are excitations of fields. Wave packets, spinors, field lattices and Feynman diagrams.",
+  "icon": "theoreticalsciences:quantum_field_lattice",
+  "x": 6,
+  "y": 6,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:calculus",
+    "theoreticalsciences:abstract_algebra",
+    "theoreticalsciences:particle_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:wave_packet",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A free scalar field is a collection of independent harmonic oscillators, one for every wave vector k. Each oscillator has a lowering operator that destroys a particle and a raising operator that creates one, multiplying a plane wave e^(\u2213ik\u00b7x) of the field's 4-momentum. Write the field operator as an integral over all momenta with the relativistically normalised measure.",
+    "name": "Mode expansion of the free Klein\u2013Gordon field",
+    "lhs": "hat ( \u03c6 )",
+    "form": "iiint ( ( hat ( a ) * exp ( - i * ( k \u00b7 x ) ) + dag ( hat ( a ) ) * exp ( i * ( k \u00b7 x ) ) ) / ( ( 2 * \u03c0 ) ^ 3 * sqrt ( 2 * \u03c9 ) ) , k )",
+    "expr": "sqrt ( k ^ 2 + m ^ 2 )",
+    "ask": "Each mode oscillates at the frequency fixed by the field equation, \u03c9\u00b2 = |k|\u00b2 + m\u00b2 (\u0127 = c = 1). Find \u03c9 for a particle of mass m = @{m} with |k| = @{k}.",
+    "vars": {
+      "\u03c6": "field operator",
+      "a": "annihilation operator of mode k (a\u2020 creates)",
+      "i": "imaginary unit",
+      "k": "4-momentum of the mode (|k| in the numeric step)",
+      "x": "spacetime point",
+      "\u03c9": "mode frequency",
+      "m": "particle mass"
+    },
+    "given": {
+      "k": 0.8,
+      "m": 0.6
+    },
+    "unit": "natural units",
+    "method": "Solve the free field equation by Fourier transform; each k gives positive and negative frequency solutions whose coefficients become a and a\u2020. Normalise with 1/\u221a(2\u03c9) so the measure is Lorentz invariant.",
+    "distractors": [
+      "\u0127",
+      "4",
+      "Re"
+    ],
+    "vary": {
+      "k": [
+        0.48,
+        0.999,
+        0.001
+      ],
+      "m": [
+        0.36,
+        0.84,
+        0.001
+      ]
+    }
+  }
+}

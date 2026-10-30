@@ -1,0 +1,84 @@
+{
+  "type": "theoreticalsciences:halo_collection",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:void_lattice_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:coherent_wiring_harness",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:dilithium_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:tachyon_klystron",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:superposition_crystal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:buckyball_cage",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:exotic_matter_crystal",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_matter",
+      "amount": 100
+    }
+  ],
+  "energy": 32768,
+  "duration": 600,
+  "research": "theoreticalsciences:dark_sector",
+  "scaled": 8,
+  "physics": {
+    "vars": {
+      "mx": 8.0
+    },
+    "windows": [
+      {
+        "q": "snr",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  },
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:tachyon_flux",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:supercritical_solvent",
+      "amount": 16000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "gtceu:quantum_processor_assembly",
+      "count": 16
+    },
+    {
+      "item": "cataclysm:witherite_ingot",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "bigreactors:blutonium",
+      "amount": 16000
+    }
+  ],
+  "expanded": true
+}

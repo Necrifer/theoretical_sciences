@@ -1,0 +1,60 @@
+{
+  "title": "Hyperdimensional Reality",
+  "description": "The space outside every universe, where universes grow on a tree and laws are born from an ocean.",
+  "icon": "theoreticalsciences:bubble_universe_sample",
+  "x": 19,
+  "y": -1,
+  "insight": 700,
+  "requires": [
+    "theoreticalsciences:reality_breach"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:arbor_heartwood_sample",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:bubble_universe_sample",
+      "count": 1
+    }
+  ],
+  "time": 4170,
+  "puzzle": {
+    "goal": "Every universe is a false vacuum that buds daughter universes by quantum tunnelling: bubbles nucleate at rate \u03bb per volume per time, suppressed by the exponential of the thin-wall bounce action for a wall of tension \u03c3 separating vacua whose energy densities differ by \u03b5. A universe of volume V lives a time \u03c4, and the tree is followed down to D generations. Write the expected number of universes in the tree.",
+    "name": "Branching multiverse with Coleman\u2013De Luccia bubble nucleation",
+    "lhs": "N",
+    "form": "sum ( j , 0 , D , ( \u03bb * V * \u03c4 * exp ( - 27 * \u03c0 ^ 2 * \u03c3 ^ 4 / ( 2 * \u0127 * \u03b5 ^ 3 ) ) ) ^ j )",
+    "expr": "( b ^ ( D + 1 ) - 1 ) / ( b - 1 )",
+    "ask": "Call the bracket b, the mean number of daughters per universe; the sum is a geometric series. Find N for b = 3 and D = @{D}.",
+    "vars": {
+      "N": "expected number of universes",
+      "j": "generation",
+      "D": "depth of the tree",
+      "\u03bb": "nucleation prefactor per volume per time",
+      "V": "volume of a universe",
+      "\u03c4": "lifetime of a universe",
+      "\u03c3": "bubble wall tension",
+      "\u0127": "reduced Planck constant",
+      "\u03b5": "vacuum energy density difference",
+      "b": "daughters per universe"
+    },
+    "given": {
+      "b": 3,
+      "D": 10
+    },
+    "unit": "universes",
+    "method": "Generation j holds b^j universes on average. The tunnelling exponent is the Euclidean action of an O(4)-symmetric bubble, B = 27\u03c0\u00b2\u03c3\u2074/(2\u03b5\u00b3), from extremising 2\u03c0\u00b2R\u00b3\u03c3 \u2212 (\u03c0\u00b2/2)R\u2074\u03b5 over R.",
+    "distractors": [
+      "\u039b",
+      "1",
+      "G"
+    ],
+    "vary": {
+      "D": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

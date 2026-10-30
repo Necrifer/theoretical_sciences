@@ -1,0 +1,74 @@
+{
+  "title": "Resolution: The Anomaly Explained",
+  "description": "The last step is not destruction but understanding. An anomaly measured completely - how it scales, where it breaks the law and by exactly how much - can be renormalised: absorbed into a deeper law that explains it. It was never abnormal, only unexplained. Unlocks the Resolved Anomaly.",
+  "icon": "theoreticalsciences:resolved_anomaly",
+  "x": 21,
+  "y": 9,
+  "insight": 600,
+  "requires": [
+    "theoreticalsciences:targeted_therapy",
+    "theoreticalsciences:anomaly_scaling",
+    "theoreticalsciences:theory_of_everything"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:quarantine_field_matrix",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:apoptosis_trigger",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:car_t_culture",
+      "count": 2
+    }
+  ],
+  "time": 3390,
+  "puzzle": {
+    "goal": "A quantity G measured at energy scale \u03bc seems to break the scaling a dimensionless theory should have. The breaking is absorbed by letting the coupling g run with \u03bc at the rate \u03b2(g) = \u03bc dg/d\u03bc, and by giving each of the n fields in G an extra, anomalous scaling \u03b3. Write the condition that makes the physics independent of the arbitrary scale \u03bc.",
+    "name": "Callan\u2013Symanzik equation (the anomalous dimension)",
+    "lhs": "0",
+    "form": "\u03bc * pd ( G , \u03bc ) + \u03b2 * pd ( G , g ) + n * \u03b3 * G",
+    "expr": "r ^ ( - n * \u03b3 )",
+    "ask": "At a fixed point \u03b2 = 0, and G then scales as \u03bc^{\u2212n\u03b3}: the anomaly is just a power law. With n fields of anomalous dimension \u03b3, find G(r\u03bc)/G(\u03bc) for a change of scale by r.",
+    "vars": {
+      "\u03bc": "energy scale",
+      "G": "Green function (the measured quantity)",
+      "\u03b2": "beta function",
+      "g": "coupling",
+      "n": "number of fields",
+      "\u03b3": "anomalous dimension",
+      "r": "ratio of scales"
+    },
+    "given": {
+      "r": 10,
+      "n": 2,
+      "\u03b3": 0.25
+    },
+    "unit": "",
+    "method": "The bare G does not depend on \u03bc; the renormalised one differs from it by a factor Z^{n/2}. Differentiate in \u03bc with the chain rule through g.",
+    "distractors": [
+      "\u03bb",
+      "ln",
+      "\u0127"
+    ],
+    "vary": {
+      "r": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "\u03b3": [
+        0.15,
+        0.35,
+        0.001
+      ]
+    }
+  }
+}

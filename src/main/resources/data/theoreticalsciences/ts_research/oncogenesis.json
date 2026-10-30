@@ -1,0 +1,61 @@
+{
+  "title": "Origins: Oncogenesis",
+  "description": "A cancer is not one mistake but several: an oncogene stuck on, a tumour suppressor like p53 lost, a checkpoint skipped - each a mutation that gives one cell an advantage over its neighbours. The hallmarks of cancer are what that cell has learned. Unlocks the Anomalous Strain Culture.",
+  "icon": "theoreticalsciences:anomalous_strain_culture",
+  "x": 15,
+  "y": 9,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:anomalous_phenomena",
+    "theoreticalsciences:directed_evolution"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:anomaly_specimen",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:stem_cell_culture",
+      "count": 4
+    }
+  ],
+  "time": 1200,
+  "puzzle": {
+    "goal": "A cell becomes malignant only after n separate rare mutations, in a fixed order, each happening at a small constant rate k_j per year. The chance that a single cell has collected all n by age t is the product of the rates times the volume of the ordered region of mutation times inside [0, t]. Write the yearly incidence of the disease at age t: the derivative of that chance.",
+    "name": "Armitage\u2013Doll multistage model of carcinogenesis",
+    "lhs": "I",
+    "form": "prod ( j , 1 , n , k _ j ) * t ^ ( n - 1 ) / ( n - 1 ) !",
+    "expr": "100000 * k ^ 6 * t ^ 5 / 120",
+    "ask": "Most cancers fit about six stages. With every k_j = k per year and n = 6, find the incidence at age t, in cases per 100,000 people per year (it rises as the fifth power of age - as measured).",
+    "vars": {
+      "I": "incidence (new cases per year)",
+      "j": "stage index",
+      "n": "number of mutations needed",
+      "k": "mutation rate of a stage (per year)",
+      "t": "age"
+    },
+    "given": {
+      "k": 0.01,
+      "t": 70
+    },
+    "unit": "per 100,000 per year",
+    "method": "The n mutation times t\u2081 < t\u2082 < ... < t_n inside [0, t] fill a simplex of volume t\u207f/n!. Multiply by the rates and differentiate in t.",
+    "distractors": [
+      "exp",
+      "ln",
+      "e"
+    ],
+    "vary": {
+      "k": [
+        0.006,
+        0.014,
+        0.0001
+      ],
+      "t": [
+        42.0,
+        98.0,
+        1.0
+      ]
+    }
+  }
+}

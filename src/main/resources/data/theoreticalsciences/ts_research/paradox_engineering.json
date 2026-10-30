@@ -1,0 +1,44 @@
+{
+  "title": "Paradox Engineering",
+  "description": "Russell sets and Banach-Tarski spheres: building with contradictions.",
+  "icon": "theoreticalsciences:russell_paradox_set",
+  "x": 16,
+  "y": 0,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:transfinite_mathematics",
+    "theoreticalsciences:causality_violation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:paradox_residue",
+      "count": 8
+    }
+  ],
+  "time": 1950,
+  "puzzle": {
+    "goal": "In the free group on k generators every element is a unique reduced word: no letter is ever followed by its own inverse. The first letter has 2k choices and each later letter 2k \u2212 1. Count all elements of word length at most N, including the empty word.",
+    "name": "Word-ball count in a free group (the engine of the Banach\u2013Tarski paradox)",
+    "lhs": "abs ( B _ N )",
+    "form": "1 + sum ( n , 1 , N , 2 * k * ( 2 * k - 1 ) ^ ( n - 1 ) )",
+    "expr": "1 + 2 * k * ( ( 2 * k - 1 ) ^ N - 1 ) / ( 2 * k - 2 )",
+    "ask": "Summing the geometric series gives 1 + 2k((2k\u22121)^N \u2212 1)/(2k \u2212 2). Find how many elements of the free group on two generators have length at most 5.",
+    "vars": {
+      "B": "ball of words around the identity",
+      "N": "maximum word length",
+      "n": "word length",
+      "k": "number of generators"
+    },
+    "given": {
+      "k": 2,
+      "N": 5
+    },
+    "unit": "words",
+    "method": "Count reduced words of exact length n by choosing letters one at a time, forbidding the inverse of the previous letter; then add up the lengths.",
+    "distractors": [
+      "3",
+      "4",
+      "+"
+    ]
+  }
+}

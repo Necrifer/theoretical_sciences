@@ -1,0 +1,61 @@
+{
+  "title": "Quantum Gravity",
+  "description": "Gravitons and spin foam: spacetime made of quanta. Unlocks the Graviton Condenser.",
+  "icon": "theoreticalsciences:graviton_crystal",
+  "x": 11,
+  "y": -1,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:string_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:planck_shard",
+      "count": 1
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "In a quantum theory of geometry, a surface's area is not continuous: every edge of a spin network that pierces it adds a quantum of area set by its spin j. Write the total area of a surface pierced N times, in terms of the fundamental constants and a free dimensionless parameter \u03b3.",
+    "name": "Loop quantum gravity area spectrum",
+    "lhs": "A",
+    "form": "8 * \u03c0 * \u03b3 * \u0127 * G / c ^ 3 * sum ( n , 1 , N , sqrt ( j _ n * ( j _ n + 1 ) ) )",
+    "expr": "8 * \u03c0 * \u03b3 * N * sqrt ( j * ( j + 1 ) )",
+    "ask": "Find the area, in units of \u0127G/c\u00b3, of a surface pierced N times by spin-\u00bd edges.",
+    "vars": {
+      "A": "area",
+      "\u03b3": "free dimensionless (Barbero\u2013Immirzi) parameter",
+      "\u0127": "reduced Planck constant",
+      "G": "gravitational constant",
+      "c": "speed of light",
+      "n": "puncture index",
+      "N": "number of punctures",
+      "j": "spin of each puncture"
+    },
+    "given": {
+      "\u03b3": 0.2375,
+      "N": 10,
+      "j": 0.5
+    },
+    "unit": "\u0127G/c\u00b3",
+    "method": "The area operator is diagonal on spin networks; each puncture contributes the square root of the Casimir j(j+1) of its spin, times 8\u03c0\u03b3 in Planck area units.",
+    "distractors": [
+      "2",
+      "-",
+      "h",
+      "16"
+    ],
+    "vary": {
+      "N": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "j": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

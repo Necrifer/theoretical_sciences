@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:anomaly_specimen",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ionic_liquid",
+      "amount": 4000
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 16000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:autocatalytic_broth",
+      "amount": 8000
+    }
+  ],
+  "energy": 65536,
+  "duration": 400,
+  "research": "theoreticalsciences:autocatalysis",
+  "unscaled": true
+}

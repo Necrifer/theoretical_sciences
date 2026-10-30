@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:antimatter_trapping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 12
+    },
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:photonic_lens",
+      "count": 12
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 8000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antimatter_pellet",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 500,
+  "research": "theoreticalsciences:antimatter",
+  "scaled": 6,
+  "optional_inputs": [
+    {
+      "item": "extendedcrafting:crystaltine_ingot",
+      "count": 24
+    }
+  ],
+  "expanded": true
+}

@@ -1,0 +1,104 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.01,
+      "default": 2
+    },
+    {
+      "id": "mdot",
+      "unit": "\u00b5g/s",
+      "min": 0,
+      "max": 100,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "sh",
+      "unit": "cm",
+      "min": 0,
+      "max": 300,
+      "step": 1,
+      "default": 50
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Ptot",
+      "unit": "MW",
+      "expr": "179.8*mdot",
+      "formula": "P = 2\u1e41c\u00b2"
+    },
+    {
+      "id": "rg",
+      "unit": "m",
+      "expr": "0.35/(0.2998*B + 1e-9)",
+      "formula": "r_g = p/(0.3B)"
+    },
+    {
+      "id": "fcap",
+      "unit": "",
+      "expr": "clamp(1 - rg/3, 0, 1)*(1 + 0.05*d)",
+      "formula": "f = 1 \u2212 r_g/R"
+    },
+    {
+      "id": "Pel",
+      "unit": "MW",
+      "expr": "0.5*Ptot*fcap",
+      "formula": "P_e = \u00bdP\u00b7f"
+    },
+    {
+      "id": "Pgam",
+      "unit": "MW",
+      "expr": "0.33*Ptot",
+      "formula": "P_\u03b3 = \u2153P"
+    },
+    {
+      "id": "Pesc",
+      "unit": "MW",
+      "expr": "Pgam*exp(-sh/20)",
+      "formula": "P_\u03b3\u00b7e^(\u2212x/20 cm)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "radiation",
+      "kind": "damage",
+      "expr": "5 - Pesc",
+      "formula": "P_esc < 5 MW"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (B)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "Pel/50",
+  "rate_formula": "output = P_e / 50 MW",
+  "heat": "4 + 0.3*Pgam*(1 - exp(-sh/20))",
+  "idle_heat": "2",
+  "quench_energy": "60*B^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

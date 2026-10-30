@@ -1,0 +1,66 @@
+{
+  "title": "String Theory",
+  "description": "Every particle is a vibrating string. Unlocks the String Resonance Loom.",
+  "icon": "theoreticalsciences:quantum_string",
+  "x": 10,
+  "y": -1,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:hyperdimensional_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cosmic_string_segment",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "A relativistic string sweeps out a two-dimensional sheet X(\u03c4, \u03c3) in spacetime, with \u03c3 running from 0 to \u03c0 along the string. Its action is minus the tension T times the area of that sheet (c = 1). Write the area element from the velocity \u2202X/\u2202\u03c4 and the stretch \u2202X/\u2202\u03c3.",
+    "name": "Nambu\u2013Goto action",
+    "lhs": "S",
+    "form": "- T * int ( int ( 0 , \u03c0 , sqrt ( ( pd ( vec ( X ) , \u03c4 ) \u00b7 pd ( vec ( X ) , \u03c3 ) ) ^ 2 - pd ( vec ( X ) , \u03c4 ) ^ 2 * pd ( vec ( X ) , \u03c3 ) ^ 2 ) , \u03c3 ) , \u03c4 )",
+    "expr": "n / ( 2 * L ) * sqrt ( T / \u03bc )",
+    "ask": "Small transverse wiggles of a stretched string obey the wave equation with speed \u221a(T/\u03bc), so its modes are f_n = (n/2L)\u00b7\u221a(T/\u03bc) - each mode a different 'particle'. Find the 3rd harmonic of a string of length @{L} m, tension @{T} N, density @{\u03bc} kg/m.",
+    "vars": {
+      "S": "action",
+      "T": "string tension",
+      "X": "embedding of the worldsheet in spacetime",
+      "\u03c4": "worldsheet time",
+      "\u03c3": "position along the string",
+      "n": "harmonic number",
+      "L": "string length (m)",
+      "\u03bc": "mass per unit length (kg/m)"
+    },
+    "given": {
+      "n": 3,
+      "L": 0.5,
+      "T": 100,
+      "\u03bc": 0.01
+    },
+    "unit": "Hz",
+    "method": "The area of a surface spanned by two tangent vectors A and B is \u221a((A\u00b7B)\u00b2 \u2212 A\u00b2B\u00b2) in a Lorentzian metric (the Gram determinant); integrate it over both parameters.",
+    "distractors": [
+      "+",
+      "c",
+      "2"
+    ],
+    "vary": {
+      "L": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "T": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "\u03bc": [
+        0.006,
+        0.014,
+        0.0001
+      ]
+    }
+  }
+}

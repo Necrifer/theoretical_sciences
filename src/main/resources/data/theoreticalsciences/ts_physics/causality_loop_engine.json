@@ -1,0 +1,137 @@
+{
+  "params": [
+    {
+      "id": "v",
+      "unit": "c",
+      "min": 0,
+      "max": 0.9999,
+      "step": 0.0001,
+      "default": 0.5
+    },
+    {
+      "id": "Tt",
+      "unit": "s",
+      "min": 0,
+      "max": 10000,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "id": "L",
+      "unit": "km",
+      "min": 1,
+      "max": 10000000.0,
+      "step": 1,
+      "default": 1000
+    },
+    {
+      "id": "Bm",
+      "unit": "T",
+      "min": 0,
+      "max": 15,
+      "step": 0.05,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ve",
+      "unit": "c",
+      "expr": "v*(1+0.0001*d)",
+      "formula": "v",
+      "show": false
+    },
+    {
+      "id": "gam",
+      "unit": "",
+      "expr": "1/sqrt(pos(1 - ve^2))",
+      "formula": "\u03b3 = 1/\u221a(1 \u2212 v\u00b2)"
+    },
+    {
+      "id": "lag",
+      "unit": "s",
+      "expr": "Tt*(1 - 1/gam)",
+      "formula": "\u0394t = T(1 \u2212 1/\u03b3)"
+    },
+    {
+      "id": "tl",
+      "unit": "s",
+      "expr": "L*1000/2.998e8",
+      "formula": "t_L = L/c"
+    },
+    {
+      "id": "loop",
+      "unit": "s",
+      "expr": "lag - tl",
+      "formula": "\u0394t \u2212 L/c"
+    },
+    {
+      "id": "ratio",
+      "unit": "",
+      "expr": "lag/tl",
+      "formula": "\u0394t/(L/c)"
+    },
+    {
+      "id": "acc",
+      "unit": "g",
+      "expr": "gam*ve*2.998e8/(Tt/2 + 1e-9)/9.81",
+      "formula": "a = \u03b3vc/(T/2)"
+    },
+    {
+      "id": "Bc",
+      "unit": "T",
+      "expr": "sc_B0*pos(1-(T/sc_Tc)^2)",
+      "formula": "B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "ctc",
+      "kind": "stop",
+      "expr": "ratio - 1",
+      "formula": "\u0394t > L/c"
+    },
+    {
+      "id": "chronology",
+      "kind": "quench",
+      "expr": "abs(ratio - 1) - 0.002",
+      "formula": "|\u0394t/(L/c) \u2212 1| > 0.002"
+    },
+    {
+      "id": "near_horizon",
+      "kind": "wear",
+      "expr": "ratio - 1.05",
+      "formula": "\u0394t/(L/c) > 1.05"
+    },
+    {
+      "id": "steer",
+      "kind": "stop",
+      "expr": "Bm*1e4 - acc",
+      "formula": "a \u2264 10\u2074 g/T"
+    },
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "0.95*sc_Tc - T",
+      "formula": "T < 0.95\u00b7T_c"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "Bc - (Bm)",
+      "formula": "B < B_c(T)"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "10 + 0.5*Bm",
+  "idle_heat": "3",
+  "quench_energy": "40*Bm^2",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

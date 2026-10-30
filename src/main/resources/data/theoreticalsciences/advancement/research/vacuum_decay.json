@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:true_vacuum_seed"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.vacuum_decay"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.vacuum_decay.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/vacuum_stability",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}
