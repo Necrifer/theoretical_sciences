@@ -16,8 +16,8 @@ against version 1.0.0 (NeoForge 1.21.1, about 53,600 lines of Java in 360 files)
 ## Summary
 
 It is a **rewrite against a different game**, sharing the design, the art, the sounds and the content data. Nearly
-every Java file touches an API that does not exist in 1.12 or works very differently. The Python content pipeline
-(`tools/`) is the largest reusable part.
+every Java file touches an API that does not exist in 1.12 or works very differently. The content itself (textures,
+sounds, music and the recipe, research and physics data in `src/main/resources`) is the largest reusable part.
 
 ## What has to be reworked
 
@@ -37,7 +37,7 @@ every Java file touches an API that does not exist in 1.12 or works very differe
   * `ts_research`, `ts_physics`, `ts_glyphs`, `ts_singularities`, `ts_component_tiers`, `ts_forge`, `ts_machines`;
   * tags → the **Ore Dictionary** (`hidden_from_viewers`, `beyond_omnipotence`, `excavator_*`, `not_accelerated`,
     `observable`, `not_spawnable`, `creative_duplicator_parts`; for entities and blocks, config lists).
-* `/reload` doesn't exist: Crafttweaker reloads with command, but recipes need a restart.
+* `/reload` doesn't exist: Crafttweaker contains a reload command, but does not update recipe changes, textures or multiblock changes without a restart.
 
 ### Engine APIs (in roughly every file)
 
@@ -82,22 +82,25 @@ every Java file touches an API that does not exist in 1.12 or works very differe
 | EMI | Doesn't exist. |
 | KubeJS | → CraftTweaker / GroovyScript (above). |
 | AE2 | → AE2 Unofficial Extended Life (AE2UEL), the maintained 1.12 fork. Different API. |
+| Patchouli | Exists for 1.12.2. Not needed: the mod has its own Codex (1.0.0 no longer ships a Patchouli book). |
+| Modonomicon | Doesn't exist, and 1.0.0 no longer uses it. |
 
-### Content pipeline (`tools/`)
+### Content (`src/main/resources`)
 
-* **Reusable as is:** texture generation, entity textures, sounds and the synthesised music, the content definitions
-  (`content.json` and the `round*.py` modules), the progression checker and the puzzle checker.
-* **Needs a 1.12 output mode:**
+* **Reusable as is:** item, block and entity textures, sounds and the music.
+* **Needs converting to 1.12 formats:**
   * language files — 1.12 uses `.lang` (`key=value`), not JSON;
-  * model, blockstate and loot formats; recipes in the new loader's format;
+  * models, blockstates and loot tables; recipes in the new loader's format;
   * the Ore Dictionary instead of tags;
-  * the generated Java content list.
+  * the Java content list (`registry/QHContentList.java`).
+* Research, physics models and multiblock definitions are the mod's own JSON formats. They can be read by a 1.12
+  port unchanged, as long as it ships its own loader for them.
 
 ## Suggested way to do it, if it happens
 
 1. A separate repository or branch ("Theoretical Sciences Legacy").
 2. Consider a reduced first release: the machines, research and the early and middle dimensions. Then the endgame.
-3. Build the content pipeline's 1.12 output first. Then registries, items, blocks and fluids. Then machines,
+3. Convert the content to 1.12 formats first. Then registries, items, blocks and fluids. Then machines,
    networking and screens. Then JEI and CraftTweaker. Then dimensions, the endgame and rendering effects.
 4. Decide CraftTweaker versus GroovyScript first-class support early: it shapes how every data folder is loaded.
 
