@@ -1,0 +1,55 @@
+// Standard NeoForge ModDevGradle build. Run `gradlew build` on a machine with internet access.
+plugins {
+    id 'java-library'
+    id 'idea'
+    id 'net.neoforged.moddev' version '2.0.78'
+}
+
+version = mod_version
+group = mod_group_id
+base { archivesName = mod_id }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenLocal()
+    maven { name = 'JEI'; url = 'https://maven.blamejared.com/' }
+    maven { name = 'KubeJS/Rhino'; url = 'https://maven.latvian.dev/releases'; content { includeGroup 'dev.latvian.mods' } }
+}
+
+neoForge {
+    version = project.neo_version
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+    runs {
+        client { client(); systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id }
+        server { server(); programArgument '--nogui' }
+        configureEach { logLevel = org.slf4j.event.Level.INFO }
+    }
+    mods { "${mod_id}" { sourceSet(sourceSets.main) } }
+}
+
+dependencies {
+    // All integrations are optional (compileOnly) - the mod runs without them.
+    // EMI, AE2 and Jade are compiled against the jars in libs/ (see libs/README.md).
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    compileOnly "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
+    compileOnly "dev.latvian.mods:rhino:${rhino_version}"
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [mod_version: mod_version]
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/neoforge.mods.toml']) { expand replaceProperties }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+// the licence travels inside the jar too
+jar {
+    from('LICENSE')
+    // only the mod's own Codex ships: the Patchouli text is the Codex's source, the Modonomicon book an intermediate
+    exclude 'assets/theoreticalsciences/patchouli_books/**', 'data/theoreticalsciences/patchouli_books/**', 'data/theoreticalsciences/modonomicon/**'
+}
