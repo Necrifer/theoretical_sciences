@@ -1,0 +1,172 @@
+{
+  "controller_block": "theoreticalsciences:annihilation_reactor",
+  "controller": "C",
+  "layers": [
+    [
+      "         ",
+      "         ",
+      "  MMNMM  ",
+      "  MMMMM  ",
+      "M NMFMMMN",
+      "  MMMMM  ",
+      "  MMMMM  ",
+      "    M    ",
+      "    N    "
+    ],
+    [
+      "         ",
+      "  MMMMM  ",
+      " MM...MM ",
+      " M.....M ",
+      "MM.....MM",
+      " M.....M ",
+      " MM...MM ",
+      "  MMMMM  ",
+      "    M    "
+    ],
+    [
+      "         ",
+      "  KKKKK  ",
+      " KK...KK ",
+      " K.....K ",
+      "MK.....KM",
+      " K.....K ",
+      " KK...KK ",
+      "  KKKKK  ",
+      "    M    "
+    ],
+    [
+      "         ",
+      "  iiCii  ",
+      " ii...ii ",
+      " i.....i ",
+      "vi.....iv",
+      " i.....i ",
+      " ii...ii ",
+      "  iiiii  ",
+      "    v    "
+    ],
+    [
+      "         ",
+      "  GGGGG  ",
+      " GG...GG ",
+      " G.....G ",
+      " G.....G ",
+      " G.....G ",
+      " GG...GG ",
+      "  GGGGG  ",
+      "         "
+    ],
+    [
+      "         ",
+      "  KKKKK  ",
+      " KK...KK ",
+      " K.....K ",
+      " K.....K ",
+      " K.....K ",
+      " KK...KK ",
+      "  KKKKK  ",
+      "         "
+    ],
+    [
+      "         ",
+      "  GGGGG  ",
+      " GG...GG ",
+      " G.....G ",
+      " G.....G ",
+      " G.....G ",
+      " GG...GG ",
+      "  GGGGG  ",
+      "         "
+    ],
+    [
+      "         ",
+      "  iiiii  ",
+      " ii...ii ",
+      " i.....i ",
+      " i.....i ",
+      " i.....i ",
+      " ii...ii ",
+      "  iiiii  ",
+      "         "
+    ],
+    [
+      "         ",
+      "  KKKKK  ",
+      " KK...KK ",
+      " K.....K ",
+      " K.....K ",
+      " K.....K ",
+      " KK...KK ",
+      "  KKKKK  ",
+      "         "
+    ],
+    [
+      "         ",
+      "  MMMMM  ",
+      " MM...MM ",
+      " M.....M ",
+      " M.....M ",
+      " M.....M ",
+      " MM...MM ",
+      "  MMMMM  ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  MMMMM  ",
+      "  MMMMM  ",
+      "  MMFMM  ",
+      "  MMMMM  ",
+      "  MMMMM  ",
+      "         ",
+      "         "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "M": [
+      "theoreticalsciences:magnetic_confinement_casing"
+    ],
+    "N": [
+      "theoreticalsciences:magnetic_confinement_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "v": [
+      "theoreticalsciences:turbomolecular_vacuum_pump"
+    ]
+  },
+  "effect_center": [
+    4,
+    5,
+    4
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

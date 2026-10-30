@@ -1,0 +1,168 @@
+{
+  "controller_block": "theoreticalsciences:quark_gluon_collider",
+  "controller": "C",
+  "layers": [
+    [
+      "     SSPSS     ",
+      "   SSSSSSSSS   ",
+      "  SSSSSSSSSSS  ",
+      " SSSSS   SSSSS ",
+      " SSS       SSS ",
+      "SSSS SSSSS SSSS",
+      "SSS  SSSSS  SSS",
+      "PSS  SSSSS  SSP",
+      "SSS  SSSSS  SSS",
+      "SSSS SSSSS SSSS",
+      " SSS       SSS ",
+      " SSSSS   SSSSS ",
+      "  SSSSSSSSSSS  ",
+      "   SSSSSSSSS   ",
+      "     SSPSS     "
+    ],
+    [
+      "      xxx      ",
+      "     qxxxq     ",
+      "   mqSxxxvmm   ",
+      "  qmSS   vvqq  ",
+      "  qv       Sm  ",
+      " mmv       Smq ",
+      "xxx         xxx",
+      "xxx    K    xxx",
+      "xxx         xxx",
+      " mqS       vqq ",
+      "  qS       vm  ",
+      "  mmvv   SSqm  ",
+      "   qqvxxxSmq   ",
+      "     mxxxm     ",
+      "      xxx      "
+    ],
+    [
+      "    GGxxxG     ",
+      "   GGexexeGG   ",
+      "  Gee xxx eeG  ",
+      " Grr       eeG ",
+      "GGr         eG ",
+      "Gee         eeG",
+      "xxx         xxx",
+      "xex    K    xex",
+      "xxx         xxx",
+      "Gee         eeG",
+      "GGe         rG ",
+      " Gee       rrG ",
+      "  Gee xxx eeG  ",
+      "   GGexexeGG   ",
+      "    GGxxxG     "
+    ],
+    [
+      "      xCx      ",
+      "     qxxxq     ",
+      "   mi xxx im   ",
+      "  im       qi  ",
+      "  q         m  ",
+      " im         mi ",
+      "xxx         xxx",
+      "xxx    K    xxx",
+      "xxx         xxx",
+      " mq         iq ",
+      "  i         m  ",
+      "  mm       im  ",
+      "   iq xxx mq   ",
+      "     mxxxi     ",
+      "      xxx      "
+    ],
+    [
+      "      SSS      ",
+      "      SSS      ",
+      "      SSS      ",
+      "  K         K  ",
+      "               ",
+      "               ",
+      "SSS         SSS",
+      "SSS    F    SSS",
+      "SSS         SSS",
+      "            K  ",
+      "               ",
+      "               ",
+      "   K  SSS      ",
+      "      SSSK     ",
+      "      SSS      "
+    ],
+    [
+      "               ",
+      "       F       ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      " F           F ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "       F       ",
+      "               "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "P": [
+      "theoreticalsciences:spacetime_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "S": [
+      "theoreticalsciences:spacetime_casing"
+    ],
+    "e": [
+      "theoreticalsciences:vacuum_beam_pipe"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "m": [
+      "theoreticalsciences:dipole_bending_magnet"
+    ],
+    "q": [
+      "theoreticalsciences:quadrupole_focusing_magnet"
+    ],
+    "r": [
+      "theoreticalsciences:rf_accelerating_cavity"
+    ],
+    "v": [
+      "theoreticalsciences:turbomolecular_vacuum_pump"
+    ],
+    "x": [
+      "theoreticalsciences:calorimeter_detector_array"
+    ]
+  },
+  "effect_center": [
+    7,
+    2,
+    7
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

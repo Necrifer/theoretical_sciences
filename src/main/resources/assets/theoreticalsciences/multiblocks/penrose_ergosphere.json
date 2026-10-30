@@ -1,0 +1,177 @@
+{
+  "controller_block": "theoreticalsciences:penrose_ergosphere",
+  "controller": "C",
+  "layers": [
+    [
+      "    SSPSS    ",
+      "   SSiiiSS   ",
+      "  SiiiSiiiS  ",
+      " SiiSSSSSiiS ",
+      "SSiSSS SSSiSS",
+      "SiiSSKKKSSiiS",
+      "PiSS KKK SSiP",
+      "SiiSSKKKSSiiS",
+      "SSiSSS SSSiSS",
+      " SiiSSSSSiiS ",
+      "  SiiiSiiiS  ",
+      "   SSiiiSS   ",
+      "    SSPSS    "
+    ],
+    [
+      "    EEEEE    ",
+      "  EEE   EEE  ",
+      " EE       EE ",
+      " E         E ",
+      "EE         EE",
+      "E           E",
+      "E     F     E",
+      "E           E",
+      "EE         EE",
+      " E         E ",
+      " EE       EE ",
+      "  EEE   EEE  ",
+      "    EEEEE    "
+    ],
+    [
+      "   KKKCKKK   ",
+      "  KKK...KKK  ",
+      " KK.......KK ",
+      "KK.........KK",
+      "KK.........KK",
+      "K...........K",
+      "K...........K",
+      "K...........K",
+      "KK.........KK",
+      "KK.........KK",
+      " KK.......KK ",
+      "  KKK...KKK  ",
+      "   KKKKKKK   "
+    ],
+    [
+      "   EEEEvvv   ",
+      "  EEE...Evv  ",
+      " vE.......EE ",
+      "vv.........EE",
+      "vE.........EE",
+      "v...........E",
+      "E...........v",
+      "E...........v",
+      "EE.........Ev",
+      "EE.........vv",
+      " EE.......Ev ",
+      "  vvE...EEE  ",
+      "   vvvEEEE   "
+    ],
+    [
+      "    GGGGG    ",
+      "   GGGGGGG   ",
+      "  GG.....GG  ",
+      " GG.......GG ",
+      "GG.........GG",
+      "GG.........GG",
+      "GG.........GG",
+      "GG.........GG",
+      "GG.........GG",
+      " GG.......GG ",
+      "  GG.....GG  ",
+      "   GGGGGGG   ",
+      "    GGGGG    "
+    ],
+    [
+      "             ",
+      "     EEE     ",
+      "   EEEEEEE   ",
+      "  EE.....EE  ",
+      "  E.......E  ",
+      " EE.......EE ",
+      " EE.......EE ",
+      " EE.......EE ",
+      "  E.......E  ",
+      "  EE.....EE  ",
+      "   EEEEEEE   ",
+      "     EEE     ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "    wwwww    ",
+      "   wwwwwww   ",
+      "  www   www  ",
+      "  ww     ww  ",
+      "  ww     ww  ",
+      "  ww     ww  ",
+      "  www   www  ",
+      "   wwwwwww   ",
+      "    wwwww    ",
+      "             ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "      F      ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             "
+    ]
+  ],
+  "key": {
+    "E": [
+      "theoreticalsciences:event_horizon_casing"
+    ],
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "P": [
+      "theoreticalsciences:spacetime_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "S": [
+      "theoreticalsciences:spacetime_casing"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "v": [
+      "theoreticalsciences:turbomolecular_vacuum_pump"
+    ],
+    "w": [
+      "theoreticalsciences:hawking_radiation_collector"
+    ]
+  },
+  "effect_center": [
+    6,
+    3.5,
+    6
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

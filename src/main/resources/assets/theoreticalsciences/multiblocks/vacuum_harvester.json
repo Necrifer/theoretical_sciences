@@ -1,0 +1,204 @@
+{
+  "controller_block": "theoreticalsciences:vacuum_harvester",
+  "controller": "C",
+  "layers": [
+    [
+      "   55655   ",
+      "  5555555  ",
+      " 555555555 ",
+      "55555555555",
+      "55555555555",
+      "65555555556",
+      "55555555555",
+      "55555555555",
+      " 555555555 ",
+      "  5555555  ",
+      "   55655   "
+    ],
+    [
+      "           ",
+      "     C     ",
+      "   55555   ",
+      "  5555555  ",
+      "  5555555  ",
+      "  5555555  ",
+      "  5555555  ",
+      "  5555555  ",
+      "   55555   ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "    GGG    ",
+      "   GGGGG   ",
+      "   GGGGG   ",
+      "   GGGGG   ",
+      "    GGG    ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "    GGG    ",
+      "   GGGGG   ",
+      "  GG...GG  ",
+      "  GG...GG  ",
+      "  GG...GG  ",
+      "   GGGGG   ",
+      "    GGG    ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "    GGG    ",
+      "   GGGGG   ",
+      "  G.....G  ",
+      " GG.....GG ",
+      " GG.....GG ",
+      " GG.....GG ",
+      "  G.....G  ",
+      "   GGGGG   ",
+      "    GGG    ",
+      "           "
+    ],
+    [
+      "           ",
+      "   GGGGG   ",
+      "  GG...GG  ",
+      " GG.....GG ",
+      " G.......G ",
+      " G.......G ",
+      " G.......G ",
+      " GG.....GG ",
+      "  GG...GG  ",
+      "   GGGGG   ",
+      "           "
+    ],
+    [
+      "    KKK    ",
+      "  KKKlKKK  ",
+      " KKG...GKK ",
+      " KG.....GK ",
+      "KK.......KK",
+      "Kl.......lK",
+      "KK.......KK",
+      " KG.....GK ",
+      " KKG...GKK ",
+      "  KKKlKKK  ",
+      "    KKK    "
+    ],
+    [
+      "           ",
+      "   GGGGG   ",
+      "  GG...GG  ",
+      " GG.....GG ",
+      " G.......G ",
+      " G.......G ",
+      " G.......G ",
+      " GG.....GG ",
+      "  GG...GG  ",
+      "   GGGGG   ",
+      "           "
+    ],
+    [
+      "           ",
+      "    GGG    ",
+      "   GGGGG   ",
+      "  G.....G  ",
+      " GG.....GG ",
+      " GG.....GG ",
+      " GG.....GG ",
+      "  G.....G  ",
+      "   GGGGG   ",
+      "    GGG    ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "    GGG    ",
+      "   GGGGG   ",
+      "  GG...GG  ",
+      "  GG...GG  ",
+      "  GG...GG  ",
+      "   GGGGG   ",
+      "    GGG    ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "    GGG    ",
+      "   GGGGG   ",
+      "   GGlGG   ",
+      "   GGGGG   ",
+      "    GGG    ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "     F     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ],
+  "key": {
+    "5": [
+      "theoreticalsciences:planck_casing"
+    ],
+    "6": [
+      "theoreticalsciences:planck_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "l": [
+      "theoreticalsciences:graviton_lens_array"
+    ]
+  },
+  "effect_center": [
+    5,
+    6,
+    5
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

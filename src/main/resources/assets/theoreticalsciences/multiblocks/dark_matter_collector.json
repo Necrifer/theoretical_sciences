@@ -1,0 +1,171 @@
+{
+  "controller_block": "theoreticalsciences:dark_matter_collector",
+  "controller": "C",
+  "layers": [
+    [
+      "           ",
+      "           ",
+      "   SSPSS   ",
+      "  SiiiiiS  ",
+      "  SiSSSiS  ",
+      "  PiSSSiP  ",
+      "  SiSSSiS  ",
+      "  SiiiiiS  ",
+      "   SSPSS   ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "    EEE    ",
+      "    EvE    ",
+      "    EEE    ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "    ECE    ",
+      "   EE EE   ",
+      "   E v E   ",
+      "   EE EE   ",
+      "    EEE    ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "    EEE    ",
+      "   EEEEE   ",
+      "  E     E  ",
+      " EE     EE ",
+      " EE  v  EE ",
+      " EE     EE ",
+      "  E     E  ",
+      "   EEEEE   ",
+      "    EEE    ",
+      "           "
+    ],
+    [
+      "  EEEEEEE  ",
+      " EE     EE ",
+      "EE       EE",
+      "E         E",
+      "E         E",
+      "E    x    E",
+      "E         E",
+      "E         E",
+      "EE       EE",
+      " EE     EE ",
+      "  EEEEEEE  "
+    ],
+    [
+      "E         E",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "     F     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "E         E"
+    ],
+    [
+      "   KKKKK   ",
+      " KK     KK ",
+      " K       K ",
+      "K         K",
+      "K   ...   K",
+      "K   ...   K",
+      "K   ...   K",
+      "K         K",
+      " K       K ",
+      " KK     KK ",
+      "   KKKKK   "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "    ...    ",
+      "    ...    ",
+      "    ...    ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "    ...    ",
+      "    ...    ",
+      "    ...    ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ],
+  "key": {
+    "E": [
+      "theoreticalsciences:event_horizon_casing"
+    ],
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "P": [
+      "theoreticalsciences:spacetime_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "S": [
+      "theoreticalsciences:spacetime_casing"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "v": [
+      "theoreticalsciences:turbomolecular_vacuum_pump"
+    ],
+    "x": [
+      "theoreticalsciences:calorimeter_detector_array"
+    ]
+  },
+  "effect_center": [
+    5,
+    7,
+    5
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

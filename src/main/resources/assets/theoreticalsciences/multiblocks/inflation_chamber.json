@@ -1,0 +1,172 @@
+{
+  "controller_block": "theoreticalsciences:inflation_chamber",
+  "controller": "C",
+  "layers": [
+    [
+      "   XCX   ",
+      " XXXXXXX ",
+      " XXXXXXX ",
+      "XXXXXXXXX",
+      "ZXXXXXXXZ",
+      "XXXXXXXXX",
+      " XXXXXXX ",
+      " XXXXXXX ",
+      "   XZX   "
+    ],
+    [
+      "         ",
+      "    s    ",
+      "   XXX   ",
+      "  XXXXX  ",
+      " sXXXXXs ",
+      "  XXXXX  ",
+      "   XXX   ",
+      "    s    ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  GGGGG  ",
+      "  GGGGG  ",
+      "  GGFGG  ",
+      "  GGGGG  ",
+      "  GGGGG  ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "  GGGGG  ",
+      " GG . GG ",
+      " G ... G ",
+      " G.....G ",
+      " G ... G ",
+      " GG . GG ",
+      "  GGGGG  ",
+      "         "
+    ],
+    [
+      "    G    ",
+      "  GGGGG  ",
+      " G ... G ",
+      " G.....G ",
+      "GG.....GG",
+      " G.....G ",
+      " G ... G ",
+      "  GGGGG  ",
+      "    G    "
+    ],
+    [
+      "   KKK   ",
+      " KKK KKK ",
+      " K.....K ",
+      "KK.....KK",
+      "K ..... K",
+      "KK.....KK",
+      " K.....K ",
+      " KKK KKK ",
+      "   KKK   "
+    ],
+    [
+      "    G    ",
+      "  GGGGG  ",
+      " G ... G ",
+      " G.....G ",
+      "GG.....GG",
+      " G.....G ",
+      " G ... G ",
+      "  GGGGG  ",
+      "    G    "
+    ],
+    [
+      "         ",
+      "  GGGGG  ",
+      " GG . GG ",
+      " G ... G ",
+      " G.....G ",
+      " G ... G ",
+      " GG . GG ",
+      "  GGGGG  ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  GGGGG  ",
+      "  GGGGG  ",
+      "  GG GG  ",
+      "  GGGGG  ",
+      "  GGGGG  ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "    G    ",
+      "   GlG   ",
+      "    G    ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "   XXX   ",
+      "   XFX   ",
+      "   XXX   ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "X": [
+      "theoreticalsciences:cosmogenic_casing"
+    ],
+    "Z": [
+      "theoreticalsciences:cosmogenic_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "l": [
+      "theoreticalsciences:graviton_lens_array"
+    ],
+    "s": [
+      "theoreticalsciences:dimensional_stabiliser"
+    ]
+  },
+  "effect_center": [
+    4,
+    5,
+    4
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "controller_block": "theoreticalsciences:synchrotron",
+  "controller": "C",
+  "layers": [
+    [
+      "         P         ",
+      "         S         ",
+      "   SSSSSSSSSSSSS   ",
+      "  SS           SS  ",
+      "  S             S  ",
+      "  S             S  ",
+      "  S             S  ",
+      "  P             P  ",
+      "  S             S  ",
+      "  P             P  ",
+      "  S             S  ",
+      "  P             P  ",
+      "  S             S  ",
+      "  S             S  ",
+      "  S             S  ",
+      "  SS  SSSSSSS  SS  ",
+      "   SSSSSSSSSSSSS   ",
+      "      SPSPSPS      ",
+      "                   "
+    ],
+    [
+      "         r         ",
+      "         q         ",
+      "   mvSqvSrvSqvSm   ",
+      "  mK           Km  ",
+      "  S             S  ",
+      "  v             q  ",
+      "  q             v  ",
+      "  S             S  ",
+      "  v             q  ",
+      "  q             v  ",
+      "  S             S  ",
+      "  v             q  ",
+      "  q             v  ",
+      "  S             S  ",
+      "  v             q  ",
+      "  mK  xxxxxxx  Km  ",
+      "   mvqxxxxxxxvqm   ",
+      "      xxxxxxx      ",
+      "                   "
+    ],
+    [
+      "         S         ",
+      "         e         ",
+      "   eeeeeeeeeeeee   ",
+      "  em           me  ",
+      "  e             e  ",
+      "  e             e  ",
+      "  e             e  ",
+      "  e             ri ",
+      "  e             ri ",
+      "  e             ri ",
+      "  e             ri ",
+      "  e             ri ",
+      "  e             e  ",
+      "  e             e  ",
+      "  e             e  ",
+      "  em  xxxxxxx  me  ",
+      "   eeexeeeeexeee   ",
+      "      xxxxxxx      ",
+      "                   "
+    ],
+    [
+      "         C         ",
+      "                   ",
+      "   miiqiiqiiqiim   ",
+      "  mK           Km  ",
+      "  i             i  ",
+      "  i             q  ",
+      "  q             i  ",
+      "  i             i  ",
+      "  i             q  ",
+      "  q             i  ",
+      "  i             i  ",
+      "  i             q  ",
+      "  q             i  ",
+      "  i             i  ",
+      "  i             q  ",
+      "  mK  xxxxxxx  Km  ",
+      "   miqxiqiiqxiqm   ",
+      "      xxxxxxx      ",
+      "                   "
+    ],
+    [
+      "                   ",
+      "                   ",
+      "   K           K   ",
+      "  K             K  ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "  K   xxxxxxx   K  ",
+      "   K  xxxxxxx  K   ",
+      "      xxxxxxx      ",
+      "                   "
+    ],
+    [
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "      iiiiiii      ",
+      "      viiFiiv      ",
+      "      iiiiiii      ",
+      "                   "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "P": [
+      "theoreticalsciences:spacetime_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "S": [
+      "theoreticalsciences:spacetime_casing"
+    ],
+    "e": [
+      "theoreticalsciences:vacuum_beam_pipe"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "m": [
+      "theoreticalsciences:dipole_bending_magnet"
+    ],
+    "q": [
+      "theoreticalsciences:quadrupole_focusing_magnet"
+    ],
+    "r": [
+      "theoreticalsciences:rf_accelerating_cavity"
+    ],
+    "v": [
+      "theoreticalsciences:turbomolecular_vacuum_pump"
+    ],
+    "x": [
+      "theoreticalsciences:calorimeter_detector_array"
+    ]
+  },
+  "effect_center": [
+    9,
+    2,
+    9
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "controller_block": "theoreticalsciences:white_hole_emitter",
+  "controller": "C",
+  "layers": [
+    [
+      "  HSPSH  ",
+      " SSSSSSS ",
+      "HSSSSSSSH",
+      "SSSS SSSS",
+      "PSS F SSP",
+      "SSSS SSSS",
+      "HSSSSSSSH",
+      " SSSSSSS ",
+      "  HSPSH  "
+    ],
+    [
+      "    G    ",
+      "  iiiii  ",
+      " ii...ii ",
+      " i.....i ",
+      "Gi.....iG",
+      " i.....i ",
+      " ii...ii ",
+      "  iiiii  ",
+      "    G    "
+    ],
+    [
+      "         ",
+      "   GCG   ",
+      "  GG.GG  ",
+      " GG...GG ",
+      " G.....G ",
+      " GG...GG ",
+      "  GG.GG  ",
+      "   GGG   ",
+      "         "
+    ],
+    [
+      "         ",
+      "    H    ",
+      "  HHHHH  ",
+      "  H...H  ",
+      " HH...HH ",
+      "  H...H  ",
+      "  HHHHH  ",
+      "    H    ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "   GGG   ",
+      "  GG.GG  ",
+      "  G...G  ",
+      "  GG.GG  ",
+      "   GGG   ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "    G    ",
+      "   GGG   ",
+      "  GG.GG  ",
+      "   GGG   ",
+      "    G    ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "   KKK   ",
+      "   K.K   ",
+      "   KKK   ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "    G    ",
+      "   GGG   ",
+      "  GG.GG  ",
+      "   GGG   ",
+      "    G    ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "   GGG   ",
+      "  GG.GG  ",
+      "  G...G  ",
+      "  GG.GG  ",
+      "   GGG   ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    H    ",
+      "  HHHHH  ",
+      "  H...H  ",
+      " HH...HH ",
+      "  H...H  ",
+      "  HHHHH  ",
+      "    H    ",
+      "         "
+    ],
+    [
+      "         ",
+      "   GGG   ",
+      "  GG.GG  ",
+      " GG...GG ",
+      " G.....G ",
+      " GG...GG ",
+      "  GG.GG  ",
+      "   GGG   ",
+      "         "
+    ],
+    [
+      "    G    ",
+      "  GGGGG  ",
+      " GG...GG ",
+      " G.....G ",
+      "GG.....GG",
+      " G.....G ",
+      " GG...GG ",
+      "  GGGGG  ",
+      "    G    "
+    ],
+    [
+      "  HwwwH  ",
+      " wwwwwww ",
+      "HwwwwwwwH",
+      "wwww wwww",
+      "www F www",
+      "wwww wwww",
+      "HwwwwwwwH",
+      " wwwwwww ",
+      "  HwwwH  "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "H": [
+      "theoreticalsciences:hyperframe_casing"
+    ],
+    "K": [
+      "theoreticalsciences:superconducting_coil_block",
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ],
+    "P": [
+      "theoreticalsciences:spacetime_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "S": [
+      "theoreticalsciences:spacetime_casing"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "w": [
+      "theoreticalsciences:hawking_radiation_collector"
+    ]
+  },
+  "effect_center": [
+    4,
+    6,
+    4
+  ],
+  "tiers": {
+    "K": {
+      "family": "coil",
+      "base": 1
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}

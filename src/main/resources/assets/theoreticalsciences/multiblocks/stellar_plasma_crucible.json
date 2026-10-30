@@ -1,0 +1,177 @@
+{
+  "controller_block": "theoreticalsciences:stellar_plasma_crucible",
+  "controller": "C",
+  "layers": [
+    [
+      "     d     ",
+      "    Ccc    ",
+      "  ciiiiic  ",
+      "  iicccii  ",
+      " cicccccic ",
+      "dciccFccicd",
+      " cicccccic ",
+      "  iicccii  ",
+      "  ciiiiic  ",
+      "    ccc    ",
+      "     d     "
+    ],
+    [
+      "     c     ",
+      "     c     ",
+      "   ccccc   ",
+      "  ccc.ccc  ",
+      "  cc...cc  ",
+      "ccc.....ccc",
+      "  cc...cc  ",
+      "  ccc.ccc  ",
+      "   ccccc   ",
+      "     c     ",
+      "     c     "
+    ],
+    [
+      "     c     ",
+      "     c     ",
+      "   kkkkk   ",
+      "  kkk.kkk  ",
+      "  kk...kk  ",
+      "cck.....kcc",
+      "  kk...kk  ",
+      "  kkk.kkk  ",
+      "   kkkkk   ",
+      "     c     ",
+      "     c     "
+    ],
+    [
+      "     c     ",
+      "     c     ",
+      "   kkkkk   ",
+      "  kkk.kkk  ",
+      "  kk...kk  ",
+      "cck.....kcc",
+      "  kk...kk  ",
+      "  kkk.kkk  ",
+      "   kkkkk   ",
+      "     c     ",
+      "     c     "
+    ],
+    [
+      "           ",
+      "     j     ",
+      "   ccjcc   ",
+      "  ccc.ccc  ",
+      "  cc...cc  ",
+      " jj.....jj ",
+      "  cc...cc  ",
+      "  ccc.ccc  ",
+      "   ccjcc   ",
+      "     j     ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "   kkkkk   ",
+      "  kkk.kkk  ",
+      "  kk...kk  ",
+      "  k.....k  ",
+      "  kk...kk  ",
+      "  kkk.kkk  ",
+      "   kkkkk   ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "   kkkkk   ",
+      "  kkk.kkk  ",
+      "  kk...kk  ",
+      "  k.....k  ",
+      "  kk...kk  ",
+      "  kkk.kkk  ",
+      "   kkkkk   ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "   ccccc   ",
+      "  ccc.ccc  ",
+      "  cc...cc  ",
+      "  c.....c  ",
+      "  cc...cc  ",
+      "  ccc.ccc  ",
+      "   ccccc   ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "   ccccc   ",
+      "  ccccccc  ",
+      "  ccc.ccc  ",
+      "  cc...cc  ",
+      "  ccc.ccc  ",
+      "  ccccccc  ",
+      "   ccccc   ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "    ccc    ",
+      "    ccc    ",
+      "    ccc    ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:field_emitter",
+      "theoreticalsciences:graviton_field_emitter",
+      "theoreticalsciences:axiomatic_field_emitter"
+    ],
+    "c": [
+      "theoreticalsciences:plasma_crucible_casing"
+    ],
+    "d": [
+      "theoreticalsciences:plasma_crucible_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "i": [
+      "theoreticalsciences:cryogenic_cooling_jacket"
+    ],
+    "j": [
+      "theoreticalsciences:plasma_injection_nozzle"
+    ],
+    "k": [
+      "theoreticalsciences:chronosteel_coil_block",
+      "theoreticalsciences:spacetime_alloy_coil_block",
+      "theoreticalsciences:cosmic_neutronium_coil_block",
+      "theoreticalsciences:transfinite_coil_block"
+    ]
+  },
+  "effect_center": [
+    5,
+    4.5,
+    5
+  ],
+  "tiers": {
+    "k": {
+      "family": "coil",
+      "base": 2
+    },
+    "F": {
+      "family": "emitter",
+      "base": 1
+    }
+  }
+}
