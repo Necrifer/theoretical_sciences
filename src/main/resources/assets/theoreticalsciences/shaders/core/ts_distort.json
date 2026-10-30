@@ -1,0 +1,13 @@
+{
+    "vertex": "theoreticalsciences:ts_distort",
+    "fragment": "theoreticalsciences:ts_distort",
+    "samplers": [
+        { "name": "Sampler0" }
+    ],
+    "uniforms": [
+        { "name": "ScreenSize", "type": "float", "count": 2, "values": [ 1.0, 1.0 ] },
+        { "name": "Mode",       "type": "float", "count": 1, "values": [ 0.0 ] },
+        { "name": "Intensity",  "type": "float", "count": 1, "values": [ 0.0 ] },
+        { "name": "Clock",      "type": "float", "count": 1, "values": [ 0.0 ] }
+    ]
+}
