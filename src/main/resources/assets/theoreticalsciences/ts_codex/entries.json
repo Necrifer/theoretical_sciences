@@ -2307,6 +2307,10 @@
         "text": "An $(item)Empty Containment Cell$() can. Right-click a source block of any Theoretical Sciences fluid to fill it, or click a machine tank with it. Pour it out, feed it to a tank, or use it in a recipe, and you get the empty cell back.$(br2)Ordinary water and lava still go in ordinary buckets."
       },
       {
+        "type": "text",
+        "text": "What keeps a bucket out keeps you out too. $(thing)Hot$() liquids (500 K and up) burn like lava, harder the hotter they are, and destroy anything dropped in them - past 2,000 K not even fire resistance or netherite helps. $(thing)Cold$() ones (200 K and below) freeze like powder snow, faster the colder they are; leather keeps out all but the coldest. $(thing)Exotic$() ones - a false vacuum, liquid spacetime, the broths and reagents - twist whoever wades in with harmful effects."
+      },
+      {
         "type": "spotlight",
         "items": [
           "theoreticalsciences:containment_cell"
@@ -7875,6 +7879,10 @@
       {
         "type": "text",
         "text": "The creative items of other mods (infinite chests, tanks, energy cells...) are no longer simply handed out by the Core, nor kept in the Transcendental's reliquaries - those now hold the controllers of the great machines of the endgame.$(br2)Only the rebuilt Core's $(thing)FORGE$() can make creative items, each from Eschaton Cores, Omnipotent Ingots, Absolute Singularities and Transcendence Crystals - and each needs its own universe tuned."
+      },
+      {
+        "type": "text",
+        "text": "Pack makers: the Forge finds creative items by itself (a list of known ones, and any item whose id says \"creative\"). The item tag $(thing)theoreticalsciences:forge_only$() adds items the search misses - or late-endgame items to keep behind the Forge - and $(thing)theoreticalsciences:forge_exempt$() takes out ones it picked up by mistake."
       }
     ],
     "research": "the_rekindling"
