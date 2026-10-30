@@ -74,7 +74,7 @@ notice and the MIT License text stay with any copy or substantial portion of the
 
 **Appreciated, not required:**
 
-- a link back to the mod's [CurseForge page](<your CurseForge link>) when you feature or redistribute it;
+- a link back to the mod's [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/theoretical-sciences) when you feature or redistribute it;
 - credit to Innight in the description and mod info of addons and ports;
 - downloading the mod from CurseForge, which supports its development.
 
