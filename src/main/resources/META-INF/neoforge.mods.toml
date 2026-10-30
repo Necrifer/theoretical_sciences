@@ -1,0 +1,58 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="Theoretical Sciences License (attribution; addons, ports and modpacks allowed) - see LICENSE"
+
+[[mods]]
+modId="theoreticalsciences"
+version="${mod_version}"
+displayName="Theoretical Sciences"
+authors="Innight"
+logoFile="theoreticalsciences_logo.png"
+description='''
+An endgame tech mod at the edge of theoretical physics.
+78 machines (37 multiblocks running on real physics models), a research tree of derivation puzzles, ten dimensions,
+singularities for every mod, Alpha Omega, and the Omnipotence Core at the end of everything.
+'''
+
+[[dependencies.theoreticalsciences]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.265,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.theoreticalsciences]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1,1.22)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.theoreticalsciences]]
+    modId="jei"
+    type="optional"
+    versionRange="[19.70,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.theoreticalsciences]]
+    modId="emi"
+    type="optional"
+    versionRange="[1.1,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.theoreticalsciences]]
+    modId="kubejs"
+    type="optional"
+    versionRange="[2101.7,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.theoreticalsciences]]
+    modId="ae2"
+    type="optional"
+    versionRange="[19.2,)"
+    ordering="AFTER"
+    side="BOTH"
+
