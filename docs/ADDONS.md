@@ -1,8 +1,9 @@
 # Making an addon for Theoretical Sciences
 
-Addons are welcome. Under the [licence](../LICENSE), an addon must **link back** to Theoretical Sciences's page and
-**credit Innight** as the author of Theoretical Sciences — in its description and in its mod metadata. Ship your addon
-on its own: don't bundle Theoretical Sciences's jar with it (players get that from its CurseForge page).
+Addons are welcome. Theoretical Sciences is under the [MIT License](../LICENSE): if your addon includes any of its code
+or assets, keep the copyright notice and licence text with them. Beyond that, a link back to Theoretical Sciences's page
+and credit to Innight in your description and mod metadata are appreciated. The simplest setup is to ship your addon on
+its own and list Theoretical Sciences as a dependency, so players get the mod from its [CurseForge page](https://www.curseforge.com/minecraft/mc-mods/theoretical-sciences).
 
 ## Data-only addons
 
