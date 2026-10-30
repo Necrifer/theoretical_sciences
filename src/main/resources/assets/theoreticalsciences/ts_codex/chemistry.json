@@ -1,0 +1,512 @@
+{
+  "id": "chemistry",
+  "name": "Chemistry",
+  "description": "Bonds, exotic matter and the island of stability.",
+  "icon": "theoreticalsciences:chiral_crystal",
+  "nodes": [
+    {
+      "entry": "chemistry/essences",
+      "x": 56,
+      "y": 5,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/node_mod_essence",
+      "x": 56,
+      "y": 3,
+      "parents": [
+        "chemistry/essences"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/bonds",
+      "x": 2,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/node_chiral_crystal",
+      "x": 0,
+      "y": 2,
+      "parents": [
+        "chemistry/bonds"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_molecular_orbital_lattice",
+      "x": 4,
+      "y": 2,
+      "parents": [
+        "chemistry/bonds"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_research_quantum_chemistry",
+      "x": 2,
+      "y": 0,
+      "parents": [
+        "chemistry/bonds"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_supercritical_solvent",
+      "x": 0,
+      "y": 0,
+      "parents": [
+        "chemistry/bonds"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_zeolite_catalyst",
+      "x": 2,
+      "y": 4,
+      "parents": [
+        "chemistry/bonds"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/chemical_reactor",
+      "x": 0,
+      "y": 7,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/electrochem",
+      "x": 2,
+      "y": 12,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "chemistry/node_carborane_superacid",
+      "x": 4,
+      "y": 12,
+      "parents": [
+        "chemistry/electrochem"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_electride_crystal",
+      "x": 0,
+      "y": 12,
+      "parents": [
+        "chemistry/electrochem"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_ionic_liquid",
+      "x": 2,
+      "y": 14,
+      "parents": [
+        "chemistry/electrochem"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_research_superacid_chemistry",
+      "x": 2,
+      "y": 10,
+      "parents": [
+        "chemistry/electrochem"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/electrolytic_cell",
+      "x": 0,
+      "y": 17,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "chemistry/carbon",
+      "x": 12,
+      "y": 3,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "chemistry/node_buckyball_cage",
+      "x": 14,
+      "y": 3,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_carbon_nanotube_bundle",
+      "x": 12,
+      "y": 5,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_metal_organic_framework",
+      "x": 10,
+      "y": 1,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_noble_gas_clathrate",
+      "x": 14,
+      "y": 1,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_research_superconductivity",
+      "x": 12,
+      "y": 1,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_research_supramolecular_chemistry",
+      "x": 10,
+      "y": 3,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_self_healing_polymer",
+      "x": 10,
+      "y": 5,
+      "parents": [
+        "chemistry/carbon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/exotic",
+      "x": 22,
+      "y": 2,
+      "parents": [
+        "chemistry/carbon"
+      ]
+    },
+    {
+      "entry": "chemistry/node_muonic_catalyst",
+      "x": 22,
+      "y": 0,
+      "parents": [
+        "chemistry/exotic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/island",
+      "x": 32,
+      "y": 2,
+      "parents": [
+        "chemistry/exotic"
+      ]
+    },
+    {
+      "entry": "chemistry/node_flerovium_ingot",
+      "x": 32,
+      "y": 0,
+      "parents": [
+        "chemistry/island"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_unbihexium_ingot",
+      "x": 30,
+      "y": 2,
+      "parents": [
+        "chemistry/island"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/nuclide_forge",
+      "x": 30,
+      "y": 7,
+      "parents": [
+        "chemistry/exotic"
+      ]
+    },
+    {
+      "entry": "chemistry/essence_distillery",
+      "x": 22,
+      "y": 9,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/node_inflaton_field",
+      "x": 22,
+      "y": 7,
+      "parents": [
+        "chemistry/essence_distillery"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_intro",
+      "x": 30,
+      "y": 10,
+      "parents": []
+    },
+    {
+      "entry": "anomaly/anomaly_containment_ward",
+      "x": 30,
+      "y": 13,
+      "parents": []
+    },
+    {
+      "entry": "anomaly/anomaly_origin_defects",
+      "x": 30,
+      "y": 16,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_autocatalysis",
+      "x": 39,
+      "y": 4,
+      "parents": [
+        "chemistry/island",
+        "chemistry/nuclide_forge"
+      ]
+    },
+    {
+      "entry": "anomaly/node_autocatalytic_broth",
+      "x": 39,
+      "y": 2,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_origin_oncogenesis",
+      "x": 37,
+      "y": 9,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_pathology",
+      "x": 37,
+      "y": 12,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_escape",
+      "x": 49,
+      "y": 14,
+      "parents": [
+        "anomaly/anomaly_origin_oncogenesis"
+      ]
+    },
+    {
+      "entry": "anomaly/node_immortal_cell_line",
+      "x": 49,
+      "y": 12,
+      "parents": [
+        "anomaly/anomaly_escape"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_selfref",
+      "x": 47,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis",
+        "anomaly/anomaly_origin_pathology"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_clonal",
+      "x": 47,
+      "y": 3,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_systems",
+      "x": 47,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_epidemics",
+      "x": 47,
+      "y": 9,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_leakage",
+      "x": 54,
+      "y": 16,
+      "parents": [
+        "anomaly/anomaly_origin_defects",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_symbiosis",
+      "x": 54,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_epidemics"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_extent",
+      "x": 54,
+      "y": 13,
+      "parents": [
+        "anomaly/anomaly_epidemics",
+        "anomaly/anomaly_leakage"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment",
+      "x": 54,
+      "y": 10,
+      "parents": [
+        "anomaly/anomaly_extent"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_therapy",
+      "x": 61,
+      "y": 1,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_resolution_engine",
+      "x": 63,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/node_car_t_culture",
+      "x": 63,
+      "y": 4,
+      "parents": [
+        "anomaly/anomaly_resolution_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/node_renormalised_essence",
+      "x": 61,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_resolution_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_resolution",
+      "x": 71,
+      "y": 5,
+      "parents": [
+        "anomaly/anomaly_extent",
+        "anomaly/anomaly_therapy"
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "tier": 0,
+      "label": "I \u00b7 Foundations",
+      "x0": -1.5,
+      "x1": 5.5,
+      "y0": -2.5,
+      "y1": 18.5
+    },
+    {
+      "tier": 1,
+      "label": "II \u00b7 Quanta & Matter",
+      "x0": 8.5,
+      "x1": 15.5,
+      "y0": -1.5,
+      "y1": 6.5
+    },
+    {
+      "tier": 2,
+      "label": "III \u00b7 Stars & Spacetime",
+      "x0": 20.5,
+      "x1": 23.5,
+      "y0": -2.5,
+      "y1": 10.5
+    },
+    {
+      "tier": 3,
+      "label": "IV \u00b7 The Cosmos",
+      "x0": 28.5,
+      "x1": 40.5,
+      "y0": -2.5,
+      "y1": 17.5
+    },
+    {
+      "tier": 4,
+      "label": "V \u00b7 Beyond Physics",
+      "x0": 45.5,
+      "x1": 64.5,
+      "y0": -2.5,
+      "y1": 17.5
+    },
+    {
+      "tier": 5,
+      "label": "VI \u00b7 Transcendence",
+      "x0": 69.5,
+      "x1": 72.5,
+      "y0": 2.5,
+      "y1": 6.5
+    }
+  ]
+}

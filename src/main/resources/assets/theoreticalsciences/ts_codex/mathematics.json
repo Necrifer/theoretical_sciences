@@ -1,0 +1,1023 @@
+{
+  "id": "mathematics",
+  "name": "Mathematics",
+  "description": "Numbers, logic, sets, infinities and information.",
+  "icon": "theoreticalsciences:riemann_zeta_crystal",
+  "nodes": [
+    {
+      "entry": "mathematics/math_overview",
+      "x": 2,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "mathematics/node_integer_ring",
+      "x": 2,
+      "y": 0,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_rational_field",
+      "x": 0,
+      "y": 2,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/numbers",
+      "x": 0,
+      "y": 7,
+      "parents": []
+    },
+    {
+      "entry": "mathematics/peano_engine",
+      "x": 0,
+      "y": 10,
+      "parents": []
+    },
+    {
+      "entry": "mathematics/logic_sets",
+      "x": 4,
+      "y": 17,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/node_axiom_of_choice",
+      "x": 6,
+      "y": 17,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_axiom_schema",
+      "x": 4,
+      "y": 19,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_category_lattice",
+      "x": 2,
+      "y": 15,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_empty_set",
+      "x": 6,
+      "y": 15,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_formal_proof_tree",
+      "x": 2,
+      "y": 19,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_functor_bridge",
+      "x": 6,
+      "y": 19,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_modular_form",
+      "x": 4,
+      "y": 13,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_power_set",
+      "x": 0,
+      "y": 17,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_prime_shard",
+      "x": 8,
+      "y": 17,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_category_theory",
+      "x": 4,
+      "y": 15,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_set_theory",
+      "x": 2,
+      "y": 17,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_riemann_zeta_crystal",
+      "x": 4,
+      "y": 21,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/platonic_realm",
+      "x": 13,
+      "y": 2,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/node_fractal_ore",
+      "x": 13,
+      "y": 0,
+      "parents": [
+        "mathematics/platonic_realm"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_prime_number_ore",
+      "x": 11,
+      "y": 2,
+      "parents": [
+        "mathematics/platonic_realm"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_transcendental_ore",
+      "x": 15,
+      "y": 2,
+      "parents": [
+        "mathematics/platonic_realm"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/fractal_space",
+      "x": 15,
+      "y": 11,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/node_axiom_sentinel",
+      "x": 13,
+      "y": 13,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_axiom_stone",
+      "x": 17,
+      "y": 11,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_euclid_reliquary",
+      "x": 15,
+      "y": 13,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_fractal_core",
+      "x": 15,
+      "y": 7,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_fractal_dust",
+      "x": 15,
+      "y": 9,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_fractal_wyrm",
+      "x": 17,
+      "y": 13,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_golden_ratio_glass",
+      "x": 13,
+      "y": 9,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_koch_crystal",
+      "x": 17,
+      "y": 9,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_proof_fragment",
+      "x": 11,
+      "y": 11,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_transcendental_crystal",
+      "x": 13,
+      "y": 11,
+      "parents": [
+        "mathematics/fractal_space"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/proof_assistant",
+      "x": 11,
+      "y": 18,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "information/demon",
+      "x": 24,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "information/node_negentropy_cell",
+      "x": 24,
+      "y": 0,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_planck_casing",
+      "x": 26,
+      "y": 0,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_planck_shard",
+      "x": 22,
+      "y": 2,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_resonance_probe",
+      "x": 26,
+      "y": 2,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_strange_matter_pellet",
+      "x": 24,
+      "y": 4,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_void_lattice_block",
+      "x": 22,
+      "y": 4,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_void_lattice_shard",
+      "x": 22,
+      "y": 0,
+      "parents": [
+        "information/demon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/maxwell_demon_sorter",
+      "x": 22,
+      "y": 7,
+      "parents": []
+    },
+    {
+      "entry": "mathematics/analysis",
+      "x": 26,
+      "y": 14,
+      "parents": [
+        "mathematics/platonic_realm",
+        "mathematics/fractal_space"
+      ]
+    },
+    {
+      "entry": "mathematics/node_complex_plane",
+      "x": 24,
+      "y": 16,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_derivative_operator",
+      "x": 28,
+      "y": 16,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_differential_manifold",
+      "x": 26,
+      "y": 10,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_fourier_series",
+      "x": 22,
+      "y": 14,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_fractal_set",
+      "x": 30,
+      "y": 14,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_function_graph",
+      "x": 26,
+      "y": 18,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_imaginary_unit",
+      "x": 24,
+      "y": 10,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_infinitesimal",
+      "x": 28,
+      "y": 10,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_abstract_algebra",
+      "x": 26,
+      "y": 12,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_calculus",
+      "x": 24,
+      "y": 14,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_complex_analysis",
+      "x": 28,
+      "y": 14,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_geometric_topology",
+      "x": 26,
+      "y": 16,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_number_theory",
+      "x": 24,
+      "y": 12,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_quantum_field_theory",
+      "x": 28,
+      "y": 12,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/analytic_continuator",
+      "x": 22,
+      "y": 21,
+      "parents": [
+        "mathematics/platonic_realm",
+        "mathematics/fractal_space"
+      ]
+    },
+    {
+      "entry": "information/holographic_encoder",
+      "x": 44,
+      "y": 3,
+      "parents": [
+        "information/demon",
+        "information/maxwell_demon_sorter"
+      ]
+    },
+    {
+      "entry": "information/node_bekenstein_crystal",
+      "x": 44,
+      "y": 1,
+      "parents": [
+        "information/holographic_encoder"
+      ],
+      "node": true
+    },
+    {
+      "entry": "information/node_holographic_matrix",
+      "x": 42,
+      "y": 3,
+      "parents": [
+        "information/holographic_encoder"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/research_nexus_machine",
+      "x": 36,
+      "y": 9,
+      "parents": []
+    },
+    {
+      "entry": "information/research_nexus",
+      "x": 36,
+      "y": 12,
+      "parents": []
+    },
+    {
+      "entry": "simulation/omega",
+      "x": 52,
+      "y": 0,
+      "parents": [
+        "information/holographic_encoder"
+      ]
+    },
+    {
+      "entry": "simulation/reality_compiler",
+      "x": 52,
+      "y": 3,
+      "parents": [
+        "information/holographic_encoder"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_intro",
+      "x": 52,
+      "y": 6,
+      "parents": [
+        "simulation/omega",
+        "simulation/reality_compiler"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment_ward",
+      "x": 52,
+      "y": 9,
+      "parents": [
+        "simulation/omega",
+        "simulation/reality_compiler"
+      ]
+    },
+    {
+      "entry": "mathematics/transfinite",
+      "x": 54,
+      "y": 14,
+      "parents": [
+        "simulation/omega",
+        "simulation/reality_compiler"
+      ]
+    },
+    {
+      "entry": "mathematics/node_hilbert_bellhop",
+      "x": 54,
+      "y": 12,
+      "parents": [
+        "mathematics/transfinite"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_hypercube_drifter",
+      "x": 52,
+      "y": 14,
+      "parents": [
+        "mathematics/transfinite"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_ordinal_hound",
+      "x": 56,
+      "y": 14,
+      "parents": [
+        "mathematics/transfinite"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/ordinal_recursor",
+      "x": 63,
+      "y": 4,
+      "parents": [
+        "simulation/omega",
+        "simulation/reality_compiler"
+      ]
+    },
+    {
+      "entry": "mathematics/node_aleph_glass",
+      "x": 61,
+      "y": 0,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_aleph_one",
+      "x": 63,
+      "y": 2,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_cardinal_shard",
+      "x": 61,
+      "y": 4,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_e8_lattice",
+      "x": 65,
+      "y": 4,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_epsilon_naught",
+      "x": 63,
+      "y": 6,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_hilbert_brick",
+      "x": 65,
+      "y": 0,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_hilbert_locker",
+      "x": 59,
+      "y": 2,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_hopf_fibration",
+      "x": 61,
+      "y": 2,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_hotel_key",
+      "x": 65,
+      "y": 2,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_hypersphere_fragment",
+      "x": 61,
+      "y": 6,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_inaccessible_cardinal",
+      "x": 65,
+      "y": 6,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_omega_one",
+      "x": 63,
+      "y": 0,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_omega_ordinal",
+      "x": 59,
+      "y": 4,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_ordinal_shard",
+      "x": 67,
+      "y": 4,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_ordinal_stone",
+      "x": 67,
+      "y": 2,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_penteract_lattice",
+      "x": 63,
+      "y": 8,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_transcendent_cache",
+      "x": 59,
+      "y": 6,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_origin_defects",
+      "x": 59,
+      "y": 11,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_autocatalysis",
+      "x": 61,
+      "y": 16,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/node_autocatalytic_broth",
+      "x": 61,
+      "y": 14,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_origin_oncogenesis",
+      "x": 59,
+      "y": 21,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_pathology",
+      "x": 70,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_escape",
+      "x": 78,
+      "y": 20,
+      "parents": [
+        "anomaly/anomaly_origin_oncogenesis"
+      ]
+    },
+    {
+      "entry": "anomaly/node_immortal_cell_line",
+      "x": 78,
+      "y": 18,
+      "parents": [
+        "anomaly/anomaly_escape"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_selfref",
+      "x": 76,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis",
+        "anomaly/anomaly_origin_pathology"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_clonal",
+      "x": 76,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_systems",
+      "x": 76,
+      "y": 9,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_epidemics",
+      "x": 76,
+      "y": 12,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_leakage",
+      "x": 76,
+      "y": 3,
+      "parents": [
+        "anomaly/anomaly_origin_defects",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_symbiosis",
+      "x": 76,
+      "y": 15,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_epidemics"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_extent",
+      "x": 83,
+      "y": 13,
+      "parents": [
+        "anomaly/anomaly_epidemics",
+        "anomaly/anomaly_leakage"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment",
+      "x": 83,
+      "y": 10,
+      "parents": [
+        "anomaly/anomaly_extent"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_therapy",
+      "x": 83,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_resolution_engine",
+      "x": 85,
+      "y": 5,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/node_car_t_culture",
+      "x": 85,
+      "y": 3,
+      "parents": [
+        "anomaly/anomaly_resolution_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/node_renormalised_essence",
+      "x": 83,
+      "y": 5,
+      "parents": [
+        "anomaly/anomaly_resolution_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_resolution",
+      "x": 93,
+      "y": 5,
+      "parents": [
+        "anomaly/anomaly_extent",
+        "anomaly/anomaly_therapy"
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "tier": 0,
+      "label": "I \u00b7 Foundations",
+      "x0": -1.5,
+      "x1": 31.5,
+      "y0": -2.5,
+      "y1": 22.5
+    },
+    {
+      "tier": 1,
+      "label": "II \u00b7 Quanta & Matter",
+      "x0": 34.5,
+      "x1": 37.5,
+      "y0": 6.5,
+      "y1": 13.5
+    },
+    {
+      "tier": 2,
+      "label": "III \u00b7 Stars & Spacetime",
+      "x0": 40.5,
+      "x1": 45.5,
+      "y0": -1.5,
+      "y1": 4.5
+    },
+    {
+      "tier": 3,
+      "label": "IV \u00b7 The Cosmos",
+      "x0": 50.5,
+      "x1": 71.5,
+      "y0": -2.5,
+      "y1": 22.5
+    },
+    {
+      "tier": 4,
+      "label": "V \u00b7 Beyond Physics",
+      "x0": 74.5,
+      "x1": 86.5,
+      "y0": -2.5,
+      "y1": 21.5
+    },
+    {
+      "tier": 5,
+      "label": "VI \u00b7 Transcendence",
+      "x0": 91.5,
+      "x1": 94.5,
+      "y0": 2.5,
+      "y1": 6.5
+    }
+  ]
+}

@@ -1,0 +1,697 @@
+{
+  "id": "biology",
+  "name": "Biology",
+  "description": "Life - made, evolved, engineered, and thinking.",
+  "icon": "theoreticalsciences:synthetic_cell",
+  "nodes": [
+    {
+      "entry": "biology/anomaly_spawner",
+      "x": 41,
+      "y": 5,
+      "parents": []
+    },
+    {
+      "entry": "minds/neural_synthesizer",
+      "x": 2,
+      "y": 9,
+      "parents": []
+    },
+    {
+      "entry": "minds/node_adaptive_feedback_core",
+      "x": 4,
+      "y": 9,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_general_ai_core",
+      "x": 2,
+      "y": 11,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_narrow_ai_core",
+      "x": 0,
+      "y": 7,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_neural_lattice",
+      "x": 4,
+      "y": 7,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_photonic_neuron",
+      "x": 0,
+      "y": 11,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_research_general_intelligence",
+      "x": 2,
+      "y": 7,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_research_superintelligence",
+      "x": 0,
+      "y": 9,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_synaptic_fluid",
+      "x": 4,
+      "y": 11,
+      "parents": [
+        "minds/neural_synthesizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/life",
+      "x": 10,
+      "y": 0,
+      "parents": [
+        "minds/neural_synthesizer"
+      ]
+    },
+    {
+      "entry": "biology/bioreactor",
+      "x": 12,
+      "y": 5,
+      "parents": [
+        "minds/neural_synthesizer"
+      ]
+    },
+    {
+      "entry": "biology/node_nutrient_broth",
+      "x": 12,
+      "y": 3,
+      "parents": [
+        "biology/bioreactor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/gene_sequencer",
+      "x": 12,
+      "y": 12,
+      "parents": [
+        "biology/life",
+        "biology/bioreactor"
+      ]
+    },
+    {
+      "entry": "biology/node_engineered_enzyme",
+      "x": 14,
+      "y": 12,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_folded_protein_crystal",
+      "x": 12,
+      "y": 14,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_genome_sample",
+      "x": 10,
+      "y": 10,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_recombinant_dna",
+      "x": 14,
+      "y": 10,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_research_extremophiles",
+      "x": 12,
+      "y": 10,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_research_protein_folding",
+      "x": 10,
+      "y": 12,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_tardigrade_culture",
+      "x": 10,
+      "y": 14,
+      "parents": [
+        "biology/gene_sequencer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/psionic_resonator",
+      "x": 19,
+      "y": 7,
+      "parents": [
+        "minds/neural_synthesizer"
+      ]
+    },
+    {
+      "entry": "minds/node_boltzmann_brain",
+      "x": 19,
+      "y": 5,
+      "parents": [
+        "minds/psionic_resonator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_psionic_crystal",
+      "x": 17,
+      "y": 7,
+      "parents": [
+        "minds/psionic_resonator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_psionic_ether",
+      "x": 19,
+      "y": 9,
+      "parents": [
+        "minds/psionic_resonator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/node_thought_matrix",
+      "x": 21,
+      "y": 7,
+      "parents": [
+        "minds/psionic_resonator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/quantum_life",
+      "x": 29,
+      "y": 5,
+      "parents": [
+        "biology/gene_sequencer"
+      ]
+    },
+    {
+      "entry": "biology/node_cryptochrome_magnetoreceptor",
+      "x": 29,
+      "y": 3,
+      "parents": [
+        "biology/quantum_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/synthetic",
+      "x": 31,
+      "y": 14,
+      "parents": [
+        "biology/gene_sequencer"
+      ]
+    },
+    {
+      "entry": "biology/node_breached_anomaly_engine",
+      "x": 31,
+      "y": 18,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_morphogenic_serum",
+      "x": 31,
+      "y": 16,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_neural_organoid",
+      "x": 29,
+      "y": 12,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_research_morphogenesis",
+      "x": 31,
+      "y": 12,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_research_neurobiology",
+      "x": 29,
+      "y": 14,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_research_xenobiology",
+      "x": 33,
+      "y": 14,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_silicon_life_spore",
+      "x": 33,
+      "y": 12,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_stem_cell_culture",
+      "x": 29,
+      "y": 16,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_turing_morphogen",
+      "x": 33,
+      "y": 16,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_xenobot_swarm",
+      "x": 31,
+      "y": 10,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_xenogenome_sample",
+      "x": 27,
+      "y": 14,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_xenoplasm",
+      "x": 35,
+      "y": 14,
+      "parents": [
+        "biology/synthetic"
+      ],
+      "node": true
+    },
+    {
+      "entry": "minds/matrioshka_brain",
+      "x": 41,
+      "y": 2,
+      "parents": [
+        "minds/neural_synthesizer"
+      ]
+    },
+    {
+      "entry": "biology/evolution",
+      "x": 43,
+      "y": 16,
+      "parents": [
+        "biology/synthetic"
+      ]
+    },
+    {
+      "entry": "biology/node_telomerase_complex",
+      "x": 43,
+      "y": 14,
+      "parents": [
+        "biology/evolution"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/evolution_engine",
+      "x": 48,
+      "y": 15,
+      "parents": [
+        "biology/synthetic"
+      ]
+    },
+    {
+      "entry": "biology/abiogenesis_crucible",
+      "x": 60,
+      "y": 9,
+      "parents": [
+        "biology/evolution",
+        "biology/evolution_engine"
+      ]
+    },
+    {
+      "entry": "biology/node_omnicellular_genome",
+      "x": 58,
+      "y": 9,
+      "parents": [
+        "biology/abiogenesis_crucible"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_panspermia_seed",
+      "x": 62,
+      "y": 9,
+      "parents": [
+        "biology/abiogenesis_crucible"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_primordial_soup",
+      "x": 58,
+      "y": 7,
+      "parents": [
+        "biology/abiogenesis_crucible"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_research_panspermia",
+      "x": 60,
+      "y": 7,
+      "parents": [
+        "biology/abiogenesis_crucible"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/node_spark_of_life",
+      "x": 60,
+      "y": 11,
+      "parents": [
+        "biology/abiogenesis_crucible"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_intro",
+      "x": 41,
+      "y": 8,
+      "parents": [
+        "minds/matrioshka_brain"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment_ward",
+      "x": 41,
+      "y": 11,
+      "parents": [
+        "minds/matrioshka_brain"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_defects",
+      "x": 48,
+      "y": 2,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_autocatalysis",
+      "x": 50,
+      "y": 7,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/node_autocatalytic_broth",
+      "x": 50,
+      "y": 5,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_origin_oncogenesis",
+      "x": 48,
+      "y": 18,
+      "parents": [
+        "biology/evolution",
+        "biology/evolution_engine"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_pathology",
+      "x": 48,
+      "y": 12,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_escape",
+      "x": 60,
+      "y": 16,
+      "parents": [
+        "anomaly/anomaly_origin_oncogenesis"
+      ]
+    },
+    {
+      "entry": "anomaly/node_immortal_cell_line",
+      "x": 60,
+      "y": 14,
+      "parents": [
+        "anomaly/anomaly_escape"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_selfref",
+      "x": 58,
+      "y": 1,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis",
+        "anomaly/anomaly_origin_pathology"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_clonal",
+      "x": 58,
+      "y": 4,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_systems",
+      "x": 65,
+      "y": 18,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_epidemics",
+      "x": 65,
+      "y": 3,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_leakage",
+      "x": 65,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_origin_defects",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_symbiosis",
+      "x": 65,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_epidemics"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_extent",
+      "x": 65,
+      "y": 12,
+      "parents": [
+        "anomaly/anomaly_epidemics",
+        "anomaly/anomaly_leakage"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment",
+      "x": 65,
+      "y": 15,
+      "parents": [
+        "anomaly/anomaly_extent"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_therapy",
+      "x": 65,
+      "y": 9,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_resolution_engine",
+      "x": 70,
+      "y": 8,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/node_car_t_culture",
+      "x": 70,
+      "y": 6,
+      "parents": [
+        "anomaly/anomaly_resolution_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/node_renormalised_essence",
+      "x": 68,
+      "y": 8,
+      "parents": [
+        "anomaly/anomaly_resolution_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "anomaly/anomaly_resolution",
+      "x": 78,
+      "y": 9,
+      "parents": [
+        "anomaly/anomaly_extent",
+        "anomaly/anomaly_therapy"
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "tier": 0,
+      "label": "I \u00b7 Foundations",
+      "x0": -1.5,
+      "x1": 5.5,
+      "y0": 4.5,
+      "y1": 12.5
+    },
+    {
+      "tier": 1,
+      "label": "II \u00b7 Quanta & Matter",
+      "x0": 8.5,
+      "x1": 22.5,
+      "y0": -2.5,
+      "y1": 15.5
+    },
+    {
+      "tier": 2,
+      "label": "III \u00b7 Stars & Spacetime",
+      "x0": 25.5,
+      "x1": 36.5,
+      "y0": 0.5,
+      "y1": 19.5
+    },
+    {
+      "tier": 3,
+      "label": "IV \u00b7 The Cosmos",
+      "x0": 39.5,
+      "x1": 51.5,
+      "y0": -0.5,
+      "y1": 19.5
+    },
+    {
+      "tier": 4,
+      "label": "V \u00b7 Beyond Physics",
+      "x0": 56.5,
+      "x1": 71.5,
+      "y0": -2.5,
+      "y1": 19.5
+    },
+    {
+      "tier": 5,
+      "label": "VI \u00b7 Transcendence",
+      "x0": 76.5,
+      "x1": 79.5,
+      "y0": 6.5,
+      "y1": 10.5
+    }
+  ]
+}

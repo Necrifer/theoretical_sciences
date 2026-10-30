@@ -1,0 +1,1845 @@
+{
+  "id": "discovery",
+  "name": "Discovery",
+  "description": "Every concept in the order you meet it, linked to what it builds on.",
+  "icon": "theoreticalsciences:quantum_codex",
+  "nodes": [
+    {
+      "entry": "anomaly/anomaly_clonal",
+      "x": 52,
+      "y": 2,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment",
+      "x": 58,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_extent"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_containment_ward",
+      "x": 41,
+      "y": -10,
+      "parents": [
+        "basics/fields",
+        "fabrication/convergence_engine"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_epidemics",
+      "x": 54,
+      "y": 4,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_escape",
+      "x": 50,
+      "y": 8,
+      "parents": [
+        "anomaly/anomaly_origin_oncogenesis"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_extent",
+      "x": 56,
+      "y": -2,
+      "parents": [
+        "anomaly/anomaly_epidemics",
+        "anomaly/anomaly_leakage"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_intro",
+      "x": 41,
+      "y": -12,
+      "parents": [
+        "basics/fields",
+        "fabrication/convergence_engine"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_leakage",
+      "x": 54,
+      "y": -8,
+      "parents": [
+        "anomaly/anomaly_origin_defects",
+        "anomaly/anomaly_systems"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_autocatalysis",
+      "x": 43,
+      "y": 8,
+      "parents": [
+        "chemistry/island",
+        "chemistry/nuclide_forge"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_defects",
+      "x": 43,
+      "y": -18,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_oncogenesis",
+      "x": 43,
+      "y": 6,
+      "parents": [
+        "biology/evolution",
+        "biology/evolution_engine"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_origin_pathology",
+      "x": 43,
+      "y": -16,
+      "parents": [
+        "anomaly/anomaly_intro",
+        "anomaly/anomaly_containment_ward"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_resolution",
+      "x": 63,
+      "y": 0,
+      "parents": [
+        "anomaly/anomaly_extent",
+        "anomaly/anomaly_therapy"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_resolution_engine",
+      "x": 58,
+      "y": 4,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_selfref",
+      "x": 50,
+      "y": -4,
+      "parents": [
+        "anomaly/anomaly_origin_autocatalysis",
+        "anomaly/anomaly_origin_pathology"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_symbiosis",
+      "x": 54,
+      "y": 2,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_epidemics"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_systems",
+      "x": 52,
+      "y": 4,
+      "parents": [
+        "anomaly/anomaly_escape",
+        "anomaly/anomaly_selfref"
+      ]
+    },
+    {
+      "entry": "anomaly/anomaly_therapy",
+      "x": 58,
+      "y": 2,
+      "parents": [
+        "anomaly/anomaly_clonal",
+        "anomaly/anomaly_containment"
+      ]
+    },
+    {
+      "entry": "antimatter/antiatoms",
+      "x": 41,
+      "y": 4,
+      "parents": [
+        "chemistry/exotic",
+        "antimatter/cpt"
+      ]
+    },
+    {
+      "entry": "antimatter/antiproton_decelerator",
+      "x": 41,
+      "y": 6,
+      "parents": [
+        "chemistry/exotic",
+        "antimatter/cpt"
+      ]
+    },
+    {
+      "entry": "antimatter/antiverse_life",
+      "x": 37,
+      "y": 2,
+      "parents": [
+        "exotic/antimatter_penning_trap",
+        "spacetime/relativity"
+      ]
+    },
+    {
+      "entry": "antimatter/baryogenesis",
+      "x": 54,
+      "y": 6,
+      "parents": [
+        "antimatter/mirror_metallurgy",
+        "antimatter/mirror_foundry"
+      ]
+    },
+    {
+      "entry": "antimatter/cpt",
+      "x": 37,
+      "y": 0,
+      "parents": [
+        "exotic/antimatter_penning_trap",
+        "spacetime/relativity"
+      ]
+    },
+    {
+      "entry": "antimatter/mirror_foundry",
+      "x": 50,
+      "y": 6,
+      "parents": [
+        "fabrication/stellar_plasma_crucible",
+        "antimatter/antiatoms"
+      ]
+    },
+    {
+      "entry": "antimatter/mirror_metallurgy",
+      "x": 50,
+      "y": 4,
+      "parents": [
+        "fabrication/stellar_plasma_crucible",
+        "antimatter/antiatoms"
+      ]
+    },
+    {
+      "entry": "basics/assembler",
+      "x": 0,
+      "y": 10,
+      "parents": [
+        "basics/guide_12_multiblocks"
+      ]
+    },
+    {
+      "entry": "basics/auto_assembler",
+      "x": 0,
+      "y": 6,
+      "parents": []
+    },
+    {
+      "entry": "basics/component_tiers",
+      "x": 26,
+      "y": -6,
+      "parents": [
+        "fabrication/femtoscale_assembly_line"
+      ]
+    },
+    {
+      "entry": "basics/containment_cells",
+      "x": 0,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "basics/containment_failure",
+      "x": 0,
+      "y": 0,
+      "parents": []
+    },
+    {
+      "entry": "basics/energy_logistics",
+      "x": 15,
+      "y": 4,
+      "parents": [
+        "quantum/quantum_entangler",
+        "fabrication/femto_fabricator"
+      ]
+    },
+    {
+      "entry": "basics/extreme_table_first",
+      "x": 0,
+      "y": -14,
+      "parents": [
+        "basics/guide_02_table"
+      ]
+    },
+    {
+      "entry": "basics/fields",
+      "x": 32,
+      "y": -10,
+      "parents": [
+        "hyperdimensions/tesseract",
+        "hyperdimensions/tesseract_assembler"
+      ]
+    },
+    {
+      "entry": "basics/guide_00_start",
+      "x": -4,
+      "y": -14,
+      "parents": []
+    },
+    {
+      "entry": "basics/guide_01_quartz",
+      "x": -4,
+      "y": -12,
+      "parents": [
+        "basics/guide_00_start"
+      ]
+    },
+    {
+      "entry": "basics/guide_02_table",
+      "x": -4,
+      "y": -10,
+      "parents": [
+        "basics/guide_01_quartz"
+      ]
+    },
+    {
+      "entry": "basics/guide_03_power",
+      "x": -4,
+      "y": -8,
+      "parents": [
+        "basics/guide_02_table"
+      ]
+    },
+    {
+      "entry": "basics/guide_04_neutronium",
+      "x": -4,
+      "y": -6,
+      "parents": [
+        "basics/guide_03_power"
+      ]
+    },
+    {
+      "entry": "basics/guide_05_dilithium",
+      "x": -4,
+      "y": -4,
+      "parents": [
+        "basics/guide_04_neutronium"
+      ]
+    },
+    {
+      "entry": "basics/guide_06_analyzer",
+      "x": -4,
+      "y": -2,
+      "parents": [
+        "basics/guide_05_dilithium"
+      ]
+    },
+    {
+      "entry": "basics/guide_07_research",
+      "x": -4,
+      "y": 0,
+      "parents": [
+        "basics/guide_06_analyzer"
+      ]
+    },
+    {
+      "entry": "basics/guide_08_casimir",
+      "x": -4,
+      "y": 2,
+      "parents": [
+        "basics/guide_07_research"
+      ]
+    },
+    {
+      "entry": "basics/guide_09_press",
+      "x": -4,
+      "y": 4,
+      "parents": [
+        "basics/guide_08_casimir"
+      ]
+    },
+    {
+      "entry": "basics/guide_10_zpe",
+      "x": -4,
+      "y": 6,
+      "parents": [
+        "basics/guide_09_press"
+      ]
+    },
+    {
+      "entry": "basics/guide_11_paths",
+      "x": -4,
+      "y": 8,
+      "parents": [
+        "basics/guide_10_zpe"
+      ]
+    },
+    {
+      "entry": "basics/guide_12_multiblocks",
+      "x": -4,
+      "y": 10,
+      "parents": [
+        "basics/guide_11_paths"
+      ]
+    },
+    {
+      "entry": "basics/guide_13_onward",
+      "x": -4,
+      "y": 12,
+      "parents": [
+        "basics/guide_12_multiblocks"
+      ]
+    },
+    {
+      "entry": "basics/insight",
+      "x": 0,
+      "y": -6,
+      "parents": [
+        "basics/guide_06_analyzer"
+      ]
+    },
+    {
+      "entry": "basics/me_ports",
+      "x": 0,
+      "y": 8,
+      "parents": []
+    },
+    {
+      "entry": "basics/power",
+      "x": 0,
+      "y": -12,
+      "parents": [
+        "basics/guide_03_power"
+      ]
+    },
+    {
+      "entry": "basics/recipe_cost",
+      "x": 0,
+      "y": 12,
+      "parents": [
+        "basics/guide_12_multiblocks"
+      ]
+    },
+    {
+      "entry": "basics/research",
+      "x": 0,
+      "y": -4,
+      "parents": [
+        "basics/guide_07_research"
+      ]
+    },
+    {
+      "entry": "basics/research_time",
+      "x": 17,
+      "y": 0,
+      "parents": [
+        "fabrication/femtoscale_assembly_line"
+      ]
+    },
+    {
+      "entry": "basics/stabilisers",
+      "x": 0,
+      "y": 4,
+      "parents": []
+    },
+    {
+      "entry": "basics/symbols",
+      "x": 0,
+      "y": -2,
+      "parents": [
+        "basics/guide_07_research"
+      ]
+    },
+    {
+      "entry": "basics/thermoelectric_generator",
+      "x": 2,
+      "y": -8,
+      "parents": [
+        "basics/guide_03_power"
+      ]
+    },
+    {
+      "entry": "basics/thought_experiments",
+      "x": 2,
+      "y": 8,
+      "parents": [
+        "basics/guide_11_paths"
+      ]
+    },
+    {
+      "entry": "basics/tuning",
+      "x": 2,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "basics/world_numbers",
+      "x": 2,
+      "y": 0,
+      "parents": [
+        "basics/guide_07_research"
+      ]
+    },
+    {
+      "entry": "basics/zero_point_extractor",
+      "x": 4,
+      "y": 10,
+      "parents": [
+        "basics/guide_10_zpe",
+        "basics/guide_08_casimir"
+      ]
+    },
+    {
+      "entry": "biology/abiogenesis_crucible",
+      "x": 52,
+      "y": 0,
+      "parents": [
+        "biology/evolution",
+        "biology/evolution_engine"
+      ]
+    },
+    {
+      "entry": "biology/anomaly_spawner",
+      "x": 41,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "biology/bioreactor",
+      "x": 15,
+      "y": 8,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "biology/evolution",
+      "x": 43,
+      "y": 0,
+      "parents": [
+        "exotic/chronon_field_inverter"
+      ]
+    },
+    {
+      "entry": "biology/evolution_engine",
+      "x": 43,
+      "y": 2,
+      "parents": [
+        "exotic/chronon_field_inverter"
+      ]
+    },
+    {
+      "entry": "biology/gene_sequencer",
+      "x": 19,
+      "y": 2,
+      "parents": [
+        "mathematics/logic_sets",
+        "mathematics/proof_assistant"
+      ]
+    },
+    {
+      "entry": "biology/life",
+      "x": 15,
+      "y": 6,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "biology/quantum_life",
+      "x": 30,
+      "y": 6,
+      "parents": [
+        "quantum/quantum_entangler"
+      ]
+    },
+    {
+      "entry": "biology/synthetic",
+      "x": 32,
+      "y": -8,
+      "parents": [
+        "chemistry/carbon"
+      ]
+    },
+    {
+      "entry": "chemistry/bonds",
+      "x": 6,
+      "y": 2,
+      "parents": [
+        "basics/guide_08_casimir",
+        "mathematics/math_overview"
+      ]
+    },
+    {
+      "entry": "chemistry/carbon",
+      "x": 19,
+      "y": -6,
+      "parents": [
+        "nanotech/nanite_assembler"
+      ]
+    },
+    {
+      "entry": "chemistry/chemical_reactor",
+      "x": 6,
+      "y": 4,
+      "parents": [
+        "basics/guide_08_casimir",
+        "mathematics/math_overview"
+      ]
+    },
+    {
+      "entry": "chemistry/electrochem",
+      "x": 10,
+      "y": 6,
+      "parents": [
+        "quantum/bose_einstein_condenser",
+        "chemistry/bonds"
+      ]
+    },
+    {
+      "entry": "chemistry/electrolytic_cell",
+      "x": 10,
+      "y": 8,
+      "parents": [
+        "quantum/bose_einstein_condenser",
+        "chemistry/bonds"
+      ]
+    },
+    {
+      "entry": "chemistry/essence_distillery",
+      "x": 30,
+      "y": -6,
+      "parents": [
+        "fabrication/femtoscale_assembly_line",
+        "hyperdimensions/tesseract"
+      ]
+    },
+    {
+      "entry": "chemistry/essences",
+      "x": 56,
+      "y": 0,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/exotic",
+      "x": 28,
+      "y": 10,
+      "parents": [
+        "exotic/antimatter_penning_trap",
+        "exotic/quark_gluon_collider"
+      ]
+    },
+    {
+      "entry": "chemistry/island",
+      "x": 37,
+      "y": 10,
+      "parents": [
+        "chemistry/exotic"
+      ]
+    },
+    {
+      "entry": "chemistry/nuclide_forge",
+      "x": 37,
+      "y": 12,
+      "parents": [
+        "chemistry/exotic"
+      ]
+    },
+    {
+      "entry": "cosmic/annihilation_reactor",
+      "x": 15,
+      "y": 10,
+      "parents": [
+        "exotic/antimatter_penning_trap"
+      ]
+    },
+    {
+      "entry": "cosmic/neutrino_condenser",
+      "x": 19,
+      "y": 6,
+      "parents": [
+        "exotic/quark_gluon_collider"
+      ]
+    },
+    {
+      "entry": "cosmic/neutron_star_forge",
+      "x": 28,
+      "y": 8,
+      "parents": [
+        "cosmic/neutrino_condenser",
+        "singularities/penrose_ergosphere"
+      ]
+    },
+    {
+      "entry": "endgame/alpha_omega",
+      "x": 63,
+      "y": -4,
+      "parents": [
+        "endgame/omnilex_goal",
+        "endgame/omnilex_memory"
+      ]
+    },
+    {
+      "entry": "endgame/axiom_distiller",
+      "x": 52,
+      "y": -8,
+      "parents": [
+        "spacetime/causality_loop_engine",
+        "endgame/beyond"
+      ]
+    },
+    {
+      "entry": "endgame/axiomatic_breach_engine",
+      "x": 54,
+      "y": -4,
+      "parents": [
+        "endgame/mass_crafting",
+        "endgame/conceptual_singularities"
+      ]
+    },
+    {
+      "entry": "endgame/beyond",
+      "x": 43,
+      "y": -10,
+      "parents": [
+        "fabrication/convergence_engine",
+        "simulation/omega"
+      ]
+    },
+    {
+      "entry": "endgame/beyond_omnipotence",
+      "x": 65,
+      "y": 6,
+      "parents": []
+    },
+    {
+      "entry": "endgame/beyond_the_shutdown",
+      "x": 65,
+      "y": -14,
+      "parents": [
+        "endgame/alpha_omega"
+      ]
+    },
+    {
+      "entry": "endgame/cantor_diagonalizer",
+      "x": 43,
+      "y": -8,
+      "parents": [
+        "fabrication/convergence_engine",
+        "simulation/omega"
+      ]
+    },
+    {
+      "entry": "endgame/concept_compressor",
+      "x": 43,
+      "y": -2,
+      "parents": [
+        "fabrication/convergence_engine",
+        "simulation/omega"
+      ]
+    },
+    {
+      "entry": "endgame/conceptual_singularities",
+      "x": 43,
+      "y": -4,
+      "parents": [
+        "fabrication/convergence_engine",
+        "simulation/omega"
+      ]
+    },
+    {
+      "entry": "endgame/creative_forge",
+      "x": 65,
+      "y": -6,
+      "parents": []
+    },
+    {
+      "entry": "endgame/dodecaract_excavator",
+      "x": 71,
+      "y": -8,
+      "parents": [
+        "endgame/omega_simulator",
+        "endgame/pleroma_reconstitutor"
+      ]
+    },
+    {
+      "entry": "endgame/entropy_censer",
+      "x": 65,
+      "y": -4,
+      "parents": []
+    },
+    {
+      "entry": "endgame/eschaton_charge",
+      "x": 71,
+      "y": -10,
+      "parents": [
+        "endgame/omega_simulator",
+        "endgame/pleroma_reconstitutor"
+      ]
+    },
+    {
+      "entry": "endgame/euclidean_anchor",
+      "x": 65,
+      "y": 10,
+      "parents": []
+    },
+    {
+      "entry": "endgame/forge_terminal",
+      "x": 65,
+      "y": -8,
+      "parents": []
+    },
+    {
+      "entry": "endgame/hyperreal",
+      "x": 56,
+      "y": -4,
+      "parents": [
+        "endgame/axiomatic_breach_engine"
+      ]
+    },
+    {
+      "entry": "endgame/mass_crafting",
+      "x": 43,
+      "y": -6,
+      "parents": [
+        "fabrication/convergence_engine",
+        "simulation/omega"
+      ]
+    },
+    {
+      "entry": "endgame/miniatures",
+      "x": 65,
+      "y": -10,
+      "parents": []
+    },
+    {
+      "entry": "endgame/omega_simulator",
+      "x": 69,
+      "y": -10,
+      "parents": [
+        "endgame/transcendental",
+        "endgame/beyond_the_shutdown"
+      ]
+    },
+    {
+      "entry": "endgame/omnilex_engine",
+      "x": 58,
+      "y": -2,
+      "parents": [
+        "endgame/hyperreal"
+      ]
+    },
+    {
+      "entry": "endgame/omnilex_goal",
+      "x": 58,
+      "y": -6,
+      "parents": [
+        "endgame/hyperreal"
+      ]
+    },
+    {
+      "entry": "endgame/omnilex_memory",
+      "x": 58,
+      "y": -4,
+      "parents": [
+        "endgame/hyperreal"
+      ]
+    },
+    {
+      "entry": "endgame/pleroma",
+      "x": 63,
+      "y": -6,
+      "parents": [
+        "endgame/omnilex_goal",
+        "endgame/omnilex_memory"
+      ]
+    },
+    {
+      "entry": "endgame/pleroma_reconstitutor",
+      "x": 69,
+      "y": -8,
+      "parents": [
+        "endgame/transcendental",
+        "endgame/beyond_the_shutdown"
+      ]
+    },
+    {
+      "entry": "endgame/resolved_endgame",
+      "x": 65,
+      "y": 0,
+      "parents": []
+    },
+    {
+      "entry": "endgame/second_core",
+      "x": 65,
+      "y": 8,
+      "parents": []
+    },
+    {
+      "entry": "endgame/simulated_universes",
+      "x": 65,
+      "y": -2,
+      "parents": []
+    },
+    {
+      "entry": "endgame/the_core_forge",
+      "x": 65,
+      "y": 4,
+      "parents": []
+    },
+    {
+      "entry": "endgame/the_rekindling",
+      "x": 69,
+      "y": -2,
+      "parents": []
+    },
+    {
+      "entry": "endgame/the_shutdown",
+      "x": 65,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "endgame/the_sundering_materials",
+      "x": 67,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "endgame/transcendental",
+      "x": 67,
+      "y": -4,
+      "parents": [
+        "endgame/alpha_omega"
+      ]
+    },
+    {
+      "entry": "endgame/uncopyable",
+      "x": 67,
+      "y": 0,
+      "parents": []
+    },
+    {
+      "entry": "exotic/antimatter_penning_trap",
+      "x": 10,
+      "y": 4,
+      "parents": [
+        "quantum/quantum_entangler",
+        "quantum/bose_einstein_condenser"
+      ]
+    },
+    {
+      "entry": "exotic/chronon_field_inverter",
+      "x": 17,
+      "y": -2,
+      "parents": [
+        "exotic/tachyon_resonator"
+      ]
+    },
+    {
+      "entry": "exotic/dark_matter_collector",
+      "x": 19,
+      "y": 0,
+      "parents": [
+        "quantum/topological_transmuter",
+        "exotic/quark_gluon_collider"
+      ]
+    },
+    {
+      "entry": "exotic/particle_spectrometer",
+      "x": 21,
+      "y": 10,
+      "parents": [
+        "exotic/quark_gluon_collider",
+        "exotic/synchrotron"
+      ]
+    },
+    {
+      "entry": "exotic/quark_gluon_collider",
+      "x": 17,
+      "y": 6,
+      "parents": [
+        "exotic/antimatter_penning_trap"
+      ]
+    },
+    {
+      "entry": "exotic/standard_model",
+      "x": 21,
+      "y": 8,
+      "parents": [
+        "exotic/quark_gluon_collider",
+        "exotic/synchrotron"
+      ]
+    },
+    {
+      "entry": "exotic/synchrotron",
+      "x": 21,
+      "y": 6,
+      "parents": [
+        "exotic/quark_gluon_collider",
+        "fabrication/stellar_plasma_crucible"
+      ]
+    },
+    {
+      "entry": "exotic/tachyon_resonator",
+      "x": 15,
+      "y": -2,
+      "parents": [
+        "quantum/metamaterial_weaver"
+      ]
+    },
+    {
+      "entry": "fabrication/byproducts",
+      "x": 30,
+      "y": -10,
+      "parents": [
+        "fabrication/femtoscale_assembly_line",
+        "hyperdimensions/tesseract"
+      ]
+    },
+    {
+      "entry": "fabrication/catalysts",
+      "x": 21,
+      "y": 2,
+      "parents": [
+        "exotic/quark_gluon_collider",
+        "nanotech/nanite_assembler"
+      ]
+    },
+    {
+      "entry": "fabrication/convergence_altar",
+      "x": 28,
+      "y": -2,
+      "parents": []
+    },
+    {
+      "entry": "fabrication/convergence_engine",
+      "x": 41,
+      "y": -6,
+      "parents": [
+        "information/holographic_encoder",
+        "spacetime/causality_loop_engine"
+      ]
+    },
+    {
+      "entry": "fabrication/femto_fabricator",
+      "x": 10,
+      "y": 2,
+      "parents": [
+        "quantum/quantum_entangler",
+        "fabrication/lattice_growth_vat"
+      ]
+    },
+    {
+      "entry": "fabrication/femtoscale_assembly_line",
+      "x": 21,
+      "y": -4,
+      "parents": [
+        "fabrication/femto_fabricator",
+        "quantum/topological_transmuter"
+      ]
+    },
+    {
+      "entry": "fabrication/fractionation_spire",
+      "x": 30,
+      "y": -8,
+      "parents": [
+        "fabrication/femtoscale_assembly_line",
+        "hyperdimensions/tesseract"
+      ]
+    },
+    {
+      "entry": "fabrication/lattice_growth_vat",
+      "x": 6,
+      "y": 6,
+      "parents": [
+        "basics/guide_09_press",
+        "basics/guide_10_zpe"
+      ]
+    },
+    {
+      "entry": "fabrication/more_singularities",
+      "x": 28,
+      "y": 0,
+      "parents": []
+    },
+    {
+      "entry": "fabrication/planck_cutter",
+      "x": 6,
+      "y": 8,
+      "parents": [
+        "basics/guide_09_press",
+        "basics/guide_10_zpe"
+      ]
+    },
+    {
+      "entry": "fabrication/processors",
+      "x": 6,
+      "y": -8,
+      "parents": []
+    },
+    {
+      "entry": "fabrication/quantum_lithographer",
+      "x": 6,
+      "y": 10,
+      "parents": [
+        "basics/guide_09_press",
+        "basics/guide_10_zpe"
+      ]
+    },
+    {
+      "entry": "fabrication/stellar_plasma_crucible",
+      "x": 19,
+      "y": 4,
+      "parents": [
+        "exotic/quark_gluon_collider",
+        "exotic/chronon_field_inverter"
+      ]
+    },
+    {
+      "entry": "fabrication/wafers",
+      "x": 6,
+      "y": -6,
+      "parents": []
+    },
+    {
+      "entry": "hyperdimensions/tesseract",
+      "x": 28,
+      "y": -10,
+      "parents": [
+        "quantum/topological_transmuter",
+        "singularities/white_hole_emitter"
+      ]
+    },
+    {
+      "entry": "hyperdimensions/tesseract_assembler",
+      "x": 28,
+      "y": -8,
+      "parents": [
+        "quantum/topological_transmuter",
+        "singularities/white_hole_emitter"
+      ]
+    },
+    {
+      "entry": "information/demon",
+      "x": 6,
+      "y": -4,
+      "parents": [
+        "quantum/bose_einstein_condenser"
+      ]
+    },
+    {
+      "entry": "information/holographic_encoder",
+      "x": 26,
+      "y": -4,
+      "parents": [
+        "information/demon",
+        "information/maxwell_demon_sorter"
+      ]
+    },
+    {
+      "entry": "information/maxwell_demon_sorter",
+      "x": 6,
+      "y": -2,
+      "parents": [
+        "quantum/bose_einstein_condenser"
+      ]
+    },
+    {
+      "entry": "information/research_nexus",
+      "x": 17,
+      "y": 4,
+      "parents": [
+        "fabrication/femtoscale_assembly_line"
+      ]
+    },
+    {
+      "entry": "mathematics/analysis",
+      "x": 10,
+      "y": 10,
+      "parents": [
+        "mathematics/platonic_realm",
+        "mathematics/fractal_space"
+      ]
+    },
+    {
+      "entry": "mathematics/analytic_continuator",
+      "x": 10,
+      "y": 12,
+      "parents": [
+        "mathematics/platonic_realm",
+        "mathematics/fractal_space"
+      ]
+    },
+    {
+      "entry": "mathematics/fractal_space",
+      "x": 6,
+      "y": 14,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/logic_sets",
+      "x": 6,
+      "y": 0,
+      "parents": [
+        "quantum/quantum_entangler",
+        "mathematics/math_overview"
+      ]
+    },
+    {
+      "entry": "mathematics/math_overview",
+      "x": 4,
+      "y": 4,
+      "parents": [
+        "basics/guide_08_casimir"
+      ]
+    },
+    {
+      "entry": "mathematics/numbers",
+      "x": 4,
+      "y": 6,
+      "parents": [
+        "basics/guide_08_casimir"
+      ]
+    },
+    {
+      "entry": "mathematics/ordinal_recursor",
+      "x": 43,
+      "y": 4,
+      "parents": [
+        "endgame/beyond",
+        "endgame/cantor_diagonalizer"
+      ]
+    },
+    {
+      "entry": "mathematics/peano_engine",
+      "x": 4,
+      "y": 8,
+      "parents": [
+        "basics/guide_08_casimir"
+      ]
+    },
+    {
+      "entry": "mathematics/platonic_realm",
+      "x": 6,
+      "y": 12,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/proof_assistant",
+      "x": 8,
+      "y": 4,
+      "parents": [
+        "quantum/quantum_entangler",
+        "mathematics/math_overview"
+      ]
+    },
+    {
+      "entry": "mathematics/research_nexus_machine",
+      "x": 17,
+      "y": 2,
+      "parents": [
+        "fabrication/femtoscale_assembly_line"
+      ]
+    },
+    {
+      "entry": "mathematics/transfinite",
+      "x": 45,
+      "y": -10,
+      "parents": [
+        "endgame/beyond",
+        "endgame/cantor_diagonalizer"
+      ]
+    },
+    {
+      "entry": "minds/matrioshka_brain",
+      "x": 37,
+      "y": -10,
+      "parents": [
+        "hyperdimensions/tesseract",
+        "hyperdimensions/tesseract_assembler"
+      ]
+    },
+    {
+      "entry": "minds/neural_synthesizer",
+      "x": 4,
+      "y": 0,
+      "parents": [
+        "quantum/quantum_entangler",
+        "quantum/bose_einstein_condenser"
+      ]
+    },
+    {
+      "entry": "minds/psionic_resonator",
+      "x": 19,
+      "y": -2,
+      "parents": [
+        "minds/neural_synthesizer",
+        "quantum/topological_transmuter"
+      ]
+    },
+    {
+      "entry": "nanotech/higgs_field_modulator",
+      "x": 21,
+      "y": 4,
+      "parents": [
+        "exotic/quark_gluon_collider",
+        "nanotech/nanite_assembler"
+      ]
+    },
+    {
+      "entry": "nanotech/nanite_assembler",
+      "x": 15,
+      "y": -6,
+      "parents": [
+        "quantum/metamaterial_weaver",
+        "information/demon"
+      ]
+    },
+    {
+      "entry": "quantum/bose_einstein_condenser",
+      "x": 8,
+      "y": 6,
+      "parents": [
+        "basics/guide_09_press",
+        "basics/guide_10_zpe"
+      ]
+    },
+    {
+      "entry": "quantum/casimir_press",
+      "x": 2,
+      "y": 4,
+      "parents": [
+        "basics/guide_09_press"
+      ]
+    },
+    {
+      "entry": "quantum/foam_boundaries",
+      "x": 32,
+      "y": 2,
+      "parents": [
+        "strings/graviton_condenser"
+      ]
+    },
+    {
+      "entry": "quantum/metamaterial_weaver",
+      "x": 10,
+      "y": 0,
+      "parents": [
+        "quantum/quantum_entangler",
+        "quantum/bose_einstein_condenser"
+      ]
+    },
+    {
+      "entry": "quantum/quantum_entangler",
+      "x": 4,
+      "y": 2,
+      "parents": [
+        "basics/guide_08_casimir"
+      ]
+    },
+    {
+      "entry": "quantum/quantum_foam",
+      "x": 32,
+      "y": 0,
+      "parents": [
+        "strings/graviton_condenser"
+      ]
+    },
+    {
+      "entry": "quantum/topological_transmuter",
+      "x": 15,
+      "y": -4,
+      "parents": [
+        "quantum/metamaterial_weaver"
+      ]
+    },
+    {
+      "entry": "simulation/omega",
+      "x": 41,
+      "y": -4,
+      "parents": [
+        "information/holographic_encoder",
+        "spacetime/causality_loop_engine"
+      ]
+    },
+    {
+      "entry": "simulation/reality_compiler",
+      "x": 41,
+      "y": -2,
+      "parents": [
+        "information/holographic_encoder",
+        "spacetime/causality_loop_engine"
+      ]
+    },
+    {
+      "entry": "singularities/eye_of_the_horizon",
+      "x": 45,
+      "y": -6,
+      "parents": [
+        "strings/universe_forge",
+        "stellar/transcendent_plasma_forge"
+      ]
+    },
+    {
+      "entry": "singularities/kugelblitz_chamber",
+      "x": 21,
+      "y": 0,
+      "parents": [
+        "exotic/dark_matter_collector"
+      ]
+    },
+    {
+      "entry": "singularities/lensing",
+      "x": 21,
+      "y": -2,
+      "parents": [
+        "exotic/dark_matter_collector"
+      ]
+    },
+    {
+      "entry": "singularities/penrose_ergosphere",
+      "x": 26,
+      "y": 0,
+      "parents": [
+        "singularities/lensing",
+        "singularities/kugelblitz_chamber"
+      ]
+    },
+    {
+      "entry": "singularities/white_hole_emitter",
+      "x": 26,
+      "y": -2,
+      "parents": [
+        "exotic/chronon_field_inverter",
+        "singularities/lensing"
+      ]
+    },
+    {
+      "entry": "spacetime/black_hole_interior",
+      "x": 28,
+      "y": -6,
+      "parents": [
+        "singularities/lensing",
+        "singularities/kugelblitz_chamber"
+      ]
+    },
+    {
+      "entry": "spacetime/causality_loop_engine",
+      "x": 32,
+      "y": -6,
+      "parents": [
+        "exotic/chronon_field_inverter",
+        "spacetime/temporal_mechanics"
+      ]
+    },
+    {
+      "entry": "spacetime/chrono_loom",
+      "x": 17,
+      "y": -4,
+      "parents": [
+        "information/demon",
+        "information/maxwell_demon_sorter"
+      ]
+    },
+    {
+      "entry": "spacetime/dark_energy_siphon",
+      "x": 37,
+      "y": 4,
+      "parents": [
+        "exotic/dark_matter_collector",
+        "spacetime/wormhole_projector"
+      ]
+    },
+    {
+      "entry": "spacetime/entropy_horizon",
+      "x": 39,
+      "y": 8,
+      "parents": [
+        "spacetime/finality_eras"
+      ]
+    },
+    {
+      "entry": "spacetime/finality_after",
+      "x": 41,
+      "y": 0,
+      "parents": [
+        "information/demon",
+        "information/maxwell_demon_sorter"
+      ]
+    },
+    {
+      "entry": "spacetime/finality_branch",
+      "x": 30,
+      "y": 0,
+      "parents": [
+        "strings/origin_branch",
+        "spacetime/dark_energy_siphon"
+      ]
+    },
+    {
+      "entry": "spacetime/finality_eras",
+      "x": 32,
+      "y": 6,
+      "parents": [
+        "spacetime/finality_branch"
+      ]
+    },
+    {
+      "entry": "spacetime/finality_heat_death",
+      "x": 39,
+      "y": 6,
+      "parents": [
+        "spacetime/finality_eras"
+      ]
+    },
+    {
+      "entry": "spacetime/finality_violent",
+      "x": 37,
+      "y": 6,
+      "parents": [
+        "fabrication/catalysts",
+        "nanotech/higgs_field_modulator"
+      ]
+    },
+    {
+      "entry": "spacetime/relativity",
+      "x": 15,
+      "y": 0,
+      "parents": [
+        "exotic/tachyon_resonator"
+      ]
+    },
+    {
+      "entry": "spacetime/temporal_mechanics",
+      "x": 17,
+      "y": -6,
+      "parents": [
+        "information/demon",
+        "information/maxwell_demon_sorter"
+      ]
+    },
+    {
+      "entry": "spacetime/tensor_engine",
+      "x": 15,
+      "y": 2,
+      "parents": [
+        "exotic/tachyon_resonator"
+      ]
+    },
+    {
+      "entry": "spacetime/vacuum_harvester",
+      "x": 32,
+      "y": 4,
+      "parents": [
+        "strings/graviton_condenser"
+      ]
+    },
+    {
+      "entry": "spacetime/wormhole_projector",
+      "x": 30,
+      "y": 4,
+      "parents": [
+        "singularities/white_hole_emitter",
+        "fabrication/catalysts"
+      ]
+    },
+    {
+      "entry": "stellar/dyson_array",
+      "x": 30,
+      "y": 2,
+      "parents": [
+        "singularities/white_hole_emitter",
+        "stellar/stellar_evolution"
+      ]
+    },
+    {
+      "entry": "stellar/nucleosynthesis_chamber",
+      "x": 26,
+      "y": 4,
+      "parents": [
+        "exotic/dark_matter_collector",
+        "fabrication/stellar_plasma_crucible"
+      ]
+    },
+    {
+      "entry": "stellar/stellar_evolution",
+      "x": 26,
+      "y": 2,
+      "parents": [
+        "exotic/dark_matter_collector",
+        "fabrication/stellar_plasma_crucible"
+      ]
+    },
+    {
+      "entry": "stellar/transcendent_plasma_forge",
+      "x": 41,
+      "y": 8,
+      "parents": [
+        "exotic/synchrotron",
+        "cosmic/neutron_star_forge"
+      ]
+    },
+    {
+      "entry": "strings/compactification",
+      "x": 37,
+      "y": -18,
+      "parents": [
+        "strings/string_resonance_loom",
+        "world/bulk"
+      ]
+    },
+    {
+      "entry": "strings/compactification_lathe",
+      "x": 37,
+      "y": -16,
+      "parents": [
+        "strings/string_resonance_loom",
+        "world/bulk"
+      ]
+    },
+    {
+      "entry": "strings/graviton_condenser",
+      "x": 32,
+      "y": -18,
+      "parents": [
+        "strings/string_resonance_loom"
+      ]
+    },
+    {
+      "entry": "strings/inflation_chamber",
+      "x": 30,
+      "y": -2,
+      "parents": [
+        "strings/origin_branch",
+        "spacetime/dark_energy_siphon"
+      ]
+    },
+    {
+      "entry": "strings/multiverse_rift",
+      "x": 37,
+      "y": -20,
+      "parents": [
+        "strings/graviton_condenser"
+      ]
+    },
+    {
+      "entry": "strings/origin_branch",
+      "x": 28,
+      "y": -4,
+      "parents": [
+        "singularities/lensing",
+        "singularities/kugelblitz_chamber"
+      ]
+    },
+    {
+      "entry": "strings/origin_ccc",
+      "x": 45,
+      "y": -8,
+      "parents": [
+        "strings/universe_forge",
+        "spacetime/finality_heat_death"
+      ]
+    },
+    {
+      "entry": "strings/origin_inflation",
+      "x": 30,
+      "y": -4,
+      "parents": [
+        "strings/origin_branch",
+        "spacetime/dark_energy_siphon"
+      ]
+    },
+    {
+      "entry": "strings/origin_matter",
+      "x": 37,
+      "y": 8,
+      "parents": [
+        "cosmic/neutrino_condenser"
+      ]
+    },
+    {
+      "entry": "strings/origin_nothing",
+      "x": 32,
+      "y": 8,
+      "parents": [
+        "exotic/standard_model",
+        "exotic/particle_spectrometer"
+      ]
+    },
+    {
+      "entry": "strings/string_resonance_loom",
+      "x": 30,
+      "y": -16,
+      "parents": [
+        "hyperdimensions/tesseract",
+        "hyperdimensions/tesseract_assembler"
+      ]
+    },
+    {
+      "entry": "strings/universe_forge",
+      "x": 39,
+      "y": -20,
+      "parents": [
+        "strings/multiverse_rift"
+      ]
+    },
+    {
+      "entry": "world/arriving_safely",
+      "x": 8,
+      "y": 0,
+      "parents": []
+    },
+    {
+      "entry": "world/attunement_hierarchy",
+      "x": 32,
+      "y": -2,
+      "parents": []
+    },
+    {
+      "entry": "world/bulk",
+      "x": 30,
+      "y": -14,
+      "parents": [
+        "hyperdimensions/tesseract",
+        "hyperdimensions/tesseract_assembler"
+      ]
+    },
+    {
+      "entry": "world/bulk_life",
+      "x": 30,
+      "y": -12,
+      "parents": [
+        "hyperdimensions/tesseract",
+        "hyperdimensions/tesseract_assembler"
+      ]
+    },
+    {
+      "entry": "world/containment_caches",
+      "x": 4,
+      "y": -2,
+      "parents": []
+    },
+    {
+      "entry": "world/decor",
+      "x": 4,
+      "y": 12,
+      "parents": [
+        "basics/guide_13_onward"
+      ]
+    },
+    {
+      "entry": "world/dilithium",
+      "x": 4,
+      "y": -6,
+      "parents": [
+        "basics/guide_05_dilithium"
+      ]
+    },
+    {
+      "entry": "world/dimension_laws",
+      "x": 28,
+      "y": 2,
+      "parents": []
+    },
+    {
+      "entry": "world/falling_through",
+      "x": 28,
+      "y": 4,
+      "parents": []
+    },
+    {
+      "entry": "world/impossible_interiors",
+      "x": 28,
+      "y": 6,
+      "parents": []
+    },
+    {
+      "entry": "world/ores",
+      "x": 4,
+      "y": -14,
+      "parents": [
+        "basics/guide_01_quartz"
+      ]
+    },
+    {
+      "entry": "world/ruins",
+      "x": 4,
+      "y": -8,
+      "parents": [
+        "basics/guide_04_neutronium"
+      ]
+    },
+    {
+      "entry": "world/transcendent_cache",
+      "x": 63,
+      "y": -2,
+      "parents": []
+    }
+  ],
+  "regions": [
+    {
+      "tier": 0,
+      "label": "I \u00b7 Foundations",
+      "x0": -5.5,
+      "x1": 11.5,
+      "y0": -16.5,
+      "y1": 15.5
+    },
+    {
+      "tier": 1,
+      "label": "II \u00b7 Quanta & Matter",
+      "x0": 13.5,
+      "x1": 22.5,
+      "y0": -8.5,
+      "y1": 11.5
+    },
+    {
+      "tier": 2,
+      "label": "III \u00b7 Stars & Spacetime",
+      "x0": 24.5,
+      "x1": 33.5,
+      "y0": -20.5,
+      "y1": 11.5
+    },
+    {
+      "tier": 3,
+      "label": "IV \u00b7 The Cosmos",
+      "x0": 35.5,
+      "x1": 46.5,
+      "y0": -22.5,
+      "y1": 13.5
+    },
+    {
+      "tier": 4,
+      "label": "V \u00b7 Beyond Physics",
+      "x0": 48.5,
+      "x1": 59.5,
+      "y0": -10.5,
+      "y1": 9.5
+    },
+    {
+      "tier": 5,
+      "label": "VI \u00b7 Transcendence",
+      "x0": 61.5,
+      "x1": 72.5,
+      "y0": -16.5,
+      "y1": 11.5
+    }
+  ]
+}
