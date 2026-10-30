@@ -1,8 +1,7 @@
 # Customising Theoretical Sciences with KubeJS
 
-Theoretical Sciences is built to be reshaped by modpacks. Almost everything a pack would want to change — machine recipes,
-the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, singularities — is data, and all of
-it can be changed from KubeJS without touching the mod.
+Theoretical Sciences is built to be customisable by modpacks. Almost everything — machine recipes, the research tree, structure parts, 
+machine numbers, the Omnipotence Core's Forge, singularities — is data, and all ofit can be changed from KubeJS without touching the mod.
 
 Requires **KubeJS for NeoForge 1.21.1** (`2101.7` or newer). Everything below is optional: with no scripts, the mod
 behaves exactly as shipped.
@@ -11,16 +10,16 @@ behaves exactly as shipped.
 
 ## Contents
 
-1. [How data reaches the mod](#1-how-data-reaches-the-mod)
+1. [Mod folder](#1-mod-folder)
 2. [Machine recipes](#2-machine-recipes)
 3. [Extreme Assembly Table, Singularity Compactor and Convergence Altar recipes](#3-extreme-assembly-table-singularity-compactor-and-convergence-altar-recipes)
-4. [Machine numbers (`ts_machines`)](#4-machine-numbers-ts_machines)
+4. [Machine properties (`ts_machines`)](#4-machine-properties-ts_machines)
 5. [Coil and emitter tiers (`ts_component_tiers`)](#5-coil-and-emitter-tiers-ts_component_tiers)
 6. [Machine physics (`ts_physics`)](#6-machine-physics-ts_physics)
 7. [Omnipotence Core Forge recipes (`ts_forge`)](#7-omnipotence-core-forge-recipes-ts_forge)
 8. [Research (`ts_research`)](#8-research-ts_research)
 9. [Singularities (`ts_singularities`)](#9-singularities-ts_singularities)
-10. [Tags the mod reads](#10-tags-the-mod-reads)
+10. [Tags from this mod](#10-tags-from-this-mod)
 11. [Events](#11-events)
 12. [The `TheoreticalSciences` helper](#12-the-theoreticalsciences-helper)
 13. [Text, names and the Quantum Codex](#13-text-names-and-the-quantum-codex)
@@ -29,11 +28,12 @@ behaves exactly as shipped.
 
 ---
 
-## 1. How data reaches the mod
+## 1. Mod folder
 
-Sections 4–9 are JSON files in a data folder. KubeJS gives you two equivalent ways to supply them:
+Sections 4–9 are unique, they only take JSON files in a data folder. 
+KubeJS gives you two equivalent ways to call them:
 
-| Way | Where |
+| Method | File location |
 |---|---|
 | A file | `kubejs/data/<namespace>/<folder>/<name>.json` |
 | A server script | `ServerEvents.generateData('after_mods', event => event.json('<namespace>:<folder>/<name>', { ... }))` |
@@ -62,7 +62,7 @@ Every machine has a KubeJS recipe schema, so `event.recipes.theoreticalsciences.
 `data/theoreticalsciences/kubejs/recipe_schema/`. Each schema file's `constructors` shows exactly which arguments that
 machine takes.
 
-Arguments come in this order — **outputs first, then inputs** — and only for the kinds the machine has:
+Arguments come in this order — **outputs first, then inputs** — and only acceptable machine inputs has:
 
 1. item outputs
 2. fluid outputs
@@ -97,7 +97,7 @@ Optional parts, chained after the call:
 | Method | JSON field | Meaning |
 |---|---|---|
 | `.energy(n)` / `.fe(n)` | `energy` | FE per tick. For generators: FE per tick **produced**. |
-| `.duration(n)` / `.time(n)` | `duration` | Ticks. |
+| `.duration(n)` / `.time(n)` | `duration` | Duration of recipe, in game ticks. |
 | `.research('ns:id')` | `research` | Research the machine's owner must have. |
 | `.catalysts([...])` | `catalysts` | Must be present, never used up. |
 | `.chances([1, 0.5])` | `chances` | Chance for each item output (1 = always). |
@@ -116,14 +116,14 @@ Notes:
 
 ### Conditions around the machine (`environment`)
 
-A recipe can require the physical conditions where its machine stands. A dimension sets them, and a Field Projector
-changes one of them within 16 blocks. Every field is optional:
+A recipe can require the physical conditions where its machine stands to operate. A dimension sets them naturally, and a Field Projector
+modifies them within 16 blocks. Every field is optional:
 
 ```js
 event.recipes.theoreticalsciences.collider(['theoreticalsciences:superpartner_shard'], [], ['theoreticalsciences:quark_gluon_plasma_cell'], [])
   .energy(4000000).duration(400)
   .environment({
-    gravity_min: 100,                                // g (Earth = 1); gravity_max for micro-gravity
+    gravity_min: 100,                                // in gravitational unit g (Earth = 1); gravity_max for micro-gravity
     dimensions_min: 5,                               // spatial dimensions
     time_max: 0.1,                                   // how fast time runs (time_min for faster)
     vacuum_min: 2,                                   // 0 ordinary, 1 Casimir-depleted, 2 false, 3 true vacuum
@@ -134,7 +134,7 @@ event.recipes.theoreticalsciences.collider(['theoreticalsciences:superpartner_sh
 
 | Field | Meaning |
 |---|---|
-| `gravity_min`, `gravity_max` | Gravity in g. |
+| `gravity_min`, `gravity_max` | Gravity required, in g. |
 | `dimensions_min` | Number of spatial dimensions. |
 | `time_min`, `time_max` | Speed of time, relative to normal. |
 | `vacuum_min` | 0 ordinary, 1 Casimir-depleted, 2 false vacuum, 3 true vacuum. |
@@ -197,12 +197,11 @@ ServerEvents.recipes(event => {
 })
 ```
 
-Singularities made in the Compactor from section 9 are not recipe files. Switch those off there, not with
-`event.remove`.
+Singularities made in the Compactor from section 9 are not recipe files. See how to turn them off under Section 9.
 
 ---
 
-## 4. Machine numbers (`ts_machines`)
+## 4. Machine properties (`ts_machines`)
 
 One file per machine: `ts_machines/<machine id>.json`. The machine id is its block id without `theoreticalsciences:`
 (`quark_gluon_collider`, `quantum_entangler`, `stellar_plasma_crucible`, ...). Every field is optional; leave out what
@@ -220,7 +219,7 @@ ServerEvents.generateData('after_mods', event => {
 })
 ```
 
-| Field | Machines | Meaning (the mod's own value in brackets) |
+| Field | Available Machine types| Meaning (the mod's own value in brackets) |
 |---|---|---|
 | `energy_capacity` | all | FE the buffer holds. It still grows by itself if a recipe needs more per tick. |
 | `max_energy_input` | consumers | FE/t accepted from cables (no limit). |
@@ -252,16 +251,15 @@ ServerEvents.generateData('after_mods', event => {
 The Transcendental and the Living Proof can only be entered the intended way (the Omnilex Engine's collapse and Alpha
 Omega's challenge), whatever a pack does with machines. This is also checked by dimension id.
 
-Machines already in the world pick up new numbers within a tick of `/reload`. Lowering `energy_capacity` never
-deletes stored energy: the buffer shrinks as the energy is used. JEI/EMI keep showing each recipe's own energy and
-duration (before these multipliers). Lowering `max_parallel` or `max_overclock` also lowers machines already set
-higher.
+Machines already in the world pick up new properties right after `/reload`. Lowering `energy_capacity` never
+deletes stored energy: the buffer shrinks as the energy is used. JEI/EMI will each recipe's own energy and
+duration (before these multipliers). Lowering `max_parallel` or `max_overclock` also lowers machines previously set properties.
 
 ### Limits and extreme values
 
 Every number is clamped, so no combination of settings can crash the game:
 
-| What | Limit |
+| Conditions | Limit |
 |---|---|
 | `speed_multiplier` | 0.0001 – 10,000 |
 | `energy_multiplier` | 0 – 10,000 |
@@ -269,7 +267,7 @@ Every number is clamped, so no combination of settings can crash the game:
 | `max_overclock` | 0 – 16 (up to 65,536× speed for 4,294,967,296× power) |
 | Fastest possible recipe | One finished cycle (× parallel) per tick. Extra speed beyond that is wasted, not an error. |
 | Recipe `energy` | up to 2,147,483,647 FE/t. With overclock, parallel and multipliers the real draw may go higher; the buffer grows to match (up to about 4.6 × 10¹⁸ FE). A machine that can't be fed shows *No Power*. |
-| Energy in and out of a block | up to 2,147,483,647 FE per side per tick — the same as every FE mod |
+| Energy I/O | up to 2,147,483,647 FE per side per tick — the same as every FE mod |
 | Item input slots | up to 2,147,483,647 items each |
 | Item output | at most 99 per output entry in a recipe file (Minecraft's own limit); output slots stack to 64 |
 | Fluid tanks | up to 2,147,483,647 mB each, inputs and outputs |
@@ -304,11 +302,11 @@ ServerEvents.generateData('after_mods', event => {
 
 | Field | Needed? | Meaning |
 |---|---|---|
-| `family` | yes | `"coil"` or `"emitter"`. |
-| `tier` | yes | The tier the block counts as. A new tier (6, 7, ...) or an existing one (adds a block to it). |
-| `block` / `blocks` / `tag` | one of them | One block id, a list of ids, or a block tag (no `#`). |
-| `critical_temperature` | no (coils) | Kelvin: the superconductor's critical temperature at this tier. |
-| `critical_field` | no (coils) | Tesla: its upper critical field. |
+| `family` | yes | Type of coil, either `"coil"` or `"emitter"`. |
+| `tier` | yes | Which tier this belongs to. A new tier (6, 7, ...) or an existing one (adds a block to the list). |
+| `block` / `blocks` / `tag` | one type | One block id, a list of ids, or a block tag (no `#`). |
+| `critical_temperature` | no (yes for coils) | Kelvin: the superconductor's critical temperature at this tier. |
+| `critical_field` | no (yes for coils) | Tesla: its upper critical field. |
 | `speed_bonus` | no | Speed at this tier = 1 + this (`1.5` = 2.5×). Default: +25% per tier above 1. |
 
 What follows:
@@ -435,14 +433,14 @@ event.json('mypack:ts_forge/removals', { remove: ['echo_lattice', 'creative/meka
 event.json('theoreticalsciences:ts_forge/echo_lattice', { remove: true })
 ```
 
-Rules that always hold: a forged Core can never forge another Omnipotence Core or a Hand of the Demiurge, through
+A hardcoded limitation: a forged Core can never forge another Omnipotence Core or a Hand of the Demiurge, through
 your recipes either. The Core's screen, the JEI/EMI "Omnipotence Forge" pages and the Codex all show the merged list.
 
 ---
 
 ## 8. Research (`ts_research`)
 
-The research tree is data: `ts_research/<name>.json`, the research id being `<namespace>:<name>`. Add your own
+The research tree is found under: `ts_research/<name>.json`, the research id being `<namespace>:<name>`. Add your own
 entries, or replace one of the mod's by using its id (`theoreticalsciences:ts_research/quantum_entanglement`).
 
 ```js
@@ -463,16 +461,16 @@ ServerEvents.generateData('after_mods', event => {
 | Field | Default | Meaning |
 |---|---|---|
 | `title` | (required) | Name shown on the research screen. |
-| `description` | `""` | Text under it. |
+| `description` | `""` | Descriptive flavour text. |
 | `icon` | `minecraft:book` | Item shown on its node. |
-| `category` | `general` | Grouping. |
-| `requires` | `[]` | Research ids that must come first. |
-| `insight` | 0 | Insight it costs (0 – 1,000,000). |
+| `category` | `general` | Which Chapter/field it falls under. |
+| `requires` | `[]` | ID of pre-requisite Research . |
+| `insight` | 0 | Insight costs (0 – 1,000,000). |
 | `cost` | `[]` | Items consumed: `{item: ..., count: n}` or `{tag: ..., count: n}`. |
 | `time` | 0 | Seconds of study after paying (0 = instant). A Research Nexus shortens it. |
 | `x`, `y` | 0 | Position on the research map. |
-| `hidden` | false | Not shown until every prerequisite is done. |
-| `grant_only` | false | Can't be researched, only granted (by a script or command): secret milestones. |
+| `hidden` | false | Hidden until every prerequisite is done. |
+| `grant_only` | false | Cant be researched, only granted by a script or command |
 | `puzzle` | none | A derivation puzzle (see any of the mod's research files for the format). Leave it out for none. |
 
 Gate any recipe behind it with `.research('mypack:advanced_containment')` (section 2), or grant it from a script
@@ -489,11 +487,11 @@ needs one of each.
 ServerEvents.generateData('after_mods', event => {
   event.json('mypack:ts_singularities/osmium', {
     tag: 'c:ingots/osmium',      // or item: 'mekanism:ingot_osmium'
-    count: 16384,                // how many the Compactor needs
+    count: 16384,                // how many per Singularity
     name: 'Osmium Singularity',
-    core: '#30405a',             // optional colours; left out = taken from the item's texture
+    core: '#30405a',             // optional colours; if empty it will be auto taken from the item's texture
     glow: '#a0c8ff',
-    enabled: true                // false switches this file off without deleting it
+    enabled: true                // disables the generation of this singularity
   })
 })
 ```
@@ -507,7 +505,7 @@ ServerEvents.generateData('after_mods', event => {
 
 ---
 
-## 10. Tags the mod reads
+## 10. Tags from this mod
 
 Change them with `ServerEvents.tags`:
 
@@ -515,6 +513,8 @@ Change them with `ServerEvents.tags`:
 ServerEvents.tags('item', event => {
   event.add('theoreticalsciences:hidden_from_viewers', 'kubejs:debug_block')
   event.add('theoreticalsciences:beyond_omnipotence', 'kubejs:final_relic')
+  event.add('theoreticalsciences:forge_only', 'somemod:ultimate_reactor')     // only the Core's Forge makes it
+  event.add('theoreticalsciences:forge_exempt', 'somemod:creative_mind_tea')  // a normal item despite its name
 })
 ServerEvents.tags('block', event => {
   event.add('theoreticalsciences:excavator_ores', 'mypack:weird_ore')
@@ -529,6 +529,8 @@ ServerEvents.tags('entity_type', event => {
 |---|---|---|
 | `theoreticalsciences:hidden_from_viewers` | item | Left out of JEI's and EMI's item lists. |
 | `theoreticalsciences:beyond_omnipotence` | item, fluid | The Omnipotence Core cannot materialize it, and creative duplicators refuse it. |
+| `theoreticalsciences:forge_only` | item | Only the Omnipotence Core's Forge makes it: it gets its own generated Forge recipe, and the Core's "make anything" screen refuses it. For creative-only items the automatic detection misses, or late-endgame items you want behind the Forge. Its other recipes are not removed. |
+| `theoreticalsciences:forge_exempt` | item | Taken off the Forge-only list: for items the automatic detection picks up by mistake (an id containing "creative" that is a normal item). |
 | `theoreticalsciences:creative_duplicator_parts` | item | Parts that turn storage into a duplicator (creative storage cells, vending upgrades). They are stopped from copying anything beyond Omnipotence. |
 | `theoreticalsciences:excavator_ores` | block | Extra blocks the Dodecaract Excavator's Ore Extraction takes. |
 | `theoreticalsciences:excavator_ignored` | block | Blocks the Excavator never breaks. |
