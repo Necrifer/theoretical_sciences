@@ -1,0 +1,19 @@
+{
+  "name": "Nuclear Waste Glass",
+  "icon": "theoreticalsciences:nuclear_waste_glass",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nuclear_waste_glass",
+      "title": "Nuclear Waste Glass",
+      "text": "Fission products melted into borosilicate glass: it will hold them for the hundred thousand years they need."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Decontamination Scrubber$().$(br2)$(thing)Unlocked by$(): Radiochemistry."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radiochemistry"
+}

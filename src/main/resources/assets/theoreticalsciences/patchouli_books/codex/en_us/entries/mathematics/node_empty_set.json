@@ -1,0 +1,23 @@
+{
+  "name": "Empty Set",
+  "icon": "theoreticalsciences:empty_set",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:empty_set",
+      "title": "Empty Set",
+      "text": "The set with nothing in it. From it alone, by taking sets of sets, you can build every number and every structure in mathematics. It is surprisingly heavy for something containing nothing, and the eye slides off it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)A Void Wraith leaves behind a kind of absence. Feeding that essence to the Formal Proof Assistant, I asked it to collect every element present. It returned a set and confirmed that it was empty."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Formal Proof Assistant$().$(br2)$(thing)Unlocked by$(): Formal Logic.$(br2)$(thing)Used in$(): Power Set."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/formal_logic"
+}

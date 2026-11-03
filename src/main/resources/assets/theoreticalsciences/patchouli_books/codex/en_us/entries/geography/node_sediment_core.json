@@ -1,0 +1,19 @@
+{
+  "name": "Sediment Core",
+  "icon": "theoreticalsciences:sediment_core",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:sediment_core",
+      "title": "Sediment Core",
+      "text": "A tube of layered ground. Each band is a year, a flood or an ash fall, stacked in the order it happened."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Deep Drilling Rig$().$(br2)$(thing)Found in$(): Deep Borehole, Deep Borehole Surface, Survey Benchmark chests.$(br2)$(thing)Unlocked by$(): Deep Drilling.$(br2)$(thing)Used in$(): Seismograph."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

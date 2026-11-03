@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_universe_seed",
+  "description": "book.theoreticalsciences.codex.spacetime.node_universe_seed.desc",
+  "icon": {
+    "item": "theoreticalsciences:universe_seed"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 144,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:universe_seed"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_universe_seed.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_universe_seed.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_universe_seed.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__dark_energy_siphon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/dark_energy"
+  }
+}

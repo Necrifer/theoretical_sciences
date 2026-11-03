@@ -1,0 +1,24 @@
+{
+  "name": "Universe Forge",
+  "icon": "theoreticalsciences:universe_forge",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 73,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Seed a universe with a slowly rolling scalar field V = m\u2074\u03c6\u1d56. The slow-roll parameters at the moment the largest scales leave the horizon fix the spectrum of the universe that results: tilt n_s, amplitude A_s, gravitational waves r. Ours: n_s = 0.965, A_s = 2.1\u00d710\u207b\u2079."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Potential power p, e-folds after CMB exit, Total e-folds, Mass scale, Trap field.$(br2)$(thing)Disturbance$(): Inflaton coupling noise: the power p seen is p + 0.01\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Inflation too short: the horizon problem is not solved; Interlock: inflaton-trap coils not superconducting (too warm); Field above the critical field: the inflaton-trap coils quench.$(br2)$(thing)Rate$(): The forge runs at a fixed pace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Field at CMB exit: \u03c6* = \u221a(2pN + p\u00b2/4)$(br)Slow-roll \u03b5: \u03b5 = \u00bd(V\u2032/V)\u00b2$(br)Slow-roll \u03b7: \u03b7 = V\u2033/V$(br)Spectral tilt n_s: n_s = 1 \u2212 6\u03b5 + 2\u03b7$(br)Tensor ratio r: r = 16\u03b5$(br)Amplitude A_s: A_s = V/(24\u03c0\u00b2\u03b5)$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

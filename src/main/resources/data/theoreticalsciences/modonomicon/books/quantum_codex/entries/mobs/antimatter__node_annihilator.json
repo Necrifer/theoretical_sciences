@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.node_annihilator",
+  "description": "book.theoreticalsciences.codex.antimatter.node_annihilator.desc",
+  "icon": {
+    "item": "theoreticalsciences:annihilator_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 46,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:annihilator_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.node_annihilator.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/antimatter__antiverse_life",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cpt_symmetry"
+  }
+}

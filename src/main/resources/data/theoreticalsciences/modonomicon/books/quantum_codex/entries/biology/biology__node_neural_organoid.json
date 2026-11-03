@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_neural_organoid",
+  "description": "book.theoreticalsciences.codex.biology.node_neural_organoid.desc",
+  "icon": {
+    "item": "theoreticalsciences:neural_organoid"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 29,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neural_organoid"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_neural_organoid.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_neural_organoid.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_neural_organoid.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__synthetic",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/synthetic_biology"
+  }
+}

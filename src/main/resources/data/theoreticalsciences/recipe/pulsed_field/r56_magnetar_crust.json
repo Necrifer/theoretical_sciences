@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:pulsed_field",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:pulsar_crust",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:core_iron",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetar_crust_fragment",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 800,
+  "research": "theoreticalsciences:magnetars",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "Bf",
+        "min": 80.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

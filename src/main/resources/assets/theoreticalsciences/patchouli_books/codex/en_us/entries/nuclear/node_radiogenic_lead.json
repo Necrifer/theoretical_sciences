@@ -1,0 +1,19 @@
+{
+  "name": "Radiogenic Lead",
+  "icon": "theoreticalsciences:radiogenic_lead",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:radiogenic_lead",
+      "title": "Radiogenic Lead",
+      "text": "Lead that was once uranium, radium and radon: the stable end of a decay chain, made one nucleus at a time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Decay Chamber$().$(br2)$(thing)Found in$(): Fallout Shelter, Fallout Shelter Stores chests.$(br2)$(thing)Unlocked by$(): Decay Chains.$(br2)$(thing)Used in$(): Lead Shielding Plate."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radiochemistry"
+}

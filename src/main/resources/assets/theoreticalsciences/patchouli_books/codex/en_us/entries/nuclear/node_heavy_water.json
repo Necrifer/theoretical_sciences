@@ -1,0 +1,19 @@
+{
+  "name": "Heavy Water",
+  "icon": "theoreticalsciences:heavy_water_cell",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:heavy_water_cell",
+      "title": "Heavy Water",
+      "text": "$(fluid)Heavy Water$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Isotope Separation.$(br2)$(thing)Used in$(): Deuterium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

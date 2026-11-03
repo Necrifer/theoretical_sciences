@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_evaporator_shield",
+  "description": "book.theoreticalsciences.codex.nuclear.node_evaporator_shield.desc",
+  "icon": {
+    "item": "theoreticalsciences:evaporator_shield"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 68,
+  "y": 7,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evaporator_shield"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_evaporator_shield.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_evaporator_shield.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__decay_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

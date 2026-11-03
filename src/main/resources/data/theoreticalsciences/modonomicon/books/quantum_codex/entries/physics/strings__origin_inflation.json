@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.origin_inflation",
+  "description": "book.theoreticalsciences.codex.strings.origin_inflation.desc",
+  "icon": {
+    "item": "theoreticalsciences:inflaton_condensate"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 119,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:inflation_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.strings.origin_inflation.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.origin_inflation.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.origin_inflation.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__origin_branch"
+    },
+    {
+      "entry": "theoreticalsciences:physics/spacetime__dark_energy_siphon"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cosmic_inflation"
+  }
+}

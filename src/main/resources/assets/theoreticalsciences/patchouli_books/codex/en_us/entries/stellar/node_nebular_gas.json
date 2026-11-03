@@ -1,0 +1,23 @@
+{
+  "name": "Nebular Gas",
+  "icon": "theoreticalsciences:nebular_gas_cell",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 506,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nebular_gas_cell",
+      "title": "Nebular Gas",
+      "text": "Cold, dusty gas from which stars are born. It is mostly hydrogen and helium, drifting in faint clouds that glow when lit by nearby stars. It is light and very cold. Given enough of it and enough time, gravity would gather it into a new sun. It is the raw material of every star."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Stars form from collapsing nebulae. Sweeping the halo with a metamaterial sheet in the Dark Matter Halo Collector, I gathered the cold gas between the stars."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Dark Matter Halo Collector$().$(br2)$(thing)Unlocked by$(): Stellar Evolution.$(br2)$(thing)Used in$(): Protostar Core, Stellar Core, Stellar Plasma, Stellar Singularity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_evolution"
+}

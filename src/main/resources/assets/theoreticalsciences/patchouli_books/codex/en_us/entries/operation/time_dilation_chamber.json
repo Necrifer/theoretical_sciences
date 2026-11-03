@@ -1,0 +1,24 @@
+{
+  "name": "Time Dilation Chamber",
+  "icon": "theoreticalsciences:time_dilation_chamber",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 70,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A core of mass M has a Schwarzschild radius r_s = 2GM/c\u00b2. Held at r from it, a sample's clock runs slower than the world's by 1/\u221a(1 \u2212 r_s/r). The work the chamber does in its own time is that many times more, measured outside."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Core mass, Sample distance.$(br2)$(thing)Disturbance$(): The core's mass flickers by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The samples have fallen through the horizon.$(br2)$(thing)Rate$(): More dilation, and a bigger chamber, do more."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Schwarzschild radius: r_s = 2GM/c\u00b2$(br)Time dilation: 1/\u221a(1 \u2212 r_s/r)"
+    }
+  ]
+}

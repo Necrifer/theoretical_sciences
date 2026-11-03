@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_star_field_plate",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_star_field_plate.desc",
+  "icon": {
+    "item": "theoreticalsciences:star_field_plate"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 55,
+  "y": 64,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:star_field_plate"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_star_field_plate.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_star_field_plate.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__reflecting_telescope",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/telescope_optics"
+  }
+}

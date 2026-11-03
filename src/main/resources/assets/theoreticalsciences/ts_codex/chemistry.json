@@ -6,14 +6,14 @@
   "nodes": [
     {
       "entry": "chemistry/essences",
-      "x": 56,
-      "y": 5,
+      "x": 78,
+      "y": 12,
       "parents": []
     },
     {
       "entry": "chemistry/node_mod_essence",
-      "x": 56,
-      "y": 3,
+      "x": 78,
+      "y": 10,
       "parents": [
         "chemistry/essences"
       ],
@@ -87,8 +87,8 @@
     },
     {
       "entry": "chemistry/node_carborane_superacid",
-      "x": 4,
-      "y": 12,
+      "x": 2,
+      "y": 14,
       "parents": [
         "chemistry/electrochem"
       ],
@@ -105,8 +105,26 @@
     },
     {
       "entry": "chemistry/node_ionic_liquid",
-      "x": 2,
-      "y": 14,
+      "x": 0,
+      "y": 10,
+      "parents": [
+        "chemistry/electrochem"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_liquid_sodium",
+      "x": 4,
+      "y": 10,
+      "parents": [
+        "chemistry/electrochem"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/node_lithium_ingot",
+      "x": 4,
+      "y": 12,
       "parents": [
         "chemistry/electrochem"
       ],
@@ -131,9 +149,144 @@
       ]
     },
     {
-      "entry": "chemistry/carbon",
-      "x": 12,
+      "entry": "optics/r46_overview",
+      "x": 0,
+      "y": 20,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "optics/r46_diffraction",
+      "x": 7,
+      "y": 0,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "optics/x_ray_diffractometer",
+      "x": 11,
+      "y": 7,
+      "parents": [
+        "chemistry/bonds",
+        "chemistry/chemical_reactor"
+      ]
+    },
+    {
+      "entry": "optics/node_corundum_crystal",
+      "x": 11,
       "y": 3,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_faraday_isolator",
+      "x": 11,
+      "y": 5,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_fluorite_boule",
+      "x": 9,
+      "y": 7,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_garnet_boule",
+      "x": 13,
+      "y": 7,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_laue_pattern",
+      "x": 11,
+      "y": 9,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_mhd_electrode",
+      "x": 7,
+      "y": 7,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_moissanite",
+      "x": 9,
+      "y": 5,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_moissanite_crystal",
+      "x": 15,
+      "y": 7,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_moissanite_drill",
+      "x": 13,
+      "y": 5,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_press_ram",
+      "x": 11,
+      "y": 11,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_sapphire_boule",
+      "x": 9,
+      "y": 9,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_silicon_boule",
+      "x": 13,
+      "y": 9,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "chemistry/carbon",
+      "x": 23,
+      "y": 2,
       "parents": [
         "chemistry/bonds",
         "chemistry/chemical_reactor"
@@ -141,8 +294,8 @@
     },
     {
       "entry": "chemistry/node_buckyball_cage",
-      "x": 14,
-      "y": 3,
+      "x": 25,
+      "y": 2,
       "parents": [
         "chemistry/carbon"
       ],
@@ -150,8 +303,8 @@
     },
     {
       "entry": "chemistry/node_carbon_nanotube_bundle",
-      "x": 12,
-      "y": 5,
+      "x": 23,
+      "y": 4,
       "parents": [
         "chemistry/carbon"
       ],
@@ -159,8 +312,8 @@
     },
     {
       "entry": "chemistry/node_metal_organic_framework",
-      "x": 10,
-      "y": 1,
+      "x": 21,
+      "y": 0,
       "parents": [
         "chemistry/carbon"
       ],
@@ -168,8 +321,8 @@
     },
     {
       "entry": "chemistry/node_noble_gas_clathrate",
-      "x": 14,
-      "y": 1,
+      "x": 25,
+      "y": 0,
       "parents": [
         "chemistry/carbon"
       ],
@@ -177,8 +330,8 @@
     },
     {
       "entry": "chemistry/node_research_superconductivity",
-      "x": 12,
-      "y": 1,
+      "x": 23,
+      "y": 0,
       "parents": [
         "chemistry/carbon"
       ],
@@ -186,8 +339,8 @@
     },
     {
       "entry": "chemistry/node_research_supramolecular_chemistry",
-      "x": 10,
-      "y": 3,
+      "x": 21,
+      "y": 2,
       "parents": [
         "chemistry/carbon"
       ],
@@ -195,16 +348,178 @@
     },
     {
       "entry": "chemistry/node_self_healing_polymer",
-      "x": 10,
-      "y": 5,
+      "x": 21,
+      "y": 4,
       "parents": [
         "chemistry/carbon"
       ],
       "node": true
     },
     {
+      "entry": "optics/r46_growth",
+      "x": 21,
+      "y": 7,
+      "parents": [
+        "optics/r46_overview",
+        "optics/r46_diffraction"
+      ]
+    },
+    {
+      "entry": "optics/crystal_growth_furnace",
+      "x": 23,
+      "y": 12,
+      "parents": [
+        "optics/r46_overview",
+        "optics/r46_diffraction"
+      ]
+    },
+    {
+      "entry": "optics/node_growth_furnace_casing",
+      "x": 23,
+      "y": 10,
+      "parents": [
+        "optics/crystal_growth_furnace"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/r46_workshop",
+      "x": 21,
+      "y": 17,
+      "parents": [
+        "optics/r46_overview",
+        "optics/r46_diffraction"
+      ]
+    },
+    {
+      "entry": "optics/optical_workshop",
+      "x": 32,
+      "y": 9,
+      "parents": [
+        "optics/r46_overview",
+        "optics/r46_diffraction"
+      ]
+    },
+    {
+      "entry": "optics/node_apochromatic_objective",
+      "x": 32,
+      "y": 7,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_cryogenic_receiver",
+      "x": 30,
+      "y": 9,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_echelle_grating",
+      "x": 34,
+      "y": 9,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_fluorite_lens",
+      "x": 32,
+      "y": 11,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_fused_silica_lens",
+      "x": 30,
+      "y": 7,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_laser_head",
+      "x": 34,
+      "y": 7,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_lens_grinder",
+      "x": 36,
+      "y": 9,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_microscope_column",
+      "x": 32,
+      "y": 13,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_moissanite_lens",
+      "x": 30,
+      "y": 11,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_photonic_lens",
+      "x": 34,
+      "y": 11,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_sapphire_window",
+      "x": 32,
+      "y": 5,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_schmidt_corrector",
+      "x": 28,
+      "y": 9,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_step_laser",
+      "x": 30,
+      "y": 5,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
       "entry": "chemistry/exotic",
-      "x": 22,
+      "x": 44,
       "y": 2,
       "parents": [
         "chemistry/carbon"
@@ -212,7 +527,7 @@
     },
     {
       "entry": "chemistry/node_muonic_catalyst",
-      "x": 22,
+      "x": 44,
       "y": 0,
       "parents": [
         "chemistry/exotic"
@@ -220,8 +535,17 @@
       "node": true
     },
     {
+      "entry": "optics/r47_lasers",
+      "x": 28,
+      "y": 2,
+      "parents": [
+        "optics/r46_growth",
+        "optics/crystal_growth_furnace"
+      ]
+    },
+    {
       "entry": "chemistry/island",
-      "x": 32,
+      "x": 54,
       "y": 2,
       "parents": [
         "chemistry/exotic"
@@ -229,7 +553,7 @@
     },
     {
       "entry": "chemistry/node_flerovium_ingot",
-      "x": 32,
+      "x": 54,
       "y": 0,
       "parents": [
         "chemistry/island"
@@ -238,7 +562,7 @@
     },
     {
       "entry": "chemistry/node_unbihexium_ingot",
-      "x": 30,
+      "x": 52,
       "y": 2,
       "parents": [
         "chemistry/island"
@@ -247,7 +571,7 @@
     },
     {
       "entry": "chemistry/nuclide_forge",
-      "x": 30,
+      "x": 52,
       "y": 7,
       "parents": [
         "chemistry/exotic"
@@ -255,13 +579,13 @@
     },
     {
       "entry": "chemistry/essence_distillery",
-      "x": 22,
+      "x": 44,
       "y": 9,
       "parents": []
     },
     {
       "entry": "chemistry/node_inflaton_field",
-      "x": 22,
+      "x": 44,
       "y": 7,
       "parents": [
         "chemistry/essence_distillery"
@@ -270,19 +594,19 @@
     },
     {
       "entry": "anomaly/anomaly_intro",
-      "x": 30,
+      "x": 52,
       "y": 10,
       "parents": []
     },
     {
       "entry": "anomaly/anomaly_containment_ward",
-      "x": 30,
+      "x": 52,
       "y": 13,
       "parents": []
     },
     {
       "entry": "anomaly/anomaly_origin_defects",
-      "x": 30,
+      "x": 52,
       "y": 16,
       "parents": [
         "anomaly/anomaly_intro",
@@ -291,7 +615,7 @@
     },
     {
       "entry": "anomaly/anomaly_origin_autocatalysis",
-      "x": 39,
+      "x": 61,
       "y": 4,
       "parents": [
         "chemistry/island",
@@ -300,7 +624,7 @@
     },
     {
       "entry": "anomaly/node_autocatalytic_broth",
-      "x": 39,
+      "x": 61,
       "y": 2,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis"
@@ -309,7 +633,7 @@
     },
     {
       "entry": "anomaly/anomaly_origin_oncogenesis",
-      "x": 37,
+      "x": 59,
       "y": 9,
       "parents": [
         "anomaly/anomaly_intro",
@@ -318,7 +642,7 @@
     },
     {
       "entry": "anomaly/anomaly_origin_pathology",
-      "x": 37,
+      "x": 59,
       "y": 12,
       "parents": [
         "anomaly/anomaly_intro",
@@ -327,16 +651,16 @@
     },
     {
       "entry": "anomaly/anomaly_escape",
-      "x": 49,
-      "y": 14,
+      "x": 71,
+      "y": 5,
       "parents": [
         "anomaly/anomaly_origin_oncogenesis"
       ]
     },
     {
       "entry": "anomaly/node_immortal_cell_line",
-      "x": 49,
-      "y": 12,
+      "x": 71,
+      "y": 3,
       "parents": [
         "anomaly/anomaly_escape"
       ],
@@ -344,7 +668,7 @@
     },
     {
       "entry": "anomaly/anomaly_selfref",
-      "x": 47,
+      "x": 69,
       "y": 0,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis",
@@ -353,8 +677,8 @@
     },
     {
       "entry": "anomaly/anomaly_clonal",
-      "x": 47,
-      "y": 3,
+      "x": 69,
+      "y": 10,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
@@ -362,8 +686,8 @@
     },
     {
       "entry": "anomaly/anomaly_systems",
-      "x": 47,
-      "y": 6,
+      "x": 69,
+      "y": 13,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
@@ -371,8 +695,8 @@
     },
     {
       "entry": "anomaly/anomaly_epidemics",
-      "x": 47,
-      "y": 9,
+      "x": 69,
+      "y": 16,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_systems"
@@ -380,8 +704,8 @@
     },
     {
       "entry": "anomaly/anomaly_leakage",
-      "x": 54,
-      "y": 16,
+      "x": 69,
+      "y": 19,
       "parents": [
         "anomaly/anomaly_origin_defects",
         "anomaly/anomaly_systems"
@@ -389,8 +713,8 @@
     },
     {
       "entry": "anomaly/anomaly_symbiosis",
-      "x": 54,
-      "y": 0,
+      "x": 76,
+      "y": 7,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_epidemics"
@@ -398,8 +722,8 @@
     },
     {
       "entry": "anomaly/anomaly_extent",
-      "x": 54,
-      "y": 13,
+      "x": 76,
+      "y": 20,
       "parents": [
         "anomaly/anomaly_epidemics",
         "anomaly/anomaly_leakage"
@@ -407,16 +731,16 @@
     },
     {
       "entry": "anomaly/anomaly_containment",
-      "x": 54,
-      "y": 10,
+      "x": 76,
+      "y": 17,
       "parents": [
         "anomaly/anomaly_extent"
       ]
     },
     {
       "entry": "anomaly/anomaly_therapy",
-      "x": 61,
-      "y": 1,
+      "x": 76,
+      "y": 4,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
@@ -424,8 +748,8 @@
     },
     {
       "entry": "anomaly/anomaly_resolution_engine",
-      "x": 63,
-      "y": 6,
+      "x": 85,
+      "y": 12,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
@@ -433,8 +757,8 @@
     },
     {
       "entry": "anomaly/node_car_t_culture",
-      "x": 63,
-      "y": 4,
+      "x": 85,
+      "y": 10,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
@@ -442,8 +766,8 @@
     },
     {
       "entry": "anomaly/node_renormalised_essence",
-      "x": 61,
-      "y": 6,
+      "x": 83,
+      "y": 12,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
@@ -451,8 +775,8 @@
     },
     {
       "entry": "anomaly/anomaly_resolution",
-      "x": 71,
-      "y": 5,
+      "x": 93,
+      "y": 10,
       "parents": [
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
@@ -464,49 +788,49 @@
       "tier": 0,
       "label": "I \u00b7 Foundations",
       "x0": -1.5,
-      "x1": 5.5,
+      "x1": 16.5,
       "y0": -2.5,
-      "y1": 18.5
+      "y1": 21.5
     },
     {
       "tier": 1,
       "label": "II \u00b7 Quanta & Matter",
-      "x0": 8.5,
-      "x1": 15.5,
-      "y0": -1.5,
-      "y1": 6.5
+      "x0": 19.5,
+      "x1": 37.5,
+      "y0": -2.5,
+      "y1": 18.5
     },
     {
       "tier": 2,
       "label": "III \u00b7 Stars & Spacetime",
-      "x0": 20.5,
-      "x1": 23.5,
+      "x0": 42.5,
+      "x1": 45.5,
       "y0": -2.5,
       "y1": 10.5
     },
     {
       "tier": 3,
       "label": "IV \u00b7 The Cosmos",
-      "x0": 28.5,
-      "x1": 40.5,
+      "x0": 50.5,
+      "x1": 62.5,
       "y0": -2.5,
       "y1": 17.5
     },
     {
       "tier": 4,
       "label": "V \u00b7 Beyond Physics",
-      "x0": 45.5,
-      "x1": 64.5,
+      "x0": 67.5,
+      "x1": 86.5,
       "y0": -2.5,
-      "y1": 17.5
+      "y1": 21.5
     },
     {
       "tier": 5,
       "label": "VI \u00b7 Transcendence",
-      "x0": 69.5,
-      "x1": 72.5,
-      "y0": 2.5,
-      "y1": 6.5
+      "x0": 91.5,
+      "x1": 94.5,
+      "y0": 7.5,
+      "y1": 11.5
     }
   ]
 }

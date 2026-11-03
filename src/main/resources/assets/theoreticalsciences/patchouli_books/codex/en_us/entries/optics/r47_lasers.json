@@ -1,0 +1,22 @@
+{
+  "name": "Lasers",
+  "icon": "theoreticalsciences:laser_head",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:laser_head,theoreticalsciences:laser_rod,theoreticalsciences:faraday_isolator",
+      "text": "An excited atom struck by a photon of just the right energy gives off a second, identical photon: $(thing)stimulated emission$(). Fill a crystal with excited atoms, put it between two mirrors, and the light builds on itself."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A garnet boule grown with a rare earth is the crystal: neodymium in garnet lases at 1064 nm, in the infrared. Cut it along its lattice into $(item)Laser Rods$(); with mirrors, silica lenses and a flash to pump it, it becomes a $(item)Laser Head$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Behind it sits a $(item)Faraday Isolator$(): garnet in a strong magnetic field turns polarised light the same way going and coming, so its own reflection cannot get back into the laser and upset it."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/laser_physics"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Step 9: The Casimir Vacuum Press",
+  "icon": "theoreticalsciences:casimir_press",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -91,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:casimir_press,theoreticalsciences:neutronium_plate",
+      "text": "Your first real machine. On the Extreme Assembly Table: 45 $(item)Neutronium Ingot$(), 9 $(item)Piston$(), 18 $(item)Cherenkov Quartz$(), 9 $(item)Spacetime Casing$(). Place it next to the Thermoelectric Generator."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "What it makes first:$(li)4 $(item)Neutronium Ingot$() + 8 $(item)Raw Pitchblende$() \u2192 1 $(item)Neutronium Plate$() (64 FE/t, 5 s)$(li)128 $(item)Cobbled Deepslate$() + 16 $(item)Obsidian$() \u2192 1 $(item)Degenerate Matter Chunk$() (2,048 FE/t, 30 s) - renewable Neutronium.$(li)8 $(item)Neutronium Plate$() + 4 $(item)Cherenkov Quartz$() + 4 $(item)Theodolite Lens$() \u2192 1 $(item)Casimir Plate$() (128 FE/t, 10 s)$(li)4 $(item)Cherenkov Quartz$() + 4 $(item)Glowstone Dust$() + 4 $(item)Magnetite$() \u2192 4 $(item)Quantum Dot$() (96 FE/t, 8 s)$(br2)Put the ingredients in its slots (or pipe them in); its screen shows progress and what is missing. Its own entry lists everything else it makes."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/casimir_effect"
+}

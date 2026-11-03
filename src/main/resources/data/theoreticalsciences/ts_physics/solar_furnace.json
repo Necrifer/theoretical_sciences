@@ -1,0 +1,86 @@
+{
+  "params": [
+    {
+      "id": "C",
+      "unit": "\u00d7",
+      "min": 1,
+      "max": 10000,
+      "step": 1,
+      "default": 1000
+    },
+    {
+      "id": "g",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "Tm": 1986
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "G",
+      "unit": "W/m\u00b2",
+      "expr": "1000*sun*(1 + 0.03*d)",
+      "formula": "G = 1000\u00b7sin(elevation)"
+    },
+    {
+      "id": "q",
+      "unit": "MW/m\u00b2",
+      "expr": "g*C*G/1e6",
+      "formula": "q = g\u00b7C\u00b7G"
+    },
+    {
+      "id": "Tt",
+      "unit": "K",
+      "expr": "(0.9*q*1e6/(0.85*5.67e-8) + T_amb^4)^0.25",
+      "formula": "T = (\u03b1q/\u03b5\u03c3 + T_amb\u2074)^(1/4)"
+    },
+    {
+      "id": "mT",
+      "unit": "K",
+      "expr": "Tt - Tm",
+      "formula": "T \u2212 T_m"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sun",
+      "kind": "stop",
+      "expr": "sun - 0.15",
+      "formula": "Sun up"
+    },
+    {
+      "id": "sky",
+      "kind": "stop",
+      "expr": "sky - 0.5",
+      "formula": "open sky"
+    },
+    {
+      "id": "clouds",
+      "kind": "stop",
+      "expr": "0.5 - rain",
+      "formula": "no rain"
+    },
+    {
+      "id": "crucible",
+      "kind": "damage",
+      "expr": "3200 - Tt",
+      "formula": "T < 3200 K"
+    }
+  ],
+  "rate": "clamp(1 + mT/400, 0.3, 2)",
+  "rate_formula": "rate = 1 + (T \u2212 T_m)/400 K",
+  "heat": "min(10, q)",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

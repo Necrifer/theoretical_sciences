@@ -1,0 +1,19 @@
+{
+  "name": "Columnar Basalt",
+  "icon": "theoreticalsciences:basalt_column",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 510,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:basalt_column",
+      "title": "Columnar Basalt",
+      "text": "$(item)Columnar Basalt$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Dropped by$(): Magma Crawler.$(br2)$(thing)Unlocked by$(): Metamorphic Petrology.$(br2)$(thing)Used in$(): Garnet, Lithostatic Casing, Metamorphic Schist."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/metamorphism"
+}

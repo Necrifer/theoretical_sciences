@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.femto_fabricator",
+  "description": "book.theoreticalsciences.codex.fabrication.femto_fabricator.desc",
+  "icon": {
+    "item": "theoreticalsciences:femto_fabricator"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 7,
+  "y": 32,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femto_fabricator"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.femto_fabricator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femto_fabricator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femto_fabricator.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femto_fabricator.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femto_fabricator"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.femto_fabricator.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femto_fabricator.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:machines/fabrication__lattice_growth_vat"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/femtoengineering"
+  }
+}

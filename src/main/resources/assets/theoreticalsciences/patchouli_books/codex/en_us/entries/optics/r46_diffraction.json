@@ -1,0 +1,22 @@
+{
+  "name": "X-ray Diffraction",
+  "icon": "theoreticalsciences:x_ray_diffractometer",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:x_ray_diffractometer,theoreticalsciences:laue_pattern,theoreticalsciences:goniometer",
+      "text": "X-rays are about as long as the gaps between atoms. Scattered by a crystal's planes, they reinforce only where the extra path between neighbouring planes is a whole number of wavelengths: $(thing)n\u03bb = 2d\u00b7sin \u03b8$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)X-ray Diffractometer$() has a copper tube: above 8.98 kV it gives copper's K\u03b1 line, \u03bb = 1.5406 \u00c5. Set the detector angle 2\u03b8 so that \u03b8 satisfies Bragg's law for the crystal's spacing - corundum 2.551 \u00c5, fluorite 3.155, garnet 2.584, moissanite 2.513, quartz 3.343, calcite 3.035 - and the reflection appears."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The sample comes back, with a $(item)Laue Pattern$(): the crystal's orientation, which every cut along its lattice needs. Every study gives $(thing)Insight$(). The anode melts above 2.2 kW: more current, but not too much."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

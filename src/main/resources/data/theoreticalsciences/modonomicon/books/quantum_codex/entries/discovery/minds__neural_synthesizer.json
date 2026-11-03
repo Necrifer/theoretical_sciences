@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.minds.neural_synthesizer",
+  "description": "book.theoreticalsciences.codex.minds.neural_synthesizer.desc",
+  "icon": {
+    "item": "theoreticalsciences:neural_synthesizer"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 4,
+  "y": -8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neural_synthesizer"
+      },
+      "text": "book.theoreticalsciences.codex.minds.neural_synthesizer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.neural_synthesizer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.neural_synthesizer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.neural_synthesizer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neural_synthesizer"
+      },
+      "text": "book.theoreticalsciences.codex.minds.neural_synthesizer.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/quantum__bose_einstein_condenser"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/artificial_intelligence"
+  }
+}

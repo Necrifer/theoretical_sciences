@@ -1,0 +1,69 @@
+{
+  "title": "Metamorphic Petrology",
+  "description": "Bury a rock and it changes without melting: its minerals regrow as the ones stable at the new pressure and temperature. Every boundary on that map has a slope set by how much the change gains in entropy and loses in volume. Unlocks the Tectonic Press.",
+  "icon": "theoreticalsciences:tectonic_press",
+  "x": 6,
+  "y": 16,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:plate_tectonics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:peridotite",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:basalt_column",
+      "count": 8
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "Two minerals share a boundary on the pressure-temperature map. Turning the first into the second changes its entropy from S _ 1 to S _ 2 and its molar volume from V _ 1 to V _ 2. Write s, how many pascals the boundary climbs for each kelvin.",
+    "name": "Clapeyron slope",
+    "lhs": "s",
+    "form": "( S _ 2 - S _ 1 ) / ( V _ 2 - V _ 1 )",
+    "expr": "( B - A ) / ( Y - X )",
+    "ask": "Find s in Pa/K for graphite into diamond: A = @{A}, B = @{B} J/(mol\u00b7K); X = 5.30e-6, Y = @{Y} m\u00b3/mol.",
+    "vars": {
+      "s": "boundary steepness (Pa/K)",
+      "S": "molar entropy",
+      "V": "molar volume",
+      "A": "entropy of graphite",
+      "B": "entropy of diamond",
+      "X": "volume of graphite (m\u00b3/mol)",
+      "Y": "volume of diamond (m\u00b3/mol)"
+    },
+    "given": {
+      "A": 5.74,
+      "B": 2.38,
+      "X": 5.3e-06,
+      "Y": 3.42e-06
+    },
+    "unit": "Pa/K",
+    "method": "Along the boundary both phases have the same Gibbs energy, so their changes match: V\u2081dP \u2212 S\u2081dT = V\u2082dP \u2212 S\u2082dT.",
+    "distractors": [
+      "T",
+      "+",
+      "ln"
+    ],
+    "vary": {
+      "A": [
+        3.44,
+        8.04,
+        0.01
+      ],
+      "B": [
+        1.42,
+        3.34,
+        0.01
+      ],
+      "Y": [
+        2.05e-06,
+        4.79e-06,
+        1e-08
+      ]
+    }
+  }
+}

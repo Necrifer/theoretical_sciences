@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_foam_bubble",
+  "description": "book.theoreticalsciences.codex.world.node_foam_bubble.desc",
+  "icon": {
+    "item": "theoreticalsciences:foam_bubble"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 0,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:foam_bubble"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_foam_bubble.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_foam_bubble.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

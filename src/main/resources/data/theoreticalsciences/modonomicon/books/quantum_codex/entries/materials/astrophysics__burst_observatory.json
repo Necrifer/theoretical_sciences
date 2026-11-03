@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.burst_observatory",
+  "description": "book.theoreticalsciences.codex.astrophysics.burst_observatory.desc",
+  "icon": {
+    "item": "theoreticalsciences:burst_observatory"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 44,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:burst_observatory"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:burst_observatory"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.burst_observatory.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__accretion_disk_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gamma_ray_bursts"
+  }
+}

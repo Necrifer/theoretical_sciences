@@ -1,0 +1,24 @@
+{
+  "name": "Omnilex Engine",
+  "icon": "theoreticalsciences:omnilex_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 53,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Laws as dynamical systems: the logistic map x \u2192 rx(1\u2212x) doubles its period at r = 3, 3.449, 3.544... converging (Feigenbaum, \u03b4 = 4.669) on chaos at r\u221e = 3.5699. A lattice of coupled laws synchronises only if the coupling beats the chaos: \u03b5 > 1 \u2212 e^(\u2212\u03bb)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Growth parameter r, Lattice coupling \u03b5.$(br2)$(thing)Disturbance$(): Law drift: r is r + 0.0002\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Laws not synchronised: the lattice tears into incoherent regions; r above 4: the map leaves the unit interval.$(br2)$(thing)Rate$(): Simulations run at a fixed pace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Bifurcation index: n \u2248 ln((r\u221e \u2212 3)/(r\u221e \u2212 r))/ln \u03b4 + 1$(br)Lyapunov exponent \u03bb: \u03bb \u2248 0.9(r \u2212 r\u221e)^0.45$(br)Synchronisation threshold: \u03b5_c = 1 \u2212 e^(\u2212\u03bb)"
+    }
+  ]
+}

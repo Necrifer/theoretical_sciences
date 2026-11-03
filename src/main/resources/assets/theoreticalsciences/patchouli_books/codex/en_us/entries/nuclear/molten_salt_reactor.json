@@ -1,0 +1,195 @@
+{
+  "name": "Molten Salt Reactor",
+  "icon": "theoreticalsciences:molten_salt_reactor",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 89,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:molten_salt_reactor",
+      "title": "Molten Salt Reactor",
+      "text": "Uranium dissolved in molten fluoride salt flows through a core of graphite and goes critical there. Tune it to exactly one neutron per neutron.$(br2)Generates power.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Burns $(item)Molten Salt Fuel$() for power and leaves $(item)Spent Fuel Salt$(). The fuel concentration and the control rods set k; the salt settles at the temperature where k is exactly 1 - keep it between 732 K (frozen) and 980 K (the vessel creeps). Its rejected heat goes into the coolant loop."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Molten Salt Reactor",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_A_________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_A_________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_A_________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "____B_B____",
+            "_____B_____",
+            "___________",
+            "___________",
+            "_A_________",
+            "___________"
+          ],
+          [
+            "___________",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "_DDDDDDDDD_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_EEEEEEEEE_",
+            "_E_______E_",
+            "_E_DDDDD_E_",
+            "_E_DDDDD_E_",
+            "_E_DDDDD_E_",
+            "_E_DDDDD_E_",
+            "_E_DDDDD_E_",
+            "_E_______E_",
+            "_EEEEEEEEE_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_EEEEEEEEE_",
+            "_E_______E_",
+            "_E_DDFDD_EG",
+            "_E_DFFFD_EG",
+            "_E_FF FF_EG",
+            "_E_DFFFD_EG",
+            "_E_DDFDD_EG",
+            "_E_______E_",
+            "_EEEEEEEEE_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_EEEEEEEEE_",
+            "_E_______E_",
+            "_E_DDFDD_EG",
+            "_E_DFFFD_EG",
+            "_E_FF FF_EG",
+            "_E_DFFFD_EG",
+            "_E_DDFDD_EG",
+            "_E_______E_",
+            "_EEEEEEEEE_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_EEEE0EEEE_",
+            "_E_______E_",
+            "_E_DDFDD_EG",
+            "_E_DFFFD_EG",
+            "_E_FF FF_EG",
+            "_E_DFFFD_EG",
+            "_E_DDFDD_EG",
+            "_E_______E_",
+            "_EEEEEEEEE_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_EEEEEEEEE_",
+            "_E_______E_",
+            "_E_DDDDD_EG",
+            "_E_DDDDD_EG",
+            "_E_DDDDD_EG",
+            "_E_DDDDD_EG",
+            "_E_DDDDD_EG",
+            "_E_______E_",
+            "_EEEEEEEEE_",
+            "___________"
+          ],
+          [
+            "DDDDDHDDDDD",
+            "DDDDDDDDDDD",
+            "DDDDDDDDDDD",
+            "DDDDDDDDDDD",
+            "DDDDDDDDDDD",
+            "HDDDDDDDDDH",
+            "DDDDDDDDDDD",
+            "DDDDDDDDDDD",
+            "DDDDDDDDDDD",
+            "DDDDDDDDDDD",
+            "DDDDDHDDDDD"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:molten_salt_reactor",
+          "A": "theoreticalsciences:exhaust_stack",
+          "B": "theoreticalsciences:control_rod_drive",
+          "D": "theoreticalsciences:reactor_vessel_casing",
+          "E": "theoreticalsciences:lead_shielding_block",
+          "F": "theoreticalsciences:graphite_moderator_block",
+          "G": "theoreticalsciences:salt_heat_exchanger",
+          "H": "#theoreticalsciences:multiblock/reactor_vessel_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (0 item and 1 fluid inputs, 0 and 1 outputs).$(br2)$(thing)Makes$(): Spent Fuel Salt."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:molten_salt_reactor",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

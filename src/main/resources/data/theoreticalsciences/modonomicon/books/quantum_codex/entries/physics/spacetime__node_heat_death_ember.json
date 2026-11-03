@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_heat_death_ember",
+  "description": "book.theoreticalsciences.codex.spacetime.node_heat_death_ember.desc",
+  "icon": {
+    "item": "theoreticalsciences:heat_death_ember"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 162,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:heat_death_ember"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_heat_death_ember.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_heat_death_ember.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__entropy_horizon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/heat_death"
+  }
+}

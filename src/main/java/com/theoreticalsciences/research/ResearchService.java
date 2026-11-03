@@ -100,6 +100,18 @@ public final class ResearchService {
         };
     }
 
+    /** Round 38 (1.2): takes one Posterior Tablet from the player, if they carry one. */
+    static boolean consumePosterior(ServerPlayer p) {
+        net.minecraft.world.item.Item tab = com.theoreticalsciences.registry.QHItems.get("posterior_tablet");
+        var inv = p.getInventory();
+        for (int i = 0; i < inv.getContainerSize(); i++)
+            if (inv.getItem(i).is(tab)) {
+                inv.getItem(i).shrink(1);
+                return true;
+            }
+        return false;
+    }
+
     /** The expensive fee for revealing the whole equation. */
     public static net.minecraft.world.item.ItemStack hintFee(ResearchDefinition d) {
         int ins = d.insight();
@@ -205,6 +217,9 @@ public final class ResearchService {
                             return;
                         }
                         p.getInventory().clearOrCountMatchingItems(st -> st.is(fee.getItem()), fee.getCount(), p.inventoryMenu.getCraftSlots());
+                    } else if (consumePosterior(p)) {
+                        // round 38 (1.2): a Posterior Tablet - what the evidence already says - pays for a hint instead of Insight
+                        p.displayClientMessage(Component.translatable("puzzle.theoreticalsciences.posterior_used").withStyle(ChatFormatting.AQUA), true);
                     } else {
                         int cost = hintInsight(def, k);
                         if (e.insight < cost) {

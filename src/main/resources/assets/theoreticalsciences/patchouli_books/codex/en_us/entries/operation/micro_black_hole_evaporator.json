@@ -1,0 +1,24 @@
+{
+  "name": "Micro Black Hole Evaporator",
+  "icon": "theoreticalsciences:micro_black_hole_evaporator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 45,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A black hole of mass M radiates as a black body at the Hawking temperature T = \u0127c\u00b3/(8\u03c0GMk) - 1.2\u00d710\u00b9\u2074 K for 10\u2079 kg - and its power grows as 1/M\u00b2, 356 TW at 10\u2079 kg. Fed exactly what it loses, it holds its mass; fed less, it shrinks, burns hotter, and runs away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Hole mass, Feed balance.$(br2)$(thing)Disturbance$(): The feed is uneven: by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The hole is shrinking faster than it is fed - it is running away; The hole is growing into its own feed; Its radiation is too hot for the shield.$(br2)$(thing)Rate$(): Power follows the Hawking power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Hawking temperature: T = \u0127c\u00b3/(8\u03c0GMk)$(br)Hawking power: P \u221d 1/M\u00b2"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Surviving the Interior",
+  "icon": "theoreticalsciences:core_drill",
+  "category": "theoreticalsciences:world",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:core_drill,theoreticalsciences:mantle_breach,theoreticalsciences:inner_core_boundary",
+      "text": "The $(thing)Planetary Interior$() needs no attunement item - its laws are only the planet's own, and they press harder the deeper you go. You reach it with the $(item)Core Drill$() (research $(thing)Plate Tectonics$()), cutting the Overworld's bedrock floor; you leave by any $(item)Mantle Breach$() - one opens beside you wherever you arrive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Lithostatic Pressure$(): below y 100, one level for every 25 blocks deeper; you move and mine slower.$(li)$(thing)Tremors$() in the Crustal Caverns: a few seconds of Seismic Vertigo.$(li)$(thing)Mantle plumes$() in the Mantle Convection Zone throw you upwards.$(li)$(thing)Geomagnetic storms$() in the Geodynamo Core leave you Magnetized: compasses spin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)The $(thing)Natural Reactor$() is radioactive - its background is far above the Overworld's, and Fission Fragment seams are hot. Carry a Geiger Counter.$(li)$(fluid)Basaltic Magma$(), the Interior's sea, does 10 damage a hit and Fire Resistance does not help. $(fluid)Deep Brine$() sets you alight like lava."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The floor is the $(item)Inner Core Boundary$(): solid iron under 330 GPa, which no tool yet made can break. The roof is bedrock, which the Core Drill cuts again from below."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plate_tectonics"
+}

@@ -1,0 +1,441 @@
+{
+ "big_bang_cosmology": {
+  "goal": "A homogeneous, isotropic universe is described by one scale factor a(t) that stretches every distance. Put such a space into general relativity: the square of the expansion rate H = (da/dt)/a is set by the density ρ of what fills it, by the curvature k of space, and by a vacuum energy Λ. Write the square of the expansion rate.",
+  "name": "First Friedmann equation",
+  "lhs": "H ^ 2",
+  "form": "8 * π * G / 3 * ρ - k * c ^ 2 / a ^ 2 + Λ * c ^ 2 / 3",
+  "expr": "100 * 3 * H ^ 2 / ( 8 * π * G )",
+  "ask": "A flat universe (k = 0) without Λ has exactly the critical density ρ_c = 3H²/(8πG). With H in units of 10⁻¹⁸ s⁻¹ and G in 10⁻¹¹ SI units, find ρ_c in units of 10⁻²⁷ kg/m³ (about five protons per cubic metre).",
+  "vars": {
+   "H": "Hubble expansion rate (10⁻¹⁸ s⁻¹)",
+   "G": "gravitational constant (10⁻¹¹ m³ kg⁻¹ s⁻²)",
+   "ρ": "mass density",
+   "k": "spatial curvature (+1, 0, −1)",
+   "c": "speed of light",
+   "a": "scale factor",
+   "Λ": "cosmological constant"
+  },
+  "given": {
+   "H": 2.2,
+   "G": 6.674
+  },
+  "unit": "10⁻²⁷ kg/m³",
+  "method": "Treat a comoving ball of dust: its kinetic energy per unit mass ½ȧ² minus the potential 4πGρa²/3 is constant, and that constant is the curvature. General relativity adds the vacuum term.",
+  "distractors": [
+   "p",
+   "ħ",
+   "4"
+  ]
+ },
+ "primordial_nucleosynthesis": {
+  "goal": "One second after the beginning, neutrons and protons stop converting into each other when the weak rate falls below the expansion rate, at temperature T. Their ratio is frozen at the Boltzmann factor of their mass difference Q, and then free neutrons decay with lifetime τ for a time t until deuterium can survive. Nearly every remaining neutron ends up in helium-4. Write the mass fraction Y of helium.",
+  "name": "Primordial helium abundance (neutron freeze-out)",
+  "lhs": "Y",
+  "form": "2 * exp ( - Q / ( kB * T ) - t / τ ) / ( 1 + exp ( - Q / ( kB * T ) - t / τ ) )",
+  "expr": "2 * exp ( - Q / E - t / τ ) / ( 1 + exp ( - Q / E - t / τ ) )",
+  "ask": "With Q = 1.293 MeV, freeze-out at k_BT = E, and the neutrons decaying for t seconds before nucleosynthesis, find Y.",
+  "vars": {
+   "Y": "helium-4 mass fraction",
+   "Q": "neutron-proton mass difference",
+   "kB": "Boltzmann constant",
+   "T": "freeze-out temperature",
+   "t": "time until deuterium survives",
+   "τ": "free neutron lifetime",
+   "E": "freeze-out energy k_BT (MeV)"
+  },
+  "given": {
+   "Q": 1.293,
+   "E": 0.75,
+   "t": 180,
+   "τ": 880
+  },
+  "unit": "",
+  "method": "Each helium-4 nucleus holds two neutrons and two protons, so all the neutrons n make a helium mass fraction 2n/(n + p). Divide by p.",
+  "distractors": [
+   "ħ",
+   "ln",
+   "4"
+  ]
+ },
+ "cosmic_inflation": {
+  "goal": "A scalar field φ with potential V(φ) dominates the universe and rolls so slowly that friction from the expansion balances the slope. Each step dφ then grows space by dN = H dt e-folds. Using H² = V/(3M_P²) and 3Hφ̇ = −dV/dφ, write the number of e-folds made while the field rolls from φ down to where it stops inflating, φ_e.",
+  "name": "e-fold count of slow-roll inflation",
+  "lhs": "N",
+  "form": "1 / M _ P ^ 2 * int ( φ _ e , φ , V / d ( V , φ ) , φ )",
+  "expr": "( φ ^ 2 - 2 ) / 4",
+  "ask": "For V = ½m²φ² the integrand is φ/2, so N = (φ² − φ_e²)/(4M_P²). Inflation ends when ε = 1, at φ_e = √2 M_P. With M_P = 1, find N for a start at φ.",
+  "vars": {
+   "N": "number of e-folds",
+   "M": "reduced Planck mass",
+   "P": "Planck",
+   "φ": "inflaton field",
+   "e": "end of inflation",
+   "V": "inflaton potential"
+  },
+  "given": {
+   "φ": 15
+  },
+  "unit": "e-folds",
+  "method": "Write dN = H dt = H dφ/φ̇ and replace φ̇ by the slow-roll equation; H² and V' combine into V/V'.",
+  "distractors": [
+   "H",
+   "exp",
+   "3"
+  ]
+ },
+ "reheating": {
+  "goal": "At the end of inflation the inflaton decays at a rate λ, and its energy turns into a thermal bath of g relativistic species whose energy density is π²gT⁴/30. The decay completes when the expansion rate has fallen to the decay rate, with H² = ρ/(3M_P²). Write the temperature the universe is reheated to.",
+  "name": "Reheating temperature",
+  "lhs": "T",
+  "form": "( 90 / ( π ^ 2 * g ) ) ^ ( 1 / 4 ) * sqrt ( λ * M _ P )",
+  "expr": "( 90 / ( π ^ 2 * g ) ) ^ ( 1 / 4 ) * sqrt ( λ * M )",
+  "ask": "With every Standard Model species in the bath (g = 106.75), a decay rate λ in GeV and M_P = M × 10¹⁸ GeV, find the reheating temperature in units of 10⁹ GeV.",
+  "vars": {
+   "T": "reheating temperature",
+   "g": "number of relativistic degrees of freedom",
+   "λ": "inflaton decay rate",
+   "M": "reduced Planck mass",
+   "P": "Planck"
+  },
+  "given": {
+   "g": 106.75,
+   "λ": 1,
+   "M": 2.435
+  },
+  "unit": "10⁹ GeV",
+  "method": "Set H = λ, square it, replace H² by ρ/(3M_P²) and ρ by the radiation density, and solve for T.",
+  "distractors": [
+   "kB",
+   "3",
+   "exp"
+  ]
+ },
+ "leptogenesis": {
+  "goal": "How rare are baryons? Count the photons: a black-body gas at temperature T has, per unit volume, an integral over energy of E² times the Bose-Einstein occupation 1/(e^{E/k_BT} − 1), times the density of states for two polarisations, 1/π² (units ħ = c = 1). Write the number density of photons.",
+  "name": "Photon number density of black-body radiation (the baryon-to-photon ratio)",
+  "lhs": "n _ γ",
+  "form": "1 / π ^ 2 * int ( 0 , ∞ , E ^ 2 / ( exp ( E / ( kB * T ) ) - 1 ) , E )",
+  "expr": "1000 * n / ( 20.29 * T ^ 3 )",
+  "ask": "The integral gives n_γ = 2ζ(3)(k_BT)³/π² ≈ 20.29·T³ photons per cm³ (T in kelvin). Today T = 2.725 K. With n × 10⁻⁷ baryons per cm³, find the baryon-to-photon ratio η = n_B/n_γ in units of 10⁻¹⁰.",
+  "vars": {
+   "n": "baryon number density (10⁻⁷ cm⁻³)",
+   "γ": "photons",
+   "E": "photon energy",
+   "kB": "Boltzmann constant",
+   "T": "temperature of the radiation"
+  },
+  "given": {
+   "n": 2.5,
+   "T": 2.725
+  },
+  "unit": "10⁻¹⁰",
+  "method": "Integrate the occupation number over momentum space: d³p/(2π)³ times two polarisations is E²dE/π². The integral of x²/(eˣ − 1) is 2ζ(3).",
+  "distractors": [
+   "+",
+   "ħ",
+   "ln"
+  ]
+ },
+ "vacuum_stability": {
+  "goal": "The quartic coupling λ of the Higgs field is not a constant: it runs with the energy scale μ. The top quark, with Yukawa coupling y, dominates the running and drives λ down logarithmically from its value λ₀ at the top mass m. Write λ at scale μ in this top-dominated approximation.",
+  "name": "Top-loop running of the scalar quartic coupling (renormalisation group)",
+  "lhs": "λ",
+  "form": "λ _ 0 - 3 * y ^ 4 / ( 8 * π ^ 2 ) * ln ( μ / m )",
+  "expr": "m * exp ( 8 * π ^ 2 * λ / ( 3 * y ^ 4 ) ) / 1000",
+  "ask": "The vacuum becomes unstable where λ(μ) = 0, at μ = m·exp(8π²λ₀/(3y⁴)). With λ₀ = λ, y and m (GeV) below, find that scale in TeV (with every other loop included it moves to about 10¹⁰ GeV - our vacuum is metastable).",
+  "vars": {
+   "λ": "Higgs quartic coupling (at the top mass)",
+   "y": "top Yukawa coupling",
+   "μ": "renormalisation scale",
+   "m": "top quark mass (GeV)"
+  },
+  "given": {
+   "λ": 0.126,
+   "y": 0.94,
+   "m": 173
+  },
+  "unit": "TeV",
+  "method": "The top loop gives dλ/d ln μ = −3y⁴/(8π²). Hold y fixed and integrate from ln m to ln μ.",
+  "distractors": [
+   "exp",
+   "G",
+   "+"
+  ]
+ },
+ "quantum_cosmology": {
+  "goal": "Quantise a closed universe with only one degree of freedom, its radius a, filled with vacuum energy Λ. The Hamiltonian constraint becomes a Schrödinger-like equation with zero energy for the wave function ψ(a) of the whole universe: a kinetic term from the curvature of ψ, minus a potential a² − (Λ/3)a⁴ that forms a barrier between a = 0 and the classical universe (units with the factor 3π/2G absorbed). Write it.",
+  "name": "Wheeler–DeWitt equation (closed minisuperspace; tunnelling from nothing)",
+  "lhs": "0",
+  "form": "ħ ^ 2 * d2 ( ψ , a ) - ( a ^ 2 - Λ / 3 * a ^ 4 ) * ψ",
+  "expr": "3 / ( 8 * G ^ 2 * ρ )",
+  "ask": "Tunnelling through the barrier from a = 0 (from nothing) has probability P ∝ exp(−3/(8G²ρ_V)). With G = 1 and the vacuum energy density ρ in Planck units, find the exponent 3/(8G²ρ).",
+  "vars": {
+   "ħ": "reduced Planck constant",
+   "ψ": "wave function of the universe",
+   "a": "scale factor (radius of the universe)",
+   "Λ": "cosmological constant",
+   "G": "gravitational constant (Planck units)",
+   "ρ": "vacuum energy density (Planck units)"
+  },
+  "given": {
+   "G": 1,
+   "ρ": 0.01
+  },
+  "unit": "",
+  "method": "Write the Einstein-Hilbert action for a closed FRW universe, keep only a, form the Hamiltonian and replace the momentum by −iħ d/da. The WKB integral under the barrier gives the exponent.",
+  "distractors": [
+   "t",
+   "φ",
+   "2"
+  ]
+ },
+ "conformal_cyclic_cosmology": {
+  "goal": "Light does not care about the size of space, only about its shape: it moves through conformal time, the integral of c dt divided by the scale factor a(t). In a universe that ends in pure vacuum energy, a(t) = a₀ e^{Ht} grows exponentially forever. Write how much conformal time is left from t₀ to the infinite future.",
+  "name": "conformal time to the future boundary of de Sitter space",
+  "lhs": "η",
+  "form": "int ( t _ 0 , ∞ , c / ( a _ 0 * exp ( H * t ) ) , t )",
+  "expr": "977.8 / ( a * H )",
+  "ask": "The integral is finite: c e^{−Ht₀}/(a₀H). Measured from now (t₀ = 0, a₀ = a), and with the Hubble rate H in km/s/Mpc (1/H = 977.8/H Gyr), find the conformal time to the end of time, in Gyr.",
+  "vars": {
+   "η": "conformal time left",
+   "t": "cosmic time",
+   "c": "speed of light",
+   "a": "scale factor",
+   "H": "Hubble rate (km/s/Mpc)"
+  },
+  "given": {
+   "a": 1,
+   "H": 67.7
+  },
+  "unit": "Gyr",
+  "method": "Change variable to u = e^{−Ht}; an exponential integrand gives an exponential back, and it vanishes at infinity.",
+  "distractors": [
+   "ρ",
+   "ln",
+   "2"
+  ]
+ },
+ "cosmic_eschatology": {
+  "goal": "Whether the expansion of a universe speeds up or slows down depends on what fills it. Take the acceleration of the scale factor, d²a/dt², divided by the scale factor itself: ordinary matter and radiation of density ρ and pressure p pull it back, a vacuum energy Λ pushes it on. Write that relative acceleration.",
+  "name": "Second Friedmann (acceleration) equation",
+  "lhs": "d2 ( a , t ) / a",
+  "form": "- 4 * π * G / 3 * ( ρ + 3 * p / c ^ 2 ) + Λ * c ^ 2 / 3",
+  "expr": "Λ - Ω / 2",
+  "ask": "In density parameters the deceleration parameter is q = Ω_m/2 − Ω_Λ (q < 0 means acceleration). With Ω_m = Ω and Ω_Λ = Λ below, find −q: how strongly our universe accelerates towards its end.",
+  "vars": {
+   "a": "scale factor",
+   "t": "cosmic time",
+   "G": "gravitational constant",
+   "ρ": "density",
+   "p": "pressure",
+   "c": "speed of light",
+   "Λ": "cosmological constant (Ω_Λ in step 2)",
+   "Ω": "matter density parameter"
+  },
+  "given": {
+   "Λ": 0.685,
+   "Ω": 0.315
+  },
+  "unit": "",
+  "method": "Differentiate the first Friedmann equation in time and use energy conservation dρ/dt = −3H(ρ + p/c²).",
+  "distractors": [
+   "k",
+   "H",
+   "2"
+  ]
+ },
+ "proton_decay": {
+  "goal": "In a theory that unifies the forces, a heavy boson of mass M_X can turn a quark into a lepton. A proton of mass m_p then decays by exchanging it; the rate is the square of the unified coupling α_G, times m_p⁵ by dimensional analysis, divided by M_X⁴, times a hadronic factor A. Write the proton lifetime (units ħ = c = 1).",
+  "name": "lifetime of the proton in grand unification (dimension-six decay)",
+  "lhs": "τ",
+  "form": "1 / ( A * α _ G ^ 2 * m _ p ^ 5 / M _ X ^ 4 )",
+  "expr": "208.56 * M ^ 4 / ( α ^ 2 * m ^ 5 )",
+  "ask": "With A = 1, M_X = M × 10¹⁶ GeV, α_G = α and m_p in GeV (1 GeV⁻¹ = 6.58×10⁻²⁵ s), find τ in units of 10³⁰ years.",
+  "vars": {
+   "τ": "proton lifetime",
+   "A": "hadronic matrix-element factor",
+   "α": "unified coupling",
+   "G": "grand unified",
+   "m": "proton mass (GeV)",
+   "p": "proton",
+   "M": "X boson mass (10¹⁶ GeV)",
+   "X": "X boson"
+  },
+  "given": {
+   "M": 1,
+   "α": 0.025,
+   "m": 0.938
+  },
+  "unit": "10³⁰ years",
+  "method": "Like muon decay through a W: the amplitude carries 1/M_X², the rate its square, and m_p⁵ makes the dimensions of a rate.",
+  "distractors": [
+   "ħ",
+   "exp",
+   "c"
+  ]
+ },
+ "black_hole_era": {
+  "goal": "A black hole radiates as a black body at a temperature inversely proportional to its mass, so it loses mass at a rate dM/dt = −ħc⁴/(15360πG²M²) and gets brighter as it shrinks. Separate the variables and write the total time it needs to radiate away a mass M completely.",
+  "name": "Hawking evaporation time",
+  "lhs": "t",
+  "form": "int ( 0 , M , 15360 * π * G ^ 2 * m ^ 2 / ( ħ * c ^ 4 ) , m )",
+  "expr": "5120 * π * G ^ 2 * M ^ 3 / ( ħ * c ^ 4 ) / 3.156",
+  "ask": "The integral is 5120πG²M³/(ħc⁴). For a primordial black hole of M × 10¹⁰ kg (G in 10⁻¹¹, ħ in 10⁻³⁴, c in 10⁸ SI units), find its lifetime in thousands of years.",
+  "vars": {
+   "t": "evaporation time",
+   "M": "initial mass (10¹⁰ kg)",
+   "m": "mass while evaporating",
+   "G": "gravitational constant",
+   "ħ": "reduced Planck constant",
+   "c": "speed of light"
+  },
+  "given": {
+   "M": 2,
+   "G": 6.674,
+   "ħ": 1.0546,
+   "c": 2.998
+  },
+  "unit": "thousand years",
+  "method": "dt = −dM/(dM/dt): put the mass-loss rate upside down and integrate from the full mass down to nothing.",
+  "distractors": [
+   "kB",
+   "T",
+   "3"
+  ]
+ },
+ "big_rip": {
+  "goal": "Dark energy with equation of state w below −1 grows denser as space expands, so the scale factor reaches infinity at a finite time. In a flat universe of matter fraction Ω_m expanding at H₀ today, the remaining time depends on how far w lies below −1. Write the time left until everything is torn apart.",
+  "name": "phantom-energy doomsday time (Big Rip)",
+  "lhs": "t _ R",
+  "form": "2 / ( 3 * abs ( 1 + w ) * H _ 0 * sqrt ( 1 - Ω _ m ) )",
+  "expr": "2 * 977.8 / ( 3 * ( - 1 - w ) * H * sqrt ( 1 - Ω ) )",
+  "ask": "With w, H₀ = H in km/s/Mpc (1/H₀ = 977.8/H Gyr) and Ω_m = Ω, find the time to the Rip in Gyr.",
+  "vars": {
+   "t": "time",
+   "R": "the Rip",
+   "w": "dark energy equation of state",
+   "H": "Hubble rate today (km/s/Mpc)",
+   "Ω": "matter density parameter",
+   "m": "matter"
+  },
+  "given": {
+   "w": -1.5,
+   "H": 70,
+   "Ω": 0.3
+  },
+  "unit": "Gyr",
+  "method": "Phantom energy dilutes as a^{−3(1+w)}, which grows. Once it dominates, H ∝ ρ^{1/2} blows up, and integrating da/(aH) gives a finite time.",
+  "distractors": [
+   "ρ",
+   "exp",
+   "4"
+  ]
+ },
+ "big_crunch": {
+  "goal": "Quantum geometry modifies the expansion of the universe near the Planck scale: the square of the Hubble rate is the classical 8πGρ/3 multiplied by a factor that vanishes when the density ρ reaches a critical density, and the curvature k of a closed universe adds its usual term. Write the corrected expansion rate.",
+  "name": "Effective Friedmann equation of loop quantum cosmology (the Big Bounce)",
+  "lhs": "H ^ 2",
+  "form": "8 * π * G / 3 * ρ * ( 1 - ρ / ρ _ c ) - k / a ^ 2",
+  "expr": "sqrt ( 2 * π * G * ρ / 3 )",
+  "ask": "At ρ = ρ_c the expansion stops and the collapse bounces. For k = 0 the expansion is fastest at ρ = ρ_c/2, where H² = 2πGρ_c/3. With G = 1 and ρ_c = ρ (Planck units), find the largest Hubble rate.",
+  "vars": {
+   "H": "Hubble rate",
+   "G": "gravitational constant",
+   "ρ": "density (critical density in step 2)",
+   "c": "critical (bounce)",
+   "k": "spatial curvature",
+   "a": "scale factor"
+  },
+  "given": {
+   "G": 1,
+   "ρ": 0.41
+  },
+  "unit": "Planck units",
+  "method": "The correction is quadratic in ρ: put x = ρ/ρ_c and find where x(1 − x) is largest.",
+  "distractors": [
+   "Λ",
+   "2",
+   "exp"
+  ]
+ },
+ "vacuum_decay": {
+  "goal": "A spherical bubble of a lower-energy vacuum of radius R nucleates inside our vacuum. Its wall costs energy in proportion to its area, with tension σ; its interior releases energy in proportion to its volume, the energy-density difference ε. Write the energy of the bubble.",
+  "name": "Thin-wall energy of a true-vacuum bubble",
+  "lhs": "E",
+  "form": "4 * π * R ^ 2 * σ - 4 / 3 * π * R ^ 3 * ε",
+  "expr": "16 * π * σ ^ 3 / ( 3 * ε ^ 2 )",
+  "ask": "Small bubbles collapse; above the critical radius R_c = 2σ/ε (where dE/dR = 0) they grow at the speed of light. Find the barrier height E(R_c) = 16πσ³/(3ε²) in natural units.",
+  "vars": {
+   "E": "bubble energy",
+   "R": "bubble radius",
+   "σ": "wall tension",
+   "ε": "vacuum energy difference"
+  },
+  "given": {
+   "σ": 2,
+   "ε": 1.5
+  },
+  "unit": "",
+  "method": "Area 4πR², volume 4πR³/3. Set the derivative to zero to find the critical bubble.",
+  "distractors": [
+   "G",
+   "c",
+   "2"
+  ]
+ },
+ "heat_death": {
+  "goal": "A universe that expands forever on vacuum energy approaches empty space with a cosmic horizon at distance c/H. That horizon has an entropy like a black hole's: Boltzmann's constant times its area A in Planck units, divided by four. Write the entropy of the horizon, with the area of a sphere of radius c/H written out.",
+  "name": "de Sitter horizon entropy (the maximum entropy of a universe)",
+  "lhs": "S",
+  "form": "kB * c ^ 3 / ( 4 * G * ħ ) * 4 * π * ( c / H ) ^ 2",
+  "expr": "π * c ^ 5 / ( G * ħ * H ^ 2 ) / 10",
+  "ask": "That is S/k_B = πc⁵/(GħH²): the most entropy the universe can ever hold. With c in 10⁸, G in 10⁻¹¹, ħ in 10⁻³⁴ SI units and H in 10⁻¹⁸ s⁻¹, find S/k_B in units of 10¹²² (its horizon glows at ħH/(2πk_B) ≈ 3×10⁻³⁰ K).",
+  "vars": {
+   "S": "horizon entropy",
+   "kB": "Boltzmann constant",
+   "c": "speed of light",
+   "G": "gravitational constant",
+   "ħ": "reduced Planck constant",
+   "H": "final Hubble rate"
+  },
+  "given": {
+   "c": 2.998,
+   "G": 6.674,
+   "ħ": 1.0546,
+   "H": 2.2
+  },
+  "unit": "10¹²²",
+  "method": "The entropy of any horizon is k_B·A/(4ℓ_P²) with ℓ_P² = Għ/c³. The cosmic horizon is a sphere of radius c/H.",
+  "distractors": [
+   "T",
+   "ln",
+   "2"
+  ]
+ },
+ "poincare_recurrence": {
+  "goal": "A small part of a universe at equilibrium, at temperature T, can fluctuate by chance into a state with a little more energy (by Δ_E) and a little less entropy (by Δ_S) than it should have. The probability falls off exponentially in the free energy the fluctuation needs, measured in units of k_BT. Write the probability.",
+  "name": "Einstein–Boltzmann fluctuation formula",
+  "lhs": "P",
+  "form": "exp ( - ( Δ _ E - T * Δ _ S ) / ( kB * T ) )",
+  "expr": "S / ln ( 10 )",
+  "ask": "A brain-sized fluctuation that costs no energy but lowers the entropy by S × 10⁵⁰ k_B has 1/P = 10^X. Find X in units of 10⁵⁰. (A whole universe returns, by Poincaré recurrence, after about e^{10¹²²} years - far longer.)",
+  "vars": {
+   "P": "probability",
+   "Δ": "change",
+   "E": "energy",
+   "S": "entropy (10⁵⁰ k_B in step 2)",
+   "T": "temperature",
+   "kB": "Boltzmann constant"
+  },
+  "given": {
+   "S": 1.2
+  },
+  "unit": "10⁵⁰",
+  "method": "Einstein's fluctuation formula: the probability of a state is e^{S/k_B}; for a subsystem in contact with a bath use the total entropy change, Δ_S − Δ_E/T.",
+  "distractors": [
+   "ħ",
+   "ln",
+   "2"
+  ]
+ }
+}

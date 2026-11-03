@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:unruh_heating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:hall_bar_chip",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:test_mass",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:unruh_thermometer",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 800,
+  "research": "theoreticalsciences:unruh_effect",
+  "unscaled": true,
+  "insight_per_run": 10,
+  "physics": {
+    "windows": [
+      {
+        "q": "Tu",
+        "min": 1.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_identity_kernel",
+  "description": "book.theoreticalsciences.codex.endgame.node_identity_kernel.desc",
+  "icon": {
+    "item": "theoreticalsciences:identity_kernel"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 182,
+  "y": 28,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:identity_kernel"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_identity_kernel.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_identity_kernel.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_identity_kernel.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__concept_compressor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conceptual_singularities"
+  }
+}

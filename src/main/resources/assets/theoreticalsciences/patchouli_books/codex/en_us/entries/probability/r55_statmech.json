@@ -1,0 +1,14 @@
+{
+  "name": "Statistical Mechanics",
+  "icon": "theoreticalsciences:partition_function_matrix",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 21,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:partition_function_matrix,theoreticalsciences:monte_carlo_sample_pack",
+      "text": "A state of energy E is found $(thing)e^(\u2212E/kT)$() times as often as one of zero: the Boltzmann factor. Summed over every state, the factors make the partition function, and everything else - energy, entropy, pressure - is a derivative of it. The Monte Carlo Engine samples one into a $(item)Partition Function Matrix$(); a billion sorted samples make a $(item)Monte Carlo Sample Pack$()."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/statistical_mechanics"
+}

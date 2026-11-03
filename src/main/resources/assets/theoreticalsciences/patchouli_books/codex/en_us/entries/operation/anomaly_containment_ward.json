@@ -1,0 +1,24 @@
+{
+  "name": "Anomaly Containment Ward",
+  "icon": "theoreticalsciences:anomaly_containment_ward",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A specimen copies itself at a rate \u03b2; the ward clears it at its natural rate \u03b3 = 0.4 per day plus the quarantine field's own rate q. Each anomalous unit then makes R = \u03b2/(\u03b3 + q) more before it is cleared. Below 1 the specimen is contained and can be studied; the faster it grows the more there is to study - but at R above 1 it spreads through the containment. Clamp the field too hard and the specimen goes dormant and there is nothing to learn."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Growth rate \u03b2, Quarantine rate q.$(br2)$(thing)Disturbance$(): The specimen's growth rate wanders by \u00b110%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): R above 1: the anomaly is spreading through the containment; The quarantine is so strong the specimen has gone dormant: nothing to study; The quarantine field is overheating the ward.$(br2)$(thing)Rate$(): A faster-growing specimen held just below R = 1 gives the most to study."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective growth rate: \u03b2_eff = \u03b2\u00b7(1 + 0.1\u00b7d)$(br)Reproduction number R: R = \u03b2/(\u03b3 + q)$(br)Observable activity: A = \u03b2\u00b7R"
+    }
+  ]
+}

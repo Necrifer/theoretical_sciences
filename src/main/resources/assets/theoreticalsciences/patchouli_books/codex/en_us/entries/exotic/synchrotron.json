@@ -1,0 +1,200 @@
+{
+  "name": "Hyperion Synchrotron",
+  "icon": "theoreticalsciences:synchrotron",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 53,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:synchrotron",
+      "title": "Hyperion Synchrotron",
+      "text": "A ring accelerator built from real beamline parts: bending dipoles, focusing quadrupoles, RF cavities, cryogenics, vacuum pumps and a detector hall. It makes the exotic hadrons nothing else can.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Like the collider, but a real beamline, and every part matters:$(li)dipoles bend$(li)quadrupoles focus$(li)RF cavities accelerate$(li)cryo jackets keep the magnets superconducting$(li)pumps keep the pipe empty$(li)the detector hall sees what was made"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Why a ring: a magnetic field curves a charged beam, so the same cavities can kick it again on every lap. A synchrotron raises its field in step with the beam's energy - hence the name.$(br2)Better $(item)coils$() unlock heavier particles: $(item)Glueball Cores$() need tier 2, $(item)Hyperon Crystals$() tier 3."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Hyperion Synchrotron",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "______AAAAAAA______",
+            "______BAADAAB______",
+            "______AAAAAAA______",
+            "___________________"
+          ],
+          [
+            "___________________",
+            "___________________",
+            "___E___________E___",
+            "__E_____________E__",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "___________________",
+            "__E___FFFFFFF___E__",
+            "___E__FFFFFFF__E___",
+            "______FFFFFFF______",
+            "___________________"
+          ],
+          [
+            "_________0_________",
+            "___________________",
+            "___GAAHAAHAAHAAG___",
+            "__GE___________EG__",
+            "__A_____________A__",
+            "__A_____________H__",
+            "__H_____________A__",
+            "__A_____________A__",
+            "__A_____________H__",
+            "__H_____________A__",
+            "__A_____________A__",
+            "__A_____________H__",
+            "__H_____________A__",
+            "__A_____________A__",
+            "__A_____________H__",
+            "__GE__FFFFFFF__EG__",
+            "___GAHFAHAAHFAHG___",
+            "______FFFFFFF______",
+            "___________________"
+          ],
+          [
+            "_________I_________",
+            "_________J_________",
+            "___JJJJJJJJJJJJJ___",
+            "__JG___________GJ__",
+            "__J_____________J__",
+            "__J_____________J__",
+            "__J_____________J__",
+            "__J_____________KA_",
+            "__J_____________KA_",
+            "__J_____________KA_",
+            "__J_____________KA_",
+            "__J_____________KA_",
+            "__J_____________J__",
+            "__J_____________J__",
+            "__J_____________J__",
+            "__JG__FFFFFFF__GJ__",
+            "___JJJFJJJJJFJJJ___",
+            "______FFFFFFF______",
+            "___________________"
+          ],
+          [
+            "_________K_________",
+            "_________H_________",
+            "___GBIHBIKBIHBIG___",
+            "__GE___________EG__",
+            "__I_____________I__",
+            "__B_____________H__",
+            "__H_____________B__",
+            "__I_____________I__",
+            "__B_____________H__",
+            "__H_____________B__",
+            "__I_____________I__",
+            "__B_____________H__",
+            "__H_____________B__",
+            "__I_____________I__",
+            "__B_____________H__",
+            "__GE__FFFFFFF__EG__",
+            "___GBHFFFFFFFBHG___",
+            "______FFFFFFF______",
+            "___________________"
+          ],
+          [
+            "_________L_________",
+            "_________I_________",
+            "___IIIIIIIIIIIII___",
+            "__II___________II__",
+            "__I_____________I__",
+            "__I_____________I__",
+            "__I_____________I__",
+            "__L_____________L__",
+            "__I_____________I__",
+            "__L_____________L__",
+            "__I_____________I__",
+            "__L_____________L__",
+            "__I_____________I__",
+            "__I_____________I__",
+            "__I_____________I__",
+            "__II__IIIIIII__II__",
+            "___IIIIIIIIIIIII___",
+            "______ILILILI______",
+            "___________________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:synchrotron",
+          "A": "theoreticalsciences:cryogenic_cooling_jacket",
+          "B": "theoreticalsciences:turbomolecular_vacuum_pump",
+          "D": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "E": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "F": "theoreticalsciences:calorimeter_detector_array",
+          "G": "theoreticalsciences:dipole_bending_magnet",
+          "H": "theoreticalsciences:quadrupole_focusing_magnet",
+          "I": "theoreticalsciences:spacetime_casing",
+          "J": "theoreticalsciences:vacuum_beam_pipe",
+          "K": "theoreticalsciences:rf_accelerating_cavity",
+          "L": "#theoreticalsciences:multiblock/spacetime_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Bottom & Top Quarks, Glueball Core, Higgs Boson Crystal, Hyperon Crystal, Magnetic Monopole, Pentaquark Shard, Strange Matter, Strange Matter Pellet."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:synchrotron",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:glueball_core",
+      "text": "A particle made of nothing but the force carriers that hold quarks together.$(br2)Made in $(item)Hyperion Synchrotron$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hyperon_crystal",
+      "text": "Strange baryons locked into a lattice. The strangeness makes them heavier than they have any right to be.$(br2)Made in $(item)Hyperion Synchrotron$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Glueball Core$(): Dimensional Residue, Gauge Boson Cluster, Hypernova Alloy Ingot, Transcendent Plasma Forge$(li)$(item)Hyperon Crystal$(): Dimensional Residue, Empirical Notes I, Graviton Field Emitter, Hypernova Alloy Ingot, Transcendent Metal Ingot and more"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/accelerator_physics"
+}

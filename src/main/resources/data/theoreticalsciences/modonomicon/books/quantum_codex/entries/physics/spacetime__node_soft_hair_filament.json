@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_soft_hair_filament",
+  "description": "book.theoreticalsciences.codex.spacetime.node_soft_hair_filament.desc",
+  "icon": {
+    "item": "theoreticalsciences:soft_hair_filament"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 119,
+  "y": 53,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:soft_hair_filament"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_soft_hair_filament.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_soft_hair_filament.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__page_curve_analyzer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/information_paradox"
+  }
+}

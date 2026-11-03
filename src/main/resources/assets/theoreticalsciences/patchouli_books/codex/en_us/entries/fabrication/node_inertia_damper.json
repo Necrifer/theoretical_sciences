@@ -1,0 +1,23 @@
+{
+  "name": "Inertia Damper",
+  "icon": "theoreticalsciences:inertia_damper",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:inertia_damper",
+      "title": "Inertia Damper",
+      "text": "A device that cancels momentum locally, letting a ship accelerate without crushing everything inside. Negative mass offsets positive mass and a superconducting coil steers the balance. It is quiet and cool, and objects placed on it never slide off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Accelerating anything quickly kills everyone on board. In the Higgs Field Modulator, a Negative Mass Ingot balanced against the passenger's mass, and the coil adjusted it. Every starship needs one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Higgs Field Modulator$().$(br2)$(thing)Unlocked by$(): Mass Manipulation.$(br2)$(thing)Used in$(): Graviton Harness."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mass_manipulation"
+}

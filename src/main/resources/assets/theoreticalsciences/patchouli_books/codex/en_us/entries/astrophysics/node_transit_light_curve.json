@@ -1,0 +1,19 @@
+{
+  "name": "Transit Light Curve",
+  "icon": "theoreticalsciences:transit_light_curve",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:transit_light_curve",
+      "title": "Transit Light Curve",
+      "text": "A star's brightness, dipping for a few hours as a planet crosses in front of it. The depth gives the planet's size."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Unlocked by$(): Exoplanetology.$(br2)$(thing)Used in$(): Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/spectroscopy"
+}

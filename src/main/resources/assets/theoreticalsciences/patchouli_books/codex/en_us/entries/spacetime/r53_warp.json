@@ -1,0 +1,22 @@
+{
+  "name": "The Warp Field Forge",
+  "icon": "theoreticalsciences:warp_field_forge",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 54,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:warp_field_forge,theoreticalsciences:warp_bubble_core,theoreticalsciences:anchored_warp_bubble",
+      "text": "Alcubierre found a solution of general relativity that moves a bubble of flat space at any speed: space contracts ahead of it and expands behind. Its wall must be made of $(thing)negative energy$() - from $(item)Negative Energy Lattices$() of Casimir plates."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Warp Field Forge$() shapes the bubble. Set its speed, radius and wall sharpness: the negative energy needed grows as v\u00b2R\u00b2\u03c3, the shear across the wall as v\u03c3 (above 5 it tears a passenger apart), and a wall too thick for its bubble (R\u03c3 < 10) leaks. A $(item)Warp Bubble Core$() must be superluminal, with under one solar mass of negative energy."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Use a Warp Bubble Core to anchor where you stand: it becomes an $(item)Anchored Warp Bubble$(). Use that, anywhere, to return there - once. Recipes only take the plain core."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/alcubierre_metric"
+}

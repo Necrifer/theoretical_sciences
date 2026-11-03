@@ -1,0 +1,24 @@
+{
+  "name": "Penrose Ergosphere",
+  "icon": "theoreticalsciences:penrose_ergosphere",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 55,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Drop matter into a spinning black hole's ergosphere, split it so half falls in on a negative-energy orbit, and the other half escapes with more energy than you sent. The extra comes out of the hole's spin. Feed it angular momentum to keep it spinning."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Splitting radius r/M, Injection rate, Spin-up torque, Horizon field.$(br2)$(thing)Disturbance$(): Accretion torque noise: the spin-up torque varies by \u00b120%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Splitting point inside the horizon: nothing comes back; Outside the ergosphere: no negative-energy orbits exist; Interlock: horizon-threading coils not superconducting (too warm); Field above the critical field: the horizon-threading coils quench.$(br2)$(thing)Rate$(): Generator output scales with the extracted power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Horizon radius r\u208a: r\u208a = M + \u221a(M\u00b2 \u2212 a\u00b2)$(br)Maximum efficiency: \u03b7_max = \u00bd(\u221a(2M/r\u208a) \u2212 1)$(br)Efficiency \u03b7: \u03b7 \u2248 \u03b7_max\u00b7(2M \u2212 r)/(2M \u2212 r\u208a)$(br)Penrose power: P = \u03b7\u00b7\u1e41c\u00b2$(br)Blandford-Znajek power: P_BZ \u221d a\u00b2B\u00b2$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

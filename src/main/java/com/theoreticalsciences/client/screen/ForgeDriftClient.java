@@ -34,7 +34,7 @@ public final class ForgeDriftClient {
 
     /** Seconds until the recipe can be compiled again (0: now). */
     public static int secondsLeft(String id) {
-        long t = READY.getOrDefault(id, 0L) - System.currentTimeMillis();
+        long t = Math.max(READY.getOrDefault(id, 0L), READY.getOrDefault(ForgeDrift.ANY, 0L)) - System.currentTimeMillis();
         return t <= 0 ? 0 : (int) ((t + 999) / 1000);
     }
 

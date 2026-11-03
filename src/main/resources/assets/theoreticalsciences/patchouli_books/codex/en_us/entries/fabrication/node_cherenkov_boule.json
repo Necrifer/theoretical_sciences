@@ -1,0 +1,23 @@
+{
+  "name": "Cherenkov Boule",
+  "icon": "theoreticalsciences:cherenkov_boule",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cherenkov_boule",
+      "title": "Cherenkov Boule",
+      "text": "A single, flawless crystal of Cherenkov quartz, grown slowly from a seed in superfluid helium. It is cylindrical, glowing faint blue along its length, and every atom in it lines up with its neighbours. It is ready to be sliced into wafers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Lattice Growth Vat, I suspended a Lattice Seed Crystal in Superfluid Helium and fed it Cherenkov Quartz. The superfluid's zero viscosity let the atoms arrange themselves perfectly as the boule grew."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Lattice Growth Vat$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Cherenkov Wafer, Spacetime Slag, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

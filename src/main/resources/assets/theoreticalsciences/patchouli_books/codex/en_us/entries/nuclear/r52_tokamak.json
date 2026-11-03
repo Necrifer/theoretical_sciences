@@ -1,0 +1,22 @@
+{
+  "name": "The Tokamak",
+  "icon": "theoreticalsciences:tokamak",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 21,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tokamak,theoreticalsciences:fusion_blanket_tile,theoreticalsciences:toroidal_field_coil",
+      "text": "Deuterium and tritium fuse into helium-4 and a neutron, giving $(thing)17.6 MeV$(). They must be hot (10-20 keV, over a hundred million kelvin), dense, and held long enough: Lawson's $(thing)nT\u03c4 \u2265 3\u00d710\u00b2\u00b9 keV\u00b7s/m\u00b3$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Tokamak$() holds the plasma in a torus of twisted field: twelve toroidal field coils, a central solenoid, a vacuum vessel. Set the density, temperature and field; confinement grows with the field squared. Keep \u03b2 - plasma pressure against magnetic - under 5%, or the plasma disrupts. The coils are superconducting: below 20 K, and below 12.5 T."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)Fusion Blanket Tile$() of lithium-6 breeds more tritium than the reaction burns. Deuterium alone burns too - but needs five times the triple product."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fusion_ignition"
+}

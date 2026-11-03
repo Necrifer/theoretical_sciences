@@ -32,6 +32,22 @@ public final class DemonSolver {
     private PhysicsModel m;
     private double sink, kappa;
 
+    private int size = 1;
+
+    /** 1.3.5: units built in a variable-height structure. */
+    public DemonSolver size(int n) {
+        this.size = Math.max(1, n);
+        return this;
+    }
+
+    private double[] world;
+
+    /** 1.4.0: the sky, weather and surroundings the machine stands in (the demon tunes for them as they are now). */
+    public DemonSolver world(double[] w) {
+        this.world = w.clone();
+        return this;
+    }
+
     public DemonSolver(String machine, RecipePhysics recipe, int coil, int emitter, int oc, int par, double[] start, @Nullable Fluid current, long seed) {
         this.machine = machine;
         this.recipe = recipe;
@@ -59,6 +75,8 @@ public final class DemonSolver {
         m = ps.model();
         if (m == null) return null;
         ps.recipe = recipe;
+        ps.size = size;
+        if (world != null) System.arraycopy(world, 0, ps.world, 0, ps.world.length);
         RandomSource rnd = RandomSource.create(seed);
         List<Fluid> fluids = new ArrayList<>();
         if (current != null) fluids.add(current);

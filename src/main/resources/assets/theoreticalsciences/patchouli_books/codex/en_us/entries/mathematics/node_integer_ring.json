@@ -1,0 +1,23 @@
+{
+  "name": "Integer Ring",
+  "icon": "theoreticalsciences:integer_ring",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:integer_ring",
+      "title": "Integer Ring",
+      "text": "Every natural number paired with its mirror image below zero, closed under addition, subtraction and multiplication. The ring has a satisfying symmetry: turn it over and every number becomes its negative. Being a ring, you can add or multiply any two elements and never fall out of it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Subtraction kept breaking the natural numbers; three minus five had nowhere to go. Feeding an antimatter pellet into the engine alongside a natural lattice gave each number an opposite, the way antimatter gives each particle one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Peano Arithmetic Engine$().$(br2)$(thing)Unlocked by$(): Number Systems.$(br2)$(thing)Used in$(): Empirical Notes III, Platonic Compass, Rational Field."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/number_systems"
+}

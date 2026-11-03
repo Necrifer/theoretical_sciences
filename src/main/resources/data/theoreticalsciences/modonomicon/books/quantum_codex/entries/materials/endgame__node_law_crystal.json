@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_law_crystal",
+  "description": "book.theoreticalsciences.codex.endgame.node_law_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:law_crystal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 28,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:law_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_law_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_law_crystal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_law_crystal.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__hyperreal",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_reality"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Molecular Orbital Lattice",
+  "icon": "theoreticalsciences:molecular_orbital_lattice",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:molecular_orbital_lattice",
+      "title": "Molecular Orbital Lattice",
+      "text": "Electron clouds shared across a whole grid of atoms, frozen in place so I can finally see what a bond is: not a stick between balls but a wavefunction spread over both, lower in energy than either alone. The lattice shimmers faintly where the orbitals overlap."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Solving the Schrodinger equation for a molecule taught me where the electrons sit. I used a qubit to encode that solution and grew the crystal around it on a zeolite template in supercritical solvent, so the orbitals set exactly where the mathematics put them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Quantum Chemistry.$(br2)$(thing)Used in$(): Carbon Nanotube Bundle, Chiral Crystal, Folded Protein Crystal, Gene Sequencer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_bonding"
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Gravitational Redshift",
+  "description": "Light climbing out of a gravity well loses energy, so its frequency falls: clocks below run slow seen from above. In 1959 Pound and Rebka measured it up a 22.5-metre tower. Unlocks the Pound-Rebka Tower and the Cobalt-57 Source.",
+  "icon": "theoreticalsciences:pound_rebka_tower",
+  "x": 7,
+  "y": 8,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:gravitational_time_dilation",
+    "theoreticalsciences:radioactivity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:time_dilated_sample",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:radium_salt",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "Light climbs a height H in a gravity g. Moving up it loses energy as a ball thrown upward would, in proportion to its own energy divided by c\u00b2. Write the fraction s of its frequency it loses.",
+    "name": "Gravitational shift over a height",
+    "lhs": "s",
+    "form": "g * H / c ^ 2",
+    "expr": "g * H / c ^ 2 * 1000000000000000",
+    "ask": "Find s in units of 10\u207b\u00b9\u2075 for Pound and Rebka's tower: g = @{g} m/s\u00b2, H = @{H} m, c = 2.998e8 m/s.",
+    "vars": {
+      "s": "fractional shift (\u00d710\u207b\u00b9\u2075)",
+      "g": "gravity (m/s\u00b2)",
+      "H": "height (m)",
+      "c": "speed of light (m/s)"
+    },
+    "given": {
+      "g": 9.81,
+      "H": 22.5,
+      "c": 299800000.0
+    },
+    "unit": "\u00d710\u207b\u00b9\u2075",
+    "method": "A photon of energy E has an effective mass E/c\u00b2; climbing H costs it (E/c\u00b2)\u00b7g\u00b7H of energy.",
+    "distractors": [
+      "2",
+      "G",
+      "+"
+    ],
+    "vary": {
+      "g": [
+        5.88,
+        13.74,
+        0.01
+      ],
+      "H": [
+        13.5,
+        31.5,
+        0.1
+      ]
+    }
+  }
+}

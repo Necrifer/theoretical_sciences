@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.r38_decay",
+  "description": "book.theoreticalsciences.codex.nuclear.r38_decay.desc",
+  "icon": {
+    "item": "theoreticalsciences:decay_chamber"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 19,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:decay_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.r38_decay.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r38_decay.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r38_decay.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r38_decay.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__electrochem"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__electrolytic_cell"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

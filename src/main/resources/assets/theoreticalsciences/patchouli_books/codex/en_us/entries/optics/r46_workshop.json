@@ -1,0 +1,26 @@
+{
+  "name": "Grinding and Polishing",
+  "icon": "theoreticalsciences:optical_workshop",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:optical_workshop,theoreticalsciences:fused_silica_lens,theoreticalsciences:schmidt_corrector,theoreticalsciences:apochromatic_objective",
+      "text": "The $(item)Optical Workshop$() turns blanks into optics. A lens's power is set by its two surfaces: $(thing)P = (n \u2212 1)(C\u2081 \u2212 C\u2082)$(), with C the curvature of each - one over its radius. A 1-dioptre lens focuses at a metre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Polishing wears the surface error down. Below a quarter of a wavelength the image is as sharp as diffraction allows; a Schmidt corrector needs an eighth, a grating a sixteenth. Longer polishing is truer, and slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Fused silica becomes lenses, $(item)Schmidt Corrector Plates$() and $(item)Echelle Gratings$(). Crystals need a Laue Pattern: fluorite lenses, moissanite lenses (its index, 2.65, makes a strong lens thin) and $(item)Sapphire Windows$(), four from a boule. Fluorite between two silica lenses is an $(item)Apochromatic Objective$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lithography lenses are really fluorite and fused silica: the workshop makes a $(item)Photonic Lens$() from them too."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/geometric_optics"
+}

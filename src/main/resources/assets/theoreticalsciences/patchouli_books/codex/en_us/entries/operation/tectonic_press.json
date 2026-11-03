@@ -1,0 +1,24 @@
+{
+  "name": "Tectonic Press",
+  "icon": "theoreticalsciences:tectonic_press",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 67,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each mineral is stable only in part of the pressure-temperature plane, and the lines between them follow the Clapeyron slope dP/dT = \u0394S/\u0394V. Hold the sample on the right side of the line and keep it hot enough to react: the rate follows Arrhenius, e^(\u2212E\u2090/RT)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Anvil pressure P, Furnace temperature.$(br2)$(thing)Disturbance$(): Gasket creep: the sample sees P\u00b7(1 \u00b1 2%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Tungsten-carbide anvils deforming above 26 GPa; The press frame is overheating.$(br2)$(thing)Rate$(): Hotter samples react faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Sample pressure: P_s = P\u00b7(1 + 0.02\u00b7d)$(br)Equivalent depth: z = P/(\u03c1g)$(br)Graphite-diamond line: P = 1.94 + 0.0025\u00b7T(\u00b0C)$(br)Ringwoodite line: P = 17.5 + 0.005\u00b7(T \u2212 1873)$(br)Post-spinel line: P = 23.5 \u2212 0.0025\u00b7(T \u2212 1900)$(br)Margin over the diamond line: P \u2212 P_dg$(br)Margin over the ringwoodite line: P \u2212 P_rw"
+    }
+  ]
+}

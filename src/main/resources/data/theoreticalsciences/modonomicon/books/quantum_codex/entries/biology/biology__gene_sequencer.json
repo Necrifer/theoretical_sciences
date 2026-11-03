@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.gene_sequencer",
+  "description": "book.theoreticalsciences.codex.biology.gene_sequencer.desc",
+  "icon": {
+    "item": "theoreticalsciences:gene_sequencer"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 12,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gene_sequencer"
+      },
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gene_sequencer"
+      },
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gene_sampler"
+      },
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_sequencer.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__life"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__bioreactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/genomics"
+  }
+}

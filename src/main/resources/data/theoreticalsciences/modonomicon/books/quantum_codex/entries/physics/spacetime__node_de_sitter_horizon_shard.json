@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_de_sitter_horizon_shard",
+  "description": "book.theoreticalsciences.codex.spacetime.node_de_sitter_horizon_shard.desc",
+  "icon": {
+    "item": "theoreticalsciences:de_sitter_horizon_shard"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 164,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:de_sitter_horizon_shard"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_de_sitter_horizon_shard.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_de_sitter_horizon_shard.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__entropy_horizon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/heat_death"
+  }
+}

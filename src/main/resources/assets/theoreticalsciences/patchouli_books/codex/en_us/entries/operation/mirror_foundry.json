@@ -1,0 +1,24 @@
+{
+  "name": "Mirror Matter Foundry",
+  "icon": "theoreticalsciences:mirror_foundry",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 46,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Penning traps: a solenoid field holds antiparticles radially, an electrostatic well axially. Stable only while \u03c9_c\u00b2 > 2\u03c9_z\u00b2. Antihydrogen forms by three-body recombination, \u221d n_e\u00b2\u00b7T^(\u22129/2) - cold positrons, dense ones; but a plasma cannot be denser than the Brillouin limit \u03b5\u2080B\u00b2/2m_e."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Solenoid field, Trap voltage, Positron density, RF melt power.$(br2)$(thing)Disturbance$(): Positron heating: the plasma runs at T\u00b7(1 + 10%\u00b7|d|)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Penning trap unstable (\u03c9_c\u00b2 < 2\u03c9_z\u00b2); Positron plasma above the Brillouin limit; Interlock: Penning-trap solenoid not superconducting (too warm); Field above the critical field: the Penning-trap solenoid quench.$(br2)$(thing)Rate$(): Production follows the recombination rate."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Cyclotron frequency: \u03c9_c = qB/m$(br)Axial frequency: \u03c9_z = \u221a(qV/(md\u00b2))$(br)Trap stability: 1 \u2212 2\u03c9_z\u00b2/\u03c9_c\u00b2$(br)Positron temperature: T_e$(br)Brillouin limit: n_B = \u03b5\u2080B\u00b2/(2m_e)$(br)Recombination rate: \u0393 \u221d n_e\u00b2\u00b7T^(\u22129/2)$(br)Melt temperature: T_pool"
+    }
+  ]
+}

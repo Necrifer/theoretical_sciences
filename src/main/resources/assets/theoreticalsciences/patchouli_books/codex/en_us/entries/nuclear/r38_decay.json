@@ -1,0 +1,26 @@
+{
+  "name": "Radon & Decay Chains",
+  "icon": "theoreticalsciences:decay_chamber",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:decay_chamber,theoreticalsciences:radiogenic_lead",
+      "text": "Radium-226 decays into $(item)Radon-222$(), a gas with a half-life of 3.8 days. The $(item)Decay Chamber$() draws it off a piece of Radium Salt - which, with a 1,600-year half-life, is never used up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Inside the chamber radon decays on a real clock, sped up so a day passes in a minute: after 5.5 minutes half of any radon is gone, after 11 minutes three quarters. Its daughters run down to lead, and each litre that decays leaves one $(item)Radiogenic Lead$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A long-lived parent and a short-lived daughter settle into $(thing)secular equilibrium$(): the daughter is made as fast as it decays, so N\u2082 = N\u2081\u00b7T\u2082/T\u2081. A gram of radium holds only 17 micrograms of radon at any moment."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Radon's daughters give off gamma rays, so a working chamber is a source. Wall it in: two blocks of lead stop 99.6% of them. Radiogenic Lead makes $(item)Lead Shielding Plates$() and Lead Shielding Blocks; lead from any other mod works too."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radiochemistry"
+}

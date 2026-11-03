@@ -1,0 +1,45 @@
+{
+  "has_precipitation": false,
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 4198400,
+    "fog_color": 5904904,
+    "water_color": 6340816,
+    "water_fog_color": 1060928,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:lava"
+      },
+      "probability": 0.002
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:magma_crawler",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_rich_gold"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

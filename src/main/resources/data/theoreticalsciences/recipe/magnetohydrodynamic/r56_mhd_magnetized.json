@@ -1,0 +1,20 @@
+{
+  "type": "theoreticalsciences:magnetohydrodynamic",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:magnetized_plasma",
+      "amount": 100
+    }
+  ],
+  "energy": 0,
+  "duration": 400,
+  "research": "theoreticalsciences:magnetohydrodynamics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": 10000.0,
+      "rh": 0.01,
+      "Pref": 20000000.0
+    }
+  }
+}

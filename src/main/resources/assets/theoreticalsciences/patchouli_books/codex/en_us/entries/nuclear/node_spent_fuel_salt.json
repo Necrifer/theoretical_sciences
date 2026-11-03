@@ -1,0 +1,19 @@
+{
+  "name": "Spent Fuel Salt",
+  "icon": "theoreticalsciences:spent_fuel_salt_cell",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spent_fuel_salt_cell",
+      "title": "Spent Fuel Salt",
+      "text": "$(fluid)Spent Fuel Salt$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Molten Salt Reactor$().$(br2)$(thing)Unlocked by$(): Nuclear Fission.$(br2)$(thing)Used in$(): Fission Fragment Mix, Nuclear Waste Glass, Plutonium-239 Pellet, Uranium Hexafluoride."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

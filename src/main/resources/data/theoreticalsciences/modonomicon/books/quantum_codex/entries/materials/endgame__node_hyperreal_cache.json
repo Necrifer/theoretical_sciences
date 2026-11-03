@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_hyperreal_cache",
+  "description": "book.theoreticalsciences.codex.endgame.node_hyperreal_cache.desc",
+  "icon": {
+    "item": "theoreticalsciences:hyperreal_cache"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hyperreal_cache"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_hyperreal_cache.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_hyperreal_cache.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__axiomatic_breach_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reality_breach"
+  }
+}

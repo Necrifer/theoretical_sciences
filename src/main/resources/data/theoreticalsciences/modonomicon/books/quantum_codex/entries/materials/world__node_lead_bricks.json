@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_lead_bricks",
+  "description": "book.theoreticalsciences.codex.world.node_lead_bricks.desc",
+  "icon": {
+    "item": "theoreticalsciences:lead_bricks"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 4,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lead_bricks"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_lead_bricks.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

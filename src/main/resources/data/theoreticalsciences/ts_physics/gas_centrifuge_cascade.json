@@ -1,0 +1,112 @@
+{
+  "params": [
+    {
+      "id": "v",
+      "unit": "m/s",
+      "min": 100,
+      "max": 1000,
+      "step": 1,
+      "default": 400
+    },
+    {
+      "id": "th",
+      "unit": "",
+      "min": 0.05,
+      "max": 0.95,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "dm": 0.003,
+    "xF": 0.0072
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ve",
+      "unit": "m/s",
+      "expr": "v*(1 + 0.01*d)",
+      "formula": "v\u00b7(1 + 0.01\u00b7d)"
+    },
+    {
+      "id": "Tg",
+      "unit": "K",
+      "expr": "T + 20",
+      "formula": "T_gas = T + 20 K"
+    },
+    {
+      "id": "al",
+      "unit": "",
+      "expr": "exp(dm*ve^2/(2*8.314*Tg))",
+      "formula": "\u03b1 = e^(\u0394m v\u00b2/2RT)"
+    },
+    {
+      "id": "be",
+      "unit": "",
+      "expr": "1 + (al - 1)*(1 - th)",
+      "formula": "\u03b2 = 1 + (\u03b1 \u2212 1)(1 \u2212 \u03b8)"
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "expr": "size",
+      "formula": "n"
+    },
+    {
+      "id": "Rf",
+      "unit": "",
+      "expr": "xF/(1 - xF)",
+      "formula": "R_F = x_F/(1 \u2212 x_F)",
+      "show": false
+    },
+    {
+      "id": "xP",
+      "unit": "",
+      "expr": "Rf*be^n/(1 + Rf*be^n)",
+      "formula": "x_P = R_F \u03b2\u207f/(1 + R_F \u03b2\u207f)"
+    },
+    {
+      "id": "sig",
+      "unit": "MPa",
+      "expr": "0.0016*ve^2",
+      "formula": "\u03c3 = \u03c1v\u00b2"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "burst",
+      "kind": "damage",
+      "expr": "1500 - sig",
+      "formula": "\u03c3 < 1500 MPa"
+    },
+    {
+      "id": "resonance",
+      "kind": "wear",
+      "expr": "abs(ve - 450) - 25",
+      "formula": "|v \u2212 450| > 25 m/s"
+    },
+    {
+      "id": "safeguard",
+      "kind": "stop",
+      "expr": "0.2 - xP",
+      "formula": "x_P < 20%"
+    },
+    {
+      "id": "freeze",
+      "kind": "stop",
+      "expr": "Tg - 250",
+      "formula": "T_gas > 250 K"
+    }
+  ],
+  "rate": "clamp(2*th*(0.7 + 0.05*n), 0, 3)",
+  "rate_formula": "rate = 2\u03b8\u00b7(0.7 + 0.05n)",
+  "heat": "0.001*v*n + 0.5",
+  "idle_heat": "0.3",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

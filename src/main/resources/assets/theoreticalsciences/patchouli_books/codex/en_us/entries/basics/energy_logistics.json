@@ -1,0 +1,50 @@
+{
+  "name": "Moving Mountains of Energy",
+  "icon": "theoreticalsciences:entangled_transceiver",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entangled_transceiver,theoreticalsciences:casimir_energy_cell,theoreticalsciences:entanglement_tuner",
+      "text": "Machines now hold at least twenty seconds of whatever their recipe draws, and take power as fast as it arrives. Arriving is the hard part. $(item)Energy Cells$() store it: every face takes energy in, the marked face sends it out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Casimir: 4 billion FE, 16 M FE/t$(li)Vacuum: 256 billion, 512 M FE/t$(li)Singularity: 16 trillion, 2.1 billion FE/t$(li)Omnium: effectively bottomless$(br2)Cells keep their charge when broken."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Entangled Relays$() and $(item)Transceivers$() sit on a block's face. Tune several to one channel with an $(item)Entanglement Tuner$(): senders pull items, fluids and energy out of what they sit on and receivers push it in - instantly, at any distance, even between dimensions."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Relay: 256 items, 64,000 mB and 64 M FE per tick. Transceiver: 8,192 items, 4,096,000 mB and 2.1 billion FE per tick. Sneak-use with the tuner to switch sending/receiving."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entangled_transceiver",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:casimir_energy_cell",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entanglement_tuner",
+      "text": "Links Entangled Transceivers to one channel. Sneak-use a transceiver to switch it between sending and receiving.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entangled_relay",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Casimir Energy Cell$(): Vacuum Energy Cell$(li)$(item)Entangled Relay$(): Entangled Transceiver"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/entangled_logistics"
+}

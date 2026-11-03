@@ -1,0 +1,32 @@
+{
+  "name": "Irradiation Chamber",
+  "icon": "theoreticalsciences:irradiation_chamber",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 115,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:irradiation_chamber",
+      "title": "Irradiation Chamber",
+      "text": "Holds a target in the neutron flux of a source until nuclei catch neutrons and become something else.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Needs a neutron source in an input slot (Radium Salt, or for the strongest flux Californium-252), never used up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 2 and 1 outputs).$(br2)$(thing)Makes$(): Californium-252 Neutron Source, Plutonium-239 Pellet, Spent Fuel Rod, Technetium-99m Vial, Tritium."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:irradiation_chamber",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

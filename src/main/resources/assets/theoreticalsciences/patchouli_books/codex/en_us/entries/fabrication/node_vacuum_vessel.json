@@ -1,0 +1,19 @@
+{
+  "name": "Vacuum Vessel",
+  "icon": "theoreticalsciences:vacuum_vessel",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 522,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:vacuum_vessel",
+      "title": "Vacuum Vessel",
+      "text": "$(item)Vacuum Vessel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Tokamak."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

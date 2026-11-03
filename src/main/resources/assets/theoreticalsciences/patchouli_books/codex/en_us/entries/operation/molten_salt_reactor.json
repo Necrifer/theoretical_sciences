@@ -1,0 +1,24 @@
+{
+  "name": "Molten Salt Reactor",
+  "icon": "theoreticalsciences:molten_salt_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 47,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each fission frees neutrons; k = \u03b7 f p \u03b5 of them cause the next fission, less what leaks out and what the control rods absorb. The salt expands as it warms and k falls by 4 pcm per kelvin, so the reactor settles at the temperature where k is exactly 1. Pumping the salt through the heat exchanger carries that heat to the turbine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Fuel concentration, Control rod insertion, Salt flow.$(br2)$(thing)Disturbance$(): Xenon and burn-up: reactivity drifts by \u00b10.2%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The fuel salt is freezing (below 732 K): the freeze plug has drained the core; Above 980 K the Hastelloy-N vessel creeps; Prompt critical: reactivity above the delayed-neutron fraction; No salt flow: the heat has nowhere to go.$(br2)$(thing)Rate$(): Power output follows the electric power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Thermal utilisation f: f = \u03a3_fuel/(\u03a3_fuel + \u03a3_other)$(br)k\u221e: k\u221e = \u03b7 f p \u03b5$(br)k at 900 K: k = k\u221e\u00b7P_NL\u00b7(1 \u2212 w\u00b7r)$(br)Reactivity: \u03c1 = (k \u2212 1)/k$(br)Salt temperature: T = 900 K + \u03c1/\u03b1_T$(br)Thermal power: P = Q\u00b7c_p\u00b7(T \u2212 T_return)$(br)Cycle efficiency: \u03b7 = 0.65\u00b7(1 \u2212 T_cold/T)"
+    }
+  ]
+}

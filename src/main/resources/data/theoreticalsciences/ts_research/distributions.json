@@ -1,0 +1,58 @@
+{
+  "title": "Distributions",
+  "description": "Add up enough small independent chances and their total always spreads into the same bell-shaped curve, whatever the chances were. Unlocks the Normal Distribution Crystal.",
+  "icon": "theoreticalsciences:normal_distribution_crystal",
+  "x": 4,
+  "y": 9,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:combinatorics",
+    "theoreticalsciences:calculus"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Add up many small independent random pushes and the total spreads into a bell-shaped curve with centre \u03bc and width \u03c3. Write the height f of that curve at the value x.",
+    "name": "Gaussian density",
+    "lhs": "f",
+    "form": "exp ( - ( x - \u03bc ) ^ 2 / ( 2 * \u03c3 ^ 2 ) ) / ( \u03c3 * sqrt ( 2 * \u03c0 ) )",
+    "expr": "exp ( - ( x - \u03bc ) ^ 2 / ( 2 * \u03c3 ^ 2 ) ) / ( \u03c3 * 2.506628 )",
+    "ask": "Find f at one width from the centre: x = @{x}, \u03bc = 0, \u03c3 = @{\u03c3}.",
+    "vars": {
+      "f": "height of the curve",
+      "x": "the value",
+      "\u03bc": "centre",
+      "\u03c3": "width",
+      "\u03c0": "pi"
+    },
+    "given": {
+      "x": 1,
+      "\u03bc": 0,
+      "\u03c3": 1
+    },
+    "unit": "",
+    "method": "The central limit theorem: sums of many independent pieces tend to this curve; the factor in front makes its total area 1.",
+    "distractors": [
+      "ln",
+      "3",
+      "n"
+    ],
+    "vary": {
+      "x": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "\u03c3": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

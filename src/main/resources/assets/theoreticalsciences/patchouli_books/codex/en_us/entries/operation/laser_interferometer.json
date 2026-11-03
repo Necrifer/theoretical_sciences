@@ -1,0 +1,24 @@
+{
+  "name": "Laser Interferometer",
+  "icon": "theoreticalsciences:laser_interferometer",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 40,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A gravitational wave of strain h changes the arms' lengths by \u00b1hL/2, and the light returning to the beam splitter interferes a little differently. Four noises hide it. Shot noise - the graininess of light - falls as 1/(F\u221aP) with the arms' finesse F and the laser power P; radiation-pressure noise - the photons' kicks on the mirrors - rises as F\u221aP: where they are equal is the standard quantum limit. Each isolation stage cuts the ground's shaking tenfold; the thermal jiggling of the mirrors falls as \u221aT."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Laser power P, Arm finesse F, Isolation stages.$(br2)$(thing)Disturbance$(): Microseism: the ground shakes by \u00b150%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The ground shakes too hard: the arms cannot hold lock.$(br2)$(thing)Rate$(): A clearer detection is faster; every isolation stage makes locking slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Shot noise: h_shot \u221d 1/(F\u221aP)$(br)Radiation-pressure noise: h_rp \u221d F\u221aP$(br)Seismic noise: h_seis \u221d ground \u00b7 10\u207b\u207f$(br)Thermal noise: h_th \u221d \u221aT$(br)Total noise: h_n = \u221a\u03a3h\u00b2$(br)Signal to noise: SNR = h/h_n"
+    }
+  ]
+}

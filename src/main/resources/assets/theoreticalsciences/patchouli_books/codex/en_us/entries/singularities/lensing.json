@@ -1,0 +1,21 @@
+{
+  "name": "Gravitational Lensing",
+  "icon": "theoreticalsciences:micro_singularity",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Observation log. A running singularity bends light around its horizon: the room behind it is smeared into an $(thing)Einstein ring$(), with a bright $(thing)photon ring$() at the edge of the shadow.$(br2)White holes do the opposite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The physics: mass curves spacetime and light follows the curve. A source directly behind the hole reaches me from every side - the ring. At 1.5 Schwarzschild radii photons can orbit; that is the photon ring, the same feature the Event Horizon Telescope imaged in M87*."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Practical note: if this conflicts with a shader pack, it can be disabled in the client config ($(thing)gravitationalLensing$()). The universe will still be curved; you just won't see it."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/singularity_physics"
+}

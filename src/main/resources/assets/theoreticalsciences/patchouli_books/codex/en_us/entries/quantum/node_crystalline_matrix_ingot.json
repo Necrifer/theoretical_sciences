@@ -1,0 +1,23 @@
+{
+  "name": "Crystalline Matrix Ingot",
+  "icon": "theoreticalsciences:crystalline_matrix_ingot",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:crystalline_matrix_ingot",
+      "title": "Crystalline Matrix Ingot",
+      "text": "A superposition crystal locked inside a Cherenkov lattice and fixed there by the light of a nether star. The ingot is glassy but metal-heavy, and its interior shows several overlapping lattices at once, none of them willing to collapse into the others."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Superposition crystals collapse when observed, so I sealed one inside a Cherenkov lattice and bathed it in the light of a dead star on the Extreme Assembly Table. The lattices froze mid-superposition."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Extreme Assembly Table$().$(br2)$(thing)Unlocked by$(): Quantum Entanglement.$(br2)$(thing)Used in$(): Omniscience Catalyst, Omnium Ingot, Transfinite Weave."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/quantum_entanglement"
+}

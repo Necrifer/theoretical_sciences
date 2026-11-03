@@ -1,0 +1,52 @@
+{
+  "name": "Mirror Metallurgy",
+  "icon": "theoreticalsciences:mirror_foundry",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiiron_ingot,theoreticalsciences:antigold_ingot,theoreticalsciences:mirror_alloy_ingot",
+      "text": "A metal that may never touch a crucible, a mould or the air. The $(item)Mirror Matter Foundry$() is a stack of Penning traps: the anti-ore floats, melts, refines and cools in fields alone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cooled by $(fluid)Liquid Antihelium$(), it casts $(item)Anti-Iron$() and $(item)Anti-Gold$(), etches $(item)Mirror Processors$() from antisilicon, and binds matter and antimatter grain by grain into the $(item)Mirror Alloy$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiiron_ingot",
+      "text": "Anti-iron, refined in levitation. Its surface never touches the mould.$(br2)Made in $(item)Mirror Matter Foundry$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antigold_ingot",
+      "text": "Anti-gold: as soft, as dense and as noble as gold. Do not wear it.$(br2)Made in $(item)Mirror Matter Foundry$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mirror_alloy_ingot",
+      "text": "Matter and antimatter in alternating grains, a Penning field between every pair. It hums.$(br2)Made in $(item)Mirror Matter Foundry$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mirror_foundry",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mirror_processor",
+      "text": "Antisilicon logic on an anticarbon die: it computes with positrons.$(br2)Made in $(item)Mirror Matter Foundry$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Anti-Iron Ingot$(): Mirror Alloy Ingot$(li)$(item)Anti-Gold Ingot$(): Baryogenesis Seed$(li)$(item)Mirror Alloy Ingot$(): Baryogenesis Seed, Dimensional Residue, Hypernova Alloy Ingot, Transcendent Metal Ingot, Transcendent Plasma$(li)$(item)Mirror Processor$(): Baryogenesis Seed, Dimensional Residue, Omega Point"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:liquid_antihelium_cell",
+      "text": "$(fluid)Liquid Antihelium$(). Made in $(item)Mirror Matter Foundry$().$(br)Used for: Anti-Gold Ingot, Anti-Iron Ingot, Baryogenesis Seed, Mirror Alloy Ingot, Mirror Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mirror_metallurgy"
+}

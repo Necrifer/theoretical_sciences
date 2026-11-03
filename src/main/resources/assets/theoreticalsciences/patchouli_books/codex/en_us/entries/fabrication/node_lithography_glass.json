@@ -1,0 +1,23 @@
+{
+  "name": "Lithography Glass",
+  "icon": "theoreticalsciences:lithography_glass",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 521,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lithography_glass",
+      "title": "Lithography Glass",
+      "text": "Containment field glass doped with quantum dots so that light passing through it is shaped at nanometre resolution. It projects patterns far finer than its own grain. Look closely and the glass seems to be drawing tiny circuits."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Quantum lithography needed a mask that could focus light below its wavelength. Embedding quantum dots in containment field glass let them shape the light into features smaller than the light itself."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Quantum Lithographer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

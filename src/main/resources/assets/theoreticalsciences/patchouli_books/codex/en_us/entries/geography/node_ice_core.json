@@ -1,0 +1,19 @@
+{
+  "name": "Ice Core",
+  "icon": "theoreticalsciences:ice_core",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ice_core",
+      "title": "Ice Core",
+      "text": "A cylinder of ice drilled from a glacier. Every layer is a year of snow, and its trapped bubbles are samples of the air of that year."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Climate Engine$().$(br2)$(thing)Unlocked by$(): Climatology.$(br2)$(thing)Used in$(): Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/climatology"
+}

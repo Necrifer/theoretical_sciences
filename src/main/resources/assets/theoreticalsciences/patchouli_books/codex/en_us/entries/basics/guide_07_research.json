@@ -1,0 +1,21 @@
+{
+  "name": "Step 7: The Research Tree",
+  "icon": "theoreticalsciences:research_terminal",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -93,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_terminal,theoreticalsciences:qubit",
+      "text": "$(thing)Sneak + use the Codex$() to open the Research Tree (or press the Research button here, or use a Research Terminal block - you do not need one).$(br2)Machines refuse recipes you have not researched, and many entries of this Codex wait for their research too."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each research shows what it builds on, its $(thing)Insight$() price and sometimes items it uses up. Most end in a $(thing)derivation$(): the situation is described, and you lay out the real equation from symbol tiles, then use it to compute a number from the given values (each world has its own numbers). Hints can be bought with Insight. The $(thing)Book of Symbols$() in the tree explains every tile and how to learn it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Your first: Quantum Foundations$() - 5 Insight, no items. The derivation is the time-dependent Schr\u00f6dinger equation. Its derivation uses symbols you learn by $(thing)holding an item$() once: $(thing)\u0127$() (reduced Planck constant) from $(item)Cherenkov Quartz$(); $(thing)\u2202\u00b2f/\u2202x\u00b2$() (second partial derivative) from $(item)Dilithium Crystal$(); $(thing)\u2202f/\u2202x$() (partial derivative) from $(item)Dilithium Crystal$(). With the tiles learned, build the equation, then compute the electron's de Broglie wavelength from the given numbers."
+    }
+  ]
+}

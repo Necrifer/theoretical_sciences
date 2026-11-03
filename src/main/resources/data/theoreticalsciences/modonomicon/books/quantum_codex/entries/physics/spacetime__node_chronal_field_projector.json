@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_chronal_field_projector",
+  "description": "book.theoreticalsciences.codex.spacetime.node_chronal_field_projector.desc",
+  "icon": {
+    "item": "theoreticalsciences:chronal_field_projector"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 56,
+  "y": 41,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chronal_field_projector"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_chronal_field_projector.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_chronal_field_projector.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_chronal_field_projector.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__chrono_loom",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/temporal_mechanics"
+  }
+}

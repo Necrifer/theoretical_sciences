@@ -1,0 +1,23 @@
+{
+  "name": "Qubit Die",
+  "icon": "theoreticalsciences:qubit_die",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:qubit_die",
+      "title": "Qubit Die",
+      "text": "A single die of entangled qubits cut from an array wafer. Each qubit on it shares its state with its neighbours, so the die computes as one coherent whole. It is cold, fragile and faintly shimmering, and any careless knock would collapse it back into ordinary silicon."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Dicing a Qubit Array Wafer in the Planck-Scale Cutter, I kept the cut in superfluid helium so the qubits stayed coherent. Each die kept its entanglement intact."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Planck-Scale Cutter$().$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Quantum Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

@@ -1,0 +1,81 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.evolution",
+  "description": "book.theoreticalsciences.codex.biology.evolution.desc",
+  "icon": {
+    "item": "theoreticalsciences:evolution_engine"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 184,
+  "y": 64,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:telomerase_complex"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:abiogenesis_crucible"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spark_of_life"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chronal_field_projector"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:primordial_soup_cell"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__chronon_field_inverter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/directed_evolution"
+  }
+}

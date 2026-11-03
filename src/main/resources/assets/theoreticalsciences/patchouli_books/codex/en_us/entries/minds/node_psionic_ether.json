@@ -1,0 +1,23 @@
+{
+  "name": "Psionic Ether",
+  "icon": "theoreticalsciences:psionic_ether_cell",
+  "category": "theoreticalsciences:minds",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:psionic_ether_cell",
+      "title": "Psionic Ether",
+      "text": "A gas that carries thought. Breathing near it fills the mind with faint impressions that are not my own, and it moves in eddies that follow attention. It is warm and almost tasteless. Its currents curl toward whoever in the room is concentrating hardest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Condensing a Psionic Crystal with synaptic fluid, the crystal dissolved into a gas that still carried its resonance. Thought crystallised, then vaporised."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bose-Einstein Condenser$().$(br2)$(thing)Unlocked by$(): Psionics.$(br2)$(thing)Used in$(): Boltzmann Brain, Cognitive Singularity, Reality Anchor, Thought Matrix."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/psionics"
+}

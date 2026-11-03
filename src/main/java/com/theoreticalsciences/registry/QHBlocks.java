@@ -131,6 +131,12 @@ public final class QHBlocks {
                             .isViewBlocking((s, l, pos) -> false).isSuffocating((s, l, pos) -> false).isRedstoneConductor((s, l, pos) -> false);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), FieldGlassBlock::new, p));
                 }
+                case "cloud" -> {
+                    // 1.10.1: nebular gas and dust - you walk straight through it, and it never suffocates or hides you
+                    p.mapColor(MapColor.COLOR_PINK).sound(SoundType.WOOL).noCollission().noOcclusion().replaceable()
+                            .isViewBlocking((s, l, pos) -> false).isSuffocating((s, l, pos) -> false).isRedstoneConductor((s, l, pos) -> false);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.block.NebulaCloudBlock::new, p));
+                }
                 case "arbor" -> {
                     p.mapColor(MapColor.COLOR_MAGENTA).sound(SoundType.CHERRY_WOOD).explosionResistance(3600000F);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.block.ArborHeartwoodBlock::new, p));
@@ -143,6 +149,16 @@ public final class QHBlocks {
                 case "fracture" -> {
                     p.mapColor(MapColor.COLOR_CYAN).sound(com.theoreticalsciences.registry.QHSounds.CRYSTAL);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.block.FracturedRealityBlock::new, p));
+                }
+                case "mantle_breach" -> {
+                    // round 40 (1.3.0): the way between the Overworld and the Planetary Interior
+                    p.mapColor(MapColor.COLOR_ORANGE).noCollission().noLootTable().strength(-1F, 3600000F);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.interior.MantleBreachBlock::new, p));
+                }
+                case "deco_model" -> {
+                    // round 39 (1.2.6): decorative instruments with their own models
+                    p.mapColor(MapColor.METAL).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).noOcclusion();
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.block.DecoModelBlock::new, p));
                 }
                 case "deco" -> {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
@@ -174,6 +190,12 @@ public final class QHBlocks {
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), Block::new, p));
                 }
             }
+            // 1.3.3: the Planetary Interior is rock, and sounds like it (breaking, placing and walking)
+            net.minecraft.world.level.block.SoundType rock = rockSound(def.id());
+            if (rock != null) p.sound(rock);
+            // 1.10.1: rock sounds like stone, crystal like amethyst, glass and lamps like glass, gas like wool
+            net.minecraft.world.level.block.SoundType look = QHBlockSounds.of(def.id());
+            if (look != null) p.sound(look);
         }
         for (MachineType type : MachineType.values()) {
             MACHINES.put(type, BLOCKS.registerBlock(type.id(), p -> new MachineBlock(p, type),
@@ -182,6 +204,17 @@ public final class QHBlocks {
                             .sound(com.theoreticalsciences.registry.QHSounds.MACHINE)
                             .lightLevel(s -> s.getValue(MachineBlock.ACTIVE) ? 12 : 3)));
         }
+    }
+
+    private static net.minecraft.world.level.block.SoundType rockSound(String id) {
+        return switch (id) {
+            case "basalt_column" -> net.minecraft.world.level.block.SoundType.BASALT;
+            case "crustal_rock", "peridotite", "core_iron", "oklo_rock", "inner_core_boundary", "geode_shell", "ringwoodite_ore", "bridgmanite_ore",
+                 "core_magnetite_ore", "oklo_uraninite_ore", "fission_fragment_ore", "rich_iron_ore", "rich_copper_ore", "rich_gold_ore" ->
+                    net.minecraft.world.level.block.SoundType.STONE;
+            case "corundum_crystal", "garnet_crystal", "peridot_crystal", "moissanite_crystal" -> net.minecraft.world.level.block.SoundType.AMETHYST;
+            default -> null;
+        };
     }
 
     public static Block get(String id) {

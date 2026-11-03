@@ -1,0 +1,185 @@
+{
+  "name": "Stellar Plasma Crucible",
+  "icon": "theoreticalsciences:stellar_plasma_crucible",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 33,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_plasma_crucible",
+      "title": "Stellar Plasma Crucible",
+      "text": "Melts and alloys matter in plasma as hot as a stellar core. Makes Chronosteel, Spacetime Alloy, Cosmic Neutronium and Exotic Solder.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Plasma is the fourth state of matter: gas so hot its electrons are stripped away. The Sun's core runs at about fifteen million kelvin. At that temperature, every metal I own is the same thing - a glowing soup waiting to be told what to become."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Stellar Plasma Crucible",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "____AAA____",
+            "____AAA____",
+            "____AAA____",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___AAAAA___",
+            "__AAAAAAA__",
+            "__AAA AAA__",
+            "__AA   AA__",
+            "__AAA AAA__",
+            "__AAAAAAA__",
+            "___AAAAA___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___AAAAA___",
+            "__AAA AAA__",
+            "__AA   AA__",
+            "__A     A__",
+            "__AA   AA__",
+            "__AAA AAA__",
+            "___AAAAA___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___BBBBB___",
+            "__BBB BBB__",
+            "__BB   BB__",
+            "__B     B__",
+            "__BB   BB__",
+            "__BBB BBB__",
+            "___BBBBB___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___BBBBB___",
+            "__BBB BBB__",
+            "__BB   BB__",
+            "__B     B__",
+            "__BB   BB__",
+            "__BBB BBB__",
+            "___BBBBB___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____D_____",
+            "___AADAA___",
+            "__AAA AAA__",
+            "__AA   AA__",
+            "_DD     DD_",
+            "__AA   AA__",
+            "__AAA AAA__",
+            "___AADAA___",
+            "_____D_____",
+            "___________"
+          ],
+          [
+            "_____A_____",
+            "_____A_____",
+            "___BBBBB___",
+            "__BBB BBB__",
+            "__BB   BB__",
+            "AAB     BAA",
+            "__BB   BB__",
+            "__BBB BBB__",
+            "___BBBBB___",
+            "_____A_____",
+            "_____A_____"
+          ],
+          [
+            "_____A_____",
+            "_____A_____",
+            "___BBBBB___",
+            "__BBB BBB__",
+            "__BB   BB__",
+            "AAB     BAA",
+            "__BB   BB__",
+            "__BBB BBB__",
+            "___BBBBB___",
+            "_____A_____",
+            "_____A_____"
+          ],
+          [
+            "_____A_____",
+            "_____A_____",
+            "___AAAAA___",
+            "__AAA AAA__",
+            "__AA   AA__",
+            "AAA     AAA",
+            "__AA   AA__",
+            "__AAA AAA__",
+            "___AAAAA___",
+            "_____A_____",
+            "_____A_____"
+          ],
+          [
+            "_____E_____",
+            "____0AA____",
+            "__AFFFFFA__",
+            "__FFAAAFF__",
+            "_AFAAAAAFA_",
+            "EAFAAGAAFAE",
+            "_AFAAAAAFA_",
+            "__FFAAAFF__",
+            "__AFFFFFA__",
+            "____AAA____",
+            "_____E_____"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:stellar_plasma_crucible",
+          "A": "theoreticalsciences:plasma_crucible_casing",
+          "B": "#theoreticalsciences:multiblock/chronosteel_coil_block_or_better",
+          "D": "theoreticalsciences:plasma_injection_nozzle",
+          "E": "#theoreticalsciences:multiblock/plasma_crucible_casing_or_port",
+          "F": "theoreticalsciences:cryogenic_cooling_jacket",
+          "G": "#theoreticalsciences:multiblock/field_emitter_or_better"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Chronosteel Ingot, Cosmic Neutronium Ingot, Dimensional Residue, Exotic Solder, Spacetime Alloy Ingot, Spacetime Slag, Stellar Core, Stellar Plasma, Warm Helium."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_plasma_crucible",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Stellar Plasma Crucible$(): Transcendent Plasma Forge"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plasma_metallurgy"
+}

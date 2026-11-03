@@ -1,0 +1,23 @@
+{
+  "name": "Cryocooler Unit",
+  "icon": "theoreticalsciences:cryocooler_unit",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cryocooler_unit",
+      "title": "Cryocooler Unit",
+      "text": "A closed-cycle superfluid refrigerator. It pumps heat out of a superconducting magnet and keeps it below its critical temperature, without which the superconductor would stop superconducting. It frosts over in seconds and makes a soft, steady sigh."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)My magnets kept quenching. In the Bose-Einstein Condenser, I built a cycle where superfluid helium flowed between Casimir Plates, carrying heat out without friction. I later found a few in derelict stations."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bose-Einstein Condenser$().$(br2)$(thing)Unlocked by$(): Cryogenics.$(br2)$(thing)Used in$(): Cosmic Neutronium Coil Block, Cryogenic Cooling Jacket, Plasma Injection Nozzle, Spacetime Alloy Coil Block."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cryogenics"
+}

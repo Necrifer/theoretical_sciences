@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lithospheric_plate_fragment",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:bridgmanite",
+      "count": 2
+    }
+  ],
+  "energy": 8192,
+  "duration": 800,
+  "research": "theoreticalsciences:mantle_geodynamics",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Ea": 300000.0,
+      "Tr": 2300.0
+    },
+    "windows": [
+      {
+        "q": "mB",
+        "min": 0.3,
+        "max": 100.0
+      },
+      {
+        "q": "Tf",
+        "min": 1800.0,
+        "max": 2600.0
+      }
+    ]
+  }
+}

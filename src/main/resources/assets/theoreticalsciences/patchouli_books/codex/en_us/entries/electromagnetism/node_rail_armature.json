@@ -1,0 +1,19 @@
+{
+  "name": "Rail Armature",
+  "icon": "theoreticalsciences:rail_armature",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:rail_armature",
+      "title": "Rail Armature",
+      "text": "A copper slug that bridges a railgun's two rails: the current through it and the field of the rails push it out at kilometres a second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Laser Cutter$().$(br2)$(thing)Unlocked by$(): Electrodynamics.$(br2)$(thing)Used in$(): Armature Breech, Exoplanet Core Sample, Lonsdaleite, Moissanite."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrodynamics"
+}

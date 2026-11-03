@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.node_step_laser",
+  "description": "book.theoreticalsciences.codex.optics.node_step_laser.desc",
+  "icon": {
+    "item": "theoreticalsciences:step_laser"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 90,
+  "y": 64,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:step_laser"
+      },
+      "text": "book.theoreticalsciences.codex.optics.node_step_laser.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.node_step_laser.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/optics__optical_workshop",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/geometric_optics"
+  }
+}

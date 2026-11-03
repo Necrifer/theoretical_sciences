@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:ergodic_mixer_core"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.ergodic_theory"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.ergodic_theory.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/statistical_mechanics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

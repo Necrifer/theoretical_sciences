@@ -1,0 +1,99 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.compactification",
+  "description": "book.theoreticalsciences.codex.strings.compactification.desc",
+  "icon": {
+    "item": "theoreticalsciences:compactified_circle"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 144,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:kaluza_klein_ore"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.compactification.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.compactification.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brane_tension_fiber"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:compactification_lathe"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:compactified_circle"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:d_brane_sheet"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:g2_manifold"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:m_theory_core"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.compactification.p9"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brane_strider_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p10"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_wisp_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.strings.compactification.p11"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__string_resonance_loom"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/compactification"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Technetium-99m Vial",
+  "icon": "theoreticalsciences:technetium_99m_vial",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:technetium_99m_vial",
+      "title": "Technetium-99m Vial",
+      "text": "An excited nucleus that gives off one clean gamma ray and calms down within hours: the most used medical isotope in the world."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Irradiation Chamber$().$(br2)$(thing)Unlocked by$(): Decay Chains.$(br2)$(thing)Used in$(): Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radiochemistry"
+}

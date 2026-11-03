@@ -1,0 +1,41 @@
+{
+  "name": "Catalysts",
+  "icon": "theoreticalsciences:higgs_catalyst",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:higgs_catalyst,theoreticalsciences:spacetime_catalyst,theoreticalsciences:eternity_catalyst",
+      "text": "Some recipes need a $(thing)catalyst$() in an input slot. It is never consumed - JEI marks it in gold. Each catalyst is made from the one before it:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Higgs Catalyst$(): mass-altering processes$(li)$(item)Spacetime Catalyst$(): forged from a Higgs Catalyst, for cosmic processors and universe forging$(li)$(item)Eternity Catalyst$(): forged from a Spacetime Catalyst, for the Omega Point and everything beyond"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A chemist's catalyst speeds a reaction and comes out unchanged at the end. These behave the same way: present, necessary, never used up. Since each is forged from the one before, I treat the first one as the most precious thing in the lab."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:higgs_catalyst",
+      "text": "A pinned Higgs-field bubble. Required (not consumed) by mass-altering processes.$(br2)Made in $(item)Higgs Field Modulator$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spacetime_catalyst",
+      "text": "A self-sustaining knot of curved spacetime. Required (not consumed) by hyperdimensional processes.$(br2)Made in $(item)Tesseract Assembler$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:eternity_catalyst",
+      "text": "Time flows through it without passing. Required (not consumed) by the final processes.$(br2)Made in $(item)Reality Compiler$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Higgs Catalyst$(): Dimensional Residue, Spacetime Catalyst, Spin Foam Lattice, Theoretical Notes I$(li)$(item)Spacetime Catalyst$(): Dimensional Residue, Eternity Catalyst, Theoretical Notes II$(li)$(item)Eternity Catalyst$(): Unified Notes II"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mass_manipulation"
+}

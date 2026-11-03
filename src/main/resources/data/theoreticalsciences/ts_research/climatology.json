@@ -1,0 +1,59 @@
+{
+  "title": "Climatology",
+  "description": "What the air holds decides how much of the Sun's heat the world keeps: carbon dioxide traps it, aerosols send it back. Unlocks the Climate Engine.",
+  "icon": "theoreticalsciences:ice_core",
+  "x": 13,
+  "y": 3,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:hydrology",
+    "theoreticalsciences:thermodynamics_of_information"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:ice",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:survey_map",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "The air's carbon dioxide rises from a concentration c to C. Write the radiative forcing F it adds, in W/m\u00b2, which grows with the logarithm of the ratio (coefficient 5.35).",
+    "name": "CO2 radiative forcing",
+    "lhs": "F",
+    "form": "5.35 * ln ( C / c )",
+    "expr": "5.35 * ln ( C / c )",
+    "ask": "Find F for doubling the pre-industrial carbon dioxide: c = @{c} ppm, C = @{C} ppm.",
+    "vars": {
+      "F": "forcing (W/m\u00b2)",
+      "C": "concentration now (ppm)",
+      "c": "concentration before (ppm)"
+    },
+    "given": {
+      "C": 560,
+      "c": 280
+    },
+    "unit": "W/m\u00b2",
+    "method": "The strongest absorption bands are already saturated; extra CO\u2082 only widens their wings, so each doubling adds the same.",
+    "distractors": [
+      "\u03c3",
+      "T",
+      "4"
+    ],
+    "vary": {
+      "C": [
+        336.0,
+        784.0,
+        1.0
+      ],
+      "c": [
+        168.0,
+        392.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Lattice Seed Crystal",
+  "icon": "theoreticalsciences:lattice_seed",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lattice_seed",
+      "title": "Lattice Seed Crystal",
+      "text": "A flawless crystal nucleus, a few atoms arranged exactly right. Boules grow from it atom by atom, each new layer copying the one below. It is tiny, clear and precious, and any flaw in it would be repeated through every wafer that follows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)To grow perfect crystals I needed a perfect start. Pressing Cherenkov Quartz in the Casimir Vacuum Press, the vacuum forced the lattice into its lowest-energy arrangement, leaving a seed without a single defect."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Casimir Vacuum Press$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Cherenkov Boule, Hyperdimensional Boule, Topological Boule, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

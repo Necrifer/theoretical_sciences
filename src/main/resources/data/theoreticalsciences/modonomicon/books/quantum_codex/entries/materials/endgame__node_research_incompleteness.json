@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_research_incompleteness",
+  "description": "book.theoreticalsciences.codex.endgame.node_research_incompleteness.desc",
+  "icon": {
+    "item": "theoreticalsciences:godel_sentence"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 186,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:godel_sentence"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_research_incompleteness.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_research_incompleteness.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__beyond",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/incompleteness"
+  }
+}

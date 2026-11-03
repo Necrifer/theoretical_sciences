@@ -1,0 +1,19 @@
+{
+  "name": "Fluorite Lens",
+  "icon": "theoreticalsciences:fluorite_lens",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fluorite_lens",
+      "title": "Fluorite Lens",
+      "text": "A lens cut from a fluorite boule along its lattice. Paired with glass it cancels the colour error glass alone cannot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Optical Workshop$().$(br2)$(thing)Unlocked by$(): Geometric Optics.$(br2)$(thing)Used in$(): Apochromatic Objective."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/geometric_optics"
+}

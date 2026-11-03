@@ -1,0 +1,61 @@
+{
+  "params": [
+    {
+      "id": "al",
+      "unit": "\u00b0",
+      "min": 0,
+      "max": 90,
+      "step": 0.01,
+      "default": 30
+    },
+    {
+      "id": "lam",
+      "unit": "\u00c5",
+      "min": 1,
+      "max": 3,
+      "step": 0.001,
+      "default": 1.4
+    },
+    {
+      "id": "t",
+      "unit": "min",
+      "min": 1,
+      "max": 600,
+      "step": 1,
+      "default": 30
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "phi",
+      "unit": "rad",
+      "expr": "39.38*lam*sin(al*0.0174533)",
+      "formula": "\u0394\u03c6 = 2\u03c0m\u00b2g\u03bbA\u00b7sin \u03b1/h\u00b2"
+    },
+    {
+      "id": "fr",
+      "unit": "",
+      "expr": "cos(phi + 0.05*d)",
+      "formula": "cos \u0394\u03c6"
+    },
+    {
+      "id": "sp",
+      "unit": "rad",
+      "expr": "1/(0.85*sqrt(40*t))",
+      "formula": "\u03c3 = 1/(V\u221aN)"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(2*60/(t + 60), 0.2, 2)",
+  "rate_formula": "rate = 2\u00b760/(t + 60 min)",
+  "heat": "0.02",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

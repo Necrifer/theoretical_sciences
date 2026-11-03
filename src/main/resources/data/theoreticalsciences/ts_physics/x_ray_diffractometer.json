@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "id": "V",
+      "unit": "kV",
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "default": 30
+    },
+    {
+      "id": "I",
+      "unit": "mA",
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "default": 20
+    },
+    {
+      "id": "tt",
+      "unit": "\u00b0",
+      "min": 5,
+      "max": 150,
+      "step": 0.001,
+      "default": 40
+    }
+  ],
+  "recipe_vars": {
+    "dl": 2.551
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "th",
+      "unit": "\u00b0",
+      "expr": "tt/2 + 0.05*d",
+      "formula": "\u03b8 = 2\u03b8/2"
+    },
+    {
+      "id": "dm",
+      "unit": "\u00c5",
+      "expr": "1.5406/(2*sin(th*0.0174533))",
+      "formula": "d = \u03bb/(2 sin \u03b8)"
+    },
+    {
+      "id": "err",
+      "unit": "%",
+      "expr": "100*abs(dm - dl)/dl",
+      "formula": "|d \u2212 d_lattice|/d_lattice"
+    },
+    {
+      "id": "Pa",
+      "unit": "kW",
+      "expr": "V*I/1000",
+      "formula": "P = V\u00b7I"
+    },
+    {
+      "id": "cnt",
+      "unit": "kcps",
+      "expr": "I*pos(V - 8.98)^1.6/100",
+      "formula": "N \u221d I\u00b7(V \u2212 V_K)^1.6"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "kedge",
+      "kind": "stop",
+      "expr": "V - 8.98",
+      "formula": "V > 8.98 kV"
+    },
+    {
+      "id": "anode",
+      "kind": "damage",
+      "expr": "2.2 - Pa",
+      "formula": "P < 2.2 kW"
+    }
+  ],
+  "rate": "clamp(cnt/40, 0.2, 2)",
+  "rate_formula": "rate = count rate / 40 kcps",
+  "heat": "Pa",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

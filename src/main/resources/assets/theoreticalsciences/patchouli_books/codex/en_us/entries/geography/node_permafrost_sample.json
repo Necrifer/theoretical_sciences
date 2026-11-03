@@ -1,0 +1,19 @@
+{
+  "name": "Permafrost Sample",
+  "icon": "theoreticalsciences:permafrost_sample",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:permafrost_sample",
+      "title": "Permafrost Sample",
+      "text": "Soil frozen for thousands of years, holding the carbon of the plants that grew before it froze."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Climate Engine$().$(br2)$(thing)Unlocked by$(): Climatology.$(br2)$(thing)Used in$(): Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/climatology"
+}

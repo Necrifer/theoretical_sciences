@@ -1,0 +1,41 @@
+{
+  "name": "Origins III: Oncogenesis",
+  "icon": "theoreticalsciences:anomalous_strain_culture",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomalous_strain_culture",
+      "text": "Cancer is the model anomaly: a part of the body that stops obeying the body. It is not one mistake but several. An $(thing)oncogene$() gets stuck on (RAS, MYC) and the cell is told to divide; a $(thing)tumour suppressor$() is lost - $(thing)p53$(), the guardian of the genome, which should stop a damaged cell or make it die - and nothing tells it to stop. Each mutation gives one clone an edge over its neighbours."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That cancer needs several hits shows in the numbers: the incidence of most cancers rises as the fifth or sixth power of age, I(t) = \u03a0k_j\u00b7t^{n\u22121}/(n \u2212 1)!, as if n \u2248 6 independent steps were needed. What a cell has gained by the end are the $(thing)hallmarks of cancer$(): sustained growth signals, deaf to growth suppressors, no apoptosis, endless replication, its own blood supply, invasion - and later, an unstable genome, reprogrammed metabolism, hiding from immunity."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Bioreactor$(), stem cells exposed to a specimen in nutrient broth lose their checkpoints: an $(item)Anomalous Strain Culture$(). (They also make the Breached Anomaly Engine's $(item)Morphogenic Serum$() - another way to it.)"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomalous_strain_culture",
+      "text": "Stem cells exposed to a contained anomaly. Their checkpoints are failing one by one: no p53, no brakes, no reason to stop dividing.$(br2)Made in $(item)Bioreactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:morphogenic_serum",
+      "text": "Every signal an embryo listens to, in one vial. A Breached Anomaly Engine spends one on every creature it grows.$(br2)Made in $(item)Bioreactor$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Anomalous Strain Culture$(): Immortal Cell Line, Morphogenic Serum$(li)$(item)Bioreactor$(): Gene Sequencer$(li)$(item)Morphogenic Serum$(): Absolute Singularity"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/oncogenesis"
+}

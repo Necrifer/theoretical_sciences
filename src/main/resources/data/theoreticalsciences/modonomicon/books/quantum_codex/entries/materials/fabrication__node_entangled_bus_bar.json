@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_entangled_bus_bar",
+  "description": "book.theoreticalsciences.codex.fabrication.node_entangled_bus_bar.desc",
+  "icon": {
+    "item": "theoreticalsciences:entangled_bus_bar"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 175,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:entangled_bus_bar"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_entangled_bus_bar.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_entangled_bus_bar.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__convergence_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/simulation_hypothesis"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Chance & Counting",
+  "icon": "theoreticalsciences:dice_set",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dice_set,theoreticalsciences:random_number_chip",
+      "text": "Chance has laws. Repeat an experiment n times, each a success with probability p, and exactly k successes happen with probability C(n,k)\u00b7p^k\u00b7(1 \u2212 p)^(n\u2212k). Three heads in ten tosses: 11.7%."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Roll the $(item)Dice Set$() and add them: seven comes up a sixth of the time, two and twelve one time in thirty-six each."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Combinatorics$() counts without listing. There are n! ways to order n things, and for large n, ln n! \u2248 n ln n \u2212 n. The $(item)Quantum Random Number Chip$() draws its bits from single photons at a half-silvered mirror - the only randomness nothing can predict."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/probability_theory"
+}

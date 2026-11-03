@@ -1,0 +1,19 @@
+{
+  "name": "Spent Fuel Rod",
+  "icon": "theoreticalsciences:spent_fuel_rod",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spent_fuel_rod",
+      "title": "Spent Fuel Rod",
+      "text": "A fuel rod after three years in a reactor: still mostly uranium, but laced with fission products a million times more radioactive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Irradiation Chamber$().$(br2)$(thing)Unlocked by$(): Decay Chains.$(br2)$(thing)Used in$(): Nuclear Waste Glass, Uranium-238 Pellet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radiochemistry"
+}

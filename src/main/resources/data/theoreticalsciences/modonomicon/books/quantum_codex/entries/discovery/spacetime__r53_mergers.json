@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r53_mergers",
+  "description": "book.theoreticalsciences.codex.spacetime.r53_mergers.desc",
+  "icon": {
+    "item": "theoreticalsciences:chirp_signal_record"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 88,
+  "y": -22,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chirp_signal_record"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r53_mergers.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r53_mergers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__r47_waves"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__r47_frame_drag"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/binary_mergers"
+  }
+}

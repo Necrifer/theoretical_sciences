@@ -16,6 +16,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * 1.3.6: every forging, of any recipe, makes the whole Forge wait {@link #COOLDOWN} ticks before it compiles again
+ * (kept under the key {@link #ANY}); the drifting recipes also scramble their own laws as before.
+ * <p>
  * Round 36: the Forge's materials that the Pleroma Reconstitutor also makes (Omnipotent Ingot, Crystal of
  * Transcendence, Shards, Absolute Singularity, the Echo, Eschaton Cells) stay in the Forge - cheaper there, but slow and
  * fiddly by hand:
@@ -49,10 +52,22 @@ public final class ForgeDrift extends SavedData {
         return get(s).epoch.getOrDefault(id, 0);
     }
 
-    /** Seconds until this recipe may be compiled again (0: now). */
+    /** 1.3.6: the key of the Forge-wide wait - after any forging, the Core re-seeds before it compiles anything. */
+    public static final String ANY = "*";
+
+    /** Seconds until this recipe may be compiled again (0: now): its own wait or the Forge-wide one, whichever is longer. */
     public static int secondsLeft(MinecraftServer s, String id) {
-        long t = get(s).readyAt.getOrDefault(id, 0L) - s.overworld().getGameTime();
+        ForgeDrift d = get(s);
+        long now = s.overworld().getGameTime();
+        long t = Math.max(d.readyAt.getOrDefault(id, 0L), d.readyAt.getOrDefault(ANY, 0L)) - now;
         return t <= 0 ? 0 : (int) ((t + 19) / 20);
+    }
+
+    /** 1.3.6: any recipe was just forged - the whole Forge waits {@link #COOLDOWN} ticks. */
+    public static void forgedAny(MinecraftServer s) {
+        ForgeDrift d = get(s);
+        d.readyAt.put(ANY, s.overworld().getGameTime() + COOLDOWN);
+        d.setDirty();
     }
 
     /** A drifting recipe was just forged: new laws, and the simulation re-seeds. */
@@ -66,6 +81,7 @@ public final class ForgeDrift extends SavedData {
     /** Tells a player's screen the current laws and waits. */
     public static void sync(ServerPlayer sp) {
         StringBuilder b = new StringBuilder();
+        b.append(ANY).append(":0:").append(secondsLeft(sp.server, ANY));
         for (String id : DRIFTING) {
             if (b.length() > 0) b.append(',');
             b.append(id).append(':').append(epoch(sp.server, id)).append(':').append(secondsLeft(sp.server, id));

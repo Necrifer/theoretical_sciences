@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.alpha_omega",
+  "description": "book.theoreticalsciences.codex.endgame.alpha_omega.desc",
+  "icon": {
+    "item": "theoreticalsciences:proof_of_everything"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 61,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_of_everything"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.alpha_omega.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.alpha_omega.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.alpha_omega.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_of_everything"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.alpha_omega.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.alpha_omega.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.alpha_omega.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/world__bulk_life"
+    },
+    {
+      "entry": "theoreticalsciences:mobs/strings__compactification"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conquered_alpha_omega"
+  }
+}

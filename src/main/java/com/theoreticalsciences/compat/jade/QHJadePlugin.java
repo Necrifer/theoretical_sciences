@@ -154,7 +154,8 @@ public class QHJadePlugin implements IWailaPlugin {
                     double left = (max - p) / sp / 20.0, total = max / sp / 20.0;
                     text = Component.translatable("jade.theoreticalsciences.progress_time", Math.round(ratio * 100), secs(total - left), secs(total));
                 } else text = Component.translatable("jade.theoreticalsciences.progress", Math.round(ratio * 100));
-                int c1 = 0xFF000000 | st.color, c2 = 0xFF000000 | darker(st.color);
+                // 1.2.1: the bar is drawn in a deep shade of the status colour, so the white text on it stays readable
+                int c1 = 0xFF000000 | shade(st.color, 0.42F), c2 = 0xFF000000 | shade(st.color, 0.26F);
                 tip.add(h.progress(ratio, text, h.progressStyle().color(c1, c2).textColor(0xFFFFFFFF), BoxStyle.getNestedBox(), true));
             }
             int oc = t.getInt("oc"), par = t.getInt("par");
@@ -168,7 +169,13 @@ public class QHJadePlugin implements IWailaPlugin {
             return String.format("%.1fs", s);
         }
 
-        private static int darker(int c) {
+        /** The colour at a fraction of its brightness. */
+    private static int shade(int rgb, float f) {
+        int r = (int) (((rgb >> 16) & 255) * f), g = (int) (((rgb >> 8) & 255) * f), b = (int) ((rgb & 255) * f);
+        return (r << 16) | (g << 8) | b;
+    }
+
+    private static int darker(int c) {
             return ((c >> 16 & 0xFF) * 6 / 10) << 16 | ((c >> 8 & 0xFF) * 6 / 10) << 8 | (c & 0xFF) * 6 / 10;
         }
 

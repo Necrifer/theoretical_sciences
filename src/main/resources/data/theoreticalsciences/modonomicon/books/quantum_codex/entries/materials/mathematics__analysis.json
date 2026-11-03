@@ -1,0 +1,86 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.analysis",
+  "description": "book.theoreticalsciences.codex.mathematics.analysis.desc",
+  "icon": {
+    "item": "theoreticalsciences:integral_operator"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 41,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.analysis"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:infinitesimal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:function_graph"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:integral_operator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:differential_manifold"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fourier_series"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractal_set"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analysis.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__platonic_realm"
+    },
+    {
+      "entry": "theoreticalsciences:materials/mathematics__fractal_space"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/real_analysis"
+  }
+}

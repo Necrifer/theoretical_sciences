@@ -1,0 +1,23 @@
+{
+  "name": "Neutrino Flux",
+  "icon": "theoreticalsciences:neutrino_flux_cell",
+  "category": "theoreticalsciences:cosmic",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:neutrino_flux_cell",
+      "title": "Neutrino Flux",
+      "text": "A stream of ghost particles, trillions of which pass through me every second. They barely interact with anything, so the flux is invisible, weightless and almost impossible to stop. Only rarely does one leave a blue flash."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Pauli predicted the neutrino to save energy conservation. The Neutrino Condenser caught the rare few that interacted with its Cherenkov quartz, and slowly accumulated them into a flux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Neutrino Condenser$().$(br2)$(thing)Unlocked by$(): Neutrino Physics.$(br2)$(thing)Used in$(): Gold Ingot, Lepton Triplet, Magnetar Shard, Pulsar Timing Crystal, R-Process Cluster, Standard Model Singularity, Supernova Remnant."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/neutrino_physics"
+}

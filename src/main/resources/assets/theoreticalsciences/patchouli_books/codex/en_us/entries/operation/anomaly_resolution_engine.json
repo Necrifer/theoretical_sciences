@@ -1,0 +1,24 @@
+{
+  "name": "Anomaly Resolution Engine",
+  "icon": "theoreticalsciences:anomaly_resolution_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 15,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The anomaly is dosed in n fractions of D. Each fraction kills a fraction exp(\u2212\u03b1D \u2212 \u03b2D\u00b2) of its 10\u2079 clonogenic cells (\u03b1 = 0.3 Gy\u207b\u00b9, \u03b2 = 0.03 Gy\u207b\u00b2); it is resolved when none survives, with probability TCP = exp(\u2212N\u2080\u00b7e^{\u2212n(\u03b1D + \u03b2D\u00b2)}). The normal tissue around it repairs between fractions, but its damage grows as BED = nD(1 + D/3): small fractions spare it, large ones do not."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Dose per fraction D, Fractions n.$(br2)$(thing)Disturbance$(): The anomaly's sensitivity \u03b1 wanders by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The anomaly survives: too many of its clonogens are left; The dose is destroying the normal tissue around the anomaly; The resolution fields are overheating.$(br2)$(thing)Rate$(): The surer the resolution, the faster the work goes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Sensitivity \u03b1: \u03b1 = 0.3\u00b7(1 + 0.05\u00b7d)$(br)Log cell kill: ln(1/S) = n(\u03b1D + \u03b2D\u00b2)$(br)Resolution probability TCP: TCP = exp(\u2212N\u2080\u00b7e^{\u2212n(\u03b1D + \u03b2D\u00b2)})$(br)Normal-tissue BED: BED\u2083 = nD(1 + D/3)"
+    }
+  ]
+}

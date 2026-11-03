@@ -1,0 +1,162 @@
+{
+  "type": "theoreticalsciences:accretion_frontier",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "theoreticalsciences:accretion_frontier",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "theoreticalsciences:molecular_cloud_nebula",
+          "parameters": {
+            "temperature": [
+              -1.0,
+              -0.45
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:asteroid_belt",
+          "parameters": {
+            "temperature": [
+              -0.45,
+              -0.1
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:lensing_void",
+          "parameters": {
+            "temperature": [
+              -0.1,
+              0.2
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:pulsar_field",
+          "parameters": {
+            "temperature": [
+              0.2,
+              0.55
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:accretion_rim",
+          "parameters": {
+            "temperature": [
+              0.55,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -1.0,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_lithium_ingot",
+  "description": "book.theoreticalsciences.codex.chemistry.node_lithium_ingot.desc",
+  "icon": {
+    "item": "theoreticalsciences:lithium_ingot"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 30,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lithium_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_lithium_ingot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_lithium_ingot.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__electrochem",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrochemistry"
+  }
+}

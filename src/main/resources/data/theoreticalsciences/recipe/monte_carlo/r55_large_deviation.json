@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:entropy_die",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:normal_distribution_crystal",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:large_deviation_shard",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 3000,
+  "research": "theoreticalsciences:extreme_value_theory",
+  "unscaled": true,
+  "insight_per_run": 15,
+  "physics": {
+    "vars": {
+      "sg": 30.0,
+      "opt": 0.7
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 20.0
+      }
+    ]
+  }
+}

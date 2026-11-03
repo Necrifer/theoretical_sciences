@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_antiiron_ore",
+  "description": "book.theoreticalsciences.codex.world.node_antiiron_ore.desc",
+  "icon": {
+    "item": "theoreticalsciences:antiiron_ore"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 8,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiiron_ore"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_antiiron_ore.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_antiiron_ore.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__ores",
+      "draw_arrow": false
+    }
+  ]
+}

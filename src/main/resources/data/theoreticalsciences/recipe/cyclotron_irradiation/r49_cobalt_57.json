@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:cyclotron_irradiation",
+  "item_inputs": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cobalt_57_source",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 800,
+  "research": "theoreticalsciences:cyclotron_physics",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Eth": 5.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": 5.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

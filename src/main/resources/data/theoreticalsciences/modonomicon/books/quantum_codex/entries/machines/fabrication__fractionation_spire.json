@@ -1,0 +1,68 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.fractionation_spire",
+  "description": "book.theoreticalsciences.codex.fabrication.fractionation_spire.desc",
+  "icon": {
+    "item": "theoreticalsciences:fractionation_spire"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 68,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractionation_spire"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractionation_spire"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dimensional_residue_cell"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.fractionation_spire.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/fabrication__femtoscale_assembly_line"
+    },
+    {
+      "entry": "theoreticalsciences:machines/hyperdimensions__tesseract"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/fractional_distillation"
+  }
+}

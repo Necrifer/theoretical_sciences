@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_carbon_nanotube_bundle",
+  "description": "book.theoreticalsciences.codex.chemistry.node_carbon_nanotube_bundle.desc",
+  "icon": {
+    "item": "theoreticalsciences:carbon_nanotube_bundle"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 79,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:carbon_nanotube_bundle"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_carbon_nanotube_bundle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_carbon_nanotube_bundle.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_carbon_nanotube_bundle.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__carbon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nanochemistry"
+  }
+}

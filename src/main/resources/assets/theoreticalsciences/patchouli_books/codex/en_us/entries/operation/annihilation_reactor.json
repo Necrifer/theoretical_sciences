@@ -1,0 +1,24 @@
+{
+  "name": "Annihilation Reactor",
+  "icon": "theoreticalsciences:annihilation_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Proton-antiproton annihilation turns mass entirely into pions: about half the energy in charged pions (p \u2248 0.35 GeV/c), a third in gamma rays, the rest in neutrinos. A magnetic nozzle can catch the charged pions if their gyroradius p/(0.3B) fits the 3 m chamber; the gammas must be stopped by shielding."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Nozzle field, Antimatter feed, Gamma shield.$(br2)$(thing)Disturbance$(): Annihilation-point jitter: capture varies by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Gamma flux through the shield is melting the structure; Interlock: magnetic nozzle not superconducting (too warm); Field above the critical field: the magnetic nozzle quench.$(br2)$(thing)Rate$(): Generator output follows the captured power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Annihilation power: P = 2\u1e41c\u00b2$(br)Pion gyroradius: r_g = p/(0.3B)$(br)Capture fraction: f = 1 \u2212 r_g/R$(br)Electric power: P_e = \u00bdP\u00b7f$(br)Gamma power: P_\u03b3 = \u2153P$(br)Escaping gammas: P_\u03b3\u00b7e^(\u2212x/20 cm)$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

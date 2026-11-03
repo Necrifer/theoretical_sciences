@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.finality_branch",
+  "description": "book.theoreticalsciences.codex.spacetime.finality_branch.desc",
+  "icon": {
+    "item": "theoreticalsciences:cosmological_constant"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 50,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cosmological_constant"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.finality_branch.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.finality_branch.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/strings__origin_branch"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__dark_energy_siphon"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cosmic_eschatology"
+  }
+}

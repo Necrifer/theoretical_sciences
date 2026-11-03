@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_transcendence_crystal",
+  "description": "book.theoreticalsciences.codex.endgame.node_transcendence_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:transcendence_crystal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 221,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transcendence_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_transcendence_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_transcendence_crystal.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__the_core_forge",
+      "draw_arrow": false
+    }
+  ]
+}

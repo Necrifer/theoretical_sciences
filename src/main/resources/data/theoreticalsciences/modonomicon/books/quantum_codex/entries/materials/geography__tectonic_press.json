@@ -1,0 +1,86 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.tectonic_press",
+  "description": "book.theoreticalsciences.codex.geography.tectonic_press.desc",
+  "icon": {
+    "item": "theoreticalsciences:tectonic_press"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 81,
+  "y": 18,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tectonic_press"
+      },
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tectonic_press"
+      },
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:core_iron"
+      },
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ringwoodite"
+      },
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bridgmanite"
+      },
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metamorphic_schist"
+      },
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.tectonic_press.p10"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/geography__seismograph"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/metamorphism"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Hypervelocity Impact Forge",
+  "icon": "theoreticalsciences:hypervelocity_impact_forge",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 110,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hypervelocity_impact_forge",
+      "title": "Hypervelocity Impact Forge",
+      "text": "A railgun: an armature shot down two rails at kilometres a second into a target, where the shock makes what only impacts can.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the current and the armature's mass. The rails push with F = \u00bdL\u2032I\u00b2; the armature leaves at v = \u221a(2FL/m) and hits with a pressure of about \u00bd\u03c1v\u00b2. Each product forms only in its own pressure window. Each shot uses a Rail Armature."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Hypervelocity Impact Forge",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________AAA",
+            "_____________AAA",
+            "_____________AAA",
+            "_____________AAA",
+            "_____________AAA"
+          ],
+          [
+            "_____________ABA",
+            "__A_A_A_A_A_AA_A",
+            "_BABABABABABAA_A",
+            "__A_A_A_A_A_AA_A",
+            "_____________ABA"
+          ],
+          [
+            "__D_D_0_D_D_DAAA",
+            "AEEEEEEEEEEEEA_A",
+            "F             _A",
+            "AEEEEEEEEEEEEA_A",
+            "__D_D_D_D_D_DAAA"
+          ],
+          [
+            "AAAAAAAGAAAAAAAA",
+            "AAAAAAAAAAAAAAAA",
+            "GAAAAAAAAAAAAAAG",
+            "AAAAAAAAAAAAAAAA",
+            "AAAAAAAGAAAAAAAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:hypervelocity_impact_forge",
+          "A": "theoreticalsciences:impact_chamber",
+          "B": "theoreticalsciences:containment_field_glass",
+          "D": "theoreticalsciences:capacitor_bank",
+          "E": "theoreticalsciences:rail_conductor",
+          "F": "theoreticalsciences:armature_breech",
+          "G": "#theoreticalsciences:multiblock/impact_chamber_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Exoplanet Core Sample, Lonsdaleite, Moissanite."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hypervelocity_impact_forge",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrodynamics"
+}

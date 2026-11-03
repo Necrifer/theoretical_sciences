@@ -1,0 +1,74 @@
+{
+  "params": [
+    {
+      "id": "Mb",
+      "unit": "10\u2079 kg",
+      "min": 0.5,
+      "max": 100,
+      "step": 0.001,
+      "default": 10
+    },
+    {
+      "id": "fd",
+      "unit": "",
+      "min": 0.5,
+      "max": 1.5,
+      "step": 0.0001,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Pref": 10
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "TH",
+      "unit": "10\u00b9\u00b3 K",
+      "expr": "12.27/Mb",
+      "formula": "T = \u0127c\u00b3/(8\u03c0GMk)"
+    },
+    {
+      "id": "Ph",
+      "unit": "TW",
+      "expr": "356/Mb^2",
+      "formula": "P \u221d 1/M\u00b2"
+    },
+    {
+      "id": "fe",
+      "unit": "",
+      "expr": "fd*(1 + 0.02*d)",
+      "formula": ""
+    }
+  ],
+  "constraints": [
+    {
+      "id": "evaporate",
+      "kind": "damage",
+      "expr": "fe - 0.95",
+      "formula": "feed > 95%"
+    },
+    {
+      "id": "swell",
+      "kind": "stop",
+      "expr": "1.05 - fe",
+      "formula": "feed < 105%"
+    },
+    {
+      "id": "gamma",
+      "kind": "damage",
+      "expr": "20 - TH",
+      "formula": "T < 2\u00d710\u00b9\u2074 K"
+    }
+  ],
+  "rate": "clamp(Ph/Pref, 0, 2)",
+  "rate_formula": "output = P / P_rated",
+  "heat": "0.01*Ph",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 60,
+  "heat_capacity": 200,
+  "timescale": 1,
+  "rate_max": 4
+}

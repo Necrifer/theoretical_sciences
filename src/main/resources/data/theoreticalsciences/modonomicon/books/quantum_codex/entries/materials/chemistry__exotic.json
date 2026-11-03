@@ -1,0 +1,63 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.exotic",
+  "description": "book.theoreticalsciences.codex.chemistry.exotic.desc",
+  "icon": {
+    "item": "theoreticalsciences:positronium_hydride"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 115,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:positronium_hydride"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.exotic.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.exotic.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:positronium_hydride"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.exotic.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:muonic_catalyst"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.exotic.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:room_temperature_superconductor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.exotic.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.exotic.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__antimatter_penning_trap"
+    },
+    {
+      "entry": "theoreticalsciences:materials/exotic__quark_gluon_collider"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/exotic_chemistry"
+  }
+}

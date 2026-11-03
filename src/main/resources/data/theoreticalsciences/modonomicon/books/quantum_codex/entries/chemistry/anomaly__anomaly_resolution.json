@@ -1,0 +1,88 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_resolution",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.desc",
+  "icon": {
+    "item": "theoreticalsciences:resolved_anomaly"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 93,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resolved_anomaly"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resolved_anomaly"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_resolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_distiller"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_fragment"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:reality_compiler"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:reality_anchor"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/anomaly__anomaly_extent"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/anomaly__anomaly_therapy"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/anomaly_resolution"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Hydrology",
+  "description": "Water moves through rock as through a sponge, slowly: Darcy's law, flow = permeability \u00d7 pressure gradient. Under the plains lie aquifers of rain that fell before the last ice age. Unlocks the Aquifer Pump.",
+  "icon": "theoreticalsciences:aquifer_sample",
+  "x": 12,
+  "y": 3,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:geomorphology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:sediment_core",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:seismic_recorder_drum",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Water of viscosity \u03bc seeps through rock of permeability k, across an area A, driven by a pressure difference P over a length L. Write the flow Q.",
+    "name": "Darcy's law",
+    "lhs": "Q",
+    "form": "k * A * P / ( \u03bc * L )",
+    "expr": "k * A * P / ( m * L ) * 1000",
+    "ask": "Find Q in litres a second for k = @{k} m\u00b2, A = @{A} m\u00b2, P = 1e5 Pa, m = @{m} Pa\u00b7s (water), L = @{L} m.",
+    "vars": {
+      "Q": "flow (L/s)",
+      "k": "permeability (m\u00b2)",
+      "A": "area (m\u00b2)",
+      "P": "pressure difference (Pa)",
+      "\u03bc": "viscosity",
+      "m": "viscosity (Pa\u00b7s)",
+      "L": "length (m)"
+    },
+    "given": {
+      "k": 1e-11,
+      "A": 10,
+      "P": 100000.0,
+      "m": 0.001,
+      "L": 10
+    },
+    "unit": "L/s",
+    "method": "Like current through a resistor: flow grows with the push (the pressure gradient) and the ease of passage (k/\u03bc).",
+    "distractors": [
+      "g",
+      "\u03c1",
+      "2"
+    ],
+    "vary": {
+      "k": [
+        5.9e-12,
+        1.4e-11,
+        1e-13
+      ],
+      "A": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "m": [
+        0.00059,
+        0.0014,
+        1e-05
+      ],
+      "L": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

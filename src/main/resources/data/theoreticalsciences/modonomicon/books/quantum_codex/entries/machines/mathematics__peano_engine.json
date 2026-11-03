@@ -1,0 +1,78 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.peano_engine",
+  "description": "book.theoreticalsciences.codex.mathematics.peano_engine.desc",
+  "icon": {
+    "item": "theoreticalsciences:peano_engine"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 0,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:peano_engine"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:peano_engine"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:natural_number_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:integer_ring"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:rational_field"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transcendental_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.peano_engine.p9"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/number_systems"
+  }
+}

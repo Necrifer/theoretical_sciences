@@ -1,0 +1,22 @@
+{
+  "name": "Clocks in a Gravity Well",
+  "icon": "theoreticalsciences:atomic_clock",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:atomic_clock,theoreticalsciences:proof_mass,theoreticalsciences:time_dilated_sample",
+      "text": "Everything falls the same way: a feather and a hammer land together on the Moon. That is the $(thing)equivalence principle$(), and a $(item)Proof Mass$() - shielded so that nothing but gravity touches it - follows free fall exactly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Clocks lower in a gravity well run slower: \u03c4 = t\u00b7\u221a(1 \u2212 2GM/rc\u00b2). On the Earth's surface the effect is a few parts in 10\u00b9\u2070; on a neutron star a clock loses twelve minutes an hour."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Atomic Clock$() shows it, scaled up so you can see it: it runs at full speed at the top of the world and at about three quarters at its floor. Carry one in your off hand and your own time stays in step - it clears Time Dilation."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_time_dilation"
+}

@@ -1,0 +1,67 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.desc",
+  "icon": {
+    "item": "theoreticalsciences:anomalous_strain_culture"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 77,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomalous_strain_culture"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomalous_strain_culture"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bioreactor"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:morphogenic_serum"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_oncogenesis.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/anomaly__anomaly_intro"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/anomaly__anomaly_containment_ward"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/oncogenesis"
+  }
+}

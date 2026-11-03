@@ -1,0 +1,71 @@
+{
+  "title": "Brownian Motion",
+  "description": "Pollen grains in water never keep still. In 1905 Einstein showed why - molecules too small to see, striking them at random - and how far they wander says how big the molecules are. Perrin watched, and atoms were real. Unlocks the Brownian Microscope.",
+  "icon": "theoreticalsciences:brownian_microscope",
+  "x": 5,
+  "y": 11,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:distributions",
+    "theoreticalsciences:geometric_optics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:normal_distribution_crystal",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fused_silica_lens",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A sphere of radius r drifts through a liquid of viscosity \u03b7 at temperature T. The drag of the liquid and the random kicks of its molecules are two sides of one thing; write the sphere's diffusion coefficient D from the thermal energy scale k _ B T.",
+    "name": "Stokes-Einstein relation",
+    "lhs": "D",
+    "form": "k _ B * T / ( 6 * \u03c0 * \u03b7 * r )",
+    "expr": "k * T / ( 6 * 3.14159 * n * r ) * 1000000000000",
+    "ask": "Find D in \u00b5m\u00b2/s for a clay grain of r = @{r} m in water at T = @{T} K (n = @{n} Pa\u00b7s, k = 1.381e-23 J/K).",
+    "vars": {
+      "D": "diffusion coefficient (\u00b5m\u00b2/s)",
+      "k": "Boltzmann constant",
+      "B": "Boltzmann",
+      "T": "temperature (K)",
+      "\u03c0": "pi",
+      "\u03b7": "viscosity",
+      "r": "radius (m)",
+      "n": "viscosity (Pa\u00b7s)"
+    },
+    "given": {
+      "k": 1.381e-23,
+      "T": 293,
+      "n": 0.001,
+      "r": 5e-07
+    },
+    "unit": "\u00b5m\u00b2/s",
+    "method": "A force F drags the sphere at F/(6\u03c0\u03b7r) (Stokes); in equilibrium the drift down a concentration gradient balances the diffusion up it, so D = kT \u00d7 that mobility.",
+    "distractors": [
+      "2",
+      "c",
+      "ln"
+    ],
+    "vary": {
+      "T": [
+        176.0,
+        410.0,
+        1.0
+      ],
+      "n": [
+        0.00059,
+        0.0014,
+        1e-05
+      ],
+      "r": [
+        2.99e-07,
+        7e-07,
+        1e-09
+      ]
+    }
+  }
+}

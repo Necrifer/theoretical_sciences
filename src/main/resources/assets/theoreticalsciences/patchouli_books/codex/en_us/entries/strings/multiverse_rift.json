@@ -1,0 +1,191 @@
+{
+  "name": "Multiverse Rift",
+  "icon": "theoreticalsciences:multiverse_rift",
+  "category": "theoreticalsciences:strings",
+  "sortnum": 41,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:multiverse_rift",
+      "title": "Multiverse Rift Stabilizer",
+      "text": "Holds open a tear into neighbouring universes and harvests what leaks through. I keep the lights low around it.$(br2)$(thing)Tier 5$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Note to self: this controller is too complex for a crafting grid. It has to be built on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts before ordering anything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Harvest log. Each harvest pulls matter from universes whose physical constants differ slightly from ours, including $(item)Multiverse Shards$() and $(fluid)Inflaton Field$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Context: eternal inflation and the string landscape (perhaps 10^500 possible vacua) both suggest other universes with other constants. None is reachable in our physics. The $(item)Multiverse Rift Stabilizer$() disagrees."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Multiverse Rift Stabilizer",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "___AAAAAAA___",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA_______AA_",
+            "_AABAADAABAA_",
+            "_AA_______AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_BA       BA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_AA       AA_",
+            "_BA       BA_",
+            "_AA       AA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "AAA      AAA_",
+            "AAA      AAA_",
+            "AAA      AAA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "A0A      AAA_",
+            "AAA      AAA_",
+            "AAA      AAA_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "AEE      AEE_",
+            "AEE      AEE_",
+            "AEE      AEE_",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "FGGGGGFGGGGGG",
+            "AAAGGGGGGAAAG",
+            "AAAGGGDGGAAAF",
+            "AAAGGGGGGAAAG",
+            "FGGGGGFGGGGGG",
+            "_____________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:multiverse_rift",
+          "A": "theoreticalsciences:rift_frame_casing",
+          "B": "theoreticalsciences:dimensional_stabiliser",
+          "D": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "E": "theoreticalsciences:spacetime_anchor_pylon",
+          "F": "#theoreticalsciences:multiblock/rift_frame_casing_or_port",
+          "G": "theoreticalsciences:hyperframe_casing"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Cherenkov Quartz, Degenerate Matter Chunk, Echo Shard, Exotic Matter Crystal, False Vacuum, Inflaton Field, Multiverse Shard, Void Lattice Shard."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:multiverse_rift",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:multiverse_shard",
+      "text": "Matter from a universe with slightly different constants. Its colour will not settle.$(br2)Made in $(item)Einstein-Rosen Bridge Projector$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Multiverse Shard$(): Cherenkov Quartz, Cosmogenic Casing, Degenerate Matter Chunk, Echo Shard, Exotic Matter Crystal and more"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:inflaton_field_cell",
+      "text": "$(fluid)Inflaton Field$(). Made in $(item)Fractionation Spire$().$(br)Used for: Dimensional Residue, Dimensional Singularity, Inflaton Condensate, Pocket Universe, Universe Seed."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/multiverse"
+}

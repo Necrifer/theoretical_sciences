@@ -1,0 +1,18 @@
+{
+  "name": "Telescopes",
+  "icon": "theoreticalsciences:telescope_mirror_blank",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:telescope_mirror_blank",
+      "text": "Astronomy begins with gathering light. A $(item)Telescope Mirror Blank$() - glass, ground and silvered - collects a star's light over its whole face and brings it to one point. The wider the mirror, the fainter the stars it shows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "But no mirror focuses light to a true point. Light is a wave, and a round opening of diameter D spreads it into a disc about 1.22\u03bb/D wide. Two stars closer than that blur into one: $(thing)the diffraction limit$(). Bigger mirrors are sharper as well as brighter."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/observational_astronomy"
+}

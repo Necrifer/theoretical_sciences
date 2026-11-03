@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:spin_network_node",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:causal_set_seed",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fixed_point_lattice",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 2400,
+  "research": "theoreticalsciences:asymptotic_safety",
+  "unscaled": true,
+  "insight_per_run": 25,
+  "physics": {
+    "vars": {
+      "sg": 30.0,
+      "opt": 0.7
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 20.0
+      }
+    ]
+  }
+}

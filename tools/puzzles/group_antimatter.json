@@ -1,0 +1,84 @@
+{
+ "cpt_symmetry": {
+  "goal": "An electron and a positron annihilate into two photons; find each photon's wavelength (the Compton wavelength) in pm. h in 1e-34 J s, m in 1e-31 kg, c in 1e8 m/s.",
+  "lhs": "λ",
+  "expr": "10 * h / ( m * c )",
+  "vars": {
+   "h": "Planck's constant (units of 1e-34 J s)",
+   "m": "electron (= positron) mass (units of 1e-31 kg)",
+   "c": "speed of light (units of 1e8 m/s)"
+  },
+  "given": {
+   "h": 6.626,
+   "m": 9.109,
+   "c": 2.998
+  },
+  "distractors": [
+   "2",
+   "E"
+  ],
+  "method": "All the rest energy becomes light: each photon carries E = mc², and a photon of energy E has wavelength hc/E. The units leave a factor of ten picometres.",
+  "unit": "pm"
+ },
+ "antiatom_chemistry": {
+  "goal": "CPT says antihydrogen has exactly the spectrum of hydrogen. Find the energy of its n-th level in eV, with R the Rydberg energy.",
+  "lhs": "E",
+  "expr": "- R / n ^ 2",
+  "vars": {
+   "R": "Rydberg energy (eV)",
+   "n": "principal quantum number"
+  },
+  "given": {
+   "R": 13.6,
+   "n": 2
+  },
+  "distractors": [
+   "2",
+   "Z"
+  ],
+  "method": "Bohr: the bound energy falls off as the square of the level number, and is negative because the positron is bound.",
+  "unit": "eV"
+ },
+ "mirror_metallurgy": {
+  "goal": "A Penning trap holds an antiproton by making it circle in a magnetic field. Find the cyclotron frequency in MHz, with q in 1e-19 C and m in 1e-27 kg.",
+  "lhs": "f",
+  "expr": "100 * q * B / ( 2 * π * m )",
+  "vars": {
+   "q": "antiproton charge magnitude (units of 1e-19 C)",
+   "B": "magnetic field (T)",
+   "m": "antiproton mass (units of 1e-27 kg)"
+  },
+  "given": {
+   "q": 1.602,
+   "B": 5.0,
+   "m": 1.673
+  },
+  "distractors": [
+   "E",
+   "v"
+  ],
+  "method": "Set the magnetic force qvB equal to the centripetal force mv²/r: the angular frequency qB/m does not depend on speed. Divide by 2π for cycles per second.",
+  "unit": "MHz"
+ },
+ "baryon_asymmetry": {
+  "goal": "Find the baryon asymmetry of the early universe: the surplus of baryons over antibaryons per photon.",
+  "lhs": "η",
+  "expr": "( nB - nA ) / nG",
+  "vars": {
+   "nB": "number of baryons",
+   "nA": "number of antibaryons",
+   "nG": "number of photons"
+  },
+  "given": {
+   "nB": 1000000006,
+   "nA": 1000000000,
+   "nG": 10000000000
+  },
+  "distractors": [
+   "2",
+   "c"
+  ],
+  "method": "Everything that could annihilate did, leaving only the surplus; compare that surplus with the photons the annihilation left behind.",
+  "unit": ""
+ }
+}

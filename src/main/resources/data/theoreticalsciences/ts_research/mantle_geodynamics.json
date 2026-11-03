@@ -1,0 +1,98 @@
+{
+  "title": "Mantle Geodynamics",
+  "description": "The mantle is solid rock, and yet it flows: a centimetre a year, heated from below, cooled from above, turning over like a pot on a stove. Its minerals - ringwoodite, bridgmanite - only exist under its pressure.",
+  "icon": "theoreticalsciences:ringwoodite",
+  "x": 6,
+  "y": 15,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:plate_tectonics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ringwoodite",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:bridgmanite",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A layer of thickness L is heated from below by a temperature difference \u0394T. Whether it turns over depends on one number: buoyancy (\u03c1 g \u03b1 \u0394T) against heat diffusion \u03ba and viscosity \u03bc. Write that number, N.",
+    "name": "Rayleigh number",
+    "lhs": "N",
+    "form": "\u03c1 * g * \u03b1 * T * L ^ 3 / ( \u03ba * \u03bc )",
+    "expr": "R * g * a * T * H ^ 3 / ( k * m )",
+    "ask": "Find N for the whole mantle: R = @{R} kg/m\u00b3, a = @{a} /K, T = @{T} K, H = @{H} m, k = @{k} m\u00b2/s, m = @{m} Pa\u00b7s.",
+    "vars": {
+      "N": "Rayleigh number",
+      "\u03c1": "density",
+      "g": "gravity (m/s\u00b2)",
+      "\u03b1": "thermal expansion",
+      "T": "temperature difference (K)",
+      "L": "layer thickness (m)",
+      "H": "mantle thickness (m)",
+      "\u03ba": "thermal diffusivity",
+      "\u03bc": "viscosity",
+      "R": "density (kg/m\u00b3)",
+      "a": "expansion (1/K)",
+      "k": "diffusivity (m\u00b2/s)",
+      "m": "viscosity (Pa\u00b7s)"
+    },
+    "given": {
+      "R": 4000,
+      "g": 9.81,
+      "a": 3e-05,
+      "T": 2500,
+      "H": 2900000.0,
+      "k": 1e-06,
+      "m": 1e+22
+    },
+    "unit": "",
+    "method": "Compare how fast a warm blob rises (buoyancy over viscosity) with how fast it loses its heat (diffusion). Above about 1000 the layer convects.",
+    "distractors": [
+      "\u03bd",
+      "2",
+      "\u03c0"
+    ],
+    "vary": {
+      "R": [
+        2400.0,
+        5600.0,
+        1.0
+      ],
+      "g": [
+        5.88,
+        13.74,
+        0.01
+      ],
+      "a": [
+        1.8e-05,
+        4.2e-05,
+        1e-07
+      ],
+      "T": [
+        1500.0,
+        3500.0,
+        1.0
+      ],
+      "H": [
+        1740000.0,
+        4060000.0,
+        10000.0
+      ],
+      "k": [
+        5.9e-07,
+        1.4e-06,
+        1e-08
+      ],
+      "m": [
+        6e+21,
+        1.4e+22,
+        1e+20
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Garnet Boule",
+  "icon": "theoreticalsciences:garnet_boule",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:garnet_boule",
+      "title": "Garnet Boule",
+      "text": "A synthetic garnet crystal, grown flawless. Garnets doped with rare earths are the heart of the most common solid-state lasers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Crystal Growth Furnace$().$(br2)$(thing)Unlocked by$(): Crystallography.$(br2)$(thing)Used in$(): Faraday Isolator, Garnet Boule, Laser Rod, Laue Pattern."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

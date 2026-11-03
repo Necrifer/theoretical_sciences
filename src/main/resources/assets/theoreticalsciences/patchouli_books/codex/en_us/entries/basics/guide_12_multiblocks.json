@@ -1,0 +1,22 @@
+{
+  "name": "Step 12: Multiblocks",
+  "icon": "theoreticalsciences:structure_assembler",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -88,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:structure_assembler,theoreticalsciences:interface_port",
+      "text": "The big machines are $(thing)multiblocks$(): a controller block plus casings and glass around it. Your first will be the $(item)Tesla Coil$() ($(thing)Resonant Circuits$())."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "How to build one:$(li)Open the machine's entry: its $(thing)Structure$() page shows the build layer by layer, with the blocks needed.$(li)Place the controller, then use a $(item)Structure Assembler$() on it - it places every missing block from your inventory. $(thing)Sneak + use$() first for a dry run and a shopping list.$(li)Swap $(item)Interface Ports$() into the marked spots: items, fluids and power go in and out through them.$(li)Running multiblocks drift and wear: their tuning panel and stabilisers keep them safe - a containment failure is dangerous."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Structure Assembler: 18 $(item)Block of Cherenkov Quartz$(), 9 $(item)Ender Pearl$(), 18 $(item)Neutronium Ingot$().$(br2)Interface Port: 36 $(item)Neutronium Ingot$(), 9 $(item)Hopper$(), 18 $(item)Bucket$(), 9 $(item)Spacetime Casing$(), 9 $(item)Redstone$() (makes 2)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/casimir_effect"
+}

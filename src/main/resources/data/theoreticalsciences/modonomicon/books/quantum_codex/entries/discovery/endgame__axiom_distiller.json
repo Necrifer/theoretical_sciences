@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.axiom_distiller",
+  "description": "book.theoreticalsciences.codex.endgame.axiom_distiller.desc",
+  "icon": {
+    "item": "theoreticalsciences:axiom_distiller"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 82,
+  "y": -6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_distiller"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.axiom_distiller.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.axiom_distiller.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.axiom_distiller.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.axiom_distiller.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_distiller"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.axiom_distiller.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__causality_loop_engine"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/endgame__beyond"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/axiom_theory"
+  }
+}

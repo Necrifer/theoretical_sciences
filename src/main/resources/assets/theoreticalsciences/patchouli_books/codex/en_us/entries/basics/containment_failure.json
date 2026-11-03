@@ -1,0 +1,81 @@
+{
+  "name": "Containment Failure",
+  "icon": "theoreticalsciences:fractured_reality",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fractured_reality,theoreticalsciences:fractured_essence,theoreticalsciences:void_essence",
+      "text": "Incident log. A multiblock whose containment reaches zero does not simply stop. What it was holding gets out - and what gets out depends on the machine. I have catalogued five kinds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Reality Destabilisation$() (colliders, reactors, forges, crucibles): a blast, and the surrounding world starts to come apart. Blocks become $(thing)Fractured Reality$(): they fade in and out and split into smaller copies of themselves, spreading slowly before reality heals."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Anything alive suffers too. Creatures caught in Fractured Reality glitch and splinter like the shadows of higher-dimensional bodies, hit harder and move faster. Villagers and zombies become $(thing)Destabilised Husks$(). I learned that one at a cost."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Spatial$() (singularities, wormholes, universe forging): a $(thing)rupture$() grows for ten seconds, drags everything in, eats the terrain and detonates. $(thing)Void Wraiths$() - tiny living black and white holes - crawl out, and burst like a creeper when they collapse. Hawking would have been delighted. I was not."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Infectious$() (Matrioshka Brain, Reality Compiler, Assembly Line): flying $(thing)Nanite Swarms$() escape. They split when destroyed, down to single units, and any creature that dies infected bursts into a new swarm. Grey goo, in other words - the old nanotech nightmare, given wings."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Temporal$() (Causality Loop Engine): $(thing)Paradox Echoes$() - walking clockwork, one for every player nearby - that rewind themselves when hurt.$(li)$(thing)Dimensional$() (Rift, Tesseract, Breach, Omnilex): a rupture plus $(thing)Law Wraiths$(), broken laws of nature shaped like tesseracts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Note to self: overclocked machines fail harder. Keep containment up with a $(item)Field Calibrator$(), or install an $(item)Autonomous Calibrator$().$(br2)For server owners: the consequences or the block damage can be disabled in the config, and block damage also respects the $(thing)mobGriefing$() game rule."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fractured_essence",
+      "text": "A splinter of reality that broke away from a destabilised creature. It is in several places at once.$(br2)Made in $(item)Chronon Field Inverter$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:void_essence",
+      "text": "What is left of a Void Wraith: a little pocket of nothing that refuses to be filled.$(br2)Made in $(item)Dark Matter Halo Collector$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:field_calibrator",
+      "text": "Use on a multiblock controller to restore its containment, clear a fault and read out the ideal tuning value.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autonomous_calibrator",
+      "text": "Installs into a multiblock controller for good: it follows the drifting tuning and repairs containment by itself, for a 25% power tax.$(br2)Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Fractured Essence$(): Contained Anomaly Specimen, Degenerate Matter Chunk, Integer Ring, Strange Matter Pellet, Warm Helium and more$(li)$(item)Void Essence$(): Contained Anomaly Specimen, Dark Matter Lens, Empty Set$(li)$(item)Field Calibrator$(): Autonomous Calibrator, Phase-Locked Stabiliser$(li)$(item)Autonomous Calibrator$(): Predictive Lattice Governor, Theoretical Notes I"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:destabilised_husk_spawn_egg",
+      "text": "$(thing)Destabilised Husk$(). Lives in: nowhere natural.$(br)Drops: Fractured Essence, Rotten Flesh, Strange Matter Pellet."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:void_wraith_spawn_egg",
+      "text": "$(thing)Void Wraith$(). Lives in: nowhere natural.$(br)Drops: Void Essence, Void Lattice Shard, Exotic Matter Crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nanite_swarm_spawn_egg",
+      "text": "$(thing)Nanite Swarm$(). Lives in: nowhere natural.$(br)Drops: Nanite Swarm, Quantum Dot."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:law_wraith_spawn_egg",
+      "text": "$(thing)Law Wraith$(). Lives in: nowhere natural.$(br)Drops: Crystallised Law, Axiom Fragment, Blaze Rod."
+    }
+  ]
+}

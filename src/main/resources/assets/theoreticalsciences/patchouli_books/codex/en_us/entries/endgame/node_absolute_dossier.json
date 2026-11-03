@@ -1,0 +1,23 @@
+{
+  "name": "Absolute Dossier",
+  "icon": "theoreticalsciences:absolute_dossier",
+  "category": "theoreticalsciences:endgame",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:absolute_dossier",
+      "title": "Absolute Dossier",
+      "text": "The research record of a civilisation that has very nearly finished understanding its universe. Its cover is primordial law itself, so the book reads like a document from before the universe decided its rules. It weighs exactly what I expect it to, which unsettles me more than anything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)To build the Omnilex Engine I needed a machine that knew everything I did. I bound the three absolute volumes over the unified dossier with primordial law, and for the first time the Research Nexus had nothing left to ask me."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Femtoscale Assembly Line$().$(br2)$(thing)Unlocked by$(): The Omnilex."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/omnilex"
+}

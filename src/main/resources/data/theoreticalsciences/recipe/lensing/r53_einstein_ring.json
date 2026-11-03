@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:lensing",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:einstein_ring_lens"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:einstein_ring_lens",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 1200,
+  "research": "theoreticalsciences:gravitational_lensing",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "Aref": 20.0
+    },
+    "windows": [
+      {
+        "q": "A",
+        "min": 20.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

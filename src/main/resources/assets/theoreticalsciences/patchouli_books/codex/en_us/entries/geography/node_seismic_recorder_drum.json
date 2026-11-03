@@ -1,0 +1,19 @@
+{
+  "name": "Seismic Recorder Drum",
+  "icon": "theoreticalsciences:seismic_recorder_drum",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:seismic_recorder_drum",
+      "title": "Seismic Recorder Drum",
+      "text": "A paper drum turned by clockwork under a hanging pen. The ground shakes, the pen does not, and the difference is written down."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Seismograph$().$(br2)$(thing)Found in$(): Deep Borehole, Survey Benchmark chests.$(br2)$(thing)Unlocked by$(): Seismology.$(br2)$(thing)Used in$(): Core Drill, Geoid Model, Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/seismology"
+}

@@ -1,0 +1,70 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.electrochem",
+  "description": "book.theoreticalsciences.codex.chemistry.electrochem.desc",
+  "icon": {
+    "item": "theoreticalsciences:electrolytic_cell"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 7,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:electrolytic_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:electrolytic_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:electride_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ionic_liquid_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:carborane_superacid_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrochem.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__bose_einstein_condenser"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrochemistry"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.analytic_continuator",
+  "description": "book.theoreticalsciences.codex.mathematics.analytic_continuator.desc",
+  "icon": {
+    "item": "theoreticalsciences:analytic_continuator"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 12,
+  "y": -4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:analytic_continuator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analytic_continuator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analytic_continuator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analytic_continuator.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.analytic_continuator.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:analytic_continuator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.analytic_continuator.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__platonic_realm"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__fractal_space"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/real_analysis"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Crustal Rock",
+  "icon": "theoreticalsciences:crustal_rock",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:crustal_rock",
+      "title": "Crustal Rock",
+      "text": "$(item)Crustal Rock$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Deep Drilling Rig$().$(br2)$(thing)Unlocked by$(): Deep Drilling."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

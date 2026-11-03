@@ -1,0 +1,26 @@
+{
+  "name": "Suits for the Deep",
+  "icon": "theoreticalsciences:refractory_suit_chestplate",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:refractory_suit_chestplate,theoreticalsciences:pressure_suit_chestplate,theoreticalsciences:heavy_radiation_plating",
+      "text": "Every hazard below has its suit, crafted like ordinary armour."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Refractory Suit$(): corundum and moissanite. A full suit is proof against $(fluid)Basaltic Magma$() - you can wade in it and mine the magnetite under it - against $(fluid)Deep Brine$(), lava, and every fire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Pressure Suit$(): bridgmanite and ringwoodite, minerals made under the mantle's weight. Each piece takes a level off $(thing)Lithostatic Pressure$(); a full suit cancels it at any depth."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Radiation plating$() goes on any armour, of any mod. Put an armour piece and a plate together in a crafting grid: $(item)Light$() (lead) stops 10% of the radiation dose per piece, $(item)Medium$() (lead and graphite) 18%, $(item)Heavy$() (lead, graphite and boron carbide) 25% - four heavy-plated pieces stop all but 5%. A better plate replaces a worse one. Wear it in the Natural Reactor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mantle_geodynamics"
+}

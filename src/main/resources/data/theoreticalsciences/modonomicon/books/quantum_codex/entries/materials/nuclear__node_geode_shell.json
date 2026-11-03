@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_geode_shell",
+  "description": "book.theoreticalsciences.codex.nuclear.node_geode_shell.desc",
+  "icon": {
+    "item": "theoreticalsciences:geode_shell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 88,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geode_shell"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_geode_shell.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_geode_shell.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__gas_centrifuge_cascade",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/isotope_separation"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.magnetizer",
+  "description": "book.theoreticalsciences.codex.electromagnetism.magnetizer.desc",
+  "icon": {
+    "item": "theoreticalsciences:magnetizer"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 12,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:magnetizer"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:magnetizer"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neodymium_magnet"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:samarium_cobalt_magnet"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.magnetizer.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__r37_fields"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ferromagnetism"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_singularity_cluster",
+  "description": "book.theoreticalsciences.codex.fabrication.node_singularity_cluster.desc",
+  "icon": {
+    "item": "theoreticalsciences:singularity_cluster"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 115,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:singularity_cluster"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_singularity_cluster.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_singularity_cluster.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__more_singularities",
+      "draw_arrow": false
+    }
+  ]
+}

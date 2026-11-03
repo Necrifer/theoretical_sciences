@@ -1,0 +1,20 @@
+{
+  "type": "theoreticalsciences:magnetohydrodynamic",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:stellar_plasma",
+      "amount": 1000
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:magnetohydrodynamics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": 10000.0,
+      "rh": 0.01,
+      "Pref": 20000000.0
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "The Hypervelocity Impact Forge",
+  "icon": "theoreticalsciences:hypervelocity_impact_forge",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hypervelocity_impact_forge,theoreticalsciences:lonsdaleite,theoreticalsciences:rail_armature",
+      "text": "Two rails and an armature between them: current up one rail, across, down the other. The field between the rails pushes the armature out with $(thing)F = \u00bdL\u2032I\u00b2$() - a railgun."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the current and the armature's mass. It leaves at $(thing)v = \u221a(2FL/m)$() and strikes the target with a shock of about $(thing)\u00bd\u03c1v\u00b2$(). Graphite shocked between 15 and 40 GPa becomes $(item)Lonsdaleite$(), hexagonal diamond, as in meteorite craters; sand and coal at 50-90 GPa fuse into moissanite. Each shot spends a Rail Armature. Above 3 MA the rails erode."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrodynamics"
+}

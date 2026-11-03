@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:aquifer_pumping",
+  "item_inputs": [
+    {
+      "item": "minecraft:bucket",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:bucket",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:supercritical_water",
+      "amount": 100
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:hydrology",
+  "unscaled": true,
+  "environment": {
+    "dimensions": [
+      "theoreticalsciences:planetary_interior"
+    ],
+    "biomes": [
+      "theoreticalsciences:magma_chambers"
+    ]
+  }
+}

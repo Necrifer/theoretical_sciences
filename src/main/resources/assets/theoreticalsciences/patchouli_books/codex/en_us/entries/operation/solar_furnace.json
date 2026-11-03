@@ -1,0 +1,24 @@
+{
+  "name": "Solar Furnace",
+  "icon": "theoreticalsciences:solar_furnace",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 64,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Sunlight brings about 1000 W/m\u00b2 at noon, less as the Sun sinks. Concentrated C times and let through a shutter of opening g, it heats the target until it radiates away what it absorbs: \u03b1gCG = \u03b5\u03c3T\u2074. The target's temperature decides what melts - and what boils off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Concentration C, Shutter opening g.$(br2)$(thing)Disturbance$(): Thin cloud: the sunlight varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The Sun is too low (or down); Something shades the mirrors; Overcast: no sunlight to concentrate; The crucible is melting (above 3,200 K).$(br2)$(thing)Rate$(): The hotter above its melting point, the faster the charge melts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Sunlight: G = 1000\u00b7sin(elevation)$(br)Flux on target: q = g\u00b7C\u00b7G$(br)Target temperature: T = (\u03b1q/\u03b5\u03c3 + T_amb\u2074)^(1/4)$(br)Above the melting point: T \u2212 T_m"
+    }
+  ]
+}

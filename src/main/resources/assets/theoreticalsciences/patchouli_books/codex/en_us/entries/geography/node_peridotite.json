@@ -1,0 +1,19 @@
+{
+  "name": "Peridotite",
+  "icon": "theoreticalsciences:peridotite",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:peridotite",
+      "title": "Peridotite",
+      "text": "$(item)Peridotite$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Deep Drilling Rig$().$(br2)$(thing)Dropped by$(): Plume Elemental.$(br2)$(thing)Found in$(): Deep Borehole chests.$(br2)$(thing)Unlocked by$(): Plate Tectonics.$(br2)$(thing)Used in$(): Bridgmanite, Ringwoodite."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/seismology"
+}

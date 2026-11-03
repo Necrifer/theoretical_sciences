@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:deep_drilling",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:moissanite"
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lithospheric_plate_fragment",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:peridotite",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 1200,
+  "research": "theoreticalsciences:plate_tectonics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "h",
+        "min": 9.0,
+        "max": 12.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "params": [
+    {
+      "id": "M",
+      "unit": "M\u2609",
+      "min": 1,
+      "max": 30,
+      "step": 0.01,
+      "default": 10
+    },
+    {
+      "id": "md",
+      "unit": "10\u00b9\u2075 kg/s",
+      "min": 0,
+      "max": 20,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "a",
+      "unit": "",
+      "min": 0,
+      "max": 0.998,
+      "step": 0.001,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "Lref": 5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "0.057 + 0.27*a^6",
+      "formula": "\u03b7(a): 0.057 at a = 0, 0.32 near a = 1"
+    },
+    {
+      "id": "L",
+      "unit": "10\u00b3\u00b9 W",
+      "expr": "9*eta*md*(1 + 0.05*d)",
+      "formula": "L = \u03b7\u00b7\u1e41\u00b7c\u00b2"
+    },
+    {
+      "id": "LE",
+      "unit": "10\u00b3\u00b9 W",
+      "expr": "1.26*M",
+      "formula": "L_E = 1.26\u00d710\u00b3\u00b9 (M/M\u2609) W"
+    },
+    {
+      "id": "lam",
+      "unit": "",
+      "expr": "L/LE",
+      "formula": "\u03bb = L/L_E"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "blowout",
+      "kind": "stop",
+      "expr": "1 - lam",
+      "formula": "L < L_E"
+    },
+    {
+      "id": "starved",
+      "kind": "stop",
+      "expr": "md - 0.001",
+      "formula": "\u1e41 > 0"
+    }
+  ],
+  "rate": "clamp(L/Lref, 0, 2)",
+  "rate_formula": "output = L / L_rated",
+  "heat": "0.02*L",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 60,
+  "heat_capacity": 200,
+  "timescale": 1,
+  "rate_max": 4
+}

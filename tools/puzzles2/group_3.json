@@ -1,0 +1,848 @@
+{
+ "precision_lithography": {
+  "goal": "Monochromatic light of wavenumber k passes through a slit of width a in a mask and is collected at angle θ. Add up the wavelets from every point x across the opening, each with the phase delay its path picks up, to get the far-field amplitude.",
+  "name": "Fraunhofer slit diffraction (Rayleigh resolution of a lithography lens)",
+  "lhs": "U",
+  "form": "int ( - a / 2 , a / 2 , exp ( - i * k * x * sin ( θ ) ) , x )",
+  "expr": "k1 * λ / NA",
+  "ask": "The integral gives U = a·sin β/β with β = ka·sinθ/2, which first vanishes at sin θ = λ/a. A lens of numerical aperture NA collects sin θ ≤ NA, so the finest printable feature is CD = k1·λ/NA. Find CD (nm) for the immersion scanner below.",
+  "vars": {
+   "U": "far-field amplitude at angle θ",
+   "a": "slit (mask opening) width",
+   "i": "imaginary unit",
+   "k": "wavenumber 2π/λ",
+   "x": "position across the slit",
+   "θ": "observation angle",
+   "k1": "process factor of the resist",
+   "λ": "wavelength (nm)",
+   "NA": "numerical aperture of the lens"
+  },
+  "given": {
+   "k1": 0.28,
+   "λ": 193,
+   "NA": 1.35
+  },
+  "unit": "nm",
+  "method": "Each point of the opening is a source; its wavelet arrives with phase k·x·sinθ relative to the centre. Integrate the phase factor across the opening, then find the first zero of the result.",
+  "distractors": [
+   "cos",
+   "π",
+   "λ"
+  ]
+ },
+ "cryogenics": {
+  "goal": "Identical particles with integer spin may pile any number into the same quantum state. In a gas held at temperature T with chemical potential μ, find the mean number of particles occupying a single state of energy ε.",
+  "name": "Bose–Einstein distribution (condensation temperature)",
+  "lhs": "n",
+  "form": "1 / ( exp ( ( ε - μ ) / ( kB * T ) ) - 1 )",
+  "expr": "2 * π * ħ ^ 2 / ( m * kB ) * ( N / 2.612 ) ^ ( 2 / 3 )",
+  "ask": "Summing the occupation over all momentum states at μ = 0 gives a maximum density ζ(3/2)/λ_T³ with ζ(3/2) = 2.612 and λ_T = √(2πħ²/(m kB T)); below that temperature the excess condenses. Find the condensation temperature Tc = (2πħ²/(m kB))·(N/2.612)^(2/3) for helium-4 at the density of the liquid.",
+  "vars": {
+   "n": "mean occupation number of the state",
+   "ε": "energy of the single-particle state",
+   "μ": "chemical potential",
+   "kB": "Boltzmann constant",
+   "T": "temperature",
+   "ħ": "reduced Planck constant",
+   "m": "mass of a helium-4 atom",
+   "N": "number density of atoms (m⁻³)"
+  },
+  "given": {
+   "ħ": 1.0546e-34,
+   "m": 6.646e-27,
+   "kB": 1.381e-23,
+   "N": 2.18e+28
+  },
+  "unit": "K",
+  "method": "Maximise the number of ways to distribute particles among states at fixed total energy and number (or sum the geometric series Σ e^(−n(ε−μ)/kBT) over occupation n in the grand canonical ensemble).",
+  "distractors": [
+   "+",
+   "h",
+   "2"
+  ]
+ },
+ "quantum_chemistry": {
+  "goal": "A single electron of mass m is bound to a proton by the electrostatic attraction. Write the stationary wave equation: the kinetic-energy operator plus the potential energy acting on the wavefunction ψ, which must equal E times ψ.",
+  "name": "Time-independent Schrödinger equation for hydrogen",
+  "lhs": "E * ψ",
+  "form": "- ħ ^ 2 / ( 2 * m ) * lap ( ψ ) - e ^ 2 / ( 4 * π * ε0 * r ) * ψ",
+  "expr": "- m * e ^ 4 / ( 8 * ε0 ^ 2 * h ^ 2 * n ^ 2 * e )",
+  "ask": "Its bound solutions have energies E_n = −m e⁴/(8 ε0² h² n²). Find the energy of the n = 2 level in electronvolts (divide the joules by e).",
+  "vars": {
+   "E": "energy eigenvalue",
+   "ψ": "electron wavefunction",
+   "ħ": "reduced Planck constant",
+   "h": "Planck constant",
+   "m": "electron mass",
+   "e": "elementary charge",
+   "ε0": "vacuum permittivity",
+   "r": "distance from the proton",
+   "n": "principal quantum number"
+  },
+  "given": {
+   "m": 9.109e-31,
+   "e": 1.602e-19,
+   "ε0": 8.854e-12,
+   "h": 6.626e-34,
+   "n": 2
+  },
+  "unit": "eV",
+  "method": "Replace momentum by −iħ∇ in the classical energy p²/2m + V, with V the Coulomb potential energy of two opposite charges.",
+  "distractors": [
+   "μ0",
+   "c",
+   "3"
+  ]
+ },
+ "extremophiles": {
+  "goal": "A reaction proceeds only when molecules reach a short-lived activated complex at the top of the energy barrier. Treat that complex as in equilibrium with the reactants and let it fall apart at the universal frequency kB·T/h, with a transmission coefficient κ. Write the rate constant in terms of the activation enthalpy and activation entropy (molar).",
+  "name": "Eyring–Polanyi equation (transition-state theory)",
+  "lhs": "k",
+  "form": "κ * kB * T / h * exp ( Δ * S / R ) * exp ( - Δ * H / ( R * T ) )",
+  "expr": "κ * kB * T / h * exp ( ΔS / R ) * exp ( - ΔH / ( R * T ) )",
+  "ask": "Find the rate constant of an enzyme in a hyperthermophile living at 121 °C (394 K).",
+  "vars": {
+   "k": "rate constant",
+   "κ": "transmission coefficient",
+   "kB": "Boltzmann constant",
+   "T": "temperature",
+   "h": "Planck constant",
+   "Δ": "change on reaching the activated complex",
+   "S": "molar entropy",
+   "H": "molar enthalpy",
+   "R": "gas constant",
+   "ΔS": "activation entropy (J/mol/K)",
+   "ΔH": "activation enthalpy (J/mol)"
+  },
+  "given": {
+   "κ": 1,
+   "kB": 1.381e-23,
+   "T": 394,
+   "h": 6.626e-34,
+   "ΔS": 10,
+   "R": 8.314,
+   "ΔH": 100000
+  },
+  "unit": "1/s",
+  "method": "Write the equilibrium constant for forming the activated complex as exp(−ΔG/RT) with ΔG = ΔH − TΔS, and multiply by the rate at which the complex crosses the barrier.",
+  "distractors": [
+   "NA",
+   "ln",
+   "+"
+  ]
+ },
+ "platonic_realm": {
+  "goal": "At every vertex of a convex polyhedron the face angles θ_j fall short of a full turn; that shortfall is the vertex's angular deficit. Sum the deficits over all V vertices: the total depends only on the shape's topology, through the number V − E + F.",
+  "name": "Descartes' theorem on total angular defect (discrete Gauss–Bonnet)",
+  "lhs": "2 * π * χ",
+  "form": "sum ( n , 1 , V , 2 * π - sumk ( j , θ _ j ) )",
+  "expr": "4 * π / ( 2 * π - q * ( p - 2 ) * π / p )",
+  "ask": "For a convex solid χ = 2, so the deficits total 4π. In a regular solid each vertex joins q regular p-gons (angle (p−2)π/p each). Find the number of vertices V of the dodecahedron (pentagons, three at each vertex).",
+  "vars": {
+   "χ": "Euler characteristic V − E + F",
+   "n": "vertex number",
+   "V": "number of vertices",
+   "j": "faces meeting at vertex n",
+   "θ": "face angle at the vertex",
+   "p": "sides of each face",
+   "q": "faces meeting at each vertex"
+  },
+  "given": {
+   "p": 5,
+   "q": 3
+  },
+  "unit": "vertices",
+  "method": "Flatten the corners: each vertex's deficit is 2π minus its face angles. Count all face angles face by face (each p-gon has angle sum (p−2)π) and use V − E + F.",
+  "distractors": [
+   "E",
+   "F",
+   "4"
+  ]
+ },
+ "femtoengineering": {
+  "goal": "A probe beam scatters off a tiny object whose charge is spread out with density ρ over a volume V, transferring momentum ħq. The scattered amplitude is the point-like one times a factor that adds up the phase each piece of the charge contributes. Write that factor, normalised to total charge Q.",
+  "name": "Form factor (Fourier transform of the charge distribution)",
+  "lhs": "F",
+  "form": "1 / Q * iiint ( ρ * exp ( i * ( vec ( q ) · vec ( r ) ) ) , V )",
+  "expr": "h * c / d",
+  "ask": "The form factor shows structure only once q ≈ 2π/d, i.e. when the probe's wavelength reaches the size d. Find the photon energy E = hc/d needed to resolve a structure of d = 0.5 fm (h in MeV·s, c in fm/s).",
+  "vars": {
+   "F": "form factor",
+   "Q": "total charge",
+   "ρ": "charge density",
+   "i": "imaginary unit",
+   "q": "momentum transfer wavevector",
+   "r": "position inside the object",
+   "V": "volume of the object",
+   "h": "Planck constant",
+   "c": "speed of light",
+   "d": "size of the structure"
+  },
+  "given": {
+   "h": 4.1357e-21,
+   "c": 2.998e+23,
+   "d": 0.5
+  },
+  "unit": "MeV",
+  "method": "Each volume element at r scatters with an extra phase q·r; integrate the phase factor weighted by the density and divide by the total.",
+  "distractors": [
+   "k",
+   "λ",
+   "cos"
+  ]
+ },
+ "exotic_chemistry": {
+  "goal": "A negative particle of mass m orbits a nucleus of mass M; both circle their common centre of mass. Replace the orbiting mass by the effective mass of the two-body problem and write the radius of the lowest orbit, from the balance of the electrostatic attraction with the quantised angular momentum.",
+  "name": "Bohr radius with reduced mass",
+  "lhs": "a",
+  "form": "4 * π * ε0 * ħ ^ 2 / ( m * M / ( m + M ) * e ^ 2 )",
+  "expr": "a0 / m * ( 1 + m / M )",
+  "ask": "Masses measured in electron masses make this a0·(1 + m/M)/m. Find the orbit radius of muonic hydrogen (a muon around a proton).",
+  "vars": {
+   "a": "radius of the lowest orbit",
+   "ε0": "vacuum permittivity",
+   "ħ": "reduced Planck constant",
+   "m": "orbiting particle mass (electron masses)",
+   "M": "nucleus mass (electron masses)",
+   "e": "elementary charge",
+   "a0": "ordinary Bohr radius (fm)"
+  },
+  "given": {
+   "a0": 52917.7,
+   "m": 206.77,
+   "M": 1836.15
+  },
+  "unit": "fm",
+  "method": "Separate centre-of-mass and relative motion: the relative coordinate moves like one particle of mass mM/(m+M). Then set m v r = ħ and m v²/r equal to the Coulomb force.",
+  "distractors": [
+   "c",
+   "μ0",
+   "-"
+  ]
+ },
+ "accelerator_physics": {
+  "goal": "A charged particle q of rest mass m moves at speed v near c through a pure magnetic field B. Its relativistic momentum changes only by the magnetic force. Since the speed stays constant, write the rate of change of its velocity vector, with the Lorentz factor written out.",
+  "name": "Lorentz-force equation of motion (relativistic)",
+  "lhs": "d ( vec ( v ) , t )",
+  "form": "q * sqrt ( 1 - v ^ 2 / c ^ 2 ) / m * ( vec ( v ) × vec ( B ) )",
+  "expr": "p / ( 0.2998 * B )",
+  "ask": "The particle circles with radius ρ = γmv/(qB) = p/(qB); for momentum in GeV/c and B in tesla this is ρ = p/(0.2998·B) metres. Find the bending radius of a 7000 GeV/c proton beam in 8.33 T dipoles.",
+  "vars": {
+   "v": "particle velocity / speed",
+   "t": "time",
+   "q": "particle charge",
+   "c": "speed of light",
+   "m": "rest mass",
+   "B": "magnetic field (T)",
+   "p": "momentum (GeV/c)"
+  },
+  "given": {
+   "p": 7000,
+   "B": 8.33
+  },
+  "unit": "m",
+  "method": "Differentiate p = γ m v with γ constant (a magnetic force does no work), set it equal to q v × B, and divide by γ m.",
+  "distractors": [
+   "E",
+   "+",
+   "2"
+  ]
+ },
+ "general_intelligence": {
+  "goal": "An artificial neuron weighs each input x_j by a learned weight w_j, adds a bias b and squashes the total into a firing probability between 0 and 1 with a smooth S-shaped curve. Write its output.",
+  "name": "Logistic (sigmoid) neuron",
+  "lhs": "y",
+  "form": "1 / ( 1 + exp ( - ( sumk ( j , w _ j * x _ j ) + b ) ) )",
+  "expr": "1 / ( 1 + exp ( - ( w1 * x1 + w2 * x2 + b ) ) )",
+  "ask": "Find the output of a two-input neuron with the weights, inputs and bias below.",
+  "vars": {
+   "y": "neuron output",
+   "j": "input index",
+   "w": "weights",
+   "x": "inputs",
+   "b": "bias",
+   "w1": "first weight",
+   "x1": "first input",
+   "w2": "second weight",
+   "x2": "second input"
+  },
+  "given": {
+   "w1": 0.5,
+   "x1": 2,
+   "w2": -1,
+   "x2": 0.5,
+   "b": 0.25
+  },
+  "unit": "",
+  "method": "Form the weighted sum z = Σ w_j x_j + b, then apply the function 1/(1 + e^(−z)), whose output tends to 0 and 1 at the extremes.",
+  "distractors": [
+   "tanh",
+   "-",
+   "ln"
+  ]
+ },
+ "psionics": {
+  "goal": "Ions of charge number z in a nerve membrane drift for two reasons: they diffuse down their concentration gradient, and the electric potential V pushes them. Write the ion flux j through the membrane in terms of both gradients (molar quantities).",
+  "name": "Nernst–Planck equation (resting potential)",
+  "lhs": "j",
+  "form": "- D * ( d ( c , x ) + z * F / ( R * T ) * c * d ( V , x ) )",
+  "expr": "R * T / ( z * F ) * ln ( co / ci ) * 1000",
+  "ask": "Setting j = 0 and integrating across the membrane gives the equilibrium potential V = (RT/zF)·ln(c_out/c_in). Find it (in mV) for potassium in a neuron at body temperature.",
+  "vars": {
+   "j": "ion flux",
+   "D": "diffusion coefficient",
+   "c": "ion concentration",
+   "x": "position across the membrane",
+   "z": "charge number of the ion",
+   "F": "Faraday constant",
+   "R": "gas constant",
+   "T": "temperature",
+   "V": "electric potential",
+   "co": "outside concentration (mM)",
+   "ci": "inside concentration (mM)"
+  },
+  "given": {
+   "R": 8.314,
+   "T": 310,
+   "z": 1,
+   "F": 96485,
+   "co": 5,
+   "ci": 140
+  },
+  "unit": "mV",
+  "method": "Diffusion gives −D dc/dx; the drift velocity in the field is the mobility times the force, and the mobility is D/(RT) per mole (zF per mole of charge).",
+  "distractors": [
+   "kB",
+   "e",
+   "exp"
+  ]
+ },
+ "standard_model": {
+  "goal": "The Higgs doublet carries weak isospin and hypercharge, so its derivative must be made gauge-covariant. Write the covariant derivative D_μ: the ordinary derivative plus couplings to the three weak gauge fields W^a (through the isospin generators τ^a/2, strength g) and to the hypercharge field B (strength g_Y, generator Y/2).",
+  "name": "Electroweak covariant derivative (W and Z masses from symmetry breaking)",
+  "lhs": "D _ μ",
+  "form": "∂ _ μ - i * g / 2 * τ ^ a * W _ μ ^ a - i * gY / 2 * Y * B _ μ",
+  "expr": "sqrt ( g ^ 2 + gY ^ 2 ) * v / 2",
+  "ask": "Putting the Higgs vacuum value v into |D_μΦ|² gives m_W = g v/2 and m_Z = √(g² + g_Y²)·v/2. Find the Z boson mass.",
+  "vars": {
+   "D": "covariant derivative",
+   "μ": "spacetime index",
+   "∂": "partial derivative",
+   "i": "imaginary unit",
+   "g": "weak SU(2) coupling",
+   "τ": "Pauli (isospin) matrices",
+   "a": "isospin index 1..3",
+   "W": "weak gauge fields",
+   "gY": "hypercharge coupling",
+   "Y": "hypercharge of the field",
+   "B": "hypercharge gauge field",
+   "v": "Higgs vacuum expectation value (GeV)"
+  },
+  "given": {
+   "g": 0.652,
+   "gY": 0.357,
+   "v": 246
+  },
+  "unit": "GeV",
+  "method": "Demand that the Lagrangian stay unchanged under local SU(2)×U(1) rotations of the doublet; each generator needs its own gauge field, and the 1/2 comes from the isospin generators being τ/2.",
+  "distractors": [
+   "e",
+   "+",
+   "γ"
+  ]
+ },
+ "abstract_algebra": {
+  "goal": "Write two four-component numbers as a real part plus a three-vector part, a + u⃗ and b + w⃗, where the three imaginary units square to −1 and anticommute. Multiply them out using vector operations only.",
+  "name": "Quaternion product (Hamilton product in scalar–vector form)",
+  "lhs": "( a + vec ( u ) ) * ( b + vec ( w ) )",
+  "form": "a * b - vec ( u ) · vec ( w ) + a * vec ( w ) + b * vec ( u ) + vec ( u ) × vec ( w )",
+  "expr": "a * w3 + b * u3 + u1 * w2 - u2 * w1",
+  "ask": "Find the k-component (third vector component) of the product of q₁ = 2 + i + 2j + 3k and q₂ = 3 + 4i + j + 2k.",
+  "vars": {
+   "a": "real part of the first quaternion",
+   "b": "real part of the second",
+   "u": "vector part of the first",
+   "w": "vector part of the second",
+   "u1": "i-component of u",
+   "u2": "j-component of u",
+   "u3": "k-component of u",
+   "w1": "i-component of w",
+   "w2": "j-component of w",
+   "w3": "k-component of w"
+  },
+  "given": {
+   "a": 2,
+   "b": 3,
+   "u1": 1,
+   "u2": 2,
+   "u3": 3,
+   "w1": 4,
+   "w2": 1,
+   "w3": 2
+  },
+  "unit": "",
+  "method": "Expand the product term by term; for two pure vectors use ij = k, jk = i, ki = j, ji = −k and i² = −1, and recognise the dot and cross products.",
+  "distractors": [
+   "i",
+   "+",
+   "2"
+  ]
+ },
+ "compact_stars": {
+  "goal": "A neutron star with moment of inertia I spins at angular velocity Ω. Its magnetic dipole m, tilted by α from the rotation axis, radiates electromagnetic waves like a rotating antenna, and that radiated power is drawn from the rotational kinetic energy. Write the rate of change of that energy.",
+  "name": "Magnetic-dipole spin-down of a pulsar",
+  "lhs": "d ( I * Ω ^ 2 / 2 , t )",
+  "form": "- μ0 * m ^ 2 * Ω ^ 4 * sin ( α ) ^ 2 / ( 6 * π * c ^ 3 )",
+  "expr": "P / ( 2 * Pd ) / 31557600",
+  "ask": "Since dΩ/dt ∝ −Ω³, integrating from a fast birth spin gives the characteristic age τ = P/(2Ṗ). Find it in years for the Crab pulsar (1 yr = 31 557 600 s).",
+  "vars": {
+   "I": "moment of inertia",
+   "Ω": "angular velocity",
+   "t": "time",
+   "μ0": "vacuum permeability",
+   "m": "magnetic dipole moment",
+   "α": "angle between magnetic and spin axes",
+   "c": "speed of light",
+   "P": "spin period (s)",
+   "Pd": "period derivative dP/dt"
+  },
+  "given": {
+   "P": 0.0334,
+   "Pd": 4.21e-13
+  },
+  "unit": "years",
+  "method": "A rotating dipole has a second time derivative of size mΩ² sin α; insert it into the power radiated by an accelerated dipole, and set the result equal to minus the change of rotational energy.",
+  "distractors": [
+   "ε0",
+   "3",
+   "cos"
+  ]
+ },
+ "penrose_process": {
+  "goal": "A rotating black hole of mass M and spin parameter a (units G = c = 1) can lose energy to particles split in its ergosphere, but its horizon area may never shrink. The part of the mass that can never be extracted is fixed by the horizon area A = 8πM(M + √(M² − a²)), via √(A/16π). Write the maximum extractable energy.",
+  "name": "Rotational energy of a Kerr black hole (irreducible mass, Christodoulou)",
+  "lhs": "E",
+  "form": "M - sqrt ( M / 2 * ( M + sqrt ( M ^ 2 - a ^ 2 ) ) )",
+  "expr": "M - sqrt ( M / 2 * ( M + sqrt ( M ^ 2 - a ^ 2 ) ) )",
+  "ask": "Find the maximum energy (in solar masses) that can be extracted from a black hole of mass 10 solar masses with spin parameter a = 8.",
+  "vars": {
+   "E": "maximum extractable energy",
+   "M": "black hole mass",
+   "a": "spin parameter J/M"
+  },
+  "given": {
+   "M": 10,
+   "a": 8
+  },
+  "unit": "solar masses",
+  "method": "Find the outer horizon radius as the larger root of r² − 2Mr + a² = 0, compute the horizon area 4π(r² + a²), and subtract the mass that area alone pins down from the total mass.",
+  "distractors": [
+   "π",
+   "4",
+   "+"
+  ]
+ },
+ "category_theory": {
+  "goal": "In the category of finite sets, an arrow into C from a product A × B (or a disjoint union with D) is the same as choosing an element of C independently for every point of the source. Count the arrows from (A × B) + D into C as nested products over the points, using cardinalities |X|.",
+  "name": "Exponential law in Set (currying and coproducts: C^(A×B+D) ≅ (C^B)^A × C^D)",
+  "lhs": "abs ( C ^ ( A × B + D ) )",
+  "form": "prod ( x , 1 , abs ( A ) , prod ( y , 1 , abs ( B ) , abs ( C ) ) ) * prod ( z , 1 , abs ( D ) , abs ( C ) )",
+  "expr": "( c ^ b ) ^ a * c ^ k",
+  "ask": "Find the number of morphisms (A × B) + D → C for |A| = 2, |B| = 3, |C| = 2, |D| = 2.",
+  "vars": {
+   "A": "first factor set",
+   "B": "second factor set",
+   "C": "target set",
+   "D": "set adjoined by disjoint union",
+   "x": "point of A",
+   "y": "point of B",
+   "z": "point of D",
+   "a": "|A|",
+   "b": "|B|",
+   "c": "|C|",
+   "k": "|D|"
+  },
+  "given": {
+   "a": 2,
+   "b": 3,
+   "c": 2,
+   "k": 2
+  },
+  "unit": "morphisms",
+  "method": "A function is a choice of image for every point; the points of A × B are pairs, so the choices nest, and the points of a disjoint union split into two independent blocks.",
+  "distractors": [
+   "+",
+   "N",
+   "2"
+  ]
+ },
+ "geometric_topology": {
+  "goal": "A compact orientable surface S with b boundary circles carries Gaussian curvature K, and its boundary curves bend within the surface with geodesic curvature κ. The total curvature integrated over the surface plus along the boundary is 2π times a topological invariant, 2 − 2g − b. Solve that for the number of handles g.",
+  "name": "Gauss–Bonnet theorem (genus from total curvature)",
+  "lhs": "g",
+  "form": "( 2 - b ) / 2 - 1 / ( 4 * π ) * ( iint ( K , S ) + oint ( κ , s ) )",
+  "expr": "( 2 - V + E - F ) / 2",
+  "ask": "For a closed surface (b = 0) the total curvature equals 2π(V − E + F) for any triangulation. Find the genus of a closed surface triangulated with V = 10, E = 36, F = 24.",
+  "vars": {
+   "g": "genus (number of handles)",
+   "b": "number of boundary circles",
+   "K": "Gaussian curvature",
+   "S": "the surface",
+   "κ": "geodesic curvature of the boundary",
+   "s": "arc length along the boundary",
+   "V": "vertices",
+   "E": "edges",
+   "F": "faces"
+  },
+  "given": {
+   "V": 10,
+   "E": 36,
+   "F": 24
+  },
+  "unit": "handles",
+  "method": "Triangulate the surface; inside each geodesic triangle the curvature equals the angle excess. Summing over triangles turns the total into V − E + F, and each handle or hole lowers it by 2 or 1.",
+  "distractors": [
+   "χ",
+   "3",
+   "+"
+  ]
+ },
+ "superintelligence": {
+  "goal": "A mind improves itself at a rate that grows faster than its current capability: dI/dt = k·I^(1+ε) with ε > 0. Separate the variables and write the moment t_s at which I becomes infinite, starting from capability I0 at time t0.",
+  "name": "Finite-time blow-up of super-linear self-improvement (hyperbolic growth)",
+  "lhs": "t _ s",
+  "form": "t0 + int ( I0 , ∞ , 1 / ( k * I ^ ( 1 + ε ) ) , I )",
+  "expr": "t0 + 1 / ( k * ε * I0 ^ ε )",
+  "ask": "The integral equals 1/(k ε I0^ε). Find the blow-up time for the values below.",
+  "vars": {
+   "t": "time",
+   "s": "singularity (blow-up)",
+   "t0": "start time (years)",
+   "I0": "starting capability",
+   "I": "capability",
+   "k": "improvement rate constant",
+   "ε": "excess of the growth exponent over 1"
+  },
+  "given": {
+   "t0": 2,
+   "k": 0.05,
+   "ε": 0.5,
+   "I0": 4
+  },
+  "unit": "years",
+  "method": "Divide both sides by k·I^(1+ε) and integrate dt on one side and dI on the other; the I-integral converges at infinity because the exponent exceeds 1.",
+  "distractors": [
+   "exp",
+   "r",
+   "-"
+  ]
+ },
+ "mass_manipulation": {
+  "goal": "A free scalar field φ describes a particle of mass m. Make the wave equation consistent with relativity by turning E² = p²c² + m²c⁴ into derivatives (E → iħ∂/∂t, p → −iħ∇). Write the second time derivative, divided by c², in terms of the three spatial second derivatives and the mass term.",
+  "name": "Klein–Gordon equation (relativistic energy–momentum relation)",
+  "lhs": "1 / c ^ 2 * pd2 ( φ , t )",
+  "form": "pd2 ( φ , x ) + pd2 ( φ , y ) + pd2 ( φ , z ) - m ^ 2 * c ^ 2 / ħ ^ 2 * φ",
+  "expr": "sqrt ( p ^ 2 + m ^ 2 )",
+  "ask": "A plane wave solves it when E² = p²c² + m²c⁴. Find E (GeV) for p = 3 GeV/c and m = 4 GeV/c² in units with c = 1 (set m = 0 to see massless matter).",
+  "vars": {
+   "φ": "scalar field",
+   "t": "time",
+   "x": "first coordinate",
+   "y": "second coordinate",
+   "z": "third coordinate",
+   "m": "particle mass",
+   "c": "speed of light",
+   "ħ": "reduced Planck constant",
+   "p": "momentum"
+  },
+  "given": {
+   "p": 3,
+   "m": 4
+  },
+  "unit": "GeV",
+  "method": "Square the energy operator and the momentum operator, apply both to φ, and rearrange; ∇² splits into three second partial derivatives.",
+  "distractors": [
+   "+",
+   "i",
+   "E"
+  ]
+ },
+ "quantum_biology": {
+  "goal": "An electron of energy E inside a protein meets a region of width L where the potential energy V is higher than E. Inside, its wavefunction decays instead of oscillating, with a local decay rate √(2m(V−E))/ħ. Write the probability of getting through, accumulating that decay across the barrier.",
+  "name": "WKB tunnelling probability",
+  "lhs": "T",
+  "form": "exp ( - 2 / ħ * int ( 0 , L , sqrt ( 2 * m * ( V - E ) ) , x ) )",
+  "expr": "exp ( - 2 * κ * L )",
+  "ask": "For a flat barrier the integral is just κħL with κ = √(2m(V−E))/ħ. Find the tunnelling probability through a 0.3 nm protein barrier with κ = 10 nm⁻¹.",
+  "vars": {
+   "T": "transmission probability",
+   "ħ": "reduced Planck constant",
+   "L": "barrier width (nm)",
+   "m": "electron mass",
+   "V": "barrier potential energy",
+   "E": "electron energy",
+   "x": "position in the barrier",
+   "κ": "decay constant (nm⁻¹)"
+  },
+  "given": {
+   "κ": 10,
+   "L": 0.3
+  },
+  "unit": "",
+  "method": "Assume the wavefunction is e^(±∫κ(x)dx) with slowly varying κ; the probability is the squared amplitude ratio, so the exponent doubles.",
+  "distractors": [
+   "h",
+   "+",
+   "4"
+  ]
+ },
+ "string_theory": {
+  "goal": "A relativistic string sweeps out a two-dimensional sheet X(τ, σ) in spacetime, with σ running from 0 to π along the string. Its action is minus the tension T times the area of that sheet (c = 1). Write the area element from the velocity ∂X/∂τ and the stretch ∂X/∂σ.",
+  "name": "Nambu–Goto action",
+  "lhs": "S",
+  "form": "- T * int ( int ( 0 , π , sqrt ( ( pd ( vec ( X ) , τ ) · pd ( vec ( X ) , σ ) ) ^ 2 - pd ( vec ( X ) , τ ) ^ 2 * pd ( vec ( X ) , σ ) ^ 2 ) , σ ) , τ )",
+  "expr": "n / ( 2 * L ) * sqrt ( T / μ )",
+  "ask": "Small transverse wiggles of a stretched string obey the wave equation with speed √(T/μ), so its modes are f_n = (n/2L)·√(T/μ) - each mode a different 'particle'. Find the 3rd harmonic of a string of length 0.5 m, tension 100 N, density 0.01 kg/m.",
+  "vars": {
+   "S": "action",
+   "T": "string tension",
+   "X": "embedding of the worldsheet in spacetime",
+   "τ": "worldsheet time",
+   "σ": "position along the string",
+   "n": "harmonic number",
+   "L": "string length (m)",
+   "μ": "mass per unit length (kg/m)"
+  },
+  "given": {
+   "n": 3,
+   "L": 0.5,
+   "T": 100,
+   "μ": 0.01
+  },
+  "unit": "Hz",
+  "method": "The area of a surface spanned by two tangent vectors A and B is √((A·B)² − A²B²) in a Lorentzian metric (the Gram determinant); integrate it over both parameters.",
+  "distractors": [
+   "+",
+   "c",
+   "2"
+  ]
+ },
+ "field_engineering": {
+  "goal": "A field projector must reproduce the gravitational field of an arbitrary mass distribution of density ρ filling a volume V. Add up the inverse-square pull of every mass element at source point s on a test point r, as a vector.",
+  "name": "Newtonian gravitational field of a mass distribution",
+  "lhs": "vec ( g )",
+  "form": "- G * iiint ( ρ * ( vec ( r ) - vec ( s ) ) / norm ( vec ( r ) - vec ( s ) ) ^ 3 , V )",
+  "expr": "G * M / r ^ 2",
+  "ask": "Outside a spherical body the integral reduces to that of a point mass M. Find the field strength at the surface of the Earth.",
+  "vars": {
+   "g": "gravitational field",
+   "G": "gravitational constant",
+   "ρ": "mass density",
+   "r": "field point / distance (m)",
+   "s": "source point",
+   "V": "volume of the source",
+   "M": "total mass (kg)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 5.972e+24,
+   "r": 6371000.0
+  },
+  "unit": "m/s²",
+  "method": "A mass element ρ dV at s pulls toward itself along the unit vector (s − r)/|r − s| with strength G ρ dV/|r − s|²; superpose all elements.",
+  "distractors": [
+   "c",
+   "2",
+   "+"
+  ]
+ },
+ "grand_unification": {
+  "goal": "A gauge coupling α is not constant: quantum loops make it change logarithmically with the energy scale μ. With one-loop coefficient b and two-loop coefficient b_2, the inverse coupling changes by −b/(2π) − b_2·α/(8π²) per unit of ln μ. Integrate from the reference scale M up to Q to get 1/α at Q.",
+  "name": "Renormalisation-group running of a gauge coupling (two loops)",
+  "lhs": "1 / α _ Q",
+  "form": "1 / α _ M - int ( M , Q , ( b / ( 2 * π ) + b _ 2 * α / ( 8 * π ^ 2 ) ) / μ , μ )",
+  "expr": "a - b / ( 2 * π ) * ln ( Q / M )",
+  "ask": "Dropping the small two-loop term the integral is (b/2π)·ln(Q/M). Find the inverse U(1) coupling at Q = 10¹⁶ GeV given 1/α = 59 at M = 91.2 GeV and b = 4.1.",
+  "vars": {
+   "α": "gauge coupling",
+   "Q": "final energy scale (GeV)",
+   "M": "reference energy scale (GeV)",
+   "b": "one-loop coefficient",
+   "μ": "running energy scale",
+   "a": "1/α at M"
+  },
+  "given": {
+   "a": 59,
+   "b": 4.1,
+   "Q": 1e+16,
+   "M": 91.2
+  },
+  "unit": "",
+  "method": "Write dα/d ln μ as a power series in α, convert it to an equation for 1/α, and integrate d ln μ = dμ/μ between the two scales.",
+  "distractors": [
+   "e",
+   "ln",
+   "4"
+  ]
+ },
+ "m_theory": {
+  "goal": "Eleven-dimensional gravity compactified on a circle of radius g_s·l_s must reproduce ten-dimensional string gravity. The 10-D inverse coupling 1/(2κ²) = 1/((2π)⁷ g_s² l_s⁸) must equal the 11-D one, 1/((2π)⁸ l₁₁⁹), integrated around the circle's circumference in the extra coordinate y.",
+  "name": "M-theory/type IIA matching (eleven-dimensional Planck length)",
+  "lhs": "1 / ( ( 2 * π ) ^ 7 * gs ^ 2 * ls ^ 8 )",
+  "form": "int ( 0 , 2 * π * gs * ls , 1 / ( ( 2 * π ) ^ 8 * l11 ^ 9 ) , y )",
+  "expr": "gs ^ ( 1 / 3 ) * ls",
+  "ask": "Solving gives l₁₁ = g_s^(1/3)·l_s. Find l₁₁ (in 10⁻³⁴ m) for g_s = 0.125 and l_s = 3×10⁻³⁴ m.",
+  "vars": {
+   "gs": "string coupling",
+   "ls": "string length (10⁻³⁴ m)",
+   "l11": "eleven-dimensional Planck length",
+   "y": "coordinate around the eleventh dimension"
+  },
+  "given": {
+   "gs": 0.125,
+   "ls": 3
+  },
+  "unit": "1e-34 m",
+  "method": "Integrating the 11-D action over the compact coordinate multiplies its coefficient by the circumference 2πR; equate the coefficients of the 10-D curvature term and solve for l₁₁.",
+  "distractors": [
+   "G",
+   "11",
+   "c"
+  ]
+ },
+ "cosmogenesis": {
+  "goal": "A scalar field φ sits in a false vacuum of energy V_f and can tunnel to a lower one by nucleating a bubble. In imaginary time the bubble is O(4)-symmetric, so its Euclidean action is an integral over the radius r with the area 2π²r³ of a 3-sphere. Write the action of the bubble relative to the false vacuum.",
+  "name": "Coleman bounce action (thin-wall false vacuum decay)",
+  "lhs": "B",
+  "form": "2 * π ^ 2 * int ( 0 , ∞ , r ^ 3 * ( 1 / 2 * d ( φ , r ) ^ 2 + V - V _ f ) , r )",
+  "expr": "27 * π ^ 2 * σ ^ 4 / ( 2 * ε ^ 3 )",
+  "ask": "For a thin wall of tension σ and vacuum energy difference ε the action is B(R) = 2π²R³σ − π²R⁴ε/2, extremal at R = 3σ/ε, giving B = 27π²σ⁴/(2ε³). Find B (decay rate ∝ e^(−B)) in natural units.",
+  "vars": {
+   "B": "bounce (tunnelling) action",
+   "r": "Euclidean radius",
+   "φ": "scalar field",
+   "V": "potential energy density",
+   "f": "false vacuum",
+   "σ": "wall tension",
+   "ε": "energy density difference of the two vacua"
+  },
+  "given": {
+   "σ": 2,
+   "ε": 1.5
+  },
+  "unit": "",
+  "method": "Rotate time to imaginary time; the least-action tunnelling path is spherically symmetric in four Euclidean dimensions, so dV₄ = 2π²r³dr and the Lagrangian is kinetic plus potential energy.",
+  "distractors": [
+   "4",
+   "+",
+   "ħ"
+  ]
+ },
+ "paradox_engineering": {
+  "goal": "In the free group on k generators every element is a unique reduced word: no letter is ever followed by its own inverse. The first letter has 2k choices and each later letter 2k − 1. Count all elements of word length at most N, including the empty word.",
+  "name": "Word-ball count in a free group (the engine of the Banach–Tarski paradox)",
+  "lhs": "abs ( B _ N )",
+  "form": "1 + sum ( n , 1 , N , 2 * k * ( 2 * k - 1 ) ^ ( n - 1 ) )",
+  "expr": "1 + 2 * k * ( ( 2 * k - 1 ) ^ N - 1 ) / ( 2 * k - 2 )",
+  "ask": "Summing the geometric series gives 1 + 2k((2k−1)^N − 1)/(2k − 2). Find how many elements of the free group on two generators have length at most 5.",
+  "vars": {
+   "B": "ball of words around the identity",
+   "N": "maximum word length",
+   "n": "word length",
+   "k": "number of generators"
+  },
+  "given": {
+   "k": 2,
+   "N": 5
+  },
+  "unit": "words",
+  "method": "Count reduced words of exact length n by choosing letters one at a time, forbidding the inverse of the previous letter; then add up the lengths.",
+  "distractors": [
+   "3",
+   "4",
+   "+"
+  ]
+ },
+ "transfinite_hierarchy": {
+  "goal": "An n-dimensional hypercube has 2^(n−k) · (n choose k) faces of dimension k: choose which k coordinates vary and fix the others at 0 or 1. Its boundary is made of all faces of dimension below n. Write the alternating sum of face counts over the boundary, with the binomial coefficient written in factorials.",
+  "name": "Euler characteristic of the boundary of the n-cube (f-vector of the hypercube)",
+  "lhs": "χ",
+  "form": "sum ( k , 0 , n - 1 , ( - 1 ) ^ k * 2 ^ ( n - k ) * n ! / ( k ! * ( n - k ) ! ) )",
+  "expr": "n * ( n - 1 ) * 2 ^ ( n - 3 )",
+  "ask": "For k = 2 the face count simplifies to n(n−1)·2^(n−3). Find the number of square faces of the 5-dimensional hypercube (penteract).",
+  "vars": {
+   "χ": "Euler characteristic of the boundary",
+   "k": "face dimension",
+   "n": "dimension of the cube"
+  },
+  "given": {
+   "n": 5
+  },
+  "unit": "squares",
+  "method": "A k-face is fixed by choosing the k free coordinates (n choose k) and fixing each of the other n − k at one of two values; alternate signs by dimension.",
+  "distractors": [
+   "+",
+   "1",
+   "3"
+  ]
+ },
+ "abiogenesis": {
+  "goal": "Self-copying molecules of length L compete: the master sequence (fraction x_0, fitness f_0) is copied without any error with probability q^L, while the population as a whole is held constant by diluting everything at the mean fitness. Write the rate of change of the master sequence's fraction, ignoring back-mutation, with the mean fitness written as a ratio of sums over all sequence types j.",
+  "name": "Quasispecies equation (Eigen's error threshold)",
+  "lhs": "d ( x _ 0 , t )",
+  "form": "x _ 0 * ( f _ 0 * q ^ L - sumk ( j , f _ j * x _ j ) / sumk ( j , x _ j ) )",
+  "expr": "ln ( s ) / ( 1 - q )",
+  "ask": "The master survives only if q^L > 1/s, where s is its fitness advantage over the mutant cloud; for q near 1 this means L < ln s/(1 − q). Find the longest genome that can be kept.",
+  "vars": {
+   "x": "fraction of each sequence type",
+   "t": "time",
+   "f": "fitness (replication rate)",
+   "q": "per-base copying fidelity",
+   "L": "genome length",
+   "j": "sequence type",
+   "s": "selective advantage of the master"
+  },
+  "given": {
+   "s": 10,
+   "q": 0.99
+  },
+  "unit": "bases",
+  "method": "Growth is fitness times error-free copying; dilution removes each type at the population's average fitness. Find when the master's growth rate stays above the mutants' at steady state.",
+  "distractors": [
+   "+",
+   "exp",
+   "N"
+  ]
+ },
+ "pleroma": {
+  "goal": "N different ideal fluids, n_i moles each, with pure-fluid chemical potentials μ_i, are poured together at temperature T. In the mixture each fluid's chemical potential gains R·T·ln of its mole fraction. Write the free energy G (at constant temperature and pressure) of the mixture minus that of the separate pure fluids, with each mole fraction written out as a ratio of sums.",
+  "name": "Gibbs energy of ideal mixing",
+  "lhs": "Δ * G",
+  "form": "sum ( i , 1 , N , n _ i * ( μ _ i + R * T * ln ( n _ i / sum ( j , 1 , N , n _ j ) ) ) ) - sum ( i , 1 , N , n _ i * μ _ i )",
+  "expr": "- N * R * T * ln ( N ) / 1000",
+  "ask": "With one mole of each fluid every mole fraction is 1/N, so ΔG = −N·R·T·ln N. Find ΔG (kJ) when N = 1000 different fluids are mixed at 300 K.",
+  "vars": {
+   "Δ": "change on mixing",
+   "G": "Gibbs free energy",
+   "i": "fluid index",
+   "j": "fluid index",
+   "N": "number of fluids",
+   "n": "moles of each fluid",
+   "μ": "chemical potential of the pure fluid",
+   "R": "gas constant",
+   "T": "temperature"
+  },
+  "given": {
+   "N": 1000,
+   "R": 8.314,
+   "T": 300
+  },
+  "unit": "kJ",
+  "method": "The total Gibbs energy is Σ n_i times each species' chemical potential; for an ideal mixture the potential shifts by RT ln x_i, which comes from counting the ways to arrange the molecules.",
+  "distractors": [
+   "kB",
+   "exp",
+   "H"
+  ]
+ }
+}

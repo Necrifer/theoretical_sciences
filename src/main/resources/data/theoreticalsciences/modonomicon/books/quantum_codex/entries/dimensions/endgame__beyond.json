@@ -1,0 +1,96 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.beyond",
+  "description": "book.theoreticalsciences.codex.endgame.beyond.desc",
+  "icon": {
+    "item": "theoreticalsciences:axiom_key"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 85,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:aleph_null_shard"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:aleph_null_shard"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:godel_sentence"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:russell_paradox_set"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:banach_tarski_sphere"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:absolute_infinity"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_fragment"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p10"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.beyond.p11"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/mathematics__platonic_realm"
+    },
+    {
+      "entry": "theoreticalsciences:dimensions/mathematics__fractal_space"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_mathematics"
+  }
+}

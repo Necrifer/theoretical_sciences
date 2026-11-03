@@ -1,0 +1,24 @@
+{
+  "name": "Axiomatic Breach Engine",
+  "icon": "theoreticalsciences:axiomatic_breach_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 16,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A breach is a bubble of different vacuum (Coleman-De Luccia). A wall of tension \u03c3 around a region whose energy is lower by \u0394\u03b5 has critical radius R = 3\u03c3/\u0394\u03b5, and the nucleation rate goes as exp(\u2212B), B = 27\u03c0\u00b2\u03c3\u2074/(2\u0394\u03b5\u00b3). Too fast, and the bubble swallows everything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Wall tension \u03c3, Energy difference \u0394\u03b5, Barrier field.$(br2)$(thing)Disturbance$(): Vacuum energy noise: \u0394\u03b5\u00b7(1 \u00b1 0.2%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Bubbles everywhere: the breach spreads beyond the chamber; Barrier not shaped: the wall cannot form; Interlock: barrier-shaping coils not superconducting (too warm); Field above the critical field: the barrier-shaping coils quench.$(br2)$(thing)Rate$(): The breach runs at a fixed pace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Critical radius: R_c = 3\u03c3/\u0394\u03b5$(br)Bounce action B: B = 27\u03c0\u00b2\u03c3\u2074/(2\u0394\u03b5\u00b3)$(br)Bubbles per second: N = \u0394\u03b5\u00b7e^(\u2212B)\u00b7V\u00b7t$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

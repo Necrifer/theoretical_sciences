@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:shock_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:interstellar_dust",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:core_iron",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rail_armature",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:exoplanet_core_sample",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 600,
+  "research": "theoreticalsciences:exoplanetology",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "P",
+        "min": 50.0,
+        "max": 90.0
+      }
+    ]
+  }
+}

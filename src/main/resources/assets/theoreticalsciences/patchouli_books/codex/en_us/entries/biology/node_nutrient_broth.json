@@ -1,0 +1,23 @@
+{
+  "name": "Nutrient Broth",
+  "icon": "theoreticalsciences:nutrient_broth_cell",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nutrient_broth_cell",
+      "title": "Nutrient Broth",
+      "text": "A warm, rich medium for growing cells. Sugar provides energy, bone meal provides minerals, and a zeolite catalyst keeps the chemistry steady. It smells faintly sweet. Left uncovered for even a moment, it clouds with whatever life drifts into it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Life needs food. In the Bioreactor, I combined sugar, bone meal and water with a zeolite catalyst, and the broth supported growth."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Unlocked by$(): Molecular Biology.$(br2)$(thing)Used in$(): Anomalous Strain Culture, CAR-T Cell Culture, Cryptochrome Magnetoreceptor, Engineered Enzyme, Folded Protein Crystal, Immortal Cell Line, Minimal Synthetic Cell, Morphogenic Serum and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/molecular_biology"
+}

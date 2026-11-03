@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_arbor_planks",
+  "description": "book.theoreticalsciences.codex.world.node_arbor_planks.desc",
+  "icon": {
+    "item": "theoreticalsciences:arbor_planks"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 10,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:arbor_planks"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_arbor_planks.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_arbor_planks.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_arbor_planks.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

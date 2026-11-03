@@ -1,0 +1,122 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.black_hole_interior",
+  "description": "book.theoreticalsciences.codex.spacetime.black_hole_interior.desc",
+  "icon": {
+    "item": "theoreticalsciences:horizon_diver"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 112,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:horizon_diver"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:horizon_diver"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geodesic_anchor"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:einstein_rosen_core"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:einstein_rosen_bridge"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:frozen_photon"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p9"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:retrocausal_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p10"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p11"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tidal_horror_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p12"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:photon_moth_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p13"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p14"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p15"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.black_hole_interior.p16"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/singularities__lensing"
+    },
+    {
+      "entry": "theoreticalsciences:physics/singularities__kugelblitz_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/black_hole_interior"
+  }
+}

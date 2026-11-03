@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.node_antihydrogen",
+  "description": "book.theoreticalsciences.codex.antimatter.node_antihydrogen.desc",
+  "icon": {
+    "item": "theoreticalsciences:antihydrogen_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 171,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antihydrogen_cell"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.node_antihydrogen.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_antihydrogen.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/antimatter__antiatoms",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/antiatom_chemistry"
+  }
+}

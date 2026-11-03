@@ -1,0 +1,23 @@
+{
+  "name": "Exotic Solder",
+  "icon": "theoreticalsciences:exotic_solder_cell",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:exotic_solder_cell",
+      "title": "Exotic Solder",
+      "text": "Solder forged in stellar plasma. Exotic matter gives it negative energy density, quark-gluon plasma gives it strength, and it joins components that ordinary solder would vaporise. It flows like liquid starlight."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)The attoscale components needed something stronger than superconducting solder. Forging it with an Exotic Matter Crystal and quark-gluon plasma in the Stellar Plasma Crucible gave me a solder with exotic properties."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Stellar Plasma Crucible$().$(br2)$(thing)Unlocked by$(): Plasma Metallurgy.$(br2)$(thing)Used in$(): Attoscale Capacitor, Attoscale Inductor, Attoscale Transistor, Burst Observatory, Causal Solder, Cosmic Circuit Board, Cosmic Neutronium Coil Block, Dimensional Residue and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plasma_metallurgy"
+}

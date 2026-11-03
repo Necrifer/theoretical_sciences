@@ -1,0 +1,72 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.evolution_engine",
+  "description": "book.theoreticalsciences.codex.biology.evolution_engine.desc",
+  "icon": {
+    "item": "theoreticalsciences:evolution_engine"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 48,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chronal_field_projector"
+      },
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.evolution_engine.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__synthetic"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/directed_evolution"
+  }
+}

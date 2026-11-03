@@ -1,0 +1,62 @@
+{
+  "title": "Geometric Optics",
+  "description": "A lens bends light by the difference in its two curvatures, times how much more slowly light runs in it. Grind the curvatures, polish the error away, and you have an instrument. Unlocks the Optical Workshop and its lenses, plates and gratings.",
+  "icon": "theoreticalsciences:optical_workshop",
+  "x": 6,
+  "y": -9,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:crystallography",
+    "theoreticalsciences:stellar_astrophysics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A thin lens of refractive index n has two surfaces of radii R _ 1 and R _ 2 (positive when the centre of the curve lies beyond the surface). Write its power P, one over its focal length.",
+    "name": "Lensmaker's equation",
+    "lhs": "P",
+    "form": "( n - 1 ) * ( 1 / R _ 1 - 1 / R _ 2 )",
+    "expr": "( n - 1 ) * ( 1 / A - 1 / B )",
+    "ask": "Find P in dioptres for a fused silica lens, n = @{n}, with A = @{A} m and B = \u2212@{A} m.",
+    "vars": {
+      "P": "power (dioptres)",
+      "n": "refractive index",
+      "R": "radius of curvature",
+      "A": "front radius (m)",
+      "B": "back radius (m)"
+    },
+    "given": {
+      "n": 1.458,
+      "A": 0.5,
+      "B": -0.5
+    },
+    "unit": "D",
+    "method": "Each surface bends the light by (n \u2212 1)/R; for a thin lens the two bends simply add.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "f"
+    ],
+    "vary": {
+      "n": [
+        0.87,
+        2.05,
+        0.01
+      ],
+      "A": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

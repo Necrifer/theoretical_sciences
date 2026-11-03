@@ -1,0 +1,24 @@
+{
+  "name": "Crystal Growth Furnace",
+  "icon": "theoreticalsciences:crystal_growth_furnace",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 22,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A seed touches the melt and is drawn up at speed v: the melt freezes onto it, releasing its latent heat into the crystal. The heater's superheat sets the temperature gradient G at the growth front, and v/G decides what the crystal keeps - too fast, and it traps vacancies; too slow, interstitials; near the critical ratio, neither (Voronkov). An impurity is taken in only k_eff as readily as it sits in the melt; pulling slowly and stirring hard brings k_eff down to its equilibrium value (Burton-Prim-Slichter)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Heater temperature, Pull rate v, Rotation \u03c9.$(br2)$(thing)Disturbance$(): Convection in the melt: the superheat varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The melt has frozen: the heaters are below its melting point; The melt is so hot it attacks the crucible and boils off; The iridium crucible softens above 2,800 K.$(br2)$(thing)Rate$(): The faster it is pulled, the sooner the boule is done."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Superheat: \u0394T = T \u2212 T_m$(br)Gradient at the front: G \u2248 G\u2080 + \u0394T/L$(br)Voronkov ratio v/G: \u03be = v/G$(br)Boundary layer: \u03b4 \u221d \u03c9^(\u22121/2)$(br)Effective segregation k_eff: k_eff = k\u2080/(k\u2080 + (1 \u2212 k\u2080)e^(\u2212v\u03b4/D))$(br)Crystal purity: purity = 1 \u2212 k_eff\u00b7c\u2080"
+    }
+  ]
+}

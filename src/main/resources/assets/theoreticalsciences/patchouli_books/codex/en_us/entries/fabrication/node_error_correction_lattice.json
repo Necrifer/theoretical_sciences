@@ -1,0 +1,23 @@
+{
+  "name": "Error-Correction Lattice",
+  "icon": "theoreticalsciences:error_correction_lattice",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:error_correction_lattice",
+      "title": "Error-Correction Lattice",
+      "text": "Thousands of physical qubits standing guard over one logical qubit. Each error is caught by the neighbours, which vote it out before it can spread. It is a delicate lattice of light, cold to touch, and remarkably stable."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)My qubits kept losing coherence. In the Neural Synthesizer, I let a Quantum Processor arrange Qubits around a Superposition Crystal, using Synaptic Fluid to learn which errors to vote out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Neural Synthesizer$().$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Adaptive Feedback Core, Anomaly Resolution Engine, Quantum Error-Correction Core."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

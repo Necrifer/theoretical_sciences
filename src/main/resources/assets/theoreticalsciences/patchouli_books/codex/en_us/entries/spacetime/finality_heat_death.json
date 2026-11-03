@@ -1,0 +1,22 @@
+{
+  "name": "Heat Death",
+  "icon": "theoreticalsciences:heat_death_ember",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 43,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entropy_horizon,theoreticalsciences:heat_death_ember,theoreticalsciences:de_sitter_horizon_shard",
+      "text": "The likeliest end: maximum entropy. After the black holes, an empty de Sitter space is left, with a horizon c/H away that glows at \u0127H/(2\u03c0k_B) \u2248 3\u00d710\u207b\u00b3\u2070 K and holds S = \u03c0c\u2075k_B/(G\u0127H\u00b2) \u2248 2\u00d710\u00b9\u00b2\u00b2 - the most entropy there can ever be. Nothing more can happen, because nothing can get colder than its surroundings."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Build the $(item)Entropy Horizon$(). It runs matter forward to the end: proton decay residue and a black hole's last flash become $(item)Heat Death Embers$() and $(fluid)Dark Era Haze$() - photons, neutrinos and positronium atoms wider than today's observable universe. Embers under dark energy give $(item)De Sitter Horizon Shards$(), and embers with a shard give $(item)Heat Death Remnants$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In its Operation console the simulated age must pass 10\u00b3\u2074 years (or the protons have not decayed); a faster expansion makes a smaller, hotter horizon - too hot, and it boils the containment. Horizon shards and phantom cells also make a $(item)Cosmological Constant$() in the Siphon."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/heat_death"
+}

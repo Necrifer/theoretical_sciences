@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r50_hawking",
+  "description": "book.theoreticalsciences.codex.spacetime.r50_hawking.desc",
+  "icon": {
+    "item": "theoreticalsciences:analog_black_hole"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 50,
+  "y": -8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:analog_black_hole"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r50_hawking.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r50_hawking.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r50_hawking.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__bose_einstein_condenser"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__r47_waves"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/analog_gravity"
+  }
+}

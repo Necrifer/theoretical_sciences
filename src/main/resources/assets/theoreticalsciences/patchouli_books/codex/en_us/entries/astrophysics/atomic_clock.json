@@ -1,0 +1,41 @@
+{
+  "name": "Atomic Clock",
+  "icon": "theoreticalsciences:atomic_clock",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 31,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:atomic_clock",
+      "title": "Atomic Clock",
+      "text": "Counts the oscillations of a caesium atom. The deeper it stands in a gravity well, the slower it ticks.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Grows $(item)Time-Dilated Samples$(). It runs at \u221a(1 \u2212 2\u03a6/c\u00b2) of its full speed: fastest at the top of the world, about three quarters as fast at its bottom."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Time-Dilated Sample."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:atomic_clock",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:time_dilated_sample",
+      "text": "A crystal grown deep in a gravity well. By its own clock it took longer to form than the outside world saw.$(br2)Made in $(item)Time Dilation Chamber$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Time-Dilated Sample$(): Pulsar Timing Record"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_time_dilation"
+}

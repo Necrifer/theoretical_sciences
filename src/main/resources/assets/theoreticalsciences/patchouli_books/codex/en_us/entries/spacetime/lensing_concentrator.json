@@ -1,0 +1,166 @@
+{
+  "name": "Lensing Concentrator",
+  "icon": "theoreticalsciences:lensing_concentrator",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 118,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lensing_concentrator",
+      "title": "Lensing Concentrator",
+      "text": "Lines a star up behind a mass and collects the light the mass bends together: an Einstein ring, made into power.$(br2)Generates power.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Works only at night under open sky. Choose the lens mass, its distance, and how closely the star is aligned behind it (u, in Einstein radii). The magnification is A = (u\u00b2 + 2)/(u\u221a(u\u00b2 + 4)) - huge as u \u2192 0, but the Einstein radius of a small, distant lens is so tiny that the aim's own jitter sets how close you can get."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Lensing Concentrator",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____A_____",
+            "___________",
+            "___________",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "___________",
+            "___________",
+            "_____A_____",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____B_____",
+            "__A_____A__",
+            "___________",
+            "___________",
+            "_B___D___B_",
+            "___________",
+            "___________",
+            "__A_____A__",
+            "_____B_____",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____B_____",
+            "__B_____B__",
+            "___________",
+            "___________",
+            "_B___B___B_",
+            "___________",
+            "___________",
+            "__B_____B__",
+            "_____B_____",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____B_____",
+            "__B_____B__",
+            "___________",
+            "___________",
+            "_B___B___B_",
+            "___________",
+            "___________",
+            "__B_____B__",
+            "_____B_____",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____B_____",
+            "__B_____B__",
+            "___________",
+            "___________",
+            "_B___B___B_",
+            "___________",
+            "___________",
+            "__B_____B__",
+            "_____B_____",
+            "___________"
+          ],
+          [
+            "___BB0BB___",
+            "__BBBBBBB__",
+            "_BBB___BBB_",
+            "BBB_____BBB",
+            "BB__BBB__BB",
+            "EB__BBB__BE",
+            "BB__BBB__BB",
+            "BBB_____BBB",
+            "_BBB___BBB_",
+            "__BBBBBBB__",
+            "___BBEBB___"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:lensing_concentrator",
+          "A": "theoreticalsciences:lens_array_block",
+          "B": "theoreticalsciences:lens_pylon",
+          "D": "theoreticalsciences:focus_receiver",
+          "E": "#theoreticalsciences:multiblock/lens_pylon_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (2 item and 0 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Einstein Ring Lens."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lensing_concentrator",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_lensing"
+}

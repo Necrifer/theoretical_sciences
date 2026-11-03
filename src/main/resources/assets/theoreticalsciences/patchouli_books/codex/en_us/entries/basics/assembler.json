@@ -1,0 +1,30 @@
+{
+  "name": "The Assembler",
+  "icon": "theoreticalsciences:structure_assembler",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:structure_assembler",
+      "text": "Day 3. I am done placing casings by hand. Set the multiblock controller down, use the $(item)Structure Assembler$() on it, and it builds every missing block, bottom-up, from casings in my inventory (free in creative)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lesson learned: $(thing)sneak-use$() first for a dry run. Sparks mark the gaps, and I get a shopping list that counts what I already carry.$(br2)The assembler never breaks blocks - anything in the way is marked, for me to clear myself. It never places $(item)Interface Ports$() automatically either; I swap those in where I want them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Taking a structure apart$(): sneak-use the assembler in the air to switch it to disassemble mode (it glints while it is in it). Use it on a controller, then again within five seconds to confirm: every block of the structure's pattern - casings, ports, coils, glass, the controller last - comes back to your inventory, and anything that does not fit lands at your feet. Blocks that are not part of the pattern are never touched. Sneak-use on a controller in this mode lists what you would get back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "On a $(thing)tower of variable height$() (the Gas Centrifuge Cascade), using the assembler on a finished structure builds one more stage on top."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:structure_assembler",
+      "text": "Use on a multiblock controller to build every missing block from your inventory. Sneak-use to preview what is missing.$(br2)Made in a crafting grid."
+    }
+  ]
+}

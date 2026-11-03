@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:interstellar_dust",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molecular_cloud",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:brown_dwarf_core",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 1200,
+  "research": "theoreticalsciences:accretion_physics",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Ea": 300000.0,
+      "Tr": 2300.0
+    },
+    "windows": [
+      {
+        "q": "mB",
+        "min": 0.3,
+        "max": 100.0
+      },
+      {
+        "q": "Tf",
+        "min": 1800.0,
+        "max": 2600.0
+      }
+    ]
+  }
+}

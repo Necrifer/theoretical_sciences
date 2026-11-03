@@ -1,0 +1,62 @@
+{
+  "title": "Hawking Radiation",
+  "description": "Near a horizon the same happens without anyone accelerating: a black hole glows, at a temperature inversely proportional to its mass, and slowly evaporates. Unlocks the Micro Black Hole Evaporator.",
+  "icon": "theoreticalsciences:hawking_quanta",
+  "x": 8,
+  "y": 1,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:semiclassical_gravity",
+    "theoreticalsciences:black_hole_era"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hawking_quanta",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:hawking_record",
+      "count": 2
+    }
+  ],
+  "time": 870,
+  "puzzle": {
+    "goal": "A black hole of mass M glows as a black body. Write its temperature T, from \u0127, c, gravity's constant G and Boltzmann's k.",
+    "name": "Hawking temperature of a mass",
+    "lhs": "T",
+    "form": "\u0127 * c ^ 3 / ( 8 * \u03c0 * G * M * k )",
+    "expr": "h * c ^ 3 / ( 25.1327 * G * M * k )",
+    "ask": "Find T in kelvin for M = @{M} kg (h = 1.0546e-34 for \u0127, c = 2.998e8, G = 6.674e-11, k = 1.381e-23).",
+    "vars": {
+      "T": "temperature (K)",
+      "\u0127": "reduced Planck constant",
+      "c": "speed of light",
+      "\u03c0": "pi",
+      "G": "gravitational constant",
+      "M": "mass (kg)",
+      "k": "Boltzmann constant",
+      "h": "\u0127 (J\u00b7s)"
+    },
+    "given": {
+      "h": 1.0546e-34,
+      "c": 299800000.0,
+      "G": 6.674e-11,
+      "M": 1000000000000.0,
+      "k": 1.381e-23
+    },
+    "unit": "K",
+    "method": "The surface gravity of a Schwarzschild horizon is \u03ba = c\u2074/4GM; put it in kT = \u0127\u03ba/2\u03c0c.",
+    "distractors": [
+      "2",
+      "a",
+      "\u03c3"
+    ],
+    "vary": {
+      "M": [
+        600000000000.0,
+        1400000000000.0,
+        10000000000.0
+      ]
+    }
+  }
+}

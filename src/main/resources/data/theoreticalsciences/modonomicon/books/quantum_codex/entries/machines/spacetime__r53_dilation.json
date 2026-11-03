@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r53_dilation",
+  "description": "book.theoreticalsciences.codex.spacetime.r53_dilation.desc",
+  "icon": {
+    "item": "theoreticalsciences:time_dilation_chamber"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 39,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:time_dilation_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r53_dilation.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r53_dilation.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/spacetime__tensor_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_time_dilation"
+  }
+}

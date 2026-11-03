@@ -1,0 +1,22 @@
+{
+  "name": "Belief & Evidence",
+  "icon": "theoreticalsciences:bayesian_analyzer",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bayesian_analyzer,theoreticalsciences:prior_tablet,theoreticalsciences:posterior_tablet",
+      "text": "A curve made of many small chances is the $(thing)normal distribution$(): f(x) = e^(\u2212(x\u2212\u03bc)\u00b2/2\u03c3\u00b2)/(\u03c3\u221a2\u03c0). 68% of it lies within one width of its centre, 95% within two."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bayes' rule turns a belief into a better one: P(H|E) = P(E|H)\u00b7P(H)/P(E). A check that is 99% reliable, for something one person in a hundred has, is right only one time in six when it says yes - because most yeses are false alarms among the many who do not have it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Bayesian Analyzer$() combines a $(item)Prior Tablet$() with evidence into a $(item)Posterior Tablet$(). Carry Posterior Tablets while solving research derivations: each one pays for a hint instead of Insight."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/bayesian_inference"
+}

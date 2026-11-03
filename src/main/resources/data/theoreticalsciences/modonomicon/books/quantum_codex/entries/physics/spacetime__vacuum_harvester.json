@@ -1,0 +1,72 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.vacuum_harvester",
+  "description": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.desc",
+  "icon": {
+    "item": "theoreticalsciences:vacuum_harvester"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 126,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:vacuum_harvester"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p4.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:vacuum_harvester"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resonance_probe"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.vacuum_harvester.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__graviton_condenser"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

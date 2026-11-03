@@ -1,0 +1,24 @@
+{
+  "name": "Radio Telescope",
+  "icon": "theoreticalsciences:radio_telescope",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 60,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A source of flux S raises the antenna temperature by T = S\u00b7A_eff/2k. The receiver hears it over the system temperature T_sys - its own noise, the Galaxy's background (strong at low frequency), rain, and the switching noise of every machine nearby. Integrating a band B for a time \u03c4 beats the noise down: SNR = T\u00b7\u221a(B\u03c4)/T_sys. A spectral line narrower than the band is diluted; a pulsar's pulse is smeared by dispersion across the band, by 8.3 \u00b5s\u00b7DM\u00b7B/\u03bd\u00b3."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Frequency \u03bd, Bandwidth B, Integration \u03c4.$(br2)$(thing)Disturbance$(): Receiver gain drift: \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The dish has no view of the sky.$(br2)$(thing)Rate$(): A clearer detection is faster; very long integrations are slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)System temperature: T_sys = T_rx + T_RFI + T_rain + T_gal(\u03bd)$(br)Source flux at \u03bd: S(\u03bd) = S\u2081\u2084\u2080\u2080\u00b7(\u03bd/1400)^\u03b1$(br)Antenna temperature: T = S\u00b7A_eff/2k$(br)Line in band: B/2 \u2212 |\u03bd \u2212 \u03bd_line|$(br)Signal to noise: SNR = T\u00b7\u221a(B\u03c4)/T_sys$(br)Dispersion smearing: \u0394t = 8.3 \u00b5s\u00b7DM\u00b7B/\u03bd\u00b3"
+    }
+  ]
+}

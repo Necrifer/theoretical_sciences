@@ -1,0 +1,75 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor",
+  "description": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.desc",
+  "icon": {
+    "item": "theoreticalsciences:pleroma_reconstitutor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 99,
+  "y": -6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_reconstitutor"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_reconstitutor"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transcendental_echo"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.pleroma_reconstitutor.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/endgame__transcendental"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/endgame__beyond_the_shutdown"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/the_sundering"
+  }
+}

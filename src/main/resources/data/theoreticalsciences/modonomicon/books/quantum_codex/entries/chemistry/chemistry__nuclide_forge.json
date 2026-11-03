@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.nuclide_forge",
+  "description": "book.theoreticalsciences.codex.chemistry.nuclide_forge.desc",
+  "icon": {
+    "item": "theoreticalsciences:nuclide_forge"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 52,
+  "y": 7,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:nuclide_forge"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:nuclide_forge"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.nuclide_forge.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__exotic"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/island_of_stability"
+  }
+}

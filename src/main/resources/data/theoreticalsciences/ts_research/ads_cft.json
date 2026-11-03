@@ -1,0 +1,58 @@
+{
+  "title": "AdS/CFT Correspondence",
+  "description": "A theory of gravity in a curved space and a quantum field theory on its boundary, without gravity, are the same theory in two languages. The universe as a hologram, made exact.",
+  "icon": "theoreticalsciences:holographic_screen",
+  "x": 17,
+  "y": 3,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:holographic_principle",
+    "theoreticalsciences:page_curve"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:page_curve_record",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:island_fragment",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:holographic_matrix",
+      "count": 1
+    }
+  ],
+  "time": 1950,
+  "puzzle": {
+    "goal": "Gravity in a three-dimensional anti-de Sitter space of radius L, with gravity's constant G, is the same as a two-dimensional conformal field theory whose central charge C counts its degrees of freedom. Write C.",
+    "name": "Brown-Henneaux relation",
+    "lhs": "C",
+    "form": "3 * L / ( 2 * G )",
+    "expr": "3 * L / ( 2 * G )",
+    "ask": "Find C for L = @{L} and G = 1 (in Planck units).",
+    "vars": {
+      "C": "central charge",
+      "L": "AdS radius",
+      "G": "Newton constant"
+    },
+    "given": {
+      "L": 1000,
+      "G": 1
+    },
+    "unit": "",
+    "method": "The asymptotic symmetries of AdS\u2083 form two Virasoro algebras whose central charge comes out as 3L/2G.",
+    "distractors": [
+      "\u03c0",
+      "c",
+      "4"
+    ],
+    "vary": {
+      "L": [
+        600.0,
+        1400.0,
+        1.0
+      ]
+    }
+  }
+}

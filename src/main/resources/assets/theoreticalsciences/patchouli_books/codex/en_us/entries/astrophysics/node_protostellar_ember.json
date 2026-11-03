@@ -1,0 +1,19 @@
+{
+  "name": "Protostellar Ember",
+  "icon": "theoreticalsciences:protostellar_ember",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:protostellar_ember",
+      "title": "Protostellar Ember",
+      "text": "A shard of a star not yet lit, still glowing with the heat of its own collapse. A furnace of a fuel: it burns for a long time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Mined$(): from $(item)Protostar Fragment$(), in veins through the rock.$(br2)$(thing)Unlocked by$(): Accretion Physics.$(br2)$(thing)Used in$(): Accretion Disk Plasma, Quasar Jet Filament."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/accretion_physics"
+}

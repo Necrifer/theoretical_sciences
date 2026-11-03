@@ -1,0 +1,60 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.quantum_life",
+  "description": "book.theoreticalsciences.codex.biology.quantum_life.desc",
+  "icon": {
+    "item": "theoreticalsciences:quantum_chlorophyll"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 50,
+  "y": -4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quantum_chlorophyll"
+      },
+      "text": "book.theoreticalsciences.codex.biology.quantum_life.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.quantum_life.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quantum_chlorophyll"
+      },
+      "text": "book.theoreticalsciences.codex.biology.quantum_life.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cryptochrome_magnetoreceptor"
+      },
+      "text": "book.theoreticalsciences.codex.biology.quantum_life.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tardigrade_culture"
+      },
+      "text": "book.theoreticalsciences.codex.biology.quantum_life.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.quantum_life.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__quantum_entangler"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_biology"
+  }
+}

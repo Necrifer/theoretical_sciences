@@ -1,0 +1,47 @@
+{
+  "name": "book.theoreticalsciences.codex.information.demon",
+  "description": "book.theoreticalsciences.codex.information.demon.desc",
+  "icon": {
+    "item": "theoreticalsciences:maxwell_demon_chip"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 15,
+  "y": 21,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.demon.p0",
+      "title": "book.theoreticalsciences.codex.information.demon"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.demon.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:negentropy_cell"
+      },
+      "text": "book.theoreticalsciences.codex.information.demon.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.demon.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dark_energy_cell"
+      },
+      "text": "book.theoreticalsciences.codex.information.demon.p4"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermodynamics_of_information"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "The Spectrograph",
+  "icon": "theoreticalsciences:spectrograph",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spectrograph,theoreticalsciences:spectral_plate",
+      "text": "Split light into its colours and it tells you what made it. A hot body glows brightest at a wavelength set by its temperature alone: $(thing)\u03bb = b/T$(), with b = 2.898 mm\u00b7K. The Sun, at 5,778 K, peaks in green light."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Atoms leave their own marks: dark lines where cool gas in front absorbs, bright lines where hot gas emits, each element at its own wavelengths. That is how helium was found on the Sun before anyone found it on Earth."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Spectrograph$() turns glass and amethyst into $(item)Spectral Plates$(). Fed $(item)Raw Pitchblende$() and a plate, it finds the radium hidden in the ore by its lines and separates it as $(item)Radium Salt$(), with a little magnetite left over."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/spectroscopy"
+}

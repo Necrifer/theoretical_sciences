@@ -1,0 +1,66 @@
+{
+  "params": [
+    {
+      "id": "g",
+      "unit": "\u00d71000",
+      "min": 0.05,
+      "max": 50,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "Bb",
+      "unit": "T",
+      "min": 0.01,
+      "max": 3,
+      "step": 0.001,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ge",
+      "unit": "\u00d71000",
+      "expr": "g*(1 + 0.01*d)",
+      "formula": "\u03b3"
+    },
+    {
+      "id": "Tu",
+      "unit": "K",
+      "expr": "214*ge*Bb",
+      "formula": "T = \u0127a/(2\u03c0ck_B)"
+    },
+    {
+      "id": "Ps",
+      "unit": "kW",
+      "expr": "0.1*ge^3*Bb",
+      "formula": "P \u221d \u03b3\u00b3B"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "rf",
+      "kind": "stop",
+      "expr": "500 - Ps",
+      "formula": "P < 500 kW"
+    },
+    {
+      "id": "saturate",
+      "kind": "wear",
+      "expr": "2 - Bb",
+      "formula": "B < 2 T"
+    }
+  ],
+  "rate": "clamp(0.5 + 0.2*g, 0.25, 2)",
+  "rate_formula": "rate = 0.5 + 0.2\u00b7\u03b3/1000",
+  "heat": "0.001*Ps",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

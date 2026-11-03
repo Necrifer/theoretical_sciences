@@ -1,0 +1,24 @@
+{
+  "name": "White Hole Emitter",
+  "icon": "theoreticalsciences:white_hole_emitter",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 77,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A white hole only emits. But it is unstable (Eardley): any matter falling toward it piles up at its horizon until it collapses into a black hole. Keep the chamber vacuum hard and the outflow strong enough to sweep it away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): White hole mass, Outflow rate, Chamber vacuum, Confinement field.$(br2)$(thing)Disturbance$(): Chamber outgassing: the residual gas pressure fluctuates by a factor 10^(0.3\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Super-Eddington outflow batters the containment; Radiation pressure exceeds the magnetic pressure: blow-out; Interlock: confinement coils not superconducting (too warm); Field above the critical field: the confinement coils quench.$(br2)$(thing)Rate$(): Ejecta production follows the outflow."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Luminosity: L = 0.1\u00b7\u1e41c\u00b2$(br)Luminosity: log\u2081\u2080 L$(br)Eddington luminosity: L_Edd = 4\u03c0GMm_p c/\u03c3_T$(br)Eddington ratio: L/L_Edd$(br)Infall rate: \u1e41_in \u221d P\u00b7M\u00b2$(br)Radiation pressure: p = L/(4\u03c0r\u00b2c)$(br)Magnetic pressure: p = B\u00b2/2\u03bc\u2080"
+    }
+  ]
+}

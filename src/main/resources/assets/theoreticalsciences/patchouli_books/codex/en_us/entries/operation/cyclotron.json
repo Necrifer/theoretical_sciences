@@ -1,0 +1,24 @@
+{
+  "name": "Cyclotron",
+  "icon": "theoreticalsciences:cyclotron",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 23,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A proton in a field B circles at f = qB/2\u03c0m, whatever its speed - so an RF voltage at that frequency kicks it across the dees' gap at every half turn. Each turn adds energy and radius; at the edge, R, it has E = (qBR)\u00b2/2m. But its mass grows with energy (\u03b3 = 1 + E/mc\u00b2), its frequency falls, and over its turns it slips out of phase with the RF. Past about 90\u00b0 the gap decelerates it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Magnetic field B, RF frequency, Beam current.$(br2)$(thing)Disturbance$(): Field ripple: B varies by \u00b10.05%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The beam has slipped out of phase with the RF; The iron yoke is saturating; The target is melting under the beam.$(br2)$(thing)Rate$(): More current makes the isotope faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective field: B\u00b7(1 + \u03b4)$(br)Cyclotron frequency: f = qB/2\u03c0m$(br)Beam energy: E = (qBR)\u00b2/2m$(br)Turns: N = E/2qV$(br)Phase slip: \u0394\u03c6 = 360\u00b0\u00b7N\u00b7|f_RF\u00b7\u03b3/f_c \u2212 1|$(br)Beam power: P = E\u00b7I"
+    }
+  ]
+}

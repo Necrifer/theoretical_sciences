@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_koch_crystal",
+  "description": "book.theoreticalsciences.codex.mathematics.node_koch_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:koch_crystal"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 17,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:koch_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_koch_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_koch_crystal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_koch_crystal.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__fractal_space",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/platonic_realm"
+  }
+}

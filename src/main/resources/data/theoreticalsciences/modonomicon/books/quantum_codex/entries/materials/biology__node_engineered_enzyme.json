@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_engineered_enzyme",
+  "description": "book.theoreticalsciences.codex.biology.node_engineered_enzyme.desc",
+  "icon": {
+    "item": "theoreticalsciences:engineered_enzyme"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 81,
+  "y": 66,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:engineered_enzyme"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_engineered_enzyme.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_engineered_enzyme.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_engineered_enzyme.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__gene_sequencer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/genomics"
+  }
+}

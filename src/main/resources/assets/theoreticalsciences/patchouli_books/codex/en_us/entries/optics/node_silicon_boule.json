@@ -1,0 +1,19 @@
+{
+  "name": "Silicon Boule",
+  "icon": "theoreticalsciences:silicon_boule",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:silicon_boule",
+      "title": "Silicon Boule",
+      "text": "Silicon reduced from silica with carbon, then pulled from its melt as one flawless crystal: the most perfect solid people make."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Crystal Growth Furnace$().$(br2)$(thing)Unlocked by$(): Crystallography.$(br2)$(thing)Used in$(): Hall Bar Chip, Laue Pattern, Perfect Crystal Interferometer, Quantum Random Number Chip, Silicon Boule."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Pleroma Reconstitutor",
+  "icon": "theoreticalsciences:pleroma_reconstitutor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 56,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Echo of the Transcendental is a standing wave: it rings at its own frequency f\u2080 and nowhere else. The Logos coils hold it in the throat with a field B; the pump drives it. A driven resonator answers with a Lorentzian, A(f) = 1/(1 + (2Q\u00b7(f \u2212 f\u2080)/f\u2080)\u00b2): only a drive tuned to within f\u2080/2Q is heard at all. The playback power is the pump power the echo actually absorbs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Logos coil current, Drive frequency, Pump power.$(br2)$(thing)Disturbance$(): The Echo drifts: its quality factor falls to Q\u2080/(1 + |d|) and its frequency wanders by 0.01%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Throat field too weak to hold the Echo; Field above 70 T: the throat is tearing; More than 20 GW of drive is not being absorbed: the throat overheats; The throat is overheating.$(br2)$(thing)Rate$(): The Transcendental rebuilds as fast as the Echo absorbs power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Throat field: B = 0.8\u00b7I$(br)Echo frequency: f\u2080(1 + 10\u207b\u2074\u00b7d)$(br)Quality factor: Q = Q\u2080/(1 + |d|)$(br)Detuning: \u03b4 = (f \u2212 f\u2080)/f\u2080$(br)Resonant response: A = 1/(1 + (2Q\u03b4)\u00b2)$(br)Playback power: P = P_pump\u00b7A$(br)Wasted power: P_pump\u00b7(1 \u2212 A)"
+    }
+  ]
+}

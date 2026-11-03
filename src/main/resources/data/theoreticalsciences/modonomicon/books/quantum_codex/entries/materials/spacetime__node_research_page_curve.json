@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_page_curve",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_page_curve.desc",
+  "icon": {
+    "item": "theoreticalsciences:page_curve_record"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 137,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:page_curve_record"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_page_curve.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_page_curve.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__page_curve_analyzer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/page_curve"
+  }
+}

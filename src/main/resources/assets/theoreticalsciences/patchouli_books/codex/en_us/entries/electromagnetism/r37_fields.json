@@ -1,0 +1,18 @@
+{
+  "name": "Magnetic Fields",
+  "icon": "theoreticalsciences:gauss_meter",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gauss_meter",
+      "text": "A current makes a magnetic field. Around a long straight wire it circles the wire, and its strength falls with distance: B = \u03bc\u2080I/(2\u03c0r). Ten amps give 40 \u00b5T five centimetres away - about the strength of the planet's own field."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Gauss Meter$() reads the field where you stand: the planet's (25 to 65 \u00b5T in the Overworld, none in the Nether or the End) and any magnets near you (block tag $(thing)magnetic$(): lodestones, and more to come)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetostatics"
+}

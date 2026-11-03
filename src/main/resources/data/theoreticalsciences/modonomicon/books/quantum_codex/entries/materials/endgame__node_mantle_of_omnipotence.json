@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_mantle_of_omnipotence",
+  "description": "book.theoreticalsciences.codex.endgame.node_mantle_of_omnipotence.desc",
+  "icon": {
+    "item": "theoreticalsciences:mantle_of_omnipotence"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 219,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mantle_of_omnipotence"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_mantle_of_omnipotence.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_mantle_of_omnipotence.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_mantle_of_omnipotence.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__beyond_omnipotence",
+      "draw_arrow": false
+    }
+  ]
+}

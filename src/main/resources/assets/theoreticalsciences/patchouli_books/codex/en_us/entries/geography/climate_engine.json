@@ -1,0 +1,194 @@
+{
+  "name": "Climate Engine",
+  "icon": "theoreticalsciences:climate_engine",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 117,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:climate_engine",
+      "title": "Climate Engine",
+      "text": "Changes the air's carbon dioxide and aerosols, and with them how much heat the world keeps: enough to bring rain, clear the sky, or grow ice.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the carbon dioxide and the aerosols. Radiative forcing \u0394F = 5.35 ln(C/280 ppm) W/m\u00b2, less what the aerosols reflect; the world warms by about 0.8 K for each W/m\u00b2. Warmer air holds more water: rain, then storms. Colder grows ice. The weather recipes set the weather (the whole world's) when they finish."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Climate Engine",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "____B____",
+            "____B____",
+            "__BBABB__",
+            "____B____",
+            "____B____",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "D_______D",
+            "_________",
+            "_________",
+            "_________",
+            "____A____",
+            "_________",
+            "_________",
+            "_________",
+            "D_______D"
+          ],
+          [
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEAEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE"
+          ],
+          [
+            "EEEEEEEEE",
+            "E       E",
+            "E       E",
+            "E       E",
+            "E   A   E",
+            "E       E",
+            "E       E",
+            "E       E",
+            "EEEEEEEEE"
+          ],
+          [
+            "EEEFEFEEE",
+            "E       E",
+            "E       E",
+            "F       F",
+            "E   A   E",
+            "F       F",
+            "E       E",
+            "E       E",
+            "EEEFEFEEE"
+          ],
+          [
+            "EEEE0EEEE",
+            "E       E",
+            "E       E",
+            "E       E",
+            "E   A   E",
+            "E       E",
+            "E       E",
+            "E       E",
+            "EEEEEEEEE"
+          ],
+          [
+            "EEEEGEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "GEEEEEEEG",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "EEEEGEEEE"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:climate_engine",
+          "A": "theoreticalsciences:cloud_seeder_stack",
+          "B": "theoreticalsciences:radiometer_mast",
+          "D": "theoreticalsciences:aerosol_sprayer",
+          "E": "theoreticalsciences:climate_casing",
+          "F": "theoreticalsciences:containment_field_glass",
+          "G": "#theoreticalsciences:multiblock/climate_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Ice Core, Permafrost Sample."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:climate_engine",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/climatology"
+}

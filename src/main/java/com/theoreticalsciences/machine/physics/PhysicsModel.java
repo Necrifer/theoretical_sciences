@@ -23,11 +23,18 @@ import java.util.Map;
  *   <li>{@code oc}, {@code par}, {@code thr} - overclock, parallels and throughput (2^oc x par)</li>
  *   <li>{@code d} - the disturbance (-1..1): field errors, drifting phases, impurities - what the machine fights against</li>
  *   <li>{@code on} - 1 while a recipe is running, else 0</li>
+ *   <li>{@code size} - units built in a variable-height structure (1.3.5: the cascade's stages), else 1</li>
+ *   <li>1.4.0, the world around the machine: {@code sky} (1 if open sky above it), {@code night} (0 by day .. 1 in full
+ *   darkness), {@code sun} (sine of the Sun's elevation, 0 below the horizon), {@code moon} (the Moon's lit fraction),
+ *   {@code rain} (1 while it rains or snows on it), {@code alt} (the controller's height, blocks) and {@code rfi}
+ *   (other machines running within 24 blocks - radio interference)</li>
  * </ul>
  */
 public final class PhysicsModel {
-    public static final String[] BUILTINS = {"T", "T_c", "T_amb", "coil", "emitter", "sc_Tc", "sc_B0", "oc", "par", "thr", "d", "on"};
-    public static final int B_T = 0, B_TC = 1, B_TAMB = 2, B_COIL = 3, B_EMIT = 4, B_SCTC = 5, B_SCB0 = 6, B_OC = 7, B_PAR = 8, B_THR = 9, B_D = 10, B_ON = 11;
+    public static final String[] BUILTINS = {"T", "T_c", "T_amb", "coil", "emitter", "sc_Tc", "sc_B0", "oc", "par", "thr", "d", "on", "size",
+            "sky", "night", "sun", "moon", "rain", "alt", "rfi"};
+    public static final int B_T = 0, B_TC = 1, B_TAMB = 2, B_COIL = 3, B_EMIT = 4, B_SCTC = 5, B_SCB0 = 6, B_OC = 7, B_PAR = 8, B_THR = 9, B_D = 10, B_ON = 11, B_SIZE = 12,
+            B_SKY = 13, B_NIGHT = 14, B_SUN = 15, B_MOON = 16, B_RAIN = 17, B_ALT = 18, B_RFI = 19;
 
     public enum Kind {
         /** the machine simply cannot work outside it (the beam is lost, the plasma will not ignite) */

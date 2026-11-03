@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.world.interior_laws",
+  "description": "book.theoreticalsciences.codex.world.interior_laws.desc",
+  "icon": {
+    "item": "theoreticalsciences:core_drill"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 25,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:core_drill"
+      },
+      "text": "book.theoreticalsciences.codex.world.interior_laws.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.interior_laws.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.interior_laws.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.interior_laws.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/geography__r37_ground"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/geography__r38_seismology"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/plate_tectonics"
+  }
+}

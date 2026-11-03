@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:laser_interferometer"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.gravitational_waves"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.gravitational_waves.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/gravitational_redshift",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

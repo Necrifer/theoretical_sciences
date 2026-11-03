@@ -1,0 +1,41 @@
+{
+  "name": "Bioreactor",
+  "icon": "theoreticalsciences:bioreactor",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 70,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "title": "Bioreactor",
+      "text": "A sterile, stirred, temperature-held vat where cells grow and do the chemistry for you.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Grows cultures in $(fluid)Nutrient Broth$(): cells, enzymes, tardigrades and organoids."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 3 fluid inputs, 2 and 1 outputs).$(br2)$(thing)Makes$(): Anomalous Strain Culture, CAR-T Cell Culture, Engineered Enzyme, Immortal Cell Line, Morphogenic Serum, Neural Organoid, Nutrient Broth, Quantum Chlorophyll, Stem Cell Culture, Tardigrade Culture, Tumour Microenvironment Organoid, Xenobot Swarm, Xenoplasm."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Bioreactor$(): Gene Sequencer"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nutrient_broth_cell",
+      "text": "$(fluid)Nutrient Broth$(). Made in $(item)Bioreactor$().$(br)Used for: Anomalous Strain Culture, CAR-T Cell Culture, Cryptochrome Magnetoreceptor, Engineered Enzyme, Folded Protein Crystal."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/molecular_biology"
+}

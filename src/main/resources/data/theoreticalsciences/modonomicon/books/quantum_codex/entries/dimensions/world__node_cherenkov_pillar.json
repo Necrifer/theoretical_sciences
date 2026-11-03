@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_cherenkov_pillar",
+  "description": "book.theoreticalsciences.codex.world.node_cherenkov_pillar.desc",
+  "icon": {
+    "item": "theoreticalsciences:cherenkov_pillar"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 10,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cherenkov_pillar"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_cherenkov_pillar.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_cherenkov_pillar.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

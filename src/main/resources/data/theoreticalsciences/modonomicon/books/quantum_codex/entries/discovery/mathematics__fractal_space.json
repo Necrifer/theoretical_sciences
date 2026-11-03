@@ -1,0 +1,74 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.fractal_space",
+  "description": "book.theoreticalsciences.codex.mathematics.fractal_space.desc",
+  "icon": {
+    "item": "theoreticalsciences:fractal_lattice_block"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 10,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractal_lattice_block"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractal_lattice_block"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:koch_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractal_wyrm_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_sentinel_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.fractal_space.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__math_overview"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__numbers"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/platonic_realm"
+  }
+}

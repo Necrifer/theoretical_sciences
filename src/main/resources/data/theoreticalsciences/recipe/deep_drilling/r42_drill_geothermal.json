@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:deep_drilling",
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:basaltic_magma",
+      "amount": 1000
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:deep_drilling",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "h",
+        "min": 3.0,
+        "max": 6.0
+      },
+      {
+        "q": "Tz",
+        "min": 360.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

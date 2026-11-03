@@ -1,0 +1,57 @@
+{
+  "name": "Chemistry That Copies Itself",
+  "icon": "theoreticalsciences:bioreactor",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor,theoreticalsciences:gene_sampler,theoreticalsciences:genome_sample,theoreticalsciences:gene_sequencer",
+      "text": "Notebook, biology. Life is chemistry that makes copies of itself, with mistakes. The $(item)Bioreactor$() grows cultures in $(fluid)Nutrient Broth$(); the $(item)Gene Sampler$() takes a genome from any creature you can reach."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Creatures of other dimensions give $(item)Xenogenome Samples$() instead - their code is not DNA. The $(item)Gene Sequencer$() reads and writes genomes: $(item)Recombinant DNA$(), $(item)Engineered Enzymes$(), $(item)Folded Protein Crystals$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gene_sampler",
+      "text": "Use on any creature to take a genome sample. Creatures from other dimensions give xenogenome samples.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:genome_sample",
+      "text": "Every instruction for building one creature, in a vial.$(br2)Made in $(item)Gene Sequencer$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gene_sequencer",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:xenogenome_sample",
+      "text": "A genome from a creature of another dimension. Its code is not written in DNA.$(br2)Made in $(item)Gene Sequencer$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:recombinant_dna",
+      "text": "A double helix spliced from more than one creature.$(br2)Made in $(item)Gene Sequencer$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Bioreactor$(): Gene Sequencer$(li)$(item)Genome Sample$(): Engineered Enzyme, Recombinant DNA, Stem Cell Culture, Tardigrade Culture, Xenogenome Sample$(li)$(item)Gene Sequencer$(): Evolution Engine$(li)$(item)Xenogenome Sample$(): Silicon Life Spore, Xenobot Swarm, Xenoplasm$(li)$(item)Recombinant DNA$(): Apoptosis Trigger, CAR-T Cell Culture, Chronoplastic Gasket, Folded Protein Crystal, Minimal Synthetic Cell and more"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nutrient_broth_cell",
+      "text": "$(fluid)Nutrient Broth$(). Made in $(item)Bioreactor$().$(br)Used for: Anomalous Strain Culture, CAR-T Cell Culture, Cryptochrome Magnetoreceptor, Engineered Enzyme, Folded Protein Crystal."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/molecular_biology"
+}

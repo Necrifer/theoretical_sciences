@@ -27,6 +27,42 @@ public class ParadoxEcho extends Zombie {
         this.xpReward = 18;
     }
 
+    // round 37 (1.1): its own mind, not a zombie's - see OwnAI
+    @Override
+    protected void registerGoals() {
+        OwnAI.melee(this, 1.0, false);
+    }
+
+    @Override
+    protected void addBehaviourGoals() {}
+
+    /** A zombie turns the villagers it kills into zombie villagers; this does not. */
+    @Override
+    public boolean killedEntity(net.minecraft.server.level.ServerLevel level, net.minecraft.world.entity.LivingEntity victim) {
+        return true;
+    }
+
+    /** No babies, chicken jockeys, armour, loot pickup, door breaking or reinforcement bonus. */
+    @Override
+    public net.minecraft.world.entity.SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.DifficultyInstance diff,
+                                                                     net.minecraft.world.entity.MobSpawnType type, @javax.annotation.Nullable net.minecraft.world.entity.SpawnGroupData data) {
+        setCanPickUpLoot(false);
+        return data;
+    }
+
+    @Override
+    public boolean isBaby() {
+        return false;
+    }
+
+    @Override
+    public void setBaby(boolean baby) {}
+
+    @Override
+    public boolean canBreakDoors() {
+        return false;
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Zombie.createAttributes().add(Attributes.MAX_HEALTH, 30.0).add(Attributes.ATTACK_DAMAGE, 6.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.3).add(Attributes.FOLLOW_RANGE, 40.0);

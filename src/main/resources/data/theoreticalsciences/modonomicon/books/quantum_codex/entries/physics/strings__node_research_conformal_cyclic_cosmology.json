@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.node_research_conformal_cyclic_cosmology",
+  "description": "book.theoreticalsciences.codex.strings.node_research_conformal_cyclic_cosmology.desc",
+  "icon": {
+    "item": "theoreticalsciences:aeon_boundary_shard"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 128,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:aeon_boundary_shard"
+      },
+      "text": "book.theoreticalsciences.codex.strings.node_research_conformal_cyclic_cosmology.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_research_conformal_cyclic_cosmology.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__graviton_condenser",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conformal_cyclic_cosmology"
+  }
+}

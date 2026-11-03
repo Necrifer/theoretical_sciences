@@ -1,0 +1,127 @@
+{
+  "name": "Research Nexus",
+  "icon": "theoreticalsciences:research_nexus",
+  "category": "theoreticalsciences:information",
+  "sortnum": 67,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_nexus",
+      "title": "Research Nexus",
+      "text": "A ring of error-corrected cores around a well of light that reads Research Dossiers and studies them in your place, shortening whatever you are researching.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Feed it $(item)Research Dossiers$() while you are studying something: each one replaces minutes of waiting. The dossier must be at least as advanced as the entry - empirical, theoretical, unified, absolute."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Research Nexus",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_________",
+            "___AAA___",
+            "__AAAAA__",
+            "__AAAAA__",
+            "__AAAAA__",
+            "___AAA___",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "___AAA___",
+            "__AAAAA__",
+            "_AA   AA_",
+            "_AA   AA_",
+            "_AA   AA_",
+            "__AAAAA__",
+            "___AAA___",
+            "_________"
+          ],
+          [
+            "___AAA___",
+            "__AAAAA__",
+            "_AA   AA_",
+            "AA     AA",
+            "AA     AA",
+            "AA     AA",
+            "_AA   AA_",
+            "__AAAAA__",
+            "___AAA___"
+          ],
+          [
+            "__AAAAA__",
+            "_AA___AA_",
+            "AA     AA",
+            "A_     _A",
+            "A_     _A",
+            "A_     _A",
+            "AA     AA",
+            "_AA___AA_",
+            "__AAAAA__"
+          ],
+          [
+            "__AAAAA__",
+            "_AA___AA_",
+            "AA_   _AA",
+            "A_     _A",
+            "A_     _A",
+            "A_     _A",
+            "AA_   _AA",
+            "_AA___AA_",
+            "__AAAAA__"
+          ],
+          [
+            "____0____",
+            "___BBBB__",
+            "_BB_ _B__",
+            "_B_   _B_",
+            "_B  D  B_",
+            "_B_   _B_",
+            "_BB_ _B__",
+            "__BBBBB__",
+            "_________"
+          ],
+          [
+            "__EEFEE__",
+            "_EEEEEEE_",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "FEEEEEEEF",
+            "EEEEEEEEE",
+            "EEEEEEEEE",
+            "_EEEEEEE_",
+            "__EEFEE__"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:research_nexus",
+          "A": "theoreticalsciences:containment_field_glass",
+          "B": "theoreticalsciences:quantum_error_correction_core",
+          "D": "theoreticalsciences:computronium_block",
+          "E": "theoreticalsciences:precision_assembly_casing",
+          "F": "#theoreticalsciences:multiblock/precision_assembly_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_nexus",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/research_synthesis"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.r55_stochastic",
+  "description": "book.theoreticalsciences.codex.probability.r55_stochastic.desc",
+  "icon": {
+    "item": "theoreticalsciences:markov_chain_link"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 29,
+  "y": 0,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:markov_chain_link"
+      },
+      "text": "book.theoreticalsciences.codex.probability.r55_stochastic.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r55_stochastic.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__r38_galton"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/probability__galton_board"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stochastic_processes"
+  }
+}

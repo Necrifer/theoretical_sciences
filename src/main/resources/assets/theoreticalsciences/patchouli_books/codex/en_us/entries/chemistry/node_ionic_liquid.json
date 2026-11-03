@@ -1,0 +1,23 @@
+{
+  "name": "Ionic Liquid",
+  "icon": "theoreticalsciences:ionic_liquid_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ionic_liquid_cell",
+      "title": "Ionic Liquid",
+      "text": "A salt that is liquid at room temperature. It conducts electricity, does not evaporate, and dissolves almost anything. It is clear, slightly viscous and faintly warm. Chemists call such salts designer solvents, because they can be tuned for almost any task."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Electrolysing quartz with supercritical solvent in the Electrolytic Cell, I got a salt that stayed liquid. An ionic liquid, perfect for further chemistry."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Electrochemistry.$(br2)$(thing)Used in$(): Absolute Singularity, Autocatalytic Broth, Carbon Nanotube Bundle, Carborane Superacid, Metal-Organic Framework, Self-Healing Polymer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrochemistry"
+}

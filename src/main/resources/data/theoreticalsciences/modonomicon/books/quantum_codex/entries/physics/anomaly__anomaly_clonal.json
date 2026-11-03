@@ -1,0 +1,60 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_clonal",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.desc",
+  "icon": {
+    "item": "theoreticalsciences:resistant_clone"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 187,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resistant_clone"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resistant_clone"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_clonal.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/anomaly__anomaly_escape"
+    },
+    {
+      "entry": "theoreticalsciences:physics/anomaly__anomaly_selfref"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/clonal_evolution"
+  }
+}

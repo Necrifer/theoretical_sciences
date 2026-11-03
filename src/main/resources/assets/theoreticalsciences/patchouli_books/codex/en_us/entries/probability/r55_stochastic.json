@@ -1,0 +1,18 @@
+{
+  "name": "Stochastic Processes",
+  "icon": "theoreticalsciences:markov_chain_link",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:markov_chain_link,theoreticalsciences:poisson_clock,theoreticalsciences:confidence_interval_gauge",
+      "text": "A drunkard's walk of N steps of length l ends about $(thing)l\u221aN$() from where it began - the reason Brownian grains wander as they do. A $(item)Markov Chain Link$() remembers only the one before it; a $(item)Poisson Clock$() ticks at random, each tick a decay in its radium. Clay stirred into water makes a $(fluid)Brownian Suspension$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Confidence Interval Gauge$() shows a range and how sure it is: carried in the off hand, it cancels Variance."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stochastic_processes"
+}

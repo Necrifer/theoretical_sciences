@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:fusion_power",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:interstellar_medium",
+      "amount": 500
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:magnetized_plasma",
+      "amount": 100
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:magnetic_confinement",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Lref": 2.0
+    },
+    "windows": [
+      {
+        "q": "L3",
+        "min": 1.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

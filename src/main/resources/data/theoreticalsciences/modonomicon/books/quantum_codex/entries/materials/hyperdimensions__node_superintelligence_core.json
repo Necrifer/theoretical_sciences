@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.hyperdimensions.node_superintelligence_core",
+  "description": "book.theoreticalsciences.codex.hyperdimensions.node_superintelligence_core.desc",
+  "icon": {
+    "item": "theoreticalsciences:superintelligence_core"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 126,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:superintelligence_core"
+      },
+      "text": "book.theoreticalsciences.codex.hyperdimensions.node_superintelligence_core.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.node_superintelligence_core.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.node_superintelligence_core.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/hyperdimensions__tesseract",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_geometry"
+  }
+}

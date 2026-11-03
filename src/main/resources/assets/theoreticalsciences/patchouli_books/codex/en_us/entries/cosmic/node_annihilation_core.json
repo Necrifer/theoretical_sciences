@@ -1,0 +1,23 @@
+{
+  "name": "Annihilation Core",
+  "icon": "theoreticalsciences:annihilation_core",
+  "category": "theoreticalsciences:cosmic",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:annihilation_core",
+      "title": "Annihilation Core",
+      "text": "A controlled matter-antimatter reaction inside a box. Matter and antimatter meet and convert entirely into energy, the most efficient fuel possible. Dilithium slows the reaction so it releases steadily rather than all at once. It glows white-hot, but the box stays cool."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Antimatter Penning Trap I let antimatter seep through Dilithium Crystal into a superfluid helium bath. Instead of a crater, it gave me a steady glow I could tap for power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Antimatter Penning Trap$().$(br2)$(thing)Unlocked by$(): Annihilation Power.$(br2)$(thing)Used in$(): Neutrino Flux."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/annihilation_power"
+}

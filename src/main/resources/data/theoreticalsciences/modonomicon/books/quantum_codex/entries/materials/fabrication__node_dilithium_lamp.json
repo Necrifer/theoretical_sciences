@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_dilithium_lamp",
+  "description": "book.theoreticalsciences.codex.fabrication.node_dilithium_lamp.desc",
+  "icon": {
+    "item": "theoreticalsciences:dilithium_lamp"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 15,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dilithium_lamp"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_dilithium_lamp.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_dilithium_lamp.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_dilithium_lamp.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__lattice_growth_vat",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/precision_lithography"
+  }
+}

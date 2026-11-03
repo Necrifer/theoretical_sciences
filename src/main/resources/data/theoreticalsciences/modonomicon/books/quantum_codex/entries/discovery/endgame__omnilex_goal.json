@@ -1,0 +1,78 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.omnilex_goal",
+  "description": "book.theoreticalsciences.codex.endgame.omnilex_goal.desc",
+  "icon": {
+    "item": "theoreticalsciences:omnilex"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 88,
+  "y": -4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omnilex"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omnilex"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tree_simulacrum"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ocean_simulacrum"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omnilex_engine"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omega_point"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_goal.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/endgame__hyperreal"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/omnilex"
+  }
+}

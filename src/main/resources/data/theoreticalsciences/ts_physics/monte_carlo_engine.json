@@ -1,0 +1,69 @@
+{
+  "params": [
+    {
+      "id": "lgN",
+      "unit": "",
+      "min": 3,
+      "max": 12,
+      "step": 0.01,
+      "default": 6
+    },
+    {
+      "id": "s",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.001,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "sg": 1,
+    "opt": 0.5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "N",
+      "unit": "",
+      "expr": "10^lgN",
+      "formula": "N"
+    },
+    {
+      "id": "sv",
+      "unit": "",
+      "expr": "sg*(1 - 0.9*s)*(1 + 6*s*(s - opt)^2)",
+      "formula": "\u03c3_eff"
+    },
+    {
+      "id": "err",
+      "unit": "ppm",
+      "expr": "1e6*sv/sqrt(N)*(1 + 0.1*abs(d))",
+      "formula": "\u03b5 = \u03c3/\u221aN"
+    },
+    {
+      "id": "Pl",
+      "unit": "kW",
+      "expr": "2e-12*N*max(T, 1)/300",
+      "formula": "P \u221d N\u00b7kT\u00b7ln 2"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "380 - T",
+      "formula": "T < 380 K"
+    }
+  ],
+  "rate": "clamp(2/(1 + N/1e11), 0.1, 2)",
+  "rate_formula": "rate = 2 / (1 + N/10\u00b9\u00b9)",
+  "heat": "Pl",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

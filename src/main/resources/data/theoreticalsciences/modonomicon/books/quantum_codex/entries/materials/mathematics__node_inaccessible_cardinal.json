@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_inaccessible_cardinal",
+  "description": "book.theoreticalsciences.codex.mathematics.node_inaccessible_cardinal.desc",
+  "icon": {
+    "item": "theoreticalsciences:inaccessible_cardinal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 188,
+  "y": 39,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:inaccessible_cardinal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_inaccessible_cardinal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_inaccessible_cardinal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_inaccessible_cardinal.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__ordinal_recursor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

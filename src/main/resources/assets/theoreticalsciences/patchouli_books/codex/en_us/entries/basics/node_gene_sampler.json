@@ -1,0 +1,23 @@
+{
+  "name": "Gene Sampler",
+  "icon": "theoreticalsciences:gene_sampler",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gene_sampler",
+      "title": "Gene Sampler",
+      "text": "A slim needle on a neutronium handle, tipped with a quantum dot that reads base pairs as it draws them. One quick touch takes a genome sample. Touch a creature from another dimension and the dot reads something that is not DNA at all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I needed a way to copy a creature's blueprint without harming it. A quantum dot on a stick, backed by neutronium so it would not flex, was enough to read a genome on contact. The first creature I sampled barely noticed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): The Casimir Effect."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/casimir_effect"
+}

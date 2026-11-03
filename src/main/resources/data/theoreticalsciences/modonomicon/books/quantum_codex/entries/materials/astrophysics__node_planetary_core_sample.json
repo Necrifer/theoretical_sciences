@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_planetary_core_sample",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_planetary_core_sample.desc",
+  "icon": {
+    "item": "theoreticalsciences:planetary_core_sample"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 32,
+  "y": 59,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:planetary_core_sample"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_planetary_core_sample.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_planetary_core_sample.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__spectrograph",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

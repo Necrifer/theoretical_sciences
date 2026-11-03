@@ -1,0 +1,19 @@
+{
+  "name": "Phase-Locked Stabiliser",
+  "icon": "theoreticalsciences:phase_locked_stabiliser",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phase_locked_stabiliser",
+      "title": "Phase-Locked Stabiliser",
+      "text": "Locks a multiblock's fields to a reference oscillator. Drift comes slower and smaller."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Nanite Assembler$().$(br2)$(thing)Unlocked by$(): Field Engineering.$(br2)$(thing)Used in$(): Adaptive Feedback Core."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/field_engineering"
+}

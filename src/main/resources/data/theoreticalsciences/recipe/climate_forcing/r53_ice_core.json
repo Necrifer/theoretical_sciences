@@ -1,0 +1,29 @@
+{
+  "type": "theoreticalsciences:climate_forcing",
+  "item_inputs": [
+    {
+      "item": "minecraft:snow_block",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ice_core",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 800,
+  "research": "theoreticalsciences:climatology",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "dT",
+        "min": -10.0,
+        "max": -2.5
+      }
+    ]
+  }
+}

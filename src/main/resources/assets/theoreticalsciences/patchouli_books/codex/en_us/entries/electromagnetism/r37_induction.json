@@ -1,0 +1,22 @@
+{
+  "name": "Induction & Magnets",
+  "icon": "theoreticalsciences:ferrite_magnet",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:magnetite,theoreticalsciences:electrical_steel_lamination,theoreticalsciences:ferrite_magnet",
+      "text": "A changing field drives a current: spin a coil of N turns in a field B and it gives \u03b5 = NBA\u03c9\u00b7sin \u03c9t. Every generator works this way. The iron core that guides the field is built from thin $(item)Electrical Steel Laminations$(), so the changing field cannot stir currents inside it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Magnetite$() comes from raw iron roasted with charcoal, or from the Spectrograph's radium assay. Pressed with clay and redstone it makes $(item)Ferrite Magnets$(): iron oxide that stays magnetised."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Iron is ferromagnetic because its atoms' spins line up by themselves - until a critical temperature, 1043 K for iron, shakes them apart. Above it the susceptibility is \u03c7 = C/(T \u2212 T_c). The item tag $(thing)ferromagnetic$() lists what a field pulls on, for the Magnetized effect to come."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electromagnetic_induction"
+}

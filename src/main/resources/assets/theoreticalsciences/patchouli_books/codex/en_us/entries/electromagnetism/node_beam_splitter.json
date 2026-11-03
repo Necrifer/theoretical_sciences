@@ -1,0 +1,19 @@
+{
+  "name": "Beam Splitter",
+  "icon": "theoreticalsciences:beam_splitter",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:beam_splitter",
+      "title": "Beam Splitter",
+      "text": "A disc of fused silica coated so it lets exactly half the light through and reflects the other half."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Optical Workshop$().$(br2)$(thing)Unlocked by$(): Lasers.$(br2)$(thing)Used in$(): Entangled Pair Source, Laser Interferometer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/laser_physics"
+}

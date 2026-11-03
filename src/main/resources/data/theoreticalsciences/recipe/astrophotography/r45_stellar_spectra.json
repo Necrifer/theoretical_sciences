@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_spectrum_plate",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 600,
+  "research": "theoreticalsciences:telescope_optics",
+  "unscaled": true,
+  "insight_per_run": 3,
+  "physics": {
+    "vars": {
+      "mreq": 12.0
+    },
+    "windows": [
+      {
+        "q": "mlim",
+        "min": 12.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

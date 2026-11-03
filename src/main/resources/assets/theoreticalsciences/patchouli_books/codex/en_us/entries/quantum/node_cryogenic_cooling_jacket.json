@@ -1,0 +1,23 @@
+{
+  "name": "Cryogenic Cooling Jacket",
+  "icon": "theoreticalsciences:cryogenic_cooling_jacket",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cryogenic_cooling_jacket",
+      "title": "Cryogenic Cooling Jacket",
+      "text": "A jacket of containment field glass around a cryocooler, built to keep superconducting parts close to absolute zero. Frost forms on its outer face within seconds. Breath fogs in front of it, and the metal near it creaks quietly as it contracts in the cold."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Superconductors fail if they warm up. I wrapped a cryocooler unit in containment glass over spacetime casing and the parts inside stayed cold indefinitely."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Cryogenics."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cryogenics"
+}

@@ -1,0 +1,28 @@
+{
+  "type": "theoreticalsciences:climate_forcing",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 2000
+    }
+  ],
+  "energy": 1024,
+  "duration": 800,
+  "research": "theoreticalsciences:climatology",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "dT",
+        "min": 2.5,
+        "max": 5.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Geomorphology",
+  "description": "Landforms are a record: rivers carry grains, the grains settle, and the speed at which they settle sorts sand from silt from clay. Unlocks the Sediment Core.",
+  "icon": "theoreticalsciences:sediment_core",
+  "x": 1,
+  "y": 16,
+  "insight": 10,
+  "requires": [
+    "theoreticalsciences:cartography"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:survey_map",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A small grain of density \u03c1_s sinks through still water of density \u03c1_f and viscosity \u03bc. It soon stops speeding up: the drag of the slow flow around it balances its weight less its buoyancy. Write the speed v at which a sphere of radius r settles.",
+    "name": "Settling speed of a small sphere",
+    "lhs": "v",
+    "form": "2 / 9 * ( \u03c1 _ s - \u03c1 _ f ) * g * r ^ 2 / \u03bc",
+    "expr": "2 / 9 * ( S - F ) * g * r ^ 2 / \u03bc",
+    "ask": "Find v in metres per second for a 0.1 mm quartz grain in water.",
+    "vars": {
+      "v": "settling speed (m/s)",
+      "\u03c1": "density",
+      "s": "of the solid grain",
+      "f": "of the fluid",
+      "g": "gravity (m/s\u00b2)",
+      "r": "grain radius (m)",
+      "\u03bc": "viscosity (Pa\u00b7s)",
+      "S": "grain density (kg/m\u00b3)",
+      "F": "water density (kg/m\u00b3)"
+    },
+    "given": {
+      "S": 2650,
+      "F": 1000,
+      "g": 9.81,
+      "r": 0.0001,
+      "\u03bc": 0.001
+    },
+    "unit": "m/s",
+    "method": "At low speed the drag on a sphere is 6\u03c0\u03bcrv; set it equal to the weight minus buoyancy, (4/3)\u03c0r\u00b3(\u03c1_s \u2212 \u03c1_f)g.",
+    "distractors": [
+      "\u03bd",
+      "\u03c0",
+      "6"
+    ],
+    "vary": {
+      "S": [
+        1590.0,
+        3710.0,
+        1.0
+      ],
+      "g": [
+        5.88,
+        13.74,
+        0.01
+      ],
+      "r": [
+        6e-05,
+        0.00014,
+        1e-06
+      ],
+      "\u03bc": [
+        0.00059,
+        0.0014,
+        1e-05
+      ]
+    }
+  }
+}

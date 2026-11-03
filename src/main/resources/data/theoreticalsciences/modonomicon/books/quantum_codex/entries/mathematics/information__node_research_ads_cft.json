@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.information.node_research_ads_cft",
+  "description": "book.theoreticalsciences.codex.information.node_research_ads_cft.desc",
+  "icon": {
+    "item": "theoreticalsciences:holographic_screen"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 62,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:holographic_screen"
+      },
+      "text": "book.theoreticalsciences.codex.information.node_research_ads_cft.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.node_research_ads_cft.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/information__holographic_encoder",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ads_cft"
+  }
+}

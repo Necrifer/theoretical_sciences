@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.node_centrifuge_rotor",
+  "description": "book.theoreticalsciences.codex.probability.node_centrifuge_rotor.desc",
+  "icon": {
+    "item": "theoreticalsciences:centrifuge_rotor"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 32,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:centrifuge_rotor"
+      },
+      "text": "book.theoreticalsciences.codex.probability.node_centrifuge_rotor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.node_centrifuge_rotor.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/probability__galton_board",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

@@ -189,6 +189,137 @@ public final class QHEffects {
                 }
             }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, TheoreticalSciences.id("dissolution_health"), -0.15, MUL));
 
+    // ======================================================================== round 37 (1.1): the new sciences' effects
+    /** Radiation Sickness: a dose built up from radioactive things. Nausea, hunger, and less maximum health the worse it gets. */
+    public static final DeferredHolder<MobEffect, MobEffect> RADIATION_SICKNESS = EFFECTS.register("radiation_sickness",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0x9CFF40) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    if (e instanceof Player p) p.causeFoodExhaustion(0.4F * (amp + 1));
+                    if (amp >= 1 && e.getRandom().nextInt(4) == 0)
+                        e.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.CONFUSION, 120, 0, true, false));
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 40 == 0;
+                }
+            }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, TheoreticalSciences.id("radiation_health"), -2.0,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE));
+
+    /** Lithostatic Pressure: the weight of the rock overhead. Slower to move and to mine, more so the deeper it is. */
+    public static final DeferredHolder<MobEffect, MobEffect> LITHOSTATIC_PRESSURE = EFFECTS.register("lithostatic_pressure",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0x8A6A4A) {}
+                    .addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, TheoreticalSciences.id("pressure_speed"), -0.08,
+                            net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                    .addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.BLOCK_BREAK_SPEED, TheoreticalSciences.id("pressure_mining"), -0.12,
+                            net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+    /** Seismic Vertigo: the ground will not hold still. Small shoves and dust - no block ever moves or changes. */
+    public static final DeferredHolder<MobEffect, MobEffect> SEISMIC_VERTIGO = EFFECTS.register("seismic_vertigo",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0xB08850) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    if (e.onGround()) {
+                        double k = 0.08 * (amp + 1);
+                        e.push((e.getRandom().nextDouble() - 0.5) * k, 0.02, (e.getRandom().nextDouble() - 0.5) * k);
+                        e.hurtMarked = true;
+                    }
+                    if (e.getRandom().nextInt(6) == 0) e.hurt(e.damageSources().generic(), 0.5F * (amp + 1));
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 10 == 0;
+                }
+            }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, TheoreticalSciences.id("vertigo_speed"), -0.1,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+    /** Magnetized: everything ferromagnetic you wear drags against the field (item tag theoreticalsciences:ferromagnetic). */
+    public static final DeferredHolder<MobEffect, MobEffect> MAGNETIZED = EFFECTS.register("magnetized",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0xC04040) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    int n = 0;
+                    for (net.minecraft.world.entity.EquipmentSlot slot : net.minecraft.world.entity.EquipmentSlot.values())
+                        if (e.getItemBySlot(slot).is(com.theoreticalsciences.science.Sciences.FERROMAGNETIC)) n++;
+                    if (n > 0)
+                        e.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.MOVEMENT_SLOWDOWN, 30,
+                                Math.min(4, n / 2 + amp), true, false));
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 20 == 0;
+                }
+            });
+
+    /** Frame Drag: spinning spacetime carries you sideways with it. */
+    public static final DeferredHolder<MobEffect, MobEffect> FRAME_DRAG = EFFECTS.register("frame_drag",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0x6080FF) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    float yaw = e.getYRot() * ((float) Math.PI / 180F);
+                    double k = 0.03 * (amp + 1);
+                    e.push(Math.cos(yaw) * k, 0, Math.sin(yaw) * k);    // to the right of where it faces
+                    e.hurtMarked = true;
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 2 == 0;
+                }
+            });
+
+    /** Information Loss: what you hold forgets where it belongs - hotbar slots trade places. */
+    public static final DeferredHolder<MobEffect, MobEffect> INFORMATION_LOSS = EFFECTS.register("information_loss",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0x404050) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    if (e instanceof net.minecraft.server.level.ServerPlayer p) {
+                        var inv = p.getInventory();
+                        int a = p.getRandom().nextInt(9), b = p.getRandom().nextInt(9);
+                        if (a != b) {
+                            net.minecraft.world.item.ItemStack t = inv.getItem(a);
+                            inv.setItem(a, inv.getItem(b));
+                            inv.setItem(b, t);
+                            p.containerMenu.broadcastChanges();
+                        }
+                    }
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % Math.max(20, 100 / (amp + 1)) == 0;
+                }
+            });
+
+    /** Variance: luck evens out - every beneficial effect you have runs out twice as fast. */
+    public static final DeferredHolder<MobEffect, MobEffect> VARIANCE = EFFECTS.register("variance",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0xE0E0E0) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    for (net.minecraft.world.effect.MobEffectInstance i : java.util.List.copyOf(e.getActiveEffects())) {
+                        if (i.getEffect().value().getCategory() != MobEffectCategory.BENEFICIAL || i.isInfiniteDuration() || i.getDuration() <= 20) continue;
+                        e.removeEffect(i.getEffect());
+                        e.addEffect(new net.minecraft.world.effect.MobEffectInstance(i.getEffect(), i.getDuration() - 20, i.getAmplifier(), i.isAmbient(),
+                                i.isVisible(), i.showIcon()));
+                    }
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 20 == 0;
+                }
+            }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.LUCK, TheoreticalSciences.id("variance_luck"), -1.0,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE));
+
     public static void register(IEventBus bus) {
         EFFECTS.register(bus);
     }

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.node_calorimeter_detector_array",
+  "description": "book.theoreticalsciences.codex.exotic.node_calorimeter_detector_array.desc",
+  "icon": {
+    "item": "theoreticalsciences:calorimeter_detector_array"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 68,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:calorimeter_detector_array"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.node_calorimeter_detector_array.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_calorimeter_detector_array.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_calorimeter_detector_array.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__quark_gluon_collider",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/particle_physics"
+  }
+}

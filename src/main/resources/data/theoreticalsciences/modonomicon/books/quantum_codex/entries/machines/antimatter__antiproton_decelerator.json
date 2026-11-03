@@ -1,0 +1,71 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator",
+  "description": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.desc",
+  "icon": {
+    "item": "theoreticalsciences:antiproton_decelerator"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 101,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiproton_decelerator"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiproton_decelerator"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiproton_bundle"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antihydrogen_cell"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.antiproton_decelerator.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/exotic__antimatter_penning_trap"
+    },
+    {
+      "entry": "theoreticalsciences:machines/exotic__quark_gluon_collider"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/antiatom_chemistry"
+  }
+}

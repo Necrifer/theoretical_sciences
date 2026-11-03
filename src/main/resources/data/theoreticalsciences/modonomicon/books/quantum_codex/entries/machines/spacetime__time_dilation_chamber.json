@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber",
+  "description": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.desc",
+  "icon": {
+    "item": "theoreticalsciences:time_dilation_chamber"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 39,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:time_dilation_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:time_dilation_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.time_dilation_chamber.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/spacetime__tensor_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_time_dilation"
+  }
+}

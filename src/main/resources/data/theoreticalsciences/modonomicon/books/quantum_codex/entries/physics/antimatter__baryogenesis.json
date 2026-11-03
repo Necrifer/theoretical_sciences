@@ -1,0 +1,49 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.baryogenesis",
+  "description": "book.theoreticalsciences.codex.antimatter.baryogenesis.desc",
+  "icon": {
+    "item": "theoreticalsciences:baryogenesis_seed"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 189,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:baryogenesis_seed"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.baryogenesis.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.baryogenesis.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:baryogenesis_seed"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.baryogenesis.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.baryogenesis.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/antimatter__mirror_metallurgy"
+    },
+    {
+      "entry": "theoreticalsciences:physics/antimatter__mirror_foundry"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/baryon_asymmetry"
+  }
+}

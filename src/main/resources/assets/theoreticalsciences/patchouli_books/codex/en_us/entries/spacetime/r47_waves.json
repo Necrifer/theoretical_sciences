@@ -1,0 +1,26 @@
+{
+  "name": "Gravitational Waves",
+  "icon": "theoreticalsciences:laser_interferometer",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 41,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:laser_interferometer,theoreticalsciences:test_mass,theoreticalsciences:gw_record_bbh,theoreticalsciences:gw_record_bns",
+      "text": "Two black holes spiralling together shake spacetime: a wave passes, stretching space one way and squeezing it the other, by a strain h of 10\u207b\u00b2\u00b9 when it reaches us. The $(item)Laser Interferometer$() is an L of two long arms with a $(item)Test Mass$() at each end: a laser split between the arms comes back to interfere, and a wave changes the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Four noises hide the wave. $(thing)Shot noise$(), the graininess of light, falls as the laser power P and the arms' finesse F rise - but $(thing)radiation pressure$(), the photons' kicks on the mirrors, grows with them. Both depend only on F\u221aP; where they are equal is the standard quantum limit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Seismic noise$() falls tenfold with each isolation stage - more stages, slower to lock. Machines running nearby shake the ground; below sea level it is quieter, as at KAGRA. $(thing)Thermal noise$() in the mirrors falls as \u221aT: cool them with your coolant."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A black hole merger, h = 10\u207b\u00b2\u00b9, needs a signal-to-noise of 8. A neutron star merger is five times fainter: only cold mirrors will do. Its record points a telescope at the $(thing)kilonova$() - where gold and platinum were made - and every detection gives a great deal of Insight. The chirp's parameters are read off by Bayesian inference: the Analyzer takes black hole records as evidence."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_waves"
+}

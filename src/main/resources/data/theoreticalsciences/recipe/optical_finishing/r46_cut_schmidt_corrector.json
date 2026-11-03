@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:schmidt_corrector",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 600,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 1.458
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": -0.05,
+        "max": 0.05
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 69.0
+      }
+    ]
+  }
+}

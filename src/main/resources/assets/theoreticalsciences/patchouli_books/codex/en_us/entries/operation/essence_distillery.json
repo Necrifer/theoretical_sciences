@@ -1,0 +1,24 @@
+{
+  "name": "Essence Distillery",
+  "icon": "theoreticalsciences:essence_distillery",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 31,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Many fluids boiled together separate only if the column is hot enough for the heaviest and the reflux high enough to keep them apart: the separation is S = R/(R+1)\u00b7exp(\u2212|T_c \u2212 T_b|/300). The column must stay below the coils' limit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Column temperature, Reflux ratio.$(br2)$(thing)Disturbance$(): The mixture's boiling point wanders by \u00b115%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Reflux above 25: the column floods; The fluids do not separate (S below 0.2): bring the column to their boiling point; The coils are overheating.$(br2)$(thing)Rate$(): The cleaner the separation, the faster the Essence comes off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Mixture boiling point: T_b = 600 K\u00b7(1 + 0.15\u00b7d)$(br)Separation: S = R/(R+1)\u00b7e^(\u2212|T_c\u2212T_b|/300)$(br)Reboiler duty: Q = 0.05\u00b7T_c\u00b7(R+1)"
+    }
+  ]
+}

@@ -51,9 +51,12 @@ public final class ContainmentCells {
     public static Component hazard(QHFluids.Entry e) {
         int t = e.def.temperature();
         if (e.def.gas()) return Component.translatable("message.theoreticalsciences.hazard.gas");
-        if (t >= 500) return Component.translatable("message.theoreticalsciences.hazard.hot", t);
-        if (t <= 200) return Component.translatable("message.theoreticalsciences.hazard.cold", t);
-        return Component.translatable("message.theoreticalsciences.hazard.exotic");
+        // round 37: the same three kinds the liquid itself acts by (a 0 K "strange" fluid is exotic, not cold)
+        return switch (com.theoreticalsciences.block.FluidHazard.kind(e)) {
+            case HOT -> Component.translatable("message.theoreticalsciences.hazard.hot", String.format(java.util.Locale.ROOT, "%,d", t));
+            case COLD -> Component.translatable("message.theoreticalsciences.hazard.cold", t);
+            case EXOTIC -> Component.translatable("message.theoreticalsciences.hazard.exotic");
+        };
     }
 
     /** A vanilla bucket aimed at one of our fluids: refuse, and say why. */

@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:shock_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graphite_moderator",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rail_armature",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lonsdaleite",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 300,
+  "research": "theoreticalsciences:electrodynamics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "P",
+        "min": 15.0,
+        "max": 40.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Step 3: First Power",
+  "icon": "theoreticalsciences:thermoelectric_generator",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -97,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:thermoelectric_generator,minecraft:coal",
+      "text": "Machines run on $(thing)FE$(). The first generator needs nothing exotic: the $(item)Thermoelectric Generator$(), on the Extreme Assembly Table from 36 $(item)Iron Ingot$(), 9 $(item)Copper Block$(), 18 $(item)Redstone$(), 9 $(item)Furnace$(), 9 $(item)Cherenkov Quartz$(). No research needed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It burns ordinary fuel:$(li)$(item)Charcoal$(): 48 FE/t for 80 s$(li)$(item)Coal$(): 48 FE/t for 80 s$(li)$(item)Dried Kelp Block$(): 24 FE/t for 200 s$(li)$(item)Blaze Rod$(): 96 FE/t for 120 s$(li)$(item)Coal Block$(): 432 FE/t for 80 s$(li)$(item)Nuclear Waste Glass$(): 32 FE/t for 1200 s$(li)$(item)Polonium-210 Source$(): 96 FE/t for 600 s$(li)$(item)Protostellar Ember$(): 128 FE/t for 800 s$(br2)It pushes its power into the blocks touching it, so set your first machine right beside it (or use any cable mod: every machine takes and gives FE on every side). Feed it with a hopper or pipe to keep it going."
+    }
+  ]
+}

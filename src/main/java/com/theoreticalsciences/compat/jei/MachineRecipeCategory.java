@@ -68,9 +68,12 @@ public class MachineRecipeCategory implements IRecipeCategory<QHRecipe> {
         int dy = layout.areaH - MachineLayout.AREA_H + HEAD;        // the many-slot form is taller
         if (machine == com.theoreticalsciences.machine.MachineType.OMNILEX_ENGINE) return 138 + dy;
         // round 35: room for the harvester's full explanation of what to tune
-        if (machine == com.theoreticalsciences.machine.MachineType.VACUUM_HARVESTER) return 132 + dy;
+        if (machine == com.theoreticalsciences.machine.MachineType.VACUUM_HARVESTER) return 108 + dy + VACUUM_ROOM;
         return (machine.isMultiblock() ? 108 : 88) + dy;        // multiblocks: room for the physics operating window    // room for the impossible recipe's warnings
     }
+
+    /** 1.1.1: the harvester's note is up to five lines; everything below it moves down by what it takes past one line. */
+    private static final int VACUUM_ROOM = 4 * 9;
 
     private int ox(int x) {
         return x - 4;
@@ -107,13 +110,13 @@ public class MachineRecipeCategory implements IRecipeCategory<QHRecipe> {
             SizedFluidIngredient s = r.fluidInputs.get(i);
             List<FluidStack> stacks = Arrays.asList(s.getFluids());
             b.addSlot(RecipeIngredientRole.INPUT, ox(layout.fluidInX[i]), oy(layout.fluidInY[i]))
-                    .setFluidRenderer(Math.max(cap, s.amount()), false, 16, layout.tankH)
+                    .setCustomRenderer(NeoForgeTypes.FLUID_STACK, new ClippedTankRenderer(Math.max(cap, s.amount()), 16, layout.tankH))
                     .addIngredients(NeoForgeTypes.FLUID_STACK, stacks);
         }
         for (int i = 0; i < Math.min(r.fluidOutputs.size(), machine.fluidOutputs); i++) {
             FluidStack fs = r.fluidOutputs.get(i);
             b.addSlot(RecipeIngredientRole.OUTPUT, ox(layout.fluidOutX[i]), oy(layout.fluidOutY[i]))
-                    .setFluidRenderer(Math.max(cap, fs.getAmount()), false, 16, layout.tankH)
+                    .setCustomRenderer(NeoForgeTypes.FLUID_STACK, new ClippedTankRenderer(Math.max(cap, fs.getAmount()), 16, layout.tankH))
                     .addIngredients(NeoForgeTypes.FLUID_STACK, List.of(fs));
         }
     }
@@ -136,19 +139,22 @@ public class MachineRecipeCategory implements IRecipeCategory<QHRecipe> {
         String dur = String.format("%.1fs", r.duration / 20.0);
         g.drawString(font, (machine.generator ? "+" : "") + energy, 2, 0, machine.generator ? 0x40C060 : 0xC04040, false);
         g.drawString(font, dur, width - 2 - font.width(dur), 0, 0x606878, false);
+        int note = 0;           // how far the rows below the note line move down (1.1.1: they used to sit under it)
+        if (machine == com.theoreticalsciences.machine.MachineType.VACUUM_HARVESTER)
+            note = (com.theoreticalsciences.client.screen.TextFit.wrapped(g, font, Component.translatable("jei.theoreticalsciences.vacuum_note_1"), 2, 60 + dy, width - 4, 0xFF60C0D0, 5, false) - 1) * 9;
         if (r.hasResearch()) {
             ResourceLocation id = ResourceLocation.tryParse(r.research);
             Component c = Component.translatable("jei.theoreticalsciences.research",
                     id == null ? Component.literal(r.research) : Component.translatableWithFallback("research." + id.getNamespace() + "." + id.getPath(), id.getPath()));
-            g.drawString(font, c, 2, 70 + dy, 0x9060C0, false);
+            g.drawString(font, c, 2, 70 + dy + note, 0x9060C0, false);
         }
         if (r.insight > 0) {      // a thought experiment: Insight for the machine's owner
             Component ic = Component.translatable("jei.theoreticalsciences.insight", r.insight);
-            g.drawString(font, ic, width - 2 - font.width(ic), 80 + dy, 0xFF60D0FF, false);
+            g.drawString(font, ic, width - 2 - font.width(ic), 80 + dy + note, 0xFF60D0FF, false);
         }
         if (r.minTier > 0) {      // needs a better grade of coils in the structure
             Component t = Component.translatable("jei.theoreticalsciences.min_tier", r.minTier);
-            g.drawString(font, t, 2, 80 + dy, 0xFFB040, false);
+            g.drawString(font, t, 2, 80 + dy + note, 0xFFB040, false);
         }
         if (r.secret) {
             // the impossible recipe: no result shown, only warnings
@@ -170,13 +176,10 @@ public class MachineRecipeCategory implements IRecipeCategory<QHRecipe> {
         }
         if (machine == com.theoreticalsciences.machine.MachineType.RESEARCH_NEXUS)
             com.theoreticalsciences.client.screen.TextFit.wrapped(g, font, Component.translatable("jei.theoreticalsciences.nexus_note"), 2, 60 + dy, width - 4, 0xFF80C0FF, 2, false);
-        if (machine == com.theoreticalsciences.machine.MachineType.VACUUM_HARVESTER) {
-            com.theoreticalsciences.client.screen.TextFit.wrapped(g, font, Component.translatable("jei.theoreticalsciences.vacuum_note_1"), 2, 60 + dy, width - 4, 0xFF60C0D0, 5, false);
-        }
         if (!r.physics.isNone() && !r.secret) {      // the QMD-style operating window
-            int yy = 90 + dy;
+            int yy = 90 + dy + note;
             for (Component c : physicsLines(r)) {
-                if (yy > 99 + dy) break;
+                if (yy > 99 + dy + note) break;
                 g.drawString(font, font.plainSubstrByWidth(c.getString(), width - 4), 2, yy, 0xFF60E0C0, false);
                 yy += 9;
             }
@@ -188,7 +191,7 @@ public class MachineRecipeCategory implements IRecipeCategory<QHRecipe> {
                     com.theoreticalsciences.machine.MachineType.dimensionList(onlyIn)), 2, getHeight() - 10, width - 4, 0xFFFFB040);
         } else if (machine.isMultiblock()) {
             Component mb = Component.translatable("jei.theoreticalsciences.multiblock");
-            g.drawString(font, mb, width - 2 - font.width(mb), 70 + dy, 0x6080A0, false);
+            g.drawString(font, mb, width - 2 - font.width(mb), 70 + dy + note, 0x6080A0, false);
         }
     }
 

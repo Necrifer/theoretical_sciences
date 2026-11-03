@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.hyperdimensions.node_theoretical_notes_2",
+  "description": "book.theoreticalsciences.codex.hyperdimensions.node_theoretical_notes_2.desc",
+  "icon": {
+    "item": "theoreticalsciences:theoretical_notes_2"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 97,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:theoretical_notes_2"
+      },
+      "text": "book.theoreticalsciences.codex.hyperdimensions.node_theoretical_notes_2.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.node_theoretical_notes_2.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.node_theoretical_notes_2.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/hyperdimensions__tesseract",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_geometry"
+  }
+}

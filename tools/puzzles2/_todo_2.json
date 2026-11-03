@@ -1,0 +1,450 @@
+[
+ {
+  "id": "number_systems",
+  "wave": 0,
+  "title": "Number Systems",
+  "insight": 10,
+  "requires": [
+   "quantum_foundations"
+  ],
+  "description": "Zero, and \"the next one\". From two rules, all of arithmetic. Unlocks the Peano Arithmetic Engine.",
+  "old_puzzle": {
+   "goal": "Show how many steps of 'add the next one' sum the first n naturals: find twice the sum 1 + 2 + ... + n for n = 100.",
+   "lhs": "2S",
+   "expr": "n * ( n + 1 )"
+  }
+ },
+ {
+  "id": "artificial_intelligence",
+  "wave": 3,
+  "title": "Artificial Intelligence",
+  "insight": 25,
+  "requires": [
+   "quantum_entanglement",
+   "cryogenics"
+  ],
+  "description": "Photonic neural networks and narrow AI. Unlocks the Neural Synthesizer.",
+  "old_puzzle": {
+   "goal": "Find the cross-entropy loss of a neural network that assigns probability p to the correct class.",
+   "lhs": "L",
+   "expr": "- ln ( p )"
+  }
+ },
+ {
+  "id": "vacuum_energy_storage",
+  "wave": 3,
+  "title": "Vacuum Energy Storage",
+  "insight": 15,
+  "requires": [
+   "casimir_effect",
+   "cryogenics"
+  ],
+  "description": "Store energy in the difference between two vacua. Unlocks the Energy Cells.",
+  "old_puzzle": {
+   "goal": "Find the energy released when a volume V of false vacuum relaxes to the true vacuum.",
+   "lhs": "E",
+   "expr": "( ρ1 - ρ2 ) * V"
+  }
+ },
+ {
+  "id": "antimatter",
+  "wave": 6,
+  "title": "Antimatter Containment",
+  "insight": 20,
+  "requires": [
+   "quantum_entanglement",
+   "cryogenics"
+  ],
+  "description": "Pair production and Penning traps.",
+  "old_puzzle": {
+   "goal": "Find the angular cyclotron frequency of an antiproton held in a Penning trap with magnetic field B.",
+   "lhs": "ω",
+   "expr": "q * B / m"
+  }
+ },
+ {
+  "id": "nanotechnology",
+  "wave": 6,
+  "title": "Molecular Nanotechnology",
+  "insight": 35,
+  "requires": [
+   "thermodynamics_of_information",
+   "metamaterials"
+  ],
+  "description": "Assemblers that build anything atom by atom - including copies of themselves.",
+  "old_puzzle": {
+   "goal": "Find how many assemblers exist after t hours if one self-replicating assembler copies itself every τ hours.",
+   "lhs": "N",
+   "expr": "2 ^ ( t / τ )"
+  }
+ },
+ {
+  "id": "entangled_logistics",
+  "wave": 10,
+  "title": "Entangled Logistics",
+  "insight": 25,
+  "requires": [
+   "quantum_entanglement",
+   "femtoengineering"
+  ],
+  "description": "Two particles, one state - and so one channel. Unlocks Entangled Relays, Transceivers and the Entanglement Tuner.",
+  "old_puzzle": {
+   "goal": "Find the CHSH value S of a Werner state with visibility V = 0.9 (classical channels cannot exceed 2).",
+   "lhs": "S",
+   "expr": "sqrt ( 8 ) * V"
+  }
+ },
+ {
+  "id": "dark_sector",
+  "wave": 11,
+  "title": "The Dark Sector",
+  "insight": 40,
+  "requires": [
+   "particle_physics",
+   "topology"
+  ],
+  "description": "Most of the universe's mass does not interact with light. Unlocks the Dark Matter Halo Collector.",
+  "old_puzzle": {
+   "goal": "Find the mass enclosed within radius r of a galaxy with a flat rotation speed v - far more than the visible stars.",
+   "lhs": "M",
+   "expr": "v ^ 2 * r / G"
+  }
+ },
+ {
+  "id": "supramolecular_chemistry",
+  "wave": 11,
+  "title": "Supramolecular Chemistry",
+  "insight": 60,
+  "requires": [
+   "nanochemistry",
+   "topology"
+  ],
+  "description": "Molecules that build themselves into cages, frameworks and machines. Unlocks MOFs, clathrates and self-healing polymers.",
+  "old_puzzle": {
+   "goal": "Find the Gibbs energy of binding (kJ/mol) of a host-guest complex with association constant K = 1e6 at 298 K.",
+   "lhs": "ΔG",
+   "expr": "- R * T * ln ( K )"
+  }
+ },
+ {
+  "id": "electrochemistry",
+  "wave": 12,
+  "title": "Electrochemistry",
+  "insight": 30,
+  "requires": [
+   "chemical_bonding",
+   "cryogenics"
+  ],
+  "description": "Chemistry is electrons moving; push them with a voltage. Unlocks the Electrolytic Cell.",
+  "old_puzzle": {
+   "goal": "Find the Gibbs free energy change of a Daniell cell (Zn/Cu) per mole of reaction from its cell voltage.",
+   "lhs": "ΔG",
+   "expr": "- n * F * E"
+  }
+ },
+ {
+  "id": "plasma_metallurgy",
+  "wave": 12,
+  "title": "Plasma Metallurgy",
+  "insight": 35,
+  "requires": [
+   "particle_physics",
+   "chronodynamics"
+  ],
+  "description": "Alloys forged in stellar plasma: Chronosteel and Exotic Solder. Unlocks the Stellar Plasma Crucible.",
+  "old_puzzle": {
+   "goal": "Find the mean thermal kinetic energy of a particle in a stellar plasma at temperature T.",
+   "lhs": "E",
+   "expr": "3 / 2 * kB * T"
+  }
+ },
+ {
+  "id": "singularity_physics",
+  "wave": 12,
+  "title": "Singularity Physics",
+  "insight": 50,
+  "requires": [
+   "dark_sector"
+  ],
+  "description": "Event horizons, Hawking radiation and the Kugelblitz: a black hole made from light alone.",
+  "old_puzzle": {
+   "goal": "Find the Schwarzschild (event-horizon) radius of a black hole of one solar mass.",
+   "lhs": "r_s",
+   "expr": "2 * G * M / c ^ 2"
+  }
+ },
+ {
+  "id": "white_holes",
+  "wave": 12,
+  "title": "White Holes",
+  "insight": 70,
+  "requires": [
+   "singularity_physics",
+   "chronodynamics"
+  ],
+  "description": "The time-reverse of a black hole: a horizon nothing can enter.",
+  "old_puzzle": {
+   "goal": "Find the speed at which matter is ejected from a white hole as it passes radius r (the time reverse of infall from rest at infinity).",
+   "lhs": "v",
+   "expr": "c * sqrt ( rs / r )"
+  }
+ },
+ {
+  "id": "calculus",
+  "wave": 13,
+  "title": "Calculus",
+  "insight": 30,
+  "requires": [
+   "real_analysis"
+  ],
+  "description": "Infinitesimals, derivatives and integrals - and manifolds, the spaces calculus lives on.",
+  "old_puzzle": {
+   "goal": "Find the slope of y = x^n at the point x, for n = 3 and x = 2.",
+   "lhs": "dy/dx",
+   "expr": "n * x ^ n / x"
+  }
+ },
+ {
+  "id": "mirror_metallurgy",
+  "wave": 13,
+  "title": "Mirror Metallurgy",
+  "insight": 200,
+  "requires": [
+   "antiatom_chemistry",
+   "plasma_metallurgy"
+  ],
+  "description": "Metals that must never touch anything. Unlocks the Mirror Matter Foundry, anti-metals and the Mirror Alloy.",
+  "old_puzzle": {
+   "goal": "A Penning trap holds an antiproton by making it circle in a magnetic field. Find the cyclotron frequency in MHz, with q in 1e-19 C and m in 1e-27 kg.",
+   "lhs": "f",
+   "expr": "100 * q * B / ( 2 * π * m )"
+  }
+ },
+ {
+  "id": "superacid_chemistry",
+  "wave": 13,
+  "title": "Superacids",
+  "insight": 50,
+  "requires": [
+   "electrochemistry",
+   "particle_physics"
+  ],
+  "description": "Acids a million million times stronger than sulfuric - strong enough to protonate almost anything.",
+  "old_puzzle": {
+   "goal": "Find the Hammett acidity H0 of an acid in which the indicator (pK of BH+ = -10.1) is 100 times more protonated than not.",
+   "lhs": "H0",
+   "expr": "pK - ln ( r ) / ln ( 10 )"
+  }
+ },
+ {
+  "id": "fractional_distillation",
+  "wave": 14,
+  "title": "Fractional Distillation",
+  "insight": 90,
+  "requires": [
+   "hyperdimensional_geometry",
+   "assembly_lines"
+  ],
+  "description": "High-tier processes leave Dimensional Residue. Distil it back into useful matter in the Fractionation Spire.",
+  "old_puzzle": {
+   "goal": "Find the minimum number of theoretical stages in the Fractionation Spire (Fenske equation) to reach a separation factor S with relative volatility α.",
+   "lhs": "N_min",
+   "expr": "ln ( S ) / ln ( α )"
+  }
+ },
+ {
+  "id": "stellar_engineering",
+  "wave": 14,
+  "title": "Stellar Engineering",
+  "insight": 80,
+  "requires": [
+   "white_holes",
+   "stellar_evolution"
+  ],
+  "description": "Ignite a captive star from white-hole ejecta.",
+  "old_puzzle": {
+   "goal": "Find the luminosity of the ignited captive star from its radius and surface temperature (Stefan-Boltzmann law in solar units).",
+   "lhs": "L",
+   "expr": "R ^ 2 * ( T / Ts ) ^ 4"
+  }
+ },
+ {
+  "id": "directed_evolution",
+  "wave": 15,
+  "title": "Directed Evolution",
+  "insight": 170,
+  "requires": [
+   "xenobiology",
+   "chronodynamics",
+   "morphogenesis"
+  ],
+  "description": "A million generations in a minute, if time runs fast enough. Unlocks the Evolution Engine and telomerase.",
+  "old_puzzle": {
+   "goal": "Find the probability that a single mutant with selective advantage s takes over a population of N (Moran process, small s).",
+   "lhs": "P_fix",
+   "expr": "s / ( 1 - exp ( - N * s ) )"
+  }
+ },
+ {
+  "id": "nucleosynthesis",
+  "wave": 15,
+  "title": "Nucleosynthesis",
+  "insight": 90,
+  "requires": [
+   "stellar_evolution"
+  ],
+  "description": "Every element heavier than helium was made in a star. Iron is where fusion stops; supernovae make the rest.",
+  "old_puzzle": {
+   "goal": "Find the energy (MeV) released when four hydrogen atoms fuse into one helium-4 atom (atomic masses in u, 1 u = 931.5 MeV).",
+   "lhs": "Q",
+   "expr": "( 4 * mH - mHe ) * 931.5"
+  }
+ },
+ {
+  "id": "quantum_gravity",
+  "wave": 15,
+  "title": "Quantum Gravity",
+  "insight": 120,
+  "requires": [
+   "string_theory"
+  ],
+  "description": "Gravitons and spin foam: spacetime made of quanta. Unlocks the Graviton Condenser.",
+  "old_puzzle": {
+   "goal": "Find the Planck mass, where a particle's Compton wavelength equals its own Schwarzschild radius and quantum gravity takes over.",
+   "lhs": "mP",
+   "expr": "sqrt ( ħ * c / G )"
+  }
+ },
+ {
+  "id": "dark_energy",
+  "wave": 17,
+  "title": "Dark Energy",
+  "insight": 150,
+  "requires": [
+   "traversable_wormholes",
+   "dark_sector"
+  ],
+  "description": "The energy of empty space itself, pushing galaxies apart.",
+  "old_puzzle": {
+   "goal": "Find the Hubble rate when the universe was half its present size (scale factor a), with matter and dark energy (cosmological constant).",
+   "lhs": "H",
+   "expr": "H0 * sqrt ( Ωm / a ^ 3 + ΩΛ )"
+  }
+ },
+ {
+  "id": "traversable_wormholes",
+  "wave": 17,
+  "title": "Traversable Wormholes",
+  "insight": 120,
+  "requires": [
+   "white_holes",
+   "mass_manipulation",
+   "general_relativity"
+  ],
+  "description": "Black and white holes joined at the throat, propped open with negative mass.",
+  "old_puzzle": {
+   "goal": "Find the (negative) energy density needed at the throat of an Ellis wormhole of throat radius r (units G = c = 1).",
+   "lhs": "ρ",
+   "expr": "- 1 / ( 8 * π * r ^ 2 )"
+  }
+ },
+ {
+  "id": "compactification",
+  "wave": 20,
+  "title": "Compactification",
+  "insight": 110,
+  "requires": [
+   "brane_cosmology",
+   "string_theory",
+   "abstract_algebra"
+  ],
+  "description": "Where are the extra dimensions? Rolled up too small to see. Unlocks the Compactification Lathe.",
+  "old_puzzle": {
+   "goal": "Find the energy of the n-th Kaluza-Klein excitation of a field on an extra dimension curled into a circle of radius R.",
+   "lhs": "E_n",
+   "expr": "n * ħ * c / R"
+  }
+ },
+ {
+  "id": "baryon_asymmetry",
+  "wave": 22,
+  "title": "Baryon Asymmetry",
+  "insight": 500,
+  "requires": [
+   "mirror_metallurgy",
+   "cosmogenesis"
+  ],
+  "description": "For every billion antibaryons in the early universe there were a billion and one baryons. We are the one. Unlocks the Baryogenesis Seed.",
+  "old_puzzle": {
+   "goal": "Find the baryon asymmetry of the early universe: the surplus of baryons over antibaryons per photon.",
+   "lhs": "η",
+   "expr": "( nB - nA ) / nG"
+  }
+ },
+ {
+  "id": "stellar_transcendence",
+  "wave": 22,
+  "title": "Stellar Transcendence",
+  "insight": 320,
+  "requires": [
+   "simulation_hypothesis",
+   "compact_stars",
+   "accelerator_physics"
+  ],
+  "description": "Above stellar-core temperatures, matter stops having fixed properties. Unlocks the Transcendent Plasma Forge.",
+  "old_puzzle": {
+   "goal": "Find the ionisation ratio n_i/n_0 of hydrogen at thermal energy T = kT from the Saha equation, showing how heat strips matter of its atomic identity.",
+   "lhs": "n_i/n_0",
+   "expr": "C * T ^ 1.5 * exp ( - χ / T ) / n"
+  }
+ },
+ {
+  "id": "incompleteness",
+  "wave": 26,
+  "title": "Incompleteness",
+  "insight": 400,
+  "requires": [
+   "transfinite_mathematics",
+   "category_theory"
+  ],
+  "description": "Any system strong enough to describe arithmetic contains truths it can never prove - reality included.",
+  "old_puzzle": {
+   "goal": "Find the Gödel number of the symbol sequence with codes (a, b, c) = (3, 1, 2), using prime-power encoding.",
+   "lhs": "G",
+   "expr": "2 ^ a * 3 ^ b * 5 ^ c"
+  }
+ },
+ {
+  "id": "reality_breach",
+  "wave": 32,
+  "title": "The Axiomatic Breach",
+  "insight": 600,
+  "requires": [
+   "axiom_theory",
+   "conceptual_singularities"
+  ],
+  "description": "Break every law of physics and mathematics at once, and step through the hole. Unlocks the Axiomatic Breach Engine and the Axiom Key.",
+  "old_puzzle": {
+   "goal": "Find the Bekenstein bound (bits) on the information inside a proton of radius 0.87 fm and energy 938 MeV, with ħc = 197.3 MeV fm - the most any region can hold before physics breaks.",
+   "lhs": "I",
+   "expr": "2 * π * R * E / ( ħc * ln ( 2 ) )"
+  }
+ },
+ {
+  "id": "panspermia",
+  "wave": 35,
+  "title": "Panspermia",
+  "insight": 450,
+  "requires": [
+   "abiogenesis",
+   "multiverse",
+   "island_of_stability"
+  ],
+  "description": "Life carried between worlds - and between universes. Unlocks panspermia seeds and the omnicellular genome.",
+  "old_puzzle": {
+   "goal": "Find how many spores in a meteorite survive an interplanetary journey of time t under cosmic radiation.",
+   "lhs": "N",
+   "expr": "N0 * exp ( - R * t / D0 )"
+  }
+ }
+]

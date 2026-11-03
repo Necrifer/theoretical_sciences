@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon",
+  "description": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.desc",
+  "icon": {
+    "item": "theoreticalsciences:dark_energy_siphon"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 164,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dark_energy_siphon"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p2.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dark_energy_siphon"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.dark_energy_siphon.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__dark_matter_collector"
+    },
+    {
+      "entry": "theoreticalsciences:materials/spacetime__wormhole_projector"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/dark_energy"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "theoreticalsciences:irradiation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:radium_salt"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:uranium_235_pellet",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:technetium_99m_vial",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:spent_fuel_rod",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 800,
+  "research": "theoreticalsciences:decay_chains",
+  "unscaled": true
+}

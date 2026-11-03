@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_spectral_plate",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_spectral_plate.desc",
+  "icon": {
+    "item": "theoreticalsciences:spectral_plate"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 11,
+  "y": 3,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spectral_plate"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_spectral_plate.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_spectral_plate.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/astrophysics__spectrograph",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

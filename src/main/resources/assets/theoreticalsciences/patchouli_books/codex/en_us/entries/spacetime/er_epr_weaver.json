@@ -1,0 +1,97 @@
+{
+  "name": "ER=EPR Weaver",
+  "icon": "theoreticalsciences:er_epr_weaver",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 123,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:er_epr_weaver",
+      "title": "ER=EPR Weaver",
+      "text": "Shares the halves of entangled pairs between two distant mouths - weaving, if Maldacena and Susskind are right, a wormhole between them.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set how many entangled pairs a second it makes, and how far apart its mouths are taken. Fidelity falls with the distance and with the machine's own temperature - and every pair heats it. Keep it cold."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "ER=EPR Weaver",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "_______________",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_B___________B_",
+            "_______________",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "DDD_________DDD",
+            "DDDAAAAAAAAADDD",
+            "DDD_________DDD",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "DDD_________DDD",
+            "DDD_D_DED_D_DDD",
+            "DDD_________DDD",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "DDD_________DDD",
+            "DDD_D_DED_D_DDD",
+            "DDD_________DDD",
+            "_______________"
+          ],
+          [
+            "DDDDDDD0DDDDDDD",
+            "DDDDDDDDDDDDDDD",
+            "FDDDDDDDDDDDDDF",
+            "DDDDDDDDDDDDDDD",
+            "DDDDDDDFDDDDDDD"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:er_epr_weaver",
+          "A": "theoreticalsciences:containment_field_glass",
+          "B": "theoreticalsciences:entanglement_node",
+          "D": "theoreticalsciences:weaver_casing",
+          "E": "theoreticalsciences:pair_source",
+          "F": "#theoreticalsciences:multiblock/weaver_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): ER Bridge Thread."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:er_epr_weaver",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/er_epr"
+}

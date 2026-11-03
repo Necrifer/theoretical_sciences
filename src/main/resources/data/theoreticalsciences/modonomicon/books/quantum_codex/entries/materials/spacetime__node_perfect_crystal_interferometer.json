@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_perfect_crystal_interferometer",
+  "description": "book.theoreticalsciences.codex.spacetime.node_perfect_crystal_interferometer.desc",
+  "icon": {
+    "item": "theoreticalsciences:perfect_crystal_interferometer"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 117,
+  "y": 65,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:perfect_crystal_interferometer"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_perfect_crystal_interferometer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_perfect_crystal_interferometer.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__neutron_interferometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/neutron_interferometry"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "name": "Solar Furnace",
+  "icon": "theoreticalsciences:solar_furnace",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 93,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:solar_furnace",
+      "title": "Solar Furnace",
+      "text": "Heliostats turn with the Sun and feed a parabolic mirror wall, which brings their light to a point. Concentrated ten thousand times, sunlight melts what no fuel flame can.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Works only by day, under open sky and without rain. Set the concentration and the shutter: the target heats to T = (\u03b1CG/\u03b5\u03c3)^(1/4), and must sit between the melting point and where the material boils off - or the crucible fails."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Solar Furnace",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "__A_________A__",
+            "___AAAAAAAAA___",
+            "_______________",
+            "____B__B__B____"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "_BAAAAAAAAAAAB_",
+            "_B__B__B__B__B_",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "__AAA_____AAA__",
+            "_____AAAAA_____",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "A_____________A",
+            "_AAA_______AAA_",
+            "____AAAAAAA____",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "A_____________A",
+            "_AAA_______AAA_",
+            "_B__AAAAAAA__B_",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______D_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "A_____________A",
+            "_AAA_______AAA_",
+            "____AAAAAAA____",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______B_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "A_____________A",
+            "_AAA_______AAA_",
+            "____AAAAAAA____",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______B_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "A_____________A",
+            "_AAA_______AAA_",
+            "_B__AAAAAAA__B_",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______B_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "__AAA_____AAA__",
+            "_____AAAAA_____",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______B_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "__AAAAAAAAAAA__",
+            "_______________",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_______________",
+            "E_E_E_E_E_E_E_E",
+            "_______________",
+            "_______B_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "__A_________A__",
+            "___AAAAAAAAA___",
+            "____B__B__B____",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "_E_E_E_0_E_E_E_",
+            "BBBBBBBBBBBBBBB",
+            "_______________",
+            "_______B_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "___AA_____AA___",
+            "_____AAAAA_____",
+            "_______________",
+            "_B__B__B__B__B_"
+          ],
+          [
+            "BBBBBBBFBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "FBBBBBBBBBBBBBF",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBBBBBBBBB",
+            "BBBBBBBFBBBBBBB"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:solar_furnace",
+          "A": "theoreticalsciences:concentrator_mirror",
+          "B": "theoreticalsciences:observatory_wall",
+          "D": "theoreticalsciences:solar_receiver",
+          "E": "theoreticalsciences:heliostat",
+          "F": "#theoreticalsciences:multiblock/observatory_wall_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Fused Silica, Sapphire Boule."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:solar_furnace",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_astrophysics"
+}

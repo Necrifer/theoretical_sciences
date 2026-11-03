@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.desc",
+  "icon": {
+    "item": "theoreticalsciences:prion_lattice"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 184,
+  "y": 46,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:prion_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:prion_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chemical_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:autocatalytic_broth_cell"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_autocatalysis.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__island"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/autocatalysis"
+  }
+}

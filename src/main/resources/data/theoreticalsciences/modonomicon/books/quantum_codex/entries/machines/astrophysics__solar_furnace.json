@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.solar_furnace",
+  "description": "book.theoreticalsciences.codex.astrophysics.solar_furnace.desc",
+  "icon": {
+    "item": "theoreticalsciences:solar_furnace"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 22,
+  "y": 3,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:solar_furnace"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.solar_furnace.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.solar_furnace.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.solar_furnace.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.solar_furnace.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.solar_furnace.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:solar_furnace"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.solar_furnace.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/astrophysics__r45_telescope"
+    },
+    {
+      "entry": "theoreticalsciences:machines/astrophysics__reflecting_telescope"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_astrophysics"
+  }
+}

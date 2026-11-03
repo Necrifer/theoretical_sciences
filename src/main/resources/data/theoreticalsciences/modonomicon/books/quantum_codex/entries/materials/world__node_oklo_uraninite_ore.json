@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_oklo_uraninite_ore",
+  "description": "book.theoreticalsciences.codex.world.node_oklo_uraninite_ore.desc",
+  "icon": {
+    "item": "theoreticalsciences:oklo_uraninite_ore"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 10,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:oklo_uraninite_ore"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_oklo_uraninite_ore.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_oklo_uraninite_ore.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__ores",
+      "draw_arrow": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:isotope_enrichment",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:uranium_235_pellet",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:uranium_238_pellet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fluorspar",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:deep_brine",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:molten_salt_fuel",
+      "amount": 1000
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:nuclear_fission",
+  "unscaled": true
+}

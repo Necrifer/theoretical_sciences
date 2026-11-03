@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_pitchblende_ore",
+  "description": "book.theoreticalsciences.codex.world.node_pitchblende_ore.desc",
+  "icon": {
+    "item": "theoreticalsciences:pitchblende_ore"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 10,
+  "y": 53,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pitchblende_ore"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_pitchblende_ore.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_pitchblende_ore.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__ores",
+      "draw_arrow": false
+    }
+  ]
+}

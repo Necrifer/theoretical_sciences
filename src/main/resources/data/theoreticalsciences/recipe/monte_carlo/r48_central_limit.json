@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:quartz",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:normal_distribution_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:monte_carlo_methods",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "sg": 1.0,
+      "opt": 0.5
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 100.0
+      }
+    ]
+  }
+}

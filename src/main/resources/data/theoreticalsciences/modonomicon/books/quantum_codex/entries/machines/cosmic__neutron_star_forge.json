@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.cosmic.neutron_star_forge",
+  "description": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.desc",
+  "icon": {
+    "item": "theoreticalsciences:neutron_star_forge"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 58,
+  "y": 1,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutron_star_forge"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutron_star_forge"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.neutron_star_forge.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/cosmic__neutrino_condenser"
+    },
+    {
+      "entry": "theoreticalsciences:machines/singularities__penrose_ergosphere"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/compact_stars"
+  }
+}

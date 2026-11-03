@@ -1,0 +1,18 @@
+{
+  "name": "The Climate Engine",
+  "icon": "theoreticalsciences:climate_engine",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:climate_engine,theoreticalsciences:ice_core,theoreticalsciences:permafrost_sample",
+      "text": "Carbon dioxide traps the heat the ground gives off: a forcing $(thing)\u0394F = 5.35 ln(C/280 ppm)$() W/m\u00b2 - 3.7 W/m\u00b2 for each doubling. Aerosols reflect sunlight back out. The world warms by about $(thing)0.8 K per W/m\u00b2$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Climate Engine$() holds the air's CO\u2082 and aerosols where you set them. Warm it by 1-2.5 K with water and a forecast and it rains; by 2.5-5 K, storms; hold it near today's and the sky clears. (Minecraft's weather is the whole world's.) Cool it 2.5 K or more and snow becomes an $(item)Ice Core$(); a little less, and frozen soil a $(item)Permafrost Sample$(). Past 6 K it runs away."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/climatology"
+}

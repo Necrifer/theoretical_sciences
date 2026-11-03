@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r51_accretion",
+  "description": "book.theoreticalsciences.codex.astrophysics.r51_accretion.desc",
+  "icon": {
+    "item": "theoreticalsciences:accretion_disk_reactor"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 126,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:accretion_disk_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r51_accretion.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r51_accretion.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r51_accretion.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/cosmic__neutron_star_forge"
+    },
+    {
+      "entry": "theoreticalsciences:physics/astrophysics__r45_galaxy"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/accretion_physics"
+  }
+}

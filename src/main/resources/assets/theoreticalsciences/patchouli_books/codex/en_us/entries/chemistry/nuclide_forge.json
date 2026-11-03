@@ -1,0 +1,160 @@
+{
+  "name": "Nuclide Forge",
+  "icon": "theoreticalsciences:nuclide_forge",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 72,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nuclide_forge",
+      "title": "Nuclide Forge",
+      "text": "A heavy-ion accelerator firing into a spinning target: fuses nuclei into elements beyond the periodic table, aiming for the island of stability.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Fuses superheavy elements - Flerovium and Unbihexium - from the r-process."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Nuclide Forge",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "___A___",
+            "___A___",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_______"
+          ],
+          [
+            "_______",
+            "___D___",
+            "_______",
+            "___D___",
+            "_______",
+            "___D___",
+            "_______",
+            "___D___",
+            "_______",
+            "_______",
+            "_BBBBB_",
+            "_E   E_",
+            "_E   E_",
+            "_BBBBB_",
+            "_______"
+          ],
+          [
+            "___0___",
+            "___F___",
+            "__GFG__",
+            "___F___",
+            "__GFG__",
+            "___F___",
+            "__GFG__",
+            "___F___",
+            "__GFG__",
+            "___F___",
+            "_BBBBB_",
+            "_E   E_",
+            "_E   E_",
+            "_BBBBB_",
+            "_______"
+          ],
+          [
+            "___H___",
+            "___H___",
+            "___H___",
+            "___H___",
+            "___H___",
+            "___H___",
+            "___H___",
+            "___H___",
+            "___H___",
+            "_______",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "HHHIHHH",
+            "HHHHHHH",
+            "IHHHHHI",
+            "HHHHHHH",
+            "HHHHHHH",
+            "HHHIHHH"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:nuclide_forge",
+          "A": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "B": "theoreticalsciences:spacetime_casing",
+          "D": "theoreticalsciences:rf_accelerating_cavity",
+          "E": "theoreticalsciences:calorimeter_detector_array",
+          "F": "theoreticalsciences:vacuum_beam_pipe",
+          "G": "theoreticalsciences:quadrupole_focusing_magnet",
+          "H": "theoreticalsciences:magnetic_confinement_casing",
+          "I": "#theoreticalsciences:multiblock/magnetic_confinement_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Flerovium Ingot, Unbihexium Ingot."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nuclide_forge",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/island_of_stability"
+}

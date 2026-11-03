@@ -48,6 +48,12 @@ public record MEWanted(java.util.List<ItemStack> items, java.util.List<FluidStac
         });
     }
 
+    /** Whether some recipe of this machine type takes this item (any components) as an input or catalyst; 1.1.0. */
+    public boolean wantsItem(ItemStack s) {
+        for (ItemStack w : items) if (w.is(s.getItem())) return true;
+        return false;
+    }
+
     /** Whether some recipe of this machine type takes this fluid (any components) as an input. */
     public boolean wantsFluid(FluidStack f) {
         for (FluidStack w : fluids) if (w.getFluid().isSame(f.getFluid())) return true;

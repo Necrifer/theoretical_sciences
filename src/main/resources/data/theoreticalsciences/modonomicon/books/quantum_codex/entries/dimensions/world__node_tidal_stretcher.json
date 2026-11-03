@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_tidal_stretcher",
+  "description": "book.theoreticalsciences.codex.world.node_tidal_stretcher.desc",
+  "icon": {
+    "item": "theoreticalsciences:tidal_stretcher_spawn_egg"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 29,
+  "y": 21,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tidal_stretcher_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_tidal_stretcher.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r51_frontier_life",
+      "draw_arrow": false
+    }
+  ]
+}

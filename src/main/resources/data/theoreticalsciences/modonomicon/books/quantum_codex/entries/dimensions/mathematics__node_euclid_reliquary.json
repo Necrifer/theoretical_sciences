@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_euclid_reliquary",
+  "description": "book.theoreticalsciences.codex.mathematics.node_euclid_reliquary.desc",
+  "icon": {
+    "item": "theoreticalsciences:euclid_reliquary"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 19,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:euclid_reliquary"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_euclid_reliquary.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_euclid_reliquary.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/mathematics__fractal_space",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/platonic_realm"
+  }
+}

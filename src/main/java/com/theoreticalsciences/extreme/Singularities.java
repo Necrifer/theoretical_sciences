@@ -320,7 +320,7 @@ public final class Singularities extends SimpleJsonResourceReloadListener {
             int level = p.length > 0 ? parse(p[0]) : 1, index = p.length > 1 ? parse(p[1]) : 0;
             String custom = names(clientSide).get(key);
             if (custom != null) return Component.literal(custom);
-            Component def = Component.translatable("item.theoreticalsciences.singularity_cluster.level" + Math.min(level, 3), index + 1);
+            Component def = Component.translatable("item.theoreticalsciences.singularity_cluster.level" + Math.min(level, 3), letter(level, index));
             return Component.translatableWithFallback("cluster.theoreticalsciences." + key, def.getString());
         }
         Def d = byId(id, clientSide);
@@ -328,6 +328,33 @@ public final class Singularities extends SimpleJsonResourceReloadListener {
         if (d.name() != null) return Component.literal(d.name());
         ItemStack src = d.source();
         return Component.translatable("item.theoreticalsciences.dynamic_singularity.of", src.isEmpty() ? Component.literal(d.id()) : stripIngot(src.getHoverName()));
+    }
+
+    static final String[] GREEK = {"Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu",
+            "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Tau", "Upsilon", "Phi", "Chi", "Psi", "Omega"};
+    static final String[] HEBREW = {"Aleph", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "Het", "Tet", "Yod", "Kaf", "Lamed", "Mem", "Nun",
+            "Samekh", "Ayin", "Pe", "Tsadi", "Qof", "Resh", "Shin", "Tav"};
+    static final String[] GREEK_SYM = {"α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ", "λ", "μ", "ν", "ξ", "ο", "π", "ρ", "σ", "τ", "υ", "φ", "χ", "ψ", "ω"};
+    static final String[] HEBREW_SYM = {"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ", "ק", "ר", "ש", "ת"};
+
+    /**
+     * 1.14.2: clusters are lettered, not numbered - Greek for clusters (Singularity Cluster Alpha α), Hebrew for
+     * hyperclusters (Singularity Hypercluster Aleph א), Greek again (in capitals' place, the symbol doubled) for the
+     * levels above. Past the end of an alphabet the letters go round again with a subscript count (Alpha₂...).
+     */
+    public static String letter(int level, int index) {
+        boolean hebrew = level == 2;
+        String[] names = hebrew ? HEBREW : GREEK, syms = hebrew ? HEBREW_SYM : GREEK_SYM;
+        int i = index % names.length, round = index / names.length;
+        String sym = level >= 3 ? syms[i] + syms[i] : syms[i];
+        String sub = round == 0 ? "" : subscript(round + 1);
+        return names[i] + sub + " " + sym + sub;
+    }
+
+    private static String subscript(int n) {
+        StringBuilder b = new StringBuilder();
+        for (char c : Integer.toString(n).toCharArray()) b.append((char) ('\u2080' + (c - '0')));
+        return b.toString();
     }
 
     private static Component stripIngot(Component c) {

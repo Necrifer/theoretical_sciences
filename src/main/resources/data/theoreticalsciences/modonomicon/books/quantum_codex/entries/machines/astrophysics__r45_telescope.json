@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r45_telescope",
+  "description": "book.theoreticalsciences.codex.astrophysics.r45_telescope.desc",
+  "icon": {
+    "item": "theoreticalsciences:reflecting_telescope"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 19,
+  "y": 0,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:reflecting_telescope"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_telescope.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_telescope.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_telescope.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_telescope.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_telescope.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/astrophysics__r37_spectrograph"
+    },
+    {
+      "entry": "theoreticalsciences:machines/astrophysics__spectrograph"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/telescope_optics"
+  }
+}

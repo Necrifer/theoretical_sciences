@@ -1,0 +1,46 @@
+{
+  "name": "Bayesian Analyzer",
+  "icon": "theoreticalsciences:bayesian_analyzer",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 30,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bayesian_analyzer",
+      "title": "Bayesian Analyzer",
+      "text": "Weighs a prior against a piece of evidence and writes down the updated belief.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Combines a $(item)Prior Tablet$() with evidence - a Spectral Plate, a Seismic Recorder Drum, a Survey Map or a Normal Distribution Crystal - into $(item)Posterior Tablets$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Posterior Tablet."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bayesian_analyzer",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:prior_tablet",
+      "text": "What you believe before you look, written down so that the evidence can change it.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:posterior_tablet",
+      "text": "Belief, updated by evidence. Carry one while solving a research derivation and it pays for a hint instead of Insight.$(br2)Made in $(item)Monte Carlo Engine$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Prior Tablet$(): Posterior Tablet$(li)$(item)Posterior Tablet$(): Confidence Interval Gauge"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/bayesian_inference"
+}

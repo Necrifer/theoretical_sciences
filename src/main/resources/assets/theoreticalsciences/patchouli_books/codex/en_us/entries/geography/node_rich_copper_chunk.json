@@ -1,0 +1,19 @@
+{
+  "name": "Rich Copper Chunk",
+  "icon": "theoreticalsciences:rich_copper_chunk",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:rich_copper_chunk",
+      "title": "Rich Copper Chunk",
+      "text": "Porphyry copper, veined with gold that came up with it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Deep Drilling Rig$().$(br2)$(thing)Mined$(): from $(item)Rich Copper Ore$(), in veins through the rock.$(br2)$(thing)Unlocked by$(): Deep Drilling."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

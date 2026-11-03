@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:crystal_pulling",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fluorspar",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fluorite_boule",
+      "count": 1
+    }
+  ],
+  "energy": 384,
+  "duration": 800,
+  "research": "theoreticalsciences:crystal_growth_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 1691.0,
+      "k0": 0.1
+    },
+    "windows": [
+      {
+        "q": "xi",
+        "min": 2.4,
+        "max": 3.6
+      },
+      {
+        "q": "pur",
+        "min": 99.75,
+        "max": 100.0
+      },
+      {
+        "q": "dT",
+        "min": 5.0,
+        "max": 80.0
+      }
+    ]
+  }
+}

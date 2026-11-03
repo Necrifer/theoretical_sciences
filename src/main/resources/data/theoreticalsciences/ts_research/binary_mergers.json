@@ -1,0 +1,63 @@
+{
+  "title": "Binary Mergers",
+  "description": "Two compact stars in orbit radiate gravitational waves, spiral in, and merge in a final whoop of rising pitch. Their chirp mass sets how fast. Unlocks gravitational-wave echoes - and an answer from the Frontier.",
+  "icon": "theoreticalsciences:chirp_signal_record",
+  "x": 20,
+  "y": 2,
+  "insight": 230,
+  "requires": [
+    "theoreticalsciences:gravitational_waves",
+    "theoreticalsciences:kilonovae"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chirp_signal_record",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:merger_remnant",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:gw_record_bbh",
+      "count": 2
+    }
+  ],
+  "time": 930,
+  "puzzle": {
+    "goal": "Two masses m and n spiral together. Their gravitational waves depend on one combination of the two, which sets how fast the pitch rises. Write it, M.",
+    "name": "Chirp mass",
+    "lhs": "M",
+    "form": "( m * n ) ^ ( 3 / 5 ) / ( m + n ) ^ ( 1 / 5 )",
+    "expr": "( m * n ) ^ 0.6 / ( m + n ) ^ 0.2",
+    "ask": "Find M in solar masses for GW150914: m = @{m}, n = @{n}.",
+    "vars": {
+      "M": "combined mass (M\u2609)",
+      "m": "first mass (M\u2609)",
+      "n": "second mass (M\u2609)"
+    },
+    "given": {
+      "m": 36,
+      "n": 29
+    },
+    "unit": "M\u2609",
+    "method": "The frequency rises as df/dt \u221d M^(5/3) f^(11/3) at leading order: only this combination enters.",
+    "distractors": [
+      "c",
+      "G",
+      "2"
+    ],
+    "vary": {
+      "m": [
+        22.0,
+        50.0,
+        1.0
+      ],
+      "n": [
+        17.0,
+        41.0,
+        1.0
+      ]
+    }
+  }
+}

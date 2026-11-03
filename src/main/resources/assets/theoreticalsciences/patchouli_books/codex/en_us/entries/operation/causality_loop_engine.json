@@ -1,0 +1,24 @@
+{
+  "name": "Causality Loop Engine",
+  "icon": "theoreticalsciences:causality_loop_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 19,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Take one mouth of a wormhole on a fast round trip: it ages less (twin paradox). Once its time lag exceeds the light-travel time between the mouths, the pair is a time machine - a closed timelike curve. Near that threshold, vacuum fluctuations pile up (Hawking's chronology protection)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Mouth speed, Trip duration, Mouth separation, Steering field.$(br2)$(thing)Disturbance$(): Mouth trajectory error: the trip speed is v\u00b7(1 \u00b1 0.01%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): No closed timelike curve yet: the lag is shorter than the light time; Chronology protection: vacuum polarisation diverges at the Cauchy horizon; Close to the chronology horizon: the structure strains; Steering field too weak for that turnaround; Interlock: mouth-steering coils not superconducting (too warm); Field above the critical field: the mouth-steering coils quench.$(br2)$(thing)Rate$(): Loops run at a fixed pace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Lorentz factor: \u03b3 = 1/\u221a(1 \u2212 v\u00b2)$(br)Time lag: \u0394t = T(1 \u2212 1/\u03b3)$(br)Light time: t_L = L/c$(br)Loop length: \u0394t \u2212 L/c$(br)Lag / light time: \u0394t/(L/c)$(br)Turnaround acceleration: a = \u03b3vc/(T/2)$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

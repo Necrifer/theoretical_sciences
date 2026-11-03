@@ -1,0 +1,93 @@
+{
+  "params": [
+    {
+      "id": "D",
+      "unit": "m",
+      "min": 0.1,
+      "max": 2.4,
+      "step": 0.01,
+      "default": 1.0
+    },
+    {
+      "id": "t",
+      "unit": "s",
+      "min": 0.001,
+      "max": 3600,
+      "step": 0.001,
+      "default": 60
+    }
+  ],
+  "recipe_vars": {
+    "mreq": 9
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "see",
+      "unit": "\u2033",
+      "expr": "2.5*exp(-pos(alt - 64)/120)*(1 + 0.15*d)",
+      "formula": "\u03b8_see \u2248 2.5\u2033\u00b7e^(\u2212(h \u2212 64)/120)"
+    },
+    {
+      "id": "th",
+      "unit": "\u2033",
+      "expr": "0.1384/D",
+      "formula": "\u03b8 = 1.22\u03bb/D"
+    },
+    {
+      "id": "fr",
+      "unit": "",
+      "expr": "0.3 + 0.7*t/(t + 0.05)",
+      "formula": "lucky imaging",
+      "show": false
+    },
+    {
+      "id": "res",
+      "unit": "\u2033",
+      "expr": "sqrt(th^2 + (see*fr)^2)",
+      "formula": "\u03b8 = \u221a(\u03b8_diff\u00b2 + \u03b8_see\u00b2)"
+    },
+    {
+      "id": "msky",
+      "unit": "mag/\u25a1\u2033",
+      "expr": "21.6 - 3.2*moon - 8*(1 - night)",
+      "formula": "\u03bc_sky"
+    },
+    {
+      "id": "mlim",
+      "unit": "mag",
+      "expr": "13.2 + 5*log10(D) + 1.25*log10(t) + 0.5*(msky - 21.6) - 2.5*log10(max(res, 0.05))",
+      "formula": "m_lim \u2248 m\u2080 + 5 log D + 1.25 log t + \u00bd(\u03bc \u2212 \u03bc\u2080) \u2212 2.5 log \u03b8"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "dark",
+      "kind": "stop",
+      "expr": "night - 0.9",
+      "formula": "night"
+    },
+    {
+      "id": "sky",
+      "kind": "stop",
+      "expr": "sky - 0.5",
+      "formula": "open sky"
+    },
+    {
+      "id": "clouds",
+      "kind": "stop",
+      "expr": "0.5 - rain",
+      "formula": "no rain"
+    }
+  ],
+  "rate": "clamp((1 + 0.3*(mlim - mreq))/(1 + t/1200), 0.2, 2)",
+  "rate_formula": "rate = (1 + 0.3\u00b7(m_lim \u2212 m_need)) / (1 + t/1200 s)",
+  "heat": "0.02",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

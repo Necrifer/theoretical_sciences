@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.NeoForge;
 
 import java.util.ArrayList;
@@ -78,8 +79,77 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         return physics.model() != null;
     }
 
+    /**
+     * 1.4.0: what the machine's physics sees of the world (the telescopes need a dark, clear, open sky; the Solar
+     * Furnace the Sun; the Radio Telescope quiet): the sky above the structure's top, day and night from the Sun's
+     * elevation, the Moon's phase, rain, the height it stands at, and how many other machines are running nearby.
+     */
+    private void senseWorld(ServerLevel level) {
+        double[] w = physics.world;
+        MultiblockDefinition def = definition();
+        Vec3 c = effectCenter();
+        int top = worldPosition.getY() + (def == null ? 1 : def.sizeY - def.cy);
+        BlockPos above = BlockPos.containing(c.x, Math.max(top, c.y + 1), c.z);
+        boolean skyLight = level.dimensionType().hasSkyLight() && !level.dimensionType().hasCeiling();
+        w[0] = skyLight && level.canSeeSky(above) ? 1 : 0;
+        double elev = Math.cos(level.getTimeOfDay(1F) * Math.PI * 2);           // 1 at noon, -1 at midnight
+        w[1] = skyLight ? Math.max(0, Math.min(1, (-elev - 0.05) / 0.15)) : 0;  // dark once the Sun is ~12 degrees down
+        w[2] = skyLight ? Math.max(0, elev) : 0;
+        w[3] = (1 + Math.cos(level.getMoonPhase() * Math.PI / 4)) / 2;          // phase 0 is full
+        boolean wet = level.isRaining() && level.getBiome(above).value().getPrecipitationAt(above) != net.minecraft.world.level.biome.Biome.Precipitation.NONE;
+        w[4] = wet ? 1 : 0;
+        w[5] = worldPosition.getY();
+        w[6] = noisyNeighbours(level);
+    }
+
+    /**
+     * 1.6.0: a spinning black hole drags spacetime round with it. While the Penrose Ergosphere or the Kugelblitz Chamber
+     * runs, everyone within 8 blocks of its core is carried sideways (Frame Drag) - an effect only, never the blocks.
+     */
+    private void frameDrag(ServerLevel level) {
+        if ((type != MachineType.PENROSE_ERGOSPHERE && type != MachineType.KUGELBLITZ_CHAMBER) || !formed || !isActive()) return;
+        Vec3 c = effectCenter();
+        for (ServerPlayer p : level.getEntitiesOfClass(ServerPlayer.class, new AABB(c, c).inflate(8)))
+            if (!p.isSpectator() && p.position().distanceToSqr(c) <= 64)
+                p.addEffect(new net.minecraft.world.effect.MobEffectInstance(com.theoreticalsciences.registry.QHEffects.FRAME_DRAG, 40, 0, false, true));
+    }
+
+    /**
+     * 1.8.0: a running Tesla coil arcs to whoever stands within six blocks of its toroid - a visual-only bolt (it never
+     * sets anything alight or changes a block) and the shock itself.
+     */
+    private void teslaStrike(ServerLevel level) {
+        if (!formed || !isActive()) return;
+        Vec3 c = effectCenter();
+        for (ServerPlayer p : level.getEntitiesOfClass(ServerPlayer.class, new AABB(c, c).inflate(6)))
+            if (!p.isSpectator() && !p.isCreative() && p.position().distanceToSqr(c) <= 36 && level.random.nextInt(3) == 0) {
+                var bolt = net.minecraft.world.entity.EntityType.LIGHTNING_BOLT.create(level);
+                if (bolt != null) {
+                    bolt.setVisualOnly(true);
+                    bolt.moveTo(p.getX(), p.getY(), p.getZ());
+                    level.addFreshEntity(bolt);
+                }
+                p.hurt(level.damageSources().lightningBolt(), 4F);
+                p.displayClientMessage(Component.translatable("message.theoreticalsciences.tesla_strike").withStyle(ChatFormatting.AQUA), true);
+            }
+    }
+
+    /** Other machines working within 24 blocks: their switching noise is what a radio receiver hears. */
+    private int noisyNeighbours(ServerLevel level) {
+        int n = 0;
+        int cx = worldPosition.getX() >> 4, cz = worldPosition.getZ() >> 4;
+        for (int dx = -2; dx <= 2; dx++)
+            for (int dz = -2; dz <= 2; dz++) {
+                if (!level.hasChunk(cx + dx, cz + dz)) continue;
+                for (var be : level.getChunk(cx + dx, cz + dz).getBlockEntities().values())
+                    if (be != this && be instanceof MachineBlockEntity m && m.isActive() && be.getBlockPos().distSqr(worldPosition) <= 24 * 24) n++;
+            }
+        return n;
+    }
+
     /** Re-evaluates the model for the current structure. */
     private void evaluatePhysics(boolean on) {
+        physics.size = units();
         physics.evaluate(coilTier, emitterTier, overclockNow(), parallelCount(), on, tuning.autoCalibrator);
     }
 
@@ -108,7 +178,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         var phys = r == null ? com.theoreticalsciences.machine.physics.RecipePhysics.NONE : r.physics;
         var job = new com.theoreticalsciences.machine.physics.DemonSolver(type.id(), phys, coilTier, emitterTier, overclockNow(),
                 tuningProfile() == null ? 1 : tuning.parallel, physics.params.clone(), physics.coolant.getFluid().isEmpty() ? null : physics.coolant.getFluid().getFluid(),
-                worldPosition.asLong());
+                worldPosition.asLong()).size(units()).world(physics.world);
         var server = level.getServer();
         java.util.concurrent.CompletableFuture.supplyAsync(job::solve, net.minecraft.Util.backgroundExecutor()).whenComplete((sol, err) -> server.execute(() -> {
             demonBusy = false;
@@ -198,7 +268,41 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     }
 
     public MultiblockDefinition definition() {
-        return Multiblocks.get(type.multiblock).orElse(null);
+        MultiblockDefinition base = Multiblocks.get(type.multiblock).orElse(null);
+        return base == null || !base.variable() ? base : base.variant(extraUnits);
+    }
+
+    /** 1.3.5: extra copies of a variable-height structure's repeated unit (0 = the smallest build). */
+    private int extraUnits;
+
+    /** Units in the structure as built: the cascade's stages. 1 for every fixed-size machine. */
+    public int units() {
+        MultiblockDefinition base = Multiblocks.get(type.multiblock).orElse(null);
+        return base == null ? 1 : base.units(extraUnits);
+    }
+
+    /** The next taller build of a variable-height structure (null at full height or for fixed structures): the Assembler grows it. */
+    @javax.annotation.Nullable
+    public MultiblockDefinition nextSize() {
+        MultiblockDefinition base = Multiblocks.get(type.multiblock).orElse(null);
+        return base == null || !base.variable() || extraUnits >= base.repeatMax ? null : base.variant(extraUnits + 1);
+    }
+
+    /** Picks the tallest build that stands complete; if none does, keeps the size it had (so the hologram shows that). */
+    private void pickSize(Level level) {
+        MultiblockDefinition base = Multiblocks.get(type.multiblock).orElse(null);
+        if (base == null || !base.variable()) return;
+        for (int e = base.repeatMax; e >= 0; e--) {
+            if (base.variant(e).quickMatch(level, worldPosition, facing())) {
+                if (e != extraUnits) {
+                    extraUnits = e;
+                    recipeDirty();
+                    markSync();
+                    setChanged();
+                }
+                return;
+            }
+        }
     }
 
     public boolean isFormed() {
@@ -212,6 +316,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     public Direction facing() {
         BlockState st = getBlockState();
         return st.hasProperty(MachineBlock.FACING) ? st.getValue(MachineBlock.FACING) : Direction.NORTH;
+    }
+
+    /** 1.3.8: how much bigger than standard this machine draws its working animation. */
+    public float effectScale() {
+        MultiblockDefinition def = definition();
+        return def == null ? 1F : (float) def.escale;
     }
 
     public Vec3 effectCenter() {
@@ -440,8 +550,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     @Override
     protected void preTick(ServerLevel level) {
         if (level.getGameTime() % 5 == 1 && hasOutput()) pushToME();     // 4x a second, only with something to push
+        if ((level.getGameTime() + worldPosition.hashCode()) % 20 == 0 && hasPhysics()) senseWorld(level);
+        if (level.getGameTime() % 20 == 0) frameDrag(level);
+        if (type == MachineType.TESLA_COIL && level.getGameTime() % 30 == 0) teslaStrike(level);
         if (--checkTimer <= 0) {
             checkTimer = 40;
+            pickSize(level);
             MultiblockDefinition def = definition();
             if (def == null) return;
             MultiblockDefinition.ScanResult scan = def.scan(level, worldPosition, facing(), portId());
@@ -761,6 +875,13 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             if (ps != null) return ps;
         }
         if (type == MachineType.RESEARCH_NEXUS) return com.theoreticalsciences.research.ResearchNexus.gate(level, owner, r);
+        // 1.3.6: the Eschaton Foundry repeats only what its owner has forged by hand in the Core's Forge
+        if (type == MachineType.ESCHATON_FOUNDRY) {
+            for (var o : r.itemOutputs)
+                if (!com.theoreticalsciences.transcend.ForgeAttainment.has(level.getServer(), owner,
+                        net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(o.getItem()).toString()))
+                    return MachineStatus.NOT_YET_FORGED;
+        }
         // it plays the Transcendental back - only while there is no Transcendental (round 36: and it says why it waits;
         // its other recipes - the Echo's harmonics - run whenever)
         if (rekindles(r)) {
@@ -895,6 +1016,93 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         // (Insight from thinking machines - the Matrioshka Brain and every "thought experiment" - is now a recipe field: insight_per_run)
     }
 
+    // ------------------------------------------------------------------ 1.1.0: Interface Ports that import and export
+    @Override
+    protected void tickServer(ServerLevel level) {
+        super.tickServer(level);
+        if (isFormed() && !ports.isEmpty() && Math.floorMod(level.getGameTime() + worldPosition.hashCode(), 10L) == 0) portIO(level);
+    }
+
+    /**
+     * Every half second each port set to export pushes the machine's products (output slots, output tanks, spent
+     * coolant) into the inventories and tanks beside it, and each port set to import pulls what this machine's recipes
+     * can use (ingredients, catalysts, input fluids, coolant) from them. Never into or out of the machine's own blocks.
+     */
+    private void portIO(ServerLevel level) {
+        MEWanted wanted = null;
+        for (BlockPos p : ports) {
+            if (!level.isLoaded(p) || !(level.getBlockEntity(p) instanceof PortBlockEntity pe) || pe.ioMode() == 0) continue;
+            int mode = pe.ioMode();
+            for (net.minecraft.core.Direction d : net.minecraft.core.Direction.values()) {
+                BlockPos t = p.relative(d);
+                if (t.equals(worldPosition) || ports.contains(t) || !level.isLoaded(t)) continue;
+                var inv = level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, t, d.getOpposite());
+                var tank = level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.FluidHandler.BLOCK, t, d.getOpposite());
+                if (inv == null && tank == null) continue;
+                if ((mode & 1) != 0) {
+                    if (inv != null) exportItems(inv);
+                    if (tank != null) exportFluids(tank);
+                }
+                if ((mode & 2) != 0) {
+                    if (wanted == null) wanted = MEWanted.of(level, type.recipeType);
+                    if (inv != null) importItems(inv, wanted);
+                    if (tank != null) importFluids(tank);
+                }
+            }
+        }
+    }
+
+    private void exportItems(net.neoforged.neoforge.items.IItemHandler inv) {
+        for (int slot = type.itemInputs; slot < itemCap.getSlots(); slot++) {
+            net.minecraft.world.item.ItemStack s = itemCap.extractItem(slot, 64, true);
+            if (s.isEmpty()) continue;
+            int n = s.getCount() - net.neoforged.neoforge.items.ItemHandlerHelper.insertItemStacked(inv, s, true).getCount();
+            if (n <= 0) continue;
+            net.minecraft.world.item.ItemStack got = itemCap.extractItem(slot, n, false);
+            net.minecraft.world.item.ItemStack left = net.neoforged.neoforge.items.ItemHandlerHelper.insertItemStacked(inv, got, false);
+            if (!left.isEmpty()) items.insertItem(slot, left, false);         // (the neighbour changed its mind: back it goes)
+        }
+    }
+
+    private void importItems(net.neoforged.neoforge.items.IItemHandler inv, MEWanted wanted) {
+        int moved = 0;
+        for (int slot = 0; slot < inv.getSlots() && moved < 4; slot++) {
+            net.minecraft.world.item.ItemStack s = inv.extractItem(slot, 64, true);
+            if (s.isEmpty() || !wanted.wantsItem(s)) continue;
+            int n = s.getCount() - net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(itemCap, s, true).getCount();
+            if (n <= 0) continue;
+            net.minecraft.world.item.ItemStack got = inv.extractItem(slot, n, false);
+            net.minecraft.world.item.ItemStack left = net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(itemCap, got, false);
+            if (!left.isEmpty()) net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(inv, left, false);
+            moved++;
+        }
+    }
+
+    private void exportFluids(net.neoforged.neoforge.fluids.capability.IFluidHandler tank) {
+        for (int i = 0; i < fluidCap.getTanks(); i++) {
+            if (fluidCap.isInputTank(i)) continue;
+            var ft = fluidCap.tank(i);
+            if (ft == null || ft.isEmpty()) continue;
+            var s = ft.drain(16000, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE);
+            int n = tank.fill(s, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE);
+            if (n <= 0) continue;
+            tank.fill(ft.drain(n, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE),
+                    net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+        }
+    }
+
+    private void importFluids(net.neoforged.neoforge.fluids.capability.IFluidHandler tank) {
+        for (int i = 0; i < tank.getTanks(); i++) {
+            var f = tank.getFluidInTank(i);
+            if (f.isEmpty()) continue;
+            var want = f.copyWithAmount(Math.min(f.getAmount(), 16000));
+            int n = fluidCap.fill(want, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE);
+            if (n <= 0) continue;
+            var got = tank.drain(want.copyWithAmount(n), net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+            if (!got.isEmpty()) fluidCap.fill(got, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+        }
+    }
+
     @Override
     protected List<BlockPos> energyOutputPositions() {
         List<BlockPos> list = new ArrayList<>();
@@ -909,6 +1117,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     }
 
     public void reportStructure(ServerPlayer player) {
+        if (level instanceof ServerLevel l0) pickSize(l0);
         MultiblockDefinition def = definition();
         if (def == null || !(level instanceof ServerLevel sl)) return;
         MultiblockDefinition.ScanResult scan = def.scan(sl, worldPosition, facing(), portId());
@@ -916,6 +1125,10 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         updateTiers(scan);
         if (scan.complete()) {
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.structure_complete", ports.size()).withStyle(ChatFormatting.AQUA), false);
+            MultiblockDefinition base = Multiblocks.get(type.multiblock).orElse(null);
+            if (base != null && base.variable())
+                player.displayClientMessage(Component.translatable("message.theoreticalsciences.structure_units", units(), base.units(base.repeatMax))
+                        .withStyle(ChatFormatting.AQUA), false);
             if (tuning.stabiliser > 0)
                 player.displayClientMessage(Component.translatable("message.theoreticalsciences.stabiliser_report", Component.translatable("item.theoreticalsciences."
                         + com.theoreticalsciences.machine.tuning.StabiliserItem.IDS[Math.min(4, tuning.stabiliser)])).withStyle(ChatFormatting.DARK_AQUA), false);
@@ -961,6 +1174,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         tag.putInt("Confirm", confirm.ordinal());
         tag.putInt("CoilTier", coilTier);
         tag.putInt("EmitterTier", emitterTier);
+        tag.putInt("ExtraUnits", extraUnits);
     }
 
     @Override
@@ -982,6 +1196,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         if (confirm == Confirm.PENDING) confirmResend = 0;
         coilTier = tag.getInt("CoilTier");
         emitterTier = tag.getInt("EmitterTier");
+        extraUnits = tag.getInt("ExtraUnits");
         if (tag.contains("Ports")) {
             ports.clear();
             for (Tag t : tag.getList("Ports", Tag.TAG_LONG)) ports.add(BlockPos.of(((LongTag) t).getAsLong()));

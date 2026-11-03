@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.node_quantum_string",
+  "description": "book.theoreticalsciences.codex.strings.node_quantum_string.desc",
+  "icon": {
+    "item": "theoreticalsciences:quantum_string"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 124,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quantum_string"
+      },
+      "text": "book.theoreticalsciences.codex.strings.node_quantum_string.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_quantum_string.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_quantum_string.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/strings__string_resonance_loom",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/string_theory"
+  }
+}

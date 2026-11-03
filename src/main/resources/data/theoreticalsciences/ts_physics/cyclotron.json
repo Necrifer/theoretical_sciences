@@ -1,0 +1,100 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "T",
+      "min": 0,
+      "max": 3,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "frf",
+      "unit": "MHz",
+      "min": 1,
+      "max": 60,
+      "step": 0.001,
+      "default": 15
+    },
+    {
+      "id": "I",
+      "unit": "\u00b5A",
+      "min": 1,
+      "max": 100,
+      "step": 0.1,
+      "default": 20
+    }
+  ],
+  "recipe_vars": {
+    "Eth": 5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Be",
+      "unit": "T",
+      "expr": "B*(1 + 0.0005*d)",
+      "formula": "B\u00b7(1 + \u03b4)"
+    },
+    {
+      "id": "fc",
+      "unit": "MHz",
+      "expr": "15.2449*Be",
+      "formula": "f = qB/2\u03c0m"
+    },
+    {
+      "id": "E",
+      "unit": "MeV",
+      "expr": "47.9*(Be*0.75)^2",
+      "formula": "E = (qBR)\u00b2/2m"
+    },
+    {
+      "id": "N",
+      "unit": "",
+      "expr": "E*10",
+      "formula": "N = E/2qV"
+    },
+    {
+      "id": "slip",
+      "unit": "\u00b0",
+      "expr": "360*N*(abs(frf*(1 + E/1876)/fc - 1) + E/3752)",
+      "formula": "\u0394\u03c6 = 360\u00b0\u00b7N\u00b7|f_RF\u00b7\u03b3/f_c \u2212 1|"
+    },
+    {
+      "id": "Pb",
+      "unit": "W",
+      "expr": "E*I",
+      "formula": "P = E\u00b7I"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "phase",
+      "kind": "stop",
+      "expr": "90 - slip",
+      "formula": "\u0394\u03c6 < 90\u00b0"
+    },
+    {
+      "id": "saturation",
+      "kind": "wear",
+      "expr": "2.2 - B",
+      "formula": "B < 2.2 T"
+    },
+    {
+      "id": "target",
+      "kind": "damage",
+      "expr": "2000 - Pb",
+      "formula": "P < 2 kW"
+    }
+  ],
+  "rate": "clamp(I/30, 0.2, 2)",
+  "rate_formula": "rate = I / 30 \u00b5A",
+  "heat": "Pb/1000",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,54 @@
+{
+ "resonant_circuits": {
+  "goal": "A capacitor of capacitance C discharges through a coil of inductance L; the current swings back and forth, its energy moving between the two. Write the frequency f it rings at.",
+  "name": "Resonance of an LC circuit",
+  "lhs": "f",
+  "form": "1 / ( 2 * π * sqrt ( L * C ) )",
+  "expr": "1 / ( 6.28318 * ( L * C ) ^ 0.5 ) / 1000",
+  "ask": "Find f in kHz for a Tesla secondary of L = 0.05 H and C = 2e-11 F.",
+  "vars": {
+   "f": "frequency (kHz)",
+   "L": "inductance (H)",
+   "C": "capacitance (F)",
+   "π": "pi"
+  },
+  "given": {
+   "L": 0.05,
+   "C": 2e-11
+  },
+  "unit": "kHz",
+  "method": "Charge obeys L d²q/dt² = −q/C: a harmonic oscillator of angular frequency 1/√(LC).",
+  "distractors": [
+   "R",
+   "4",
+   "+"
+  ]
+ },
+ "cyclotron_physics": {
+  "goal": "A charge q of mass m moves across a uniform magnetic field B. The magnetic force bends it into a circle; write how many times a second it goes round, f.",
+  "name": "Cyclotron frequency",
+  "lhs": "f",
+  "form": "q * B / ( 2 * π * m )",
+  "expr": "q * B / ( 6.28318 * m ) / 1000000",
+  "ask": "Find f in MHz for a proton (q = 1.602e-19 C, m = 1.6726e-27 kg) in B = 1.5 T.",
+  "vars": {
+   "f": "frequency (MHz)",
+   "q": "charge (C)",
+   "B": "field (T)",
+   "m": "mass (kg)",
+   "π": "pi"
+  },
+  "given": {
+   "q": 1.602e-19,
+   "B": 1.5,
+   "m": 1.6726e-27
+  },
+  "unit": "MHz",
+  "method": "qvB = mv²/r gives r = mv/qB; the time round, 2πr/v = 2πm/qB, does not depend on the speed.",
+  "distractors": [
+   "v",
+   "r",
+   "2"
+  ]
+ }
+}

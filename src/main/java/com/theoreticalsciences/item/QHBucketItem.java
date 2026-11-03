@@ -27,6 +27,13 @@ public class QHBucketItem extends BucketItem {
 
     @Override
     public boolean emptyContents(@Nullable Player player, Level level, BlockPos pos, @Nullable BlockHitResult hit, @Nullable ItemStack container) {
+        // round 37 (1.1): the Quantum Foam's boundaries cannot be poured out - they would hold themselves up for ever
+        String fid = net.minecraft.core.registries.BuiltInRegistries.FLUID.getKey(content).getPath();
+        if (fid.equals("schrodinger_limit") || fid.equals("relativity_breakdown")) {
+            if (player != null && !level.isClientSide)
+                player.displayClientMessage(Component.translatable("message.theoreticalsciences.boundary_no_pour").withStyle(ChatFormatting.GOLD), true);
+            return false;
+        }
         if (!gas) return super.emptyContents(player, level, pos, hit, container);
         if (level instanceof ServerLevel sl) {
             sl.sendParticles(com.theoreticalsciences.registry.QHParticles.PHOTON.get(), pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 30, 0.6, 0.6, 0.6, 0.08);

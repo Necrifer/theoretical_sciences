@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_function_graph",
+  "description": "book.theoreticalsciences.codex.mathematics.node_function_graph.desc",
+  "icon": {
+    "item": "theoreticalsciences:function_graph"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 26,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:function_graph"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_function_graph.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_function_graph.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_function_graph.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__analysis",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/real_analysis"
+  }
+}

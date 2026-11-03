@@ -1,0 +1,53 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 3149832,
+    "fog_color": 6301712,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:flame"
+      },
+      "probability": 0.002
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:tidal_stretcher",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "theoreticalsciences:hawking_imp",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [
+      "theoreticalsciences:accretion_disk_plasma_lake",
+      "theoreticalsciences:tidal_plasma_lake"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_accretion_fragment"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.desc",
+  "icon": {
+    "item": "theoreticalsciences:topological_defect_core"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 52,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:topological_defect_core"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:topological_defect_core"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:higgs_field_modulator"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metastable_vacuum_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_origin_defects.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/anomaly__anomaly_intro"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/anomaly__anomaly_containment_ward"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/topological_defects"
+  }
+}

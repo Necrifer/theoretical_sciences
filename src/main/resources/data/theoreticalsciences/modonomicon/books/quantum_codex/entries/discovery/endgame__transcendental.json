@@ -1,0 +1,43 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.transcendental",
+  "description": "book.theoreticalsciences.codex.endgame.transcendental.desc",
+  "icon": {
+    "item": "theoreticalsciences:forged_omnipotence_core"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 97,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:forged_omnipotence_core"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.transcendental.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.transcendental.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.transcendental.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.transcendental.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/endgame__alpha_omega"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/beyond_the_omega"
+  }
+}

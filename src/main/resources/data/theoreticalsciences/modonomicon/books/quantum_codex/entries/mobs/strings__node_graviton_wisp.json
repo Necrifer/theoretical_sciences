@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.node_graviton_wisp",
+  "description": "book.theoreticalsciences.codex.strings.node_graviton_wisp.desc",
+  "icon": {
+    "item": "theoreticalsciences:graviton_wisp_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 51,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_wisp_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.strings.node_graviton_wisp.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/strings__compactification",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/compactification"
+  }
+}

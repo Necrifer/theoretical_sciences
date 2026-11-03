@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:pulsed_field",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:magnetar_crust_fragment",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:black_swan_feather",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetic_monopole",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 1600,
+  "research": "theoreticalsciences:magnetic_monopoles",
+  "unscaled": true,
+  "insight_per_run": 12,
+  "physics": {
+    "windows": [
+      {
+        "q": "Bf",
+        "min": 80.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

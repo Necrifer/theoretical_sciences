@@ -1,0 +1,46 @@
+{
+  "name": "Spectrograph",
+  "icon": "theoreticalsciences:spectrograph",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 24,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spectrograph",
+      "title": "Spectrograph",
+      "text": "A slit, a grating and a plate. Light comes in as one colour and leaves as a rainbow crossed with dark lines, and every line is an element's fingerprint.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Spreads light into $(item)Spectral Plates$(), and identifies the radium hidden in $(item)Raw Pitchblende$() by its lines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 2 and 0 outputs).$(br2)$(thing)Makes$(): Chondrite Fragment, Fluorspar, Garnet, Interstellar Dust, Iron Nugget, Iron-Nickel, Magnetite, Meteoric Iron, Monazite Sand, Peridot, Presolar Grains, Quartz, Radium Salt, Rare Earth Oxide..."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spectrograph",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spectral_plate",
+      "text": "Starlight spread into a rainbow and caught on glass. The dark lines in it say which elements the light passed through.$(br2)Made in $(item)Spectrograph$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:raw_pitchblende",
+      "text": "Uraninite: heavy, black and pitch-glossy. Marie and Pierre Curie found two new elements in it by following its radioactivity.$(br2)"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Spectral Plate$(): Chondrite Fragment, Fluorspar, Garnet, Interstellar Dust, Iron Nugget and more$(li)$(item)Raw Pitchblende$(): Magnetite, Radium Salt"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/spectroscopy"
+}

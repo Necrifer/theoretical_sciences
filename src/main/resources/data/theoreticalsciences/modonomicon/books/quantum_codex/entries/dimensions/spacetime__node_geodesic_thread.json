@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_geodesic_thread",
+  "description": "book.theoreticalsciences.codex.spacetime.node_geodesic_thread.desc",
+  "icon": {
+    "item": "theoreticalsciences:geodesic_thread"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 47,
+  "y": 21,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geodesic_thread"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_geodesic_thread.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_geodesic_thread.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_geodesic_thread.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/spacetime__black_hole_interior",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/black_hole_interior"
+  }
+}

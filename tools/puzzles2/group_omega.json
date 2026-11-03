@@ -1,0 +1,54 @@
+{
+ "beyond_the_omega": {
+  "goal": "Everything, in one line. Write the single action density from which every law you have met follows: the curvature of spacetime and the energy of its vacuum; the three gauge forces; matter fields moving through them; a field filling space whose potential has its minimum away from zero, and the couplings through which matter feels it; a dark scalar that only gravity sees; the pressure of hot matter in chemical equilibrium (temperature times entropy, plus every species' chemical potential times its number density, minus the energy density); and the thermodynamic price of every bit of information erased.",
+  "name": "The Omnilex Lagrangian - the Standard Model with gravity, the dark sector, thermodynamics, chemistry and information",
+  "lhs": "ℒ",
+  "form": "( R - 2 * Λ ) / ( 16 * π * G ) - 1 / 4 * F _ μν ^ a * F _ a ^ μν + i * bar ( ψ ) * γ ^ μ * D _ μ * ψ + dag ( D _ μ * φ ) * D ^ μ * φ - λ * ( dag ( φ ) * φ - v ^ 2 / 2 ) ^ 2 - ( bar ( ψ ) _ i * y _ ij * ψ _ j * φ + hc ( ) ) + 1 / 2 * ∂ _ μ * χ * ∂ ^ μ * χ - 1 / 2 * mχ ^ 2 * χ ^ 2 + T * s + sumk ( k , μc _ k * n _ k ) - u - kB * T * ln ( 2 ) * ρI",
+  "expr": "sqrt ( 2 * λ ) * v",
+  "ask": "The scalar's potential is smallest where φ†φ = v²/2; small ripples about that minimum are a particle of mass m = √(2λ)·v. With the measured self-coupling and vacuum value below, find that mass in GeV.",
+  "vars": {
+   "R": "Ricci scalar - the curvature of spacetime",
+   "Λ": "cosmological constant - the energy of the vacuum",
+   "G": "gravitational constant",
+   "F": "gauge field strength of the strong, weak and electromagnetic forces",
+   "a": "gauge (colour / isospin / hypercharge) index",
+   "μν": "spacetime index pair",
+   "ψ": "the matter (fermion) fields",
+   "γ": "Dirac gamma matrices",
+   "D": "gauge-covariant derivative",
+   "μ": "spacetime index",
+   "φ": "the scalar (Higgs) doublet",
+   "λ": "scalar self-coupling",
+   "v": "vacuum expectation value of the scalar",
+   "y": "Yukawa coupling matrix (sets every matter particle's mass)",
+   "ij": "generation indices",
+   "χ": "the dark scalar field",
+   "mχ": "dark scalar mass",
+   "∂": "partial derivative",
+   "T": "temperature",
+   "s": "entropy density",
+   "μc": "chemical potential",
+   "k": "species index",
+   "n": "number density",
+   "u": "energy density",
+   "kB": "Boltzmann constant",
+   "ρI": "density of erased information (bits per volume per time)",
+   "i": "imaginary unit",
+   "ℒ": "the action density"
+  },
+  "given": {
+   "λ": 0.129,
+   "v": 246.22
+  },
+  "unit": "GeV",
+  "method": "Assemble it sector by sector: curvature over 16πG; −¼ of the squared field strength; the Dirac kinetic term; the covariant kinetic term and quartic potential of the scalar; the Yukawa couplings plus their conjugate; a free massive scalar; the fluid pressure from Euler's relation p = Ts + Σμn − u; and a Landauer term kT ln 2 per erased bit.",
+  "distractors": [
+   "8",
+   "β",
+   "ω",
+   "Γ",
+   "+",
+   "3"
+  ]
+ }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:accretion_power",
+  "chances": [
+    0.25
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:accretion_disk_fragment",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quasar_jet_filament",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:accretion_disk_plasma",
+      "amount": 250
+    }
+  ],
+  "energy": 8192,
+  "duration": 1600,
+  "research": "theoreticalsciences:accretion_physics",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Lref": 8.0
+    },
+    "windows": [
+      {
+        "q": "lam",
+        "min": 0.3,
+        "max": 0.95
+      }
+    ]
+  }
+}

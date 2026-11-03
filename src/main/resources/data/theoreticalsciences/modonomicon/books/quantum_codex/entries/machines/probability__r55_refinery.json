@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.r55_refinery",
+  "description": "book.theoreticalsciences.codex.probability.r55_refinery.desc",
+  "icon": {
+    "item": "theoreticalsciences:markov_chain_refinery"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 58,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:markov_chain_refinery"
+      },
+      "text": "book.theoreticalsciences.codex.probability.r55_refinery.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r55_refinery.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__topological_transmuter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ergodic_theory"
+  }
+}

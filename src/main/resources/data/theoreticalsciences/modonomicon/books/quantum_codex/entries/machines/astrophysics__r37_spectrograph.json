@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r37_spectrograph",
+  "description": "book.theoreticalsciences.codex.astrophysics.r37_spectrograph.desc",
+  "icon": {
+    "item": "theoreticalsciences:spectrograph"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 10,
+  "y": 0,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spectrograph"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r37_spectrograph.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r37_spectrograph.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r37_spectrograph.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__bonds"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__chemical_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

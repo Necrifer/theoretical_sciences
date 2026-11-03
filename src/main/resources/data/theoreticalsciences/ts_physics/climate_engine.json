@@ -1,0 +1,54 @@
+{
+  "params": [
+    {
+      "id": "Cc",
+      "unit": "ppm",
+      "min": 150,
+      "max": 1500,
+      "step": 0.1,
+      "default": 400
+    },
+    {
+      "id": "aer",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "dF",
+      "unit": "W/m\u00b2",
+      "expr": "5.35*ln(Cc/280) - 20*aer",
+      "formula": "\u0394F = 5.35 ln(C/C\u2080) \u2212 20\u03c4"
+    },
+    {
+      "id": "dT",
+      "unit": "K",
+      "expr": "0.8*(1 + 0.1*d)*dF",
+      "formula": "\u0394T = \u03bb\u0394F"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "damage",
+      "expr": "6 - dT",
+      "formula": "\u0394T < 6 K"
+    }
+  ],
+  "rate": "clamp(1.5 - abs(dF)/20, 0.5, 1.5)",
+  "rate_formula": "rate = 1.5 \u2212 |\u0394F|/20",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

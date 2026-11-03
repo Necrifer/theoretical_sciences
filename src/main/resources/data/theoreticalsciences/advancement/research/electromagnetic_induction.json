@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:electrical_steel_lamination"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.electromagnetic_induction"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.electromagnetic_induction.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/magnetostatics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

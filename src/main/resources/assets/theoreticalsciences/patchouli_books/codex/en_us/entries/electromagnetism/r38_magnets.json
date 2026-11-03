@@ -1,0 +1,22 @@
+{
+  "name": "Permanent Magnets",
+  "icon": "theoreticalsciences:neodymium_magnet",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:magnetizer,theoreticalsciences:neodymium_magnet,theoreticalsciences:samarium_cobalt_magnet",
+      "text": "A permanent magnet is set by a field stronger than its $(thing)coercivity$(), and keeps what it was given. Ferrite needs about 0.35 T, neodymium-iron-boron 1.2 T, samarium-cobalt 2 T."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The rare earths come from $(item)Monazite Sand$(), which the Spectrograph picks out of ordinary sand and separates into $(item)Rare Earth Oxide$(). Monazite carries a little thorium: it is weakly radioactive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Magnetizer$() gives 0.6 T from its coil alone. An iron core multiplies a coil's field: each block of iron (or any block tagged $(thing)magnetic$()) touching the Magnetizer adds 0.35 T."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ferromagnetism"
+}

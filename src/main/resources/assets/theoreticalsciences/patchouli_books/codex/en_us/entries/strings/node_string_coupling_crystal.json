@@ -1,0 +1,23 @@
+{
+  "name": "String Coupling Crystal",
+  "icon": "theoreticalsciences:string_coupling_crystal",
+  "category": "theoreticalsciences:strings",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:string_coupling_crystal",
+      "title": "String Coupling Crystal",
+      "text": "Turn this crystal and the strength with which strings interact changes. Turn it far enough and a strongly coupled string theory becomes a weakly coupled one of a different type: this is string duality. It is cool and smooth and feels slightly alive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I fixed a compactified circle's radius with a bulk crystal and varied the coupling in the Compactification Lathe. At strong coupling, Type IIA became M-theory, and the crystal captured the transition."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Compactification Lathe$().$(br2)$(thing)Unlocked by$(): Compactification.$(br2)$(thing)Used in$(): M-Brane, Theoretical Notes III."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/compactification"
+}

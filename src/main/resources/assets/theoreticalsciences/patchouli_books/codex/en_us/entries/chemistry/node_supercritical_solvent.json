@@ -1,0 +1,23 @@
+{
+  "name": "Supercritical Solvent",
+  "icon": "theoreticalsciences:supercritical_solvent_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:supercritical_solvent_cell",
+      "title": "Supercritical Solvent",
+      "text": "A fluid past its critical point, neither liquid nor gas. It diffuses like a gas and dissolves like a liquid, getting into every pore. It is warm and almost invisible. Industry uses supercritical water and carbon dioxide to dissolve what nothing else will."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Heating charcoal and water past their critical point in the Chemical Reactor, the water became supercritical, dissolving things it never could before."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Chemical Bonding.$(br2)$(thing)Used in$(): Chiral Crystal, Graphene Sheet, Ionic Liquid, Molecular Orbital Lattice, Zeolite Catalyst."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_bonding"
+}

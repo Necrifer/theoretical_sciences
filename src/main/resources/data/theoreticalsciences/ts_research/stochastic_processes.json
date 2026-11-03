@@ -1,0 +1,58 @@
+{
+  "title": "Stochastic Processes",
+  "description": "Chance that unfolds in time: a walk with random steps, a clock with random ticks, a chain whose next state depends only on this one. Unlocks Markov Chain Links, Poisson Clocks and Brownian Suspension.",
+  "icon": "theoreticalsciences:markov_chain_link",
+  "x": 6,
+  "y": 0,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:distributions"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:normal_distribution_crystal",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A drunkard takes N steps of length a, each in a direction chosen by chance. Write how far x from the start he typically ends up.",
+    "name": "Random walk spread",
+    "lhs": "x",
+    "form": "sqrt ( N * a ^ 2 )",
+    "expr": "sqrt ( N * a ^ 2 )",
+    "ask": "Find x in metres for N = @{N} steps of a = @{a} m.",
+    "vars": {
+      "x": "distance (m)",
+      "a": "step length (m)",
+      "N": "steps"
+    },
+    "given": {
+      "a": 0.7,
+      "N": 10000
+    },
+    "unit": "m",
+    "method": "The steps are independent, so their variances add: N\u00b7a\u00b2. The typical distance is the square root.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "t"
+    ],
+    "vary": {
+      "a": [
+        0.42,
+        0.98,
+        0.001
+      ],
+      "N": [
+        6000.0,
+        14000.0,
+        1.0
+      ]
+    }
+  }
+}

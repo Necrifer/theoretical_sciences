@@ -1,0 +1,52 @@
+{
+  "name": "Carbon, One Atom Thick",
+  "icon": "theoreticalsciences:graphene_sheet",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:graphene_sheet,theoreticalsciences:carbon_nanotube_bundle,theoreticalsciences:buckyball_cage,theoreticalsciences:metal_organic_framework",
+      "text": "$(item)Graphene$() is a single sheet of carbon atoms in hexagons. Roll it and you have $(item)Carbon Nanotubes$(); fold sixty atoms into a ball and you have a $(item)Buckyball$() - hollow, with room for one guest atom inside."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Supramolecular chemistry builds with these: $(item)Metal-Organic Frameworks$() (more inner surface per gram than a football pitch), $(item)Noble Gas Clathrates$() (xenon caged in ice) and $(item)Self-Healing Polymers$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:graphene_sheet",
+      "text": "Carbon one atom thick. Stronger than steel, conducts better than copper.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:carbon_nanotube_bundle",
+      "text": "Graphene rolled into tubes, the tubes twisted into rope.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:buckyball_cage",
+      "text": "Sixty carbon atoms arranged like a football - with room inside for one more atom.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:metal_organic_framework",
+      "text": "Metal nodes, organic struts: a sponge with more inner surface than a football pitch per gram.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:noble_gas_clathrate",
+      "text": "Xenon caged in ice. The noble gases are not as aloof as the textbooks said.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:self_healing_polymer",
+      "text": "Cut it and the chains find each other again.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Graphene Sheet$(): Buckyball Cage, Carbon Nanotube Bundle$(li)$(item)Carbon Nanotube Bundle$(): Metal-Organic Framework, Self-Healing Polymer$(li)$(item)Buckyball Cage$(): Minimal Synthetic Cell, Noble Gas Clathrate, Positronium Hydride$(li)$(item)Metal-Organic Framework$(): Morphogenic Serum, Room-Temperature Superconductor$(li)$(item)Noble Gas Clathrate$(): Muonic Catalyst, Primordial Soup"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nanochemistry"
+}

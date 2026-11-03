@@ -44,7 +44,8 @@ public final class CodexState {
             MEMO.clear();
             memoFor = ClientResearch.unlocked;
         }
-        return open(e.id, new HashSet<>());
+        Boolean m = MEMO.get(e.id);              // 1.1.3: the answer is remembered; no new set unless it must be worked out
+        return m != null ? m : open(e.id, new HashSet<>());
     }
 
     private static boolean open(String id, Set<String> visiting) {

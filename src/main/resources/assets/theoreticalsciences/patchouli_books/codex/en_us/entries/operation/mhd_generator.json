@@ -1,0 +1,24 @@
+{
+  "name": "MHD Generator",
+  "icon": "theoreticalsciences:mhd_generator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 42,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A fluid of conductivity \u03c3 crossing a field B at speed u sees an electric field uB. The load takes a fraction k of it; the current density j = \u03c3uB(1 \u2212 k) flows to the electrodes, and the power per volume is p = \u03c3u\u00b2B\u00b2k(1 \u2212 k)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Magnetic field B, Flow speed u, Load factor k.$(br2)$(thing)Disturbance$(): Magnet supply ripple: the field varies by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Electrode arcing: current density above 100 A/cm\u00b2; The pumps cannot drive the flow that fast; The channel is overheating.$(br2)$(thing)Rate$(): Power output follows the electric power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective field: B\u00b7(1 + 0.01\u00b7d)$(br)Current density: j = \u03c3uB(1 \u2212 k)$(br)Power density: p = \u03c3u\u00b2B\u00b2k(1 \u2212 k)$(br)Electric power: P = p\u00b7V$(br)Dynamic pressure: q = \u00bd\u03c1u\u00b2"
+    }
+  ]
+}

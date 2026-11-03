@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_anchored_warp_bubble",
+  "description": "book.theoreticalsciences.codex.spacetime.node_anchored_warp_bubble.desc",
+  "icon": {
+    "item": "theoreticalsciences:anchored_warp_bubble"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 189,
+  "y": 0,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anchored_warp_bubble"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_anchored_warp_bubble.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__r53_warp",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alcubierre_metric"
+  }
+}

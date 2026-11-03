@@ -1,0 +1,64 @@
+{
+  "title": "Galactic Dynamics",
+  "description": "Map how fast the Galaxy's hydrogen turns at each distance from its centre and the stars alone cannot hold it together: something unseen outweighs them several times over. Unlocks the long galactic survey.",
+  "icon": "theoreticalsciences:hydrogen_line_map",
+  "x": 7,
+  "y": -8,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:radio_astronomy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hydrogen_line_map",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:pulsar_timing_record",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:deep_sky_plate",
+      "count": 2
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A cloud of gas circles the centre of a galaxy at radius r, held by the gravity of the mass M inside its orbit. Write the speed v it must have to stay on a circle.",
+    "name": "Circular orbital speed",
+    "lhs": "v",
+    "form": "sqrt ( G * M / r )",
+    "expr": "( G * M / r ) ^ 0.5 / 1000",
+    "ask": "Find v in km/s for the Sun's orbit: M = @{M} kg within r = @{r} m, G = 6.674e-11.",
+    "vars": {
+      "v": "orbital speed (km/s)",
+      "G": "gravitational constant",
+      "M": "mass inside the orbit (kg)",
+      "r": "orbit radius (m)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.8e+41,
+      "r": 2.5e+20
+    },
+    "unit": "km/s",
+    "method": "Gravity supplies exactly the centripetal force: G M m / r\u00b2 = m v\u00b2 / r.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "c"
+    ],
+    "vary": {
+      "M": [
+        1.08e+41,
+        2.53e+41,
+        1e+39
+      ],
+      "r": [
+        1.5e+20,
+        3.5e+20,
+        1e+18
+      ]
+    }
+  }
+}

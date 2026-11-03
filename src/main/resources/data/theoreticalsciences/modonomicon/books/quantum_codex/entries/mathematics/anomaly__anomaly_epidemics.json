@@ -1,0 +1,60 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.desc",
+  "icon": {
+    "item": "theoreticalsciences:contagion_network_map"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 91,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:contagion_network_map"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:contagion_network_map"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:holographic_encoder"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_epidemics.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/anomaly__anomaly_clonal"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/anomaly__anomaly_systems"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/epidemic_dynamics"
+  }
+}

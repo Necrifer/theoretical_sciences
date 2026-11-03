@@ -1,0 +1,19 @@
+{
+  "name": "Supercritical Water",
+  "icon": "theoreticalsciences:supercritical_water_cell",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:supercritical_water_cell",
+      "title": "Supercritical Water",
+      "text": "$(fluid)Supercritical Water$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Aquifer Pump$().$(br2)$(thing)Unlocked by$(): Hydrology.$(br2)$(thing)Used in$(): Cherenkov Quartz."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/hydrology"
+}

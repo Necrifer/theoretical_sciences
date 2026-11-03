@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r37_telescopes",
+  "description": "book.theoreticalsciences.codex.astrophysics.r37_telescopes.desc",
+  "icon": {
+    "item": "theoreticalsciences:telescope_mirror_blank"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 4,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:telescope_mirror_blank"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r37_telescopes.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r37_telescopes.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_08_casimir"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/observational_astronomy"
+  }
+}

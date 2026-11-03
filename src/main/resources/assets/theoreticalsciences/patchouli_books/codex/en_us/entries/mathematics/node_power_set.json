@@ -1,0 +1,23 @@
+{
+  "name": "Power Set",
+  "icon": "theoreticalsciences:power_set",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:power_set",
+      "title": "Power Set",
+      "text": "The set of all subsets of a set. Cantor proved it is always strictly larger than the set itself, even when the original is infinite. Turn it over and it seems to contain more than could possibly fit in it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I asked the Formal Proof Assistant to list every subset of a natural number lattice, starting with the empty set. A proof tree confirmed what Cantor showed: no list of them could ever be complete."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Formal Proof Assistant$().$(br2)$(thing)Found in$(): Hilbert Hotel chests.$(br2)$(thing)Unlocked by$(): Set Theory.$(br2)$(thing)Used in$(): Absolute Notes II, Aleph-Null Shard, Cantor Key, Category Lattice, Continuum Shard, Epsilon-Naught, Hypersphere Fragment, Mathematics Singularity and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/formal_logic"
+}

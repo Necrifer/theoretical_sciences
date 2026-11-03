@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.r55_extremes",
+  "description": "book.theoreticalsciences.codex.probability.r55_extremes.desc",
+  "icon": {
+    "item": "theoreticalsciences:large_deviation_shard"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 46,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:large_deviation_shard"
+      },
+      "text": "book.theoreticalsciences.codex.probability.r55_extremes.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r55_extremes.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/mathematics__fractal_space"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/extreme_value_theory"
+  }
+}

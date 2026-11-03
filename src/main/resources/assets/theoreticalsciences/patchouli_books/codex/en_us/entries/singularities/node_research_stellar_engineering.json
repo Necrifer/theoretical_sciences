@@ -1,0 +1,19 @@
+{
+  "name": "Stellar Engineering",
+  "icon": "theoreticalsciences:stellar_core",
+  "advancement": "theoreticalsciences:research/stellar_engineering",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_core",
+      "title": "Stellar Engineering",
+      "text": "$(thing)Stellar Engineering$()$(br2)Ignite a captive star from white-hole ejecta."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): White Holes, Stellar Evolution.$(br2)$(thing)Samples$(): 1 Hawking Emitter.$(br2)$(thing)Derivation$(): Find the luminosity of the ignited captive star from its radius and surface temperature (Stefan-Boltzmann law in solar units)."
+    }
+  ]
+}

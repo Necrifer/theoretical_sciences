@@ -1,0 +1,57 @@
+{
+  "title": "Geodesy",
+  "description": "Measure one baseline and two angles and every other distance follows - that is how countries were mapped, triangle by triangle. Geodesy measures the planet itself. Unlocks the Theodolite Lens, the Geoid Model and the Geodetic Surveyor.",
+  "icon": "theoreticalsciences:theodolite_lens",
+  "x": 1,
+  "y": 15,
+  "insight": 10,
+  "requires": [
+    "theoreticalsciences:cartography",
+    "theoreticalsciences:number_systems"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:survey_map",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Surveyors measure one side c of a triangle and the angles at both its ends; the third angle \u03b3 follows. Write the length a of the side opposite the angle \u03b1.",
+    "name": "Triangulation by the sine rule",
+    "lhs": "a",
+    "form": "c * sin ( \u03b1 ) / sin ( \u03b3 )",
+    "expr": "c * sin ( \u03b1 ) / sin ( \u03b3 )",
+    "ask": "Find a in metres for a @{c} m baseline c, \u03b1 = @{\u03b1} rad and \u03b3 = 1.2 rad.",
+    "vars": {
+      "a": "side opposite \u03b1 (m)",
+      "c": "measured baseline (m)",
+      "\u03b1": "angle opposite a",
+      "\u03b3": "angle opposite the baseline"
+    },
+    "given": {
+      "c": 1000,
+      "\u03b1": 0.9,
+      "\u03b3": 1.2
+    },
+    "unit": "m",
+    "method": "Drop a height from one corner onto the opposite side: it equals each adjacent side times the sine of its angle, so a sin \u03b3 = c sin \u03b1.",
+    "distractors": [
+      "cos",
+      "tan",
+      "b"
+    ],
+    "vary": {
+      "c": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "\u03b1": [
+        0.54,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

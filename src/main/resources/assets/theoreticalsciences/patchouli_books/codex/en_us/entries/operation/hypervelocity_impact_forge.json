@@ -1,0 +1,24 @@
+{
+  "name": "Hypervelocity Impact Forge",
+  "icon": "theoreticalsciences:hypervelocity_impact_forge",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 37,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A current I flows up one rail, through the armature and back down the other. The rails' field pushes the armature with F = \u00bdL\u2032I\u00b2 (L\u2032 = 0.5 \u00b5H/m) along their 10 m; it leaves at v = \u221a(2FL/m). Hitting the target it drives a shock of pressure P \u2248 \u00bd\u03c1v\u00b2. Shock synthesis needs the right pressure: too low and nothing changes, too high and the target vaporises."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Current, Armature mass.$(br2)$(thing)Disturbance$(): Rail contact: the force varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The rails are eroding under the arc.$(br2)$(thing)Rate$(): Smaller currents recharge faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Rail force: F = \u00bdL\u2032I\u00b2$(br)Muzzle speed: v = \u221a(2FL/m)$(br)Impact pressure: P \u2248 \u00bd\u03c1v\u00b2"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.node_gauge_boson_cluster",
+  "description": "book.theoreticalsciences.codex.exotic.node_gauge_boson_cluster.desc",
+  "icon": {
+    "item": "theoreticalsciences:gauge_boson_cluster"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 103,
+  "y": 33,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gauge_boson_cluster"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.node_gauge_boson_cluster.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_gauge_boson_cluster.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_gauge_boson_cluster.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__particle_spectrometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/standard_model"
+  }
+}

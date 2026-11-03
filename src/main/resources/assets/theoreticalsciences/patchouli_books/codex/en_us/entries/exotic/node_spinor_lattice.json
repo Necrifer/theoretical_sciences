@@ -1,0 +1,23 @@
+{
+  "name": "Spinor Lattice",
+  "icon": "theoreticalsciences:spinor_lattice",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 513,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spinor_lattice",
+      "title": "Spinor Lattice",
+      "text": "Spinors describe electrons and other spin-half particles. Rotate one a full 360 degrees and it comes back with its sign flipped; a second full turn restores it. The lattice feels oddly twisted and never quite seems to have come back to where it started."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Representing rotations with quaternions in the Peano Arithmetic Engine, I noticed each rotation had two quaternions, plus and minus. A qubit stored the sign, and the result behaved like a spinor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Peano Arithmetic Engine$().$(br2)$(thing)Unlocked by$(): Quantum Field Theory.$(br2)$(thing)Used in$(): Eigenstate Lattice, Quantum Field Lattice, Quantum Singularity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

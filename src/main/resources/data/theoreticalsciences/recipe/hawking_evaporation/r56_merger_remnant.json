@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:hawking_evaporation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:kugelblitz_seed"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:micro_singularity",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:merger_remnant",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hawking_radiation",
+      "amount": 500
+    }
+  ],
+  "energy": 131072,
+  "duration": 2400,
+  "research": "theoreticalsciences:binary_mergers",
+  "unscaled": true,
+  "insight_per_run": 20,
+  "physics": {
+    "vars": {
+      "Pref": 10.0
+    }
+  }
+}

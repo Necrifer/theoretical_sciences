@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_kerr_metric_shard",
+  "description": "book.theoreticalsciences.codex.spacetime.node_kerr_metric_shard.desc",
+  "icon": {
+    "item": "theoreticalsciences:kerr_metric_shard"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 70,
+  "y": 43,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:kerr_metric_shard"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_kerr_metric_shard.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_kerr_metric_shard.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_kerr_metric_shard.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__relativity",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/special_relativity"
+  }
+}

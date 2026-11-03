@@ -1,0 +1,22 @@
+{
+  "name": "Maps & Measurement",
+  "icon": "theoreticalsciences:geodetic_surveyor",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:survey_map,theoreticalsciences:theodolite_lens,theoreticalsciences:geodetic_surveyor",
+      "text": "A map flattens a round planet, and no flat map keeps everything true. Keep every angle true - so a compass course is a straight line - and the map must stretch towards the poles: a point at latitude \u03c6 is drawn at R\u00b7ln tan(\u03c0/4 + \u03c6/2)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Geodesy$() measures the planet itself. Measure one baseline, sight two angles with a $(item)Theodolite Lens$(), and the sine rule gives every other side of the triangle. Chain triangles together and a whole country is mapped."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Geodetic Surveyor$() does it for you: use it to list the ores within 24 blocks - how many of each, and how far and which way the nearest one lies. A burst of light marks each."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cartography"
+}

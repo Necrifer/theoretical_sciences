@@ -1,0 +1,26 @@
+{
+  "name": "The Radio Telescope",
+  "icon": "theoreticalsciences:radio_telescope",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:radio_telescope,theoreticalsciences:feed_horn,theoreticalsciences:hydrogen_line_map,theoreticalsciences:pulsar_timing_record",
+      "text": "The $(item)Radio Telescope$() is a dish on an alt-azimuth mount with a $(item)Feed Horn$() at its focus. Radio passes through cloud and daylight: it works at any hour, rain or shine - but it needs a view of the sky, and every machine running within 24 blocks is $(thing)noise$() in its receiver."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A source raises the antenna temperature by T = S\u00b7A/2k; the receiver hears it over the system temperature, T_sys. Taking in a band B for a time \u03c4 beats the noise down: $(thing)SNR = T\u00b7\u221a(B\u03c4)/T_sys$(). The Galaxy itself roars at low frequencies, so T_sys climbs steeply below a few hundred MHz."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Hydrogen$() glows in a narrow line at 1420.4 MHz. Tune to it and keep the band narrow: a line half a megahertz wide is diluted in a wider one. $(thing)Pulsars$() are faint and broadband - take a wide band for the SNR, but not so wide that dispersion in the interstellar plasma, 8.3 \u00b5s\u00b7DM\u00b7B/\u03bd\u00b3, smears the pulse beyond a millisecond. Higher frequencies smear less, but the pulsar is fainter there."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every map and timing record gives $(thing)Insight$(). Once you have mapped how fast the Galaxy turns, the long galactic survey gives a great deal more - and a $(thing)binary pulsar$() can be timed: its orbit shrinks exactly as general relativity predicts, measured against a $(item)Time-Dilated Sample$() as the reference clock."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radio_astronomy"
+}

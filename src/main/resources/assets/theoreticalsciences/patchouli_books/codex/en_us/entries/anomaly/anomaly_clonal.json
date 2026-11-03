@@ -1,0 +1,36 @@
+{
+  "name": "Escape: Clonal Evolution & Resistance",
+  "icon": "theoreticalsciences:resistant_clone",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:resistant_clone",
+      "text": "A tumour is not one enemy but a population of competing clones, each with its own mutations and its own fitness f_i. A clone gains share only when it beats the average: dx_i/dt = x_i(f_i \u2212 \u03a3x_j f_j). Every treatment changes the fitnesses - and so it selects whichever clones it happens not to kill."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That is how $(thing)drug resistance$() arises: a resistant cell one in a thousand, with an advantage of s = 0.5 per day under treatment, is 96% of the tumour twenty days later. It was there before the drug - the drug only chose it. Hence combination therapy: a clone resistant to two independent drugs at once is rarer by the product of their odds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Evolution Engine$(), metastatic spores, an immortal line and an enzyme under selection leave a $(item)Resistant Clone Colony$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:resistant_clone",
+      "text": "The cells that survived the last treatment - and so the ones that make the next tumour. Selection, not malice.$(br2)Made in $(item)Evolution Engine$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:evolution_engine",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Resistant Clone Colony$(): Apoptosis Trigger, Contagion Network Map, Renormalised Essence, Stem Cell Culture$(li)$(item)Evolution Engine$(): Abiogenesis Crucible"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/clonal_evolution"
+}

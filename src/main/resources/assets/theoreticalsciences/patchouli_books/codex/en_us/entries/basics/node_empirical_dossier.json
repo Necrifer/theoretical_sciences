@@ -1,0 +1,23 @@
+{
+  "name": "Empirical Dossier",
+  "icon": "theoreticalsciences:empirical_dossier",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:empirical_dossier",
+      "title": "Empirical Dossier",
+      "text": "A thick binder of my earliest discoveries - every measurement, every failed run, every note in the margin - bound and sealed in superfluid-cooled pages. Read by a machine, it is a curriculum. Read by me, it is mostly embarrassment and nostalgia in roughly equal parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Teaching a machine to study meant giving it something to study. I gathered the three volumes of my empirical notes and preserved them in superfluid helium, so the Research Nexus could read them as I once did - only faster. I have found copies in anomaly vaults too."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Femtoscale Assembly Line$().$(br2)$(thing)Found in$(): Anomaly Vault chests.$(br2)$(thing)Unlocked by$(): Research Synthesis.$(br2)$(thing)Used in$(): Theoretical Dossier."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/research_synthesis"
+}

@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:void_glass",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:einstein_ring_lens",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 800,
+  "research": "theoreticalsciences:gravitational_lensing",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "n": 1.6
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": -0.01,
+        "max": 0.01
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 20.0
+      }
+    ]
+  }
+}

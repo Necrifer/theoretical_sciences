@@ -1,0 +1,328 @@
+{
+ "observational_astronomy": {
+  "goal": "Light from a distant star enters a round mirror of diameter D. Because light is a wave, the mirror cannot focus it to a point: it makes a small disc with rings, and two stars closer together than that disc cannot be told apart. Write the smallest angle θ the mirror resolves for light of wavelength λ.",
+  "name": "Diffraction limit of a circular aperture",
+  "lhs": "θ",
+  "form": "1.22 * λ / D",
+  "expr": "1.22 * λ / D * 0.206265",
+  "ask": "Find θ in arcseconds for green light, λ in micrometres and D in metres.",
+  "vars": {
+   "θ": "smallest resolvable angle",
+   "λ": "wavelength (µm)",
+   "D": "mirror diameter (m)"
+  },
+  "given": {
+   "λ": 0.55,
+   "D": 2.4
+  },
+  "unit": "arcsec",
+  "method": "The first dark ring of the diffraction pattern of a circular opening sits where the first zero of the Bessel function J₁ falls; 1 radian is 206,265 arcseconds.",
+  "distractors": [
+   "c",
+   "ν",
+   "2"
+  ]
+ },
+ "spectroscopy": {
+  "goal": "A hot, dense body glows with a thermal spectrum whose peak moves to shorter wavelengths as it gets hotter, in inverse proportion to its temperature T. Write the wavelength at which it shines brightest, from the quantum of action h, the speed of light and the thermal energy scale.",
+  "name": "Wien's displacement law (from Planck's spectrum)",
+  "lhs": "λ",
+  "form": "h * c / ( 4.965 * kB * T )",
+  "expr": "h * c / ( 4.965 * kB * T ) * 1000000",
+  "ask": "Find the peak wavelength in micrometres for a star with the Sun's surface temperature (h, c and k_B in SI units).",
+  "vars": {
+   "λ": "wavelength of the peak (µm)",
+   "h": "Planck constant (J·s)",
+   "c": "speed of light (m/s)",
+   "kB": "Boltzmann constant (J/K)",
+   "T": "temperature (K)"
+  },
+  "given": {
+   "h": 6.626e-34,
+   "c": 299800000.0,
+   "kB": 1.381e-23,
+   "T": 5778
+  },
+  "unit": "µm",
+  "method": "Differentiate the thermal spectrum with respect to wavelength and set it to zero: the root is a fixed number times hc/(k_B T).",
+  "distractors": [
+   "σ",
+   "ν",
+   "4"
+  ]
+ },
+ "cartography": {
+  "goal": "A map that keeps every angle true (so a compass course is a straight line) must stretch north-south distances more and more towards the poles. On a sphere of radius R, write how far up the map a point at latitude φ is drawn.",
+  "name": "Conformal cylindrical projection",
+  "lhs": "Y",
+  "form": "R * ln ( tan ( π / 4 + φ / 2 ) )",
+  "expr": "R * ln ( sin ( 0.785398 + φ / 2 ) / cos ( 0.785398 + φ / 2 ) )",
+  "ask": "Find Y in kilometres for latitude 45° (0.7854 rad) on a planet of radius R km.",
+  "vars": {
+   "Y": "distance up the map (km)",
+   "R": "radius of the planet (km)",
+   "φ": "latitude (rad)",
+   "π": "pi"
+  },
+  "given": {
+   "R": 6371,
+   "φ": 0.7854
+  },
+  "unit": "km",
+  "method": "Keeping angles means the north-south stretch at each latitude must equal the east-west one, 1/cos φ: integrate R/cos φ from the equator.",
+  "distractors": [
+   "sin",
+   "cos",
+   "θ"
+  ]
+ },
+ "geodesy": {
+  "goal": "Surveyors measure one side c of a triangle and the angles at both its ends; the third angle γ follows. Write the length a of the side opposite the angle α.",
+  "name": "Triangulation by the sine rule",
+  "lhs": "a",
+  "form": "c * sin ( α ) / sin ( γ )",
+  "expr": "c * sin ( α ) / sin ( γ )",
+  "ask": "Find a in metres for a 1000 m baseline c, α = 0.9 rad and γ = 1.2 rad.",
+  "vars": {
+   "a": "side opposite α (m)",
+   "c": "measured baseline (m)",
+   "α": "angle opposite a",
+   "γ": "angle opposite the baseline"
+  },
+  "given": {
+   "c": 1000,
+   "α": 0.9,
+   "γ": 1.2
+  },
+  "unit": "m",
+  "method": "Drop a height from one corner onto the opposite side: it equals each adjacent side times the sine of its angle, so a sin γ = c sin α.",
+  "distractors": [
+   "cos",
+   "tan",
+   "b"
+  ]
+ },
+ "geomorphology": {
+  "goal": "A small grain of density ρ_s sinks through still water of density ρ_f and viscosity μ. It soon stops speeding up: the drag of the slow flow around it balances its weight less its buoyancy. Write the speed v at which a sphere of radius r settles.",
+  "name": "Settling speed of a small sphere",
+  "lhs": "v",
+  "form": "2 / 9 * ( ρ _ s - ρ _ f ) * g * r ^ 2 / μ",
+  "expr": "2 / 9 * ( S - F ) * g * r ^ 2 / μ",
+  "ask": "Find v in metres per second for a 0.1 mm quartz grain in water.",
+  "vars": {
+   "v": "settling speed (m/s)",
+   "ρ": "density",
+   "s": "of the solid grain",
+   "f": "of the fluid",
+   "g": "gravity (m/s²)",
+   "r": "grain radius (m)",
+   "μ": "viscosity (Pa·s)",
+   "S": "grain density (kg/m³)",
+   "F": "water density (kg/m³)"
+  },
+  "given": {
+   "S": 2650,
+   "F": 1000,
+   "g": 9.81,
+   "r": 0.0001,
+   "μ": 0.001
+  },
+  "unit": "m/s",
+  "method": "At low speed the drag on a sphere is 6πμrv; set it equal to the weight minus buoyancy, (4/3)πr³(ρ_s − ρ_f)g.",
+  "distractors": [
+   "ν",
+   "π",
+   "6"
+  ]
+ },
+ "radioactivity": {
+  "goal": "Each unstable nucleus has the same small chance λ per second of decaying, whatever the others do. Starting with N _ 0 nuclei, write how many N are left after a time t.",
+  "name": "Radioactive decay law",
+  "lhs": "N",
+  "form": "N _ 0 * exp ( - λ * t )",
+  "expr": "M * exp ( - 0.693147 * t / T )",
+  "ask": "A sample starts with M = 1000 radium nuclei; radium-226 has a half-life T of 1600 years. Find how many remain after t = 400 years.",
+  "vars": {
+   "N": "nuclei left",
+   "λ": "decay constant (per year)",
+   "t": "time (years)",
+   "M": "nuclei at the start",
+   "T": "half-life (years)"
+  },
+  "given": {
+   "M": 1000,
+   "t": 400,
+   "T": 1600
+  },
+  "unit": "nuclei",
+  "method": "dN/dt = −λN: the decay rate is proportional to what is left. The half-life is the time for exp(−λt) to reach 1/2, so λ = ln 2 / T.",
+  "distractors": [
+   "τ",
+   "ln",
+   "2"
+  ]
+ },
+ "nuclear_binding_energy": {
+  "goal": "A nucleus of Z protons and A − Z neutrons weighs less than its parts did apart. Write the energy B that holds it together, from the proton mass m_p, the neutron mass m_n, the nucleus's mass M and the speed of light.",
+  "name": "Nuclear binding energy (mass defect)",
+  "lhs": "B",
+  "form": "( Z * m _ p + ( A - Z ) * m _ n - M ) * c ^ 2",
+  "expr": "( Z * P + ( A - Z ) * N - M ) * 931.494",
+  "ask": "Find B in MeV for helium-4, with masses in atomic mass units (1 u·c² = 931.494 MeV).",
+  "vars": {
+   "B": "binding energy (MeV)",
+   "Z": "protons",
+   "A": "mass number",
+   "m": "mass",
+   "p": "of a proton",
+   "n": "of a neutron",
+   "M": "mass of the nucleus (u)",
+   "c": "speed of light",
+   "P": "proton mass (u)",
+   "N": "neutron mass (u)"
+  },
+  "given": {
+   "Z": 2,
+   "A": 4,
+   "P": 1.007276,
+   "N": 1.008665,
+   "M": 4.001506
+  },
+  "unit": "MeV",
+  "method": "Mass and energy are one: the mass that went missing when the nucleons came together left as energy, E = Δm c².",
+  "distractors": [
+   "e",
+   "h",
+   "2"
+  ]
+ },
+ "magnetostatics": {
+  "goal": "A long straight wire carries a steady current I. Its magnetic field circles the wire; integrate the field around a circle of radius r and the total is fixed by the current through it. Write the field strength B at distance r.",
+  "name": "Ampère's circuital law for a straight wire",
+  "lhs": "B",
+  "form": "μ _ 0 * I / ( 2 * π * r )",
+  "expr": "0.2 * I / r",
+  "ask": "Find B in microtesla 5 cm from a wire carrying 10 A.",
+  "vars": {
+   "B": "magnetic field (µT)",
+   "μ": "permeability",
+   "I": "current (A)",
+   "r": "distance from the wire (m)",
+   "π": "pi"
+  },
+  "given": {
+   "I": 10,
+   "r": 0.05
+  },
+  "unit": "µT",
+  "method": "Around any closed loop the field adds up to μ₀ times the current threading it; by symmetry B is the same all round the circle of length 2πr.",
+  "distractors": [
+   "r",
+   "4",
+   "ε"
+  ]
+ },
+ "electromagnetic_induction": {
+  "goal": "A coil of N turns, each of area A, spins at angular speed ω in a steady field B. The flux through it rises and falls as the coil turns, and the changing flux drives a voltage. Write the voltage ε at time t.",
+  "name": "EMF of a rotating coil",
+  "lhs": "ε",
+  "form": "N * B * A * ω * sin ( ω * t )",
+  "expr": "N * B * A * ω",
+  "ask": "Find the peak voltage in volts for 100 turns of 0.01 m² spinning at 50 turns a second (ω = 314.16 rad/s) in 0.5 T.",
+  "vars": {
+   "ε": "voltage (V)",
+   "N": "number of turns",
+   "B": "field (T)",
+   "A": "area of a turn (m²)",
+   "ω": "angular speed (rad/s)",
+   "t": "time (s)"
+  },
+  "given": {
+   "N": 100,
+   "B": 0.5,
+   "A": 0.01,
+   "ω": 314.16
+  },
+  "unit": "V",
+  "method": "The flux through the coil is NBA cos ωt; the voltage is minus its rate of change.",
+  "distractors": [
+   "cos",
+   "I",
+   "R"
+  ]
+ },
+ "ferromagnetism": {
+  "goal": "Above a critical temperature the spins in iron no longer line up by themselves, but an applied field still lines them up a little, more easily the closer the iron is to that temperature. Write the susceptibility χ, with C a constant of the material and T_c the critical temperature.",
+  "name": "Curie-Weiss law",
+  "lhs": "χ",
+  "form": "C / ( T - T _ c )",
+  "expr": "C / ( T - X )",
+  "ask": "Find χ for iron at 1100 K, with C = 1.5 K and a critical temperature X of 1043 K.",
+  "vars": {
+   "χ": "magnetic susceptibility",
+   "C": "material constant (K)",
+   "T": "temperature (K)",
+   "c": "critical",
+   "X": "critical temperature (K)"
+  },
+  "given": {
+   "C": 1.5,
+   "T": 1100,
+   "X": 1043
+  },
+  "unit": "",
+  "method": "Mean-field theory: each spin feels the applied field plus a field proportional to the average magnetisation of its neighbours. Solve for the magnetisation per unit applied field.",
+  "distractors": [
+   "μ",
+   "B",
+   "1"
+  ]
+ },
+ "probability_theory": {
+  "goal": "An experiment either succeeds, with probability p, or fails. It is repeated n times, independently. Write the probability P of exactly k successes.",
+  "name": "Binomial distribution",
+  "lhs": "P",
+  "form": "binom ( n , k ) * p ^ k * ( 1 - p ) ^ ( n - k )",
+  "expr": "120 * p ^ k * ( 1 - p ) ^ ( n - k )",
+  "ask": "Find the probability of exactly 3 heads in 10 tosses of a fair coin (there are 120 ways to choose which 3).",
+  "vars": {
+   "P": "probability",
+   "n": "number of trials",
+   "k": "number of successes",
+   "p": "chance of success in one trial"
+  },
+  "given": {
+   "n": 10,
+   "k": 3,
+   "p": 0.5
+  },
+  "unit": "",
+  "method": "Each particular sequence with k successes has probability p^k (1 − p)^(n − k); count how many such sequences there are.",
+  "distractors": [
+   "q",
+   "e",
+   "m"
+  ]
+ },
+ "combinatorics": {
+  "goal": "The number of ways to put n objects in order grows faster than any power of n. For large n its logarithm is very nearly a simple expression. Write it.",
+  "name": "Large-n approximation of the factorial",
+  "lhs": "ln ( n ! )",
+  "form": "n * ln ( n ) - n",
+  "expr": "n * ln ( n ) - n",
+  "ask": "Find ln(100!) approximately.",
+  "vars": {
+   "n": "number of objects"
+  },
+  "given": {
+   "n": 100
+  },
+  "unit": "",
+  "method": "ln n! = ln 1 + ln 2 + … + ln n. For large n the sum is close to the integral of ln x from 1 to n.",
+  "distractors": [
+   "exp",
+   "π",
+   "2"
+  ]
+ }
+}

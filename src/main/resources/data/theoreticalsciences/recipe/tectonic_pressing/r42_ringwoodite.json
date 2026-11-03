@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:peridotite",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ringwoodite",
+      "count": 1
+    }
+  ],
+  "energy": 6144,
+  "duration": 800,
+  "research": "theoreticalsciences:metamorphism",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 300000.0,
+      "Tr": 1900.0
+    },
+    "windows": [
+      {
+        "q": "mR",
+        "min": 0.0,
+        "max": 100.0
+      },
+      {
+        "q": "mB",
+        "min": -100.0,
+        "max": -0.5
+      },
+      {
+        "q": "Tf",
+        "min": 1600.0,
+        "max": 2200.0
+      }
+    ]
+  }
+}

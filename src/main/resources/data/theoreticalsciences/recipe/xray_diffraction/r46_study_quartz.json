@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:xray_diffraction",
+  "item_inputs": [
+    {
+      "item": "minecraft:quartz",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:quartz",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:laue_pattern",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:crystallography",
+  "unscaled": true,
+  "insight_per_run": 3,
+  "physics": {
+    "vars": {
+      "dl": 3.343
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 0.4
+      }
+    ]
+  }
+}

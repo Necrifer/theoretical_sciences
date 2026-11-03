@@ -1,0 +1,49 @@
+{
+  "has_precipitation": false,
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 2635808,
+    "fog_color": 3162140,
+    "water_color": 6340816,
+    "water_fog_color": 1060928,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.01
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:plume_elemental",
+        "weight": 30,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [
+      "theoreticalsciences:peridot_pocket",
+      "theoreticalsciences:moissanite_pocket"
+    ],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_ringwoodite",
+      "theoreticalsciences:ore_bridgmanite"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

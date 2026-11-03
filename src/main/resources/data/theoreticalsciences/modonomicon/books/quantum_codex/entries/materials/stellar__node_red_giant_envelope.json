@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.node_red_giant_envelope",
+  "description": "book.theoreticalsciences.codex.stellar.node_red_giant_envelope.desc",
+  "icon": {
+    "item": "theoreticalsciences:red_giant_envelope"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 117,
+  "y": 58,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:red_giant_envelope"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.node_red_giant_envelope.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_red_giant_envelope.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_red_giant_envelope.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/stellar__nucleosynthesis_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_evolution"
+  }
+}

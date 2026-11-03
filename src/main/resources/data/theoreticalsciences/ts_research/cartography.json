@@ -1,0 +1,48 @@
+{
+  "title": "Cartography",
+  "description": "A map is a projection: a round planet drawn on a flat sheet, and every projection trades one truth for another. The first study of the Earth sciences. Unlocks the Survey Map.",
+  "icon": "theoreticalsciences:survey_map",
+  "x": 0,
+  "y": 15,
+  "insight": 5,
+  "requires": [],
+  "cost": [],
+  "time": 0,
+  "puzzle": {
+    "goal": "A map that keeps every angle true (so a compass course is a straight line) must stretch north-south distances more and more towards the poles. On a sphere of radius R, write how far up the map a point at latitude \u03c6 is drawn.",
+    "name": "Conformal cylindrical projection",
+    "lhs": "Y",
+    "form": "R * ln ( tan ( \u03c0 / 4 + \u03c6 / 2 ) )",
+    "expr": "R * ln ( sin ( 0.785398 + \u03c6 / 2 ) / cos ( 0.785398 + \u03c6 / 2 ) )",
+    "ask": "Find Y in kilometres for latitude 45\u00b0 (@{\u03c6} rad) on a planet of radius R km.",
+    "vars": {
+      "Y": "distance up the map (km)",
+      "R": "radius of the planet (km)",
+      "\u03c6": "latitude (rad)",
+      "\u03c0": "pi"
+    },
+    "given": {
+      "R": 6371,
+      "\u03c6": 0.7854
+    },
+    "unit": "km",
+    "method": "Keeping angles means the north-south stretch at each latitude must equal the east-west one, 1/cos \u03c6: integrate R/cos \u03c6 from the equator.",
+    "distractors": [
+      "sin",
+      "cos",
+      "\u03b8"
+    ],
+    "vary": {
+      "R": [
+        3823.0,
+        8919.0,
+        1.0
+      ],
+      "\u03c6": [
+        0.471,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

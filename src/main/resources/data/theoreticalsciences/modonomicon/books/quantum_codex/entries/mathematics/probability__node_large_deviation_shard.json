@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.node_large_deviation_shard",
+  "description": "book.theoreticalsciences.codex.probability.node_large_deviation_shard.desc",
+  "icon": {
+    "item": "theoreticalsciences:large_deviation_shard"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 28,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:large_deviation_shard"
+      },
+      "text": "book.theoreticalsciences.codex.probability.node_large_deviation_shard.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.node_large_deviation_shard.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/probability__galton_board",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

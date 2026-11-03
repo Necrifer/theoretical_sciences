@@ -1,0 +1,23 @@
+{
+  "name": "Tachyon Klystron",
+  "icon": "theoreticalsciences:tachyon_klystron",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 514,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tachyon_klystron",
+      "title": "Tachyon Klystron",
+      "text": "A microwave amplifier whose electron beam has been replaced with tachyons. It drives RF cavities from slightly in the future, so the wave is already there when each bunch arrives. It hums with a pitch that starts before it is switched on."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)My cavities lagged behind the beam. In the Tachyon Resonator I wound a superconducting coil around a quantum dot in helium, sending tachyons through. The drive signal now arrives a little early."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Tachyon Resonator$().$(br2)$(thing)Unlocked by$(): High-Energy Particle Physics.$(br2)$(thing)Used in$(): Chronal Accelerator, Empirical Notes II, RF Accelerating Cavity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

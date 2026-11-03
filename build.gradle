@@ -50,6 +50,6 @@ tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 // the licence travels inside the jar too
 jar {
     from('LICENSE')
-    // only the mod's own Codex ships: the Patchouli text is the Codex's source, the Modonomicon book an intermediate
+    // only the mod's own Codex ships; older Patchouli / Modonomicon book folders, if present, are left out
     exclude 'assets/theoreticalsciences/patchouli_books/**', 'data/theoreticalsciences/patchouli_books/**', 'data/theoreticalsciences/modonomicon/**'
 }

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_warp_bubble_core",
+  "description": "book.theoreticalsciences.codex.spacetime.node_warp_bubble_core.desc",
+  "icon": {
+    "item": "theoreticalsciences:warp_bubble_core"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 189,
+  "y": 7,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:warp_bubble_core"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_warp_bubble_core.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_warp_bubble_core.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__warp_field_forge",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alcubierre_metric"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Chiral Crystal",
+  "icon": "theoreticalsciences:chiral_crystal",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chiral_crystal",
+      "title": "Chiral Crystal",
+      "text": "A crystal that comes in only one hand. Like my left and right palms, its mirror image cannot be rotated to match it. Living things use left-handed amino acids and right-handed sugars, and nobody fully knows why. This one twists light passing through it, always the same way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Molecular orbitals let me predict which hand a molecule would take. Seeding an orbital lattice with amethyst and a quantum dot in supercritical solvent, I found the crystals all came out with the same handedness. I stopped calling it an accident after the tenth batch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Quantum Chemistry.$(br2)$(thing)Used in$(): Carborane Superacid, Coherent Wiring Harness, Engineered Enzyme, Metal-Organic Framework, Primordial Soup, Turing Morphogen."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_bonding"
+}

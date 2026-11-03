@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.radio_telescope",
+  "description": "book.theoreticalsciences.codex.astrophysics.radio_telescope.desc",
+  "icon": {
+    "item": "theoreticalsciences:radio_telescope"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 65,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:radio_telescope"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:radio_telescope"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.radio_telescope.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__r37_induction"
+    },
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__r38_generator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radio_astronomy"
+  }
+}

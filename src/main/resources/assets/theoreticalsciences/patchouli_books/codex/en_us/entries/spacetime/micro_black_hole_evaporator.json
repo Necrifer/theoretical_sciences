@@ -1,0 +1,197 @@
+{
+  "name": "Micro Black Hole Evaporator",
+  "icon": "theoreticalsciences:micro_black_hole_evaporator",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 122,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:micro_black_hole_evaporator",
+      "title": "Micro Black Hole Evaporator",
+      "text": "A black hole lighter than a mountain, held in a cage and fed as fast as it evaporates: it glows with Hawking radiation hotter than any star.$(br2)Generates power.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the hole's mass and how fast it is fed. It radiates at T = \u0127c\u00b3/(8\u03c0GMk): lighter is hotter, and the power grows as 1/M\u00b2. Feed it just what it loses: feed it less and it shrinks, runs away and explodes; more and it swells into the feed. Lighter than 6\u00d710\u2078 kg, its gamma rays are too hot for the shield."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Micro Black Hole Evaporator",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "_____A_____",
+            "____AAA____",
+            "___AAAAA___",
+            "____AAA____",
+            "_____A_____",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___AAAAA___",
+            "__AAAAAAA__",
+            "__AA   AA__",
+            "__AA   AA__",
+            "__AA   AA__",
+            "__AAAAAAA__",
+            "___AAAAA___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___AAAAA___",
+            "__AAA AAA__",
+            "_AA     AA_",
+            "_AA     AA_",
+            "_A       A_",
+            "_AA     AA_",
+            "_AA     AA_",
+            "__AAA AAA__",
+            "___AAAAA___",
+            "___________"
+          ],
+          [
+            "_____A_____",
+            "__AAAAAAA__",
+            "_AA     AA_",
+            "_A       A_",
+            "_A       A_",
+            "AA       AA",
+            "_A       A_",
+            "_A       A_",
+            "_AA     AA_",
+            "__AAAAAAA__",
+            "_____A_____"
+          ],
+          [
+            "____AAA____",
+            "__AA   AA__",
+            "_AA     AA_",
+            "_A       A_",
+            "A   B B   A",
+            "A         A",
+            "A   B B   A",
+            "_A       A_",
+            "_AA     AA_",
+            "__AA   AA__",
+            "____AAA____"
+          ],
+          [
+            "___ADADA___",
+            "__AD   DA__",
+            "_A       A_",
+            "AD       DA",
+            "D         D",
+            "A         A",
+            "D         D",
+            "AD       DA",
+            "_A       A_",
+            "__AD   DA__",
+            "___ADADA___"
+          ],
+          [
+            "____AAA____",
+            "__AA   AA__",
+            "_AA     AA_",
+            "_A       A_",
+            "A   B B   A",
+            "A         A",
+            "A   B B   A",
+            "_A       A_",
+            "_AA     AA_",
+            "__AA   AA__",
+            "____AAA____"
+          ],
+          [
+            "_____A_____",
+            "__AAAAAAA__",
+            "_AA     AA_",
+            "_A       A_",
+            "_A       A_",
+            "AA   B   AA",
+            "_A       A_",
+            "_A       A_",
+            "_AA     AA_",
+            "__AAAAAAA__",
+            "_____A_____"
+          ],
+          [
+            "___________",
+            "___AAAAA___",
+            "__AAA AAA__",
+            "_AA     AA_",
+            "_AA     AA_",
+            "_A   B   A_",
+            "_AA     AA_",
+            "_AA     AA_",
+            "__AAA AAA__",
+            "___AAAAA___",
+            "___________"
+          ],
+          [
+            "___________",
+            "_____0_____",
+            "___AAEAA___",
+            "__AAAAAAA__",
+            "__AA   AA__",
+            "__EA   AE__",
+            "__AA   AA__",
+            "__AAAAAAA__",
+            "___AAEAA___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "_____A_____",
+            "____AAA____",
+            "___AAAAA___",
+            "____AAA____",
+            "_____A_____",
+            "___________",
+            "___________",
+            "___________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:micro_black_hole_evaporator",
+          "A": "theoreticalsciences:evaporator_shield",
+          "B": "theoreticalsciences:horizon_cage",
+          "D": "theoreticalsciences:containment_field_glass",
+          "E": "#theoreticalsciences:multiblock/evaporator_shield_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (2 item and 0 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Hawking Quanta, Hawking Radiation, Merger Remnant."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:micro_black_hole_evaporator",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/hawking_radiation"
+}

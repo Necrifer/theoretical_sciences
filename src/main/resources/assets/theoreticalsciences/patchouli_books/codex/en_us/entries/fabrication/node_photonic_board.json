@@ -1,0 +1,23 @@
+{
+  "name": "Photonic Circuit Board",
+  "icon": "theoreticalsciences:photonic_board",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photonic_board",
+      "title": "Photonic Circuit Board",
+      "text": "A circuit board of light-guides rather than copper traces. Its paths are Cherenkov quartz, its connectors superconducting, and signals travel between them at light speed. It glows faint blue when powered, and warms only slightly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Metamaterial Weaver I laid Cherenkov Quartz waveguides across a Metamaterial Substrate with a superconducting coil and Quantum-Dot Photoresist. Light followed the paths exactly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Metamaterial Weaver$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Photonic Processor, Quantum Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

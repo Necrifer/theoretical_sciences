@@ -1,0 +1,86 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.byproducts",
+  "description": "book.theoreticalsciences.codex.fabrication.byproducts.desc",
+  "icon": {
+    "item": "theoreticalsciences:spacetime_slag"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 65,
+  "y": 33,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p0",
+      "title": "book.theoreticalsciences.codex.fabrication.byproducts"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bose_einstein_condenser"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractionation_spire"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spacetime_slag"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:superfluid_helium_cell"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:warm_helium_cell"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dimensional_residue_cell"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.byproducts.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/fabrication__femtoscale_assembly_line"
+    },
+    {
+      "entry": "theoreticalsciences:machines/hyperdimensions__tesseract"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/fractional_distillation"
+  }
+}

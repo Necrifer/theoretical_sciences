@@ -1,0 +1,85 @@
+{
+  "name": "Pound-Rebka Tower",
+  "icon": "theoreticalsciences:pound_rebka_tower",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 99,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pound_rebka_tower",
+      "title": "Pound-Rebka Tower",
+      "text": "Gamma rays climbing a tower lose energy to gravity. A source moving at the right speed - less than a micrometre a second - puts them back in tune with the absorber above.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Built 1 to 8 storeys tall (7.5 m each). Set the Doppler drive to v = gH/c to cancel the gravitational shift, and count long enough that the shift stands five times above the counting error. Keep source and absorber at the same temperature: each kelvin between them shifts the line by 0.66 \u00b5m/s."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Pound-Rebka Tower",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____",
+            "_AAA_",
+            "_ABA_",
+            "_AAA_",
+            "_____"
+          ],
+          [
+            "AAAAA",
+            "AAAAA",
+            "AA AA",
+            "AAAAA",
+            "AAAAA"
+          ],
+          [
+            "AADAA",
+            "A   A",
+            "D   D",
+            "A   A",
+            "AADAA"
+          ],
+          [
+            "AA0AA",
+            "AAAAA",
+            "AAEAA",
+            "AAAAA",
+            "AAAAA"
+          ],
+          [
+            "AAFAA",
+            "AAAAA",
+            "FAEAF",
+            "AAAAA",
+            "AAFAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:pound_rebka_tower",
+          "A": "theoreticalsciences:redshift_tower_casing",
+          "B": "theoreticalsciences:mossbauer_absorber",
+          "D": "theoreticalsciences:leaded_glass",
+          "E": "theoreticalsciences:doppler_drive",
+          "F": "#theoreticalsciences:multiblock/redshift_tower_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Gravitational Redshift Record."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pound_rebka_tower",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_redshift"
+}

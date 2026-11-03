@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_seismic_isolator",
+  "description": "book.theoreticalsciences.codex.spacetime.node_seismic_isolator.desc",
+  "icon": {
+    "item": "theoreticalsciences:seismic_isolator"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 128,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:seismic_isolator"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_seismic_isolator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_seismic_isolator.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__laser_interferometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_waves"
+  }
+}

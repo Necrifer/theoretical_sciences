@@ -1,0 +1,23 @@
+{
+  "name": "Functor Bridge",
+  "icon": "theoreticalsciences:functor_bridge",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:functor_bridge",
+      "title": "Functor Bridge",
+      "text": "A map between categories that sends objects to objects and arrows to arrows while respecting composition. It lets you translate a hard problem in one area of mathematics into an easier one elsewhere. The bridge is narrow, sturdy and arched in a way that suggests symmetry."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I needed a structured way to pass from a category to a manifold to the octonions. The Formal Proof Assistant found a functor that carried every arrow over without breaking a composition."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Formal Proof Assistant$().$(br2)$(thing)Unlocked by$(): Category Theory.$(br2)$(thing)Used in$(): Topos."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/formal_logic"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Waveguide",
+  "icon": "theoreticalsciences:waveguide",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:waveguide",
+      "title": "Waveguide",
+      "text": "A rectangular copper pipe that carries microwaves the way a pipe carries water - no wave longer than twice its width gets through."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Laser Cutter$().$(br2)$(thing)Unlocked by$(): Electrodynamics.$(br2)$(thing)Used in$(): Acceleration Cavity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrodynamics"
+}

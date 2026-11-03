@@ -1,0 +1,43 @@
+{
+  "name": "book.theoreticalsciences.codex.world.falling_through",
+  "description": "book.theoreticalsciences.codex.world.falling_through.desc",
+  "icon": {
+    "item": "minecraft:ender_pearl"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 48,
+  "y": 0,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.falling_through.p0",
+      "title": "book.theoreticalsciences.codex.world.falling_through"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.falling_through.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.falling_through.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:inner_core_boundary"
+      },
+      "text": "book.theoreticalsciences.codex.world.falling_through.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mantle_breach"
+      },
+      "text": "book.theoreticalsciences.codex.world.falling_through.p4"
+    }
+  ],
+  "parents": []
+}

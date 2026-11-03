@@ -1,0 +1,24 @@
+{
+  "name": "Evolution Engine",
+  "icon": "theoreticalsciences:evolution_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 32,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Population genetics, run fast. A beneficial mutation fixes with Kimura's probability (1 \u2212 e^(\u22122s))/(1 \u2212 e^(\u22124Ns)). Too small a population and drift beats selection; too high a mutation rate and the genome melts (error catastrophe)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Population size, Selection coefficient, Mutation rate.$(br2)$(thing)Disturbance$(): Mutagen drift: \u00b5\u00b7(1 \u00b1 20%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Drift dominates: selection is blind at this population size; Error catastrophe: mutations outpace selection; The culture is overheating.$(br2)$(thing)Rate$(): Evolution proceeds as fast as adaptations fix."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Genomic mutation rate: U = \u00b5L$(br)Fixation probability: P = (1\u2212e^(\u22122s))/(1\u2212e^(\u22124Ns))$(br)Adaptation rate: v = 2NU\u00b7f_b\u00b7P_fix$(br)Selection strength Ns: N\u00b7s"
+    }
+  ]
+}

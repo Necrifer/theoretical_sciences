@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.node_stabiliser_matrix",
+  "description": "book.theoreticalsciences.codex.strings.node_stabiliser_matrix.desc",
+  "icon": {
+    "item": "theoreticalsciences:stabiliser_matrix"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 112,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stabiliser_matrix"
+      },
+      "text": "book.theoreticalsciences.codex.strings.node_stabiliser_matrix.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_stabiliser_matrix.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_stabiliser_matrix.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__string_resonance_loom",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/string_theory"
+  }
+}

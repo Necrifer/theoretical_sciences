@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.node_mhd_field_magnet",
+  "description": "book.theoreticalsciences.codex.probability.node_mhd_field_magnet.desc",
+  "icon": {
+    "item": "theoreticalsciences:mhd_field_magnet"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 41,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mhd_field_magnet"
+      },
+      "text": "book.theoreticalsciences.codex.probability.node_mhd_field_magnet.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.node_mhd_field_magnet.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/probability__galton_board",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

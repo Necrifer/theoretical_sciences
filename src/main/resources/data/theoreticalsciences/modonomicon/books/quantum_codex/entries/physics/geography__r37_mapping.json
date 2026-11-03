@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.r37_mapping",
+  "description": "book.theoreticalsciences.codex.geography.r37_mapping.desc",
+  "icon": {
+    "item": "theoreticalsciences:geodetic_surveyor"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 0,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:survey_map"
+      },
+      "text": "book.theoreticalsciences.codex.geography.r37_mapping.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r37_mapping.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r37_mapping.p2"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cartography"
+  }
+}

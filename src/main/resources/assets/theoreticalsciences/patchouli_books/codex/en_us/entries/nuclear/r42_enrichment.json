@@ -1,0 +1,22 @@
+{
+  "name": "Enrichment",
+  "icon": "theoreticalsciences:gas_centrifuge_cascade",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gas_centrifuge_cascade,theoreticalsciences:yellowcake,theoreticalsciences:fluorspar,theoreticalsciences:uranium_235_pellet",
+      "text": "Natural uranium is 0.72% uranium-235. A reactor needs a few per cent. Roast $(item)Raw Pitchblende$() into $(item)Yellowcake$(), combine it with $(item)Fluorspar$() (the Spectrograph finds it in calcite and in geode shells) and you have $(fluid)Uranium Hexafluoride$(), a gas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In a centrifuge spinning at hundreds of metres a second, the heavier U-238 crowds to the wall: the separation factor is \u03b1 = e^(\u0394m v\u00b2/2RT). One stage barely helps. The $(item)Gas Centrifuge Cascade$() is a tower, one layer per stage: build the stage layer once, or stack it up to fourteen high, and every stage multiplies the ratio again."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)cut$() is the share of each stage's feed passed upward: small cuts enrich more, large ones run faster. Spin the rotors faster for more separation, but carbon fibre bursts above about 1,500 MPa, and there is a flexural resonance near 450 m/s. Enrichment stops at 20%: reactor fuel, never more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

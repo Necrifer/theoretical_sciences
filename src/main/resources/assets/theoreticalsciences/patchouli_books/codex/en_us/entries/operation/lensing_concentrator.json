@@ -1,0 +1,24 @@
+{
+  "name": "Lensing Concentrator",
+  "icon": "theoreticalsciences:lensing_concentrator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 41,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A mass M at distance D_l bends the light of a star behind it (at 8 kpc) into a ring of angular radius \u03b8_E = \u221a(4GM/c\u00b2 \u00b7 D_ls/D_lD_s). A star a distance u Einstein radii off the line is magnified A = (u\u00b2 + 2)/(u\u221a(u\u00b2 + 4)). The aim jitters by 0.3 milliarcseconds, so a small, distant lens - a small \u03b8_E - cannot be aimed closely. Starlight only: at night, under open sky."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Lens mass, Lens distance, Alignment.$(br2)$(thing)Disturbance$(): Pointing jitter: \u00b10.3 mas\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): No starlight to focus: it is daytime; Its lenses cannot see the sky.$(br2)$(thing)Rate$(): Power follows the magnification."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Einstein radius: \u03b8_E = \u221a(4GM D_ls/(c\u00b2 D_l D_s))$(br)Effective alignment: u \u2295 jitter/\u03b8_E$(br)Magnification: A = (u\u00b2 + 2)/(u\u221a(u\u00b2 + 4))"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Laue Pattern",
+  "icon": "theoreticalsciences:laue_pattern",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:laue_pattern",
+      "title": "Laue Pattern",
+      "text": "A photographic plate exposed to X-rays scattered by a crystal: a pattern of spots that shows how its lattice planes lie. Cut along them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)X-ray Diffractometer$().$(br2)$(thing)Unlocked by$(): Crystallography.$(br2)$(thing)Used in$(): Fluorite Lens, Laser Rod, Moissanite Lens, Perfect Crystal Interferometer, Photonic Lens, Sapphire Window."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

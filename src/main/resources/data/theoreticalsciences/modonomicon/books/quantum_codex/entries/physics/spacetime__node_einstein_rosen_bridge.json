@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_einstein_rosen_bridge",
+  "description": "book.theoreticalsciences.codex.spacetime.node_einstein_rosen_bridge.desc",
+  "icon": {
+    "item": "theoreticalsciences:einstein_rosen_bridge"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 108,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:einstein_rosen_bridge"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_einstein_rosen_bridge.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_einstein_rosen_bridge.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_einstein_rosen_bridge.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__black_hole_interior",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/black_hole_interior"
+  }
+}

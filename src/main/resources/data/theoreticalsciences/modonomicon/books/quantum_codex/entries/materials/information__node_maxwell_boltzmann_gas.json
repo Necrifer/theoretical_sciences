@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.information.node_maxwell_boltzmann_gas",
+  "description": "book.theoreticalsciences.codex.information.node_maxwell_boltzmann_gas.desc",
+  "icon": {
+    "item": "theoreticalsciences:maxwell_boltzmann_gas_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 32,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:maxwell_boltzmann_gas_cell"
+      },
+      "text": "book.theoreticalsciences.codex.information.node_maxwell_boltzmann_gas.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.node_maxwell_boltzmann_gas.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/information__demon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermodynamics_of_information"
+  }
+}

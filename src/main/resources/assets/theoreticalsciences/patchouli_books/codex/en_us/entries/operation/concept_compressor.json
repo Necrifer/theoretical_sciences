@@ -1,0 +1,24 @@
+{
+  "name": "Concept Compressor",
+  "icon": "theoreticalsciences:concept_compressor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 21,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Shannon's source coding theorem: a source of entropy H bits per symbol can be compressed to any rate R above H - and to none below. At finite block length n, the error falls as exp(\u2212n(R\u2212H)\u00b2/2V). Every concept has its own entropy."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Code rate R, Block length n, Store field.$(br2)$(thing)Disturbance$(): Source drift: the concept's entropy fluctuates by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Rate below the entropy: information is destroyed; Store field too weak for that rate; Interlock: holographic-store coils not superconducting (too warm); Field above the critical field: the holographic-store coils quench.$(br2)$(thing)Rate$(): Shorter blocks compress faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Entropy H: H = \u2212q log q \u2212 (1\u2212q) log(1\u2212q)$(br)Dispersion V: V = q(1\u2212q)\u00b7log\u00b2((1\u2212q)/q)$(br)Rate margin R \u2212 H: R \u2212 H$(br)Error probability: P_e \u2248 exp(\u2212n(R\u2212H)\u00b2/2V)$(br)Compression ratio: 1/R$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

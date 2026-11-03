@@ -1,0 +1,23 @@
+{
+  "name": "Zeolite Catalyst",
+  "icon": "theoreticalsciences:zeolite_catalyst",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "title": "Zeolite Catalyst",
+      "text": "An aluminosilicate crystal riddled with channels the width of a single molecule. Anything that fits inside is held in exactly the right pose to react, so reactions that would idle in open air happen in a blink. It is light, chalky and faintly gritty, like pumice that remembers being a mineral."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Clay and quartz dissolved in supercritical solvent recrystallised into a sponge of perfect pores. With a pinch of Cherenkov quartz as a template the channels came out uniform, and molecules small enough to enter came out changed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Chemical Bonding.$(br2)$(thing)Used in$(): Autocatalytic Broth, Bioreactor, Engineered Enzyme, Graphene Sheet, Molecular Orbital Lattice, Nutrient Broth."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_bonding"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Casimir Energy Cell",
+  "icon": "theoreticalsciences:casimir_energy_cell",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:casimir_energy_cell",
+      "title": "Casimir Energy Cell",
+      "text": "An energy store built around the force between two plates in a vacuum. Between closely spaced conductors, fewer vacuum modes fit, so the outside pushes them together; this cell charges by tensioning that gap. It hums very faintly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Casimir plates press together with energy taken from nothing. Pairing them with a Chronon Capacitor in a chronosteel shell, I found I could store that tension and release it on demand."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Plasma Metallurgy.$(br2)$(thing)Used in$(): Vacuum Energy Cell."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plasma_metallurgy"
+}

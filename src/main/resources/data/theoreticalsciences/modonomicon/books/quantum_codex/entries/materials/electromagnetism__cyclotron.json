@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.cyclotron",
+  "description": "book.theoreticalsciences.codex.electromagnetism.cyclotron.desc",
+  "icon": {
+    "item": "theoreticalsciences:cyclotron"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 90,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cyclotron"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.cyclotron.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.cyclotron.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.cyclotron.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.cyclotron.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.cyclotron.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cyclotron"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.cyclotron.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__r37_radioactivity"
+    },
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__r49_tesla"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cyclotron_physics"
+  }
+}

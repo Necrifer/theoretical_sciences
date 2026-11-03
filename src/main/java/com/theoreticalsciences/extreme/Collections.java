@@ -184,9 +184,16 @@ public final class Collections {
             String mod = t.getString("Mod");
             String modName = net.neoforged.fml.ModList.get().getModContainerById(mod).map(c -> c.getModInfo().getDisplayName()).orElse(mod);
             Component c = Component.translatable("item.theoreticalsciences.specimen_bundle.of", col, modName);
-            return t.contains("Part") ? c.copy().append(" (" + t.getString("Part") + ")") : c;
+            if (!t.contains("Part")) return c;
+            int part = 1;                                     // stored as "part/parts"; shown lettered like the clusters (1.1.0)
+            try {
+                part = Integer.parseInt(t.getString("Part").split("/")[0]);
+            } catch (RuntimeException ignored) {
+            }
+            return c.copy().append(" " + Singularities.letter(1, Math.max(0, part - 1)));
         }
-        return Component.translatable("item.theoreticalsciences.specimen_bundle.archive" + Math.min(level, 4), col, index + 1);
+        // 1.1.0: archives are lettered the way singularity clusters are - Greek, then Hebrew, then doubled Greek
+        return Component.translatable("item.theoreticalsciences.specimen_bundle.archive" + Math.min(level, 4), col, Singularities.letter(level - 1, index));
     }
 
     /** A colour of its own per mod (bundles) or per collection (archives). */

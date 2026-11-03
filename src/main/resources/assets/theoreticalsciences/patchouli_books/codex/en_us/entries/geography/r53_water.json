@@ -1,0 +1,18 @@
+{
+  "name": "Hydrology",
+  "icon": "theoreticalsciences:aquifer_pump",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:aquifer_pump,theoreticalsciences:aquifer_sample",
+      "text": "Water seeps through rock by $(thing)Darcy's law$(): Q = kA\u0394P/(\u03bcL) - permeability times the pressure gradient. The $(item)Aquifer Pump$() draws it up: Water anywhere; in the Planetary Interior, an $(item)Aquifer Sample$() with Deep Brine from a confined aquifer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the Interior's Magma Chambers it reaches water heated past its critical point, 647 K and 22 MPa: $(fluid)Supercritical Water$(), neither liquid nor gas."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/hydrology"
+}

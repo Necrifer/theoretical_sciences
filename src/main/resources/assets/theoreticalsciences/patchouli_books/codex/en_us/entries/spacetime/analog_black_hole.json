@@ -1,0 +1,93 @@
+{
+  "name": "Analog Black Hole",
+  "icon": "theoreticalsciences:analog_black_hole",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 105,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:analog_black_hole",
+      "title": "Analog Black Hole",
+      "text": "A condensate flowing faster than its own speed of sound: a horizon that sound cannot cross back over - and, at it, Hawking radiation of phonons.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Feed it Bose-Einstein Condensate and keep it below 5 K. Set the density, the flow, and the laser step: the flow must be subsonic before the step and supersonic after it. The Hawking temperature, \u0127\u03ba/2\u03c0k_B, must stand out of the condensate's own warmth over enough shots - only Bose-Einstein Condensate as the coolant is cold enough."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Analog Black Hole",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________",
+            "_____________",
+            "______A______",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "______B______",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "___D_____D___",
+            "___D__A__D___",
+            "___D_____D___",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "___D_____D___",
+            "_EEEEFFFEEEE_",
+            "___D_____D___",
+            "_____________"
+          ],
+          [
+            "______0______",
+            "___D_____D___",
+            "__AD_____DA__",
+            "___D_____D___",
+            "_____________"
+          ],
+          [
+            "AAAAAAGAAAAAA",
+            "AAAAAAAAAAAAA",
+            "GAAAAAAAAAAAG",
+            "AAAAAAAAAAAAA",
+            "AAAAAAGAAAAAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:analog_black_hole",
+          "A": "theoreticalsciences:optical_bench",
+          "B": "theoreticalsciences:step_laser",
+          "D": "theoreticalsciences:mhd_field_magnet",
+          "E": "theoreticalsciences:vacuum_beam_tube",
+          "F": "theoreticalsciences:bec_trap",
+          "G": "#theoreticalsciences:multiblock/optical_bench_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Hawking Correlation Record."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:analog_black_hole",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/analog_gravity"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Plasma Nozzle Tip",
+  "icon": "theoreticalsciences:plasma_nozzle_tip",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:plasma_nozzle_tip",
+      "title": "Plasma Nozzle Tip",
+      "text": "A converging magnetic nozzle that accelerates plasma to a few percent of the speed of light. Topological insulators guide the current around its throat and tachyon crystals keep the field ahead of the flow. It glows bright at the tip even when cold."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Femto Fabricator, I shaped a magnetic throat from Neutronium Plate, Topological Insulator and Metamaterial Sheet, and added a Tachyon Crystal to drive the field ahead of the plasma."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Femto Fabricator$().$(br2)$(thing)Unlocked by$(): Plasma Metallurgy.$(br2)$(thing)Used in$(): Plasma Injection Nozzle."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plasma_metallurgy"
+}

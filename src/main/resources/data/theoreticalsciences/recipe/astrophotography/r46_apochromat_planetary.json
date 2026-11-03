@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:apochromatic_objective"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:planetary_plate",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "insight_per_run": 5,
+  "physics": {
+    "vars": {
+      "mreq": 0.0
+    },
+    "windows": [
+      {
+        "q": "res",
+        "min": 0.0,
+        "max": 1.1
+      }
+    ]
+  }
+}

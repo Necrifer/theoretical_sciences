@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_omnium_ingot",
+  "description": "book.theoreticalsciences.codex.endgame.node_omnium_ingot.desc",
+  "icon": {
+    "item": "theoreticalsciences:omnium_ingot"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 211,
+  "y": 44,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omnium_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_omnium_ingot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_omnium_ingot.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_omnium_ingot.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__omnilex_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/omnilex"
+  }
+}

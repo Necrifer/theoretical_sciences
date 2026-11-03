@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:schmidt_corrector"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:star_field_plate",
+      "count": 5
+    },
+    {
+      "id": "theoreticalsciences:deep_sky_plate",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 1200,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "mreq": 15.0
+    },
+    "windows": [
+      {
+        "q": "mlim",
+        "min": 15.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

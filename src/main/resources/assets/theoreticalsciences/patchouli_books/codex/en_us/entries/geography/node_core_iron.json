@@ -1,0 +1,19 @@
+{
+  "name": "Iron-Nickel",
+  "icon": "theoreticalsciences:core_iron",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 512,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:core_iron",
+      "title": "Iron-Nickel",
+      "text": "$(item)Iron-Nickel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Spectrograph$().$(br2)$(thing)Unlocked by$(): Meteoritics.$(br2)$(thing)Used in$(): Exoplanet Core Sample, Iridium Crucible, Magnetar Crust Fragment, Mu-Metal Shield, Planetary Core Sample, Reactor Vessel Casing."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/metamorphism"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Geode Shell",
+  "icon": "theoreticalsciences:geode_shell",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 506,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:geode_shell",
+      "title": "Geode Shell",
+      "text": "$(item)Geode Shell$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Unlocked by$(): Isotope Separation.$(br2)$(thing)Used in$(): Fluorspar."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

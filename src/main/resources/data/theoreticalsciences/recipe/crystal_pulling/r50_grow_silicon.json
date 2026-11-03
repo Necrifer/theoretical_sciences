@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:crystal_pulling",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 2
+    },
+    {
+      "item": "minecraft:coal",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:silicon_boule",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 800,
+  "research": "theoreticalsciences:neutron_interferometry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 1687.0,
+      "k0": 0.05
+    },
+    "windows": [
+      {
+        "q": "xi",
+        "min": 2.4,
+        "max": 3.6
+      },
+      {
+        "q": "pur",
+        "min": 99.85,
+        "max": 100.0
+      },
+      {
+        "q": "dT",
+        "min": 5.0,
+        "max": 80.0
+      }
+    ]
+  }
+}

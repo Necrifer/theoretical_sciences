@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.node_omniscience_catalyst",
+  "description": "book.theoreticalsciences.codex.antimatter.node_omniscience_catalyst.desc",
+  "icon": {
+    "item": "theoreticalsciences:omniscience_catalyst"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 189,
+  "y": 33,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omniscience_catalyst"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.node_omniscience_catalyst.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_omniscience_catalyst.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_omniscience_catalyst.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/antimatter__baryogenesis",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/baryon_asymmetry"
+  }
+}

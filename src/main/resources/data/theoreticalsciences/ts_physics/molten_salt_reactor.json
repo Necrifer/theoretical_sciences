@@ -1,0 +1,118 @@
+{
+  "params": [
+    {
+      "id": "c",
+      "unit": "mol%",
+      "min": 0,
+      "max": 5,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "r",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.5
+    },
+    {
+      "id": "Q",
+      "unit": "kg/s",
+      "min": 0,
+      "max": 5,
+      "step": 0.01,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {
+    "Pref": 500
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "f",
+      "unit": "",
+      "expr": "c/(c + 0.6)",
+      "formula": "f = \u03a3_fuel/(\u03a3_fuel + \u03a3_other)"
+    },
+    {
+      "id": "kinf",
+      "unit": "",
+      "expr": "2.07*f*0.92*1.02*(1 + 0.002*d)",
+      "formula": "k\u221e = \u03b7 f p \u03b5"
+    },
+    {
+      "id": "k0",
+      "unit": "",
+      "expr": "kinf*0.8*(1 - 0.5*r)",
+      "formula": "k = k\u221e\u00b7P_NL\u00b7(1 \u2212 w\u00b7r)"
+    },
+    {
+      "id": "rho",
+      "unit": "pcm",
+      "expr": "(k0 - 1)/k0*1e5",
+      "formula": "\u03c1 = (k \u2212 1)/k"
+    },
+    {
+      "id": "Ts",
+      "unit": "K",
+      "expr": "900 + (k0 - 1)/4e-5",
+      "formula": "T = 900 K + \u03c1/\u03b1_T"
+    },
+    {
+      "id": "Pth",
+      "unit": "kW",
+      "expr": "2.4*Q*pos(Ts - 820)",
+      "formula": "P = Q\u00b7c_p\u00b7(T \u2212 T_return)"
+    },
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "0.65*pos(1 - T/Ts)",
+      "formula": "\u03b7 = 0.65\u00b7(1 \u2212 T_cold/T)"
+    },
+    {
+      "id": "Pe",
+      "unit": "kW",
+      "expr": "eta*Pth",
+      "formula": "P_e = \u03b7\u00b7P"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "freeze",
+      "kind": "stop",
+      "expr": "Ts - 732",
+      "formula": "T > 732 K"
+    },
+    {
+      "id": "vessel",
+      "kind": "damage",
+      "expr": "980 - Ts",
+      "formula": "T < 980 K"
+    },
+    {
+      "id": "prompt",
+      "kind": "damage",
+      "expr": "0.0065 - (k0 - 1)",
+      "formula": "k \u2212 1 < 0.0065"
+    },
+    {
+      "id": "flow",
+      "kind": "stop",
+      "expr": "Q - 0.05",
+      "formula": "Q > 0"
+    }
+  ],
+  "rate": "clamp(Pe/Pref, 0, 2)",
+  "rate_formula": "output = P_e / P_rated",
+  "heat": "pos(Pth - Pe)/10",
+  "idle_heat": "0.5",
+  "quench_energy": "0",
+  "kappa": 60,
+  "heat_capacity": 200,
+  "timescale": 1,
+  "rate_max": 4
+}

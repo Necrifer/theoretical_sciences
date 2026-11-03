@@ -1,0 +1,19 @@
+{
+  "name": "Morphogenesis",
+  "icon": "theoreticalsciences:turing_morphogen",
+  "advancement": "theoreticalsciences:research/morphogenesis",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:turing_morphogen",
+      "title": "Morphogenesis",
+      "text": "$(thing)Morphogenesis$()$(br2)How a blob of identical cells paints itself into a body: reaction and diffusion. Unlocks Turing morphogens."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Synthetic Biology, Complex Analysis.$(br2)$(thing)Samples$(): 2 Minimal Synthetic Cell.$(br2)$(thing)Derivation$(): Find the relative morphogen concentration C/C0 at x = 50 \u00b5m from the source, with D = 10 \u00b5m^2/s and degradation rate k = 0.001 /s."
+    }
+  ]
+}

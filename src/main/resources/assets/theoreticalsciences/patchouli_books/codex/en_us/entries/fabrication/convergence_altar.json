@@ -1,0 +1,29 @@
+{
+  "name": "Convergence",
+  "icon": "theoreticalsciences:convergence_altar",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:convergence_altar,theoreticalsciences:resonance_pedestal,theoreticalsciences:harmonic_pedestal,theoreticalsciences:absolute_pedestal",
+      "text": "Some things are not made in a machine: they are $(thing)converged$(). Place a $(item)Convergence Altar$() and up to twelve $(item)Resonance Pedestals$() around it (within 4 blocks, at most one block higher or lower). Put the core item on the altar and one item on each pedestal - JEI shows which."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Power the altar (it takes energy from any side), then right-click it with an empty hand or give it a $(thing)redstone pulse$(). Beams run from the pedestals; when it finishes, the pedestals are empty and the core has become the result. Take it off with an empty hand (sneak-click takes the core back instead)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bigger rituals need better pedestals: $(item)Harmonic$() (grade 2) and $(item)Absolute$() (grade 3) pedestals carry what a Resonance Pedestal cannot. Every pedestal in use must be good enough."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Automating it is the trick: pipes may put the core onto the altar and take the result off, and every pedestal takes exactly one item from a pipe (it refuses more, and locks while in use). A comparator reads 15 from the altar when a result waits, 7 while it works. The $(item)Engineering Components$() are all made here."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Much later the $(item)Convergence Engine$() runs every convergence recipe as an ordinary machine, at four times the energy."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:tesla_coil"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.resonant_circuits"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.resonant_circuits.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/electromagnetic_induction",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

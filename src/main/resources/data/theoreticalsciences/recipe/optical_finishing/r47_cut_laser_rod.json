@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:garnet_boule",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:laser_rod",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:laser_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 1.82
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": -0.02,
+        "max": 0.02
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 69.0
+      }
+    ]
+  }
+}

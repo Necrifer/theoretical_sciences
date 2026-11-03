@@ -1,0 +1,19 @@
+{
+  "name": "Quantum Chemistry",
+  "icon": "theoreticalsciences:molecular_orbital_lattice",
+  "advancement": "theoreticalsciences:research/quantum_chemistry",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:molecular_orbital_lattice",
+      "title": "Quantum Chemistry",
+      "text": "$(thing)Quantum Chemistry$()$(br2)Solve the Schr\u00f6dinger equation for a molecule and you have its chemistry. Unlocks orbital lattices and chiral crystals."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 35$(br2)$(thing)Builds on$(): Chemical Bonding, Quantum Entanglement.$(br2)$(thing)Samples$(): 4 Qubit.$(br2)$(thing)Derivation$(): Find the energy of the n = 2 level of the hydrogen atom from the Schr\u00f6dinger equation."
+    }
+  ]
+}

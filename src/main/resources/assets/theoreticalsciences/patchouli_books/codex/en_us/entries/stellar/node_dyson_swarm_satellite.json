@@ -1,0 +1,23 @@
+{
+  "name": "Dyson Swarm Satellite",
+  "icon": "theoreticalsciences:dyson_swarm_satellite",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dyson_swarm_satellite",
+      "title": "Dyson Swarm Satellite",
+      "text": "One collector out of millions that together surround a star in a cloud. Each one harvests a sliver of starlight, computes its own position and beams the energy home. It is a small, neat thing, but many of them together can catch a star."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Solar Statites could hover, but not steer or transmit. In the Metamaterial Weaver I gave each one a Quantum Processor and a superconducting coil, and they began organising themselves into a swarm."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Metamaterial Weaver$().$(br2)$(thing)Unlocked by$(): Dyson Swarm.$(br2)$(thing)Used in$(): Dyson Array, Von Neumann Probe."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/dyson_swarm"
+}

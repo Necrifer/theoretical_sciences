@@ -1,0 +1,46 @@
+{
+  "name": "Decay Chamber",
+  "icon": "theoreticalsciences:decay_chamber",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 26,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:decay_chamber",
+      "title": "Decay Chamber",
+      "text": "A sealed, shielded vessel where short-lived isotopes live out their half-lives. Radon in its tanks decays on a real clock - a day in a minute - into lead.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Draws $(item)Radon-222$() from $(item)Radium Salt$() (which is never used up). Radon in its tanks decays with its real 3.8-day half-life, sped up 1440 times, and every litre that decays leaves one $(item)Radiogenic Lead$(). It gives off gamma rays while radioactive things are inside - shield it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 2 and 1 outputs).$(br2)$(thing)Makes$(): Polonium-210 Source, Radiogenic Lead, Radon-222."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:decay_chamber",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:radium_salt",
+      "text": "Ten milligrams of radium chloride, glowing faintly in the dark by its own decay. Handle it as little as you can.$(br2)Made in $(item)Spectrograph$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:radiogenic_lead",
+      "text": "Lead that was once uranium, radium and radon: the stable end of a decay chain, made one nucleus at a time.$(br2)Made in $(item)Decay Chamber$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Radium Salt$(): Cobalt-57 Source, Gravity-Phase Record, Irradiation Chamber, Poisson Clock, Polonium-210 Source$(li)$(item)Radiogenic Lead$(): Lead Shielding Plate"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radiochemistry"
+}

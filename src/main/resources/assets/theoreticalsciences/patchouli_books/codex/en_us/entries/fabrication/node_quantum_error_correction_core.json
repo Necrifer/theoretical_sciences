@@ -1,0 +1,23 @@
+{
+  "name": "Quantum Error-Correction Core",
+  "icon": "theoreticalsciences:quantum_error_correction_core",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quantum_error_correction_core",
+      "title": "Quantum Error-Correction Core",
+      "text": "A core that protects a quantum computer's fragile states by spreading each logical qubit across many physical ones and fixing errors as they happen. It hums with a steady, careful rhythm. Its lights blink in careful patterns."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Qubits decohere constantly. Error correction encodes one logical qubit in many, so errors can be detected and undone. I combined a quantum processor with an error-correction lattice on spacetime casing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Femtoengineering."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

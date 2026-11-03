@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.node_empirical_dossier",
+  "description": "book.theoreticalsciences.codex.basics.node_empirical_dossier.desc",
+  "icon": {
+    "item": "theoreticalsciences:empirical_dossier"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 79,
+  "y": 32,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:empirical_dossier"
+      },
+      "text": "book.theoreticalsciences.codex.basics.node_empirical_dossier.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.node_empirical_dossier.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.node_empirical_dossier.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/basics__research_time",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/research_synthesis"
+  }
+}

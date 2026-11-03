@@ -1,0 +1,435 @@
+{
+ "anomalous_phenomena": {
+  "goal": "Before calling anything abnormal you must know what normal looks like. A quantity measured many times scatters around its mean μ with spread σ, its values distributed as the bell-shaped density exp(−(x − μ)²/2σ²)/(σ√(2π)). Write the probability that a single measurement lies more than k standard deviations from the mean, on either side.",
+  "name": "two-sided tail of the Gaussian distribution (the significance of a deviation)",
+  "lhs": "P",
+  "form": "2 * int ( μ + k * σ , ∞ , 1 / ( σ * sqrt ( 2 * π ) ) * exp ( - ( x - μ ) ^ 2 / ( 2 * σ ^ 2 ) ) , x )",
+  "expr": "sqrt ( 2 / π ) * exp ( - k ^ 2 / 2 ) / k * 10000000",
+  "ask": "For large k the integral is close to √(2/π)·e^{−k²/2}/k. Physics calls a result a discovery at k = 5: find the chance of a deviation that large by accident, in units of 10⁻⁷.",
+  "vars": {
+   "P": "probability of a deviation of k σ or more",
+   "μ": "mean",
+   "k": "number of standard deviations",
+   "σ": "standard deviation",
+   "x": "measured value"
+  },
+  "given": {
+   "k": 5
+  },
+  "unit": "10⁻⁷",
+  "method": "The two tails are equal by symmetry: integrate one from μ + kσ to infinity and double it. Substitute u = (x − μ)/σ; for large u the tail integral of e^{−u²/2} is e^{−k²/2}/k.",
+  "distractors": [
+   "ν",
+   "ln",
+   "3"
+  ]
+ },
+ "topological_defects": {
+  "goal": "A real scalar field φ in one dimension has a potential with two equal minima, at φ = ±v, and a coupling λ: the symmetry φ → −φ is broken by whichever vacuum it falls into. Far to the left it sits at −v, far to the right at +v, and in between it must climb over the hill. Write the total energy of that static configuration: gradient energy plus potential, along the whole line.",
+  "name": "energy of a kink (domain wall) of a spontaneously broken Z₂ symmetry",
+  "lhs": "E",
+  "form": "int ( - ∞ , ∞ , 1 / 2 * d ( φ , x ) ^ 2 + λ / 4 * ( φ ^ 2 - v ^ 2 ) ^ 2 , x )",
+  "expr": "2 * sqrt ( 2 ) / 3 * sqrt ( λ ) * v ^ 3",
+  "ask": "The minimum-energy solution is φ = v·tanh(v x √(λ/2)), and its energy is E = (2√2/3)·√λ·v³. Find it for the coupling and vacuum value below (natural units).",
+  "vars": {
+   "E": "energy of the defect",
+   "φ": "scalar field",
+   "x": "position",
+   "λ": "quartic coupling",
+   "v": "vacuum value of the field"
+  },
+  "given": {
+   "λ": 0.5,
+   "v": 2
+  },
+  "unit": "natural units",
+  "method": "Energy = ∫[½φ'² + V(φ)]dx with V = (λ/4)(φ² − v²)². The minimising solution has ½φ'² = V, so dφ/dx = √(2V): change the integral to one over φ from −v to v.",
+  "distractors": [
+   "t",
+   "exp",
+   "3"
+  ]
+ },
+ "autocatalysis": {
+  "goal": "Two reagents A and B are fed in at constant concentration. A makes an intermediate X; B turns X into Y; X decays; and - the autocatalytic step - two X and one Y make three X, so X catalyses its own production. In dimensionless units with every rate constant 1, write how fast X changes.",
+  "name": "Brusselator (autocatalytic chemical oscillator), the X equation",
+  "lhs": "d ( X , t )",
+  "form": "A - ( B + 1 ) * X + X ^ 2 * Y",
+  "expr": "1 + A ^ 2",
+  "ask": "The steady state is X = A, Y = B/A. It loses stability - and the mixture starts to oscillate on its own, a chemical clock - once B exceeds 1 + A². Find that critical B for the A below.",
+  "vars": {
+   "X": "autocatalytic intermediate",
+   "Y": "second intermediate",
+   "A": "feed concentration of the first reagent",
+   "B": "feed concentration of the second reagent",
+   "t": "time"
+  },
+  "given": {
+   "A": 1.5
+  },
+  "unit": "",
+  "method": "Add up the four steps: A → X adds A, B + X → Y removes BX, X → product removes X, 2X + Y → 3X adds X²Y.",
+  "distractors": [
+   "k",
+   "2",
+   "exp"
+  ]
+ },
+ "oncogenesis": {
+  "goal": "A cell becomes malignant only after n separate rare mutations, in a fixed order, each happening at a small constant rate k_j per year. The chance that a single cell has collected all n by age t is the product of the rates times the volume of the ordered region of mutation times inside [0, t]. Write the yearly incidence of the disease at age t: the derivative of that chance.",
+  "name": "Armitage–Doll multistage model of carcinogenesis",
+  "lhs": "I",
+  "form": "prod ( j , 1 , n , k _ j ) * t ^ ( n - 1 ) / ( n - 1 ) !",
+  "expr": "100000 * k ^ 6 * t ^ 5 / 120",
+  "ask": "Most cancers fit about six stages. With every k_j = k per year and n = 6, find the incidence at age t, in cases per 100,000 people per year (it rises as the fifth power of age - as measured).",
+  "vars": {
+   "I": "incidence (new cases per year)",
+   "j": "stage index",
+   "n": "number of mutations needed",
+   "k": "mutation rate of a stage (per year)",
+   "t": "age"
+  },
+  "given": {
+   "k": 0.01,
+   "t": 70
+  },
+  "unit": "per 100,000 per year",
+  "method": "The n mutation times t₁ < t₂ < ... < t_n inside [0, t] fill a simplex of volume tⁿ/n!. Multiply by the rates and differentiate in t.",
+  "distractors": [
+   "exp",
+   "ln",
+   "e"
+  ]
+ },
+ "pathological_objects": {
+  "goal": "Build a curve as a sum of ever faster, ever smaller waves: the n-th term is a cosine whose frequency grows like bⁿ and whose amplitude shrinks like aⁿ, with 0 < a < 1 and ab large. The sum converges everywhere and is continuous, yet it has a corner at every point - a monster that broke the nineteenth-century idea of a function. Write it.",
+  "name": "Weierstrass function (continuous everywhere, differentiable nowhere)",
+  "lhs": "W",
+  "form": "sum ( n , 0 , ∞ , a ^ n * cos ( b ^ n * π * x ) )",
+  "expr": "2 + ln ( a ) / ln ( b )",
+  "ask": "Its graph is a fractal: zoom in and it never straightens. Its box-counting dimension is D = 2 + ln a / ln b. Find D for the a and b below.",
+  "vars": {
+   "W": "the curve",
+   "x": "position",
+   "n": "term index",
+   "a": "amplitude ratio (0 < a < 1)",
+   "b": "frequency ratio"
+  },
+  "given": {
+   "a": 0.5,
+   "b": 7
+  },
+  "unit": "",
+  "method": "Each term is bounded by aⁿ, so the series converges uniformly (a continuous limit). The derivative of the n-th term grows like (ab)ⁿ, so the differentiated series diverges everywhere.",
+  "distractors": [
+   "sin",
+   "exp",
+   "k"
+  ]
+ },
+ "self_replication": {
+  "goal": "A replicator - a self-printing program, a virus particle, a rumour - makes k copies of itself with probability p_k before it is destroyed, and every copy does the same independently. The lineage dies out only if every one of the first copy's offspring lineages dies out. Write the equation for the probability q that the lineage eventually dies out.",
+  "name": "extinction probability of a Galton–Watson branching process (generating-function fixed point)",
+  "lhs": "q",
+  "form": "sum ( k , 0 , ∞ , p _ k * q ^ k )",
+  "expr": "1 - ( 1 - p ) / p",
+  "ask": "A replicator that makes either two copies (probability p) or none has q = (1 − p)/p when p > ½. Find the chance that its lineage escapes destruction forever, 1 − q.",
+  "vars": {
+   "q": "probability the lineage dies out",
+   "k": "number of copies",
+   "p": "probability of making copies (p_k: of exactly k)"
+  },
+  "given": {
+   "p": 0.6
+  },
+  "unit": "",
+  "method": "Condition on the first generation: with k copies, all k independent lineages must die out, with probability q^k. Sum over k.",
+  "distractors": [
+   "n",
+   "exp",
+   "1"
+  ]
+ },
+ "immune_evasion": {
+  "goal": "A tumour of N cells grows fast while it is small and slows as it outgrows its blood supply: its specific growth rate decays exponentially in time at a rate α, so that it levels off at a carrying capacity K. Starting from N₀ cells, write the number of cells at time t.",
+  "name": "Gompertz law of tumour growth",
+  "lhs": "N",
+  "form": "K * exp ( ln ( N _ 0 / K ) * exp ( - α * t ) )",
+  "expr": "K * exp ( ln ( n / K ) * exp ( - α * t ) )",
+  "ask": "With K and the starting size n in units of 10⁹ cells, α per month and t in months, find the size of the tumour.",
+  "vars": {
+   "N": "number of tumour cells",
+   "K": "carrying capacity",
+   "α": "decay rate of the growth rate",
+   "t": "time",
+   "n": "starting number of cells (N₀, 10⁹ cells)"
+  },
+  "given": {
+   "K": 1000,
+   "n": 1,
+   "α": 0.1,
+   "t": 20
+  },
+  "unit": "10⁹ cells",
+  "method": "Write d ln N/dt = r e^{−αt} and integrate; or note that d ln N/dt = α ln(K/N), so ln(N/K) itself decays exponentially.",
+  "distractors": [
+   "r",
+   "β",
+   "2"
+  ]
+ },
+ "clonal_evolution": {
+  "goal": "A tumour holds n clones; clone i makes up a fraction x_i of it and has fitness f_i - its net growth rate under the current treatment. A clone grows in share only if it is fitter than the tumour's average. Write how the fraction of clone i changes.",
+  "name": "replicator equation (selection among competing clones)",
+  "lhs": "d ( x _ i , t )",
+  "form": "x _ i * ( f _ i - sum ( j , 1 , n , x _ j * f _ j ) )",
+  "expr": "x * exp ( s * t ) / ( 1 - x + x * exp ( s * t ) )",
+  "ask": "A resistant clone starts as a fraction x and grows faster than the rest by s per day under treatment; its share is then x e^{st}/(1 − x + x e^{st}). Find its share after t days.",
+  "vars": {
+   "x": "fraction of the tumour (x in step 2: the resistant clone's starting share)",
+   "i": "clone index",
+   "j": "summation index",
+   "f": "fitness",
+   "n": "number of clones",
+   "t": "time",
+   "s": "fitness advantage of the resistant clone (per day)"
+  },
+  "given": {
+   "x": 0.001,
+   "s": 0.5,
+   "t": 20
+  },
+  "unit": "",
+  "method": "Each clone grows as dN_i/dt = f_i N_i. Differentiate x_i = N_i/ΣN_j with the quotient rule; the denominator brings in the mean fitness.",
+  "distractors": [
+   "μ",
+   "ln",
+   "2"
+  ]
+ },
+ "invasion_fronts": {
+  "goal": "Anomalous cells of density u diffuse through tissue with diffusivity D and divide at a rate r while there is room, up to a carrying density K. Write how the density changes in space and time: diffusion plus self-limiting growth.",
+  "name": "Fisher–KPP reaction–diffusion equation (a travelling invasion front)",
+  "lhs": "pd ( u , t )",
+  "form": "D * lap ( u ) + r * u * ( 1 - u / K )",
+  "expr": "2 * sqrt ( D * r )",
+  "ask": "Started from a small seed, the anomaly invades as a front that settles to the speed c = 2√(Dr). With D in mm²/day and r per day, find the speed of the front in mm/day.",
+  "vars": {
+   "u": "density of anomalous cells",
+   "t": "time",
+   "D": "diffusivity",
+   "r": "growth rate",
+   "K": "carrying density"
+  },
+  "given": {
+   "D": 0.05,
+   "r": 0.2
+  },
+  "unit": "mm/day",
+  "method": "Linearise at the leading edge (u small) and look for a front u ∝ e^{−λ(x − ct)}: c = Dλ + r/λ, smallest at λ = √(r/D).",
+  "distractors": [
+   "v",
+   "exp",
+   "2"
+  ]
+ },
+ "epidemic_dynamics": {
+  "goal": "A population of N is split into the susceptible S, the infected I and the recovered. Infected hosts meet others at random and transmit at a rate β per contact with a susceptible; they recover at a rate γ and die of other causes at a rate μ. Write how the number of infected changes.",
+  "name": "Kermack–McKendrick SIR model with vital dynamics, the infected equation",
+  "lhs": "d ( I , t )",
+  "form": "β * S * I / N - ( γ + μ ) * I",
+  "expr": "1 - ( γ + μ ) / β",
+  "ask": "At the start S ≈ N, and the infection grows only if R₀ = β/(γ + μ) is above 1 - a phase transition. It stops spreading once a fraction 1 − 1/R₀ is immune. Find that herd-immunity threshold.",
+  "vars": {
+   "I": "number infected",
+   "t": "time",
+   "β": "transmission rate",
+   "S": "number susceptible",
+   "N": "population",
+   "γ": "recovery rate",
+   "μ": "background death rate"
+  },
+  "given": {
+   "β": 0.6,
+   "γ": 0.2,
+   "μ": 0.01
+  },
+  "unit": "",
+  "method": "New infections come from S·I contacts, a fraction I/N of each susceptible's meetings; infected leave by recovery or death.",
+  "distractors": [
+   "R",
+   "exp",
+   "k"
+  ]
+ },
+ "anomalous_leakage": {
+  "goal": "Massless fermions have a chiral charge that the classical equations conserve exactly. Put them in parallel electric and magnetic fields and quantum effects break that conservation: chiral charge appears out of the vacuum at a rate set by the fine-structure constant through e², and by the fields' dot product. Write the source of chiral charge per unit volume, with ħ and c written out.",
+  "name": "Adler–Bell–Jackiw chiral anomaly",
+  "lhs": "pd ( ρ , t ) + div ( vec ( j ) )",
+  "form": "e ^ 2 / ( 2 * π ^ 2 * ħ ^ 2 * c ) * vec ( E ) · vec ( B )",
+  "expr": "2 * α / π * E * B",
+  "ask": "In natural units (ħ = c = 1, e² = 4πα) the source is (2α/π)·E·B for parallel fields. Find it for the fields below.",
+  "vars": {
+   "ρ": "chiral charge density",
+   "t": "time",
+   "j": "chiral current",
+   "e": "elementary charge",
+   "E": "electric field",
+   "B": "magnetic field",
+   "α": "fine-structure constant",
+   "ħ": "reduced Planck constant",
+   "c": "speed of light"
+  },
+  "given": {
+   "α": 0.0073,
+   "E": 2,
+   "B": 3
+  },
+  "unit": "natural units",
+  "method": "In a magnetic field the fermions fill Landau levels; the lowest one is chiral and one-dimensional. An electric field along B pumps states through it at a rate eE/2π per unit length, and the level holds eB/2π states per unit area.",
+  "distractors": [
+   "G",
+   "kB",
+   "4"
+  ]
+ },
+ "symbiosis_parasitism": {
+  "goal": "Two populations N₁ and N₂ share a world. Each grows logistically at rate r_i up to its own capacity K_i, and each member of the second population counts as α members of the first against that capacity - α > 0 is competition, α < 0 is help. Write how the first population changes.",
+  "name": "competitive Lotka–Volterra equations (and mutualism)",
+  "lhs": "d ( N _ 1 , t )",
+  "form": "r _ 1 * N _ 1 * ( 1 - ( N _ 1 + α * N _ 2 ) / K _ 1 )",
+  "expr": "( K - α * L ) / ( 1 - α * β )",
+  "ask": "The second population has the mirror equation with coefficient β. They coexist at N₁* = (K₁ − αK₂)/(1 − αβ). With K₁ = K and K₂ = L, find N₁*.",
+  "vars": {
+   "N": "population",
+   "r": "growth rate",
+   "α": "effect of population 2 on 1",
+   "K": "carrying capacity (of 1)",
+   "L": "carrying capacity of 2",
+   "β": "effect of population 1 on 2",
+   "t": "time"
+  },
+  "given": {
+   "K": 100,
+   "L": 80,
+   "α": 0.5,
+   "β": 0.4
+  },
+  "unit": "",
+  "method": "Logistic growth r N(1 − N/K) with the other population added to the crowding term. For the equilibrium set both brackets to zero and solve the pair.",
+  "distractors": [
+   "γ",
+   "exp",
+   "2"
+  ]
+ },
+ "anomaly_scaling": {
+  "goal": "Catalogue anomalies by size - tumours, outbreaks, avalanches, ruptures - and above a smallest size s₀ their sizes follow a power law: the probability density falls off as s^(−τ), normalised by (τ − 1)/s₀. Write the mean size of an anomaly.",
+  "name": "mean of a power-law (Pareto) distribution",
+  "lhs": "avg ( s )",
+  "form": "int ( s _ 0 , ∞ , s * ( τ - 1 ) / s _ 0 * ( s / s _ 0 ) ^ ( - τ ) , s )",
+  "expr": "s * ( τ - 1 ) / ( τ - 2 )",
+  "ask": "For τ > 2 the integral is s₀(τ − 1)/(τ − 2); at τ ≤ 2 it diverges - the largest anomaly dominates everything. With s₀ = s, find the mean size.",
+  "vars": {
+   "s": "anomaly size (s₀ in step 2: the smallest size)",
+   "τ": "power-law exponent"
+  },
+  "given": {
+   "s": 10,
+   "τ": 2.5
+  },
+  "unit": "",
+  "method": "Substitute u = s/s₀: the integrand becomes (τ − 1)u^{1−τ}, and ∫₁^∞ u^{1−τ}du = 1/(τ − 2).",
+  "distractors": [
+   "exp",
+   "ln",
+   "σ"
+  ]
+ },
+ "containment_protocols": {
+  "goal": "A contained anomalous unit makes new ones at a constant rate β while it is active, and stops being active either by clearing itself (rate γ) or by being caught by the quarantine field (rate q), so it is still active a time τ after it appeared with probability exp(−(γ + q)τ). Write the expected number of new units it makes in its whole active life.",
+  "name": "effective reproduction number under quarantine (renewal integral)",
+  "lhs": "R _ e",
+  "form": "int ( 0 , ∞ , β * exp ( - ( γ + q ) * τ ) , τ )",
+  "expr": "β - γ",
+  "ask": "The integral is β/(γ + q). Find the smallest quarantine rate q that holds R_e at 1 (containment) for the β and γ below, in units per day.",
+  "vars": {
+   "R": "reproduction number",
+   "e": "effective",
+   "β": "rate of making new units",
+   "γ": "natural clearance rate",
+   "q": "quarantine rate",
+   "τ": "age of a unit"
+  },
+  "given": {
+   "β": 0.5,
+   "γ": 0.1
+  },
+  "unit": "per day",
+  "method": "Integrate the rate of making new units times the probability of still being active at each age.",
+  "distractors": [
+   "N",
+   "ln",
+   "2"
+  ]
+ },
+ "targeted_therapy": {
+  "goal": "An anomaly has N₀ cells able to regrow it. It is dosed in n equal fractions of D; each fraction lets each cell survive with probability exp(−αD − βD²). It is resolved only if not one cell survives, and the survivors are rare, independent events. Write the probability of resolution.",
+  "name": "tumour control probability (linear-quadratic cell kill, Poisson statistics)",
+  "lhs": "P",
+  "form": "exp ( - N _ 0 * exp ( - n * ( α * D + β * D ^ 2 ) ) )",
+  "expr": "exp ( - N * exp ( - n * ( α * D + β * D ^ 2 ) ) )",
+  "ask": "Find the probability of resolution for 10⁹ clonogens, 30 fractions of 2 Gy, α = 0.3 Gy⁻¹ and β = 0.03 Gy⁻².",
+  "vars": {
+   "P": "probability of resolution",
+   "N": "number of clonogenic cells",
+   "n": "number of fractions",
+   "α": "linear sensitivity (per Gy)",
+   "β": "quadratic sensitivity (per Gy²)",
+   "D": "dose per fraction (Gy)"
+  },
+  "given": {
+   "N": 1000000000,
+   "n": 30,
+   "α": 0.3,
+   "β": 0.03,
+   "D": 2
+  },
+  "unit": "",
+  "method": "The expected number of survivors is N₀ times the survival per fraction to the n-th power. For rare independent survivors the chance of none is e^{−mean}.",
+  "distractors": [
+   "γ",
+   "t",
+   "ln"
+  ]
+ },
+ "anomaly_resolution": {
+  "goal": "A quantity G measured at energy scale μ seems to break the scaling a dimensionless theory should have. The breaking is absorbed by letting the coupling g run with μ at the rate β(g) = μ dg/dμ, and by giving each of the n fields in G an extra, anomalous scaling γ. Write the condition that makes the physics independent of the arbitrary scale μ.",
+  "name": "Callan–Symanzik equation (the anomalous dimension)",
+  "lhs": "0",
+  "form": "μ * pd ( G , μ ) + β * pd ( G , g ) + n * γ * G",
+  "expr": "r ^ ( - n * γ )",
+  "ask": "At a fixed point β = 0, and G then scales as μ^{−nγ}: the anomaly is just a power law. With n fields of anomalous dimension γ, find G(rμ)/G(μ) for a change of scale by r.",
+  "vars": {
+   "μ": "energy scale",
+   "G": "Green function (the measured quantity)",
+   "β": "beta function",
+   "g": "coupling",
+   "n": "number of fields",
+   "γ": "anomalous dimension",
+   "r": "ratio of scales"
+  },
+  "given": {
+   "r": 10,
+   "n": 2,
+   "γ": 0.25
+  },
+  "unit": "",
+  "method": "The bare G does not depend on μ; the renormalised one differs from it by a factor Z^{n/2}. Differentiate in μ with the chain rule through g.",
+  "distractors": [
+   "λ",
+   "ln",
+   "ħ"
+  ]
+ }
+}

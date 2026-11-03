@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_hotel_key",
+  "description": "book.theoreticalsciences.codex.mathematics.node_hotel_key.desc",
+  "icon": {
+    "item": "theoreticalsciences:hotel_key"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 188,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hotel_key"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_hotel_key.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_hotel_key.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_hotel_key.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__ordinal_recursor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

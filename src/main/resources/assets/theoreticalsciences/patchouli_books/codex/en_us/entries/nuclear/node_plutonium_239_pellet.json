@@ -1,0 +1,19 @@
+{
+  "name": "Plutonium-239 Pellet",
+  "icon": "theoreticalsciences:plutonium_239_pellet",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:plutonium_239_pellet",
+      "title": "Plutonium-239 Pellet",
+      "text": "Bred from uranium-238 in the reactor and taken out of its spent salt. Warm to the touch from its own alpha decay."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gas Centrifuge Cascade$().$(br2)$(thing)Unlocked by$(): Nuclear Fission.$(br2)$(thing)Used in$(): Californium-252 Neutron Source, Molten Salt Fuel."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

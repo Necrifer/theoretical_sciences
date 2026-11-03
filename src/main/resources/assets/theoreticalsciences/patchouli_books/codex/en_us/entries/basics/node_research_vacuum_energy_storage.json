@@ -1,0 +1,19 @@
+{
+  "name": "Vacuum Energy Storage",
+  "icon": "theoreticalsciences:casimir_energy_cell",
+  "advancement": "theoreticalsciences:research/vacuum_energy_storage",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:casimir_energy_cell",
+      "title": "Vacuum Energy Storage",
+      "text": "$(thing)Vacuum Energy Storage$()$(br2)Store energy in the difference between two vacua. Unlocks the Energy Cells."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 15$(br2)$(thing)Builds on$(): The Casimir Effect, Cryogenics.$(br2)$(thing)Samples$(): 4 Casimir Plate.$(br2)$(thing)Derivation$(): Find the energy released when a volume V of false vacuum relaxes to the true vacuum."
+    }
+  ]
+}

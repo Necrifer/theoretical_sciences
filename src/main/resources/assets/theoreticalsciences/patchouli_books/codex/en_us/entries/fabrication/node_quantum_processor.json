@@ -1,0 +1,23 @@
+{
+  "name": "Quantum Processor",
+  "icon": "theoreticalsciences:quantum_processor",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quantum_processor",
+      "title": "Quantum Processor",
+      "text": "A fault-tolerant array of logical qubits, each one encoded across many physical ones so errors can be caught and corrected before they spread. It runs algorithms ordinary computers cannot reach in the lifetime of a star. The casing stays cold, and when it works it makes no sound at all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Only a Matrioshka Brain had the patience to lay out computronium finely enough for error-corrected logic. I bathed the ingot in Synaptic Fluid and let the brain design the layout; older processors also turned up in anomaly vaults and derelict stations."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Matrioshka Brain$().$(br2)$(thing)Found in$(): Anomaly Vault chests.$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Accretion Disk Reactor, Analog Black Hole, Antiproton Decelerator, Assembly Matrix, Autonomous Extreme Assembler, Calorimeter Detector Array, Chrono Loom, Computronium Ingot and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

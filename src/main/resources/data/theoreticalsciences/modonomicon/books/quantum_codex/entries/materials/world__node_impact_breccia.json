@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_impact_breccia",
+  "description": "book.theoreticalsciences.codex.world.node_impact_breccia.desc",
+  "icon": {
+    "item": "theoreticalsciences:impact_breccia"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 8,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:impact_breccia"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_impact_breccia.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

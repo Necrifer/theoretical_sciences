@@ -1,0 +1,21 @@
+{
+  "name": "Singularities of Everything",
+  "icon": "theoreticalsciences:omniscience_catalyst",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dynamic_singularity,theoreticalsciences:singularity_cluster",
+      "text": "Every ingot of every installed mod (anything tagged c:ingots) has its own singularity, made in the $(item)Singularity Compactor$() - and the $(item)Omniscience Catalyst$() needs one of each, on top of its usual ingredients. Packs can add more (data/<namespace>/ts_singularities/*.json), with their own names, counts and colours; colours not given come from the item's texture."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When there are more singularities than the Extreme Assembly Table can hold, nine at a time are condensed (with a Micro Singularity) into a $(item)Singularity Cluster$() - and clusters into Hyperclusters - and the catalyst asks for those instead. JEI shows what this game needs. Clusters can be renamed with a resource pack or in ts_singularities/_clusters.json."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Biosphere Compendium$() and the $(item)Primordial Harvest$() likewise take one of every meat, catch and mob drop - every crop, seed, fruit and flower - of every installed mod, as many as fit."
+    }
+  ]
+}

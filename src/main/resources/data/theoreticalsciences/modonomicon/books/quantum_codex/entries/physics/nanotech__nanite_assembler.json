@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.nanotech.nanite_assembler",
+  "description": "book.theoreticalsciences.codex.nanotech.nanite_assembler.desc",
+  "icon": {
+    "item": "theoreticalsciences:nanite_assembler"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 34,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:nanite_assembler"
+      },
+      "text": "book.theoreticalsciences.codex.nanotech.nanite_assembler.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nanotech.nanite_assembler.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nanotech.nanite_assembler.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nanotech.nanite_assembler.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:nanite_assembler"
+      },
+      "text": "book.theoreticalsciences.codex.nanotech.nanite_assembler.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__metamaterial_weaver"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nanotechnology"
+  }
+}

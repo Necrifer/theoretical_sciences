@@ -1,0 +1,26 @@
+{
+  "name": "Power & Automation",
+  "icon": "theoreticalsciences:interface_port",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:interface_port",
+      "text": "Housekeeping. All my machines use standard $(thing)FE$() and expose items, fluids and energy on every side, so any pipe, cable or storage mod works. Inputs can be inserted; outputs can be extracted."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Fluids move the same way: pipes, AE2 import/export buses, storage buses and pattern providers can all fill input tanks and drain output tanks.$(br2)Multiblocks talk to the outside world through $(item)Interface Ports$() placed in the marked positions - and one port is enough for items, fluids and energy alike."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Working by hand: right-click a machine with a bucket or a $(item)Containment Cell$(), or click a tank in its screen while holding one. Containment Cells are proper fluid containers, so tanks, pipes and AE2 can fill and empty them too. Good - some of what I bottle should never touch a bucket."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:interface_port",
+      "text": "Made in a crafting grid."
+    }
+  ]
+}

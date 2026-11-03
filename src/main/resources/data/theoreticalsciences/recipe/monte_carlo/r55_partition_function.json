@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:entropy_die",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:normal_distribution_crystal",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:partition_function_matrix",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 1600,
+  "research": "theoreticalsciences:statistical_mechanics",
+  "unscaled": true,
+  "insight_per_run": 12,
+  "physics": {
+    "vars": {
+      "sg": 20.0,
+      "opt": 0.6
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 30.0
+      }
+    ]
+  }
+}

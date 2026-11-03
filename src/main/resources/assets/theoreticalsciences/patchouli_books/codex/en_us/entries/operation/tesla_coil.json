@@ -1,0 +1,24 @@
+{
+  "name": "Tesla Coil",
+  "icon": "theoreticalsciences:tesla_coil",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 68,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The secondary - a long winding and its toroid - rings at its own frequency, 1/2\u03c0\u221a(L\u2082C\u2082) = 159 kHz. The primary, a capacitor and a few turns, rings at 1/2\u03c0\u221a(L\u2081C\u2081). Only when the two agree does the energy slosh across to the secondary, where it appears as a voltage higher by \u221a(C\u2081/C\u2082). In air an arc reaches about a metre for every 700 kV."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Primary capacitance, Primary turns tapped, Charging voltage.$(br2)$(thing)Disturbance$(): Spark-gap jitter: the primary's frequency wanders by \u00b10.5%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Flashover down the secondary: above 5 MV it arcs along its own winding.$(br2)$(thing)Rate$(): Longer arcs work the charge faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Primary inductance: L\u2081 \u221d N\u00b2$(br)Primary frequency: f\u2081 = 1/2\u03c0\u221a(L\u2081C\u2081)$(br)Secondary frequency: f\u2082 = 1/2\u03c0\u221a(L\u2082C\u2082)$(br)Detuning: |f\u2081/f\u2082 \u2212 1|$(br)Secondary voltage: V\u2082 = \u03b7\u00b7V\u2081\u00b7\u221a(C\u2081/C\u2082)$(br)Arc length: \u2113 \u2248 V/(700 kV/m)"
+    }
+  ]
+}

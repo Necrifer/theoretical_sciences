@@ -1,0 +1,75 @@
+{
+  "title": "Nuclear Binding Energy",
+  "description": "A nucleus weighs less than the protons and neutrons in it. The missing mass is the energy that binds them - millions of times more per atom than any chemical bond. The way into fission and fusion.",
+  "icon": "theoreticalsciences:geiger_counter",
+  "x": 3,
+  "y": 13,
+  "insight": 25,
+  "requires": [
+    "theoreticalsciences:radioactivity",
+    "theoreticalsciences:chemical_bonding"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:radium_salt",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A nucleus of Z protons and A \u2212 Z neutrons weighs less than its parts did apart. Write the energy B that holds it together, from the proton mass m_p, the neutron mass m_n, the nucleus's mass M and the speed of light.",
+    "name": "Nuclear binding energy (mass defect)",
+    "lhs": "B",
+    "form": "( Z * m _ p + ( A - Z ) * m _ n - M ) * c ^ 2",
+    "expr": "( Z * P + ( A - Z ) * N - M ) * 931.494",
+    "ask": "Find B in MeV for helium-4, with masses in atomic mass units (1 u\u00b7c\u00b2 = 931.494 MeV).",
+    "vars": {
+      "B": "binding energy (MeV)",
+      "Z": "protons",
+      "A": "mass number",
+      "m": "mass",
+      "p": "of a proton",
+      "n": "of a neutron",
+      "M": "mass of the nucleus (u)",
+      "c": "speed of light",
+      "P": "proton mass (u)",
+      "N": "neutron mass (u)"
+    },
+    "given": {
+      "Z": 2,
+      "A": 4,
+      "P": 1.007276,
+      "N": 1.008665,
+      "M": 4.001506
+    },
+    "unit": "MeV",
+    "method": "Mass and energy are one: the mass that went missing when the nucleons came together left as energy, E = \u0394m c\u00b2.",
+    "distractors": [
+      "e",
+      "h",
+      "2"
+    ],
+    "vary": {
+      "Z": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "P": [
+        0.92,
+        1.09,
+        0.01
+      ],
+      "N": [
+        0.92,
+        1.09,
+        0.01
+      ],
+      "M": [
+        3.68,
+        4.33,
+        0.01
+      ]
+    }
+  }
+}

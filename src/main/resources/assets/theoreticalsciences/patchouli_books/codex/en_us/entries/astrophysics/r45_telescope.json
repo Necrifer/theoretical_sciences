@@ -1,0 +1,30 @@
+{
+  "name": "The Reflecting Telescope",
+  "icon": "theoreticalsciences:reflecting_telescope",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:reflecting_telescope,theoreticalsciences:photographic_plate,theoreticalsciences:star_field_plate,theoreticalsciences:deep_sky_plate",
+      "text": "The $(item)Reflecting Telescope$() is a mirror under a dome. It works only at $(thing)night$(), with $(thing)open sky$() above its slit and no rain - and every plate it exposes teaches you something: each run gives $(thing)Insight$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Two settings decide what it records. The $(thing)aperture$() D gathers light in proportion to D\u00b2, and the $(thing)exposure$() t adds up what arrives: the faintest star on the plate, the limiting magnitude, rises by 5\u00b7log D and 1.25\u00b7log t. Each magnitude is 2.5 times fainter. A full Moon brightens the sky by three magnitudes and drowns the faintest stars."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The air smears every star into a $(thing)seeing$() disc of about 2.5\u2033 at sea level - better the higher you build. The mirror cannot beat its own $(thing)diffraction limit$(), 1.22\u03bb/D. But in exposures shorter than about 50 ms the turbulence stands still: take very short ones and keep the sharpest - $(thing)lucky imaging$() - for a $(item)Planetary Plate$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "What it makes: $(item)Star Field Plates$() (magnitude 9), $(item)Stellar Spectrum Plates$() through a Spectral Plate (12), $(item)Planetary Plates$() (sharper than 1.1\u2033), and, once you know stellar astrophysics, $(item)Deep Sky Plates$() of galaxies (16.5 - a big mirror, long exposures and a dark sky)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The plates are evidence, too: the $(item)Bayesian Analyzer$() turns a Prior Tablet and a Stellar Spectrum Plate (or two Star Field Plates) into Posterior Tablets. And star positions against the plumb line are how the geoid was first mapped - a Star Field Plate and two Survey Maps make two $(item)Geoid Models$(). Mirror blanks ground with $(item)Garnet$() grit come out twice as many."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/telescope_optics"
+}

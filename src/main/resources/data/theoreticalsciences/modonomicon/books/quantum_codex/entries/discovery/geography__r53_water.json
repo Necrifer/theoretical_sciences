@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.r53_water",
+  "description": "book.theoreticalsciences.codex.geography.r53_water.desc",
+  "icon": {
+    "item": "theoreticalsciences:aquifer_pump"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 61,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:aquifer_pump"
+      },
+      "text": "book.theoreticalsciences.codex.geography.r53_water.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r53_water.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/geography__r37_ground"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hydrology"
+  }
+}

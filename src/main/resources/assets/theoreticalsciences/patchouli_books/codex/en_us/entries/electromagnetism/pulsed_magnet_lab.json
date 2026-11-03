@@ -1,0 +1,86 @@
+{
+  "name": "Pulsed Magnet Lab",
+  "icon": "theoreticalsciences:pulsed_magnet_lab",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 109,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pulsed_magnet_lab",
+      "title": "Pulsed Magnet Lab",
+      "text": "A coil of Bitter plates and a room of capacitors dumped into it: a field of up to a hundred tesla, for a few milliseconds.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the turns, the current and how long the pulse lasts. The field is B = \u03bc\u2080NI/L. Every storey adds copper and cooling to the coil. All that current heats it (\u0394T \u221d NI\u00b2t/size) - past 400 K it melts - and past 100 T the magnetic pressure tears it apart."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Pulsed Magnet Lab",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_________",
+            "____A____",
+            "___ABA___",
+            "____A____",
+            "_________",
+            "_________"
+          ],
+          [
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_"
+          ],
+          [
+            "_DDD0DDD_",
+            "AD     DA",
+            "AE     EA",
+            "_E  B  E_",
+            "AE     EA",
+            "AD     DA",
+            "_DDDDDDD_"
+          ],
+          [
+            "_DDDFDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_FDDDDDF_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDFDDD_"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:pulsed_magnet_lab",
+          "A": "theoreticalsciences:capacitor_bank",
+          "B": "theoreticalsciences:bitter_plate_stack",
+          "D": "theoreticalsciences:pulsed_lab_casing",
+          "E": "theoreticalsciences:containment_field_glass",
+          "F": "#theoreticalsciences:multiblock/pulsed_lab_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Magnetar Crust Fragment, Magnetic Monopole, Magnetite, Samarium-Cobalt Magnet."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pulsed_magnet_lab",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetic_confinement"
+}

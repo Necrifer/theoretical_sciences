@@ -1,0 +1,70 @@
+{
+  "title": "Frame Dragging",
+  "description": "A spinning mass drags spacetime round with it: a gyroscope in orbit round the Earth turns, by forty milliarcseconds a year, for no other reason. Unlocks the Lense-Thirring Vortex Core.",
+  "icon": "theoreticalsciences:precision_gyroscope",
+  "x": 12,
+  "y": 4,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:geodesics",
+    "theoreticalsciences:penrose_process"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:precision_gyroscope",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:pulsar_timing_record",
+      "count": 2
+    }
+  ],
+  "time": 630,
+  "puzzle": {
+    "goal": "A body with angular momentum L drags the spacetime round it. Write the rate \u03a9 at which a gyroscope's axis is turned at distance r, with G and c.",
+    "name": "Lense-Thirring precession",
+    "lhs": "\u03a9",
+    "form": "2 * G * L / ( c ^ 2 * r ^ 3 )",
+    "expr": "2 * G * L / ( c ^ 2 * r ^ 3 ) * u",
+    "ask": "Find \u03a9 in milliarcseconds a year (u = @{u}) above the Earth: L = @{L} kg\u00b7m\u00b2/s, r = @{r} m, G = 6.674e-11, c = 2.998e8.",
+    "vars": {
+      "\u03a9": "precession (mas/yr)",
+      "G": "gravitational constant",
+      "L": "angular momentum",
+      "c": "speed of light",
+      "r": "distance (m)",
+      "u": "rad/s \u2192 mas/yr"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "L": 5.86e+33,
+      "c": 299800000.0,
+      "r": 7020000.0,
+      "u": 6510000000000000.0
+    },
+    "unit": "mas/yr",
+    "method": "The spinning mass makes a gravitomagnetic field, a dipole like a spinning charge's; a gyroscope precesses in it.",
+    "distractors": [
+      "M",
+      "\u03c0",
+      "4"
+    ],
+    "vary": {
+      "L": [
+        3.51e+33,
+        8.21e+33,
+        1e+31
+      ],
+      "r": [
+        4210000.0,
+        9830000.0,
+        10000.0
+      ],
+      "u": [
+        3900000000000000.0,
+        9120000000000000.0,
+        10000000000000.0
+      ]
+    }
+  }
+}

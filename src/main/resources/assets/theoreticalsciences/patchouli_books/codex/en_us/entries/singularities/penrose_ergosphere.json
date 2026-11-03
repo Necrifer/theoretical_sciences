@@ -1,0 +1,187 @@
+{
+  "name": "Penrose Ergosphere Generator",
+  "icon": "theoreticalsciences:penrose_ergosphere",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 38,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:penrose_ergosphere",
+      "title": "Penrose Ergosphere Generator",
+      "text": "Extracts the rotational energy of a spinning black hole via the $(thing)Penrose process$(). My first real power from a singularity.$(br2)Generates power.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Penrose, 1969: around a rotating hole lies the $(thing)ergosphere$(), where spacetime itself is dragged so hard nothing can stand still. Split a particle there, drop one half onto a negative-energy orbit, and the other escapes with more energy than you sent in. The hole spins down to pay for it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Running figures: a $(item)Micro Singularity$() burns for twenty minutes at 65,536 FE/t. Energy leaves through the controller and any $(item)Interface Port$()."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Penrose Ergosphere Generator",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______A______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "____BBBBB____",
+            "___BBBBBBB___",
+            "__BBB___BBB__",
+            "__BB_____BB__",
+            "__BB_____BB__",
+            "__BB_____BB__",
+            "__BBB___BBB__",
+            "___BBBBBBB___",
+            "____BBBBB____",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____DDD_____",
+            "___DDDDDDD___",
+            "__DD     DD__",
+            "__D       D__",
+            "_DD       DD_",
+            "_DD       DD_",
+            "_DD       DD_",
+            "__D       D__",
+            "__DD     DD__",
+            "___DDDDDDD___",
+            "_____DDD_____",
+            "_____________"
+          ],
+          [
+            "____EEEEE____",
+            "___EEEEEEE___",
+            "__EE     EE__",
+            "_EE       EE_",
+            "EE         EE",
+            "EE         EE",
+            "EE         EE",
+            "EE         EE",
+            "EE         EE",
+            "_EE       EE_",
+            "__EE     EE__",
+            "___EEEEEEE___",
+            "____EEEEE____"
+          ],
+          [
+            "___DDDDFFF___",
+            "__DDD   DFF__",
+            "_FD       DD_",
+            "FF         DD",
+            "FD         DD",
+            "F           D",
+            "D           F",
+            "D           F",
+            "DD         DF",
+            "DD         FF",
+            "_DD       DF_",
+            "__FFD   DDD__",
+            "___FFFDDDD___"
+          ],
+          [
+            "___GGG0GGG___",
+            "__GGG   GGG__",
+            "_GG       GG_",
+            "GG         GG",
+            "GG         GG",
+            "G           G",
+            "G           G",
+            "G           G",
+            "GG         GG",
+            "GG         GG",
+            "_GG       GG_",
+            "__GGG   GGG__",
+            "___GGGGGGG___"
+          ],
+          [
+            "____DDDDD____",
+            "__DDD___DDD__",
+            "_DD_______DD_",
+            "_D_________D_",
+            "DD_________DD",
+            "D___________D",
+            "D_____A_____D",
+            "D___________D",
+            "DD_________DD",
+            "_D_________D_",
+            "_DD_______DD_",
+            "__DDD___DDD__",
+            "____DDDDD____"
+          ],
+          [
+            "____HHIHH____",
+            "___HHJJJHH___",
+            "__HJJJHJJJH__",
+            "_HJJHHHHHJJH_",
+            "HHJHHH_HHHJHH",
+            "HJJHHGGGHHJJH",
+            "IJHH_GGG_HHJI",
+            "HJJHHGGGHHJJH",
+            "HHJHHH_HHHJHH",
+            "_HJJHHHHHJJH_",
+            "__HJJJHJJJH__",
+            "___HHJJJHH___",
+            "____HHIHH____"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:penrose_ergosphere",
+          "A": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "B": "theoreticalsciences:hawking_radiation_collector",
+          "D": "theoreticalsciences:event_horizon_casing",
+          "E": "theoreticalsciences:containment_field_glass",
+          "F": "theoreticalsciences:turbomolecular_vacuum_pump",
+          "G": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "H": "theoreticalsciences:spacetime_casing",
+          "I": "#theoreticalsciences:multiblock/spacetime_casing_or_port",
+          "J": "theoreticalsciences:cryogenic_cooling_jacket"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (2 item and 1 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Hawking Radiation."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:penrose_ergosphere",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:micro_singularity",
+      "text": "A black hole the mass of a mountain, smaller than an atom.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Micro Singularity$(): Absolute Singularity, Closed Timelike Curve, Degenerate Matter Chunk, Dense Mass Core, Dimensional Residue and more"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/penrose_process"
+}

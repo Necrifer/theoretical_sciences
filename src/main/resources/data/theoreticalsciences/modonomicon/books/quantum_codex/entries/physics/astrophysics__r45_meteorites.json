@@ -1,0 +1,39 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r45_meteorites",
+  "description": "book.theoreticalsciences.codex.astrophysics.r45_meteorites.desc",
+  "icon": {
+    "item": "theoreticalsciences:meteoric_iron"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 2,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:meteoric_iron"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_meteorites.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_meteorites.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_meteorites.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/astrophysics__r37_telescopes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/meteoritics"
+  }
+}

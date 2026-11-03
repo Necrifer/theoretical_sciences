@@ -1,0 +1,30 @@
+{
+  "name": "The Planetary Interior",
+  "icon": "theoreticalsciences:core_drill",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:core_drill,theoreticalsciences:ringwoodite,theoreticalsciences:bridgmanite",
+      "text": "Bedrock is not the bottom of the world - it is only as far as any tool could cut. The $(item)Core Drill$() cuts it: hold it against bedrock and keep holding. At the floor of the Overworld the bit breaks through into a $(item)Mantle Breach$(). Step in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)Planetary Interior$() is layered by depth, like the planet. At the top lie the $(thing)Crustal Caverns$(), with patches of $(thing)Natural Reactor$() - Oklo rock where uranium seams once ran a chain reaction by themselves, two billion years ago. Below them the $(thing)Magma Chambers$(): columnar basalt over a sea of basaltic magma."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Deeper still is the $(thing)Mantle Convection Zone$(), peridotite holding $(item)Ringwoodite$() and $(item)Bridgmanite$() - minerals that only exist under its pressure - where hot plumes rise and throw you upwards. At the bottom is the $(thing)Geodynamo Core$() of iron and nickel, whose currents make the planet's field: magnetic storms sweep through it, Magnetizing everything you carry. Beneath it lies the $(item)Inner Core Boundary$(): solid iron held at 330 GPa, which no tool yet made can cut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Lithostatic Pressure$(): the deeper you stand, the heavier the rock above presses - P = \u03c1gh - and the slower you move and mine. The Natural Reactor has a high radiation background, and its Fission Fragment seams are strongly radioactive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To leave, step back into a Mantle Breach. One opens beside you wherever you arrive, and the Core Drill cuts new ones through the Interior's bedrock."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plate_tectonics"
+}

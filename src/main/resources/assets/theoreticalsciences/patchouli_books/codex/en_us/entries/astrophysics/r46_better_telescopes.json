@@ -1,0 +1,18 @@
+{
+  "name": "Better Telescopes",
+  "icon": "theoreticalsciences:schmidt_corrector",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:schmidt_corrector,theoreticalsciences:echelle_grating,theoreticalsciences:apochromatic_objective",
+      "text": "Optics from the workshop make the Reflecting Telescope a better instrument. Each sits in it as a catalyst and is never used up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)Schmidt Corrector Plate$() turns it into a survey camera: four plates at once give two Star Field Plates and a Deep Sky Plate (magnitude 15). An $(item)Echelle Grating$() spreads each star's light so finely that one exposure gives three Stellar Spectrum Plates. An $(item)Apochromatic Objective$() brings every colour to one focus: two Planetary Plates at a time."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/geometric_optics"
+}

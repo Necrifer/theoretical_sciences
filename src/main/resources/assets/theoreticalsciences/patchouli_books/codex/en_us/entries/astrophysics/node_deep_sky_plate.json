@@ -1,0 +1,19 @@
+{
+  "name": "Deep Sky Plate",
+  "icon": "theoreticalsciences:deep_sky_plate",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deep_sky_plate",
+      "title": "Deep Sky Plate",
+      "text": "A long exposure on a dark, moonless night: faint smudges that are whole galaxies, millions of light-years away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Unlocked by$(): Stellar Astrophysics."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_astrophysics"
+}

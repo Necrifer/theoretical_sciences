@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.r46_growth",
+  "description": "book.theoreticalsciences.codex.optics.r46_growth.desc",
+  "icon": {
+    "item": "theoreticalsciences:crystal_growth_furnace"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 21,
+  "y": -14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:crystal_growth_furnace"
+      },
+      "text": "book.theoreticalsciences.codex.optics.r46_growth.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.r46_growth.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.r46_growth.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.r46_growth.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/optics__r46_overview"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/optics__r46_diffraction"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/crystal_growth_physics"
+  }
+}

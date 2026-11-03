@@ -1,0 +1,52 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 530472,
+    "fog_color": 1060944,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:electric_spark"
+      },
+      "probability": 0.004
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:pulsar_wisp",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "theoreticalsciences:hawking_imp",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_magnetar_crust",
+      "theoreticalsciences:ore_pulsar_timing",
+      "theoreticalsciences:ore_cosmic_ray"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

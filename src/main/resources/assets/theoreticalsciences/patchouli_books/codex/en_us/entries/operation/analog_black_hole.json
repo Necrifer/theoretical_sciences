@@ -1,0 +1,24 @@
+{
+  "name": "Analog Black Hole",
+  "icon": "theoreticalsciences:analog_black_hole",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A condensate of density n carries sound at c = \u221a(gn/m). It flows at v toward a step of depth U that speeds it to \u221a(v\u00b2 + 2kU/m) and thins it, so beyond the step it outruns its own sound: a horizon. There the flow speeds up over about a healing length, giving a surface gravity \u03ba, and phonon pairs appear across the horizon at T_H = \u0127\u03ba/2\u03c0k_B. They show only against a condensate colder than that, summed over many shots."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Density, Upstream flow, Step depth, Shots.$(br2)$(thing)Disturbance$(): Shot-to-shot atom number: the density varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The trap is too warm for a condensate to form.$(br2)$(thing)Rate$(): Fewer shots are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Sound speed before: c = \u221a(gn/m)$(br)Flow after the step: v\u2082 = \u221a(v\u00b2 + 2kU/m)$(br)Sound speed after: c\u2082 = c\u00b7\u221a(n\u2082/n)$(br)Mach number before: v/c$(br)Mach number after: v\u2082/c\u2082$(br)Hawking temperature: T_H = \u0127\u03ba/2\u03c0k_B$(br)Condensate temperature: T_c"
+    }
+  ]
+}

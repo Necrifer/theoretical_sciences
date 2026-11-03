@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_poincare_recurrence",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_poincare_recurrence.desc",
+  "icon": {
+    "item": "theoreticalsciences:boltzmann_fluctuation"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 164,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:boltzmann_fluctuation"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_poincare_recurrence.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_poincare_recurrence.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__entropy_horizon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/poincare_recurrence"
+  }
+}

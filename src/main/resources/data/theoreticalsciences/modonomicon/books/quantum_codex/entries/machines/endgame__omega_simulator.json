@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.omega_simulator",
+  "description": "book.theoreticalsciences.codex.endgame.omega_simulator.desc",
+  "icon": {
+    "item": "theoreticalsciences:omega_simulator"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 127,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omega_simulator"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omega_simulator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omega_simulator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omega_simulator.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omega_simulator.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omega_simulator"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.omega_simulator.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/endgame__omnilex_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/the_sundering"
+  }
+}

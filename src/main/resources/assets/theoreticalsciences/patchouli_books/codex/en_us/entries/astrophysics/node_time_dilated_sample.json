@@ -1,0 +1,19 @@
+{
+  "name": "Time-Dilated Sample",
+  "icon": "theoreticalsciences:time_dilated_sample",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:time_dilated_sample",
+      "title": "Time-Dilated Sample",
+      "text": "A crystal grown deep in a gravity well. By its own clock it took longer to form than the outside world saw."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Time Dilation Chamber$().$(br2)$(thing)Unlocked by$(): Gravitational Time Dilation.$(br2)$(thing)Used in$(): Pulsar Timing Record."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_time_dilation"
+}

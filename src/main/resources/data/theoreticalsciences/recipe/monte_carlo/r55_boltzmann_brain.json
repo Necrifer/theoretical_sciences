@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ergodic_mixer_core",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:entropy_die",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:boltzmann_brain",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 6000,
+  "research": "theoreticalsciences:measure_problem",
+  "unscaled": true,
+  "insight_per_run": 60,
+  "physics": {
+    "vars": {
+      "sg": 40.0,
+      "opt": 0.7
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 15.0
+      }
+    ]
+  }
+}

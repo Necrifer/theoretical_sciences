@@ -154,12 +154,12 @@ public class DodecaractExcavatorItem extends PickaxeItem implements EschatonPowe
     // ---- mining
     @Override
     public float getDestroySpeed(ItemStack s, BlockState state) {
-        return EschatonCharge.get(s) <= 0 ? 1F : super.getDestroySpeed(s, state);
+        return EschatonCharge.get(s) <= 0 ? 1F : 1.0E9F;               // 1.3.7: charged, it breaks anything breakable at once
     }
 
     @Override
     public boolean isCorrectToolForDrops(ItemStack s, BlockState state) {
-        return EschatonCharge.get(s) > 0 && super.isCorrectToolForDrops(s, state);
+        return EschatonCharge.get(s) > 0;                               // ...and every block it breaks drops
     }
 
     @Override

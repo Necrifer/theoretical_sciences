@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.quantum_lithographer",
+  "description": "book.theoreticalsciences.codex.fabrication.quantum_lithographer.desc",
+  "icon": {
+    "item": "theoreticalsciences:quantum_lithographer"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 7,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quantum_lithographer"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.quantum_lithographer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.quantum_lithographer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.quantum_lithographer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.quantum_lithographer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quantum_lithographer"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.quantum_lithographer.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/basics__zero_point_extractor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/precision_lithography"
+  }
+}

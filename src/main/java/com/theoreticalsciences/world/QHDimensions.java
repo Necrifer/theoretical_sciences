@@ -36,5 +36,11 @@ public final class QHDimensions {
     /** The Antiverse: a universe exactly like ours, made of antimatter (reached through the CPT Mirror). */
     public static final ResourceKey<Level> ANTIVERSE = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("antiverse"));
 
+    /** 1.3: the Planetary Interior, layered by depth (reached by drilling through bedrock with the Core Drill). */
+    public static final ResourceKey<Level> INTERIOR = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("planetary_interior"));
+
+    /** 1.10: the Accretion Frontier - islands of rock and ice in the space round an accreting black hole (reached with a Light Sail). */
+    public static final ResourceKey<Level> FRONTIER = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("accretion_frontier"));
+
     private QHDimensions() {}
 }

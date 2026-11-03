@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.origin_branch",
+  "description": "book.theoreticalsciences.codex.strings.origin_branch.desc",
+  "icon": {
+    "item": "theoreticalsciences:cosmic_record_fragment"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 48,
+  "y": -4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:primordial_ash"
+      },
+      "text": "book.theoreticalsciences.codex.strings.origin_branch.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.origin_branch.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.origin_branch.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/singularities__lensing"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/singularities__kugelblitz_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/big_bang_cosmology"
+  }
+}

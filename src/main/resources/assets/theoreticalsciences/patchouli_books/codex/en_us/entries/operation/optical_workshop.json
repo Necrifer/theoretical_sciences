@@ -1,0 +1,24 @@
+{
+  "name": "Optical Workshop",
+  "icon": "theoreticalsciences:optical_workshop",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 54,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A lens's power comes from its two surfaces: P = (n \u2212 1)(C\u2081 \u2212 C\u2082), with C the curvature (one over the radius) of each, positive when it bulges toward the light. Grinding sets the curvatures; polishing then wears the surface error down, roughly exponentially with time. Below a quarter of a wavelength the image is as sharp as diffraction allows (the Rayleigh criterion)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Front curvature C\u2081, Back curvature C\u2082, Polishing time.$(br2)$(thing)Disturbance$(): Temperature of the shop: the glass expands, and the power drifts by \u00b10.2%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): .$(br2)$(thing)Rate$(): Longer polishing is slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Lens power: P = (n \u2212 1)(C\u2081 \u2212 C\u2082)$(br)Focal length: f = 1/P$(br)Surface error: \u03b5 \u2248 \u03b5\u2080\u00b7e^(\u2212t/\u03c4)$(br)Strehl ratio: S = e^(\u2212(2\u03c0\u03b5/\u03bb)\u00b2)"
+    }
+  ]
+}

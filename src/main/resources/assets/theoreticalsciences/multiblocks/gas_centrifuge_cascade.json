@@ -1,0 +1,59 @@
+{
+  "controller_block": "theoreticalsciences:gas_centrifuge_cascade",
+  "controller": "C",
+  "layers": [
+    [
+      "~~~^~~~",
+      "~~~~~~~",
+      "~~~~~~~",
+      "^~~~~~^",
+      "~~~~~~~",
+      "~~~~~~~",
+      "~~~^~~~"
+    ],
+    [
+      "~~~C~~~",
+      "~~~~~~~",
+      "~~~~~~~",
+      "~~~~~~~",
+      "~~~~~~~",
+      "~~~~~~~",
+      "~~~~~~~"
+    ],
+    [
+      "~~GGG~~",
+      "~.....~",
+      "G.@.@.G",
+      "G..~..G",
+      "G.@.@.G",
+      "~.....~",
+      "~~GGG~~"
+    ]
+  ],
+  "key": {
+    "@": [
+      "theoreticalsciences:centrifuge_rotor"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "^": [
+      "theoreticalsciences:cascade_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "~": [
+      "theoreticalsciences:cascade_casing"
+    ]
+  },
+  "effect_center": [
+    3,
+    2,
+    3
+  ],
+  "tiers": {},
+  "repeat": {
+    "from": 2,
+    "to": 2,
+    "max": 13
+  }
+}

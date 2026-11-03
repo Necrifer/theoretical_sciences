@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.r42_drilling",
+  "description": "book.theoreticalsciences.codex.geography.r42_drilling.desc",
+  "icon": {
+    "item": "theoreticalsciences:deep_drilling_rig"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 72,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:deep_drilling_rig"
+      },
+      "text": "book.theoreticalsciences.codex.geography.r42_drilling.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r42_drilling.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r42_drilling.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/geography__r41_riches"
+    },
+    {
+      "entry": "theoreticalsciences:physics/geography__r42_press"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/deep_drilling"
+  }
+}

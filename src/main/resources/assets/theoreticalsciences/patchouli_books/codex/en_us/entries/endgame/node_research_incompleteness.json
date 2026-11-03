@@ -1,0 +1,19 @@
+{
+  "name": "Incompleteness",
+  "icon": "theoreticalsciences:godel_sentence",
+  "advancement": "theoreticalsciences:research/incompleteness",
+  "category": "theoreticalsciences:endgame",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:godel_sentence",
+      "title": "Incompleteness",
+      "text": "$(thing)Incompleteness$()$(br2)Any system strong enough to describe arithmetic contains truths it can never prove - reality included."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 400$(br2)$(thing)Builds on$(): Transfinite Mathematics, Category Theory.$(br2)$(thing)Samples$(): 2 Aleph-Null Shard.$(br2)$(thing)Derivation$(): Find the G\u00f6del number of the symbol sequence with codes (a, b, c) = (3, 1, 2), using prime-power encoding."
+    }
+  ]
+}

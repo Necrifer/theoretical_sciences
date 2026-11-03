@@ -1,0 +1,56 @@
+{
+  "title": "Bayesian Inference",
+  "description": "Belief is a probability, and evidence should change it by a fixed rule: how likely the evidence was if you are right, against how likely it was anyway. Unlocks the Bayesian Analyzer and the Prior and Posterior Tablets.",
+  "icon": "theoreticalsciences:bayesian_analyzer",
+  "x": 5,
+  "y": 10,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:distributions"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:random_number_chip",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A condition affects a fraction p of people. A check comes back positive with probability L when it is present, and wrongly with probability F when it is not. Write the chance Q that someone who checks positive really has it.",
+    "name": "Bayes' rule",
+    "lhs": "Q",
+    "form": "L * p / ( L * p + F * ( 1 - p ) )",
+    "expr": "L * p / ( L * p + F * ( 1 - p ) )",
+    "ask": "Find Q for a condition in 1% of people, a check that finds it 99% of the time and gives false alarms 5% of the time.",
+    "vars": {
+      "Q": "chance it is really there",
+      "p": "how common it is",
+      "L": "chance of a positive when present",
+      "F": "chance of a false alarm"
+    },
+    "given": {
+      "p": 0.01,
+      "L": 0.99,
+      "F": 0.05
+    },
+    "unit": "",
+    "method": "Of all the positives, the true ones are L\u00b7p and the false ones F\u00b7(1 \u2212 p). Q is the true share.",
+    "distractors": [
+      "q",
+      "2",
+      "N"
+    ],
+    "vary": {
+      "p": [
+        0.006,
+        0.014,
+        0.0001
+      ],
+      "L": [
+        0.594,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

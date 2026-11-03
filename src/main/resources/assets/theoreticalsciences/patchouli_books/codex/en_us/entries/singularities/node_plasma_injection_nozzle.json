@@ -1,0 +1,23 @@
+{
+  "name": "Plasma Injection Nozzle",
+  "icon": "theoreticalsciences:plasma_injection_nozzle",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 516,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:plasma_injection_nozzle",
+      "title": "Plasma Injection Nozzle",
+      "text": "A nozzle that fires plasma into a confinement chamber at a precisely controlled rate. Magnetic confinement steers it, a cryocooler keeps the coils cold, and the tip glows white when in use. The air around the tip crackles."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Feeding plasma into a nucleosynthesis chamber needs precision. I fitted a plasma nozzle tip into magnetic confinement casing with a superconducting coil block and a cryocooler, and the plasma went exactly where I aimed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Horizon Simulation.$(br2)$(thing)Used in$(): Nucleosynthesis Chamber."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/horizon_simulation"
+}

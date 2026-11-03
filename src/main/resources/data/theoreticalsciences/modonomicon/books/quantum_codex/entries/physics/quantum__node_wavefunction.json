@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_wavefunction",
+  "description": "book.theoreticalsciences.codex.quantum.node_wavefunction.desc",
+  "icon": {
+    "item": "theoreticalsciences:wavefunction"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 130,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:wavefunction"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_wavefunction.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_wavefunction.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_wavefunction.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__foam_boundaries",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_primordial_charter",
+  "description": "book.theoreticalsciences.codex.endgame.node_primordial_charter.desc",
+  "icon": {
+    "item": "theoreticalsciences:primordial_charter"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 200,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:primordial_charter"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_primordial_charter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_primordial_charter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_primordial_charter.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__axiom_distiller",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/axiom_theory"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Lithium-6 Ingot",
+  "icon": "theoreticalsciences:lithium_6_ingot",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lithium_6_ingot",
+      "title": "Lithium-6 Ingot",
+      "text": "Lithium enriched in its lighter isotope. One neutron splits it into helium and tritium - which is how a fusion blanket breeds its fuel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gas Centrifuge Cascade$().$(br2)$(thing)Unlocked by$(): Isotope Separation.$(br2)$(thing)Used in$(): Fusion Blanket Tile, Tritium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

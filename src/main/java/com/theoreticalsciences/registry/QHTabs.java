@@ -29,6 +29,8 @@ public final class QHTabs {
                 out.accept(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTOR_ITEM.get());
                 out.accept(com.theoreticalsciences.extreme.ExtremeRegistry.AUTO_ASSEMBLER_ITEM.get());
                 com.theoreticalsciences.transcend.TranscendRegistry.TAB.forEach(i -> out.accept(i.get()));
+                com.theoreticalsciences.interior.InteriorRegistry.TAB.forEach(i -> out.accept(i.get()));
+                com.theoreticalsciences.frontier.FrontierRegistry.TAB.forEach(i -> out.accept(i.get()));
                 QHFluids.ALL.values().forEach(f -> out.accept(f.bucket.get()));
                 QHEntities.SPAWN_EGGS.forEach(e -> out.accept(e.get()));
             })

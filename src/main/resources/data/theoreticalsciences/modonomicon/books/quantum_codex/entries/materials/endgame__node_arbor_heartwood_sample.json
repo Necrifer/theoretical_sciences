@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_arbor_heartwood_sample",
+  "description": "book.theoreticalsciences.codex.endgame.node_arbor_heartwood_sample.desc",
+  "icon": {
+    "item": "theoreticalsciences:arbor_heartwood_sample"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 7,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:arbor_heartwood_sample"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_arbor_heartwood_sample.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_arbor_heartwood_sample.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_arbor_heartwood_sample.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__axiomatic_breach_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reality_breach"
+  }
+}

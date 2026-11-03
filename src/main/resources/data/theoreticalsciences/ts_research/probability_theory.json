@@ -1,0 +1,56 @@
+{
+  "title": "Probability Theory",
+  "description": "Chance has rules. Count the ways an outcome can happen, divide by all the ways anything can, and the result is exact even when every single trial is not. Unlocks the Dice Set.",
+  "icon": "theoreticalsciences:dice_set",
+  "x": 2,
+  "y": 10,
+  "insight": 10,
+  "requires": [
+    "theoreticalsciences:number_systems"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "An experiment either succeeds, with probability p, or fails. It is repeated n times, independently. Write the probability P of exactly k successes.",
+    "name": "Binomial distribution",
+    "lhs": "P",
+    "form": "binom ( n , k ) * p ^ k * ( 1 - p ) ^ ( n - k )",
+    "expr": "120 * p ^ k * ( 1 - p ) ^ ( n - k )",
+    "ask": "Find the probability of exactly 3 heads in @{n} tosses of a fair coin (there are 120 ways to choose which 3).",
+    "vars": {
+      "P": "probability",
+      "n": "number of trials",
+      "k": "number of successes",
+      "p": "chance of success in one trial"
+    },
+    "given": {
+      "n": 10,
+      "k": 3,
+      "p": 0.5
+    },
+    "unit": "",
+    "method": "Each particular sequence with k successes has probability p^k (1 \u2212 p)^(n \u2212 k); count how many such sequences there are.",
+    "distractors": [
+      "q",
+      "e",
+      "m"
+    ],
+    "vary": {
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "p": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

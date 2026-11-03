@@ -1,0 +1,22 @@
+{
+  "name": "Heavy Water, Lithium and Tritium",
+  "icon": "theoreticalsciences:lithium_6_ingot",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lithium_6_ingot,theoreticalsciences:technetium_99m_vial,theoreticalsciences:californium_252_neutron_source",
+      "text": "Electrolysing water leaves the heavy molecules behind: a thousand millibuckets of $(fluid)Water$() give ten of $(fluid)Heavy Water$(), and electrolysing that gives $(fluid)Deuterium$(). $(item)Lithium$() is won from Deep Brine; the Gas Centrifuge Cascade enriches it to $(item)Lithium-6$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Irradiation Chamber$() - a neutron source in one slot, never used up - lithium-6 catches a neutron and splits into helium and $(fluid)Tritium$(). Uranium-235 fissions into $(item)Technetium-99m$() and a spent fuel rod; plutonium fed neutrons for long enough climbs to $(item)Californium-252$(), and californium's flux turns uranium-238 into plutonium-239."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Decontamination Scrubber$() melts fission products and spent salt into $(item)Nuclear Waste Glass$(), and takes the uranium back out of spent fuel rods. Radium decays, in the Decay Chamber, to $(item)Polonium-210$(); monazite sand gives $(item)Thorium-232$()."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fusion_ignition"
+}

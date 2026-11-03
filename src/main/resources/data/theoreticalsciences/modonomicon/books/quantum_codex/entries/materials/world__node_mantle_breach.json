@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_mantle_breach",
+  "description": "book.theoreticalsciences.codex.world.node_mantle_breach.desc",
+  "icon": {
+    "item": "theoreticalsciences:mantle_breach"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 113,
+  "y": 33,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mantle_breach"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_mantle_breach.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__falling_through",
+      "draw_arrow": false
+    }
+  ]
+}

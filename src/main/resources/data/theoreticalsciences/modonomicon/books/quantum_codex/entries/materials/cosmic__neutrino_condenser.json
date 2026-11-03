@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.cosmic.neutrino_condenser",
+  "description": "book.theoreticalsciences.codex.cosmic.neutrino_condenser.desc",
+  "icon": {
+    "item": "theoreticalsciences:neutrino_condenser"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 79,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutrino_condenser"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.neutrino_condenser.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutrino_condenser.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutrino_condenser.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.neutrino_condenser.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutrino_condenser"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.neutrino_condenser.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__quark_gluon_collider"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/neutrino_physics"
+  }
+}

@@ -1,0 +1,19 @@
+# Gradle / IDE
+.gradle/
+build/
+run/
+out/
+*.iml
+.idea/
+.vscode/
+*.class
+
+# compile-only jars (see libs/README.md)
+libs/*.jar
+
+# Python caches
+__pycache__/
+
+# text-rewrite working files (the returned documents and generated exports)
+tools/text/in/
+tools/text/out/

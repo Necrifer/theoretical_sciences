@@ -1,0 +1,84 @@
+{
+  "title": "Nuclear Astrophysics",
+  "description": "Stars fuse by tunnelling: their protons are far too cold to touch, but quantum mechanics lets a few through the Coulomb barrier. The Gamow energy sets which ones.",
+  "icon": "theoreticalsciences:kilonova_ash",
+  "x": 16,
+  "y": 2,
+  "insight": 150,
+  "requires": [
+    "theoreticalsciences:fusion_ignition",
+    "theoreticalsciences:nucleosynthesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stellar_spectrum_plate",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:lithium_6_ingot",
+      "count": 2
+    }
+  ],
+  "time": 510,
+  "puzzle": {
+    "goal": "Two nuclei of charges Z and z tunnel through their Coulomb barrier with an energy scale set by their reduced mass m, the speed of light c and the fine-structure constant \u03b1. Write that energy E.",
+    "name": "Gamow energy",
+    "lhs": "E",
+    "form": "2 * m * c ^ 2 * ( \u03c0 * \u03b1 * Z * z ) ^ 2",
+    "expr": "2 * m * c ^ 2 * ( 3.14159 * a * Z * z ) ^ 2 / k",
+    "ask": "Find E in keV (k = @{k} J) for two protons: m = @{m} kg, c = 2.998e8 m/s, a = @{a}, Z = @{Z}, z = @{z}.",
+    "vars": {
+      "E": "energy (keV)",
+      "m": "reduced mass (kg)",
+      "c": "speed of light",
+      "\u03c0": "pi",
+      "\u03b1": "fine-structure constant",
+      "a": "\u03b1",
+      "Z": "charge number",
+      "z": "charge number",
+      "k": "1 keV (J)"
+    },
+    "given": {
+      "m": 8.36e-28,
+      "c": 299800000.0,
+      "a": 0.0073,
+      "Z": 1,
+      "z": 1,
+      "k": 1.602e-16
+    },
+    "unit": "keV",
+    "method": "The tunnelling probability goes as e^(\u2212\u221a(E_G/E)); E_G collects every constant in the WKB exponent.",
+    "distractors": [
+      "h",
+      "G",
+      "4"
+    ],
+    "vary": {
+      "m": [
+        5.01e-28,
+        1.171e-27,
+        1e-30
+      ],
+      "a": [
+        0.00438,
+        0.01022,
+        1e-05
+      ],
+      "Z": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "z": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "k": [
+        9.6e-17,
+        2.25e-16,
+        1e-18
+      ]
+    }
+  }
+}

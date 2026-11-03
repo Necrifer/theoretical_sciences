@@ -1,0 +1,19 @@
+{
+  "name": "Ferrite Magnet",
+  "icon": "theoreticalsciences:ferrite_magnet",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ferrite_magnet",
+      "title": "Ferrite Magnet",
+      "text": "Iron oxide pressed with clay, fired, then magnetised: cheap, brittle and permanently magnetic."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Magnetizer$().$(br2)$(thing)Dropped by$(): Geodynamo Wraith.$(br2)$(thing)Found in$(): Crashed Satellite, Magnetic Anomaly chests.$(br2)$(thing)Unlocked by$(): Ferromagnetism.$(br2)$(thing)Used in$(): Faraday Isolator, Gauss Meter, Induction Generator, Magnetizer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ferromagnetism"
+}

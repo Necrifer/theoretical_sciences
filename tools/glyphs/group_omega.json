@@ -1,0 +1,83 @@
+{
+ "ℒ": {
+  "name": "Lagrangian density",
+  "cat": "fields",
+  "meaning": "The action per unit volume and time. Nature takes the path where its integral, the action, is stationary - every equation of motion follows.",
+  "unit": "J/m³",
+  "unlock": {
+   "research": "quantum_field_theory"
+  }
+ },
+ "μν": {
+  "name": "Spacetime index pair",
+  "cat": "indices",
+  "meaning": "Two spacetime indices, each running over t, x, y, z. A repeated upper and lower index is summed (Einstein convention).",
+  "unit": "",
+  "unlock": {
+   "research": "special_relativity"
+  }
+ },
+ "ij": {
+  "name": "Index pair",
+  "cat": "indices",
+  "meaning": "Two indices labelling rows and columns of a matrix (e.g. particle generations).",
+  "unit": "",
+  "unlock": {
+   "start": true
+  }
+ },
+ "∂": {
+  "name": "Partial derivative operator",
+  "cat": "calculus",
+  "meaning": "∂_μ = ∂/∂x^μ: the rate of change along one spacetime direction.",
+  "unit": "",
+  "unlock": {
+   "item": "dilithium_crystal"
+  }
+ },
+ "χ": {
+  "name": "Chi",
+  "cat": "variables",
+  "meaning": "A field or susceptibility; here usually a dark-sector field that interacts only through gravity.",
+  "unit": "",
+  "unlock": {
+   "research": "dark_sector"
+  }
+ },
+ "mχ": {
+  "name": "Dark scalar mass",
+  "cat": "particles",
+  "meaning": "The mass of the dark-sector particle χ.",
+  "unit": "GeV",
+  "unlock": {
+   "research": "dark_sector"
+  }
+ },
+ "μc": {
+  "name": "Chemical potential",
+  "cat": "chemistry",
+  "meaning": "The free energy added by one more particle of a species; species flow from high to low μ until it is equal everywhere.",
+  "unit": "J/mol",
+  "unlock": {
+   "item": "chemical_reactor"
+  }
+ },
+ "ρI": {
+  "name": "Information erasure density",
+  "cat": "thermo",
+  "meaning": "Bits erased per unit volume per unit time. Each costs at least kT ln 2 of free energy.",
+  "unit": "bit/(m³·s)",
+  "unlock": {
+   "research": "thermodynamics_of_information"
+  }
+ },
+ "y": {
+  "name": "Yukawa coupling",
+  "cat": "particles",
+  "meaning": "How strongly a matter field couples to the scalar field; its value fixes that particle's mass m = yv/√2.",
+  "unit": "",
+  "unlock": {
+   "research": "standard_model"
+  }
+ }
+}

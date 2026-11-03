@@ -1,0 +1,23 @@
+{
+  "name": "Stellar Iron Ingot",
+  "icon": "theoreticalsciences:stellar_iron_ingot",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_iron_ingot",
+      "title": "Stellar Iron Ingot",
+      "text": "Iron forged in the core of a star, where fusion stops being profitable. Iron has the most tightly bound nucleus, so fusing it or splitting it costs energy. The ingot is dense and dull grey and carries a faint heat that seems to come from somewhere deep inside it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Combining a white dwarf core with ordinary iron in stellar plasma, I drove fusion until it stopped. Iron was where nucleosynthesis ended, and the Chamber left me an ingot of star-forged metal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Nucleosynthesis Chamber$().$(br2)$(thing)Unlocked by$(): Nucleosynthesis.$(br2)$(thing)Used in$(): Dyson Shell Segment, Magnetar Shard, Stellar Singularity, Supernova Remnant."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_evolution"
+}

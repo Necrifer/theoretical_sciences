@@ -1,0 +1,23 @@
+{
+  "name": "Horizon Glass",
+  "icon": "theoreticalsciences:horizon_glass",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 518,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:horizon_glass",
+      "title": "Horizon Glass",
+      "text": "A pane cut from the boundary of no return. Light enters easily but seems reluctant to leave, so everything beyond looks slightly dimmed and stretched. It is cold and smooth, and holding it at an angle makes my reflection redshift."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)An event horizon is just a surface in spacetime; locally nothing special happens there. Near the black hole I found glassy deposits that bent light like that surface does, and learned to cut them into panes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Kugelblitz Chamber$().$(br2)$(thing)Unlocked by$(): Inside a Black Hole.$(br2)$(thing)Used in$(): Dark Matter Lens, Einstein-Rosen Bridge."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/black_hole_interior"
+}

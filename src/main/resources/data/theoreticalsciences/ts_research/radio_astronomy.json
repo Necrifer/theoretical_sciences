@@ -1,0 +1,51 @@
+{
+  "title": "Radio Astronomy",
+  "description": "Cold hydrogen, invisible to any telescope, glows at 21 centimetres; dead stars spinning hundreds of times a second pulse in radio. A dish and a cold receiver hear them through cloud and daylight. Unlocks the Radio Telescope and the Cryogenic Receiver.",
+  "icon": "theoreticalsciences:radio_telescope",
+  "x": 6,
+  "y": -7,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:stellar_astrophysics",
+    "theoreticalsciences:electromagnetic_induction",
+    "theoreticalsciences:geometric_optics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:sapphire_window",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 4
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A cloud of hydrogen emits a line at frequency \u03bd _ 0. Moving away from us at speed v, it is received at a lower frequency \u03bd. For speeds far below light's, write v.",
+    "name": "Radial velocity from the line shift",
+    "lhs": "v",
+    "form": "c * ( \u03bd _ 0 - \u03bd ) / \u03bd _ 0",
+    "expr": "c * ( A - B ) / A",
+    "ask": "Find v in km/s for the 21 cm line, A = 1420.406 MHz, received at B = 1420.000 MHz (c = 299792 km/s).",
+    "vars": {
+      "v": "speed away from us (km/s)",
+      "c": "speed of light (km/s)",
+      "\u03bd": "frequency",
+      "A": "rest frequency (MHz)",
+      "B": "received frequency (MHz)"
+    },
+    "given": {
+      "c": 299792,
+      "A": 1420.406,
+      "B": 1420.0
+    },
+    "unit": "km/s",
+    "method": "Each successive wave crest is emitted v/c of a wavelength further away, so the received frequency drops by the fraction v/c.",
+    "distractors": [
+      "\u03bb",
+      "2",
+      "+"
+    ]
+  }
+}

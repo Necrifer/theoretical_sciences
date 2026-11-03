@@ -1,0 +1,60 @@
+{
+  "params": [
+    {
+      "id": "I",
+      "unit": "MA",
+      "min": 0.05,
+      "max": 5,
+      "step": 0.001,
+      "default": 0.5
+    },
+    {
+      "id": "m",
+      "unit": "g",
+      "min": 10,
+      "max": 1000,
+      "step": 0.1,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "F",
+      "unit": "MN",
+      "expr": "0.25*I^2*(1 + 0.03*d)",
+      "formula": "F = \u00bdL\u2032I\u00b2"
+    },
+    {
+      "id": "v",
+      "unit": "m/s",
+      "expr": "sqrt(2*F*1e6*10/(m/1000))",
+      "formula": "v = \u221a(2FL/m)"
+    },
+    {
+      "id": "P",
+      "unit": "GPa",
+      "expr": "4e-6*v^2",
+      "formula": "P \u2248 \u00bd\u03c1v\u00b2"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "erode",
+      "kind": "damage",
+      "expr": "3 - I",
+      "formula": "I < 3 MA"
+    }
+  ],
+  "rate": "clamp(0.8/(0.2 + I), 0.25, 2)",
+  "rate_formula": "rate = 0.8/(0.2 + I)",
+  "heat": "0.5*I",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

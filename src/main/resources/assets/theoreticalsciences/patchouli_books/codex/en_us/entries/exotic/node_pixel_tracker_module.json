@@ -1,0 +1,23 @@
+{
+  "name": "Pixel Tracker Module",
+  "icon": "theoreticalsciences:pixel_tracker_module",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pixel_tracker_module",
+      "title": "Pixel Tracker Module",
+      "text": "A qubit-array sensor that records the exact path of every charged particle crossing it. Each pixel is a qubit that flips when a particle passes, and the trail of flipped pixels traces a track. It is flat, cold and delicate."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I needed to see particle tracks, not just flashes. In the Femto Fabricator I laid Qubits and Quantum Dots on a Cherenkov Wafer with Superconducting Solder. Every passing particle flipped a line of pixels."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Femto Fabricator$().$(br2)$(thing)Unlocked by$(): High-Energy Particle Physics.$(br2)$(thing)Used in$(): Calorimeter Detector Array."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

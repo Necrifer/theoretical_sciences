@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_magnetized_plasma",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_magnetized_plasma.desc",
+  "icon": {
+    "item": "theoreticalsciences:magnetized_plasma_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 173,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:magnetized_plasma_cell"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_magnetized_plasma.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_magnetized_plasma.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__pulsed_magnet_lab",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/magnetic_confinement"
+  }
+}

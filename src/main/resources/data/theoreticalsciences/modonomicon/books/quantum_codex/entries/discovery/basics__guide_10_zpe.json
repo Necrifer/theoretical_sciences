@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.guide_10_zpe",
+  "description": "book.theoreticalsciences.codex.basics.guide_10_zpe.desc",
+  "icon": {
+    "item": "theoreticalsciences:zero_point_extractor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": -4,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:zero_point_extractor"
+      },
+      "text": "book.theoreticalsciences.codex.basics.guide_10_zpe.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.guide_10_zpe.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_09_press"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/casimir_effect"
+  }
+}

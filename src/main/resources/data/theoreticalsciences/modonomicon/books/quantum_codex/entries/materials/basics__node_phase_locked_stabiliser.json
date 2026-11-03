@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.node_phase_locked_stabiliser",
+  "description": "book.theoreticalsciences.codex.basics.node_phase_locked_stabiliser.desc",
+  "icon": {
+    "item": "theoreticalsciences:phase_locked_stabiliser"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 148,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:phase_locked_stabiliser"
+      },
+      "text": "book.theoreticalsciences.codex.basics.node_phase_locked_stabiliser.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.node_phase_locked_stabiliser.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/basics__fields",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/field_engineering"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.research_nexus_machine",
+  "description": "book.theoreticalsciences.codex.mathematics.research_nexus_machine.desc",
+  "icon": {
+    "item": "theoreticalsciences:research_nexus"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 29,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:research_nexus"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.research_nexus_machine.p0"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:research_nexus"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.research_nexus_machine.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/fabrication__femtoscale_assembly_line"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/research_synthesis"
+  }
+}

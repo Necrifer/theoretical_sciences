@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_alt_az_mount",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_alt_az_mount.desc",
+  "icon": {
+    "item": "theoreticalsciences:alt_az_mount"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 92,
+  "y": 39,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:alt_az_mount"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_alt_az_mount.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_alt_az_mount.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__radio_telescope",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radio_astronomy"
+  }
+}

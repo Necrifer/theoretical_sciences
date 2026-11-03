@@ -1,0 +1,43 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.r42_press",
+  "description": "book.theoreticalsciences.codex.geography.r42_press.desc",
+  "icon": {
+    "item": "theoreticalsciences:tectonic_press"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 54,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tectonic_press"
+      },
+      "text": "book.theoreticalsciences.codex.geography.r42_press.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r42_press.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r42_press.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r42_press.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/geography__r40_interior"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/metamorphism"
+  }
+}

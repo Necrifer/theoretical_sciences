@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.white_hole_emitter",
+  "description": "book.theoreticalsciences.codex.singularities.white_hole_emitter.desc",
+  "icon": {
+    "item": "theoreticalsciences:white_hole_emitter"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 101,
+  "y": 21,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:white_hole_emitter"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.white_hole_emitter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.white_hole_emitter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.white_hole_emitter.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.white_hole_emitter.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.white_hole_emitter.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:white_hole_emitter"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.white_hole_emitter.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/exotic__chronon_field_inverter"
+    },
+    {
+      "entry": "theoreticalsciences:physics/singularities__lensing"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/white_holes"
+  }
+}

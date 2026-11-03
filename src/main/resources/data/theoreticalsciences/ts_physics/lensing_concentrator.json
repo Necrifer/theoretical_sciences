@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "Ml",
+      "unit": "M\u2609",
+      "min": 0.1,
+      "max": 100,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "Dl",
+      "unit": "kpc",
+      "min": 0.1,
+      "max": 7.9,
+      "step": 0.01,
+      "default": 4
+    },
+    {
+      "id": "u",
+      "unit": "\u03b8_E",
+      "min": 0.01,
+      "max": 2,
+      "step": 0.0001,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Aref": 5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "thE",
+      "unit": "mas",
+      "expr": "2.85*sqrt(Ml*(8 - Dl)/(8*Dl))",
+      "formula": "\u03b8_E = \u221a(4GM D_ls/(c\u00b2 D_l D_s))"
+    },
+    {
+      "id": "ue",
+      "unit": "\u03b8_E",
+      "expr": "sqrt(u^2 + (0.3*d/thE)^2)",
+      "formula": "u \u2295 jitter/\u03b8_E"
+    },
+    {
+      "id": "A",
+      "unit": "",
+      "expr": "(ue^2 + 2)/(ue*sqrt(ue^2 + 4))",
+      "formula": "A = (u\u00b2 + 2)/(u\u221a(u\u00b2 + 4))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "day",
+      "kind": "stop",
+      "expr": "night - 0.5",
+      "formula": "night"
+    },
+    {
+      "id": "roof",
+      "kind": "stop",
+      "expr": "sky - 0.5",
+      "formula": "open sky"
+    }
+  ],
+  "rate": "clamp(A/Aref, 0, 2)",
+  "rate_formula": "output = A / A_rated",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

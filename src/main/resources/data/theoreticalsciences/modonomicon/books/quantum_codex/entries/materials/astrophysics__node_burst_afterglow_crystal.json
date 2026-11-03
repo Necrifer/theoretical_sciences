@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_burst_afterglow_crystal",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_burst_afterglow_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:burst_afterglow_crystal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 42,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:burst_afterglow_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_burst_afterglow_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_burst_afterglow_crystal.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__burst_observatory",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gamma_ray_bursts"
+  }
+}

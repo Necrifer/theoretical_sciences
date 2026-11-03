@@ -1,0 +1,68 @@
+{
+  "title": "Deep Drilling",
+  "description": "The deepest hole ever drilled went down 12 km and met rock at 180 \u00b0C, softer than expected and full of water. Drilling deep is a fight with heat and pressure. Unlocks the Deep Drilling Rig.",
+  "icon": "theoreticalsciences:deep_drilling_rig",
+  "x": 7,
+  "y": 16,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:mantle_geodynamics",
+    "theoreticalsciences:metamorphism"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:moissanite",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:sediment_core",
+      "count": 8
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Heat flows up out of the planet at q watts per square metre through rock that conducts k watts per metre per kelvin. The surface is at T _ 0. Write the temperature T a depth h down.",
+    "name": "Geothermal gradient",
+    "lhs": "T",
+    "form": "T _ 0 + q * h / k",
+    "expr": "A + q * h / k",
+    "ask": "Find T in kelvin at the bottom of the deepest hole, h = 12000 m, with A = @{A} K, q = @{q} W/m\u00b2 and k = @{k} W/(m\u00b7K).",
+    "vars": {
+      "T": "temperature (K)",
+      "q": "heat flow (W/m\u00b2)",
+      "h": "depth (m)",
+      "k": "conductivity (W/m\u00b7K)",
+      "A": "surface temperature (K)"
+    },
+    "given": {
+      "A": 288,
+      "q": 0.065,
+      "h": 12000,
+      "k": 2.5
+    },
+    "unit": "K",
+    "method": "Fourier's law: the heat flow is the conductivity times how fast the temperature rises with depth.",
+    "distractors": [
+      "ln",
+      "2",
+      "\u03c1"
+    ],
+    "vary": {
+      "A": [
+        173.0,
+        403.0,
+        1.0
+      ],
+      "q": [
+        0.039,
+        0.091,
+        0.0001
+      ],
+      "k": [
+        1.5,
+        3.5,
+        0.01
+      ]
+    }
+  }
+}

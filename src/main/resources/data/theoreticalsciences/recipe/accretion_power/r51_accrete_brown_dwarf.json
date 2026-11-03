@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:accretion_power",
+  "chances": [
+    0.5
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:brown_dwarf_core",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quasar_jet_filament",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:accretion_disk_plasma",
+      "amount": 500
+    }
+  ],
+  "energy": 16384,
+  "duration": 2400,
+  "research": "theoreticalsciences:accretion_physics",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Lref": 12.0
+    },
+    "windows": [
+      {
+        "q": "lam",
+        "min": 0.5,
+        "max": 0.95
+      }
+    ]
+  }
+}

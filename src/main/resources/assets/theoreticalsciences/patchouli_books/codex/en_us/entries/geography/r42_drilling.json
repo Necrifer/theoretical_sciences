@@ -1,0 +1,22 @@
+{
+  "name": "Deep Drilling",
+  "icon": "theoreticalsciences:deep_drilling_rig",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deep_drilling_rig,theoreticalsciences:drill_string,theoreticalsciences:derrick_frame",
+      "text": "The $(item)Deep Drilling Rig$() is a derrick: four leaning legs, a crown block, and a string of pipe hanging into the hole. Set the depth, the weight on the bit and its speed, and the density of the mud that fills the well."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Below you the rock warms by about 25 K a kilometre, and the water in its pores is under pressure - overpressured, deeper down. The mud column must press harder than that water, or it flows into the well: a $(thing)kick$(). But too heavy a mud fractures the rock and vanishes into it: $(thing)lost circulation$(). Between the two is the window you drill in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "What comes up depends on how deep you are: sediment cores and brine near the top, a pocket of $(fluid)Basaltic Magma$() where the rock is hot enough, crustal rock with rich ore, and at the bottom of thin crust, $(item)Peridotite$() from the mantle."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

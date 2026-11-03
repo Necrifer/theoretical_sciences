@@ -1,0 +1,87 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.hyperreal",
+  "description": "book.theoreticalsciences.codex.endgame.hyperreal.desc",
+  "icon": {
+    "item": "theoreticalsciences:bubble_universe_sample"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:arbor_heartwood"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:arbor_heartwood"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bubble_universe_sample"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_fragment"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:law_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p10"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.hyperreal.p11"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__axiomatic_breach_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_reality"
+  }
+}

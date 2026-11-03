@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.bioreactor",
+  "description": "book.theoreticalsciences.codex.biology.bioreactor.desc",
+  "icon": {
+    "item": "theoreticalsciences:bioreactor"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 12,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bioreactor"
+      },
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bioreactor"
+      },
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:nutrient_broth_cell"
+      },
+      "text": "book.theoreticalsciences.codex.biology.bioreactor.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/minds__neural_synthesizer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/molecular_biology"
+  }
+}

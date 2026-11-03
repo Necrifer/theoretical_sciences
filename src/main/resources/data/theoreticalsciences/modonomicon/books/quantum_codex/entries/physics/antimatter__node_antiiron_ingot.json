@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.node_antiiron_ingot",
+  "description": "book.theoreticalsciences.codex.antimatter.node_antiiron_ingot.desc",
+  "icon": {
+    "item": "theoreticalsciences:antiiron_ingot"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 187,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiiron_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.node_antiiron_ingot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_antiiron_ingot.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_antiiron_ingot.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/antimatter__mirror_foundry",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mirror_metallurgy"
+  }
+}

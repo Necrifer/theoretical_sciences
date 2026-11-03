@@ -1,0 +1,22 @@
+{
+  "name": "The Cyclotron",
+  "icon": "theoreticalsciences:cyclotron",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cyclotron,theoreticalsciences:cyclotron_dee,theoreticalsciences:rf_oscillator",
+      "text": "A proton crossing a magnetic field circles, and how often it circles - $(thing)f = qB/2\u03c0m$() - does not depend on how fast it goes. Lawrence saw what that meant: put an RF voltage at that frequency across a gap, and the proton is kicked every half turn, spiralling out faster and faster in step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the field B, then the RF to 15.25 MHz per tesla. At the edge, 0.75 m out, the beam has $(thing)E = (qBR)\u00b2/2m$(). But relativity: the faster it goes the heavier it is, its frequency drops, and over its hundreds of turns it slips out of phase. Past 90\u00b0 the gap slows it instead. Tune a hair low to split the difference - the classical cyclotron runs out at about ten MeV."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Five MeV protons on iron make $(item)Cobalt-57$() (\u2075\u2077Fe(p,n)\u2075\u2077Co): the Pound-Rebka source, two at a time, without radium. Above 2.2 T the iron yoke saturates; more than 2 kW of beam melts the target."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cyclotron_physics"
+}

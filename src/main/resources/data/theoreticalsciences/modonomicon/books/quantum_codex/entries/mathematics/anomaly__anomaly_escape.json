@@ -1,0 +1,71 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_escape",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_escape.desc",
+  "icon": {
+    "item": "theoreticalsciences:metastatic_spore"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 93,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:immortal_cell_line"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:immortal_cell_line"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metastatic_spore"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bioreactor"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_escape.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/anomaly__anomaly_origin_oncogenesis"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/immune_evasion"
+  }
+}

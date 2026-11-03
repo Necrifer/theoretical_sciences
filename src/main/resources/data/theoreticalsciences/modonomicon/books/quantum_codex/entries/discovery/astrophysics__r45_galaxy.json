@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r45_galaxy",
+  "description": "book.theoreticalsciences.codex.astrophysics.r45_galaxy.desc",
+  "icon": {
+    "item": "theoreticalsciences:hydrogen_line_map"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 33,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hydrogen_line_map"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_galaxy.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_galaxy.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r45_galaxy.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__r45_radio"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__radio_telescope"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

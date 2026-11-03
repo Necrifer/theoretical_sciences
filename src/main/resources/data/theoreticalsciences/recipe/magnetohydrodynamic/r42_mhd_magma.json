@@ -1,0 +1,26 @@
+{
+  "type": "theoreticalsciences:magnetohydrodynamic",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:basaltic_magma",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:basalt",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 1200,
+  "research": "theoreticalsciences:magnetohydrodynamics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": 10.0,
+      "rh": 2700.0,
+      "Pref": 4.0
+    }
+  }
+}

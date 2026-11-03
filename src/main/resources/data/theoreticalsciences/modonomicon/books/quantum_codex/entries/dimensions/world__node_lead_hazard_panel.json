@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_lead_hazard_panel",
+  "description": "book.theoreticalsciences.codex.world.node_lead_hazard_panel.desc",
+  "icon": {
+    "item": "theoreticalsciences:lead_hazard_panel"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 4,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lead_hazard_panel"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_lead_hazard_panel.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

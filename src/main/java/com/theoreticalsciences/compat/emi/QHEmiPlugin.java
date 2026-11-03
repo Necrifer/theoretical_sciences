@@ -91,6 +91,7 @@ public class QHEmiPlugin implements EmiPlugin {
         safely("workstations", () -> workstations(reg, jemi));
         safely("recipes", () -> recipes(reg));
         if (!jemi) safely("info pages", () -> info(reg));
+        safely("containment cells", () -> cells(reg));
         reg.addRecipeHandler(ExtremeRegistry.EXTREME_MENU.get(), new ExtremeTableRecipeHandler());
     }
 
@@ -231,6 +232,29 @@ public class QHEmiPlugin implements EmiPlugin {
             safely("forge " + r.id(), () -> reg.addRecipe(new ForgeEmiRecipe(FORGE, QHEmi.synthetic("omnipotence_forge/" + r.id()), r)));
     }
 
+    /**
+     * Round 37: EMI shows "empty bucket + fluid = filled bucket" for every fluid that names a bucket item, and ours name
+     * their containment cell - but buckets refuse our fluids. Those pages are taken out, and the real way in (an Empty
+     * Containment Cell used on a source block) is shown instead. Gases have no block, so they get no page.
+     */
+    private static void cells(EmiRegistry reg) {
+        java.util.Set<net.minecraft.world.item.Item> cellItems = new java.util.HashSet<>();
+        for (QHFluids.Entry e : QHFluids.ALL.values()) cellItems.add(e.bucket.get());
+        reg.removeRecipes(r -> r.getCategory() == VanillaEmiRecipeCategories.WORLD_INTERACTION
+                && r.getOutputs().stream().anyMatch(o -> cellItems.contains(o.getItemStack().getItem()))
+                && r.getInputs().stream().anyMatch(in -> in.getEmiStacks().stream().anyMatch(s -> s.getItemStack().is(net.minecraft.world.item.Items.BUCKET))));
+        EmiStack empty = EmiStack.of(com.theoreticalsciences.item.ContainmentCells.empty());
+        for (QHFluids.Entry e : QHFluids.ALL.values()) {
+            if (e.def.gas() || e.block == null || e.def.id().equals("mod_essence")) continue;
+            reg.addRecipe(dev.emi.emi.api.recipe.EmiWorldInteractionRecipe.builder()
+                    .id(QHEmi.synthetic("world/cell_filling/" + e.def.id()))
+                    .leftInput(empty)
+                    .rightInput(EmiStack.of(e.source.get(), 1000), false)
+                    .output(EmiStack.of(e.bucket.get()))
+                    .build());
+        }
+    }
+
     /** Where the fluids that no machine makes come from. */
     private static void info(EmiRegistry reg) {
         for (String f : new String[]{"schrodinger_limit", "relativity_breakdown", "pleroma"}) {
@@ -238,6 +262,12 @@ public class QHEmiPlugin implements EmiPlugin {
             if (e == null) continue;
             List<EmiIngredient> stacks = List.of(EmiStack.of(e.source.get(), 1000), EmiStack.of(e.bucket.get()));
             reg.addRecipe(new EmiInfoRecipe(stacks, List.of(Component.translatable("jei.theoreticalsciences.info." + f)), QHEmi.synthetic("info/" + f)));
+        }
+        // round 37: the item / fluid / energy transport, easy to miss
+        for (String id : new String[]{"entangled_relay", "entangled_transceiver", "entanglement_tuner"}) {
+            var it = QHItems.get(id);
+            if (it == null || it == net.minecraft.world.item.Items.AIR) continue;
+            reg.addRecipe(new EmiInfoRecipe(List.of(EmiStack.of(it)), List.of(Component.translatable("jei.theoreticalsciences.info." + id)), QHEmi.synthetic("info/" + id)));
         }
     }
 }

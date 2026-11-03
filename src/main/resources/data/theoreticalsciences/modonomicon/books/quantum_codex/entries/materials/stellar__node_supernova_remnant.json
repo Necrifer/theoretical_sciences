@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.node_supernova_remnant",
+  "description": "book.theoreticalsciences.codex.stellar.node_supernova_remnant.desc",
+  "icon": {
+    "item": "theoreticalsciences:supernova_remnant"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 113,
+  "y": 56,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:supernova_remnant"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.node_supernova_remnant.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_supernova_remnant.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_supernova_remnant.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/stellar__nucleosynthesis_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_evolution"
+  }
+}

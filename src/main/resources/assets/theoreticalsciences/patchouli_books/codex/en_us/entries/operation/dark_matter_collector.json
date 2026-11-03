@@ -1,0 +1,24 @@
+{
+  "name": "Dark Matter Collector",
+  "icon": "theoreticalsciences:dark_matter_collector",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Dark matter streams through at ~230 km/s. A WIMP of mass m_\u03c7 hitting a nucleus of mass m_N can give it at most 2\u00b5\u00b2v\u00b2/m_N of recoil - so match the target to the WIMP. Bolometers resolve \u0394E \u221d T^(5/2): light dark matter needs millikelvin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Target mass number, Recoil threshold, Detector mass, Shield field.$(br2)$(thing)Disturbance$(): Neutron background varies by \u00b130%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Threshold above the maximum recoil: nothing can be seen; Threshold inside the thermal noise; Interlock: veto-shield magnet not superconducting (too warm); Field above the critical field: the veto-shield magnet quench.$(br2)$(thing)Rate$(): Collection follows the detection significance."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Nucleus mass: m_N = 0.9315\u00b7A$(br)Reduced mass: \u00b5 = m_\u03c7m_N/(m_\u03c7 + m_N)$(br)Maximum recoil: E_max = 2\u00b5\u00b2v_max\u00b2/m_N$(br)Typical recoil: E\u2080 = 2\u00b5\u00b2v\u2080\u00b2/m_N$(br)Signal events: S \u221d M\u00b7A\u00b2\u00b5\u00b2/m_\u03c7\u00b7e^(\u2212E/E\u2080)$(br)Background: B \u221d M\u00b7e^(\u2212E/3 keV)$(br)Energy resolution: \u0394E \u221d T^(5/2)"
+    }
+  ]
+}

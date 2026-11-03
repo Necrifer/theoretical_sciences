@@ -1,0 +1,146 @@
+{
+ "metamorphism": {
+  "goal": "Two minerals share a boundary on the pressure-temperature map. Turning the first into the second changes its entropy from S _ 1 to S _ 2 and its molar volume from V _ 1 to V _ 2. Write s, how many pascals the boundary climbs for each kelvin.",
+  "name": "Clapeyron slope",
+  "lhs": "s",
+  "form": "( S _ 2 - S _ 1 ) / ( V _ 2 - V _ 1 )",
+  "expr": "( B - A ) / ( Y - X )",
+  "ask": "Find s in Pa/K for graphite into diamond: A = 5.74, B = 2.38 J/(mol·K); X = 5.30e-6, Y = 3.42e-6 m³/mol.",
+  "vars": {
+   "s": "boundary steepness (Pa/K)",
+   "S": "molar entropy",
+   "V": "molar volume",
+   "A": "entropy of graphite",
+   "B": "entropy of diamond",
+   "X": "volume of graphite (m³/mol)",
+   "Y": "volume of diamond (m³/mol)"
+  },
+  "given": {
+   "A": 5.74,
+   "B": 2.38,
+   "X": 5.3e-06,
+   "Y": 3.42e-06
+  },
+  "unit": "Pa/K",
+  "method": "Along the boundary both phases have the same Gibbs energy, so their changes match: V₁dP − S₁dT = V₂dP − S₂dT.",
+  "distractors": [
+   "T",
+   "+",
+   "ln"
+  ]
+ },
+ "deep_drilling": {
+  "goal": "Heat flows up out of the planet at q watts per square metre through rock that conducts k watts per metre per kelvin. The surface is at T _ 0. Write the temperature T a depth h down.",
+  "name": "Geothermal gradient",
+  "lhs": "T",
+  "form": "T _ 0 + q * h / k",
+  "expr": "A + q * h / k",
+  "ask": "Find T in kelvin at the bottom of the deepest hole, h = 12000 m, with A = 288 K, q = 0.065 W/m² and k = 2.5 W/(m·K).",
+  "vars": {
+   "T": "temperature (K)",
+   "q": "heat flow (W/m²)",
+   "h": "depth (m)",
+   "k": "conductivity (W/m·K)",
+   "A": "surface temperature (K)"
+  },
+  "given": {
+   "A": 288,
+   "q": 0.065,
+   "h": 12000,
+   "k": 2.5
+  },
+  "unit": "K",
+  "method": "Fourier's law: the heat flow is the conductivity times how fast the temperature rises with depth.",
+  "distractors": [
+   "ln",
+   "2",
+   "ρ"
+  ]
+ },
+ "isotope_separation": {
+  "goal": "In a spinning rotor a heavy and a light molecule of the same gas settle differently. Their molar masses differ by M, the wall moves at speed v and the gas is at temperature T. Write α, how much richer in the light one the gas at the axis is than at the wall.",
+  "name": "Centrifuge separation factor",
+  "lhs": "α",
+  "form": "exp ( M * v ^ 2 / ( 2 * R * T ) )",
+  "expr": "exp ( M * v ^ 2 / ( 2 * R * T ) )",
+  "ask": "Find α for uranium hexafluoride: M = 0.003 kg/mol, v = 700 m/s, R = 8.314 J/(mol·K), T = 310 K.",
+  "vars": {
+   "α": "enrichment between axis and wall",
+   "M": "molar mass difference (kg/mol)",
+   "v": "wall speed (m/s)",
+   "R": "gas constant",
+   "T": "temperature (K)"
+  },
+  "given": {
+   "M": 0.003,
+   "v": 700,
+   "R": 8.314,
+   "T": 310
+  },
+  "unit": "",
+  "method": "Each species follows the Boltzmann law in the rotating frame, n ∝ e^(mω²r²/2RT); divide the two at the wall and at the axis.",
+  "distractors": [
+   "ln",
+   "π",
+   "4"
+  ]
+ },
+ "nuclear_fission": {
+  "goal": "A neutron from one splitting nucleus makes η new neutrons per neutron the fuel absorbs; a fraction f of slowed neutrons are absorbed by fuel, a fraction p survive slowing down, and fast splits add a factor ε. Write k, the neutrons in the next generation per neutron in this one.",
+  "name": "Four-factor formula",
+  "lhs": "k",
+  "form": "η * f * p * ε",
+  "expr": "n * f * p * e",
+  "ask": "Find k for a graphite core: n = 2.07, f = 0.71, p = 0.75, e = 1.03.",
+  "vars": {
+   "k": "multiplication",
+   "η": "neutrons per absorption",
+   "f": "thermal utilisation",
+   "p": "resonance escape",
+   "ε": "fast fission",
+   "n": "neutrons per absorption",
+   "e": "fast fission"
+  },
+  "given": {
+   "n": 2.07,
+   "f": 0.71,
+   "p": 0.75,
+   "e": 1.03
+  },
+  "unit": "",
+  "method": "Follow one generation round: each step keeps or multiplies the neutron count, so the factors multiply.",
+  "distractors": [
+   "+",
+   "λ",
+   "2"
+  ]
+ },
+ "magnetohydrodynamics": {
+  "goal": "A fluid of conductivity σ flows at speed u across a field B between two electrodes; the outside circuit takes a fraction k of the open-circuit voltage. Write p, the electrical output per cubic metre.",
+  "name": "Faraday generator",
+  "lhs": "p",
+  "form": "σ * u ^ 2 * B ^ 2 * k * ( 1 - k )",
+  "expr": "σ * u ^ 2 * B ^ 2 * k * ( 1 - k )",
+  "ask": "Find p in W/m³ for a seeded plasma: σ = 50 S/m, u = 1000 m/s, B = 5 T, k = 0.5.",
+  "vars": {
+   "p": "output per volume (W/m³)",
+   "σ": "conductivity (S/m)",
+   "u": "flow speed (m/s)",
+   "B": "magnetic field (T)",
+   "k": "load factor"
+  },
+  "given": {
+   "σ": 50,
+   "u": 1000,
+   "B": 5,
+   "k": 0.5
+  },
+  "unit": "W/m³",
+  "method": "The current density is j = σ(uB − E) with E = k·uB at the load; the power delivered is j·E.",
+  "distractors": [
+   "2",
+   "+",
+   "ρ"
+  ]
+ }
+}

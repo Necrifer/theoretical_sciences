@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.node_antiproton_bundle",
+  "description": "book.theoreticalsciences.codex.antimatter.node_antiproton_bundle.desc",
+  "icon": {
+    "item": "theoreticalsciences:antiproton_bundle"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 164,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiproton_bundle"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.node_antiproton_bundle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_antiproton_bundle.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.node_antiproton_bundle.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/antimatter__antiatoms",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/antiatom_chemistry"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Warp Field Forge",
+  "icon": "theoreticalsciences:warp_field_forge",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 76,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Alcubierre's metric moves a bubble of flat space by contracting space ahead of it and expanding it behind, at any speed v. Its wall needs negative energy, growing as v\u00b2R\u00b2\u03c3 for radius R and wall sharpness \u03c3; the tidal shear across the wall goes as v\u03c3; a wall that is thick for its bubble (R\u03c3 small) is not a bubble at all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Bubble speed, Bubble radius, Wall sharpness \u03c3.$(br2)$(thing)Disturbance$(): Casimir supply: the negative energy needed varies by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): More negative energy than the forge can hold.$(br2)$(thing)Rate$(): Smaller bubbles form faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Negative energy: E \u221d \u2212v\u00b2R\u00b2\u03c3$(br)Wall shear: \u221d v\u03c3$(br)Wall thinness: R\u03c3"
+    }
+  ]
+}

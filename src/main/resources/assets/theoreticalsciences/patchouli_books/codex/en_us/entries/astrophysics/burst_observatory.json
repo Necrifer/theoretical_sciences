@@ -1,0 +1,164 @@
+{
+  "name": "Burst Observatory",
+  "icon": "theoreticalsciences:burst_observatory",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 111,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:burst_observatory",
+      "title": "Burst Observatory",
+      "text": "Twelve scintillators facing every way at once, waiting for the brightest explosions in the Universe.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lower the trigger threshold and it sees more bursts - but noise sets it off falsely more often. Watch long enough to be all but sure of catching one (90%), with few enough false triggers."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Burst Observatory",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_________",
+            "_________",
+            "___AAA___",
+            "___ABA___",
+            "___AAA___",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____D____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "____A____",
+            "__A_D____",
+            "___DD____",
+            "____D____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____D____",
+            "____DD___",
+            "____D_A__",
+            "____A____",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "____A____",
+            "____D____",
+            "_ADDD____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____DDDA_",
+            "____D____",
+            "____A____",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "__ADD____",
+            "___D_____",
+            "__A______",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "______A__",
+            "_____D___",
+            "____DDA__",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____D____",
+            "_________",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "DDDD0DDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "EDDDDDDDE",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDEDDDD"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:burst_observatory",
+          "A": "theoreticalsciences:scintillator_panel",
+          "B": "theoreticalsciences:containment_field_glass",
+          "D": "theoreticalsciences:burst_casing",
+          "E": "#theoreticalsciences:multiblock/burst_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Burst Afterglow Crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:burst_observatory",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gamma_ray_bursts"
+}

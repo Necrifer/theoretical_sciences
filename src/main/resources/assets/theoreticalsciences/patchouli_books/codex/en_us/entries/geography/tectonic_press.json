@@ -1,0 +1,217 @@
+{
+  "name": "Tectonic Press",
+  "icon": "theoreticalsciences:tectonic_press",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 86,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tectonic_press",
+      "title": "Tectonic Press",
+      "text": "A multi-anvil press over a firebox: it squeezes rock to the pressures of the deep mantle and bakes it to match. What crystallises depends on where on the phase diagram you hold it.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the anvil pressure and the furnace temperature. Below the graphite-diamond line carbon stays graphite; above it, with $(item)Iron-Nickel$() as the solvent catalyst beside the press, it becomes diamond. Peridotite turns to $(item)Ringwoodite$() above 17.5 GPa and to $(item)Bridgmanite$() above the post-spinel line near 23 GPa. Basalt becomes $(item)Metamorphic Schist$() at a few kilobars."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tectonic Press",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "________A"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_________",
+            "________A"
+          ],
+          [
+            "_________",
+            "_DDDDDDD_",
+            "_D_____D_",
+            "_D_____D_",
+            "_DDDDDDD_",
+            "_D_____D_",
+            "_D_____D_",
+            "_DDDDDDD_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_D_____D_",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_D_____D_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_D_____D_",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_D_____D_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_D_____D_",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_D_____D_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDBDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "_DDDDDDD_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_DDDDDDD_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_DDDDDDD_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_DDDDDDD_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_DDDDDDD_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_DDD0DDD_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_D     D_",
+            "_DDDDDDD_",
+            "________A"
+          ],
+          [
+            "_________",
+            "_DDDDDDD_",
+            "_DEEEEED_",
+            "_DEEEEED_",
+            "_DEEEEED_",
+            "_DEEEEED_",
+            "_DEEEEED_",
+            "_DDDDDDD_",
+            "________A"
+          ],
+          [
+            "DDEEEEEDD",
+            "DDEEEEEDD",
+            "DDEEEEEDD",
+            "DDEEEEEDD",
+            "DDEEEEEDD",
+            "DDEEEEEDD",
+            "DDEEEEEDD",
+            "DDDDDDDDD",
+            "DDDDDDDDA"
+          ],
+          [
+            "DDDDFDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "FDDDDDDDF",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDFDDDD"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:tectonic_press",
+          "A": "theoreticalsciences:exhaust_stack",
+          "B": "theoreticalsciences:press_ram",
+          "D": "theoreticalsciences:lithostatic_casing",
+          "E": "theoreticalsciences:refractory_firebox",
+          "F": "#theoreticalsciences:multiblock/lithostatic_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Accretion Disk Fragment, Boron Control Rod, Bridgmanite, Brown Dwarf Core, Garnet, Graphite Moderator, Metamorphic Schist, Planetary Core Sample, Ringwoodite, White Dwarf Core."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tectonic_press",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:core_iron",
+      "text": "Made in $(item)Spectrograph$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ringwoodite",
+      "text": "A high-pressure form of olivine from 520 km down. Its crystals hold water: there may be more of it in the mantle than in every ocean.$(br2)Made in $(item)Spectrograph$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bridgmanite",
+      "text": "The most abundant mineral on Earth - and almost never seen, because it only exists under the pressure of the lower mantle.$(br2)Made in $(item)Tectonic Press$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:metamorphic_schist",
+      "text": "Basalt pressed and baked until its minerals regrew as flat, glittering mica - with the odd red garnet among them.$(br2)Made in $(item)Tectonic Press$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Iron-Nickel$(): Exoplanet Core Sample, Iridium Crucible, Magnetar Crust Fragment, Mu-Metal Shield, Planetary Core Sample and more$(li)$(item)Ringwoodite$(): Pressure Boots, Pressure Chestplate, Pressure Helmet, Pressure Leggings$(li)$(item)Bridgmanite$(): Pressure Boots, Pressure Chestplate, Pressure Helmet, Pressure Leggings$(li)$(item)Metamorphic Schist$(): Garnet, Quartz"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/metamorphism"
+}

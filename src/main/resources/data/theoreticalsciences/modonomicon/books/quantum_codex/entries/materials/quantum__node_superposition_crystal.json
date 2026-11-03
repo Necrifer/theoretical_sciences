@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_superposition_crystal",
+  "description": "book.theoreticalsciences.codex.quantum.node_superposition_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:superposition_crystal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 2,
+  "y": 71,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:superposition_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_superposition_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_superposition_crystal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_superposition_crystal.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__quantum_entangler",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_entanglement"
+  }
+}

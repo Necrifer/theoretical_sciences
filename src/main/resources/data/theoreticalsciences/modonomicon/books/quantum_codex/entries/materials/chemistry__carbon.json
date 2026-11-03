@@ -1,0 +1,81 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.carbon",
+  "description": "book.theoreticalsciences.codex.chemistry.carbon.desc",
+  "icon": {
+    "item": "theoreticalsciences:graphene_sheet"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 79,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graphene_sheet"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graphene_sheet"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:carbon_nanotube_bundle"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:buckyball_cage"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metal_organic_framework"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:noble_gas_clathrate"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:self_healing_polymer"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.carbon.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nanotech__nanite_assembler"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nanochemistry"
+  }
+}

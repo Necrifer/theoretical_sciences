@@ -6,7 +6,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 
 /**
- * The ten travel animations, one per dimension, all drawn from code (no textures).
+ * The twelve travel animations, one per dimension, all drawn from code (no textures).
  *
  * <p>Every scene is a function of three numbers:
  * <ul>
@@ -40,6 +40,8 @@ public final class TransitScenes {
             case HYPERREAL -> hyperreal(g, s, w, h, t, p, rev);
             case LIVING_PROOF -> livingProof(g, s, w, h, t, p, rev);
             case TRANSCENDENTAL -> transcendental(g, s, w, h, t, p, rev);
+            case INTERIOR -> interior(g, s, w, h, t, p, rev);
+            case FRONTIER -> frontier(g, s, w, h, t, p, rev);
         }
         g.flush();
     }
@@ -239,6 +241,85 @@ public final class TransitScenes {
 
     private static float whiteFlash(float p) {
         return smooth(clamp((p - 0.5F) / 0.5F));
+    }
+
+    // ================================================================== The Planetary Interior
+    /**
+     * Down through the Earth: the layers of the crust and mantle - soil, granite, basalt, peridotite - rush up past
+     * you as bands, each warmer in colour than the last, while the glow of the molten outer core rises from below and
+     * sparks of magma stream upward. Leaving, the bands fall away downward and the glow sinks out of sight.
+     */
+    private static void interior(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float ep = smooth(p), dir = rev ? -1 : 1;
+        int[] strata = {0x4A3424, 0x6A6460, 0x2E2A2C, 0x3E5A34, 0x6A3018, 0x8A3810};
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        float bandH = h / 3.2F, scroll = t * (0.6F + 1.6F * ep) * dir;
+        for (int i = -1; i < 6; i++) {
+            float y0 = (i - frac(scroll)) * bandH;
+            int k = Math.floorMod(i + (int) Math.floor(scroll), strata.length);
+            d.rect(0, y0, w, y0 + bandH, strata[k], 0.85F * p);
+            // a wavy contact between layers
+            for (int x = 0; x < w; x += 8) {
+                float wob = 4 * (float) Math.sin(x * 0.05F + k * 1.7F);
+                d.rect(x, y0 + wob - 1.5F, x + 8, y0 + wob + 1.5F, 0x140806, 0.6F * p);
+            }
+        }
+        d.end();
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        // the core's glow: coming up from below when descending, sinking away when rising
+        float glow = rev ? 1 - ep : ep;
+        f.rectV(0, h * (1 - 0.8F * glow), w, h, s.ink, 0, s.accent, 0.85F * p * glow);
+        int n = (int) (90 * Math.min(1, p * 1.5F));
+        for (int i = 0; i < n; i++) {
+            float x = rnd(i, 1) * w, q = frac(rnd(i, 2) + t * (0.4F + 0.6F * rnd(i, 3)) * dir);
+            float y = h * (1 - q), len = 6 + 20 * ep;
+            f.line(x, y, x, y + len * dir, 1.4F, s.accent, p * 0.8F * (1 - q), s.ink, 0);
+        }
+        f.end();
+    }
+
+    // ================================================================== The Accretion Frontier
+    /**
+     * Out past the heliopause on a light sail: stars stream past in lengthening streaks (relativistic aberration
+     * crowding them towards the direction of travel), while far ahead a black hole grows - a black disc ringed by its
+     * photon ring and a tilted, Doppler-bright accretion disk. Leaving, the streaks run backwards and the hole shrinks
+     * into the distance behind you.
+     */
+    private static void frontier(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, cy = h / 2F, u = Math.min(w, h), R = (float) Math.hypot(w, h) / 2, ep = smooth(p), dir = rev ? -1 : 1;
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        int n = (int) (220 * Math.min(1, p * 1.4F));
+        for (int i = 0; i < n; i++) {
+            float ang = rnd(i, 1) * TAU, q = frac(rnd(i, 2) + t * (0.15F + 0.5F * ep) * dir);
+            float r = R * q * q, len = 2 + 60 * ep * q;
+            float c = (float) Math.cos(ang), sn = (float) Math.sin(ang);
+            int col = rnd(i, 4) < 0.2F ? s.accent : (rnd(i, 4) < 0.6F ? s.ink : 0xFFFFFF);
+            f.line(cx + c * r, cy + sn * r, cx + c * (r + len), cy + sn * (r + len), 1 + q, col, p * 0.9F * Math.min(1, q * 4), col, 0);
+        }
+        float size = rev ? 1 - ep : ep;
+        float rc = u * (0.02F + 0.12F * size);
+        disk(f, s, cx, cy, rc, t, p, true);
+        f.end();
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        d.disc(cx, cy, rc, 48, 0, p, 0, p);
+        d.end();
+        f = Fx2D.begin(g, Blend.ADD);
+        f.ring(cx, cy, rc * 1.06F, 1.6F, 64, 0xFFE8C0, p * 0.9F);
+        f.band(cx, cy, rc * 1.06F, rc * 1.5F, 1, 0, TAU, 64, s.accent, 0.3F * p, s.accent, 0);
+        disk(f, s, cx, cy, rc, t, p, false);
+        // the jets, straight up and down out of the poles
+        f.line(cx, cy - rc, cx, cy - rc * 5, 2.2F, s.ink, 0.7F * p, s.ink, 0);
+        f.line(cx, cy + rc, cx, cy + rc * 5, 2.2F, s.ink, 0.7F * p, s.ink, 0);
+        f.end();
+    }
+
+    private static void disk(Fx2D f, TransitStyle s, float cx, float cy, float rc, float t, float p, boolean far) {
+        int seg = 40;
+        for (int i = 0; i < seg; i++) {
+            float a0 = (far ? (float) Math.PI : 0) + (float) Math.PI * i / seg, mid = a0 + (float) Math.PI / seg / 2;
+            float bright = 0.5F + 0.5F * (float) Math.cos(mid) + 0.2F * (float) Math.sin(mid * 5 - t * 3);
+            f.band(cx, cy, rc * 1.3F, rc * 3.2F, 0.3F, a0, (float) Math.PI / seg, 1, s.accent, 0.85F * p * bright, 0xFF4020, 0);
+        }
     }
 
     // ================================================================== The Transfinite Hierarchy
@@ -512,6 +593,18 @@ public final class TransitScenes {
                 f.glowLine(cx, cy - 7, cx, cy + 7, 1, 0xFFFFFF, 0.8F);
             }
             case HYPERREAL -> tesseract(f, cx, cy, 10, t * 1.5F, 0, ink, 0.9F);
+            case INTERIOR -> {
+                // a drill bit going down through the bands
+                for (int i = 0; i < 5; i++) f.rect(cx - half + i * 28, cy - 4, cx - half + i * 28 + 26, cy + 4, i <= done * 5 ? accent : ink, 0.3F + 0.1F * i);
+                float x = cx - half + 2 * half * done;
+                f.tri(x, cy + 7, accent, 1, x - 4, cy - 5, ink, 0.8F, x + 4, cy - 5, ink, 0.8F);
+            }
+            case FRONTIER -> {
+                // a sail on its way out to a hole
+                f.ring(cx + half, cy, 5, 1.2F, 24, accent, 0.8F);
+                float x = cx - half + 2 * half * done;
+                f.tri(x + 5, cy, 0xFFFFFF, 0.9F, x - 4, cy - 5, ink, 0.8F, x - 4, cy + 5, ink, 0.8F);
+            }
             case LIVING_PROOF -> {} // drawn as text below
             case TRANSCENDENTAL -> {
                 f.disc(cx, cy, 6 + 3 * done, 20, 0xFFFFFF, 0.9F, ink, 0);

@@ -1,0 +1,26 @@
+{
+  "name": "Life on the Frontier",
+  "icon": "theoreticalsciences:nebuloid_spawn_egg",
+  "category": "theoreticalsciences:world",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nebuloid_spawn_egg,theoreticalsciences:pulsar_wisp_spawn_egg,theoreticalsciences:lens_phantom_spawn_egg",
+      "text": "Each of the Frontier's creatures acts out its physics. The $(thing)Nebuloid$() is a drifting knot of gas and dust; inside it you are blind. The $(thing)Pulsar Wisp$() pulses on an exact beat, once every one and a half seconds, and its pulse hurts and irradiates anyone it can see within ten blocks - dodge behind something between pulses."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)Tidal Stretcher$() pulls you in harder the closer you are (a tidal force grows as 1/r\u00b3) and stretches what it grabs. The $(thing)Lens Phantom$() is never where it appears: its light reaches you bent round the void's mass, so its image stands a block or two from its body. Aim beside it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)Hawking Imp$() is a tiny black hole. It evaporates, and the smaller it gets the hotter and faster it burns (T \u221d 1/M) - until it pops. The $(thing)Boltzmann Brain$() fluctuates out of nothing, mutters, and is gone within half a minute unless caught."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)The Binary$(): play a Binary Black Hole Merger record - or a Gravitational Wave Echo - in the Frontier and two compact stars spiral out of the dark. Their gravitational waves carry off their orbit: they close in (da/dt \u221d \u22121/a\u00b3) and circle ever faster. Kill both before they meet - if they merge, the shockwave hits everything nearby, and nothing is left to loot."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galactic_dynamics"
+}

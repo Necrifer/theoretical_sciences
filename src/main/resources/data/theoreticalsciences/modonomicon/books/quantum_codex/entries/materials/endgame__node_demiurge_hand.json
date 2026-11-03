@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_demiurge_hand",
+  "description": "book.theoreticalsciences.codex.endgame.node_demiurge_hand.desc",
+  "icon": {
+    "item": "theoreticalsciences:demiurge_hand"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 219,
+  "y": 52,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:demiurge_hand"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_demiurge_hand.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_demiurge_hand.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_demiurge_hand.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__second_core",
+      "draw_arrow": false
+    }
+  ]
+}

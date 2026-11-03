@@ -1,0 +1,36 @@
+{
+  "name": "The Extent of Anomalies",
+  "icon": "theoreticalsciences:anomaly_catalogue",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_catalogue",
+      "text": "What can an anomaly do? The catalogue so far:$(li)break a symmetry and stay broken (defects)$(li)make itself from its surroundings (autocatalysis, prions)$(li)override the rules of its host (oncogenesis)$(li)defy prediction (chaos, undecidability)$(li)copy itself and escape (replicators, metastasis)$(li)evolve resistance$(li)spread through a population$(li)break a conservation law locally$(li)turn partner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "How big do they get? Sizes of tumours, outbreaks, earthquakes, forest fires and ruptures follow $(thing)power laws$(), p(s) \u221d s^{\u2212\u03c4}: most are tiny, a few are enormous, and nothing sets a typical size. The mean is s\u2080(\u03c4 \u2212 1)/(\u03c4 \u2212 2) - and for \u03c4 \u2264 2 it is infinite: the largest anomaly you will ever meet outweighs all the others together. Systems tuned to the edge of a phase transition do this by themselves (self-organised criticality)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Anomaly Containment Ward$() binds one of every kind you have made into the $(item)Anomaly Catalogue$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_catalogue",
+      "text": "Every kind of anomaly you have contained, what it can do, how far it can spread and how big the largest one will be. Most are small; a few are not.$(br2)Made in $(item)Anomaly Containment Ward$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_containment_ward",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Anomaly Catalogue$(): Resolved Anomaly"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/anomaly_scaling"
+}

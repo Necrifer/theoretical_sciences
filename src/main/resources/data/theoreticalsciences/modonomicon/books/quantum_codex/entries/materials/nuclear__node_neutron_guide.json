@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_neutron_guide",
+  "description": "book.theoreticalsciences.codex.nuclear.node_neutron_guide.desc",
+  "icon": {
+    "item": "theoreticalsciences:neutron_guide"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 66,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutron_guide"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_neutron_guide.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_neutron_guide.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__decay_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

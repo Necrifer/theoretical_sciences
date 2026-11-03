@@ -1,0 +1,19 @@
+{
+  "name": "Hall Bar Chip",
+  "icon": "theoreticalsciences:hall_bar_chip",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hall_bar_chip",
+      "title": "Hall Bar Chip",
+      "text": "A strip of two-dimensional electrons at a kelvin and ten tesla. Its Hall resistance sits on plateaus at exactly h/(\u03bde\u00b2): a resistance standard set by nature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Laser Cutter$().$(br2)$(thing)Unlocked by$(): Quantum Hall Effect.$(br2)$(thing)Used in$(): Boundary CFT Chip, Unruh Detector, Unruh Thermometer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/topology"
+}

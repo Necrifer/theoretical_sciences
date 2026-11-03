@@ -1,0 +1,86 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.logic_sets",
+  "description": "book.theoreticalsciences.codex.mathematics.logic_sets.desc",
+  "icon": {
+    "item": "theoreticalsciences:topos"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 19,
+  "y": 70,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.logic_sets"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_schema"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:empty_set"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:power_set"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_of_choice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:category_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:functor_bridge"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.logic_sets.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:materials/mathematics__math_overview"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/formal_logic"
+  }
+}

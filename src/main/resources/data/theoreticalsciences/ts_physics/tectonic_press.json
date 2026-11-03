@@ -1,0 +1,105 @@
+{
+  "params": [
+    {
+      "id": "P",
+      "unit": "GPa",
+      "min": 0,
+      "max": 30,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "Tf",
+      "unit": "K",
+      "min": 300,
+      "max": 3200,
+      "step": 1,
+      "default": 1000
+    }
+  ],
+  "recipe_vars": {
+    "Ea": 300000,
+    "Tr": 1500
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Pe",
+      "unit": "GPa",
+      "expr": "P*(1 + 0.02*d)",
+      "formula": "P_s = P\u00b7(1 + 0.02\u00b7d)"
+    },
+    {
+      "id": "z",
+      "unit": "km",
+      "expr": "Pe*1e9/(3300*9.81)/1000",
+      "formula": "z = P/(\u03c1g)"
+    },
+    {
+      "id": "Pdg",
+      "unit": "GPa",
+      "expr": "1.94 + 0.0025*(Tf - 273)",
+      "formula": "P = 1.94 + 0.0025\u00b7T(\u00b0C)"
+    },
+    {
+      "id": "Prw",
+      "unit": "GPa",
+      "expr": "17.5 + 0.005*(Tf - 1873)",
+      "formula": "P = 17.5 + 0.005\u00b7(T \u2212 1873)"
+    },
+    {
+      "id": "Pps",
+      "unit": "GPa",
+      "expr": "23.5 - 0.0025*(Tf - 1900)",
+      "formula": "P = 23.5 \u2212 0.0025\u00b7(T \u2212 1900)"
+    },
+    {
+      "id": "mD",
+      "unit": "GPa",
+      "expr": "Pe - Pdg",
+      "formula": "P \u2212 P_dg"
+    },
+    {
+      "id": "mR",
+      "unit": "GPa",
+      "expr": "Pe - Prw",
+      "formula": "P \u2212 P_rw"
+    },
+    {
+      "id": "mB",
+      "unit": "GPa",
+      "expr": "Pe - Pps",
+      "formula": "P \u2212 P_ps"
+    },
+    {
+      "id": "kin",
+      "unit": "",
+      "expr": "exp(Ea/8.314*(1/Tr - 1/Tf))",
+      "formula": "k/k_ref = e^(E\u2090/R\u00b7(1/T_ref \u2212 1/T))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "anvil",
+      "kind": "wear",
+      "expr": "26 - P",
+      "formula": "P < 26 GPa"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "900 - T",
+      "formula": "T < 900 K"
+    }
+  ],
+  "rate": "clamp(kin, 0, 3)",
+  "rate_formula": "rate = e^(E\u2090/R\u00b7(1/T_ref \u2212 1/T))",
+  "heat": "0.02*(Tf - 300) + 0.5*P",
+  "idle_heat": "0.5",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

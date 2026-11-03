@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_entangled_photon_pair",
+  "description": "book.theoreticalsciences.codex.quantum.node_entangled_photon_pair.desc",
+  "icon": {
+    "item": "theoreticalsciences:entangled_photon_pair"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 0,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:entangled_photon_pair"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_entangled_photon_pair.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_entangled_photon_pair.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_entangled_photon_pair.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__quantum_entangler",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_entanglement"
+  }
+}

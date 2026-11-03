@@ -37,7 +37,8 @@ public final class VoidFall {
             QHDimensions.WHITE_HOLE, Level.OVERWORLD,
             QHDimensions.HYPERREAL, QHDimensions.BULK,
             QHDimensions.TRANSCENDENTAL, QHDimensions.HYPERREAL,
-            QHDimensions.ANTIVERSE, Level.OVERWORLD);
+            QHDimensions.ANTIVERSE, Level.OVERWORLD,
+            QHDimensions.FRONTIER, Level.OVERWORLD);
     private static final Map<UUID, Vec3> LAST_GROUND = com.theoreticalsciences.world.SessionMaps.perPlayer(new HashMap<>());
 
     /** Round 29: a player logged out - drop their remembered ground spot (TheoreticalSciences's logout listener calls this). */

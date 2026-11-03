@@ -66,7 +66,79 @@ public final class QHCommands {
                             for (ServerPlayer p : EntityArgument.getPlayers(ctx, "player")) ResearchService.addInsight(p, amount);
                             ctx.getSource().sendSuccess(() -> Component.literal("Added " + amount + " insight"), true);
                             return 1;
-                        }))))));
+                        })))))
+                .then(radiation()));
+    }
+
+    /**
+     * Round 37 (1.1): /theoreticalsciences radiation reset [targets] | get <target> | set <targets> <dose>. Reset also clears the dose
+     * the linked mods hold (Mekanism, GregTech), so testing starts clean everywhere.
+     */
+    private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack> radiation() {
+        return Commands.literal("radiation")
+                .then(Commands.literal("debug").executes(ctx -> {
+                    // 1.2.2: what this mod reads where you stand, and what its links to other mods have done
+                    ServerPlayer p = ctx.getSource().getPlayerOrException();
+                    var r = com.theoreticalsciences.science.RadiationService.reading(p);
+                    java.util.List<String> lines = new java.util.ArrayList<>();
+                    lines.add(String.format(java.util.Locale.ROOT, "Theoretical Sciences (mSv/s): carried %.4g, around %.4g (machines %.4g), background %.3g; dose %.1f mSv; machines emitting here: %d",
+                            r.carried(), r.around(), r.fromMachines(), r.background(), com.theoreticalsciences.science.RadiationService.dose(p),
+                            com.theoreticalsciences.science.RadiationService.emitters(p.serverLevel())));
+                    lines.addAll(com.theoreticalsciences.science.RadiationCompat.debug(p));
+                    for (String l : lines) ctx.getSource().sendSuccess(() -> Component.literal(l), false);
+                    return 1;
+                }))
+                .then(Commands.literal("cleanup").executes(ctx -> cleanup(ctx.getSource(), 8))
+                        .then(Commands.argument("radius", IntegerArgumentType.integer(1, 64)).executes(ctx -> cleanup(ctx.getSource(),
+                                IntegerArgumentType.getInteger(ctx, "radius")))))
+                .then(Commands.literal("reset")
+                        .executes(ctx -> resetRadiation(ctx.getSource(), java.util.List.of(ctx.getSource().getEntityOrException())))
+                        .then(Commands.argument("targets", EntityArgument.entities())
+                                .executes(ctx -> resetRadiation(ctx.getSource(), EntityArgument.getEntities(ctx, "targets")))))
+                .then(Commands.literal("get").then(Commands.argument("target", EntityArgument.entity()).executes(ctx -> {
+                    var e = EntityArgument.getEntity(ctx, "target");
+                    double d = e.getPersistentData().getDouble("theoreticalsciences_rad_dose");
+                    ctx.getSource().sendSuccess(() -> Component.translatable("commands.theoreticalsciences.radiation.get", e.getDisplayName(),
+                            String.format(java.util.Locale.ROOT, "%.1f", d)), false);
+                    return (int) d;
+                })))
+                .then(Commands.literal("set").then(Commands.argument("targets", EntityArgument.entities())
+                        .then(Commands.argument("dose", com.mojang.brigadier.arguments.DoubleArgumentType.doubleArg(0, 100000)).executes(ctx -> {
+                            double d = com.mojang.brigadier.arguments.DoubleArgumentType.getDouble(ctx, "dose");
+                            int n = 0;
+                            for (var e : EntityArgument.getEntities(ctx, "targets")) {
+                                if (!(e instanceof net.minecraft.world.entity.LivingEntity)) continue;
+                                e.getPersistentData().putDouble("theoreticalsciences_rad_dose", d);
+                                n++;
+                            }
+                            int count = n;
+                            ctx.getSource().sendSuccess(() -> Component.translatable("commands.theoreticalsciences.radiation.set", count,
+                                    String.format(java.util.Locale.ROOT, "%.1f", d)), true);
+                            return n;
+                        }))));
+    }
+
+    /** 1.2.3: clears Nuclear Radiation's lingering sources around the player (see RadiationCompat.cleanupLeftovers). */
+    private static int cleanup(CommandSourceStack src, int radius) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        ServerPlayer p = src.getPlayerOrException();
+        int n = com.theoreticalsciences.science.RadiationCompat.cleanupLeftovers(p.serverLevel(), p.blockPosition(), radius);
+        src.sendSuccess(() -> Component.literal(n < 0 ? "Nuclear Radiation is not installed, or its sources could not be read."
+                : "Removed " + n + " lingering Nuclear Radiation sources within " + radius + " blocks."), true);
+        return Math.max(0, n);
+    }
+
+    private static int resetRadiation(CommandSourceStack src, java.util.Collection<? extends net.minecraft.world.entity.Entity> targets) {
+        int n = 0;
+        for (var e : targets) {
+            if (!(e instanceof net.minecraft.world.entity.LivingEntity le)) continue;
+            le.getPersistentData().remove("theoreticalsciences_rad_dose");
+            le.removeEffect(com.theoreticalsciences.registry.QHEffects.RADIATION_SICKNESS);
+            com.theoreticalsciences.science.RadiationCompat.reset(le);
+            n++;
+        }
+        int count = n;
+        src.sendSuccess(() -> Component.translatable("commands.theoreticalsciences.radiation.reset", count), true);
+        return n;
     }
 
     private QHCommands() {}

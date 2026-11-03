@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_bulk_stone",
+  "description": "book.theoreticalsciences.codex.world.node_bulk_stone.desc",
+  "icon": {
+    "item": "theoreticalsciences:bulk_stone"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 60,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bulk_stone"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_bulk_stone.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_bulk_stone.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_bulk_stone.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__bulk",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brane_cosmology"
+  }
+}

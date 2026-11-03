@@ -1,0 +1,308 @@
+{
+ "electrodynamics": {
+  "goal": "Maxwell found that waves of electric and magnetic field cross empty space at a rate set only by its permeability μ0 and its permittivity ε0. Write that rate c.",
+  "name": "Speed of light from the vacuum",
+  "lhs": "c",
+  "form": "1 / sqrt ( μ0 * ε0 )",
+  "expr": "1 / ( m * e ) ^ 0.5 / 1000000",
+  "ask": "Find c in units of 10⁶ m/s, with m = 1.2566e-6 H/m for μ0 and e = 8.854e-12 F/m for ε0.",
+  "vars": {
+   "c": "wave speed (10⁶ m/s)",
+   "μ0": "permeability of the vacuum",
+   "ε0": "permittivity of the vacuum",
+   "m": "μ0 (H/m)",
+   "e": "ε0 (F/m)"
+  },
+  "given": {
+   "m": 1.2566e-06,
+   "e": 8.854e-12
+  },
+  "unit": "×10⁶ m/s",
+  "method": "From the curl equations in empty space, each field obeys the wave equation with speed² = 1/(μ0 ε0).",
+  "distractors": [
+   "2",
+   "π",
+   "h"
+  ]
+ },
+ "magnetic_confinement": {
+  "goal": "A magnetic field B pushes outward on whatever carries the current that makes it. Write the pressure P it exerts, with the permeability of the vacuum μ0.",
+  "name": "Maxwell stress",
+  "lhs": "P",
+  "form": "B ^ 2 / ( 2 * μ0 )",
+  "expr": "B ^ 2 / ( 2 * m ) / 1000000",
+  "ask": "Find P in megapascals for B = 13 T (m = 1.2566e-6 H/m for μ0).",
+  "vars": {
+   "P": "pressure (MPa)",
+   "B": "field (T)",
+   "μ0": "permeability of the vacuum",
+   "m": "μ0 (H/m)"
+  },
+  "given": {
+   "B": 13,
+   "m": 1.2566e-06
+  },
+  "unit": "MPa",
+  "method": "The energy stored in a field is B²/2μ0 per volume; pressure is energy per volume.",
+  "distractors": [
+   "π",
+   "4",
+   "c"
+  ]
+ },
+ "quantum_hall_effect": {
+  "goal": "With ν Landau levels filled, a sheet of electrons carries a Hall resistance R fixed only by the quantum of action h and the elementary charge q. Write R.",
+  "name": "Von Klitzing constant",
+  "lhs": "R",
+  "form": "h / ( ν * q ^ 2 )",
+  "expr": "h / ( n * q ^ 2 )",
+  "ask": "Find R in ohms for the first plateau, n = 1 (h = 6.626e-34 J·s, q = 1.602e-19 C).",
+  "vars": {
+   "R": "Hall resistance (Ω)",
+   "h": "Planck constant",
+   "ν": "filling factor",
+   "q": "elementary charge (C)",
+   "n": "filling factor"
+  },
+  "given": {
+   "h": 6.626e-34,
+   "n": 1,
+   "q": 1.602e-19
+  },
+  "unit": "Ω",
+  "method": "Each filled level carries a conductance of exactly q²/h, a topological (Chern) number times the quantum of conductance.",
+  "distractors": [
+   "π",
+   "2",
+   "B"
+  ]
+ },
+ "magnetars": {
+  "goal": "A core of radius R threaded by a field B collapses to radius r, keeping all the field lines through it. Write the field b it ends with.",
+  "name": "Flux freezing",
+  "lhs": "b",
+  "form": "B * ( R / r ) ^ 2",
+  "expr": "B * ( R / r ) ^ 2 / u",
+  "ask": "Find b in units of 10⁹ T (u = 1e9) for B = 100 T, R = 7e8 m, r = 1e4 m.",
+  "vars": {
+   "b": "final field (10⁹ T)",
+   "B": "initial field (T)",
+   "R": "initial radius (m)",
+   "r": "final radius (m)",
+   "u": "10⁹ T"
+  },
+  "given": {
+   "B": 100,
+   "R": 700000000.0,
+   "r": 10000.0,
+   "u": 1000000000.0
+  },
+  "unit": "×10⁹ T",
+  "method": "The flux Φ = Bπr² through the star is frozen into its conducting plasma, so B grows as 1/r².",
+  "distractors": [
+   "π",
+   "3",
+   "G"
+  ]
+ },
+ "magnetic_monopoles": {
+  "goal": "If a single magnetic charge g exists anywhere, the reduced quantum of action ħ and the elementary charge q fix its smallest value. Write g.",
+  "name": "Dirac quantisation",
+  "lhs": "g",
+  "form": "2 * π * ħ / q",
+  "expr": "h / q * u",
+  "ask": "Find g in units of 10⁻¹⁵ Wb (u = 1e15) with h = 6.626e-34 J·s and q = 1.602e-19 C.",
+  "vars": {
+   "g": "magnetic charge (10⁻¹⁵ Wb)",
+   "π": "pi",
+   "ħ": "reduced Planck constant",
+   "h": "Planck constant (2πħ)",
+   "q": "elementary charge (C)",
+   "u": "10¹⁵"
+  },
+  "given": {
+   "h": 6.626e-34,
+   "q": 1.602e-19,
+   "u": 1000000000000000.0
+  },
+  "unit": "×10⁻¹⁵ Wb",
+  "method": "An electron carried round the monopole must come back with the same phase: q·g/ħ must be a whole multiple of 2π.",
+  "distractors": [
+   "2",
+   "π",
+   "c"
+  ]
+ },
+ "fusion_ignition": {
+  "goal": "A plasma of n deuterium-tritium pairs per cubic metre reacts at the rate n²/4·σ; each reaction gives an energy E. Write the power P each cubic metre makes.",
+  "name": "Fusion power density",
+  "lhs": "P",
+  "form": "n ^ 2 / 4 * σ * E",
+  "expr": "n ^ 2 / 4 * s * E / u",
+  "ask": "Find P in MW/m³ (u = 1e6) for n = 1e20 /m³, s = 3e-22 m³/s (the reactivity near 15 keV) and E = 2.82e-12 J (17.6 MeV).",
+  "vars": {
+   "P": "power density (MW/m³)",
+   "n": "ions per m³",
+   "σ": "reactivity ⟨σv⟩",
+   "s": "reactivity (m³/s)",
+   "E": "energy per reaction (J)",
+   "u": "10⁶"
+  },
+  "given": {
+   "n": 1e+20,
+   "s": 3e-22,
+   "E": 2.82e-12,
+   "u": 1000000.0
+  },
+  "unit": "MW/m³",
+  "method": "Half the ions are deuterium and half tritium: n/2 of each, so the rate per volume is (n/2)²⟨σv⟩.",
+  "distractors": [
+   "2",
+   "c",
+   "k"
+  ]
+ },
+ "nuclear_astrophysics": {
+  "goal": "Two nuclei of charges Z and z tunnel through their Coulomb barrier with an energy scale set by their reduced mass m, the speed of light c and the fine-structure constant α. Write that energy E.",
+  "name": "Gamow energy",
+  "lhs": "E",
+  "form": "2 * m * c ^ 2 * ( π * α * Z * z ) ^ 2",
+  "expr": "2 * m * c ^ 2 * ( 3.14159 * a * Z * z ) ^ 2 / k",
+  "ask": "Find E in keV (k = 1.602e-16 J) for two protons: m = 8.36e-28 kg, c = 2.998e8 m/s, a = 0.0073, Z = 1, z = 1.",
+  "vars": {
+   "E": "energy (keV)",
+   "m": "reduced mass (kg)",
+   "c": "speed of light",
+   "π": "pi",
+   "α": "fine-structure constant",
+   "a": "α",
+   "Z": "charge number",
+   "z": "charge number",
+   "k": "1 keV (J)"
+  },
+  "given": {
+   "m": 8.36e-28,
+   "c": 299800000.0,
+   "a": 0.0073,
+   "Z": 1,
+   "z": 1,
+   "k": 1.602e-16
+  },
+  "unit": "keV",
+  "method": "The tunnelling probability goes as e^(−√(E_G/E)); E_G collects every constant in the WKB exponent.",
+  "distractors": [
+   "h",
+   "G",
+   "4"
+  ]
+ },
+ "transuranic_synthesis": {
+  "goal": "N nuclei of a sample with half-life τ are left to wait a time t. Write how many n are left.",
+  "name": "Radioactive decay law",
+  "lhs": "n",
+  "form": "N / 2 ^ ( t / τ )",
+  "expr": "N / 2 ^ ( t / T )",
+  "ask": "Find n for N = 1000 nuclei of californium-252 (T = 2.645 years) after t = 5.29 years.",
+  "vars": {
+   "n": "nuclei left",
+   "N": "nuclei at the start",
+   "t": "time waited (years)",
+   "τ": "half-life",
+   "T": "half-life (years)"
+  },
+  "given": {
+   "N": 1000,
+   "t": 5.29,
+   "T": 2.645
+  },
+  "unit": "",
+  "method": "Every half-life halves what is left: after t/τ of them, N is divided by 2 that many times.",
+  "distractors": [
+   "e",
+   "3",
+   "λ"
+  ]
+ },
+ "nuclear_isomers": {
+  "goal": "Each nucleus of an isomer stores an energy E; a mole of them weighs M and holds N of them. Write the energy U each kilogram stores.",
+  "name": "Spin-trap capacity",
+  "lhs": "U",
+  "form": "E * N / M",
+  "expr": "E * N / M / u",
+  "ask": "Find U in GJ/kg (u = 1e9) for hafnium-178m2: E = 3.919e-13 J (2.446 MeV), N = 6.022e23 /mol, M = 0.178 kg/mol.",
+  "vars": {
+   "U": "energy per kg (GJ/kg)",
+   "E": "energy per nucleus (J)",
+   "N": "Avogadro constant",
+   "M": "molar mass (kg/mol)",
+   "u": "10⁹"
+  },
+  "given": {
+   "E": 3.919e-13,
+   "N": 6.022e+23,
+   "M": 0.178,
+   "u": 1000000000.0
+  },
+  "unit": "GJ/kg",
+  "method": "Nuclei per kilogram are N/M; each gives E.",
+  "distractors": [
+   "c",
+   "2",
+   "h"
+  ]
+ },
+ "kilonovae": {
+  "goal": "Ejecta of mass M expanding at speed v stay opaque until their light can diffuse out through opacity κ. Write the time t its glow peaks, with the speed of light c.",
+  "name": "Diffusion time of the ejecta",
+  "lhs": "t",
+  "form": "sqrt ( κ * M / ( 4 * π * v * c ) )",
+  "expr": "( k * M / ( 12.5664 * v * c ) ) ^ 0.5 / 86400",
+  "ask": "Find t in days for M = 9.945e28 kg (0.05 suns), v = 3e7 m/s, k = 1 m²/kg (lanthanide-rich), c = 2.998e8 m/s.",
+  "vars": {
+   "t": "peak time (days)",
+   "κ": "opacity",
+   "k": "opacity (m²/kg)",
+   "M": "ejecta mass (kg)",
+   "π": "pi",
+   "v": "speed (m/s)",
+   "c": "speed of light"
+  },
+  "given": {
+   "k": 1,
+   "M": 9.945e+28,
+   "v": 30000000.0,
+   "c": 299800000.0
+  },
+  "unit": "days",
+  "method": "Light escapes when the time to random-walk out (∝ κM/rc) equals the time since the blast (r/v): solve for t = r/v.",
+  "distractors": [
+   "G",
+   "2",
+   "h"
+  ]
+ },
+ "gamma_ray_bursts": {
+  "goal": "A jet moving at speed v beams its light forward into a narrow cone. Write the half-angle θ of the cone, with the speed of light c.",
+  "name": "Relativistic beaming angle",
+  "lhs": "θ",
+  "form": "sqrt ( 1 - ( v / c ) ^ 2 )",
+  "expr": "( 1 - b ^ 2 ) ^ 0.5 * 57.2958",
+  "ask": "Find θ in degrees for a jet with b = 0.9999944 (its speed as a fraction of c, a Lorentz factor of 300).",
+  "vars": {
+   "θ": "half-angle (degrees)",
+   "v": "jet speed",
+   "c": "speed of light",
+   "b": "v/c"
+  },
+  "given": {
+   "b": 0.9999944
+  },
+  "unit": "°",
+  "method": "Aberration: light emitted at right angles in the jet's frame comes out at sin θ = 1/γ = √(1 − v²/c²) in ours.",
+  "distractors": [
+   "2",
+   "G",
+   "π"
+  ]
+ }
+}

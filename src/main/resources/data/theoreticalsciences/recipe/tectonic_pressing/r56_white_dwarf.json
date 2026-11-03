@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:planetary_nebula_shell",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:white_dwarf_core",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 1600,
+  "research": "theoreticalsciences:compact_stars",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Ea": 400000.0,
+      "Tr": 2100.0
+    },
+    "windows": [
+      {
+        "q": "mD",
+        "min": 0.5,
+        "max": 100.0
+      },
+      {
+        "q": "Tf",
+        "min": 1600.0,
+        "max": 2400.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "MHD Electrode",
+  "icon": "theoreticalsciences:mhd_electrode",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mhd_electrode",
+      "title": "MHD Electrode",
+      "text": "$(item)MHD Electrode$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Crystallography.$(br2)$(thing)Used in$(): MHD Generator."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

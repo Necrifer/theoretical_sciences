@@ -1,0 +1,22 @@
+{
+  "name": "Inflation & Reheating",
+  "icon": "theoreticalsciences:inflaton_condensate",
+  "category": "theoreticalsciences:strings",
+  "sortnum": 41,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:inflation_chamber,theoreticalsciences:inflaton_condensate",
+      "text": "The Big Bang alone cannot explain why opposite sides of the sky have the same temperature to one part in 100,000: they were never in contact. $(thing)Inflation$() does: before the hot Big Bang, a scalar field - the inflaton - sat high on its potential and made space grow exponentially, sixty e-folds in 10\u207b\u00b3\u00b2 s."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Build the $(item)Inflation Chamber$(). It condenses the $(fluid)Inflaton Field$() and $(fluid)False Vacuum$() into $(item)Inflaton Condensate$(). In its Operation console keep the slow-roll \u03b5 = 2/\u03c6\u00b2 below 1 and N = (\u03c6\u2080\u00b2 \u2212 2)/4 above 50 - but start the field too high and inflation turns $(thing)eternal$(): quantum jumps outrun the roll, and the bubble never ends (in our universe, other bubbles still may)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Reheating$(): at the bottom of its potential the inflaton oscillates and decays. The chamber turns Condensate and a little quark-gluon plasma into $(fluid)Reheating Plasma$() - every particle there is, at 10\u2079 GeV and more. That plasma is the raw stuff of every other Origin material."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cosmic_inflation"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Geoid Model",
+  "icon": "theoreticalsciences:geoid_model",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:geoid_model",
+      "title": "Geoid Model",
+      "text": "The true shape of the planet: not a sphere, not quite an ellipsoid, but the surface the sea would take if it could flow everywhere."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Seismograph$().$(br2)$(thing)Found in$(): Survey Benchmark chests.$(br2)$(thing)Unlocked by$(): Seismology."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/seismology"
+}

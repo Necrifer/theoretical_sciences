@@ -1,0 +1,96 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "T",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "u",
+      "unit": "m/s",
+      "min": 0,
+      "max": 8000,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "k",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "sg": 20,
+    "rh": 1200,
+    "Pref": 18
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Be",
+      "unit": "T",
+      "expr": "B*(1 + 0.01*d)",
+      "formula": "B\u00b7(1 + 0.01\u00b7d)"
+    },
+    {
+      "id": "j",
+      "unit": "A/m\u00b2",
+      "expr": "sg*u*Be*(1 - k)",
+      "formula": "j = \u03c3uB(1 \u2212 k)"
+    },
+    {
+      "id": "p",
+      "unit": "W/m\u00b3",
+      "expr": "sg*u^2*Be^2*k*(1 - k)",
+      "formula": "p = \u03c3u\u00b2B\u00b2k(1 \u2212 k)"
+    },
+    {
+      "id": "Pe",
+      "unit": "kW",
+      "expr": "p*4/1000",
+      "formula": "P = p\u00b7V"
+    },
+    {
+      "id": "q",
+      "unit": "kPa",
+      "expr": "0.5*rh*u^2/1000",
+      "formula": "q = \u00bd\u03c1u\u00b2"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "arc",
+      "kind": "wear",
+      "expr": "1e6 - j",
+      "formula": "j < 10\u2076 A/m\u00b2"
+    },
+    {
+      "id": "pumps",
+      "kind": "stop",
+      "expr": "200 - q",
+      "formula": "q < 200 kPa"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "1300 - T",
+      "formula": "T < 1300 K"
+    }
+  ],
+  "rate": "clamp(Pe/Pref, 0, 2)",
+  "rate_formula": "output = P / P_rated",
+  "heat": "0.5 + min(200, 4*sg*u^2*Be^2*(1 - k)^2/1000)",
+  "idle_heat": "0.3",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

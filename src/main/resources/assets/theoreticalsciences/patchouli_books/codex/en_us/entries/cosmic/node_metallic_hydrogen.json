@@ -1,0 +1,23 @@
+{
+  "name": "Liquid Metallic Hydrogen",
+  "icon": "theoreticalsciences:metallic_hydrogen_cell",
+  "category": "theoreticalsciences:cosmic",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:metallic_hydrogen_cell",
+      "title": "Liquid Metallic Hydrogen",
+      "text": "Hydrogen compressed until it becomes a metal. At pressures found in the cores of gas giants, the electrons break free and conduct like copper. It flows silvery and heavy, and may be a room-temperature superconductor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Wigner and Huntington predicted metallic hydrogen in 1935. Crushing degenerate matter with superfluid helium in the Neutron Star Forge, I found hydrogen that conducted like a metal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Neutron Star Forge$().$(br2)$(thing)Unlocked by$(): Compact Stars.$(br2)$(thing)Used in$(): Metallic Hydrogen Ingot."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/compact_stars"
+}

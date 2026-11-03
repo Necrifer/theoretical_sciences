@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_silicon_life_spore",
+  "description": "book.theoreticalsciences.codex.biology.node_silicon_life_spore.desc",
+  "icon": {
+    "item": "theoreticalsciences:silicon_life_spore"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 141,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:silicon_life_spore"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_silicon_life_spore.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_silicon_life_spore.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_silicon_life_spore.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__synthetic",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/synthetic_biology"
+  }
+}

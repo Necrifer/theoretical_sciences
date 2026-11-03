@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.cosmic.node_sterile_neutrino",
+  "description": "book.theoreticalsciences.codex.cosmic.node_sterile_neutrino.desc",
+  "icon": {
+    "item": "theoreticalsciences:sterile_neutrino"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 77,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:sterile_neutrino"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.node_sterile_neutrino.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.node_sterile_neutrino.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.node_sterile_neutrino.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/cosmic__neutrino_condenser",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/neutrino_physics"
+  }
+}

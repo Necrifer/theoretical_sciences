@@ -1,0 +1,41 @@
+{
+  "name": "Origins II: Molecules That Copy Themselves",
+  "icon": "theoreticalsciences:prion_lattice",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:prion_lattice,theoreticalsciences:autocatalytic_broth_cell",
+      "text": "In chemistry an anomaly begins as $(thing)autocatalysis$(): a product that speeds up its own making. Its concentration does not rise steadily but explodes, and with feedback it can oscillate - a chemical clock - or spread as a wave through a still dish. The classic model feeds A and B into dX/dt = A \u2212 (B + 1)X + X\u00b2Y; past B = 1 + A\u00b2 the steady state breaks and the colours start to pulse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(thing)prion$() is autocatalysis by shape. A protein folds wrong, and the wrong fold is the stable one: it touches a healthy copy and refolds it, and the misfolded stack grows into an amyloid fibre that breaks into more seeds. Nothing is alive, and yet it spreads, resists heat and protease, and kills."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Chemical Reactor$(): a zeolite catalyst and a specimen in ionic liquid and water make $(fluid)Autocatalytic Broth$() - and broth with water and a zeolite catalyst (kept) makes more broth than went in. Folded protein crystals in broth misfold into a $(item)Prion Lattice$(); one lattice templates two crystals into twelve."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:prion_lattice",
+      "text": "Misfolded protein stacked into amyloid. Touch a healthy protein to it and the healthy one misfolds too: shape is the infection.$(br2)Made in $(item)Chemical Reactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chemical_reactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Prion Lattice$(): Anomaly Catalogue, Prion Lattice, Symbiont Culture$(li)$(item)Chemical Reactor$(): Bioreactor, Nuclide Forge"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autocatalytic_broth_cell",
+      "text": "$(fluid)Autocatalytic Broth$(). Made in $(item)Chemical Reactor$().$(br)Used for: Autocatalytic Broth, Prion Lattice, Quine Replicator, Symbiont Culture."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/autocatalysis"
+}

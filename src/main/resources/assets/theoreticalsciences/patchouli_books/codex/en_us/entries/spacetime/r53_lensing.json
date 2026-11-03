@@ -1,0 +1,22 @@
+{
+  "name": "Geodesics and Lensing",
+  "icon": "theoreticalsciences:lensing_concentrator",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 50,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lensing_concentrator,theoreticalsciences:geodesic_compass,theoreticalsciences:einstein_ring_lens",
+      "text": "A falling body follows a $(thing)geodesic$(): the straightest path through curved spacetime. The $(item)Geodesic Compass$() points along one. A mass squeezed inside $(thing)r_s = 2GM/c\u00b2$() lets no light out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Light follows geodesics too, and is bent by $(thing)\u03b1 = 4GM/(c\u00b2b)$() - 1.75\u2033 at the Sun's edge. A mass exactly in front of a star turns it into an Einstein ring."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Lensing Concentrator$() aims at a star through a lens mass and turns the focused light into power - at night, under open sky. The magnification $(thing)A = (u\u00b2 + 2)/(u\u221a(u\u00b2 + 4))$() grows without limit as the alignment u \u2192 0, but the aim jitters by 0.3 milliarcseconds: choose a massive, near lens so the Einstein radius is big. Above A = 20 it grows an $(item)Einstein Ring Lens$()."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_lensing"
+}

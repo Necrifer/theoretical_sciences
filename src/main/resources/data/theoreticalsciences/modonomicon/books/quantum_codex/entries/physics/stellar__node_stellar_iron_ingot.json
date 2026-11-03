@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.node_stellar_iron_ingot",
+  "description": "book.theoreticalsciences.codex.stellar.node_stellar_iron_ingot.desc",
+  "icon": {
+    "item": "theoreticalsciences:stellar_iron_ingot"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 99,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stellar_iron_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.node_stellar_iron_ingot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_stellar_iron_ingot.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_stellar_iron_ingot.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/stellar__nucleosynthesis_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_evolution"
+  }
+}

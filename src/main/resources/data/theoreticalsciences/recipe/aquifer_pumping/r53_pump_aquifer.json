@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:aquifer_pumping",
+  "item_inputs": [
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:aquifer_sample",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:deep_brine",
+      "amount": 100
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:hydrology",
+  "unscaled": true,
+  "insight_per_run": 1,
+  "environment": {
+    "dimensions": [
+      "theoreticalsciences:planetary_interior"
+    ]
+  }
+}

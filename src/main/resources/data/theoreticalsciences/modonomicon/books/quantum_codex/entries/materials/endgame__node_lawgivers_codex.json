@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_lawgivers_codex",
+  "description": "book.theoreticalsciences.codex.endgame.node_lawgivers_codex.desc",
+  "icon": {
+    "item": "theoreticalsciences:lawgivers_codex"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 221,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lawgivers_codex"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_lawgivers_codex.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_lawgivers_codex.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_lawgivers_codex.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__beyond_omnipotence",
+      "draw_arrow": false
+    }
+  ]
+}

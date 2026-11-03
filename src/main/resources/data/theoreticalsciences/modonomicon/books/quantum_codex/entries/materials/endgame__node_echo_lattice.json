@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_echo_lattice",
+  "description": "book.theoreticalsciences.codex.endgame.node_echo_lattice.desc",
+  "icon": {
+    "item": "theoreticalsciences:echo_lattice"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 217,
+  "y": 54,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:echo_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_echo_lattice.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_echo_lattice.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__second_core",
+      "draw_arrow": false
+    }
+  ]
+}

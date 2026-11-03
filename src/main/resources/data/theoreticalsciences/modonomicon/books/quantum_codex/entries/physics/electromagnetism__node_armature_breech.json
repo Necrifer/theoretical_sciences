@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_armature_breech",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_armature_breech.desc",
+  "icon": {
+    "item": "theoreticalsciences:armature_breech"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 151,
+  "y": 51,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:armature_breech"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_armature_breech.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_armature_breech.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__hypervelocity_impact_forge",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

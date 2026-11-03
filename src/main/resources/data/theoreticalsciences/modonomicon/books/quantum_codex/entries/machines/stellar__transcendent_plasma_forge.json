@@ -1,0 +1,82 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge",
+  "description": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.desc",
+  "icon": {
+    "item": "theoreticalsciences:transcendent_plasma_forge"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 101,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transcendent_plasma_forge"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p4.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transcendent_plasma_forge"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:residual_starlight_cell"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dimensional_residue_cell"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.transcendent_plasma_forge.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/exotic__synchrotron"
+    },
+    {
+      "entry": "theoreticalsciences:machines/cosmic__neutron_star_forge"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_transcendence"
+  }
+}

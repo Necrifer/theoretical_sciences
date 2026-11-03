@@ -1,0 +1,79 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.desc",
+  "icon": {
+    "item": "theoreticalsciences:anomaly_resolution_engine"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 209,
+  "y": 53,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_resolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_resolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resolved_anomaly"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:renormalised_essence_cell"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_resolution_engine.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/anomaly__anomaly_escape"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/targeted_therapy"
+  }
+}

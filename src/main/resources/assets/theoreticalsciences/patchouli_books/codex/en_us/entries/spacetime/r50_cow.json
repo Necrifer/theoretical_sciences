@@ -1,0 +1,22 @@
+{
+  "name": "Gravity on a Quantum Wave",
+  "icon": "theoreticalsciences:neutron_interferometer",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 43,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:neutron_interferometer,theoreticalsciences:perfect_crystal_interferometer,theoreticalsciences:silicon_boule",
+      "text": "In 1975 Colella, Overhauser and Werner split single neutrons with a perfect silicon crystal and joined them again - and tilted the whole thing. One path ran a few centimetres higher than the other; gravity slowed the neutron on it; the two waves came back out of step. Gravity, acting on a quantum wave: $(thing)\u0394\u03c6 = 2\u03c0m\u00b2g\u03bbA\u00b7sin \u03b1/h\u00b2$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Grow a $(item)Silicon Boule$() (fused silica and coal in the Crystal Growth Furnace), study it for its Laue Pattern, and cut two into a $(item)Perfect Crystal Interferometer$() - three blades still joined at the base, their lattices aligned to a fraction of an atom."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Neutron Interferometer$() runs on a radium-beryllium source. Choose the wavelength and tilt it until gravity has turned the phase at least 30 radians and lands it on a bright fringe; count until the phase is known to 0.1 rad. Each record is a great deal of Insight."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/neutron_interferometry"
+}

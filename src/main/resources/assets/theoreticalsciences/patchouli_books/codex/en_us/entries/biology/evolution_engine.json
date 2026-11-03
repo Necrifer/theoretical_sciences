@@ -1,0 +1,169 @@
+{
+  "name": "Evolution Engine",
+  "icon": "theoreticalsciences:evolution_engine",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 73,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:evolution_engine",
+      "title": "Evolution Engine",
+      "text": "A biodome where generations of designed life live and die in seconds. Run it inside a fast chronal field and a million years pass in a minute.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Recipes need time running at least 10x: run it inside a $(item)Chronal Field Projector$() field."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Evolution Engine",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "____AAA____",
+            "___AAAAA___",
+            "___AABAA___",
+            "___AAAAA___",
+            "____AAA____",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___AAAAA___",
+            "__AAAAAAA__",
+            "__AA   AA__",
+            "__AA   AA__",
+            "__AA   AA__",
+            "__AAAAAAA__",
+            "___AAAAA___",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___AAAAA___",
+            "__AA___AA__",
+            "_AA_   _AA_",
+            "_A_     _A_",
+            "_A_     _A_",
+            "_A_     _A_",
+            "_AA_   _AA_",
+            "__AA___AA__",
+            "___AAAAA___",
+            "___________"
+          ],
+          [
+            "____AAA____",
+            "__AAAAAAA__",
+            "_AA_   _AA_",
+            "_A_     _A_",
+            "AA       AA",
+            "AA       AA",
+            "AA       AA",
+            "_A_     _A_",
+            "_AA_   _AA_",
+            "__AAAAAAA__",
+            "____AAA____"
+          ],
+          [
+            "___AAAAA___",
+            "__AA___AA__",
+            "_A_DDDDD_A_",
+            "AAD    DDAA",
+            "A_D     D_A",
+            "A_D     D_A",
+            "A_D     D_A",
+            "AAD    DDAA",
+            "_A_DDDDD_A_",
+            "__AA___AA__",
+            "___AAAAA___"
+          ],
+          [
+            "_____0_____",
+            "___EEEEE___",
+            "__EE   EE__",
+            "_EE     EE_",
+            "_E       E_",
+            "_E       E_",
+            "_E       E_",
+            "_EE     EE_",
+            "__EE   EE__",
+            "___EEEEE___",
+            "___________"
+          ],
+          [
+            "___FFGFF___",
+            "__FFFFFFF__",
+            "_FFFFFFFFF_",
+            "FFFFFFFFFFF",
+            "FFFFFFFFFFF",
+            "GFFFFFFFFFG",
+            "FFFFFFFFFFF",
+            "FFFFFFFFFFF",
+            "_FFFFFFFFF_",
+            "__FFFFFFF__",
+            "___FFGFF___"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:evolution_engine",
+          "A": "theoreticalsciences:containment_field_glass",
+          "B": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "D": "theoreticalsciences:cryogenic_cooling_jacket",
+          "E": "theoreticalsciences:arbor_heartwood",
+          "F": "theoreticalsciences:chronoplastic_casing",
+          "G": "#theoreticalsciences:multiblock/chronoplastic_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Arbor Heartwood, Metastatic Spore, Omnicellular Genome, Resistant Clone Colony, Silicon Life Spore, Telomerase Complex, Xenobot Swarm."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:evolution_engine",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chronal_field_projector",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Evolution Engine$(): Abiogenesis Crucible"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/directed_evolution"
+}

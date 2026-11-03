@@ -1,0 +1,24 @@
+{
+  "name": "Accretion Disk Reactor",
+  "icon": "theoreticalsciences:accretion_disk_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gas falling onto a black hole of mass M spirals in through a disk, heating as it goes, until it reaches the innermost stable orbit and drops in. The energy it has radiated by then is \u03b7\u00b7\u1e41c\u00b2, and \u03b7 depends on the spin a: the faster the hole spins, the closer that orbit, the more comes out. But the light pushes on the gas: its luminosity cannot exceed the Eddington limit L_E = 1.26\u00d710\u00b3\u00b9 (M/M\u2609) W."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Hole mass, Feed rate, Spin a.$(br2)$(thing)Disturbance$(): The feed is clumpy: the accretion rate varies by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Past the Eddington luminosity: the disk's own light has blown it apart; Nothing is being fed in.$(br2)$(thing)Rate$(): Power output follows the luminosity."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Radiative efficiency \u03b7: \u03b7(a): 0.057 at a = 0, 0.32 near a = 1$(br)Luminosity: L = \u03b7\u00b7\u1e41\u00b7c\u00b2$(br)Eddington luminosity: L_E = 1.26\u00d710\u00b3\u00b9 (M/M\u2609) W$(br)Eddington ratio: \u03bb = L/L_E"
+    }
+  ]
+}

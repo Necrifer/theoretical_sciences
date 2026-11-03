@@ -1,0 +1,62 @@
+{
+  "title": "Remote Sensing",
+  "description": "A telescope turned round: from orbit, in visible light and infrared and radar, the whole ground at once. Unlocks the Survey Satellite.",
+  "icon": "theoreticalsciences:satellite_image_plate",
+  "x": 9,
+  "y": -2,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:seismology",
+    "theoreticalsciences:observational_astronomy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:star_field_plate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:survey_map",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A satellite at height h looks down through a telescope of aperture D at light of wavelength \u03bb. Write the smallest separation x it can tell apart on the surface.",
+    "name": "Diffraction-limited footprint",
+    "lhs": "x",
+    "form": "1.22 * \u03bb * h / D",
+    "expr": "1.22 * L * h / D",
+    "ask": "Find x in metres for L = @{L} m, h = 7e5 m, D = @{D} m.",
+    "vars": {
+      "x": "separation (m)",
+      "\u03bb": "wavelength",
+      "L": "wavelength (m)",
+      "h": "height (m)",
+      "D": "aperture (m)"
+    },
+    "given": {
+      "L": 5e-07,
+      "h": 700000.0,
+      "D": 1.1
+    },
+    "unit": "m",
+    "method": "The smallest angle a circular aperture resolves is 1.22\u03bb/D; at distance h that angle spans x.",
+    "distractors": [
+      "c",
+      "2",
+      "\u03c0"
+    ],
+    "vary": {
+      "L": [
+        2.99e-07,
+        7e-07,
+        1e-09
+      ],
+      "D": [
+        0.66,
+        1.54,
+        0.01
+      ]
+    }
+  }
+}

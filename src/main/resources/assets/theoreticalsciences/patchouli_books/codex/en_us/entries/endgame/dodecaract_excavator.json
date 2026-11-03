@@ -1,0 +1,26 @@
+{
+  "name": "The Dodecaract Excavator",
+  "icon": "theoreticalsciences:dodecaract_excavator",
+  "category": "theoreticalsciences:endgame",
+  "sortnum": 92,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dodecaract_excavator",
+      "text": "A pickaxe in the shape of a twelve-dimensional cube. It mines anything a netherite pickaxe can, far faster, and never wears out - it spends Eschaton Charge instead."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sneak and use it to change mode; sneak and scroll to change its reach, from 3x3x3 to 33x33x33.$(li)$(bold)Single$(): one block at a time - any breakable block, broken at once, with its drops, whatever slows you down.$(li)$(bold)Area$(): breaking a block breaks the whole cube reaching into the wall behind it. The drops come straight to you."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(bold)Ore Extraction$(): use it on a block, or in the air to work around yourself. Every ore in the cube is pulled out into your inventory - with the tool's Fortune or Silk Touch - and the stone it grew in takes its place. The rest of the rock is left as it was."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It respects spawn protection and claims, and never takes unbreakable blocks or blocks with contents. Pack makers can add ores with the block tag $(thing)theoreticalsciences:excavator_ores$() and protect blocks with $(thing)theoreticalsciences:excavator_ignored$()."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/the_rekindling"
+}

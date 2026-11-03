@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_black_hole_thermodynamics",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_black_hole_thermodynamics.desc",
+  "icon": {
+    "item": "theoreticalsciences:bekenstein_crystal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 115,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bekenstein_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_black_hole_thermodynamics.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_black_hole_thermodynamics.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__micro_black_hole_evaporator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/black_hole_thermodynamics"
+  }
+}

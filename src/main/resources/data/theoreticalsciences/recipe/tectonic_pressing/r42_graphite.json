@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "minecraft:coal_block",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:graphite_moderator",
+      "count": 4
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:metamorphism",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 500000.0,
+      "Tr": 3000.0
+    },
+    "windows": [
+      {
+        "q": "mD",
+        "min": -100.0,
+        "max": -1.0
+      },
+      {
+        "q": "Tf",
+        "min": 2600.0,
+        "max": 3200.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "name": "MHD Generator",
+  "icon": "theoreticalsciences:mhd_generator",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 90,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mhd_generator",
+      "title": "MHD Generator",
+      "text": "A conducting fluid driven through a magnetic field makes current with no moving parts: the flow itself is the armature.$(br2)Generates power.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Burns a conducting fluid: $(item)Deep Brine$(), $(item)Basaltic Magma$() or $(item)Stellar Plasma$(). Power per volume is \u03c3u\u00b2B\u00b2k(1 \u2212 k): more field and more speed give more, the load factor k is best at one half - unless the current density would arc the electrodes away."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "MHD Generator",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "___A___",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "_______",
+            "___A___",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "_BBBBB_",
+            "_______",
+            "_BBBBB_",
+            "_______",
+            "_BBBBB_",
+            "_______",
+            "_______",
+            "_______",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_"
+          ],
+          [
+            "_______",
+            "__DDD__",
+            "__DDD__",
+            "_BDDDB_",
+            "__DDD__",
+            "_BDDDB_",
+            "__DDD__",
+            "_BDDDB_",
+            "__DDD__",
+            "__DDD__",
+            "__DDD__",
+            "_D___D_",
+            "_D___D_",
+            "_D___D_",
+            "_DDDDD_"
+          ],
+          [
+            "__DDD__",
+            "__D D__",
+            "__D D__",
+            "_BE EB_",
+            "__E E__",
+            "_BE EB_",
+            "__E E__",
+            "_BE EB_",
+            "__E E__",
+            "__D D__",
+            "__D D__",
+            "_D_ _D_",
+            "_D_ _D_",
+            "_D_ _D_",
+            "_DDDDD_"
+          ],
+          [
+            "__D0D__",
+            "__DDD__",
+            "__DDD__",
+            "_BDDDB_",
+            "__DDD__",
+            "_BDDDB_",
+            "__DDD__",
+            "_BDDDB_",
+            "__DDD__",
+            "__DDD__",
+            "__DDD__",
+            "_D___D_",
+            "_D___D_",
+            "_D___D_",
+            "_DDDDD_"
+          ],
+          [
+            "__DDD__",
+            "_______",
+            "_______",
+            "_BBBBB_",
+            "_______",
+            "_BBBBB_",
+            "_______",
+            "_BBBBB_",
+            "_______",
+            "_______",
+            "_______",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_"
+          ],
+          [
+            "_DDFDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_FDDDF_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDDDD_",
+            "_DDFDD_"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:mhd_generator",
+          "A": "theoreticalsciences:exhaust_stack",
+          "B": "theoreticalsciences:mhd_field_magnet",
+          "D": "theoreticalsciences:mhd_channel_casing",
+          "E": "theoreticalsciences:mhd_electrode",
+          "F": "#theoreticalsciences:multiblock/mhd_channel_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (0 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Basalt."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mhd_generator",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetohydrodynamics"
+}

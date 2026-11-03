@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_klein_bottle",
+  "description": "book.theoreticalsciences.codex.quantum.node_klein_bottle.desc",
+  "icon": {
+    "item": "theoreticalsciences:klein_bottle"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 55,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:klein_bottle"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_klein_bottle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_klein_bottle.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_klein_bottle.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__topological_transmuter",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/topology"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Stellar Astrophysics",
+  "description": "A star's colour gives its surface temperature, and its brightness and temperature together give its size: a star radiates \u03c3T\u2074 from every square metre. The Sun is the star close enough to use. Unlocks the Solar Furnace and deep-sky exposures.",
+  "icon": "theoreticalsciences:solar_furnace",
+  "x": 5,
+  "y": -8,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:telescope_optics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stellar_spectrum_plate",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:star_field_plate",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:planetary_plate",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A star is a ball of radius R whose surface glows at temperature T. Every square metre of a perfect radiator gives off \u03c3T\u2074. Write the star's total power L.",
+    "name": "Stefan-Boltzmann law for a star",
+    "lhs": "L",
+    "form": "4 * \u03c0 * R ^ 2 * \u03c3 * T ^ 4",
+    "expr": "4 * 3.14159 * R ^ 2 * s * T ^ 4 / 100000000000000000000000000",
+    "ask": "Find L for the Sun, in units of 10\u00b2\u2076 W: R = @{R} m, T = @{T} K, s = 5.67e-8 W/(m\u00b2\u00b7K\u2074).",
+    "vars": {
+      "L": "luminosity (10\u00b2\u2076 W)",
+      "R": "radius (m)",
+      "T": "surface temperature (K)",
+      "\u03c3": "Stefan-Boltzmann constant",
+      "s": "\u03c3 (SI)",
+      "\u03c0": "pi"
+    },
+    "given": {
+      "R": 696000000.0,
+      "T": 5772,
+      "s": 5.67e-08
+    },
+    "unit": "\u00d710\u00b2\u2076 W",
+    "method": "Multiply the power per square metre by the area of the sphere, 4\u03c0R\u00b2.",
+    "distractors": [
+      "c",
+      "\u03bd",
+      "3"
+    ],
+    "vary": {
+      "R": [
+        417000000.0,
+        975000000.0,
+        1000000.0
+      ],
+      "T": [
+        3463.0,
+        8081.0,
+        1.0
+      ]
+    }
+  }
+}

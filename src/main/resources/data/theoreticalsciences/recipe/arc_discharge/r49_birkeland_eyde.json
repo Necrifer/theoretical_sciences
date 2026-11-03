@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:arc_discharge",
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:bone_meal",
+      "count": 12
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:resonant_circuits",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "amin": 1.0
+    },
+    "windows": [
+      {
+        "q": "arc",
+        "min": 1.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

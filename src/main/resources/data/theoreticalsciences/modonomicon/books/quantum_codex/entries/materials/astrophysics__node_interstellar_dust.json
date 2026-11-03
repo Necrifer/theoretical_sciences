@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_interstellar_dust",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_interstellar_dust.desc",
+  "icon": {
+    "item": "theoreticalsciences:interstellar_dust"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 30,
+  "y": 63,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:interstellar_dust"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_interstellar_dust.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_interstellar_dust.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__spectrograph",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

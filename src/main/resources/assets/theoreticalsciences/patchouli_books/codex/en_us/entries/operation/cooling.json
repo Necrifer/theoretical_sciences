@@ -1,0 +1,29 @@
+{
+  "name": "Coolant & Superconductors",
+  "icon": "theoreticalsciences:superconducting_coil_block",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:superconducting_coil_block,theoreticalsciences:chronosteel_coil_block,theoreticalsciences:spacetime_alloy_coil_block",
+      "text": "Every multiblock has a $(thing)coolant loop$(): pipe a coolant into it (or click its tank with a filled container). The coolant holds the cold mass near its own temperature; whatever heat the machine makes raises it by heat/\u03ba."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Coolants: Water and Ionic Liquid (300 K), Superfluid Helium and Liquid Antihelium (2 K), Neutrino Flux (10 K), Metallic Hydrogen and Antihydrogen (20 K), Dark Matter and Liquid Spacetime (3 K), and a Bose-Einstein Condensate at 10 mK that carries almost no heat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Superfluid Helium comes back out as $(fluid)Warm Helium$() in the spent tank: send it to a Condensing Chamber and back. If the spent tank fills, the loop stops - and without coolant a machine only sheds heat slowly to the air."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Coils are superconductors with a critical temperature and field: Nb-Ti (tier 1) 9.2 K and 14.5 T, Nb\u2083Sn 18.3 K and 30 T, REBCO 92 K and 120 T, neutronium hydride 290 K and 400 T, transfinite lattice 4000 K. The usable field falls as B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2): the colder, the stronger."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Run a magnet above its critical field and it $(thing)quenches$(). Above 95% of T_c the interlock will not even let it start. So heat is not just a cost: every kilowatt raises the temperature, and with it lowers the field you can use."
+    }
+  ]
+}

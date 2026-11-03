@@ -1,0 +1,23 @@
+{
+  "name": "Klein Bottle",
+  "icon": "theoreticalsciences:klein_bottle",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:klein_bottle",
+      "title": "Klein Bottle",
+      "text": "A bottle whose neck passes through its own side to join the base from inside, so that inside and outside are the same surface. In three dimensions it must cross itself; in four it does not. This one was built in four, so its glass never touches itself and nothing can be poured into it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Gluing two Mobius strips edge to edge needed a fourth dimension to avoid self-intersection. The Tesseract Assembler supplied it, with exotic matter to hold the surface open while I joined them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Tesseract Assembler$().$(br2)$(thing)Unlocked by$(): Geometric Topology.$(br2)$(thing)Used in$(): Mathematics Singularity, Topos."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/topology"
+}

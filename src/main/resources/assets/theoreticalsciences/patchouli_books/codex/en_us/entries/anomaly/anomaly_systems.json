@@ -1,0 +1,36 @@
+{
+  "name": "Systems: The Microenvironment & Invasion Fronts",
+  "icon": "theoreticalsciences:microenvironment_organoid",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:microenvironment_organoid",
+      "text": "An anomaly is a system, not a cell. A tumour builds a $(thing)microenvironment$(): blood vessels, fibroblasts, a stiffened matrix, immune cells talked into helping. Signalling networks - growth factors, cytokines, feedback loops - decide which cells divide, move or die, and a mutation in one hub rewires them all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Seen from far away, it invades as a $(thing)front$(): cells of density u diffuse (D) and grow (r) until crowded, \u2202u/\u2202t = D\u2207\u00b2u + ru(1 \u2212 u/K), and any small seed becomes a front moving at c = 2\u221a(Dr). Fractured Reality does the same on the block grid - a $(thing)cellular automaton$(), each block catching from its neighbours - until the healing outruns the spread."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Bioreactor$(), a metastatic spore with stem cells and enzymes in broth and xenoplasm grows a $(item)Tumour Microenvironment Organoid$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:microenvironment_organoid",
+      "text": "An anomaly is never alone: here it has grown its own blood vessels, recruited its own stroma and taught the local immune cells to look away.$(br2)Made in $(item)Bioreactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Tumour Microenvironment Organoid$(): Symbiont Culture$(li)$(item)Bioreactor$(): Gene Sequencer"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/invasion_fronts"
+}

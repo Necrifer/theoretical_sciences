@@ -1,0 +1,23 @@
+{
+  "name": "Dipole Winding",
+  "icon": "theoreticalsciences:dipole_winding",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dipole_winding",
+      "title": "Dipole Winding",
+      "text": "Superconducting cable wound into a saddle-shaped coil. Its magnetic field runs straight across the beam pipe and bends charged particles into a circle, as in every synchrotron. It is cold, heavy and slightly springy, frosted along its windings."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)To steer particles around a ring I needed a uniform bending field. In the Metamaterial Weaver I wound a Superconducting Coil over Neutronium Plate and metamaterial into a saddle, cooled in helium. A derelict station had one too."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Metamaterial Weaver$().$(br2)$(thing)Unlocked by$(): High-Energy Particle Physics.$(br2)$(thing)Used in$(): Dipole Bending Magnet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

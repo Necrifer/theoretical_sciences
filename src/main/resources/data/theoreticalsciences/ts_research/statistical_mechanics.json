@@ -1,0 +1,61 @@
+{
+  "title": "Statistical Mechanics",
+  "description": "Temperature, pressure and entropy are averages over states too many to count: each weighted by e^(\u2212E/kT). Sum the weights and the partition function holds every property of the system.",
+  "icon": "theoreticalsciences:partition_function_matrix",
+  "x": 8,
+  "y": -2,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:stochastic_processes",
+    "theoreticalsciences:thermodynamics_of_information"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:markov_chain_link",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:avogadro_record",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "Two states differ in energy by E. At temperature T, write the ratio r of how often the upper one is found to how often the lower one is, with Boltzmann's k.",
+    "name": "Population ratio",
+    "lhs": "r",
+    "form": "1 / exp ( E / ( k * T ) )",
+    "expr": "1 / exp ( E / ( k * T ) )",
+    "ask": "Find r for E = @{E} J (0.1 eV), k = 1.381e-23 J/K, T = @{T} K.",
+    "vars": {
+      "r": "population ratio",
+      "E": "energy gap (J)",
+      "k": "Boltzmann constant",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "E": 1.602e-20,
+      "k": 1.381e-23,
+      "T": 300
+    },
+    "unit": "",
+    "method": "Each state is weighted by e^(\u2212E/kT); the ratio of two weights depends only on their difference.",
+    "distractors": [
+      "h",
+      "2",
+      "N"
+    ],
+    "vary": {
+      "E": [
+        9.6e-21,
+        2.25e-20,
+        1e-22
+      ],
+      "T": [
+        180.0,
+        420.0,
+        1.0
+      ]
+    }
+  }
+}

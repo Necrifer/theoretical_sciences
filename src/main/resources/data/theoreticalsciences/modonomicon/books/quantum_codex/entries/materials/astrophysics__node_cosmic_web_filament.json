@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_cosmic_web_filament",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_cosmic_web_filament.desc",
+  "icon": {
+    "item": "theoreticalsciences:cosmic_web_filament"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 160,
+  "y": 70,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cosmic_web_filament"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_cosmic_web_filament.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_cosmic_web_filament.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__interstellar_scoop",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/interstellar_medium"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "The Turning Galaxy",
+  "icon": "theoreticalsciences:hydrogen_line_map",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hydrogen_line_map",
+      "text": "Measure the Doppler shift of the hydrogen line along the Galaxy and you have how fast its gas circles at each distance from the centre. If the stars were all its mass, the speed would fall off far out, as the planets' does: v = \u221a(GM/r)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It does not. Far beyond the visible disc the gas still turns at over 200 km/s. Something unseen holds it: $(thing)dark matter$(), several times the mass of every star. The long galactic survey maps it - and gives a great deal of Insight."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)Dark Matter Collector$() told where the halo is gathers twice as much: give it two $(item)Hydrogen Line Maps$() with its usual inputs."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galactic_dynamics"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_virtual_quark",
+  "description": "book.theoreticalsciences.codex.quantum.node_virtual_quark.desc",
+  "icon": {
+    "item": "theoreticalsciences:virtual_quark"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 132,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:virtual_quark"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_virtual_quark.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_virtual_quark.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_virtual_quark.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__foam_boundaries",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

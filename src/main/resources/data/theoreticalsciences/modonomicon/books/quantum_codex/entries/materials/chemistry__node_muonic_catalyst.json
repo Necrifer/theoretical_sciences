@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_muonic_catalyst",
+  "description": "book.theoreticalsciences.codex.chemistry.node_muonic_catalyst.desc",
+  "icon": {
+    "item": "theoreticalsciences:muonic_catalyst"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 115,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:muonic_catalyst"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_muonic_catalyst.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_muonic_catalyst.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_muonic_catalyst.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__exotic",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/exotic_chemistry"
+  }
+}

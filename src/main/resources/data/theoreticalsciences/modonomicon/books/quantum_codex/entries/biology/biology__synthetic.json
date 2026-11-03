@@ -1,0 +1,88 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.synthetic",
+  "description": "book.theoreticalsciences.codex.biology.synthetic.desc",
+  "icon": {
+    "item": "theoreticalsciences:synthetic_cell"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 31,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:synthetic_cell"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:synthetic_cell"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:xenobot_swarm"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neural_organoid"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:silicon_life_spore"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stem_cell_culture"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:turing_morphogen"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:xenoplasm_cell"
+      },
+      "text": "book.theoreticalsciences.codex.biology.synthetic.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__gene_sequencer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/synthetic_biology"
+  }
+}

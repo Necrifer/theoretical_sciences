@@ -1,0 +1,24 @@
+{
+  "name": "Matrioshka Brain",
+  "icon": "theoreticalsciences:matrioshka_brain",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 44,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Nested shells around a star, each running on the waste heat of the one inside. Computation is limited by Landauer: erasing a bit costs kT\u00b7ln2, so the cold outer shell sets the price - and the coolant sets how cold it can be."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Inner shell radius, Number of shells, Duty.$(br2)$(thing)Disturbance$(): Stellar luminosity variation: the inner shell runs at T\u00b7(1 \u00b1 1%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The inner shell is melting; The core is overheating.$(br2)$(thing)Rate$(): Computation rate follows the usable power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Inner shell temperature: T\u2081 = 278.6 K/\u221a(r/AU)$(br)Outer shell temperature: T_out = max(T_coolant, T\u2081e^(\u2212N/2))$(br)Carnot efficiency: \u03b7 = 1 \u2212 T_out/T\u2081$(br)Bit operations: N = \u03b7L/(kT\u00b7ln2)"
+    }
+  ]
+}

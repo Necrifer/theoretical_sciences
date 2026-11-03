@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.r49_tesla",
+  "description": "book.theoreticalsciences.codex.electromagnetism.r49_tesla.desc",
+  "icon": {
+    "item": "theoreticalsciences:tesla_coil"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 16,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tesla_coil"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.r49_tesla.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r49_tesla.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r49_tesla.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r49_tesla.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/electromagnetism__r38_generator"
+    },
+    {
+      "entry": "theoreticalsciences:machines/electromagnetism__induction_generator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/resonant_circuits"
+  }
+}

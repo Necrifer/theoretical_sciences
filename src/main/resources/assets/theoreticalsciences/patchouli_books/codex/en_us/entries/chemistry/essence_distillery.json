@@ -1,0 +1,340 @@
+{
+  "name": "Essence Distillery",
+  "icon": "theoreticalsciences:essence_distillery",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 80,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:essence_distillery",
+      "title": "Essence Distillery",
+      "text": "A tower of fractionation trays wound with chronosteel coils. Pour in every fluid one mod has and it boils them together, tray after tray, until what is left is a single fluid that stands for all of them: that mod's Essence.$(br2)$(thing)Tier 5$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Distils every fluid of one mod into that mod's $(fluid)Essence$(), which the $(item)Pleroma Confluence$() wants. JEI lists, mod by mod, which fluids go in."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Essence Distillery",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "________ABBBA________",
+            "________BBBBB________",
+            "________BBBBB________",
+            "________BBBBB________",
+            "________ABBBA________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "________DDDDD________",
+            "________D   D________",
+            "________D   D________",
+            "________D   D________",
+            "________DDDDD________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "________AAAAA________",
+            "________A   A________",
+            "________A   A________",
+            "________A   A________",
+            "________AAAAA________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "________BBBBB________",
+            "________B   B________",
+            "________B   B________",
+            "________B   B________",
+            "________BBBBB________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "________AAAAA________",
+            "________A   A________",
+            "________A   A________",
+            "________A   A________",
+            "________AAAAA________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "________DDDDD________",
+            "___BBB__D   D________",
+            "___BBB__D   D________",
+            "___BBB__D   D________",
+            "________DDDDD________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA________",
+            "__AA AA_A   A________",
+            "__A   A_A   A________",
+            "__AA AA_A   A________",
+            "___AAA__AAAAA________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___BBB__BBBBB________",
+            "__BB BB_B   B________",
+            "__B   B_B   B________",
+            "__BB BB_B   B________",
+            "___BBB__BBBBB________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA________",
+            "__AA AA_A   A________",
+            "__A   BBB   A________",
+            "__AA AA_A   A________",
+            "___AAA__AAAAA________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___DDD__DDDDD________",
+            "__DD DD_D   D__BBB___",
+            "__D   D_D   D__BBB___",
+            "__DD DD_D   D__BBB___",
+            "___DDD__DDDDD________",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA__AAA___",
+            "__AA AA_A   A_AA AA__",
+            "__A   A_A   BBB   A__",
+            "__AA AA_A   A_AA AA__",
+            "___AAA__AAAAA__AAA___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___BBB__BBBBB__BBB___",
+            "__BB BB_B   B_BB BB__",
+            "__B   B_B   B_B   B__",
+            "__BB BB_B   B_BB BB__",
+            "___BBB__BBBBB__BBB___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA__AAA___",
+            "__AA AA_A   A_AA AA__",
+            "__A   A_A   A_A   A__",
+            "__AA AA_A   A_AA AA__",
+            "___AAA__AAAAA__AAA___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___DDD__DDDDD__DDD___",
+            "__DD DD_D   D_DD DD__",
+            "__D   BBB   D_D   D__",
+            "__DD DD_D   D_DD DD__",
+            "___DDD__DDDDD__DDD___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA__AAA___",
+            "__AA AA_A   A_AA AA__",
+            "__A   A_A   A_A   A__",
+            "__AA AA_A   A_AA AA__",
+            "___AAA__AAAAA__AAA___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___BBB__BBBBB__BBB___",
+            "__BB BB_B   B_BB BB__",
+            "__B   B_B   B_B   B__",
+            "__BB BB_B   B_BB BB__",
+            "___BBB__BBBBB__BBB___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA__AAA___",
+            "__AA AA_A   A_AA AA__",
+            "__A   A_A   A_A   A__",
+            "__AA AA_A   A_AA AA__",
+            "___AAA__AAAAA__AAA___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___DDD__DDDDD__DDD___",
+            "__DD DD_D   D_DD DD__",
+            "__D   D_D   D_D   D__",
+            "__DD DD_D   D_DD DD__",
+            "___DDD__DDDDD__DDD___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AAAAA__AAA___",
+            "__AA AA_A   A_AA AA__",
+            "__A   A_A   A_A   A__",
+            "__AA AA_A   A_AA AA__",
+            "___AAA__AAAAA__AAA___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___BBB__BBBBB__BBB___",
+            "__BB BB_B   B_BB BB__",
+            "__B   B_B   B_B   B__",
+            "__BB BB_B   B_BB BB__",
+            "___BBB__BBBBB__BBB___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_____________________",
+            "_____________________",
+            "___AAA__AA0AA__AAA___",
+            "__AA AA_A   A_AA AA__",
+            "__A   A_A   A_A   A__",
+            "__AA AA_A   A_AA AA__",
+            "___AAA__AAAAA__AAA___",
+            "_____________________",
+            "_____________________",
+            "_____________________"
+          ],
+          [
+            "_____________________",
+            "_________BEB_________",
+            "___BBB__BBBBB__BBB___",
+            "__BBBBBBBBBBBBBBBBB__",
+            "_BBBBBBBBBBBBBBBBBBB_",
+            "_EBBBBBBBBBBBBBBBBBE_",
+            "_BBBBBBBBBBBBBBBBBBE_",
+            "__BBBBBBBBBBBBBBBBB__",
+            "___BBB__BBBBB__BBB___",
+            "_________BEB_________",
+            "_____________________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:essence_distillery",
+          "A": "theoreticalsciences:containment_field_glass",
+          "B": "theoreticalsciences:fractionation_casing",
+          "D": "#theoreticalsciences:multiblock/chronosteel_coil_block_or_better",
+          "E": "#theoreticalsciences:multiblock/fractionation_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:essence_distillery",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fractional_distillation"
+}

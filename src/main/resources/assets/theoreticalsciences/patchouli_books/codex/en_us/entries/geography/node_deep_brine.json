@@ -1,0 +1,19 @@
+{
+  "name": "Deep Brine",
+  "icon": "theoreticalsciences:deep_brine_cell",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deep_brine_cell",
+      "title": "Deep Brine",
+      "text": "$(fluid)Deep Brine$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Deep Drilling Rig$().$(br2)$(thing)Unlocked by$(): Hydrology.$(br2)$(thing)Used in$(): Boron Control Rod, Liquid Sodium, Lithium Ingot, Molten Salt Fuel."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/hydrology"
+}

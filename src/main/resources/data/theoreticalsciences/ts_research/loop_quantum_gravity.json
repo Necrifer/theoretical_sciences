@@ -1,0 +1,57 @@
+{
+  "title": "Loop Quantum Gravity",
+  "description": "Quantise geometry itself: areas and volumes come in discrete steps, carried by a spin network. Space is woven, not continuous. Unlocks the Spin Network Loom.",
+  "icon": "theoreticalsciences:spin_network_node",
+  "x": 10,
+  "y": 5,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:quantum_gravity",
+    "theoreticalsciences:black_hole_thermodynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:spin_foam_lattice",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:metric_tensor",
+      "count": 2
+    }
+  ],
+  "time": 1200,
+  "puzzle": {
+    "goal": "Where a spin network's link of spin j crosses a surface it gives that surface an area A, in units of the Planck area l, scaled by the Immirzi parameter \u03b3. Write A.",
+    "name": "Quantised geometry",
+    "lhs": "A",
+    "form": "8 * \u03c0 * \u03b3 * l ^ 2 * sqrt ( j * ( j + 1 ) )",
+    "expr": "8 * 3.14159 * g * sqrt ( j * ( j + 1 ) )",
+    "ask": "Find A in Planck areas for the smallest step, j = @{j}, with g = 0.2375 for \u03b3.",
+    "vars": {
+      "A": "area (Planck areas)",
+      "\u03c0": "pi",
+      "\u03b3": "Immirzi parameter",
+      "l": "Planck length",
+      "j": "spin",
+      "g": "\u03b3"
+    },
+    "given": {
+      "g": 0.2375,
+      "j": 0.5
+    },
+    "unit": "\u2113\u209a\u00b2",
+    "method": "The area operator acts on each link like the length of an angular momentum: its eigenvalues are \u221a(j(j+1)).",
+    "distractors": [
+      "2",
+      "c",
+      "h"
+    ],
+    "vary": {
+      "j": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

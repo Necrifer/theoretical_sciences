@@ -69,16 +69,15 @@ public class TheoreticalSciences {
         com.theoreticalsciences.transcend.TranscendRegistry.register(modBus);
         com.theoreticalsciences.registry.QHLogistics.register(modBus);
         com.theoreticalsciences.endgame.EndgameRegistry.register(modBus);
+        com.theoreticalsciences.interior.InteriorRegistry.register(modBus);
+        com.theoreticalsciences.frontier.FrontierRegistry.register(modBus);
 
         modBus.addListener(QHNetwork::register);
         modBus.addListener(QHCapabilities::register);
         modBus.addListener(com.theoreticalsciences.compat.MEBridge::registerCaps);
-        modBus.addListener(net.neoforged.bus.api.EventPriority.HIGHEST, com.theoreticalsciences.transcend.Uncopyable::registerCaps);
-        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.transcend.Uncopyable::onServerTick);
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> com.theoreticalsciences.transcend.CoreForge.invalidate());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> com.theoreticalsciences.extreme.Collections.invalidate());
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.endgame.EntropyCenserItem::cloudApplies);
-        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.transcend.Uncopyable::onRightClick);
 
         container.registerConfig(ModConfig.Type.COMMON, QHConfig.COMMON_SPEC);
         container.registerConfig(ModConfig.Type.CLIENT, QHConfig.CLIENT_SPEC);

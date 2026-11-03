@@ -1,0 +1,94 @@
+{
+ "neutron_interferometry": {
+  "goal": "A neutron of mass m and wavelength λ is split into two paths that enclose an area A, the plane of the paths tilted by α. Gravity g changes the higher path's momentum; write the phase difference φ that builds up between them, from the quantum of action h.",
+  "name": "Gravitationally induced quantum phase",
+  "lhs": "φ",
+  "form": "2 * π * m ^ 2 * g * λ * A * sin ( α ) / h ^ 2",
+  "expr": "6.28318 * m ^ 2 * g * L * A * sin ( a ) / h ^ 2",
+  "ask": "Find φ in radians for m = 1.675e-27 kg, g = 9.81 m/s², L = 1.4e-10 m, A = 0.001 m², a = 0.5236 rad (30°), h = 6.626e-34 J·s.",
+  "vars": {
+   "φ": "phase difference (rad)",
+   "m": "neutron mass (kg)",
+   "g": "gravity (m/s²)",
+   "λ": "wavelength",
+   "A": "enclosed area (m²)",
+   "α": "tilt",
+   "h": "Planck constant (J·s)",
+   "π": "pi",
+   "L": "wavelength (m)",
+   "a": "tilt (rad)"
+  },
+  "given": {
+   "m": 1.675e-27,
+   "g": 9.81,
+   "L": 1.4e-10,
+   "A": 0.001,
+   "a": 0.5236,
+   "h": 6.626e-34
+  },
+  "unit": "rad",
+  "method": "Climbing a height H costs the neutron mgH of kinetic energy, so its wavenumber falls by m²gHλ/h²·2π; over a path length L at that height, the phases part by that times L - and H·L = A·sin α.",
+  "distractors": [
+   "c",
+   "ħ",
+   "4"
+  ]
+ },
+ "analog_gravity": {
+  "goal": "A horizon whose surface gravity is κ glows at a temperature T set by the quantum of action and the thermal energy scale. Write T.",
+  "name": "Hawking temperature",
+  "lhs": "T",
+  "form": "ħ * κ / ( 2 * π * k _ B )",
+  "expr": "h * K / ( 6.28318 * k ) * 1000000000",
+  "ask": "Find T in nK for a sonic horizon with K = 4000 s⁻¹ (h = 1.0546e-34 J·s for ħ, k = 1.381e-23 J/K).",
+  "vars": {
+   "T": "temperature (nK)",
+   "ħ": "reduced Planck constant",
+   "κ": "surface gravity",
+   "k": "Boltzmann constant",
+   "B": "Boltzmann",
+   "π": "pi",
+   "h": "ħ (J·s)",
+   "K": "surface gravity (1/s)"
+  },
+  "given": {
+   "h": 1.0546e-34,
+   "K": 4000,
+   "k": 1.381e-23
+  },
+  "unit": "nK",
+  "method": "Near the horizon, modes are stretched exponentially at the rate κ; seen from far away that stretching looks like a thermal spectrum at kT = ħκ/2π.",
+  "distractors": [
+   "c",
+   "G",
+   "4"
+  ]
+ },
+ "semiclassical_gravity": {
+  "goal": "Quantum effects of gravity become as strong as gravity itself at a length built only from the quantum of action ħ, gravity's constant G and the speed of light c. Write that length l.",
+  "name": "Planck length",
+  "lhs": "l",
+  "form": "sqrt ( ħ * G / c ^ 3 )",
+  "expr": "( h * G / c ^ 3 ) ^ 0.5 * 1000000000000000000000000000000000000",
+  "ask": "Find l in units of 10⁻³⁶ m (h = 1.0546e-34 for ħ, G = 6.674e-11, c = 2.998e8).",
+  "vars": {
+   "l": "Planck length (×10⁻³⁶ m)",
+   "ħ": "reduced Planck constant",
+   "G": "gravitational constant",
+   "c": "speed of light",
+   "h": "ħ (J·s)"
+  },
+  "given": {
+   "h": 1.0546e-34,
+   "G": 6.674e-11,
+   "c": 299800000.0
+  },
+  "unit": "×10⁻³⁶ m",
+  "method": "Only one combination of ħ, G and c has the dimensions of a length. At that size a particle's quantum wavelength equals the radius of the black hole its energy would make.",
+  "distractors": [
+   "π",
+   "2",
+   "k"
+  ]
+ }
+}

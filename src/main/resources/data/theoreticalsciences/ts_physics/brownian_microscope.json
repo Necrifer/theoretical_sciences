@@ -1,0 +1,100 @@
+{
+  "params": [
+    {
+      "id": "dt",
+      "unit": "s",
+      "min": 0.1,
+      "max": 100,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "min": 10,
+      "max": 5000,
+      "step": 1,
+      "default": 200
+    },
+    {
+      "id": "NA",
+      "unit": "",
+      "min": 0.1,
+      "max": 1.4,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "r": 0.5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "eta",
+      "unit": "mPa\u00b7s",
+      "expr": "0.02414*10^(247.8/max(T - 140, 1))",
+      "formula": "\u03b7 = A\u00b710^(B/(T \u2212 C))"
+    },
+    {
+      "id": "Dc",
+      "unit": "\u00b5m\u00b2/s",
+      "expr": "1.381e-23*T/(6*3.1416*eta*0.001*r*1e-6)*1e12",
+      "formula": "D = kT/(6\u03c0\u03b7r)"
+    },
+    {
+      "id": "msd",
+      "unit": "\u00b5m\u00b2",
+      "expr": "2*Dc*dt*(1 + 0.02*d)",
+      "formula": "\u27e8x\u00b2\u27e9 = 2Dt"
+    },
+    {
+      "id": "res",
+      "unit": "\u00b5m",
+      "expr": "0.61*0.55/NA",
+      "formula": "\u03b4 = 0.61\u03bb/NA"
+    },
+    {
+      "id": "bias",
+      "unit": "%",
+      "expr": "100*2*(res/10)^2/msd",
+      "formula": "2\u03c3\u00b2/\u27e8x\u00b2\u27e9"
+    },
+    {
+      "id": "stat",
+      "unit": "%",
+      "expr": "100*sqrt(2/n)",
+      "formula": "\u221a(2/n)"
+    },
+    {
+      "id": "err",
+      "unit": "%",
+      "expr": "sqrt(stat^2 + bias^2 + d^2)",
+      "formula": "all added in quadrature"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "frozen",
+      "kind": "stop",
+      "expr": "T - 273",
+      "formula": "T > 273 K"
+    },
+    {
+      "id": "boiling",
+      "kind": "stop",
+      "expr": "370 - T",
+      "formula": "T < 370 K"
+    }
+  ],
+  "rate": "clamp(300/(n + 100)*(1 + 2/(dt + 1)), 0.1, 2)",
+  "rate_formula": "rate = 300/(n + 100) \u00b7 (1 + 2/(t + 1 s))",
+  "heat": "0.02",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

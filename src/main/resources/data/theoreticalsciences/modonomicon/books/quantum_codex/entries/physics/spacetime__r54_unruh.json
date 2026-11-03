@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r54_unruh",
+  "description": "book.theoreticalsciences.codex.spacetime.r54_unruh.desc",
+  "icon": {
+    "item": "theoreticalsciences:unruh_accelerator"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 108,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:unruh_accelerator"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r54_unruh.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r54_unruh.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__r50_unification"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/unruh_effect"
+  }
+}

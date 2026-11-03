@@ -1,0 +1,85 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.math_overview",
+  "description": "book.theoreticalsciences.codex.mathematics.math_overview.desc",
+  "icon": {
+    "item": "theoreticalsciences:natural_number_lattice"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 17,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:natural_number_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:natural_number_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:complex_plane"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:absolute_infinity"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:peano_engine"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:analytic_continuator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_assistant"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.math_overview.p10"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/number_systems"
+  }
+}

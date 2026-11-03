@@ -1,0 +1,96 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.mass_crafting",
+  "description": "book.theoreticalsciences.codex.endgame.mass_crafting.desc",
+  "icon": {
+    "item": "theoreticalsciences:extreme_assembly_table"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 188,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:extreme_assembly_table"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:extreme_assembly_table"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:singularity_compactor"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omnium_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cherenkov_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:crystalline_matrix_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p9"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:omniscience_catalyst"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p10"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.mass_crafting.p11"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__convergence_engine"
+    },
+    {
+      "entry": "theoreticalsciences:materials/endgame__beyond"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conceptual_singularities"
+  }
+}

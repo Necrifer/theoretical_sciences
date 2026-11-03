@@ -1,0 +1,24 @@
+{
+  "name": "Unruh Accelerator",
+  "icon": "theoreticalsciences:unruh_accelerator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 74,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "An electron of Lorentz factor \u03b3, bent by a field B, circles at r = \u03b3mc/eB with proper acceleration a = \u03b3\u00b2c\u00b2/r. An accelerated observer sees the vacuum as a thermal bath at the Unruh temperature T = \u0127a/(2\u03c0ck_B): about 214 K per thousand of \u03b3 per tesla, here. Synchrotron radiation drains the beam as \u03b3\u00b3B; the cavities can replace up to 500 kW."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Lorentz factor, Bending field.$(br2)$(thing)Disturbance$(): Beam energy jitter: \u03b3 varies by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The cavities cannot replace what the beam radiates; The bending magnets are saturating.$(br2)$(thing)Rate$(): A more energetic beam works faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Lorentz factor: \u03b3$(br)Unruh temperature: T = \u0127a/(2\u03c0ck_B)$(br)Synchrotron loss: P \u221d \u03b3\u00b3B"
+    }
+  ]
+}

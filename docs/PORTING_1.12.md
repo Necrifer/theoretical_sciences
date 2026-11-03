@@ -36,8 +36,8 @@ sounds, music and the recipe, research and physics data in `src/main/resources`)
     types: those need the mod's own loader;
   * `ts_research`, `ts_physics`, `ts_glyphs`, `ts_singularities`, `ts_component_tiers`, `ts_forge`, `ts_machines`;
   * tags → the **Ore Dictionary** (`hidden_from_viewers`, `beyond_omnipotence`, `excavator_*`, `not_accelerated`,
-    `observable`, `not_spawnable`, `creative_duplicator_parts`; for entities and blocks, config lists).
-* `/reload` doesn't exist: Crafttweaker contains a reload command, but does not update recipe changes, textures or multiblock changes without a restart.
+    `observable`, `not_spawnable`; for entities and blocks, config lists).
+* `/reload` doesn't exist: data reloads become a command, or need a restart.
 
 ### Engine APIs (in roughly every file)
 
@@ -79,7 +79,7 @@ sounds, music and the recipe, research and physics data in `src/main/resources`)
 | Today | 1.12.2 |
 |---|---|
 | JEI | JEI exists for 1.12.2 — different, older API. All categories and the 3D multiblock preview are rewritten. |
-| EMI | Doesn't exist. |
+| EMI | Doesn't exist. Drop it. |
 | KubeJS | → CraftTweaker / GroovyScript (above). |
 | AE2 | → AE2 Unofficial Extended Life (AE2UEL), the maintained 1.12 fork. Different API. |
 | Patchouli | Exists for 1.12.2. Not needed: the mod has its own Codex (1.0.0 no longer ships a Patchouli book). |
@@ -98,7 +98,8 @@ sounds, music and the recipe, research and physics data in `src/main/resources`)
 
 ## Suggested way to do it, if it happens
 
-1. A separate repository or branch ("Theoretical Sciences Legacy").
+1. A separate repository or branch ("Theoretical Sciences Legacy"), crediting the same author. Don't share Java code
+   between versions.
 2. Consider a reduced first release: the machines, research and the early and middle dimensions. Then the endgame.
 3. Convert the content to 1.12 formats first. Then registries, items, blocks and fluids. Then machines,
    networking and screens. Then JEI and CraftTweaker. Then dimensions, the endgame and rendering effects.

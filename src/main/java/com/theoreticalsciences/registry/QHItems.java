@@ -19,9 +19,21 @@ public final class QHItems {
     public static final Map<String, DeferredItem<? extends Item>> ALL = new LinkedHashMap<>();
     public static final Map<String, DeferredItem<BlockItem>> BLOCK_ITEMS = new LinkedHashMap<>();
 
+    /**
+     * 1.3.8: what the Planetary Interior yields below its magma sea - the rocks, ores and what they drop - never burns:
+     * not in Basaltic Magma, lava or fire (see FluidHazard for the magma).
+     */
+    public static final java.util.Set<String> FIREPROOF = java.util.Set.of(
+            "magnetite", "ringwoodite", "bridgmanite", "peridotite", "core_iron", "core_magnetite_ore", "ringwoodite_ore", "bridgmanite_ore",
+            "basalt_column", "crustal_rock", "oklo_rock", "oklo_uraninite_ore", "fission_fragment_ore", "fission_fragment_mix", "raw_pitchblende",
+            "rich_iron_ore", "rich_copper_ore", "rich_gold_ore", "rich_iron_chunk", "rich_copper_chunk", "rich_gold_chunk",
+            "corundum", "garnet", "peridot", "moissanite", "corundum_crystal", "garnet_crystal", "peridot_crystal", "moissanite_crystal",
+            "geode_shell", "inner_core_boundary");
+
     static {
         for (QHContentList.ItemDef def : QHContentList.ITEMS) {
             Item.Properties p = new Item.Properties().stacksTo(def.stack()).rarity(rarityFor(def.id()));
+            if (FIREPROOF.contains(def.id())) p.fireResistant();
             DeferredItem<? extends Item> holder = switch (def.special()) {
                 case "analyzer" -> ITEMS.registerItem(def.id(), SpectralAnalyzerItem::new, p);
                 case "codex" -> ITEMS.registerItem(def.id(), CodexItem::new, p);
@@ -62,11 +74,23 @@ public final class QHItems {
                 case "eschatoncell" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.EschatonCellItem::new, p.rarity(Rarity.EPIC));
                 // round 35: holds space flat around its bearer (no distortion near impossible structures)
                 case "euclideananchor" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.EuclideanAnchorItem::new, p.rarity(Rarity.EPIC));
+                // round 37 (1.1): the first instruments of the new sciences
+                case "surveyor" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.Surveyor::new, p);
+                case "gaussmeter" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.GaussMeter::new, p);
+                case "geiger" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.GeigerCounter::new, p);
+                case "warpcore" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.frontier.SpacetimeTools.WarpBubbleCore::new, p.rarity(Rarity.RARE));
+                case "anchoredwarp" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.frontier.SpacetimeTools.AnchoredWarpBubble::new, p.rarity(Rarity.RARE));
+                case "lightsail" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.frontier.FrontierTravel.LightSailItem::new, p);
+                case "coredrill" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.interior.CoreDrillItem::new, p);
+                case "moissanitedrill" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.interior.MoissaniteDrillItem::new, p);
+                case "dice" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.Dice::new, p);
+                case "prussianblue" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.PrussianBlue::new, p);
                 default -> ITEMS.registerItem(def.id(), LoreItem::new, p);
             };
             ALL.put(def.id(), holder);
         }
-        QHBlocks.SIMPLE.forEach((id, block) -> BLOCK_ITEMS.put(id, ITEMS.registerSimpleBlockItem(block)));
+        QHBlocks.SIMPLE.forEach((id, block) -> BLOCK_ITEMS.put(id, FIREPROOF.contains(id)
+                ? ITEMS.registerSimpleBlockItem(block, new Item.Properties().fireResistant()) : ITEMS.registerSimpleBlockItem(block)));
         QHBlocks.MACHINES.forEach((type, block) -> BLOCK_ITEMS.put(type.id(),
                 ITEMS.registerItem(type.id(), p -> new MachineBlockItem(block.get(), p, type),
                         new Item.Properties().rarity(type.isMultiblock() ? Rarity.EPIC : Rarity.RARE))));

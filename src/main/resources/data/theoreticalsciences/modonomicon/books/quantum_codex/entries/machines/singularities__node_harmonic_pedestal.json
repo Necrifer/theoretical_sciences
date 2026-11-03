@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.node_harmonic_pedestal",
+  "description": "book.theoreticalsciences.codex.singularities.node_harmonic_pedestal.desc",
+  "icon": {
+    "item": "theoreticalsciences:harmonic_pedestal"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 104,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:harmonic_pedestal"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.node_harmonic_pedestal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_harmonic_pedestal.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/singularities__eye_of_the_horizon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/horizon_simulation"
+  }
+}

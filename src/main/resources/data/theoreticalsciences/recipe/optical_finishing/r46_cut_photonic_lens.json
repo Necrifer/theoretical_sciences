@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fluorite_boule",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:photonic_lens",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 1200,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 1.5
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": 9.5,
+        "max": 10.5
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 34.0
+      }
+    ]
+  }
+}

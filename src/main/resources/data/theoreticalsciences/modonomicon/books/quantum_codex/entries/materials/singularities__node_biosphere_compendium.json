@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.node_biosphere_compendium",
+  "description": "book.theoreticalsciences.codex.singularities.node_biosphere_compendium.desc",
+  "icon": {
+    "item": "theoreticalsciences:biosphere_compendium"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 115,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:biosphere_compendium"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.node_biosphere_compendium.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_biosphere_compendium.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_biosphere_compendium.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/singularities__white_hole_emitter",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/white_holes"
+  }
+}

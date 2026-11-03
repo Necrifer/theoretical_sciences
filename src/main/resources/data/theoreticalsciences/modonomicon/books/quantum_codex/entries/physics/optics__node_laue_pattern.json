@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.node_laue_pattern",
+  "description": "book.theoreticalsciences.codex.optics.node_laue_pattern.desc",
+  "icon": {
+    "item": "theoreticalsciences:laue_pattern"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 22,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laue_pattern"
+      },
+      "text": "book.theoreticalsciences.codex.optics.node_laue_pattern.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.node_laue_pattern.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/optics__x_ray_diffractometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/crystallography"
+  }
+}

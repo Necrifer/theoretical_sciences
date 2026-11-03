@@ -1,0 +1,47 @@
+{
+  "title": "Gamma-Ray Bursts",
+  "description": "For a few seconds, the brightest light in the Universe: a jet from a newborn black hole at nearly the speed of light, beamed straight at us. Unlocks the Burst Observatory.",
+  "icon": "theoreticalsciences:burst_afterglow_crystal",
+  "x": 18,
+  "y": 0,
+  "insight": 240,
+  "requires": [
+    "theoreticalsciences:kilonovae",
+    "theoreticalsciences:accretion_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:kilonova_ash",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:quasar_jet_filament",
+      "count": 2
+    }
+  ],
+  "time": 990,
+  "puzzle": {
+    "goal": "A jet moving at speed v beams its light forward into a narrow cone. Write the half-angle \u03b8 of the cone, with the speed of light c.",
+    "name": "Relativistic beaming angle",
+    "lhs": "\u03b8",
+    "form": "sqrt ( 1 - ( v / c ) ^ 2 )",
+    "expr": "( 1 - b ^ 2 ) ^ 0.5 * 57.2958",
+    "ask": "Find \u03b8 in degrees for a jet with b = 0.9999944 (its speed as a fraction of c, a Lorentz factor of 300).",
+    "vars": {
+      "\u03b8": "half-angle (degrees)",
+      "v": "jet speed",
+      "c": "speed of light",
+      "b": "v/c"
+    },
+    "given": {
+      "b": 0.9999944
+    },
+    "unit": "\u00b0",
+    "method": "Aberration: light emitted at right angles in the jet's frame comes out at sin \u03b8 = 1/\u03b3 = \u221a(1 \u2212 v\u00b2/c\u00b2) in ours.",
+    "distractors": [
+      "2",
+      "G",
+      "\u03c0"
+    ]
+  }
+}

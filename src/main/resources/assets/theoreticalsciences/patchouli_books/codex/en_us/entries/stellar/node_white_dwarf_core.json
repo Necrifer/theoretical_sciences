@@ -1,0 +1,23 @@
+{
+  "name": "White Dwarf Core",
+  "icon": "theoreticalsciences:white_dwarf_core",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:white_dwarf_core",
+      "title": "White Dwarf Core",
+      "text": "What remains when a modest star sheds its outer layers: a core of carbon and oxygen about the size of the Earth, held up against gravity only by electron degeneracy pressure. It is fiercely hot and absurdly heavy for its size, and will cool for longer than the universe has existed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)After the red giant phase, the Nucleosynthesis Chamber left a small, glowing ember behind. Electron degeneracy held it up, exactly as Chandrasekhar described, and it slowly radiated away its leftover heat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Tectonic Press$().$(br2)$(thing)Unlocked by$(): Stellar Evolution.$(br2)$(thing)Used in$(): Absolute Singularity, Stellar Iron Ingot, Stellar Singularity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_evolution"
+}

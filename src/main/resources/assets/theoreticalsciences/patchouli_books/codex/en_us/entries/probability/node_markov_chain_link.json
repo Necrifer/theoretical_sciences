@@ -1,0 +1,19 @@
+{
+  "name": "Markov Chain Link",
+  "icon": "theoreticalsciences:markov_chain_link",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:markov_chain_link",
+      "title": "Markov Chain Link",
+      "text": "A link that remembers only the one before it. Chain enough of them and the past stops mattering at all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Monte Carlo Methods.$(br2)$(thing)Used in$(): Ergodic Mixer Core, Markov Chain Refinery, Transition Valve."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/monte_carlo_methods"
+}

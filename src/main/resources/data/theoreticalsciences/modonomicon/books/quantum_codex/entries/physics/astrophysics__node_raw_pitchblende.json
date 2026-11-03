@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_raw_pitchblende",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_raw_pitchblende.desc",
+  "icon": {
+    "item": "theoreticalsciences:raw_pitchblende"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 9,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:raw_pitchblende"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_raw_pitchblende.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_raw_pitchblende.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/astrophysics__spectrograph",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

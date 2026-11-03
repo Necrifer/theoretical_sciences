@@ -1,0 +1,71 @@
+{
+  "controller_block": "theoreticalsciences:pulsed_magnet_lab",
+  "controller": "C",
+  "layers": [
+    [
+      " \u043c\u043c\u043c\u043d\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043d\u043c\u043c\u043c\u043c\u043c\u043d ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043d\u043c\u043c\u043c "
+    ],
+    [
+      " \u043c\u043c\u043cC\u043c\u043c\u043c ",
+      "\u042d\u043c.....\u043c\u042d",
+      "\u042dG.....G\u042d",
+      " G..\u043e..G ",
+      "\u042dG.....G\u042d",
+      "\u042d\u043c.....\u043c\u042d",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c "
+    ],
+    [
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c ",
+      " \u043c\u043c\u043c\u043c\u043c\u043c\u043c "
+    ],
+    [
+      "         ",
+      "         ",
+      "    \u042d    ",
+      "   \u042d\u043e\u042d   ",
+      "    \u042d    ",
+      "         ",
+      "         "
+    ]
+  ],
+  "key": {
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "\u042d": [
+      "theoreticalsciences:capacitor_bank"
+    ],
+    "\u043c": [
+      "theoreticalsciences:pulsed_lab_casing"
+    ],
+    "\u043d": [
+      "theoreticalsciences:pulsed_lab_casing",
+      "theoreticalsciences:interface_port"
+    ],
+    "\u043e": [
+      "theoreticalsciences:bitter_plate_stack"
+    ]
+  },
+  "effect_center": [
+    4.0,
+    1.5,
+    3.0
+  ],
+  "tiers": {},
+  "repeat": {
+    "from": 1,
+    "to": 1,
+    "max": 6
+  }
+}

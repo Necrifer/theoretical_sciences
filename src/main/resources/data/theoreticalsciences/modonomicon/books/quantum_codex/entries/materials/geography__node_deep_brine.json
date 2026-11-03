@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.node_deep_brine",
+  "description": "book.theoreticalsciences.codex.geography.node_deep_brine.desc",
+  "icon": {
+    "item": "theoreticalsciences:deep_brine_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 160,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:deep_brine_cell"
+      },
+      "text": "book.theoreticalsciences.codex.geography.node_deep_brine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.node_deep_brine.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/geography__aquifer_pump",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hydrology"
+  }
+}

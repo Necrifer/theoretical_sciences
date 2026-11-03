@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:fixed_point_lattice"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.asymptotic_safety"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.asymptotic_safety.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/loop_quantum_gravity",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Wormhole Projector",
+  "icon": "theoreticalsciences:wormhole_projector",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 78,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Morris-Thorne wormhole: a throat of radius b\u2080 held open by exotic matter of negative energy, about b\u2080c\u00b2/2G of it. Cargo crossing it feels tides that grow with speed - go slowly through a wide throat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Throat radius b\u2080, Transit speed, Exotic matter, Throat length.$(br2)$(thing)Disturbance$(): Exotic-matter leakage: the throat needs M\u00b7(1 \u00b1 2%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Not enough exotic matter: the throat pinches off; Tidal forces would shred the cargo; The throat frame is overheating.$(br2)$(thing)Rate$(): A wider throat passes more cargo at once."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Exotic matter needed: M = b\u2080c\u00b2/(2G)$(br)Lorentz factor: \u03b3 = 1/\u221a(1 \u2212 v\u00b2/c\u00b2)$(br)Tidal acceleration: \u0394a = \u03b3\u00b2v\u00b2\u2113/b\u2080\u00b2$(br)Transit time: t = L/v"
+    }
+  ]
+}

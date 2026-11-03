@@ -1,0 +1,19 @@
+{
+  "name": "Avogadro Record",
+  "icon": "theoreticalsciences:avogadro_record",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:avogadro_record",
+      "title": "Avogadro Record",
+      "text": "A thousand tracks of a clay grain in water, each one a staggering random walk, and from how far they wander: how many molecules make a mole. Perrin won the Nobel Prize for this."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Brownian Microscope$().$(br2)$(thing)Unlocked by$(): Brownian Motion."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/brownian_motion"
+}

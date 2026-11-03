@@ -29,14 +29,17 @@ public final class ExpansionMobRenderers {
             String id = BuiltInRegistries.ENTITY_TYPE.getKey(e.getType()).getPath();
             float t = e.tickCount + partial;
             int ov = OverlayTexture.pack(0, e.hurtTime > 0);
-            float die = e.deathTime > 0 ? 1F - Math.min(1F, (e.deathTime + partial) / 20F) : 1F;
             VertexConsumer solid = SafeBuffer.of(buf, RenderType.entitySolid(WHITE));
             VertexConsumer trans = SafeBuffer.of(buf, RenderType.entityTranslucent(WHITE));
             VertexConsumer glow = SafeBuffer.of(buf, RenderType.eyes(WHITE));
             float limb = e.walkAnimation.position(partial), amt = Math.min(1F, e.walkAnimation.speed(partial));
             ps.pushPose();
             ps.mulPose(Axis.YP.rotationDegrees(180F - Mth.rotLerp(partial, e.yBodyRotO, e.yBodyRot)));
-            ps.scale(die, die, die);
+            if (!DeathAnim.apply(ps, e, partial, id)) {         // 1.10.1: each creature dies its own way
+                ps.popPose();
+                super.render(e, yaw, partial, ps, buf, light);
+                return;
+            }
             switch (id) {
                 case "virtual_pair" -> virtualPair(ps, glow, t);
                 case "hypercube_drifter" -> hypercube(ps, solid, glow, t, light, ov);

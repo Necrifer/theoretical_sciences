@@ -1,0 +1,19 @@
+{
+  "name": "Remote Sensing",
+  "icon": "theoreticalsciences:satellite_image_plate",
+  "advancement": "theoreticalsciences:research/remote_sensing",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:satellite_image_plate",
+      "title": "Remote Sensing",
+      "text": "$(thing)Remote Sensing$()$(br2)A telescope turned round: from orbit, in visible light and infrared and radar, the whole ground at once. Unlocks the Survey Satellite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Seismology, Observational Astronomy.$(br2)$(thing)Samples$(): 2 Star Field Plate, 4 Survey Map."
+    }
+  ]
+}

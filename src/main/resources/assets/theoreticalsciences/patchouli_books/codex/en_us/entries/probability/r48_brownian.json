@@ -1,0 +1,22 @@
+{
+  "name": "Brownian Motion",
+  "icon": "theoreticalsciences:brownian_microscope",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:brownian_microscope,theoreticalsciences:colloid_cell,theoreticalsciences:avogadro_record",
+      "text": "Grains of clay in water never keep still: molecules too small to see strike them from every side, unevenly, and they wander. Einstein worked out how far: the mean square displacement grows as $(thing)\u27e8x\u00b2\u27e9 = 2Dt$(), with D = kT/(6\u03c0\u03b7r)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Measure D and you have Boltzmann's constant - and so how many molecules make a mole. The $(item)Brownian Microscope$() follows the grains in a $(item)Colloid Cell$(). The coolant sets the water's temperature, and with it the viscosity: water is three times thinner near boiling than near freezing. Keep it liquid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Two errors. Averaging n tracks scatters by \u221a(2/n): follow more grains. Each position is found to about a tenth of the objective's resolution, 0.61\u03bb/NA, and that inflates \u27e8x\u00b2\u27e9: open the aperture, or wait longer between frames so they wander further. Get Avogadro's number within 3% for an $(item)Avogadro Record$() - and the displacements, a perfect bell curve, give a Normal Distribution Crystal."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/brownian_motion"
+}

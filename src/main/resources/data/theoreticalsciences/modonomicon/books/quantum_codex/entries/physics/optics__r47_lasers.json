@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.r47_lasers",
+  "description": "book.theoreticalsciences.codex.optics.r47_lasers.desc",
+  "icon": {
+    "item": "theoreticalsciences:laser_head"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 83,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laser_head"
+      },
+      "text": "book.theoreticalsciences.codex.optics.r47_lasers.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.r47_lasers.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.r47_lasers.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/optics__r46_growth"
+    },
+    {
+      "entry": "theoreticalsciences:physics/optics__crystal_growth_furnace"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/laser_physics"
+  }
+}

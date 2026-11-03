@@ -1,0 +1,196 @@
+{
+  "name": "Tesseract Assembler",
+  "icon": "theoreticalsciences:tesseract_assembler",
+  "category": "theoreticalsciences:hyperdimensions",
+  "sortnum": 40,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tesseract_assembler",
+      "title": "Tesseract Assembler",
+      "text": "Folds matter through a fourth spatial dimension - parts meet in W that could never touch in our three.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Too complex for any crafting grid. I built this controller on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts; I needed every one of them."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tesseract Assembler",
+      "multiblock": {
+        "pattern": [
+          [
+            "ABBBBBBBBBA",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "B_________B",
+            "ABBBBBBBBBA"
+          ],
+          [
+            "B_________B",
+            "_B_______B_",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_B_______B_",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "__B_____B__",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "__B_____B__",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "___________",
+            "___DEEED___",
+            "___E___E___",
+            "___E___E___",
+            "___E___E___",
+            "___DEEED___",
+            "___________",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "___________",
+            "___E___E___",
+            "____   ____",
+            "____   ____",
+            "____   ____",
+            "___E___E___",
+            "___________",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "___________",
+            "___E___E___",
+            "____   ____",
+            "____   ____",
+            "____   ____",
+            "___E___E___",
+            "___________",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "___________",
+            "___E___E___",
+            "____   ____",
+            "____   ____",
+            "____   ____",
+            "___E___E___",
+            "___________",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "___________",
+            "___DEEED___",
+            "___E___E___",
+            "___E___E___",
+            "___E___E___",
+            "___DEEED___",
+            "___________",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "__F_____F__",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "__F_____F__",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "B_________B",
+            "_F_______F_",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_F_______F_",
+            "B_________B"
+          ],
+          [
+            "ABBBB0BBBBA",
+            "B_________B",
+            "B_________B",
+            "B__GGGGG__B",
+            "B__GGGGG__B",
+            "B__GGHGG__B",
+            "B__GGGGG__B",
+            "B__GGGGG__B",
+            "B_________B",
+            "B_________B",
+            "ABBBBBBBBBA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:tesseract_assembler",
+          "A": "theoreticalsciences:dimensional_stabiliser",
+          "B": "theoreticalsciences:hyperframe_casing",
+          "D": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "E": "theoreticalsciences:containment_field_glass",
+          "F": "#theoreticalsciences:multiblock/hyperframe_casing_or_port",
+          "G": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "H": "theoreticalsciences:cryogenic_cooling_jacket"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Alcubierre Coil, Cosmic Circuit Board, Dimensional Residue, E8 Lattice, Einstein-Rosen Core, Grand Unified Core, Hopf Fibration, Klein Bottle, Penteract Lattice, Planck Shard, Spacetime Catalyst, Tesseract Core, Tesseract Lens, Wormhole Throat."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tesseract_assembler",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/hyperdimensional_geometry"
+}

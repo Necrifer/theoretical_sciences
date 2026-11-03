@@ -1,0 +1,24 @@
+{
+  "name": "Pulsed Magnet Lab",
+  "icon": "theoreticalsciences:pulsed_magnet_lab",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 58,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A capacitor bank dumps a current I through a coil of N turns and length L: the field is B = \u03bc\u2080NI/L. The coil's resistance turns the current into heat, \u0394T \u221d NI\u00b2t over the pulse t; the magnetic pressure B\u00b2/2\u03bc\u2080 pushes the coil outward. Every storey of the room is another stack of plates and its cooling: more copper to soak up the heat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Turns, Peak current, Pulse length.$(br2)$(thing)Disturbance$(): Capacitor charge: the current varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The coil is melting; The magnetic pressure is tearing the coil apart.$(br2)$(thing)Rate$(): Shorter pulses recharge faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Coil length: L$(br)Peak field: B = \u03bc\u2080NI/L$(br)Coil heating: \u0394T \u221d NI\u00b2t"
+    }
+  ]
+}

@@ -32,6 +32,15 @@ public enum MachineType {
     FEMTO_FABRICATOR        ("femtofabrication",     4, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0x60FFD0),
     CANTOR_DIAGONALIZER     ("transfinite_computation", 4, 1, 2, 0, false, null,                  2_000_000_000, 200_000_000, Effect.NONE,   0xD0C0FF),
     AXIOM_DISTILLER         ("axiom_distillation",   3, 2, 2, 1, false, null,                   2_000_000_000, 200_000_000, Effect.NONE,      0xA060FF),
+    SPECTROGRAPH            ("spectroscopy",         2, 0, 2, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xB080FF),
+    // round 38 (1.2): the Tier II instruments of the new sciences (ScienceMachineBlockEntity gives each its physics)
+    SEISMOGRAPH             ("seismography",         2, 0, 1, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xC09060),
+    DECAY_CHAMBER           ("radioactive_decay",    1, 1, 2, 1, false, null,                         100_000,    2_000, Effect.NONE,        0x90FF60),
+    MAGNETIZER              ("magnetizing",          1, 0, 1, 0, false, null,                         200_000,    4_000, Effect.NONE,        0xFF5050),
+    INDUCTION_GENERATOR     ("induction",            2, 0, 0, 0, true,  null,                         100_000,    2_000, Effect.NONE,        0x60A0FF),
+    GALTON_BOARD            ("galton_sorting",       1, 0, 3, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xF0E0A0),
+    BAYESIAN_ANALYZER       ("bayesian_inference",   2, 0, 1, 0, false, null,                         100_000,    2_000, Effect.NONE,        0x80C0FF),
+    ATOMIC_CLOCK            ("clock_comparison",     2, 0, 1, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xFFD080),
 
     FEMTOSCALE_ASSEMBLY_LINE("femto_assembly",       9, 3, 1, 0, false, "femtoscale_assembly_line",  64_000_000,  2_000_000, Effect.ASSEMBLY, 0x60FFD0),
     STELLAR_PLASMA_CRUCIBLE ("plasma_smelting",      3, 2, 2, 2, false, "stellar_plasma_crucible",  32_000_000,  1_000_000, Effect.PLASMA,   0xFF8040),
@@ -89,10 +98,67 @@ public enum MachineType {
     ENTROPY_HORIZON         ("eschatology",          4, 2, 2, 2, false, "entropy_horizon",        256_000_000, 8_000_000, Effect.EXPANSION,   0x6070C0),
     // round 34 (round34_anomaly): Abnormality & Infection - containing anomalies, and resolving them
     ANOMALY_CONTAINMENT_WARD ("anomaly_containment", 4, 2, 2, 2, false, "anomaly_containment_ward", 256_000_000, 8_000_000, Effect.RIFT, 0x40FFA0),
-    ANOMALY_RESOLUTION_ENGINE("anomaly_resolution",  4, 2, 2, 2, false, "anomaly_resolution_engine", 256_000_000, 8_000_000, Effect.MATRIX, 0xFFF0C0);
+    ANOMALY_RESOLUTION_ENGINE("anomaly_resolution",  4, 2, 2, 2, false, "anomaly_resolution_engine", 256_000_000, 8_000_000, Effect.MATRIX, 0xFFF0C0),
+    // round 42 (1.3.5): the Planetary Interior's machines - each with its own silhouette and physics
+    TECTONIC_PRESS          ("tectonic_pressing",    2, 1, 2, 0, false, "tectonic_press",          16_000_000,   500_000, Effect.HEARTH,    0xFF9040),
+    DEEP_DRILLING_RIG       ("deep_drilling",        1, 1, 3, 1, false, "deep_drilling_rig",       16_000_000,   500_000, Effect.DRILL_STRING,      0xE0A040),
+    GAS_CENTRIFUGE_CASCADE  ("isotope_enrichment",   3, 1, 2, 1, false, "gas_centrifuge_cascade",  16_000_000,   500_000, Effect.CENTRIFUGE,      0x90FF60),
+    MOLTEN_SALT_REACTOR     ("molten_salt_fission",  0, 1, 0, 1, true,  "molten_salt_reactor",     64_000_000, 2_000_000, Effect.SALT_GLOW,    0x60FF90),
+    MHD_GENERATOR           ("magnetohydrodynamic",  0, 1, 1, 0, true,  "mhd_generator",           64_000_000, 2_000_000, Effect.MHD_FLOW,      0x60A0FF),
+    // round 43 (1.3.6): the Forge's last materials, made in bulk - each only once its owner has forged it by hand
+    ESCHATON_FOUNDRY        ("eschaton_founding",    6, 2, 1, 0, false, "eschaton_foundry",     2_000_000_000, 500_000_000, Effect.HEAT_DEATH, 0xFFD0A0),
+    // round 45 (1.4.0): Astrophysics, Tier II - instruments that need the real sky above them
+    REFLECTING_TELESCOPE    ("astrophotography",     2, 0, 2, 0, false, "reflecting_telescope",     4_000_000,   100_000, Effect.STARLIGHT, 0xC0D8FF),
+    SOLAR_FURNACE           ("solar_melting",        2, 0, 2, 0, false, "solar_furnace",            4_000_000,   100_000, Effect.SOLAR,     0xFFE080),
+    RADIO_TELESCOPE         ("radio_observation",    1, 0, 2, 0, false, "radio_telescope",          8_000_000,   200_000, Effect.RADIO,     0x80FFC0),
+    // round 46 (1.5.0): Optics & Crystals - study, grow and cut the crystals
+    X_RAY_DIFFRACTOMETER    ("xray_diffraction",     2, 0, 2, 0, false, "x_ray_diffractometer",     4_000_000,   100_000, Effect.DIFFRACTION, 0xA0E0FF),
+    CRYSTAL_GROWTH_FURNACE  ("crystal_pulling",      2, 0, 1, 0, false, "crystal_growth_furnace",   8_000_000,   200_000, Effect.CZOCHRALSKI,    0xFFB070),
+    OPTICAL_WORKSHOP        ("optical_finishing",    3, 0, 1, 0, false, "optical_workshop",         4_000_000,   100_000, Effect.FRINGES,   0xC8E8FF),
+    // round 47 (1.6.0): General Relativity - gravitational waves and the gravitational redshift
+    LASER_INTERFEROMETER    ("gw_detection",         2, 0, 1, 0, false, "laser_interferometer",    32_000_000,   800_000, Effect.LASER_ARMS, 0xFF5060),
+    POUND_REBKA_TOWER       ("redshift_measurement", 1, 0, 1, 0, false, "pound_rebka_tower",        8_000_000,   200_000, Effect.GAMMA_RISE, 0xE0FF80),
+    // round 48 (1.7.0): Probability - Brownian motion and Monte Carlo
+    BROWNIAN_MICROSCOPE     ("brownian_tracking",    2, 0, 2, 0, false, "brownian_microscope",      4_000_000,   100_000, Effect.BROWNIAN,  0xF0E0B0),
+    MONTE_CARLO_ENGINE      ("monte_carlo",          1, 0, 1, 0, false, "monte_carlo_engine",      16_000_000,   400_000, Effect.MONTE_CARLO, 0x40FF80),
+    // round 49 (1.8.0): Electromagnetism - the cyclotron and the Tesla coil
+    CYCLOTRON               ("cyclotron_irradiation", 2, 0, 1, 0, false, "cyclotron",               8_000_000,   200_000, Effect.CYCLOTRON, 0xFFB070),
+    TESLA_COIL              ("arc_discharge",        1, 1, 1, 0, false, "tesla_coil",               8_000_000,   200_000, Effect.TESLA_ARCS, 0xC0E0FF),
+    // round 50 (1.9.0): Unification - quantum mechanics and gravity in one measurement
+    NEUTRON_INTERFEROMETER  ("gravity_interferometry", 3, 0, 1, 0, false, "neutron_interferometer", 16_000_000,   400_000, Effect.NEUTRON_PATHS, 0xC0D8FF),
+    ANALOG_BLACK_HOLE       ("analog_horizon",       1, 1, 1, 0, false, "analog_black_hole",       16_000_000,   400_000, Effect.SONIC_HORIZON, 0xC0F0FF),
+    // round 51 (1.10.0): the Accretion Frontier's astrophysics
+    INTERSTELLAR_SCOOP      ("interstellar_scooping", 2, 0, 1, 1, false, null,                        100_000,    2_000, Effect.NONE,        0x8090C0),
+    ACCRETION_DISK_REACTOR  ("accretion_power",      1, 1, 1, 1, true,  "accretion_disk_reactor",  64_000_000, 2_000_000, Effect.QUASAR_JETS, 0xFFB060),
+    // round 52 (1.11.0): Fields & Nuclei - the rest of Electromagnetism and Nuclear Physics, and the bursts
+    TOKAMAK                 ("fusion_power",         1, 2, 1, 2, true,  "tokamak",                128_000_000, 4_000_000, Effect.TOKAMAK_PLASMA, 0xFF80C0),
+    PULSED_MAGNET_LAB       ("pulsed_field",         2, 0, 2, 0, false, "pulsed_magnet_lab",        32_000_000, 1_000_000, Effect.PULSED_FIELD, 0x80C0FF),
+    HYPERVELOCITY_IMPACT_FORGE("shock_synthesis",    3, 0, 1, 0, false, "hypervelocity_impact_forge", 32_000_000, 1_000_000, Effect.RAILGUN, 0xFFE0A0),
+    BURST_OBSERVATORY       ("burst_detection",      2, 0, 1, 0, false, "burst_observatory",         8_000_000,   200_000, Effect.GAMMA_BURST, 0xE0E0FF),
+    LASER_CUTTER            ("laser_cutting",        2, 0, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xFF5060),
+    ISOMER_TRIGGER          ("isomer_triggering",    2, 0, 1, 0, true,  null,                       2_000_000,   40_000, Effect.NONE,        0xE0FF80),
+    DECONTAMINATION_SCRUBBER("decontamination",      2, 1, 2, 0, false, null,                         400_000,    8_000, Effect.NONE,        0x60FFA0),
+    IRRADIATION_CHAMBER     ("irradiation",          2, 0, 2, 1, false, null,                         400_000,    8_000, Effect.NONE,        0xA0FF40),
+    // round 53 (1.12.0): Earth & Spacetime - the rest of Geography and General Relativity
+    AQUIFER_PUMP            ("aquifer_pumping",      1, 0, 1, 1, false, null,                         100_000,    2_000, Effect.NONE,        0x4080C0),
+    CLIMATE_ENGINE          ("climate_forcing",      2, 1, 2, 0, false, "climate_engine",           16_000_000,   400_000, Effect.CLIMATE,   0xA0D0FF),
+    LENSING_CONCENTRATOR    ("lensing",              2, 0, 1, 0, true,  "lensing_concentrator",     64_000_000, 2_000_000, Effect.EINSTEIN_RING, 0xE0E8FF),
+    TIME_DILATION_CHAMBER   ("time_dilation",        2, 1, 2, 1, false, "time_dilation_chamber",    32_000_000, 1_000_000, Effect.DILATION_RINGS, 0xFFD080),
+    WARP_FIELD_FORGE        ("warp_forging",         3, 1, 1, 0, false, "warp_field_forge",        128_000_000, 4_000_000, Effect.WARP_BUBBLE,  0xC080FF),
+    // round 54 (1.13.0): Horizons - where quantum mechanics meets gravity
+    UNRUH_ACCELERATOR       ("unruh_heating",        2, 1, 1, 1, false, "unruh_accelerator",        64_000_000, 2_000_000, Effect.UNRUH_BATH, 0xFFB060),
+    MICRO_BLACK_HOLE_EVAPORATOR("hawking_evaporation", 2, 0, 1, 1, true, "micro_black_hole_evaporator", 256_000_000, 8_000_000, Effect.HAWKING_SPARK, 0xFFE0A0),
+    ER_EPR_WEAVER           ("er_weaving",           2, 0, 1, 0, false, "er_epr_weaver",           128_000_000, 4_000_000, Effect.ER_BRIDGE,  0xFF80FF),
+    SPIN_NETWORK_LOOM       ("spin_weaving",         2, 1, 1, 1, false, null,                       4_000_000,   80_000, Effect.NONE,        0xA0C0FF),
+    PAGE_CURVE_ANALYZER     ("page_analysis",        2, 0, 2, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0x80E0FF),
+    // round 55 (1.14.0): Ensembles - the rest of Statistical Probability
+    MARKOV_CHAIN_REFINERY   ("markov_refining",      1, 1, 1, 1, false, "markov_chain_refinery",    32_000_000, 1_000_000, Effect.MARKOV_HOPS, 0xC0C0FF);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
-        ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM }
+        ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
+        STARLIGHT, SOLAR, RADIO, DIFFRACTION, FRINGES, LASER_ARMS, GAMMA_RISE, BROWNIAN, MONTE_CARLO, CYCLOTRON, TESLA_ARCS, NEUTRON_PATHS, SONIC_HORIZON, TOKAMAK_PLASMA, PULSED_FIELD, RAILGUN, CLIMATE,
+        SALT_GLOW, CZOCHRALSKI, DRILL_STRING, CENTRIFUGE, MHD_FLOW, HEAT_DEATH, GAMMA_BURST, MARKOV_HOPS, EINSTEIN_RING, DILATION_RINGS,
+        WARP_BUBBLE, UNRUH_BATH, HAWKING_SPARK, ER_BRIDGE, QUASAR_JETS }
 
     public final String recipeType;
     public final int itemInputs, fluidInputs, itemOutputs, fluidOutputs;

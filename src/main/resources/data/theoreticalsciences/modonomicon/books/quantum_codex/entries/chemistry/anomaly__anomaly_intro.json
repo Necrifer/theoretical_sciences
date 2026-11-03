@@ -1,0 +1,85 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_intro",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_intro.desc",
+  "icon": {
+    "item": "theoreticalsciences:anomaly_specimen"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 52,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_containment_ward"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_containment_ward"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_specimen"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:fractured_essence"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:void_essence"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:paradox_residue"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:nanite_swarm"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_intro.p10"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/anomalous_phenomena"
+  }
+}

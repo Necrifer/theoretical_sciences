@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.information.research_nexus",
+  "description": "book.theoreticalsciences.codex.information.research_nexus.desc",
+  "icon": {
+    "item": "theoreticalsciences:research_nexus"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 23,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:research_nexus"
+      },
+      "text": "book.theoreticalsciences.codex.information.research_nexus.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.research_nexus.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.research_nexus.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.research_nexus.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.research_nexus.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:research_nexus"
+      },
+      "text": "book.theoreticalsciences.codex.information.research_nexus.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/fabrication__femtoscale_assembly_line"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/research_synthesis"
+  }
+}

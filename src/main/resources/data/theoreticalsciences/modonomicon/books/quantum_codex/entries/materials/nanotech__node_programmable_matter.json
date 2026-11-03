@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.nanotech.node_programmable_matter",
+  "description": "book.theoreticalsciences.codex.nanotech.node_programmable_matter.desc",
+  "icon": {
+    "item": "theoreticalsciences:programmable_matter"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 55,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:programmable_matter"
+      },
+      "text": "book.theoreticalsciences.codex.nanotech.node_programmable_matter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nanotech.node_programmable_matter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nanotech.node_programmable_matter.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nanotech__nanite_assembler",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nanotechnology"
+  }
+}

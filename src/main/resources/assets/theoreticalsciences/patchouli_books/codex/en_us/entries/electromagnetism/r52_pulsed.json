@@ -1,0 +1,22 @@
+{
+  "name": "The Pulsed Magnet Lab",
+  "icon": "theoreticalsciences:pulsed_magnet_lab",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pulsed_magnet_lab,theoreticalsciences:bitter_plate_stack,theoreticalsciences:magnetic_monopole",
+      "text": "Steady magnets top out near 45 tesla. For more, dump a room of capacitors into a coil for a few milliseconds: $(thing)B = \u03bc\u2080NI/L$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Pulsed Magnet Lab$() grows a storey for every stack of Bitter plates (1 to 7): more copper and cooling to soak up the pulse's heat (\u0394T \u221d NI\u00b2t/storeys). Past 400 K the coil melts; past 100 T the magnetic pressure B\u00b2/2\u03bc\u2080 tears it apart."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "At 40 T it magnetises samarium-cobalt in bulk. At 80 T, with magnetar crust and cosmic ray shards, it searches for $(item)Magnetic Monopoles$() - and now and then, finds one."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetic_confinement"
+}

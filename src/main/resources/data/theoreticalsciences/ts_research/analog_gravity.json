@@ -1,0 +1,60 @@
+{
+  "title": "Analog Gravity",
+  "description": "A fluid flowing faster than its own sound has a horizon for sound, and the mathematics of sound on it is the mathematics of light near a black hole - Hawking radiation included. Unlocks the Analog Black Hole.",
+  "icon": "theoreticalsciences:analog_black_hole",
+  "x": 10,
+  "y": 7,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:gravitational_waves",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:gw_record_bbh",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:test_mass",
+      "count": 1
+    }
+  ],
+  "time": 660,
+  "puzzle": {
+    "goal": "A horizon whose surface gravity is \u03ba glows at a temperature T set by the quantum of action and the thermal energy scale. Write T.",
+    "name": "Hawking temperature",
+    "lhs": "T",
+    "form": "\u0127 * \u03ba / ( 2 * \u03c0 * k _ B )",
+    "expr": "h * K / ( 6.28318 * k ) * 1000000000",
+    "ask": "Find T in nK for a sonic horizon with K = @{K} s\u207b\u00b9 (h = 1.0546e-34 J\u00b7s for \u0127, k = 1.381e-23 J/K).",
+    "vars": {
+      "T": "temperature (nK)",
+      "\u0127": "reduced Planck constant",
+      "\u03ba": "surface gravity",
+      "k": "Boltzmann constant",
+      "B": "Boltzmann",
+      "\u03c0": "pi",
+      "h": "\u0127 (J\u00b7s)",
+      "K": "surface gravity (1/s)"
+    },
+    "given": {
+      "h": 1.0546e-34,
+      "K": 4000,
+      "k": 1.381e-23
+    },
+    "unit": "nK",
+    "method": "Near the horizon, modes are stretched exponentially at the rate \u03ba; seen from far away that stretching looks like a thermal spectrum at kT = \u0127\u03ba/2\u03c0.",
+    "distractors": [
+      "c",
+      "G",
+      "4"
+    ],
+    "vary": {
+      "K": [
+        2400.0,
+        5600.0,
+        1.0
+      ]
+    }
+  }
+}

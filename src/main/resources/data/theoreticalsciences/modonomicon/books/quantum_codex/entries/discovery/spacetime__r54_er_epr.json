@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r54_er_epr",
+  "description": "book.theoreticalsciences.codex.spacetime.r54_er_epr.desc",
+  "icon": {
+    "item": "theoreticalsciences:er_epr_weaver"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 71,
+  "y": -6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:er_epr_weaver"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r54_er_epr.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r54_er_epr.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__wormhole_projector"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/er_epr"
+  }
+}

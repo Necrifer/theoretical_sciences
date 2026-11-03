@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "id": "C1",
+      "unit": "nF",
+      "min": 1,
+      "max": 200,
+      "step": 0.1,
+      "default": 20
+    },
+    {
+      "id": "Np",
+      "unit": "",
+      "min": 1,
+      "max": 15,
+      "step": 0.1,
+      "default": 8
+    },
+    {
+      "id": "Vin",
+      "unit": "kV",
+      "min": 5,
+      "max": 30,
+      "step": 0.1,
+      "default": 15
+    }
+  ],
+  "recipe_vars": {
+    "amin": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Lp",
+      "unit": "\u00b5H",
+      "expr": "0.5*Np^2",
+      "formula": "L\u2081 \u221d N\u00b2"
+    },
+    {
+      "id": "fp",
+      "unit": "kHz",
+      "expr": "1/(6.2832*sqrt(Lp*1e-6*C1*1e-9))/1000*(1 + 0.005*d)",
+      "formula": "f\u2081 = 1/2\u03c0\u221a(L\u2081C\u2081)"
+    },
+    {
+      "id": "fs",
+      "unit": "kHz",
+      "expr": "159.15",
+      "formula": "f\u2082 = 1/2\u03c0\u221a(L\u2082C\u2082)"
+    },
+    {
+      "id": "mis",
+      "unit": "%",
+      "expr": "100*abs(fp/fs - 1)",
+      "formula": "|f\u2081/f\u2082 \u2212 1|"
+    },
+    {
+      "id": "Vout",
+      "unit": "kV",
+      "expr": "Vin*sqrt(C1*1e-9/20e-12)*0.8/(1 + (mis/3)^2)",
+      "formula": "V\u2082 = \u03b7\u00b7V\u2081\u00b7\u221a(C\u2081/C\u2082)"
+    },
+    {
+      "id": "arc",
+      "unit": "m",
+      "expr": "Vout/700",
+      "formula": "\u2113 \u2248 V/(700 kV/m)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "flashover",
+      "kind": "damage",
+      "expr": "5000 - Vout",
+      "formula": "V < 5 MV"
+    }
+  ],
+  "rate": "clamp(arc/amin, 0.25, 2)",
+  "rate_formula": "rate = arc length / arc needed",
+  "heat": "0.002*Vin*C1/20",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

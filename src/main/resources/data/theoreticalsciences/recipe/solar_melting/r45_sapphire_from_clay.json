@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:solar_melting",
+  "item_inputs": [
+    {
+      "item": "minecraft:clay_ball",
+      "count": 6
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sapphire_boule",
+      "count": 8
+    }
+  ],
+  "energy": 47,
+  "duration": 600,
+  "research": "theoreticalsciences:stellar_astrophysics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 2323.0
+    },
+    "windows": [
+      {
+        "q": "Tt",
+        "min": 2330.0,
+        "max": 2700.0
+      }
+    ]
+  }
+}

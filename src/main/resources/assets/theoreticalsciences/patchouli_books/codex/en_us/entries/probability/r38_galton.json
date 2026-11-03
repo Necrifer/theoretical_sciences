@@ -1,0 +1,18 @@
+{
+  "name": "The Galton Board",
+  "icon": "theoreticalsciences:galton_board",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:galton_board",
+      "text": "Drop a ball through rows of pegs. At each it goes left or right with even odds, so after n rows it has gone right k times with probability C(n,k)/2\u207f. Pile up enough balls and the binomial heap becomes a bell curve: $(thing)the central limit theorem$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Galton Board$() sorts raw ore into ingots by where each piece lands after 12 rows: within one of the middle, one ingot (61%); two or three away, two (35%); four or more, three (4%). On average 1.43 ingots a piece."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/combinatorics"
+}

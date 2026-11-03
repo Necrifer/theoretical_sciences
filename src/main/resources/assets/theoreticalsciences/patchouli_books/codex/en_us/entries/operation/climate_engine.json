@@ -1,0 +1,24 @@
+{
+  "name": "Climate Engine",
+  "icon": "theoreticalsciences:climate_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Carbon dioxide absorbs the infrared the ground gives off: more of it, more heat kept, by a radiative forcing \u0394F = 5.35 ln(C/C\u2080) W/m\u00b2 (C\u2080 = 280 ppm). Aerosols reflect sunlight back out, about \u221220 W/m\u00b2 per unit of optical depth. The world's temperature follows, \u0394T = \u03bb\u0394F, with a climate sensitivity \u03bb near 0.8 K per W/m\u00b2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Carbon dioxide, Aerosol optical depth.$(br2)$(thing)Disturbance$(): Feedbacks: the sensitivity varies by \u00b110%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Runaway warming: the engine's own feedbacks are tearing it apart.$(br2)$(thing)Rate$(): Small changes settle faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Radiative forcing: \u0394F = 5.35 ln(C/C\u2080) \u2212 20\u03c4$(br)Warming: \u0394T = \u03bb\u0394F"
+    }
+  ]
+}

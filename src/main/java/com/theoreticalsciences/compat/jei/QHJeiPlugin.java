@@ -173,6 +173,13 @@ public class QHJeiPlugin implements IModPlugin {
             reg.addIngredientInfo(new ItemStack(e.bucket.get()), mezz.jei.api.constants.VanillaTypes.ITEM_STACK,
                     net.minecraft.network.chat.Component.translatable("jei.theoreticalsciences.info." + f));
         }
+        // round 37: the item / fluid / energy transport, easy to miss
+        for (String id : new String[]{"entangled_relay", "entangled_transceiver", "entanglement_tuner"}) {
+            var it = QHItems.get(id);
+            if (it != null && it != net.minecraft.world.item.Items.AIR)
+                reg.addIngredientInfo(new ItemStack(it), mezz.jei.api.constants.VanillaTypes.ITEM_STACK,
+                        net.minecraft.network.chat.Component.translatable("jei.theoreticalsciences.info." + id));
+        }
         List<com.theoreticalsciences.extreme.CompactionRecipe> comp = new ArrayList<>(level.getRecipeManager().getAllRecipesFor(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTION_TYPE.get()).stream().map(RecipeHolder::value).toList());
         for (var d : com.theoreticalsciences.extreme.Singularities.all(true))          // the pack-added and automatic singularities
             comp.add(new com.theoreticalsciences.extreme.CompactionRecipe(d.ingredient(), d.count(), com.theoreticalsciences.extreme.Singularities.stack(d)));

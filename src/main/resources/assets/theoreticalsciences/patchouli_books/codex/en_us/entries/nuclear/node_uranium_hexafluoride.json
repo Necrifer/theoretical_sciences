@@ -1,0 +1,19 @@
+{
+  "name": "Uranium Hexafluoride",
+  "icon": "theoreticalsciences:uranium_hexafluoride_cell",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:uranium_hexafluoride_cell",
+      "title": "Uranium Hexafluoride",
+      "text": "$(fluid)Uranium Hexafluoride$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gas Centrifuge Cascade$().$(br2)$(thing)Unlocked by$(): Isotope Separation.$(br2)$(thing)Used in$(): Uranium-235 Pellet, Uranium-238 Pellet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

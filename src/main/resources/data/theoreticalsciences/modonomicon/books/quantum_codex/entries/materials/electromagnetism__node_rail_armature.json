@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_rail_armature",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_rail_armature.desc",
+  "icon": {
+    "item": "theoreticalsciences:rail_armature"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 160,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:rail_armature"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_rail_armature.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_rail_armature.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__hypervelocity_impact_forge",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

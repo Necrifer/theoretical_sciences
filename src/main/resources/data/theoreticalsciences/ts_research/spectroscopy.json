@@ -1,0 +1,54 @@
+{
+  "title": "Spectroscopy",
+  "description": "Split light by colour and its spectrum tells you what made it: how hot, and which elements, by the dark and bright lines each one leaves. Unlocks the Spectrograph and Spectral Plates.",
+  "icon": "theoreticalsciences:spectrograph",
+  "x": 3,
+  "y": -7,
+  "insight": 20,
+  "requires": [
+    "theoreticalsciences:observational_astronomy",
+    "theoreticalsciences:chemical_bonding"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:telescope_mirror_blank",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A hot, dense body glows with a thermal spectrum whose peak moves to shorter wavelengths as it gets hotter, in inverse proportion to its temperature T. Write the wavelength at which it shines brightest, from the quantum of action h, the speed of light and the thermal energy scale.",
+    "name": "Wien's displacement law (from Planck's spectrum)",
+    "lhs": "\u03bb",
+    "form": "h * c / ( 4.965 * kB * T )",
+    "expr": "h * c / ( 4.965 * kB * T ) * 1000000",
+    "ask": "Find the peak wavelength in micrometres for a star with the Sun's surface temperature (h, c and k_B in SI units).",
+    "vars": {
+      "\u03bb": "wavelength of the peak (\u00b5m)",
+      "h": "Planck constant (J\u00b7s)",
+      "c": "speed of light (m/s)",
+      "kB": "Boltzmann constant (J/K)",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "h": 6.626e-34,
+      "c": 299800000.0,
+      "kB": 1.381e-23,
+      "T": 5778
+    },
+    "unit": "\u00b5m",
+    "method": "Differentiate the thermal spectrum with respect to wavelength and set it to zero: the root is a fixed number times hc/(k_B T).",
+    "distractors": [
+      "\u03c3",
+      "\u03bd",
+      "4"
+    ],
+    "vary": {
+      "T": [
+        3467.0,
+        8089.0,
+        1.0
+      ]
+    }
+  }
+}

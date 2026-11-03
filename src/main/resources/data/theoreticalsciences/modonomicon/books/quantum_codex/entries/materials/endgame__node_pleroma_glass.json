@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_pleroma_glass",
+  "description": "book.theoreticalsciences.codex.endgame.node_pleroma_glass.desc",
+  "icon": {
+    "item": "theoreticalsciences:pleroma_glass"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 223,
+  "y": 65,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_glass"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_pleroma_glass.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_pleroma_glass.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__omega_simulator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/the_sundering"
+  }
+}

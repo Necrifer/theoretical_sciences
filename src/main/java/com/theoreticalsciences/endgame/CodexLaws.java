@@ -156,12 +156,28 @@ public final class CodexLaws {
         if (server.getTickCount() % 20 != 0) return;
         Data d = data(server);
         if (d.rules.isEmpty()) return;
+        // 1.1.0 (audit): every creature already gets the rules when it joins the level, and again (sweep) whenever they
+        // change, so once a second only what can have changed needs a look: players, and the health of mobs close
+        // enough to a player to be ticking (beyond the simulation distance nothing moves, heals or gets hurt). This
+        // used to walk every entity in the level, which grows with everything the dimension holds.
+        int reach = Math.max(2, server.getPlayerList().getSimulationDistance()) * 16;
         for (ServerLevel level : server.getAllLevels()) {
             Rules r = d.rules.get(level.dimension());
-            if (r == null || r.natural()) continue;
-            for (Entity ent : level.getAllEntities())
-                if (ent instanceof LivingEntity le) apply(le, r);
+            if (r == null || r.natural() || level.players().isEmpty()) continue;
+            java.util.Set<Mob> seen = new java.util.HashSet<>();
+            for (var pl : level.players()) {
+                apply(pl, r);
+                for (Mob m : level.getEntitiesOfClass(Mob.class, pl.getBoundingBox().inflate(reach, level.getHeight(), reach)))
+                    if (seen.add(m)) rememberHealth(m, r);
+            }
         }
+    }
+
+    /** Keeps the fraction of health a mob has left in its own data (see {@link #apply}); 1.1.0. */
+    private static void rememberHealth(Mob m, Rules r) {
+        if (!m.isAlive()) return;
+        if (STRENGTH[r.health] == 1) return;
+        if (m.getMaxHealth() > 0) m.getPersistentData().putFloat(HEALTH_FRAC, Math.max(0.0001F, Math.min(1F, m.getHealth() / m.getMaxHealth())));
     }
 
     public static void onJoin(EntityJoinLevelEvent e) {

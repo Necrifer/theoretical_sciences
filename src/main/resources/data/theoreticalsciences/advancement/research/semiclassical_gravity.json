@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:cow_record"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.semiclassical_gravity"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.semiclassical_gravity.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/analog_gravity",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

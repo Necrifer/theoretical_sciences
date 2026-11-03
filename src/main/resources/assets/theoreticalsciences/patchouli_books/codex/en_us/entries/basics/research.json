@@ -1,0 +1,30 @@
+{
+  "name": "The Research Matrix",
+  "icon": "theoreticalsciences:research_terminal",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_terminal",
+      "text": "Day 2. I set up a $(item)Research Terminal$() to keep my thinking in order: it opens the research tree. Each node costs Insight and sometimes materials, and needs its prerequisites."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Machines refuse to run recipes I have not researched - a machine checks the research of whoever placed it.$(br2)For pack makers: this can be turned off in the config, entries can be edited in $(thing)data/*/ts_research$(), and research can be granted with $(thing)/theoreticalsciences research grant$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Handy trick: sneak-use this Codex to open the research tree from anywhere. I no longer walk back to the terminal every time an idea strikes."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_terminal",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Research Terminal$(): Research Nexus"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Kugelblitz Chamber",
+  "icon": "theoreticalsciences:kugelblitz_chamber",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 39,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Focus enough light into a small enough spot and it collapses into a black hole (the hoop conjecture). Then the hard part: a micro black hole evaporates faster the smaller it is, so it must be fed exactly as fast as it radiates - an unstable balance."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Pulse energy, Photon energy, Numerical aperture, Feed rate \u1e41.$(br2)$(thing)Disturbance$(): Feed-coupling efficiency drifts: only \u1e41\u00b7(1 + 5%\u00b7d) actually falls in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Hoop conjecture not met: the pulse is not focused inside its own Schwarzschild radius.$(br2)$(thing)Rate$(): The chamber works at a fixed pace once the hole is in range."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Pulse mass E/c\u00b2: M = E/c\u00b2$(br)Schwarzschild radius (pulse): r_s = 2GM/c\u00b2$(br)Focal spot radius: r = \u03bb/(2\u00b7NA)$(br)Black hole mass: log\u2081\u2080 M$(br)Hawking temperature: T_H = \u0127c\u00b3/(8\u03c0GMk)$(br)Hawking power: P = \u0127c\u2076/(15360\u03c0G\u00b2M\u00b2)$(br)Equilibrium feed: \u1e41_eq = P/c\u00b2"
+    }
+  ]
+}

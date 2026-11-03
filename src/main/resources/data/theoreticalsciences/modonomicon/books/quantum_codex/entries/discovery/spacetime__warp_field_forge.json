@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.warp_field_forge",
+  "description": "book.theoreticalsciences.codex.spacetime.warp_field_forge.desc",
+  "icon": {
+    "item": "theoreticalsciences:warp_field_forge"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 80,
+  "y": -6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:warp_field_forge"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:warp_field_forge"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.warp_field_forge.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__wormhole_projector"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alcubierre_metric"
+  }
+}

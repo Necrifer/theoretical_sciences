@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:gw_detection",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:gw_record_bbh",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:strain_sensor",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chirp_signal_record",
+      "count": 2
+    }
+  ],
+  "energy": 8192,
+  "duration": 1600,
+  "research": "theoreticalsciences:binary_mergers",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "hw": 1e-21
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 8.0,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

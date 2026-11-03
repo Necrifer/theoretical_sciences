@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fused_silica_lens",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 1.458
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": 0.9,
+        "max": 1.1
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 137.0
+      }
+    ]
+  }
+}

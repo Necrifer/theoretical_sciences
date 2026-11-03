@@ -1,0 +1,163 @@
+{
+  "name": "Quark-Gluon Collider",
+  "icon": "theoreticalsciences:quark_gluon_collider",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 35,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quark_gluon_collider",
+      "title": "Quark-Gluon Collider",
+      "text": "A ring accelerator that smashes heavy nuclei into quark-gluon plasma.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quarks are never seen alone - the strong force pulls harder the further apart they get. But smash heavy nuclei together hard enough and, for an instant, protons and neutrons melt into a soup of free quarks and gluons: the universe as it was a microsecond after the Big Bang."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Quark-Gluon Collider",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______________",
+            "_______A_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______A_______",
+            "_______________"
+          ],
+          [
+            "______BBB______",
+            "______BBB______",
+            "______BBB______",
+            "__D_________D__",
+            "_______________",
+            "_______________",
+            "BBB_________BBB",
+            "BBB____A____BBB",
+            "BBB_________BBB",
+            "____________D__",
+            "_______________",
+            "_______________",
+            "___D__BBB______",
+            "______BBBD_____",
+            "______BBB______"
+          ],
+          [
+            "______E0E______",
+            "_____FEEEF_____",
+            "___GH_EEE_HG___",
+            "__HG_______FH__",
+            "__F_________G__",
+            "_HG_________GH_",
+            "EEE_________EEE",
+            "EEE____D____EEE",
+            "EEE_________EEE",
+            "_GF_________HF_",
+            "__H_________G__",
+            "__GG_______HG__",
+            "___HF_EEE_GF___",
+            "_____GEEEH_____",
+            "______EEE______"
+          ],
+          [
+            "____IIEEEI_____",
+            "___IIJEJEJII___",
+            "__IJJ_EEE_JJI__",
+            "_IKK_______JJI_",
+            "IIK_________JI_",
+            "IJJ_________JJI",
+            "EEE_________EEE",
+            "EJE____D____EJE",
+            "EEE_________EEE",
+            "IJJ_________JJI",
+            "IIJ_________KI_",
+            "_IJJ_______KKI_",
+            "__IJJ_EEE_JJI__",
+            "___IIJEJEJII___",
+            "____IIEEEI_____"
+          ],
+          [
+            "______EEE______",
+            "_____FEEEF_____",
+            "___GFBEEELGG___",
+            "__FGBB___LLFF__",
+            "__FL_______BG__",
+            "_GGL_______BGF_",
+            "EEE_________EEE",
+            "EEE____D____EEE",
+            "EEE_________EEE",
+            "_GFB_______LFF_",
+            "__FB_______LG__",
+            "__GGLL___BBFG__",
+            "___FFLEEEBGF___",
+            "_____GEEEG_____",
+            "______EEE______"
+          ],
+          [
+            "_____BBMBB_____",
+            "___BBBBBBBBB___",
+            "__BBBBBBBBBBB__",
+            "_BBBBB___BBBBB_",
+            "_BBB_______BBB_",
+            "BBBB_BBBBB_BBBB",
+            "BBB__BBBBB__BBB",
+            "MBB__BBBBB__BBM",
+            "BBB__BBBBB__BBB",
+            "BBBB_BBBBB_BBBB",
+            "_BBB_______BBB_",
+            "_BBBBB___BBBBB_",
+            "__BBBBBBBBBBB__",
+            "___BBBBBBBBB___",
+            "_____BBMBB_____"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:quark_gluon_collider",
+          "A": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "B": "theoreticalsciences:spacetime_casing",
+          "D": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "E": "theoreticalsciences:calorimeter_detector_array",
+          "F": "theoreticalsciences:quadrupole_focusing_magnet",
+          "G": "theoreticalsciences:dipole_bending_magnet",
+          "H": "theoreticalsciences:cryogenic_cooling_jacket",
+          "I": "theoreticalsciences:containment_field_glass",
+          "J": "theoreticalsciences:vacuum_beam_pipe",
+          "K": "theoreticalsciences:rf_accelerating_cavity",
+          "L": "theoreticalsciences:turbomolecular_vacuum_pump",
+          "M": "#theoreticalsciences:multiblock/spacetime_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Baryon Asymmetry Crystal, Dark Matter, Magnetic Monopole, Quark-Gluon Plasma, Strange Matter, Strange Matter Pellet, Superpartner Shard."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quark_gluon_collider",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Quark-Gluon Collider$(): Hyperion Synchrotron"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

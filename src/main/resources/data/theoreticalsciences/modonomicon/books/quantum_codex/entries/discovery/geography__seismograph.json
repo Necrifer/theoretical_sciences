@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.seismograph",
+  "description": "book.theoreticalsciences.codex.geography.seismograph.desc",
+  "icon": {
+    "item": "theoreticalsciences:seismograph"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 19,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:seismograph"
+      },
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:seismograph"
+      },
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:seismic_recorder_drum"
+      },
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.seismograph.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/geography__r37_ground"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/seismology"
+  }
+}

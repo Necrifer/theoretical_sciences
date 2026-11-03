@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_light_radiation_plating",
+  "description": "book.theoreticalsciences.codex.nuclear.node_light_radiation_plating.desc",
+  "icon": {
+    "item": "theoreticalsciences:light_radiation_plating"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 49,
+  "y": 42,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:light_radiation_plating"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_light_radiation_plating.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_light_radiation_plating.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/nuclear__decay_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

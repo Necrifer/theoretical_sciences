@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.r52_isomers",
+  "description": "book.theoreticalsciences.codex.nuclear.r52_isomers.desc",
+  "icon": {
+    "item": "theoreticalsciences:isomer_trigger"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 101,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:isomer_trigger"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.r52_isomers.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r52_isomers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__island"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__nuclide_forge"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nuclear_isomers"
+  }
+}

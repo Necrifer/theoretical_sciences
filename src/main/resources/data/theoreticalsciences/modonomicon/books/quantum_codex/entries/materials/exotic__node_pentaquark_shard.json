@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.node_pentaquark_shard",
+  "description": "book.theoreticalsciences.codex.exotic.node_pentaquark_shard.desc",
+  "icon": {
+    "item": "theoreticalsciences:pentaquark_shard"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 103,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pentaquark_shard"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.node_pentaquark_shard.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_pentaquark_shard.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_pentaquark_shard.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__synchrotron",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/accelerator_physics"
+  }
+}

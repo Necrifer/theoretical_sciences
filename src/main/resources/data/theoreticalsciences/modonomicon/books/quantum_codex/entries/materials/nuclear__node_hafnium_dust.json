@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_hafnium_dust",
+  "description": "book.theoreticalsciences.codex.nuclear.node_hafnium_dust.desc",
+  "icon": {
+    "item": "theoreticalsciences:hafnium_dust"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 171,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hafnium_dust"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_hafnium_dust.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_hafnium_dust.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__isomer_trigger",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nuclear_isomers"
+  }
+}

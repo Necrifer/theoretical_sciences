@@ -1,0 +1,66 @@
+{
+  "title": "The Measure Problem",
+  "description": "In a universe that lasts forever, everything that can fluctuate into being does, infinitely often - even a lone brain that only thinks it remembers a world. How then to say what is likely? Unlocks the deliberate assembly of a Boltzmann Brain.",
+  "icon": "theoreticalsciences:boltzmann_brain",
+  "x": 10,
+  "y": -4,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:ergodic_theory",
+    "theoreticalsciences:simulation_hypothesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ergodic_mixer_core",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:large_deviation_shard",
+      "count": 2
+    }
+  ],
+  "time": 1440,
+  "puzzle": {
+    "goal": "Fluctuations out of equilibrium are rarer the more entropy they cost. Write how many times likelier Q a fluctuation that costs s of entropy is than one costing S, with Boltzmann's k.",
+    "name": "Einstein's inversion",
+    "lhs": "Q",
+    "form": "exp ( ( S - s ) / k )",
+    "expr": "exp ( ( S - s ) / k )",
+    "ask": "Find Q for S = @{S}, s = @{s} and k = @{k} (entropies in units of k).",
+    "vars": {
+      "Q": "odds",
+      "S": "entropy cost of the larger fluctuation",
+      "s": "entropy cost of the smaller",
+      "k": "Boltzmann constant"
+    },
+    "given": {
+      "S": 30,
+      "s": 10,
+      "k": 1
+    },
+    "unit": "",
+    "method": "Einstein: a fluctuation that lowers the entropy by \u0394S has probability \u221d e^(\u2212\u0394S/k). A brain is far cheaper than a universe.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "S": [
+        28.0,
+        32.0,
+        1.0
+      ],
+      "s": [
+        9.0,
+        11.0,
+        1.0
+      ],
+      "k": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Telescope Optics",
+  "description": "A telescope is a light bucket: its mirror gathers as much more light than your eye as its area is larger, so it records stars hundreds of times fainter. What it cannot beat is the air above it. Unlocks the Reflecting Telescope and the Photographic Plate.",
+  "icon": "theoreticalsciences:reflecting_telescope",
+  "x": 4,
+  "y": -7,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:spectroscopy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:telescope_mirror_blank",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A telescope collects starlight over a round mirror of diameter D; your eye collects it through a pupil of diameter p. Write G, how many times more light the telescope gathers.",
+    "name": "Aperture gain",
+    "lhs": "G",
+    "form": "( D / p ) ^ 2",
+    "expr": "( D / p ) ^ 2",
+    "ask": "Find G for a @{D} m mirror against a dark-adapted pupil of 7 mm (0.007 m).",
+    "vars": {
+      "G": "light gathered, relative to the eye",
+      "D": "mirror diameter (m)",
+      "p": "pupil diameter (m)"
+    },
+    "given": {
+      "D": 2.4,
+      "p": 0.007
+    },
+    "unit": "\u00d7",
+    "method": "Light collected is proportional to the collecting area, \u03c0(D/2)\u00b2, so the ratio of two apertures is the square of the ratio of their diameters.",
+    "distractors": [
+      "\u03c0",
+      "4",
+      "ln"
+    ],
+    "vary": {
+      "D": [
+        1.44,
+        3.36,
+        0.01
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.node_peridotite",
+  "description": "book.theoreticalsciences.codex.geography.node_peridotite.desc",
+  "icon": {
+    "item": "theoreticalsciences:peridotite"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 32,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:peridotite"
+      },
+      "text": "book.theoreticalsciences.codex.geography.node_peridotite.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.node_peridotite.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/geography__seismograph",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/seismology"
+  }
+}

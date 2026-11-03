@@ -1,0 +1,86 @@
+{
+ "crystallography": {
+  "goal": "Two neighbouring planes of atoms, a distance a apart, scatter X-rays of wavelength λ arriving at a glancing angle θ. The rays reinforce when the extra path between the planes is a whole number n of wavelengths. Write a.",
+  "name": "Bragg reflection condition",
+  "lhs": "a",
+  "form": "n * λ / ( 2 * sin ( θ ) )",
+  "expr": "n * L / ( 2 * sin ( t ) )",
+  "ask": "Find d in ångströms for copper Kα (L = 1.5406 Å), first order (n = 1), reflecting at t = 0.3067 rad.",
+  "vars": {
+   "a": "spacing between planes (Å)",
+   "n": "order",
+   "λ": "wavelength",
+   "θ": "glancing angle",
+   "L": "wavelength (Å)",
+   "t": "glancing angle (rad)"
+  },
+  "given": {
+   "n": 1,
+   "L": 1.5406,
+   "t": 0.3067
+  },
+  "unit": "Å",
+  "method": "The ray scattered by the deeper plane travels 2d·sin θ further; the waves add up when that is a whole number of wavelengths.",
+  "distractors": [
+   "cos",
+   "4",
+   "c"
+  ]
+ },
+ "crystal_growth_physics": {
+  "goal": "A crystal grows at its front only as fast as its latent heat L (per kilogram) can be carried away up the crystal, of density ρ, which conducts heat k watts per metre per kelvin down a gradient G. Write the growth speed v.",
+  "name": "Stefan condition at the front",
+  "lhs": "v",
+  "form": "k * G / ( ρ * L )",
+  "expr": "k * G / ( R * L ) * 3600000",
+  "ask": "Find v in mm/h for silicon: k = 22 W/(m·K), G = 1500 K/m, R = 2330 kg/m³, L = 1.8e6 J/kg.",
+  "vars": {
+   "v": "growth speed (mm/h)",
+   "k": "thermal conductivity",
+   "G": "gradient (K/m)",
+   "ρ": "density",
+   "L": "latent heat (J/kg)",
+   "R": "density (kg/m³)"
+  },
+  "given": {
+   "k": 22,
+   "G": 1500,
+   "R": 2330,
+   "L": 1800000.0
+  },
+  "unit": "mm/h",
+  "method": "At the front the heat conducted away, k·G per square metre, must equal the latent heat set free, ρ·L·v.",
+  "distractors": [
+   "T",
+   "2",
+   "+"
+  ]
+ },
+ "geometric_optics": {
+  "goal": "A thin lens of refractive index n has two surfaces of radii R _ 1 and R _ 2 (positive when the centre of the curve lies beyond the surface). Write its power P, one over its focal length.",
+  "name": "Lensmaker's equation",
+  "lhs": "P",
+  "form": "( n - 1 ) * ( 1 / R _ 1 - 1 / R _ 2 )",
+  "expr": "( n - 1 ) * ( 1 / A - 1 / B )",
+  "ask": "Find P in dioptres for a fused silica lens, n = 1.458, with A = 0.5 m and B = −0.5 m.",
+  "vars": {
+   "P": "power (dioptres)",
+   "n": "refractive index",
+   "R": "radius of curvature",
+   "A": "front radius (m)",
+   "B": "back radius (m)"
+  },
+  "given": {
+   "n": 1.458,
+   "A": 0.5,
+   "B": -0.5
+  },
+  "unit": "D",
+  "method": "Each surface bends the light by (n − 1)/R; for a thin lens the two bends simply add.",
+  "distractors": [
+   "2",
+   "π",
+   "f"
+  ]
+ }
+}

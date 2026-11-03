@@ -1,0 +1,23 @@
+{
+  "name": "Degenerate Armour Plate",
+  "icon": "theoreticalsciences:degenerate_armour_plate",
+  "category": "theoreticalsciences:cosmic",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:degenerate_armour_plate",
+      "title": "Degenerate Armour Plate",
+      "text": "A slab of neutronium that should, by rights, explode back into a cloud of free neutrons the moment it leaves a star. The spacetime-alloy frame keeps the pressure on, so the plate stays degenerate: neutrons packed shoulder to shoulder, refusing by the Pauli principle to be squeezed any further."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Neutronium decompresses violently outside a star, so I tried caging a block in spacetime alloy and letting the Casimir Vacuum Press hold the vacuum around it. The neutrons stayed locked. Anything that can survive a compact star's interior can survive me."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Casimir Vacuum Press$().$(br2)$(thing)Unlocked by$(): Compact Stars.$(br2)$(thing)Used in$(): Stellar Containment Plate, Theoretical Notes II."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/compact_stars"
+}

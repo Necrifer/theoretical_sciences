@@ -1,0 +1,18 @@
+{
+  "name": "Dust Cloud",
+  "icon": "theoreticalsciences:dust_cloud",
+  "category": "theoreticalsciences:world",
+  "sortnum": 22,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dust_cloud",
+      "text": "$(item)Dust Cloud$(). A cloud of dust grains, too thin to stand on. Now and then, broken, it leaves Interstellar Dust."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Found$(): The Molecular Cloud Nebula: you can pass through it.$(br2)$(thing)Used$(): Breaks into Interstellar Dust, sometimes."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galactic_dynamics"
+}

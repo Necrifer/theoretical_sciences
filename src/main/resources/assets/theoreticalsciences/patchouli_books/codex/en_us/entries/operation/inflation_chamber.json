@@ -1,0 +1,24 @@
+{
+  "name": "Inflation Chamber",
+  "icon": "theoreticalsciences:inflation_chamber",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 38,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A scalar field \u03c6 with potential V = \u00bdm\u00b2\u03c6\u00b2 inflates while it rolls slowly: the slow-roll parameter \u03b5 = 2/\u03c6\u00b2 (in reduced Planck units) must stay below 1, and the number of e-folds N = (\u03c6\u2080\u00b2 \u2212 2)/4 must reach about 60 to make a smooth, flat universe. Start too high, though, and quantum jumps of the field outrun its classical roll - inflation becomes eternal and the bubble never reheats."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Initial field \u03c6\u2080, Reheating coupling \u0393.$(br2)$(thing)Disturbance$(): Quantum fluctuations kick the starting field by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): No inflation: the field is too low on its potential (\u03b5 above 1); Too few e-folds: the bubble comes out curved and lumpy; Eternal inflation: quantum jumps outrun the roll and the bubble never reheats; Reheating too weak: the universe stays cold and empty; The containment sphere is overheating.$(br2)$(thing)Rate$(): More e-folds and a hotter reheating make the work go faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective field: \u03c6 = \u03c6\u2080\u00b7(1 + 0.03\u00b7d)$(br)Slow-roll \u03b5: \u03b5 = 2/\u03c6\u00b2$(br)e-folds N: N = (\u03c6\u2080\u00b2 \u2212 2)/4$(br)Reheating temperature: T_rh = (90/\u03c0\u00b2g*)^\u00bc\u00b7\u221a(\u0393\u00b7M_P)"
+    }
+  ]
+}

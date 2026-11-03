@@ -1,0 +1,46 @@
+{
+  "name": "Escape: Evasion, Immortality & Metastasis",
+  "icon": "theoreticalsciences:metastatic_spore",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:immortal_cell_line,theoreticalsciences:metastatic_spore",
+      "text": "The body destroys anomalous cells all the time. A tumour exists because it escaped. $(thing)Immune evasion$(): it sheds the markers T cells look for, shows PD-L1 to switch them off, and recruits cells that suppress inflammation. $(thing)Immortality$(): every division shortens the telomeres at the chromosome ends until a cell must stop - unless it switches $(thing)telomerase$() back on."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Angiogenesis$(): beyond a millimetre it starves, so it calls in new blood vessels (VEGF). Even then it slows: a tumour grows as N = K\u00b7exp(ln(N\u2080/K)e^{\u2212\u03b1t}), fast when small and levelling off at the capacity of its supply. $(thing)Metastasis$(): cells loosen their grip (the epithelial-mesenchymal transition), enter the blood, survive the journey and grow again elsewhere. Most die; it only takes one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Bioreactor$(): a strain culture with a telomerase complex becomes an $(item)Immortal Cell Line$() - and an immortal line in broth is passaged into twelve, forever. In the $(item)Evolution Engine$(): an immortal line and a silicon spore in xenoplasm make $(item)Metastatic Spores$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:immortal_cell_line",
+      "text": "Telomerase switched back on: the chromosome ends rebuild themselves, and the cells forget how to grow old. They have outlived their donor.$(br2)Made in $(item)Bioreactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:metastatic_spore",
+      "text": "A cluster of cells that has learned to leave: to slip its tissue, ride the blood and grow again somewhere it was never meant to be.$(br2)Made in $(item)Evolution Engine$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:evolution_engine",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Immortal Cell Line$(): Anomaly Catalogue, Immortal Cell Line, Metastatic Spore, Resistant Clone Colony$(li)$(item)Metastatic Spore$(): Resistant Clone Colony, Tumour Microenvironment Organoid$(li)$(item)Bioreactor$(): Gene Sequencer$(li)$(item)Evolution Engine$(): Abiogenesis Crucible"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/immune_evasion"
+}

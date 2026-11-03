@@ -1,0 +1,24 @@
+{
+  "name": "Markov Chain Refinery",
+  "icon": "theoreticalsciences:markov_chain_refinery",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 43,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The feed hops A \u2192 B with chance p each step, B \u2192 C with q, C \u2192 A with r. However it starts, it settles into the chain's steady state: the share of time in each vat is proportional to 1/(its chance of leaving), \u03c0 = (1/p, 1/q, 1/r)/\u03a3. How fast it settles is set by the slowest hop."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): A \u2192 B chance, B \u2192 C chance, C \u2192 A chance.$(br2)$(thing)Disturbance$(): Valve wear: the A \u2192 B chance varies by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): .$(br2)$(thing)Rate$(): The slowest hop sets how fast it mixes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Time in A: \u03c0_A$(br)Time in B: \u03c0_B$(br)Time in C: \u03c0_C"
+    }
+  ]
+}

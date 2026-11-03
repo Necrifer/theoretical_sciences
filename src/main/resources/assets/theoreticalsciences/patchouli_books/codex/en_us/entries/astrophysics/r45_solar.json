@@ -1,0 +1,22 @@
+{
+  "name": "The Solar Furnace",
+  "icon": "theoreticalsciences:solar_furnace",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:solar_furnace,theoreticalsciences:heliostat,theoreticalsciences:fused_silica,theoreticalsciences:sapphire_window",
+      "text": "After the furnace at Odeillo in the Pyrenees: $(item)Heliostats$() turn with the Sun and throw its light onto a parabolic wall of $(item)Concentrator Mirrors$(), which brings it to a point on the $(item)Solar Receiver$(). It works only by day, under open sky and without rain."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sunlight brings about 1,000 W/m\u00b2 when the Sun is high - less as it sinks. Concentrated C times and let through the shutter, it heats the target until it radiates away what it takes in: \u03b1gCG = \u03b5\u03c3T\u2074. At ten thousand suns that is well over 3,000 K - hotter than any flame. Too hot and the crucible itself melts (3,200 K); too cool and nothing does."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quartz or sand melts at 1,986 K into $(item)Fused Silica$(): a glass that barely expands with heat. Corundum - or, more slowly, the alumina in clay - melts at 2,323 K and freezes into a $(item)Sapphire Boule$(), for the Optical Workshop to cut into windows. Both go into the Radio Telescope's cold receiver."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_astrophysics"
+}

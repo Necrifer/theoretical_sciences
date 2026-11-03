@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.hyperdimensions.tesseract",
+  "description": "book.theoreticalsciences.codex.hyperdimensions.tesseract.desc",
+  "icon": {
+    "item": "theoreticalsciences:tesseract_core"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 60,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.tesseract.p0",
+      "title": "book.theoreticalsciences.codex.hyperdimensions.tesseract"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.tesseract.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__topological_transmuter"
+    },
+    {
+      "entry": "theoreticalsciences:machines/singularities__white_hole_emitter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_geometry"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_bubble_pedestal",
+  "description": "book.theoreticalsciences.codex.spacetime.node_bubble_pedestal.desc",
+  "icon": {
+    "item": "theoreticalsciences:bubble_pedestal"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 114,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bubble_pedestal"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_bubble_pedestal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_bubble_pedestal.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__black_hole_interior",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/black_hole_interior"
+  }
+}

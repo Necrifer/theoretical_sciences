@@ -1,0 +1,19 @@
+{
+  "name": "Aquifer Sample",
+  "icon": "theoreticalsciences:aquifer_sample",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:aquifer_sample",
+      "title": "Aquifer Sample",
+      "text": "Water from a confined aquifer, tens of thousands of years old: rain from the last ice age, still on its way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Aquifer Pump$().$(br2)$(thing)Unlocked by$(): Hydrology.$(br2)$(thing)Used in$(): Radium Salt."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/hydrology"
+}

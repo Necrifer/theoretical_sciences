@@ -164,7 +164,7 @@ public class MachineEmiRecipe extends dev.emi.emi.api.recipe.BasicEmiRecipe {
 
         int tankH = layout.tankH;
         for (int i = 0; i < fluidIns.size(); i++)
-            w.addTank(fluidIns.get(i), ox(layout.fluidInX[i]) - 1, oy(layout.fluidInY[i]) - 1, 18, tankH + 2, cap(fluidIns.get(i)));
+            w.add(new ClippedTankWidget(fluidIns.get(i), ox(layout.fluidInX[i]) - 1, oy(layout.fluidInY[i]) - 1, 18, tankH + 2, cap(fluidIns.get(i))));
         for (int i = 0; i < itemIns.size(); i++) w.addSlot(itemIns.get(i), ox(layout.itemInX[i]) - 1, oy(layout.itemInY[i]) - 1);
         for (int c = 0; c < cats.size(); c++) {
             int s = itemIns.size() + c;
@@ -192,7 +192,7 @@ public class MachineEmiRecipe extends dev.emi.emi.api.recipe.BasicEmiRecipe {
                 if (machine == MachineType.VACUUM_HARVESTER) os.appendTooltip(Component.translatable("jei.theoreticalsciences.vacuum_slot").withStyle(ChatFormatting.AQUA));
             }
             for (int i = 0; i < fluidOuts.size(); i++)
-                w.addTank(fluidOuts.get(i), ox(layout.fluidOutX[i]) - 1, oy(layout.fluidOutY[i]) - 1, 18, tankH + 2, cap(fluidOuts.get(i)))
+                w.add(new ClippedTankWidget(fluidOuts.get(i), ox(layout.fluidOutX[i]) - 1, oy(layout.fluidOutY[i]) - 1, 18, tankH + 2, cap(fluidOuts.get(i))))
                         .recipeContext(this);
         }
         int y = HEAD + layout.areaH + 7;

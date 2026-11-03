@@ -1,0 +1,34 @@
+{
+  "name": "book.theoreticalsciences.codex.world.decor",
+  "description": "book.theoreticalsciences.codex.world.decor.desc",
+  "icon": {
+    "item": "theoreticalsciences:neutronium_bricks"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 6,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutronium_plating"
+      },
+      "text": "book.theoreticalsciences.codex.world.decor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.decor.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cherenkov_lamp"
+      },
+      "text": "book.theoreticalsciences.codex.world.decor.p2"
+    }
+  ],
+  "parents": []
+}

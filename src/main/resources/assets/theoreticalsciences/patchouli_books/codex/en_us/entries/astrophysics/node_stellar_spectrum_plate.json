@@ -1,0 +1,19 @@
+{
+  "name": "Stellar Spectrum Plate",
+  "icon": "theoreticalsciences:stellar_spectrum_plate",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_spectrum_plate",
+      "title": "Stellar Spectrum Plate",
+      "text": "Starlight spread into a spectrum on the plate. The dark lines across it give each star's temperature and what it is made of."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Unlocked by$(): Telescope Optics.$(br2)$(thing)Used in$(): Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/telescope_optics"
+}

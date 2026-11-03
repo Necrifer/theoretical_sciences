@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor",
+  "description": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.desc",
+  "icon": {
+    "item": "theoreticalsciences:accretion_disk_reactor"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 148,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:accretion_disk_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:accretion_disk_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.accretion_disk_reactor.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/cosmic__neutron_star_forge"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/accretion_physics"
+  }
+}

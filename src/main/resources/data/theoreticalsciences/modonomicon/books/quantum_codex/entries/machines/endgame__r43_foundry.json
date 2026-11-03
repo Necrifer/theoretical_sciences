@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.r43_foundry",
+  "description": "book.theoreticalsciences.codex.endgame.r43_foundry.desc",
+  "icon": {
+    "item": "theoreticalsciences:eschaton_foundry"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 127,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:eschaton_foundry"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.r43_foundry.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r43_foundry.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r43_foundry.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/endgame__omega_simulator"
+    },
+    {
+      "entry": "theoreticalsciences:machines/endgame__pleroma_reconstitutor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/the_rekindling"
+  }
+}

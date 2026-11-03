@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_riemann_curvature_tensor",
+  "description": "book.theoreticalsciences.codex.spacetime.node_riemann_curvature_tensor.desc",
+  "icon": {
+    "item": "theoreticalsciences:riemann_curvature_tensor"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 68,
+  "y": 43,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:riemann_curvature_tensor"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_riemann_curvature_tensor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_riemann_curvature_tensor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_riemann_curvature_tensor.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__relativity",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/special_relativity"
+  }
+}

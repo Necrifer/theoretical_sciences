@@ -1,0 +1,19 @@
+{
+  "name": "Autocatalytic Broth",
+  "icon": "theoreticalsciences:autocatalytic_broth_cell",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autocatalytic_broth_cell",
+      "title": "Autocatalytic Broth",
+      "text": "$(fluid)Autocatalytic Broth$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Origins: Molecules That Copy Themselves.$(br2)$(thing)Used in$(): Autocatalytic Broth, Prion Lattice, Quine Replicator, Symbiont Culture."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/autocatalysis"
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Exoplanetology",
+  "description": "Most stars have planets. Watch a star's light dip as one crosses in front of it, and the dip gives its size; its spectrum through the planet's air gives what it is made of. Unlocks transit photometry and the assay of exoplanet cores.",
+  "icon": "theoreticalsciences:transit_light_curve",
+  "x": 8,
+  "y": -1,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:spectroscopy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:star_field_plate",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:stellar_spectrum_plate",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A planet of radius r crosses in front of its star, whose radius is R, and blocks part of its light. Write the fraction \u03b4 of the starlight that is lost, as a percentage.",
+    "name": "Transit depth",
+    "lhs": "\u03b4",
+    "form": "( r / R ) ^ 2",
+    "expr": "( r / R ) ^ 2 * 100",
+    "ask": "Find \u03b4 in per cent for a Jupiter-sized planet (r = 7.0e7 m) in front of the Sun (R = @{R} m).",
+    "vars": {
+      "\u03b4": "depth (%)",
+      "r": "planet radius (m)",
+      "R": "star radius (m)"
+    },
+    "given": {
+      "r": 70000000.0,
+      "R": 696000000.0
+    },
+    "unit": "%",
+    "method": "The planet's disc blocks an area \u03c0r\u00b2 of the star's disc \u03c0R\u00b2.",
+    "distractors": [
+      "\u03c0",
+      "3",
+      "G"
+    ],
+    "vary": {
+      "R": [
+        417000000.0,
+        975000000.0,
+        1000000.0
+      ]
+    }
+  }
+}

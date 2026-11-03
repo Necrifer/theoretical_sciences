@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:poisson_clock"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:silicon_boule",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:random_number_chip",
+      "count": 8
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:monte_carlo_methods",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "sg": 10.0,
+      "opt": 0.5
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

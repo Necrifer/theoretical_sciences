@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_antihydrogen_ice",
+  "description": "book.theoreticalsciences.codex.world.node_antihydrogen_ice.desc",
+  "icon": {
+    "item": "theoreticalsciences:antihydrogen_ice"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 10,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antihydrogen_ice"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_antihydrogen_ice.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_antihydrogen_ice.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "name": "Brownian Microscope",
+  "icon": "theoreticalsciences:brownian_microscope",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:brownian_microscope",
+      "title": "Brownian Microscope",
+      "text": "A microscope over a drop of water with clay in it. The grains never stop jittering - molecules strike them from every side - and how far they wander weighs the molecules.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hold the cell's temperature with the coolant (water stays liquid between 273 and 370 K; its viscosity falls steeply as it warms). Choose how long between frames and how many tracks to follow: the error in Avogadro's number falls as \u221a(2/n), and the objective's resolution must be fine against how far a grain wanders in that time."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Brownian Microscope",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "__AA___",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "___A___",
+            "____BB_",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "___A___",
+            "_____B_",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "___A___",
+            "_____B_",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_B_D_B_",
+            "_____B_",
+            "_______"
+          ],
+          [
+            "___0___",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_BBBBB_",
+            "_______"
+          ],
+          [
+            "BBBEBBB",
+            "BBBBBBB",
+            "EBBBBBE",
+            "BBBBBBB",
+            "BBBEBBB"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:brownian_microscope",
+          "A": "theoreticalsciences:microscope_column",
+          "B": "theoreticalsciences:optical_bench",
+          "D": "theoreticalsciences:colloid_cell",
+          "E": "#theoreticalsciences:multiblock/optical_bench_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Avogadro Record, Normal Distribution Crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:brownian_microscope",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/brownian_motion"
+}

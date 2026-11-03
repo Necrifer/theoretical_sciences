@@ -1,0 +1,103 @@
+{
+  "name": "Monte Carlo Engine",
+  "icon": "theoreticalsciences:monte_carlo_engine",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 101,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:monte_carlo_engine",
+      "title": "Monte Carlo Engine",
+      "text": "Halls of random-number cores that answer by throwing dice: sample enough and the error falls as one over the square root of the count.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Choose how many samples (10\u00b3 to 10\u00b9\u00b2) and how strongly to importance-sample: the error is \u03c3/\u221aN, and the right proposal cuts \u03c3 while a wrong one inflates it. Each erased bit gives off kT\u00b7ln 2 at least: cool the cores and the heat falls."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Monte Carlo Engine",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_AA___AA_",
+            "_________",
+            "_AA___AA_",
+            "_________",
+            "_AA___AA_",
+            "_________",
+            "_AA___AA_",
+            "_________"
+          ],
+          [
+            "_________",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_________"
+          ],
+          [
+            "_________",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_________"
+          ],
+          [
+            "____0____",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_BB_ _BB_",
+            "_________"
+          ],
+          [
+            "BBBBDBBBB",
+            "BBBBBBBBB",
+            "BBBBBBBBB",
+            "BBBBBBBBB",
+            "DBBBBBBBD",
+            "BBBBBBBBB",
+            "BBBBBBBBB",
+            "BBBBBBBBB",
+            "BBBBDBBBB"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:monte_carlo_engine",
+          "A": "theoreticalsciences:entropy_sink",
+          "B": "theoreticalsciences:stochastic_core",
+          "D": "#theoreticalsciences:multiblock/stochastic_core_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Boltzmann Brain, Causal Set Seed, Cosmic Web Filament, Fixed-Point Lattice, Large Deviation Shard, Monte Carlo Sample Pack, Normal Distribution Crystal, Partition Function Matrix, Posterior Tablet, Quantum Random Number Chip, Spin Foam Lattice."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:monte_carlo_engine",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/monte_carlo_methods"
+}

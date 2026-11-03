@@ -1,0 +1,59 @@
+{
+  "title": "Radiochemistry",
+  "description": "Chemistry done by following radioactivity: a few atoms of a new element are found because they glow. Radium gives off a gas, radon, that decays in days. Unlocks the Decay Chamber.",
+  "icon": "theoreticalsciences:decay_chamber",
+  "x": 4,
+  "y": 12,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:radioactivity",
+    "theoreticalsciences:electrochemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:radium_salt",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:geiger_tube",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Every nucleus in a collection of N has the same small chance of decaying each second, set by the half-life T. Write how many decays happen per second, A.",
+    "name": "Activity of a radioactive source",
+    "lhs": "A",
+    "form": "ln ( 2 ) * N / T",
+    "expr": "0.693147 * N / T",
+    "ask": "Find A in becquerels for one gram of radium-226: N = @{N} nuclei and T = @{T} seconds.",
+    "vars": {
+      "A": "decays per second (Bq)",
+      "N": "nuclei present",
+      "T": "half-life (s)"
+    },
+    "given": {
+      "N": 2.66e+21,
+      "T": 50500000000.0
+    },
+    "unit": "Bq",
+    "method": "The decay constant is \u03bb = ln 2 / T, and each second \u03bbN of the N nuclei decay.",
+    "distractors": [
+      "exp",
+      "t",
+      "e"
+    ],
+    "vary": {
+      "N": [
+        1.59e+21,
+        3.73e+21,
+        1e+19
+      ],
+      "T": [
+        30300000000.0,
+        70700000000.0,
+        100000000.0
+      ]
+    }
+  }
+}

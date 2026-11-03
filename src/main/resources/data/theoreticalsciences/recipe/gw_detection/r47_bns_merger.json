@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:gw_detection",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:gw_record_bns",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 2400,
+  "research": "theoreticalsciences:gravitational_waves",
+  "unscaled": true,
+  "insight_per_run": 15,
+  "physics": {
+    "vars": {
+      "hw": 2e-22
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 8.0,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

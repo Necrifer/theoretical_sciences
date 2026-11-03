@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_photon_moth",
+  "description": "book.theoreticalsciences.codex.spacetime.node_photon_moth.desc",
+  "icon": {
+    "item": "theoreticalsciences:photon_moth_spawn_egg"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 108,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:photon_moth_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_photon_moth.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__black_hole_interior",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/black_hole_interior"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:echelle_grating"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_spectrum_plate",
+      "count": 3
+    }
+  ],
+  "energy": 128,
+  "duration": 800,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "mreq": 11.0
+    },
+    "windows": [
+      {
+        "q": "mlim",
+        "min": 11.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

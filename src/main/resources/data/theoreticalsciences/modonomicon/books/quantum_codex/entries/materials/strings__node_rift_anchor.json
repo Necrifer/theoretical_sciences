@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.node_rift_anchor",
+  "description": "book.theoreticalsciences.codex.strings.node_rift_anchor.desc",
+  "icon": {
+    "item": "theoreticalsciences:rift_anchor"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 164,
+  "y": 50,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:rift_anchor"
+      },
+      "text": "book.theoreticalsciences.codex.strings.node_rift_anchor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_rift_anchor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_rift_anchor.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/strings__multiverse_rift",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/multiverse"
+  }
+}

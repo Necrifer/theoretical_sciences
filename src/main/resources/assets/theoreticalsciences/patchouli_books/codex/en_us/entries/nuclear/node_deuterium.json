@@ -1,0 +1,19 @@
+{
+  "name": "Deuterium",
+  "icon": "theoreticalsciences:deuterium_cell",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deuterium_cell",
+      "title": "Deuterium",
+      "text": "$(fluid)Deuterium$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Fusion Ignition.$(br2)$(thing)Used in$(): Tritium, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fusion_ignition"
+}

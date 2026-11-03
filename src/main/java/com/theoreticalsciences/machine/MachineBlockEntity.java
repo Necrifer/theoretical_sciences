@@ -128,6 +128,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     public static MachineBlockEntity create(MachineType type, BlockPos pos, BlockState state) {
         if (type == MachineType.DYSON_ARRAY) return new DysonControllerBlockEntity(type, pos, state);
+        if (ScienceMachineBlockEntity.handles(type)) return new ScienceMachineBlockEntity(type, pos, state);
         return type.isMultiblock() ? new ControllerBlockEntity(type, pos, state) : new MachineBlockEntity(type, pos, state);
     }
 
@@ -275,6 +276,12 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             tickProcessor(level);
         }
         boolean active = isActive();
+        // 1.7.0: Maxwell's demon has to forget what it sorted - its erasures spill into whoever stands by it (Landauer)
+        if (active && type == MachineType.MAXWELL_DEMON_SORTER && level.getGameTime() % 40 == 0)
+            for (net.minecraft.server.level.ServerPlayer p : level.getEntitiesOfClass(net.minecraft.server.level.ServerPlayer.class,
+                    new net.minecraft.world.phys.AABB(worldPosition).inflate(4)))
+                if (!p.isSpectator() && !p.isCreative())
+                    p.addEffect(new net.minecraft.world.effect.MobEffectInstance(com.theoreticalsciences.registry.QHEffects.INFORMATION_LOSS, 60, 0, false, true));
         if (active != lastActive) {
             lastActive = active;
             BlockState st = getBlockState();

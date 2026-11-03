@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_containment",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_containment.desc",
+  "icon": {
+    "item": "theoreticalsciences:quarantine_field_matrix"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 76,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quarantine_field_matrix"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_containment.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_containment.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_containment.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:quarantine_field_matrix"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_containment.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_containment.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/anomaly__anomaly_extent"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/containment_protocols"
+  }
+}

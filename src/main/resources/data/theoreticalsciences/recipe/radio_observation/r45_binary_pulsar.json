@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:radio_observation",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:time_dilated_sample",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pulsar_timing_record",
+      "count": 5
+    }
+  ],
+  "energy": 384,
+  "duration": 1200,
+  "research": "theoreticalsciences:galactic_dynamics",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "S": 0.03,
+      "al": -1.6,
+      "wl": 1000000.0,
+      "nl": 1400.0,
+      "DM": 30.0,
+      "Sreq": 10.0
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 10.0,
+        "max": 1000000000000.0
+      },
+      {
+        "q": "ts",
+        "min": 0.0,
+        "max": 0.5
+      }
+    ]
+  }
+}

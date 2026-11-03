@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.electrolytic_cell",
+  "description": "book.theoreticalsciences.codex.chemistry.electrolytic_cell.desc",
+  "icon": {
+    "item": "theoreticalsciences:electrolytic_cell"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 0,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:electrolytic_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrolytic_cell.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.electrolytic_cell.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.electrolytic_cell.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.electrolytic_cell.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:electrolytic_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.electrolytic_cell.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__bonds"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__chemical_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrochemistry"
+  }
+}

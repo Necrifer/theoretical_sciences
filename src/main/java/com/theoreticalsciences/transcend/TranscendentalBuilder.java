@@ -137,7 +137,18 @@ public final class TranscendentalBuilder {
         return out;
     }
 
-    /** The creative items of every installed mod: no longer handed out; only the rebuilt Core's Forge makes them. */
+    /** Items any pack or mod adds to the Forge-only list (each gets its own generated Forge recipe). */
+    public static final net.minecraft.tags.TagKey<Item> FORGE_ONLY = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
+            com.theoreticalsciences.TheoreticalSciences.id("forge_only"));
+    /** Items the detection would pick up (by name, or from the built-in list) that are not creative-only after all. */
+    public static final net.minecraft.tags.TagKey<Item> FORGE_EXEMPT = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
+            com.theoreticalsciences.TheoreticalSciences.id("forge_exempt"));
+
+    /**
+     * The creative items of every installed mod: no longer handed out; only the rebuilt Core's Forge makes them.
+     * Detected from the built-in list and from item ids containing "creative", then the item tags
+     * {@code theoreticalsciences:forge_only} (added) and {@code theoreticalsciences:forge_exempt} (taken out) apply.
+     */
     public static List<Item> relics() {
         Set<Item> out = new LinkedHashSet<>();
         for (String id : RELICS) {
@@ -149,7 +160,10 @@ public final class TranscendentalBuilder {
             String p = rl.getPath();
             if (p.contains("creative") && !p.contains("tab_icon") && !p.contains("spawn_egg")) out.add(BuiltInRegistries.ITEM.get(rl));
         }
+        // round 37: what packs and mods add by tag (tags not loaded yet: simply empty)
+        for (var h : BuiltInRegistries.ITEM.getTagOrEmpty(FORGE_ONLY)) out.add(h.value());
         out.remove(Items.AIR);
+        out.removeIf(i -> new ItemStack(i).is(FORGE_EXEMPT));
         // never the creative-only tools (Laplace's Demon, the Oracle's Lemma) nor anything beyond Omnipotence
         out.removeIf(i -> new ItemStack(i).is(OmnipotencePayload.BEYOND));
         return new ArrayList<>(out);

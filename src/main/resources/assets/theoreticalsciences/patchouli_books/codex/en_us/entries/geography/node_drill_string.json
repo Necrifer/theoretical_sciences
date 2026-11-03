@@ -1,0 +1,19 @@
+{
+  "name": "Drill String",
+  "icon": "theoreticalsciences:drill_string",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:drill_string",
+      "title": "Drill String",
+      "text": "$(item)Drill String$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Found in$(): Deep Borehole, Deep Borehole Surface chests.$(br2)$(thing)Unlocked by$(): Deep Drilling.$(br2)$(thing)Used in$(): Deep Drilling Rig."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Genome Sample",
+  "icon": "theoreticalsciences:genome_sample",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:genome_sample",
+      "title": "Genome Sample",
+      "text": "A vial of clear fluid with every instruction for building one creature written in four chemical letters. It looks like water. It is the most information-dense thing I have ever casually put in my pocket."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)The Gene Sampler's first touch filled a vial with a creature's complete genome. Sequencing it showed the same alphabet as my own, which was both expected and moving."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gene Sequencer$().$(br2)$(thing)Unlocked by$(): Genomics.$(br2)$(thing)Used in$(): Engineered Enzyme, Recombinant DNA, Stem Cell Culture, Tardigrade Culture, Xenogenome Sample."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/genomics"
+}

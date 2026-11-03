@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:core_drill"
+    },
+    "title": {
+      "translate": "advancements.theoreticalsciences.interior_arrival.title"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.interior_arrival.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/plate_tectonics",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "theoreticalsciences:planetary_interior"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

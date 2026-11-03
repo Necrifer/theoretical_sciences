@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_spacetime_bearing",
+  "description": "book.theoreticalsciences.codex.fabrication.node_spacetime_bearing.desc",
+  "icon": {
+    "item": "theoreticalsciences:spacetime_bearing"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 179,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spacetime_bearing"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_spacetime_bearing.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_spacetime_bearing.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__convergence_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/simulation_hypothesis"
+  }
+}

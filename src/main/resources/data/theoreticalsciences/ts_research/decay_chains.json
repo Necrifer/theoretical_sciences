@@ -1,0 +1,56 @@
+{
+  "title": "Decay Chains",
+  "description": "Uranium becomes thorium, then radium, then radon, then polonium and at last lead - fourteen steps, each with its own half-life. Wait long enough and every step runs as fast as the slowest feeds it. Unlocks Radiogenic Lead and Lead Shielding.",
+  "icon": "theoreticalsciences:radiogenic_lead",
+  "x": 5,
+  "y": 13,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:radiochemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:radium_salt",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A long-lived parent (half-life T _ 1) feeds a short-lived daughter (half-life T _ 2). After a while the daughter is made as fast as it decays and its amount stops changing. Write how many daughter nuclei M sit alongside N parent nuclei.",
+    "name": "Secular equilibrium",
+    "lhs": "M",
+    "form": "N * T _ 2 / T _ 1",
+    "expr": "N * R / T",
+    "ask": "Find M for a speck of radium holding N = @{N} nuclei (T = @{T} s), with its radon (R = 3.30e5 s).",
+    "vars": {
+      "M": "daughter nuclei",
+      "N": "parent nuclei",
+      "T": "half-life (s)",
+      "R": "the daughter's half-life (s)"
+    },
+    "given": {
+      "N": 1000000000000.0,
+      "T": 50500000000.0,
+      "R": 330000.0
+    },
+    "unit": "nuclei",
+    "method": "When nothing changes, the daughter decays as fast as it forms: \u03bb\u2082M = \u03bb\u2081N, and each \u03bb is ln 2 over its half-life.",
+    "distractors": [
+      "ln",
+      "+",
+      "\u03bb"
+    ],
+    "vary": {
+      "N": [
+        600000000000.0,
+        1400000000000.0,
+        10000000000.0
+      ],
+      "T": [
+        30300000000.0,
+        70700000000.0,
+        100000000.0
+      ]
+    }
+  }
+}

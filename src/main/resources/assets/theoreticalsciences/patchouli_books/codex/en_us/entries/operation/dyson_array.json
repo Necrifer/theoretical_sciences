@@ -1,0 +1,24 @@
+{
+  "name": "Dyson Array",
+  "icon": "theoreticalsciences:dyson_array",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 27,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Collectors around a star reach the temperature where they radiate what they absorb: 394 K/\u221a(r/AU) for a flat absorber. They run heat engines into your coolant, so Carnot sets the efficiency: closer is hotter and better, until the collectors melt."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Orbit radius, Pointing duty.$(br2)$(thing)Disturbance$(): Stellar flare activity: collector temperature varies by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Collectors melting; Heat sink as hot as the collectors: no engine can run.$(br2)$(thing)Rate$(): Generator output follows the useful flux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Collector temperature: T = (L/(4\u03c0r\u00b2\u03c3))^(1/4)$(br)Stellar flux: F = L/(4\u03c0r\u00b2)$(br)Carnot efficiency: \u03b7 = 1 \u2212 T_cold/T_hot$(br)Useful flux: F\u00b7duty\u00b7\u03b7"
+    }
+  ]
+}

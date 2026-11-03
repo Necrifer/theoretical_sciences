@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_hamiltonian_operator",
+  "description": "book.theoreticalsciences.codex.quantum.node_hamiltonian_operator.desc",
+  "icon": {
+    "item": "theoreticalsciences:hamiltonian_operator"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 132,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hamiltonian_operator"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_hamiltonian_operator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_hamiltonian_operator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_hamiltonian_operator.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__foam_boundaries",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Photonic Die",
+  "icon": "theoreticalsciences:photonic_die",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photonic_die",
+      "title": "Photonic Die",
+      "text": "A single photonic logic die cut from its wafer. It is a tiny square of crystal whose engraved waveguides carry light through logic gates, and it glows faintly when powered. It is small enough to lose in a pocket, and I have."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)The Planck-Scale Cutter diced a Photonic Logic Wafer in superfluid helium, separating each logic unit cleanly. The first die worked on the first try, which I recorded with some suspicion."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Planck-Scale Cutter$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Photonic Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

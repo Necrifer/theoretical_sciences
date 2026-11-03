@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:prior_tablet",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:posterior_tablet",
+      "count": 17
+    }
+  ],
+  "energy": 1024,
+  "duration": 800,
+  "research": "theoreticalsciences:monte_carlo_methods",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "sg": 30.0,
+      "opt": 0.62
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 50.0
+      }
+    ]
+  }
+}

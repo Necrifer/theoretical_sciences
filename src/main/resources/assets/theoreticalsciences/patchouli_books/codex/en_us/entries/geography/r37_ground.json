@@ -1,0 +1,18 @@
+{
+  "name": "Reading the Ground",
+  "icon": "theoreticalsciences:sediment_core",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:sediment_core,theoreticalsciences:geoid_model",
+      "text": "Landscapes are written by water. A river carries grains as fast as it flows, and drops them as it slows - the heaviest first. A small grain of radius r sinks at a steady speed v = (2/9)(\u03c1_s \u2212 \u03c1_f)g r\u00b2/\u03bc: sand settles in minutes, clay in days."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That is why the ground is layered. A $(item)Sediment Core$() is a tube of those layers, oldest at the bottom: floods, droughts and ash falls in the order they happened."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/geomorphology"
+}

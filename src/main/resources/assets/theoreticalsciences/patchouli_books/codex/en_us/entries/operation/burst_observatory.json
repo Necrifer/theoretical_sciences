@@ -1,0 +1,24 @@
+{
+  "name": "Burst Observatory",
+  "icon": "theoreticalsciences:burst_observatory",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gamma-ray bursts come from anywhere in the sky, about once a day bright enough to catch. A lower trigger threshold Eth catches fainter ones (rate \u221d e^(\u2212Eth/50 keV)) - and more noise. Over a watch of t hours the chance of catching at least one is 1 \u2212 e^(\u2212N), N the bursts expected; the false triggers grow as t\u00b7e^(\u2212Eth/8 keV)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Trigger threshold, Watch.$(br2)$(thing)Disturbance$(): Background: the noise rate varies by \u00b120%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): .$(br2)$(thing)Rate$(): Shorter watches report sooner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Burst rate: R \u221d e^(\u2212Eth/50)$(br)Detection chance: 1 \u2212 e^(\u2212N)$(br)False triggers: FA \u221d t\u00b7e^(\u2212Eth/8)"
+    }
+  ]
+}

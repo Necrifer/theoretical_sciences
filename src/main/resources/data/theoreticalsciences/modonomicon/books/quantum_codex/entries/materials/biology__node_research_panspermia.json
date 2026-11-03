@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_research_panspermia",
+  "description": "book.theoreticalsciences.codex.biology.node_research_panspermia.desc",
+  "icon": {
+    "item": "theoreticalsciences:panspermia_seed"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:panspermia_seed"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_research_panspermia.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_research_panspermia.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__abiogenesis_crucible",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/panspermia"
+  }
+}

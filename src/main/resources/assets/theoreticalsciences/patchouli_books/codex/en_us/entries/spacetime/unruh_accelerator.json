@@ -1,0 +1,136 @@
+{
+  "name": "Unruh Accelerator",
+  "icon": "theoreticalsciences:unruh_accelerator",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 121,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:unruh_accelerator",
+      "title": "Unruh Accelerator",
+      "text": "A storage ring whose electrons are accelerated so hard round their curve that, to them, the empty vacuum is warm.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the beam's Lorentz factor and the bending field. An electron of \u03b3 in a field B circles at r = \u03b3mc/eB with acceleration a = \u03b3\u00b2c\u00b2/r - and sees the vacuum at T = \u0127a/2\u03c0ck. The faster and tighter, the hotter; but synchrotron radiation drains the beam as \u03b3\u00b3B, and the cavities can only replace so much. Above 2 T the magnets saturate."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Unruh Accelerator",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "_______A_______",
+            "_______________",
+            "___A_______A___",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "_______________",
+            "_______________",
+            "_______________",
+            "___A_______A___",
+            "_______________",
+            "_______A_______",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "_____BBDBB_____",
+            "___BB_____BB___",
+            "__BB_______BB__",
+            "__B_________B__",
+            "_B___________B_",
+            "_B___________B_",
+            "_B___________B_",
+            "_B___________B_",
+            "_B___________B_",
+            "__B_________B__",
+            "__BB_______BB__",
+            "___BB_____BB___",
+            "_____BBDBB_____",
+            "_______E_______"
+          ],
+          [
+            "_______________",
+            "_______A_______",
+            "_______________",
+            "___A_______A___",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_A___________A_",
+            "_______________",
+            "_______________",
+            "_______________",
+            "___A_______A___",
+            "_______________",
+            "_______A_______",
+            "_______F_______"
+          ],
+          [
+            "_______________",
+            "_____FF0FF_____",
+            "___FF_____FF___",
+            "__FF_______FF__",
+            "__F_________F__",
+            "_F___________F_",
+            "_F___________F_",
+            "_F___________F_",
+            "_F___________F_",
+            "_F___________F_",
+            "__F_________F__",
+            "__FF_______FF__",
+            "___FF_____FF___",
+            "_____FFFFF_____",
+            "_______G_______"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:unruh_accelerator",
+          "A": "theoreticalsciences:bending_magnet",
+          "B": "theoreticalsciences:vacuum_beam_tube",
+          "D": "theoreticalsciences:acceleration_cavity",
+          "E": "theoreticalsciences:unruh_detector",
+          "F": "theoreticalsciences:unruh_ring_casing",
+          "G": "#theoreticalsciences:multiblock/unruh_ring_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Hawking Radiation, Unruh Thermometer."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:unruh_accelerator",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/unruh_effect"
+}

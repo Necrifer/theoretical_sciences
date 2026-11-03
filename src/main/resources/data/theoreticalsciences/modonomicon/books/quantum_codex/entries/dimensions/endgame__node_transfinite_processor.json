@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_transfinite_processor",
+  "description": "book.theoreticalsciences.codex.endgame.node_transfinite_processor.desc",
+  "icon": {
+    "item": "theoreticalsciences:transfinite_processor"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 81,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transfinite_processor"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_transfinite_processor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_transfinite_processor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_transfinite_processor.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/endgame__beyond",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_mathematics"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.category.physics",
+  "description": "book.theoreticalsciences.codex.category.physics.desc",
+  "icon": {
+    "item": "theoreticalsciences:entangled_photon_pair"
+  },
+  "sort_number": 1,
+  "display_mode": "node",
+  "max_scroll_x": 8760,
+  "max_scroll_y": 8760,
+  "background": "theoreticalsciences:textures/gui/codex/space_0.png",
+  "background_width": 512,
+  "background_height": 512,
+  "background_parallax_layers": [
+    {
+      "background": "theoreticalsciences:textures/gui/codex/space_0.png",
+      "speed": 0.25
+    },
+    {
+      "background": "theoreticalsciences:textures/gui/codex/space_1.png",
+      "speed": 0.45
+    },
+    {
+      "background": "theoreticalsciences:textures/gui/codex/space_2.png",
+      "speed": 0.7
+    },
+    {
+      "background": "theoreticalsciences:textures/gui/codex/space_3.png",
+      "speed": 1.0
+    }
+  ]
+}

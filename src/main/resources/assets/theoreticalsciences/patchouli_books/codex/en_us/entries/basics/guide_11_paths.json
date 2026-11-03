@@ -1,0 +1,18 @@
+{
+  "name": "Step 11: Choosing a Path",
+  "icon": "theoreticalsciences:qubit",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -89,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:qubit,theoreticalsciences:lattice_growth_vat,theoreticalsciences:quantum_entangler",
+      "text": "From here the research tree branches. The next research open to you:$(li)$(thing)Magnetostatics$() (8 Insight, 4 $(item)Cherenkov Quartz$()): A steady current makes a magnetic field that circles the wire and weakens with distance from it. The first study of electromagnetism. Unlocks the Gauss Meter.$(li)$(thing)Number Systems$() (10 Insight, 8 $(item)Cherenkov Quartz$()): Zero, and \"the next one\". From two rules, all of arithmetic. Unlocks the Peano Arithmetic Engine.$(li)$(thing)Observational Astronomy$() (8 Insight, 4 $(item)Cherenkov Quartz$()): Everything known about the sky came through a lens. A bigger mirror gathers more light and splits finer detail - up to the limit that the wave nature of light itself sets. Unlocks the Telescope Mirror Blank.$(li)$(thing)Quantum Entanglement$() (5 Insight, 4 $(item)Cherenkov Quartz$()): Spooky action at a distance, put to work. Unlocks qubits and the Quantum Entangler.$(li)$(thing)Radioactivity$() (10 Insight, 4 $(item)Raw Pitchblende$()): Some nuclei are unstable and fall apart on their own, at random, but at a rate fixed for each kind. Half of any sample is gone after its half-life, whatever you do to it. Unlocks Radium Salt, the Geiger Tube and Counter, and the Prussian Blue Tablet.$(li)$(thing)Cryogenics$() (10 Insight, 2 $(item)Neutronium Plate$()): Near absolute zero, matter forgets it is many particles. Superfluids and Bose-Einstein condensates."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Precision Lithography$() matters early: its Lattice Growth Vat grows Cherenkov Quartz from ordinary quartz and amethyst, so you stop depending on ore. $(thing)Quantum Entanglement$() gives the Quantum Entangler, whose $(thing)thought experiment$() turns materials into Insight - the renewable way to pay for research.$(br2)Every machine's entry on the map says what it makes; machines need their own research before they run."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/casimir_effect"
+}

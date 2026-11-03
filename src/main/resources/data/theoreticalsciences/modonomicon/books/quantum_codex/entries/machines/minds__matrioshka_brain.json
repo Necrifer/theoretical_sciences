@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.minds.matrioshka_brain",
+  "description": "book.theoreticalsciences.codex.minds.matrioshka_brain.desc",
+  "icon": {
+    "item": "theoreticalsciences:matrioshka_brain"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 91,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:matrioshka_brain"
+      },
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:matrioshka_brain"
+      },
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.minds.matrioshka_brain.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/hyperdimensions__tesseract"
+    },
+    {
+      "entry": "theoreticalsciences:machines/hyperdimensions__tesseract_assembler"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/matrioshka_brain"
+  }
+}

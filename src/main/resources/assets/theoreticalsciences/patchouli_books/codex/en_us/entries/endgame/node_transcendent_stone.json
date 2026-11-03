@@ -1,0 +1,23 @@
+{
+  "name": "Transcendent Stone",
+  "icon": "theoreticalsciences:transcendent_stone",
+  "category": "theoreticalsciences:endgame",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:transcendent_stone",
+      "title": "Transcendent Stone",
+      "text": "Rock that no longer remembers which universe formed it. It has the solid presence of stone but none of the expected minerals, and its surface shifts colour faintly with my mood. Building with it feels less like stacking blocks and more like stating facts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Found lining the regions beyond the last physical layer. It cuts cleanly and holds a shape, so I started using it for walls. Practical, if philosophically suspicious."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Transcendent Plasma Forge$().$(br2)$(thing)Unlocked by$(): The Sundering.$(br2)$(thing)Used in$(): Transcendent Cache."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/the_sundering"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "X-ray Diffractometer",
+  "icon": "theoreticalsciences:x_ray_diffractometer",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 79,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "X-rays scattered by successive planes of atoms reinforce only where the extra path between planes is a whole number of wavelengths: n\u03bb = 2d\u00b7sin \u03b8. A copper anode gives its K\u03b1 line, \u03bb = 1.5406 \u00c5 - but only when the tube voltage can knock out a K-shell electron, above 8.98 kV. The count rate grows with the current and steeply with the overvoltage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Tube voltage V, Tube current I, Detector angle 2\u03b8.$(br2)$(thing)Disturbance$(): Thermal drift of the goniometer: the angle wanders by \u00b10.05\u00b0\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Below copper's K-edge: no K\u03b1 line; The anode is melting (above 2.2 kW).$(br2)$(thing)Rate$(): More X-rays, a faster exposure."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Bragg angle \u03b8: \u03b8 = 2\u03b8/2$(br)Spacing that reflects: d = \u03bb/(2 sin \u03b8)$(br)Mismatch: |d \u2212 d_lattice|/d_lattice$(br)Anode power: P = V\u00b7I$(br)Count rate: N \u221d I\u00b7(V \u2212 V_K)^1.6"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Cepheid Standard Candle",
+  "icon": "theoreticalsciences:cepheid_standard_candle",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cepheid_standard_candle",
+      "title": "Cepheid Standard Candle",
+      "text": "The light curve of a Cepheid variable. How long it takes to pulse tells how bright it truly is (Leavitt's law) - and so how far away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Unlocked by$(): Galactic Dynamics.$(br2)$(thing)Used in$(): Redshift Lens."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radio_astronomy"
+}

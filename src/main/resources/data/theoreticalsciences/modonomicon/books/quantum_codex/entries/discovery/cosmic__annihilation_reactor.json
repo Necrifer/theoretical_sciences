@@ -1,0 +1,83 @@
+{
+  "name": "book.theoreticalsciences.codex.cosmic.annihilation_reactor",
+  "description": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.desc",
+  "icon": {
+    "item": "theoreticalsciences:annihilation_reactor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 19,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:annihilation_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p4.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:annihilation_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antimatter_pellet"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dilithium_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:annihilation_core"
+      },
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.cosmic.annihilation_reactor.p10"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/exotic__antimatter_penning_trap"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/annihilation_power"
+  }
+}

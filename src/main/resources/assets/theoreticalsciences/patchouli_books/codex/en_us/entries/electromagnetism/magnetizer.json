@@ -1,0 +1,46 @@
+{
+  "name": "Magnetizer",
+  "icon": "theoreticalsciences:magnetizer",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 27,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:magnetizer",
+      "title": "Magnetizer",
+      "text": "A coil around an iron core that pulses a field through a magnet blank. Only a field stronger than the blank's coercivity sets it.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Its coil gives 0.6 T; each iron block or magnetic block touching it adds 0.35 T. A Ferrite Magnet needs 0.35 T, a $(item)Neodymium Magnet$() 1.2 T (two touching blocks), a $(item)Samarium-Cobalt Magnet$() 2.0 T (four)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Ferrite Magnet, Neodymium Magnet, Samarium-Cobalt Magnet."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:magnetizer",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:neodymium_magnet",
+      "text": "The strongest permanent magnet known: a thumb-sized piece can hold a kilogram of steel. Loses its strength above about 80 \u00b0C.$(br2)Made in $(item)Magnetizer$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:samarium_cobalt_magnet",
+      "text": "A little weaker than neodymium, but it keeps its field up to 300 \u00b0C - the magnet for hot machines.$(br2)Made in $(item)Pulsed Magnet Lab$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Neodymium Magnet$(): Bending Magnet, Central Solenoid, Centrifuge Rotor, Condensate Trap, Disk Confinement Ring and more"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ferromagnetism"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Fission Fragment Mix",
+  "icon": "theoreticalsciences:fission_fragment_mix",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fission_fragment_mix",
+      "title": "Fission Fragment Mix",
+      "text": "Caesium, strontium, iodine and xenon: what a uranium nucleus becomes when it splits. Two billion years ago, Oklo made this on its own."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gas Centrifuge Cascade$().$(br2)$(thing)Mined$(): from $(item)Fission Fragment Seam$(), in veins through the rock.$(br2)$(thing)Dropped by$(): Fission Husk.$(br2)$(thing)Found in$(): Oklo Reactor Ruin chests.$(br2)$(thing)Unlocked by$(): Nuclear Fission.$(br2)$(thing)Used in$(): Nuclear Waste Glass, Rare Earth Oxide, Uranium Hexafluoride."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

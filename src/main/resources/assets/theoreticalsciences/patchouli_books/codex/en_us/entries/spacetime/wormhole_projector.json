@@ -1,0 +1,153 @@
+{
+  "name": "Einstein-Rosen Bridge Projector",
+  "icon": "theoreticalsciences:wormhole_projector",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 47,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:wormhole_projector",
+      "title": "Einstein-Rosen Bridge Projector",
+      "text": "Opens a traversable wormhole to distant stars and drags their matter through.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the textbooks, an Einstein-Rosen bridge pinches shut faster than light could cross it; holding one open would take negative energy at the throat. This one stays open.$(br2)This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Day 205. Inside the ring I can see the other end of the bridge - another sky. Each transit drags back matter from a distant star system or a neighbouring brane. I have started keeping a list of which."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Einstein-Rosen Bridge Projector",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________",
+            "____AAAAA____",
+            "_____BBB_____",
+            "____AAAAA____",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "__AA_____AA__",
+            "___BDBBBDB___",
+            "__AA_____AA__",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_A_________A_",
+            "__BB     BB__",
+            "_A_________A_",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_A_________A_",
+            "_BB       BB_",
+            "_A_________A_",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "A___________A",
+            "_D         D_",
+            "A___________A",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "A___________A",
+            "BB         BB",
+            "A___________A",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "A___________A",
+            "EB         BE",
+            "A___________A",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "A___________A",
+            "BB         BB",
+            "A___________A",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "A___________A",
+            "_D         D_",
+            "A___________A",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_A_________A_",
+            "_BB       BB_",
+            "_A_________A_",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_A_________A_",
+            "_ABB     BBA_",
+            "_A_________A_",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_AAA_____AAA_",
+            "_F_BDBBBDB_F_",
+            "_AAA_____AAA_",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_A__AAAAA__A_",
+            "_A___BBB___A_",
+            "_A__AAAAA__A_",
+            "_____________"
+          ],
+          [
+            "_AAAAA0AAAAA_",
+            "_AAAAAAAAAAA_",
+            "_AAAAAAAAAAA_",
+            "_AAAAAAAAAAA_",
+            "_AAAAAAAAAAA_"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:wormhole_projector",
+          "A": "theoreticalsciences:spacetime_casing",
+          "B": "theoreticalsciences:wormhole_frame_casing",
+          "D": "theoreticalsciences:spacetime_anchor_pylon",
+          "E": "#theoreticalsciences:multiblock/wormhole_frame_casing_or_port",
+          "F": "theoreticalsciences:dimensional_stabiliser"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Degenerate Matter Chunk, Dilithium Crystal, Exotic Matter Crystal, Magnetar Shard, Multiverse Shard, Neutrino Flux, Void Lattice Shard."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:wormhole_projector",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/traversable_wormholes"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.node_vacuum_state_projector",
+  "description": "book.theoreticalsciences.codex.singularities.node_vacuum_state_projector.desc",
+  "icon": {
+    "item": "theoreticalsciences:vacuum_state_projector"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 106,
+  "y": 22,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:vacuum_state_projector"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.node_vacuum_state_projector.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_vacuum_state_projector.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_vacuum_state_projector.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/singularities__eye_of_the_horizon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/horizon_simulation"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "params": [
+    {
+      "id": "Mc",
+      "unit": "10\u00b2\u2074 kg",
+      "min": 0.1,
+      "max": 1000,
+      "step": 0.01,
+      "default": 10
+    },
+    {
+      "id": "r",
+      "unit": "mm",
+      "min": 1,
+      "max": 2000,
+      "step": 0.01,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "rs",
+      "unit": "mm",
+      "expr": "1.485*Mc*(1 + 0.01*d)",
+      "formula": "r_s = 2GM/c\u00b2"
+    },
+    {
+      "id": "f",
+      "unit": "\u00d7",
+      "expr": "1/sqrt(pos(1 - rs/r) + 1e-9)",
+      "formula": "1/\u221a(1 \u2212 r_s/r)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "fallen",
+      "kind": "damage",
+      "expr": "r - 1.02*rs",
+      "formula": "r > r_s"
+    }
+  ],
+  "rate": "clamp(f/3*(0.7 + 0.1*size), 0.25, 2)",
+  "rate_formula": "rate = f/3 \u00b7 (0.7 + 0.1\u00b7storeys)",
+  "heat": "0.01*f",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

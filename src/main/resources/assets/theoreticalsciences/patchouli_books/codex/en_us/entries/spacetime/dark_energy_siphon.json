@@ -1,0 +1,251 @@
+{
+  "name": "Dark Energy Siphon",
+  "icon": "theoreticalsciences:dark_energy_siphon",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 49,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dark_energy_siphon",
+      "title": "Dark Energy Siphon",
+      "text": "Taps the energy of empty space that drives the expansion of the universe.$(br2)$(thing)Tier 5$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Since 1998 we have known the expansion of the universe is speeding up. Whatever drives it - $(thing)dark energy$(), perhaps the energy of the vacuum itself - makes up roughly 70% of everything there is. The siphon drinks from it.$(br2)This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Dark Energy Siphon",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____A_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___AAAAA___",
+            "_BAA___AAB_",
+            "_AB_____BA_",
+            "AA_B___B_AA",
+            "A___B_B___A",
+            "A____D____A",
+            "A___B_B___A",
+            "AA_B___B_AA",
+            "_AB_____BA_",
+            "_BAA___AAB_",
+            "___AAAAA___"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___EEEBE___",
+            "__EE__BEE__",
+            "_EE__BB_EE_",
+            "_BBB_B___E_",
+            "_E_BBDBB_E_",
+            "_E___B_BBB_",
+            "_EE_BB__EE_",
+            "__EEB__EE__",
+            "___EBEEE___",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "____BEE____",
+            "___EB__E___",
+            "__E_BBBBB__",
+            "__E_BDB_E__",
+            "__BBBBB_E__",
+            "___E__BE___",
+            "____EEB____",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "____EEB____",
+            "___BB_BE___",
+            "___E_D_E___",
+            "___EB_BB___",
+            "____BEE____",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____B_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "_____0_____",
+            "___________",
+            "___________",
+            "__F__B__F__",
+            "___________",
+            "___________",
+            "_____F_____",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "____BGB____",
+            "__BBBBBBB__",
+            "__BBBBBBB__",
+            "_BBBBBBBBB_",
+            "_GBBBBBBBG_",
+            "_BBBBBBBBB_",
+            "__BBBBBBB__",
+            "__BBBBBBB__",
+            "____BGB____",
+            "___________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:dark_energy_siphon",
+          "A": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "B": "theoreticalsciences:event_horizon_casing",
+          "D": "theoreticalsciences:dimensional_stabiliser",
+          "E": "theoreticalsciences:containment_field_glass",
+          "F": "theoreticalsciences:spacetime_anchor_pylon",
+          "G": "#theoreticalsciences:multiblock/event_horizon_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Cosmological Constant, Dark Energy, Phantom Energy Cell."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dark_energy_siphon",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Dark Energy Siphon$(): Inflation Chamber"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/dark_energy"
+}

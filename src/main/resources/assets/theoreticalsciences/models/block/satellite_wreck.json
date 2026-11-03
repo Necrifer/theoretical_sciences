@@ -1,0 +1,207 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "theoreticalsciences:block/satellite_wreck",
+    "bus": "theoreticalsciences:block/satellite_wreck",
+    "panel": "theoreticalsciences:block/computronium_panel",
+    "rod": "theoreticalsciences:block/chronosteel_plating"
+  },
+  "elements": [
+    {
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        12,
+        7,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#bus"
+        },
+        "south": {
+          "texture": "#bus"
+        },
+        "east": {
+          "texture": "#bus"
+        },
+        "west": {
+          "texture": "#bus"
+        },
+        "up": {
+          "texture": "#bus"
+        },
+        "down": {
+          "texture": "#bus"
+        }
+      },
+      "rotation": {
+        "origin": [
+          8,
+          4,
+          8
+        ],
+        "axis": "z",
+        "angle": 22.5
+      }
+    },
+    {
+      "from": [
+        0,
+        3,
+        6
+      ],
+      "to": [
+        4,
+        4,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#panel"
+        },
+        "south": {
+          "texture": "#panel"
+        },
+        "east": {
+          "texture": "#panel"
+        },
+        "west": {
+          "texture": "#panel"
+        },
+        "up": {
+          "texture": "#panel"
+        },
+        "down": {
+          "texture": "#panel"
+        }
+      },
+      "rotation": {
+        "origin": [
+          8,
+          4,
+          8
+        ],
+        "axis": "z",
+        "angle": 22.5
+      }
+    },
+    {
+      "from": [
+        12,
+        3,
+        6
+      ],
+      "to": [
+        16,
+        4,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#panel"
+        },
+        "south": {
+          "texture": "#panel"
+        },
+        "east": {
+          "texture": "#panel"
+        },
+        "west": {
+          "texture": "#panel"
+        },
+        "up": {
+          "texture": "#panel"
+        },
+        "down": {
+          "texture": "#panel"
+        }
+      },
+      "rotation": {
+        "origin": [
+          8,
+          4,
+          8
+        ],
+        "axis": "z",
+        "angle": -22.5
+      }
+    },
+    {
+      "from": [
+        7.5,
+        7,
+        7.5
+      ],
+      "to": [
+        8.5,
+        15,
+        8.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#rod"
+        },
+        "south": {
+          "texture": "#rod"
+        },
+        "east": {
+          "texture": "#rod"
+        },
+        "west": {
+          "texture": "#rod"
+        },
+        "up": {
+          "texture": "#rod"
+        },
+        "down": {
+          "texture": "#rod"
+        }
+      },
+      "rotation": {
+        "origin": [
+          8,
+          7,
+          8
+        ],
+        "axis": "x",
+        "angle": 22.5
+      }
+    },
+    {
+      "from": [
+        6,
+        7,
+        6
+      ],
+      "to": [
+        10,
+        8,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#rod"
+        },
+        "south": {
+          "texture": "#rod"
+        },
+        "east": {
+          "texture": "#rod"
+        },
+        "west": {
+          "texture": "#rod"
+        },
+        "up": {
+          "texture": "#rod"
+        },
+        "down": {
+          "texture": "#rod"
+        }
+      }
+    }
+  ]
+}

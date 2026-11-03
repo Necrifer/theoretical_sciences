@@ -1,0 +1,61 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.atomic_clock",
+  "description": "book.theoreticalsciences.codex.astrophysics.atomic_clock.desc",
+  "icon": {
+    "item": "theoreticalsciences:atomic_clock"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 39,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:atomic_clock"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:atomic_clock"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:time_dilated_sample"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.atomic_clock.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/spacetime__tensor_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_time_dilation"
+  }
+}

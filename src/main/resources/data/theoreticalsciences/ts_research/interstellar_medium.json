@@ -1,0 +1,74 @@
+{
+  "title": "Interstellar Medium",
+  "description": "Between the stars is not nothing: a few atoms in every cubic centimetre, cold molecular clouds where stars are born, hot ionised bubbles blown by the ones that died, and dust through all of it. Unlocks the Interstellar Scoop.",
+  "icon": "theoreticalsciences:interstellar_dust",
+  "x": 12,
+  "y": 1,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:spectroscopy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:deep_sky_plate",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A hot young star gives off Q ionising photons a second into gas of n atoms per cubic metre. Each ionised atom recombines at the rate n\u00b7\u03b1; write the radius R of the ball of gas the star can keep ionised.",
+    "name": "Str\u00f6mgren sphere",
+    "lhs": "R",
+    "form": "( 3 * Q / ( 4 * \u03c0 * n ^ 2 * \u03b1 ) ) ^ ( 1 / 3 )",
+    "expr": "( 3 * Q / ( 12.5664 * n ^ 2 * a ) ) ^ 0.333333 / p",
+    "ask": "Find R in parsecs for Q = @{Q} /s, n = @{n} /m\u00b3, a = @{a} m\u00b3/s (one parsec p = @{p} m).",
+    "vars": {
+      "R": "radius (pc)",
+      "Q": "ionising photons per second",
+      "\u03c0": "pi",
+      "n": "atoms per m\u00b3",
+      "\u03b1": "recombination coefficient",
+      "a": "recombination coefficient (m\u00b3/s)",
+      "p": "one parsec (m)"
+    },
+    "given": {
+      "Q": 1e+49,
+      "n": 10000000.0,
+      "a": 2.6e-19,
+      "p": 3.086e+16
+    },
+    "unit": "pc",
+    "method": "Balance: every photon ionises one atom, and inside the sphere atoms recombine at n\u00b2\u03b1 per volume. So Q = (4/3)\u03c0R\u00b3\u00b7n\u00b2\u03b1.",
+    "distractors": [
+      "c",
+      "h",
+      "2"
+    ],
+    "vary": {
+      "Q": [
+        6e+48,
+        1.4e+49,
+        1e+47
+      ],
+      "n": [
+        6000000.0,
+        14000000.0,
+        100000.0
+      ],
+      "a": [
+        1.56e-19,
+        3.65e-19,
+        1e-21
+      ],
+      "p": [
+        1.85e+16,
+        4.33e+16,
+        100000000000000.0
+      ]
+    }
+  }
+}

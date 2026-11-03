@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_photonic_die",
+  "description": "book.theoreticalsciences.codex.fabrication.node_photonic_die.desc",
+  "icon": {
+    "item": "theoreticalsciences:photonic_die"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 15,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:photonic_die"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_photonic_die.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_photonic_die.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_photonic_die.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__lattice_growth_vat",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/precision_lithography"
+  }
+}

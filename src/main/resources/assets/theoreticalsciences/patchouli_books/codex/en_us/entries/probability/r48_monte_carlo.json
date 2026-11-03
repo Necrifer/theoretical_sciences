@@ -1,0 +1,26 @@
+{
+  "name": "Monte Carlo",
+  "icon": "theoreticalsciences:monte_carlo_engine",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:monte_carlo_engine,theoreticalsciences:stochastic_core,theoreticalsciences:entropy_sink",
+      "text": "Some sums are too hard to work out. Throw dice instead: average N random samples and the answer is off by only $(thing)\u03c3/\u221aN$(). To halve the error, sample four times as much. The $(item)Monte Carlo Engine$() draws up to a trillion samples a run."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Importance sampling$() draws more samples where they matter. Set near the problem's own optimum it cuts \u03c3 several times; set wrong, it makes \u03c3 worse than plain sampling."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every sample erases bits, and $(thing)Landauer's principle$() says erasing a bit gives off at least kT\u00b7ln 2: the engine's heat is proportional to its own temperature. Cool the cores and a trillion samples cost far less."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sums of random numbers fall on a bell curve - the central limit theorem - so the engine grows Normal Distribution Crystals; and its Markov chains sample a posterior without ever computing it, turning two Prior Tablets into four Posteriors."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/monte_carlo_methods"
+}

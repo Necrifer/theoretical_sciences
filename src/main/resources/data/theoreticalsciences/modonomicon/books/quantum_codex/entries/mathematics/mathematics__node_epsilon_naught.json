@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_epsilon_naught",
+  "description": "book.theoreticalsciences.codex.mathematics.node_epsilon_naught.desc",
+  "icon": {
+    "item": "theoreticalsciences:epsilon_naught"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 81,
+  "y": 22,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:epsilon_naught"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_epsilon_naught.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_epsilon_naught.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_epsilon_naught.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__ordinal_recursor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

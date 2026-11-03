@@ -1,0 +1,51 @@
+{
+  "name": "Projected Fields",
+  "icon": "theoreticalsciences:graviton_field_projector",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:graviton_field_projector,theoreticalsciences:graviton_harness,theoreticalsciences:chronal_anchor",
+      "text": "Some recipes only run in the right conditions around the controller - heavy gravity, extra dimensions, slowed or hastened time, an altered vacuum. JEI marks them with a diamond."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Some dimensions supply conditions by nature: the Bulk has 5 dimensions, the Transfinite Hierarchy 7, Hyperdimensional Reality 11; inside a black hole gravity is 1000 g and time runs at 1%; the Foam's vacuum is false. Anywhere else, $(item)Field Projectors$() make them within 16 blocks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Right-click a projector to step its setting up, sneak to step down; it needs power to hold the field. $(item)Graviton$(): 0.01 to 1000 g. $(item)Dimensional Lift$(): 4 to 11 dimensions. $(item)Chronal$(): time x0.01 to x100. $(item)Vacuum State$(): Casimir, false, true vacuum."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Fields act on you too. High gravity crushes ($(item)Graviton Harness$()), extra dimensions bleed you ($(item)Brane Tether$()), altered time slows or ages you ($(item)Chronal Anchor$()) and an altered vacuum decays you ($(item)Coherence Stabiliser$()). Prepare before you walk into your own factory."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:graviton_field_projector",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:graviton_harness",
+      "text": "Spreads crushing gravity evenly through you. Carry it into high-gravity fields.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chronal_anchor",
+      "text": "Holds your own clock steady. Carry it into fields where time runs fast or slow.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:brane_tether",
+      "text": "Ties your mass to our brane. Carry it in the Bulk - or in any field of extra dimensions.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:coherence_stabiliser",
+      "text": "Keeps your wavefunction in one piece. Carry it in the Quantum Foam - or in an altered vacuum.$(br2)Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/field_engineering"
+}

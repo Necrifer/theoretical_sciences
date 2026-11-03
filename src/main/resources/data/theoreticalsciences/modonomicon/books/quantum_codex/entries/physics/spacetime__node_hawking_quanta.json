@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_hawking_quanta",
+  "description": "book.theoreticalsciences.codex.spacetime.node_hawking_quanta.desc",
+  "icon": {
+    "item": "theoreticalsciences:hawking_quanta"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 97,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hawking_quanta"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_hawking_quanta.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_hawking_quanta.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__micro_black_hole_evaporator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hawking_radiation"
+  }
+}

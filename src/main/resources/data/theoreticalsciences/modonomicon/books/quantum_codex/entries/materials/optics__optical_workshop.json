@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.optical_workshop",
+  "description": "book.theoreticalsciences.codex.optics.optical_workshop.desc",
+  "icon": {
+    "item": "theoreticalsciences:optical_workshop"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 92,
+  "y": 68,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:optical_workshop"
+      },
+      "text": "book.theoreticalsciences.codex.optics.optical_workshop.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.optical_workshop.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.optical_workshop.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.optical_workshop.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.optical_workshop.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:optical_workshop"
+      },
+      "text": "book.theoreticalsciences.codex.optics.optical_workshop.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/optics__x_ray_diffractometer"
+    },
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__solar_furnace"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/geometric_optics"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r50_cow",
+  "description": "book.theoreticalsciences.codex.spacetime.r50_cow.desc",
+  "icon": {
+    "item": "theoreticalsciences:neutron_interferometer"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 44,
+  "y": -16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:neutron_interferometer"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r50_cow.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r50_cow.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r50_cow.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/optics__r46_growth"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/optics__crystal_growth_furnace"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/neutron_interferometry"
+  }
+}

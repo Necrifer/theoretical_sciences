@@ -1,0 +1,23 @@
+{
+  "name": "Vacuum Beam Pipe",
+  "icon": "theoreticalsciences:vacuum_beam_pipe",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:vacuum_beam_pipe",
+      "title": "Vacuum Beam Pipe",
+      "text": "A pipe of containment field glass and metamaterial lined with Casimir plates, so the space inside is emptier than empty. A particle beam runs through it without touching anything at all. Peering inside shows nothing, not even a reflection."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Particle beams scatter off any gas. I lined containment glass with Casimir plates, which push out even virtual particles, and wrapped it in metamaterial. The beam stopped scattering."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Metamaterials."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/metamaterials"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Molecular Cloud",
+  "icon": "theoreticalsciences:molecular_cloud_cell",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:molecular_cloud_cell",
+      "title": "Molecular Cloud",
+      "text": "$(fluid)Molecular Cloud$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Interstellar Scoop$().$(br2)$(thing)Unlocked by$(): Interstellar Medium.$(br2)$(thing)Used in$(): Accretion Disk Plasma, Brown Dwarf Core, Quasar Jet Filament."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/interstellar_medium"
+}

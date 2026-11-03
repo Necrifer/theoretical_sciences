@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:fusion_power",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fusion_blanket_tile",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:deuterium",
+      "amount": 100
+    },
+    {
+      "fluid": "theoreticalsciences:tritium",
+      "amount": 100
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 50
+    },
+    {
+      "id": "theoreticalsciences:tritium",
+      "amount": 150
+    }
+  ],
+  "energy": 65536,
+  "duration": 1200,
+  "research": "theoreticalsciences:fusion_ignition",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Lref": 6.0
+    },
+    "windows": [
+      {
+        "q": "L3",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

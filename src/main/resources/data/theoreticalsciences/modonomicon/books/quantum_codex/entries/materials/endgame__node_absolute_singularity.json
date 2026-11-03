@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_absolute_singularity",
+  "description": "book.theoreticalsciences.codex.endgame.node_absolute_singularity.desc",
+  "icon": {
+    "item": "theoreticalsciences:absolute_singularity"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 188,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:absolute_singularity"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_absolute_singularity.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_absolute_singularity.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__mass_crafting",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conceptual_singularities"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer",
+  "description": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.desc",
+  "icon": {
+    "item": "theoreticalsciences:cantor_diagonalizer"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 104,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cantor_diagonalizer"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cantor_diagonalizer"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:banach_tarski_sphere"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.cantor_diagonalizer.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/fabrication__convergence_engine"
+    },
+    {
+      "entry": "theoreticalsciences:machines/simulation__reality_compiler"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_mathematics"
+  }
+}

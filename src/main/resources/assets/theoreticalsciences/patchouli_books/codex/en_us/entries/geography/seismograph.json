@@ -1,0 +1,41 @@
+{
+  "name": "Seismograph",
+  "icon": "theoreticalsciences:seismograph",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:seismograph",
+      "title": "Seismograph",
+      "text": "A heavy pendulum that the ground moves under. It times two kinds of wave from below - fast pressure waves and slow shear waves - and the gap between them says how deep their source lies.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Makes $(item)Seismic Recorder Drums$(). It must stand on a full solid block, or it hears only a fifth as fast. Each finished run reports, to everyone within 16 blocks, how deep the nearest ore or cave beneath it lies."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Geoid Model, Seismic Recorder Drum."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:seismograph",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:seismic_recorder_drum",
+      "text": "A paper drum turned by clockwork under a hanging pen. The ground shakes, the pen does not, and the difference is written down.$(br2)Made in $(item)Seismograph$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Seismic Recorder Drum$(): Core Drill, Geoid Model, Posterior Tablet"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/seismology"
+}

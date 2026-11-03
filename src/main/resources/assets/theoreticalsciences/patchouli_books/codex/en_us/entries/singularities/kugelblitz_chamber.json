@@ -1,0 +1,204 @@
+{
+  "name": "Kugelblitz Chamber",
+  "icon": "theoreticalsciences:kugelblitz_chamber",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 37,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:kugelblitz_chamber",
+      "title": "Kugelblitz Chamber",
+      "text": "Day 1 of the singularity work. The $(item)Kugelblitz Chamber$() focuses so much light into one point that it collapses into a black hole.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(thing)kugelblitz$() (German: 'ball lightning') is a real prediction of general relativity: energy curves spacetime just as mass does, so enough light in a small enough volume forms a horizon. Nobody has made one. The required intensity is absurd. Apparently, not here."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lesson learned the hard way: while running, the singularity at its heart bends light around it ($(thing)gravitational lensing$()) and pulls in loose items and creatures. My spare tools are gone. Keep your distance."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Kugelblitz Chamber",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "____AAA____",
+            "____AAA____",
+            "____AAA____",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "____AAA____",
+            "___AAAAA___",
+            "__AAAAAAA__",
+            "__AAAAAAA__",
+            "__AAAAAAA__",
+            "___AAAAA___",
+            "____AAA____",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "____BBB____",
+            "__BBBBBBB__",
+            "__BB   BB__",
+            "_BB     BB_",
+            "_BB     BB_",
+            "_BB     BB_",
+            "__BB   BB__",
+            "__BBBBBBB__",
+            "____BBB____",
+            "___________"
+          ],
+          [
+            "___________",
+            "___BBBBB___",
+            "__BB   BB__",
+            "_BB     BB_",
+            "_B       B_",
+            "_B       B_",
+            "_B       B_",
+            "_BB     BB_",
+            "__BB   BB__",
+            "___BBBBB___",
+            "___________"
+          ],
+          [
+            "____DED____",
+            "__DDDDDDD__",
+            "_DD     DD_",
+            "_D       D_",
+            "DD       DD",
+            "ED       DE",
+            "DD       DD",
+            "_D       D_",
+            "_DD     DD_",
+            "__DDDDDDD__",
+            "____DED____"
+          ],
+          [
+            "____EDE____",
+            "__DDDDDDD__",
+            "_DD     DD_",
+            "_D       D_",
+            "ED       DE",
+            "FD       DF",
+            "ED       DE",
+            "_D       D_",
+            "_DD     DD_",
+            "__DDDDDDD__",
+            "____EFE____"
+          ],
+          [
+            "____DED____",
+            "__DDDDDDD__",
+            "_DD     DD_",
+            "_D       D_",
+            "DD       DD",
+            "ED       DE",
+            "DD       DD",
+            "_D       D_",
+            "_DD     DD_",
+            "__DDDDDDD__",
+            "____DED____"
+          ],
+          [
+            "___________",
+            "___BBBBB___",
+            "__BB   BB__",
+            "_BB     BB_",
+            "_B       B_",
+            "_B       B_",
+            "_B       B_",
+            "_BB     BB_",
+            "__BB   BB__",
+            "___BBBBB___",
+            "___________"
+          ],
+          [
+            "___________",
+            "____B0B____",
+            "__GBBBBBG__",
+            "__BB   BB__",
+            "_BB     BB_",
+            "_BB     BB_",
+            "_BB     BB_",
+            "__BB   BB__",
+            "__GBBBBBG__",
+            "____BBB____",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "__G_AAA_G__",
+            "___AAAAA___",
+            "__AAAAAAA__",
+            "__AAAAAAA__",
+            "__AAAAAAA__",
+            "___AAAAA___",
+            "__G_AAA_G__",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "__H_____H__",
+            "___GGIGG___",
+            "___GAAAG___",
+            "___IAAAI___",
+            "___GAAAG___",
+            "___GGIGG___",
+            "__H_____H__",
+            "___________",
+            "___________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:kugelblitz_chamber",
+          "A": "theoreticalsciences:hawking_radiation_collector",
+          "B": "theoreticalsciences:containment_field_glass",
+          "D": "theoreticalsciences:event_horizon_casing",
+          "E": "theoreticalsciences:graviton_lens_array",
+          "F": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "G": "theoreticalsciences:spacetime_casing",
+          "H": "theoreticalsciences:cryogenic_cooling_jacket",
+          "I": "#theoreticalsciences:multiblock/spacetime_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Gravitational Wave Crystal, Hawking Radiation, Horizon Glass, Infall Rock, Kugelblitz Seed, Last Flash of a Black Hole, Micro Singularity, Tidal Alloy Scrap."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:kugelblitz_chamber",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Kugelblitz Chamber$(): Conceptual Singularity Compressor, Entropy Horizon, Eye of the Event Horizon"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/singularity_physics"
+}

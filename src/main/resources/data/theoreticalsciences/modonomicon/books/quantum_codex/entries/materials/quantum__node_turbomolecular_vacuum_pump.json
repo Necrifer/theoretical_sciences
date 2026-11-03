@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_turbomolecular_vacuum_pump",
+  "description": "book.theoreticalsciences.codex.quantum.node_turbomolecular_vacuum_pump.desc",
+  "icon": {
+    "item": "theoreticalsciences:turbomolecular_vacuum_pump"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 15,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:turbomolecular_vacuum_pump"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_turbomolecular_vacuum_pump.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_turbomolecular_vacuum_pump.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_turbomolecular_vacuum_pump.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__bose_einstein_condenser",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cryogenics"
+  }
+}

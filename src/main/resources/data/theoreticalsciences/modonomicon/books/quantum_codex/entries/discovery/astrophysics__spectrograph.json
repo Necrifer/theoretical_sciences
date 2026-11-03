@@ -1,0 +1,71 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.spectrograph",
+  "description": "book.theoreticalsciences.codex.astrophysics.spectrograph.desc",
+  "icon": {
+    "item": "theoreticalsciences:spectrograph"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 12,
+  "y": -8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spectrograph"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spectrograph"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spectral_plate"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:raw_pitchblende"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.spectrograph.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__r37_telescopes"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

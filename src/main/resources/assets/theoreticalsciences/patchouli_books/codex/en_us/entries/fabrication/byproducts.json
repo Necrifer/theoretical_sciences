@@ -1,0 +1,55 @@
+{
+  "name": "Coolant, Residue & Slag",
+  "icon": "theoreticalsciences:spacetime_slag",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Lesson learned the expensive way. Processes cooled by $(fluid)Superfluid Helium$() hand it back as $(fluid)Warm Helium$(). Recondense it in a $(item)Bose-Einstein Condenser$() or the $(item)Fractionation Spire$() - or you will run out. Below about 2 K helium flows with no friction at all; a little warmer and it is just a cold liquid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "High-tier processes leave $(fluid)Dimensional Residue$(). The $(item)Fractionation Spire$() splits it into Dark Matter, Exotic Matter, Inflaton Field and Chronon Gas. Nothing is waste if you can separate it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Spacetime Slag$() can be sorted by a $(item)Maxwell's Demon$() for Void Lattice and, rarely, Planck Shards. Maxwell dreamed up his demon in 1867: a tiny doorkeeper sorting fast molecules from slow, seeming to cheat the second law. Mine sorts rubble."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bose_einstein_condenser",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fractionation_spire",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spacetime_slag",
+      "text": "Crumpled leftover geometry. A Maxwell's demon can sort useful shards out of it.$(br2)Made in $(item)Fractionation Spire$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Bose-Einstein Condenser$(): Fractionation Spire$(li)$(item)Fractionation Spire$(): Essence Distillery$(li)$(item)Spacetime Slag$(): Coherent Wiring Harness, Planck Shard, Theoretical Notes II, Void Lattice Shard, Warm Helium"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:superfluid_helium_cell",
+      "text": "$(fluid)Superfluid Helium$(). Made in $(item)Fractionation Spire$().$(br)Used for: Abiogenesis Crucible, Annihilation Core, Anomaly Containment Ward, Anomaly Resolution Engine, Antihelium Nucleus."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:warm_helium_cell",
+      "text": "$(fluid)Warm Helium$(). Made in $(item)Tokamak$().$(br)Used for: Maxwell-Boltzmann Gas, Superfluid Helium."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dimensional_residue_cell",
+      "text": "$(fluid)Dimensional Residue$(). Made in $(item)Tesseract Assembler$().$(br)Used for: Chronon Gas, Dark Matter, Dimensional Singularity, Exotic Matter, Inflaton Field."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fractional_distillation"
+}

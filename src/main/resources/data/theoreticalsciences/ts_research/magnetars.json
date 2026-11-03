@@ -1,0 +1,68 @@
+{
+  "title": "Magnetars",
+  "description": "A star's core collapses to a neutron star and its field is squeezed with it, flux conserved: a thousand times stronger than any magnet made on Earth, a billion times. Starquakes crack its crust.",
+  "icon": "theoreticalsciences:magnetar_crust_fragment",
+  "x": 15,
+  "y": 1,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:magnetic_confinement",
+    "theoreticalsciences:compact_stars"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:magnetar_crust_fragment",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:pulsar_timing_crystal",
+      "count": 2
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "A core of radius R threaded by a field B collapses to radius r, keeping all the field lines through it. Write the field b it ends with.",
+    "name": "Flux freezing",
+    "lhs": "b",
+    "form": "B * ( R / r ) ^ 2",
+    "expr": "B * ( R / r ) ^ 2 / u",
+    "ask": "Find b in units of 10\u2079 T (u = @{u}) for B = @{B} T, R = @{R} m, r = 1e4 m.",
+    "vars": {
+      "b": "final field (10\u2079 T)",
+      "B": "initial field (T)",
+      "R": "initial radius (m)",
+      "r": "final radius (m)",
+      "u": "10\u2079 T"
+    },
+    "given": {
+      "B": 100,
+      "R": 700000000.0,
+      "r": 10000.0,
+      "u": 1000000000.0
+    },
+    "unit": "\u00d710\u2079 T",
+    "method": "The flux \u03a6 = B\u03c0r\u00b2 through the star is frozen into its conducting plasma, so B grows as 1/r\u00b2.",
+    "distractors": [
+      "\u03c0",
+      "3",
+      "G"
+    ],
+    "vary": {
+      "B": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "R": [
+        420000000.0,
+        980000000.0,
+        1000000.0
+      ],
+      "u": [
+        600000000.0,
+        1400000000.0,
+        10000000.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_void_lattice_ore",
+  "description": "book.theoreticalsciences.codex.world.node_void_lattice_ore.desc",
+  "icon": {
+    "item": "theoreticalsciences:void_lattice_ore"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 135,
+  "y": 43,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:void_lattice_ore"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_void_lattice_ore.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_void_lattice_ore.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_void_lattice_ore.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__bulk",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brane_cosmology"
+  }
+}

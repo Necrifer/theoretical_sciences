@@ -1,0 +1,24 @@
+{
+  "name": "Neutron Star Forge",
+  "icon": "theoreticalsciences:neutron_star_forge",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 51,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Matter squeezed until electrons are pressed into protons: neutron-degenerate matter, held up by the Pauli principle (P = K\u03c1^(5/3)). The mass and pressure you choose set the density and radius; general relativity sets the limits."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Mass, Compression pressure, Spin frequency, Seed field.$(br2)$(thing)Disturbance$(): Compressor pressure ripple: p\u00b7(1 \u00b1 1%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Above the TOV mass: collapse into a black hole; Buchdahl limit exceeded: no static star is possible; Spinning past the mass-shedding limit; Interlock: flux-compression coils not superconducting (too warm); Field above the critical field: the flux-compression coils quench.$(br2)$(thing)Rate$(): Compression proceeds at a fixed pace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Density \u03c1: \u03c1 = (P/K)^(3/5),  K = (3\u03c0\u00b2)^(2/3)\u0127\u00b2/(5m_n^(8/3))$(br)Density: log\u2081\u2080 \u03c1$(br)Radius: R = (3M/4\u03c0\u03c1)^(1/3)$(br)Schwarzschild radius: r_s = 2GM/c\u00b2$(br)Compactness: C = r_s/R$(br)Surface redshift: z = (1 \u2212 r_s/R)^(\u2212\u00bd) \u2212 1$(br)Mass-shedding frequency: f_K = \u221a(GM/R\u00b3)/2\u03c0"
+    }
+  ]
+}

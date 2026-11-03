@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_lonsdaleite",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_lonsdaleite.desc",
+  "icon": {
+    "item": "theoreticalsciences:lonsdaleite"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 153,
+  "y": 51,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lonsdaleite"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_lonsdaleite.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_lonsdaleite.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__hypervelocity_impact_forge",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

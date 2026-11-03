@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:pound_rebka_tower"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.gravitational_redshift"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.gravitational_redshift.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/gravitational_time_dilation",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Quaternion Crystal",
+  "icon": "theoreticalsciences:quaternion_crystal",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 510,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quaternion_crystal",
+      "title": "Quaternion Crystal",
+      "text": "Hamilton's numbers: one real part and three imaginary units i, j and k, which multiply in a fixed cycle and do not commute. Swap the order and the sign flips. Rotations in three dimensions are just quaternion multiplication, so the crystal turns in the hand with an uncanny smoothness and never gimbal-locks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Trying to extend the complex plane into three dimensions failed, as it did for Hamilton, until I added a fourth. A magnetic monopole supplied the twist that lets ij differ from ji, and the condensate held it steady."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Peano Arithmetic Engine$().$(br2)$(thing)Unlocked by$(): Abstract Algebra.$(br2)$(thing)Used in$(): Empirical Notes II, Hopf Fibration, Minkowski Lattice, Octonion Crystal, Spinor Lattice."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

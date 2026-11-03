@@ -1,0 +1,106 @@
+{
+  "params": [
+    {
+      "id": "n",
+      "unit": "10\u00b9\u2074 cm\u207b\u00b3",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "v",
+      "unit": "mm/s",
+      "min": 0.05,
+      "max": 2,
+      "step": 0.001,
+      "default": 0.5
+    },
+    {
+      "id": "U",
+      "unit": "nK",
+      "min": 0,
+      "max": 500,
+      "step": 0.1,
+      "default": 50
+    },
+    {
+      "id": "sh",
+      "unit": "",
+      "min": 1,
+      "max": 5000,
+      "step": 1,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "cu",
+      "unit": "mm/s",
+      "expr": "1.9*sqrt(n*(1 + 0.03*d))",
+      "formula": "c = \u221a(gn/m)"
+    },
+    {
+      "id": "vd",
+      "unit": "mm/s",
+      "expr": "sqrt(v^2 + 0.1914*U)",
+      "formula": "v\u2082 = \u221a(v\u00b2 + 2kU/m)"
+    },
+    {
+      "id": "cd",
+      "unit": "mm/s",
+      "expr": "1.9*sqrt(n*(1 + 0.03*d)*v/vd)",
+      "formula": "c\u2082 = c\u00b7\u221a(n\u2082/n)"
+    },
+    {
+      "id": "mu",
+      "unit": "",
+      "expr": "v/cu",
+      "formula": "v/c"
+    },
+    {
+      "id": "md",
+      "unit": "",
+      "expr": "vd/cd",
+      "formula": "v\u2082/c\u2082"
+    },
+    {
+      "id": "TH",
+      "unit": "nK",
+      "expr": "1.215*pos(vd - cd)",
+      "formula": "T_H = \u0127\u03ba/2\u03c0k_B"
+    },
+    {
+      "id": "Tb",
+      "unit": "nK",
+      "expr": "1 + 25*T",
+      "formula": "T_c"
+    },
+    {
+      "id": "SNR",
+      "unit": "",
+      "expr": "0.5*TH/Tb*sqrt(sh)",
+      "formula": "S \u221d (T_H/T)\u00b7\u221ashots"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "warm",
+      "kind": "stop",
+      "expr": "5 - T",
+      "formula": "T < 5 K"
+    }
+  ],
+  "rate": "clamp(400/(sh + 100), 0.2, 2)",
+  "rate_formula": "rate = 400/(shots + 100)",
+  "heat": "0.02",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

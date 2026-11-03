@@ -1,0 +1,70 @@
+{
+  "title": "Kilonovae",
+  "description": "When two neutron stars merge, a few hundredths of a solar mass of neutron-rich matter is flung out, and in a second it captures neutrons up to gold and platinum. Its radioactive glow fades over days.",
+  "icon": "theoreticalsciences:kilonova_ash",
+  "x": 18,
+  "y": 2,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:compact_stars",
+    "theoreticalsciences:nuclear_astrophysics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:gw_record_bns",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:deep_sky_plate",
+      "count": 2
+    }
+  ],
+  "time": 630,
+  "puzzle": {
+    "goal": "Ejecta of mass M expanding at speed v stay opaque until their light can diffuse out through opacity \u03ba. Write the time t its glow peaks, with the speed of light c.",
+    "name": "Diffusion time of the ejecta",
+    "lhs": "t",
+    "form": "sqrt ( \u03ba * M / ( 4 * \u03c0 * v * c ) )",
+    "expr": "( k * M / ( 12.5664 * v * c ) ) ^ 0.5 / 86400",
+    "ask": "Find t in days for M = @{M} kg (0.05 suns), v = @{v} m/s, k = @{k} m\u00b2/kg (lanthanide-rich), c = 2.998e8 m/s.",
+    "vars": {
+      "t": "peak time (days)",
+      "\u03ba": "opacity",
+      "k": "opacity (m\u00b2/kg)",
+      "M": "ejecta mass (kg)",
+      "\u03c0": "pi",
+      "v": "speed (m/s)",
+      "c": "speed of light"
+    },
+    "given": {
+      "k": 1,
+      "M": 9.945e+28,
+      "v": 30000000.0,
+      "c": 299800000.0
+    },
+    "unit": "days",
+    "method": "Light escapes when the time to random-walk out (\u221d \u03baM/rc) equals the time since the blast (r/v): solve for t = r/v.",
+    "distractors": [
+      "G",
+      "2",
+      "h"
+    ],
+    "vary": {
+      "k": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "M": [
+        5.96e+28,
+        1.393e+29,
+        1e+26
+      ],
+      "v": [
+        18000000.0,
+        42000000.0,
+        100000.0
+      ]
+    }
+  }
+}

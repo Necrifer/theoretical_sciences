@@ -1,0 +1,22 @@
+{
+  "name": "Meteorites",
+  "icon": "theoreticalsciences:meteoric_iron",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:meteoric_iron,theoreticalsciences:chondrite_fragment,theoreticalsciences:presolar_grains",
+      "text": "Sometimes a $(thing)crater$() lies in open country: a bowl of $(item)Impact Breccia$() with a raised rim, and in the middle, half buried, what made it. An $(item)Iron Meteorite$() is the core of a small planet that shattered billions of years ago; a $(item)Chondrite$() is stone that has not melted since the planets formed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Meteoric Iron$() smelts to iron. Assayed in the Spectrograph, four pieces give two blocks of the $(item)Iron-Nickel$() a planet's core is made of. Chondrites hold $(item)Presolar Grains$(): silicon carbide that condensed around stars that died before the Sun was born. Henri Moissan found it in the Canyon Diablo meteorite: eight grains make a $(item)Moissanite$() crystal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "One iron meteorite in four is a $(thing)pallasite$(): green olivine crystals set in the metal, the boundary between a small planet's core and mantle. Its assay gives a $(item)Peridot$() - an olivine refractory that lines a Refractory Firebox as well as corundum does."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/meteoritics"
+}

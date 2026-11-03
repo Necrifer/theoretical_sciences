@@ -1,0 +1,24 @@
+{
+  "name": "Quark-Gluon Collider",
+  "icon": "theoreticalsciences:quark_gluon_collider",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 59,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two counter-rotating rings of bending radius 600 m cross at the detector. Heavy ions make quark-gluon plasma; protons make whatever \u221as allows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Dipole field B, RF voltage V, Quadrupole gradient G, Beam current I.$(br2)$(thing)Disturbance$(): Dipole field error (power-supply ripple, magnet hysteresis): the beam sees B\u00b7(1 \u00b1 0.4%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): RF cannot replace the synchrotron loss: beam lost; Quadrupoles too weak: the beam is not focused; Quadrupoles too strong: betatron motion unstable; Space-charge tune shift too large: the beam blows up; Beam halo scraping the vacuum chamber; Interlock: dipoles and quadrupoles not superconducting (too warm).$(br2)$(thing)Rate$(): Collision rate: the beam current, times how well the lattice focuses (best at \u03bc = 90\u00b0)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective dipole field: B_eff = B\u00b7(1 + \u03b4_field)$(br)Beam momentum p: p = 0.2998\u00b7q\u00b7B\u00b7\u03c1$(br)Total energy E: E = \u221a(p\u00b2 + m\u00b2)$(br)Kinetic energy: E_k = E \u2212 m$(br)Lorentz factor \u03b3: \u03b3 = E/m$(br)Velocity \u03b2: \u03b2 = p/E$(br)Synchrotron loss / turn: U\u2080 = 6.03\u00d710\u207b\u00b9\u2078\u00b7q\u00b2\u00b7\u03b3\u2074\u00b7\u03b2\u00b3/\u03c1"
+    }
+  ]
+}

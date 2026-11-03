@@ -1,0 +1,60 @@
+{
+  "title": "Magnetic Confinement",
+  "description": "A charged particle spirals round a field line and cannot leave it. Twist the lines into a torus and a plasma can be held off every wall. Unlocks the Pulsed Magnet Lab and the Tokamak's coils.",
+  "icon": "theoreticalsciences:bitter_plate",
+  "x": 13,
+  "y": 1,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:magnetohydrodynamics",
+    "theoreticalsciences:superconductivity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:samarium_cobalt_magnet",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "A magnetic field B pushes outward on whatever carries the current that makes it. Write the pressure P it exerts, with the permeability of the vacuum \u03bc0.",
+    "name": "Maxwell stress",
+    "lhs": "P",
+    "form": "B ^ 2 / ( 2 * \u03bc0 )",
+    "expr": "B ^ 2 / ( 2 * m ) / 1000000",
+    "ask": "Find P in megapascals for B = @{B} T (m = @{m} H/m for \u03bc0).",
+    "vars": {
+      "P": "pressure (MPa)",
+      "B": "field (T)",
+      "\u03bc0": "permeability of the vacuum",
+      "m": "\u03bc0 (H/m)"
+    },
+    "given": {
+      "B": 13,
+      "m": 1.2566e-06
+    },
+    "unit": "MPa",
+    "method": "The energy stored in a field is B\u00b2/2\u03bc0 per volume; pressure is energy per volume.",
+    "distractors": [
+      "\u03c0",
+      "4",
+      "c"
+    ],
+    "vary": {
+      "B": [
+        8.0,
+        18.0,
+        1.0
+      ],
+      "m": [
+        7.5e-07,
+        1.76e-06,
+        1e-08
+      ]
+    }
+  }
+}

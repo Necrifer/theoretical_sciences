@@ -1,0 +1,23 @@
+{
+  "name": "Femtoscale Transistor",
+  "icon": "theoreticalsciences:femto_transistor",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femto_transistor",
+      "title": "Femtoscale Transistor",
+      "text": "A single-qubit switch, the smallest logic gate there can be. One qubit flips between states and a quantum dot opens or closes to current in response. It is invisible to the eye, switches in femtoseconds, and wastes almost no energy doing so."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Femto Fabricator I placed a Qubit inside a Quantum Dot coated in Quantum-Dot Photoresist. Flipping the qubit opened or closed the dot to current: one bit, one switch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Femto Fabricator$().$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Attoscale Transistor, Quantum Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

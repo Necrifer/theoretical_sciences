@@ -1,0 +1,23 @@
+{
+  "name": "Hilbert's Hotel Key",
+  "icon": "theoreticalsciences:hotel_key",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hotel_key",
+      "title": "Hilbert's Hotel Key",
+      "text": "A brass key with a tag that always reads one number higher than the last time I looked. Hilbert's Hotel has infinitely many rooms, all full, and still has space for a new guest: everyone just moves up by one. The key is warm, as if someone has only now handed it over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I found it in a drawer of the infinite hotel, and later prised more from the hands of the Bellhops who shuffle guests from room n to room n+1. The tag changed while I was reading it, which was my first proof that the hotel was taking its own rule seriously."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Cantor Diagonalizer$().$(br2)$(thing)Dropped by$(): Hilbert Bellhop.$(br2)$(thing)Found in$(): Hilbert Hotel chests.$(br2)$(thing)Unlocked by$(): The Transfinite Hierarchy.$(br2)$(thing)Used in$(): Inaccessible Cardinal."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/transfinite_hierarchy"
+}

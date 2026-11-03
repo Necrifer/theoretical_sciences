@@ -1,0 +1,24 @@
+{
+  "name": "Dark Energy Siphon",
+  "icon": "theoreticalsciences:dark_energy_siphon",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 24,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two plates a hair apart exclude vacuum modes from the gap: a Casimir pressure P = \u03c0\u00b2\u0127c/(240a\u2074) pushes them together, and the vacuum between them holds negative energy. At about 30 \u00b5m that energy density equals the dark energy of the universe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Plate gap a, Plate area, Cycle rate, Plate stiffness.$(br2)$(thing)Disturbance$(): Plate parallelism error: the effective gap is a\u00b7(1 + 0.5%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Casimir pull-in: the plates snap together; Thermal photons swamp the vacuum signal: cool the plates; The plate stack is overheating.$(br2)$(thing)Rate$(): Plate area swept per second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective gap: a_eff$(br)Casimir pressure: P = \u03c0\u00b2\u0127c/(240a\u2074)$(br)Vacuum energy density: |u| = \u03c0\u00b2\u0127c/(720a\u2074)$(br)Energy density / \u03c1_\u039b: log\u2081\u2080(|u|/\u03c1_\u039b)$(br)Force gradient: dF/da = 4PA/a$(br)Thermal wavelength: \u03bb_T = \u0127c/kT$(br)Extracted power: P = |u|\u00b7A\u00b7a\u00b7f"
+    }
+  ]
+}

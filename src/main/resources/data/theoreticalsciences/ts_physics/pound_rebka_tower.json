@@ -1,0 +1,77 @@
+{
+  "params": [
+    {
+      "id": "v",
+      "unit": "\u00b5m/s",
+      "min": -5,
+      "max": 5,
+      "step": 0.001,
+      "default": 0
+    },
+    {
+      "id": "t",
+      "unit": "min",
+      "min": 1,
+      "max": 600,
+      "step": 1,
+      "default": 60
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "H",
+      "unit": "m",
+      "expr": "7.5*size",
+      "formula": "H = 7.5 m \u00b7 storeys"
+    },
+    {
+      "id": "sh",
+      "unit": "\u00d710\u207b\u00b9\u2075",
+      "expr": "9.81*H/8.988e16*1e15",
+      "formula": "\u0394f/f = gH/c\u00b2"
+    },
+    {
+      "id": "vg",
+      "unit": "\u00b5m/s",
+      "expr": "9.81*H/2.998e8*1e6",
+      "formula": "v = gH/c"
+    },
+    {
+      "id": "vt",
+      "unit": "\u00b5m/s",
+      "expr": "0.66*(T - T_amb)*(1 + 0.1*d)",
+      "formula": "\u0394v = 0.66 \u00b5m/s per K"
+    },
+    {
+      "id": "sg",
+      "unit": "\u00b5m/s",
+      "expr": "190/sqrt(30000*t)",
+      "formula": "\u03c3 = \u0393/\u221aN"
+    },
+    {
+      "id": "mis",
+      "unit": "\u03c3",
+      "expr": "abs(v - vg - vt)/sg",
+      "formula": "|v \u2212 v_g \u2212 v_th|/\u03c3"
+    },
+    {
+      "id": "zs",
+      "unit": "\u03c3",
+      "expr": "vg/sg",
+      "formula": "v_g/\u03c3"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(2*60/(t + 60)*(0.6 + 0.05*size), 0.1, 2)",
+  "rate_formula": "rate = 2\u00b760/(t + 60 min) \u00b7 (0.6 + 0.05\u00b7storeys)",
+  "heat": "0.02",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_ferrofluid",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_ferrofluid.desc",
+  "icon": {
+    "item": "theoreticalsciences:ferrofluid_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 43,
+  "y": 52,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ferrofluid_cell"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_ferrofluid.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_ferrofluid.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__magnetizer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ferromagnetism"
+  }
+}

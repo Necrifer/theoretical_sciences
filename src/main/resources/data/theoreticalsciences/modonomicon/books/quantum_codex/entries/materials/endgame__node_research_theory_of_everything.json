@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_research_theory_of_everything",
+  "description": "book.theoreticalsciences.codex.endgame.node_research_theory_of_everything.desc",
+  "icon": {
+    "item": "theoreticalsciences:theory_of_everything"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 184,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:theory_of_everything"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_research_theory_of_everything.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_research_theory_of_everything.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__concept_compressor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/theory_of_everything"
+  }
+}

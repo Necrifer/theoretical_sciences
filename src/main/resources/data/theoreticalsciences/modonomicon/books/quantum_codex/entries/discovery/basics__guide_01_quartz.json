@@ -1,0 +1,31 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.guide_01_quartz",
+  "description": "book.theoreticalsciences.codex.basics.guide_01_quartz.desc",
+  "icon": {
+    "item": "theoreticalsciences:cherenkov_quartz"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": -4,
+  "y": -12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cherenkov_quartz"
+      },
+      "text": "book.theoreticalsciences.codex.basics.guide_01_quartz.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.guide_01_quartz.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_00_start"
+    }
+  ]
+}

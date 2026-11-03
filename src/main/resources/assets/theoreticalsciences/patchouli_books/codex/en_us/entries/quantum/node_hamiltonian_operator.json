@@ -1,0 +1,23 @@
+{
+  "name": "Hamiltonian Operator",
+  "icon": "theoreticalsciences:hamiltonian_operator",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hamiltonian_operator",
+      "title": "Hamiltonian Operator",
+      "text": "The operator that answers how a quantum system evolves by telling you its energy. Schrodinger's equation is just the statement that the Hamiltonian drives time evolution. It is calm and steady, ticking quietly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Differentiating a wavefunction with respect to time, I found the rate of change was proportional to energy. The Analytic Continuator packaged that rule into an operator."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Analytic Continuator$().$(br2)$(thing)Unlocked by$(): The Quantum Foam.$(br2)$(thing)Used in$(): Eigenstate Lattice, Path Integral."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/quantum_foam"
+}

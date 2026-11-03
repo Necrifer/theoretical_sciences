@@ -1,0 +1,23 @@
+{
+  "name": "Plasma Crucible Casing",
+  "icon": "theoreticalsciences:plasma_crucible_casing",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 510,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:plasma_crucible_casing",
+      "title": "Plasma Crucible Casing",
+      "text": "A casing of chronosteel around magnetic confinement and superconducting coils, built to hold plasma at stellar temperatures for as long as needed. The air near it shimmers, and it ticks softly as it settles."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Holding plasma for long periods wears magnetic casings out. I added chronosteel so the casing ages slowly relative to the plasma inside, and paired it with superconducting coils for the field."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Plasma Metallurgy.$(br2)$(thing)Used in$(): Abiogenesis Crucible, Stellar Plasma Crucible."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/plasma_metallurgy"
+}

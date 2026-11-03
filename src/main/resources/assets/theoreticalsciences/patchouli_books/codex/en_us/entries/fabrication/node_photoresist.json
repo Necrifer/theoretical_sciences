@@ -1,0 +1,23 @@
+{
+  "name": "Quantum-Dot Photoresist",
+  "icon": "theoreticalsciences:photoresist_cell",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 514,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photoresist_cell",
+      "title": "Quantum-Dot Photoresist",
+      "text": "A light-sensitive coating made of quantum dots. Each dot reacts to a single photon, so patterns can be printed finer than the wavelength of light. It is thin, faintly coloured and cool to the touch. Exposed regions harden instantly, so it records light like a photographic plate."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Lithography needs a resist that responds to single photons. Condensing quantum dots with water, I got a photoresist that allowed patterns far finer than any classical resist."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bose-Einstein Condenser$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Cosmic Logic Wafer, Femtoscale Transistor, Hyperdimensional Logic Wafer, Photonic Circuit Board, Photonic Logic Wafer, Quantum Singularity, Qubit Array Wafer, Topological Circuit Board and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

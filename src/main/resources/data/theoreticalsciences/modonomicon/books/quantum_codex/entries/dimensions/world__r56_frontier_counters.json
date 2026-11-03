@@ -1,0 +1,39 @@
+{
+  "name": "book.theoreticalsciences.codex.world.r56_frontier_counters",
+  "description": "book.theoreticalsciences.codex.world.r56_frontier_counters.desc",
+  "icon": {
+    "item": "theoreticalsciences:frontier_suit_helmet"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 29,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:frontier_suit_helmet"
+      },
+      "text": "book.theoreticalsciences.codex.world.r56_frontier_counters.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r56_frontier_counters.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r56_frontier_counters.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r56_frontier_counters.p3"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

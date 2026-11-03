@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.r38_magnets",
+  "description": "book.theoreticalsciences.codex.electromagnetism.r38_magnets.desc",
+  "icon": {
+    "item": "theoreticalsciences:neodymium_magnet"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 12,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:magnetizer"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.r38_magnets.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r38_magnets.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r38_magnets.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__r37_fields"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ferromagnetism"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_precision_gyroscope",
+  "description": "book.theoreticalsciences.codex.spacetime.node_precision_gyroscope.desc",
+  "icon": {
+    "item": "theoreticalsciences:precision_gyroscope"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 110,
+  "y": 59,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:precision_gyroscope"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_precision_gyroscope.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_precision_gyroscope.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__laser_interferometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_waves"
+  }
+}

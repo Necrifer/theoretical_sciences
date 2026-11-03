@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_void_glass",
+  "description": "book.theoreticalsciences.codex.spacetime.node_void_glass.desc",
+  "icon": {
+    "item": "theoreticalsciences:void_glass"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 128,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:void_glass"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_void_glass.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_void_glass.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__lensing_concentrator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_lensing"
+  }
+}

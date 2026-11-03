@@ -1,0 +1,19 @@
+{
+  "name": "Immortal Cell Line",
+  "icon": "theoreticalsciences:immortal_cell_line",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:immortal_cell_line",
+      "title": "Immortal Cell Line",
+      "text": "Telomerase switched back on: the chromosome ends rebuild themselves, and the cells forget how to grow old. They have outlived their donor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Unlocked by$(): Escape: Evasion, Immortality & Metastasis.$(br2)$(thing)Used in$(): Anomaly Catalogue, Immortal Cell Line, Metastatic Spore, Resistant Clone Colony."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/immune_evasion"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Brownian Microscope",
+  "icon": "theoreticalsciences:brownian_microscope",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 17,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A grain of radius r in water is struck by molecules from every side and wanders: its mean square displacement grows as \u27e8x\u00b2\u27e9 = 2Dt, with D = kT/(6\u03c0\u03b7r) (Einstein). Measure D and you have Boltzmann's constant, and from it Avogadro's number. The water's viscosity \u03b7 falls steeply as it warms. n tracks measure \u27e8x\u00b2\u27e9 to \u221a(2/n); each position is found to about a tenth of the objective's resolution, 0.61\u03bb/NA, and that error adds to the wandering."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Frame interval t, Tracks followed, Numerical aperture.$(br2)$(thing)Disturbance$(): Convection in the cell: the drift biases the tracks by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The water in the cell has frozen; The water in the cell is boiling.$(br2)$(thing)Rate$(): Fewer tracks and shorter intervals are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Water viscosity: \u03b7 = A\u00b710^(B/(T \u2212 C))$(br)Diffusion coefficient: D = kT/(6\u03c0\u03b7r)$(br)Mean square displacement: \u27e8x\u00b2\u27e9 = 2Dt$(br)Resolution: \u03b4 = 0.61\u03bb/NA$(br)Position error: 2\u03c3\u00b2/\u27e8x\u00b2\u27e9$(br)Statistical error: \u221a(2/n)$(br)Error in Avogadro's number: all added in quadrature"
+    }
+  ]
+}

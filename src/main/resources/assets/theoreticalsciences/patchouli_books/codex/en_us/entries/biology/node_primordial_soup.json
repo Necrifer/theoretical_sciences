@@ -1,0 +1,23 @@
+{
+  "name": "Primordial Soup",
+  "icon": "theoreticalsciences:primordial_soup_cell",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:primordial_soup_cell",
+      "title": "Primordial Soup",
+      "text": "The chemical mixture from which life arose. Morphogens, chiral crystals and superacids give it the ingredients for self-replication. It is warm and bubbles slowly. Miller and Urey made amino acids in a flask of sparks; this goes much further."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Abiogenesis needs the right chemistry. In the Chemical Reactor, I combined a Turing Morphogen with chiral crystal, clathrate and superacid, and the soup began to organise itself."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Abiogenesis.$(br2)$(thing)Used in$(): Panspermia Seed, Spark of Life."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/abiogenesis"
+}

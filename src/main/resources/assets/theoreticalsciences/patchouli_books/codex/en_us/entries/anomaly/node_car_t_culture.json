@@ -1,0 +1,19 @@
+{
+  "name": "CAR-T Cell Culture",
+  "icon": "theoreticalsciences:car_t_culture",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:car_t_culture",
+      "title": "CAR-T Cell Culture",
+      "text": "Killer T cells taught a new receptor: they hunt one marker, the anomaly's own, and they multiply as they find it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Unlocked by$(): Targeted Therapy.$(br2)$(thing)Used in$(): Renormalised Essence, Stem Cell Culture."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/targeted_therapy"
+}

@@ -1,0 +1,29 @@
+{
+  "type": "theoreticalsciences:time_dilation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_spacetime",
+      "amount": 500
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:strained_spacetime",
+      "amount": 500
+    }
+  ],
+  "energy": 4096,
+  "duration": 800,
+  "research": "theoreticalsciences:tidal_physics",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "f",
+        "min": 5.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

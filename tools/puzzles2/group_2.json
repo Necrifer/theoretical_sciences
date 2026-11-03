@@ -1,0 +1,874 @@
+{
+ "number_systems": {
+  "goal": "Starting from zero and the rule 'take the next one', add up the first n counting numbers. Write the sum forwards and backwards underneath itself, so that each term k is paired with its mirror partner, and express the total as half of a sum of those pairs.",
+  "name": "Gauss pairing (sum of the first n naturals)",
+  "lhs": "sum ( k , 1 , n , k )",
+  "form": "1 / 2 * sum ( k , 1 , n , k + ( n + 1 - k ) )",
+  "expr": "n * ( n + 1 ) / 2",
+  "ask": "Every pair adds up to n + 1, and there are n pairs. Find the sum of the first n naturals for the value below.",
+  "vars": {
+   "k": "running counting number",
+   "n": "how many numbers are added"
+  },
+  "given": {
+   "n": 100
+  },
+  "unit": "",
+  "method": "Write the series once forwards and once backwards; the k-th terms of the two copies add to a constant. Two copies make twice the sum.",
+  "distractors": [
+   "2",
+   "m",
+   "-"
+  ]
+ },
+ "artificial_intelligence": {
+  "goal": "A neural network outputs raw scores z for each class; they are turned into probabilities by exponentiating and normalising over all classes. Training compares these probabilities with the true labels y (1 for the correct class, 0 otherwise). Write the loss as minus the label-weighted logarithm of the predicted probabilities, summed over classes.",
+  "name": "Cross-entropy loss of a softmax classifier",
+  "lhs": "L",
+  "form": "- sumk ( k , y _ k * ln ( exp ( z _ k ) / sumk ( j , exp ( z _ j ) ) ) )",
+  "expr": "- ln ( exp ( z1 ) / ( exp ( z1 ) + exp ( z2 ) + exp ( z3 ) ) )",
+  "ask": "Class 1 is the correct one (y1 = 1, the others 0). Find the loss for the three scores below.",
+  "vars": {
+   "L": "training loss",
+   "y": "true label of each class (one-hot)",
+   "z": "raw score (logit) of each class",
+   "k": "class index",
+   "j": "class index of the normalising sum",
+   "z1": "score of the correct class",
+   "z2": "score of class 2",
+   "z3": "score of class 3"
+  },
+  "given": {
+   "z1": 2,
+   "z2": 1,
+   "z3": 0
+  },
+  "unit": "nats",
+  "method": "Turn scores into probabilities by exponentiating and dividing by the total; then take minus the logarithm of the probability given to each true label.",
+  "distractors": [
+   "log",
+   "x",
+   "+",
+   "sin"
+  ]
+ },
+ "vacuum_energy_storage": {
+  "goal": "Two parallel conducting plates of area A are let go at a wide gap b and allowed to drift together to a narrow gap a. Between them fewer vacuum modes fit than outside, so the vacuum pushes them together with a pressure that grows as the inverse fourth power of the gap x. Write the energy harvested as the work done by that pressure over the approach.",
+  "name": "Casimir energy extracted (integrated Casimir pressure)",
+  "lhs": "E",
+  "form": "A * int ( a , b , π ^ 2 * ħ * c / ( 240 * x ^ 4 ) , x )",
+  "expr": "A * π ^ 2 * ħ * c / 720 * ( 1 / a ^ 3 - 1 / b ^ 3 ) * 1000000000",
+  "ask": "The integral evaluates to π²ħc/720 · (1/a³ − 1/b³) per unit area. Find the energy stored for the plates below, in nanojoules.",
+  "vars": {
+   "E": "energy extracted",
+   "A": "plate area (m²)",
+   "a": "final gap (m)",
+   "b": "initial gap (m)",
+   "x": "gap during the approach",
+   "ħ": "reduced Planck constant (J s)",
+   "c": "speed of light (m/s)"
+  },
+  "given": {
+   "A": 0.0001,
+   "a": 1e-08,
+   "b": 2e-08,
+   "ħ": 1.0546e-34,
+   "c": 299800000.0
+  },
+  "unit": "nJ",
+  "method": "Work is pressure times area integrated over the distance moved. Integrate the inverse-fourth-power pressure from the narrow gap to the wide one.",
+  "distractors": [
+   "3",
+   "2",
+   "kB",
+   "T"
+  ]
+ },
+ "antimatter": {
+  "goal": "An antiproton of charge q moves with velocity v through a trap made of an electrostatic potential and a strong magnetic field. Write the full force on it in terms of the scalar potential and the vector potential A (from which the magnetic field B is derived), including the magnetic part that bends it into circles.",
+  "name": "Lorentz force (in terms of potentials)",
+  "lhs": "m * d ( vec ( v ) , t )",
+  "form": "q * ( - grad ( Φ ) - pd ( vec ( A ) , t ) + vec ( v ) × vec ( B ) )",
+  "expr": "q * B / ( 2 * π * m ) / 1000000",
+  "ask": "In a uniform field the magnetic part makes the particle circle at the frequency f = qB/(2πm). Find it in MHz for an antiproton (charge magnitude q, mass m) in the field below.",
+  "vars": {
+   "m": "particle mass (kg)",
+   "v": "velocity",
+   "t": "time",
+   "q": "charge magnitude (C)",
+   "Φ": "electric (scalar) potential",
+   "A": "magnetic vector potential",
+   "B": "magnetic flux density (T)"
+  },
+  "given": {
+   "q": 1.602e-19,
+   "B": 5,
+   "m": 1.6726e-27
+  },
+  "unit": "MHz",
+  "method": "The electric field is minus the gradient of the potential minus the rate of change of the vector potential; the magnetic force is the cross product of velocity and field.",
+  "distractors": [
+   "E",
+   "+",
+   "c",
+   "x"
+  ]
+ },
+ "nanotechnology": {
+  "goal": "Self-replicating assemblers each build a copy of themselves every τ hours, but the feedstock can only support K of them. Write the growth rate of the population N: doubling growth when there are few, slowing to zero as the population fills the capacity.",
+  "name": "Logistic growth of self-replicators",
+  "lhs": "d ( N , t )",
+  "form": "ln ( 2 ) / τ * N * ( 1 - N / K )",
+  "expr": "K / ( 1 + ( K / N0 - 1 ) * exp ( - ln ( 2 ) * t / τ ) )",
+  "ask": "The solution is N = K / (1 + (K/N0 − 1)·2^(−t/τ)). Starting from N0 assemblers, find how many exist after time t.",
+  "vars": {
+   "N": "number of assemblers",
+   "t": "time (h)",
+   "τ": "doubling time (h)",
+   "K": "carrying capacity",
+   "N0": "initial number"
+  },
+  "given": {
+   "K": 1000000,
+   "N0": 1,
+   "τ": 0.5,
+   "t": 10
+  },
+  "unit": "assemblers",
+  "method": "Pure doubling every τ is exponential growth at rate ln2/τ; multiply by the fraction of capacity still free.",
+  "distractors": [
+   "exp",
+   "2",
+   "+",
+   "M"
+  ]
+ },
+ "entangled_logistics": {
+  "goal": "Alice measures one particle of an entangled pair with one of two settings A or X; Bob measures the other with B or Y. Each outcome is ±1. Combine the four expectation values of the products of outcomes into the single correlation quantity that any local classical model keeps between −2 and 2.",
+  "name": "CHSH inequality (Bell test)",
+  "lhs": "S",
+  "form": "avg ( A * B ) - avg ( A * Y ) + avg ( X * B ) + avg ( X * Y )",
+  "expr": "2 * sqrt ( 2 ) * V",
+  "ask": "With optimal settings a pure entangled state reaches 2√2; a noisy (Werner) state of visibility V reaches 2√2·V. Find S for the visibility below.",
+  "vars": {
+   "S": "correlation value",
+   "A": "Alice's first setting (±1 outcome)",
+   "X": "Alice's second setting",
+   "B": "Bob's first setting",
+   "Y": "Bob's second setting",
+   "V": "visibility of the shared state"
+  },
+  "given": {
+   "V": 0.9
+  },
+  "unit": "",
+  "method": "Classically each outcome is fixed in advance, so A(B − Y) + X(B + Y) is always ±2. Average each product separately; exactly one of the four terms enters with the opposite sign.",
+  "distractors": [
+   "Z",
+   "-",
+   "C"
+  ]
+ },
+ "dark_sector": {
+  "goal": "Stars far out in a galaxy orbit at speeds that stay roughly constant with radius, so most of the mass must be invisible. Model the halo with a density that falls as 1/s near the centre and 1/s³ far out, with scale radius a. Write the squared orbital speed at radius r from the mass enclosed in spherical shells out to r.",
+  "name": "Circular velocity of a Navarro–Frenk–White dark-matter halo",
+  "lhs": "v ^ 2",
+  "form": "G / r * int ( 0 , r , 4 * π * s ^ 2 * ρ _ 0 / ( s / a * ( 1 + s / a ) ^ 2 ) , s )",
+  "expr": "sqrt ( 4 * π * G * ρ0 * a ^ 3 * ( ln ( 1 + r / a ) - r / ( a + r ) ) / r ) / 1000",
+  "ask": "The integral gives an enclosed mass 4πρ0a³[ln(1 + r/a) − r/(a + r)]. Find the orbital speed in km/s at the radius below.",
+  "vars": {
+   "v": "circular orbital speed",
+   "G": "gravitational constant",
+   "r": "orbit radius (m)",
+   "s": "shell radius",
+   "ρ": "halo density",
+   "ρ0": "characteristic halo density (kg/m³)",
+   "a": "scale radius (m)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "ρ0": 5e-22,
+   "a": 6.171e+20,
+   "r": 1.851e+21
+  },
+  "unit": "km/s",
+  "method": "Balance gravity against centripetal acceleration, v²/r = GM(r)/r², and build M(r) by integrating density over thin spherical shells of area 4πs².",
+  "distractors": [
+   "3",
+   "M",
+   "c",
+   "-"
+  ]
+ },
+ "supramolecular_chemistry": {
+  "goal": "A host cage and a guest molecule bind in solution. The binding releases enthalpy but costs entropy, as both lose freedom. Write the association constant (per molar concentration) from the enthalpy change, the entropy change and the temperature.",
+  "name": "Gibbs energy of binding (ΔG° = ΔH° − TΔS° = −RT ln K)",
+  "lhs": "K",
+  "form": "exp ( - ( Δ * H - T * Δ * S ) / ( R * T ) ) / c _ 0",
+  "expr": "exp ( - ( dH - T * dS ) / ( R * T ) ) / c0",
+  "ask": "Find the association constant (M⁻¹) of the host-guest complex below.",
+  "vars": {
+   "K": "association constant",
+   "Δ": "change on binding",
+   "H": "enthalpy",
+   "S": "entropy",
+   "T": "temperature (K)",
+   "R": "gas constant (J/mol K)",
+   "c": "concentration",
+   "dH": "binding enthalpy (J/mol)",
+   "dS": "binding entropy (J/mol K)",
+   "c0": "standard concentration (1 M)"
+  },
+  "given": {
+   "dH": -40000,
+   "dS": -20,
+   "T": 298,
+   "R": 8.314,
+   "c0": 1
+  },
+  "unit": "M⁻¹",
+  "method": "The free energy change combines enthalpy and temperature-weighted entropy; equilibrium constants are Boltzmann factors of free energies per mole.",
+  "distractors": [
+   "+",
+   "ln",
+   "U",
+   "kB"
+  ]
+ },
+ "electrochemistry": {
+  "goal": "A zinc electrode in zinc ions is wired to a copper electrode in copper ions; two electrons pass per reaction. Write the cell voltage when the ion activities are not standard, correcting the standard voltage by the thermal energy per transferred charge times the logarithm of the reaction quotient.",
+  "name": "Nernst equation (Daniell cell)",
+  "lhs": "E",
+  "form": "E _ 0 - R * T / ( n * F ) * ln ( a _ Z / a _ C )",
+  "expr": "E0 - R * T / ( n * F ) * ln ( aZ / aC )",
+  "ask": "Find the cell voltage with the activities below.",
+  "vars": {
+   "E": "cell voltage (V)",
+   "E0": "standard cell voltage (V)",
+   "R": "gas constant (J/mol K)",
+   "T": "temperature (K)",
+   "n": "electrons per reaction",
+   "F": "Faraday constant (C/mol)",
+   "a": "ion activity",
+   "Z": "zinc ion",
+   "C": "copper ion",
+   "aZ": "zinc ion activity",
+   "aC": "copper ion activity"
+  },
+  "given": {
+   "E0": 1.1,
+   "R": 8.314,
+   "T": 298,
+   "n": 2,
+   "F": 96485,
+   "aZ": 1,
+   "aC": 0.01
+  },
+  "unit": "V",
+  "method": "The free energy of the reaction is −nFE, and it shifts from its standard value by RT ln Q; divide through by −nF.",
+  "distractors": [
+   "+",
+   "exp",
+   "NA",
+   "e"
+  ]
+ },
+ "plasma_metallurgy": {
+  "goal": "Particles in a hot plasma share energy according to a thermal weight e^(−βE), with β = 1/(kB T), and a density of states proportional to √E for free motion in three dimensions. Write the mean energy per particle by differentiating the logarithm of the partition integral with respect to β.",
+  "name": "Equipartition of energy (from the partition function)",
+  "lhs": "avg ( E )",
+  "form": "- pd ( ln ( int ( 0 , ∞ , sqrt ( E ) * exp ( - β * E ) , E ) ) , β )",
+  "expr": "3 / 2 * kB * T",
+  "ask": "The integral is (√π/2)β^(−3/2), so the result is (3/2)kB T. Find the mean energy (eV) of a particle in the plasma below.",
+  "vars": {
+   "E": "particle energy",
+   "β": "inverse temperature 1/(kB T)",
+   "kB": "Boltzmann constant (eV/K)",
+   "T": "temperature (K)"
+  },
+  "given": {
+   "kB": 8.617e-05,
+   "T": 15000000
+  },
+  "unit": "eV",
+  "method": "Weighted averages of E follow from the logarithmic derivative of the normalising integral: d(ln Z)/dβ = −⟨E⟩.",
+  "distractors": [
+   "2",
+   "π",
+   "kB",
+   "T"
+  ]
+ },
+ "singularity_physics": {
+  "goal": "A probe falls straight towards a non-rotating mass M. In the curved spacetime outside it, the clock rate and radial distances are both modified by the factor (1 − rs/r). Write the normalisation of the four-velocity (dots are rates per unit of the probe's own time) for purely radial motion; the factor vanishes at the horizon.",
+  "name": "Schwarzschild metric (radial four-velocity normalisation)",
+  "lhs": "c ^ 2",
+  "form": "( 1 - r _ s / r ) * c ^ 2 * tdot ( t ) ^ 2 - tdot ( r ) ^ 2 / ( 1 - r _ s / r )",
+  "expr": "2 * G * M / c ^ 2 / 1000",
+  "ask": "The horizon radius is rs = 2GM/c². Find it, in km, for one solar mass.",
+  "vars": {
+   "r": "radial coordinate",
+   "t": "coordinate time",
+   "c": "speed of light (m/s)",
+   "s": "label: horizon",
+   "G": "gravitational constant",
+   "M": "mass (kg)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 1.989e+30,
+   "c": 299800000.0
+  },
+  "unit": "km",
+  "method": "Proper time is the interval along the path. The time part is weighted by (1 − rs/r), the radial part by its inverse, with opposite signs.",
+  "distractors": [
+   "2",
+   "+",
+   "θ",
+   "φ"
+  ]
+ },
+ "white_holes": {
+  "goal": "Matter is thrown outward from a horizon that nothing can enter - the time-reverse of matter falling in from rest far away. Using the conserved energy E per unit rest mass (E = c for a particle at rest at infinity) and angular momentum L per unit mass, write the squared radial velocity (per unit proper time) as a function of r.",
+  "name": "Schwarzschild radial geodesic (white-hole ejection)",
+  "lhs": "tdot ( r ) ^ 2",
+  "form": "E ^ 2 - ( 1 - r _ s / r ) * ( c ^ 2 + L ^ 2 / r ^ 2 )",
+  "expr": "c * sqrt ( rs / r )",
+  "ask": "For radial motion (L = 0) with E = c the result is c·√(rs/r). Find the ejection speed at the radius below.",
+  "vars": {
+   "r": "radial coordinate",
+   "E": "conserved energy per unit rest mass, divided by c",
+   "rs": "horizon radius",
+   "s": "label: horizon",
+   "c": "speed of light (km/s)",
+   "L": "angular momentum per unit mass"
+  },
+  "given": {
+   "c": 299792,
+   "rs": 3,
+   "r": 12
+  },
+  "unit": "km/s",
+  "method": "Combine the conserved energy and angular momentum with the four-velocity normalisation; solve for the radial rate.",
+  "distractors": [
+   "2",
+   "G",
+   "M",
+   "+"
+  ]
+ },
+ "calculus": {
+  "goal": "The slope of a curve at a point is what the slope of a short chord approaches as the chord shrinks. For the power function x^n, write the slope at x as the limit of rise over run as the step δ goes to zero.",
+  "name": "Derivative as a limit (power rule)",
+  "lhs": "d ( x ^ n , x )",
+  "form": "lim ( δ , 0 , ( ( x + δ ) ^ n - x ^ n ) / δ )",
+  "expr": "n * x ^ ( n - 1 )",
+  "ask": "Expanding the binomial gives n·x^(n−1). Find the slope for the values below.",
+  "vars": {
+   "x": "point on the curve",
+   "n": "exponent",
+   "δ": "small step"
+  },
+  "given": {
+   "n": 3,
+   "x": 2
+  },
+  "unit": "",
+  "method": "Take the change in the function over a small step, divide by the step, and let the step tend to zero.",
+  "distractors": [
+   "1",
+   "∞",
+   "+",
+   "y"
+  ]
+ },
+ "mirror_metallurgy": {
+  "goal": "An anti-metal must be held without touching anything, so every antinucleus and positron in it is steered by electromagnetic fields alone. Write the relativistic wave equation for a spin-½ particle of charge q and mass m coupled to the four-potential A_μ, with the coupling entering through the derivative.",
+  "name": "Dirac equation with minimal coupling",
+  "lhs": "0",
+  "form": "i * ħ * γ ^ μ * ( ∂ _ μ + i * q / ħ * A _ μ ) * ψ - m * c * ψ",
+  "expr": "q * B / ( 2 * π * m ) / 1000000",
+  "ask": "In a uniform magnetic field its low-energy solutions are Landau levels spaced by ħqB/m: the particle circles at f = qB/(2πm). Find f in MHz for an antiproton in the trap below.",
+  "vars": {
+   "i": "imaginary unit",
+   "ħ": "reduced Planck constant",
+   "γ": "Dirac matrices",
+   "μ": "spacetime index 0..3",
+   "∂": "partial derivative along a spacetime direction",
+   "q": "charge (magnitude, C)",
+   "A": "electromagnetic four-potential",
+   "ψ": "four-component spinor",
+   "m": "mass (kg)",
+   "c": "speed of light",
+   "B": "magnetic field (T)"
+  },
+  "given": {
+   "q": 1.602e-19,
+   "B": 1.9,
+   "m": 1.6726e-27
+  },
+  "unit": "MHz",
+  "method": "Start from the free spinor equation, then replace every derivative by a gauge-covariant derivative that adds the charge times the potential.",
+  "distractors": [
+   "e",
+   "-",
+   "ν",
+   "2"
+  ]
+ },
+ "superacid_chemistry": {
+  "goal": "A weakly basic indicator B is dissolved in a superacid and partly protonated to BH⁺. The acidity is measured by how far the protonation goes. Write the acidity function from the standard free energy of deprotonation of BH⁺ (converted to a base-10 logarithm) plus the log of the ratio of unprotonated to protonated indicator.",
+  "name": "Hammett acidity function",
+  "lhs": "H _ 0",
+  "form": "Δ * G / ( R * T * ln ( 10 ) ) + log ( c _ B / c _ BH )",
+  "expr": "dG / ( R * T * ln ( 10 ) ) + ln ( cB / cBH ) / ln ( 10 )",
+  "ask": "Find H0 for an indicator whose deprotonation free energy is below, when it is 100 times more protonated than not.",
+  "vars": {
+   "H": "acidity function",
+   "Δ": "standard change",
+   "G": "deprotonation free energy of BH⁺",
+   "R": "gas constant",
+   "T": "temperature (K)",
+   "c": "concentration",
+   "B": "free indicator base",
+   "BH": "protonated indicator",
+   "dG": "standard free energy of deprotonation (J/mol)",
+   "cB": "concentration of B",
+   "cBH": "concentration of BH⁺"
+  },
+  "given": {
+   "dG": -57620,
+   "R": 8.314,
+   "T": 298,
+   "cB": 1,
+   "cBH": 100
+  },
+  "unit": "",
+  "method": "Write the acid dissociation constant of BH⁺ as a Boltzmann factor of its free energy, take minus its base-10 log, and add the log of the base-to-acid ratio.",
+  "distractors": [
+   "-",
+   "exp",
+   "K",
+   "e"
+  ]
+ },
+ "fractional_distillation": {
+  "goal": "A column separates two components of a residue at total reflux; the light one is α times as volatile as the heavy one. At the top its mole fraction is x_D, at the bottom x_B. Each ideal stage multiplies the light/heavy ratio by α: write the minimum number of ideal stages needed.",
+  "name": "Fenske equation",
+  "lhs": "N",
+  "form": "ln ( x _ D / ( 1 - x _ D ) * ( 1 - x _ B ) / x _ B ) / ln ( α )",
+  "expr": "ln ( xD / ( 1 - xD ) * ( 1 - xB ) / xB ) / ln ( α )",
+  "ask": "Find the minimum number of ideal stages for the separation below.",
+  "vars": {
+   "N": "minimum number of ideal stages",
+   "x": "mole fraction of the light component",
+   "D": "distillate (top)",
+   "B": "bottoms",
+   "α": "relative volatility",
+   "xD": "light fraction at the top",
+   "xB": "light fraction at the bottom"
+  },
+  "given": {
+   "xD": 0.99,
+   "xB": 0.01,
+   "α": 2.5
+  },
+  "unit": "stages",
+  "method": "The separation factor (light/heavy at top divided by light/heavy at bottom) equals α to the power N; take logarithms.",
+  "distractors": [
+   "exp",
+   "+",
+   "y",
+   "2"
+  ]
+ },
+ "stellar_engineering": {
+  "goal": "A captive star of radius R radiates as a black body at surface temperature T. Write its total power output, divided by 4π²R², as the integral over all frequencies of the spectral radiance of thermal radiation (photon modes, each occupied according to Bose statistics).",
+  "name": "Stefan–Boltzmann law (integrated Planck spectrum)",
+  "lhs": "L / ( 4 * π ^ 2 * R ^ 2 )",
+  "form": "int ( 0 , ∞ , 2 * h * ν ^ 3 / c ^ 2 / ( exp ( h * ν / ( kB * T ) ) - 1 ) , ν )",
+  "expr": "R ^ 2 * ( T / Ts ) ^ 4",
+  "ask": "The integral equals σT⁴/π, so L = 4πR²σT⁴. In solar units (R in solar radii, Ts = solar surface temperature), find the luminosity in solar luminosities.",
+  "vars": {
+   "L": "luminosity",
+   "R": "stellar radius (solar radii)",
+   "h": "Planck constant",
+   "ν": "frequency",
+   "c": "speed of light",
+   "kB": "Boltzmann constant",
+   "T": "surface temperature (K)",
+   "Ts": "solar surface temperature (K)"
+  },
+  "given": {
+   "R": 2,
+   "T": 8000,
+   "Ts": 5772
+  },
+  "unit": "L☉",
+  "method": "Integrate the radiance of every frequency; substitute x = hν/kBT to pull out T⁴.",
+  "distractors": [
+   "8",
+   "σ",
+   "+",
+   "λ"
+  ]
+ },
+ "directed_evolution": {
+  "goal": "A new mutant with selective advantage s appears in a population of N, starting at frequency p. Random drift and selection act together; in the diffusion limit the chance it ever takes over is a ratio of two integrals of the same weight function, which decays exponentially with the frequency x at rate 4Ns.",
+  "name": "Kimura fixation probability (diffusion approximation)",
+  "lhs": "u",
+  "form": "int ( 0 , p , exp ( - 4 * N * s * x ) , x ) / int ( 0 , 1 , exp ( - 4 * N * s * x ) , x )",
+  "expr": "( 1 - exp ( - 4 * N * s * p ) ) / ( 1 - exp ( - 4 * N * s ) )",
+  "ask": "The integrals give (1 − e^(−4Nsp)) / (1 − e^(−4Ns)). Find the fixation probability of a single new mutant, p = 1/(2N).",
+  "vars": {
+   "u": "probability of fixation",
+   "p": "initial frequency",
+   "N": "population size",
+   "s": "selective advantage",
+   "x": "allele frequency"
+  },
+  "given": {
+   "N": 1000,
+   "s": 0.01,
+   "p": 0.0005
+  },
+  "unit": "",
+  "method": "Solve the backward diffusion equation with absorbing boundaries at 0 and 1: the solution is the integral of exp(−2∫M/V) from 0 to p, normalised by the same integral to 1.",
+  "distractors": [
+   "2",
+   "+",
+   "t",
+   "ln"
+  ]
+ },
+ "nucleosynthesis": {
+  "goal": "Inside a star at temperature T, two nuclei of reduced mass μ must tunnel through their Coulomb barrier to fuse. Their cross-section is S(E)/E times a tunnelling factor exp(−√(E_G/E)). Average the cross-section times relative speed over the thermal distribution of energies E.",
+  "name": "Thermonuclear reaction rate with the Gamow peak",
+  "lhs": "avg ( σ * v )",
+  "form": "sqrt ( 8 / ( π * μ ) ) * ( kB * T ) ^ ( - 3 / 2 ) * int ( 0 , ∞ , S * exp ( - E / ( kB * T ) - sqrt ( E _ G / E ) ) , E )",
+  "expr": "( EG * kT ^ 2 / 4 ) ^ ( 1 / 3 )",
+  "ask": "The integrand peaks sharply where E/kT + √(EG/E) is smallest, at E0 = (EG(kT)²/4)^(1/3). Find this peak energy for proton-proton fusion in the Sun's core.",
+  "vars": {
+   "σ": "fusion cross-section",
+   "v": "relative speed",
+   "μ": "reduced mass",
+   "kB": "Boltzmann constant",
+   "T": "temperature",
+   "S": "astrophysical S-factor (slowly varying)",
+   "E": "relative kinetic energy",
+   "G": "label: Coulomb barrier",
+   "EG": "barrier-penetration energy (keV)",
+   "kT": "thermal energy (keV)"
+  },
+  "given": {
+   "EG": 493,
+   "kT": 1.29
+  },
+  "unit": "keV",
+  "method": "Multiply the cross-section by the speed and the thermal distribution of energies; the tunnelling and thermal factors combine into one exponential.",
+  "distractors": [
+   "2",
+   "+",
+   "ħ",
+   "c"
+  ]
+ },
+ "quantum_gravity": {
+  "goal": "In a quantum theory of geometry, a surface's area is not continuous: every edge of a spin network that pierces it adds a quantum of area set by its spin j. Write the total area of a surface pierced N times, in terms of the fundamental constants and a free dimensionless parameter γ.",
+  "name": "Loop quantum gravity area spectrum",
+  "lhs": "A",
+  "form": "8 * π * γ * ħ * G / c ^ 3 * sum ( n , 1 , N , sqrt ( j _ n * ( j _ n + 1 ) ) )",
+  "expr": "8 * π * γ * N * sqrt ( j * ( j + 1 ) )",
+  "ask": "Find the area, in units of ħG/c³, of a surface pierced N times by spin-½ edges.",
+  "vars": {
+   "A": "area",
+   "γ": "free dimensionless (Barbero–Immirzi) parameter",
+   "ħ": "reduced Planck constant",
+   "G": "gravitational constant",
+   "c": "speed of light",
+   "n": "puncture index",
+   "N": "number of punctures",
+   "j": "spin of each puncture"
+  },
+  "given": {
+   "γ": 0.2375,
+   "N": 10,
+   "j": 0.5
+  },
+  "unit": "ħG/c³",
+  "method": "The area operator is diagonal on spin networks; each puncture contributes the square root of the Casimir j(j+1) of its spin, times 8πγ in Planck area units.",
+  "distractors": [
+   "2",
+   "-",
+   "h",
+   "16"
+  ]
+ },
+ "dark_energy": {
+  "goal": "A homogeneous universe expands with scale factor a(t) (a = 1 today). It contains matter diluting as a⁻³, radiation as a⁻⁴, spatial curvature k, and a constant energy of empty space Λ. Write the square of the expansion rate in terms of these.",
+  "name": "Friedmann equation with a cosmological constant",
+  "lhs": "( tdot ( a ) / a ) ^ 2",
+  "form": "8 * π * G / 3 * ( ρ _ m / a ^ 3 + ρ _ r / a ^ 4 ) - k * c ^ 2 / a ^ 2 + Λ * c ^ 2 / 3",
+  "expr": "H0 * sqrt ( Ωm / a ^ 3 + ΩΛ )",
+  "ask": "For a flat universe with negligible radiation, H = H0·√(Ωm/a³ + ΩΛ). Find the expansion rate when the universe was half its present size.",
+  "vars": {
+   "a": "scale factor",
+   "G": "gravitational constant",
+   "ρ": "density today",
+   "m": "label: matter",
+   "r": "label: radiation",
+   "k": "spatial curvature",
+   "c": "speed of light",
+   "Λ": "cosmological constant",
+   "H0": "Hubble constant today (km/s/Mpc)",
+   "Ωm": "matter density parameter",
+   "ΩΛ": "dark-energy density parameter"
+  },
+  "given": {
+   "H0": 70,
+   "Ωm": 0.3,
+   "ΩΛ": 0.7,
+   "a": 0.5
+  },
+  "unit": "km/s/Mpc",
+  "method": "Treat a comoving sphere's kinetic plus gravitational energy, or take the time-time component of the field equations for a homogeneous metric.",
+  "distractors": [
+   "2",
+   "+",
+   "H",
+   "p"
+  ]
+ },
+ "traversable_wormholes": {
+  "goal": "A static, spherically symmetric throat of radius r0 joins two regions of space. Its shape is set by a function b(r) = r0²/r, and the field equations relate the energy density at radius r to the radial derivative of b. Write the mass density needed.",
+  "name": "Morris–Thorne energy density (Ellis wormhole)",
+  "lhs": "ρ",
+  "form": "c ^ 2 * d ( r _ 0 ^ 2 / r , r ) / ( 8 * π * G * r ^ 2 )",
+  "expr": "- 1 / ( 8 * π * r ^ 2 )",
+  "ask": "The derivative is −r0²/r²; at the throat (r = r0), in units G = c = 1, ρ = −1/(8πr0²). Find it for the throat radius below.",
+  "vars": {
+   "ρ": "mass-energy density",
+   "c": "speed of light",
+   "r": "radius",
+   "G": "gravitational constant"
+  },
+  "given": {
+   "r": 0.1
+  },
+  "unit": "geometric units",
+  "method": "Take the time-time component of the field equations for the throat metric ds² = −c²dt² + dr²/(1 − b/r) + r²dΩ².",
+  "distractors": [
+   "2",
+   "-",
+   "M",
+   "4"
+  ]
+ },
+ "compactification": {
+  "goal": "A massless field lives in five dimensions, one of which is curled into a circle of radius R. Its momentum around the circle can only take whole-number values n of ħ/R. Seen from four dimensions, write the energy of each mode with ordinary momentum p, including a rest mass m it may also have.",
+  "name": "Kaluza–Klein mass tower",
+  "lhs": "E ^ 2",
+  "form": "p ^ 2 * c ^ 2 + m ^ 2 * c ^ 4 + ( n * ħ * c / R ) ^ 2",
+  "expr": "n * hc / R / 1000",
+  "ask": "For a massless field at rest, the n-th mode has E = nħc/R. Find the first excitation in GeV for the radius below.",
+  "vars": {
+   "E": "energy",
+   "p": "four-dimensional momentum",
+   "c": "speed of light",
+   "m": "rest mass",
+   "n": "mode number",
+   "ħ": "reduced Planck constant",
+   "R": "radius of the extra dimension (fm)",
+   "hc": "ħc (MeV fm)"
+  },
+  "given": {
+   "n": 1,
+   "hc": 197.327,
+   "R": 0.001
+  },
+  "unit": "GeV",
+  "method": "Periodicity around the circle quantises the extra momentum component; the five-dimensional energy-momentum relation then looks like a mass in four dimensions.",
+  "distractors": [
+   "2",
+   "π",
+   "-",
+   "L"
+  ]
+ },
+ "baryon_asymmetry": {
+  "goal": "In the early universe there were slightly more baryons than antibaryons. Measure the surplus per photon: divide the net baryon number density by the photon number density, which is the occupation of thermal photon modes (two polarisations, Bose statistics) at temperature T integrated over all wavenumbers k.",
+  "name": "Baryon-to-photon ratio",
+  "lhs": "η",
+  "form": "( n _ B - bar ( n ) _ B ) / ( g / ( 2 * π ^ 2 ) * int ( 0 , ∞ , k ^ 2 / ( exp ( ħ * c * k / ( kB * T ) ) - 1 ) , k ) )",
+  "expr": "dn / ( 2 * Z3 / π ^ 2 * ( kB * T / ( ħ * c ) ) ^ 3 ) * 10000000000",
+  "ask": "The photon integral gives nγ = (2ζ(3)/π²)(kB T/ħc)³ with ζ(3) = 1.202. Find η, in units of 10⁻¹⁰, today.",
+  "vars": {
+   "η": "baryon-to-photon ratio",
+   "n": "number density",
+   "B": "label: baryons",
+   "g": "photon polarisations (2)",
+   "k": "photon wavenumber",
+   "ħ": "reduced Planck constant",
+   "c": "speed of light",
+   "kB": "Boltzmann constant",
+   "T": "photon temperature (K)",
+   "dn": "net baryon density today (m⁻³)",
+   "Z3": "ζ(3)"
+  },
+  "given": {
+   "dn": 0.25,
+   "Z3": 1.202,
+   "kB": 1.380649e-23,
+   "T": 2.725,
+   "ħ": 1.0546e-34,
+   "c": 299800000.0
+  },
+  "unit": "10⁻¹⁰",
+  "method": "Count photons by integrating the Bose occupation over all modes, 4πk²dk/(2π)³ per polarisation.",
+  "distractors": [
+   "3",
+   "+",
+   "μ",
+   "ν"
+  ]
+ },
+ "stellar_transcendence": {
+  "goal": "In a plasma hotter than any stellar core, atoms lose their electrons. Balance ionisation against recombination in thermal equilibrium: the ratio of ionised to neutral atoms times the electron density is set by the electron's thermal phase-space density, the statistical weights g of the two states, and a Boltzmann factor of the ionisation energy χ.",
+  "name": "Saha ionisation equation",
+  "lhs": "n _ i * n _ e / n _ 0",
+  "form": "2 * g _ 1 / g _ 0 * ( 2 * π * m _ e * kB * T / h ^ 2 ) ^ ( 3 / 2 ) * exp ( - χ / ( kB * T ) )",
+  "expr": "( 2 * π * me * kB * T / h ^ 2 ) ^ 1.5 * exp ( - χ / ( kB * T ) ) / ne",
+  "ask": "For hydrogen 2g1/g0 = 1. Find the ionisation ratio n_i/n_0 at the temperature and electron density below.",
+  "vars": {
+   "n": "number density",
+   "i": "label: ionised",
+   "e": "label: electron",
+   "g": "statistical weight",
+   "m": "mass",
+   "kB": "Boltzmann constant (J/K)",
+   "T": "temperature (K)",
+   "h": "Planck constant",
+   "χ": "ionisation energy (J)",
+   "me": "electron mass (kg)",
+   "ne": "electron density (m⁻³)"
+  },
+  "given": {
+   "me": 9.109e-31,
+   "kB": 1.380649e-23,
+   "T": 10000,
+   "h": 6.626e-34,
+   "χ": 2.179e-18,
+   "ne": 1e+20
+  },
+  "unit": "",
+  "method": "Apply the Boltzmann distribution to the ion + free electron state; the free electron's states are counted by phase-space volume divided by h³.",
+  "distractors": [
+   "3",
+   "ħ",
+   "+",
+   "μ"
+  ]
+ },
+ "incompleteness": {
+  "goal": "To let arithmetic talk about itself, every proof is turned into a single number. Symbol j of formula k has code c_kj; each formula becomes the product of successive primes raised to its codes, and the proof becomes the product of successive primes raised to those formula numbers. Write the logarithm of the proof's number for a proof of m formulas, formula k having n_k symbols.",
+  "name": "Gödel numbering of a proof",
+  "lhs": "ln ( G )",
+  "form": "sum ( k , 1 , m , ln ( p _ k ) * prod ( j , 1 , n _ k , p _ j ^ c _ kj ) )",
+  "expr": "( 2 ^ a * 3 ^ b ) * ln ( 2 ) + 2 ^ c * ln ( 3 )",
+  "ask": "A two-line proof: formula 1 has codes (a, b), formula 2 has the single code c. Find ln G.",
+  "vars": {
+   "G": "number of the whole proof",
+   "k": "formula index",
+   "m": "number of formulas",
+   "p": "the primes 2, 3, 5, ...",
+   "j": "symbol index",
+   "n": "number of symbols",
+   "c": "symbol code",
+   "kj": "symbol j of formula k",
+   "a": "code of symbol 1 of formula 1",
+   "b": "code of symbol 2 of formula 1"
+  },
+  "given": {
+   "a": 1,
+   "b": 2,
+   "c": 3
+  },
+  "unit": "",
+  "method": "Unique prime factorisation makes the encoding reversible; the logarithm turns the outer product into a sum.",
+  "distractors": [
+   "+",
+   "exp",
+   "q",
+   "2"
+  ]
+ },
+ "reality_breach": {
+  "goal": "A sphere of radius R holds matter whose energy density falls from u0 at the centre to zero at the edge as 1 − r²/R². No region can hold more than a fixed amount of information, proportional to its radius times its total energy. Write that maximum, in bits, with the energy built up from thin spherical shells.",
+  "name": "Bekenstein bound",
+  "lhs": "I",
+  "form": "2 * π * R / ( ħ * c * ln ( 2 ) ) * int ( 0 , R , 4 * π * r ^ 2 * ρ _ 0 * c ^ 2 * ( 1 - r ^ 2 / R ^ 2 ) , r )",
+  "expr": "2 * π * R / ( hc * ln ( 2 ) ) * 8 * π * u * R ^ 3 / 15",
+  "ask": "The integral is 8πρ0c²R³/15. For a proton-sized region (R in fm, u = ρ0c² in MeV/fm³, ħc in MeV fm) find the maximum information.",
+  "vars": {
+   "I": "maximum information (bits)",
+   "R": "radius of the region",
+   "ħ": "reduced Planck constant",
+   "c": "speed of light",
+   "r": "shell radius",
+   "ρ": "mass density",
+   "u": "central energy density ρ0c² (MeV/fm³)",
+   "hc": "ħc (MeV fm)"
+  },
+  "given": {
+   "R": 0.87,
+   "hc": 197.3,
+   "u": 850
+  },
+  "unit": "bits",
+  "method": "Total energy is the volume integral of the energy density over shells 4πr²dr; the entropy bound is 2πkRE/(ħc), and dividing by kB ln 2 converts to bits.",
+  "distractors": [
+   "4",
+   "G",
+   "kB",
+   "+",
+   "3"
+  ]
+ },
+ "panspermia": {
+  "goal": "Spores ride inside a rock between worlds for time t. Radiation at dose rate R is attenuated by the rock (absorption coefficient μ, depth x), and a spore dies only when all m of its sensitive targets are hit, each target surviving a dose D with probability exp(−D/D0). Write the surviving fraction after the journey.",
+  "name": "Multi-target survival model (radiation dose)",
+  "lhs": "N / N _ 0",
+  "form": "1 - ( 1 - exp ( - int ( 0 , t , R * exp ( - μ * x ) , s ) / D _ 0 ) ) ^ m",
+  "expr": "N0 * ( 1 - ( 1 - exp ( - R * t * exp ( - k ) / D0 ) ) ^ m )",
+  "ask": "With a constant dose rate the dose is R·t·e^(−μx). Find how many of N0 spores survive, with shielding μx = k.",
+  "vars": {
+   "N": "surviving spores",
+   "N0": "initial spores",
+   "t": "journey time (years)",
+   "R": "dose rate (Gy/year)",
+   "μ": "absorption coefficient",
+   "x": "depth in the rock",
+   "s": "time during the journey",
+   "D": "dose",
+   "D0": "characteristic dose per target (Gy)",
+   "m": "number of targets",
+   "k": "shielding μx"
+  },
+  "given": {
+   "N0": 1000000,
+   "R": 0.1,
+   "t": 100000,
+   "k": 2,
+   "D0": 1000,
+   "m": 3
+  },
+  "unit": "spores",
+  "method": "Accumulate the dose by integrating the shielded dose rate over time; a target survives with exp(−D/D0), and the spore dies only if every target is hit.",
+  "distractors": [
+   "+",
+   "ln",
+   "2",
+   "λ"
+  ]
+ }
+}

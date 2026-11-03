@@ -1,0 +1,24 @@
+{
+  "name": "Deep Drilling Rig",
+  "icon": "theoreticalsciences:deep_drilling_rig",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 26,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Rock warms by about 25 K for every kilometre down, and the water in its pores is under pressure. The mud in the well must press back harder than that pore pressure, or the well kicks; but not so hard that it fractures the rock. Between the two, weight and speed on the bit decide how fast it cuts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Bit depth, Weight on bit, Rotary speed, Mud density.$(br2)$(thing)Disturbance$(): Overpressured pockets: the pore pressure varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Kick: formation fluid is flowing into the well; Lost circulation: the mud is fracturing the rock; The diamond cutters are burning (above 700 K); The drill string is buckling under the weight.$(br2)$(thing)Rate$(): The faster it cuts, the faster cores come up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Formation temperature: T = T\u2080 + (dT/dz)\u00b7h$(br)Pore pressure: P_p \u2248 \u03c1_w g h (overpressured below)$(br)Mud pressure: P_m = \u03c1_m g h$(br)Fracture pressure: P_f$(br)Rate of penetration: ROP \u221d W\u00b7N^0.7\u00b7e^(\u2212c\u00b7(P_m \u2212 P_p))$(br)Bit temperature: T_bit = T + friction"
+    }
+  ]
+}

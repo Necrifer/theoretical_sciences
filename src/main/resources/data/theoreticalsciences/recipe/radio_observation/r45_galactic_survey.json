@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:radio_observation",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hydrogen_line_map",
+      "count": 8
+    }
+  ],
+  "energy": 512,
+  "duration": 1600,
+  "research": "theoreticalsciences:galactic_dynamics",
+  "unscaled": true,
+  "insight_per_run": 12,
+  "physics": {
+    "vars": {
+      "S": 0.2,
+      "al": 0.0,
+      "wl": 0.5,
+      "nl": 1420.4,
+      "DM": 0.0,
+      "Sreq": 30.0
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 30.0,
+        "max": 1000000000000.0
+      },
+      {
+        "q": "inb",
+        "min": 0.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

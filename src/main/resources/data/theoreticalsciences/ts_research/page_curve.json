@@ -1,0 +1,66 @@
+{
+  "title": "Page Curve and Islands",
+  "description": "The radiation's entropy rises as a black hole evaporates, then - after the Page time - falls back to zero: the information comes out. Islands inside the horizon, counted as part of the radiation, make it turn over.",
+  "icon": "theoreticalsciences:page_curve_record",
+  "x": 14,
+  "y": 3,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:information_paradox",
+    "theoreticalsciences:er_epr"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:firewall_shard",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:soft_hair_filament",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:er_bridge_thread",
+      "count": 1
+    }
+  ],
+  "time": 1560,
+  "puzzle": {
+    "goal": "A black hole takes a time \u03c4 to evaporate from mass M to nothing, its remaining lifetime going as the cube of its mass. Write the time t it takes to shrink from M to m.",
+    "name": "Page time",
+    "lhs": "t",
+    "form": "\u03c4 * ( 1 - ( m / M ) ^ 3 )",
+    "expr": "T * ( 1 - ( m / M ) ^ 3 )",
+    "ask": "Find t in billions of years for T = @{T}, M = @{M} and m = 0.7071 (half the entropy gone: m = M/\u221a2).",
+    "vars": {
+      "t": "time (Gyr)",
+      "\u03c4": "evaporation time",
+      "T": "evaporation time (Gyr)",
+      "m": "mass then",
+      "M": "mass at the start"
+    },
+    "given": {
+      "T": 10,
+      "M": 1,
+      "m": 0.7071
+    },
+    "unit": "Gyr",
+    "method": "The time left goes as M\u00b3, so the time taken to fall to m is \u03c4 \u2212 \u03c4(m/M)\u00b3. Entropy goes as M\u00b2, so half is gone at m = M/\u221a2.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "G"
+    ],
+    "vary": {
+      "T": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "M": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

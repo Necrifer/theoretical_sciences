@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.laser_interferometer",
+  "description": "book.theoreticalsciences.codex.spacetime.laser_interferometer.desc",
+  "icon": {
+    "item": "theoreticalsciences:laser_interferometer"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 46,
+  "y": -18,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laser_interferometer"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.laser_interferometer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.laser_interferometer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.laser_interferometer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.laser_interferometer.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.laser_interferometer.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laser_interferometer"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.laser_interferometer.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__laser_cutter"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/optics__r47_lasers"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_waves"
+  }
+}

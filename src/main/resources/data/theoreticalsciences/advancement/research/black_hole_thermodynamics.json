@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:bekenstein_crystal"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.black_hole_thermodynamics"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.black_hole_thermodynamics.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/hawking_radiation",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

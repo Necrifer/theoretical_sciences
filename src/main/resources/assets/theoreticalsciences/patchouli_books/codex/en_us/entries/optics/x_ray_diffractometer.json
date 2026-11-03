@@ -1,0 +1,131 @@
+{
+  "name": "X-ray Diffractometer",
+  "icon": "theoreticalsciences:x_ray_diffractometer",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 95,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:x_ray_diffractometer",
+      "title": "X-ray Diffractometer",
+      "text": "X-rays scattered by a crystal's planes of atoms reinforce only at angles that fit the spacing between them. Find the angle, and you know the lattice - and how to cut it.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the tube voltage above copper's K-edge (8.98 kV) so it gives its K\u03b1 line (\u03bb = 1.5406 \u00c5), then the detector angle 2\u03b8 so that n\u03bb = 2d\u00b7sin \u03b8 for the crystal's lattice spacing d. The sample comes back with a $(item)Laue Pattern$() and Insight. Keep the anode under 2.2 kW."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "X-ray Diffractometer",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________",
+            "__AAAAA______",
+            "__AAAAA______",
+            "__AAAAA______",
+            "__AAAAA______",
+            "__AAAAA______",
+            "_____________"
+          ],
+          [
+            "AAAAAAAAA____",
+            "AAAAAAAAA____",
+            "AAAAAAAAA____",
+            "AAAAAAAAA____",
+            "AAAAAAAAA____",
+            "AAAAAAAAA____",
+            "AAAAAAAAA____"
+          ],
+          [
+            "AAAAAAAAA____",
+            "A       A____",
+            "A       A__B_",
+            "A  DDD  A____",
+            "A       A____",
+            "A       A____",
+            "AAAAAAAAA____"
+          ],
+          [
+            "AAEEEEEAA____",
+            "A       A_AAA",
+            "A       A_AAA",
+            "E DD DD EAAAA",
+            "A       A_AAA",
+            "A       A____",
+            "AAAAAAAAA____"
+          ],
+          [
+            "AAEEEEEAA____",
+            "A       A_AAA",
+            "A       A_AAA",
+            "EBD   D E_AAA",
+            "A      DA_AAA",
+            "A       A____",
+            "AAAAAAAAA____"
+          ],
+          [
+            "AAEEEEEAA____",
+            "A       A_AAA",
+            "A       A_AAA",
+            "E DD DD E_AAA",
+            "A       A_AAA",
+            "A       A____",
+            "AAAAAAAAA____"
+          ],
+          [
+            "AAAA0AAAA____",
+            "A       A_AAA",
+            "A       A_AAA",
+            "A  DDD  A_AAA",
+            "A       A_AAA",
+            "A       A____",
+            "AAAAAAAAA____"
+          ],
+          [
+            "AAAAFAAAA____",
+            "AAAAAAAAA_AAA",
+            "AAAAAAAAA_AAA",
+            "FAAAAAAAF_AAA",
+            "AAAAAAAAA_AAA",
+            "AAAAAAAAA____",
+            "AAAAFAAAA____"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:x_ray_diffractometer",
+          "A": "theoreticalsciences:xray_cabinet",
+          "B": "theoreticalsciences:xray_tube",
+          "D": "theoreticalsciences:goniometer",
+          "E": "theoreticalsciences:leaded_glass",
+          "F": "#theoreticalsciences:multiblock/xray_cabinet_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Calcite, Fluorite Boule, Garnet Boule, Laue Pattern, Moissanite, Quartz, Sapphire Boule, Silicon Boule."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:x_ray_diffractometer",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:laue_pattern",
+      "text": "A photographic plate exposed to X-rays scattered by a crystal: a pattern of spots that shows how its lattice planes lie. Cut along them.$(br2)Made in $(item)X-ray Diffractometer$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Laue Pattern$(): Fluorite Lens, Laser Rod, Moissanite Lens, Perfect Crystal Interferometer, Photonic Lens and more"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

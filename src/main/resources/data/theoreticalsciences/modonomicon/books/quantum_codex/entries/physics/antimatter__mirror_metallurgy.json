@@ -1,0 +1,84 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy",
+  "description": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.desc",
+  "icon": {
+    "item": "theoreticalsciences:mirror_foundry"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 187,
+  "y": 43,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiiron_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antiiron_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antigold_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mirror_alloy_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mirror_foundry"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mirror_processor"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:liquid_antihelium_cell"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_metallurgy.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/antimatter__antiatoms"
+    },
+    {
+      "entry": "theoreticalsciences:physics/antimatter__antiproton_decelerator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mirror_metallurgy"
+  }
+}

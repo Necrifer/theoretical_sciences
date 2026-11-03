@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:partition_function_matrix"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.statistical_mechanics"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.statistical_mechanics.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/stochastic_processes",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -98,6 +98,7 @@ public final class QHFluids {
     }
 
     static FluidType typeFor(String id, FluidType.Properties p) {
+        if (id.equals("schrodinger_limit") || id.equals("relativity_breakdown")) return new BoundaryFluidType(p);
         return id.equals("mod_essence") ? new EssenceFluidType(p) : new BucketlessFluidType(p);
     }
 
@@ -110,6 +111,38 @@ public final class QHFluids {
         @Override
         public net.minecraft.network.chat.Component getDescription(net.neoforged.neoforge.fluids.FluidStack stack) {
             return com.theoreticalsciences.transcend.Essences.name(stack);
+        }
+    }
+
+    /**
+     * Round 37 (1.1): the Quantum Foam's boundaries live only in tanks and cells once taken - a boundary poured out anywhere would
+     * hold itself up for ever. Covers pumps and fluid placers of other mods too (they ask the fluid type first).
+     */
+    static final class BoundaryFluidType extends BucketlessFluidType {
+        BoundaryFluidType(Properties p) {
+            super(p);
+        }
+
+        /** No block form to pour into (the Foam's own layers are generated as blocks directly), so nothing can place it. */
+        @Override
+        public net.minecraft.world.level.block.state.BlockState getBlockForFluidState(net.minecraft.world.level.BlockAndTintGetter getter,
+                                                                                       net.minecraft.core.BlockPos pos,
+                                                                                       net.minecraft.world.level.material.FluidState state) {
+            return net.minecraft.world.level.block.Blocks.AIR.defaultBlockState();
+        }
+
+        /** And should anything try regardless, it comes apart like water poured in the Nether. */
+        @Override
+        public boolean isVaporizedOnPlacement(net.minecraft.world.level.Level level, net.minecraft.core.BlockPos pos, net.neoforged.neoforge.fluids.FluidStack stack) {
+            return true;
+        }
+
+        @Override
+        public void onVaporize(@javax.annotation.Nullable net.minecraft.world.entity.player.Player player, net.minecraft.world.level.Level level,
+                               net.minecraft.core.BlockPos pos, net.neoforged.neoforge.fluids.FluidStack stack) {
+            if (level instanceof net.minecraft.server.level.ServerLevel sl)
+                sl.sendParticles(com.theoreticalsciences.registry.QHParticles.QUANTUM_FOAM.get(), pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                        16, 0.3, 0.3, 0.3, 0.02);
         }
     }
 

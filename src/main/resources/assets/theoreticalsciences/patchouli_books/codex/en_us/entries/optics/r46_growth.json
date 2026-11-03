@@ -1,0 +1,26 @@
+{
+  "name": "Growing a Crystal",
+  "icon": "theoreticalsciences:crystal_growth_furnace",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:crystal_growth_furnace,theoreticalsciences:iridium_crucible,theoreticalsciences:sapphire_boule,theoreticalsciences:fluorite_boule",
+      "text": "In the $(item)Crystal Growth Furnace$() a seed crystal is dipped into the melt and drawn slowly up, turning - the Czochralski method. The melt freezes onto it as one crystal. Its $(item)Iridium Crucible$() is made of Iron-Nickel: a planet's core, and the iron meteorites, hoard the iridium the crust lacks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hold the melt a little above its melting point: the superheat sets how steeply the temperature falls at the growth front, G. Then pull at v so that $(thing)v/G$() sits near 3 - Voronkov's critical ratio: faster and the crystal traps vacancies, slower and it traps interstitials."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "An impurity enters the crystal only k_eff as readily as it sits in the melt. Pull slowly and turn fast, and k_eff falls to its lowest: the impurities stay in the crucible. Optical boules must be 99.75-99.85% pure: close to the limit k\u2080 sets."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sapphire from corundum (best from a whole $(item)Corundum Crystal Mass$()), fluorite from fluorspar, and garnet from garnet with a rare earth - the dopant that makes garnet a laser crystal."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystal_growth_physics"
+}

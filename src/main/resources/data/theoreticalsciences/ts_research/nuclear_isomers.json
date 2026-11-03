@@ -1,0 +1,73 @@
+{
+  "title": "Nuclear Isomers",
+  "description": "Some nuclei can sit in an excited state for years, held there by their spin. Hafnium-178m2 holds 2.4 MeV per nucleus for thirty-one years. Unlocks the Isomer Trigger.",
+  "icon": "theoreticalsciences:hafnium_178m2_isomer",
+  "x": 14,
+  "y": -2,
+  "insight": 230,
+  "requires": [
+    "theoreticalsciences:transuranic_synthesis",
+    "theoreticalsciences:island_of_stability"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:californium_252_neutron_source",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rare_earth_oxide",
+      "count": 4
+    }
+  ],
+  "time": 930,
+  "puzzle": {
+    "goal": "Each nucleus of an isomer stores an energy E; a mole of them weighs M and holds N of them. Write the energy U each kilogram stores.",
+    "name": "Spin-trap capacity",
+    "lhs": "U",
+    "form": "E * N / M",
+    "expr": "E * N / M / u",
+    "ask": "Find U in GJ/kg (u = @{u}) for hafnium-178m2: E = @{E} J (2.446 MeV), N = @{N} /mol, M = @{M} kg/mol.",
+    "vars": {
+      "U": "energy per kg (GJ/kg)",
+      "E": "energy per nucleus (J)",
+      "N": "Avogadro constant",
+      "M": "molar mass (kg/mol)",
+      "u": "10\u2079"
+    },
+    "given": {
+      "E": 3.919e-13,
+      "N": 6.022e+23,
+      "M": 0.178,
+      "u": 1000000000.0
+    },
+    "unit": "GJ/kg",
+    "method": "Nuclei per kilogram are N/M; each gives E.",
+    "distractors": [
+      "c",
+      "2",
+      "h"
+    ],
+    "vary": {
+      "E": [
+        2.35e-13,
+        5.49e-13,
+        1e-15
+      ],
+      "N": [
+        3.61e+23,
+        8.44e+23,
+        1e+21
+      ],
+      "M": [
+        0.106,
+        0.25,
+        0.001
+      ],
+      "u": [
+        600000000.0,
+        1400000000.0,
+        10000000.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,756 @@
+{
+  "quantum_foundations": {
+    "goal": "Find the de Broglie wavelength of an electron in nm, with h in 1e-34 J s, m in 1e-31 kg and v in 1e6 m/s (the unit factors combine to 1 nm).",
+    "lhs": "λ",
+    "expr": "h / ( m * v )",
+    "vars": {
+      "h": "Planck's constant (units of 1e-34 J s)",
+      "m": "particle mass (units of 1e-31 kg)",
+      "v": "particle speed (units of 1e6 m/s)"
+    },
+    "given": {
+      "h": 6.63,
+      "m": 9.11,
+      "v": 1.0
+    },
+    "distractors": [
+      "c",
+      "^",
+      "2"
+    ],
+    "method": "A matter wave carries momentum p = h/λ just like a photon; turn that around and use the classical momentum p = mv.",
+    "unit": "nm"
+  },
+  "number_systems": {
+    "goal": "Show how many steps of 'add the next one' sum the first n naturals: find twice the sum 1 + 2 + ... + n for n = 100.",
+    "lhs": "2S",
+    "expr": "n * ( n + 1 )",
+    "vars": {
+      "n": "the last natural number in the sum"
+    },
+    "given": {
+      "n": 100
+    },
+    "distractors": [
+      "-",
+      "^",
+      "3"
+    ],
+    "method": "Write the sum forwards and backwards and add them term by term: every pair gives n + 1, and there are n pairs, counted twice. Induction on the successor confirms it.",
+    "unit": ""
+  },
+  "metamaterials": {
+    "goal": "Find the refractive index of a double-negative metamaterial whose relative permittivity is -4 and relative permeability is -1 (enter the magnitudes; the negative root is taken).",
+    "lhs": "n",
+    "expr": "- sqrt ( ε * μ )",
+    "vars": {
+      "ε": "magnitude of the (negative) relative permittivity",
+      "μ": "magnitude of the (negative) relative permeability"
+    },
+    "given": {
+      "ε": 4,
+      "μ": 1
+    },
+    "distractors": [
+      "/",
+      "+",
+      "2"
+    ],
+    "method": "In any medium n^2 = εμ. Veselago showed that when both ε and μ are negative, causality forces the negative square root.",
+    "unit": ""
+  },
+  "chemical_bonding": {
+    "goal": "Find the bond order of the O2 molecule from its molecular-orbital electron counts.",
+    "lhs": "BO",
+    "expr": "( nb - na ) / 2",
+    "vars": {
+      "nb": "electrons in bonding orbitals",
+      "na": "electrons in antibonding orbitals"
+    },
+    "given": {
+      "nb": 10,
+      "na": 6
+    },
+    "distractors": [
+      "+",
+      "*",
+      "4"
+    ],
+    "method": "Each bonding pair lowers the energy and each antibonding pair cancels one bonding pair; count net pairs of electrons that hold the atoms together.",
+    "unit": ""
+  },
+  "thermodynamics_of_information": {
+    "goal": "Find the Landauer minimum energy to erase one bit at T = 300 K, expressed in units of kB (so the answer is in kelvin).",
+    "lhs": "E / kB",
+    "expr": "T * ln ( 2 )",
+    "vars": {
+      "T": "temperature of the environment the bit is erased into (K)"
+    },
+    "given": {
+      "T": 300
+    },
+    "distractors": [
+      "exp",
+      "/",
+      "4"
+    ],
+    "method": "Erasing a bit halves the number of possible states, an entropy drop of kB ln 2 that must be dumped as heat at temperature T.",
+    "unit": "K"
+  },
+  "entangled_logistics": {
+    "goal": "Find the CHSH value S of a Werner state with visibility V = 0.9 (classical channels cannot exceed 2).",
+    "lhs": "S",
+    "expr": "sqrt ( 8 ) * V",
+    "vars": {
+      "V": "visibility (purity) of the entangled pair, 0 to 1"
+    },
+    "given": {
+      "V": 0.9
+    },
+    "distractors": [
+      "^",
+      "+",
+      "4",
+      "2"
+    ],
+    "method": "A perfect Bell pair reaches the Tsirelson bound 2√2; mixing with white noise scales every correlation, and so S, by the visibility.",
+    "unit": ""
+  },
+  "chronodynamics": {
+    "goal": "Find the minimum energy uncertainty (eV) of a state that lasts Δt = 1 fs, with ħ = 0.658 eV fs.",
+    "lhs": "ΔE",
+    "expr": "ħ / ( 2 * Δt )",
+    "vars": {
+      "ħ": "reduced Planck constant (eV fs)",
+      "Δt": "lifetime of the state (fs)"
+    },
+    "given": {
+      "ħ": 0.658,
+      "Δt": 1
+    },
+    "distractors": [
+      "*",
+      "π",
+      "4"
+    ],
+    "method": "Energy and time are Fourier partners, so a state confined to a time window has a spread of energies; the energy-time uncertainty relation sets the minimum product.",
+    "unit": "eV"
+  },
+  "molecular_biology": {
+    "goal": "Find how many DNA copies exist after g = 10 rounds of replication starting from N0 = 5 molecules.",
+    "lhs": "N",
+    "expr": "N0 * 2 ^ g",
+    "vars": {
+      "N0": "starting number of molecules",
+      "g": "number of replication rounds"
+    },
+    "given": {
+      "N0": 5,
+      "g": 10
+    },
+    "distractors": [
+      "+",
+      "e",
+      "*"
+    ],
+    "method": "Semiconservative replication turns every double helix into two each round, so the count doubles g times.",
+    "unit": "copies"
+  },
+  "neutrino_physics": {
+    "goal": "Find the oscillation length (km) of a 1 GeV neutrino with mass-squared splitting 0.0025 eV^2.",
+    "lhs": "L",
+    "expr": "2.48 * E / Δm",
+    "vars": {
+      "E": "neutrino energy (GeV)",
+      "Δm": "mass-squared difference Δm^2 (eV^2)"
+    },
+    "given": {
+      "E": 1,
+      "Δm": 0.0025
+    },
+    "distractors": [
+      "1.27",
+      "*",
+      "^"
+    ],
+    "method": "The two mass states pick up a relative phase Δm^2 L / (4E); one full oscillation is when it reaches π, giving L = 4πE/Δm^2, which is 2.48 km per GeV/eV^2.",
+    "unit": "km"
+  },
+  "special_relativity": {
+    "goal": "Find the rest energy of 1 kg of matter, with c in units of 1e8 m/s (answer in 1e16 J).",
+    "lhs": "E",
+    "expr": "m * c ^ 2",
+    "vars": {
+      "m": "rest mass (kg)",
+      "c": "speed of light (1e8 m/s)"
+    },
+    "given": {
+      "m": 1,
+      "c": 3
+    },
+    "distractors": [
+      "3",
+      "/",
+      "2"
+    ],
+    "method": "Expand the relativistic energy γmc^2 at zero speed: the constant term left over is energy the body has just by existing.",
+    "unit": "1e16 J"
+  },
+  "component_tiers": {
+    "goal": "Find the survival probability of a structure of N = 10 parts under stress σ = 0.5 (in units of the characteristic part strength) when the Weibull modulus is m = 3.",
+    "lhs": "P",
+    "expr": "exp ( - N * σ ^ m )",
+    "vars": {
+      "N": "number of parts (or volume elements)",
+      "σ": "applied stress, in units of the characteristic strength of one part",
+      "m": "Weibull modulus (how uniform the parts are)"
+    },
+    "given": {
+      "N": 10,
+      "σ": 0.5,
+      "m": 3
+    },
+    "distractors": [
+      "ln",
+      "+",
+      "2"
+    ],
+    "method": "Weakest-link statistics: the structure survives only if every part survives, so single-part survival probabilities multiply, which turns the exponent into a sum over N parts.",
+    "unit": ""
+  },
+  "accelerator_physics": {
+    "goal": "Find the bending radius (m) of a 7000 GeV/c proton beam in 8.33 T dipoles.",
+    "lhs": "ρ",
+    "expr": "p / ( 0.2998 * B )",
+    "vars": {
+      "p": "beam momentum (GeV/c)",
+      "B": "dipole magnetic field (T)"
+    },
+    "given": {
+      "p": 7000,
+      "B": 8.33
+    },
+    "distractors": [
+      "2",
+      "^",
+      "*"
+    ],
+    "method": "The Lorentz force qvB supplies the centripetal force, so p = qBρ; for a unit charge, p in GeV/c equals 0.2998 times the magnetic rigidity Bρ in T m.",
+    "unit": "m"
+  },
+  "nanochemistry": {
+    "goal": "Find the diameter (nm) of a (10,10) armchair carbon nanotube, with graphene lattice constant a = 0.246 nm.",
+    "lhs": "d",
+    "expr": "a * n * sqrt ( 3 ) / π",
+    "vars": {
+      "a": "graphene lattice constant (nm)",
+      "n": "chiral index (n,n) of the armchair tube"
+    },
+    "given": {
+      "a": 0.246,
+      "n": 10
+    },
+    "distractors": [
+      "2",
+      "^",
+      "+"
+    ],
+    "method": "The circumference is the length of the chiral vector a·sqrt(n^2 + nm + m^2); with m = n this is a·n·sqrt(3), then divide by π.",
+    "unit": "nm"
+  },
+  "geometric_topology": {
+    "goal": "Find the genus of a closed orientable surface triangulated with V = 10 vertices, E = 36 edges and F = 24 faces.",
+    "lhs": "g",
+    "expr": "( 2 - V + E - F ) / 2",
+    "vars": {
+      "V": "number of vertices",
+      "E": "number of edges",
+      "F": "number of faces"
+    },
+    "given": {
+      "V": 10,
+      "E": 36,
+      "F": 24
+    },
+    "distractors": [
+      "*",
+      "3",
+      "+"
+    ],
+    "method": "The Euler characteristic V - E + F is a topological invariant equal to 2 - 2g for an orientable surface with g handles; solve for g.",
+    "unit": "handles"
+  },
+  "superacid_chemistry": {
+    "goal": "Find the Hammett acidity H0 of an acid in which the indicator (pK of BH+ = -10.1) is 100 times more protonated than not.",
+    "lhs": "H0",
+    "expr": "pK - ln ( r ) / ln ( 10 )",
+    "vars": {
+      "pK": "pKa of the protonated indicator BH+",
+      "r": "ratio [BH+]/[B] of protonated to free indicator"
+    },
+    "given": {
+      "pK": -10.1,
+      "r": 100
+    },
+    "distractors": [
+      "+",
+      "exp",
+      "2"
+    ],
+    "method": "Hammett extended pH to concentrated acids by measuring how far a weak-base indicator is protonated: H0 = pK + log10([B]/[BH+]). Convert log10 to natural logs.",
+    "unit": ""
+  },
+  "protein_folding": {
+    "goal": "Find the time (s) a 30-residue chain would need to try every conformation if each residue has 3 states and each try takes 1e-13 s (Levinthal's paradox).",
+    "lhs": "t",
+    "expr": "k ^ n * τ",
+    "vars": {
+      "k": "conformations per residue",
+      "n": "number of residues",
+      "τ": "time per conformation tried (s)"
+    },
+    "given": {
+      "k": 3,
+      "n": 30,
+      "τ": 1e-13
+    },
+    "distractors": [
+      "*",
+      "+",
+      "2"
+    ],
+    "method": "Independent choices multiply, so the conformations grow exponentially with chain length; a blind search must visit them one at a time.",
+    "unit": "s"
+  },
+  "supramolecular_chemistry": {
+    "goal": "Find the Gibbs energy of binding (kJ/mol) of a host-guest complex with association constant K = 1e6 at 298 K.",
+    "lhs": "ΔG",
+    "expr": "- R * T * ln ( K )",
+    "vars": {
+      "R": "gas constant (kJ/(mol K))",
+      "T": "temperature (K)",
+      "K": "association constant (M^-1)"
+    },
+    "given": {
+      "R": 0.008314,
+      "T": 298,
+      "K": 1000000
+    },
+    "distractors": [
+      "exp",
+      "/",
+      "+"
+    ],
+    "method": "At equilibrium ΔG = 0, so the standard free energy is tied to the equilibrium constant by ΔG° = -RT ln K; tighter binding means more negative ΔG.",
+    "unit": "kJ/mol"
+  },
+  "mass_manipulation": {
+    "goal": "Find the energy (GeV) of a particle with momentum 3 GeV/c and mass 4 GeV/c^2, in units where c = 1 (set m = 0 to see massless matter).",
+    "lhs": "E",
+    "expr": "sqrt ( p ^ 2 + m ^ 2 )",
+    "vars": {
+      "p": "momentum (GeV/c)",
+      "m": "rest mass (GeV/c^2)"
+    },
+    "given": {
+      "p": 3,
+      "m": 4
+    },
+    "distractors": [
+      "-",
+      "*",
+      "3"
+    ],
+    "method": "The four-momentum has invariant length m: E^2 - p^2 = m^2 in every frame. Rest mass is only one contribution to energy; a massless particle has E = p.",
+    "unit": "GeV"
+  },
+  "general_relativity": {
+    "goal": "Find the Schwarzschild radius (m) of the Sun, mass 1.989e30 kg.",
+    "lhs": "rs",
+    "expr": "2 * G * M / c ^ 2",
+    "vars": {
+      "G": "gravitational constant (m^3 kg^-1 s^-2)",
+      "M": "mass (kg)",
+      "c": "speed of light (m/s)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+30,
+      "c": 299800000.0
+    },
+    "distractors": [
+      "4",
+      "3",
+      "π"
+    ],
+    "method": "In the Schwarzschild metric the time component is 1 - 2GM/(rc^2), which vanishes at the horizon; equivalently, set the Newtonian escape speed equal to c.",
+    "unit": "m"
+  },
+  "quantum_biology": {
+    "goal": "Find the probability that an electron tunnels through a 0.3 nm protein barrier with decay constant κ = 10 nm^-1.",
+    "lhs": "T",
+    "expr": "exp ( - 2 * κ * d )",
+    "vars": {
+      "κ": "decay constant of the wavefunction in the barrier (nm^-1)",
+      "d": "barrier width (nm)"
+    },
+    "given": {
+      "κ": 10,
+      "d": 0.3
+    },
+    "distractors": [
+      "ln",
+      "^",
+      "π"
+    ],
+    "method": "Inside a classically forbidden barrier the wavefunction decays as exp(-κx); the transmission is the squared amplitude ratio across the width.",
+    "unit": ""
+  },
+  "dyson_swarm": {
+    "goal": "Find the starlight flux (W/m^2) a statite receives at 1 AU (1.496e11 m) from a star of luminosity 3.828e26 W.",
+    "lhs": "F",
+    "expr": "L / ( 4 * π * r ^ 2 )",
+    "vars": {
+      "L": "stellar luminosity (W)",
+      "r": "distance from the star (m)"
+    },
+    "given": {
+      "L": 3.828e+26,
+      "r": 149600000000.0
+    },
+    "distractors": [
+      "2",
+      "3",
+      "*"
+    ],
+    "method": "All the power crosses every sphere around the star, so divide it by the sphere's surface area; the flux falls off with the inverse square of distance.",
+    "unit": "W/m^2"
+  },
+  "nucleosynthesis": {
+    "goal": "Find the energy (MeV) released when four hydrogen atoms fuse into one helium-4 atom (atomic masses in u, 1 u = 931.5 MeV).",
+    "lhs": "Q",
+    "expr": "( 4 * mH - mHe ) * 931.5",
+    "vars": {
+      "mH": "atomic mass of hydrogen-1 (u)",
+      "mHe": "atomic mass of helium-4 (u)"
+    },
+    "given": {
+      "mH": 1.007825,
+      "mHe": 4.002603
+    },
+    "distractors": [
+      "2",
+      "+",
+      "/"
+    ],
+    "method": "The products weigh less than the reactants; the missing mass is converted to energy by E = mc^2, and c^2 is 931.5 MeV per atomic mass unit.",
+    "unit": "MeV"
+  },
+  "string_theory": {
+    "goal": "Find the frequency (Hz) of the 3rd harmonic of a string of length 0.5 m, tension 100 N and linear density 0.01 kg/m - each mode is a different 'particle'.",
+    "lhs": "f",
+    "expr": "n * sqrt ( T / μ ) / L / 2",
+    "vars": {
+      "n": "harmonic (mode) number",
+      "L": "string length (m)",
+      "T": "string tension (N)",
+      "μ": "mass per unit length (kg/m)"
+    },
+    "given": {
+      "n": 3,
+      "L": 0.5,
+      "T": 100,
+      "μ": 0.01
+    },
+    "distractors": [
+      "π",
+      "^",
+      "*"
+    ],
+    "method": "Waves travel along the string at sqrt(T/μ); a string fixed at both ends only supports standing waves fitting an integer number of half-wavelengths.",
+    "unit": "Hz"
+  },
+  "neurobiology": {
+    "goal": "Find the potassium equilibrium potential (V) of a neuron at 310 K with 5 mM K+ outside and 140 mM inside.",
+    "lhs": "E",
+    "expr": "R * T / F * ln ( co / ci )",
+    "vars": {
+      "R": "gas constant (J/(mol K))",
+      "T": "temperature (K)",
+      "F": "Faraday constant (C/mol)",
+      "co": "ion concentration outside (mM)",
+      "ci": "ion concentration inside (mM)"
+    },
+    "given": {
+      "R": 8.314,
+      "T": 310,
+      "F": 96485,
+      "co": 5,
+      "ci": 140
+    },
+    "distractors": [
+      "exp",
+      "2",
+      "-"
+    ],
+    "method": "At equilibrium the electrical work zFE balances the chemical potential difference RT ln(co/ci) of a monovalent ion across the membrane (Nernst equation).",
+    "unit": "V"
+  },
+  "dyson_sphere": {
+    "goal": "Find the equilibrium temperature (K) of a Dyson shell at r = 0.7 AU around a star of L = 0.5 solar luminosities, radiating only outward.",
+    "lhs": "T",
+    "expr": "394 * L ^ 0.25 / sqrt ( r )",
+    "vars": {
+      "L": "stellar luminosity (solar units)",
+      "r": "shell radius (AU)"
+    },
+    "given": {
+      "L": 0.5,
+      "r": 0.7
+    },
+    "distractors": [
+      "2",
+      "^",
+      "π"
+    ],
+    "method": "The shell must re-emit the whole luminosity from its outer surface: L = 4πr^2σT^4. For the Sun at 1 AU that gives 394 K; scale as L^(1/4) and r^(-1/2).",
+    "unit": "K"
+  },
+  "morphogenesis": {
+    "goal": "Find the relative morphogen concentration C/C0 at x = 50 µm from the source, with D = 10 µm^2/s and degradation rate k = 0.001 /s.",
+    "lhs": "C / C0",
+    "expr": "exp ( - x * sqrt ( k / D ) )",
+    "vars": {
+      "x": "distance from the source (µm)",
+      "k": "degradation rate (1/s)",
+      "D": "diffusion coefficient (µm^2/s)"
+    },
+    "given": {
+      "x": 50,
+      "k": 0.001,
+      "D": 10
+    },
+    "distractors": [
+      "ln",
+      "*",
+      "2"
+    ],
+    "method": "In steady state, diffusion D C'' balances degradation k C; the solution decays exponentially with length scale sqrt(D/k), turning one source into a positional gradient.",
+    "unit": ""
+  },
+  "xenobiology": {
+    "goal": "Find how many bits a 100-letter genome stores in an 8-letter (hachimoji-like) genetic alphabet.",
+    "lhs": "I",
+    "expr": "L * ln ( b ) / ln ( 2 )",
+    "vars": {
+      "L": "genome length (letters)",
+      "b": "size of the genetic alphabet"
+    },
+    "given": {
+      "L": 100,
+      "b": 8
+    },
+    "distractors": [
+      "^",
+      "+",
+      "4"
+    ],
+    "method": "There are b^L possible sequences; the information is the base-2 logarithm of that count, and change of base turns log2 into a ratio of natural logs.",
+    "unit": "bits"
+  },
+  "grand_unification": {
+    "goal": "Find the inverse U(1) coupling at Q = 1e16 GeV, given 1/α = 59 at μ = 91.2 GeV and one-loop coefficient b = 4.1.",
+    "lhs": "1/α(Q)",
+    "expr": "a - b / ( 2 * π ) * ln ( Q / μ )",
+    "vars": {
+      "a": "inverse coupling 1/α at the reference scale",
+      "b": "one-loop beta-function coefficient",
+      "Q": "high energy scale (GeV)",
+      "μ": "reference scale (GeV)"
+    },
+    "given": {
+      "a": 59,
+      "b": 4.1,
+      "Q": 1e+16,
+      "μ": 91.2
+    },
+    "distractors": [
+      "+",
+      "exp",
+      "4"
+    ],
+    "method": "At one loop the renormalisation group makes each inverse coupling run linearly in the log of energy; the three lines nearly meet near 1e16 GeV.",
+    "unit": ""
+  },
+  "island_of_stability": {
+    "goal": "Find the liquid-drop fissility of flerovium-298 (Z = 114, A = 298) with surface coefficient 17.8 MeV and Coulomb coefficient 0.711 MeV.",
+    "lhs": "x",
+    "expr": "Z ^ 2 / A / ( 2 * aS / aC )",
+    "vars": {
+      "Z": "proton number",
+      "A": "mass number",
+      "aS": "surface energy coefficient (MeV)",
+      "aC": "Coulomb energy coefficient (MeV)"
+    },
+    "given": {
+      "Z": 114,
+      "A": 298,
+      "aS": 17.8,
+      "aC": 0.711
+    },
+    "distractors": [
+      "3",
+      "*",
+      "+"
+    ],
+    "method": "Compare the Coulomb energy (pushing apart, ~ Z^2/A^(1/3)) with twice the surface energy (holding together, ~ A^(2/3)) of a slightly deformed drop; near x = 1 only shell effects at magic numbers keep a fission barrier.",
+    "unit": ""
+  },
+  "black_hole_interior": {
+    "goal": "Find the maximum proper time (s) an infaller can survive between the horizon and the singularity of a 10 solar-mass black hole (M = 1.989e31 kg).",
+    "lhs": "τ",
+    "expr": "π * G * M / c ^ 3",
+    "vars": {
+      "G": "gravitational constant (m^3 kg^-1 s^-2)",
+      "M": "black hole mass (kg)",
+      "c": "speed of light (m/s)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+31,
+      "c": 299800000.0
+    },
+    "distractors": [
+      "2",
+      "4",
+      "^"
+    ],
+    "method": "Inside the horizon r is a time coordinate; the longest path to r = 0 is free fall from rest at the horizon, a cycloid-like geodesic lasting π rs/(2c).",
+    "unit": "s"
+  },
+  "abiogenesis": {
+    "goal": "Find the longest genome (bases) a replicator can keep without an error catastrophe if its master sequence has selective advantage 10 and per-base copying fidelity 0.99.",
+    "lhs": "Lmax",
+    "expr": "ln ( s ) / ( 1 - q )",
+    "vars": {
+      "s": "selective superiority of the master sequence",
+      "q": "per-base copying fidelity"
+    },
+    "given": {
+      "s": 10,
+      "q": 0.99
+    },
+    "distractors": [
+      "exp",
+      "*",
+      "2"
+    ],
+    "method": "The master sequence survives only if its advantage outweighs the chance of copying it perfectly, s·q^L > 1; take logs and use ln q ≈ -(1 - q) (Eigen's error threshold).",
+    "unit": "bases"
+  },
+  "transfinite_mathematics": {
+    "goal": "Show how many more subsets the power set of the power set of a 3-element set has than the power set itself (Cantor: each step is strictly bigger).",
+    "lhs": "|P(P(S))| - |P(S)|",
+    "expr": "2 ^ 2 ^ n - 2 ^ n",
+    "vars": {
+      "n": "number of elements of the starting set S"
+    },
+    "given": {
+      "n": 3
+    },
+    "distractors": [
+      "*",
+      "n",
+      "+",
+      "3"
+    ],
+    "method": "A set of size k has 2^k subsets (each element is in or out); apply this twice. Cantor's diagonal argument shows 2^k > k holds even for infinite k, giving an endless ladder of infinities.",
+    "unit": "subsets"
+  },
+  "paradox_engineering": {
+    "goal": "Show how many reduced words of length n = 5 exist in the free group on two generators, the engine of the Banach-Tarski paradox.",
+    "lhs": "W",
+    "expr": "4 * 3 ^ ( n - 1 )",
+    "vars": {
+      "n": "word length"
+    },
+    "given": {
+      "n": 5
+    },
+    "distractors": [
+      "2",
+      "+",
+      "*"
+    ],
+    "method": "The first letter can be any of a, a⁻¹, b, b⁻¹; each later letter has 3 choices because it may not cancel the previous one. This exponential self-similarity lets the group be split into pieces that rebuild two copies of itself.",
+    "unit": "words"
+  },
+  "axiom_theory": {
+    "goal": "Find the Gödel number of the three-symbol formula whose symbol codes are 3, 1 and 2.",
+    "lhs": "G",
+    "expr": "2 ^ a * 3 ^ b * 5 ^ c",
+    "vars": {
+      "a": "code of the first symbol",
+      "b": "code of the second symbol",
+      "c": "code of the third symbol"
+    },
+    "given": {
+      "a": 3,
+      "b": 1,
+      "c": 2
+    },
+    "distractors": [
+      "7",
+      "+",
+      "4"
+    ],
+    "method": "Raise the i-th prime to the code of the i-th symbol and multiply; unique prime factorisation lets the formula be decoded back, so statements about axioms become statements about numbers.",
+    "unit": ""
+  },
+  "reality_breach": {
+    "goal": "Find the Bekenstein bound (bits) on the information inside a proton of radius 0.87 fm and energy 938 MeV, with ħc = 197.3 MeV fm - the most any region can hold before physics breaks.",
+    "lhs": "I",
+    "expr": "2 * π * R * E / ( ħc * ln ( 2 ) )",
+    "vars": {
+      "R": "radius of the enclosing sphere (fm)",
+      "E": "total energy inside (MeV)",
+      "ħc": "reduced Planck constant times c (MeV fm)"
+    },
+    "given": {
+      "R": 0.87,
+      "E": 938,
+      "ħc": 197.3
+    },
+    "distractors": [
+      "4",
+      "^",
+      "G",
+      "sqrt"
+    ],
+    "method": "Lower the system into a black hole: the horizon area, and so its entropy, may not decrease, which caps the entropy at 2πkRE/(ħc). Divide by k ln 2 to count bits.",
+    "unit": "bits"
+  },
+  "pleroma": {
+    "goal": "Find the Gibbs energy of mixing (kJ) when one mole each of N = 1000 different ideal fluids is poured together at 300 K.",
+    "lhs": "ΔG",
+    "expr": "- N * R * T * ln ( N )",
+    "vars": {
+      "N": "number of different fluids (one mole each)",
+      "R": "gas constant (kJ/(mol K))",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "N": 1000,
+      "R": 0.008314,
+      "T": 300
+    },
+    "distractors": [
+      "exp",
+      "/",
+      "2",
+      "+"
+    ],
+    "method": "Ideal mixing has no enthalpy change, only entropy: ΔG = RT Σ n_i ln x_i. With N equal components each mole fraction is 1/N.",
+    "unit": "kJ"
+  }
+}

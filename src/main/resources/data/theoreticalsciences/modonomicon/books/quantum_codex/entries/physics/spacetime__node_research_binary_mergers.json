@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_binary_mergers",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_binary_mergers.desc",
+  "icon": {
+    "item": "theoreticalsciences:chirp_signal_record"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 112,
+  "y": 55,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chirp_signal_record"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_binary_mergers.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_binary_mergers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__laser_interferometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/binary_mergers"
+  }
+}

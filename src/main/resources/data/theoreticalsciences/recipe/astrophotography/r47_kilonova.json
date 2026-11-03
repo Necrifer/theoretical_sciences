@@ -1,0 +1,45 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:gw_record_bns"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:gw_record_bns",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:deep_sky_plate",
+      "count": 11
+    },
+    {
+      "id": "theoreticalsciences:stellar_spectrum_plate",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 1200,
+  "research": "theoreticalsciences:gravitational_waves",
+  "unscaled": true,
+  "insight_per_run": 12,
+  "physics": {
+    "vars": {
+      "mreq": 14.0
+    },
+    "windows": [
+      {
+        "q": "mlim",
+        "min": 14.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

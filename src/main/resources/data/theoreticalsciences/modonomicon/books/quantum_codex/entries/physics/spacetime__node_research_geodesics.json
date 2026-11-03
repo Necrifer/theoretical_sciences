@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_geodesics",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_geodesics.desc",
+  "icon": {
+    "item": "theoreticalsciences:geodesic_compass"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 49,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geodesic_compass"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_geodesics.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_geodesics.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__relativity",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/geodesics"
+  }
+}

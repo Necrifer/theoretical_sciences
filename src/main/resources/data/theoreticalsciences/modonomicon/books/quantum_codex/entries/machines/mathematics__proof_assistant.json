@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.proof_assistant",
+  "description": "book.theoreticalsciences.codex.mathematics.proof_assistant.desc",
+  "icon": {
+    "item": "theoreticalsciences:proof_assistant"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 7,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_assistant"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.proof_assistant.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.proof_assistant.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.proof_assistant.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.proof_assistant.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_assistant"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.proof_assistant.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:machines/mathematics__peano_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/formal_logic"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.ordinal_recursor",
+  "description": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.desc",
+  "icon": {
+    "item": "theoreticalsciences:ordinal_recursor"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 106,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ordinal_recursor"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ordinal_recursor"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ordinal_shard"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.ordinal_recursor.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/endgame__cantor_diagonalizer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

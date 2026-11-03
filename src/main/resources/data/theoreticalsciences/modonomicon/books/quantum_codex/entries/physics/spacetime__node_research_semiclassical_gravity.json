@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_semiclassical_gravity",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_semiclassical_gravity.desc",
+  "icon": {
+    "item": "theoreticalsciences:cow_record"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 99,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cow_record"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_semiclassical_gravity.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_semiclassical_gravity.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__neutron_interferometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/semiclassical_gravity"
+  }
+}

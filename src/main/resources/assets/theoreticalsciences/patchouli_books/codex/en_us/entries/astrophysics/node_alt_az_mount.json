@@ -1,0 +1,19 @@
+{
+  "name": "Alt-Azimuth Mount",
+  "icon": "theoreticalsciences:alt_az_mount",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:alt_az_mount",
+      "title": "Alt-Azimuth Mount",
+      "text": "$(item)Alt-Azimuth Mount$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Radio Astronomy.$(br2)$(thing)Used in$(): Radio Telescope."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radio_astronomy"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.node_research_dyson_sphere",
+  "description": "book.theoreticalsciences.codex.stellar.node_research_dyson_sphere.desc",
+  "icon": {
+    "item": "theoreticalsciences:dyson_shell_segment"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 137,
+  "y": 64,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dyson_shell_segment"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.node_research_dyson_sphere.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_research_dyson_sphere.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/stellar__dyson_array",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/dyson_sphere"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.synchrotron",
+  "description": "book.theoreticalsciences.codex.exotic.synchrotron.desc",
+  "icon": {
+    "item": "theoreticalsciences:synchrotron"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 42,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:synchrotron"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p4.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:synchrotron"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:glueball_core"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hyperon_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.synchrotron.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/exotic__quark_gluon_collider"
+    },
+    {
+      "entry": "theoreticalsciences:machines/fabrication__stellar_plasma_crucible"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/accelerator_physics"
+  }
+}

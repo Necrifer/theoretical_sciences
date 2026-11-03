@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:solar_melting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:corundum",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sapphire_boule",
+      "count": 1
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:stellar_astrophysics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 2323.0
+    },
+    "windows": [
+      {
+        "q": "Tt",
+        "min": 2330.0,
+        "max": 2700.0
+      }
+    ]
+  }
+}

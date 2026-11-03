@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_geometric_topology",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_geometric_topology.desc",
+  "icon": {
+    "item": "theoreticalsciences:klein_bottle"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 26,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:klein_bottle"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_geometric_topology.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_geometric_topology.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__analysis",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/geometric_topology"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.r38_seismology",
+  "description": "book.theoreticalsciences.codex.geography.r38_seismology.desc",
+  "icon": {
+    "item": "theoreticalsciences:seismograph"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 32,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:seismograph"
+      },
+      "text": "book.theoreticalsciences.codex.geography.r38_seismology.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r38_seismology.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/geography__r37_ground"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/seismology"
+  }
+}

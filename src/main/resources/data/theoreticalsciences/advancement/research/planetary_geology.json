@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:planetary_core_sample"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.planetary_geology"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.planetary_geology.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/mantle_geodynamics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

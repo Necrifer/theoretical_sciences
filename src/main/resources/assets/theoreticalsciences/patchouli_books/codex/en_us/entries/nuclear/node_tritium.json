@@ -1,0 +1,19 @@
+{
+  "name": "Tritium",
+  "icon": "theoreticalsciences:tritium_cell",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tritium_cell",
+      "title": "Tritium",
+      "text": "$(fluid)Tritium$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Irradiation Chamber$().$(br2)$(thing)Unlocked by$(): Fusion Ignition.$(br2)$(thing)Used in$(): Tritium, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fusion_ignition"
+}

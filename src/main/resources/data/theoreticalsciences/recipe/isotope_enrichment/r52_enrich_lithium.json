@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:isotope_enrichment",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lithium_ingot",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lithium_6_ingot",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 800,
+  "research": "theoreticalsciences:isotope_separation",
+  "unscaled": true,
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ferrofluid",
+      "amount": 50
+    }
+  ],
+  "physics": {
+    "vars": {
+      "dm": 0.001,
+      "xF": 0.075
+    },
+    "windows": [
+      {
+        "q": "xP",
+        "min": 0.12,
+        "max": 0.2
+      }
+    ]
+  }
+}

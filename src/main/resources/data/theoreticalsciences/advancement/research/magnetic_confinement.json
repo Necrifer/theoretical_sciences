@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:bitter_plate"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.magnetic_confinement"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.magnetic_confinement.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/superconductivity",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

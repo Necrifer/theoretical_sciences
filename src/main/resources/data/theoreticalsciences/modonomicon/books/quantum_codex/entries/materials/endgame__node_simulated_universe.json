@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_simulated_universe",
+  "description": "book.theoreticalsciences.codex.endgame.node_simulated_universe.desc",
+  "icon": {
+    "item": "theoreticalsciences:simulated_universe"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 219,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:simulated_universe"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_simulated_universe.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_simulated_universe.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__simulated_universes",
+      "draw_arrow": false
+    }
+  ]
+}

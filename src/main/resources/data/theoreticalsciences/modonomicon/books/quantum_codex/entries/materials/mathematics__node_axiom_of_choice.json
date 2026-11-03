@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_axiom_of_choice",
+  "description": "book.theoreticalsciences.codex.mathematics.node_axiom_of_choice.desc",
+  "icon": {
+    "item": "theoreticalsciences:axiom_of_choice"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 21,
+  "y": 70,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:axiom_of_choice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_axiom_of_choice.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_axiom_of_choice.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_axiom_of_choice.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__logic_sets",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/formal_logic"
+  }
+}

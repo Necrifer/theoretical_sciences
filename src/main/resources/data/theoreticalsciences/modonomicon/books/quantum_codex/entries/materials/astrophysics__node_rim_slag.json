@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_rim_slag",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_rim_slag.desc",
+  "icon": {
+    "item": "theoreticalsciences:rim_slag"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 146,
+  "y": 59,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:rim_slag"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_rim_slag.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_rim_slag.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__accretion_disk_reactor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/accretion_physics"
+  }
+}

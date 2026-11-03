@@ -1,0 +1,82 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.abiogenesis_crucible",
+  "description": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.desc",
+  "icon": {
+    "item": "theoreticalsciences:abiogenesis_crucible"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 202,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:abiogenesis_crucible"
+      },
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:abiogenesis_crucible"
+      },
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spark_of_life"
+      },
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:primordial_soup_cell"
+      },
+      "text": "book.theoreticalsciences.codex.biology.abiogenesis_crucible.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__evolution"
+    },
+    {
+      "entry": "theoreticalsciences:materials/fabrication__convergence_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/abiogenesis"
+  }
+}

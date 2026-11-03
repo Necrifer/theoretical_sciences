@@ -1,0 +1,54 @@
+{
+  "title": "Observational Astronomy",
+  "description": "Everything known about the sky came through a lens. A bigger mirror gathers more light and splits finer detail - up to the limit that the wave nature of light itself sets. Unlocks the Telescope Mirror Blank.",
+  "icon": "theoreticalsciences:telescope_mirror_blank",
+  "x": 1,
+  "y": -7,
+  "insight": 8,
+  "requires": [
+    "theoreticalsciences:quantum_foundations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Light from a distant star enters a round mirror of diameter D. Because light is a wave, the mirror cannot focus it to a point: it makes a small disc with rings, and two stars closer together than that disc cannot be told apart. Write the smallest angle \u03b8 the mirror resolves for light of wavelength \u03bb.",
+    "name": "Diffraction limit of a circular aperture",
+    "lhs": "\u03b8",
+    "form": "1.22 * \u03bb / D",
+    "expr": "1.22 * \u03bb / D * 0.206265",
+    "ask": "Find \u03b8 in arcseconds for green light, \u03bb in micrometres and D in metres.",
+    "vars": {
+      "\u03b8": "smallest resolvable angle",
+      "\u03bb": "wavelength (\u00b5m)",
+      "D": "mirror diameter (m)"
+    },
+    "given": {
+      "\u03bb": 0.55,
+      "D": 2.4
+    },
+    "unit": "arcsec",
+    "method": "The first dark ring of the diffraction pattern of a circular opening sits where the first zero of the Bessel function J\u2081 falls; 1 radian is 206,265 arcseconds.",
+    "distractors": [
+      "c",
+      "\u03bd",
+      "2"
+    ],
+    "vary": {
+      "\u03bb": [
+        0.33,
+        0.77,
+        0.001
+      ],
+      "D": [
+        1.44,
+        3.36,
+        0.01
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:crystal_pulling",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:garnet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rare_earth_oxide",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:garnet_boule",
+      "count": 1
+    }
+  ],
+  "energy": 384,
+  "duration": 800,
+  "research": "theoreticalsciences:crystal_growth_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 1700.0,
+      "k0": 0.08
+    },
+    "windows": [
+      {
+        "q": "xi",
+        "min": 2.4,
+        "max": 3.6
+      },
+      {
+        "q": "pur",
+        "min": 99.8,
+        "max": 100.0
+      },
+      {
+        "q": "dT",
+        "min": 5.0,
+        "max": 80.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_deep_sky_plate",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_deep_sky_plate.desc",
+  "icon": {
+    "item": "theoreticalsciences:deep_sky_plate"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 56,
+  "y": 3,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:deep_sky_plate"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_deep_sky_plate.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_deep_sky_plate.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/astrophysics__solar_furnace",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_astrophysics"
+  }
+}

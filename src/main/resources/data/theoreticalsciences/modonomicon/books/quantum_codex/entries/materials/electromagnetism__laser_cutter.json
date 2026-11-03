@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.laser_cutter",
+  "description": "book.theoreticalsciences.codex.electromagnetism.laser_cutter.desc",
+  "icon": {
+    "item": "theoreticalsciences:laser_cutter"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 101,
+  "y": 54,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laser_cutter"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.laser_cutter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.laser_cutter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.laser_cutter.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.laser_cutter.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laser_cutter"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.laser_cutter.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/optics__crystal_growth_furnace"
+    },
+    {
+      "entry": "theoreticalsciences:materials/optics__optical_workshop"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/laser_physics"
+  }
+}

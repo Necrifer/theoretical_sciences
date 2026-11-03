@@ -1,0 +1,23 @@
+{
+  "name": "Xenogenome Sample",
+  "icon": "theoreticalsciences:xenogenome_sample",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:xenogenome_sample",
+      "title": "Xenogenome Sample",
+      "text": "A vial of something that is clearly a genome but is not DNA. The molecule folds the wrong way, uses letters I do not recognise and carries information more densely than any terrestrial code. It glows faintly in the dark."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I sampled a creature from another dimension expecting DNA and found something else. Life evolved under different physics, with a different chemistry of inheritance - and it was still readable."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gene Sequencer$().$(br2)$(thing)Unlocked by$(): Xenobiology.$(br2)$(thing)Used in$(): Silicon Life Spore, Xenobot Swarm, Xenoplasm."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/synthetic_biology"
+}

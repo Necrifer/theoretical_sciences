@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.information.node_boundary_cft_chip",
+  "description": "book.theoreticalsciences.codex.information.node_boundary_cft_chip.desc",
+  "icon": {
+    "item": "theoreticalsciences:boundary_cft_chip"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 117,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:boundary_cft_chip"
+      },
+      "text": "book.theoreticalsciences.codex.information.node_boundary_cft_chip.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.node_boundary_cft_chip.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/information__holographic_encoder",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/holographic_principle"
+  }
+}

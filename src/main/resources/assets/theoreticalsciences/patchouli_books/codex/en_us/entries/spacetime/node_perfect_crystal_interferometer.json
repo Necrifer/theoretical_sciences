@@ -1,0 +1,19 @@
+{
+  "name": "Perfect Crystal Interferometer",
+  "icon": "theoreticalsciences:perfect_crystal_interferometer",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:perfect_crystal_interferometer",
+      "title": "Perfect Crystal Interferometer",
+      "text": "Three slabs cut from one silicon crystal, still joined at the base, so their lattice planes line up to a fraction of an atom: they split a neutron's wave, steer it, and bring it back together."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Optical Workshop$().$(br2)$(thing)Unlocked by$(): Neutron Interferometry.$(br2)$(thing)Used in$(): Crystal Interferometer Mount."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/neutron_interferometry"
+}

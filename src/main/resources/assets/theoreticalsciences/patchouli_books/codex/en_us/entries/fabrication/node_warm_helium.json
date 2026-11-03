@@ -1,0 +1,23 @@
+{
+  "name": "Warm Helium",
+  "icon": "theoreticalsciences:warm_helium_cell",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 515,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:warm_helium_cell",
+      "title": "Warm Helium",
+      "text": "Helium that has done its job and warmed back up. It is ordinary gas now, clear and inert, waiting to be cooled again. Once superfluid, it is just helium. The noble gas never reacts with anything, so it can be recycled almost endlessly. Squeezed and chilled again, it remembers how to become superfluid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Using superfluid helium to chill Casimir plates in the Bose-Einstein Condenser, the helium warmed back to gas. Distilled in the Fractionation Spire, it could be recycled."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Tokamak$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Maxwell-Boltzmann Gas, Superfluid Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

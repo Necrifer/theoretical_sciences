@@ -153,6 +153,19 @@ public final class ExpansionMobs {
             this.xpReward = 6;
         }
 
+        // round 37 (1.1): its own mind, not a spider's - no hunting iron golems, no daylight truce - see OwnAI
+        @Override
+        protected void registerGoals() {
+            OwnAI.melee(this, 1.0, true);
+        }
+
+        /** No skeleton rider and none of the spider's random spawn effects. */
+        @Override
+        public net.minecraft.world.entity.SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.DifficultyInstance diff,
+                                                                         net.minecraft.world.entity.MobSpawnType type, @javax.annotation.Nullable net.minecraft.world.entity.SpawnGroupData data) {
+            return data;
+        }
+
         public static AttributeSupplier.Builder createAttributes() {
             return Monster.createMonsterAttributes().add(Attributes.MAX_HEALTH, 10.0).add(Attributes.ATTACK_DAMAGE, 3.0).add(Attributes.MOVEMENT_SPEED, 0.36);
         }

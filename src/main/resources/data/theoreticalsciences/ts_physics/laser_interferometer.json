@@ -1,0 +1,95 @@
+{
+  "params": [
+    {
+      "id": "P",
+      "unit": "W",
+      "min": 1,
+      "max": 200,
+      "step": 0.1,
+      "default": 50
+    },
+    {
+      "id": "F",
+      "unit": "",
+      "min": 1,
+      "max": 500,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "id": "ns",
+      "unit": "",
+      "min": 0,
+      "max": 7,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "recipe_vars": {
+    "hw": 1e-21
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "x",
+      "unit": "",
+      "expr": "F*sqrt(P)",
+      "formula": "F\u00b7\u221aP",
+      "show": false
+    },
+    {
+      "id": "hs",
+      "unit": "strain",
+      "expr": "1e-20/x",
+      "formula": "h_shot \u221d 1/(F\u221aP)"
+    },
+    {
+      "id": "hr",
+      "unit": "strain",
+      "expr": "2.5e-27*x",
+      "formula": "h_rp \u221d F\u221aP"
+    },
+    {
+      "id": "hg",
+      "unit": "strain",
+      "expr": "1e-19*(1 + 0.5*rfi)*(1 + pos(alt)/128)*(1 + 0.5*d)*10^(-ns)",
+      "formula": "h_seis \u221d ground \u00b7 10\u207b\u207f"
+    },
+    {
+      "id": "ht",
+      "unit": "strain",
+      "expr": "4e-23*sqrt(max(T, 0.01)/300)",
+      "formula": "h_th \u221d \u221aT"
+    },
+    {
+      "id": "hn",
+      "unit": "strain",
+      "expr": "sqrt(hs^2 + hr^2 + hg^2 + ht^2)",
+      "formula": "h_n = \u221a\u03a3h\u00b2"
+    },
+    {
+      "id": "SNR",
+      "unit": "",
+      "expr": "hw/hn",
+      "formula": "SNR = h/h_n"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "lock",
+      "kind": "stop",
+      "expr": "1e-20 - hg",
+      "formula": "h_seis < 10\u207b\u00b2\u2070"
+    }
+  ],
+  "rate": "clamp((0.5 + 0.05*(SNR - 8))/(1 + 0.1*ns), 0.2, 2)",
+  "rate_formula": "rate = (0.5 + 0.05\u00b7(SNR \u2212 8)) / (1 + 0.1n)",
+  "heat": "0.01*P",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

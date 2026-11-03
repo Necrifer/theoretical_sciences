@@ -32,8 +32,8 @@ import java.util.List;
  * </pre>
  */
 public record Environment(double gravityMin, double gravityMax, int dimensionsMin, double timeMin, double timeMax, int vacuumMin,
-                          List<String> dimensions, List<String> biomes) {
-    public static final Environment ANY = new Environment(0, Double.MAX_VALUE, 0, 0, Double.MAX_VALUE, 0, List.of(), List.of());
+                          List<String> dimensions, List<String> biomes, int minY) {
+    public static final Environment ANY = new Environment(0, Double.MAX_VALUE, 0, 0, Double.MAX_VALUE, 0, List.of(), List.of(), Integer.MIN_VALUE);
 
     public static final Codec<Environment> CODEC = RecordCodecBuilder.create(i -> i.group(
             Codec.DOUBLE.optionalFieldOf("gravity_min", 0.0).forGetter(Environment::gravityMin),
@@ -43,7 +43,9 @@ public record Environment(double gravityMin, double gravityMax, int dimensionsMi
             Codec.DOUBLE.optionalFieldOf("time_max", Double.MAX_VALUE).forGetter(Environment::timeMax),
             Codec.INT.optionalFieldOf("vacuum_min", 0).forGetter(Environment::vacuumMin),
             Codec.STRING.listOf().optionalFieldOf("dimensions", List.of()).forGetter(Environment::dimensions),
-            Codec.STRING.listOf().optionalFieldOf("biomes", List.of()).forGetter(Environment::biomes)
+            Codec.STRING.listOf().optionalFieldOf("biomes", List.of()).forGetter(Environment::biomes),
+            // 1.10.0: only at or above this height - unless in one of "dimensions" (the Interstellar Scoop: high up, or in space)
+            Codec.INT.optionalFieldOf("min_y", Integer.MIN_VALUE).forGetter(Environment::minY)
     ).apply(i, Environment::new));
 
     public boolean isAny() {
@@ -57,7 +59,10 @@ public record Environment(double gravityMin, double gravityMax, int dimensionsMi
 
     /** Round 35: the place itself - which dimension (by its id) and which biome (by id or tag) the machine stands in. */
     public boolean testPlace(Level level, BlockPos pos) {
-        if (!dimensions.isEmpty() && !dimensions.contains(level.dimension().location().toString())) return false;
+        boolean inDim = dimensions.contains(level.dimension().location().toString());
+        if (minY != Integer.MIN_VALUE) {
+            if (pos.getY() < minY && !inDim) return false;
+        } else if (!dimensions.isEmpty() && !inDim) return false;
         if (biomes.isEmpty()) return true;
         var biome = level.getBiome(pos);
         for (String b : biomes) {
@@ -85,11 +90,12 @@ public record Environment(double gravityMin, double gravityMax, int dimensionsMi
         b.writeVarInt(vacuumMin);
         b.writeCollection(dimensions, FriendlyByteBuf::writeUtf);
         b.writeCollection(biomes, FriendlyByteBuf::writeUtf);
+        b.writeInt(minY);
     }
 
     public static Environment read(FriendlyByteBuf b) {
         return new Environment(b.readDouble(), b.readDouble(), b.readVarInt(), b.readDouble(), b.readDouble(), b.readVarInt(),
-                b.readList(FriendlyByteBuf::readUtf), b.readList(FriendlyByteBuf::readUtf));
+                b.readList(FriendlyByteBuf::readUtf), b.readList(FriendlyByteBuf::readUtf), b.readInt());
     }
 
     static String num(double d) {
@@ -105,7 +111,10 @@ public record Environment(double gravityMin, double gravityMax, int dimensionsMi
         if (timeMin > 0) out.add(Component.translatable("env.theoreticalsciences.time_min", num(timeMin)).withStyle(ChatFormatting.LIGHT_PURPLE));
         if (timeMax < Double.MAX_VALUE) out.add(Component.translatable("env.theoreticalsciences.time_max", num(timeMax)).withStyle(ChatFormatting.LIGHT_PURPLE));
         if (vacuumMin > 0) out.add(Component.translatable("env.theoreticalsciences.vacuum_min", Component.translatable("env.theoreticalsciences.vacuum." + vacuumMin)).withStyle(ChatFormatting.LIGHT_PURPLE));
-        if (!dimensions.isEmpty())
+        if (minY != Integer.MIN_VALUE)
+            out.add(Component.translatable(dimensions.isEmpty() ? "env.theoreticalsciences.min_y" : "env.theoreticalsciences.min_y_or", minY,
+                    dimensions.isEmpty() ? Component.empty() : joined(dimensions, false)).withStyle(ChatFormatting.LIGHT_PURPLE));
+        else if (!dimensions.isEmpty())
             out.add(Component.translatable("env.theoreticalsciences.in_dimension", joined(dimensions, false)).withStyle(ChatFormatting.LIGHT_PURPLE));
         if (!biomes.isEmpty())
             out.add(Component.translatable("env.theoreticalsciences.in_biome", joined(biomes, true)).withStyle(ChatFormatting.LIGHT_PURPLE));

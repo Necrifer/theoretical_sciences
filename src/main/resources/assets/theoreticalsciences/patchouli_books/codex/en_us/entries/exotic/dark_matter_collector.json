@@ -1,0 +1,170 @@
+{
+  "name": "Dark Matter Halo Collector",
+  "icon": "theoreticalsciences:dark_matter_collector",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 36,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dark_matter_collector",
+      "title": "Dark Matter Halo Collector",
+      "text": "Gravitationally focuses the invisible halo surrounding every galaxy.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Galaxies spin too fast for the matter we can see to hold them together. Something unseen supplies the missing gravity: $(thing)dark matter$(), about five times as much as ordinary matter, spread in a halo far beyond the visible disc. This collector gathers it - and the Nebular Gas my first stars are made from."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Dark Matter Halo Collector",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "____   ____",
+            "____   ____",
+            "____   ____",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "____   ____",
+            "____   ____",
+            "____   ____",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___AAAAA___",
+            "_AA_____AA_",
+            "_A_______A_",
+            "A_________A",
+            "A___   ___A",
+            "A___   ___A",
+            "A___   ___A",
+            "A_________A",
+            "_A_______A_",
+            "_AA_____AA_",
+            "___AAAAA___"
+          ],
+          [
+            "B_________B",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "_____D_____",
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "B_________B"
+          ],
+          [
+            "__BBBBBBB__",
+            "_BB_____BB_",
+            "BB_______BB",
+            "B_________B",
+            "B_________B",
+            "B____E____B",
+            "B_________B",
+            "B_________B",
+            "BB_______BB",
+            "_BB_____BB_",
+            "__BBBBBBB__"
+          ],
+          [
+            "___________",
+            "____BBB____",
+            "___BBBBB___",
+            "__B_____B__",
+            "_BB_____BB_",
+            "_BB__F__BB_",
+            "_BB_____BB_",
+            "__B_____B__",
+            "___BBBBB___",
+            "____BBB____",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "____B0B____",
+            "___BB_BB___",
+            "___B_F_B___",
+            "___BB_BB___",
+            "____BBB____",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___________",
+            "___________",
+            "____BBB____",
+            "____BFB____",
+            "____BBB____",
+            "___________",
+            "___________",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "___GGHGG___",
+            "__GIIIIIG__",
+            "__GIGGGIG__",
+            "__HIGGGIH__",
+            "__GIGGGIG__",
+            "__GIIIIIG__",
+            "___GGHGG___",
+            "___________",
+            "___________"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:dark_matter_collector",
+          "A": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "B": "theoreticalsciences:event_horizon_casing",
+          "D": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "E": "theoreticalsciences:calorimeter_detector_array",
+          "F": "theoreticalsciences:turbomolecular_vacuum_pump",
+          "G": "theoreticalsciences:spacetime_casing",
+          "H": "#theoreticalsciences:multiblock/spacetime_casing_or_port",
+          "I": "theoreticalsciences:cryogenic_cooling_jacket"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Dark Matter, Exotic Matter Crystal, Nebular Gas, Void Essence."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dark_matter_collector",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/dark_sector"
+}

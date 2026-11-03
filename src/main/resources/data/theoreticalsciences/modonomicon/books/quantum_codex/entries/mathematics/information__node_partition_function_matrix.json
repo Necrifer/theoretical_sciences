@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.information.node_partition_function_matrix",
+  "description": "book.theoreticalsciences.codex.information.node_partition_function_matrix.desc",
+  "icon": {
+    "item": "theoreticalsciences:partition_function_matrix"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 17,
+  "y": 21,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:partition_function_matrix"
+      },
+      "text": "book.theoreticalsciences.codex.information.node_partition_function_matrix.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.node_partition_function_matrix.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/information__demon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermodynamics_of_information"
+  }
+}

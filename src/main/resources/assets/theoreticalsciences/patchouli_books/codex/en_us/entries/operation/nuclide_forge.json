@@ -1,0 +1,24 @@
+{
+  "name": "Nuclide Forge",
+  "icon": "theoreticalsciences:nuclide_forge",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 52,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A superconducting heavy-ion linac (40 niobium cavities) fires a projectile into an actinide target. Fuse just above the Coulomb barrier with the compound nucleus cool enough to survive: one atom at a time, the island of stability."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Cavity voltage V, Synchronous phase \u03c6, Ion charge state, Beam intensity, Solenoid field.$(br2)$(thing)Disturbance$(): Cavity field drift (microphonics, Lorentz detuning): every cavity gives V\u00b7(1 \u00b1 1%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Interlock: niobium cavities not superconducting; Cavity quench: the niobium went normal; Phase at the crest: no phase focusing, the bunch spreads out; Below the Coulomb barrier: nothing fuses; Solenoids too weak to focus the beam; Interlock: focusing solenoids not superconducting (too warm).$(br2)$(thing)Rate$(): Fusions per second: beam intensity \u00d7 transmission \u00d7 cross-section."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective cavity voltage: V_eff = V\u00b7(1 + \u03b4)$(br)Beam energy (lab): E_lab = N\u00b7q\u00b7V\u00b7cos \u03c6$(br)Centre-of-mass energy: E_cm = E_lab\u00b7A_t/(A_p + A_t)$(br)Coulomb barrier: V_C = 1.44\u00b7Z\u2081Z\u2082 / R  (MeV\u00b7fm)$(br)Excitation energy E*: E* = E_cm + Q$(br)Relative cross-section: \u03c3/\u03c3_max = e^\u2212((E*\u2212E*_opt)/5)\u00b2$(br)Linac transmission: T \u2248 3\u00b7sin|\u03c6|"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_exotic_crystal_singularity",
+  "description": "book.theoreticalsciences.codex.endgame.node_exotic_crystal_singularity.desc",
+  "icon": {
+    "item": "theoreticalsciences:exotic_crystal_singularity"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 184,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:exotic_crystal_singularity"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_exotic_crystal_singularity.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_exotic_crystal_singularity.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_exotic_crystal_singularity.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__mass_crafting",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conceptual_singularities"
+  }
+}

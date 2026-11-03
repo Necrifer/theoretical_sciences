@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_beam_splitter",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_beam_splitter.desc",
+  "icon": {
+    "item": "theoreticalsciences:beam_splitter"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 85,
+  "y": 50,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:beam_splitter"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_beam_splitter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_beam_splitter.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__laser_cutter",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/laser_physics"
+  }
+}

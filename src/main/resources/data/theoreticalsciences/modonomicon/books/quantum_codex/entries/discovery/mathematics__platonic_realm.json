@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.platonic_realm",
+  "description": "book.theoreticalsciences.codex.mathematics.platonic_realm.desc",
+  "icon": {
+    "item": "theoreticalsciences:platonic_compass"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 10,
+  "y": -4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:platonic_compass"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.platonic_realm.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.platonic_realm.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:platonic_compass"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.platonic_realm.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.platonic_realm.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.platonic_realm.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__math_overview"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__numbers"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/platonic_realm"
+  }
+}

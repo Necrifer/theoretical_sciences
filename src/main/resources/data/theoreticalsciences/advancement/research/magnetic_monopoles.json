@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:magnetic_monopole"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.magnetic_monopoles"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.magnetic_monopoles.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/magnetars",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

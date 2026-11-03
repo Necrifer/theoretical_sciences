@@ -1,0 +1,23 @@
+{
+  "name": "Entanglement Tuner",
+  "icon": "theoreticalsciences:entanglement_tuner",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entanglement_tuner",
+      "title": "Entanglement Tuner",
+      "text": "A slim instrument with a dial that sets which entangled channel a transceiver listens on. Entanglement cannot carry a message by itself, but it can share a key and a correlation; the tuner makes two devices agree on which pair of photons they share. It clicks softly between settings."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)My transceivers kept pairing with whichever partner was nearest. I mounted an entangled photon pair and a quantum dot on a neutronium plate as a reference, so every device I tune shares the same correlated source and stays on one channel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): The Casimir Effect."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/casimir_effect"
+}

@@ -1,0 +1,58 @@
+{
+  "title": "The Cyclotron",
+  "description": "A charge in a magnetic field circles at a frequency that does not depend on its speed. Kick it at that frequency and it spirals out, faster every turn - until relativity puts it out of step. Unlocks the Cyclotron.",
+  "icon": "theoreticalsciences:cyclotron",
+  "x": 6,
+  "y": -6,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:resonant_circuits",
+    "theoreticalsciences:radioactivity",
+    "theoreticalsciences:magnetohydrodynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:radium_salt",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A charge q of mass m moves across a uniform magnetic field B. The magnetic force bends it into a circle; write how many times a second it goes round, f.",
+    "name": "Cyclotron frequency",
+    "lhs": "f",
+    "form": "q * B / ( 2 * \u03c0 * m )",
+    "expr": "q * B / ( 6.28318 * m ) / 1000000",
+    "ask": "Find f in MHz for a proton (q = 1.602e-19 C, m = 1.6726e-27 kg) in B = @{B} T.",
+    "vars": {
+      "f": "frequency (MHz)",
+      "q": "charge (C)",
+      "B": "field (T)",
+      "m": "mass (kg)",
+      "\u03c0": "pi"
+    },
+    "given": {
+      "q": 1.602e-19,
+      "B": 1.5,
+      "m": 1.6726e-27
+    },
+    "unit": "MHz",
+    "method": "qvB = mv\u00b2/r gives r = mv/qB; the time round, 2\u03c0r/v = 2\u03c0m/qB, does not depend on the speed.",
+    "distractors": [
+      "v",
+      "r",
+      "2"
+    ],
+    "vary": {
+      "B": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

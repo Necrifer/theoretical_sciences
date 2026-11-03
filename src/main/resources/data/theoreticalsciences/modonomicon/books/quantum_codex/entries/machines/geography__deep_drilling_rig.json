@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.deep_drilling_rig",
+  "description": "book.theoreticalsciences.codex.geography.deep_drilling_rig.desc",
+  "icon": {
+    "item": "theoreticalsciences:deep_drilling_rig"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 42,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:deep_drilling_rig"
+      },
+      "text": "book.theoreticalsciences.codex.geography.deep_drilling_rig.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.deep_drilling_rig.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.deep_drilling_rig.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.deep_drilling_rig.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.deep_drilling_rig.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:deep_drilling_rig"
+      },
+      "text": "book.theoreticalsciences.codex.geography.deep_drilling_rig.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/geography__r42_press"
+    },
+    {
+      "entry": "theoreticalsciences:machines/geography__tectonic_press"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/deep_drilling"
+  }
+}

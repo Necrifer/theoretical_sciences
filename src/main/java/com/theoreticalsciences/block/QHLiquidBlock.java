@@ -21,4 +21,11 @@ public class QHLiquidBlock extends LiquidBlock {
         if (player == null) return ItemStack.EMPTY;
         return super.pickupBlock(player, level, pos, state);
     }
+
+    /** Round 37: the reason a bucket refuses it is what it does to you - heat burns, cold freezes, the exotic twists. */
+    @Override
+    protected void entityInside(BlockState state, net.minecraft.world.level.Level level, BlockPos pos, net.minecraft.world.entity.Entity entity) {
+        super.entityInside(state, level, pos, entity);
+        FluidHazard.entityInside(state, level, pos, entity);
+    }
 }

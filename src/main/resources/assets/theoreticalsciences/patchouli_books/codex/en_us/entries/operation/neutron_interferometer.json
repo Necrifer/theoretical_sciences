@@ -1,0 +1,24 @@
+{
+  "name": "Neutron Interferometer",
+  "icon": "theoreticalsciences:neutron_interferometer",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 50,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A neutron of wavelength \u03bb is split by the first silicon blade, its two paths enclosing an area A, and joined at the third. Tilt the plane of the paths by \u03b1 and one path climbs higher than the other: gravity changes its momentum, and the phase between them shifts by \u0394\u03c6 = 2\u03c0m\u00b2g\u03bbA\u00b7sin \u03b1/h\u00b2. The counts at an exit follow (1 + V\u00b7cos \u0394\u03c6)/2; N neutrons fix the phase to 1/(V\u221aN)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Tilt \u03b1, Neutron wavelength \u03bb, Counting time.$(br2)$(thing)Disturbance$(): Thermal bending of the crystal: the phase drifts by \u00b10.05 rad\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): .$(br2)$(thing)Rate$(): Shorter counts are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Gravitational phase \u0394\u03c6: \u0394\u03c6 = 2\u03c0m\u00b2g\u03bbA\u00b7sin \u03b1/h\u00b2$(br)Fringe: cos \u0394\u03c6$(br)Phase error: \u03c3 = 1/(V\u221aN)"
+    }
+  ]
+}

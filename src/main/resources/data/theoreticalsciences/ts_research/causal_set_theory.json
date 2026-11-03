@@ -1,0 +1,55 @@
+{
+  "title": "Causal Set Theory",
+  "description": "Spacetime as a set of events and nothing else but which can affect which. Scatter them at random, and a manifold appears: order plus number gives geometry.",
+  "icon": "theoreticalsciences:causal_set_seed",
+  "x": 11,
+  "y": -3,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:quantum_gravity",
+    "theoreticalsciences:set_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:normal_distribution_crystal",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:metric_tensor",
+      "count": 2
+    }
+  ],
+  "time": 1080,
+  "puzzle": {
+    "goal": "Events are scattered at random with density \u03c1 through spacetime. Write the chance P that a region of volume V holds none at all.",
+    "name": "Poisson sprinkling",
+    "lhs": "P",
+    "form": "1 / exp ( \u03c1 * V )",
+    "expr": "1 / exp ( p * V )",
+    "ask": "Find P for p = @{p} events per unit volume in a region of V = 3.",
+    "vars": {
+      "P": "chance of an empty region",
+      "\u03c1": "density",
+      "p": "density",
+      "V": "volume"
+    },
+    "given": {
+      "p": 0.5,
+      "V": 3
+    },
+    "unit": "",
+    "method": "A Poisson process with mean \u03c1V gives n events with probability (\u03c1V)\u207fe^(\u2212\u03c1V)/n!; put n = 0.",
+    "distractors": [
+      "2",
+      "n",
+      "\u03c0"
+    ],
+    "vary": {
+      "p": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

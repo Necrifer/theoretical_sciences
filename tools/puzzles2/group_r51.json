@@ -1,0 +1,117 @@
+{
+ "interstellar_medium": {
+  "goal": "A hot young star gives off Q ionising photons a second into gas of n atoms per cubic metre. Each ionised atom recombines at the rate n·α; write the radius R of the ball of gas the star can keep ionised.",
+  "name": "Strömgren sphere",
+  "lhs": "R",
+  "form": "( 3 * Q / ( 4 * π * n ^ 2 * α ) ) ^ ( 1 / 3 )",
+  "expr": "( 3 * Q / ( 12.5664 * n ^ 2 * a ) ) ^ 0.333333 / p",
+  "ask": "Find R in parsecs for Q = 1e49 /s, n = 1e7 /m³, a = 2.6e-19 m³/s (one parsec p = 3.086e16 m).",
+  "vars": {
+   "R": "radius (pc)",
+   "Q": "ionising photons per second",
+   "π": "pi",
+   "n": "atoms per m³",
+   "α": "recombination coefficient",
+   "a": "recombination coefficient (m³/s)",
+   "p": "one parsec (m)"
+  },
+  "given": {
+   "Q": 1e+49,
+   "n": 10000000.0,
+   "a": 2.6e-19,
+   "p": 3.086e+16
+  },
+  "unit": "pc",
+  "method": "Balance: every photon ionises one atom, and inside the sphere atoms recombine at n²α per volume. So Q = (4/3)πR³·n²α.",
+  "distractors": [
+   "c",
+   "h",
+   "2"
+  ]
+ },
+ "exoplanetology": {
+  "goal": "A planet of radius r crosses in front of its star, whose radius is R, and blocks part of its light. Write the fraction δ of the starlight that is lost, as a percentage.",
+  "name": "Transit depth",
+  "lhs": "δ",
+  "form": "( r / R ) ^ 2",
+  "expr": "( r / R ) ^ 2 * 100",
+  "ask": "Find δ in per cent for a Jupiter-sized planet (r = 7.0e7 m) in front of the Sun (R = 6.96e8 m).",
+  "vars": {
+   "δ": "depth (%)",
+   "r": "planet radius (m)",
+   "R": "star radius (m)"
+  },
+  "given": {
+   "r": 70000000.0,
+   "R": 696000000.0
+  },
+  "unit": "%",
+  "method": "The planet's disc blocks an area πr² of the star's disc πR².",
+  "distractors": [
+   "π",
+   "3",
+   "G"
+  ]
+ },
+ "accretion_physics": {
+  "goal": "Light from gas falling onto a mass M pushes on its electrons (cross-section σ) while gravity pulls on its protons (mass m). Write the luminosity L at which the two balance, using G and c.",
+  "name": "Eddington luminosity",
+  "lhs": "L",
+  "form": "4 * π * G * M * m * c / σ",
+  "expr": "12.5664 * G * M * m * c / s / u",
+  "ask": "Find L in units of 1e31 W (u = 1e31) for ten solar masses: M = 1.989e31 kg, m = 1.6726e-27 kg, c = 2.998e8 m/s, s = 6.652e-29 m², G = 6.674e-11.",
+  "vars": {
+   "L": "luminosity (10³¹ W)",
+   "π": "pi",
+   "G": "gravitational constant",
+   "M": "mass (kg)",
+   "m": "proton mass (kg)",
+   "c": "speed of light",
+   "σ": "Thomson cross-section",
+   "s": "Thomson cross-section (m²)",
+   "u": "10³¹ W"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 1.989e+31,
+   "m": 1.6726e-27,
+   "c": 299800000.0,
+   "s": 6.652e-29,
+   "u": 1e+31
+  },
+  "unit": "×10³¹ W",
+  "method": "The radiation force on an electron at distance r is σL/(4πr²c); gravity on its proton is GMm/r². The r² cancels.",
+  "distractors": [
+   "h",
+   "k",
+   "2"
+  ]
+ },
+ "cosmic_web": {
+  "goal": "For the Universe to be exactly flat, the mass in each cubic metre must balance its expansion rate H against gravity's constant G. Write how much mass ρ each cubic metre must hold.",
+  "name": "Critical density",
+  "lhs": "ρ",
+  "form": "3 * H ^ 2 / ( 8 * π * G )",
+  "expr": "3 * H ^ 2 / ( 25.1327 * G * m )",
+  "ask": "Find ρ in protons per cubic metre for H = 2.27e-18 /s (70 km/s/Mpc), G = 6.674e-11 and a proton mass m = 1.6726e-27 kg.",
+  "vars": {
+   "ρ": "protons per m³",
+   "H": "Hubble constant (1/s)",
+   "π": "pi",
+   "G": "gravitational constant",
+   "m": "proton mass (kg)"
+  },
+  "given": {
+   "H": 2.27e-18,
+   "G": 6.674e-11,
+   "m": 1.6726e-27
+  },
+  "unit": "protons/m³",
+  "method": "Friedmann's equation, H² = 8πGρ/3 − k/a², with the curvature k set to zero.",
+  "distractors": [
+   "c",
+   "Λ",
+   "2"
+  ]
+ }
+}

@@ -1,0 +1,100 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.dyson_array",
+  "description": "book.theoreticalsciences.codex.stellar.dyson_array.desc",
+  "icon": {
+    "item": "theoreticalsciences:dyson_array"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 137,
+  "y": 66,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dyson_array"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p4.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dyson_array"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stellar_core"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dyson_swarm_satellite"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p9"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:von_neumann_probe"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p10"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dyson_shell_segment"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p11"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.dyson_array.p12"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/singularities__white_hole_emitter"
+    },
+    {
+      "entry": "theoreticalsciences:materials/stellar__nucleosynthesis_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/dyson_swarm"
+  }
+}

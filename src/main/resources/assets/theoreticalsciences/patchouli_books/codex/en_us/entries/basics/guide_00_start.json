@@ -1,0 +1,25 @@
+{
+  "name": "Start Here",
+  "icon": "theoreticalsciences:quantum_codex",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quantum_codex",
+      "text": "$(l)Welcome.$() This Codex is your guide to Theoretical Sciences. The gold-marked nodes in this column are the $(thing)Getting Started$() steps: read them from the top down. Later steps open by themselves as you reach them (a padlock says what opens it), and every chapter of the map to the right opens with the step that explains it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Using the Codex$()$(li)$(thing)Drag$() the map (or arrow keys) to move it, $(thing)mouse wheel$() to zoom, $(thing)Fit$() (F) shows the whole map, $(thing)Centre$() (C) comes back here.$(li)$(thing)Hover$() a node: everything it links to lights up.$(li)$(thing)Click$() a node to read it; highlighted names in the text are links. $(li)$(thing)Search$() (bottom right, or Ctrl+F) looks through every page you have unlocked.$(li)The tabs along the top sort the same entries by branch: Physics, Materials, Machines..."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Two shortcuts$()$(li)$(thing)Sneak + use$() the Codex opens the $(thing)Research Tree$() (so does the $(thing)Research$() button at the bottom left).$(li)In any inventory, hover an item of this mod and press $(thing)K$() (changeable in Controls): the Codex opens at its page, with every way to make it.$(br2)The $(thing)Next steps$() button lists the research you can start right now and the guide steps you have not read yet."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lost your Codex? It is crafted in an ordinary crafting table: $(item)Book$(), $(item)Cherenkov Quartz$()."
+    }
+  ]
+}

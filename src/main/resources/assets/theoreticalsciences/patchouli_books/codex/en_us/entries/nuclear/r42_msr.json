@@ -1,0 +1,26 @@
+{
+  "name": "The Molten Salt Reactor",
+  "icon": "theoreticalsciences:molten_salt_reactor",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:molten_salt_reactor,theoreticalsciences:boron_control_rod,theoreticalsciences:plutonium_239_pellet",
+      "text": "In a $(item)Molten Salt Reactor$() the fuel is liquid: uranium fluoride dissolved in a lithium salt, pumped through a core of graphite. Graphite slows the neutrons; the salt carries the heat out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A chain reaction holds steady when each fission leads to exactly one more: k = \u03b7 f p \u03b5, less what leaks out and what the boron $(thing)control rods$() absorb. Too little uranium and it will not go critical at all; too much and the rods must hold it back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Salt expands as it warms, so k falls with temperature: the reactor finds its own temperature, where k is exactly one. Keep that between 732 K, where the salt freezes, and 980 K, where the vessel creeps. More fuel or fewer rods: hotter. More flow: more power at the same temperature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The spent salt still holds most of its uranium, plutonium bred from uranium-238, and fission products. The cascade takes it apart by fluoride volatility: back to hexafluoride, plutonium and $(item)Fission Fragment Mix$(). Plutonium makes mixed-oxide fuel salt."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

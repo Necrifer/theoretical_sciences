@@ -1,0 +1,30 @@
+{
+  "type": "theoreticalsciences:hawking_evaporation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:kugelblitz_seed"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:interstellar_dust",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hawking_radiation",
+      "amount": 100
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:hawking_radiation",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Pref": 10.0
+    }
+  }
+}

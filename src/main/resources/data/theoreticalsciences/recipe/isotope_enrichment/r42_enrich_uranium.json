@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:isotope_enrichment",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:uranium_hexafluoride",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:uranium_235_pellet",
+      "count": 1
+    },
+    {
+      "id": "theoreticalsciences:uranium_238_pellet",
+      "count": 5
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:isotope_separation",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "xP",
+        "min": 0.03,
+        "max": 0.2
+      }
+    ]
+  }
+}

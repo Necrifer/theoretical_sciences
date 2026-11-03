@@ -1,0 +1,68 @@
+{
+  "title": "Crystal Growth",
+  "description": "Every transistor, laser and lens crystal starts as a seed dipped in its own melt. How fast it is drawn out decides what defects and impurities it keeps. Unlocks the Crystal Growth Furnace and its boules.",
+  "icon": "theoreticalsciences:crystal_growth_furnace",
+  "x": 4,
+  "y": -10,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:crystallography"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 4
+    },
+    {
+      "item": "minecraft:quartz",
+      "count": 16
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A crystal grows at its front only as fast as its latent heat L (per kilogram) can be carried away up the crystal, of density \u03c1, which conducts heat k watts per metre per kelvin down a gradient G. Write the growth speed v.",
+    "name": "Stefan condition at the front",
+    "lhs": "v",
+    "form": "k * G / ( \u03c1 * L )",
+    "expr": "k * G / ( R * L ) * 3600000",
+    "ask": "Find v in mm/h for silicon: k = @{k} W/(m\u00b7K), G = 1500 K/m, R = @{R} kg/m\u00b3, L = @{L} J/kg.",
+    "vars": {
+      "v": "growth speed (mm/h)",
+      "k": "thermal conductivity",
+      "G": "gradient (K/m)",
+      "\u03c1": "density",
+      "L": "latent heat (J/kg)",
+      "R": "density (kg/m\u00b3)"
+    },
+    "given": {
+      "k": 22,
+      "G": 1500,
+      "R": 2330,
+      "L": 1800000.0
+    },
+    "unit": "mm/h",
+    "method": "At the front the heat conducted away, k\u00b7G per square metre, must equal the latent heat set free, \u03c1\u00b7L\u00b7v.",
+    "distractors": [
+      "T",
+      "2",
+      "+"
+    ],
+    "vary": {
+      "k": [
+        13.0,
+        31.0,
+        1.0
+      ],
+      "R": [
+        1398.0,
+        3262.0,
+        1.0
+      ],
+      "L": [
+        1080000.0,
+        2520000.0,
+        10000.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Monte Carlo Sample Pack",
+  "icon": "theoreticalsciences:monte_carlo_sample_pack",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:monte_carlo_sample_pack",
+      "title": "Monte Carlo Sample Pack",
+      "text": "A billion random points, drawn and sorted: the answer to an integral too hard to do any other way, to a part in thirty thousand."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Monte Carlo Engine$().$(br2)$(thing)Unlocked by$(): Monte Carlo Methods.$(br2)$(thing)Used in$(): Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/monte_carlo_methods"
+}

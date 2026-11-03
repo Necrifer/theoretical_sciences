@@ -1,0 +1,42 @@
+{
+  "name": "Pushing Electrons",
+  "icon": "theoreticalsciences:electrolytic_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electrolytic_cell,theoreticalsciences:electride_crystal",
+      "text": "Every reaction is electrons moving from where they are to where they would rather be. The $(item)Electrolytic Cell$() pushes them with a voltage instead of waiting."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It makes $(item)Electride Crystals$() (salts whose negative ions are bare electrons), $(fluid)Ionic Liquid$() (molten salt at room temperature), and with superacid research, $(fluid)Carborane Superacid$() - a million million times stronger than sulfuric acid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electrolytic_cell",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electride_crystal",
+      "text": "A salt whose negative ions are bare electrons sitting in holes in the lattice.$(br2)Made in $(item)Electrolytic Cell$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Electride Crystal$(): Carborane Superacid, Room-Temperature Superconductor"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ionic_liquid_cell",
+      "text": "$(fluid)Ionic Liquid$(). Made in $(item)Electrolytic Cell$().$(br)Used for: Absolute Singularity, Autocatalytic Broth, Carbon Nanotube Bundle, Carborane Superacid, Metal-Organic Framework."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:carborane_superacid_cell",
+      "text": "$(fluid)Carborane Superacid$(). Made in $(item)Electrolytic Cell$().$(br)Used for: Positronium Hydride, Primordial Soup."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrochemistry"
+}

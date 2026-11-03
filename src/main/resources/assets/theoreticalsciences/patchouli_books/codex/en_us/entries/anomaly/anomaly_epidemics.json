@@ -1,0 +1,36 @@
+{
+  "name": "Systems: Epidemics, Percolation & Phase Transitions",
+  "icon": "theoreticalsciences:contagion_network_map",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:contagion_network_map",
+      "text": "Between hosts, an infection is bookkeeping. Split a population into susceptible S, infected I and recovered: dI/dt = \u03b2SI/N \u2212 (\u03b3 + \u03bc)I. At the start everyone is susceptible, and the infection grows only if each case makes more than one more: $(thing)R\u2080 = \u03b2/(\u03b3 + \u03bc) > 1$(). Once a fraction 1 \u2212 1/R\u2080 is immune, it can no longer spread."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That threshold is a $(thing)phase transition$(). Let each link of a network pass the infection with probability T: below a critical T, outbreaks stay small; above it a giant connected cluster appears and the infection $(thing)percolates$() through the whole population - like water through ground coffee, or a magnet ordering below its Curie point. On networks with hubs the critical T can be very small."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Holographic Encoder$(), a replicator, a resistant clone and a holographic matrix write the $(item)Contagion Network Map$(): every path an anomaly can take, and where R crosses 1."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:contagion_network_map",
+      "text": "Every contact, every transmission, every node an infection passed through. Somewhere in it is the threshold where R crosses 1.$(br2)Made in $(item)Holographic Encoder$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:holographic_encoder",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Contagion Network Map$(): Anomaly Catalogue, CAR-T Cell Culture, Quarantine Field Matrix"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/epidemic_dynamics"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Exoplanetology",
+  "icon": "theoreticalsciences:transit_light_curve",
+  "advancement": "theoreticalsciences:research/exoplanetology",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:transit_light_curve",
+      "title": "Exoplanetology",
+      "text": "$(thing)Exoplanetology$()$(br2)Most stars have planets. Watch a star's light dip as one crosses in front of it, and the dip gives its size; its spectrum through the planet's air gives what it is made of. Unlocks transit photometry and the assay of exoplanet cores."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 70$(br2)$(thing)Builds on$(): Spectroscopy.$(br2)$(thing)Samples$(): 4 Star Field Plate, 2 Stellar Spectrum Plate."
+    }
+  ]
+}

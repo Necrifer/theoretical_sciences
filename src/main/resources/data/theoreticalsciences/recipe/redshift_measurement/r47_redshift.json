@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:redshift_measurement",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cobalt_57_source"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:redshift_record",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 1200,
+  "research": "theoreticalsciences:gravitational_redshift",
+  "unscaled": true,
+  "insight_per_run": 5,
+  "physics": {
+    "windows": [
+      {
+        "q": "mis",
+        "min": 0.0,
+        "max": 2.0
+      },
+      {
+        "q": "zs",
+        "min": 5.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

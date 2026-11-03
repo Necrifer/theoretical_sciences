@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:warp_bubble_core"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.alcubierre_metric"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.alcubierre_metric.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/tidal_physics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

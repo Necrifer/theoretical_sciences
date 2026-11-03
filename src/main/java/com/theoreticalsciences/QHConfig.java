@@ -22,9 +22,10 @@ public final class QHConfig {
     public static final ModConfigSpec.BooleanValue FAILURE_HAZARDS;
     public static final ModConfigSpec.IntValue NANITE_CAP;
     public static final ModConfigSpec.BooleanValue FAILURE_DESTROYS_BLOCKS;
+    public static final ModConfigSpec.BooleanValue RADIATION_SICKNESS;
+    public static final ModConfigSpec.BooleanValue RADIATION_SHARE;
     public static final ModConfigSpec.DoubleValue INGREDIENT_MULTIPLIER;
     public static final ModConfigSpec.IntValue CHRONAL_MAX_SPEED, CHRONAL_MAX_RADIUS;
-    public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> CREATIVE_DUPLICATOR_BLOCKS, CREATIVE_DUPLICATOR_HOSTS;
     public static final ModConfigSpec.BooleanValue AUTO_SINGULARITIES;
     public static final ModConfigSpec.IntValue AUTO_SINGULARITY_COUNT;
     public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> AUTO_SINGULARITY_BLACKLIST;
@@ -86,12 +87,6 @@ public final class QHConfig {
         ESSENCE_BLACKLIST = b.comment("Fluids that are not distilled into a mod's Essence (and so are not needed for Pleroma): \"modid:fluid\", or \"modid:*\" for a whole mod. Only fluids with a bucket count at all.")
                 .defineListAllowEmpty("essenceBlacklist", java.util.List.of(), () -> "modid:fluid", o -> o instanceof String);
         b.pop();
-        b.push("beyond_copying");
-        CREATIVE_DUPLICATOR_BLOCKS = b.comment("Blocks that copy items or fluids without end (creative chests, bins, tanks, drums). They refuse what lies beyond Omnipotence (item / fluid tag theoreticalsciences:beyond_omnipotence). Changes to this list take effect for pipes after a restart.")
-                .defineListAllowEmpty("creativeDuplicatorBlocks", com.theoreticalsciences.transcend.Uncopyable.DEFAULT_BLOCKS, () -> "modid:block", o -> o instanceof String);
-        CREATIVE_DUPLICATOR_HOSTS = b.comment("Mods whose storage blocks become duplicators while a vending-style part (item tag theoreticalsciences:creative_duplicator_parts) is installed in them, e.g. Storage Drawers with a Creative Vending Upgrade. Ordinary blocks of these mods are not affected.")
-                .defineListAllowEmpty("creativeDuplicatorHosts", com.theoreticalsciences.transcend.Uncopyable.DEFAULT_HOSTS, () -> "modid", o -> o instanceof String);
-        b.pop();
         b.push("chronal_accelerator");
         CHRONAL_MAX_SPEED = b.comment("Highest time acceleration the Chronal Accelerator may be set to (2..256).").defineInRange("maxSpeed", 256, 2, 256);
         CHRONAL_MAX_RADIUS = b.comment("Largest field radius (the field is a cube of side 2r+1).").defineInRange("maxRadius", 4, 1, 8);
@@ -100,6 +95,12 @@ public final class QHConfig {
         b.pop();
         b.push("hazards");
         SINGULARITY_PULL_RADIUS = b.comment("Radius in blocks within which an active singularity pulls loose items and mobs (0 disables).").defineInRange("singularityPullRadius", 6, 0, 32);
+        b.pop();
+        b.push("radiation");
+        RADIATION_SICKNESS = b.comment("If true, carrying radioactive items (item tags theoreticalsciences:radioactive and theoreticalsciences:strongly_radioactive) builds up a dose that gives this mod's Radiation Sickness. Turn off for packs that rely on another mod's radiation.")
+                .define("radiationSickness", true);
+        RADIATION_SHARE = b.comment("If true and Mekanism or GregTech is installed, the same dose is also handed to that mod's own radiation system (Mekanism radiation, GregTech's carcinogen condition), so its detectors and protective gear apply. NuclearRadiation (NuclearCraft) reads this mod's data files under data/theoreticalsciences/nuclear_radiation/bindings instead; override those with a datapack to change or remove them.")
+                .define("shareRadiationWithOtherMods", true);
         b.pop();
         COMMON_SPEC = b.build();
 

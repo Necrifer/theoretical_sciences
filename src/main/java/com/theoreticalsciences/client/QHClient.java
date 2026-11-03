@@ -41,6 +41,7 @@ public final class QHClient {
         // round 30: Clusters, Hyperclusters and Ultraclusters each show their own animated glow (model overrides)
         event.enqueueWork(() -> net.minecraft.client.renderer.item.ItemProperties.register(com.theoreticalsciences.registry.QHItems.get("singularity_cluster"),
                 TheoreticalSciences.id("cluster_level"), (stack, level, entity, seed) -> com.theoreticalsciences.extreme.Singularities.clusterLevel(stack) / 10F));
+        event.enqueueWork(MagneticCompass::register);          // 1.2.8: compasses swing towards magnets close by
         event.enqueueWork(() -> QHFluids.ALL.values().forEach(e -> {
             ItemBlockRenderTypes.setRenderLayer(e.source.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(e.flowing.get(), RenderType.translucent());
@@ -179,6 +180,7 @@ public final class QHClient {
     @SubscribeEvent
     public static void dimensionEffects(RegisterDimensionSpecialEffectsEvent event) {
         event.register(TheoreticalSciences.id("the_bulk"), new BulkSkyEffects());
+        event.register(TheoreticalSciences.id("accretion_frontier"), new com.theoreticalsciences.client.render.FrontierSkyEffects());
         event.register(TheoreticalSciences.id("hyperdimensional_reality"), new com.theoreticalsciences.client.render.HyperrealSkyEffects());
         event.register(TheoreticalSciences.id("platonic_realm"), new com.theoreticalsciences.client.render.FractalSkyEffects(false));
         event.register(TheoreticalSciences.id("transcendental"), new com.theoreticalsciences.client.render.FractalSkyEffects(true));

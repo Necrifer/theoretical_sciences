@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.topological_transmuter",
+  "description": "book.theoreticalsciences.codex.quantum.topological_transmuter.desc",
+  "icon": {
+    "item": "theoreticalsciences:topological_transmuter"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 34,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:topological_transmuter"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.topological_transmuter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.topological_transmuter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.topological_transmuter.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.topological_transmuter.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:topological_transmuter"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.topological_transmuter.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__metamaterial_weaver"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/topology"
+  }
+}

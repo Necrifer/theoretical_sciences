@@ -1,0 +1,71 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.bayesian_analyzer",
+  "description": "book.theoreticalsciences.codex.probability.bayesian_analyzer.desc",
+  "icon": {
+    "item": "theoreticalsciences:bayesian_analyzer"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 49,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bayesian_analyzer"
+      },
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bayesian_analyzer"
+      },
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:prior_tablet"
+      },
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:posterior_tablet"
+      },
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.bayesian_analyzer.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/probability__r38_galton"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/probability__galton_board"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/bayesian_inference"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Folded Protein Crystal",
+  "icon": "theoreticalsciences:folded_protein_crystal",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:folded_protein_crystal",
+      "title": "Folded Protein Crystal",
+      "text": "A long chain of amino acids that has found its one native shape out of more possible shapes than there are atoms in the universe - and frozen in that shape as a crystal. Levinthal's paradox says it should take forever. It took milliseconds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Proteins fold quickly because the energy landscape funnels them. I mapped that funnel with a molecular orbital lattice, let a quantum processor search it, and grew the folded chain from recombinant DNA in nutrient broth."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gene Sequencer$().$(br2)$(thing)Unlocked by$(): Protein Folding.$(br2)$(thing)Used in$(): Cryptochrome Magnetoreceptor, Morphogenic Serum, Prion Lattice, Quantum Chlorophyll."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/genomics"
+}

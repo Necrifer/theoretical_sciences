@@ -1,0 +1,19 @@
+{
+  "name": "Bitter Plate",
+  "icon": "theoreticalsciences:bitter_plate",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bitter_plate",
+      "title": "Bitter Plate",
+      "text": "A copper disc cut with a slit and pierced with cooling holes. Stacked into a helix, Bitter plates make the strongest steady magnets there are."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Laser Cutter$().$(br2)$(thing)Unlocked by$(): Magnetic Confinement.$(br2)$(thing)Used in$(): Bitter Plate Stack."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetic_confinement"
+}

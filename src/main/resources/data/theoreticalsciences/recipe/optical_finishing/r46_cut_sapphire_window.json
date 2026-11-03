@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:sapphire_boule",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sapphire_window",
+      "count": 4
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 1.77
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": -0.02,
+        "max": 0.02
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 69.0
+      }
+    ]
+  }
+}

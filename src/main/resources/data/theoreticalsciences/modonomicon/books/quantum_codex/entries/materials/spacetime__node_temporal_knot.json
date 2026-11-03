@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_temporal_knot",
+  "description": "book.theoreticalsciences.codex.spacetime.node_temporal_knot.desc",
+  "icon": {
+    "item": "theoreticalsciences:temporal_knot"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 70,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:temporal_knot"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_temporal_knot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_temporal_knot.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_temporal_knot.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__chrono_loom",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/temporal_mechanics"
+  }
+}

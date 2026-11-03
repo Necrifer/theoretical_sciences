@@ -36,5 +36,24 @@ public final class MEBridge {
         if (present()) com.theoreticalsciences.compat.ae2.Ae2Link.registerCaps(e);
     }
 
+    // ------------------------------------------------------------------ 1.1.0: a bound tool reaching into a network
+    /** The online ME network the block at this position belongs to (an opaque handle), or null. */
+    @Nullable
+    public static Object grid(net.minecraft.server.level.ServerLevel level, net.minecraft.core.BlockPos pos) {
+        return present() ? com.theoreticalsciences.compat.ae2.Ae2Remote.grid(level, pos) : null;
+    }
+
+    public static long count(@Nullable Object grid, net.minecraft.world.item.Item item) {
+        return grid != null && present() ? com.theoreticalsciences.compat.ae2.Ae2Remote.count(grid, item) : 0;
+    }
+
+    public static boolean take(@Nullable Object grid, net.minecraft.world.item.Item item, int n, net.minecraft.world.entity.player.Player player) {
+        return grid != null && present() && com.theoreticalsciences.compat.ae2.Ae2Remote.take(grid, item, n, player);
+    }
+
+    public static long put(@Nullable Object grid, net.minecraft.world.item.ItemStack s, net.minecraft.world.entity.player.Player player) {
+        return grid != null && present() ? com.theoreticalsciences.compat.ae2.Ae2Remote.put(grid, s, player) : 0;
+    }
+
     private MEBridge() {}
 }

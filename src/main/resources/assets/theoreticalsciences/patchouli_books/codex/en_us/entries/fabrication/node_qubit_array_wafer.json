@@ -1,0 +1,23 @@
+{
+  "name": "Qubit Array Wafer",
+  "icon": "theoreticalsciences:qubit_array_wafer",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 506,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:qubit_array_wafer",
+      "title": "Qubit Array Wafer",
+      "text": "Thousands of qubits engraved into a single wafer through a metamaterial lens, each one isolated from the rest by careful spacing. When cooled, the whole array waits in superposition. It is cold to touch and shimmers faintly at the edges."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Exposing a Cherenkov Wafer through Quantum-Dot Photoresist in the Quantum Lithographer, I tuned the dots so each one became a qubit. The lens laid out thousands at once."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Quantum Lithographer$().$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Qubit Die, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.omnilex_memory",
+  "description": "book.theoreticalsciences.codex.endgame.omnilex_memory.desc",
+  "icon": {
+    "item": "theoreticalsciences:omnilex"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 88,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.omnilex_memory.p0",
+      "title": "book.theoreticalsciences.codex.endgame.omnilex_memory"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/endgame__hyperreal"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/omnilex"
+  }
+}

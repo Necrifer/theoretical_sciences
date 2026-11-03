@@ -1,0 +1,19 @@
+{
+  "name": "Ferrofluid",
+  "icon": "theoreticalsciences:ferrofluid_cell",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ferrofluid_cell",
+      "title": "Ferrofluid",
+      "text": "$(fluid)Ferrofluid$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Ferromagnetism.$(br2)$(thing)Used in$(): Lithium-6 Ingot."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ferromagnetism"
+}

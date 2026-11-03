@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.node_higgs_boson_crystal",
+  "description": "book.theoreticalsciences.codex.exotic.node_higgs_boson_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:higgs_boson_crystal"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 85,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:higgs_boson_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.node_higgs_boson_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_higgs_boson_crystal.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_higgs_boson_crystal.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/exotic__particle_spectrometer",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/standard_model"
+  }
+}

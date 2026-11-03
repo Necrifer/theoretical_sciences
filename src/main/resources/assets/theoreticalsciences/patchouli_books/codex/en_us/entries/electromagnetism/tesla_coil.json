@@ -1,0 +1,158 @@
+{
+  "name": "Tesla Coil",
+  "icon": "theoreticalsciences:tesla_coil",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 103,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tesla_coil",
+      "title": "Tesla Coil",
+      "text": "A resonant transformer: a spark-gap primary ringing in tune with a tall secondary steps a few kilovolts up to millions, and the toroid throws arcs metres long.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Tune the primary - its capacitance and the turns tapped - to ring at the secondary's 159 kHz. In tune, the voltage steps up as \u221a(C\u2081/C\u2082) and the arcs grow a metre for every 700 kV. Stand clear: anyone within six blocks of a running coil gets struck."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tesla Coil",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___A___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "__AAA__",
+            "_AAAAA_",
+            "AA___AA",
+            "AA_B_AA",
+            "AA___AA",
+            "_AAAAA_",
+            "__AAA__"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "D______",
+            "_______",
+            "_______",
+            "___B___",
+            "_______",
+            "_______",
+            "______D"
+          ],
+          [
+            "D_E0E__",
+            "_EEEEE_",
+            "EE___EE",
+            "EE_B_EE",
+            "EE___EE",
+            "_EEEEE_",
+            "__EEE_D"
+          ],
+          [
+            "DDDFDDD",
+            "DDDDDDD",
+            "DDDDDDD",
+            "FDDDDDF",
+            "DDDDDDD",
+            "DDDDDDD",
+            "DDDFDDD"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:tesla_coil",
+          "A": "theoreticalsciences:tesla_toroid",
+          "B": "theoreticalsciences:tesla_secondary",
+          "D": "theoreticalsciences:capacitor_bank",
+          "E": "theoreticalsciences:tesla_primary",
+          "F": "#theoreticalsciences:multiblock/capacitor_bank_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Bone Meal, Fused Silica."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tesla_coil",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/resonant_circuits"
+}

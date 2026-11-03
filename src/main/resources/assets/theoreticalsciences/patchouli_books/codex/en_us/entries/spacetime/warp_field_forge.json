@@ -1,0 +1,131 @@
+{
+  "name": "Warp Field Forge",
+  "icon": "theoreticalsciences:warp_field_forge",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 120,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:warp_field_forge",
+      "title": "Warp Field Forge",
+      "text": "Shapes a bubble of flat space inside a wall of negative energy: contracted ahead, expanded behind.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This controller is too complex for a crafting grid. Build it on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the bubble's speed (in c), its radius and the sharpness of its wall. The negative energy it needs grows as v\u00b2R\u00b2\u03c3; the tidal shear at the wall as v\u03c3 (a passenger is torn apart above 5); a wall too thick for its radius (R\u03c3 < 10) leaks. A Warp Bubble Core must be superluminal."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Warp Field Forge",
+      "multiblock": {
+        "pattern": [
+          [
+            "___________",
+            "___________",
+            "____AAA____",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "__AA___AA__",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "___________"
+          ],
+          [
+            "___________",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "___________"
+          ],
+          [
+            "_A_______A_",
+            "___________",
+            "_A_______A_",
+            "___________",
+            "_A_______A_"
+          ],
+          [
+            "_B_______B_",
+            "___________",
+            "__AA___AA__",
+            "___________",
+            "_B_______B_"
+          ],
+          [
+            "_B_______B_",
+            "___________",
+            "____ADA____",
+            "___________",
+            "_B_______B_"
+          ],
+          [
+            "BBBBB0BBBBB",
+            "BBBBBBBBBBB",
+            "EBBBBBBBBBE",
+            "BBBBBBBBBBB",
+            "BBBBBEBBBBB"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:warp_field_forge",
+          "A": "theoreticalsciences:warp_coil_ring",
+          "B": "theoreticalsciences:warp_casing",
+          "D": "theoreticalsciences:bubble_pedestal",
+          "E": "#theoreticalsciences:multiblock/warp_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Warp Bubble Core."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:warp_field_forge",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/alcubierre_metric"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Radiation & Shielding",
+  "icon": "theoreticalsciences:lead_shielding_block",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lead_shielding_plate,theoreticalsciences:lead_shielding_block",
+      "text": "From 1.2, radiation in the mod follows the physics. Every source is an $(thing)isotope$() with its real half-life and its own kind of radiation, and what reaches you falls with the $(thing)square of the distance$(): a source two blocks away gives a quarter of the dose it gives at one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Alpha$() particles (uranium, radium, radon) are stopped by a few centimetres of air or by skin: they harm only what you carry. $(thing)Beta$() electrons are stopped by any solid block. $(thing)Gamma$() rays pass through walls, but each block lets through only e^(\u2212\u03bcx) of them. $(thing)Neutrons$() pass through metal and are slowed by water and anything rich in hydrogen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "For shielding, each block counts as a 5 cm slab. Lead lets through about 6% of gamma rays, iron 11%, concrete 55%, rock 58%, water 70%, wood 87%. Neutrons are the other way round: water stops 70% of them, lead almost none. Pack makers can set any block's values in the data map $(thing)theoreticalsciences:radiation_shielding$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every dimension has a $(thing)background$() rate: about 0.1 \u00b5Sv/h in the Overworld (the real world's average), more in the Nether, more still in the End with no air above you, and none at all in the Quantum Foam. The $(item)Geiger Counter$() shows the rate where you stand in \u00b5Sv/h and its count, which saturates near ten thousand a second as a real tube does."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Your $(thing)dose$() is counted in millisieverts and fades by 1% a second as the body repairs itself. Doses here are scaled up, as everything in the game's time is: sickness begins at 100 mSv and grows worse at 400, 1,000 and 2,500."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radioactivity"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.metamaterial_weaver",
+  "description": "book.theoreticalsciences.codex.quantum.metamaterial_weaver.desc",
+  "icon": {
+    "item": "theoreticalsciences:metamaterial_weaver"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 14,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metamaterial_weaver"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.metamaterial_weaver.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.metamaterial_weaver.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.metamaterial_weaver.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.metamaterial_weaver.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metamaterial_weaver"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.metamaterial_weaver.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/quantum__bose_einstein_condenser"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/metamaterials"
+  }
+}

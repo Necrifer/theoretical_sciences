@@ -1,0 +1,36 @@
+{
+  "name": "Patience, Automated",
+  "icon": "theoreticalsciences:research_nexus",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_nexus,theoreticalsciences:empirical_dossier",
+      "text": "Later research is not bought - it is studied. Once paid for, an entry takes real time: minutes at first, hours near the end. You can study one thing at a time; the Research Terminal shows how long is left."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)Research Nexus$() studies in your place. Feed it $(item)Research Dossiers$() while you study and each one cuts the wait: Empirical 2 min, Theoretical 5, Unified 10, Absolute 20."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A dossier must be at least as advanced as the entry: $(thing)Empirical$() up to 150 Insight, $(thing)Theoretical$() up to 400, $(thing)Unified$() up to 1000, $(thing)Absolute$() beyond. Each is assembled from three sets of Notes, and those from a broad sample of everything you have researched before - a test of your whole production line."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:research_nexus",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:empirical_dossier",
+      "text": "Every early discovery, written up. A Research Nexus can study it in your place.$(br2)Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Empirical Dossier$(): Theoretical Dossier"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/research_synthesis"
+}

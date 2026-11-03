@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:crystal_pulling",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:corundum_crystal",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sapphire_boule",
+      "count": 3
+    }
+  ],
+  "energy": 512,
+  "duration": 1200,
+  "research": "theoreticalsciences:crystal_growth_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 2323.0,
+      "k0": 0.05
+    },
+    "windows": [
+      {
+        "q": "xi",
+        "min": 2.4,
+        "max": 3.6
+      },
+      {
+        "q": "pur",
+        "min": 99.85,
+        "max": 100.0
+      },
+      {
+        "q": "dT",
+        "min": 5.0,
+        "max": 80.0
+      }
+    ]
+  }
+}

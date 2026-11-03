@@ -1,0 +1,24 @@
+{
+  "name": "Reflecting Telescope",
+  "icon": "theoreticalsciences:reflecting_telescope",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 62,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A mirror of diameter D gathers light in proportion to D\u00b2, so the faintest star it records - the limiting magnitude - rises by 5\u00b7log\u2081\u2080 D, and by 2.5\u00b7log\u2081\u2080 for every tenfold longer exposure. The air smears every star into a seeing disc; the mirror itself cannot do better than its diffraction limit, 1.22\u03bb/D. A moonlit sky is brighter, and drowns the faintest stars."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Aperture D, Exposure t.$(br2)$(thing)Disturbance$(): Turbulence: the seeing varies by \u00b115%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The sky is too bright: a telescope works only at night; Something blocks the sky above the slit; Overcast: no stars tonight.$(br2)$(thing)Rate$(): Deeper than the target needs is faster; very long exposures are slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Seeing: \u03b8_see \u2248 2.5\u2033\u00b7e^(\u2212(h \u2212 64)/120)$(br)Diffraction limit: \u03b8 = 1.22\u03bb/D$(br)Resolution: \u03b8 = \u221a(\u03b8_diff\u00b2 + \u03b8_see\u00b2)$(br)Sky brightness: \u03bc_sky$(br)Limiting magnitude: m_lim \u2248 m\u2080 + 5 log D + 1.25 log t + \u00bd(\u03bc \u2212 \u03bc\u2080) \u2212 2.5 log \u03b8"
+    }
+  ]
+}

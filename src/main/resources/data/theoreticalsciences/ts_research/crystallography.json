@@ -1,0 +1,68 @@
+{
+  "title": "Crystallography",
+  "description": "A crystal is one pattern of atoms repeated in every direction. X-rays are short enough to be scattered by its planes, and the angles at which they reinforce give the spacing between them. Unlocks the X-ray Diffractometer and the Laue Pattern.",
+  "icon": "theoreticalsciences:x_ray_diffractometer",
+  "x": 3,
+  "y": -9,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:spectroscopy",
+    "theoreticalsciences:chemical_bonding"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Two neighbouring planes of atoms, a distance a apart, scatter X-rays of wavelength \u03bb arriving at a glancing angle \u03b8. The rays reinforce when the extra path between the planes is a whole number n of wavelengths. Write a.",
+    "name": "Bragg reflection condition",
+    "lhs": "a",
+    "form": "n * \u03bb / ( 2 * sin ( \u03b8 ) )",
+    "expr": "n * L / ( 2 * sin ( t ) )",
+    "ask": "Find d in \u00e5ngstr\u00f6ms for copper K\u03b1 (L = @{L} \u00c5), first order (n = @{n}), reflecting at t = @{t} rad.",
+    "vars": {
+      "a": "spacing between planes (\u00c5)",
+      "n": "order",
+      "\u03bb": "wavelength",
+      "\u03b8": "glancing angle",
+      "L": "wavelength (\u00c5)",
+      "t": "glancing angle (rad)"
+    },
+    "given": {
+      "n": 1,
+      "L": 1.5406,
+      "t": 0.3067
+    },
+    "unit": "\u00c5",
+    "method": "The ray scattered by the deeper plane travels 2d\u00b7sin \u03b8 further; the waves add up when that is a whole number of wavelengths.",
+    "distractors": [
+      "cos",
+      "4",
+      "c"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "L": [
+        0.92,
+        2.16,
+        0.01
+      ],
+      "t": [
+        0.184,
+        0.43,
+        0.001
+      ]
+    }
+  }
+}

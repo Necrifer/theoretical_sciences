@@ -1,0 +1,22 @@
+{
+  "name": "Gravity and Light",
+  "icon": "theoreticalsciences:pound_rebka_tower",
+  "category": "theoreticalsciences:spacetime",
+  "sortnum": 40,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pound_rebka_tower,theoreticalsciences:cobalt_57_source,theoreticalsciences:redshift_record",
+      "text": "Light climbing out of gravity loses energy. Over a height H the fraction lost is $(thing)gH/c\u00b2$() - about 2.5\u00d710\u207b\u00b9\u2075 up a 22.5-metre tower. In 1959 Pound and Rebka measured it with the gamma ray of iron-57, whose line is so sharp that even this shows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Pound-Rebka Tower$() is built 1 to 8 storeys tall, 7.5 m each. A $(item)Cobalt-57 Source$() sits on a Doppler drive at the foot, the absorber at the top. Move the source up at exactly $(thing)v = gH/c$() - under a micrometre a second - and the climb is cancelled."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Counting decides how sure you are: the line is 190 \u00b5m/s wide, and N gamma rays find its centre to 190/\u221aN. Count until the shift stands five times above that error, and set v within two of it. Keep the tower at the air's temperature: each kelvin between source and absorber shifts the line by 0.66 \u00b5m/s - as much as the whole effect."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gravitational_redshift"
+}

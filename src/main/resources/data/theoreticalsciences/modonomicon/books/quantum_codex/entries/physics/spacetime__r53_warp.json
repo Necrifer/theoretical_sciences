@@ -1,0 +1,39 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r53_warp",
+  "description": "book.theoreticalsciences.codex.spacetime.r53_warp.desc",
+  "icon": {
+    "item": "theoreticalsciences:warp_field_forge"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 189,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:warp_field_forge"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r53_warp.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r53_warp.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r53_warp.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__wormhole_projector"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alcubierre_metric"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:analog_horizon",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:unruh_thermometer"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hawking_record",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 1200,
+  "research": "theoreticalsciences:unruh_effect",
+  "unscaled": true,
+  "insight_per_run": 25,
+  "physics": {
+    "windows": [
+      {
+        "q": "mu",
+        "min": 0.0,
+        "max": 0.9
+      },
+      {
+        "q": "md",
+        "min": 1.2,
+        "max": 1000000000.0
+      },
+      {
+        "q": "SNR",
+        "min": 5.0,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

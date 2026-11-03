@@ -1,0 +1,26 @@
+{
+  "name": "Answering the Frontier",
+  "icon": "theoreticalsciences:frontier_suit_helmet",
+  "category": "theoreticalsciences:world",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:frontier_suit_helmet,theoreticalsciences:frontier_suit_chestplate,theoreticalsciences:frontier_suit_leggings,theoreticalsciences:frontier_suit_boots",
+      "text": "Every region of the Accretion Frontier has its hazard, and each has an answer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Nebula$() - blinding dust: the $(item)Adaptive Optics Visor$().$(li)$(thing)Asteroid Belt$() - micrometeorites: the $(item)Whipple Shield$() (a quarter per piece); low gravity: $(item)Gravity Compensators$().$(li)$(thing)Pulsar Field$() - its radiation pulse: $(item)Radiation Plating$() on your armour; high gravity: Gravity Compensators; Time Dilation: an $(item)Atomic Clock$() in the off hand."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Accretion Rim$() - heat: the $(item)Thermal Shroud$() (or a full Refractory Suit); its tidal pull: the $(item)Tidal Brace$() (or a Precision Gyroscope in the off hand).$(li)$(thing)Lensing Void$() - frame dragging: a $(item)Precision Gyroscope$() in the off hand; warped sight: the Adaptive Optics Visor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The four pieces of the $(item)Frontier Suit$() are made of Station Hull, each round a piece of the region it answers: an Einstein Ring Lens, an Accretion Disk Fragment, a Tidal Shear Crystal and a Planetary Core Sample (the reference mass the boots weigh gravity against)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galactic_dynamics"
+}

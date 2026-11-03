@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.information.maxwell_demon_sorter",
+  "description": "book.theoreticalsciences.codex.information.maxwell_demon_sorter.desc",
+  "icon": {
+    "item": "theoreticalsciences:maxwell_demon_sorter"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 7,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:maxwell_demon_sorter"
+      },
+      "text": "book.theoreticalsciences.codex.information.maxwell_demon_sorter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.maxwell_demon_sorter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.maxwell_demon_sorter.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.maxwell_demon_sorter.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:maxwell_demon_sorter"
+      },
+      "text": "book.theoreticalsciences.codex.information.maxwell_demon_sorter.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__bose_einstein_condenser"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermodynamics_of_information"
+  }
+}

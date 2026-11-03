@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:graviton_condensing",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:fixed_point_lattice"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graviton_crystal",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:higgs_catalyst",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:spin_foam_lattice",
+      "count": 16
+    }
+  ],
+  "energy": 1,
+  "duration": 700,
+  "research": "theoreticalsciences:asymptotic_safety",
+  "unscaled": true,
+  "insight_per_run": 10
+}

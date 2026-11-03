@@ -1,0 +1,24 @@
+{
+  "name": "Fractionation Spire",
+  "icon": "theoreticalsciences:fractionation_spire",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 35,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A 40-tray distillation column. Fenske gives the fewest trays at total reflux, Underwood the least reflux at infinite trays, and Gilliland what lies between. The condenser must be colder than the light fraction boils."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Reflux ratio R, Reboiler duty, Product purity.$(br2)$(thing)Disturbance$(): Feed composition drift: x_F\u00b7(1 \u00b1 5%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Reflux below the Underwood minimum: the column pinches; Not enough trays for that purity at this reflux; Condenser too warm: the light fraction will not condense.$(br2)$(thing)Rate$(): Product drawn off per second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Minimum stages (Fenske): N_min = ln[(x_D/(1\u2212x_D))((1\u2212x_B)/x_B)] / ln \u03b1$(br)Minimum reflux (Underwood): R_min = (x_D/x_F \u2212 \u03b1(1\u2212x_D)/(1\u2212x_F))/(\u03b1 \u2212 1)$(br)Stages needed (Gilliland): Y = 0.75(1 \u2212 X^0.5668),  N = (N_min + Y)/(1 \u2212 Y)$(br)Product rate: D = Q/((R+1)\u0394H_vap)"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:cyclotron_irradiation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rare_earth_oxide",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hafnium_178m2_isomer",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 1600,
+  "research": "theoreticalsciences:nuclear_isomers",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Eth": 6.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": 6.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

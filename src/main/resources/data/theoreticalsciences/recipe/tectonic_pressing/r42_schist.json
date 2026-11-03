@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "chances": [
+    1.0,
+    0.25
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:basalt_column",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:metamorphic_schist",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:garnet",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:metamorphism",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 150000.0,
+      "Tr": 950.0
+    },
+    "windows": [
+      {
+        "q": "Pe",
+        "min": 0.3,
+        "max": 1.2
+      },
+      {
+        "q": "Tf",
+        "min": 700.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

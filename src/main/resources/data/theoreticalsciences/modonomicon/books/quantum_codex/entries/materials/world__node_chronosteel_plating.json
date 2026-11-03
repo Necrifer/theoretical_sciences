@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_chronosteel_plating",
+  "description": "book.theoreticalsciences.codex.world.node_chronosteel_plating.desc",
+  "icon": {
+    "item": "theoreticalsciences:chronosteel_plating"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 8,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chronosteel_plating"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_chronosteel_plating.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_chronosteel_plating.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_chronosteel_plating.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

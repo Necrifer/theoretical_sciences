@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_cepheid_standard_candle",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_cepheid_standard_candle.desc",
+  "icon": {
+    "item": "theoreticalsciences:cepheid_standard_candle"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 67,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cepheid_standard_candle"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_cepheid_standard_candle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_cepheid_standard_candle.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/astrophysics__radio_telescope",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radio_astronomy"
+  }
+}

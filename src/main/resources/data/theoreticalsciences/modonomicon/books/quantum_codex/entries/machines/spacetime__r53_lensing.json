@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r53_lensing",
+  "description": "book.theoreticalsciences.codex.spacetime.r53_lensing.desc",
+  "icon": {
+    "item": "theoreticalsciences:lensing_concentrator"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 71,
+  "y": 22,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lensing_concentrator"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r53_lensing.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r53_lensing.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r53_lensing.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/quantum__topological_transmuter"
+    },
+    {
+      "entry": "theoreticalsciences:machines/singularities__kugelblitz_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_lensing"
+  }
+}

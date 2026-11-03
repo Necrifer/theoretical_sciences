@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_plasma_thruster_nozzle",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_plasma_thruster_nozzle.desc",
+  "icon": {
+    "item": "theoreticalsciences:plasma_thruster_nozzle"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 68,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:plasma_thruster_nozzle"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_plasma_thruster_nozzle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_plasma_thruster_nozzle.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__mhd_generator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/magnetohydrodynamics"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.penrose_ergosphere",
+  "description": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.desc",
+  "icon": {
+    "item": "theoreticalsciences:penrose_ergosphere"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 97,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:penrose_ergosphere"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p4.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:penrose_ergosphere"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:micro_singularity"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.penrose_ergosphere.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/singularities__lensing"
+    },
+    {
+      "entry": "theoreticalsciences:physics/singularities__kugelblitz_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/penrose_process"
+  }
+}

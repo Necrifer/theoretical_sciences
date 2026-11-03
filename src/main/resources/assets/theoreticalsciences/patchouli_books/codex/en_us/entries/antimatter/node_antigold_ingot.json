@@ -1,0 +1,23 @@
+{
+  "name": "Anti-Gold Ingot",
+  "icon": "theoreticalsciences:antigold_ingot",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antigold_ingot",
+      "title": "Anti-Gold Ingot",
+      "text": "Soft, dense, incorruptible - and the most dangerous jewellery imaginable."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Cast in the Foundry from raw anti-gold. The mirror symmetry is perfect: same melting point, same density."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mirror Matter Foundry$().$(br2)$(thing)Unlocked by$(): Mirror Metallurgy.$(br2)$(thing)Used in$(): Baryogenesis Seed."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mirror_metallurgy"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Quadrupole Focusing Magnet",
+  "icon": "theoreticalsciences:quadrupole_focusing_magnet",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 518,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quadrupole_focusing_magnet",
+      "title": "Quadrupole Focusing Magnet",
+      "text": "A quadrupole magnet with four pole tips that squeeze a particle beam in one direction while stretching it in the other. Pairs of them focus a beam the way lenses focus light. Its four poles alternate north and south around the bore, and the field between them is zero at the very centre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)A beam spreads as it travels. Quadrupoles focus it like lenses. I fitted quadrupole pole tips to a superconducting coil on spacetime casing and the beam stayed tight."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): Horizon Simulation.$(br2)$(thing)Used in$(): Hyperion Synchrotron."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/horizon_simulation"
+}

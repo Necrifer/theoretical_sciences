@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_solar_receiver",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_solar_receiver.desc",
+  "icon": {
+    "item": "theoreticalsciences:solar_receiver"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 66,
+  "y": 63,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:solar_receiver"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_solar_receiver.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_solar_receiver.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__solar_furnace",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_astrophysics"
+  }
+}

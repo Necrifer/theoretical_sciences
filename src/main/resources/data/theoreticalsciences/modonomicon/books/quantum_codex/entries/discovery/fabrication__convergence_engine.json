@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.convergence_engine",
+  "description": "book.theoreticalsciences.codex.fabrication.convergence_engine.desc",
+  "icon": {
+    "item": "theoreticalsciences:convergence_engine"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 69,
+  "y": -6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:convergence_engine"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:convergence_engine"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:convergence_altar"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.convergence_engine.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/information__holographic_encoder"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__causality_loop_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/simulation_hypothesis"
+  }
+}

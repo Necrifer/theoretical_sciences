@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.brownian_microscope",
+  "description": "book.theoreticalsciences.codex.probability.brownian_microscope.desc",
+  "icon": {
+    "item": "theoreticalsciences:brownian_microscope"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 49,
+  "y": 18,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brownian_microscope"
+      },
+      "text": "book.theoreticalsciences.codex.probability.brownian_microscope.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.brownian_microscope.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.brownian_microscope.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.brownian_microscope.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.brownian_microscope.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brownian_microscope"
+      },
+      "text": "book.theoreticalsciences.codex.probability.brownian_microscope.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/probability__r38_galton"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/probability__galton_board"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brownian_motion"
+  }
+}

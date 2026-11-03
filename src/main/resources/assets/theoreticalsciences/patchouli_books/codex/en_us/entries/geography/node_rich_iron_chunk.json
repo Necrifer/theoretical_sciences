@@ -1,0 +1,19 @@
+{
+  "name": "Rich Iron Chunk",
+  "icon": "theoreticalsciences:rich_iron_chunk",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:rich_iron_chunk",
+      "title": "Rich Iron Chunk",
+      "text": "Banded iron from deep down: richer than any Overworld ore, with magnetite in its layers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Deep Drilling Rig$().$(br2)$(thing)Mined$(): from $(item)Rich Iron Ore$(), in veins through the rock.$(br2)$(thing)Unlocked by$(): Deep Drilling."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Containment, Study & Isolation",
+  "icon": "theoreticalsciences:quarantine_field_matrix",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quarantine_field_matrix",
+      "text": "Containment is not destruction: you must keep the anomaly alive to study it. A unit that makes new ones at rate \u03b2, and is cleared naturally (\u03b3) or by quarantine (q), makes R_e = \u222b\u03b2 e^{\u2212(\u03b3+q)\u03c4}d\u03c4 = \u03b2/(\u03b3 + q) in its life. Quarantine works by pushing R_e below 1 - every outbreak then dies out - and the minimum field is q = \u03b2 \u2212 \u03b3."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The protocols, from the clinic and the high-containment lab: $(li)isolate - one specimen, one cell, sealed$(li)reduce contact (q) without starving the sample$(li)watch R, not the count$(li)never study what you cannot destroy. The Containment Ward's console is exactly this: hold R below 1, close to it for the fastest work."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the Ward: stabiliser matrices, causal shielding, a defect core and a contagion map become $(item)Quarantine Field Matrices$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quarantine_field_matrix",
+      "text": "A field that clears an anomaly faster than it can copy itself. It does not destroy anything - it only keeps R below one.$(br2)Made in $(item)Anomaly Containment Ward$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Quarantine Field Matrix$(): Reality Anchor, Resolved Anomaly"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/containment_protocols"
+}

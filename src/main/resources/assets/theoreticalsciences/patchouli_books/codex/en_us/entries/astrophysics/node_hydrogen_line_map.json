@@ -1,0 +1,19 @@
+{
+  "name": "Hydrogen Line Map",
+  "icon": "theoreticalsciences:hydrogen_line_map",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hydrogen_line_map",
+      "title": "Hydrogen Line Map",
+      "text": "A chart of the 21-centimetre glow of cold hydrogen across the Galaxy. The line's Doppler shift gives how fast each cloud moves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Radio Telescope$().$(br2)$(thing)Unlocked by$(): Radio Astronomy.$(br2)$(thing)Used in$(): Galactic Filament."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radio_astronomy"
+}

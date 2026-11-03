@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rim_slag",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:accretion_disk_plasma",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:accretion_disk_fragment",
+      "count": 2
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:accretion_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 150000.0,
+      "Tr": 950.0
+    },
+    "windows": [
+      {
+        "q": "Pe",
+        "min": 0.3,
+        "max": 1.2
+      },
+      {
+        "q": "Tf",
+        "min": 700.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

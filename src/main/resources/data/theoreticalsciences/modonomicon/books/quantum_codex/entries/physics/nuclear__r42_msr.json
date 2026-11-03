@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.r42_msr",
+  "description": "book.theoreticalsciences.codex.nuclear.r42_msr.desc",
+  "icon": {
+    "item": "theoreticalsciences:molten_salt_reactor"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 72,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:molten_salt_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.r42_msr.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r42_msr.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r42_msr.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r42_msr.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/nuclear__r37_binding"
+    },
+    {
+      "entry": "theoreticalsciences:physics/nuclear__r42_enrichment"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nuclear_fission"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "title": "Isotope Separation",
+  "description": "Isotopes of one element are chemically the same; only their mass differs, by about one per cent for uranium. Spin them fast enough and that is enough to sort them, a little at a time. Unlocks the Gas Centrifuge Cascade, Yellowcake and Fluorspar.",
+  "icon": "theoreticalsciences:gas_centrifuge_cascade",
+  "x": 6,
+  "y": 13,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:radiochemistry",
+    "theoreticalsciences:decay_chains"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:raw_pitchblende",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:radium_salt",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "In a spinning rotor a heavy and a light molecule of the same gas settle differently. Their molar masses differ by M, the wall moves at speed v and the gas is at temperature T. Write \u03b1, how much richer in the light one the gas at the axis is than at the wall.",
+    "name": "Centrifuge separation factor",
+    "lhs": "\u03b1",
+    "form": "exp ( M * v ^ 2 / ( 2 * R * T ) )",
+    "expr": "exp ( M * v ^ 2 / ( 2 * R * T ) )",
+    "ask": "Find \u03b1 for uranium hexafluoride: M = @{M} kg/mol, v = @{v} m/s, R = 8.314 J/(mol\u00b7K), T = @{T} K.",
+    "vars": {
+      "\u03b1": "enrichment between axis and wall",
+      "M": "molar mass difference (kg/mol)",
+      "v": "wall speed (m/s)",
+      "R": "gas constant",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "M": 0.003,
+      "v": 700,
+      "R": 8.314,
+      "T": 310
+    },
+    "unit": "",
+    "method": "Each species follows the Boltzmann law in the rotating frame, n \u221d e^(m\u03c9\u00b2r\u00b2/2RT); divide the two at the wall and at the axis.",
+    "distractors": [
+      "ln",
+      "\u03c0",
+      "4"
+    ],
+    "vary": {
+      "M": [
+        0.00179,
+        0.0042,
+        1e-05
+      ],
+      "v": [
+        420.0,
+        980.0,
+        1.0
+      ],
+      "T": [
+        186.0,
+        434.0,
+        1.0
+      ]
+    }
+  }
+}

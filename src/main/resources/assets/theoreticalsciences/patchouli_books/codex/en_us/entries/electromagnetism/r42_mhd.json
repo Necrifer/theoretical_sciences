@@ -1,0 +1,22 @@
+{
+  "name": "The MHD Generator",
+  "icon": "theoreticalsciences:mhd_generator",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mhd_generator,theoreticalsciences:mhd_field_magnet,theoreticalsciences:mhd_electrode",
+      "text": "Push a conducting fluid across a magnetic field and it becomes the armature of a generator: the field drives current across the flow, into $(item)MHD Electrodes$() on the channel walls. No turbine, no moving parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Power per cubic metre is p = \u03c3u\u00b2B\u00b2k(1 \u2212 k): conductivity, speed squared, field squared. The load factor k is the share of the voltage the outside circuit takes; one half gives the most - unless the current density, j = \u03c3uB(1 \u2212 k), would arc the electrodes away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Brine conducts a little, magma a little less but the Interior has oceans of it, and $(fluid)Stellar Plasma$() conducts ten thousand times better. The pumps limit how fast a dense fluid can be driven."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetohydrodynamics"
+}

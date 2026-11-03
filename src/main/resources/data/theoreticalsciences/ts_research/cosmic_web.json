@@ -1,0 +1,58 @@
+{
+  "title": "The Cosmic Web",
+  "description": "On the largest scales the galaxies are not scattered evenly: they lie along filaments and sheets round enormous voids, the shape gravity has pulled the dark matter into since the Big Bang. Unlocks the cosmic web simulation.",
+  "icon": "theoreticalsciences:cosmic_web_filament",
+  "x": 13,
+  "y": 0,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:galactic_dynamics",
+    "theoreticalsciences:big_bang_cosmology",
+    "theoreticalsciences:interstellar_medium"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:galactic_filament",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:redshift_lens",
+      "count": 2
+    }
+  ],
+  "time": 870,
+  "puzzle": {
+    "goal": "For the Universe to be exactly flat, the mass in each cubic metre must balance its expansion rate H against gravity's constant G. Write how much mass \u03c1 each cubic metre must hold.",
+    "name": "Critical density",
+    "lhs": "\u03c1",
+    "form": "3 * H ^ 2 / ( 8 * \u03c0 * G )",
+    "expr": "3 * H ^ 2 / ( 25.1327 * G * m )",
+    "ask": "Find \u03c1 in protons per cubic metre for H = @{H} /s (70 km/s/Mpc), G = 6.674e-11 and a proton mass m = 1.6726e-27 kg.",
+    "vars": {
+      "\u03c1": "protons per m\u00b3",
+      "H": "Hubble constant (1/s)",
+      "\u03c0": "pi",
+      "G": "gravitational constant",
+      "m": "proton mass (kg)"
+    },
+    "given": {
+      "H": 2.27e-18,
+      "G": 6.674e-11,
+      "m": 1.6726e-27
+    },
+    "unit": "protons/m\u00b3",
+    "method": "Friedmann's equation, H\u00b2 = 8\u03c0G\u03c1/3 \u2212 k/a\u00b2, with the curvature k set to zero.",
+    "distractors": [
+      "c",
+      "\u039b",
+      "2"
+    ],
+    "vary": {
+      "H": [
+        1.36e-18,
+        3.18e-18,
+        1e-20
+      ]
+    }
+  }
+}

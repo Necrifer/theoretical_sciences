@@ -1,0 +1,23 @@
+{
+  "name": "Scintillator Crystal",
+  "icon": "theoreticalsciences:scintillator_crystal",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 512,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:scintillator_crystal",
+      "title": "Scintillator Crystal",
+      "text": "A crystal that flashes when a particle passes through it. Each flash is proportional to the energy deposited, so counting them tells me what was made in a collision. It is clear and slightly blue, and twinkles constantly from cosmic rays."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Lattice Growth Vat I grew Cherenkov Quartz with Quantum Dots in superfluid helium. Every passing particle lit a dot, and the flashes gave me a clear count of each collision."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Lattice Growth Vat$().$(br2)$(thing)Unlocked by$(): High-Energy Particle Physics.$(br2)$(thing)Used in$(): Calorimeter Detector Array."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

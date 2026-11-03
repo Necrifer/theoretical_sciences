@@ -1,0 +1,24 @@
+{
+  "name": "Transcendent Plasma Forge",
+  "icon": "theoreticalsciences:transcendent_plasma_forge",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 72,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A far larger tokamak (R = 14 m, a = 4.5 m) able to burn the aneutronic fuels - deuterium-helium-3 and proton-boron - at hundreds of keV."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Toroidal field Bt, Plasma current Ip, Density n, Auxiliary heating.$(br2)$(thing)Disturbance$(): Impurity influx from the wall: Z_eff rises by up to 30% (d = \u22121 clean ... +1 dirty), and bremsstrahlung with it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): \u03b2 above the Troyon limit: the plasma disrupts; Above the Greenwald density: radiative collapse, disruption; Safety factor below 2: external kink, disruption; Interlock: toroidal field coils not superconducting (too warm); Field above the critical field: the toroidal field coils quench.$(br2)$(thing)Rate$(): Smelting rate follows the power heating the plasma: fusion heating plus your own."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective charge: Z_eff$(br)Reactivity \u27e8\u03c3v\u27e9: \u27e8\u03c3v\u27e9 = C\u00b7T^(\u22122/3)\u00b7exp(\u22123(E_G/4T)^(1/3))$(br)Fusion power: P_fus = \u00bcn\u00b2\u27e8\u03c3v\u27e9E_f\u00b7V$(br)Charged-particle heating: P_\u03b1 = f_ch\u00b7P_fus$(br)Bremsstrahlung: P_br = 5.35\u00d710\u207b\u00b3\u00b7Z_eff\u00b7n\u00b2\u00b7\u221aT\u00b7V$(br)Confinement time \u03c4_E: \u03c4_E = 0.0562\u00b7I^0.93\u00b7B^0.15\u00b7n^0.41\u00b7P^\u22120.69\u00b7R^1.97\u00b7\u03ba^0.78\u00b7\u03b5^0.58\u00b7M^0.19$(br)Stored energy: W = 3nTV"
+    }
+  ]
+}

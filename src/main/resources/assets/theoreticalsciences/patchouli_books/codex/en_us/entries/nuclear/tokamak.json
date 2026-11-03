@@ -1,0 +1,204 @@
+{
+  "name": "Tokamak",
+  "icon": "theoreticalsciences:tokamak",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 108,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tokamak",
+      "title": "Tokamak",
+      "text": "A ring of hydrogen plasma held off its walls by a twisted magnetic field, hot enough for deuterium and tritium to fuse.$(br2)Generates power.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Burns Deuterium and Tritium (or Deuterium alone, far harder) for power, leaving warm helium. Set the plasma density, its temperature and the toroidal field. Ignition needs the Lawson triple product nT\u03c4 above 3\u00d710\u00b2\u00b9 keV\u00b7s/m\u00b3; the energy confinement time \u03c4 grows with the field. The plasma pressure must stay below 5% of the magnetic pressure (\u03b2), or it disrupts. The coils are superconducting: keep it below 20 K, and the field below 12.5 T."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tokamak",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______A_______",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______B_______",
+            "____BB_B_BB____",
+            "___B_B___B_B___",
+            "___BB_____BB___",
+            "_______________",
+            "__BB___A___BB__",
+            "_______________",
+            "___BB_____BB___",
+            "___B_B___B_B___",
+            "____BB_B_BB____",
+            "_______B_______",
+            "_______________",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "____B__B__B____",
+            "____B_____B____",
+            "_______B_______",
+            "_BB__B_B_B__BB_",
+            "____B_____B____",
+            "_______________",
+            "_B_BB__A__BB_B_",
+            "_______________",
+            "____B_____B____",
+            "_BB__B_B_B__BB_",
+            "_______B_______",
+            "____B_____B____",
+            "____B__B__B____",
+            "_______________"
+          ],
+          [
+            "_______B_______",
+            "___BB_____BB___",
+            "____DDEDEDD____",
+            "_B_DDEDEDEDD_B_",
+            "_BDDEDDBDDEDDB_",
+            "__DED_B_B_DED__",
+            "__EDDB___BDDE__",
+            "B_DEB__A__BED_B",
+            "__EDDB___BDDE__",
+            "__DED_B_B_DED__",
+            "_BDDEDDBDDEDDB_",
+            "_B_DDEDEDEDD_B_",
+            "____DDEDEDD____",
+            "___BB_____BB___",
+            "_______B_______"
+          ],
+          [
+            "_______B_______",
+            "___B__DDD__B___",
+            "____D     D____",
+            "_B_D       D_B_",
+            "__D   DBD   D__",
+            "__   DB_BD   __",
+            "_D  DB___BD  D_",
+            "BD  B__A__B  DB",
+            "_D  DB___BD  D_",
+            "__   DB_BD   __",
+            "__D   DBD   D__",
+            "_B_D       D_B_",
+            "____D     D____",
+            "___B__DDD__B___",
+            "_______B_______"
+          ],
+          [
+            "_______B_______",
+            "___BB_____BB___",
+            "____DDDDDDD____",
+            "_B_DDDDDDDDD_B_",
+            "_BDDDDDBDDDDDB_",
+            "__DDD_B_B_DDD__",
+            "__DDDB___BDDD__",
+            "B_DDB__A__BDD_B",
+            "__DDDB___BDDD__",
+            "__DDD_B_B_DDD__",
+            "_BDDDDDBDDDDDB_",
+            "_B_DDDDDDDDD_B_",
+            "____DDDDDDD____",
+            "___BB_____BB___",
+            "_______B_______"
+          ],
+          [
+            "_______________",
+            "____B__B__B____",
+            "____B_____B____",
+            "_______B_______",
+            "_BB__B_B_B__BB_",
+            "____B_____B____",
+            "_______________",
+            "_B_BB__A__BB_B_",
+            "_______________",
+            "____B_____B____",
+            "_BB__B_B_B__BB_",
+            "_______B_______",
+            "____B_____B____",
+            "____B__B__B____",
+            "_______________"
+          ],
+          [
+            "_______________",
+            "_______________",
+            "_______B_______",
+            "____BB_B_BB____",
+            "___B_B___B_B___",
+            "___BB_____BB___",
+            "_______________",
+            "__BB___A___BB__",
+            "_______________",
+            "___BB_____BB___",
+            "___B_B___B_B___",
+            "____BB_B_BB____",
+            "_______B_______",
+            "_______________",
+            "_______________"
+          ],
+          [
+            "_______0_______",
+            "____FFFFFFF____",
+            "___FFFFFFFFF___",
+            "__FFFFFFFFFFF__",
+            "_FFFFF___FFFFF_",
+            "_FFFF_____FFFF_",
+            "_FFF_______FFF_",
+            "GFFF___A___FFFG",
+            "_FFF_______FFF_",
+            "_FFFF_____FFFF_",
+            "_FFFFF___FFFFF_",
+            "__FFFFFFFFFFF__",
+            "___FFFFFFFFF___",
+            "____FFFFFFF____",
+            "_______G_______"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:tokamak",
+          "A": "theoreticalsciences:central_solenoid",
+          "B": "theoreticalsciences:toroidal_field_coil",
+          "D": "theoreticalsciences:vacuum_vessel",
+          "E": "theoreticalsciences:containment_field_glass",
+          "F": "theoreticalsciences:tokamak_casing",
+          "G": "#theoreticalsciences:multiblock/tokamak_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (1 item and 2 fluid inputs, 1 and 2 outputs).$(br2)$(thing)Makes$(): Magnetized Plasma, Tritium, Warm Helium."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tokamak",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fusion_ignition"
+}

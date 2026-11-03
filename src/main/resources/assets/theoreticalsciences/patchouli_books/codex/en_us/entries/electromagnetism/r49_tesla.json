@@ -1,0 +1,26 @@
+{
+  "name": "The Tesla Coil",
+  "icon": "theoreticalsciences:tesla_coil",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tesla_coil,theoreticalsciences:tesla_toroid,theoreticalsciences:tesla_primary",
+      "text": "Two circuits, each a capacitor and a coil, each ringing at its own frequency. Tune the primary to the secondary and energy sloshes across - and appears at a voltage higher by $(thing)\u221a(C\u2081/C\u2082)$(): kilovolts in, megavolts out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The secondary of the $(item)Tesla Coil$() rings at 159 kHz. Set the primary capacitance and where its spiral is tapped (inductance grows as the turns squared) so it rings there too; a few per cent off and most of the energy stays in the primary. In air an arc reaches about a metre for every 700 kV."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Its arcs fix the air's nitrogen into nitrates - the Birkeland-Eyde process that made the first fertilisers: water becomes bone meal. Arcs over 2.5 m fuse sand into glass, as lightning makes fulgurites: Fused Silica, without the Sun."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Stand well clear. A running coil strikes anyone within six blocks of it."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/resonant_circuits"
+}

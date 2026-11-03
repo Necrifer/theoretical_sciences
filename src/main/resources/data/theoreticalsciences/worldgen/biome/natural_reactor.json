@@ -1,0 +1,46 @@
+{
+  "has_precipitation": false,
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 2764816,
+    "fog_color": 3162138,
+    "water_color": 6340816,
+    "water_fog_color": 1060928,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:electric_spark"
+      },
+      "probability": 0.003
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:fission_husk",
+        "weight": 50,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_oklo_uraninite",
+      "theoreticalsciences:ore_fission_fragments"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

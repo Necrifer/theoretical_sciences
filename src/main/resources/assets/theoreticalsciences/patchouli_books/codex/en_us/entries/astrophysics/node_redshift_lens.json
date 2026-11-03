@@ -1,0 +1,19 @@
+{
+  "name": "Redshift Lens",
+  "icon": "theoreticalsciences:redshift_lens",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 506,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:redshift_lens",
+      "title": "Redshift Lens",
+      "text": "A calibrated lens of spectra: distances from standard candles set against the redshifts of their galaxies. Every one is moving away, and the farther, the faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Spectrograph$().$(br2)$(thing)Unlocked by$(): Galactic Dynamics.$(br2)$(thing)Used in$(): Cosmic Web Filament."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radio_astronomy"
+}

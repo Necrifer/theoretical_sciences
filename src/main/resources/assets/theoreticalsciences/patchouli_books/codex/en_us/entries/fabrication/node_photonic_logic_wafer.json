@@ -1,0 +1,23 @@
+{
+  "name": "Photonic Logic Wafer",
+  "icon": "theoreticalsciences:photonic_logic_wafer",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 510,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photonic_logic_wafer",
+      "title": "Photonic Logic Wafer",
+      "text": "A wafer engraved with waveguides instead of wires, so its logic runs on light. Signals cross without interfering and switch in femtoseconds. Held to the light, the engravings scatter a faint rainbow across my palm."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Quantum Lithographer, I exposed a Cherenkov Wafer through Quantum-Dot Photoresist. The dots blocked light precisely where I needed waveguides, and the pattern etched itself into the wafer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Quantum Lithographer$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Coherent Wiring Harness, Empirical Notes II, Photonic Die, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

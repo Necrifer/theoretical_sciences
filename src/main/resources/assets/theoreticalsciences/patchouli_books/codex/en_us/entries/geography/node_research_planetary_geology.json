@@ -1,0 +1,19 @@
+{
+  "name": "Planetary Geology",
+  "icon": "theoreticalsciences:planetary_core_sample",
+  "advancement": "theoreticalsciences:research/planetary_geology",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:planetary_core_sample",
+      "title": "Planetary Geology",
+      "text": "$(thing)Planetary Geology$()$(br2)Every rocky planet sorts itself the same way: iron sinks to a core, rock floats above as mantle and crust. Comparing their cores tells how planets form."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 200$(br2)$(thing)Builds on$(): Mantle Geodynamics, Exoplanetology.$(br2)$(thing)Samples$(): 4 Exoplanet Core Sample, 4 Ringwoodite."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.particle_spectrometer",
+  "description": "book.theoreticalsciences.codex.exotic.particle_spectrometer.desc",
+  "icon": {
+    "item": "theoreticalsciences:particle_spectrometer"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 42,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:particle_spectrometer"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.particle_spectrometer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.particle_spectrometer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.particle_spectrometer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.particle_spectrometer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:particle_spectrometer"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.particle_spectrometer.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/exotic__quark_gluon_collider"
+    },
+    {
+      "entry": "theoreticalsciences:machines/exotic__synchrotron"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/standard_model"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_pair_source",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_pair_source.desc",
+  "icon": {
+    "item": "theoreticalsciences:pair_source"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 103,
+  "y": 54,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pair_source"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_pair_source.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_pair_source.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__laser_cutter",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/laser_physics"
+  }
+}

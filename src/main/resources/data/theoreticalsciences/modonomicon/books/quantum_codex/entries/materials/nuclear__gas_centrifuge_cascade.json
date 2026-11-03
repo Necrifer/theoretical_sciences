@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade",
+  "description": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.desc",
+  "icon": {
+    "item": "theoreticalsciences:gas_centrifuge_cascade"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 90,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gas_centrifuge_cascade"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gas_centrifuge_cascade"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.gas_centrifuge_cascade.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__decay_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/isotope_separation"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Other Worlds",
+  "icon": "theoreticalsciences:transit_light_curve",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 21,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:transit_light_curve,theoreticalsciences:exoplanet_core_sample,theoreticalsciences:brown_dwarf_core",
+      "text": "A planet crossing its star blocks a fraction $(thing)\u03b4 = (r/R)\u00b2$() of its light: a Jupiter dims the Sun by one per cent, an Earth by one part in twelve thousand. The Reflecting Telescope records a $(item)Transit Light Curve$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the Accretion Frontier's Asteroid Belt lie the cores of shattered planets that formed round other stars. The Spectrograph assays an $(item)Exoplanet Core Sample$() into iron-nickel and ringwoodite, and a $(item)Brown Dwarf Core$() - a failed star - into rare earths and dust."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/exoplanetology"
+}

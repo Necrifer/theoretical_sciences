@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.node_akashic_record",
+  "description": "book.theoreticalsciences.codex.basics.node_akashic_record.desc",
+  "icon": {
+    "item": "theoreticalsciences:akashic_record"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 2,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:akashic_record"
+      },
+      "text": "book.theoreticalsciences.codex.basics.node_akashic_record.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.node_akashic_record.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/basics__research",
+      "draw_arrow": false
+    }
+  ]
+}

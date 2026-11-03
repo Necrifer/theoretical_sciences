@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.r37_binding",
+  "description": "book.theoreticalsciences.codex.nuclear.r37_binding.desc",
+  "icon": {
+    "item": "theoreticalsciences:geiger_counter"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 7,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r37_binding.p0",
+      "title": "book.theoreticalsciences.codex.nuclear.r37_binding"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r37_binding.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/nuclear__r37_radioactivity"
+    },
+    {
+      "entry": "theoreticalsciences:physics/nuclear__r38_radiation"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nuclear_binding_energy"
+  }
+}

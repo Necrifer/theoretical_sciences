@@ -1,0 +1,19 @@
+{
+  "name": "Californium-252 Neutron Source",
+  "icon": "theoreticalsciences:californium_252_neutron_source",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:californium_252_neutron_source",
+      "title": "Californium-252 Neutron Source",
+      "text": "A microgram of californium splits by itself often enough to give off two million neutrons a second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Irradiation Chamber$().$(br2)$(thing)Unlocked by$(): Transuranic Synthesis."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nuclear_fission"
+}

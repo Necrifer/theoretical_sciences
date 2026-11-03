@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_mossbauer_absorber",
+  "description": "book.theoreticalsciences.codex.nuclear.node_mossbauer_absorber.desc",
+  "icon": {
+    "item": "theoreticalsciences:mossbauer_absorber"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 51,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mossbauer_absorber"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_mossbauer_absorber.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_mossbauer_absorber.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/nuclear__decay_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

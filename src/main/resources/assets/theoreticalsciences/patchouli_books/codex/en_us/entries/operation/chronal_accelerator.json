@@ -1,0 +1,25 @@
+{
+  "name": "Chronal Accelerator",
+  "icon": "theoreticalsciences:chronal_accelerator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 40,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chronal_accelerator",
+      "text": "The $(item)Chronal Accelerator$() wraps a cube of space in a closed timelike shell and lets time inside run faster - x2 up to x256. Every machine, furnace, block entity of any mod, and every growing thing (crops, saplings, ores of the Bulk) inside the cube runs that many times faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Right-click$() to change the speed, $(thing)sneak-right-click$() to change the size of the field (3x3x3 up to 9x9x9). A redstone signal stops it. It glows while it is working."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It is ruinous to run. Every extra tick it gives one block entity costs $(thing)65,536 FE$(); every extra random tick to a growing block 16,384 FE; and every eight extra ticks one mB of $(item)Chronon Gas$(). A single machine at x256 eats about 16.7 million FE and 32 mB of gas per tick. When it runs short it simply does nothing that tick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Feed it energy and Chronon Gas from any side. Pack makers: the costs, the top speed and the largest field are in the common config; the block tag theoreticalsciences:not_accelerated lists blocks it will never touch. It never accelerates another accelerator, and the $(item)Chronal Field Projector$() (which only sets the rate of time for this mod's recipes) is a different thing."
+    }
+  ]
+}

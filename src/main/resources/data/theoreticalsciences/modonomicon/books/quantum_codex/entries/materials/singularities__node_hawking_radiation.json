@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.node_hawking_radiation",
+  "description": "book.theoreticalsciences.codex.singularities.node_hawking_radiation.desc",
+  "icon": {
+    "item": "theoreticalsciences:hawking_radiation_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 90,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hawking_radiation_cell"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.node_hawking_radiation.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_hawking_radiation.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_hawking_radiation.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/singularities__kugelblitz_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/singularity_physics"
+  }
+}

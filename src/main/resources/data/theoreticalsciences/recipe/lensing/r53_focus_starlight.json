@@ -1,0 +1,25 @@
+{
+  "type": "theoreticalsciences:lensing",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:einstein_ring_lens"
+    }
+  ],
+  "energy": 16384,
+  "duration": 600,
+  "research": "theoreticalsciences:gravitational_lensing",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Aref": 5.0
+    },
+    "windows": [
+      {
+        "q": "A",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

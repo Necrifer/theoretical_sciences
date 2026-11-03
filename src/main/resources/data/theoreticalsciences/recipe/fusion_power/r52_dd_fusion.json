@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:fusion_power",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:deuterium",
+      "amount": 200
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 50
+    }
+  ],
+  "energy": 32768,
+  "duration": 1600,
+  "research": "theoreticalsciences:nuclear_astrophysics",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "Lref": 20.0
+    },
+    "windows": [
+      {
+        "q": "L3",
+        "min": 15.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.node_negative_energy_lattice",
+  "description": "book.theoreticalsciences.codex.exotic.node_negative_energy_lattice.desc",
+  "icon": {
+    "item": "theoreticalsciences:negative_energy_lattice"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 81,
+  "y": 41,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:negative_energy_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.node_negative_energy_lattice.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_negative_energy_lattice.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__dark_matter_collector",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/dark_sector"
+  }
+}

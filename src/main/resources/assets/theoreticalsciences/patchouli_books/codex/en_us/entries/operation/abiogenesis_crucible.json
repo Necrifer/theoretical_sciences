@@ -1,0 +1,24 @@
+{
+  "name": "Abiogenesis Crucible",
+  "icon": "theoreticalsciences:abiogenesis_crucible",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Life's first molecules polymerise (Arrhenius, E\u2090 = 60 kJ/mol) while water hydrolyses them (80 kJ/mol). Copying is imperfect: Eigen's error threshold says a genome of length L survives only if L < ln \u03c3 / \u00b5. Sparks drive chemistry but also mutate."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Reactor temperature, Monomer concentration, Spark & UV flux.$(br2)$(thing)Disturbance$(): Temperature swings: the error rate varies by \u00b110%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Error catastrophe: the genome cannot persist; The crucible cannot be held colder than its coolant.$(br2)$(thing)Rate$(): Synthesis rate follows the yield and the energy supply."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Polymerisation rate: k = A\u00b7e^(\u2212E\u2090/RT)$(br)Hydrolysis rate: k_h = A_h\u00b7e^(\u2212E_h/RT)$(br)Polymer yield: Y = k_p c/(k_p c + k_h)$(br)Copy error \u00b5: \u00b5$(br)Error threshold: L_max = ln \u03c3 / \u00b5"
+    }
+  ]
+}

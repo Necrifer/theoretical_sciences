@@ -1,0 +1,55 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.numbers",
+  "description": "book.theoreticalsciences.codex.mathematics.numbers.desc",
+  "icon": {
+    "item": "theoreticalsciences:real_continuum"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 4,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.numbers.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.numbers"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.numbers.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.numbers.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:transcendental_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.numbers.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:surreal_number"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.numbers.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.numbers.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_08_casimir"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/number_systems"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": "Magnetohydrodynamics",
+  "description": "A conducting fluid in a magnetic field carries the field with it and pushes current through it: the physics of the Sun's surface, of the geodynamo, and of a generator with no moving parts. Unlocks the MHD Generator.",
+  "icon": "theoreticalsciences:mhd_generator",
+  "x": 5,
+  "y": -5,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:electromagnetic_induction",
+    "theoreticalsciences:plasma_metallurgy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:electrical_steel_lamination",
+      "count": 4
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A fluid of conductivity \u03c3 flows at speed u across a field B between two electrodes; the outside circuit takes a fraction k of the open-circuit voltage. Write p, the electrical output per cubic metre.",
+    "name": "Faraday generator",
+    "lhs": "p",
+    "form": "\u03c3 * u ^ 2 * B ^ 2 * k * ( 1 - k )",
+    "expr": "\u03c3 * u ^ 2 * B ^ 2 * k * ( 1 - k )",
+    "ask": "Find p in W/m\u00b3 for a seeded plasma: \u03c3 = @{\u03c3} S/m, u = @{u} m/s, B = @{B} T, k = @{k}.",
+    "vars": {
+      "p": "output per volume (W/m\u00b3)",
+      "\u03c3": "conductivity (S/m)",
+      "u": "flow speed (m/s)",
+      "B": "magnetic field (T)",
+      "k": "load factor"
+    },
+    "given": {
+      "\u03c3": 50,
+      "u": 1000,
+      "B": 5,
+      "k": 0.5
+    },
+    "unit": "W/m\u00b3",
+    "method": "The current density is j = \u03c3(uB \u2212 E) with E = k\u00b7uB at the load; the power delivered is j\u00b7E.",
+    "distractors": [
+      "2",
+      "+",
+      "\u03c1"
+    ],
+    "vary": {
+      "\u03c3": [
+        30.0,
+        70.0,
+        1.0
+      ],
+      "u": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "B": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "k": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

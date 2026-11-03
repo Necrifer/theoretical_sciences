@@ -23,6 +23,13 @@ public class VoidWraith extends Vex {
         this.xpReward = 15;
     }
 
+    // round 37 (1.1): keeps the vex's flight, but hunts for itself - no raid or owner targeting - see OwnAI
+    @Override
+    protected void registerGoals() {
+        super.registerGoals();
+        OwnAI.hunter(this);
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Vex.createAttributes().add(Attributes.MAX_HEALTH, 30.0).add(Attributes.ATTACK_DAMAGE, 6.0);
     }

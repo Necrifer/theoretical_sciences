@@ -1,0 +1,56 @@
+{
+  "name": "book.theoreticalsciences.codex.world.bulk_life",
+  "description": "book.theoreticalsciences.codex.world.bulk_life.desc",
+  "icon": {
+    "item": "theoreticalsciences:kaluza_klein_ore"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 29,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:kaluza_klein_ore"
+      },
+      "text": "book.theoreticalsciences.codex.world.bulk_life.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.bulk_life.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.bulk_life.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_wisp_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.bulk_life.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brane_strider_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.bulk_life.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:moduli_crawler_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.bulk_life.p5"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brane_cosmology"
+  }
+}

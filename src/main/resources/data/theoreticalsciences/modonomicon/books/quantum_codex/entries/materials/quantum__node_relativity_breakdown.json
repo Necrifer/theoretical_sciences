@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_relativity_breakdown",
+  "description": "book.theoreticalsciences.codex.quantum.node_relativity_breakdown.desc",
+  "icon": {
+    "item": "theoreticalsciences:relativity_breakdown_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 146,
+  "y": 37,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:relativity_breakdown_cell"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_relativity_breakdown.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_relativity_breakdown.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_relativity_breakdown.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__foam_boundaries",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

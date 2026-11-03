@@ -1,0 +1,57 @@
+{
+  "title": "Quantum Hall Effect",
+  "description": "Electrons in a sheet at low temperature and strong field fill Landau levels; the Hall resistance locks onto plateaus at h/(\u03bde\u00b2), exact to a part in a billion - because it counts a topological invariant. Unlocks Hall Bar Chips.",
+  "icon": "theoreticalsciences:hall_bar_chip",
+  "x": 7,
+  "y": 0,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:superconductivity",
+    "theoreticalsciences:topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:silicon_boule",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "With \u03bd Landau levels filled, a sheet of electrons carries a Hall resistance R fixed only by the quantum of action h and the elementary charge q. Write R.",
+    "name": "Von Klitzing constant",
+    "lhs": "R",
+    "form": "h / ( \u03bd * q ^ 2 )",
+    "expr": "h / ( n * q ^ 2 )",
+    "ask": "Find R in ohms for the first plateau, n = @{n} (h = 6.626e-34 J\u00b7s, q = 1.602e-19 C).",
+    "vars": {
+      "R": "Hall resistance (\u03a9)",
+      "h": "Planck constant",
+      "\u03bd": "filling factor",
+      "q": "elementary charge (C)",
+      "n": "filling factor"
+    },
+    "given": {
+      "h": 6.626e-34,
+      "n": 1,
+      "q": 1.602e-19
+    },
+    "unit": "\u03a9",
+    "method": "Each filled level carries a conductance of exactly q\u00b2/h, a topological (Chern) number times the quantum of conductance.",
+    "distractors": [
+      "\u03c0",
+      "2",
+      "B"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

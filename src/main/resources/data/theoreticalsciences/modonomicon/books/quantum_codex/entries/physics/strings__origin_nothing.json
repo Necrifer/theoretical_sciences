@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.origin_nothing",
+  "description": "book.theoreticalsciences.codex.strings.origin_nothing.desc",
+  "icon": {
+    "item": "theoreticalsciences:no_boundary_seed"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 126,
+  "y": 28,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metastable_vacuum_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.strings.origin_nothing.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.origin_nothing.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.origin_nothing.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/exotic__standard_model"
+    },
+    {
+      "entry": "theoreticalsciences:physics/exotic__particle_spectrometer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/vacuum_stability"
+  }
+}

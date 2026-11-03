@@ -1,0 +1,24 @@
+{
+  "type": "theoreticalsciences:molten_salt_fission",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molten_salt_fuel",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:spent_fuel_salt",
+      "amount": 900
+    }
+  ],
+  "energy": 4096,
+  "duration": 4800,
+  "research": "theoreticalsciences:nuclear_fission",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Pref": 500.0
+    }
+  }
+}

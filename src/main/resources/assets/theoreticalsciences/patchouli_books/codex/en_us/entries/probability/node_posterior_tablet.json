@@ -1,0 +1,19 @@
+{
+  "name": "Posterior Tablet",
+  "icon": "theoreticalsciences:posterior_tablet",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:posterior_tablet",
+      "title": "Posterior Tablet",
+      "text": "Belief, updated by evidence. Carry one while solving a research derivation and it pays for a hint instead of Insight."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Monte Carlo Engine$().$(br2)$(thing)Unlocked by$(): Bayesian Inference.$(br2)$(thing)Used in$(): Confidence Interval Gauge."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/bayesian_inference"
+}

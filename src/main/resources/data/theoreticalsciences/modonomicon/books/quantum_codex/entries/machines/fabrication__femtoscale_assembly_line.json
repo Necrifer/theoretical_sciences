@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line",
+  "description": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.desc",
+  "icon": {
+    "item": "theoreticalsciences:femtoscale_assembly_line"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 42,
+  "y": 26,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.femtoscale_assembly_line.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/fabrication__femto_fabricator"
+    },
+    {
+      "entry": "theoreticalsciences:machines/quantum__topological_transmuter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/assembly_lines"
+  }
+}

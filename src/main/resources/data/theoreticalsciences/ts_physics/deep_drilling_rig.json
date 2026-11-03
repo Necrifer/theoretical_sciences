@@ -1,0 +1,112 @@
+{
+  "params": [
+    {
+      "id": "h",
+      "unit": "km",
+      "min": 0,
+      "max": 12,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "W",
+      "unit": "t",
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "N",
+      "unit": "rpm",
+      "min": 0,
+      "max": 250,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "id": "rm",
+      "unit": "g/cm\u00b3",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.01,
+      "default": 1.2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Tz",
+      "unit": "K",
+      "expr": "288 + 25*h",
+      "formula": "T = T\u2080 + (dT/dz)\u00b7h"
+    },
+    {
+      "id": "Pp",
+      "unit": "MPa",
+      "expr": "9.81*h*(1 + 0.04*h)*(1 + 0.03*d)",
+      "formula": "P_p \u2248 \u03c1_w g h (overpressured below)"
+    },
+    {
+      "id": "Pm",
+      "unit": "MPa",
+      "expr": "9.81*rm*h",
+      "formula": "P_m = \u03c1_m g h"
+    },
+    {
+      "id": "Pf",
+      "unit": "MPa",
+      "expr": "9.81*h*(1.65 + 0.03*h)",
+      "formula": "P_f"
+    },
+    {
+      "id": "ROP",
+      "unit": "m/h",
+      "expr": "0.5*W*N^0.7*exp(-0.08*pos(Pm - Pp))/(1 + 0.3*h)",
+      "formula": "ROP \u221d W\u00b7N^0.7\u00b7e^(\u2212c\u00b7(P_m \u2212 P_p))"
+    },
+    {
+      "id": "Tb",
+      "unit": "K",
+      "expr": "Tz + 0.02*W*N",
+      "formula": "T_bit = T + friction"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "kick",
+      "kind": "damage",
+      "expr": "Pm - Pp",
+      "formula": "P_m \u2265 P_p"
+    },
+    {
+      "id": "losses",
+      "kind": "stop",
+      "expr": "Pf - Pm",
+      "formula": "P_m < P_f"
+    },
+    {
+      "id": "bit",
+      "kind": "damage",
+      "expr": "700 - Tb",
+      "formula": "T_bit < 700 K"
+    },
+    {
+      "id": "buckle",
+      "kind": "wear",
+      "expr": "45 - W",
+      "formula": "W < 45 t"
+    }
+  ],
+  "rate": "clamp(ROP/30, 0, 3)",
+  "rate_formula": "rate = ROP / 30 m/h",
+  "heat": "0.002*W*N + 0.5*rm",
+  "idle_heat": "0.5",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Reality Compiler",
+  "icon": "theoreticalsciences:reality_compiler",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 61,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A fault-tolerant quantum computer. Each logical qubit is a surface-code patch of 2d\u00b2 physical qubits; the logical error falls as (p/p_th)^((d+1)/2) - if the physical error p is below 1%. And p depends on temperature: hf/kT must be large, or thermal excitations flip the qubits."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Code distance d, Qubit frequency, Gate clock, Logical qubits.$(br2)$(thing)Disturbance$(): Control-line crosstalk: gate errors grow by 20%\u00b7|d|."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Above the threshold: error correction makes things worse.$(br2)$(thing)Rate$(): Logical operations per second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Thermal error: p_th = e^(\u2212hf/kT)$(br)Gate error: p_g$(br)Physical error p: p = p_g + p_th$(br)Logical error: p_L = 0.1(p/p_th)^((d+1)/2)$(br)Physical qubits: N = 2d\u00b2\u00b7N_L$(br)Wiring heat: P \u221d N\u00b7\u221af_clk\u00b7f_q"
+    }
+  ]
+}

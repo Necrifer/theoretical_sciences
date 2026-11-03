@@ -1,0 +1,31 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.world_numbers",
+  "description": "book.theoreticalsciences.codex.basics.world_numbers.desc",
+  "icon": {
+    "item": "theoreticalsciences:research_terminal"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 2,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:research_terminal"
+      },
+      "text": "book.theoreticalsciences.codex.basics.world_numbers.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.world_numbers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_07_research"
+    }
+  ]
+}

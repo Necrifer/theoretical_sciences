@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:gw_record_bns",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:kilonova_ash",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 1600,
+  "research": "theoreticalsciences:kilonovae",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "mreq": 14.0
+    },
+    "windows": [
+      {
+        "q": "mlim",
+        "min": 14.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

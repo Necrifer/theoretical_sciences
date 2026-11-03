@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.node_geiger_counter",
+  "description": "book.theoreticalsciences.codex.probability.node_geiger_counter.desc",
+  "icon": {
+    "item": "theoreticalsciences:geiger_counter"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 28,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geiger_counter"
+      },
+      "text": "book.theoreticalsciences.codex.probability.node_geiger_counter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.node_geiger_counter.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/probability__galton_board",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

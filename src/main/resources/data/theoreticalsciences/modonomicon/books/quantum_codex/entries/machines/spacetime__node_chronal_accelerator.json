@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_chronal_accelerator",
+  "description": "book.theoreticalsciences.codex.spacetime.node_chronal_accelerator.desc",
+  "icon": {
+    "item": "theoreticalsciences:chronal_accelerator"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 73,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chronal_accelerator"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_chronal_accelerator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_chronal_accelerator.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/spacetime__causality_loop_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/causality_violation"
+  }
+}

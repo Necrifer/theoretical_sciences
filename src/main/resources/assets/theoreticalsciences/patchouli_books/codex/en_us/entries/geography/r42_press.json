@@ -1,0 +1,26 @@
+{
+  "name": "The Tectonic Press",
+  "icon": "theoreticalsciences:tectonic_press",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tectonic_press,theoreticalsciences:metamorphic_schist,theoreticalsciences:graphite_moderator",
+      "text": "Rock buried deep recrystallises into whatever is stable down there. The $(item)Tectonic Press$() does it on purpose: a multi-anvil vessel over a firebox, under a hydraulic ram. You set two things - the anvil pressure and the furnace temperature - and the phase diagram does the rest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each boundary between two minerals is a line on that diagram, and its slope is the $(thing)Clapeyron slope$(), dP/dT = \u0394S/\u0394V. Graphite turns to diamond above P = 1.94 + 0.0025\u00b7T(\u00b0C) GPa; olivine to ringwoodite above about 17.5 GPa; ringwoodite to bridgmanite above the post-spinel line near 23 GPa, which leans the other way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Being on the right side is not enough: the sample must be hot enough to react. Its rate follows Arrhenius - a few hundred kelvin make the difference between hours and seconds. Diamond also wants a solvent: keep a block of $(item)Iron-Nickel$() in the press, as real diamond presses use molten iron and nickel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "At low pressure and 3,000 K the press turns coal into nuclear-grade $(item)Graphite$(), and with brine and iron into $(item)Boron Control Rods$(): boron carbide is made the same way."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/metamorphism"
+}

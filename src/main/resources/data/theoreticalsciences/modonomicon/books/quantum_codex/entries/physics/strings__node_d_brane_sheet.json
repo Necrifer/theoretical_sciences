@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.node_d_brane_sheet",
+  "description": "book.theoreticalsciences.codex.strings.node_d_brane_sheet.desc",
+  "icon": {
+    "item": "theoreticalsciences:d_brane_sheet"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 144,
+  "y": 12,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:d_brane_sheet"
+      },
+      "text": "book.theoreticalsciences.codex.strings.node_d_brane_sheet.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_d_brane_sheet.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.node_d_brane_sheet.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__compactification",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/compactification"
+  }
+}

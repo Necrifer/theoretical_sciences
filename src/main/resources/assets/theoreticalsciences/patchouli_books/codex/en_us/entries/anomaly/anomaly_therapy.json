@@ -1,0 +1,56 @@
+{
+  "name": "Targeted Therapy",
+  "icon": "theoreticalsciences:apoptosis_trigger",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_resolution_engine,theoreticalsciences:apoptosis_trigger,theoreticalsciences:car_t_culture",
+      "text": "Kill the anomaly, spare the normal. $(thing)CRISPR$() cuts DNA where a guide RNA matches, so it can write a trigger only the anomalous genome will read - restoring $(thing)apoptosis$(), the death a damaged cell was always meant to accept. $(thing)CAR-T$() cells are a patient's own T cells given a receptor for the anomaly's marker: living drugs that multiply as they find their target."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "And dose: n fractions of D let each cell survive with probability e^{\u2212\u03b1D\u2212\u03b2D\u00b2}. The anomaly is resolved only if not one of its N\u2080 clonogens survives: TCP = exp(\u2212N\u2080e^{\u2212n(\u03b1D+\u03b2D\u00b2)}). Normal tissue repairs between fractions; its damage grows as BED = nD(1 + D/3) - so many small fractions beat a few large ones."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Build the $(item)Anomaly Resolution Engine$(). Its console is that trade: TCP above one half, normal-tissue BED below 120 Gy. The $(item)Gene Sequencer$() writes $(item)Apoptosis Triggers$(); the $(item)Bioreactor$() engineers $(item)CAR-T Cell Culture$(). In the Engine, a resistant clone with a trigger and CAR-T cells goes into remission: sixteen ordinary stem cells again, and $(fluid)Renormalised Essence$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_resolution_engine",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:apoptosis_trigger",
+      "text": "A CRISPR-written instruction that only an anomalous cell will read: a reminder of the death it was always supposed to accept.$(br2)Made in $(item)Gene Sequencer$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:car_t_culture",
+      "text": "Killer T cells taught a new receptor: they hunt one marker, the anomaly's own, and they multiply as they find it.$(br2)Made in $(item)Bioreactor$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gene_sequencer",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bioreactor",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Apoptosis Trigger$(): Renormalised Essence, Resolved Anomaly, Stem Cell Culture$(li)$(item)CAR-T Cell Culture$(): Renormalised Essence, Stem Cell Culture$(li)$(item)Gene Sequencer$(): Evolution Engine$(li)$(item)Bioreactor$(): Gene Sequencer"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:renormalised_essence_cell",
+      "text": "$(fluid)Renormalised Essence$(). Made in $(item)Anomaly Resolution Engine$().$(br)Used for: Axiom Fragment, Resolved Anomaly."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/targeted_therapy"
+}

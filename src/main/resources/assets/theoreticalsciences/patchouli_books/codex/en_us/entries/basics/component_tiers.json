@@ -1,0 +1,50 @@
+{
+  "name": "Components & Tiers",
+  "icon": "theoreticalsciences:spacetime_alloy_coil_block",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spacetime_alloy_coil_block,theoreticalsciences:graviton_field_emitter,theoreticalsciences:dipole_bending_magnet",
+      "text": "Week two. The big machines are not single blocks but assemblies of $(thing)functional components$(), each with its own crafting chain. Like a real accelerator hall: nothing works alone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The parts list reads like a CERN inventory: magnets, RF cavities, beam pipes, cryogenics, vacuum pumps, detectors, injectors, lenses, anchors, stabilisers and more. In reality, dipole magnets bend a beam, RF cavities kick it faster, and cryogenics keep superconductors below their critical temperature."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Coils$() come in five tiers: Superconducting, Chronosteel, Spacetime Alloy, Cosmic Neutronium and Transfinite. Like a chain and its weakest link, a structure counts only its $(thing)lowest$() coil. Each tier above the first adds 25% speed, and some recipes need a minimum tier (JEI shows it)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Field Emitters$() come in three tiers. The lowest emitter tier multiplies how many parallels the tuning panel allows.$(br2)The $(item)Structure Assembler$() places the best tier I carry; in creative, hold the tier you want in your off-hand. Mixing tiers works, but only the lowest counts - I checked twice."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:spacetime_alloy_coil_block",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:graviton_field_emitter",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dipole_bending_magnet",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:structure_assembler",
+      "text": "Use on a multiblock controller to build every missing block from your inventory. Sneak-use to preview what is missing.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Spacetime Alloy Coil Block$(): Cosmic Neutronium Coil Block$(li)$(item)Graviton Field Emitter$(): Axiomatic Field Emitter, Chronal Field Projector, Dimensional Lift Projector, Empirical Notes I, Graviton Field Projector and more$(li)$(item)Dipole Bending Magnet$(): Antiproton Decelerator, Hyperion Synchrotron, Particle Spectrometer"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/component_tiers"
+}

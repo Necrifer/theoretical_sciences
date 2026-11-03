@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:time_dilation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:proof_mass",
+      "count": 1
+    },
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:time_dilated_sample",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 800,
+  "research": "theoreticalsciences:gravitational_time_dilation",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "f",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

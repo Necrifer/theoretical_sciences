@@ -1,0 +1,26 @@
+{
+  "name": "Radioactivity",
+  "icon": "theoreticalsciences:radium_salt",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:raw_pitchblende,theoreticalsciences:radium_salt,theoreticalsciences:geiger_counter",
+      "text": "$(item)Pitchblende Ore$() lies in stone and, more often, in deepslate. It is uranium ore, and it is radioactive: its nuclei fall apart on their own, at random, but at a fixed rate. Of N\u2080 nuclei, N = N\u2080\u00b7e^(\u2212\u03bbt) remain - half of them after each half-life."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Eight $(item)Raw Pitchblende$() and a little bone meal give one $(item)Radium Salt$() by hand; the $(item)Spectrograph$() does it from four. Radium is a hundred thousand times more active than the uranium it came from."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Radiation Sickness$(): every radioactive thing you carry adds to a dose (the item tags $(thing)radioactive$() and $(thing)strongly_radioactive$()). The dose fades slowly. Past a point it brings nausea, hunger and lower maximum health. A $(item)Prussian Blue Tablet$() flushes most of it out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Geiger Counter$(), held in either hand, clicks for every decay it hears and shows your dose. Pack makers can turn Radiation Sickness off in the config. With Mekanism or GregTech installed the same dose also counts in their radiation; NuclearCraft's radiation reads this mod's items too."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/radioactivity"
+}

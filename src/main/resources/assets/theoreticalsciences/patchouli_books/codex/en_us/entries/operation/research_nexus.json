@@ -1,0 +1,24 @@
+{
+  "name": "Research Nexus",
+  "icon": "theoreticalsciences:research_nexus",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 63,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A discovery is a statistical claim. With s expected signal events over b background, the Asimov significance is Z = \u221a(2((s+b)ln(1+s/b) \u2212 s)). Search K hypotheses at once and the look-elsewhere effect eats into it. Tight cuts keep the signal and kill the background - up to a point."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Exposure, Selection cut, Hypotheses tried.$(br2)$(thing)Disturbance$(): Systematic drift: the signal estimate wanders by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The data centre is overheating.$(br2)$(thing)Rate$(): Less data and more parallel searches finish sooner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Signal events: s = \u03c3_s\u00b7L\u00b7\u03b5_s$(br)Background events: b = \u03c3_b\u00b7L\u00b7\u03b5_b$(br)Local significance: Z = \u221a(2((s+b)ln(1+s/b) \u2212 s))$(br)Global significance: Z_g\u00b2 \u2248 Z\u00b2 \u2212 2 ln K"
+    }
+  ]
+}

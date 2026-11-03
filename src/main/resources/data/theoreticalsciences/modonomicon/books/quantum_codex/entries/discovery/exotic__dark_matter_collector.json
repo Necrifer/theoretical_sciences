@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.dark_matter_collector",
+  "description": "book.theoreticalsciences.codex.exotic.dark_matter_collector.desc",
+  "icon": {
+    "item": "theoreticalsciences:dark_matter_collector"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 27,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dark_matter_collector"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.dark_matter_collector.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.dark_matter_collector.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.dark_matter_collector.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.dark_matter_collector.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.dark_matter_collector.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dark_matter_collector"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.dark_matter_collector.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__topological_transmuter"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/exotic__quark_gluon_collider"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/dark_sector"
+  }
+}

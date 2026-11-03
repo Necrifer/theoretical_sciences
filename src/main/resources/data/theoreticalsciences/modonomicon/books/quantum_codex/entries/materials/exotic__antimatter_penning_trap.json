@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap",
+  "description": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.desc",
+  "icon": {
+    "item": "theoreticalsciences:antimatter_penning_trap"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 28,
+  "y": 41,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antimatter_penning_trap"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antimatter_penning_trap"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.antimatter_penning_trap.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__quantum_entangler"
+    },
+    {
+      "entry": "theoreticalsciences:materials/quantum__bose_einstein_condenser"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/antimatter"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.r44_suits",
+  "description": "book.theoreticalsciences.codex.geography.r44_suits.desc",
+  "icon": {
+    "item": "theoreticalsciences:refractory_suit_chestplate"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 61,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:refractory_suit_chestplate"
+      },
+      "text": "book.theoreticalsciences.codex.geography.r44_suits.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r44_suits.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r44_suits.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.r44_suits.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/geography__r40_interior"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mantle_geodynamics"
+  }
+}

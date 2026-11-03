@@ -1,0 +1,33 @@
+{
+  "name": "Running a Multiblock",
+  "icon": "theoreticalsciences:field_calibrator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:field_calibrator",
+      "text": "Every multiblock is a real machine now. Its $(thing)Operation$() console (right of its screen) has three pages.$(br2)$(thing)Controls$(): the parameters you set - fields, voltages, currents, gaps. Click a value to type it, scroll to step it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Readout$(): everything that follows from your settings, worked out with real equations. Hover any line for its formula. Below them, the $(thing)limits$() the machine must respect and the $(thing)recipe window$() it must be run inside."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each recipe states a window - a beam energy, a plasma temperature, a density, a significance. JEI shows it under the recipe. If the readout is outside it, the machine waits: $(thing)Out of Window$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Limits come in four kinds. Some simply stop the machine. Some make it $(thing)strain$() - containment wears four times as fast. Some $(thing)damage$() it every second. And some $(thing)quench$(): the stored energy dumps as heat in an instant, the containment takes a hit, and the machine needs eight seconds to recover. Enough of those and containment fails."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)disturbance$() d (Plant page) is what the machine fights: field errors, drifting phases, impurities, outgassing. It moves while the machine runs, and every model says what it does. A Field Calibrator trims it back to zero; an Autonomous Calibrator damps it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Structures may cross chunk borders freely. Away from home, a $(thing)chunk loader$() keeps a machine running: load every chunk the structure touches. If only some are loaded, the controller keeps the state it last saw (formed, its ports) and waits - it never reaches into an unloaded chunk."
+    }
+  ]
+}

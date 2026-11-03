@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:solar_melting",
+  "item_inputs": [
+    {
+      "item": "minecraft:sand",
+      "count": 16
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fused_silica",
+      "count": 16
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:stellar_astrophysics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tm": 1986.0
+    },
+    "windows": [
+      {
+        "q": "Tt",
+        "min": 2000.0,
+        "max": 2450.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.node_research_mantle_geodynamics",
+  "description": "book.theoreticalsciences.codex.geography.node_research_mantle_geodynamics.desc",
+  "icon": {
+    "item": "theoreticalsciences:ringwoodite"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 59,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ringwoodite"
+      },
+      "text": "book.theoreticalsciences.codex.geography.node_research_mantle_geodynamics.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.node_research_mantle_geodynamics.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/geography__seismograph",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mantle_geodynamics"
+  }
+}

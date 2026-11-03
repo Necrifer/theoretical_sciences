@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_antisoil",
+  "description": "book.theoreticalsciences.codex.world.node_antisoil.desc",
+  "icon": {
+    "item": "theoreticalsciences:antisoil"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 6,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antisoil"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_antisoil.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

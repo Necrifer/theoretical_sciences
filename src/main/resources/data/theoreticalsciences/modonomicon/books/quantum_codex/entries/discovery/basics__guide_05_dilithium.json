@@ -1,0 +1,31 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.guide_05_dilithium",
+  "description": "book.theoreticalsciences.codex.basics.guide_05_dilithium.desc",
+  "icon": {
+    "item": "theoreticalsciences:dilithium_crystal"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": -4,
+  "y": -4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dilithium_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.basics.guide_05_dilithium.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.guide_05_dilithium.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_04_neutronium"
+    }
+  ]
+}

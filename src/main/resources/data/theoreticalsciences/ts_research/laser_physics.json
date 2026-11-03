@@ -1,0 +1,57 @@
+{
+  "title": "Lasers",
+  "description": "An excited atom struck by a photon of the right colour gives off a second, identical one. Pump a crystal full of excited atoms between two mirrors and the light builds on itself: one colour, one direction, in step. Unlocks the Laser Rod, Laser Head and Faraday Isolator.",
+  "icon": "theoreticalsciences:laser_head",
+  "x": 7,
+  "y": -10,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:geometric_optics",
+    "theoreticalsciences:crystal_growth_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:garnet_boule",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fused_silica_lens",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A laser gives off light of one wavelength \u03bb. Each photon carries an energy set by the quantum of action h and the speed of light c. Write the energy E of one photon.",
+    "name": "Planck relation for light",
+    "lhs": "E",
+    "form": "h * c / \u03bb",
+    "expr": "h * c / L * 6241509074460763000",
+    "ask": "Find E in electronvolts for a neodymium laser, L = @{L} m (h = 6.626e-34 J\u00b7s, c = 2.998e8 m/s; 1 eV = 1.602e-19 J).",
+    "vars": {
+      "E": "photon energy (eV)",
+      "h": "Planck constant (J\u00b7s)",
+      "c": "speed of light (m/s)",
+      "\u03bb": "wavelength",
+      "L": "wavelength (m)"
+    },
+    "given": {
+      "h": 6.626e-34,
+      "c": 299800000.0,
+      "L": 1.064e-06
+    },
+    "unit": "eV",
+    "method": "A photon's energy is h\u03bd, and its frequency is c over its wavelength.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "k"
+    ],
+    "vary": {
+      "L": [
+        6.3e-07,
+        1.49e-06,
+        1e-08
+      ]
+    }
+  }
+}

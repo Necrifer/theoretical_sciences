@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.cpt",
+  "description": "book.theoreticalsciences.codex.antimatter.cpt.desc",
+  "icon": {
+    "item": "theoreticalsciences:cpt_mirror"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 140,
+  "y": 35,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cpt_mirror"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cpt_mirror"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:penning_harness"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p5"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.cpt.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/exotic__antimatter_penning_trap"
+    },
+    {
+      "entry": "theoreticalsciences:physics/spacetime__relativity"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cpt_symmetry"
+  }
+}

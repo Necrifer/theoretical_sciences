@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_multiverse_shard",
+  "description": "book.theoreticalsciences.codex.spacetime.node_multiverse_shard.desc",
+  "icon": {
+    "item": "theoreticalsciences:multiverse_shard"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 137,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:multiverse_shard"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_multiverse_shard.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_multiverse_shard.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_multiverse_shard.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/spacetime__wormhole_projector",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/traversable_wormholes"
+  }
+}

@@ -763,105 +763,111 @@ public class CodexScreen extends Screen {
             linked.addAll(hovered.parents());
             for (CodexData.Node m : tab.nodes) if (m.parents().contains(hid)) linked.add(m.entry());
         }
-        // connections: to the chapter it builds on (bright, with a moving spark when open) or to its hub (faint)
+        // 1.1.3: everything flat on the map is drawn as one batch per pass. Each rectangle used to be sent to the graphics
+        // card on its own (thousands a frame), which made a crowded map such as Discovery - nearly all on screen at once - lag.
         float thick = (float) Math.max(1, Math.min(2.5, zoom * 1.2));
-        for (CodexData.Node n : tab.nodes) {
-            double nx = sx(n), ny = sy(n);
-            for (String pid : n.parents()) {
-                CodexData.Node p = tab.byEntry.get(pid);
-                if (p == null) continue;
-                double px = sx(p), py = sy(p);
-                if ((nx < x0 && px < x0) || (nx > x1 && px > x1) || (ny < y0 && py < y0) || (ny > y1 && py > y1)) continue;
+        List<CodexData.Node> shown = new ArrayList<>();
+        g.drawManaged(() -> {
+            // connections: to the chapter it builds on (bright, with a moving spark when open) or to its hub (faint)
+            for (CodexData.Node n : tab.nodes) {
+                double nx = sx(n), ny = sy(n);
+                for (String pid : n.parents()) {
+                    CodexData.Node p = tab.byEntry.get(pid);
+                    if (p == null) continue;
+                    double px = sx(p), py = sy(p);
+                    if ((nx < x0 && px < x0) || (nx > x1 && px > x1) || (ny < y0 && py < y0) || (ny > y1 && py > y1)) continue;
+                    CodexData.Entry e = CodexData.entries.get(n.entry());
+                    if (!CodexState.visible(e)) continue;               // hidden nodes have no lines either
+                    boolean open = CodexState.unlocked(e);
+                    int col = n.small() ? HoloStyle.argb(open ? 0x50 : 0x24, a) : open ? HoloStyle.argb(0xB0, a) : 0x50607080;
+                    boolean lit = hid != null && (n.entry().equals(hid) || pid.equals(hid));
+                    if (lit) col = 0xFFFFE070;
+                    else if (hid != null) col = (Math.max(0x10, ((col >>> 24) & 0xFF) / 3) << 24) | (col & 0xFFFFFF);
+                    line(g, px, py, nx, ny, lit ? Math.max(2F, thick + 1) : n.small() ? 1 : thick, col);
+                    if (!n.small() && open) {
+                        double f = ((t * 0.02 + (n.x() * 31 + n.y() * 17) * 0.13) % 1 + 1) % 1;
+                        int sxp = (int) (px + (nx - px) * f), syp = (int) (py + (ny - py) * f);
+                        g.fill(sxp - 1, syp - 1, sxp + 1, syp + 1, 0xFFFFFFFF);
+                    }
+                }
+            }
+            // node frames (pass 1)
+            for (CodexData.Node n : tab.nodes) {
+                int S = size(n);
+                int cx = (int) Math.round(sx(n)), cy = (int) Math.round(sy(n));
+                if (cx + S < x0 || cy + S < y0 || cx - S > x1 || cy - S > y1) continue;
                 CodexData.Entry e = CodexData.entries.get(n.entry());
-                if (!CodexState.visible(e)) continue;               // hidden nodes have no lines either
+                if (e == null || !CodexState.visible(e)) continue;     // further on than the player has got: not drawn
                 boolean open = CodexState.unlocked(e);
-                int col = n.small() ? HoloStyle.argb(open ? 0x50 : 0x24, a) : open ? HoloStyle.argb(0xB0, a) : 0x50607080;
-                boolean lit = hid != null && (n.entry().equals(hid) || pid.equals(hid));
-                if (lit) col = 0xFFFFE070;
-                else if (hid != null) col = (Math.max(0x10, ((col >>> 24) & 0xFF) / 3) << 24) | (col & 0xFFFFFF);
-                line(g, px, py, nx, ny, lit ? Math.max(2F, thick + 1) : n.small() ? 1 : thick, col);
-                if (!n.small() && open) {
-                    double f = ((t * 0.02 + (n.x() * 31 + n.y() * 17) * 0.13) % 1 + 1) % 1;
-                    int sxp = (int) (px + (nx - px) * f), syp = (int) (py + (ny - py) * f);
-                    g.fill(sxp - 1, syp - 1, sxp + 1, syp + 1, 0xFFFFFFFF);
+                boolean hit = matches.contains(e.id);
+                int nx = cx - S / 2, ny = cy - S / 2;
+                if (S < 10) {              // far away: just a dot (and a thousand icons would slow the game down)
+                    g.fill(nx, ny, nx + S, ny + S, hit ? 0xFFFFFF60 : open ? HoloStyle.argb(0xE0, a) : 0xFF404858);
+                    continue;
                 }
+                shown.add(n);
+                int c = Math.max(1, S / (n.small() ? 6 : 5));
+                int bg = open ? (n.small() ? 0xE0081420 : 0xF0102030) : 0xF0080A10;
+                boolean near = hid != null && linked.contains(n.entry()) && n != hovered;
+                int fr = hit ? 0xFFFFFF60 : n == hovered ? 0xFFFFFFFF : near ? 0xFFFFE070 : open ? HoloStyle.argb(n.small() ? 0x90 : 0xFF, a) : 0xFF404858;
+                if (!n.small() && open) HoloStyle.chamferFill(g, nx - 2, ny - 2, S + 4, S + 4, c + 1, HoloStyle.argb(0x30, a));
+                if (CodexState.isGuide(e.id)) {
+                    // round 33: the Getting Started steps are framed in gold; the one to read next (and "Start Here") pulses
+                    boolean pulse = open && !CodexState.isRead(e.id);
+                    int al = pulse ? (int) (0x90 + 0x6F * Math.sin(t * 0.25)) : open ? 0xC0 : 0x60;
+                    int ring = e.id.equals(CodexState.START) ? 4 : 2;
+                    HoloStyle.chamferFrame(g, nx - ring, ny - ring, S + ring * 2, S + ring * 2, c + 2, (Math.max(0, Math.min(255, al)) << 24) | 0xFFC840);
+                }
+                HoloStyle.chamferFill(g, nx, ny, S, S, c, bg);
+                HoloStyle.chamferFrame(g, nx, ny, S, S, c, fr);
+                if (hit) HoloStyle.chamferFrame(g, nx - 2, ny - 2, S + 4, S + 4, c + 1, HoloStyle.argb((int) (0x80 + 0x7F * Math.sin(t * 0.3)), 0xFFFF60));
             }
-        }
-        // nodes
-        for (CodexData.Node n : tab.nodes) {
-            int S = size(n);
-            int cx = (int) Math.round(sx(n)), cy = (int) Math.round(sy(n));
-            if (cx + S < x0 || cy + S < y0 || cx - S > x1 || cy - S > y1) continue;
+        });
+        // the icons (pass 2: items are drawn by the game's own item renderer)
+        for (CodexData.Node n : shown) {
             CodexData.Entry e = CodexData.entries.get(n.entry());
-            if (e == null || !CodexState.visible(e)) continue;     // further on than the player has got: not drawn
-            boolean open = CodexState.unlocked(e);
-            boolean fresh = open && !n.small() && !CodexState.isRead(e.id);      // (chapters only: a spark on every item would drown the map)
-            boolean hit = matches.contains(e.id);
-            int nx = cx - S / 2, ny = cy - S / 2;
-            if (S < 10) {              // far away: just a dot (and a thousand icons would slow the game down)
-                g.fill(nx, ny, nx + S, ny + S, hit ? 0xFFFFFF60 : open ? HoloStyle.argb(0xE0, a) : 0xFF404858);
-                continue;
-            }
-            int c = Math.max(1, S / (n.small() ? 6 : 5));
-            int bg = open ? (n.small() ? 0xE0081420 : 0xF0102030) : 0xF0080A10;
-            boolean near = hid != null && linked.contains(n.entry()) && n != hovered;
-            int fr = hit ? 0xFFFFFF60 : n == hovered ? 0xFFFFFFFF : near ? 0xFFFFE070 : open ? HoloStyle.argb(n.small() ? 0x90 : 0xFF, a) : 0xFF404858;
-            if (!n.small() && open) HoloStyle.chamferFill(g, nx - 2, ny - 2, S + 4, S + 4, c + 1, HoloStyle.argb(0x30, a));
-            boolean guide = CodexState.isGuide(e.id);
-            if (guide) {
-                // round 33: the Getting Started steps are framed in gold; the one to read next (and "Start Here") pulses
-                boolean pulse = open && !CodexState.isRead(e.id);
-                int al = pulse ? (int) (0x90 + 0x6F * Math.sin(t * 0.25)) : open ? 0xC0 : 0x60;
-                int ring = e.id.equals(CodexState.START) ? 4 : 2;
-                HoloStyle.chamferFrame(g, nx - ring, ny - ring, S + ring * 2, S + ring * 2, c + 2, (Math.max(0, Math.min(255, al)) << 24) | 0xFFC840);
-                if (e.id.equals(CodexState.START) && S >= 10) {
-                    g.pose().pushPose();
-                    g.pose().translate(0, 0, 200);
-                    g.drawString(font, Component.translatable("gui.theoreticalsciences.codex.start_here").withStyle(ChatFormatting.BOLD), nx + S + 8, cy - 4, 0xFFFFD060, true);
-                    g.pose().popPose();
-                }
-            }
-            HoloStyle.chamferFill(g, nx, ny, S, S, c, bg);
-            HoloStyle.chamferFrame(g, nx, ny, S, S, c, fr);
-            if (hit) HoloStyle.chamferFrame(g, nx - 2, ny - 2, S + 4, S + 4, c + 1, HoloStyle.argb((int) (0x80 + 0x7F * Math.sin(t * 0.3)), 0xFFFF60));
+            if (!CodexState.unlocked(e) && !CodexState.isGuide(e.id)) continue;     // a locked next step does not show what it is (a guide step does)
+            int S = size(n);
+            int nx = (int) Math.round(sx(n)) - S / 2, ny = (int) Math.round(sy(n)) - S / 2;
             float k = (S - 4) / 16F;
             g.pose().pushPose();
             g.pose().translate(nx + 2, ny + 2, 0);
             g.pose().scale(k, k, 1F);
-            if (open || guide) g.renderItem(icon(e.icon), 0, 0);       // a locked next step does not show what it is (a guide step does)
+            g.renderItem(icon(e.icon), 0, 0);
             g.pose().popPose();
-            if (!open) {
-                g.pose().pushPose();
-                g.pose().translate(0, 0, 200);
-                g.fill(nx + 1, ny + 1, nx + S - 1, ny + S - 1, 0xA0000000);
-                if (S >= 14) padlock(g, cx, cy);
-                g.pose().popPose();
-            }
-            if (hid != null && !linked.contains(n.entry())) {           // not linked to the hovered node: dimmed
-                g.pose().pushPose();
-                g.pose().translate(0, 0, 200);
-                g.fill(nx, ny, nx + S, ny + S, 0x90000000);
-                g.pose().popPose();
-            }
-            if (fresh) {
-                g.pose().pushPose();
-                g.pose().translate(0, 0, 200);
-                int al = (int) (0xA0 + 0x5F * Math.sin(t * 0.25 + n.x()));
-                int d = Math.max(2, S / 8);
-                g.fill(nx + S - d - 1, ny + 1, nx + S - 1, ny + d + 1, (al << 24) | 0xFFD040);
-                g.pose().popPose();
-            }
-            // names under the chapters when zoomed in far enough
-            if ((!n.small() && zoom >= 1.3) || zoom >= 2.2) {
-                int lw = (int) (UNIT * 2 * zoom) - 2;
-                Component nm = Component.literal(open || guide ? e.title : "???");
-                g.pose().pushPose();
-                g.pose().translate(0, 0, 200);
-                int tw = Math.min(lw, font.width(nm));
-                TextFit.draw(g, font, nm, cx - tw / 2, ny + S + 2, lw, open ? 0xFFD8E4F0 : 0xFF707880);
-                g.pose().popPose();
-            }
         }
+        // pass 3: what lies over the icons - locks, dimming, the "new" spark, names
+        g.drawManaged(() -> {
+            g.pose().pushPose();
+            g.pose().translate(0, 0, 200);
+            for (CodexData.Node n : shown) {
+                CodexData.Entry e = CodexData.entries.get(n.entry());
+                int S = size(n);
+                int cx = (int) Math.round(sx(n)), cy = (int) Math.round(sy(n));
+                int nx = cx - S / 2, ny = cy - S / 2;
+                boolean open = CodexState.unlocked(e), guide = CodexState.isGuide(e.id);
+                if (guide && e.id.equals(CodexState.START))
+                    g.drawString(font, Component.translatable("gui.theoreticalsciences.codex.start_here").withStyle(ChatFormatting.BOLD), nx + S + 8, cy - 4, 0xFFFFD060, true);
+                if (!open) {
+                    g.fill(nx + 1, ny + 1, nx + S - 1, ny + S - 1, 0xA0000000);
+                    if (S >= 14) padlock(g, cx, cy);
+                }
+                if (hid != null && !linked.contains(n.entry())) g.fill(nx, ny, nx + S, ny + S, 0x90000000);   // not linked to the hovered node: dimmed
+                if (open && !n.small() && !CodexState.isRead(e.id)) {      // (chapters only: a spark on every item would drown the map)
+                    int al = (int) (0xA0 + 0x5F * Math.sin(t * 0.25 + n.x()));
+                    int d = Math.max(2, S / 8);
+                    g.fill(nx + S - d - 1, ny + 1, nx + S - 1, ny + d + 1, (al << 24) | 0xFFD040);
+                }
+                // names under the chapters when zoomed in far enough
+                if ((!n.small() && zoom >= 1.3) || zoom >= 2.2) {
+                    int lw = (int) (UNIT * 2 * zoom) - 2;
+                    Component nm = Component.literal(open || guide ? e.title : "???");
+                    int tw = Math.min(lw, font.width(nm));
+                    TextFit.draw(g, font, nm, cx - tw / 2, ny + S + 2, lw, open ? 0xFFD8E4F0 : 0xFF707880);
+                }
+            }
+            g.pose().popPose();
+        });
         g.disableScissor();
     }
 
@@ -1111,7 +1117,9 @@ public class CodexScreen extends Screen {
         scroll = Math.max(0, Math.min(maxScroll(), scroll));
         g.enableScissor(c[0], c[1], c[0] + c[2], c[1] + c[3]);
         boolean inside = mx >= c[0] && my >= c[1] && mx < c[0] + c[2] && my < c[1] + c[3];
-        CodexPage.Hover h = pg.render(g, font, c[0], c[1] - (int) scroll, inside ? mx : -10000, inside ? my : -10000);
+        // round 37 (1.1): a page shorter than the panel (which fits the entry's tallest page) sits in the middle of it, not at the top
+        int centre = Math.max(0, (c[3] - pg.height()) / 2);
+        CodexPage.Hover h = pg.render(g, font, c[0], c[1] + centre - (int) scroll, inside ? mx : -10000, inside ? my : -10000);
         g.disableScissor();
         if (maxScroll() > 0) {               // a scroll bar beside the page
             int trackX = c[0] + c[2] - 2, th = Math.max(10, c[3] * c[3] / Math.max(1, pg.height()));

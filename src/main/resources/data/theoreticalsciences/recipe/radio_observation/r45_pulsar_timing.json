@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:radio_observation",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pulsar_timing_record",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 800,
+  "research": "theoreticalsciences:radio_astronomy",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "S": 0.05,
+      "al": -1.6,
+      "wl": 1000000.0,
+      "nl": 1400.0,
+      "DM": 50.0,
+      "Sreq": 8.0
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 8.0,
+        "max": 1000000000000.0
+      },
+      {
+        "q": "ts",
+        "min": 0.0,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.5,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 1052692,
+    "fog_color": 2105380,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.004
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:nebuloid",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "theoreticalsciences:hawking_imp",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "theoreticalsciences:boltzmann_brain",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_planetesimal_core",
+      "theoreticalsciences:ore_brown_dwarf"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

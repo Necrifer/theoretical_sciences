@@ -1,0 +1,24 @@
+{
+  "name": "Entropy Horizon",
+  "icon": "theoreticalsciences:entropy_horizon",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 29,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Matter is run forward through the eras of an expanding universe until it reaches the temperature of its own horizon. The horizon of a de Sitter universe of Hubble rate H glows at T = \u0127H/(2\u03c0k_B); everything left inside cools towards it, and the work goes as fast as the entropy still left to produce. Squeeze the horizon too small and it is hot enough to boil the containment."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Horizon Hubble rate H, Simulated age.$(br2)$(thing)Disturbance$(): The expansion rate wanders by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too young: the stars are still burning and the protons have not decayed; The horizon is too small and too hot: the containment is boiling; The horizon casing is overheating.$(br2)$(thing)Rate$(): The further towards maximum entropy, the faster the ember and the haze come off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Effective Hubble rate: H = H\u2080\u00b7(1 + 0.05\u00b7d)$(br)Horizon temperature: T = \u0127H/(2\u03c0k_B)$(br)Horizon radius: R = c/H$(br)Entropy still to produce: S/S_max \u2248 (log t \u2212 10)/90"
+    }
+  ]
+}

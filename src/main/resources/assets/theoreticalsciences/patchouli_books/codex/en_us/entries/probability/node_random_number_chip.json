@@ -1,0 +1,19 @@
+{
+  "name": "Quantum Random Number Chip",
+  "icon": "theoreticalsciences:random_number_chip",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:random_number_chip",
+      "title": "Quantum Random Number Chip",
+      "text": "Single photons meet a half-silvered mirror: transmitted is 1, reflected is 0. Nothing in the universe knows the next bit in advance."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Monte Carlo Engine$().$(br2)$(thing)Found in$(): Crashed Satellite, Derelict Station, Probability Hall chests.$(br2)$(thing)Unlocked by$(): Monte Carlo Methods.$(br2)$(thing)Used in$(): Atomic Clock, Bayesian Analyzer, Markov Chain Link, Prior Tablet, Satellite Wreck, Stochastic Core, Transition Valve."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/monte_carlo_methods"
+}

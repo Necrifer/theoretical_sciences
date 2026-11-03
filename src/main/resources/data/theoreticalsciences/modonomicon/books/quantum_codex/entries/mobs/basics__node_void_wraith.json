@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.node_void_wraith",
+  "description": "book.theoreticalsciences.codex.basics.node_void_wraith.desc",
+  "icon": {
+    "item": "theoreticalsciences:void_wraith_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 2,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:void_wraith_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.basics.node_void_wraith.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/basics__containment_failure",
+      "draw_arrow": false
+    }
+  ]
+}

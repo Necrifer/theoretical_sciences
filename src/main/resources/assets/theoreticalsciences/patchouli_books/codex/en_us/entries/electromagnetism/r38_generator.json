@@ -1,0 +1,18 @@
+{
+  "name": "The Induction Generator",
+  "icon": "theoreticalsciences:induction_generator",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:induction_generator",
+      "text": "Spin a coil in a magnet's field and it drives a current: \u03b5 = NBA\u03c9. With the same coil and load, the power goes as \u03b5\u00b2, so a magnet three times stronger gives about ten times the power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Induction Generator$() burns fuel to spin its coil. Put a magnet in its second slot - a Ferrite Magnet gives 24 FE/t, Samarium-Cobalt 180, Neodymium 250 - and flowing water beside it, like a water wheel, adds half again for every side."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electromagnetic_induction"
+}

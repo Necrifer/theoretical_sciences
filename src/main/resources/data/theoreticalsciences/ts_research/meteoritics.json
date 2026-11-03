@@ -1,0 +1,49 @@
+{
+  "title": "Meteoritics",
+  "description": "Stones fall from the sky: iron ones from the broken cores of small planets, stony ones that never melted at all since the planets formed. Look for their craters. Unlocks the assay of meteorites.",
+  "icon": "theoreticalsciences:meteoric_iron",
+  "x": 2,
+  "y": -8,
+  "insight": 25,
+  "requires": [
+    "theoreticalsciences:observational_astronomy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A body of mass m strikes the ground at speed v. All of its motion becomes heat, shock and a crater. Write the energy E it brings.",
+    "name": "Kinetic energy of an impactor",
+    "lhs": "E",
+    "form": "1 / 2 * m * v ^ 2",
+    "expr": "0.5 * m * v ^ 2 / 1000000000000",
+    "ask": "Find E in terajoules for the body that made Meteor Crater: m = 3e8 kg at v = @{v} m/s.",
+    "vars": {
+      "E": "energy (TJ)",
+      "m": "mass (kg)",
+      "v": "speed (m/s)"
+    },
+    "given": {
+      "m": 300000000.0,
+      "v": 12800
+    },
+    "unit": "TJ",
+    "method": "The work needed to bring a mass from rest to speed v is the integral of m\u00b7v dv, which is half of m v\u00b2.",
+    "distractors": [
+      "g",
+      "h",
+      "2"
+    ],
+    "vary": {
+      "v": [
+        7680.0,
+        17920.0,
+        1.0
+      ]
+    }
+  }
+}

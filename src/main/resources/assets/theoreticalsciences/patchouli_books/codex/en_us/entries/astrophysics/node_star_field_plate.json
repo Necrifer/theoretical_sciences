@@ -1,0 +1,19 @@
+{
+  "name": "Star Field Plate",
+  "icon": "theoreticalsciences:star_field_plate",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:star_field_plate",
+      "title": "Star Field Plate",
+      "text": "A developed plate of a patch of sky: thousands of stars, their positions measured to a fraction of an arcsecond."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Unlocked by$(): Telescope Optics.$(br2)$(thing)Used in$(): Geoid Model, Posterior Tablet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/telescope_optics"
+}

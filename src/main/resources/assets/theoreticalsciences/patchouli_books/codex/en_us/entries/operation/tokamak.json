@@ -1,0 +1,24 @@
+{
+  "name": "Tokamak",
+  "icon": "theoreticalsciences:tokamak",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 71,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Deuterium and tritium fuse when their ions are hot enough to get close: around 10-20 keV. A plasma of density n at temperature T loses its energy over a confinement time \u03c4, which grows with the magnetic field holding it (here \u03c4 \u221d B\u00b2). It ignites when the Lawson triple product nT\u03c4 passes 3\u00d710\u00b2\u00b9 keV\u00b7s/m\u00b3. The plasma's pressure pushes on the field; past \u03b2 = 5% of the magnetic pressure, it disrupts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Plasma density, Ion temperature, Toroidal field.$(br2)$(thing)Disturbance$(): Edge turbulence: the confinement time varies by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The plasma has disrupted: its pressure beat the field; The superconducting coils have quenched (too much field); The superconducting coils are too warm.$(br2)$(thing)Rate$(): Power follows the triple product."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Energy confinement time: \u03c4 \u221d B\u00b2$(br)Triple product: nT\u03c4$(br)Plasma beta: \u03b2 = 2\u03bc\u2080nkT/B\u00b2"
+    }
+  ]
+}

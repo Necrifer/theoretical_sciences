@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_cryogenic_cooling_jacket",
+  "description": "book.theoreticalsciences.codex.quantum.node_cryogenic_cooling_jacket.desc",
+  "icon": {
+    "item": "theoreticalsciences:cryogenic_cooling_jacket"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 0,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cryogenic_cooling_jacket"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_cryogenic_cooling_jacket.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_cryogenic_cooling_jacket.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_cryogenic_cooling_jacket.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/quantum__bose_einstein_condenser",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cryogenics"
+  }
+}

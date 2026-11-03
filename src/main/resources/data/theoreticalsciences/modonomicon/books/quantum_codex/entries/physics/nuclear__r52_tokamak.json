@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.r52_tokamak",
+  "description": "book.theoreticalsciences.codex.nuclear.r52_tokamak.desc",
+  "icon": {
+    "item": "theoreticalsciences:tokamak"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 151,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tokamak"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.r52_tokamak.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r52_tokamak.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r52_tokamak.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/nuclear__r42_msr"
+    },
+    {
+      "entry": "theoreticalsciences:physics/nuclear__molten_salt_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/fusion_ignition"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r54_information",
+  "description": "book.theoreticalsciences.codex.spacetime.r54_information.desc",
+  "icon": {
+    "item": "theoreticalsciences:page_curve_analyzer"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 68,
+  "y": 1,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:page_curve_analyzer"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r54_information.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r54_information.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/spacetime__r54_hawking"
+    },
+    {
+      "entry": "theoreticalsciences:machines/spacetime__micro_black_hole_evaporator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/information_paradox"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.node_research_equivalence_principle",
+  "description": "book.theoreticalsciences.codex.spacetime.node_research_equivalence_principle.desc",
+  "icon": {
+    "item": "theoreticalsciences:proof_mass"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 49,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_mass"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_equivalence_principle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.node_research_equivalence_principle.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/spacetime__relativity",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/equivalence_principle"
+  }
+}

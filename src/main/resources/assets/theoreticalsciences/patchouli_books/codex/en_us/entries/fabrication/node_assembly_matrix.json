@@ -1,0 +1,23 @@
+{
+  "name": "Assembly Matrix",
+  "icon": "theoreticalsciences:assembly_matrix",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:assembly_matrix",
+      "title": "Assembly Matrix",
+      "text": "A femtoscale jig that holds a hundred tiny parts exactly in place while the Extreme Assembly Table joins them. It is small, heavy and covered in fine engraved channels, and it seems to settle into the hand like a tool that knows its job."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Assembling parts smaller than a proton by hand is impossible. I combined photonic and quantum processors with a metamaterial frame and chronosteel so that the matrix positions every part itself while the table does the joining."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Femtoscale Assembly Line$().$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Hyperlattice Frame."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

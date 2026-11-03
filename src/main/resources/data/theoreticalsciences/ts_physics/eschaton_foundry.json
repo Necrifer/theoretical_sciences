@@ -1,0 +1,80 @@
+{
+  "params": [
+    {
+      "id": "lgE",
+      "unit": "",
+      "min": 30,
+      "max": 48,
+      "step": 0.01,
+      "default": 40
+    },
+    {
+      "id": "lgR",
+      "unit": "",
+      "min": -6,
+      "max": 4,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Sq": 70
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "E",
+      "unit": "J",
+      "expr": "10^lgE*(1 + 0.02*d)",
+      "formula": "E\u00b7(1 + 0.02\u00b7d)"
+    },
+    {
+      "id": "R",
+      "unit": "m",
+      "expr": "10^lgR",
+      "formula": "R"
+    },
+    {
+      "id": "Rs",
+      "unit": "m",
+      "expr": "2*6.674e-11*E/8.0776e33",
+      "formula": "R_s = 2GE/c\u2074"
+    },
+    {
+      "id": "x",
+      "unit": "",
+      "expr": "R/Rs",
+      "formula": "R/R_s"
+    },
+    {
+      "id": "lgS",
+      "unit": "",
+      "expr": "log10(R) + log10(E) + 26.458",
+      "formula": "S = 2\u03c0RE/(\u0127c\u00b7ln 2)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "collapse",
+      "kind": "damage",
+      "expr": "x - 1.05",
+      "formula": "R > 1.05\u00b7R_s"
+    },
+    {
+      "id": "overheat",
+      "kind": "damage",
+      "expr": "1200 - T",
+      "formula": "T < 1200 K"
+    }
+  ],
+  "rate": "clamp(1 + 0.5*(lgS - Sq), 0, 3)",
+  "rate_formula": "rate = 1 + \u00bd(log S \u2212 log S_needed)",
+  "heat": "10 + 3*(lgE - 30)",
+  "idle_heat": "4",
+  "quench_energy": "0",
+  "kappa": 80,
+  "heat_capacity": 120,
+  "timescale": 1,
+  "rate_max": 4
+}

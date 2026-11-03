@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_negative_mass_ingot",
+  "description": "book.theoreticalsciences.codex.fabrication.node_negative_mass_ingot.desc",
+  "icon": {
+    "item": "theoreticalsciences:negative_mass_ingot"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 101,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:negative_mass_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_negative_mass_ingot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_negative_mass_ingot.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_negative_mass_ingot.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__catalysts",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mass_manipulation"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Laser Rod",
+  "icon": "theoreticalsciences:laser_rod",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:laser_rod",
+      "title": "Laser Rod",
+      "text": "Garnet doped with neodymium, cut along its lattice and polished flat at both ends. Pumped with light, it gives back more light than it took in, all of one colour: infrared at 1064 nanometres."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Optical Workshop$().$(br2)$(thing)Found in$(): Derelict Station chests.$(br2)$(thing)Unlocked by$(): Lasers.$(br2)$(thing)Used in$(): Entangled Pair Source, Laser Cutter, Laser Head."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/laser_physics"
+}

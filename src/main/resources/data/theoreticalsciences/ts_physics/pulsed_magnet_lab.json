@@ -1,0 +1,74 @@
+{
+  "params": [
+    {
+      "id": "N",
+      "unit": "",
+      "min": 10,
+      "max": 200,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "id": "I",
+      "unit": "kA",
+      "min": 1,
+      "max": 100,
+      "step": 0.01,
+      "default": 20
+    },
+    {
+      "id": "t",
+      "unit": "ms",
+      "min": 1,
+      "max": 100,
+      "step": 0.01,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Lc",
+      "unit": "m",
+      "expr": "0.1",
+      "formula": "L"
+    },
+    {
+      "id": "Bf",
+      "unit": "T",
+      "expr": "0.0012566*N*I*(1 + 0.02*d)/Lc",
+      "formula": "B = \u03bc\u2080NI/L"
+    },
+    {
+      "id": "dT",
+      "unit": "K",
+      "expr": "0.0004*N*I^2*t/size",
+      "formula": "\u0394T \u221d NI\u00b2t"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "melt",
+      "kind": "damage",
+      "expr": "400 - dT",
+      "formula": "\u0394T < 400 K"
+    },
+    {
+      "id": "burst",
+      "kind": "damage",
+      "expr": "100 - Bf",
+      "formula": "B < 100 T"
+    }
+  ],
+  "rate": "clamp(4/(t + 1), 0.25, 2)",
+  "rate_formula": "rate = 4/(t + 1 ms)",
+  "heat": "0.0001*N*I^2",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

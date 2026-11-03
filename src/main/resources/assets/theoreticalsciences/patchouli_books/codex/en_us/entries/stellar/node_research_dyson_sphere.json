@@ -1,0 +1,19 @@
+{
+  "name": "Dyson Sphere",
+  "icon": "theoreticalsciences:dyson_shell_segment",
+  "advancement": "theoreticalsciences:research/dyson_sphere",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dyson_shell_segment",
+      "title": "Dyson Sphere",
+      "text": "$(thing)Dyson Sphere$()$(br2)Close the swarm into a shell and capture a star's entire output."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Dyson Swarm.$(br2)$(thing)Samples$(): 2 Higgs Field Capacitor.$(br2)$(thing)Derivation$(): Find the equilibrium temperature (K) of a Dyson shell at r = 0.7 AU around a star of L = 0.5 solar luminosities, radiating only outward."
+    }
+  ]
+}

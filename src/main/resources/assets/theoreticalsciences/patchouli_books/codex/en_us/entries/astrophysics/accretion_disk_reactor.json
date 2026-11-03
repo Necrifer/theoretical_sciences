@@ -1,0 +1,216 @@
+{
+  "name": "Accretion Disk Reactor",
+  "icon": "theoreticalsciences:accretion_disk_reactor",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 107,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:accretion_disk_reactor",
+      "title": "Accretion Disk Reactor",
+      "text": "Feeds matter onto a captive black hole: falling in, it gives up to a third of its rest energy as light. Too much at once, and its own light blows the disk away.$(br2)Generates power.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the hole's mass, how fast it is fed, and its spin. A spinning hole lets matter orbit closer before it falls, so more of its rest energy comes out (6% at no spin, a third near the maximum). The light pushes back on the infalling gas: past the Eddington luminosity, L = 1.26\u00d710\u00b3\u00b9 (M/M\u2609) W, it blows the disk apart."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Accretion Disk Reactor",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______A______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______A______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______B______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____DBD_____",
+            "____DDBDD____",
+            "____BBBBB____",
+            "____DDBDD____",
+            "_____DBD_____",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "____DDBDD____",
+            "____D___D____",
+            "____B___B____",
+            "____D___D____",
+            "____DDBDD____",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________"
+          ],
+          [
+            "_____EEE_____",
+            "___DEEEDEE___",
+            "__DEEEDEEED__",
+            "_DEEEDEEEDEE_",
+            "_EEEDBBBDEEE_",
+            "EEEDB___BEEDE",
+            "EEDEB___BEDEE",
+            "EDEEB___BDEEE",
+            "_EEEDBBBDEEE_",
+            "_EEDEEEDEEED_",
+            "__DEEEDEEED__",
+            "___EEDEEED___",
+            "_____EEE_____"
+          ],
+          [
+            "______F______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "____DDBDD____",
+            "____D___D____",
+            "F___B___B___F",
+            "____D___D____",
+            "____DDBDD____",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______F______"
+          ],
+          [
+            "______F______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____DBD_____",
+            "____DDBDD____",
+            "F___BBBBB___F",
+            "____DDBDD____",
+            "_____DBD_____",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______F______"
+          ],
+          [
+            "______F______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "F_____B_____F",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______F______"
+          ],
+          [
+            "______F______",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "F_____A_____F",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "_____________",
+            "______F______"
+          ],
+          [
+            "____FF0FF____",
+            "__FF_____FF__",
+            "_FF_______FF_",
+            "_F_________F_",
+            "F___________F",
+            "F___________F",
+            "F_____A_____F",
+            "F___________F",
+            "F___________F",
+            "_F_________F_",
+            "_FF_______FF_",
+            "__FF_____FF__",
+            "____FFGFF____"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:accretion_disk_reactor",
+          "A": "theoreticalsciences:jet_collimator",
+          "B": "theoreticalsciences:horizon_containment",
+          "D": "theoreticalsciences:containment_field_glass",
+          "E": "theoreticalsciences:disk_confinement_ring",
+          "F": "theoreticalsciences:accretion_casing",
+          "G": "#theoreticalsciences:multiblock/accretion_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (1 item and 1 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Accretion Disk Plasma, Quasar Jet Filament."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:accretion_disk_reactor",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/accretion_physics"
+}

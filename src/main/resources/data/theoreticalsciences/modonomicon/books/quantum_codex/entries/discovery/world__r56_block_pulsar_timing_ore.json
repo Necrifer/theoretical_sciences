@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.world.r56_block_pulsar_timing_ore",
+  "description": "book.theoreticalsciences.codex.world.r56_block_pulsar_timing_ore.desc",
+  "icon": {
+    "item": "theoreticalsciences:pulsar_timing_ore"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 39,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pulsar_timing_ore"
+      },
+      "text": "book.theoreticalsciences.codex.world.r56_block_pulsar_timing_ore.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r56_block_pulsar_timing_ore.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__r45_radio"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__radio_telescope"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

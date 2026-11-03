@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.node_law_wraith",
+  "description": "book.theoreticalsciences.codex.basics.node_law_wraith.desc",
+  "icon": {
+    "item": "theoreticalsciences:law_wraith_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 0,
+  "y": 3,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:law_wraith_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.basics.node_law_wraith.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/basics__containment_failure",
+      "draw_arrow": false
+    }
+  ]
+}

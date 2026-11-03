@@ -1,0 +1,36 @@
+{
+  "name": "Symbiosis & Parasitism",
+  "icon": "theoreticalsciences:symbiont_culture",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:symbiont_culture",
+      "text": "An anomaly that lives inside a normal system is in a relationship with it. Write both as populations: dN\u2081/dt = r\u2081N\u2081(1 \u2212 (N\u2081 + \u03b1N\u2082)/K\u2081), and the mirror equation for N\u2082 with \u03b2. With \u03b1 and \u03b2 positive they compete; they coexist at N\u2081* = (K\u2081 \u2212 \u03b1K\u2082)/(1 \u2212 \u03b1\u03b2) only if neither crowds the other out. Flip the sign of \u03b1 and the invader helps its host instead."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nature has done it: mitochondria and chloroplasts were bacteria that invaded other cells two billion years ago and became their power plants. Gut bacteria, lichens, the viral genes in our own DNA that now build the placenta - the line between infection and partnership is one coefficient."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Anomaly Containment Ward$(), a microenvironment organoid, a xenobot swarm and a prion lattice in Autocatalytic Broth are turned into a $(item)Symbiont Culture$(): the same anomaly, paying its host back."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:symbiont_culture",
+      "text": "The same anomaly, turned: it still copies itself, but now it pays its host back. Parasite and partner differ by one sign.$(br2)Made in $(item)Anomaly Containment Ward$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_containment_ward",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Symbiont Culture$(): Anomaly Catalogue"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/symbiosis_parasitism"
+}

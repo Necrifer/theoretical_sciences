@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab",
+  "description": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.desc",
+  "icon": {
+    "item": "theoreticalsciences:pulsed_magnet_lab"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 98,
+  "y": 5,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pulsed_magnet_lab"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pulsed_magnet_lab"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.pulsed_magnet_lab.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/electromagnetism__r42_mhd"
+    },
+    {
+      "entry": "theoreticalsciences:machines/electromagnetism__mhd_generator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/magnetic_confinement"
+  }
+}

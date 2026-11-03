@@ -1,0 +1,51 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.temporal_mechanics",
+  "description": "book.theoreticalsciences.codex.spacetime.temporal_mechanics.desc",
+  "icon": {
+    "item": "theoreticalsciences:novikov_crystal"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 54,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.temporal_mechanics.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.temporal_mechanics"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.temporal_mechanics.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chrono_loom"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.temporal_mechanics.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:temporal_knot"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.temporal_mechanics.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.temporal_mechanics.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/exotic__chronon_field_inverter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/temporal_mechanics"
+  }
+}

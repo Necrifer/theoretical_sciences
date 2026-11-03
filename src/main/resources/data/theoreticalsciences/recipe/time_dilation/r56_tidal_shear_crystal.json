@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:time_dilation",
+  "item_inputs": [
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:tidal_plasma",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tidal_shear_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 4096,
+  "duration": 800,
+  "research": "theoreticalsciences:tidal_physics",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "f",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

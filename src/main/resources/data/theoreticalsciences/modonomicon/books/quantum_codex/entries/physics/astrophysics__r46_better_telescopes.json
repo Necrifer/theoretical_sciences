@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.r46_better_telescopes",
+  "description": "book.theoreticalsciences.codex.astrophysics.r46_better_telescopes.desc",
+  "icon": {
+    "item": "theoreticalsciences:schmidt_corrector"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 61,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:schmidt_corrector"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.r46_better_telescopes.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.r46_better_telescopes.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/optics__r46_overview"
+    },
+    {
+      "entry": "theoreticalsciences:physics/optics__r46_diffraction"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/geometric_optics"
+  }
+}

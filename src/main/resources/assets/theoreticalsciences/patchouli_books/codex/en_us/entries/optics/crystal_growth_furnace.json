@@ -1,0 +1,205 @@
+{
+  "name": "Crystal Growth Furnace",
+  "icon": "theoreticalsciences:crystal_growth_furnace",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 96,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:crystal_growth_furnace",
+      "title": "Crystal Growth Furnace",
+      "text": "A seed is dipped into the melt and drawn slowly up, turning: the melt freezes onto it as one single crystal, and the impurities stay behind.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Heat the melt a little above its melting point, pull the seed and turn it. Pull rate over the thermal gradient must sit near the critical ratio for a defect-free crystal; slow pulling and stirring leave the impurities in the melt."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Crystal Growth Furnace",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "__AAA__",
+            "__ABA__",
+            "__AAA__",
+            "_______",
+            "_______",
+            "_______",
+            "_______"
+          ],
+          [
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAABAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "_______",
+            "_______"
+          ],
+          [
+            "AAAAAAA",
+            "A     A",
+            "A     A",
+            "A  B  A",
+            "A     A",
+            "A     A",
+            "AAAAAAA",
+            "_B___B_",
+            "_B___B_"
+          ],
+          [
+            "AADDDAA",
+            "A     A",
+            "A     A",
+            "A  B  A",
+            "A     A",
+            "A     A",
+            "AAAAAAA",
+            "_______",
+            "_B___B_"
+          ],
+          [
+            "AADDDAA",
+            "A     A",
+            "A     A",
+            "A     A",
+            "A     A",
+            "A     A",
+            "AAAAAAA",
+            "_______",
+            "_B___B_"
+          ],
+          [
+            "AAA0AAA",
+            "AAAAAAA",
+            "AAEEEAA",
+            "AAEFEAA",
+            "AAEEEAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "_______",
+            "_B___B_"
+          ],
+          [
+            "AAAGAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "GAAAAAG",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAGAAA",
+            "_______",
+            "_B___B_"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:crystal_growth_furnace",
+          "A": "theoreticalsciences:growth_furnace_casing",
+          "B": "theoreticalsciences:pull_shaft",
+          "D": "theoreticalsciences:leaded_glass",
+          "E": "theoreticalsciences:refractory_firebox",
+          "F": "theoreticalsciences:iridium_crucible",
+          "G": "#theoreticalsciences:multiblock/growth_furnace_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Fluorite Boule, Garnet Boule, Sapphire Boule, Silicon Boule."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:crystal_growth_furnace",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystal_growth_physics"
+}

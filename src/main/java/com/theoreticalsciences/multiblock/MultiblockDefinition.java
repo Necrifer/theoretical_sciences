@@ -24,6 +24,10 @@ import java.util.*;
  *   <li>{@code effect_center}: pattern coordinates of the visual effect centre.</li>
  * </ul>
  * Patterns are written for a controller facing NORTH (its front looks toward -Z, the structure extends to +Z).
+ * <p>
+ * 1.3.5: {@code "repeat": {"from": a, "to": b, "max": n}} makes the structure variable in height, the way GTNH's
+ * Distillation Tower is: layers a..b form one unit that may be stacked up to n more times (so the machine is built
+ * with 1 to n+1 units). The definition itself is the smallest build; {@link #variant(int)} gives the taller ones.
  */
 public final class MultiblockDefinition {
     public final String id;
@@ -33,6 +37,8 @@ public final class MultiblockDefinition {
     public final char controllerChar;
     public final int cx, cy, cz;
     public final double ex, ey, ez;
+    /** 1.3.8: {@code effect_scale} - the effect drawn bigger, for the giant machines (1 = standard). */
+    public final double escale;
     public final int sizeX, sizeY, sizeZ;
     /**
      * GT-style tiered components: a key character whose accepted blocks are listed lowest tier first.
@@ -43,8 +49,39 @@ public final class MultiblockDefinition {
 
     public record TierSpec(String family, int base) {}
 
+    /** Variable height: the repeated unit (pattern layers {@code repeatFrom..repeatTo}) and how many extra copies are allowed. */
+    public final int repeatFrom, repeatTo, repeatMax;
+    private final JsonObject source;
+    private final MultiblockDefinition[] variants;
+    /** 1.3.6: earlier layouts of a reworked structure (same key), so the Structure Assembler can still take old builds apart. */
+    public final List<MultiblockDefinition> legacy;
+
     private MultiblockDefinition(String id, JsonObject json) {
         this.id = id;
+        this.source = json;
+        if (json.has("repeat")) {
+            JsonObject r = json.getAsJsonObject("repeat");
+            this.repeatFrom = r.get("from").getAsInt();
+            this.repeatTo = r.get("to").getAsInt();
+            this.repeatMax = r.get("max").getAsInt();
+        } else {
+            this.repeatFrom = this.repeatTo = -1;
+            this.repeatMax = 0;
+        }
+        this.variants = new MultiblockDefinition[repeatMax + 1];
+        List<MultiblockDefinition> leg = new ArrayList<>();
+        if (json.has("legacy")) for (JsonElement l : json.getAsJsonArray("legacy")) {
+            JsonObject j = json.deepCopy();
+            j.remove("legacy");
+            j.remove("repeat");
+            j.remove("effect_center");
+            j.add("layers", l.getAsJsonArray());
+            try {
+                leg.add(new MultiblockDefinition(id, j));
+            } catch (RuntimeException ignored) {          // a legacy layout without a controller: nothing to align it to
+            }
+        }
+        this.legacy = List.copyOf(leg);
         this.controllerBlock = ResourceLocation.parse(json.get("controller_block").getAsString());
         this.controllerChar = json.has("controller") ? json.get("controller").getAsString().charAt(0) : 'C';
         List<List<String>> ls = new ArrayList<>();
@@ -94,10 +131,64 @@ public final class MultiblockDefinition {
         this.ex = ec != null ? ec.get(0).getAsDouble() : (mx - 1) / 2.0;
         this.ey = ec != null ? ec.get(1).getAsDouble() : (layers.size() - 1) / 2.0;
         this.ez = ec != null ? ec.get(2).getAsDouble() : (mz - 1) / 2.0;
+        this.escale = json.has("effect_scale") ? json.get("effect_scale").getAsDouble() : 1.0;
     }
 
     static MultiblockDefinition parse(String id, JsonObject json) {
         return new MultiblockDefinition(id, json);
+    }
+
+    /** Whether the structure can be built taller (see the class comment). */
+    public boolean variable() {
+        return repeatMax > 0;
+    }
+
+    /** Units in a build with {@code extra} extra copies of the repeated unit: 1 for the smallest. */
+    public int units(int extra) {
+        return 1 + Math.max(0, Math.min(extra, repeatMax));
+    }
+
+    /** The build with {@code extra} more copies of the repeated unit (0 = this, the smallest). */
+    public synchronized MultiblockDefinition variant(int extra) {
+        extra = Math.max(0, Math.min(extra, repeatMax));
+        if (extra == 0) return this;
+        if (variants[extra] == null) {
+            JsonObject j = source.deepCopy();
+            j.remove("repeat");
+            JsonArray src = source.getAsJsonArray("layers"), out = new JsonArray();
+            for (int y = 0; y < src.size(); y++) {
+                out.add(src.get(y).deepCopy());
+                if (y == repeatTo)
+                    for (int k = 0; k < extra; k++)
+                        for (int r = repeatFrom; r <= repeatTo; r++) out.add(src.get(r).deepCopy());
+            }
+            j.add("layers", out);
+            int unit = repeatTo - repeatFrom + 1;
+            JsonArray ec = new JsonArray();
+            ec.add(ex);
+            ec.add(ey + extra * unit / 2.0);
+            ec.add(ez);
+            j.add("effect_center", ec);
+            variants[extra] = new MultiblockDefinition(id, j);
+        }
+        return variants[extra];
+    }
+
+    /** A cheap yes/no check that stops at the first wrong block (top layers first); unloaded chunks count as no. */
+    public boolean quickMatch(Level level, BlockPos controller, Direction facing) {
+        for (int y = sizeY - 1; y >= 0; y--) {
+            List<String> rows = layers.get(y);
+            for (int z = 0; z < rows.size(); z++) {
+                String row = rows.get(z);
+                for (int x = 0; x < row.length(); x++) {
+                    char c = row.charAt(x);
+                    if (c == ' ' || c == controllerChar) continue;
+                    BlockPos p = toWorld(controller, facing, x, y, z);
+                    if (!level.isLoaded(p) || !matches(c, level.getBlockState(p))) return false;
+                }
+            }
+        }
+        return true;
     }
 
     /** Character at pattern coordinates, or ' ' outside the pattern. */

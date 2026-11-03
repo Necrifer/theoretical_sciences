@@ -1,0 +1,23 @@
+{
+  "name": "Mirror Processor",
+  "icon": "theoreticalsciences:mirror_processor",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mirror_processor",
+      "title": "Mirror Processor",
+      "text": "A chip of antisilicon on an anticarbon die. It runs any program at all - with positrons instead of electrons, and current flowing the other way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Etched in the Foundry. It is the first circuit I have made that would work equally well on either side of the mirror."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mirror Matter Foundry$().$(br2)$(thing)Unlocked by$(): Mirror Metallurgy.$(br2)$(thing)Used in$(): Baryogenesis Seed, Dimensional Residue, Omega Point."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mirror_metallurgy"
+}

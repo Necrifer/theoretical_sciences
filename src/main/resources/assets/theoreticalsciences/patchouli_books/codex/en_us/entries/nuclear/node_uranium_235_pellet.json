@@ -1,0 +1,19 @@
+{
+  "name": "Uranium-235 Pellet",
+  "icon": "theoreticalsciences:uranium_235_pellet",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:uranium_235_pellet",
+      "title": "Uranium-235 Pellet",
+      "text": "Uranium enriched to a few percent of the fissile isotope: reactor fuel. The cascade will not go past 20%."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gas Centrifuge Cascade$().$(br2)$(thing)Unlocked by$(): Isotope Separation.$(br2)$(thing)Used in$(): Molten Salt Fuel, Spent Fuel Rod, Technetium-99m Vial."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

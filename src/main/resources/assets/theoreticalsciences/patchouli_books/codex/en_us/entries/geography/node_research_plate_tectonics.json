@@ -1,0 +1,19 @@
+{
+  "name": "Plate Tectonics",
+  "icon": "theoreticalsciences:core_drill",
+  "advancement": "theoreticalsciences:research/plate_tectonics",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:core_drill",
+      "title": "Plate Tectonics",
+      "text": "$(thing)Plate Tectonics$()$(br2)The crust is broken into plates that ride on the hot mantle beneath. Where they part, rock wells up; where they meet, one dives under the other. Unlocks the Core Drill - the first tool that cuts bedrock - and the way into the Planetary Interior."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 60$(br2)$(thing)Builds on$(): Seismology, Geomorphology.$(br2)$(thing)Samples$(): 4 Seismic Recorder Drum, 4 Sediment Core."
+    }
+  ]
+}

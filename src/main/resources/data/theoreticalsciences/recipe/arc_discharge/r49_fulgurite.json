@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:arc_discharge",
+  "item_inputs": [
+    {
+      "item": "minecraft:sand",
+      "count": 16
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fused_silica",
+      "count": 6
+    }
+  ],
+  "energy": 4096,
+  "duration": 200,
+  "research": "theoreticalsciences:resonant_circuits",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "amin": 2.5
+    },
+    "windows": [
+      {
+        "q": "arc",
+        "min": 2.5,
+        "max": 99.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.r48_monte_carlo",
+  "description": "book.theoreticalsciences.codex.probability.r48_monte_carlo.desc",
+  "icon": {
+    "item": "theoreticalsciences:monte_carlo_engine"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 10,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:monte_carlo_engine"
+      },
+      "text": "book.theoreticalsciences.codex.probability.r48_monte_carlo.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r48_monte_carlo.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r48_monte_carlo.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r48_monte_carlo.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/probability__r38_galton"
+    },
+    {
+      "entry": "theoreticalsciences:machines/probability__galton_board"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/monte_carlo_methods"
+  }
+}

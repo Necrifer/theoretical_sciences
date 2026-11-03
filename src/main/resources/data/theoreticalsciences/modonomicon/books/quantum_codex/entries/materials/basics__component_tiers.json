@@ -1,0 +1,75 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.component_tiers",
+  "description": "book.theoreticalsciences.codex.basics.component_tiers.desc",
+  "icon": {
+    "item": "theoreticalsciences:spacetime_alloy_coil_block"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 115,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spacetime_alloy_coil_block"
+      },
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:spacetime_alloy_coil_block"
+      },
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_field_emitter"
+      },
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dipole_bending_magnet"
+      },
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:structure_assembler"
+      },
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.component_tiers.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__femtoscale_assembly_line"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/component_tiers"
+  }
+}

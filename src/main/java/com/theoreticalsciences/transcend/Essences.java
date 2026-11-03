@@ -93,7 +93,17 @@ public final class Essences {
         var cd = s.get(DataComponents.CUSTOM_DATA);
         String part = cd == null ? "" : cd.getUnsafe().getString("Part");
         return part.isEmpty() ? Component.translatable("fluid.theoreticalsciences.mod_essence.of", n)
-                : Component.translatable("fluid.theoreticalsciences.mod_essence.part", n, part);
+                : Component.translatable("fluid.theoreticalsciences.mod_essence.part", n, lettered(part));
+    }
+
+    /** 1.1.0: "level.index" shown the way singularity clusters are lettered (Alpha α, Aleph א, ...). */
+    static String lettered(String part) {
+        try {
+            String[] p = part.split("\\.");
+            return com.theoreticalsciences.extreme.Singularities.letter(Integer.parseInt(p[0]), Integer.parseInt(p[1]));
+        } catch (RuntimeException e) {
+            return part;
+        }
     }
 
     public static int colour(FluidStack s) {

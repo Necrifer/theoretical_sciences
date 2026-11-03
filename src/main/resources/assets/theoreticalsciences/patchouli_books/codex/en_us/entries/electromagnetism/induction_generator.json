@@ -1,0 +1,32 @@
+{
+  "name": "Induction Generator",
+  "icon": "theoreticalsciences:induction_generator",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 28,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:induction_generator",
+      "title": "Induction Generator",
+      "text": "A coil spun inside a permanent magnet's field by a small turbine. Stronger magnets give more power; flowing water beside it spins it faster.$(br2)Generates power.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Burns coal, charcoal or blaze rods to spin its coil, with a magnet in its second slot (never used up). The stronger the magnet the more power - it rises with the square of the field. Flowing water beside it adds half again per side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (2 item and 0 fluid inputs, 0 and 0 outputs)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:induction_generator",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electromagnetic_induction"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Planetary Plate",
+  "icon": "theoreticalsciences:planetary_plate",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:planetary_plate",
+      "title": "Planetary Plate",
+      "text": "The sharpest of a thousand short exposures of a planet, taken in the instants the air held still: belts, moons, a shadow."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Unlocked by$(): Telescope Optics."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/telescope_optics"
+}

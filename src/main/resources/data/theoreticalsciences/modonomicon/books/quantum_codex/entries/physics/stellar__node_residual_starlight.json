@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.node_residual_starlight",
+  "description": "book.theoreticalsciences.codex.stellar.node_residual_starlight.desc",
+  "icon": {
+    "item": "theoreticalsciences:residual_starlight_cell"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 164,
+  "y": 44,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:residual_starlight_cell"
+      },
+      "text": "book.theoreticalsciences.codex.stellar.node_residual_starlight.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_residual_starlight.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.node_residual_starlight.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/stellar__transcendent_plasma_forge",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_transcendence"
+  }
+}

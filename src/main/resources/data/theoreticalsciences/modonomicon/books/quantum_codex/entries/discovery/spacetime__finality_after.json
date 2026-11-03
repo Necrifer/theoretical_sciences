@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.finality_after",
+  "description": "book.theoreticalsciences.codex.spacetime.finality_after.desc",
+  "icon": {
+    "item": "theoreticalsciences:boltzmann_fluctuation"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 69,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:boltzmann_fluctuation"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.finality_after.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.finality_after.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.finality_after.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/information__demon"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/information__maxwell_demon_sorter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/poincare_recurrence"
+  }
+}

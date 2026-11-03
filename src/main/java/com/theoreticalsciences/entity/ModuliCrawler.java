@@ -21,6 +21,12 @@ public class ModuliCrawler extends Spider {
         this.xpReward = 5;
     }
 
+    // round 37 (1.1): its own mind, not a spider's - no hunting iron golems, no daylight truce - see OwnAI
+    @Override
+    protected void registerGoals() {
+        OwnAI.melee(this, 1.0, true);
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Spider.createAttributes().add(Attributes.MAX_HEALTH, 12.0).add(Attributes.ATTACK_DAMAGE, 3.0).add(Attributes.MOVEMENT_SPEED, 0.34);
     }
@@ -50,15 +56,10 @@ public class ModuliCrawler extends Spider {
         return super.getVoicePitch() * 1.1F;
     }
 
-    /** A spider's 1-in-100 skeleton rider has no business in the Bulk: whatever vanilla adds as a passenger is removed. */
+    /** No skeleton rider and none of the spider's random spawn effects. */
     @Override
     public net.minecraft.world.entity.SpawnGroupData finalizeSpawn(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.world.DifficultyInstance diff,
                                                                      net.minecraft.world.entity.MobSpawnType type, @javax.annotation.Nullable net.minecraft.world.entity.SpawnGroupData data) {
-        net.minecraft.world.entity.SpawnGroupData out = super.finalizeSpawn(level, diff, type, data);
-        for (net.minecraft.world.entity.Entity p : java.util.List.copyOf(getPassengers())) {
-            p.stopRiding();
-            p.discard();
-        }
-        return out;
+        return data;
     }
 }

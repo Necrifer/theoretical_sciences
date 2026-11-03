@@ -1,0 +1,19 @@
+{
+  "name": "Plasma Thruster Nozzle",
+  "icon": "theoreticalsciences:plasma_thruster_nozzle",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:plasma_thruster_nozzle",
+      "title": "Plasma Thruster Nozzle",
+      "text": "A magnetic nozzle of lonsdaleite and iron: plasma pushed out along its field lines leaves faster than any chemical exhaust."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Laser Cutter$().$(br2)$(thing)Unlocked by$(): Magnetohydrodynamics.$(br2)$(thing)Used in$(): Jet Collimator."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetohydrodynamics"
+}

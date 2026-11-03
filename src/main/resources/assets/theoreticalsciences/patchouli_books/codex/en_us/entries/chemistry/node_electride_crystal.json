@@ -1,0 +1,23 @@
+{
+  "name": "Electride Crystal",
+  "icon": "theoreticalsciences:electride_crystal",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electride_crystal",
+      "title": "Electride Crystal",
+      "text": "A salt in which the negative ions are not atoms at all but bare electrons, sitting in cavities of the lattice like eggs in a carton. It is dark, glossy and conducts strangely, and seems to give up electrons at the slightest provocation."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Pushing electrons into Cherenkov quartz with redstone current, while superfluid helium held the lattice cold and still, I found that some electrons stayed behind in empty sites with no atom to belong to. The Electrolytic Cell had made an electride."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Electrochemistry.$(br2)$(thing)Used in$(): Carborane Superacid, Room-Temperature Superconductor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrochemistry"
+}

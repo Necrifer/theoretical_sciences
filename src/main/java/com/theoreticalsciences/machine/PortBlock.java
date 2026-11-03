@@ -16,7 +16,10 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import javax.annotation.Nullable;
 
-/** Multiblock I/O block: exposes the controller's items, fluids and energy on all six faces. */
+/**
+ * Multiblock I/O block: exposes the controller's items, fluids and energy on all six faces. 1.1.0: sneak-use it with an
+ * empty hand to make it push the machine's products into the blocks beside it, pull ingredients from them, or both.
+ */
 public class PortBlock extends Block implements EntityBlock {
     public static final MapCodec<PortBlock> CODEC = simpleCodec(PortBlock::new);
     public static final BooleanProperty LINKED = BooleanProperty.create("linked");
@@ -56,6 +59,14 @@ public class PortBlock extends Block implements EntityBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof PortBlockEntity be && player instanceof ServerPlayer sp) {
+            if (player.isShiftKeyDown()) {           // 1.1.0: sneak-use with an empty hand cycles automatic import / export
+                int m = be.cycleMode();
+                sp.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.port_mode",
+                        net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.port_mode." + m))
+                        .withStyle(m == 0 ? net.minecraft.ChatFormatting.GRAY : net.minecraft.ChatFormatting.AQUA), true);
+                level.playSound(null, pos, com.theoreticalsciences.registry.QHSounds.CONFIRM.get(), net.minecraft.sounds.SoundSource.BLOCKS, 0.5F, 0.9F + 0.2F * m);
+                return InteractionResult.CONSUME;
+            }
             MachineBlockEntity c = be.controller();
             if (c != null) {
                 sp.openMenu(c, buf -> buf.writeBlockPos(c.getBlockPos()));

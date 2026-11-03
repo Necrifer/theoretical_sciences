@@ -1,0 +1,21 @@
+{
+  "name": "The Breached Anomaly Engine",
+  "icon": "theoreticalsciences:breached_anomaly_engine",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 30,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:breached_anomaly_engine,theoreticalsciences:morphogenic_serum",
+      "text": "The engines found in ruins pull creatures out of nothing at random. One you build yourself (on the $(item)Convergence Altar$()) grows the creature you choose - once you have studied $(thing)Synthetic Biology$(); before that it will not open for you."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Its template is a $(item)Genome Sample$() from the Gene Sampler: every sample now remembers whose it is. Each creature costs one $(item)Morphogenic Serum$() and 16 million FE."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "And it must be tuned: four controls - morphogen, membrane, tide and coherence - and four readings of how close the breach is to the creature's form. Every creature has its own settings; bring all four readings to the middle and it starts to grow them. It stops when eight are around it. It will not grow bosses (tag theoreticalsciences:not_spawnable)."
+    }
+  ]
+}

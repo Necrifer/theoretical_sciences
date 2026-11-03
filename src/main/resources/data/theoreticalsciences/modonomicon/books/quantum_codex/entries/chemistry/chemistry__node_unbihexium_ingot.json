@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_unbihexium_ingot",
+  "description": "book.theoreticalsciences.codex.chemistry.node_unbihexium_ingot.desc",
+  "icon": {
+    "item": "theoreticalsciences:unbihexium_ingot"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 52,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:unbihexium_ingot"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_unbihexium_ingot.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_unbihexium_ingot.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_unbihexium_ingot.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__island",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/island_of_stability"
+  }
+}

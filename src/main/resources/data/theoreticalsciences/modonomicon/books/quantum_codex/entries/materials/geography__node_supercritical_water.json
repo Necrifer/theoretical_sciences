@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.node_supercritical_water",
+  "description": "book.theoreticalsciences.codex.geography.node_supercritical_water.desc",
+  "icon": {
+    "item": "theoreticalsciences:supercritical_water_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 164,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:supercritical_water_cell"
+      },
+      "text": "book.theoreticalsciences.codex.geography.node_supercritical_water.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.node_supercritical_water.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/geography__aquifer_pump",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hydrology"
+  }
+}

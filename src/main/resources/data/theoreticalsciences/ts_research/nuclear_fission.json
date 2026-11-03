@@ -1,0 +1,75 @@
+{
+  "title": "Nuclear Fission",
+  "description": "A slow neutron splits a uranium-235 nucleus into two lighter ones, freeing 200 MeV and two or three new neutrons. If on average exactly one of them splits another nucleus, the reaction keeps itself going. Unlocks the Molten Salt Reactor.",
+  "icon": "theoreticalsciences:molten_salt_reactor",
+  "x": 7,
+  "y": 13,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:isotope_separation",
+    "theoreticalsciences:nuclear_binding_energy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:uranium_235_pellet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:graphite_moderator",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A neutron from one splitting nucleus makes \u03b7 new neutrons per neutron the fuel absorbs; a fraction f of slowed neutrons are absorbed by fuel, a fraction p survive slowing down, and fast splits add a factor \u03b5. Write k, the neutrons in the next generation per neutron in this one.",
+    "name": "Four-factor formula",
+    "lhs": "k",
+    "form": "\u03b7 * f * p * \u03b5",
+    "expr": "n * f * p * e",
+    "ask": "Find k for a graphite core: n = @{n}, f = @{f}, p = @{p}, e = @{e}.",
+    "vars": {
+      "k": "multiplication",
+      "\u03b7": "neutrons per absorption",
+      "f": "thermal utilisation",
+      "p": "resonance escape",
+      "\u03b5": "fast fission",
+      "n": "neutrons per absorption",
+      "e": "fast fission"
+    },
+    "given": {
+      "n": 2.07,
+      "f": 0.71,
+      "p": 0.75,
+      "e": 1.03
+    },
+    "unit": "",
+    "method": "Follow one generation round: each step keeps or multiplies the neutron count, so the factors multiply.",
+    "distractors": [
+      "+",
+      "\u03bb",
+      "2"
+    ],
+    "vary": {
+      "n": [
+        1.24,
+        2.9,
+        0.01
+      ],
+      "f": [
+        0.426,
+        0.994,
+        0.001
+      ],
+      "p": [
+        0.449,
+        0.999,
+        0.001
+      ],
+      "e": [
+        0.61,
+        1.45,
+        0.01
+      ]
+    }
+  }
+}

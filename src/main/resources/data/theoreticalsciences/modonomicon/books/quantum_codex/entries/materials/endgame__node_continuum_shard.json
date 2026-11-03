@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_continuum_shard",
+  "description": "book.theoreticalsciences.codex.endgame.node_continuum_shard.desc",
+  "icon": {
+    "item": "theoreticalsciences:continuum_shard"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 188,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:continuum_shard"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_continuum_shard.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_continuum_shard.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_continuum_shard.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__beyond",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_mathematics"
+  }
+}

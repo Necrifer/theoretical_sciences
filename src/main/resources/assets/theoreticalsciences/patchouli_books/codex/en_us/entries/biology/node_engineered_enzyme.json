@@ -1,0 +1,23 @@
+{
+  "name": "Engineered Enzyme",
+  "icon": "theoreticalsciences:engineered_enzyme",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:engineered_enzyme",
+      "title": "Engineered Enzyme",
+      "text": "A protein designed rather than evolved, folded around a pocket shaped for exactly one reaction. It speeds that reaction a millionfold and ignores everything else. It looks like a pale, slightly sticky crystal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Natural enzymes are evolved to fit their substrates. I started from a genome, used a chiral crystal to fix the handedness and a zeolite to shape the pocket, then let the Bioreactor optimise the rest in nutrient broth."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Unlocked by$(): Genomics.$(br2)$(thing)Used in$(): Apoptosis Trigger, Morphogenic Serum, Recombinant DNA, Resistant Clone Colony, Stem Cell Culture, Tardigrade Culture, Tumour Microenvironment Organoid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/genomics"
+}

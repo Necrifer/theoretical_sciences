@@ -1,0 +1,23 @@
+{
+  "name": "Superconducting Solder",
+  "icon": "theoreticalsciences:superconducting_solder_cell",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:superconducting_solder_cell",
+      "title": "Superconducting Solder",
+      "text": "Solder that conducts electricity without resistance. Chilled with superfluid helium, it joins femtoscale components with perfect efficiency. It shimmers faintly when current passes through. Magnets float above a puddle of it, pinned in place by expelled field lines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Femtoscale components needed joints with no resistance. Condensing a Superconducting Coil with superfluid helium, I got a solder that kept its superconductivity even at the joint."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bose-Einstein Condenser$().$(br2)$(thing)Unlocked by$(): Femtoengineering.$(br2)$(thing)Used in$(): Exotic Solder, Femtoscale Capacitor, Femtoscale Inductor, Photonic Processor, Pixel Tracker Module, Plasma Nozzle Tip, Quantum Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/femtoengineering"
+}

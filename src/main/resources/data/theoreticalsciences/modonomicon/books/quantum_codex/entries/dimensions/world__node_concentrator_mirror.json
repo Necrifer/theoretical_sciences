@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_concentrator_mirror",
+  "description": "book.theoreticalsciences.codex.world.node_concentrator_mirror.desc",
+  "icon": {
+    "item": "theoreticalsciences:concentrator_mirror"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 12,
+  "y": 6,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:concentrator_mirror"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_concentrator_mirror.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_concentrator_mirror.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

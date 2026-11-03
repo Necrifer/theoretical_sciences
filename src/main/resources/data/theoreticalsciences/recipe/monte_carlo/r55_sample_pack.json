@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:monte_carlo_sample_pack",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 800,
+  "research": "theoreticalsciences:monte_carlo_methods",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "sg": 10.0,
+      "opt": 0.5
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

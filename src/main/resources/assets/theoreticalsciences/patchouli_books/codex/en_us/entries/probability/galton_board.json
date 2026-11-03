@@ -1,0 +1,32 @@
+{
+  "name": "Galton Board",
+  "icon": "theoreticalsciences:galton_board",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 29,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:galton_board",
+      "title": "Galton Board",
+      "text": "Twelve rows of pegs. Every piece bounces left or right at each, and where it lands sorts it: most near the middle, a few far out in the tails.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each piece falls through 12 rows of pegs and lands in one of three grades: common (61%), fine (35%) or exceptional (4%) - the binomial distribution, exactly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 3 and 0 outputs).$(br2)$(thing)Makes$(): Cherenkov Quartz, Copper Ingot, Gold Ingot, Large Deviation Shard, Normal Distribution Crystal, Quartz."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:galton_board",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/combinatorics"
+}

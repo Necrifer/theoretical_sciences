@@ -1,0 +1,52 @@
+{
+  "name": "Antiatoms",
+  "icon": "theoreticalsciences:antiproton_decelerator",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiproton_bundle,theoreticalsciences:antihydrogen_crystal",
+      "text": "An antiproton and a positron make $(item)antihydrogen$(), and its spectral lines sit exactly where hydrogen's do - measured to twelve decimal places, and still CPT holds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Antiproton Decelerator$() brakes antiprotons from collisions until they can be trapped, and combines them with positrons into $(fluid)Antihydrogen$(). $(fluid)Antiwater$() from the Antiverse sea can be split in the $(item)Electrolytic Cell$() for the same gas."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiproton_bundle",
+      "text": "A few billion antiprotons, slowed from near light speed and held in a magnetic bottle.$(br2)Made in $(item)Antiproton Decelerator$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antihydrogen_crystal",
+      "text": "Frozen antihydrogen: one antiproton, one positron, a few kelvin.$(br2)Made in $(item)Antiproton Decelerator$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiproton_decelerator",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electrolytic_cell",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Antiproton Bundle$(): Antihelium Nucleus, Antihydrogen, Antihydrogen Crystal, Liquid Antihelium, Mirror Matter Foundry$(li)$(item)Antihydrogen Crystal$(): Antihydrogen"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antihydrogen_cell",
+      "text": "$(fluid)Antihydrogen$(). Made in $(item)Antiproton Decelerator$().$(br)Used for: Baryogenesis Seed, Liquid Antihelium."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiwater_cell",
+      "text": "$(fluid)Antiwater$(). Made in $(item)Mirror Matter Foundry$().$(br)Used for: Antihydrogen, Empty Containment Cell."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/antiatom_chemistry"
+}

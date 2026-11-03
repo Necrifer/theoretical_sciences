@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.node_wave_packet",
+  "description": "book.theoreticalsciences.codex.exotic.node_wave_packet.desc",
+  "icon": {
+    "item": "theoreticalsciences:wave_packet"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 74,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:wave_packet"
+      },
+      "text": "book.theoreticalsciences.codex.exotic.node_wave_packet.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_wave_packet.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.node_wave_packet.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/exotic__quark_gluon_collider",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/particle_physics"
+  }
+}

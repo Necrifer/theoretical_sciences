@@ -1,0 +1,19 @@
+{
+  "name": "Magnetized Plasma",
+  "icon": "theoreticalsciences:magnetized_plasma_cell",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:magnetized_plasma_cell",
+      "title": "Magnetized Plasma",
+      "text": "$(fluid)Magnetized Plasma$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Tokamak$().$(br2)$(thing)Unlocked by$(): Magnetic Confinement."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/magnetic_confinement"
+}

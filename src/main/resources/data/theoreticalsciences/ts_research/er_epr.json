@@ -1,0 +1,52 @@
+{
+  "title": "ER = EPR",
+  "description": "Maldacena and Susskind's conjecture: two entangled particles are joined by a wormhole, too small to pass through. Entanglement is geometry. Unlocks the ER=EPR Weaver.",
+  "icon": "theoreticalsciences:er_bridge_thread",
+  "x": 14,
+  "y": -1,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:quantum_entanglement",
+    "theoreticalsciences:traversable_wormholes"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:exotic_matter_crystal",
+      "count": 2
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "Each maximally entangled pair of qubits shares one unit of entanglement entropy. Write the entropy S of n such pairs, in nats.",
+    "name": "Bell-pair counting",
+    "lhs": "S",
+    "form": "n * ln ( 2 )",
+    "expr": "n * ln ( 2 )",
+    "ask": "Find S for n = @{n} pairs.",
+    "vars": {
+      "S": "entropy (nats)",
+      "n": "pairs"
+    },
+    "given": {
+      "n": 10
+    },
+    "unit": "nats",
+    "method": "Each half of a Bell pair is in a mixed state, \u00bd and \u00bd: its entropy is \u2212\u03a3 p ln p = ln 2.",
+    "distractors": [
+      "e",
+      "\u03c0",
+      "4"
+    ],
+    "vary": {
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

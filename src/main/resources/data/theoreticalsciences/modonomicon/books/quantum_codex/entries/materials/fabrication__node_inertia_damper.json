@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.fabrication.node_inertia_damper",
+  "description": "book.theoreticalsciences.codex.fabrication.node_inertia_damper.desc",
+  "icon": {
+    "item": "theoreticalsciences:inertia_damper"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 99,
+  "y": 22,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:inertia_damper"
+      },
+      "text": "book.theoreticalsciences.codex.fabrication.node_inertia_damper.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_inertia_damper.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.fabrication.node_inertia_damper.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/fabrication__catalysts",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mass_manipulation"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r47_frame_drag",
+  "description": "book.theoreticalsciences.codex.spacetime.r47_frame_drag.desc",
+  "icon": {
+    "item": "theoreticalsciences:penrose_ergosphere"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 46,
+  "y": -20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:penrose_ergosphere"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r47_frame_drag.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r47_frame_drag.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__laser_cutter"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/optics__r47_lasers"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_waves"
+  }
+}

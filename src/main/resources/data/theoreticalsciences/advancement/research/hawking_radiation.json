@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:hawking_quanta"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.hawking_radiation"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.hawking_radiation.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/semiclassical_gravity",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Von Neumann Probe",
+  "icon": "theoreticalsciences:von_neumann_probe",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:von_neumann_probe",
+      "title": "Von Neumann Probe",
+      "text": "A self-replicating machine that builds copies of itself from whatever material it finds. Send one to a star system and it builds more, which build more, until every star has one. Von Neumann proved such machines were possible. This one is small, neat and patient."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)In the Nanite Assembler I gave a Dyson Swarm Satellite claytronic catoms and a Quantum Processor, so it could fabricate its own parts. It began printing a copy of itself before I had finished writing the entry."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Nanite Assembler$().$(br2)$(thing)Unlocked by$(): Dyson Swarm.$(br2)$(thing)Used in$(): Theoretical Notes I."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/dyson_swarm"
+}

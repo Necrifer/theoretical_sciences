@@ -1,0 +1,19 @@
+{
+  "name": "Lithium Ingot",
+  "icon": "theoreticalsciences:lithium_ingot",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lithium_ingot",
+      "title": "Lithium Ingot",
+      "text": "The lightest metal, won from brine. Soft enough to cut with a knife; it floats on oil and burns crimson."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Electrochemistry.$(br2)$(thing)Used in$(): Lithium-6 Ingot."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electrochemistry"
+}

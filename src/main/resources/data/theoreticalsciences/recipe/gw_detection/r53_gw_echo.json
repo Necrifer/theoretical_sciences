@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:gw_detection",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:chirp_signal_record",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:strain_sensor",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:gravitational_wave_echo",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 2400,
+  "research": "theoreticalsciences:binary_mergers",
+  "unscaled": true,
+  "insight_per_run": 15,
+  "physics": {
+    "vars": {
+      "hw": 3e-22
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 8.0,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

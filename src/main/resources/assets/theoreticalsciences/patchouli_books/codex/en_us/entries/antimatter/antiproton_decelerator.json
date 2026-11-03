@@ -1,0 +1,46 @@
+{
+  "name": "Antiproton Decelerator",
+  "icon": "theoreticalsciences:antiproton_decelerator",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 75,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiproton_decelerator",
+      "title": "Antiproton Decelerator",
+      "text": "A ring that catches antiprotons from collisions at nearly light speed and brakes them, lap after lap, until they can be trapped.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Turns antimatter pellets and virtual quarks into $(item)Antiproton Bundles$(), and bundles into $(fluid)Antihydrogen$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 2 and 1 outputs).$(br2)$(thing)Makes$(): Antihelium Nucleus, Antihydrogen, Antihydrogen Crystal, Antiproton Bundle."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiproton_decelerator",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiproton_bundle",
+      "text": "A few billion antiprotons, slowed from near light speed and held in a magnetic bottle.$(br2)Made in $(item)Antiproton Decelerator$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Antiproton Bundle$(): Antihelium Nucleus, Antihydrogen, Antihydrogen Crystal, Liquid Antihelium, Mirror Matter Foundry"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antihydrogen_cell",
+      "text": "$(fluid)Antihydrogen$(). Made in $(item)Antiproton Decelerator$().$(br)Used for: Baryogenesis Seed, Liquid Antihelium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/antiatom_chemistry"
+}

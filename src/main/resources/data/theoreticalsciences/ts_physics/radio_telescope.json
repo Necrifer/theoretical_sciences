@@ -1,0 +1,100 @@
+{
+  "params": [
+    {
+      "id": "nu",
+      "unit": "MHz",
+      "min": 100,
+      "max": 10000,
+      "step": 0.1,
+      "default": 1420
+    },
+    {
+      "id": "B",
+      "unit": "MHz",
+      "min": 0.001,
+      "max": 500,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "tau",
+      "unit": "s",
+      "min": 1,
+      "max": 36000,
+      "step": 1,
+      "default": 600
+    }
+  ],
+  "recipe_vars": {
+    "S": 0.2,
+    "al": 0,
+    "wl": 1000000.0,
+    "nl": 1420.4,
+    "DM": 0,
+    "Sreq": 10
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Tsys",
+      "unit": "K",
+      "expr": "20 + 6*rfi + 12*rain + 60*(nu/408)^(-2.6)",
+      "formula": "T_sys = T_rx + T_RFI + T_rain + T_gal(\u03bd)"
+    },
+    {
+      "id": "Sf",
+      "unit": "Jy",
+      "expr": "S*(nu/1400)^al",
+      "formula": "S(\u03bd) = S\u2081\u2084\u2080\u2080\u00b7(\u03bd/1400)^\u03b1"
+    },
+    {
+      "id": "Ta",
+      "unit": "K",
+      "expr": "0.107*Sf*(1 + 0.05*d)",
+      "formula": "T = S\u00b7A_eff/2k"
+    },
+    {
+      "id": "dil",
+      "unit": "",
+      "expr": "min(1, wl/B)",
+      "formula": "min(1, \u0394\u03bd_line/B)",
+      "show": false
+    },
+    {
+      "id": "inb",
+      "unit": "MHz",
+      "expr": "B/2 - abs(nu - nl)",
+      "formula": "B/2 \u2212 |\u03bd \u2212 \u03bd_line|"
+    },
+    {
+      "id": "SNR",
+      "unit": "",
+      "expr": "Ta*dil*sqrt(B*1e6*tau)/Tsys",
+      "formula": "SNR = T\u00b7\u221a(B\u03c4)/T_sys"
+    },
+    {
+      "id": "ts",
+      "unit": "ms",
+      "expr": "8.3e6*DM*B/nu^3",
+      "formula": "\u0394t = 8.3 \u00b5s\u00b7DM\u00b7B/\u03bd\u00b3"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sky",
+      "kind": "stop",
+      "expr": "sky - 0.5",
+      "formula": "open sky"
+    }
+  ],
+  "rate": "clamp((0.6 + 0.04*(SNR - Sreq))/(1 + tau/7200), 0.2, 2)",
+  "rate_formula": "rate = (0.6 + 0.04\u00b7(SNR \u2212 SNR_need)) / (1 + \u03c4/2 h)",
+  "heat": "0.05",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Turbomolecular Rotor",
+  "icon": "theoreticalsciences:turbomolecular_rotor",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 513,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:turbomolecular_rotor",
+      "title": "Turbomolecular Rotor",
+      "text": "Bladed discs spinning at ninety thousand revolutions per minute, so fast that gas molecules striking them are batted out of the beamline one at a time. It produces the ultra-high vacuum particle beams need. It whines softly and must never be touched while it spins."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Particle beams scatter off any gas. In the Planck-Scale Cutter I carved Neutronium Plate into blades, cooled with helium so they would not deform at speed. The vacuum improved by orders of magnitude."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Planck-Scale Cutter$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Turbomolecular Vacuum Pump."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

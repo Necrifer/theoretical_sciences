@@ -362,7 +362,8 @@ public final class MachineConsole {
                 feed(fx, cx + R * 0.9F, cy, outX - 2, ny, i + 7, run ? Math.max(0.15F, f) : 0.15F, outCol());
             }
         }
-        switch (arch) {
+        // 1.14.2: most machines have a picture of their own; the rest keep their family's
+        if (!SimScenes.draw(fx, be.type.effect, cx + jit, cy, R, col, hot, run, f, phase)) switch (arch) {
             case RING -> ring(fx, cx + jit, cy, R, col, hot, run, f);
             case WELL -> well(fx, cx + jit, cy, R, col, hot, run, f);
             case HYPER -> hyper(fx, cx + jit, cy, R, col, hot, run, f);

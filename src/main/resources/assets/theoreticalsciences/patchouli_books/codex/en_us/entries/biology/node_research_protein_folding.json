@@ -1,0 +1,19 @@
+{
+  "name": "Protein Folding",
+  "icon": "theoreticalsciences:folded_protein_crystal",
+  "advancement": "theoreticalsciences:research/protein_folding",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:folded_protein_crystal",
+      "title": "Protein Folding",
+      "text": "$(thing)Protein Folding$()$(br2)A chain finds its one shape among astronomically many. Unlocks folded protein crystals."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 60$(br2)$(thing)Builds on$(): Genomics, Quantum Chemistry.$(br2)$(thing)Samples$(): 2 Recombinant DNA.$(br2)$(thing)Derivation$(): Find the time (s) a 30-residue chain would need to try every conformation if each residue has 3 states and each try takes 1e-13 s (Levinthal's paradox)."
+    }
+  ]
+}

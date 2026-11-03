@@ -1,0 +1,56 @@
+{
+  "title": "Magnetostatics",
+  "description": "A steady current makes a magnetic field that circles the wire and weakens with distance from it. The first study of electromagnetism. Unlocks the Gauss Meter.",
+  "icon": "theoreticalsciences:gauss_meter",
+  "x": 1,
+  "y": -5,
+  "insight": 8,
+  "requires": [
+    "theoreticalsciences:quantum_foundations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A long straight wire carries a steady current I. Its magnetic field circles the wire; integrate the field around a circle of radius r and the total is fixed by the current through it. Write the field strength B at distance r.",
+    "name": "Amp\u00e8re's circuital law for a straight wire",
+    "lhs": "B",
+    "form": "\u03bc _ 0 * I / ( 2 * \u03c0 * r )",
+    "expr": "0.2 * I / r",
+    "ask": "Find B in microtesla 5 cm from a wire carrying @{I} A.",
+    "vars": {
+      "B": "magnetic field (\u00b5T)",
+      "\u03bc": "permeability",
+      "I": "current (A)",
+      "r": "distance from the wire (m)",
+      "\u03c0": "pi"
+    },
+    "given": {
+      "I": 10,
+      "r": 0.05
+    },
+    "unit": "\u00b5T",
+    "method": "Around any closed loop the field adds up to \u03bc\u2080 times the current threading it; by symmetry B is the same all round the circle of length 2\u03c0r.",
+    "distractors": [
+      "r",
+      "4",
+      "\u03b5"
+    ],
+    "vary": {
+      "I": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "r": [
+        0.03,
+        0.07,
+        0.0001
+      ]
+    }
+  }
+}

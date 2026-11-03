@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:pulsed_field",
+  "chances": [
+    0.08,
+    1.0
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:magnetar_crust_fragment",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:cosmic_ray_shard",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetic_monopole",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:magnetite",
+      "count": 2
+    }
+  ],
+  "energy": 16384,
+  "duration": 1600,
+  "research": "theoreticalsciences:magnetic_monopoles",
+  "unscaled": true,
+  "insight_per_run": 12,
+  "physics": {
+    "windows": [
+      {
+        "q": "Bf",
+        "min": 80.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

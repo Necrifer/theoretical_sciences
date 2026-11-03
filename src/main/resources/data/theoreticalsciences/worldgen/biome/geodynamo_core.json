@@ -1,0 +1,45 @@
+{
+  "has_precipitation": false,
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 3158080,
+    "fog_color": 4210776,
+    "water_color": 6340816,
+    "water_fog_color": 1060928,
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:electric_spark"
+      },
+      "probability": 0.006
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:geodynamo_wraith",
+        "weight": 25,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_core_magnetite"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:galactic_filament",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:redshift_lens",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cosmic_web_filament",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 2400,
+  "research": "theoreticalsciences:cosmic_web",
+  "unscaled": true,
+  "insight_per_run": 30,
+  "physics": {
+    "vars": {
+      "sg": 30.0,
+      "opt": 0.6
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 30.0
+      }
+    ]
+  }
+}

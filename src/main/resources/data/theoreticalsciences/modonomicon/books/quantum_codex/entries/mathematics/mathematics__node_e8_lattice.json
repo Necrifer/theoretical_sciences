@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_e8_lattice",
+  "description": "book.theoreticalsciences.codex.mathematics.node_e8_lattice.desc",
+  "icon": {
+    "item": "theoreticalsciences:e8_lattice"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 83,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:e8_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_e8_lattice.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_e8_lattice.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_e8_lattice.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__ordinal_recursor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "title": "Fusion Ignition",
+  "description": "Deuterium and tritium fuse into helium and a neutron, giving 17.6 MeV - if they are hot enough, dense enough, and held long enough. Unlocks the Tokamak, heavy water, deuterium and tritium breeding.",
+  "icon": "theoreticalsciences:fusion_blanket_tile",
+  "x": 13,
+  "y": 2,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:nuclear_fission",
+    "theoreticalsciences:plasma_metallurgy",
+    "theoreticalsciences:magnetic_confinement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:lithium_ingot",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:graphite_moderator",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A plasma of n deuterium-tritium pairs per cubic metre reacts at the rate n\u00b2/4\u00b7\u03c3; each reaction gives an energy E. Write the power P each cubic metre makes.",
+    "name": "Fusion power density",
+    "lhs": "P",
+    "form": "n ^ 2 / 4 * \u03c3 * E",
+    "expr": "n ^ 2 / 4 * s * E / u",
+    "ask": "Find P in MW/m\u00b3 (u = @{u}) for n = @{n} /m\u00b3, s = @{s} m\u00b3/s (the reactivity near 15 keV) and E = @{E} J (17.6 MeV).",
+    "vars": {
+      "P": "power density (MW/m\u00b3)",
+      "n": "ions per m\u00b3",
+      "\u03c3": "reactivity \u27e8\u03c3v\u27e9",
+      "s": "reactivity (m\u00b3/s)",
+      "E": "energy per reaction (J)",
+      "u": "10\u2076"
+    },
+    "given": {
+      "n": 1e+20,
+      "s": 3e-22,
+      "E": 2.82e-12,
+      "u": 1000000.0
+    },
+    "unit": "MW/m\u00b3",
+    "method": "Half the ions are deuterium and half tritium: n/2 of each, so the rate per volume is (n/2)\u00b2\u27e8\u03c3v\u27e9.",
+    "distractors": [
+      "2",
+      "c",
+      "k"
+    ],
+    "vary": {
+      "n": [
+        6e+19,
+        1.4e+20,
+        1e+18
+      ],
+      "s": [
+        1.8e-22,
+        4.2e-22,
+        1e-24
+      ],
+      "E": [
+        1.69e-12,
+        3.95e-12,
+        1e-14
+      ],
+      "u": [
+        600000.0,
+        1400000.0,
+        10000.0
+      ]
+    }
+  }
+}

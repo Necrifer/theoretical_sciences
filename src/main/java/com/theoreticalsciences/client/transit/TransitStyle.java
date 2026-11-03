@@ -20,7 +20,9 @@ public enum TransitStyle {
     ANTIVERSE("antiverse", 0x14040A, 0xFF3048, 0x30F0FF, 0xFFE0E4, 0xC08890, false),
     HYPERREAL("hyperdimensional_reality", 0x12021A, 0xFF40E0, 0xA060FF, 0xFFD8F8, 0xC088C0, false),
     LIVING_PROOF("living_proof", 0x010A04, 0x40FF70, 0xD0FFD8, 0xD0FFD8, 0x70B880, false),
-    TRANSCENDENTAL("transcendental", 0x140C02, 0xFFE8A0, 0xFFFFFF, 0xFFF4D8, 0xC8B488, false);
+    TRANSCENDENTAL("transcendental", 0x140C02, 0xFFE8A0, 0xFFFFFF, 0xFFF4D8, 0xC8B488, false),
+    INTERIOR("planetary_interior", 0x120604, 0xFF7A20, 0xFFD27A, 0xFFE0C0, 0xB08060, false),
+    FRONTIER("accretion_frontier", 0x020208, 0x80B0FF, 0xFFB050, 0xE0E8FF, 0x8890B0, false);
 
     public final String id;
     public final int bg, ink, accent, title, subtitle;

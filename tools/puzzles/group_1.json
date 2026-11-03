@@ -1,0 +1,754 @@
+{
+ "quantum_entanglement": {
+  "goal": "Find the probability that two polarisation-entangled photons in the state |Φ+> give the same result when the two polarisers are set at an angle θ to each other.",
+  "lhs": "P_same",
+  "expr": "cos ( θ ) ^ 2",
+  "vars": {
+   "θ": "angle between the two polariser axes (radians)"
+  },
+  "given": {
+   "θ": 0.5236
+  },
+  "distractors": [
+   "sin",
+   "sqrt",
+   "4"
+  ],
+  "method": "For |Φ+> the joint amplitude for matching outcomes depends only on the relative angle and is the projection cos θ of one axis on the other; square the amplitude to get a probability (Malus-like law for the pair).",
+  "unit": ""
+ },
+ "cryogenics": {
+  "goal": "Find the best possible coefficient of performance of a refrigerator pulling heat out of liquid helium at Tc and dumping it into a room at Th.",
+  "lhs": "COP",
+  "expr": "Tc / ( Th - Tc )",
+  "vars": {
+   "Tc": "cold reservoir temperature (K)",
+   "Th": "hot (room) reservoir temperature (K)"
+  },
+  "given": {
+   "Tc": 4.2,
+   "Th": 300
+  },
+  "distractors": [
+   "Th",
+   "+",
+   "*"
+  ],
+  "method": "A reversible (Carnot) cycle moves heat Qc with zero total entropy change, so Qc/Tc = Qh/Th; the work is Qh - Qc and the COP is heat removed per unit work.",
+  "unit": ""
+ },
+ "formal_logic": {
+  "goal": "Show how many distinct Boolean functions (truth tables) exist on n propositional variables, with n = 3.",
+  "lhs": "F",
+  "expr": "2 ^ 2 ^ n",
+  "vars": {
+   "n": "number of propositional variables"
+  },
+  "given": {
+   "n": 3
+  },
+  "distractors": [
+   "*",
+   "n",
+   "3"
+  ],
+  "method": "A truth table on n variables has 2^n rows, and each row can independently be assigned true or false, so count the ways to fill 2^n rows with two values.",
+  "unit": "functions"
+ },
+ "antimatter": {
+  "goal": "Find the angular cyclotron frequency of an antiproton held in a Penning trap with magnetic field B.",
+  "lhs": "ω",
+  "expr": "q * B / m",
+  "vars": {
+   "q": "magnitude of the antiproton charge (C)",
+   "B": "magnetic field strength (T)",
+   "m": "antiproton mass (kg)"
+  },
+  "given": {
+   "q": 1.602e-19,
+   "B": 5,
+   "m": 1.673e-27
+  },
+  "distractors": [
+   "2",
+   "π",
+   "^"
+  ],
+  "method": "Set the magnetic Lorentz force qvB equal to the centripetal force mv^2/r; the speed cancels when you form ω = v/r, so the frequency is independent of orbit size.",
+  "unit": "rad/s"
+ },
+ "tachyonics": {
+  "goal": "Find the squared speed (in units of c²) of a tachyon whose imaginary-mass scale divided by its energy is r = |μ|c²/E = 0.75.",
+  "lhs": "(v/c)²",
+  "expr": "1 + r ^ 2",
+  "vars": {
+   "r": "ratio |μ|c²/E of the tachyon mass scale to its energy"
+  },
+  "given": {
+   "r": 0.75
+  },
+  "distractors": [
+   "-",
+   "2",
+   "/"
+  ],
+  "method": "Put an imaginary mass m = iμ into E² = p²c² + m²c⁴ to get p²c² = E² + μ²c⁴, and use v = pc²/E; as E grows the ratio shrinks and v falls toward c.",
+  "unit": "c"
+ },
+ "artificial_intelligence": {
+  "goal": "Find the cross-entropy loss of a neural network that assigns probability p to the correct class.",
+  "lhs": "L",
+  "expr": "- ln ( p )",
+  "vars": {
+   "p": "probability the network gives to the correct answer"
+  },
+  "given": {
+   "p": 0.8
+  },
+  "distractors": [
+   "exp",
+   "1",
+   "/"
+  ],
+  "method": "Cross-entropy sums -target·ln(prediction) over classes; with a one-hot target only the correct class survives.",
+  "unit": "nats"
+ },
+ "calculus": {
+  "goal": "Find the slope of y = x^n at the point x, for n = 3 and x = 2.",
+  "lhs": "dy/dx",
+  "expr": "n * x ^ n / x",
+  "vars": {
+   "n": "exponent of the power function",
+   "x": "point where the derivative is taken"
+  },
+  "given": {
+   "n": 3,
+   "x": 2
+  },
+  "distractors": [
+   "+",
+   "/",
+   "ln"
+  ],
+  "method": "Expand (x+h)^n with the binomial theorem, subtract x^n, divide by h and let h go to 0; only the term linear in h survives.",
+  "unit": ""
+ },
+ "electrochemistry": {
+  "goal": "Find the Gibbs free energy change of a Daniell cell (Zn/Cu) per mole of reaction from its cell voltage.",
+  "lhs": "ΔG",
+  "expr": "- n * F * E",
+  "vars": {
+   "n": "electrons transferred per reaction",
+   "F": "Faraday constant (C/mol)",
+   "E": "cell potential (V)"
+  },
+  "given": {
+   "n": 2,
+   "F": 96485,
+   "E": 1.1
+  },
+  "distractors": [
+   "/",
+   "R",
+   "T"
+  ],
+  "method": "The maximum electrical work is charge times voltage; one mole of reaction moves nF coulombs, and a spontaneous cell has negative ΔG.",
+  "unit": "J/mol"
+ },
+ "nanotechnology": {
+  "goal": "Find how many assemblers exist after t hours if one self-replicating assembler copies itself every τ hours.",
+  "lhs": "N",
+  "expr": "2 ^ ( t / τ )",
+  "vars": {
+   "t": "elapsed time (h)",
+   "τ": "doubling (replication) time (h)"
+  },
+  "given": {
+   "t": 10,
+   "τ": 0.5
+  },
+  "distractors": [
+   "*",
+   "exp",
+   "e"
+  ],
+  "method": "Every replication cycle doubles the population, and t/τ cycles fit into the elapsed time.",
+  "unit": "assemblers"
+ },
+ "quantum_chemistry": {
+  "goal": "Find the energy of the n = 2 level of the hydrogen atom from the Schrödinger equation.",
+  "lhs": "E_n",
+  "expr": "- 13.6 / n ^ 2",
+  "vars": {
+   "n": "principal quantum number"
+  },
+  "given": {
+   "n": 2
+  },
+  "distractors": [
+   "3",
+   "*",
+   "π"
+  ],
+  "method": "Solving the Schrödinger equation for the Coulomb potential gives bound levels scaling as the inverse square of the principal quantum number, with the Rydberg energy 13.6 eV as the scale.",
+  "unit": "eV"
+ },
+ "annihilation_power": {
+  "goal": "Find the energy released when 1 μg of antimatter annihilates with the same mass of matter in a reactor of efficiency η.",
+  "lhs": "E",
+  "expr": "2 * η * m * c ^ 2",
+  "vars": {
+   "η": "fraction of the energy captured",
+   "m": "mass of antimatter (kg)",
+   "c": "speed of light (m/s)"
+  },
+  "given": {
+   "η": 0.5,
+   "m": 1e-09,
+   "c": 300000000.0
+  },
+  "distractors": [
+   "/",
+   "4",
+   "sqrt"
+  ],
+  "method": "Annihilation converts the rest mass of both particle and antiparticle into energy via E = mc², so the total mass converted is twice the antimatter mass.",
+  "unit": "J"
+ },
+ "number_theory": {
+  "goal": "Find the approximate number of primes below one million using the prime number theorem.",
+  "lhs": "π(x)",
+  "expr": "x / ln ( x )",
+  "vars": {
+   "x": "upper limit"
+  },
+  "given": {
+   "x": 1000000
+  },
+  "distractors": [
+   "exp",
+   "*",
+   "sqrt"
+  ],
+  "method": "The density of primes near x is about 1/ln x (Gauss), so the count up to x is roughly x times that density.",
+  "unit": "primes"
+ },
+ "genomics": {
+  "goal": "Find the sequencing coverage (Lander-Waterman) of a human genome sequenced with N reads of length L.",
+  "lhs": "C",
+  "expr": "L * N / G",
+  "vars": {
+   "L": "read length (bp)",
+   "N": "number of reads",
+   "G": "genome length (bp)"
+  },
+  "given": {
+   "L": 150,
+   "N": 600000000.0,
+   "G": 3000000000.0
+  },
+  "distractors": [
+   "4",
+   "^",
+   "+"
+  ],
+  "method": "Total sequenced bases spread over the genome give the average number of times each base is read.",
+  "unit": "x"
+ },
+ "standard_model": {
+  "goal": "Find the W boson mass from the weak coupling g and the Higgs vacuum expectation value v.",
+  "lhs": "m_W",
+  "expr": "g * v / 2",
+  "vars": {
+   "g": "SU(2) weak gauge coupling",
+   "v": "Higgs vacuum expectation value (GeV)"
+  },
+  "given": {
+   "g": 0.65,
+   "v": 246
+  },
+  "distractors": [
+   "sqrt",
+   "^",
+   "4"
+  ],
+  "method": "Expanding the Higgs kinetic term around its vacuum value v gives a mass term for the W, with mass proportional to the coupling times v (with a factor of one half).",
+  "unit": "GeV"
+ },
+ "singularity_physics": {
+  "goal": "Find the Schwarzschild (event-horizon) radius of a black hole of one solar mass.",
+  "lhs": "r_s",
+  "expr": "2 * G * M / c ^ 2",
+  "vars": {
+   "G": "gravitational constant",
+   "M": "mass (kg)",
+   "c": "speed of light (m/s)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 1.989e+30,
+   "c": 300000000.0
+  },
+  "distractors": [
+   "sqrt",
+   "4",
+   "π"
+  ],
+  "method": "Set the Newtonian escape velocity sqrt(2GM/r) equal to c and solve for r; the exact general-relativistic result happens to agree.",
+  "unit": "m"
+ },
+ "penrose_process": {
+  "goal": "Find the maximum energy extractable by the Penrose process from a rotating black hole of mass M and horizon area A (units G = c = 1).",
+  "lhs": "E_rot",
+  "expr": "M - sqrt ( A / ( 16 * π ) )",
+  "vars": {
+   "M": "black hole mass",
+   "A": "event horizon area"
+  },
+  "given": {
+   "M": 1,
+   "A": 40
+  },
+  "distractors": [
+   "8",
+   "+",
+   "^"
+  ],
+  "method": "Horizon area can never decrease, so the irreducible mass sqrt(A/16π) cannot be extracted; everything above it is rotational energy available to the ergosphere.",
+  "unit": "M"
+ },
+ "research_synthesis": {
+  "goal": "Find the time a learning machine needs for its n-th study task under a power-law learning curve (Wright's law).",
+  "lhs": "T_n",
+  "expr": "T1 * n ^ ( - b )",
+  "vars": {
+   "T1": "time for the first task",
+   "n": "task number",
+   "b": "learning exponent"
+  },
+  "given": {
+   "T1": 100,
+   "n": 16,
+   "b": 0.322
+  },
+  "distractors": [
+   "exp",
+   "+",
+   "ln"
+  ],
+  "method": "Each doubling of experience cuts the time by a constant factor (b = 0.322 means 80% per doubling); a constant factor per doubling is a power law in n.",
+  "unit": "h"
+ },
+ "extremophiles": {
+  "goal": "Find the rate constant of an enzyme-catalysed reaction in a hyperthermophile living at 121 °C, using the Arrhenius law.",
+  "lhs": "k",
+  "expr": "A * exp ( - Ea / R / T )",
+  "vars": {
+   "A": "pre-exponential factor (1/s)",
+   "Ea": "activation energy (J/mol)",
+   "R": "gas constant (J/mol/K)",
+   "T": "temperature (K)"
+  },
+  "given": {
+   "A": 10000000000000.0,
+   "Ea": 100000,
+   "R": 8.314,
+   "T": 394
+  },
+  "distractors": [
+   "ln",
+   "2",
+   "+"
+  ],
+  "method": "Only molecules with energy above the barrier react, and the Boltzmann fraction of those is exp(-Ea/RT); multiply by the attempt frequency.",
+  "unit": "1/s"
+ },
+ "white_holes": {
+  "goal": "Find the speed at which matter is ejected from a white hole as it passes radius r (the time reverse of infall from rest at infinity).",
+  "lhs": "v",
+  "expr": "c * sqrt ( rs / r )",
+  "vars": {
+   "c": "speed of light (m/s)",
+   "rs": "Schwarzschild radius (m)",
+   "r": "distance from the centre (m)"
+  },
+  "given": {
+   "c": 300000000.0,
+   "rs": 3000,
+   "r": 12000
+  },
+  "distractors": [
+   "2",
+   "^",
+   "/"
+  ],
+  "method": "Reverse the free-fall solution: an object falling from rest at infinity reaches v = sqrt(2GM/r), and writing 2GM = rs c² gives a form in units of c that hits c exactly at the horizon.",
+  "unit": "m/s"
+ },
+ "hyperdimensional_geometry": {
+  "goal": "Find the hypervolume of a 4-dimensional ball of radius r.",
+  "lhs": "V4",
+  "expr": "π ^ 2 / 2 * r ^ 4",
+  "vars": {
+   "r": "radius of the 4-ball"
+  },
+  "given": {
+   "r": 2
+  },
+  "distractors": [
+   "3",
+   "4",
+   "sqrt"
+  ],
+  "method": "The n-ball volume is π^(n/2) r^n / Γ(n/2 + 1); for n = 4 the Gamma function is 2! = 2. Equivalently integrate the 3-ball volume over slices.",
+  "unit": ""
+ },
+ "compact_stars": {
+  "goal": "Find the characteristic (spin-down) age in years of a pulsar with period P and period derivative Pd (the Crab pulsar).",
+  "lhs": "τ",
+  "expr": "P / ( 2 * Pd ) / 31557600",
+  "vars": {
+   "P": "rotation period (s)",
+   "Pd": "period derivative dP/dt (s/s)"
+  },
+  "given": {
+   "P": 0.0334,
+   "Pd": 4.21e-13
+  },
+  "distractors": [
+   "3",
+   "*",
+   "π"
+  ],
+  "method": "Magnetic dipole braking makes P·dP/dt constant; integrating from a much shorter initial period gives an age of P/(2 dP/dt) seconds, then divide by the seconds in a year.",
+  "unit": "years"
+ },
+ "fractional_distillation": {
+  "goal": "Find the minimum number of theoretical stages in the Fractionation Spire (Fenske equation) to reach a separation factor S with relative volatility α.",
+  "lhs": "N_min",
+  "expr": "ln ( S ) / ln ( α )",
+  "vars": {
+   "S": "separation factor (xD/(1-xD))·((1-xB)/xB)",
+   "α": "relative volatility of the two components"
+  },
+  "given": {
+   "S": 361,
+   "α": 2.5
+  },
+  "distractors": [
+   "exp",
+   "*",
+   "1"
+  ],
+  "method": "At total reflux each equilibrium stage multiplies the light/heavy ratio by α, so N stages give α^N = S; take logarithms.",
+  "unit": "stages"
+ },
+ "brane_cosmology": {
+  "goal": "Find the Randall-Sundrum warp factor that suppresses energies on our brane relative to the hidden brane.",
+  "lhs": "w",
+  "expr": "exp ( - k * π * r )",
+  "vars": {
+   "k": "AdS curvature of the bulk",
+   "r": "radius of the extra dimension (units of 1/k scale)"
+  },
+  "given": {
+   "k": 1,
+   "r": 2
+  },
+  "distractors": [
+   "2",
+   "/",
+   "ln"
+  ],
+  "method": "In the warped metric ds² = e^(-2k|y|)ημν dx dx - dy², masses scale with the square root of the warp, e^(-k|y|), evaluated at the second brane y = πr.",
+  "unit": ""
+ },
+ "compactification": {
+  "goal": "Find the energy of the n-th Kaluza-Klein excitation of a field on an extra dimension curled into a circle of radius R.",
+  "lhs": "E_n",
+  "expr": "n * ħ * c / R",
+  "vars": {
+   "n": "Kaluza-Klein mode number",
+   "ħ": "reduced Planck constant (GeV s)",
+   "c": "speed of light (m/s)",
+   "R": "compactification radius (m)"
+  },
+  "given": {
+   "n": 1,
+   "ħ": 6.582e-25,
+   "c": 300000000.0,
+   "R": 1e-18
+  },
+  "distractors": [
+   "2",
+   "π",
+   "^"
+  ],
+  "method": "A wave on a circle must fit a whole number of wavelengths, so momentum around the extra dimension is quantised as nħ/R; seen from 4D, that momentum times c appears as rest energy.",
+  "unit": "GeV"
+ },
+ "category_theory": {
+  "goal": "Show how many morphisms A×B → C exist in the category of finite sets by counting maps A → C^B (currying, the exponential adjunction), with |A| = 2, |B| = 3, |C| = 2.",
+  "lhs": "|Hom(A×B,C)|",
+  "expr": "( c ^ b ) ^ a",
+  "vars": {
+   "a": "number of elements of A",
+   "b": "number of elements of B",
+   "c": "number of elements of C"
+  },
+  "given": {
+   "a": 2,
+   "b": 3,
+   "c": 2
+  },
+  "distractors": [
+   "+",
+   "*",
+   "2"
+  ],
+  "method": "The exponential object C^B has |C|^|B| elements (all functions B → C), and Hom(A×B, C) ≅ Hom(A, C^B) because a two-argument map is a map returning a one-argument map.",
+  "unit": "morphisms"
+ },
+ "m_theory": {
+  "goal": "Find the 11-dimensional Planck length of M-theory from the string coupling gs and string length ls.",
+  "lhs": "l11",
+  "expr": "gs ^ ( 1 / 3 ) * ls",
+  "vars": {
+   "gs": "type IIA string coupling",
+   "ls": "string length"
+  },
+  "given": {
+   "gs": 8,
+   "ls": 1.5
+  },
+  "distractors": [
+   "2",
+   "/",
+   "sqrt"
+  ],
+  "method": "Matching the 10D Newton constant (∝ gs² ls⁸) to the 11D one (∝ l11⁹) compactified on a circle of radius R11 = gs ls gives l11⁹ = gs³ ls⁹.",
+  "unit": "ls units"
+ },
+ "traversable_wormholes": {
+  "goal": "Find the (negative) energy density needed at the throat of an Ellis wormhole of throat radius r (units G = c = 1).",
+  "lhs": "ρ",
+  "expr": "- 1 / ( 8 * π * r ^ 2 )",
+  "vars": {
+   "r": "throat radius"
+  },
+  "given": {
+   "r": 1
+  },
+  "distractors": [
+   "4",
+   "3",
+   "+"
+  ],
+  "method": "Insert the Ellis metric into Einstein's equations G = 8πT; the flare-out condition at the throat forces an energy density whose magnitude scales like the inverse square of the throat radius, and it must be negative (exotic matter).",
+  "unit": ""
+ },
+ "dark_energy": {
+  "goal": "Find the Hubble rate when the universe was half its present size (scale factor a), with matter and dark energy (cosmological constant).",
+  "lhs": "H",
+  "expr": "H0 * sqrt ( Ωm / a ^ 3 + ΩΛ )",
+  "vars": {
+   "H0": "present Hubble constant (km/s/Mpc)",
+   "Ωm": "present matter density parameter",
+   "a": "scale factor (1 today)",
+   "ΩΛ": "dark energy density parameter"
+  },
+  "given": {
+   "H0": 70,
+   "Ωm": 0.3,
+   "a": 0.5,
+   "ΩΛ": 0.7
+  },
+  "distractors": [
+   "4",
+   "-",
+   "2"
+  ],
+  "method": "The Friedmann equation sets H² proportional to total density; matter dilutes with volume (a^-3) while vacuum energy stays constant.",
+  "unit": "km/s/Mpc"
+ },
+ "causality_violation": {
+  "goal": "Find the time interval, in a frame moving at speed v (Lorentz factor γ), between sending and receiving a faster-than-light signal - negative means it arrives before it was sent (units c = 1).",
+  "lhs": "Δt'",
+  "expr": "γ * ( Δt - v * Δx )",
+  "vars": {
+   "γ": "Lorentz factor of the moving frame",
+   "Δt": "time between emission and reception in the rest frame",
+   "v": "speed of the moving frame",
+   "Δx": "distance covered by the signal"
+  },
+  "given": {
+   "γ": 1.25,
+   "Δt": 1,
+   "v": 0.6,
+   "Δx": 2
+  },
+  "distractors": [
+   "+",
+   "sqrt",
+   "/"
+  ],
+  "method": "Apply the Lorentz transformation for time; when the signal speed Δx/Δt exceeds 1/v the bracket turns negative, which is how superluminal signals create closed causal loops.",
+  "unit": ""
+ },
+ "directed_evolution": {
+  "goal": "Find the probability that a single mutant with selective advantage s takes over a population of N (Moran process, small s).",
+  "lhs": "P_fix",
+  "expr": "s / ( 1 - exp ( - N * s ) )",
+  "vars": {
+   "s": "selective advantage (relative fitness 1 + s)",
+   "N": "population size"
+  },
+  "given": {
+   "s": 0.1,
+   "N": 50
+  },
+  "distractors": [
+   "2",
+   "4",
+   "ln"
+  ],
+  "method": "The mutant count is a biased random walk; the gambler's-ruin result (1 - 1/r)/(1 - 1/r^N) with r = 1 + s becomes this for small s - drift wins in small populations, selection in large ones.",
+  "unit": ""
+ },
+ "matrioshka_brain": {
+  "goal": "Find the equilibrium temperature of the outermost Matrioshka shell (area A = 4πR² at 1 AU) around a star of luminosity L, which sets the Landauer cost per bit of the whole brain.",
+  "lhs": "T",
+  "expr": "( L / ( σ * A ) ) ^ 0.25",
+  "vars": {
+   "L": "stellar luminosity (W)",
+   "σ": "Stefan-Boltzmann constant (W m⁻² K⁻⁴)",
+   "A": "outer shell surface area (m²)"
+  },
+  "given": {
+   "L": 3.828e+26,
+   "σ": 5.67e-08,
+   "A": 2.8124e+23
+  },
+  "distractors": [
+   "4",
+   "2",
+   "sqrt"
+  ],
+  "method": "In steady state the outer shell must radiate the star's entire luminosity to space as a blackbody emitting σT⁴ per unit area (inner shells pass their waste heat outward).",
+  "unit": "K"
+ },
+ "stellar_transcendence": {
+  "goal": "Find the ionisation ratio n_i/n_0 of hydrogen at thermal energy T = kT from the Saha equation, showing how heat strips matter of its atomic identity.",
+  "lhs": "n_i/n_0",
+  "expr": "C * T ^ 1.5 * exp ( - χ / T ) / n",
+  "vars": {
+   "C": "Saha constant (2πm_e/h²)^1.5 (m⁻³ eV⁻¹·⁵)",
+   "T": "thermal energy kT (eV)",
+   "χ": "ionisation energy (eV)",
+   "n": "electron number density (m⁻³)"
+  },
+  "given": {
+   "C": 3.019e+27,
+   "T": 0.8617,
+   "χ": 13.6,
+   "n": 1e+20
+  },
+  "distractors": [
+   "2",
+   "ln",
+   "+"
+  ],
+  "method": "Treat ionisation as a chemical equilibrium: the freed electron gains a thermal phase-space factor proportional to T^(3/2) but pays a Boltzmann penalty exp(-χ/kT); kT = 0.8617 eV is 10 000 K.",
+  "unit": ""
+ },
+ "incompleteness": {
+  "goal": "Find the Gödel number of the symbol sequence with codes (a, b, c) = (3, 1, 2), using prime-power encoding.",
+  "lhs": "G",
+  "expr": "2 ^ a * 3 ^ b * 5 ^ c",
+  "vars": {
+   "a": "code of the first symbol",
+   "b": "code of the second symbol",
+   "c": "code of the third symbol"
+  },
+  "given": {
+   "a": 3,
+   "b": 1,
+   "c": 2
+  },
+  "distractors": [
+   "7",
+   "+",
+   "4"
+  ],
+  "method": "Raise the i-th prime to the code of the i-th symbol and multiply; unique prime factorisation lets arithmetic decode the formula, so arithmetic can talk about its own proofs.",
+  "unit": ""
+ },
+ "horizon_simulation": {
+  "goal": "Find how many bits a black hole of horizon radius r can store (Bekenstein-Hawking entropy), with r and the Planck length l in the same units.",
+  "lhs": "N",
+  "expr": "π * r ^ 2 / ( l ^ 2 * ln ( 2 ) )",
+  "vars": {
+   "r": "horizon radius",
+   "l": "Planck length"
+  },
+  "given": {
+   "r": 3000,
+   "l": 1
+  },
+  "distractors": [
+   "4",
+   "16",
+   "exp"
+  ],
+  "method": "The entropy is a quarter of the horizon area 4πr² in Planck units, S = A/(4 l²); divide by ln 2 to convert nats to bits.",
+  "unit": "bits"
+ },
+ "theory_of_everything": {
+  "goal": "Find the inverse strong coupling at the grand-unification scale Q by running it up from μ = M_Z with the one-loop renormalisation group equation.",
+  "lhs": "1/α(Q)",
+  "expr": "1 / α + b / ( 2 * π ) * ln ( Q / μ )",
+  "vars": {
+   "α": "coupling at the reference scale",
+   "b": "one-loop beta coefficient (11 - 2nf/3)",
+   "Q": "target energy scale (GeV)",
+   "μ": "reference energy scale (GeV)"
+  },
+  "given": {
+   "α": 0.118,
+   "b": 7,
+   "Q": 1e+16,
+   "μ": 91.2
+  },
+  "distractors": [
+   "-",
+   "4",
+   "exp"
+  ],
+  "method": "At one loop dα/d ln Q = -bα²/2π, which makes 1/α linear in ln Q; the three Standard Model couplings run toward each other at about 10^16 GeV.",
+  "unit": ""
+ },
+ "omnilex": {
+  "goal": "Find the Bekenstein bound - the most bits any region of radius R containing energy E can hold - for a proton; the Omnilex would need this many bits per proton to simulate reality.",
+  "lhs": "I",
+  "expr": "2 * π * R * E / ( ħ * c * ln ( 2 ) )",
+  "vars": {
+   "R": "radius of the region (m)",
+   "E": "total energy inside (J)",
+   "ħ": "reduced Planck constant (J s)",
+   "c": "speed of light (m/s)"
+  },
+  "given": {
+   "R": 1e-15,
+   "E": 1.503e-10,
+   "ħ": 1.0546e-34,
+   "c": 299800000.0
+  },
+  "distractors": [
+   "4",
+   "G",
+   "sqrt"
+  ],
+  "method": "Lower an object into a black hole: the generalised second law demands the horizon entropy gain (∝ RE) exceed the object's entropy; divide nats by ln 2 for bits.",
+  "unit": "bits"
+ }
+}

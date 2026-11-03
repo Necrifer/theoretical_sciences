@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_radiogenic_lead",
+  "description": "book.theoreticalsciences.codex.nuclear.node_radiogenic_lead.desc",
+  "icon": {
+    "item": "theoreticalsciences:radiogenic_lead"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 49,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:radiogenic_lead"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_radiogenic_lead.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_radiogenic_lead.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/nuclear__decay_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

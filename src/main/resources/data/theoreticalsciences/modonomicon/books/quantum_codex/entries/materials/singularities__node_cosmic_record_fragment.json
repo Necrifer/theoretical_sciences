@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.node_cosmic_record_fragment",
+  "description": "book.theoreticalsciences.codex.singularities.node_cosmic_record_fragment.desc",
+  "icon": {
+    "item": "theoreticalsciences:cosmic_record_fragment"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 186,
+  "y": 53,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cosmic_record_fragment"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.node_cosmic_record_fragment.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_cosmic_record_fragment.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.node_cosmic_record_fragment.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/singularities__eye_of_the_horizon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/horizon_simulation"
+  }
+}

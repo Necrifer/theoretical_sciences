@@ -1,0 +1,19 @@
+{
+  "name": "Morphogenic Serum",
+  "icon": "theoreticalsciences:morphogenic_serum",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:morphogenic_serum",
+      "title": "Morphogenic Serum",
+      "text": "Every signal an embryo listens to, in one vial. A Breached Anomaly Engine spends one on every creature it grows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Unlocked by$(): Synthetic Biology.$(br2)$(thing)Used in$(): Absolute Singularity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/synthetic_biology"
+}

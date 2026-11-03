@@ -1,0 +1,19 @@
+{
+  "name": "Planetary Nebula Shell",
+  "icon": "theoreticalsciences:planetary_nebula_shell",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:planetary_nebula_shell",
+      "title": "Planetary Nebula Shell",
+      "text": "The glowing shell a dying Sun-like star throws off: oxygen green, hydrogen red, round a white dwarf at its centre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reflecting Telescope$().$(br2)$(thing)Dropped by$(): Nebuloid.$(br2)$(thing)Unlocked by$(): Interstellar Medium.$(br2)$(thing)Used in$(): White Dwarf Core."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/interstellar_medium"
+}

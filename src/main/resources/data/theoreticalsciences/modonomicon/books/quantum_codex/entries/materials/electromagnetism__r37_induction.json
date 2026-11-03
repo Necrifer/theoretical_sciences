@@ -1,0 +1,35 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.r37_induction",
+  "description": "book.theoreticalsciences.codex.electromagnetism.r37_induction.desc",
+  "icon": {
+    "item": "theoreticalsciences:ferrite_magnet"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 28,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:magnetite"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.r37_induction.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r37_induction.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.r37_induction.p2"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electromagnetic_induction"
+  }
+}

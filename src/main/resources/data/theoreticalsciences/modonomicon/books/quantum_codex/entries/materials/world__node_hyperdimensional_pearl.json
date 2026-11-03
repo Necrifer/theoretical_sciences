@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_hyperdimensional_pearl",
+  "description": "book.theoreticalsciences.codex.world.node_hyperdimensional_pearl.desc",
+  "icon": {
+    "item": "theoreticalsciences:hyperdimensional_pearl"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 139,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hyperdimensional_pearl"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_hyperdimensional_pearl.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_hyperdimensional_pearl.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_hyperdimensional_pearl.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__bulk",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brane_cosmology"
+  }
+}

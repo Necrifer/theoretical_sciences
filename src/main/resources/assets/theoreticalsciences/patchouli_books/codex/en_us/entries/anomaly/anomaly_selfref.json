@@ -1,0 +1,41 @@
+{
+  "name": "Self-Reference & Replicators",
+  "icon": "theoreticalsciences:quine_replicator",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quine_replicator",
+      "text": "A $(thing)quine$() is a program that prints its own source code. It needs two parts: a description of itself, and instructions to copy the description and build from it. Von Neumann found the same two parts in any machine that can build itself - years before DNA showed life does it that way. A computer virus, a gene and a $(thing)meme$() (an idea that spreads because it is good at spreading) are the same trick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Does a replicator's lineage survive? If each copy makes k copies with probability p_k, the chance q that it ever dies out is the smallest root of q = \u03a3p_k q^k. If the mean number of copies is at most 1, it always dies out; above 1 it escapes destruction with probability 1 \u2212 q - for two-or-nothing copies at p = 0.6, one time in three."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In the $(item)Nanite Assembler$(), an Undecidable Kernel with a nanite swarm in Autocatalytic Broth becomes four $(item)Quine Replicators$(). Two replicators, catoms and a processor in nanite slurry are another way to a $(item)Von Neumann Probe$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quine_replicator",
+      "text": "A machine whose instructions contain a description of itself and an order to copy it. A von Neumann replicator, a virus, a meme.$(br2)Made in $(item)Nanite Assembler$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nanite_assembler",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:von_neumann_probe",
+      "text": "Builds copies of itself from whatever it finds. Put one in a Dyson Array.$(br2)Made in $(item)Nanite Assembler$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Quine Replicator$(): Contagion Network Map, Von Neumann Probe$(li)$(item)Von Neumann Probe$(): Theoretical Notes I"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/self_replication"
+}

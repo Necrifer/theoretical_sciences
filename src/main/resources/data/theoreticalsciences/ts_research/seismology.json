@@ -1,0 +1,60 @@
+{
+  "title": "Seismology",
+  "description": "Earthquakes send two kinds of wave through rock: fast pressure waves and slower shear waves. Time the gap between them and you know how far away the source is; time it at three stations and you know where. Unlocks the Seismograph.",
+  "icon": "theoreticalsciences:seismograph",
+  "x": 4,
+  "y": 15,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:geodesy",
+    "theoreticalsciences:geomorphology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:sediment_core",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:theodolite_lens",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "An earthquake sends compressional waves through rock at speed v _ p and slower shear waves at v _ s. A seismometer records the second kind arriving a time T after the first. Write how far away, L, the quake happened.",
+    "name": "Hypocentre from two arrivals",
+    "lhs": "L",
+    "form": "T * v _ p * v _ s / ( v _ p - v _ s )",
+    "expr": "D * P * S / ( P - S )",
+    "ask": "Find L in kilometres for a 2 second gap, with P = 6.0 km/s and S = @{S} km/s.",
+    "vars": {
+      "L": "how far away (km)",
+      "T": "gap between the arrivals (s)",
+      "v": "wave speed",
+      "p": "compressional",
+      "s": "shear",
+      "D": "the gap (s)",
+      "P": "compressional speed (km/s)",
+      "S": "shear speed (km/s)"
+    },
+    "given": {
+      "D": 2,
+      "P": 6.0,
+      "S": 3.5
+    },
+    "unit": "km",
+    "method": "The slow wave takes d/v_s, the fast one d/v_p; their difference is \u0394t. Solve for d.",
+    "distractors": [
+      "t",
+      "+",
+      "2"
+    ],
+    "vary": {
+      "S": [
+        2.1,
+        4.9,
+        0.01
+      ]
+    }
+  }
+}

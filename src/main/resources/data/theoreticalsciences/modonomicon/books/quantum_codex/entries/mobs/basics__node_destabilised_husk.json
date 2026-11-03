@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.node_destabilised_husk",
+  "description": "book.theoreticalsciences.codex.basics.node_destabilised_husk.desc",
+  "icon": {
+    "item": "theoreticalsciences:destabilised_husk_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 2,
+  "y": 1,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:destabilised_husk_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.basics.node_destabilised_husk.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/basics__containment_failure",
+      "draw_arrow": false
+    }
+  ]
+}

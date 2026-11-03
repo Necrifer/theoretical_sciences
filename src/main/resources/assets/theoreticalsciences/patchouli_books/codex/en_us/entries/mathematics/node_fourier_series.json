@@ -1,0 +1,23 @@
+{
+  "name": "Fourier Series",
+  "icon": "theoreticalsciences:fourier_series",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fourier_series",
+      "title": "Fourier Series",
+      "text": "Fourier claimed any periodic signal could be written as a sum of sines and cosines, and he was almost right. This series holds infinitely many harmonics in balance, each one a quiet tone. Hold it to your ear and it hums every frequency at once, so quietly that it sounds like silence."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Integrating a function graph against waves on the complex plane gave me one coefficient for each frequency. Adding the waves back together rebuilt the original curve exactly, and the Continuator stored the whole spectrum."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Analytic Continuator$().$(br2)$(thing)Unlocked by$(): Complex Analysis.$(br2)$(thing)Used in$(): Modular Form, Wave Packet."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/real_analysis"
+}

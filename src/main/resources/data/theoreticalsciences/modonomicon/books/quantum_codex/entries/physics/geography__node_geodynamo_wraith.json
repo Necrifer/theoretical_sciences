@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.node_geodynamo_wraith",
+  "description": "book.theoreticalsciences.codex.geography.node_geodynamo_wraith.desc",
+  "icon": {
+    "item": "theoreticalsciences:geodynamo_wraith_spawn_egg"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 65,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geodynamo_wraith_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.geography.node_geodynamo_wraith.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/geography__r44_creatures",
+      "draw_arrow": false
+    }
+  ]
+}

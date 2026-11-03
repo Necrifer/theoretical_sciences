@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.markov_chain_refinery",
+  "description": "book.theoreticalsciences.codex.probability.markov_chain_refinery.desc",
+  "icon": {
+    "item": "theoreticalsciences:markov_chain_refinery"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 46,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:markov_chain_refinery"
+      },
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:markov_chain_refinery"
+      },
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.probability.markov_chain_refinery.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/quantum__topological_transmuter"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/probability__r55_statmech"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ergodic_theory"
+  }
+}

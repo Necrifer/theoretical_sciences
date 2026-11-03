@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:moissanite",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:laue_pattern",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:moissanite_lens",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 2.65
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": 4.5,
+        "max": 5.5
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 137.0
+      }
+    ]
+  }
+}

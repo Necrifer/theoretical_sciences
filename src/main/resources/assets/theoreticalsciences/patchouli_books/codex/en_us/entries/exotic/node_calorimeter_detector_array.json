@@ -1,0 +1,23 @@
+{
+  "name": "Calorimeter Detector Array",
+  "icon": "theoreticalsciences:calorimeter_detector_array",
+  "category": "theoreticalsciences:exotic",
+  "sortnum": 518,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:calorimeter_detector_array",
+      "title": "Calorimeter Detector Array",
+      "text": "An array of scintillator crystals and pixel trackers that records where a particle went and how much energy it carried. A quantum processor reads the flashes. The crystals glow faintly when hit. Tiny flashes ripple across it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)To know what a collision produced I needed to measure both position and energy. I combined scintillators for energy, pixel trackers for paths and a quantum processor to read them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Unlocked by$(): High-Energy Particle Physics.$(br2)$(thing)Used in$(): Nuclide Forge, Particle Spectrometer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/particle_physics"
+}

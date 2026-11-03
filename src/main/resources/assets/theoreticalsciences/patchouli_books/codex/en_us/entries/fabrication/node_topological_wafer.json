@@ -1,0 +1,23 @@
+{
+  "name": "Topological Wafer",
+  "icon": "theoreticalsciences:topological_wafer",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": 512,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:topological_wafer",
+      "title": "Topological Wafer",
+      "text": "A wafer whose edges carry current without resistance, protected by topology. No scratch or defect in the middle can interrupt the flow around the rim. It looks like a thin grey disc with a faintly shimmering edge."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Cutting a Topological Boule in the Planck-Scale Cutter, I worried slicing would ruin its edges. Instead every slice had its own protected boundary, because topology does not care where you cut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Planck-Scale Cutter$().$(br2)$(thing)Unlocked by$(): Precision Lithography.$(br2)$(thing)Used in$(): Topological Logic Wafer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/precision_lithography"
+}

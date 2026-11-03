@@ -1,0 +1,85 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.relativity",
+  "description": "book.theoreticalsciences.codex.spacetime.relativity.desc",
+  "icon": {
+    "item": "theoreticalsciences:einstein_field_core"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 47,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lorentz_transform_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lorentz_transform_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:metric_tensor"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:einstein_field_core"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tensor_engine"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:minkowski_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:riemann_curvature_tensor"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p8"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.relativity.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/exotic__tachyon_resonator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/special_relativity"
+  }
+}

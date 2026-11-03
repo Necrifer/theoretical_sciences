@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.r37_chance",
+  "description": "book.theoreticalsciences.codex.probability.r37_chance.desc",
+  "icon": {
+    "item": "theoreticalsciences:dice_set"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 11,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dice_set"
+      },
+      "text": "book.theoreticalsciences.codex.probability.r37_chance.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r37_chance.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r37_chance.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__math_overview"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__numbers"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/probability_theory"
+  }
+}

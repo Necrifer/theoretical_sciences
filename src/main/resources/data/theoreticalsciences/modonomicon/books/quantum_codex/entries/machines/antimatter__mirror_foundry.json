@@ -1,0 +1,75 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.mirror_foundry",
+  "description": "book.theoreticalsciences.codex.antimatter.mirror_foundry.desc",
+  "icon": {
+    "item": "theoreticalsciences:mirror_foundry"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 114,
+  "y": 29,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mirror_foundry"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mirror_foundry"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:baryogenesis_seed"
+      },
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.mirror_foundry.p8"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/fabrication__stellar_plasma_crucible"
+    },
+    {
+      "entry": "theoreticalsciences:machines/antimatter__antiatoms"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mirror_metallurgy"
+  }
+}

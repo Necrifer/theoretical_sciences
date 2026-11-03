@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:climate_forcing",
+  "item_inputs": [
+    {
+      "item": "minecraft:dirt",
+      "count": 4
+    },
+    {
+      "item": "minecraft:snowball",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:permafrost_sample",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 800,
+  "research": "theoreticalsciences:climatology",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "windows": [
+      {
+        "q": "dT",
+        "min": -2.5,
+        "max": -1.0
+      }
+    ]
+  }
+}

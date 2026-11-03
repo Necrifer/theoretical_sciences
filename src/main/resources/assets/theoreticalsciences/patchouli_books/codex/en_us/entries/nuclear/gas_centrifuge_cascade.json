@@ -1,0 +1,76 @@
+{
+  "name": "Gas Centrifuge Cascade",
+  "icon": "theoreticalsciences:gas_centrifuge_cascade",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 88,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gas_centrifuge_cascade",
+      "title": "Gas Centrifuge Cascade",
+      "text": "Rotors spinning faster than sound fling the heavier isotope outward. One stage enriches a little; a tower of them, a lot. Build it taller for more stages: each new layer on top is one more.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A tower of stages: build the stage layer (four rotors behind windows) once, or stack it up to fourteen high - every stage multiplies the U-235 ratio by \u03b2. It also makes uranium hexafluoride, fuel salt, and takes spent salt apart again (fluoride volatility). Enrichment is interlocked at 20%."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Gas Centrifuge Cascade",
+      "multiblock": {
+        "pattern": [
+          [
+            "AABBBAA",
+            "A     A",
+            "B D D B",
+            "B  A  B",
+            "B D D B",
+            "A     A",
+            "AABBBAA"
+          ],
+          [
+            "AAA0AAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAAAAA"
+          ],
+          [
+            "AAAEAAA",
+            "AAAAAAA",
+            "AAAAAAA",
+            "EAAAAAE",
+            "AAAAAAA",
+            "AAAAAAA",
+            "AAAEAAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:gas_centrifuge_cascade",
+          "A": "theoreticalsciences:cascade_casing",
+          "B": "theoreticalsciences:containment_field_glass",
+          "D": "theoreticalsciences:centrifuge_rotor",
+          "E": "#theoreticalsciences:multiblock/cascade_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Fission Fragment Mix, Lithium-6 Ingot, Molten Salt Fuel, Plutonium-239 Pellet, Rare Earth Oxide, Uranium Hexafluoride, Uranium-235 Pellet, Uranium-238 Pellet."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gas_centrifuge_cascade",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

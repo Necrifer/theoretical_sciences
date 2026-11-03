@@ -1,0 +1,24 @@
+{
+  "name": "Gas Centrifuge Cascade",
+  "icon": "theoreticalsciences:gas_centrifuge_cascade",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 36,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In a spinning rotor the heavier molecule crowds to the wall: the separation factor is \u03b1 = e^(\u0394m v\u00b2/2RT). A stage passes on a fraction \u03b8 (the cut) of its feed, enriched by \u03b2 = 1 + (\u03b1 \u2212 1)(1 \u2212 \u03b8); n stages multiply the isotope ratio by \u03b2\u207f. Every layer of the tower is a stage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Rotor peripheral speed, Cut \u03b8.$(br2)$(thing)Disturbance$(): Rotor imbalance: the speed wanders by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Rotor stress above what carbon fibre safely holds; The rotors are sitting on a flexural resonance; Safeguards interlock: product above 20% U-235; Uranium hexafluoride freezing onto the rotor walls.$(br2)$(thing)Rate$(): A bigger cut, and a taller tower, pass more product."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Rotor speed: v\u00b7(1 + 0.01\u00b7d)$(br)Gas temperature: T_gas = T + 20 K$(br)Separation factor \u03b1: \u03b1 = e^(\u0394m v\u00b2/2RT)$(br)Stage enrichment \u03b2: \u03b2 = 1 + (\u03b1 \u2212 1)(1 \u2212 \u03b8)$(br)Stages: n$(br)Product assay: x_P = R_F \u03b2\u207f/(1 + R_F \u03b2\u207f)$(br)Rotor hoop stress: \u03c3 = \u03c1v\u00b2"
+    }
+  ]
+}

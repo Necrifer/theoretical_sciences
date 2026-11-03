@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_dynamic_singularity",
+  "description": "book.theoreticalsciences.codex.endgame.node_dynamic_singularity.desc",
+  "icon": {
+    "item": "theoreticalsciences:dynamic_singularity"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 184,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:dynamic_singularity"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_dynamic_singularity.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__mass_crafting",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conceptual_singularities"
+  }
+}

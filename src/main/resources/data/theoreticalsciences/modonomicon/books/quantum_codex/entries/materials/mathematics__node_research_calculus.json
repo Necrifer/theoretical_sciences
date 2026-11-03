@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_calculus",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_calculus.desc",
+  "icon": {
+    "item": "theoreticalsciences:integral_operator"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 39,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:integral_operator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_calculus.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_calculus.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__analysis",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/calculus"
+  }
+}

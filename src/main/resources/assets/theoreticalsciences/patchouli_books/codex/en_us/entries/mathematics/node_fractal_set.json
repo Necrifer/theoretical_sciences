@@ -1,0 +1,23 @@
+{
+  "name": "Fractal Set",
+  "icon": "theoreticalsciences:fractal_set",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 510,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fractal_set",
+      "title": "Fractal Set",
+      "text": "Iterate z goes to z squared plus c, and colour each point by whether it escapes. The boundary that results is infinitely detailed: zoom in anywhere and new spirals, filaments and tiny copies of the whole appear. Holding it, the edges seem fuzzy, and they never sharpen however closely you look."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Running a Koch crystal's self-similar rule through a function graph on the complex plane, I asked the Analytic Continuator which points stayed bounded. The answer was the Mandelbrot set, coastlines within coastlines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Analytic Continuator$().$(br2)$(thing)Unlocked by$(): Complex Analysis.$(br2)$(thing)Used in$(): Empirical Notes III, Mathematics Singularity, Undecidable Kernel."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/real_analysis"
+}

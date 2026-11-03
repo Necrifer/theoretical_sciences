@@ -1,0 +1,24 @@
+{
+  "name": "ER=EPR Weaver",
+  "icon": "theoreticalsciences:er_epr_weaver",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 28,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Entangled pairs are made in the middle and their halves sent to the two mouths, a distance L apart. Their fidelity falls as e^(\u2212L/50 km) and with the weaver's temperature, (1 \u2212 T/1000 K) - and each pair a second warms it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Pair rate, Mouth separation.$(br2)$(thing)Disturbance$(): Path noise: the coherence length varies by \u00b15%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): .$(br2)$(thing)Rate$(): More pairs, faster weaving."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Fidelity: F = e^(\u2212L/\u2113)(1 \u2212 T/1000 K)"
+    }
+  ]
+}

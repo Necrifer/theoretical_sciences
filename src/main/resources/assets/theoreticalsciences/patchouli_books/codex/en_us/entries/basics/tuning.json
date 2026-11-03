@@ -1,0 +1,43 @@
+{
+  "name": "Tuning Notes",
+  "icon": "theoreticalsciences:field_calibrator",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:field_calibrator,theoreticalsciences:autonomous_calibrator",
+      "text": "Multiblocks are not set-and-forget. Each has a $(thing)tuning panel$() beside its screen with its own control: the Collider's $(thing)Beam Focus$(), the Crucible's $(thing)Plasma Temperature$(), the Omnilex's $(thing)Law Coherence$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Day 19. The ideal setting $(thing)drifts$() while the machine runs, each machine its own way: some wander, some swing back and forth, some steadily fall, some sit still then suddenly jump. Match it to keep $(thing)efficiency$() high. The panel shows two waves; when I am close they line up and go clean, like two tuning forks falling into unison."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Overclock$() doubles speed but quadruples power draw - a square law, like resistive heating. $(thing)Parallel$() runs several recipes per cycle. Generators cannot overclock; tuning sets their output instead."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Containment$() wears down while running - faster when overclocked or out of tune. At zero the machine $(thing)faults$(): work in progress is lost and it stops. A $(item)Field Calibrator$() used on the controller restores it. It also reveals the ideal setting, marked in gold on the panel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Much later: an $(item)Autonomous Calibrator$() can be installed into a controller. From then on the machine follows its own drift and repairs itself, for a 25% power tax and 10% less generator output. Worth every joule.$(br2)Pack makers can slow or disable drift and wear in the config."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:field_calibrator",
+      "text": "Use on a multiblock controller to restore its containment, clear a fault and read out the ideal tuning value.$(br2)Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autonomous_calibrator",
+      "text": "Installs into a multiblock controller for good: it follows the drifting tuning and repairs containment by itself, for a 25% power tax.$(br2)Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Field Calibrator$(): Autonomous Calibrator, Phase-Locked Stabiliser$(li)$(item)Autonomous Calibrator$(): Predictive Lattice Governor, Theoretical Notes I"
+    }
+  ]
+}

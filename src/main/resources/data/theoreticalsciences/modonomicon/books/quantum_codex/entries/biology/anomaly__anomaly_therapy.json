@@ -1,0 +1,88 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_therapy",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.desc",
+  "icon": {
+    "item": "theoreticalsciences:apoptosis_trigger"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 65,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_resolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_resolution_engine"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:apoptosis_trigger"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:car_t_culture"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gene_sequencer"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bioreactor"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p7"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:renormalised_essence_cell"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_therapy.p9"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/anomaly__anomaly_clonal"
+    },
+    {
+      "entry": "theoreticalsciences:biology/anomaly__anomaly_containment"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/targeted_therapy"
+  }
+}

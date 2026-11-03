@@ -1,0 +1,24 @@
+{
+  "name": "Monte Carlo Engine",
+  "icon": "theoreticalsciences:monte_carlo_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 48,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Draw N random samples of a quantity of spread \u03c3 and their average is off by \u03c3/\u221aN: four times the work halves the error. Importance sampling draws more where it matters and cuts \u03c3 - if its proposal fits the problem; a poor one makes \u03c3 worse. Each sample erases bits, and erasing a bit gives off at least kT\u00b7ln 2 (Landauer's principle): a cold engine computes for less heat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Samples (log\u2081\u2080 N), Importance sampling.$(br2)$(thing)Disturbance$(): Correlations in the random stream: the error grows by up to 10%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The cores are overheating.$(br2)$(thing)Rate$(): More samples take longer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Samples: N$(br)Effective spread: \u03c3_eff$(br)Error: \u03b5 = \u03c3/\u221aN$(br)Heat of erasure: P \u221d N\u00b7kT\u00b7ln 2"
+    }
+  ]
+}

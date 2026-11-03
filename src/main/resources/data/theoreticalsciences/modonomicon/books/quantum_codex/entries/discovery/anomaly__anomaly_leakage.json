@@ -1,0 +1,60 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.anomaly_leakage",
+  "description": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.desc",
+  "icon": {
+    "item": "theoreticalsciences:law_violation_shard"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 84,
+  "y": -10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:law_violation_shard"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:law_violation_shard"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anomaly_containment_ward"
+      },
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.anomaly_leakage.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__anomaly_origin_defects"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__anomaly_systems"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/anomalous_leakage"
+  }
+}

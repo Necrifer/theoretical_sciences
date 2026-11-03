@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:monte_carlo",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:random_number_chip"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cow_record",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:hawking_record",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:metric_tensor",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:spin_foam_lattice",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 2400,
+  "research": "theoreticalsciences:semiclassical_gravity",
+  "unscaled": true,
+  "insight_per_run": 40,
+  "physics": {
+    "vars": {
+      "sg": 40.0,
+      "opt": 0.7
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 25.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "name": "Neutron Star Forge",
+  "icon": "theoreticalsciences:neutron_star_forge",
+  "category": "theoreticalsciences:cosmic",
+  "sortnum": 46,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:neutron_star_forge",
+      "title": "Neutron Star Forge",
+      "text": "Recreates the crushing interior of a collapsed star: neutronium, metallic hydrogen and quark matter. Each one a state of matter no lab on Earth has held.$(br2)$(thing)Tier 4$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Note to self: this controller is too complex for a crafting grid. It has to be built on the $(item)Femtoscale Assembly Line$() - check JEI for the exact parts before ordering anything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Why it matters: a neutron star packs more than a Sun's mass into a city-sized sphere. Gravity crushes electrons into protons, leaving neutrons held up only by degeneracy pressure. Deeper in, neutrons may dissolve into free quarks. A teaspoon would weigh about a billion tonnes."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Neutron Star Forge",
+      "multiblock": {
+        "pattern": [
+          [
+            "____AAA____",
+            "_BAAAAAAAB_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "AAAAAAAAAAA",
+            "AAAAAAAAAAA",
+            "AAAAAAAAAAA",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_BAAAAAAAB_",
+            "____AAA____"
+          ],
+          [
+            "___________",
+            "_B_AAAAA_B_",
+            "__AAAAAAA__",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "__AAAAAAA__",
+            "_B_AAAAA_B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___DDDDD___",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "___DDDDD___",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___________",
+            "____EEE____",
+            "____EFE____",
+            "____EEE____",
+            "___________",
+            "___________",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___________",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___________",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_G_______G_",
+            "___________",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___________",
+            "_G_______G_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___________",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___     ___",
+            "___________",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___________",
+            "___________",
+            "____EEE____",
+            "____EFE____",
+            "____EEE____",
+            "___________",
+            "___________",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_______B_",
+            "___DDDDD___",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "__DDDDDDD__",
+            "___DDDDD___",
+            "_B_______B_",
+            "___________"
+          ],
+          [
+            "___________",
+            "_B_AA0AA_B_",
+            "__AAAAAAA__",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "__AAAAAAA__",
+            "_B_AAAAA_B_",
+            "___________"
+          ],
+          [
+            "____AHA____",
+            "_BAAAAAAAB_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "AAAAAAAAAAA",
+            "HAAAAAAAAAH",
+            "AAAAAAAAAAA",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_BAAAAAAAB_",
+            "____AHA____"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:neutron_star_forge",
+          "A": "theoreticalsciences:magnetic_confinement_casing",
+          "B": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "D": "theoreticalsciences:stellar_containment_plate",
+          "E": "theoreticalsciences:event_horizon_casing",
+          "F": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "G": "theoreticalsciences:cryogenic_cooling_jacket",
+          "H": "#theoreticalsciences:multiblock/magnetic_confinement_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Block of Neutronium, Bounce Core, Degenerate Matter Chunk, Frozen Photon, Liquid Metallic Hydrogen, Magnetar Shard, Pulsar Timing Crystal, Quark Star Core, Supernova Remnant."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:neutron_star_forge",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:femtoscale_assembly_line",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/compact_stars"
+}

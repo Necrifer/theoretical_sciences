@@ -1,0 +1,64 @@
+{
+  "title": "Gravitational Time Dilation",
+  "description": "A clock lower in a gravity well ticks slower than one above it. Satellite navigation has to correct for it every day, or it would drift kilometres. Unlocks the Atomic Clock.",
+  "icon": "theoreticalsciences:atomic_clock",
+  "x": 6,
+  "y": 7,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:equivalence_principle"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:proof_mass",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:random_number_chip",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A clock sits a distance r from the centre of a mass M. Compared with a clock far away it ticks slower. Write how many seconds \u03c4 it counts while the faraway clock counts t.",
+    "name": "Gravitational time dilation",
+    "lhs": "\u03c4",
+    "form": "t * sqrt ( 1 - 2 * G * M / ( r * c ^ 2 ) )",
+    "expr": "t * sqrt ( 1 - 2 * G * M / ( r * c ^ 2 ) )",
+    "ask": "Find \u03c4 in seconds for one hour on the surface of a neutron star: M = @{M} kg, r = 12 km (G and c in SI units).",
+    "vars": {
+      "\u03c4": "seconds on the near clock",
+      "t": "seconds on the far clock",
+      "G": "gravitational constant",
+      "M": "mass (kg)",
+      "r": "distance (m)",
+      "c": "speed of light (m/s)"
+    },
+    "given": {
+      "t": 3600,
+      "G": 6.674e-11,
+      "M": 2.8e+30,
+      "r": 12000,
+      "c": 299800000.0
+    },
+    "unit": "s",
+    "method": "The Schwarzschild metric: for a clock at rest at radius r, d\u03c4\u00b2 = (1 \u2212 2GM/rc\u00b2) dt\u00b2.",
+    "distractors": [
+      "v",
+      "ln",
+      "\u03c0"
+    ],
+    "vary": {
+      "t": [
+        2160.0,
+        5040.0,
+        1.0
+      ],
+      "M": [
+        1.68e+30,
+        3.92e+30,
+        1e+28
+      ]
+    }
+  }
+}

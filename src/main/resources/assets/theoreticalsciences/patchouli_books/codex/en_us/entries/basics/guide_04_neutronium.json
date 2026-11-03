@@ -1,0 +1,17 @@
+{
+  "name": "Step 4: Neutronium",
+  "icon": "theoreticalsciences:neutronium_ingot",
+  "category": "theoreticalsciences:basics",
+  "sortnum": -96,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:neutronium_ingot,theoreticalsciences:degenerate_matter_chunk,theoreticalsciences:degenerate_matter_ore",
+      "text": "Nearly every machine is built from $(item)Neutronium Ingot$() - and a lot of it (the first few machines take well over a hundred). Where it comes from:$(li)$(thing)The End$(): $(item)Degenerate Matter Ore$() in End stone (Y 10 to 80), needs a $(thing)diamond pickaxe$(). Smelt the $(item)Degenerate Matter Chunk$() it drops in a furnace (20 s; 10 s in a blast furnace) - one chunk, one ingot. This is the main source early on.$(li)$(thing)Observatory Ruins$() on the Overworld surface: 1-4 ingots in a cache.$(li)$(thing)Anomaly Vaults$(): half-sunk containment vaults, 2-8 ingots per chest - but the anomaly engine inside keeps spawning creatures."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Later, once you have the Casimir Vacuum Press (step 9), you can make Degenerate Matter at home: 128 $(item)Cobbled Deepslate$() + 16 $(item)Obsidian$() \u2192 1 $(item)Degenerate Matter Chunk$() (2,048 FE/t, 30 s).$(br2)Holding $(item)Degenerate Matter Chunk$() once teaches the research symbol $(thing)\u222b f dx$() (integral) - the derivation of $(thing)The Casimir Effect$() and $(thing)Precision Lithography$() needs it. "
+    }
+  ]
+}

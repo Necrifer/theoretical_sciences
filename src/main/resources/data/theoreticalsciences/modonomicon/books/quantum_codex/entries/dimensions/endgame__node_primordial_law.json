@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_primordial_law",
+  "description": "book.theoreticalsciences.codex.endgame.node_primordial_law.desc",
+  "icon": {
+    "item": "theoreticalsciences:primordial_law_cell"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 95,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:primordial_law_cell"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_primordial_law.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_primordial_law.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_primordial_law.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/endgame__hyperreal",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_reality"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.zero_point_extractor",
+  "description": "book.theoreticalsciences.codex.basics.zero_point_extractor.desc",
+  "icon": {
+    "item": "theoreticalsciences:zero_point_extractor"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 0,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:zero_point_extractor"
+      },
+      "text": "book.theoreticalsciences.codex.basics.zero_point_extractor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.zero_point_extractor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.zero_point_extractor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.zero_point_extractor.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:zero_point_extractor"
+      },
+      "text": "book.theoreticalsciences.codex.basics.zero_point_extractor.p4"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/casimir_effect"
+  }
+}

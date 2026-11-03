@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.r42_enrichment",
+  "description": "book.theoreticalsciences.codex.nuclear.r42_enrichment.desc",
+  "icon": {
+    "item": "theoreticalsciences:gas_centrifuge_cascade"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 32,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gas_centrifuge_cascade"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.r42_enrichment.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r42_enrichment.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.r42_enrichment.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/nuclear__r38_decay"
+    },
+    {
+      "entry": "theoreticalsciences:machines/nuclear__decay_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/isotope_separation"
+  }
+}

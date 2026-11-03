@@ -1,0 +1,225 @@
+{
+  "name": "Deep Drilling Rig",
+  "icon": "theoreticalsciences:deep_drilling_rig",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 87,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deep_drilling_rig",
+      "title": "Deep Drilling Rig",
+      "text": "A derrick and a string of drill pipe kilometres long. The deeper the bit, the hotter the rock, the higher the pressure in it - and the older and stranger the core it brings up.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Choose a depth, the weight on the bit, its speed and the mud. The mud must press harder than the water in the rock (or the well kicks) but not so hard it splits the rock (lost circulation). Shallow: sediment cores and brine; a few kilometres: crustal rock with rich ore, or a pocket of magma; at the bottom of thin crust, peridotite."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Deep Drilling Rig",
+      "multiblock": {
+        "pattern": [
+          [
+            "_________",
+            "_________",
+            "_________",
+            "___AAA___",
+            "___AAA___",
+            "___AAA___",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "___A_A___",
+            "____B____",
+            "___A_A___",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "___A_A___",
+            "____B____",
+            "___A_A___",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "___A_A___",
+            "____B____",
+            "___A_A___",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "__A___A__",
+            "___A_A___",
+            "____B____",
+            "___A_A___",
+            "__A___A__",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "__AAAAA__",
+            "__A___A__",
+            "__A_B_A__",
+            "__A___A__",
+            "__AAAAA__",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "__A___A__",
+            "_________",
+            "____B____",
+            "_________",
+            "__A___A__",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "__A___A__",
+            "_________",
+            "____B____",
+            "_________",
+            "__A___A__",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "__A___A__",
+            "_________",
+            "____B____",
+            "_________",
+            "__A___A__",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "__AAAAA__",
+            "__A___A__",
+            "__A_B_A__",
+            "__A___A__",
+            "__AAAAA__",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_A_____A_",
+            "__A___A__",
+            "_________",
+            "____B____",
+            "_________",
+            "__A___A__",
+            "_A_____A_",
+            "_________"
+          ],
+          [
+            "_________",
+            "_A_____A_",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_A_____A_",
+            "_________"
+          ],
+          [
+            "DDD______",
+            "DDD____A_",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_A_____A_",
+            "_________"
+          ],
+          [
+            "D0D______",
+            "DDD____A_",
+            "_________",
+            "_________",
+            "____B____",
+            "_________",
+            "_________",
+            "_A_____A_",
+            "_________"
+          ],
+          [
+            "DDDDEDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "EDDDBDDDE",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDDDDDD",
+            "DDDDEDDDD"
+          ],
+          [
+            "DDD___DDD",
+            "DDD___DDD",
+            "DDD___DDD",
+            "_________",
+            "____B____",
+            "_________",
+            "DDD___DDD",
+            "DDD___DDD",
+            "DDD___DDD"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:deep_drilling_rig",
+          "A": "theoreticalsciences:derrick_frame",
+          "B": "theoreticalsciences:drill_string",
+          "D": "theoreticalsciences:lithostatic_casing",
+          "E": "#theoreticalsciences:multiblock/lithostatic_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Basaltic Magma, Crustal Rock, Deep Brine, Garnet, Lithospheric Plate Fragment, Peridotite, Rich Copper Chunk, Rich Iron Chunk, Sediment Core."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deep_drilling_rig",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/deep_drilling"
+}

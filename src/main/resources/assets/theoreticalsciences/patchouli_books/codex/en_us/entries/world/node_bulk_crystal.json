@@ -1,0 +1,23 @@
+{
+  "name": "Bulk Crystal",
+  "icon": "theoreticalsciences:bulk_crystal",
+  "category": "theoreticalsciences:world",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bulk_crystal",
+      "title": "Bulk Crystal",
+      "text": "A translucent crystal from the Bulk whose facets seem to point in directions I cannot quite name. Light passing through comes out a little out of phase with itself, as if it had taken a short detour through another axis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I found these growing in the Bulk where the extra dimensions are most tightly curled. Looking through one, I saw my own hand from an angle I should not have been able to see it from."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Graviton Condenser$().$(br2)$(thing)Unlocked by$(): Brane Cosmology.$(br2)$(thing)Used in$(): Brane Tension Fiber, Bulk Cache, Graviton Wisp Core, Silicon Life Spore, String Coupling Crystal."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/brane_cosmology"
+}

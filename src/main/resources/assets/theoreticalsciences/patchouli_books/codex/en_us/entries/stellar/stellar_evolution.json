@@ -1,0 +1,60 @@
+{
+  "name": "Stellar Evolution",
+  "icon": "theoreticalsciences:protostar_core",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:protostar_core,theoreticalsciences:stellar_iron_ingot,theoreticalsciences:supernova_remnant",
+      "text": "Day 77. A star begins as a cloud. I harvest $(fluid)Nebular Gas$() with the Dark Matter Halo Collector and collapse it into a $(item)Protostar$() in the $(item)Nucleosynthesis Chamber$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gravity squeezes until the core reaches millions of degrees and hydrogen fuses. I ignite the protostar into a $(item)Stellar Core$(). When a real star runs low on hydrogen its outer layers balloon outward; mine swells into a $(item)Red Giant$(), and I keep its $(item)White Dwarf$() - the bare, glowing core left behind."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "White dwarfs forge $(item)Stellar Iron$() - the end of fusion. Iron's nucleus is among the most tightly bound there is; fusing it costs energy instead of releasing it. Dyson shells are made of stellar iron."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A red giant crushed onto stellar iron goes supernova. Its remnant feeds the $(item)r-process$() - rapid neutron capture, nature's way of making gold and everything heavier - and it is needed for every quark star."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:protostar_core",
+      "text": "A collapsing knot of nebular gas, hot enough to glow but not yet to fuse.$(br2)Made in $(item)Nucleosynthesis Chamber$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_iron_ingot",
+      "text": "Iron from the core of a star - the end of fusion. Making anything heavier costs energy instead of releasing it.$(br2)Made in $(item)Nucleosynthesis Chamber$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:supernova_remnant",
+      "text": "What is left after a star's core collapses and its outer layers are blasted across the galaxy.$(br2)Made in $(item)Neutron Star Forge$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nucleosynthesis_chamber",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stellar_core",
+      "text": "A captive star the size of a fist, ignited by a white hole.$(br2)Made in $(item)Stellar Plasma Crucible$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Protostar Core$(): Stellar Core, Stellar Plasma, Stellar Singularity, Theoretical Notes III$(li)$(item)Stellar Iron Ingot$(): Dyson Shell Segment, Magnetar Shard, Stellar Singularity, Supernova Remnant$(li)$(item)Supernova Remnant$(): Dimensional Residue, Gold Ingot, Hypernova Alloy Ingot, Magnetar Shard, Quark Star Core and more$(li)$(item)Stellar Core$(): Closed Timelike Curve,..."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nebular_gas_cell",
+      "text": "$(fluid)Nebular Gas$(). Made in $(item)Dark Matter Halo Collector$().$(br)Used for: Protostar Core, Stellar Core, Stellar Plasma, Stellar Singularity."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/stellar_evolution"
+}

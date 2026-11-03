@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.analog_black_hole",
+  "description": "book.theoreticalsciences.codex.spacetime.analog_black_hole.desc",
+  "icon": {
+    "item": "theoreticalsciences:analog_black_hole"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 137,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:analog_black_hole"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.analog_black_hole.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.analog_black_hole.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.analog_black_hole.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.analog_black_hole.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.analog_black_hole.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:analog_black_hole"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.analog_black_hole.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__bose_einstein_condenser"
+    },
+    {
+      "entry": "theoreticalsciences:materials/spacetime__laser_interferometer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/analog_gravity"
+  }
+}

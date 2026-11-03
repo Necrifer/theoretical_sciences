@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_research_galactic_dynamics",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_research_galactic_dynamics.desc",
+  "icon": {
+    "item": "theoreticalsciences:hydrogen_line_map"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 90,
+  "y": 43,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hydrogen_line_map"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_research_galactic_dynamics.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_research_galactic_dynamics.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__radio_telescope",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

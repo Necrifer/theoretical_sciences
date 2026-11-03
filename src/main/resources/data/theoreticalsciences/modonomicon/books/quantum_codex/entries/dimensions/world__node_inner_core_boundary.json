@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_inner_core_boundary",
+  "description": "book.theoreticalsciences.codex.world.node_inner_core_boundary.desc",
+  "icon": {
+    "item": "theoreticalsciences:inner_core_boundary"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 47,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:inner_core_boundary"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_inner_core_boundary.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__falling_through",
+      "draw_arrow": false
+    }
+  ]
+}

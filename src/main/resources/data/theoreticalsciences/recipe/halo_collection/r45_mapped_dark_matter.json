@@ -1,0 +1,77 @@
+{
+  "type": "theoreticalsciences:halo_collection",
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:dark_matter",
+      "amount": 500
+    }
+  ],
+  "energy": 16384,
+  "duration": 600,
+  "research": "theoreticalsciences:galactic_dynamics",
+  "physics": {
+    "vars": {
+      "mx": 100.0
+    },
+    "windows": [
+      {
+        "q": "snr",
+        "min": 3.0,
+        "max": 1000000000.0
+      }
+    ]
+  },
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:strange_matter_pellet",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cosmic_record_fragment",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:photonic_lens",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_lattice",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:femto_transistor",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:hydrogen_line_map",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:photoresist",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 16000
+    }
+  ],
+  "optional_inputs": [
+    {
+      "item": "mekanism:pellet_polonium",
+      "count": 16
+    },
+    {
+      "item": "ae2:singularity",
+      "count": 16
+    }
+  ],
+  "optional_fluid_inputs": [
+    {
+      "fluid": "ufo:gelid_cryotheum",
+      "amount": 16000
+    }
+  ],
+  "unscaled": true
+}

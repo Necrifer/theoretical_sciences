@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.node_xray_cabinet",
+  "description": "book.theoreticalsciences.codex.nuclear.node_xray_cabinet.desc",
+  "icon": {
+    "item": "theoreticalsciences:xray_cabinet"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 72,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:xray_cabinet"
+      },
+      "text": "book.theoreticalsciences.codex.nuclear.node_xray_cabinet.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.node_xray_cabinet.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/nuclear__decay_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radiochemistry"
+  }
+}

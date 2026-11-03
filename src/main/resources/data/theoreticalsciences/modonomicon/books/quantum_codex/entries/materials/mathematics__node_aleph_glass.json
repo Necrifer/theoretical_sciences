@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_aleph_glass",
+  "description": "book.theoreticalsciences.codex.mathematics.node_aleph_glass.desc",
+  "icon": {
+    "item": "theoreticalsciences:aleph_glass"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 184,
+  "y": 33,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:aleph_glass"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_aleph_glass.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_aleph_glass.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_aleph_glass.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__ordinal_recursor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

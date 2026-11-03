@@ -1,0 +1,196 @@
+{
+  "name": "White Hole Emitter",
+  "icon": "theoreticalsciences:white_hole_emitter",
+  "category": "theoreticalsciences:singularities",
+  "sortnum": 39,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:white_hole_emitter",
+      "title": "White Hole Emitter",
+      "text": "A black hole, run backwards in time. Nothing can enter; everything comes out. The $(item)White Hole Emitter$() should not work. It does.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Theory check: the equations of general relativity are time-symmetric, so every black hole solution has a reversed twin - a $(thing)white hole$(), a horizon that can only be left, never crossed inward. None has ever been observed. Its lensing ring, I note, behaves the opposite way to a black hole's."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "White Hole Emitter",
+      "multiblock": {
+        "pattern": [
+          [
+            "__ABBBA__",
+            "_BBBBBBB_",
+            "ABBBBBBBA",
+            "BBBB_BBBB",
+            "BBB_D_BBB",
+            "BBBB_BBBB",
+            "ABBBBBBBA",
+            "_BBBBBBB_",
+            "__ABBBA__"
+          ],
+          [
+            "____E____",
+            "__EEEEE__",
+            "_EE   EE_",
+            "_E     E_",
+            "EE     EE",
+            "_E     E_",
+            "_EE   EE_",
+            "__EEEEE__",
+            "____E____"
+          ],
+          [
+            "_________",
+            "___EEE___",
+            "__EE EE__",
+            "_EE   EE_",
+            "_E     E_",
+            "_EE   EE_",
+            "__EE EE__",
+            "___EEE___",
+            "_________"
+          ],
+          [
+            "_________",
+            "____A____",
+            "__AAAAA__",
+            "__A   A__",
+            "_AA   AA_",
+            "__A   A__",
+            "__AAAAA__",
+            "____A____",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "___EEE___",
+            "__EE EE__",
+            "__E   E__",
+            "__EE EE__",
+            "___EEE___",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "____E____",
+            "___EEE___",
+            "__EE EE__",
+            "___EEE___",
+            "____E____",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "_________",
+            "___FFF___",
+            "___F F___",
+            "___FFF___",
+            "_________",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "____E____",
+            "___EEE___",
+            "__EE EE__",
+            "___EEE___",
+            "____E____",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "_________",
+            "___EEE___",
+            "__EE EE__",
+            "__E   E__",
+            "__EE EE__",
+            "___EEE___",
+            "_________",
+            "_________"
+          ],
+          [
+            "_________",
+            "____A____",
+            "__AAAAA__",
+            "__A   A__",
+            "_AA   AA_",
+            "__A   A__",
+            "__AAAAA__",
+            "____A____",
+            "_________"
+          ],
+          [
+            "_________",
+            "___E0E___",
+            "__EE EE__",
+            "_EE   EE_",
+            "_E     E_",
+            "_EE   EE_",
+            "__EE EE__",
+            "___EEE___",
+            "_________"
+          ],
+          [
+            "____E____",
+            "__GGGGG__",
+            "_GG   GG_",
+            "_G     G_",
+            "EG     GE",
+            "_G     G_",
+            "_GG   GG_",
+            "__GGGGG__",
+            "____E____"
+          ],
+          [
+            "__AHIHA__",
+            "_HHHHHHH_",
+            "AHHHHHHHA",
+            "HHHH_HHHH",
+            "IHH_D_HHI",
+            "HHHH_HHHH",
+            "AHHHHHHHA",
+            "_HHHHHHH_",
+            "__AHIHA__"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:white_hole_emitter",
+          "A": "theoreticalsciences:hyperframe_casing",
+          "B": "theoreticalsciences:hawking_radiation_collector",
+          "D": "#theoreticalsciences:multiblock/field_emitter_or_better",
+          "E": "theoreticalsciences:containment_field_glass",
+          "F": "#theoreticalsciences:multiblock/superconducting_coil_block_or_better",
+          "G": "theoreticalsciences:cryogenic_cooling_jacket",
+          "H": "theoreticalsciences:spacetime_casing",
+          "I": "#theoreticalsciences:multiblock/spacetime_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Cosmic String Segment, Ejecta Rock, Exotic Matter, Exotic Matter Crystal, Primordial Ejecta, Retrocausal Crystal, Stellar Core, Stellar Plasma, White Hole Fragment."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:white_hole_emitter",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/white_holes"
+}

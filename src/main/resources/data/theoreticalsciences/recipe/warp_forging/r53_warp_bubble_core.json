@@ -1,0 +1,63 @@
+{
+  "type": "theoreticalsciences:warp_forging",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:negative_energy_lattice",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:alcubierre_coil",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:lense_thirring_vortex_core",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:strained_spacetime",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:warp_bubble_core",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 2400,
+  "research": "theoreticalsciences:alcubierre_metric",
+  "unscaled": true,
+  "insight_per_run": 20,
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:geodesic_compass"
+    }
+  ],
+  "physics": {
+    "windows": [
+      {
+        "q": "v",
+        "min": 1.0,
+        "max": 99.0
+      },
+      {
+        "q": "E",
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "q": "tid",
+        "min": 0.0,
+        "max": 5.0
+      },
+      {
+        "q": "Rs",
+        "min": 10.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

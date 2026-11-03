@@ -1,0 +1,23 @@
+{
+  "name": "Axiom of Choice",
+  "icon": "theoreticalsciences:axiom_of_choice",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:axiom_of_choice",
+      "title": "Axiom of Choice",
+      "text": "Given any collection of non-empty sets, you may choose one element from each, even when no rule tells you which. It seems harmless, yet it implies that a sphere can be cut into finitely many pieces and reassembled into two spheres. The token feels decisive."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)I asked the Formal Proof Assistant to choose a point from each piece of the continuum and it could not without an extra axiom. I wrote one in and it immediately proved Banach-Tarski."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Formal Proof Assistant$().$(br2)$(thing)Unlocked by$(): Set Theory.$(br2)$(thing)Used in$(): Absolute Singularity, Banach-Tarski Sphere."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/formal_logic"
+}

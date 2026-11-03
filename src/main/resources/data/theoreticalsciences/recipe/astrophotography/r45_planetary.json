@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:planetary_plate",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 400,
+  "research": "theoreticalsciences:telescope_optics",
+  "unscaled": true,
+  "insight_per_run": 3,
+  "physics": {
+    "vars": {
+      "mreq": 0.0
+    },
+    "windows": [
+      {
+        "q": "res",
+        "min": 0.0,
+        "max": 1.1
+      }
+    ]
+  }
+}

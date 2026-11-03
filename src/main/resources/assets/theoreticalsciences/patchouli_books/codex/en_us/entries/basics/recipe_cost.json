@@ -1,0 +1,25 @@
+{
+  "name": "Heavy Industry",
+  "icon": "theoreticalsciences:coherent_wiring_harness",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:coherent_wiring_harness,theoreticalsciences:entangled_bus_bar,theoreticalsciences:chronoplastic_gasket,theoreticalsciences:spacetime_bearing,theoreticalsciences:cosmic_flux_coupler,theoreticalsciences:ontological_junction,theoreticalsciences:transfinite_lattice_bolt,theoreticalsciences:omnilex_seal",
+      "text": "Every multiblock (except generators) takes $(thing)16$() kinds of item and $(thing)16$() fluids at once, and gives up to 4 of each; the smaller machines take a few more than they used to. Recipes are built to fill them: each needs many materials from all over the mod, in quantities that grow steeply with the machine's tier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Engineering Components$() - from the Coherent Wiring Harness (tier 1) to the Omnilex Seal (tier 8) - are the standard parts: each tier's recipes use its own and the one before. Each is made in a machine of its tier from that tier's plate and processor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Some recipes also ask for materials from other mods in your pack (Mekanism, AE2, GregTech, Draconic Evolution, Botania, Malum, Astral Sorcery...). These appear only if that mod is installed. JEI always shows exactly what is needed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pack makers: the common config $(thing)recipeIngredientMultiplier$() scales every machine recipe's inputs (then /reload); KubeJS or a datapack can edit or replace any recipe."
+    }
+  ]
+}

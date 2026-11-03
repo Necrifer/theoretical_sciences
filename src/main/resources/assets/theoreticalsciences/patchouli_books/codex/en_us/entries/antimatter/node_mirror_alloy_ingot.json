@@ -1,0 +1,23 @@
+{
+  "name": "Mirror Alloy Ingot",
+  "icon": "theoreticalsciences:mirror_alloy_ingot",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mirror_alloy_ingot",
+      "title": "Mirror Alloy Ingot",
+      "text": "Matter and antimatter grains alternate in it like a chessboard, each pair held apart by its own Penning field. It hums, and it is warm."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)If the field that keeps a grain of anti-iron from touching iron can be made small enough, the two can share an ingot. The Foundry makes it so."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mirror Matter Foundry$().$(br2)$(thing)Unlocked by$(): Mirror Metallurgy.$(br2)$(thing)Used in$(): Baryogenesis Seed, Dimensional Residue, Hypernova Alloy Ingot, Transcendent Metal Ingot, Transcendent Plasma."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mirror_metallurgy"
+}

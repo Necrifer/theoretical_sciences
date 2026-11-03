@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.r54_unruh",
+  "description": "book.theoreticalsciences.codex.spacetime.r54_unruh.desc",
+  "icon": {
+    "item": "theoreticalsciences:unruh_accelerator"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 65,
+  "y": 9,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:unruh_accelerator"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.r54_unruh.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.r54_unruh.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/probability__r48_monte_carlo"
+    },
+    {
+      "entry": "theoreticalsciences:machines/probability__monte_carlo_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/unruh_effect"
+  }
+}

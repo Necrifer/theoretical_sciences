@@ -1,0 +1,24 @@
+{
+  "name": "Vacuum Fluctuation Harvester",
+  "icon": "theoreticalsciences:vacuum_harvester",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 75,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The dynamical Casimir effect: shake a cavity mirror at twice a mode frequency and real photons are pulled out of the vacuum - parametric amplification of nothing. Here the \"photons\" are whatever virtual particle the Foam resonates with where you stand."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Resonance tuning, Modulation depth \u03b5, Cavity quality Q, Drive field.$(br2)$(thing)Disturbance$(): Mirror drive phase noise: the gain varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Parametric instability: the photon number runs away; The cavity cannot reach that Q at this temperature; Mirror drive too weak for that modulation depth; Interlock: mirror-drive coils not superconducting (too warm); Field above the critical field: the mirror-drive coils quench.$(br2)$(thing)Rate$(): Harvest rate follows the quanta created per stroke."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Parametric gain: G = \u03b5Q/4$(br)Quanta per stroke: N = G\u00b2/(1 \u2212 G\u00b2)$(br)Achievable Q: Q_max \u221d 1/R_s(T)$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Seismology",
+  "icon": "theoreticalsciences:seismograph",
+  "category": "theoreticalsciences:geography",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:seismograph,theoreticalsciences:seismic_recorder_drum",
+      "text": "An earthquake sends out two kinds of wave. $(thing)Pressure waves$() push and pull the rock along their path and travel fastest, about 6 km/s in the crust. $(thing)Shear waves$() shake it sideways and travel at about 3.5 km/s. The farther the source, the larger the gap between them: d = \u0394t\u00b7v_p\u00b7v_s/(v_p \u2212 v_s)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Seismograph$() must stand on solid ground. Each finished run times the echoes from below and reports the depth of the nearest ore or cave - within 64 m and three blocks to either side."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/seismology"
+}

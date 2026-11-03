@@ -1,0 +1,49 @@
+{
+  "title": "Geodesics",
+  "description": "In curved spacetime a falling body takes the straightest path there is - a geodesic. Gravity is not a force; it is the shape of the road. Unlocks the Geodesic Compass.",
+  "icon": "theoreticalsciences:geodesic_compass",
+  "x": 10,
+  "y": 2,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:general_relativity",
+    "theoreticalsciences:geometric_topology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:proof_mass",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:metric_tensor",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A mass M is squeezed until light cannot escape it. Write the radius r at which that happens, from gravity's constant G and the speed of light c.",
+    "name": "Schwarzschild radius",
+    "lhs": "r",
+    "form": "2 * G * M / c ^ 2",
+    "expr": "2 * G * M / c ^ 2 / 1000",
+    "ask": "Find r in kilometres for the Sun: M = 1.989e30 kg, G = 6.674e-11, c = 2.998e8 m/s.",
+    "vars": {
+      "r": "radius (km)",
+      "G": "gravitational constant",
+      "M": "mass (kg)",
+      "c": "speed of light (m/s)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+30,
+      "c": 299800000.0
+    },
+    "unit": "km",
+    "method": "Where the escape speed \u221a(2GM/r) reaches c - which, by luck, is exactly what general relativity gives too.",
+    "distractors": [
+      "\u03c0",
+      "4",
+      "h"
+    ]
+  }
+}

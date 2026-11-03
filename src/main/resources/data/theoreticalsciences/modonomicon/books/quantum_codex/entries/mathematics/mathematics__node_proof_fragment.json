@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_proof_fragment",
+  "description": "book.theoreticalsciences.codex.mathematics.node_proof_fragment.desc",
+  "icon": {
+    "item": "theoreticalsciences:proof_fragment"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 11,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:proof_fragment"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_proof_fragment.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_proof_fragment.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_proof_fragment.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__fractal_space",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/platonic_realm"
+  }
+}

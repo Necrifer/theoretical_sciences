@@ -1,0 +1,19 @@
+{
+  "name": "Sapphire Window",
+  "icon": "theoreticalsciences:sapphire_window",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:sapphire_window",
+      "title": "Sapphire Window",
+      "text": "A disc of synthetic sapphire, aluminium oxide grown from the melt: hard, clear from ultraviolet to infrared, and it stays clear when frozen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Optical Workshop$().$(br2)$(thing)Unlocked by$(): Geometric Optics.$(br2)$(thing)Used in$(): Cryogenic Receiver."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/geometric_optics"
+}

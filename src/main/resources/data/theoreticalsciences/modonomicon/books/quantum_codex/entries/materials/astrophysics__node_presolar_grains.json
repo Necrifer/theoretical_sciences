@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.node_presolar_grains",
+  "description": "book.theoreticalsciences.codex.astrophysics.node_presolar_grains.desc",
+  "icon": {
+    "item": "theoreticalsciences:presolar_grains"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 28,
+  "y": 18,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:presolar_grains"
+      },
+      "text": "book.theoreticalsciences.codex.astrophysics.node_presolar_grains.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.node_presolar_grains.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/astrophysics__r45_meteorites",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/meteoritics"
+  }
+}

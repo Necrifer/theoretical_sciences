@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.galton_board",
+  "description": "book.theoreticalsciences.codex.probability.galton_board.desc",
+  "icon": {
+    "item": "theoreticalsciences:galton_board"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 10,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:galton_board"
+      },
+      "text": "book.theoreticalsciences.codex.probability.galton_board.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.galton_board.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.galton_board.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.galton_board.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:galton_board"
+      },
+      "text": "book.theoreticalsciences.codex.probability.galton_board.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/mathematics__peano_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.node_focus_receiver",
+  "description": "book.theoreticalsciences.codex.probability.node_focus_receiver.desc",
+  "icon": {
+    "item": "theoreticalsciences:focus_receiver"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 49,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:focus_receiver"
+      },
+      "text": "book.theoreticalsciences.codex.probability.node_focus_receiver.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.node_focus_receiver.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/probability__galton_board",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

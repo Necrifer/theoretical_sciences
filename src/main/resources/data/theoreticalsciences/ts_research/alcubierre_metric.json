@@ -1,0 +1,61 @@
+{
+  "title": "Alcubierre Metric",
+  "description": "General relativity allows a bubble of flat space to be carried faster than light - if its wall is made of negative energy. Unlocks the Warp Field Forge.",
+  "icon": "theoreticalsciences:warp_bubble_core",
+  "x": 16,
+  "y": 4,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:tidal_physics",
+    "theoreticalsciences:traversable_wormholes"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:lense_thirring_vortex_core",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:negative_energy_lattice",
+      "count": 2
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "Energy and mass are one: write the energy E locked in a mass M, with the speed of light c.",
+    "name": "Mass-energy equivalence",
+    "lhs": "E",
+    "form": "M * c ^ 2",
+    "expr": "M * c ^ 2 / u",
+    "ask": "Find E in units of 10\u2074\u2074 J (u = @{u}) for the mass of Jupiter, M = @{M} kg - roughly the negative energy a small warp bubble needs (c = 2.998e8 m/s).",
+    "vars": {
+      "E": "energy (10\u2074\u2074 J)",
+      "M": "mass (kg)",
+      "c": "speed of light (m/s)",
+      "u": "10\u2074\u2074"
+    },
+    "given": {
+      "M": 1.898e+27,
+      "c": 299800000.0,
+      "u": 1e+44
+    },
+    "unit": "\u00d710\u2074\u2074 J",
+    "method": "From the energy of a body at rest in special relativity: E\u00b2 = (pc)\u00b2 + (mc\u00b2)\u00b2 with p = 0.",
+    "distractors": [
+      "2",
+      "G",
+      "h"
+    ],
+    "vary": {
+      "M": [
+        1.13e+27,
+        2.66e+27,
+        1e+25
+      ],
+      "u": [
+        6e+43,
+        1.4e+44,
+        1e+42
+      ]
+    }
+  }
+}

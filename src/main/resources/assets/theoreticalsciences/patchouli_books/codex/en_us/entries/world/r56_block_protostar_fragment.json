@@ -1,0 +1,18 @@
+{
+  "name": "Protostar Fragment",
+  "icon": "theoreticalsciences:protostar_fragment",
+  "category": "theoreticalsciences:world",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:protostar_fragment",
+      "text": "$(item)Protostar Fragment$(). A piece of a star not yet lit, buried in a nebula's ice. Mined, it gives a Protostellar Ember."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Found$(): Inside the Nebula's ice.$(br2)$(thing)Used$(): Gives a Protostellar Ember: thermoelectric fuel that burns for a long time, or feed for the Accretion Disk Reactor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galactic_dynamics"
+}

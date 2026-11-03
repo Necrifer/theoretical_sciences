@@ -1,0 +1,19 @@
+{
+  "name": "Fluorspar",
+  "icon": "theoreticalsciences:fluorspar",
+  "category": "theoreticalsciences:nuclear",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fluorspar",
+      "title": "Fluorspar",
+      "text": "Calcium fluoride, which grows in veins beside calcite. The fluorine that turns uranium into a gas comes from here."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Spectrograph$().$(br2)$(thing)Unlocked by$(): Isotope Separation.$(br2)$(thing)Used in$(): Fluorite Boule, Molten Salt Fuel, Rare Earth Oxide, Uranium Hexafluoride."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/isotope_separation"
+}

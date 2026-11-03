@@ -1,0 +1,64 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.wormhole_projector",
+  "description": "book.theoreticalsciences.codex.spacetime.wormhole_projector.desc",
+  "icon": {
+    "item": "theoreticalsciences:wormhole_projector"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 68,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:wormhole_projector"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:wormhole_projector"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.wormhole_projector.p6"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/singularities__white_hole_emitter"
+    },
+    {
+      "entry": "theoreticalsciences:machines/fabrication__catalysts"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/traversable_wormholes"
+  }
+}

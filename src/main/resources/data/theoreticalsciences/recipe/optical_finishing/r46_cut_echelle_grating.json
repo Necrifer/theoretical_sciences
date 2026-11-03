@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:optical_finishing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 2
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:echelle_grating",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 600,
+  "research": "theoreticalsciences:geometric_optics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "n": 1.458
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": -0.02,
+        "max": 0.02
+      },
+      {
+        "q": "e",
+        "min": 0.0,
+        "max": 34.0
+      }
+    ]
+  }
+}

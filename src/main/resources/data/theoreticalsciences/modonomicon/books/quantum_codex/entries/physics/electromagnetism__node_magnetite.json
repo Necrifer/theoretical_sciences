@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_magnetite",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_magnetite.desc",
+  "icon": {
+    "item": "theoreticalsciences:magnetite"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 2,
+  "y": 50,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:magnetite"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_magnetite.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_magnetite.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__r37_induction",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electromagnetic_induction"
+  }
+}

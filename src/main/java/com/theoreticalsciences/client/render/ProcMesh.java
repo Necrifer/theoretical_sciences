@@ -9,6 +9,10 @@ public final class ProcMesh {
     /** Axis-aligned box in the current pose. argb colour; normals per face so world lighting shades it properly. */
     public static void box(PoseStack ps, VertexConsumer vc, float x0, float y0, float z0, float x1, float y1, float z1,
                            int argb, int light, int overlay) {
+        // corners may be given in either order (mirrored parts often are): sort them so every face points outward
+        if (x0 > x1) { float t = x0; x0 = x1; x1 = t; }
+        if (y0 > y1) { float t = y0; y0 = y1; y1 = t; }
+        if (z0 > z1) { float t = z0; z0 = z1; z1 = t; }
         PoseStack.Pose p = ps.last();
         float a = ((argb >>> 24) & 255) / 255F, r = ((argb >> 16) & 255) / 255F, g = ((argb >> 8) & 255) / 255F, b = (argb & 255) / 255F;
         // -Y, +Y, -Z, +Z, -X, +X

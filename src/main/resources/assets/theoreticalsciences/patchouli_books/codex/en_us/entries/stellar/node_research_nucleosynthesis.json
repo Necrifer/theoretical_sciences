@@ -1,0 +1,19 @@
+{
+  "name": "Nucleosynthesis",
+  "icon": "theoreticalsciences:r_process_cluster",
+  "advancement": "theoreticalsciences:research/nucleosynthesis",
+  "category": "theoreticalsciences:stellar",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:r_process_cluster",
+      "title": "Nucleosynthesis",
+      "text": "$(thing)Nucleosynthesis$()$(br2)Every element heavier than helium was made in a star. Iron is where fusion stops; supernovae make the rest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Stellar Evolution.$(br2)$(thing)Samples$(): 2 White Dwarf Core.$(br2)$(thing)Derivation$(): Find the energy (MeV) released when four hydrogen atoms fuse into one helium-4 atom (atomic masses in u, 1 u = 931.5 MeV)."
+    }
+  ]
+}

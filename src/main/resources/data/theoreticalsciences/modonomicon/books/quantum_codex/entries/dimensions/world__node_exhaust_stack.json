@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_exhaust_stack",
+  "description": "book.theoreticalsciences.codex.world.node_exhaust_stack.desc",
+  "icon": {
+    "item": "theoreticalsciences:exhaust_stack"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 12,
+  "y": 4,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:exhaust_stack"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_exhaust_stack.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_exhaust_stack.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

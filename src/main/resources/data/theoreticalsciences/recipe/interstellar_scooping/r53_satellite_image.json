@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:interstellar_scooping",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:survey_satellite"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:satellite_image_plate",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 1200,
+  "research": "theoreticalsciences:remote_sensing",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "environment": {
+    "min_y": 200,
+    "dimensions": [
+      "theoreticalsciences:accretion_frontier",
+      "minecraft:the_end"
+    ]
+  }
+}

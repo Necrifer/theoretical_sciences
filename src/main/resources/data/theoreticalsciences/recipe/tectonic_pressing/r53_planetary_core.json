@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:tectonic_pressing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:exoplanet_core_sample",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:core_iron",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:planetary_core_sample",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 1600,
+  "research": "theoreticalsciences:planetary_geology",
+  "unscaled": true,
+  "insight_per_run": 10,
+  "physics": {
+    "vars": {
+      "Ea": 300000.0,
+      "Tr": 2300.0
+    },
+    "windows": [
+      {
+        "q": "mB",
+        "min": 0.3,
+        "max": 100.0
+      },
+      {
+        "q": "Tf",
+        "min": 1800.0,
+        "max": 2600.0
+      }
+    ]
+  }
+}

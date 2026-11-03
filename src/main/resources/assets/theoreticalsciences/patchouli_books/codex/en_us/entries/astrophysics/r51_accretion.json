@@ -1,0 +1,22 @@
+{
+  "name": "The Accretion Disk Reactor",
+  "icon": "theoreticalsciences:accretion_disk_reactor",
+  "category": "theoreticalsciences:astrophysics",
+  "sortnum": 22,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:accretion_disk_reactor,theoreticalsciences:quasar_jet_filament,theoreticalsciences:accretion_disk_fragment",
+      "text": "Matter falling onto a black hole gives up energy as it spirals in - \u03b7 of its rest energy, from 6% for a hole that does not spin to a third for one spinning at the limit. Fusion manages 0.7%."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Accretion Disk Reactor$() holds a black hole in a sphere of horizon containment, its disk turning in the confinement ring. Set the hole's mass, the feed rate and the spin. Power follows the luminosity $(thing)L = \u03b7\u00b7\u1e41c\u00b2$() - but the light pushes back on the gas, and past the $(thing)Eddington luminosity$(), L = 1.26\u00d710\u00b3\u00b9 (M/M\u2609) W, the disk is blown away and the reactor stops."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It burns Interstellar Dust with Molecular Cloud gas, Accretion Disk Fragments, or a whole Brown Dwarf Core, leaving $(fluid)Accretion Disk Plasma$() - and now and then a $(item)Quasar Jet Filament$() from the jets out of its poles."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/accretion_physics"
+}

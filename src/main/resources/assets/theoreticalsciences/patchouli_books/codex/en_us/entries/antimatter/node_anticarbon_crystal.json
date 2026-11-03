@@ -1,0 +1,23 @@
+{
+  "name": "Anticarbon Crystal",
+  "icon": "theoreticalsciences:anticarbon_crystal",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anticarbon_crystal",
+      "title": "Anticarbon Crystal",
+      "text": "Antidiamond: the hardest thing in the Antiverse, glowing faintly where stray matter atoms meet its surface."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Picked out of anticarbon veins deep in the antistone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mirror Matter Foundry$().$(br2)$(thing)Mined$(): from $(item)Anticarbon Ore$(), in veins through the Antiverse.$(br2)$(thing)Found in$(): Antiverse Vault chests.$(br2)$(thing)Unlocked by$(): CPT Symmetry.$(br2)$(thing)Used in$(): Mirror Processor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cpt_symmetry"
+}

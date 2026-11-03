@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.graviton_condenser",
+  "description": "book.theoreticalsciences.codex.strings.graviton_condenser.desc",
+  "icon": {
+    "item": "theoreticalsciences:graviton_condenser"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 71,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_condenser"
+      },
+      "text": "book.theoreticalsciences.codex.strings.graviton_condenser.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.graviton_condenser.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.graviton_condenser.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.graviton_condenser.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_condenser"
+      },
+      "text": "book.theoreticalsciences.codex.strings.graviton_condenser.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/strings__string_resonance_loom"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_gravity"
+  }
+}

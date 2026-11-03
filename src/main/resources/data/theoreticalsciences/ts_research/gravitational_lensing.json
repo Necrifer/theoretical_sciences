@@ -1,0 +1,58 @@
+{
+  "title": "Gravitational Lensing",
+  "description": "Light follows geodesics too: a mass bends the light passing it, twice as much as Newton would say, and a mass exactly between you and a star turns it into a ring. Unlocks the Lensing Concentrator.",
+  "icon": "theoreticalsciences:einstein_ring_lens",
+  "x": 11,
+  "y": 3,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:geodesics",
+    "theoreticalsciences:observational_astronomy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:einstein_ring_lens",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:deep_sky_plate",
+      "count": 2
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "A ray passes a mass M at closest distance b and is bent. Write the angle \u03b1 it turns through, with G and c.",
+    "name": "Einstein deflection",
+    "lhs": "\u03b1",
+    "form": "4 * G * M / ( c ^ 2 * b )",
+    "expr": "4 * G * M / ( c ^ 2 * b ) * 206265",
+    "ask": "Find \u03b1 in arcseconds for starlight grazing the Sun: M = 1.989e30 kg, b = @{b} m, G = 6.674e-11, c = 2.998e8 m/s.",
+    "vars": {
+      "\u03b1": "deflection (arcsec)",
+      "G": "gravitational constant",
+      "M": "mass (kg)",
+      "c": "speed of light",
+      "b": "closest distance (m)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 1.989e+30,
+      "b": 696000000.0,
+      "c": 299800000.0
+    },
+    "unit": "\u2033",
+    "method": "Newton gives 2GM/(c\u00b2b); curved space adds as much again - which Eddington's 1919 eclipse confirmed.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "h"
+    ],
+    "vary": {
+      "b": [
+        417000000.0,
+        975000000.0,
+        1000000.0
+      ]
+    }
+  }
+}

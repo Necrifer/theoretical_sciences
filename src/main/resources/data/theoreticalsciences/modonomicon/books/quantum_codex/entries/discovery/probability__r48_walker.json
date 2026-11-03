@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.r48_walker",
+  "description": "book.theoreticalsciences.codex.probability.r48_walker.desc",
+  "icon": {
+    "item": "theoreticalsciences:random_walker_spawn_egg"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 25,
+  "y": -2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:random_walker_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.probability.r48_walker.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r48_walker.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.r48_walker.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__r46_better_telescopes"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/optics__r46_workshop"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brownian_motion"
+  }
+}

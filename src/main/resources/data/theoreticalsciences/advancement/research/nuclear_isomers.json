@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:hafnium_178m2_isomer"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.nuclear_isomers"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.nuclear_isomers.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/transuranic_synthesis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

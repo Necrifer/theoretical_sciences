@@ -8,35 +8,35 @@ at the end of everything.
 
 ![Theoretical Sciences](src/main/resources/theoreticalsciences_logo.png)
 
-## Content
+**Download:** [CurseForge](https://www.curseforge.com/minecraft/mc-mods/theoretical-sciences) · **Bugs and suggestions:** [Issues](https://github.com/Necrifer/theoretical_sciences/issues)
 
-* **78 machines, 37 of them multiblocks.** The big ones run on real physics models: the operator sets fields,
-  temperatures and beam energies on a console, and each recipe has its own unique hazardous environment to perform. Tuned
-  multiblocks drift and wear their containment, overclock and run parallel recipes accelerates it. A failing containment releases
+## What is in it
+
+* **127 machines, 70 of them multiblocks.** The big ones run on real physics models: the operator sets fields,
+  temperatures and beam energies on a console, and each recipe needs its quantities held inside a window. Tuned
+  multiblocks drift, wear their containment, overclock and run parallel recipes. A failing containment releases
   hazards.
-* **A research tree of 148 entries.** Many are unlocked by solving a derivation puzzle (build the equation, find the
-  answer) with values that differ in every world. Each equations are exact, or derivative of its real life equivalent.
-* **Ten dimensions:** Representing the concepts of the Universe, the Quantum Foam, the Bulk, Hyperdimensional Reality, the Platonic Realm,
-  the Transfinite Hierarchy, the Antiverse, black and white hole interiors, the Living Proof and the Transcendental.
-  Each has its ownlaws, creatures and soundtrack.
-* **The endgame:** the Omnilex Engine's impossible recipe opens the gate to Transcendental; Alpha Omega awaits in the Living
+* **A research tree of 232 entries**, with seven branches added in 1.1: astrophysics, Earth & mapping, nuclear
+  science, electromagnetism, general relativity, optics and probability. Many entries are unlocked by solving a
+  derivation puzzle (build the equation, find the answer) with values that differ in every world.
+* **Twelve dimensions:** the Quantum Foam, the Bulk, Hyperdimensional Reality, the Platonic Realm, the Transfinite
+  Hierarchy, the Antiverse, black and white hole interiors, the Living Proof, the Transcendental, the Planetary
+  Interior and the Accretion Frontier. Each has its own laws, creatures and soundtrack.
+* **The endgame:** the Omnilex Engine's impossible recipe opens the Transcendental; Alpha Omega waits in the Living
   Proof; the Omnipotence Core can materialize and forge anything — until its Shutdown Sequence, the Sundering and the
-  Rekindling. Powerful tools, armour and weapons that run on Eschaton Charge, and an Omnipotence Core of your
-  own that must be attuned to every place it stands in, are within your grasp, at a steep price and cost.
+  Rekindling. After that come tools, armour and weapons that run on Eschaton Charge, and an Omnipotence Core of your
+  own that must be attuned to every place it stands in.
 * **Singularities for every mod:** every ingot of every installed mod gets one automatically.
 * **The Quantum Codex:** the mod's own guide book, revealed as you progress, with every recipe in it.
-* **874 items and blocks, 48 fluids, 25 creatures**, all with generated art and a synthesised soundtrack.
-* **Extreme costly, deeply intertwined recipes**, that puts the most costly items you have seen elsewhere to shame.
-* **Living, automatic Creative Mode items recipe support**: Creative-only items are automatically detected from your other installed mods,
-  with an endgame recipe at the Omnipotence Core’s Forge, built from that mod’s own most advanced items.
-  For modpack authors, this can be done with just a tag addition for any that escapes detection.
+* **About 1,260 items and blocks, 69 fluids, 35 creatures**, all with generated art and a synthesised soundtrack.
 
 ## Compatibility
 
 * No mixins, no access transformers, no coremods, no required dependencies.
 * Standard FE, item and fluid capabilities on every machine and on Interface Ports.
 * Optional integrations: **JEI** or **EMI** (every recipe, 3D structure previews), **Jade** (machine status, recipe
-  and progress), **KubeJS** (see below), **AE2** (Interface Ports automatically detects and registers as part of ME network).
+  and progress), **KubeJS** (see below),
+  **AE2** (Interface Ports join an ME network).
 
 ## For modpack developers
 
@@ -49,7 +49,7 @@ datapack or with KubeJS:
 Addons are welcome: **[docs/ADDONS.md](docs/ADDONS.md)** (and the licence below).
 
 Server config: `config/theoreticalsciences-common.toml` (energy, duration and ingredient multipliers, drift and wear,
-research and puzzles, singularities, creative duplicators, Chronal Accelerator). Client config:
+research and puzzles, singularities, Chronal Accelerator). Client config:
 `config/theoreticalsciences-client.toml` (gravitational lensing, structure distortion, sky, particles).
 
 Commands (operators):

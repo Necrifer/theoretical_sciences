@@ -1,0 +1,62 @@
+{
+  "title": "Radioactivity",
+  "description": "Some nuclei are unstable and fall apart on their own, at random, but at a rate fixed for each kind. Half of any sample is gone after its half-life, whatever you do to it. Unlocks Radium Salt, the Geiger Tube and Counter, and the Prussian Blue Tablet.",
+  "icon": "theoreticalsciences:radium_salt",
+  "x": 1,
+  "y": 12,
+  "insight": 10,
+  "requires": [
+    "theoreticalsciences:quantum_foundations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:raw_pitchblende",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Each unstable nucleus has the same small chance \u03bb per second of decaying, whatever the others do. Starting with N _ 0 nuclei, write how many N are left after a time t.",
+    "name": "Radioactive decay law",
+    "lhs": "N",
+    "form": "N _ 0 * exp ( - \u03bb * t )",
+    "expr": "M * exp ( - 0.693147 * t / T )",
+    "ask": "A sample starts with M = @{M} radium nuclei; radium-226 has a half-life T of @{T} years. Find how many remain after t = @{t} years.",
+    "vars": {
+      "N": "nuclei left",
+      "\u03bb": "decay constant (per year)",
+      "t": "time (years)",
+      "M": "nuclei at the start",
+      "T": "half-life (years)"
+    },
+    "given": {
+      "M": 1000,
+      "t": 400,
+      "T": 1600
+    },
+    "unit": "nuclei",
+    "method": "dN/dt = \u2212\u03bbN: the decay rate is proportional to what is left. The half-life is the time for exp(\u2212\u03bbt) to reach 1/2, so \u03bb = ln 2 / T.",
+    "distractors": [
+      "\u03c4",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "M": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "t": [
+        240.0,
+        560.0,
+        1.0
+      ],
+      "T": [
+        960.0,
+        2240.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "book.theoreticalsciences.codex.basics.guide_12_multiblocks",
+  "description": "book.theoreticalsciences.codex.basics.guide_12_multiblocks.desc",
+  "icon": {
+    "item": "theoreticalsciences:structure_assembler"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": -4,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:structure_assembler"
+      },
+      "text": "book.theoreticalsciences.codex.basics.guide_12_multiblocks.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.guide_12_multiblocks.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.basics.guide_12_multiblocks.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/basics__guide_11_paths"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/casimir_effect"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "The Markov Chain Refinery",
+  "icon": "theoreticalsciences:markov_chain_refinery",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 23,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:markov_chain_refinery,theoreticalsciences:ergodic_mixer_core",
+      "text": "Three vats in a ring, A \u2192 B \u2192 C \u2192 A, the feed hopping on by chances p, q and r. However it starts, it settles into the steady state: time in each vat \u221d $(thing)1/(its chance of leaving)$(). Give a vat three fifths of the time and monazite sand comes out as that vat's product: rare earths, thorium, or phosphate. Make all three equal and warm helium thermalises into $(fluid)Maxwell-Boltzmann Gas$(). The slowest hop sets how fast it mixes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "An $(item)Ergodic Mixer Core$() visits every state there is: its time average is its average over all of them (Kac: a set of measure \u03bc is revisited every t/\u03bc on average)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ergodic_theory"
+}

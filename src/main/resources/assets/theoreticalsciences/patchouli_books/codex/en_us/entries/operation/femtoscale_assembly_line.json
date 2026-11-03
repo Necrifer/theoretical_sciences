@@ -1,0 +1,24 @@
+{
+  "name": "Femtoscale Assembly Line",
+  "icon": "theoreticalsciences:femtoscale_assembly_line",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 34,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Parts are held in optical and magnetic traps of stiffness \u03ba. Equipartition sets the jitter: \u03c3 = \u221a(kT/\u03ba). To place parts to a picometre you need a stiff trap and a cold one - but light heats the trap and ultraviolet damages the parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Trap laser power, Wavelength, Tweezer field.$(br2)$(thing)Disturbance$(): Laser pointing noise: stiffness varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Photodamage: the light is breaking the parts; Interlock: magnetic-tweezer coils not superconducting (too warm); Field above the critical field: the magnetic-tweezer coils quench.$(br2)$(thing)Rate$(): A stiffer trap settles faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Trap stiffness \u03ba: \u03ba \u221d P/\u03bb\u00b3 + B\u00b2$(br)Trap temperature: T_trap = T + absorbed light$(br)Placement jitter \u03c3: \u03c3 = \u221a(kT/\u03ba)$(br)Photodamage index: \u221d P/\u03bb\u00b3$(br)Critical field: B_c(T) = B_c2(0)\u00b7(1 \u2212 (T/T_c)\u00b2)"
+    }
+  ]
+}

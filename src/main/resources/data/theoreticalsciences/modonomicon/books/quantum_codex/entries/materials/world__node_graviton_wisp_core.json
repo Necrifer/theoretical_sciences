@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_graviton_wisp_core",
+  "description": "book.theoreticalsciences.codex.world.node_graviton_wisp_core.desc",
+  "icon": {
+    "item": "theoreticalsciences:graviton_wisp_core"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 141,
+  "y": 43,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graviton_wisp_core"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_graviton_wisp_core.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_graviton_wisp_core.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.node_graviton_wisp_core.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/world__bulk",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brane_cosmology"
+  }
+}

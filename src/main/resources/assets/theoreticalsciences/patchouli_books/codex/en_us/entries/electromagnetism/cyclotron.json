@@ -1,0 +1,115 @@
+{
+  "name": "Cyclotron",
+  "icon": "theoreticalsciences:cyclotron",
+  "category": "theoreticalsciences:electromagnetism",
+  "sortnum": 102,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cyclotron",
+      "title": "Cyclotron",
+      "text": "Protons spiralling outward between two copper dees, kicked across the gap twice a turn by a radio-frequency voltage that must keep exact step with them.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the field, then tune the RF to the protons' cyclotron frequency, f = qB/2\u03c0m (15.25 MHz per tesla). The beam reaches E = (qBR)\u00b2/2m at the extraction radius; as it gains energy its mass grows and it slips out of phase - keep the slip under 90\u00b0. Above 2.2 T the iron saturates. Beam power heats the target."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cyclotron",
+      "multiblock": {
+        "pattern": [
+          [
+            "A_________A",
+            "_A_AAAAA_A_",
+            "__AAAAAAA__",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "__AAAAAAA__",
+            "_A_AAAAA_A_",
+            "A_________A"
+          ],
+          [
+            "A_________A",
+            "___BBBBB___",
+            "__BAAAAAB__",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "__BAAAAAB__",
+            "___BBBBB___",
+            "A_________A"
+          ],
+          [
+            "A_________A",
+            "____D D____",
+            "___DD DD___",
+            "__DDD DDD__",
+            "_DDDD DDDD_",
+            "_DDDD DDDEE",
+            "_DDDD DDDD_",
+            "__DDD DDD__",
+            "___DD DD___",
+            "____D D____",
+            "A_________A"
+          ],
+          [
+            "A____0____A",
+            "___BBBBB___",
+            "__BAAAAAB__",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "_BAAAAAAAB_",
+            "__BAAAAAB__",
+            "___BBBBB___",
+            "A_________A"
+          ],
+          [
+            "A_________A",
+            "_A_AAFAA_A_",
+            "__AAAAAAA__",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "_FAAAAAAAF_",
+            "_AAAAAAAAA_",
+            "_AAAAAAAAA_",
+            "__AAAAAAA__",
+            "_A_AAFAA_A_",
+            "A_________A"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:cyclotron",
+          "A": "theoreticalsciences:cyclotron_yoke",
+          "B": "theoreticalsciences:mhd_field_magnet",
+          "D": "theoreticalsciences:cyclotron_dee",
+          "E": "theoreticalsciences:rf_oscillator",
+          "F": "#theoreticalsciences:multiblock/cyclotron_yoke_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Cobalt-57 Source, Hafnium-178m2 Isomer."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cyclotron",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cyclotron_physics"
+}

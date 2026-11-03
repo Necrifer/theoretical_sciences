@@ -1,0 +1,18 @@
+{
+  "name": "Asteroid Rock",
+  "icon": "theoreticalsciences:asteroid_rock",
+  "category": "theoreticalsciences:world",
+  "sortnum": 27,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:asteroid_rock",
+      "text": "$(item)Asteroid Rock$(). The rubble of planetesimals that never became planets. A Spectrograph sorts its iron meteorites from its chondrules."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Found$(): The Asteroid Belt.$(br2)$(thing)Used$(): The Spectrograph sorts four into two Meteoric Iron and a Chondrite Fragment."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galactic_dynamics"
+}

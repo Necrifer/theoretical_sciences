@@ -51,6 +51,11 @@ public final class QHSounds {
             FLUID_FILL = s("fx.fluid_fill"), FLUID_EMPTY = s("fx.fluid_empty"), MUTATE = s("fx.mutate"),
             HATCH_OPEN = s("fx.hatch_open"), HATCH_CLOSE = s("fx.hatch_close"), EQUIP = s("fx.equip"), ALARM = s("fx.alarm");
 
+    /** 1.10.1: the Accretion Frontier's own sounds (they used to borrow vanilla note blocks, explosions and wardens). */
+    public static final DeferredHolder<SoundEvent, SoundEvent>
+            PULSAR_BEAT = s("frontier.pulsar_beat"), MICROMETEORITE = s("frontier.micrometeorite"), IMP_BURST = s("hawking_imp.burst"),
+            BINARY_SUMMON = s("binary_serpent.summon"), BINARY_WAVE = s("binary_serpent.wave");
+
     private static final DeferredHolder<SoundEvent, SoundEvent>
             MB_BREAK = s("machine_block.break"), MB_STEP = s("machine_block.step"), MB_PLACE = s("machine_block.place"),
             MB_HIT = s("machine_block.hit"), MB_FALL = s("machine_block.fall"),
@@ -66,7 +71,9 @@ public final class QHSounds {
 
     /** ambient / hurt / death for the expansion's creatures, looked up by entity id. */
     public static final String[] NEW_MOBS = {"virtual_pair", "planck_mite", "vacuum_drifter", "hilbert_bellhop", "ordinal_hound", "hypercube_drifter",
-            "tidal_horror", "photon_moth", "annihilator", "positronium_skitterer", "antihydrogen_wisp"};
+            "tidal_horror", "photon_moth", "annihilator", "positronium_skitterer", "antihydrogen_wisp",
+            "magma_crawler", "plume_elemental", "fission_husk", "geodynamo_wraith", "random_walker",
+            "nebuloid", "pulsar_wisp", "tidal_stretcher", "lens_phantom", "hawking_imp", "boltzmann_brain", "black_swan", "binary_serpent"};
     private static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MOB = new java.util.HashMap<>();
 
     static {
@@ -75,7 +82,8 @@ public final class QHSounds {
 
     /** The soundtrack: one piece per dimension, the Living Proof, and Alpha Omega. */
     public static final String[] TRACKS = {"the_bulk", "hyperdimensional_reality", "platonic_realm", "quantum_foam", "transfinite_hierarchy",
-            "black_hole_interior", "white_hole_interior", "transcendental", "living_proof", "alpha_omega", "antiverse"};
+            "black_hole_interior", "white_hole_interior", "transcendental", "living_proof", "alpha_omega", "antiverse",
+            "planetary_interior", "accretion_frontier"};
     public static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MUSIC = new java.util.HashMap<>();
 
     static {

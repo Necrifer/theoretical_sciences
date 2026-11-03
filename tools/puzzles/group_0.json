@@ -1,0 +1,773 @@
+{
+ "casimir_effect": {
+  "goal": "Find the attractive Casimir force between two parallel plates of area A at separation a.",
+  "lhs": "F",
+  "expr": "K * A / a ^ 4",
+  "vars": {
+   "K": "Casimir constant π²ħc/240 (about 1.30e-27 J·m)",
+   "A": "plate area (m²)",
+   "a": "plate separation (here in µm, so K is rescaled to 1.30e-3 N·µm⁴/m²)"
+  },
+  "given": {
+   "K": 0.0013,
+   "A": 1,
+   "a": 0.1
+  },
+  "distractors": [
+   "3",
+   "2",
+   "*",
+   "c"
+  ],
+  "method": "Only vacuum modes that fit between the plates survive; summing the missing zero-point energies gives a pressure that falls off as the fourth power of the gap, times the plate area.",
+  "unit": "N"
+ },
+ "precision_lithography": {
+  "goal": "Find the smallest feature size a lithography lens can print (Rayleigh criterion).",
+  "lhs": "CD",
+  "expr": "k * λ / NA",
+  "vars": {
+   "k": "process factor k1 (about 0.25-0.8)",
+   "λ": "exposure wavelength (nm)",
+   "NA": "numerical aperture of the projection lens"
+  },
+  "given": {
+   "k": 0.3,
+   "λ": 13.5,
+   "NA": 0.33
+  },
+  "distractors": [
+   "*",
+   "2",
+   "sqrt"
+  ],
+  "method": "Diffraction blurs any image to roughly a wavelength divided by how wide a cone of light the lens collects; process tricks shrink it by the factor k1.",
+  "unit": "nm"
+ },
+ "femtoengineering": {
+  "goal": "Find the photon energy needed to resolve (and engineer) a structure of size d, smaller than a proton.",
+  "lhs": "E",
+  "expr": "h * c / d",
+  "vars": {
+   "h": "Planck constant (4.136e-21 MeV·s)",
+   "c": "speed of light (2.998e23 fm/s)",
+   "d": "feature size (fm)"
+  },
+  "given": {
+   "h": 4.136e-21,
+   "c": 2.998e+23,
+   "d": 0.5
+  },
+  "distractors": [
+   "2",
+   "^",
+   "π"
+  ],
+  "method": "To see or shape a feature you need a probe whose wavelength is no bigger than it; a photon of wavelength λ carries energy hc/λ.",
+  "unit": "MeV"
+ },
+ "vacuum_energy_storage": {
+  "goal": "Find the energy released when a volume V of false vacuum relaxes to the true vacuum.",
+  "lhs": "E",
+  "expr": "( ρ1 - ρ2 ) * V",
+  "vars": {
+   "ρ1": "energy density of the false (higher) vacuum (J/m³)",
+   "ρ2": "energy density of the true (lower) vacuum (J/m³)",
+   "V": "volume converted (m³)"
+  },
+  "given": {
+   "ρ1": 500,
+   "ρ2": 200,
+   "V": 4
+  },
+  "distractors": [
+   "+",
+   "/",
+   "2"
+  ],
+  "method": "Energy density times volume is energy; only the difference between the two vacuum levels can be extracted.",
+  "unit": "J"
+ },
+ "platonic_realm": {
+  "goal": "Find the number of edges of a Platonic solid from its vertices and faces (e.g. the dodecahedron).",
+  "lhs": "E",
+  "expr": "V + F - 2",
+  "vars": {
+   "V": "number of vertices",
+   "F": "number of faces"
+  },
+  "given": {
+   "V": 20,
+   "F": 12
+  },
+  "distractors": [
+   "+",
+   "1",
+   "*"
+  ],
+  "method": "Euler's polyhedron formula V - E + F = 2 holds for every convex polyhedron; rearrange it for E.",
+  "unit": "edges"
+ },
+ "topology": {
+  "goal": "Find the Hall conductance of a topological insulator state with Chern number ν (quantum Hall effect).",
+  "lhs": "σ",
+  "expr": "ν * e ^ 2 / h",
+  "vars": {
+   "ν": "Chern number / filling factor (an integer topological invariant)",
+   "e": "elementary charge (C)",
+   "h": "Planck constant (J·s)"
+  },
+  "given": {
+   "ν": 1,
+   "e": 1.602e-19,
+   "h": 6.626e-34
+  },
+  "distractors": [
+   "ħ",
+   "2",
+   "*"
+  ],
+  "method": "The Hall conductance is a topological invariant: it can only change in integer steps, each step being one conductance quantum built from the charge squared over Planck's constant.",
+  "unit": "S"
+ },
+ "real_analysis": {
+  "goal": "Find the limit of the geometric series a + ar + ar² + ... (for |r| < 1).",
+  "lhs": "S",
+  "expr": "a / ( 1 - r )",
+  "vars": {
+   "a": "first term",
+   "r": "common ratio"
+  },
+  "given": {
+   "a": 3,
+   "r": 0.25
+  },
+  "distractors": [
+   "+",
+   "r",
+   "^"
+  ],
+  "method": "Write the partial sum S_n, subtract r·S_n so all middle terms cancel, then let n go to infinity so r^n vanishes."
+ },
+ "complex_analysis": {
+  "goal": "Find the modulus of each of the n complex n-th roots of a number with modulus r.",
+  "lhs": "|w|",
+  "expr": "r ^ ( 1 / n )",
+  "vars": {
+   "r": "modulus of the number being rooted",
+   "n": "order of the root (the polynomial degree)"
+  },
+  "given": {
+   "r": 32,
+   "n": 5
+  },
+  "distractors": [
+   "*",
+   "n",
+   "2"
+  ],
+  "method": "Write z = r·e^{iθ}; by de Moivre each of the n roots is r^(1/n)·e^{i(θ+2πk)/n}, so all share the same modulus and are spread evenly around a circle."
+ },
+ "particle_physics": {
+  "goal": "Find the bending radius of a collider ring for protons of momentum p in dipole field B.",
+  "lhs": "R",
+  "expr": "p / ( 0.3 * B )",
+  "vars": {
+   "p": "particle momentum (GeV/c)",
+   "B": "dipole magnetic field (T)"
+  },
+  "given": {
+   "p": 7000,
+   "B": 8.33
+  },
+  "distractors": [
+   "*",
+   "q",
+   "2"
+  ],
+  "method": "The Lorentz force qvB supplies the centripetal force, giving R = p/(qB); for unit charge, p in GeV/c and B in tesla the conversion factor is 0.3.",
+  "unit": "m"
+ },
+ "plasma_metallurgy": {
+  "goal": "Find the mean thermal kinetic energy of a particle in a stellar plasma at temperature T.",
+  "lhs": "E",
+  "expr": "3 / 2 * kB * T",
+  "vars": {
+   "kB": "Boltzmann constant (8.617e-5 eV/K)",
+   "T": "plasma temperature (K)"
+  },
+  "given": {
+   "kB": 8.617e-05,
+   "T": 15000000.0
+  },
+  "distractors": [
+   "1",
+   "^",
+   "+"
+  ],
+  "method": "Equipartition gives kT/2 per quadratic degree of freedom, and a free particle has three translational degrees of freedom.",
+  "unit": "eV"
+ },
+ "abstract_algebra": {
+  "goal": "Find how many imaginary units the algebra obtained after n Cayley-Dickson doublings of the reals has (complex, quaternions, octonions...).",
+  "lhs": "N",
+  "expr": "2 ^ n - 1",
+  "vars": {
+   "n": "number of Cayley-Dickson doublings starting from the reals"
+  },
+  "given": {
+   "n": 3
+  },
+  "distractors": [
+   "*",
+   "+",
+   "1"
+  ],
+  "method": "Each doubling pairs two copies of the previous algebra, doubling the dimension; one basis element is the real unit, the rest are imaginary units.",
+  "unit": "units"
+ },
+ "dark_sector": {
+  "goal": "Find the mass enclosed within radius r of a galaxy with a flat rotation speed v - far more than the visible stars.",
+  "lhs": "M",
+  "expr": "v ^ 2 * r / G",
+  "vars": {
+   "v": "orbital (rotation-curve) speed (km/s)",
+   "r": "orbital radius (kpc)",
+   "G": "gravitational constant in kpc·(km/s)²/(10¹⁰ solar masses), about 4.3e4"
+  },
+  "given": {
+   "v": 220,
+   "r": 8,
+   "G": 43000
+  },
+  "distractors": [
+   "2",
+   "*",
+   "c"
+  ],
+  "method": "Set the gravitational acceleration GM/r² equal to the centripetal acceleration v²/r of a circular orbit and solve for M.",
+  "unit": "10^10 solar masses"
+ },
+ "assembly_lines": {
+  "goal": "Find the total time a k-stage pipelined assembly line needs to produce N components.",
+  "lhs": "T",
+  "expr": "( k + N - 1 ) * t",
+  "vars": {
+   "k": "number of pipeline stages",
+   "N": "number of items produced",
+   "t": "time per stage (s)"
+  },
+  "given": {
+   "k": 5,
+   "N": 100,
+   "t": 2
+  },
+  "distractors": [
+   "*",
+   "/",
+   "2"
+  ],
+  "method": "The first item takes k stage-times to fill the pipeline; after that one finished item drops out every stage-time.",
+  "unit": "s"
+ },
+ "set_theory": {
+  "goal": "Find how many elements the power set of the power set of an n-element set has.",
+  "lhs": "|P(P(S))|",
+  "expr": "2 ^ ( 2 ^ n )",
+  "vars": {
+   "n": "number of elements of S"
+  },
+  "given": {
+   "n": 3
+  },
+  "distractors": [
+   "n",
+   "*",
+   "^"
+  ],
+  "method": "Each subset is a yes/no choice for every element, so a set with m elements has 2^m subsets; apply this twice.",
+  "unit": "sets"
+ },
+ "quantum_field_theory": {
+  "goal": "Find the energy of a field excitation (particle) of mass m and wavenumber k, in units with ħ = c = 1.",
+  "lhs": "ω",
+  "expr": "sqrt ( k ^ 2 + m ^ 2 )",
+  "vars": {
+   "k": "wavenumber (momentum) of the mode",
+   "m": "mass of the field quantum"
+  },
+  "given": {
+   "k": 3,
+   "m": 4
+  },
+  "distractors": [
+   "-",
+   "*",
+   "2"
+  ],
+  "method": "Plug a plane wave into the Klein-Gordon equation: each Fourier mode is a harmonic oscillator whose frequency obeys the relativistic energy-momentum relation."
+ },
+ "general_intelligence": {
+  "goal": "Find the output of a sigmoid neuron - the building block of learning machines - with net input z.",
+  "lhs": "y",
+  "expr": "1 / ( 1 + exp ( - z ) )",
+  "vars": {
+   "z": "net weighted input (activation) w·x + b"
+  },
+  "given": {
+   "z": 1
+  },
+  "distractors": [
+   "+",
+   "ln",
+   "2"
+  ],
+  "method": "The logistic function squashes the weighted input into (0, 1); it equals one over one plus the exponential of the negated activation."
+ },
+ "psionics": {
+  "goal": "Find the resting (Nernst) potential of a neuron for an ion species - the closest real 'crystallised thought' is the voltage of a nerve cell.",
+  "lhs": "E",
+  "expr": "Vt / z * ln ( co / ci )",
+  "vars": {
+   "Vt": "thermal voltage kT/e (26.7 mV at body temperature)",
+   "z": "ion charge number",
+   "co": "outside concentration (mM)",
+   "ci": "inside concentration (mM)"
+  },
+  "given": {
+   "Vt": 26.7,
+   "z": 1,
+   "co": 5,
+   "ci": 140
+  },
+  "distractors": [
+   "*",
+   "exp",
+   "2"
+  ],
+  "method": "At equilibrium the electrical work zeE balances the diffusion drive kT·ln of the concentration ratio across the membrane.",
+  "unit": "mV"
+ },
+ "temporal_mechanics": {
+  "goal": "Find the entropy increase when n moles of gas expand freely from V1 to V2 - the thermodynamic arrow of time.",
+  "lhs": "ΔS",
+  "expr": "n * R * ln ( V2 / V1 )",
+  "vars": {
+   "n": "amount of gas (mol)",
+   "R": "gas constant (8.314 J/(mol·K))",
+   "V1": "initial volume",
+   "V2": "final volume"
+  },
+  "given": {
+   "n": 1,
+   "R": 8.314,
+   "V1": 1,
+   "V2": 2
+  },
+  "distractors": [
+   "exp",
+   "T",
+   "/"
+  ],
+  "method": "Entropy is k·ln of the number of microstates; each molecule gains V2/V1 times as many positions, so ΔS is N·k·ln(V2/V1) = nR·ln(V2/V1).",
+  "unit": "J/K"
+ },
+ "stellar_evolution": {
+  "goal": "Find the main-sequence lifetime of a star of mass M (in solar masses).",
+  "lhs": "t",
+  "expr": "10 * M ^ ( - 2.5 )",
+  "vars": {
+   "M": "stellar mass (solar masses)"
+  },
+  "given": {
+   "M": 2
+  },
+  "distractors": [
+   "3.5",
+   "*",
+   "/"
+  ],
+  "method": "Lifetime is fuel over burn rate: fuel scales with M and luminosity with roughly M^3.5, and the Sun lasts about 10 billion years.",
+  "unit": "Gyr"
+ },
+ "holographic_principle": {
+  "goal": "Find the Bekenstein-Hawking entropy (in bits of kB) of a black hole of horizon radius r, which is a quarter of its area in Planck units.",
+  "lhs": "S",
+  "expr": "π * r ^ 2 / lp ^ 2",
+  "vars": {
+   "r": "horizon radius",
+   "lp": "Planck length (same units as r)"
+  },
+  "given": {
+   "r": 10000,
+   "lp": 1
+  },
+  "distractors": [
+   "4",
+   "*",
+   "3"
+  ],
+  "method": "Black hole entropy is A/(4 lp²) - proportional to area, not volume; with A = 4πr² the factors of 4 cancel.",
+  "unit": "kB"
+ },
+ "stellar_engineering": {
+  "goal": "Find the luminosity of the ignited captive star from its radius and surface temperature (Stefan-Boltzmann law in solar units).",
+  "lhs": "L",
+  "expr": "R ^ 2 * ( T / Ts ) ^ 4",
+  "vars": {
+   "R": "stellar radius (solar radii)",
+   "T": "surface temperature (K)",
+   "Ts": "the Sun's surface temperature (5772 K)"
+  },
+  "given": {
+   "R": 1.5,
+   "T": 8000,
+   "Ts": 5772
+  },
+  "distractors": [
+   "3",
+   "/",
+   "π"
+  ],
+  "method": "A star radiates like a black body: σT⁴ per unit area times the surface 4πR²; divide by the same expression for the Sun.",
+  "unit": "solar luminosities"
+ },
+ "exotic_chemistry": {
+  "goal": "Find the Bohr radius of muonic hydrogen - a muon (mass m) orbiting a proton (mass M) - using the reduced mass.",
+  "lhs": "a",
+  "expr": "a0 / m * ( 1 + m / M )",
+  "vars": {
+   "a0": "ordinary Bohr radius (52.9 pm)",
+   "m": "orbiting particle mass (electron masses)",
+   "M": "nucleus mass (electron masses)"
+  },
+  "given": {
+   "a0": 52.9,
+   "m": 206.8,
+   "M": 1836.2
+  },
+  "distractors": [
+   "^",
+   "2",
+   "-"
+  ],
+  "method": "The Bohr radius is inversely proportional to the reduced mass μ = mM/(m+M); measured in electron masses this gives a0/μ.",
+  "unit": "pm"
+ },
+ "supersymmetry": {
+  "goal": "Find the relic density of the lightest supersymmetric particle (a WIMP) from its annihilation cross-section.",
+  "lhs": "Ω",
+  "expr": "0.3 / ( s * h ^ 2 )",
+  "vars": {
+   "s": "thermally averaged annihilation cross-section ⟨σv⟩ (units of 1e-26 cm³/s)",
+   "h": "reduced Hubble constant (H0 / 100 km/s/Mpc)"
+  },
+  "given": {
+   "s": 3,
+   "h": 0.674
+  },
+  "distractors": [
+   "*",
+   "2",
+   "sqrt"
+  ],
+  "method": "WIMPs freeze out when annihilation can no longer keep up with expansion; the more they annihilate the fewer survive, giving Ωh² ≈ 3e-27 cm³/s / ⟨σv⟩."
+ },
+ "synthetic_biology": {
+  "goal": "Find how many synthetic cells a culture holds after time t if it starts from N0 cells that divide every td hours.",
+  "lhs": "N",
+  "expr": "N0 * 2 ^ ( t / td )",
+  "vars": {
+   "N0": "initial number of cells",
+   "t": "elapsed time (h)",
+   "td": "doubling (division) time (h)"
+  },
+  "given": {
+   "N0": 1000,
+   "t": 12,
+   "td": 1.5
+  },
+  "distractors": [
+   "exp",
+   "*",
+   "ln"
+  ],
+  "method": "Every division doubles the population, and t/td divisions happen in time t, so the count is multiplied by two that many times.",
+  "unit": "cells"
+ },
+ "superconductivity": {
+  "goal": "Find the BCS critical temperature of a hydride superconductor from its Debye temperature and electron-phonon coupling.",
+  "lhs": "Tc",
+  "expr": "1.13 * Θ * exp ( - 1 / λ )",
+  "vars": {
+   "Θ": "Debye temperature (K) - high for light hydrogen lattices",
+   "λ": "effective coupling N(0)·V"
+  },
+  "given": {
+   "Θ": 1500,
+   "λ": 0.5
+  },
+  "distractors": [
+   "ln",
+   "2",
+   "*"
+  ],
+  "method": "In BCS theory the Cooper-pair binding is non-perturbative in the coupling: the phonon energy cutoff is suppressed by an exponential in minus one over the coupling.",
+  "unit": "K"
+ },
+ "field_engineering": {
+  "goal": "Find the gravitational field strength a projector must reproduce at distance r from a mass M.",
+  "lhs": "g",
+  "expr": "G * M / r ^ 2",
+  "vars": {
+   "G": "gravitational constant (6.674e-11 N·m²/kg²)",
+   "M": "source mass (kg)",
+   "r": "distance from the centre (m)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 5.972e+24,
+   "r": 6371000.0
+  },
+  "distractors": [
+   "3",
+   "*",
+   "c"
+  ],
+  "method": "The field is force per unit test mass; Newton's law gives an inverse-square fall-off (Gauss's law for a spherical source).",
+  "unit": "m/s²"
+ },
+ "quantum_gravity": {
+  "goal": "Find the Planck mass, where a particle's Compton wavelength equals its own Schwarzschild radius and quantum gravity takes over.",
+  "lhs": "mP",
+  "expr": "sqrt ( ħ * c / G )",
+  "vars": {
+   "ħ": "reduced Planck constant (1.0546e-25 µg·m²/s)",
+   "c": "speed of light (m/s)",
+   "G": "gravitational constant (6.674e-20 m³/(µg·s²))"
+  },
+  "given": {
+   "ħ": 1.0546e-25,
+   "c": 299800000.0,
+   "G": 6.674e-20
+  },
+  "distractors": [
+   "^",
+   "3",
+   "2"
+  ],
+  "method": "Set ħ/(mc) equal to Gm/c² (up to factors of order one) and solve for m.",
+  "unit": "µg"
+ },
+ "superintelligence": {
+  "goal": "Find the capability of a self-improving mind after n rounds, if each round improves it by a fraction r.",
+  "lhs": "I",
+  "expr": "I0 * ( 1 + r ) ^ n",
+  "vars": {
+   "I0": "initial capability",
+   "r": "fractional improvement per round",
+   "n": "number of self-improvement rounds"
+  },
+  "given": {
+   "I0": 1,
+   "r": 0.5,
+   "n": 20
+  },
+  "distractors": [
+   "*",
+   "-",
+   "exp"
+  ],
+  "method": "Each round multiplies the current capability by (1 + r), so the gains compound geometrically like interest.",
+  "unit": ""
+ },
+ "multiverse": {
+  "goal": "Find how many Hubble volumes (pocket universes) eternal inflation creates from one after time t.",
+  "lhs": "N",
+  "expr": "exp ( 3 * H * t )",
+  "vars": {
+   "H": "Hubble rate of the inflating false vacuum",
+   "t": "elapsed time (units of 1/H)"
+  },
+  "given": {
+   "H": 1,
+   "t": 5
+  },
+  "distractors": [
+   "2",
+   "ln",
+   "*"
+  ],
+  "method": "During inflation the scale factor grows as e^{Ht}; volume goes as the cube of the scale factor."
+ },
+ "quantum_foam": {
+  "goal": "Find how long a virtual particle-antiparticle pair can borrow existence from the vacuum.",
+  "lhs": "Δt",
+  "expr": "ħ / ( 4 * m * c ^ 2 )",
+  "vars": {
+   "ħ": "reduced Planck constant (658.2 MeV·ys)",
+   "m": "particle mass (MeV/c²)",
+   "c": "speed of light (1 in these units)"
+  },
+  "given": {
+   "ħ": 658.2,
+   "m": 0.511,
+   "c": 1
+  },
+  "distractors": [
+   "2",
+   "3",
+   "+"
+  ],
+  "method": "The energy-time uncertainty relation ΔE·Δt ≥ ħ/2 allows borrowing ΔE = 2mc² (two rest masses) for a time ħ/(2ΔE).",
+  "unit": "ys"
+ },
+ "cosmogenesis": {
+  "goal": "Find the tunnelling exponent B for false vacuum decay in the thin-wall approximation (decay rate ∝ e^-B).",
+  "lhs": "B",
+  "expr": "27 * π ^ 2 * σ ^ 4 / 2 / ε ^ 3",
+  "vars": {
+   "σ": "bubble wall tension",
+   "ε": "energy density difference between false and true vacuum"
+  },
+  "given": {
+   "σ": 1,
+   "ε": 3
+  },
+  "distractors": [
+   "4",
+   "3",
+   "ħ"
+  ],
+  "method": "Coleman's bounce: a bubble costs wall energy ~σR² and gains ~εR³; extremising the Euclidean action gives R = 3σ/ε and B = 27π²σ⁴/(2ε³)."
+ },
+ "simulation_hypothesis": {
+  "goal": "Find the maximum number of bits a simulated region of radius R and energy E can hold (Bekenstein bound) - e.g. a proton.",
+  "lhs": "I",
+  "expr": "2 * π * R * E / ( ħc * ln ( 2 ) )",
+  "vars": {
+   "R": "radius of the region (fm)",
+   "E": "total energy in it (MeV)",
+   "ħc": "reduced Planck constant times c (197.3 MeV·fm)"
+  },
+  "given": {
+   "R": 1,
+   "E": 938,
+   "ħc": 197.3
+  },
+  "distractors": [
+   "4",
+   "G",
+   "exp"
+  ],
+  "method": "Lower an object into a black hole: the second law forbids it carrying more entropy than the horizon area it adds, giving S ≤ 2πkRE/(ħc); divide by ln 2 for bits.",
+  "unit": "bits"
+ },
+ "conceptual_singularities": {
+  "goal": "Find the minimum number of bits needed to compress a message of N symbols drawn uniformly from an alphabet of k symbols (Shannon source coding).",
+  "lhs": "B",
+  "expr": "N * ln ( k ) / ln ( 2 )",
+  "vars": {
+   "N": "number of symbols in the message",
+   "k": "alphabet size"
+  },
+  "given": {
+   "N": 1000,
+   "k": 26
+  },
+  "distractors": [
+   "exp",
+   "k",
+   "^"
+  ],
+  "method": "Each symbol carries log2(k) bits of entropy and no lossless code beats the entropy; change base with ln(k)/ln(2).",
+  "unit": "bits"
+ },
+ "transfinite_hierarchy": {
+  "goal": "Find how many square (2-dimensional) faces an n-dimensional hypercube has (e.g. the tesseract).",
+  "lhs": "F2",
+  "expr": "n * ( n - 1 ) * 2 ^ ( n - 3 )",
+  "vars": {
+   "n": "dimension of the hypercube"
+  },
+  "given": {
+   "n": 4
+  },
+  "distractors": [
+   "3",
+   "+",
+   "^"
+  ],
+  "method": "A square face is fixed by choosing which 2 of the n coordinates vary (n choose 2 ways) and fixing each of the remaining n-2 coordinates to 0 or 1.",
+  "unit": "faces"
+ },
+ "panspermia": {
+  "goal": "Find how many spores in a meteorite survive an interplanetary journey of time t under cosmic radiation.",
+  "lhs": "N",
+  "expr": "N0 * exp ( - R * t / D0 )",
+  "vars": {
+   "N0": "initial number of spores",
+   "R": "radiation dose rate (Gy/year)",
+   "t": "travel time (years)",
+   "D0": "dose that reduces survivors by a factor e (Gy)"
+  },
+  "given": {
+   "N0": 100000000.0,
+   "R": 0.1,
+   "t": 10000,
+   "D0": 500
+  },
+  "distractors": [
+   "ln",
+   "2",
+   "+"
+  ],
+  "method": "Each unit of dose kills a fixed fraction of the survivors, so survival decays exponentially in the total absorbed dose R·t.",
+  "unit": "spores"
+ },
+ "hyperdimensional_reality": {
+  "goal": "Find how many universes the cosmic tree holds if every universe buds b daughters, down to depth d.",
+  "lhs": "N",
+  "expr": "( b ^ ( d + 1 ) - 1 ) / ( b - 1 )",
+  "vars": {
+   "b": "branching factor (daughter universes per universe)",
+   "d": "depth of the tree (generations below the root)"
+  },
+  "given": {
+   "b": 3,
+   "d": 5
+  },
+  "distractors": [
+   "*",
+   "2",
+   "+"
+  ],
+  "method": "Generation g holds b^g universes; sum the geometric series 1 + b + ... + b^d by multiplying by (b-1) and cancelling the middle terms.",
+  "unit": "universes"
+ },
+ "beyond_the_omega": {
+  "goal": "Find the de Sitter horizon entropy - the absolute information ceiling of a universe with cosmological constant Λ, the closest real limit to 'past the possible' (natural units).",
+  "lhs": "S",
+  "expr": "3 * π * c ^ 3 / ( G * ħ * Λ )",
+  "vars": {
+   "c": "speed of light (1 here)",
+   "G": "gravitational constant (1 here)",
+   "ħ": "reduced Planck constant (1 here)",
+   "Λ": "cosmological constant (Planck units)"
+  },
+  "given": {
+   "c": 1,
+   "G": 1,
+   "ħ": 1,
+   "Λ": 1e-06
+  },
+  "distractors": [
+   "4",
+   "8",
+   "kB",
+   "2"
+  ],
+  "method": "The cosmological horizon has radius sqrt(3/Λ); like a black hole, its entropy is a quarter of its area in Planck units (A/4lp² with lp² = ħG/c³).",
+  "unit": "kB"
+ }
+}

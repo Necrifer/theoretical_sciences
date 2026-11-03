@@ -452,7 +452,7 @@ public final class CoreForge {
         Recipe r = byId(id);
         if (r == null || !canMake(sp, r)) return;
         boolean drifts = ForgeDrift.drifts(r.id());
-        int wait = drifts ? ForgeDrift.secondsLeft(sp.server, r.id()) : 0;
+        int wait = ForgeDrift.secondsLeft(sp.server, r.id());      // 1.3.6: every recipe waits out the Forge-wide re-seed
         if (wait > 0) {
             sp.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.forge_reseeding", wait / 60, String.format("%02d", wait % 60))
                     .withStyle(net.minecraft.ChatFormatting.GOLD), true);
@@ -478,6 +478,9 @@ public final class CoreForge {
         inv.setChanged();
         ItemStack out = r.result();
         if (!inv.add(out)) sp.drop(out, false);
+        ForgeDrift.forgedAny(sp.server);              // 1.3.6: the whole Forge re-seeds after any forging
+        ForgeAttainment.record(sp, r.id());            // 1.3.6: forged once - the Omnipotent Foundry may now make it
+        ForgeDrift.sync(sp);
         if (drifts) {                     // round 36: that universe is spent - new laws, and the Core re-seeds
             ForgeDrift.forged(sp.server, r.id());
             ForgeDrift.sync(sp);

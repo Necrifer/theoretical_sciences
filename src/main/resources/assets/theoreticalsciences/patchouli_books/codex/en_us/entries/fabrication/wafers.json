@@ -1,0 +1,55 @@
+{
+  "name": "Wafers & Lithography",
+  "icon": "theoreticalsciences:cherenkov_wafer",
+  "category": "theoreticalsciences:fabrication",
+  "sortnum": -1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cherenkov_boule,theoreticalsciences:cherenkov_wafer,theoreticalsciences:photonic_logic_wafer,theoreticalsciences:photonic_die",
+      "text": "$(li)Press Cherenkov quartz into a $(item)Lattice Seed$().$(li)Grow a $(item)Boule$() in the $(item)Lattice Growth Vat$().$(li)Slice it into 16 $(item)Wafers$() with the $(item)Planck-Scale Cutter$().$(li)Engrave in the $(item)Quantum Lithographer$() with $(fluid)Photoresist$().$(li)Cut each engraved wafer into 8 $(item)Dies$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The lithographer needs a $(thing)lens$() in one input slot. Lenses are $(thing)catalysts$(): never consumed. Better lenses engrave better logic:$(br)$(li)Photonic Lens$(li)Metamaterial Sheet$(li)Dark Matter Lens$(li)Tesseract Lens$(li)Cosmic String Lens"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Day 21. Why Cherenkov quartz? Cherenkov light is the blue glow a charged particle gives off when it outruns light in a medium - never in vacuum, but in water or glass, where light is slower. Every chip in this journal starts from that crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cherenkov_boule",
+      "text": "A single crystal of Cherenkov quartz, grown in superfluid helium. Ready to be sliced.$(br2)Made in $(item)Lattice Growth Vat$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cherenkov_wafer",
+      "text": "A wafer sliced from a Cherenkov boule.$(br2)Made in $(item)Planck-Scale Cutter$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photonic_logic_wafer",
+      "text": "Engraved with waveguides instead of wires.$(br2)Made in $(item)Quantum Lithographer$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photonic_die",
+      "text": "A single photonic logic die.$(br2)Made in $(item)Planck-Scale Cutter$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lattice_growth_vat",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:planck_cutter",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Cherenkov Boule$(): Cherenkov Wafer, Spacetime Slag, Warm Helium$(li)$(item)Cherenkov Wafer$(): Photonic Logic Wafer, Pixel Tracker Module, Qubit Array Wafer$(li)$(item)Photonic Logic Wafer$(): Coherent Wiring Harness, Empirical Notes II, Photonic Die, Warm Helium$(li)$(item)Photonic Die$(): Photonic Processor"
+    }
+  ]
+}

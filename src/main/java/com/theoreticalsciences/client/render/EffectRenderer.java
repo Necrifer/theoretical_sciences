@@ -52,7 +52,10 @@ public final class EffectRenderer {
     private static float time;
 
     public static void onRenderLevel(RenderLevelStageEvent event) {
-        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_LEVEL) return;
+        // 1.3.8: drawn before translucent blocks, not after the whole level - glass writes depth, so effects drawn after it
+        // vanished behind every window (the Eschaton Foundry's core, inside its glass sphere, could not be seen at all).
+        // Now the glass is laid over them as it should be.
+        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) return;
         Minecraft mc = Minecraft.getInstance();
         boolean selfGlitch = mc.player != null && mc.player.hasEffect(com.theoreticalsciences.registry.QHEffects.REALITY_DESTABILISATION);
         if (mc.level == null || (ClientHooks.CONTROLLERS.isEmpty() && ClientHooks.FAILURES.isEmpty() && ClientHooks.BUBBLES.isEmpty() && ClientHooks.RUPTURES.isEmpty()
@@ -78,7 +81,7 @@ public final class EffectRenderer {
             if (since < (ps.on ? PowerAnimator.WAVE_UP : PowerAnimator.WAVE_DOWN) + 0.2) sweeping.add(c);
             if (ps.power(tick) <= 0.001F) continue;
             if (c.type.effect == MachineType.Effect.NONE) continue;
-            if (!event.getFrustum().isVisible(new AABB(ctr, ctr).inflate(6))) continue;
+            if (!event.getFrustum().isVisible(new AABB(ctr, ctr).inflate(6 * c.effectScale()))) continue;
             visible.add(c);
         }
         List<Vec3> bubbles = new ArrayList<>();
@@ -203,6 +206,7 @@ public final class EffectRenderer {
             alpha = p * (drop ? 0.15F : 1F);
             scale = 0.25F + 0.75F * (float) Math.sqrt(p);
         }
+        scale *= c.effectScale();          // 1.3.8: the giants draw theirs bigger
         Vec3 ctr = c.effectCenter();
         int lensStart = LENSES.size(), fgStart = FOREGROUND.size();
         Vec3 rel = ctr.subtract(cam);
@@ -716,6 +720,12 @@ public final class EffectRenderer {
                 ring3D(p, 1.8F, 0xFFB060, time * 2F, 0.0F, 0.05F);
             }
             case FRACTIONATION -> fractionation(p);
+            case HEARTH -> {
+                // 1.3.5: a furnace or a reactor core, glowing in the machine's own colour through its windows
+                float pulse = 0.85F + 0.15F * (float) Math.sin(time * 2.3F);
+                glow(p, 1.5F * pulse, c.type.color, 0.45F);
+                glow(p, 0.55F, 0xFFFFFF, 0.5F);
+            }
             case SYNCHROTRON -> colliderBeams(p, 6.5F);
             case CONCEPT -> {
                 // whole fields of knowledge falling into one point: nine streams converge, reality shatters around the core
@@ -748,6 +758,49 @@ public final class EffectRenderer {
             case BREACH -> breach(p);
             case OMNILEX -> omnilex(p);
             case FOAM -> foam(p);
+            case STARLIGHT -> starlight(p);
+            case SOLAR -> solar(p, c.facing());
+            case RADIO -> radioWaves(p);
+            case DIFFRACTION -> diffraction(p, c.facing());
+            case FRINGES -> fringes(p);
+            case LASER_ARMS -> laserArms(p, c.facing());
+            case GAMMA_RISE -> gammaRise(p);
+            case BROWNIAN -> brownian(p);
+            case MONTE_CARLO -> monteCarlo(p, c.facing());
+            case CYCLOTRON -> cyclotronSpiral(p);
+            case TESLA_ARCS -> teslaArcs(p, c.getBlockPos().asLong());
+            case NEUTRON_PATHS -> neutronPaths(p, c.facing());
+            case SONIC_HORIZON -> sonicHorizon(p, c.facing());
+            case TOKAMAK_PLASMA -> tokamakPlasma(p);
+            case PULSED_FIELD -> pulsedField(p);
+            case RAILGUN -> railgun(p, c.facing());
+            case CLIMATE -> climate(p);
+            case SALT_GLOW -> saltGlow(p);
+            case CZOCHRALSKI -> czochralski(p);
+            case DRILL_STRING -> drillString(p);
+            case CENTRIFUGE -> centrifuge(p);
+            case MHD_FLOW -> mhdFlow(p, c.facing());
+            case HEAT_DEATH -> heatDeath(p);
+            case GAMMA_BURST -> gammaBurst(p, c.getBlockPos().asLong());
+            case MARKOV_HOPS -> markovHops(p);
+            case EINSTEIN_RING -> {
+                einsteinRing(p);
+                LENSES.add(new Lens(p, 0.25F, 2.0F, 0, 0.8F));
+            }
+            case DILATION_RINGS -> dilationRings(p);
+            case WARP_BUBBLE -> warpBubble(p, c.facing());
+            case UNRUH_BATH -> unruhBath(p);
+            case HAWKING_SPARK -> {
+                hawkingSpark(p);
+                LENSES.add(new Lens(p, 0.12F, 1.2F, 0, 0.9F));
+            }
+            case ER_BRIDGE -> erBridge(p, c.facing());
+            case QUASAR_JETS -> {
+                accretionDisk(p, 0.6F, 2.4F, 0.05F, false, 1);
+                FOREGROUND.add(() -> accretionDisk(p, 0.6F, 2.4F, 0.05F, true, 1));
+                quasarJets(p);
+                LENSES.add(new Lens(p, 0.3F, 2.2F, 0, 1.0F));
+            }
             default -> {}
         }
     }
@@ -766,6 +819,608 @@ public final class EffectRenderer {
         ribbon(bb, c.add(dir.scale(-9)).add(0, -0.4, 0), c.add(dir.scale(9)).add(0, -0.4, 0), 0.04F, 0x60FFD0, 0.25F, 0x60FFD0, 0.25F);
         draw(bb);
         glow(c.add(dir.scale(travel)).add(0, -0.3, 0), 0.4F, 0xA0FFE0, 0.8F);
+    }
+
+    /**
+     * 1.4.0, the Reflecting Telescope: starlight falling in through the dome's slit onto the primary mirror and
+     * brought to a focus - a pale beam from the sky, the stars it comes from twinkling above, and the focus glowing.
+     */
+    private static void starlight(Vec3 c) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        for (int k = 0; k < 3; k++)
+            ribbon(bb, c.add(0, 9, 0), c, 0.9F - k * 0.25F, 0xA0C0FF, 0.0F, 0xE0F0FF, 0.18F + 0.08F * k);
+        draw(bb);
+        BufferBuilder st = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 7; i++) {
+            double a = i * 2.39996, r = 1.2 + (i % 3) * 0.9;
+            float tw = 0.35F + 0.65F * (float) Math.max(0, Math.sin(time * (2.1 + i * 0.37) + i));
+            glowInto(st, c.add(Math.cos(a) * r, 7.5 + (i % 4) * 0.7, Math.sin(a) * r), 0.22F, i % 3 == 0 ? 0xFFE0C0 : 0xC0D8FF, tw);
+        }
+        draw(st);
+        glow(c, 0.7F, 0xC8DCFF, 0.55F + 0.15F * (float) Math.sin(time * 3));
+        glow(c, 0.2F, 0xFFFFFF, 0.9F);
+    }
+
+    /**
+     * 1.4.0, the Solar Furnace: sunlight from the concentrator behind the target converging on it - beams from a fan of
+     * mirror facets, a white-hot spot where they meet, and the shimmer of the air around it.
+     */
+    private static void solar(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 back = new Vec3(-facing.getStepX(), 0, -facing.getStepZ());     // the concentrator stands behind the target
+        Vec3 side = new Vec3(back.z, 0, -back.x);
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = -3; i <= 3; i++)
+            for (int j = -1; j <= 2; j++) {
+                Vec3 src = c.add(back.scale(4.5 - 0.06 * i * i)).add(side.scale(i * 1.8)).add(0, j * 1.6, 0);
+                float fl = 0.15F + 0.08F * (float) Math.sin(time * 4 + i * 1.3 + j * 2.1);
+                ribbon(bb, src, c, 0.14F, 0xFFE8A0, fl * 0.5F, 0xFFFFF0, fl);
+            }
+        draw(bb);
+        float pulse = 0.85F + 0.15F * (float) Math.sin(time * 7);
+        glow(c, 1.5F * pulse, 0xFFB040, 0.5F);
+        glow(c, 0.6F, 0xFFFFE0, 1.0F);
+        ring3D(c, 1.1F, 0xFFD080, time * 0.8F, 0.0F, 0.04F);
+    }
+
+    /**
+     * 1.4.0, the Radio Telescope: wavefronts coming down onto the dish, then drawn in to the feed at its focus - each
+     * ring falls, spreads over the dish, and shrinks into the receiver, which pulses as it catches them.
+     */
+    private static void radioWaves(Vec3 c) {
+        for (int k = 0; k < 4; k++) {
+            float ph = (time * 0.35F + k / 4F) % 1F;
+            if (ph < 0.55F) {
+                float f = ph / 0.55F;                                       // falling from the sky onto the dish
+                ring3D(c.add(0, 7 - 10 * f, 0), 6.5F, 0x80FFC0, time * 0.3F, 0F, 0.06F * (1 - f * 0.5F));
+            } else {
+                float f = (ph - 0.55F) / 0.45F;                             // reflected in to the focus
+                ring3D(c.add(0, -3 + 3 * f, 0), 6.5F * (1 - f) + 0.2F, 0xB0FFE0, -time * 0.3F, 0F, 0.05F);
+            }
+        }
+        float pulse = 0.6F + 0.4F * (float) Math.max(0, Math.sin(time * 0.35F * Math.PI * 2 * 4 / 4));
+        glow(c, 0.8F, 0x80FFC0, 0.4F * pulse);
+        glow(c, 0.25F, 0xE0FFF0, 0.8F);
+    }
+
+    /**
+     * 1.5.0, the X-ray Diffractometer: the tube's beam striking the sample, and the reflections leaving it on cones -
+     * Debye-Scherrer rings, one for each family of lattice planes - flickering as the goniometer sweeps.
+     */
+    private static void diffraction(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());      // the beam runs across the cabinet, tube to detector
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        ribbon(bb, c.add(ax.scale(-3)), c, 0.08F, 0xA0E0FF, 0.15F, 0xE0F8FF, 0.6F);
+        Vec3 side = new Vec3(-ax.z, 0, ax.x), up3 = new Vec3(0, 1, 0);
+        for (int k = 0; k < 3; k++) {
+            double tw = 0.5 + k * 0.45;                                       // 2θ of each ring
+            float on = 0.3F + 0.7F * (float) Math.max(0, Math.sin(time * 2.2 - k * 1.3));
+            int n = 20;
+            for (int i = 0; i < n; i++) {
+                double a = i * Math.PI * 2 / n;
+                Vec3 dir = ax.scale(Math.cos(tw)).add(side.scale(Math.sin(tw) * Math.cos(a))).add(up3.scale(Math.sin(tw) * Math.sin(a)));
+                ribbon(bb, c, c.add(dir.scale(1.9)), 0.03F, 0xC0F0FF, 0.35F * on, 0x80C0FF, 0.0F);
+            }
+        }
+        draw(bb);
+        glow(c, 0.35F, 0xE0F8FF, 0.8F);
+    }
+
+    /**
+     * 1.5.0, the Optical Workshop: Newton's rings over the test stand - the light and dark fringes where a surface meets
+     * its reference flat, drifting as the polish takes the error away.
+     */
+    private static void fringes(Vec3 c) {
+        for (int k = 0; k < 6; k++) {
+            float r = (float) Math.sqrt(k + 0.5 + (time * 0.3F) % 1F) * 0.45F;   // radii grow as √k, as Newton's rings do
+            ring3D(c, r, k % 2 == 0 ? 0xFFE8C0 : 0xA0C8FF, 0F, 0F, 0.035F);
+        }
+        glow(c, 0.25F, 0xFFFFFF, 0.5F);
+    }
+
+    /**
+     * 1.6.0, the Laser Interferometer: the infrared beam (drawn red) running out along both arms from the beam splitter,
+     * pulses travelling to the end mirrors and back, and the dark port at the splitter flickering as the arms breathe.
+     */
+    private static void laserArms(Vec3 c, net.minecraft.core.Direction facing) {
+        // the pattern's +x and +z arms, turned the way MultiblockDefinition.effectCenter turns the structure
+        Vec3 ax, az;
+        switch (facing) {
+            case SOUTH -> { ax = new Vec3(-1, 0, 0); az = new Vec3(0, 0, -1); }
+            case EAST -> { ax = new Vec3(0, 0, 1); az = new Vec3(-1, 0, 0); }
+            case WEST -> { ax = new Vec3(0, 0, -1); az = new Vec3(1, 0, 0); }
+            default -> { ax = new Vec3(1, 0, 0); az = new Vec3(0, 0, 1); }
+        }
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        for (Vec3 arm : new Vec3[]{ax, az}) {
+            ribbon(bb, c, c.add(arm.scale(27)), 0.06F, 0xFF4050, 0.45F, 0xFF4050, 0.3F);
+            for (int k = 0; k < 4; k++) {
+                float s = (time * 0.6F + k / 4F) % 1F;
+                double d = s < 0.5F ? s * 2 * 27 : (1 - s) * 2 * 27;          // out to the end mirror and back
+                Vec3 q = c.add(arm.scale(d));
+                ribbon(bb, q.add(arm.scale(-0.6)), q.add(arm.scale(0.6)), 0.14F, 0xFF8090, 0.0F, 0xFFC0C8, 0.7F);
+            }
+        }
+        draw(bb);
+        float dark = 0.2F + 0.8F * (float) Math.pow(Math.max(0, Math.sin(time * 1.7)), 8);    // the dark port, brightening as a wave passes
+        glow(c, 0.5F, 0xFF6070, 0.6F * dark);
+        glow(c, 0.15F, 0xFFFFFF, 0.8F);
+    }
+
+    /** 1.6.0, the Pound-Rebka Tower: gamma rays climbing from the source to the absorber, as pulses of green-white light. */
+    private static void gammaRise(Vec3 c) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        ribbon(bb, c.add(0, -4, 0), c.add(0, 4, 0), 0.05F, 0xE0FF80, 0.15F, 0xE0FF80, 0.15F);
+        for (int k = 0; k < 5; k++) {
+            float s = (time * 0.5F + k / 5F) % 1F;
+            Vec3 q = c.add(0, -4 + 8 * s, 0);
+            ribbon(bb, q, q.add(0, 0.7, 0), 0.12F, 0xF0FFC0, 0.0F, 0xFFFFFF, 0.8F * (1 - s * 0.6F));
+        }
+        draw(bb);
+        glow(c.add(0, -4, 0), 0.35F, 0xC0FF80, 0.6F);
+    }
+
+    /** 1.7.0, the Brownian Microscope: grains in the cell, each on its own jittering walk, trailing where it has just been. */
+    private static void brownian(Vec3 c) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 9; i++) {
+            double a = i * 1.7, b = i * 2.9;
+            for (int k = 0; k < 5; k++) {                                     // the grain and its fading trail
+                double tt = time - k * 0.12;
+                double x = 0.35 * (Math.sin(tt * (0.9 + i * 0.13) + a) + 0.6 * Math.sin(tt * (2.3 + i * 0.07) + b) + 0.3 * Math.sin(tt * 5.1 + i));
+                double z = 0.35 * (Math.cos(tt * (1.1 + i * 0.11) + b) + 0.6 * Math.sin(tt * (1.9 + i * 0.09) + a) + 0.3 * Math.cos(tt * 4.7 + i));
+                glowInto(bb, c.add(x, 0.55 + 0.04 * Math.sin(tt * 3 + i), z), 0.06F - k * 0.009F, 0xF0E0B0, 0.9F - k * 0.17F);
+            }
+        }
+        draw(bb);
+    }
+
+    /**
+     * 1.7.0, the Monte Carlo Engine: random points thrown into a square with a circle in it - the oldest Monte Carlo there
+     * is, π from the share that land inside - green inside, red outside, each flashing and fading.
+     */
+    private static void monteCarlo(Vec3 c, net.minecraft.core.Direction facing) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        float half = 1.4F;
+        long tick = (long) (time * 12);
+        for (int k = 0; k < 40; k++) {
+            long sd = (tick - k) * 2654435761L + k * 40503L;
+            java.util.Random r = new java.util.Random(sd);
+            double u = r.nextDouble() * 2 - 1, v = r.nextDouble() * 2 - 1;
+            boolean in = u * u + v * v <= 1;
+            float age = (float) k / 40F;
+            glowInto(bb, c.add(u * half, 0.6 + v * half, 0), 0.07F, in ? 0x40FF80 : 0xFF5050, 0.9F * (1 - age));
+        }
+        draw(bb);
+        ring3D(c.add(0, 0.6, 0), half, 0x60FFA0, 0F, (float) (Math.PI / 2), 0.03F);
+    }
+
+    /** 1.8.0, the Cyclotron: protons spiralling out between the dees, a little further each half turn, to the extraction edge. */
+    private static void cyclotronSpiral(Vec3 c) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        int n = 90;
+        Vec3 prev = c;
+        for (int i = 1; i <= n; i++) {
+            double a = i * 0.35 - time * 6;
+            double r = 3.6 * Math.sqrt(i / (double) n);                       // radius grows as √(energy)
+            Vec3 q = c.add(Math.cos(a) * r, 0, Math.sin(a) * r);
+            float f = i / (float) n;
+            ribbon(bb, prev, q, 0.05F, 0xFFB070, 0.15F + 0.5F * f, 0xFFE0B0, 0.15F + 0.5F * f);
+            prev = q;
+        }
+        draw(bb);
+        glow(c, 0.4F, 0xFFC080, 0.6F);
+    }
+
+    /**
+     * 1.9.0, the Neutron Interferometer: neutrons come down the guide, split at the first blade, part (one path higher than the
+     * other) and meet again at the third; the two exits brighten and dim in turn as gravity swings the phase between them.
+     */
+    private static void neutronPaths(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        Vec3 side = new Vec3(-ax.z, 0, ax.x), up = new Vec3(0, 1, 0);
+        Vec3 b1 = c.add(ax.scale(-1)), b3 = c.add(ax.scale(1)), hi = c.add(up.scale(0.45)), lo = c.add(up.scale(-0.45));
+        Vec3 e1 = c.add(ax.scale(2)).add(side.scale(-1)), e2 = c.add(ax.scale(2)).add(side.scale(1));
+        float swing = 0.5F + 0.5F * (float) Math.cos(time * 0.8);              // the fringe: one exit bright as the other dims
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        ribbon(bb, c.add(ax.scale(-6)), b1, 0.04F, 0xA0C0FF, 0.15F, 0xC0D8FF, 0.45F);
+        ribbon(bb, b1, hi, 0.03F, 0xC0D8FF, 0.45F, 0xC0D8FF, 0.4F);
+        ribbon(bb, b1, lo, 0.03F, 0xC0D8FF, 0.45F, 0xC0D8FF, 0.4F);
+        ribbon(bb, hi, b3, 0.03F, 0xC0D8FF, 0.4F, 0xE0ECFF, 0.45F);
+        ribbon(bb, lo, b3, 0.03F, 0xC0D8FF, 0.4F, 0xE0ECFF, 0.45F);
+        ribbon(bb, b3, e1, 0.04F, 0xE0ECFF, 0.6F * swing, 0xFFE0A0, 0.8F * swing);
+        ribbon(bb, b3, e2, 0.04F, 0xE0ECFF, 0.6F * (1 - swing), 0xFFE0A0, 0.8F * (1 - swing));
+        draw(bb);
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 6; i++) {                                         // neutrons as wave packets, each taking both paths at once
+            float f = (time * 0.35F + i / 6F) % 1F;
+            if (f < 0.5F) glowInto(pts, c.add(ax.scale(-6 + 10 * f)), 0.07F, 0xC0D8FF, 0.8F);
+            else {
+                double g = (f - 0.5) * 2, h = 0.45 * (1 - Math.abs(2 * g - 1));
+                glowInto(pts, b1.add(ax.scale(2 * g)).add(up.scale(h)), 0.05F, 0xE0ECFF, 0.6F);
+                glowInto(pts, b1.add(ax.scale(2 * g)).add(up.scale(-h)), 0.05F, 0xE0ECFF, 0.6F);
+            }
+        }
+        draw(pts);
+        glow(e1, 0.25F, 0xFFE0A0, 0.6F * swing);
+        glow(e2, 0.25F, 0xFFE0A0, 0.6F * (1 - swing));
+    }
+
+    /**
+     * 1.9.0, the Analog Black Hole: the condensate streams down the tube, slowly before the laser step and fast after it; at
+     * the step a faint horizon glows, and phonon pairs appear there - one crawling upstream, its partner swept away.
+     */
+    private static void sonicHorizon(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 24; i++) {                                        // the flow: x(t) slow upstream, three times faster past the step
+            float f = (time * 0.12F + i / 24F) % 1F;
+            double x = f < 0.6F ? -4.5 + f / 0.6 * 4.5 : (f - 0.6) / 0.4 * 4.5;
+            double r = 0.18 * Math.sin(i * 2.4);
+            glowInto(pts, c.add(ax.scale(x)).add(0, r, 0.18 * Math.cos(i * 2.4)), 0.05F, 0x80E0FF, 0.55F);
+        }
+        long pair = (long) (time * 0.7);
+        float age = (time * 0.7F) % 1F;
+        java.util.Random rr = new java.util.Random(pair * 977L);
+        double yy = (rr.nextDouble() - 0.5) * 0.3, zz = (rr.nextDouble() - 0.5) * 0.3;
+        glowInto(pts, c.add(ax.scale(-0.6 * age)).add(0, yy, zz), 0.08F, 0xFFFFFF, 0.9F * (1 - age));     // the Hawking phonon, escaping
+        glowInto(pts, c.add(ax.scale(3.5 * age)).add(0, yy, zz), 0.08F, 0xC080FF, 0.9F * (1 - age));      // its partner, swept inside
+        draw(pts);
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        ribbon(bb, c.add(0, 1.9, 0), c, 0.04F, 0xFF5060, 0.7F, 0xFF5060, 0.25F);           // the step laser from above
+        draw(bb);
+        ring3D(c, 0.42F, 0xC0F0FF, 0F, 0F, 0.03F);
+        ring3D(c, 0.42F, 0xC0F0FF, (float) (Math.PI / 2), (float) (Math.PI / 2), 0.03F);
+        glow(c, 0.35F, 0xC0F0FF, 0.25F + 0.15F * (float) Math.sin(time * 3));
+    }
+
+    /** 1.11.0, the Tokamak: a ring of violet plasma round the torus, its filaments twisting with the helical field. */
+    private static void tokamakPlasma(Vec3 c) {
+        float R = 4.5F;
+        ring3D(c, R, 0xFF60C0, time * 0.3F, 0F, 0.35F);
+        ring3D(c, R, 0xFFC0F0, -time * 0.2F, 0F, 0.12F);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 48; i++) {
+            double ph = i * Math.PI * 2 / 48 + time * 0.8;                    // round the torus
+            double th = ph * 3 + time * 2.0;                                  // and round the tube: q = 3 field lines
+            double r = R + 0.45 * Math.cos(th);
+            glowInto(pts, c.add(Math.cos(ph) * r, 0.45 * Math.sin(th), Math.sin(ph) * r), 0.07F, 0xFFD0FF, 0.7F);
+        }
+        draw(pts);
+    }
+
+    /** 1.11.0, the Pulsed Magnet Lab: each shot a burst of field - rings racing out from the coil, then quiet while the capacitors charge. */
+    private static void pulsedField(Vec3 c) {
+        float ph = (time * 0.5F) % 1F;
+        if (ph < 0.35F) {
+            float k = ph / 0.35F;
+            for (int i = 0; i < 4; i++) {
+                float r = 0.3F + (k + i * 0.25F) % 1F * 2.6F;
+                ring3D(c, r, 0x80C0FF, 0F, (float) (Math.PI / 2), 0.04F);
+                ring3D(c, r, 0xC0E0FF, (float) (Math.PI / 2), (float) (Math.PI / 2), 0.03F);
+            }
+            glow(c, 0.6F, 0xC0E0FF, 0.8F * (1 - k));
+        } else glow(c, 0.25F, 0x6080C0, 0.3F);
+    }
+
+    /** 1.11.0, the Hypervelocity Impact Forge: an armature shot down the rails, a streak and a white flash at the target. */
+    private static void railgun(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        float ph = (time * 0.4F) % 1F;
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        if (ph < 0.15F) {
+            float k = ph / 0.15F;
+            Vec3 head = c.add(ax.scale(-6 + 12 * k));
+            ribbon(bb, head.subtract(ax.scale(2.5)), head, 0.06F, 0xFFE0A0, 0F, 0xFFFFFF, 0.9F);
+        }
+        draw(bb);
+        if (ph >= 0.15F && ph < 0.4F) glow(c.add(ax.scale(6)), 1.2F * (1 - (ph - 0.15F) / 0.25F), 0xFFF0D0, 0.9F);
+        for (int s = -1; s <= 1; s += 2) {                                  // the rails glow faintly while charged
+            Vec3 side = new Vec3(-ax.z, 0, ax.x).scale(s * 1.0);
+            BufferBuilder rb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+            ribbon(rb, c.add(side).add(ax.scale(-6)), c.add(side).add(ax.scale(6)), 0.03F, 0xFFB060, 0.25F, 0xFFB060, 0.25F);
+            draw(rb);
+        }
+    }
+
+    // ---------------------------------------------------------------- 1.10.1: every later multiblock its own animation
+
+    /** Molten Salt Reactor: the fuel salt's green glow, pulsing with the reactor's power, and salt rising through the core and sinking outside it. */
+    private static void saltGlow(Vec3 c) {
+        float pulse = 0.75F + 0.25F * (float) Math.sin(time * 1.3);
+        glow(c, 1.1F * pulse, 0x80FF90, 0.45F);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 28; i++) {
+            float f = (time * 0.25F + i / 28F) % 1F;
+            double a = i * 2.39;
+            boolean up = i % 2 == 0;                                    // up the middle, down the downcomer
+            double r = up ? 0.4 : 1.4;
+            double y = up ? -1.5 + 3 * f : 1.5 - 3 * f;
+            glowInto(pts, c.add(Math.cos(a) * r, y, Math.sin(a) * r), 0.07F, up ? 0xC0FFA0 : 0x60C070, 0.7F);
+        }
+        draw(pts);
+    }
+
+    /** Crystal Growth Furnace: a boule drawn slowly up out of a glowing melt, turning as it rises. */
+    private static void czochralski(Vec3 c) {
+        float len = 0.4F + 1.2F * ((time * 0.03F) % 1F);
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        for (int k = 0; k < 6; k++) {
+            double a = k * Math.PI / 3 + time * 0.4;
+            Vec3 o = new Vec3(Math.cos(a) * 0.22, 0, Math.sin(a) * 0.22);
+            ribbon(bb, c.add(o).add(0, -1.2, 0), c.add(o).add(0, -1.2 + len, 0), 0.05F, 0xFFD0A0, 0.6F, 0xFFFFFF, 0.25F);
+        }
+        draw(bb);
+        ring3D(c.add(0, -1.25, 0), 0.7F, 0xFF9040, time * 0.2F, 0F, 0.12F);
+        glow(c.add(0, -1.3, 0), 0.8F, 0xFFA040, 0.5F);
+    }
+
+    /** Deep Drilling Rig: the drill string turning, its joints running down the well, and mud with cuttings rising back. */
+    private static void drillString(Vec3 c) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        ribbon(bb, c.add(0, 6, 0), c.add(0, -6, 0), 0.08F, 0xC0C0C0, 0.25F, 0x806040, 0.1F);
+        draw(bb);
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 12; i++) {
+            float f = (time * 0.15F + i / 12F) % 1F;
+            double a = time * 3 + i;
+            glowInto(pts, c.add(Math.cos(a) * 0.15, 6 - 12 * f, Math.sin(a) * 0.15), 0.06F, 0xE0E0F0, 0.6F);        // tool joints going down
+            glowInto(pts, c.add(Math.cos(-a) * 0.4, -6 + 12 * f, Math.sin(-a) * 0.4), 0.05F, 0xC08040, 0.5F);       // mud and cuttings coming up
+        }
+        draw(pts);
+    }
+
+    /** Gas Centrifuge Cascade: the rotors' blur at every stage, and the enriched stream stepping up the tower. */
+    private static void centrifuge(Vec3 c) {
+        for (int k = 0; k < 6; k++)
+            ring3D(c.add(0, k, 0), 0.9F, k % 2 == 0 ? 0xA0FF70 : 0x70C050, time * (6 + k), 0F, 0.05F);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 10; i++) {
+            float f = (time * 0.2F + i / 10F) % 1F;
+            glowInto(pts, c.add(0, 6 * f, 0), 0.08F, 0xD0FF90, 0.8F * (0.4F + 0.6F * f));
+        }
+        draw(pts);
+    }
+
+    /** MHD Generator: conducting fluid streaming down the channel; the field pushes its positive charges to one wall and negative to the other. */
+    private static void mhdFlow(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        Vec3 along = new Vec3(-ax.z, 0, ax.x);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 30; i++) {
+            float f = (time * 0.35F + i / 30F) % 1F;
+            boolean pos = i % 2 == 0;
+            double drift = (pos ? 1 : -1) * 0.9 * f;                     // the Lorentz force sorts them as they go
+            glowInto(pts, c.add(along.scale(-5.5 + 11 * f)).add(ax.scale(drift)).add(0, 0.2 * Math.sin(i), 0), 0.07F, pos ? 0xFF6040 : 0x4080FF, 0.75F);
+        }
+        draw(pts);
+    }
+
+    /** Eschaton Foundry: a dying sun at the heart, its last embers drifting outward and going dark. */
+    private static void heatDeath(Vec3 c) {
+        float b = 0.55F + 0.15F * (float) Math.sin(time * 0.2);
+        glow(c, 3.2F, 0x601808, 0.35F * b);
+        glow(c, 1.6F, 0xFF6020, 0.5F * b);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 60; i++) {
+            float f = (time * 0.05F + i / 60F) % 1F;
+            double th = i * 2.39996, ph = Math.acos(1 - 2 * ((i * 0.618) % 1));
+            Vec3 d = new Vec3(Math.sin(ph) * Math.cos(th), Math.cos(ph), Math.sin(ph) * Math.sin(th));
+            glowInto(pts, c.add(d.scale(1.8 + 6 * f)), 0.12F, f < 0.5 ? 0xFFA040 : 0x803020, 0.8F * (1 - f));
+        }
+        draw(pts);
+    }
+
+    /** Burst Observatory: now and then a flash somewhere on the sky, and its gamma rays falling onto the panels. */
+    private static void gammaBurst(Vec3 c, long seed) {
+        long n = (long) (time / 3.0);
+        float f = (float) ((time / 3.0) % 1.0);
+        java.util.Random r = new java.util.Random(seed * 13 + n * 7919);
+        double a = r.nextDouble() * Math.PI * 2, el = 0.4 + r.nextDouble() * 0.9;
+        Vec3 src = c.add(Math.cos(a) * Math.cos(el) * 7, 3 + Math.sin(el) * 5, Math.sin(a) * Math.cos(el) * 7);
+        if (f < 0.25F) {
+            float k = f / 0.25F;
+            glow(src, 0.9F * (1 - k), 0xFFFFFF, 1 - k);
+            beginAdditive();
+            BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+            ribbon(bb, src, c, 0.05F, 0xFFFFFF, 0.8F * (1 - k), 0xA0C0FF, 0.5F * (1 - k));
+            draw(bb);
+        }
+        glow(c, 0.3F, 0xA0C0FF, 0.3F + (f < 0.25F ? 0.5F * (1 - f / 0.25F) : 0));
+    }
+
+    /** Markov Chain Refinery: three states in a ring and the feed hopping between them, lingering longest where leaving is least likely. */
+    private static void markovHops(Vec3 c) {
+        Vec3[] v = new Vec3[3];
+        for (int k = 0; k < 3; k++) {
+            double a = Math.PI / 2 + k * Math.PI * 2 / 3;
+            v[k] = c.add(Math.cos(a) * 4.5, -0.5, Math.sin(a) * 4.5);
+            glow(v[k], 0.45F, k == 0 ? 0xFF8080 : k == 1 ? 0x80FF80 : 0x8080FF, 0.35F);
+        }
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 9; i++) {
+            float f = (time * 0.4F + i * 0.37F) % 3F;
+            int k = (int) f;
+            float t = f - k;
+            float hop = Math.max(0F, (t - 0.6F) / 0.4F);                // linger, then hop on
+            Vec3 p = v[k].add(v[(k + 1) % 3].subtract(v[k]).scale(hop)).add(0, 0.6 * Math.sin(hop * Math.PI), 0);
+            glowInto(pts, p, 0.1F, 0xFFFFFF, 0.8F);
+        }
+        draw(pts);
+    }
+
+    /** Lensing Concentrator: a star behind the focus drawn out into arcs that close into an Einstein ring as it lines up. */
+    private static void einsteinRing(Vec3 c) {
+        float u = (float) Math.abs(Math.sin(time * 0.25));             // the alignment, sweeping in and out
+        float R = 1.2F;
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 48; i++) {
+            double a = i * Math.PI * 2 / 48;
+            double w = Math.max(0, 1 - u * (1 + Math.cos(a)) * 1.5);    // the arc on the far side fills in last
+            if (w <= 0.02) continue;
+            glowInto(pts, c.add(Math.cos(a) * R, Math.sin(a) * R, 0), 0.09F, 0xFFF4D0, (float) w);
+        }
+        draw(pts);
+    }
+
+    /** Time Dilation Chamber: rings like clock hands, turning slower the nearer the core they are. */
+    private static void dilationRings(Vec3 c) {
+        for (int k = 1; k <= 6; k++) {
+            float r = 0.3F * k;
+            float rate = (float) Math.sqrt(Math.max(0.02, 1 - 0.28 / r));  // 1/√(1 − r_s/r), as clock rate
+            ring3D(c, r, k % 2 == 0 ? 0xFFD080 : 0xFFF0C0, time * rate, (float) (Math.PI / 2), 0.03F);
+        }
+        glow(c, 0.25F, 0xFFD080, 0.5F);
+    }
+
+    /** Warp Field Forge: a bubble with space squeezed in front of it and stretched behind, gridlines bunching one way and spreading the other. */
+    private static void warpBubble(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        ring3D(c, 1.6F, 0xC080FF, time * 0.4F, 0F, 0.04F);
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = -6; i <= 6; i++) {
+            double x = i * 0.35;
+            double shift = x > 0 ? -0.6 * Math.exp(-x) : 0.6 * Math.exp(x);
+            double flow = (time * 0.6) % 0.35;
+            Vec3 at = c.add(ax.scale(x + shift + flow));
+            ribbon(bb, at.add(0, -1.8, 0), at.add(0, 1.8, 0), 0.02F, 0xE0A0FF, 0.35F, 0xE0A0FF, 0.35F);
+        }
+        draw(bb);
+        glow(c, 0.6F, 0xF0C0FF, 0.25F);
+    }
+
+    /** Unruh Accelerator: the beam racing round the ring, and round it a warm haze - the vacuum, as the beam sees it. */
+    private static void unruhBath(Vec3 c) {
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 6; i++) {
+            double a = time * 4 + i * 0.12;
+            glowInto(pts, c.add(Math.cos(a) * 6, 0, Math.sin(a) * 6), 0.12F - i * 0.015F, 0xFFFFFF, 0.9F - i * 0.13F);
+        }
+        java.util.Random r = new java.util.Random((long) (time * 8));
+        for (int i = 0; i < 26; i++) {
+            double a = r.nextDouble() * Math.PI * 2;
+            double rr = 6 + r.nextGaussian() * 0.35;
+            glowInto(pts, c.add(Math.cos(a) * rr, r.nextGaussian() * 0.3, Math.sin(a) * rr), 0.05F, 0xFFB060, 0.6F);
+        }
+        draw(pts);
+    }
+
+    /** Micro Black Hole Evaporator: a speck too small to see in a white-hot glare, pairs born at its edge - one escaping, one falling in. */
+    private static void hawkingSpark(Vec3 c) {
+        float flick = 0.8F + 0.2F * (float) Math.sin(time * 9);
+        glow(c, 0.9F * flick, 0xFFF0D0, 0.7F);
+        glow(c, 0.35F, 0xFFFFFF, 0.9F);
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 18; i++) {
+            float f = (time * 0.8F + i / 18F) % 1F;
+            double th = i * 2.39996, ph = Math.acos(1 - 2 * ((i * 0.618) % 1));
+            Vec3 d = new Vec3(Math.sin(ph) * Math.cos(th), Math.cos(ph), Math.sin(ph) * Math.sin(th));
+            glowInto(pts, c.add(d.scale(0.4 + 3.6 * f)), 0.06F, 0xFFE0A0, 1 - f);           // the escaping partner
+            glowInto(pts, c.add(d.scale(0.4 * (1 - f))), 0.04F, 0x8060FF, 0.6F * (1 - f));    // the one that falls in
+        }
+        draw(pts);
+    }
+
+    /** ER=EPR Weaver: pairs born in the middle, their halves flying out to the two mouths, a faint thread between each pair. */
+    private static void erBridge(Vec3 c, net.minecraft.core.Direction facing) {
+        Vec3 ax = new Vec3(facing.getStepZ(), 0, -facing.getStepX());
+        if (ax.lengthSqr() < 0.5) ax = new Vec3(1, 0, 0);
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 4; i++) {
+            float f = (time * 0.3F + i / 4F) % 1F;
+            Vec3 a = c.add(ax.scale(-6 * f)).add(0, -0.5 + 0.3 * Math.sin(f * 6 + i), 0);
+            Vec3 b = c.add(ax.scale(6 * f)).add(0, -0.5 + 0.3 * Math.sin(f * 6 + i), 0);
+            ribbon(bb, a, b, 0.015F, 0xFF80FF, 0.3F * (1 - f), 0xFF80FF, 0.3F * (1 - f));
+            glowInto(pts, a, 0.08F, 0xFFA0FF, 0.9F);
+            glowInto(pts, b, 0.08F, 0xFFA0FF, 0.9F);
+        }
+        draw(bb);
+        draw(pts);
+        glow(c.add(ax.scale(-6)), 0.6F, 0xFF80FF, 0.3F);
+        glow(c.add(ax.scale(6)), 0.6F, 0xFF80FF, 0.3F);
+    }
+
+    /** Accretion Disk Reactor: a flat disk spiralling in, and twin jets driven out of the poles. */
+    private static void quasarJets(Vec3 c) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        for (int s = -1; s <= 1; s += 2) ribbon(bb, c, c.add(0, s * 5.5, 0), 0.12F, 0xC0E8FF, 0.8F, 0x6080FF, 0.0F);
+        draw(bb);
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 16; i++) {
+            float f = (time * 0.9F + i / 16F) % 1F;
+            for (int s = -1; s <= 1; s += 2) glowInto(pts, c.add(0, s * 5.5 * f, 0), 0.1F, 0xE0F0FF, 1 - f);
+        }
+        draw(pts);
+    }
+
+    /** 1.12.0, the Climate Engine: a band of cloud wheeling round the tower, drifting up, now and then lit from within. */
+    private static void climate(Vec3 c) {
+        beginAdditive();
+        BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        for (int i = 0; i < 36; i++) {
+            double a = i * Math.PI * 2 / 36 + time * 0.15;
+            double r = 2.2 + 0.4 * Math.sin(i * 1.7 + time * 0.4);
+            double y = 0.6 * Math.sin(a * 2 + time * 0.3);
+            glowInto(pts, c.add(Math.cos(a) * r, y, Math.sin(a) * r), 0.22F, 0xD0E4FF, 0.18F);
+        }
+        draw(pts);
+        if (((int) (time * 2)) % 9 == 0) glow(c.add(0, 0.3, 0), 1.0F, 0xE0F0FF, 0.25F);
+    }
+
+    /** 1.8.0, the Tesla Coil: jagged arcs leaping from the toroid, each living a few frames, branching as they go. */
+    private static void teslaArcs(Vec3 c, long seed) {
+        beginAdditive();
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        long frame = (long) (time * 15);
+        for (int k = 0; k < 5; k++) {
+            java.util.Random r = new java.util.Random(seed * 31 + frame * 7 + k * 101);
+            double a = r.nextDouble() * Math.PI * 2;
+            Vec3 dir = new Vec3(Math.cos(a), -0.2 + r.nextDouble() * 0.7, Math.sin(a)).normalize();
+            Vec3 p = c.add(dir.scale(1.6));
+            int segs = 8;
+            for (int i = 0; i < segs; i++) {
+                Vec3 q = p.add(dir.scale(0.45)).add(r.nextGaussian() * 0.22, r.nextGaussian() * 0.22, r.nextGaussian() * 0.22);
+                ribbon(bb, p, q, 0.06F, 0xE0F0FF, 0.9F, 0xA0C8FF, 0.8F);
+                if (r.nextInt(4) == 0) {                                      // a branch
+                    Vec3 b = q.add(r.nextGaussian() * 0.5, r.nextGaussian() * 0.5, r.nextGaussian() * 0.5);
+                    ribbon(bb, q, b, 0.03F, 0xC0E0FF, 0.6F, 0x80A0FF, 0.0F);
+                }
+                p = q;
+            }
+        }
+        draw(bb);
+        glow(c, 1.4F, 0xA0C8FF, 0.35F);
     }
 
     /** Fractions rising up the spire, each condensing out at its own height and colour. */

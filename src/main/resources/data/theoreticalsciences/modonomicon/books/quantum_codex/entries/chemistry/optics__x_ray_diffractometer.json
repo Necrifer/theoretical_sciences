@@ -1,0 +1,68 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.x_ray_diffractometer",
+  "description": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.desc",
+  "icon": {
+    "item": "theoreticalsciences:x_ray_diffractometer"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 11,
+  "y": 7,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:x_ray_diffractometer"
+      },
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:x_ray_diffractometer"
+      },
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:laue_pattern"
+      },
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.x_ray_diffractometer.p7"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__bonds"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__chemical_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/crystallography"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon",
+  "description": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.desc",
+  "icon": {
+    "item": "theoreticalsciences:eye_of_the_horizon"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 175,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:eye_of_the_horizon"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p5.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p6"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:eye_of_the_horizon"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:femtoscale_assembly_line"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p8"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:horizon_shard"
+      },
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p9"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.eye_of_the_horizon.p10"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/strings__universe_forge"
+    },
+    {
+      "entry": "theoreticalsciences:physics/stellar__transcendent_plasma_forge"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/horizon_simulation"
+  }
+}

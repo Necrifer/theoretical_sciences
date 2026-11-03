@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:monte_carlo_engine"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.monte_carlo_methods"
+    },
+    "description": {
+      "translate": "research.theoreticalsciences.monte_carlo_methods.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/bayesian_inference",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

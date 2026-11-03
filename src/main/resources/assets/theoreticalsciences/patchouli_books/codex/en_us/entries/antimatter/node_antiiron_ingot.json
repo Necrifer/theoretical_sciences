@@ -1,0 +1,23 @@
+{
+  "name": "Anti-Iron Ingot",
+  "icon": "theoreticalsciences:antiiron_ingot",
+  "category": "theoreticalsciences:antimatter",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antiiron_ingot",
+      "title": "Anti-Iron Ingot",
+      "text": "A bar of anti-iron, refined in levitation and cooled in vacuum. It rings like iron when the field taps it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)The Mirror Matter Foundry melts the ore without a crucible - the metal floats in a Penning field the whole time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mirror Matter Foundry$().$(br2)$(thing)Unlocked by$(): Mirror Metallurgy.$(br2)$(thing)Used in$(): Mirror Alloy Ingot."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mirror_metallurgy"
+}

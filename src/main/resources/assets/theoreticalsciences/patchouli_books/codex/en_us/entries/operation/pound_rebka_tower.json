@@ -1,0 +1,24 @@
+{
+  "name": "Pound-Rebka Tower",
+  "icon": "theoreticalsciences:pound_rebka_tower",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 57,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Light climbing a height H in gravity g loses a fraction gH/c\u00b2 of its frequency. The gamma ray of iron-57 is so sharp that this shift - a few parts in 10\u00b9\u2075 - can be seen: move the source up at v = gH/c and the Doppler shift cancels it. Counting N gamma rays measures the line's centre to its width over \u221aN. A temperature difference between source and absorber shifts it too, by 2.2\u00d710\u207b\u00b9\u2075 a kelvin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Source speed v, Counting time.$(br2)$(thing)Disturbance$(): Vibration of the tower: the thermal shift wanders by \u00b110%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): .$(br2)$(thing)Rate$(): Shorter counts are faster; a taller tower measures more at once."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Tower height: H = 7.5 m \u00b7 storeys$(br)Gravitational shift: \u0394f/f = gH/c\u00b2$(br)Speed that cancels it: v = gH/c$(br)Thermal shift: \u0394v = 0.66 \u00b5m/s per K$(br)Counting error: \u03c3 = \u0393/\u221aN$(br)Mistuning: |v \u2212 v_g \u2212 v_th|/\u03c3$(br)Significance: v_g/\u03c3"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "Abnormality & Infection",
+  "icon": "theoreticalsciences:anomaly_specimen",
+  "category": "theoreticalsciences:anomaly",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_containment_ward,theoreticalsciences:anomaly_specimen,theoreticalsciences:fractured_essence",
+      "text": "Every science keeps a drawer of things that should not happen. Physics has defects and law violations, chemistry has molecules that make themselves, biology has cancer, mathematics has monsters. $(thing)Abnormality & Infection$() studies them together, because they behave alike: they $(thing)arise$() from a broken rule, $(thing)replicate$(), $(thing)escape$() what should destroy them, and $(thing)change$() the normal world they live in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "You have met them already. A failing multiblock leaks them: $(thing)Fractured Reality$() spreads block to block like an infection of a higher-dimensional shadow, Nanite Swarms turn their hosts into new swarms, Husks, Void Wraiths, Paradox Echoes and Law Wraiths crawl out. What they leave - $(item)Fractured Essence$(), $(item)Void Essence$(), $(item)Paradox Residue$(), $(item)Nanite Swarms$(), $(item)Law Crystals$() - is the field sample."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Build the $(item)Anomaly Containment Ward$(). It turns each of those drops, with a stabiliser matrix or causal shielding, into sixteen $(item)Contained Anomaly Specimens$() - the raw material of the whole branch. Its Operation console is an epidemic: the specimen grows at \u03b2, the ward clears it at \u03b3 + q, and R = \u03b2/(\u03b3 + q) must stay below 1. The faster it grows (just below 1), the more there is to study."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Is it anomalous at all? Normal noise scatters as a Gaussian. A deviation of k\u03c3 happens by chance with probability \u2248 \u221a(2/\u03c0)e^{\u2212k\u00b2/2}/k: one in 1.7 million at five sigma - the threshold at which physics believes a discovery. The branch runs in six stages: $(li)Origin$(li)Replication & escape$(li)The systems behind it$(li)Interaction with normality$(li)Extent$(li)Containment, study, isolation - and resolution."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_containment_ward",
+      "text": "Made in $(item)Femtoscale Assembly Line$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anomaly_specimen",
+      "text": "A sample of something that should not be, held in a quarantine field small enough to carry. It is still trying to get out.$(br2)Made in $(item)Anomaly Containment Ward$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fractured_essence",
+      "text": "A splinter of reality that broke away from a destabilised creature. It is in several places at once.$(br2)Made in $(item)Chronon Field Inverter$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:void_essence",
+      "text": "What is left of a Void Wraith: a little pocket of nothing that refuses to be filled.$(br2)Made in $(item)Dark Matter Halo Collector$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:paradox_residue",
+      "text": "What is left after a contradiction resolves itself.$(br2)Made in $(item)Axiomatic Breach Engine$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nanite_swarm",
+      "text": "A billion machines the size of viruses. Hungry.$(br2)Made in $(item)Nanite Assembler$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Contained Anomaly Specimen$(): Anomalous Strain Culture, Autocatalytic Broth, Local Law Violation, Resolved Anomaly, Topological Defect Core and more$(li)$(item)Fractured Essence$(): Contained Anomaly Specimen, Degenerate Matter Chunk, Integer Ring, Strange Matter Pellet, Warm Helium and more$(li)$(item)Void Essence$(): Contained Anomaly Specimen, Dark Matter Lens, Empty Set$(li)..."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/anomalous_phenomena"
+}

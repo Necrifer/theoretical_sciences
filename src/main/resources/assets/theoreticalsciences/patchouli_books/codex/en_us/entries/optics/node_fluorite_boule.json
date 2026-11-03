@@ -1,0 +1,19 @@
+{
+  "name": "Fluorite Boule",
+  "icon": "theoreticalsciences:fluorite_boule",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fluorite_boule",
+      "title": "Fluorite Boule",
+      "text": "Calcium fluoride grown as one crystal. It bends colours apart less than any glass, so lenses of it bring every colour to one focus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Crystal Growth Furnace$().$(br2)$(thing)Unlocked by$(): Crystallography.$(br2)$(thing)Used in$(): Fluorite Boule, Fluorite Lens, Laue Pattern, Photonic Lens."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

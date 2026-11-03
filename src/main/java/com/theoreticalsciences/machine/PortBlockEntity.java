@@ -13,6 +13,8 @@ public class PortBlockEntity extends BlockEntity {
     /** Its AE2 node (compat.ae2.Ae2Link) when AE2 is installed; null otherwise. */
     @Nullable private Object me;
     @Nullable private CompoundTag meSaved;
+    /** 1.1.0: 0 passive, 1 exports products, 2 imports ingredients, 3 both - into and from the blocks beside it. */
+    private int ioMode;
 
     public PortBlockEntity(BlockPos pos, BlockState state) {
         super(QHBlockEntities.PORT.get(), pos, state);
@@ -28,6 +30,17 @@ public class PortBlockEntity extends BlockEntity {
         if (controllerPos == null || level == null || !level.isLoaded(controllerPos)) return null;
         if (level.getBlockEntity(controllerPos) instanceof ControllerBlockEntity c && c.isFormed() && c.ports().contains(worldPosition)) return c;
         return null;
+    }
+
+    public int ioMode() {
+        return ioMode;
+    }
+
+    /** Next mode; returns it. */
+    int cycleMode() {
+        ioMode = (ioMode + 1) % 4;
+        setChanged();
+        return ioMode;
     }
 
     @Nullable
@@ -65,6 +78,7 @@ public class PortBlockEntity extends BlockEntity {
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider regs) {
         super.saveAdditional(tag, regs);
         if (controllerPos != null) tag.putLong("Controller", controllerPos.asLong());
+        if (ioMode != 0) tag.putInt("IOMode", ioMode);
         if (me != null) com.theoreticalsciences.compat.MEBridge.save(me, tag);
         else if (meSaved != null) tag.put("ME", meSaved);
     }
@@ -74,5 +88,6 @@ public class PortBlockEntity extends BlockEntity {
         super.loadAdditional(tag, regs);
         controllerPos = tag.contains("Controller") ? BlockPos.of(tag.getLong("Controller")) : null;
         meSaved = tag.contains("ME") ? tag.getCompound("ME") : null;
+        ioMode = tag.getInt("IOMode") & 3;
     }
 }

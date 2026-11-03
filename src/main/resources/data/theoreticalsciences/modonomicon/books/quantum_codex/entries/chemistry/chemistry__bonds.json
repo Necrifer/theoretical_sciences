@@ -1,0 +1,74 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.bonds",
+  "description": "book.theoreticalsciences.codex.chemistry.bonds.desc",
+  "icon": {
+    "item": "theoreticalsciences:chemical_reactor"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 2,
+  "y": 2,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chemical_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chemical_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:zeolite_catalyst"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:molecular_orbital_lattice"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p5"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chiral_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p6"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p7"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:supercritical_solvent_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bonds.p8"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/chemical_bonding"
+  }
+}

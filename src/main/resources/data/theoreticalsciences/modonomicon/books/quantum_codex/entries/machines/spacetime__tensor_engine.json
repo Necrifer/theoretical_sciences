@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.tensor_engine",
+  "description": "book.theoreticalsciences.codex.spacetime.tensor_engine.desc",
+  "icon": {
+    "item": "theoreticalsciences:tensor_engine"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 19,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tensor_engine"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.tensor_engine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.tensor_engine.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.tensor_engine.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.tensor_engine.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tensor_engine"
+      },
+      "text": "book.theoreticalsciences.codex.spacetime.tensor_engine.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/exotic__tachyon_resonator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/special_relativity"
+  }
+}
