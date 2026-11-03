@@ -1,7 +1,7 @@
 # Customising Theoretical Sciences with KubeJS
 
-Theoretical Sciences is built to be reshaped by modpacks. Almost everything a pack would want to change — machine recipes,
-the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, singularities — is data, and all of
+Theoretical Sciences is built to be reshaped by modpacks. Almost everything — machine recipes,
+the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, singularities — all of
 it can be changed from KubeJS without touching the mod.
 
 Requires **KubeJS for NeoForge 1.21.1** (`2101.7` or newer). Everything below is optional: with no scripts, the mod
@@ -97,11 +97,11 @@ Optional parts, chained after the call:
 | Method | JSON field | Meaning |
 |---|---|---|
 | `.energy(n)` / `.fe(n)` | `energy` | FE per tick. For generators: FE per tick **produced**. |
-| `.duration(n)` / `.time(n)` | `duration` | Ticks. |
+| `.duration(n)` / `.time(n)` | `duration` | Recipe duration in ticks. |
 | `.research('ns:id')` | `research` | Research the machine's owner must have. |
-| `.catalysts([...])` | `catalysts` | Must be present, never used up. |
-| `.chances([1, 0.5])` | `chances` | Chance for each item output (1 = always). |
-| `.minTier(6)` | `min_tier` | Lowest coil tier the multiblock must have (see section 5). |
+| `.catalysts([...])` | `catalysts` | Ingredient will not be used up. |
+| `.chances([1, 0.5])` | `chances` | Chance for each item output (1 = guaranteed). |
+| `.minTier(6)` | `min_tier` | Lowest coil tier accepted by multiblock (see section 5). |
 | `.optionalInputs([{item: 'mekanism:alloy_atomic', count: 4}])` | `optional_inputs` | Only used if that mod is installed. |
 | `.optionalFluidInputs([{fluid: 'mekanism:hydrogen', amount: 1000}])` | `optional_fluid_inputs` | The same for fluids. |
 | `.physics({vars: {A: 1}, windows: [{q: 'sNN', min: 3600, max: 4200}]})` | `physics` | A window a physics quantity must be held in (section 6). |
