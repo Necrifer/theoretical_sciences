@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0 — Chemistry, Mathematics and Biology
+## 1.2.0 — 3 Forgotten Memories
 
 The first release since 1.1.0, in three parts, newest first: Biology, Mathematics, Chemistry. (They were built
 internally as three development versions, never released on their own.)
