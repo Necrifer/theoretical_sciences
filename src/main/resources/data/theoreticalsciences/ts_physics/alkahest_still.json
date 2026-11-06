@@ -1,0 +1,56 @@
+{
+  "params": [
+    {
+      "id": "Ts",
+      "unit": "K",
+      "min": 280,
+      "max": 700,
+      "step": 0.1,
+      "default": 400
+    },
+    {
+      "id": "Rf",
+      "unit": "",
+      "min": 0.1,
+      "max": 12,
+      "step": 0.01,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {
+    "Tb": 400
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "pur",
+      "unit": "",
+      "expr": "1 - exp(-0.6*Rf*(1 + 0.02*d))",
+      "formula": "x = 1 \u2212 e^(\u22120.6R)"
+    },
+    {
+      "id": "boil",
+      "unit": "",
+      "expr": "pos(Ts - Tb)/40",
+      "formula": "v \u221d (T \u2212 T_b)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "boilover",
+      "kind": "stop",
+      "expr": "Tb + 150 - Ts",
+      "formula": "T < T_b + 150 K"
+    }
+  ],
+  "rate": "clamp(boil/(1 + 0.15*Rf), 0, 4)",
+  "rate_formula": "rate = boil-up / (1 + 0.15R)",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

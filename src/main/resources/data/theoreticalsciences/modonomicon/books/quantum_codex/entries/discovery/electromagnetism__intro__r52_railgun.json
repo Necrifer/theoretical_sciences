@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.intro__r52_railgun",
+  "description": "book.theoreticalsciences.codex.electromagnetism.intro__r52_railgun.desc",
+  "icon": {
+    "item": "theoreticalsciences:hypervelocity_impact_forge"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 54,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r52_railgun.p0",
+      "title": "book.theoreticalsciences.codex.electromagnetism.intro__r52_railgun"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r52_railgun.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r37_induction"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r38_generator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

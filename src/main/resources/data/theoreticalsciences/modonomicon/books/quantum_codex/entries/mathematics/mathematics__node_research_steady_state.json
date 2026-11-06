@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_steady_state",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_steady_state.desc",
+  "icon": {
+    "item": "theoreticalsciences:assayed_enzyme"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 124,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:assayed_enzyme"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_steady_state.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_steady_state.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__enzyme_assay_bench",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/steady_state"
+  }
+}

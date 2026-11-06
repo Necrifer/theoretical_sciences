@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r59_ostwald",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r59_ostwald.desc",
+  "icon": {
+    "item": "theoreticalsciences:ostwald_converter"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 73,
+  "y": 62,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_ostwald.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r59_ostwald"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_ostwald.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_haber"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_contact"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ostwald_process"
+  }
+}

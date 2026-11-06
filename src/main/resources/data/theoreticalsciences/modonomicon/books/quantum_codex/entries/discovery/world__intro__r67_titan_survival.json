@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r67_titan_survival",
+  "description": "book.theoreticalsciences.codex.world.intro__r67_titan_survival.desc",
+  "icon": {
+    "item": "theoreticalsciences:heated_pressure_suit_chestplate"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 88,
+  "y": 95,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r67_titan_survival.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r67_titan_survival"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r67_titan_survival.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/world__intro__r67_titan"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cryogenic_survival"
+  }
+}

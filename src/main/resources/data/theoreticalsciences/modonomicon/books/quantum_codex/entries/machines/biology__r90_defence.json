@@ -1,0 +1,47 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.r90_defence",
+  "description": "book.theoreticalsciences.codex.biology.r90_defence.desc",
+  "icon": {
+    "item": "theoreticalsciences:antibody_bench"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 131,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antibody_bench"
+      },
+      "text": "book.theoreticalsciences.codex.biology.r90_defence.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r90_defence.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r90_defence.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r90_defence.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r90_defence.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/biology__gene_sequencer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/adaptive_immunity"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sieve of Eratosthenes",
+  "icon": "theoreticalsciences:eratosthenes_sieve",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 119,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "List every number up to N; cross out the multiples of 2, then of 3, then of each number still standing. What is left is prime. There are about N / ln N of them (the prime number theorem), and the crossing out takes about N ln ln N steps. A wheel skips the multiples of the first few primes before it starts, leaving only \u03a0(1 \u2212 1/p) of the numbers to sieve."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Sieve limit N, Wheel.$(br2)$(thing)Disturbance$(): Worn holes: the count drifts by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Less work is faster: the smallest N that is enough, and a big wheel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Primes found: \u03c0(N) \u2248 N / ln N$(br)Left to sieve: \u03a0(1 \u2212 1/p)$(br)Work: W \u221d N ln ln N"
+    }
+  ]
+}

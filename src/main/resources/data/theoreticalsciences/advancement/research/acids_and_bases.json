@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:titration_bench"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.acids_and_bases"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.acids_and_bases.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/chemical_equilibrium",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

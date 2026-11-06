@@ -1,0 +1,19 @@
+{
+  "name": "Thermochemical Data Card",
+  "icon": "theoreticalsciences:thermochemical_data_card",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:thermochemical_data_card",
+      "title": "Thermochemical Data Card",
+      "text": "A heat of combustion, measured to a part in a thousand and written down: the numbers every later energy balance starts from."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bomb Calorimeter$().$(br2)$(thing)Unlocked by$(): Calorimetry.$(br2)$(thing)Used in$(): Heat-Pack Reactor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/calorimetry"
+}

@@ -1,0 +1,59 @@
+{
+  "params": [
+    {
+      "id": "Tk",
+      "unit": "K",
+      "min": 600,
+      "max": 1100,
+      "step": 1,
+      "default": 800
+    },
+    {
+      "id": "fo",
+      "unit": "L/min",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.01,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "kb",
+      "unit": "",
+      "expr": "exp(-12000*(1/Tk - 1/800))",
+      "formula": "k \u221d e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/800 K))"
+    },
+    {
+      "id": "Cr",
+      "unit": "",
+      "expr": "1 - exp(-0.5*kb*fo*(1 + 0.03*d))",
+      "formula": "C = 1 \u2212 e^(\u2212k\u00b7f/2)"
+    },
+    {
+      "id": "Sn",
+      "unit": "",
+      "expr": "1 - exp(-pos(Tk - 900)/60)",
+      "formula": "S = 1 \u2212 e^(\u2212(T \u2212 900 K)/60 K)"
+    },
+    {
+      "id": "Rr",
+      "unit": "",
+      "expr": "Cr*(1 - Sn)",
+      "formula": "R = C\u00b7(1 \u2212 S)"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(kb/2, 0.25, 4)",
+  "rate_formula": "rate = k / 2",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -68,6 +68,10 @@ public class EnergyCellBlock extends BaseEntityBlock {
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof EnergyCellBlockEntity be)
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.cell", String.format("%,d", be.energy.stored()),
                     String.format("%,d", be.energy.capacity()), String.format("%,d", be.rate())).withStyle(ChatFormatting.GOLD), true);
+        if (!level.isClientSide && level.getBlockEntity(pos) instanceof EnergyCellBlockEntity be && be.flow())
+            player.displayClientMessage(Component.translatable("message.theoreticalsciences.flow_battery",
+                    String.format(java.util.Locale.ROOT, "%.0f%%", 100.0 * be.energy.stored() / Math.max(1, be.energy.capacity())),
+                    String.format(java.util.Locale.ROOT, "%.3f", be.voltage())).withStyle(ChatFormatting.AQUA), false);
         return InteractionResult.sidedSuccess(level.isClientSide);
     }
 

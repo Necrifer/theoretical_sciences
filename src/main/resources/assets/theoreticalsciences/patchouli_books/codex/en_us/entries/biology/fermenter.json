@@ -1,0 +1,36 @@
+{
+  "name": "Fermenter",
+  "icon": "theoreticalsciences:fermenter",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 175,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fermenter",
+      "title": "Fermenter",
+      "text": "A sealed vat of warm sugar water with a culture working in it, an airlock bubbling on top.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the sugar level and the air. Growth follows S/(Ks + S) but too much sugar inhibits it (Haldane): it must reach 80% of its best. Growing yeast needs air; fermenting needs none."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Ammonia, Bacterial Culture, Magnetite, Methane, Nucleotide, Nutrient Broth, Probiotic Seal, Yeast Culture."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fermenter",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Fermenter$(): Antibody Bench, Circadian Incubator, Ecosphere, Mirror Culture Vat, Mycelium Bed and more"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fermentation"
+}

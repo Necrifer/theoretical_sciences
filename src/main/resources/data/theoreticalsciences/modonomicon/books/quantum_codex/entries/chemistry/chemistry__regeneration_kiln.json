@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.regeneration_kiln",
+  "description": "book.theoreticalsciences.codex.chemistry.regeneration_kiln.desc",
+  "icon": {
+    "item": "theoreticalsciences:regeneration_kiln"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 6,
+  "y": 39,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:regeneration_kiln"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.regeneration_kiln.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.regeneration_kiln.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.regeneration_kiln.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.regeneration_kiln.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:regeneration_kiln"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.regeneration_kiln.p4"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/chemical_bonding"
+  }
+}

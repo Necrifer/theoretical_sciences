@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:mass_spectrometry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lithium_ingot",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lithium_6_ingot",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:mass_spectrometry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "mz": 6.0
+    },
+    "windows": [
+      {
+        "q": "rr",
+        "min": 0.495,
+        "max": 0.505
+      }
+    ]
+  }
+}

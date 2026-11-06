@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:adaptive_immunity",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tumour_specimen",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:memory_cell",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:car_t_culture",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 400,
+  "research": "theoreticalsciences:targeted_therapy",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Kd": 20.0
+    },
+    "windows": [
+      {
+        "q": "resp",
+        "min": 0.9,
+        "max": 2.0
+      }
+    ]
+  }
+}

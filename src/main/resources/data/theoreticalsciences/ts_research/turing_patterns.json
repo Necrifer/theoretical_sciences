@@ -1,0 +1,55 @@
+{
+  "title": "Turing Patterns",
+  "description": "A zebra's stripes, a leopard's spots, the ridges of a fingerprint: the same two-chemical sum at different spacings. Unlocks cheaper Turing Morphogens and Morphogenic Serum.",
+  "icon": "theoreticalsciences:turing_morphogen",
+  "x": 25,
+  "y": 3,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:reaction_diffusion",
+    "theoreticalsciences:morphogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pattern_template",
+      "count": 1
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A tail of radius R has bands laid round it at a spacing w. Write how many bands N fit along its circumference.",
+    "name": "Zebra count",
+    "lhs": "N",
+    "form": "2 * \u03c0 * R / w",
+    "expr": "2 * \u03c0 * R / w",
+    "ask": "Find N for R = @{R} and w = @{w}.",
+    "vars": {
+      "N": "bands",
+      "R": "radius",
+      "w": "spacing"
+    },
+    "given": {
+      "R": 4,
+      "w": 2
+    },
+    "unit": "",
+    "method": "The way round is 2\u03c0R; a pattern of spacing w repeats every w along it.",
+    "distractors": [
+      "+",
+      "exp",
+      "e"
+    ],
+    "vary": {
+      "R": [
+        2.0,
+        6.0,
+        1.0
+      ],
+      "w": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

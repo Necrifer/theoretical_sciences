@@ -1,0 +1,65 @@
+{
+  "title": "Acids and Bases",
+  "description": "An acid gives up a proton, a base takes one; pH counts the hydrogen ions on a scale of ten-fold steps. Titrate to the endpoint and you know a reagent's strength exactly. Unlocks the Titration Bench and the purity tag.",
+  "icon": "theoreticalsciences:titration_bench",
+  "x": 18,
+  "y": -2,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:chemical_equilibrium"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:sulfuric_acid_cell",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A sample of volume V and concentration C is titrated with a standard of concentration B. Write the volume E of standard needed to reach the endpoint.",
+    "name": "Equivalence volume",
+    "lhs": "E",
+    "form": "C * V / B",
+    "expr": "C * V / B",
+    "ask": "Find E in mL for C = @{C} mol/L, V = @{V} mL and B = @{B} mol/L.",
+    "vars": {
+      "E": "standard needed (mL)",
+      "C": "sample concentration (mol/L)",
+      "V": "sample volume (mL)",
+      "B": "standard concentration (mol/L)"
+    },
+    "given": {
+      "C": 0.1,
+      "V": 25,
+      "B": 0.1
+    },
+    "unit": "mL",
+    "method": "At the endpoint the moles of standard equal the moles in the sample: B\u00b7E = C\u00b7V.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "C": [
+        0.06,
+        0.14,
+        0.001
+      ],
+      "V": [
+        15.0,
+        35.0,
+        1.0
+      ],
+      "B": [
+        0.06,
+        0.14,
+        0.001
+      ]
+    }
+  }
+}

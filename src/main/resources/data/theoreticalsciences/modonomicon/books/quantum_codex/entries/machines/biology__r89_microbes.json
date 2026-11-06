@@ -1,0 +1,47 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.r89_microbes",
+  "description": "book.theoreticalsciences.codex.biology.r89_microbes.desc",
+  "icon": {
+    "item": "theoreticalsciences:phage_lab"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 119,
+  "y": 62,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:phage_lab"
+      },
+      "text": "book.theoreticalsciences.codex.biology.r89_microbes.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r89_microbes.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r89_microbes.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r89_microbes.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r89_microbes.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/biology__fermenter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/microbiology"
+  }
+}

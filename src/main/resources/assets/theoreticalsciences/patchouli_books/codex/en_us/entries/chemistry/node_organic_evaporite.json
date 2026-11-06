@@ -1,0 +1,19 @@
+{
+  "name": "Organic Evaporite",
+  "icon": "theoreticalsciences:organic_evaporite",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:organic_evaporite",
+      "title": "Organic Evaporite",
+      "text": "Crystals of benzene and ethane, and of acetylene and butane, left behind where a methane lake dried up - Titan's salt flats. Found in the evaporite crust of Titan's dry lake beds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Brine Evaporator$().$(br2)$(thing)Mined$(): from $(item)Evaporite Deposit$(), in veins through the rock.$(br2)$(thing)Dropped by$(): Catalyst Sprite, Cryolava Slug.$(br2)$(thing)Found in$(): Abandoned Refinery, Cryolab chests.$(br2)$(thing)Unlocked by$(): Lakes of Titan.$(br2)$(thing)Used in$(): Aramid Fibre, Chiral Ligand, Ethylene, Evaporite Crust, Kekule's Dream."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/titan_lakes"
+}

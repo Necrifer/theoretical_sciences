@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.ecosphere",
+  "description": "book.theoreticalsciences.codex.biology.ecosphere.desc",
+  "icon": {
+    "item": "theoreticalsciences:ecosphere"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 80,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ecosphere"
+      },
+      "text": "book.theoreticalsciences.codex.biology.ecosphere.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.ecosphere.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.ecosphere.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.ecosphere.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ecosphere"
+      },
+      "text": "book.theoreticalsciences.codex.biology.ecosphere.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__r91_body"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__perfusion_rig"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ecology"
+  }
+}

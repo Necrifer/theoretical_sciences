@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_turing_morphogen",
+  "description": "book.theoreticalsciences.codex.mathematics.node_turing_morphogen.desc",
+  "icon": {
+    "item": "theoreticalsciences:turing_morphogen"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 134,
+  "y": 18,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:turing_morphogen"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_turing_morphogen.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_turing_morphogen.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_turing_morphogen.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__pattern_basin",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reaction_diffusion"
+  }
+}

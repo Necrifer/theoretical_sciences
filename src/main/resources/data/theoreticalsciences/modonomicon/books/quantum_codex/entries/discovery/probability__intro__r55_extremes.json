@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.intro__r55_extremes",
+  "description": "book.theoreticalsciences.codex.probability.intro__r55_extremes.desc",
+  "icon": {
+    "item": "theoreticalsciences:large_deviation_shard"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 52,
+  "y": 82,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r55_extremes.p0",
+      "title": "book.theoreticalsciences.codex.probability.intro__r55_extremes"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r55_extremes.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r38_galton"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/extreme_value_theory"
+  }
+}

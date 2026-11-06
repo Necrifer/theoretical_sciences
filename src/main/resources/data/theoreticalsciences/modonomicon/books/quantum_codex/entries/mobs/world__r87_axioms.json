@@ -1,0 +1,43 @@
+{
+  "name": "book.theoreticalsciences.codex.world.r87_axioms",
+  "description": "book.theoreticalsciences.codex.world.r87_axioms.desc",
+  "icon": {
+    "item": "theoreticalsciences:postulate_slate"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 10,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:postulate_slate"
+      },
+      "text": "book.theoreticalsciences.codex.world.r87_axioms.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r87_axioms.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r87_axioms.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r87_axioms.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r87_axioms.p4"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/formal_logic"
+  }
+}

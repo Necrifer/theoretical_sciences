@@ -1,0 +1,75 @@
+{
+  "title": "Lakes of Titan",
+  "description": "Methane rains, runs in rivers and pools in seas, then boils off again, just as water does on Earth. Unlocks the Lake Pump, the separation of Titan's liquids, and the evaporites its dry lake beds leave.",
+  "icon": "theoreticalsciences:lake_pump",
+  "x": 25,
+  "y": -1,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:titan",
+    "theoreticalsciences:solubility"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:titan_ice",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:methane_cell",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A liquid of molar latent heat L boils at temperature b under pressure P. Write its vapour pressure p at another temperature T, with the gas constant R.",
+    "name": "Clausius-Clapeyron relation",
+    "lhs": "p",
+    "form": "P * exp ( L / R * ( 1 / b - 1 / T ) )",
+    "expr": "P * exp ( L / R * ( 1 / b - 1 / T ) )",
+    "ask": "Find p in atmospheres for methane on Titan: P = @{P} atm, L = @{L} J/mol, R = 8.314, b = @{b} K, T = @{T} K.",
+    "vars": {
+      "p": "vapour pressure (atm)",
+      "P": "pressure at the boiling point (atm)",
+      "L": "molar latent heat (J/mol)",
+      "R": "gas constant",
+      "b": "boiling point (K)",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "P": 1,
+      "L": 8190,
+      "R": 8.314,
+      "b": 111.7,
+      "T": 94
+    },
+    "unit": "atm",
+    "method": "Along the boiling curve dp/dT = Lp/(RT\u00b2) (the latent heat over the volume of the vapour); integrate from b to T.",
+    "distractors": [
+      "2",
+      "ln",
+      "M"
+    ],
+    "vary": {
+      "P": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "L": [
+        4914.0,
+        11466.0,
+        1.0
+      ],
+      "b": [
+        67.0,
+        157.0,
+        1.0
+      ],
+      "T": [
+        56.0,
+        132.0,
+        1.0
+      ]
+    }
+  }
+}

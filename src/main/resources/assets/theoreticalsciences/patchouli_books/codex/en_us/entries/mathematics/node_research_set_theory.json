@@ -3,7 +3,7 @@
   "icon": "theoreticalsciences:power_set",
   "advancement": "theoreticalsciences:research/set_theory",
   "category": "theoreticalsciences:mathematics",
-  "sortnum": 501,
+  "sortnum": 503,
   "pages": [
     {
       "type": "patchouli:spotlight",
@@ -13,7 +13,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(thing)Insight$(): 45$(br2)$(thing)Builds on$(): Formal Logic, Real Analysis.$(br2)$(thing)Samples$(): 4 Empty Set.$(br2)$(thing)Derivation$(): Find how many elements the power set of the power set of an n-element set has."
+      "text": "$(thing)Insight$(): 45$(br2)$(thing)Builds on$(): Formal Logic, Cardinality.$(br2)$(thing)Samples$(): 4 Empty Set.$(br2)$(thing)Derivation$(): A set S has n elements. Count its subsets by size with binomial coefficients and add them up. Then the collection of all those subsets is itself a set: count ITS subsets the same way, with the inner count used as the size."
     }
   ]
 }

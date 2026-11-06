@@ -1,0 +1,49 @@
+{
+  "params": [
+    {
+      "id": "lo",
+      "unit": "cm\u207b\u00b9",
+      "min": 400,
+      "max": 4000,
+      "step": 1,
+      "default": 1000
+    },
+    {
+      "id": "hi",
+      "unit": "cm\u207b\u00b9",
+      "min": 400,
+      "max": 4000,
+      "step": 1,
+      "default": 2000
+    }
+  ],
+  "recipe_vars": {
+    "nu": 1715
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "mg",
+      "unit": "cm\u207b\u00b9",
+      "expr": "min(nu + 2*d - lo, hi - nu - 2*d)",
+      "formula": "distance of the band from the ends"
+    },
+    {
+      "id": "wid",
+      "unit": "cm\u207b\u00b9",
+      "expr": "hi - lo",
+      "formula": "width"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(1000/pos(hi - lo + 1), 0.5, 3)",
+  "rate_formula": "rate = 1000/width",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

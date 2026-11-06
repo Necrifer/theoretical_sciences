@@ -1,0 +1,24 @@
+{
+  "name": "Haber-Bosch Reactor",
+  "icon": "theoreticalsciences:haber_bosch_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 67,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "N\u2082 + 3H\u2082 \u21cc 2NH\u2083 gives out heat (\u0394H = \u221292.4 kJ/mol) and halves the gas (\u0394S = \u2212198 J/mol\u00b7K). So \u0394G\u00b0 = \u0394H \u2212 T\u0394S rises with temperature, and the equilibrium constant K = e^(\u2212\u0394G\u00b0/RT) falls: cold and pressed gives the most ammonia. But the iron only turns the gas over fast when it is hot (Arrhenius, E\u2090 \u2248 100 kJ/mol). Hence the compromise: about 450 \u00b0C and 200 atm."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Bed temperature, Pressure, H\u2082 : N\u2082 ratio.$(br2)$(thing)Disturbance$(): Bed temperature drift: the rate sees T\u00b7(1 \u00b1 0.5%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The iron catalyst is sintering (above 550 \u00b0C); The vessel is over its rated pressure.$(br2)$(thing)Rate$(): Ammonia made per pass: how much there is at equilibrium, times how fast it gets there."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)\u0394G\u00b0: \u0394G\u00b0 = \u0394H \u2212 T\u0394S$(br)Equilibrium constant: K = e^(\u2212\u0394G\u00b0/RT)$(br)Equilibrium ammonia: y \u2248 \u221aK\u00b7P\u00b7x_N^\u00bd\u00b7x_H^1.5 (saturating)$(br)Relative rate: k/k\u2087\u2082\u2083 = e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/723 K))"
+    }
+  ]
+}

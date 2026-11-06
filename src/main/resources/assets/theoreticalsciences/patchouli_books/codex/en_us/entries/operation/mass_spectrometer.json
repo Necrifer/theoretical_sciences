@@ -1,0 +1,24 @@
+{
+  "name": "Mass Spectrometer",
+  "icon": "theoreticalsciences:mass_spectrometer",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 78,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "An ion of mass m and charge q, accelerated through V volts, moves at \u221a(2qV/m); in a field B it bends on a circle of radius r = \u221a(2mV/q)/B. The detector sits at 0.5 m: for each mass there is one field that puts it there."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Magnetic field, Accelerating voltage.$(br2)$(thing)Disturbance$(): Field ripple: B varies by \u00b10.1%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The field is beyond the magnet's range.$(br2)$(thing)Rate$(): More voltage, more ions a second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Orbit radius: r = \u221a(2mV/q)/B"
+    }
+  ]
+}

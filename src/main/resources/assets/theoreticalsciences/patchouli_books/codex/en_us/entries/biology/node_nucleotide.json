@@ -1,0 +1,19 @@
+{
+  "name": "Nucleotide",
+  "icon": "theoreticalsciences:nucleotide",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 506,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nucleotide",
+      "title": "Nucleotide",
+      "text": "A sugar, a phosphate and one of four bases: a single letter of the genetic code. Found in nucleotide clusters in the Nucleus of Inner Space; the Fermenter draws more out of yeast."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Fermenter$().$(br2)$(thing)Mined$(): from $(item)Nucleotide Cluster$(), in veins through the rock.$(br2)$(thing)Dropped by$(): Polymerase.$(br2)$(thing)Found in$(): Nuclear Pore chests.$(br2)$(thing)Unlocked by$(): Inner Space.$(br2)$(thing)Used in$(): Chromatin, Messenger RNA, Nucleotide Cluster."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/physiology"
+}

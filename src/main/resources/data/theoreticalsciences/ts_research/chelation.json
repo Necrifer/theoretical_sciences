@@ -1,0 +1,66 @@
+{
+  "title": "Chelation",
+  "description": "Molecules with many grips wrap a metal ion and will not let go, the tighter-held ions first. Unlocks EDTA and the Chelation Column.",
+  "icon": "theoreticalsciences:chelation_column",
+  "x": 23,
+  "y": -1,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:coordination_chemistry",
+    "theoreticalsciences:chromatography"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:caustic_soda",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A column catches a metal with binding K at dose c and flow f, each pass removing a share 1 \u2212 e^(\u2212Kc/f). Write the share x removed.",
+    "name": "Breakthrough",
+    "lhs": "x",
+    "form": "1 - exp ( - K * c / f )",
+    "expr": "1 - exp ( - K * c / f )",
+    "ask": "Find x for K = @{K}, c = @{c} and f = @{f}.",
+    "vars": {
+      "x": "share removed",
+      "K": "binding",
+      "c": "dose",
+      "f": "flow"
+    },
+    "given": {
+      "K": 8,
+      "c": 2,
+      "f": 5
+    },
+    "unit": "",
+    "method": "Each slice of the column catches the same share of what reaches it: the survivors fall off exponentially.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "K": [
+        5.0,
+        11.0,
+        1.0
+      ],
+      "c": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "f": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

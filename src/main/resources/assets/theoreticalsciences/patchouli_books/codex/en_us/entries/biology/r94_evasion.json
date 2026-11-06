@@ -1,0 +1,22 @@
+{
+  "name": "Immune Evasion",
+  "icon": "theoreticalsciences:clonal_selector",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:clonal_selector,theoreticalsciences:matured_antibody,theoreticalsciences:ward_metastasis",
+      "text": "Late anomalies learn to hide, as tumours do: they shed the markers a ward is made against. The $(thing)Tumour Hydra$()'s bite carries $(thing)Metastasis$(): every ten seconds the growth spreads somewhere new (weakness, hunger or slowness), and no plain Anomaly Ward holds it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Clonal Selector$() matures antibodies as a germinal centre does. Each round of selection multiplies their binding by (1 + s), but culls the line: its diversity falls as 100.e^(-n.s/3), and below 10% it collapses to a single clone. Set the rounds and the stringency to bind tightly enough while keeping enough variety."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Matured Antibodies$() make the $(item)Metastasis Ward$() (three days, as the others) and, after Immune Memory, the lasting one. They also make the other four lasting wards far more cheaply than before."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/affinity_maturation"
+}

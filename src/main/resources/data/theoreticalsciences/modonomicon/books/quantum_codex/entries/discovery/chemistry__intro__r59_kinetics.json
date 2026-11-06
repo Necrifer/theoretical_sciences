@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r59_kinetics",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r59_kinetics.desc",
+  "icon": {
+    "item": "theoreticalsciences:air_separation_unit"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 58,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_kinetics.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r59_kinetics"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_kinetics.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reaction_kinetics"
+  }
+}

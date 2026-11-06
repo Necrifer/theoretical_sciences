@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r56_block_station_hull",
+  "description": "book.theoreticalsciences.codex.world.intro__r56_block_station_hull.desc",
+  "icon": {
+    "item": "theoreticalsciences:station_hull"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 36,
+  "y": 95,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r56_block_station_hull.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r56_block_station_hull"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r56_block_station_hull.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

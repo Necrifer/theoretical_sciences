@@ -1,0 +1,19 @@
+{
+  "name": "Memory Cell",
+  "icon": "theoreticalsciences:memory_cell",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:memory_cell",
+      "title": "Memory Cell",
+      "text": "A lymphocyte that has met an invader once and never forgets it: years later it wakes and answers in hours. Dropped by T Cells and kept in the Germinal Centres of Inner Space's Lymph Node; the Antibody Bench raises more from lymph tissue."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Antibody Bench$().$(br2)$(thing)Dropped by$(): T Cell.$(br2)$(thing)Found in$(): Germinal Centre chests.$(br2)$(thing)Unlocked by$(): Inner Space.$(br2)$(thing)Used in$(): Antibody, CAR-T Cell Culture, Lymph Tissue, Matured Antibody."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/physiology"
+}

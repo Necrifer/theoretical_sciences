@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:miniaturiser"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.inner_space"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.inner_space.short"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/circulation",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

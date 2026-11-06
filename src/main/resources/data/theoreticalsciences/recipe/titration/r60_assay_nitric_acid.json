@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:titration",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nitric_acid",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nitric_acid",
+      "amount": 1000,
+      "components": {
+        "theoreticalsciences:assayed": {}
+      }
+    }
+  ],
+  "energy": 64,
+  "duration": 200,
+  "research": "theoreticalsciences:acids_and_bases",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ca": 0.1,
+      "sg": 1.0
+    },
+    "windows": [
+      {
+        "q": "pH",
+        "min": 4.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

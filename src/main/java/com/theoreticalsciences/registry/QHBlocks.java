@@ -35,6 +35,9 @@ public final class QHBlocks {
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(3.5F, 10.0F).requiresCorrectToolForDrops()
                     .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 9).noOcclusion());
 
+    static final java.util.Set<String> SQUISH = java.util.Set.of("extracellular_matrix", "cell_membrane", "bone_matrix", "lymph_tissue", "chromatin",
+            "tumour_mass", "bioluminescent_membrane", "collagen_seam", "nucleotide_cluster", "tumour_nodule");
+
     static {
         for (QHContentList.BlockDef def : QHContentList.BLOCKS) {
             BlockBehaviour.Properties p = BlockBehaviour.Properties.of()
@@ -110,6 +113,24 @@ public final class QHBlocks {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).strength(3.0F, 1200.0F).lightLevel(s -> 4);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.dungeon.CacheBlock::new, p));
                 }
+                case "zeno_anchor" -> {        // 1.2.0: the chunk loader
+                    p.mapColor(MapColor.COLOR_CYAN).sound(com.theoreticalsciences.registry.QHSounds.MACHINE)
+                            .lightLevel(s -> s.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.LIT) ? 12 : 2);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.logistics.ZenoAnchorBlock::new, p));
+                }
+                case "governor" -> {           // 1.2.0: Control Theory
+                    p.mapColor(MapColor.COLOR_ORANGE).sound(com.theoreticalsciences.registry.QHSounds.MACHINE)
+                            .lightLevel(s -> s.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.LIT) ? 10 : 2);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.machine.tuning.GovernorBlock::new, p));
+                }
+                case "gas_cell" -> {           // 1.2.0
+                    p.mapColor(MapColor.COLOR_LIGHT_BLUE).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).strength(4.0F, 1200.0F).lightLevel(s -> 4);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.science.GasCellBlock::new, p));
+                }
+                case "chrono_vault" -> {       // 1.2.0
+                    p.mapColor(MapColor.COLOR_CYAN).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).strength(5.0F, 1200.0F).lightLevel(s -> 6);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.science.ChronostaticVaultBlock::new, p));
+                }
                 case "exnihilo" -> {
                     p.mapColor(MapColor.GOLD).sound(com.theoreticalsciences.registry.QHSounds.CRYSTAL).strength(def.hardness(), 1200.0F).lightLevel(s -> 15);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.endgame.ExNihiloEngineBlock::new, p));
@@ -151,9 +172,20 @@ public final class QHBlocks {
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.block.FracturedRealityBlock::new, p));
                 }
                 case "mantle_breach" -> {
-                    // round 40 (1.3.0): the way between the Overworld and the Planetary Interior
+                    // round 40 (1.2.0): the way between the Overworld and the Planetary Interior
                     p.mapColor(MapColor.COLOR_ORANGE).noCollission().noLootTable().strength(-1F, 3600000F);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.interior.MantleBreachBlock::new, p));
+                }
+                case "vent" -> {
+                    // 1.2.0: a black smoker, Titan's hidden ocean
+                    p.mapColor(MapColor.COLOR_BLACK).sound(SoundType.BASALT);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.ocean.OceanBlocks.BlackSmoker::new, p));
+                }
+                case "ocean_plant", "ocean_plant_hanging" -> {
+                    boolean hang = def.kind().equals("ocean_plant_hanging");
+                    p.mapColor(hang ? MapColor.ICE : MapColor.COLOR_RED).sound(hang ? SoundType.GLASS : SoundType.WET_GRASS).noCollission().noOcclusion()
+                            .instabreak().randomTicks();
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), pp -> new com.theoreticalsciences.ocean.OceanBlocks.Growth(pp, hang), p));
                 }
                 case "deco_model" -> {
                     // round 39 (1.2.6): decorative instruments with their own models
@@ -196,6 +228,8 @@ public final class QHBlocks {
             // 1.10.1: rock sounds like stone, crystal like amethyst, glass and lamps like glass, gas like wool
             net.minecraft.world.level.block.SoundType look = QHBlockSounds.of(def.id());
             if (look != null) p.sound(look);
+            // 1.2.0: Inner Space is living tissue: every block of it squelches like a slime block
+            if (SQUISH.contains(def.id())) p.sound(SoundType.SLIME_BLOCK);
         }
         for (MachineType type : MachineType.values()) {
             MACHINES.put(type, BLOCKS.registerBlock(type.id(), p -> new MachineBlock(p, type),

@@ -1,0 +1,54 @@
+{
+  "title": "Modular Arithmetic",
+  "description": "Arithmetic on a clock: 9 + 5 is 2 on a twelve-hour dial. Fermat and Euler found its rules, and every cipher that keeps a secret on the open internet runs on them.",
+  "icon": "theoreticalsciences:prime_shard",
+  "x": 1,
+  "y": 10,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:primes"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:prime_shard",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "p and q are two different primes. Write \u03c6, how many numbers below pq share no factor with pq.",
+    "name": "Coprime count",
+    "lhs": "\u03c6",
+    "form": "( p - 1 ) * ( q - 1 )",
+    "expr": "( p - 1 ) * ( q - 1 )",
+    "ask": "Find \u03c6 for p = @{p} and q = @{q}.",
+    "vars": {
+      "\u03c6": "totient of pq",
+      "p": "first prime",
+      "q": "second prime"
+    },
+    "given": {
+      "p": 11,
+      "q": 13
+    },
+    "unit": "",
+    "method": "Of the pq numbers, q are multiples of p and p are multiples of q, and pq itself was counted twice: pq \u2212 p \u2212 q + 1.",
+    "distractors": [
+      "+",
+      "n",
+      "2"
+    ],
+    "vary": {
+      "p": [
+        7.0,
+        15.0,
+        1.0
+      ],
+      "q": [
+        8.0,
+        18.0,
+        1.0
+      ]
+    }
+  }
+}

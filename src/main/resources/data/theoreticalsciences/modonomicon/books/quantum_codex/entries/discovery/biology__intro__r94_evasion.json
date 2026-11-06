@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.intro__r94_evasion",
+  "description": "book.theoreticalsciences.codex.biology.intro__r94_evasion.desc",
+  "icon": {
+    "item": "theoreticalsciences:clonal_selector"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 69,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__r94_evasion.p0",
+      "title": "book.theoreticalsciences.codex.biology.intro__r94_evasion"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__r94_evasion.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__r90_defence"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__r89_microbes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/affinity_maturation"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.information.intro__demon",
+  "description": "book.theoreticalsciences.codex.information.intro__demon.desc",
+  "icon": {
+    "item": "theoreticalsciences:maxwell_demon_chip"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 15,
+  "y": 84,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.intro__demon.p0",
+      "title": "book.theoreticalsciences.codex.information.intro__demon"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.information.intro__demon.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermodynamics_of_information"
+  }
+}

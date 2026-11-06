@@ -1,0 +1,21 @@
+{
+  "name": "The Reactor Console",
+  "icon": "theoreticalsciences:chemical_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chemical_reactor",
+      "text": "The $(item)Chemical Reactor$() has an $(thing)Operation$() console now, like the big physics machines. Set two things: the $(thing)heater temperature$() and the $(thing)residence time$() - how long each batch is held.$(br2)A reaction goes at the rate constant k = A\u00b7e^(\u2212E\u2090/RT) (Arrhenius): hotter is faster, and the higher its activation energy E\u2090, the more heat it needs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A batch held for \u03c4 reaches the conversion X = 1 \u2212 e^(\u2212k\u03c4). Each recipe needs its own conversion (the recipe page shows it); until the readout reaches it the reactor waits, $(thing)Out of Window$().$(br2)A shorter residence time runs more batches (60 s is the normal pace, down to a quarter of it) - so heat it up, then shorten \u03c4 until X just reaches the target."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Two limits: the vessel is rated to 850 K, and a recipe with a $(thing)catalyst$() has the catalyst's sintering temperature (700 K). A catalyst lowers E\u2090 - the same reaction runs at a much lower temperature - but run it above 700 K and it wears ten times as fast."
+    }
+  ]
+}

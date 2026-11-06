@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:gypsum_crystal",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sulfur_dioxide",
+      "amount": 760
+    }
+  ],
+  "energy": 256,
+  "duration": 50,
+  "research": "theoreticalsciences:solubility",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 58.5,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

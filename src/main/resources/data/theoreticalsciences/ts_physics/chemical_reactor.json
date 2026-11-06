@@ -1,0 +1,71 @@
+{
+  "params": [
+    {
+      "id": "Th",
+      "unit": "K",
+      "min": 300,
+      "max": 1000,
+      "step": 1,
+      "default": 400
+    },
+    {
+      "id": "tau",
+      "unit": "s",
+      "min": 1,
+      "max": 600,
+      "step": 1,
+      "default": 60
+    }
+  ],
+  "recipe_vars": {
+    "Ea": 60,
+    "Af": 10000000.0,
+    "Xt": 0.9,
+    "Ts": 2000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "k",
+      "unit": "1/s",
+      "expr": "Af*exp(-Ea*1000/(8.314*Th*(1 + 0.005*d)))",
+      "formula": "k = A\u00b7e^(\u2212E\u2090/RT)"
+    },
+    {
+      "id": "X",
+      "unit": "",
+      "expr": "1 - exp(-k*tau)",
+      "formula": "X = 1 \u2212 e^(\u2212k\u03c4)"
+    },
+    {
+      "id": "t90",
+      "unit": "s",
+      "expr": "-ln(1 - Xt)/k",
+      "formula": "t = \u2212ln(1 \u2212 X_target)/k"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "vessel",
+      "kind": "stop",
+      "expr": "850 - Th",
+      "formula": "T < 850 K"
+    },
+    {
+      "id": "sinter",
+      "kind": "wear",
+      "expr": "Ts - Th",
+      "formula": "T < T_sinter"
+    }
+  ],
+  "rate": "clamp(60/tau, 0, 4)",
+  "rate_formula": "rate = 60 s / \u03c4",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

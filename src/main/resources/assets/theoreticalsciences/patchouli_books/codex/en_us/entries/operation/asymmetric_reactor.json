@@ -1,0 +1,24 @@
+{
+  "name": "Asymmetric Reactor",
+  "icon": "theoreticalsciences:asymmetric_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 19,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A chiral catalyst lowers the barrier to one mirror-image product by \u0394\u0394G\u2021 more than to the other, so one forms e^(\u0394\u0394G\u2021/RT) times faster: the enantiomeric excess is ee = (s \u2212 1)/(s + 1). Colder gives a purer product, but every rate follows Arrhenius, and falls."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Reaction temperature, Hydrogen pressure.$(br2)$(thing)Disturbance$(): Catalyst ageing: the barrier difference varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too much hydrogen: the catalyst is stripped.$(br2)$(thing)Rate$(): Warmer and higher pressure are faster, but less selective."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Selectivity: s = e^(\u0394\u0394G\u2021/RT)$(br)Enantiomeric excess: ee = (s \u2212 1)/(s + 1)$(br)Rate: k \u221d e^(\u2212Ea/RT)\u00b7p"
+    }
+  ]
+}

@@ -83,6 +83,27 @@ public final class QHEntityRenderers {
         e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.BOLTZMANN_BRAIN.get(), FrontierMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.BLACK_SWAN.get(), FrontierMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.BINARY_SERPENT.get(), FrontierMobRenderers.Mob::new);
+        // 1.2.0: Titan
+        e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.THOLIN_DRIFTER.get(), TitanMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.CATALYST_SPRITE.get(), TitanMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.METHANE_SKATER.get(), TitanMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.CRYOLAVA_SLUG.get(), TitanMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.OUROBOROS.get(), TitanMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.math.MathRegistry.EUCLIDS_AUTOMATON.get(), MathMobRenderers.Mob::new);     // 1.2.0
+        e.registerEntityRenderer(com.theoreticalsciences.math.MathRegistry.PARADOX_SHADE.get(), LayerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.math.MathRegistry.TESSELLATE.get(), LayerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.math.MathRegistry.FOURIER_WISP.get(), LayerMobRenderers.Mob::new);
+        // 1.2.0: Inner Space
+        e.registerEntityRenderer(com.theoreticalsciences.inner.InnerRegistry.RED_CELL.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.inner.InnerRegistry.MACROPHAGE.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.inner.InnerRegistry.T_CELL.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.inner.InnerRegistry.POLYMERASE.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.inner.InnerRegistry.TUMOUR_HYDRA.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.ocean.OceanRegistry.VENT_GRAZER.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.ocean.OceanRegistry.ICE_EEL.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.ocean.OceanRegistry.BRINE_JELLY.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.ocean.OceanRegistry.VENT_CRAB.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.inner.InnerRegistry.MIRROR_MICROBE.get(), InnerMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.transcend.TranscendRegistry.HYPERCUBE_DRIFTER.get(), ExpansionMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.transcend.TranscendRegistry.PHOTON_MOTH.get(), ExpansionMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.transcend.TranscendRegistry.PLANCK_MITE.get(), ExpansionMobRenderers.Mob::new);

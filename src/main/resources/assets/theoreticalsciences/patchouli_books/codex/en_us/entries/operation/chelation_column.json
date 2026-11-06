@@ -1,0 +1,24 @@
+{
+  "name": "Chelation Column",
+  "icon": "theoreticalsciences:chelation_column",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 29,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "EDTA grips a metal ion with six bonds; the tighter its binding constant, the surer the catch. Each pass removes a share 1 \u2212 e^(\u2212K\u00b7c/f) - and the column holds only so much: too much flow for the dose and it is saturated."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Flow, EDTA dose.$(br2)$(thing)Disturbance$(): Feed strength: the load varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The column is saturated.$(br2)$(thing)Rate$(): More flow, more throughput."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Removed: X = 1 \u2212 e^(\u2212Kc/f)$(br)Loading: load / capacity"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Membranes",
+  "description": "A cell is a bag: two layers of fat that water cannot cross, but ions can, through channels. Unlocks the Patch-Clamp Rig and Lipid Bilayers.",
+  "icon": "theoreticalsciences:lipid_bilayer",
+  "x": 4,
+  "y": 18,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:molecular_biology"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:egg",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A sphere of radius r is wrapped in a skin two molecules thick. Write the skin's area A.",
+    "name": "Surface of a cell",
+    "lhs": "A",
+    "form": "4 * \u03c0 * r ^ 2",
+    "expr": "4 * \u03c0 * r ^ 2",
+    "ask": "Find A for r = @{r} (micrometres).",
+    "vars": {
+      "A": "area",
+      "r": "radius"
+    },
+    "given": {
+      "r": 5
+    },
+    "unit": "\u00b5m\u00b2",
+    "method": "A sphere's surface is 4\u03c0r\u00b2; volume grows as r\u00b3, which is why cells stay small.",
+    "distractors": [
+      "3",
+      "e",
+      "+"
+    ],
+    "vary": {
+      "r": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

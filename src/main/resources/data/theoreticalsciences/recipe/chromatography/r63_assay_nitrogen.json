@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:chromatography",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nitrogen",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nitrogen",
+      "amount": 1000,
+      "components": {
+        "theoreticalsciences:assayed": {}
+      }
+    }
+  ],
+  "energy": 64,
+  "duration": 100,
+  "research": "theoreticalsciences:chromatography",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 2.5,
+      "k0": 1.0
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 1.5,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

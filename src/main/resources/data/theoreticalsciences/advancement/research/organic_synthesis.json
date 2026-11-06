@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:synthesis_bench"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.organic_synthesis"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.organic_synthesis.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/petrochemistry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_kekule_ring",
+  "description": "book.theoreticalsciences.codex.chemistry.node_kekule_ring.desc",
+  "icon": {
+    "item": "theoreticalsciences:kekule_ring"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 253,
+  "y": 55,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:kekule_ring"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_kekule_ring.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_kekule_ring.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__alkahest_still",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alkahest"
+  }
+}

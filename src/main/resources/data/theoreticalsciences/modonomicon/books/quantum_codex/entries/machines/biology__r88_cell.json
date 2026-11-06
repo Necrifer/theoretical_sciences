@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.r88_cell",
+  "description": "book.theoreticalsciences.codex.biology.r88_cell.desc",
+  "icon": {
+    "item": "theoreticalsciences:patch_clamp_rig"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 125,
+  "y": 63,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:autoclave"
+      },
+      "text": "book.theoreticalsciences.codex.biology.r88_cell.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r88_cell.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r88_cell.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r88_cell.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r88_cell.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r88_cell.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/biology__life"
+    },
+    {
+      "entry": "theoreticalsciences:machines/biology__bioreactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/membranes"
+  }
+}

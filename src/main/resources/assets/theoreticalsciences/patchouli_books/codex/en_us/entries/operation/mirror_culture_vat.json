@@ -1,0 +1,24 @@
+{
+  "name": "Mirror Culture Vat",
+  "icon": "theoreticalsciences:mirror_culture_vat",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 81,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Life is one-handed: its sugars are all right, its amino acids all left. A mirror cell is the reverse, and lives only on mirror food. The growth falls off sharply as the food's purity drops below pure."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Chirality purity, Feed.$(br2)$(thing)Disturbance$(): Stray molecules: the purity varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Natural nutrient poisons it.$(br2)$(thing)Rate$(): Pure mirror food is fastest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Growth: g = [(purity - 90)/10].feed/(1 + feed)"
+    }
+  ]
+}

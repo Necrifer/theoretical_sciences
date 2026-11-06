@@ -1,0 +1,55 @@
+{
+  "title": "Curved Geometry",
+  "description": "Drop the fifth postulate and parallel lines may meet, or spread apart: the geometry of a sphere, or of a saddle. Gauss measured mountain triangles to see which one we live in.",
+  "icon": "theoreticalsciences:pi_crystal",
+  "x": 2,
+  "y": 5,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:euclidean_geometry",
+    "theoreticalsciences:cartography"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pi_crystal",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A triangle is drawn on a sphere of radius R and covers an area A. Write the sum S of its three angles.",
+    "name": "Spherical excess",
+    "lhs": "S",
+    "form": "\u03c0 + A / R ^ 2",
+    "expr": "\u03c0 + A / R ^ 2",
+    "ask": "Find S for A = @{A} and R = @{R} (one eighth of the sphere: three right angles).",
+    "vars": {
+      "S": "angle sum (rad)",
+      "A": "area",
+      "R": "radius"
+    },
+    "given": {
+      "A": 1.5708,
+      "R": 1
+    },
+    "unit": "rad",
+    "method": "The angles add to \u03c0 on a plane; on a sphere they exceed it by the area divided by R\u00b2 (Girard).",
+    "distractors": [
+      "-",
+      "2",
+      "r"
+    ],
+    "vary": {
+      "A": [
+        0.94,
+        2.2,
+        0.01
+      ],
+      "R": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

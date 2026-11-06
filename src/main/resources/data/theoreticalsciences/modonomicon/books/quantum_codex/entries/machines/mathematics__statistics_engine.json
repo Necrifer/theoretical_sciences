@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.statistics_engine",
+  "description": "book.theoreticalsciences.codex.mathematics.statistics_engine.desc",
+  "icon": {
+    "item": "theoreticalsciences:statistics_engine"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 140,
+  "y": 80,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:statistics_engine"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.statistics_engine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.statistics_engine.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.statistics_engine.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.statistics_engine.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:statistics_engine"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.statistics_engine.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/mathematics__r73_first_steps"
+    },
+    {
+      "entry": "theoreticalsciences:machines/mathematics__peano_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/statistics"
+  }
+}

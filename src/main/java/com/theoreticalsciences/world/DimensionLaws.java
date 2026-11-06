@@ -57,6 +57,7 @@ public final class DimensionLaws {
     private static final ResourceLocation LAW_GRAVITY = TheoreticalSciences.id("law_gravity");
     private static final Map<UUID, Integer> UNANCHORED = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());
     private static final Map<UUID, Integer> EXPOSURE = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());
+    private static final Map<UUID, ResourceKey<Level>> LAST_LAW_DIM = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());
     private static final Map<UUID, long[]> LAW = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());   // {law index, ends at tick}
     private static final Map<UUID, Integer> NEXT_BLINK = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());
     private static final java.util.Set<UUID> SHIELDED = com.theoreticalsciences.world.SessionMaps.perServer(ConcurrentHashMap.newKeySet());
@@ -158,7 +159,10 @@ public final class DimensionLaws {
 
     public static void onPlayerTick(PlayerTickEvent.Post e) {
         if (!(e.getEntity() instanceof ServerPlayer sp)) return;
-        var dim = sp.level().dimension();
+        // 1.2.0: the Realm's upper strata are the Transfinite Hierarchy, and keep its laws
+        var dim = Strata.effective(sp.level().dimension(), sp.getY());
+        // crossing between the Realm and its upper strata changes law: the new one warns afresh
+        if (LAST_LAW_DIM.put(sp.getUUID(), dim) != dim) EXPOSURE.remove(sp.getUUID());
         Law law = lawFor(dim);
         AttributeInstance grav = sp.getAttribute(Attributes.GRAVITY);
         UUID id = sp.getUUID();
@@ -336,7 +340,7 @@ public final class DimensionLaws {
 
     // ------------------------------------------------------------------ the Platonic Realm: only the ideal line cuts
     private static boolean platonic(Player p) {
-        return p.level().dimension() == QHDimensions.PLATONIC && !p.isCreative();
+        return Strata.effective(p.level().dimension(), p.getY()) == QHDimensions.PLATONIC && !p.isCreative();
     }
 
     public static void onBreakSpeed(PlayerEvent.BreakSpeed e) {

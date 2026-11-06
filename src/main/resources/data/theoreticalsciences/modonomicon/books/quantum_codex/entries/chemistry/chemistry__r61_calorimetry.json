@@ -1,0 +1,34 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r61_calorimetry",
+  "description": "book.theoreticalsciences.codex.chemistry.r61_calorimetry.desc",
+  "icon": {
+    "item": "theoreticalsciences:bomb_calorimeter"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 88,
+  "y": 37,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bomb_calorimeter"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r61_calorimetry.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r59_kinetics"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__air_separation_unit"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/calorimetry"
+  }
+}

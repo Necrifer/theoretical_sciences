@@ -60,7 +60,7 @@ public final class QHFluids {
                     .viscosity(Math.max(1, def.viscosity()))
                     .temperature(def.temperature())
                     .rarity(def.gas() ? Rarity.RARE : Rarity.UNCOMMON)
-                    .canSwim(!def.gas())
+                    .canSwim(!def.gas() && !id.equals("liquid_methane"))     // 1.2.0: too thin to swim in - you sink
                     .canDrown(!def.gas())
                     .canExtinguish(false)
                     .supportsBoating(false)
@@ -150,6 +150,14 @@ public final class QHFluids {
     static class BucketlessFluidType extends FluidType {
         BucketlessFluidType(Properties p) {
             super(p);
+        }
+
+        /** 1.2.0: an assayed fluid says so in its name - in tanks, pipes and an ME terminal alike. */
+        @Override
+        public net.minecraft.network.chat.Component getDescription(net.neoforged.neoforge.fluids.FluidStack stack) {
+            net.minecraft.network.chat.Component base = super.getDescription(stack);
+            return stack.has(com.theoreticalsciences.science.Wear.ASSAYED.get())
+                    ? net.minecraft.network.chat.Component.translatable("fluid.theoreticalsciences.assayed", base) : base;
         }
 
         @Override

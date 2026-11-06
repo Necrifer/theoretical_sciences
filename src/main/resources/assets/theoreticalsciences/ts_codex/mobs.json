@@ -6,14 +6,14 @@
   "nodes": [
     {
       "entry": "basics/containment_failure",
-      "x": 2,
-      "y": 3,
+      "x": 3,
+      "y": 5,
       "parents": []
     },
     {
       "entry": "basics/node_destabilised_husk",
-      "x": 2,
-      "y": 1,
+      "x": 3,
+      "y": 3,
       "parents": [
         "basics/containment_failure"
       ],
@@ -21,8 +21,8 @@
     },
     {
       "entry": "basics/node_law_wraith",
-      "x": 0,
-      "y": 3,
+      "x": 1,
+      "y": 5,
       "parents": [
         "basics/containment_failure"
       ],
@@ -30,17 +30,8 @@
     },
     {
       "entry": "basics/node_nanite_swarm",
-      "x": 4,
-      "y": 3,
-      "parents": [
-        "basics/containment_failure"
-      ],
-      "node": true
-    },
-    {
-      "entry": "basics/node_paradox_echo",
-      "x": 0,
-      "y": 1,
+      "x": 5,
+      "y": 5,
       "parents": [
         "basics/containment_failure"
       ],
@@ -48,8 +39,8 @@
     },
     {
       "entry": "basics/node_void_wraith",
-      "x": 2,
-      "y": 5,
+      "x": 3,
+      "y": 7,
       "parents": [
         "basics/containment_failure"
       ],
@@ -57,28 +48,43 @@
     },
     {
       "entry": "world/ruins",
-      "x": 0,
-      "y": 8,
+      "x": 3,
+      "y": 13,
       "parents": [
         "basics/guide_04_neutronium"
       ]
     },
     {
       "entry": "biology/anomaly_spawner",
-      "x": 51,
-      "y": 10,
+      "x": 107,
+      "y": 25,
       "parents": []
     },
     {
+      "entry": "world/r87_axioms",
+      "x": 10,
+      "y": 17,
+      "parents": []
+    },
+    {
+      "entry": "world/node_paradox_shade",
+      "x": 10,
+      "y": 15,
+      "parents": [
+        "world/r87_axioms"
+      ],
+      "node": true
+    },
+    {
       "entry": "mathematics/fractal_space",
-      "x": 2,
-      "y": 13,
+      "x": 89,
+      "y": 45,
       "parents": []
     },
     {
       "entry": "mathematics/node_axiom_sentinel",
-      "x": 2,
-      "y": 11,
+      "x": 89,
+      "y": 43,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -86,38 +92,70 @@
     },
     {
       "entry": "mathematics/node_fractal_wyrm",
-      "x": 0,
-      "y": 13,
+      "x": 87,
+      "y": 45,
       "parents": [
         "mathematics/fractal_space"
       ],
       "node": true
     },
     {
+      "entry": "world/r78_elements",
+      "x": 3,
+      "y": 18,
+      "parents": []
+    },
+    {
+      "entry": "world/node_euclids_automaton",
+      "x": 3,
+      "y": 16,
+      "parents": [
+        "world/r78_elements"
+      ],
+      "node": true
+    },
+    {
       "entry": "nanotech/nanite_assembler",
-      "x": 12,
-      "y": 5,
+      "x": 89,
+      "y": 15,
       "parents": []
     },
     {
       "entry": "nanotech/node_nanite_swarm",
-      "x": 12,
-      "y": 3,
+      "x": 89,
+      "y": 13,
       "parents": [
         "nanotech/nanite_assembler"
       ],
       "node": true
     },
     {
+      "entry": "world/r87_continuum",
+      "x": 17,
+      "y": 17,
+      "parents": [
+        "world/r87_axioms"
+      ]
+    },
+    {
+      "entry": "world/node_fourier_wisp",
+      "x": 17,
+      "y": 15,
+      "parents": [
+        "world/r87_continuum"
+      ],
+      "node": true
+    },
+    {
       "entry": "geography/r44_creatures",
-      "x": 12,
-      "y": 12,
+      "x": 89,
+      "y": 5,
       "parents": []
     },
     {
       "entry": "geography/node_fission_husk",
-      "x": 10,
-      "y": 12,
+      "x": 87,
+      "y": 5,
       "parents": [
         "geography/r44_creatures"
       ],
@@ -125,8 +163,8 @@
     },
     {
       "entry": "geography/node_geodynamo_wraith",
-      "x": 14,
-      "y": 12,
+      "x": 91,
+      "y": 5,
       "parents": [
         "geography/r44_creatures"
       ],
@@ -134,8 +172,8 @@
     },
     {
       "entry": "geography/node_plume_elemental",
-      "x": 12,
-      "y": 10,
+      "x": 89,
+      "y": 3,
       "parents": [
         "geography/r44_creatures"
       ],
@@ -143,81 +181,49 @@
     },
     {
       "entry": "minds/psionic_resonator",
-      "x": 19,
-      "y": 5,
-      "parents": []
+      "x": 89,
+      "y": 35,
+      "parents": [
+        "world/r78_elements"
+      ]
     },
     {
       "entry": "minds/node_boltzmann_brain",
-      "x": 19,
-      "y": 3,
+      "x": 89,
+      "y": 33,
       "parents": [
         "minds/psionic_resonator"
       ],
       "node": true
     },
     {
-      "entry": "antimatter/antiverse_life",
-      "x": 46,
-      "y": 8,
+      "entry": "world/r87_curved",
+      "x": 27,
+      "y": 17,
       "parents": [
-        "mathematics/fractal_space"
+        "world/r78_elements",
+        "world/r87_continuum"
       ]
     },
     {
-      "entry": "antimatter/node_annihilator",
-      "x": 46,
-      "y": 6,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antihydrogen_wisp",
-      "x": 44,
-      "y": 8,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_positronium_skitterer",
-      "x": 48,
-      "y": 8,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/r55_extremes",
-      "x": 46,
+      "entry": "world/node_tessellate",
+      "x": 27,
       "y": 15,
       "parents": [
-        "mathematics/fractal_space"
-      ]
-    },
-    {
-      "entry": "probability/node_black_swan",
-      "x": 46,
-      "y": 13,
-      "parents": [
-        "probability/r55_extremes"
+        "world/r87_curved"
       ],
       "node": true
     },
     {
       "entry": "world/r51_frontier_life",
-      "x": 19,
-      "y": 12,
+      "x": 34,
+      "y": 17,
       "parents": []
     },
     {
       "entry": "world/node_binary_serpent",
-      "x": 17,
-      "y": 10,
+      "x": 32,
+      "y": 15,
       "parents": [
         "world/r51_frontier_life"
       ],
@@ -225,8 +231,8 @@
     },
     {
       "entry": "world/node_hawking_imp",
-      "x": 19,
-      "y": 14,
+      "x": 34,
+      "y": 19,
       "parents": [
         "world/r51_frontier_life"
       ],
@@ -234,8 +240,8 @@
     },
     {
       "entry": "world/node_lens_phantom",
-      "x": 21,
-      "y": 12,
+      "x": 36,
+      "y": 17,
       "parents": [
         "world/r51_frontier_life"
       ],
@@ -243,8 +249,8 @@
     },
     {
       "entry": "world/node_pulsar_wisp",
-      "x": 19,
-      "y": 10,
+      "x": 34,
+      "y": 15,
       "parents": [
         "world/r51_frontier_life"
       ],
@@ -252,25 +258,127 @@
     },
     {
       "entry": "world/node_tidal_stretcher",
-      "x": 17,
-      "y": 12,
+      "x": 32,
+      "y": 17,
       "parents": [
         "world/r51_frontier_life"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/black_hole_interior",
-      "x": 29,
-      "y": 8,
+      "entry": "antimatter/antiverse_life",
+      "x": 3,
+      "y": 48,
       "parents": [
-        "mathematics/fractal_space"
+        "world/r87_continuum"
+      ]
+    },
+    {
+      "entry": "antimatter/node_annihilator",
+      "x": 3,
+      "y": 46,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antihydrogen_wisp",
+      "x": 1,
+      "y": 48,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_positronium_skitterer",
+      "x": 5,
+      "y": 48,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "probability/r55_extremes",
+      "x": 89,
+      "y": 55,
+      "parents": [
+        "world/r87_continuum"
+      ]
+    },
+    {
+      "entry": "probability/node_black_swan",
+      "x": 89,
+      "y": 53,
+      "parents": [
+        "probability/r55_extremes"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/bulk_life",
+      "x": 51,
+      "y": 17,
+      "parents": [
+        "world/r78_elements"
+      ]
+    },
+    {
+      "entry": "world/node_moduli_crawler",
+      "x": 51,
+      "y": 15,
+      "parents": [
+        "world/bulk_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/r68_titan_life",
+      "x": 71,
+      "y": 17,
+      "parents": []
+    },
+    {
+      "entry": "world/node_catalyst_sprite",
+      "x": 69,
+      "y": 17,
+      "parents": [
+        "world/r68_titan_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_cryolava_slug",
+      "x": 73,
+      "y": 17,
+      "parents": [
+        "world/r68_titan_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_tholin_drifter",
+      "x": 71,
+      "y": 15,
+      "parents": [
+        "world/r68_titan_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/black_hole_interior",
+      "x": 3,
+      "y": 38,
+      "parents": [
+        "world/r87_continuum"
       ]
     },
     {
       "entry": "spacetime/node_photon_moth",
-      "x": 29,
-      "y": 6,
+      "x": 3,
+      "y": 36,
       "parents": [
         "spacetime/black_hole_interior"
       ],
@@ -278,40 +386,25 @@
     },
     {
       "entry": "spacetime/node_tidal_horror",
-      "x": 27,
-      "y": 8,
+      "x": 1,
+      "y": 38,
       "parents": [
         "spacetime/black_hole_interior"
       ],
       "node": true
     },
     {
-      "entry": "world/bulk_life",
-      "x": 29,
-      "y": 15,
-      "parents": []
-    },
-    {
-      "entry": "world/node_moduli_crawler",
-      "x": 29,
-      "y": 13,
-      "parents": [
-        "world/bulk_life"
-      ],
-      "node": true
-    },
-    {
       "entry": "strings/compactification",
-      "x": 53,
-      "y": 15,
+      "x": 3,
+      "y": 58,
       "parents": [
-        "world/bulk_life"
+        "world/r87_curved"
       ]
     },
     {
       "entry": "strings/node_brane_strider",
-      "x": 53,
-      "y": 13,
+      "x": 3,
+      "y": 56,
       "parents": [
         "strings/compactification"
       ],
@@ -319,23 +412,42 @@
     },
     {
       "entry": "strings/node_graviton_wisp",
-      "x": 51,
-      "y": 15,
+      "x": 1,
+      "y": 58,
       "parents": [
         "strings/compactification"
       ],
       "node": true
     },
     {
+      "entry": "biology/r92_scale",
+      "x": 99,
+      "y": 25,
+      "parents": [
+        "world/r78_elements"
+      ]
+    },
+    {
+      "entry": "biology/node_mirror_microbe",
+      "x": 99,
+      "y": 23,
+      "parents": [
+        "biology/r92_scale"
+      ],
+      "node": true
+    },
+    {
       "entry": "quantum/foam_boundaries",
-      "x": 36,
-      "y": 8,
-      "parents": []
+      "x": 3,
+      "y": 28,
+      "parents": [
+        "world/r78_elements"
+      ]
     },
     {
       "entry": "quantum/node_planck_mite",
-      "x": 36,
-      "y": 6,
+      "x": 3,
+      "y": 26,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -343,8 +455,8 @@
     },
     {
       "entry": "quantum/node_vacuum_drifter",
-      "x": 34,
-      "y": 8,
+      "x": 1,
+      "y": 28,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -352,25 +464,147 @@
     },
     {
       "entry": "quantum/node_virtual_pair",
-      "x": 38,
-      "y": 8,
+      "x": 5,
+      "y": 28,
       "parents": [
         "quantum/foam_boundaries"
       ],
       "node": true
     },
     {
-      "entry": "mathematics/transfinite",
-      "x": 53,
-      "y": 5,
+      "entry": "world/r94_titan_ocean",
+      "x": 61,
+      "y": 17,
       "parents": [
-        "mathematics/fractal_space"
+        "world/r68_titan_life"
+      ]
+    },
+    {
+      "entry": "world/node_brine_jelly",
+      "x": 63,
+      "y": 17,
+      "parents": [
+        "world/r94_titan_ocean"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_ice_eel",
+      "x": 59,
+      "y": 17,
+      "parents": [
+        "world/r94_titan_ocean"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_vent_crab",
+      "x": 61,
+      "y": 19,
+      "parents": [
+        "world/r94_titan_ocean"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_vent_grazer",
+      "x": 61,
+      "y": 15,
+      "parents": [
+        "world/r94_titan_ocean"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/r68_ouroboros",
+      "x": 78,
+      "y": 17,
+      "parents": [
+        "world/r68_titan_life"
+      ]
+    },
+    {
+      "entry": "world/node_ouroboros",
+      "x": 78,
+      "y": 15,
+      "parents": [
+        "world/r68_ouroboros"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/r93_inner_life",
+      "x": 44,
+      "y": 17,
+      "parents": [
+        "world/r87_axioms"
+      ]
+    },
+    {
+      "entry": "world/node_macrophage",
+      "x": 42,
+      "y": 17,
+      "parents": [
+        "world/r93_inner_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_polymerase",
+      "x": 44,
+      "y": 19,
+      "parents": [
+        "world/r93_inner_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_red_cell",
+      "x": 44,
+      "y": 15,
+      "parents": [
+        "world/r93_inner_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "world/node_t_cell",
+      "x": 46,
+      "y": 17,
+      "parents": [
+        "world/r93_inner_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "biology/r90_defence",
+      "x": 89,
+      "y": 25,
+      "parents": [
+        "world/r87_axioms"
+      ]
+    },
+    {
+      "entry": "biology/node_paradox_echo",
+      "x": 89,
+      "y": 23,
+      "parents": [
+        "biology/r90_defence"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/transfinite",
+      "x": 99,
+      "y": 45,
+      "parents": [
+        "world/r87_axioms"
       ]
     },
     {
       "entry": "mathematics/node_hilbert_bellhop",
-      "x": 53,
-      "y": 3,
+      "x": 99,
+      "y": 43,
       "parents": [
         "mathematics/transfinite"
       ],
@@ -378,8 +612,8 @@
     },
     {
       "entry": "mathematics/node_hypercube_drifter",
-      "x": 51,
-      "y": 5,
+      "x": 97,
+      "y": 45,
       "parents": [
         "mathematics/transfinite"
       ],
@@ -387,63 +621,143 @@
     },
     {
       "entry": "mathematics/node_ordinal_hound",
-      "x": 55,
-      "y": 5,
+      "x": 101,
+      "y": 45,
       "parents": [
         "mathematics/transfinite"
       ],
       "node": true
     },
     {
-      "entry": "endgame/alpha_omega",
-      "x": 61,
-      "y": 13,
+      "entry": "biology/r94_anomaly_lived",
+      "x": 112,
+      "y": 25,
       "parents": [
-        "world/bulk_life",
-        "strings/compactification"
+        "world/bulk_life"
+      ]
+    },
+    {
+      "entry": "biology/node_tumour_hydra",
+      "x": 112,
+      "y": 23,
+      "parents": [
+        "biology/r94_anomaly_lived"
+      ],
+      "node": true
+    },
+    {
+      "entry": "endgame/alpha_omega",
+      "x": 87,
+      "y": 63,
+      "parents": [
+        "world/bulk_life"
       ]
     }
   ],
   "regions": [
     {
       "tier": 0,
-      "label": "I \u00b7 Foundations",
+      "label": "Getting Started",
       "x0": -1.5,
-      "x1": 5.5,
-      "y0": -1.5,
-      "y1": 14.5
+      "x1": 82.5,
+      "y0": 0,
+      "y1": 8.5
     },
     {
       "tier": 1,
-      "label": "II \u00b7 Quanta & Matter",
-      "x0": 8.5,
-      "x1": 22.5,
-      "y0": 0.5,
-      "y1": 15.5
+      "label": "The World",
+      "x0": -1.5,
+      "x1": 82.5,
+      "y0": 10,
+      "y1": 21.5
     },
     {
       "tier": 2,
-      "label": "III \u00b7 Stars & Spacetime",
-      "x0": 25.5,
-      "x1": 39.5,
-      "y0": 3.5,
-      "y1": 16.5
+      "label": "Quantum Engineering",
+      "x0": -1.5,
+      "x1": 82.5,
+      "y0": 23,
+      "y1": 31.5
     },
     {
       "tier": 3,
-      "label": "IV \u00b7 The Cosmos",
-      "x0": 42.5,
-      "x1": 56.5,
-      "y0": 0.5,
-      "y1": 16.5
+      "label": "Wormholes & Causality",
+      "x0": -1.5,
+      "x1": 82.5,
+      "y0": 33,
+      "y1": 41.5
+    },
+    {
+      "tier": 4,
+      "label": "Antimatter",
+      "x0": -1.5,
+      "x1": 82.5,
+      "y0": 43,
+      "y1": 51.5
     },
     {
       "tier": 5,
-      "label": "VI \u00b7 Transcendence",
-      "x0": 59.5,
-      "x1": 62.5,
-      "y0": 10.5,
-      "y1": 14.5
+      "label": "Strings & the Multiverse",
+      "x0": -1.5,
+      "x1": 82.5,
+      "y0": 53,
+      "y1": 61.5
+    },
+    {
+      "tier": 6,
+      "label": "Earth & Mapping",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 0,
+      "y1": 8.5
+    },
+    {
+      "tier": 7,
+      "label": "Nanotech & Mass",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 10,
+      "y1": 18.5
+    },
+    {
+      "tier": 8,
+      "label": "Biology",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 20,
+      "y1": 28.5
+    },
+    {
+      "tier": 9,
+      "label": "Artificial Minds",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 30,
+      "y1": 38.5
+    },
+    {
+      "tier": 10,
+      "label": "Mathematics",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 40,
+      "y1": 48.5
+    },
+    {
+      "tier": 11,
+      "label": "Probability",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 50,
+      "y1": 58.5
+    },
+    {
+      "tier": 12,
+      "label": "Beyond Mathematics",
+      "x0": 84.5,
+      "x1": 116.5,
+      "y0": 60,
+      "y1": 64.5
     }
   ]
 }

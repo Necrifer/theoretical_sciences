@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__bulk_life",
+  "description": "book.theoreticalsciences.codex.world.intro__bulk_life.desc",
+  "icon": {
+    "item": "theoreticalsciences:kaluza_klein_ore"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 95,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__bulk_life.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__bulk_life"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__bulk_life.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/world__intro__r78_elements"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/geography__intro__r37_mapping"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brane_cosmology"
+  }
+}

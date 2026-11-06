@@ -1,0 +1,112 @@
+{
+  "name": "Cracking Tower",
+  "icon": "theoreticalsciences:cracking_tower",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 144,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cracking_tower",
+      "title": "Cracking Tower",
+      "text": "Long carbon chains heated for half a second and quenched: they break into short ones, ethylene above all.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the furnace temperature and the steam ratio. Each product has its temperature (ethylene about 1100 K, propylene 1000 K): its share must reach 60%. Above about 1150 K coke builds up and fouls the Zeolite Catalyst (it wears ten times as fast) - steam keeps it down."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cracking Tower",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "_____A_",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_____A_",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_____B_",
+            "_______",
+            "_______"
+          ],
+          [
+            "_______",
+            "_______",
+            "_____A_",
+            "_______",
+            "_______"
+          ],
+          [
+            "AAAA___",
+            "AAAA___",
+            "AAAA_B_",
+            "AAAA___",
+            "AAAA___"
+          ],
+          [
+            "AAAA___",
+            "A  A___",
+            "A  A_A_",
+            "A  A___",
+            "AAAA___"
+          ],
+          [
+            "AAAA___",
+            "ADDA___",
+            "ADDAAB_",
+            "ADDA___",
+            "AAAA___"
+          ],
+          [
+            "A0AA___",
+            "A  A___",
+            "A  A_A_",
+            "A  A___",
+            "AAAA___"
+          ],
+          [
+            "AAEAAAA",
+            "AAAAAAA",
+            "EAAAAAE",
+            "AAAAAAA",
+            "AAEAAAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:cracking_tower",
+          "A": "theoreticalsciences:cracker_casing",
+          "B": "theoreticalsciences:distillate_tray",
+          "D": "theoreticalsciences:cracking_coil",
+          "E": "#theoreticalsciences:multiblock/cracker_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Ethylene, Propylene."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cracking_tower",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/petrochemistry"
+}

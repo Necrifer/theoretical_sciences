@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r47_redshift",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r47_redshift.desc",
+  "icon": {
+    "item": "theoreticalsciences:pound_rebka_tower"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 28,
+  "y": 50,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r47_redshift.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r47_redshift"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r47_redshift.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r38_clocks"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r53_dilation"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_redshift"
+  }
+}

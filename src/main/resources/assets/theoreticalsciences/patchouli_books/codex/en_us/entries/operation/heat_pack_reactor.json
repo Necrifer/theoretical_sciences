@@ -1,0 +1,24 @@
+{
+  "name": "Heat-Pack Reactor",
+  "icon": "theoreticalsciences:heat_pack_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 68,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A reaction that gives out heat warms what flows out; one that takes heat in chills it. The faster the reactants are mixed, the further the outlet moves from 298 K: T = 298 K \u00b1 h\u00b7\u1e41. Each product wants its outlet in a band. Heat released faster than the jacket can carry it away runs away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Mixing rate.$(br2)$(thing)Disturbance$(): Feed temperature: the outlet varies by \u00b12%\u00b7d of its shift."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Runaway: heat released faster than removed (ammonium nitrate decomposes).$(br2)$(thing)Rate$(): Product follows the feed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Outlet temperature: T = 298 K \u00b1 h\u00b7\u1e41"
+    }
+  ]
+}

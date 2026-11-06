@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r59_contact",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r59_contact.desc",
+  "icon": {
+    "item": "theoreticalsciences:contact_process_tower"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 71,
+  "y": 60,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_contact.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r59_contact"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_contact.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_haber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/contact_process"
+  }
+}

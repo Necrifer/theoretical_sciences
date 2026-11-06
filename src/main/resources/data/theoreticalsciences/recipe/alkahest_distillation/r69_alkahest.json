@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:alkahest_distillation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:kekule_ring"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:porphyrin_oxygen_carrier",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:copper_ammine_complex",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:doped_wafer",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chirality_tincture",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:alkahest",
+      "amount": 250
+    }
+  ],
+  "energy": 16384,
+  "duration": 800,
+  "research": "theoreticalsciences:alkahest",
+  "unscaled": true,
+  "insight_per_run": 5,
+  "physics": {
+    "vars": {
+      "Tb": 520.0
+    },
+    "windows": [
+      {
+        "q": "pur",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

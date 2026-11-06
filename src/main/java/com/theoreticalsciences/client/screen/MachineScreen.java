@@ -42,7 +42,7 @@ public class MachineScreen extends AbstractContainerScreen<MachineMenu> {
     }
 
     // ------------------------------------------------------------------ tuning panel (multiblocks only)
-    private static final int PW = 124, PH = 158;
+    private static final int PW = 124, PH = 168;
 
     private com.theoreticalsciences.machine.tuning.TuningProfile profile() {
         return menu.be instanceof ControllerBlockEntity c ? c.tuningProfile() : null;
@@ -339,6 +339,10 @@ public class MachineScreen extends AbstractContainerScreen<MachineMenu> {
         fit(g, Component.translatable("gui.theoreticalsciences.parallel", s.parallel, c.maxParallel()), x + 5, y + 129, PW - 10, 0xC0C8D8);
         String rates = s.omega ? "x\u221E speed  x\u221E FE/t" : String.format("x%d speed  x%d FE/t", 1 << s.overclock, (int) Math.pow(4, s.overclock) * s.parallel);
         fit(g, Component.literal(rates), x + 5, y + 142, PW - 10, 0x8090A0);
+        // 1.2.0: precision, the fine tuning that earns extra products
+        double pr = c.precision.value;
+        fit(g, Component.translatable("gui.theoreticalsciences.phys.precision", Math.round(pr * 100), Math.round(c.productBonus() * 100)),
+                x + 5, y + 154, PW - 10, pr > 0.98 ? 0x70FF9A : 0xC0D0E0);
         if (s.faulted) {
             g.fill(x + 1, y + 26, x + PW - 1, y + 60, 0xD0300808);
             TextFit.wrapped(g, font, Component.translatable("gui.theoreticalsciences.fault"), x + PW / 2, y + 30, PW - 8, 0xFF6050, 1, true);
@@ -443,6 +447,7 @@ public class MachineScreen extends AbstractContainerScreen<MachineMenu> {
         // slots
         for (int i = 0; i < t.itemInputs; i++) HoloStyle.slot(g, x + layout.itemInX[i] - 1, y + layout.itemInY[i] - 1, accent, false, false, run, time);
         for (int i = 0; i < t.itemOutputs; i++) HoloStyle.slot(g, x + layout.itemOutX[i] - 1, y + layout.itemOutY[i] - 1, accent, true, false, run, time);
+        HoloStyle.slot(g, x + layout.catX - 1, y + layout.catY - 1, 0xFFC060, false, false, run, time);     // 1.2.0: the catalyst slot
         for (int r = 0; r < 3; r++)
             for (int c = 0; c < 9; c++) HoloStyle.slot(g, x + layout.invX - 1 + c * 18, y + layout.invY - 1 + r * 18, accent, false, true, false, time);
         for (int c = 0; c < 9; c++) HoloStyle.slot(g, x + layout.invX - 1 + c * 18, y + layout.invY + 57, accent, false, true, false, time);
@@ -586,11 +591,17 @@ public class MachineScreen extends AbstractContainerScreen<MachineMenu> {
                 FluidStack fs = menu.be.tanks[i].getFluid();
                 List<Component> lines = new ArrayList<>();
                 lines.add(fs.isEmpty() ? Component.translatable("gui.theoreticalsciences.empty") : fs.getHoverName());
+                if (!fs.isEmpty() && fs.has(com.theoreticalsciences.science.Wear.ASSAYED.get()))
+                    lines.add(Component.translatable("tooltip.theoreticalsciences.assayed").withStyle(ChatFormatting.GREEN));
                 lines.add(Component.literal(String.format("%,d / %,d mB", fs.getAmount(), menu.be.tanks[i].getCapacity())).withStyle(ChatFormatting.GRAY));
                 lines.add(Component.translatable(i < menu.be.type.fluidInputs ? "gui.theoreticalsciences.tank_hint_in" : "gui.theoreticalsciences.tank_hint_out")
                         .withStyle(ChatFormatting.DARK_GRAY));
                 TextFit.tooltip(g, font, lines, mx, my);
             }
+        }
+        if (in(mx, my, x + layout.catX, y + layout.catY, 16, 16) && menu.be.catalyst.getStackInSlot(0).isEmpty() && menu.getCarried().isEmpty()) {
+            TextFit.tooltip(g, font, List.of(Component.translatable("gui.theoreticalsciences.catalyst_slot"),
+                    Component.translatable("gui.theoreticalsciences.catalyst_slot.hint").withStyle(ChatFormatting.GRAY)), mx, my);
         }
         if (in(mx, my, x + layout.arrowX, y + layout.arrowY, 24, 16) && menu.maxProgress() > 0) {
             g.renderTooltip(font, Component.literal(menu.progress() * 100 / Math.max(1, menu.maxProgress()) + "%"), mx, my);

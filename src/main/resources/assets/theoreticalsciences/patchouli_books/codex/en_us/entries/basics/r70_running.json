@@ -1,0 +1,22 @@
+{
+  "name": "Keeping Things Running",
+  "icon": "theoreticalsciences:zeno_anchor",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entangled_link,theoreticalsciences:zeno_anchor,theoreticalsciences:entanglement_tuner",
+      "text": "Many machines only work in one place or one world: a Lake Pump on Titan, a siphon in the nebula, a drill deep in the Interior. Two things keep a spread-out factory going."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Entangled Links$() (research $(thing)Entanglement Links$(), right after Quantum Entanglement) sit on a block's face. Links tuned to one channel with an $(item)Entanglement Tuner$() share it: senders pull items, fluids and energy out of what they sit on, receivers push them in, at any distance and across dimensions. A link moves 16 items, 4,000 mB and 262,144 FE a tick; the later Relay and Transceiver move far more, on the same channels."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A channel only works while both ends are loaded. The $(item)Zeno Anchor$() (research $(thing)The Quantum Zeno Effect$()) keeps them so: powered, it holds the 3 x 3 chunks round it loaded and working whether or not anyone is near, and across restarts. It draws 64 FE a tick, and lets go when the power runs out or it is broken. Right-click it to see its state."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/entanglement_links"
+}

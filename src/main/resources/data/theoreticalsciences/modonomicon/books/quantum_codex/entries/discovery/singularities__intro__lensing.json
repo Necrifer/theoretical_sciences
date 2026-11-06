@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.singularities.intro__lensing",
+  "description": "book.theoreticalsciences.codex.singularities.intro__lensing.desc",
+  "icon": {
+    "item": "theoreticalsciences:micro_singularity"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 28,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.intro__lensing.p0",
+      "title": "book.theoreticalsciences.codex.singularities.intro__lensing"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.singularities.intro__lensing.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/singularity_physics"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Gypsum Crystal",
+  "icon": "theoreticalsciences:gypsum_crystal",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:gypsum_crystal",
+      "title": "Gypsum Crystal",
+      "text": "Calcium sulfate, the first salt to come out of an evaporating brine: soft enough to scratch with a fingernail."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Brine Evaporator$().$(br2)$(thing)Unlocked by$(): Solubility.$(br2)$(thing)Used in$(): Sulfur Dioxide."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/solubility"
+}

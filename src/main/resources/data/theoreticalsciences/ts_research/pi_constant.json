@@ -1,0 +1,47 @@
+{
+  "title": "\u03c0",
+  "description": "The ratio of every circle's circumference to its width, the same for all of them, and never ending or repeating. Archimedes trapped it between polygons. Unlocks the \u03c0 Crystal.",
+  "icon": "theoreticalsciences:pi_crystal",
+  "x": 2,
+  "y": 6,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:euclidean_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A regular polygon of n sides is drawn inside a circle of diameter 1. Write its perimeter P.",
+    "name": "Archimedes' polygon",
+    "lhs": "P",
+    "form": "n * sin ( \u03c0 / n )",
+    "expr": "n * sin ( \u03c0 / n )",
+    "ask": "Find P for n = @{n} (Archimedes' own polygon).",
+    "vars": {
+      "P": "perimeter",
+      "n": "sides"
+    },
+    "given": {
+      "n": 96
+    },
+    "unit": "",
+    "method": "Each side spans an angle 2\u03c0/n at the centre, so it is 2\u00b7(1/2)\u00b7sin(\u03c0/n) long.",
+    "distractors": [
+      "cos",
+      "2",
+      "r"
+    ],
+    "vary": {
+      "n": [
+        58.0,
+        134.0,
+        1.0
+      ]
+    }
+  }
+}

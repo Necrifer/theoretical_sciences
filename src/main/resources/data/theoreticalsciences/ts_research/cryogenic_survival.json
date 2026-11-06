@@ -1,0 +1,73 @@
+{
+  "title": "Cryogenic Survival",
+  "description": "At 94 K the trick is not to make heat but to keep it. Unlocks the Heated Pressure Suit and the Hydrophobic Coating that keeps methane rain out of its lining.",
+  "icon": "theoreticalsciences:heated_pressure_suit_chestplate",
+  "x": 24,
+  "y": 2,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:titan",
+    "theoreticalsciences:calorimetry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:tholin_sand",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:silica_aerogel",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "Heat leaks through a slab of insulation of thermal conductivity k, area A and thickness l, with a difference T between the temperatures of its faces. Write the heat flow q.",
+    "name": "Fourier's law",
+    "lhs": "q",
+    "form": "k * A * T / l",
+    "expr": "k * A * T / l",
+    "ask": "Find q in watts through a suit's aerogel lining: k = @{k} W/m\u00b7K, A = @{A} m\u00b2, T = @{T} K (310 K inside, 94 K outside), l = @{l} m.",
+    "vars": {
+      "q": "heat flow (W)",
+      "k": "thermal conductivity (W/m\u00b7K)",
+      "A": "area (m\u00b2)",
+      "T": "temperature difference (K)",
+      "l": "thickness (m)"
+    },
+    "given": {
+      "k": 0.015,
+      "A": 2,
+      "T": 216,
+      "l": 0.02
+    },
+    "unit": "W",
+    "method": "The flow is proportional to the temperature gradient, T/l, and to the area it crosses.",
+    "distractors": [
+      "2",
+      "m",
+      "t"
+    ],
+    "vary": {
+      "k": [
+        0.0089,
+        0.021,
+        0.0001
+      ],
+      "A": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "T": [
+        130.0,
+        302.0,
+        1.0
+      ],
+      "l": [
+        0.012,
+        0.028,
+        0.0001
+      ]
+    }
+  }
+}

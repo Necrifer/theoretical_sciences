@@ -1,0 +1,55 @@
+{
+  "title": "Cryptography",
+  "description": "A secret only stays secret if breaking it takes longer than the secret matters. Unlocks the One-Time Pad.",
+  "icon": "theoreticalsciences:one_time_pad",
+  "x": 1,
+  "y": 11,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:error_correction",
+    "theoreticalsciences:modular_arithmetic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:error_code",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "A key has b bits, and a machine can try s keys a second. Write the longest time T it can take to find the key by trying them all.",
+    "name": "Brute force",
+    "lhs": "T",
+    "form": "2 ^ b / s",
+    "expr": "2 ^ b / s",
+    "ask": "Find T for b = @{b} and s = @{s}.",
+    "vars": {
+      "T": "time (s)",
+      "b": "key bits",
+      "s": "tries a second"
+    },
+    "given": {
+      "b": 40,
+      "s": 1000000000
+    },
+    "unit": "s",
+    "method": "There are 2^b keys to try; each extra bit doubles the work, which is why 128 bits is out of reach.",
+    "distractors": [
+      "-",
+      "k",
+      "n"
+    ],
+    "vary": {
+      "b": [
+        30.0,
+        50.0,
+        1.0
+      ],
+      "s": [
+        750000000.0,
+        1250000000.0,
+        10000000.0
+      ]
+    }
+  }
+}

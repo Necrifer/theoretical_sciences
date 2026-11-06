@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.intro__quantum_foam",
+  "description": "book.theoreticalsciences.codex.quantum.intro__quantum_foam.desc",
+  "icon": {
+    "item": "theoreticalsciences:planck_diver"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.intro__quantum_foam.p0",
+      "title": "book.theoreticalsciences.codex.quantum.intro__quantum_foam"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.intro__quantum_foam.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/hyperdimensions__intro__tesseract"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

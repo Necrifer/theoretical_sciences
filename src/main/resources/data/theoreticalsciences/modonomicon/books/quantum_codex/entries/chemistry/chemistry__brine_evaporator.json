@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.brine_evaporator",
+  "description": "book.theoreticalsciences.codex.chemistry.brine_evaporator.desc",
+  "icon": {
+    "item": "theoreticalsciences:brine_evaporator"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 119,
+  "y": 32,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brine_evaporator"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.brine_evaporator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.brine_evaporator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.brine_evaporator.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.brine_evaporator.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brine_evaporator"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.brine_evaporator.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r60_acids"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__titration_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/solubility"
+  }
+}

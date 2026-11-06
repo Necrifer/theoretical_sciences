@@ -1,0 +1,43 @@
+{
+  "params": [
+    {
+      "id": "mr",
+      "unit": "L/min",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "sg": 1,
+    "hh": 40
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "To",
+      "unit": "K",
+      "expr": "298 + sg*hh*mr*(1 + 0.02*d)",
+      "formula": "T = 298 K \u00b1 h\u00b7\u1e41"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "stop",
+      "expr": "450 - To",
+      "formula": "T < 450 K"
+    }
+  ],
+  "rate": "clamp(mr/2, 0.25, 4)",
+  "rate_formula": "rate = \u1e41 / 2 L/min",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

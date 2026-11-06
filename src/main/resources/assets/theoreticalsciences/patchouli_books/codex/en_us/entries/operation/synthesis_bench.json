@@ -1,0 +1,24 @@
+{
+  "name": "Synthesis Bench",
+  "icon": "theoreticalsciences:synthesis_bench",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 127,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A route of n steps, each keeping a fraction y of the material, keeps y\u207f of it overall: steps cost. But every target has a least number of steps - the bonds that must be made one at a time - and no route is shorter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Steps in the route.$(br2)$(thing)Disturbance$(): Bench technique: each step keeps \u00b10.5%\u00b7d more or less."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): No route that short: the target needs more steps.$(br2)$(thing)Rate$(): Fewer steps, quicker."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Overall yield: Y = y\u207f"
+    }
+  ]
+}

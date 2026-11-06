@@ -1,0 +1,64 @@
+{
+  "params": [
+    {
+      "id": "Iu",
+      "unit": "W/m\u00b2",
+      "min": 1,
+      "max": 600,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "id": "lp",
+      "unit": "cm",
+      "min": 0.05,
+      "max": 10,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "eps": 100,
+    "cc": 0.01,
+    "Phi": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Ab",
+      "unit": "",
+      "expr": "eps*cc*lp",
+      "formula": "A = \u03b5cl"
+    },
+    {
+      "id": "fa",
+      "unit": "",
+      "expr": "1 - exp(-2.303*Ab)",
+      "formula": "f = 1 \u2212 10^(\u2212A)"
+    },
+    {
+      "id": "Rp",
+      "unit": "mol/s",
+      "expr": "Phi*Iu*(1 + 0.03*d)*fa/100",
+      "formula": "r = \u03a6\u00b7I\u00b7f"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "cook",
+      "kind": "stop",
+      "expr": "400 - Iu",
+      "formula": "I < 400 W/m\u00b2"
+    }
+  ],
+  "rate": "clamp(Rp/0.5, 0.25, 4)",
+  "rate_formula": "rate = r / 0.5",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

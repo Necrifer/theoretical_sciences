@@ -1,0 +1,54 @@
+{
+  "title": "Eigenvalues",
+  "description": "Some directions a matrix only stretches, never turns. How much it stretches them decides whether a system grows, shrinks or circles.",
+  "icon": "theoreticalsciences:lie_group_lattice",
+  "x": 0,
+  "y": 5,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:linear_algebra"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A 2 \u00d7 2 matrix has trace T and determinant D. Write the larger of the two amounts L it stretches its own directions by.",
+    "name": "Characteristic roots",
+    "lhs": "L",
+    "form": "T / 2 + sqrt ( T ^ 2 / 4 - D )",
+    "expr": "T / 2 + sqrt ( T ^ 2 / 4 - D )",
+    "ask": "Find L for T = @{T} and D = @{D}.",
+    "vars": {
+      "L": "larger stretch",
+      "T": "trace",
+      "D": "determinant"
+    },
+    "given": {
+      "T": 5,
+      "D": 6
+    },
+    "unit": "",
+    "method": "They solve \u03bb\u00b2 \u2212 T\u03bb + D = 0: they add to T and multiply to D.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "T": [
+        4.0,
+        6.0,
+        1.0
+      ],
+      "D": [
+        5.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

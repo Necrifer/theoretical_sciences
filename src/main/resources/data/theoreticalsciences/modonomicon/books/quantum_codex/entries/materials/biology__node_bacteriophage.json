@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_bacteriophage",
+  "description": "book.theoreticalsciences.codex.biology.node_bacteriophage.desc",
+  "icon": {
+    "item": "theoreticalsciences:bacteriophage"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 140,
+  "y": 89,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bacteriophage"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_bacteriophage.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_bacteriophage.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__phage_lab",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/viruses"
+  }
+}

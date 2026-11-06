@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:pharmacokinetics",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:balance_tincture",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stable_dose",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:pharmacokinetics",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Vd": 5.0,
+      "ke": 0.15
+    },
+    "windows": [
+      {
+        "q": "trough",
+        "min": 2.0,
+        "max": 1000000.0
+      },
+      {
+        "q": "peak",
+        "min": 0.0,
+        "max": 40.0
+      }
+    ]
+  }
+}

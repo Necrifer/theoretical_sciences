@@ -1,0 +1,19 @@
+{
+  "name": "Fine Reagent",
+  "icon": "theoreticalsciences:fine_reagent",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fine_reagent",
+      "title": "Fine Reagent",
+      "text": "A pure organic compound made step by careful step - the kind of thing later recipes name exactly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)NMR Spectrometer$().$(br2)$(thing)Unlocked by$(): Infrared Spectroscopy.$(br2)$(thing)Used in$(): Chiral Ligand, EDTA, Enantiopure Reagent, Fine Reagent, Structure Card, Tincture of Form."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/infrared_spectroscopy"
+}

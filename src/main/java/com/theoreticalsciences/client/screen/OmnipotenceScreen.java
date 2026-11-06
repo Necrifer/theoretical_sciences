@@ -95,7 +95,7 @@ public class OmnipotenceScreen extends Screen {
         shown = all;
         tab = phase == REBORN ? 1 : 0;
         say("OMNIPOTENCE CORE :: TERMINAL v∞");
-        say(phase == REBORN ? "core state: REKINDLED - forge online" : phase == SHUTDOWN ? "core state: SHUTTING DOWN" : "core state: INTACT");
+        say(phase == REBORN ? "core state: REKINDLED, forge online" : phase == SHUTDOWN ? "core state: SHUTTING DOWN" : "core state: INTACT");
         // the program starts the way a computer boots
         code.emit("import core.omnipotence, forge, registry  // v∞");
         code.emit("let core = Core.attach(" + core.getX() + ", " + core.getY() + ", " + core.getZ() + ")");
@@ -255,12 +255,18 @@ public class OmnipotenceScreen extends Screen {
     private final Map<String, Boolean> makeable = new HashMap<>();
     private long makeableAt;
 
+    private static final CoreForge.Recipe NO_RECIPE = new CoreForge.Recipe("none", new CoreForge.Ing("minecraft:air", 0), List.of());
+
     private CoreForge.Recipe recipe() {
         List<CoreForge.Recipe> rs = CoreForge.all();
         if (selCache != null && selCacheList == rs && selCache.id().equals(selectedId)) return selCache;
         CoreForge.Recipe found = null;
         if (selectedId != null) for (CoreForge.Recipe r : rs) if (r.id().equals(selectedId)) { found = r; break; }
-        if (found == null) found = rs.get(0);
+        if (found == null) {
+            // 1.2.0: a pack may have removed every Forge recipe: an empty one stands in (nothing to forge)
+            if (rs.isEmpty()) return NO_RECIPE;
+            found = rs.get(0);
+        }
         selectedId = found.id();
         selCache = found;
         selCacheList = rs;
@@ -704,7 +710,7 @@ public class OmnipotenceScreen extends Screen {
             String label = font.width(full) <= ingCellW - 20 ? full : in.count() == 0 ? (have > 0 ? "held" : "needed") : compact(have) + "/" + compact(need);
             g.drawString(font, cut(label, ingCellW - 20), ix + 18, iy + 4, have >= need ? GREEN : RED, false);
             if (over(mx, my, ix, iy, ingCellW - 2, 16)) {
-                String hn = in.count() == 0 ? (have > 0 ? "held - not used up" : "needed - not used up") : "have " + have + " / need " + need;
+                String hn = in.count() == 0 ? (have > 0 ? "held, not used up" : "needed, not used up") : "have " + have + " / need " + need;
                 itemTip(s, mx, my, Component.literal(hn).withStyle(have >= need ? ChatFormatting.GREEN : ChatFormatting.RED));
                 hover("i:" + in.item() + k, "inspect(\"" + in.item() + "\") -> " + (in.count() == 0 ? (have > 0 ? "held" : "missing") : have + "/" + need));
             }
@@ -775,13 +781,13 @@ public class OmnipotenceScreen extends Screen {
             }
         }
         int sy = obsY + 7 + ForgeLaws.N * OBS_ROW + 1;
-        String state = conv ? "STABLE - recipe can compile" : String.format("DIVERGENT  χ² = %.1f", chi);
+        String state = conv ? "STABLE, recipe can compile" : String.format("DIVERGENT  χ² = %.1f", chi);
         g.drawString(font, cut(state, ow), ox2, sy, conv ? GREEN : RED, false);
         // round 36: the materials the Reconstitutor also makes drift - new laws after each forging, then a wait
         int wait = ForgeDriftClient.secondsLeft(r.id());
         int ep = ForgeDriftClient.epoch(r.id());
         if (r.id().equals(shownEpochFor) && ep != shownEpoch) {
-            say("the laws of " + r.id() + " drifted - tune the universe again");
+            say("the laws of " + r.id() + " drifted; tune the universe again");
             code.emit("u = universe.reseed(epoch = " + ep + ")  // the last universe is spent");
         }
         shownEpochFor = r.id();
@@ -851,7 +857,7 @@ public class OmnipotenceScreen extends Screen {
         if (t != tab) code.emit("exec tab." + tabName(t) + "()");
         tab = t;
         refresh();
-        if (t == 2) say("WARNING: shutdown requested - confirm below");
+        if (t == 2) say("WARNING: shutdown requested, confirm below");
         if (t == 0) setFocused(query);
         if (t == 1 && phase == REBORN) setFocused(forgeQuery);
         return true;

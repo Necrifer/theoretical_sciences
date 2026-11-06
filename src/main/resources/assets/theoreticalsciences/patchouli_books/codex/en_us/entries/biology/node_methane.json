@@ -1,0 +1,19 @@
+{
+  "name": "Methane",
+  "icon": "theoreticalsciences:methane_cell",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:methane_cell",
+      "title": "Methane",
+      "text": "CH\u2084, the simplest hydrocarbon: the cloud's carbon, the Fuel Cell's fuel, and a Cracking Tower's feed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Fractionation Spire$().$(br2)$(thing)Unlocked by$(): Fermentation.$(br2)$(thing)Used in$(): Hydrogen Cyanide, Methane, Tholin, Water."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fermentation"
+}

@@ -50,6 +50,26 @@ import java.util.UUID;
 public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     public final MachineType type;
     public final BigItemStackHandler items;
+    /**
+     * 1.2.0: the catalyst slot - one catalyst at a time (anything in the theoreticalsciences:catalysts tag). A catalyst
+     * that wears only works from here, so it is always this one that wears. Filled by hand; pipes and ME do not reach it.
+     */
+    public final ItemStackHandler catalyst = new ItemStackHandler(1) {
+        @Override
+        public int getSlotLimit(int slot) {
+            return 1;
+        }
+
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            return com.theoreticalsciences.science.Wear.isCatalyst(stack);
+        }
+
+        @Override
+        protected void onContentsChanged(int slot) {
+            onInventoryChanged();
+        }
+    };
     public final FluidTank[] tanks;
     public final QHEnergyStorage energy;
     public final MachineItemHandler itemCap;
@@ -66,6 +86,8 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     private boolean recipeDirty = true;
     private boolean syncDirty = true;
+    /** 1.2.0: players with this machine's screen open (server side), so idle readouts go out often only while watched. */
+    public int viewers;
     private int idleTimer;
     private int syncTimer;
     private boolean lastActive;
@@ -90,7 +112,12 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         }
         // intake is limited only by the buffer; generators push out as fast as anything will take it
         // (round 31: a datapack may change the buffer size and the intake limit - data/<ns>/ts_machines/<machine>.json)
-        this.energy = new QHEnergyStorage(com.theoreticalsciences.custom.MachineParams.energyCapacity(type), type.generator ? 0 : Integer.MAX_VALUE, type.generator ? Integer.MAX_VALUE : 0, this::markSync);
+        this.energy = new QHEnergyStorage(com.theoreticalsciences.custom.MachineParams.energyCapacity(type), type.generator ? 0 : Integer.MAX_VALUE, type.generator ? Integer.MAX_VALUE : 0, () -> {
+            markSync();
+            // 1.2.0: the stored energy is saved too (a reload lost a consumer's charge, gave a generator back what it sent);
+            // only the chunk is marked for saving, not setChanged's neighbour updates, as this runs every tick
+            if (level != null && !level.isClientSide) level.blockEntityChanged(worldPosition);
+        });
         applyEnergyLimits();
         this.itemCap = new MachineItemHandler(this);
         this.fluidCap = new MachineFluidHandler(this);
@@ -129,7 +156,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     public static MachineBlockEntity create(MachineType type, BlockPos pos, BlockState state) {
         if (type == MachineType.DYSON_ARRAY) return new DysonControllerBlockEntity(type, pos, state);
         if (ScienceMachineBlockEntity.handles(type)) return new ScienceMachineBlockEntity(type, pos, state);
-        return type.isMultiblock() ? new ControllerBlockEntity(type, pos, state) : new MachineBlockEntity(type, pos, state);
+        return type.isMultiblock() || type.standaloneConsole() ? new ControllerBlockEntity(type, pos, state) : new MachineBlockEntity(type, pos, state);
     }
 
     /** FE/t actually produced while burning (Dyson Array scales this with its swarm). */
@@ -213,7 +240,39 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     /** Multiblock controllers override this to require a complete structure. */
     public boolean canOperate() {
-        return !wrongDimension();
+        return !wrongDimension() && placementOk();
+    }
+
+    /** 1.2.0: the Cloud Siphon draws only from a nebula cloud block it touches, the Lake Pump only from a Titan lake. */
+    static final java.util.List<String> CLOUDS = java.util.List.of("hydrogen_cloud", "oxygen_cloud", "dust_cloud");
+    static final java.util.List<String> LAKES = java.util.List.of("liquid_methane", "cryolava", "blood_plasma");
+
+    /** The blocks this machine draws on (empty for machines that draw on nothing round them). */
+    static java.util.List<String> sourcesFor(MachineType t) {
+        return t == MachineType.CLOUD_SIPHON ? CLOUDS : t == MachineType.LAKE_PUMP ? LAKES : java.util.List.of();
+    }
+
+    protected java.util.List<String> touchingClouds() {
+        java.util.List<String> out = new java.util.ArrayList<>();
+        java.util.List<String> want = sourcesFor(type);
+        if (level == null || want.isEmpty()) return out;
+        for (net.minecraft.core.Direction d : net.minecraft.core.Direction.values()) {
+            var id = net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(level.getBlockState(worldPosition.relative(d)).getBlock());
+            if (com.theoreticalsciences.TheoreticalSciences.MODID.equals(id.getNamespace()) && want.contains(id.getPath()) && !out.contains(id.getPath()))
+                out.add(id.getPath());
+        }
+        return out;
+    }
+
+    public boolean placementOk() {
+        return sourcesFor(type).isEmpty() || !touchingClouds().isEmpty();
+    }
+
+    /** A recipe this machine may run where it stands (a siphon's or pump's recipes are each named after what they draw on). */
+    protected boolean recipeAllowed(net.minecraft.resources.ResourceLocation id) {
+        if (sourcesFor(type).isEmpty()) return true;
+        for (String c : touchingClouds()) if (id.getPath().endsWith(c)) return true;
+        return false;
     }
 
     /** Round 35: built outside the dimensions this machine works in (MachineType.allowedDimensions; a pack may set any). */
@@ -303,7 +362,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     /** Status shown while {@link #canOperate()} is false. */
     protected MachineStatus blockedStatus() {
-        return wrongDimension() ? MachineStatus.WRONG_DIMENSION : MachineStatus.INCOMPLETE;
+        return wrongDimension() ? MachineStatus.WRONG_DIMENSION : !placementOk() ? MachineStatus.WRONG_ENVIRONMENT : MachineStatus.INCOMPLETE;
     }
 
     // ---- tuning hooks (multiblock controllers override these; plain machines run at 1x)
@@ -350,12 +409,12 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     /** The recipe the inputs match right now, or the one it is running / last ran (for tools; no caching side effects). */
     @Nullable
     public RecipeHolder<QHRecipe> matchingRecipe(ServerLevel level) {
-        QHRecipeInput input = new QHRecipeInput(inputStacks(), inputFluids());
+        QHRecipeInput input = new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0));
         RecipeHolder<QHRecipe> best = null;
         int bestScore = -1;
         for (RecipeHolder<QHRecipe> h : recipesFor(level)) {
             QHRecipe r = h.value();
-            if (!r.matches(input, level)) continue;
+            if (!recipeAllowed(h.id()) || !r.matches(input, level)) continue;
             int score = (r.itemInputs.size() + r.catalysts.size()) * 2 + r.fluidInputs.size();
             if (score > bestScore) {
                 best = h;
@@ -389,10 +448,10 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     @Nullable
     protected RecipeHolder<QHRecipe> findRecipe(ServerLevel level) {
-        QHRecipeInput input = new QHRecipeInput(inputStacks(), inputFluids());
+        QHRecipeInput input = new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0));
         if (currentRecipe != null) {
             Optional<RecipeHolder<?>> cached = byKey(level, currentRecipe);
-            if (cached.isPresent() && cached.get().value() instanceof QHRecipe r && r.typeId().equals(type.recipeType) && r.matches(input, level)) {
+            if (cached.isPresent() && cached.get().value() instanceof QHRecipe r && r.typeId().equals(type.recipeType) && recipeAllowed(currentRecipe) && r.matches(input, level)) {
                 @SuppressWarnings("unchecked") RecipeHolder<QHRecipe> h = (RecipeHolder<QHRecipe>) cached.get();
                 return h;
             }
@@ -405,7 +464,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         int bestScore = -1;
         for (RecipeHolder<QHRecipe> h : recipesFor(level)) {
             QHRecipe r = h.value();
-            if (!r.matches(input, level)) continue;
+            if (!recipeAllowed(h.id()) || !r.matches(input, level)) continue;
             int score = (r.itemInputs.size() + r.catalysts.size()) * 2 + r.fluidInputs.size();
             if (score > bestScore) {
                 best = h;
@@ -512,11 +571,13 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             int runs = singleRunOnly(r) ? 1 : parallelCount();
             int runsDone = 0;
             for (int k = 0; k < runs; k++) {
-                if (k > 0 && !(r.matches(new QHRecipeInput(inputStacks(), inputFluids()), level) && canOutput(r, true))) break;
+                if (k > 0 && !(r.matches(new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0)), level) && canOutput(r, true))) break;
                 if (!consumeInputs(r)) break;          // (what it needed from the ME network was gone)
+                wearCatalysts(level, r);               // 1.2.0: catalysts and instruments wear
                 runsDone++;
                 rollChances(level, r);
                 canOutput(r, false);
+                bonusOutputs(level, r);                // 1.2.0: a finely tuned multiblock makes more
             }
             rolled = null;
             if (runsDone > 0) {
@@ -559,6 +620,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
                         setStatus(MachineStatus.BLOCKED);
                         return;
                     }
+                    wearCatalysts(level, r);
                     canOutput(r, false);
                     burnRate = scaledEnergy(r);
                     burnTime = maxProgress = scaledDuration(r);
@@ -572,13 +634,27 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         pushEnergy(level);
     }
 
+    /** 1.2.0: the neighbours' energy handlers, looked up once and kept (the game keeps each cache current). */
+    private final java.util.Map<Long, net.neoforged.neoforge.capabilities.BlockCapabilityCache<IEnergyStorage, Direction>> energyCaches = new java.util.HashMap<>();
+
+    protected IEnergyStorage energyCap(ServerLevel level, BlockPos target, Direction side) {
+        long k = target.asLong() * 6 + side.ordinal();
+        var c = energyCaches.get(k);
+        if (c == null || c.level() != level) {
+            c = net.neoforged.neoforge.capabilities.BlockCapabilityCache.create(Capabilities.EnergyStorage.BLOCK, level, target.immutable(), side);
+            if (energyCaches.size() > 256) energyCaches.clear();
+            energyCaches.put(k, c);
+        }
+        return c.getCapability();
+    }
+
     protected void pushEnergy(ServerLevel level) {
         if (energy.stored() <= 0) return;
         for (BlockPos p : energyOutputPositions()) {
             for (Direction d : Direction.values()) {
                 BlockPos target = p.relative(d);
                 if (target.equals(worldPosition) || isOwnPart(target) || !level.isLoaded(target)) continue;     // (never load a chunk to push power)
-                IEnergyStorage storage = level.getCapability(Capabilities.EnergyStorage.BLOCK, target, d.getOpposite());
+                IEnergyStorage storage = energyCap(level, target, d.getOpposite());
                 if (storage != null && storage.canReceive()) {
                     Long cap = params().maxOutput();         // round 31: a pack may set the generator's output rate
                     long rate = cap != null ? Math.min(Integer.MAX_VALUE, cap) : Math.max(type.maxIO, Math.min(Integer.MAX_VALUE, effectiveBurnRate() * 4L));
@@ -620,9 +696,13 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
      * part is taken first and all at once; if it is not all there any more (someone else took it), nothing is used and
      * this returns false.
      */
+    /** 1.2.0: whether the last run's feeds were all assayed (or could not be) - see Wear.feedsPure. */
+    protected boolean lastFeedsPure = true;
+
     protected boolean consumeInputs(QHRecipe r) {
         List<ItemStack> in = inputStacks();
         List<FluidStack> fin = inputFluids();
+        lastFeedsPure = r.catalysts.isEmpty() || com.theoreticalsciences.science.Wear.feedsPure(r.fluidInputs, fin);
         int base = Math.min(type.itemInputs, in.size()), fbase = Math.min(type.fluidInputs, fin.size());
         boolean extra = in.size() > base || fin.size() > fbase;
         if (extra) {
@@ -655,6 +735,53 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         return true;
     }
 
+    /** 1.2.0: the share of catalyst wear that counts (a console's Symbiont Lining lowers it). */
+    protected double wearScale() {
+        return 1.0;
+    }
+
+    /** 1.2.0: the recipe feeds a living catalyst: it takes sugar or nutrient broth. */
+    static boolean feeds(QHRecipe r) {
+        for (var ing : r.itemInputs)
+            if (ing.ingredient().test(new ItemStack(net.minecraft.world.item.Items.SUGAR))) return true;
+        net.minecraft.world.level.material.Fluid broth = net.minecraft.core.registries.BuiltInRegistries.FLUID.get(
+                com.theoreticalsciences.TheoreticalSciences.id("nutrient_broth"));
+        for (var f : r.fluidInputs)
+            if (f.ingredient().test(new FluidStack(broth, 1000))) return true;
+        return false;
+    }
+
+    /** 1.2.0: true while the machine's physics shows a "wear" condition - catalysts then wear ten times as fast. */
+    protected boolean wearHot() {
+        return false;
+    }
+
+    /**
+     * 1.2.0: the run used a run of life of the catalyst in the catalyst slot (see {@link com.theoreticalsciences.science.Wear}).
+     * A worn-out restorable one goes to the output slots, or out of the top of the machine if they are full.
+     */
+    protected void wearCatalysts(ServerLevel level, QHRecipe r) {
+        if (r.catalysts.isEmpty() || catalyst.getStackInSlot(0).isEmpty()) return;
+        List<ItemStack> off = com.theoreticalsciences.science.Wear.afterRun(r.catalysts, List.of(catalyst.getStackInSlot(0)), wearHot(), lastFeedsPure,
+                wearScale(), feeds(r), level);
+        if (catalyst.getStackInSlot(0).isEmpty()) catalyst.setStackInSlot(0, ItemStack.EMPTY);
+        for (ItemStack w : off) {
+            for (int i = 0; i < type.itemOutputs && !w.isEmpty(); i++) {
+                int slot = type.itemInputs + i;
+                ItemStack o = items.getStackInSlot(slot);
+                if (o.isEmpty()) {
+                    items.setStackInSlot(slot, w.copy());
+                    w = ItemStack.EMPTY;
+                } else if (ItemStack.isSameItemSameComponents(o, w) && o.getCount() < o.getMaxStackSize()) {
+                    o.grow(1);
+                    w = ItemStack.EMPTY;
+                }
+            }
+            if (!w.isEmpty()) net.minecraft.world.level.block.Block.popResource(level, worldPosition.above(), w);
+        }
+        onInventoryChanged();
+    }
+
     /** Which chance outputs were produced this cycle (null = all; used while simulating). */
     @Nullable
     protected boolean[] rolled;
@@ -662,6 +789,51 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     protected void rollChances(ServerLevel level, QHRecipe r) {
         rolled = new boolean[r.itemOutputs.size()];
         for (int i = 0; i < rolled.length; i++) rolled[i] = level.random.nextFloat() < r.chance(i);
+    }
+
+    /** 1.2.0: extra products after a cycle (multiblocks: precision). Nothing here. */
+    protected void bonusOutputs(ServerLevel level, QHRecipe r) {}
+
+    /** Puts an extra product in the output slots, as much as fits (the rest is not made). */
+    protected void addOutput(ItemStack rem) {
+        if (level != null) com.theoreticalsciences.science.Wear.stamp(rem, level.getGameTime());
+        for (int i = 0; i < type.itemOutputs && !rem.isEmpty(); i++) {
+            ItemStack s = items.getStackInSlot(type.itemInputs + i);
+            if (s.isEmpty()) {
+                int m = Math.min(rem.getCount(), Math.min(rem.getMaxStackSize(), items.getSlotLimit(type.itemInputs + i)));
+                items.setStackInSlot(type.itemInputs + i, rem.copyWithCount(m));
+                rem.shrink(m);
+            } else if (ItemStack.isSameItemSameComponents(s, rem)) {
+                int room = Math.min(s.getMaxStackSize(), items.getSlotLimit(type.itemInputs + i)) - s.getCount();
+                int m = Math.min(room, rem.getCount());
+                if (m > 0) {
+                    ItemStack n = s.copy();
+                    n.grow(m);
+                    items.setStackInSlot(type.itemInputs + i, n);
+                    rem.shrink(m);
+                }
+            }
+        }
+    }
+
+    /** Puts extra fluid in the output tanks, as much as fits. */
+    protected void addFluidOutput(FluidStack f) {
+        int rem = f.getAmount(), cap = type.tankCapacity();
+        for (int i = 0; i < type.fluidOutputs && rem > 0; i++) {
+            var t = tanks[type.fluidInputs + i];
+            FluidStack cur = t.getFluid();
+            if (cur.isEmpty()) {
+                int m = Math.min(cap, rem);
+                t.setFluid(f.copyWithAmount(m));
+                rem -= m;
+            } else if (FluidStack.isSameFluidSameComponents(cur, f)) {
+                int m = Math.min(cap - cur.getAmount(), rem);
+                if (m > 0) {
+                    t.setFluid(cur.copyWithAmount(cur.getAmount() + m));
+                    rem -= m;
+                }
+            }
+        }
     }
 
     /** Checks (simulate) or inserts (execute) all outputs. Simulation assumes every chance output is produced. */
@@ -672,6 +844,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             if (!simulate && rolled != null && oi < rolled.length && !rolled[oi]) continue;
             ItemStack out = r.itemOutputs.get(oi);
             ItemStack rem = out.copy();
+            if (level != null) com.theoreticalsciences.science.Wear.stamp(rem, level.getGameTime());     // 1.2.0: a source's clock starts
             for (int i = 0; i < slots.length && !rem.isEmpty(); i++) {
                 if (slots[i].isEmpty()) {
                     slots[i] = rem.copy();
@@ -765,6 +938,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     protected void writeShared(CompoundTag tag, HolderLookup.Provider regs) {
         tag.put("Items", items.serializeNBT(regs));
+        tag.put("Catalyst", catalyst.serializeNBT(regs));
         tag.putInt("InSlots", type.itemInputs);
         tag.putInt("FluidInSlots", type.fluidInputs);
         ListTag tl = new ListTag();
@@ -800,6 +974,8 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             }
             items.deserializeNBT(regs, it);
         }
+        if (tag.contains("Catalyst")) catalyst.deserializeNBT(regs, tag.getCompound("Catalyst"));
+        else migrateCatalyst();
         ListTag tl = tag.getList("Tanks", Tag.TAG_COMPOUND);
         for (int i = 0; i < tl.size(); i++) {
             int to = i < oldFin ? (i < type.fluidInputs ? i : -1) : (i - oldFin < type.fluidOutputs ? type.fluidInputs + (i - oldFin) : -1);
@@ -870,8 +1046,25 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         return oversized();
     }
 
+    /**
+     * 1.2.0: a machine saved before the catalyst slot: a catalyst that wears, left in an input slot, moves into the catalyst
+     * slot (one of it; the rest stay where they were).
+     */
+    private void migrateCatalyst() {
+        for (int i = 0; i < type.itemInputs; i++) {
+            ItemStack s = items.getStackInSlot(i);
+            if (s.isEmpty() || com.theoreticalsciences.science.Wear.profile(s) == null || !com.theoreticalsciences.science.Wear.isCatalyst(s)) continue;
+            catalyst.setStackInSlot(0, s.copyWithCount(1));
+            s.shrink(1);
+            if (s.isEmpty()) items.setStackInSlot(i, ItemStack.EMPTY);
+            return;
+        }
+    }
+
     public void dropContents() {
         if (level == null || keepsContentsInItem()) return;
+        ItemStack cat = catalyst.getStackInSlot(0);
+        if (!cat.isEmpty()) net.minecraft.world.Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 0.5, worldPosition.getZ() + 0.5, cat.copy());
         for (int i = 0; i < items.getSlots(); i++) {
             ItemStack s = items.getStackInSlot(i);
             if (!s.isEmpty()) net.minecraft.world.Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 0.5, worldPosition.getZ() + 0.5, s.copy());

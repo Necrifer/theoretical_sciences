@@ -33,6 +33,8 @@ public final class QHFeatures {
     public static final DeferredHolder<Feature<?>, com.theoreticalsciences.world.PlatonicSolidFeature> PLATONIC_SOLID = FEATURES.register("platonic_solid",
             () -> new com.theoreticalsciences.world.PlatonicSolidFeature(NoneFeatureConfiguration.CODEC));
 
+    public static final DeferredHolder<Feature<?>, com.theoreticalsciences.world.SelkCraterFeature> SELK_CRATER = FEATURES.register("selk_crater",
+            () -> new com.theoreticalsciences.world.SelkCraterFeature(NoneFeatureConfiguration.CODEC));      // 1.2.0: Titan
     public static final DeferredHolder<Feature<?>, com.theoreticalsciences.world.OreVeinFeature> ORE_VEIN = FEATURES.register("ore_vein",
             () -> new com.theoreticalsciences.world.OreVeinFeature(com.theoreticalsciences.world.OreVeinFeature.Config.CODEC));
     public static final DeferredHolder<Feature<?>, com.theoreticalsciences.dungeon.AnomalyVaultFeature> ANOMALY_VAULT = FEATURES.register("anomaly_vault",

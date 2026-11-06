@@ -80,6 +80,91 @@ public final class ContainmentHazards {
                 for (int i = 0; i < Math.max(1, (int) (s / 3)); i++) spawn(level, QHEntities.LAW_WRAITH.get(), c, 4, r, TuningProfile.Hazard.DIMENSIONAL, i * 10);
                 cloud(level, c, s, 1800, new MobEffectInstance(MobEffects.LEVITATION, 60, 0), com.theoreticalsciences.registry.QHParticles.GLYPH.get());
             }
+            case CHEMICAL -> {
+                // the vessel splits: a burst, then a cloud of corrosive gas that poisons and eats at armour
+                level.explode(null, c.x, c.y, c.z, Math.min(4F, s * 0.3F), false, grief ? Level.ExplosionInteraction.BLOCK : Level.ExplosionInteraction.NONE);
+                cloud(level, c, s * 1.2F, 1800, new MobEffectInstance(MobEffects.POISON, 200, 1), com.theoreticalsciences.registry.QHParticles.VAPOUR.get());
+                cloud(level, c, s * 0.8F, 1200, new MobEffectInstance(MobEffects.WEAKNESS, 400, 1), net.minecraft.core.particles.ParticleTypes.SNEEZE);
+                for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, new AABB(c, c).inflate(s * 1.5), LivingEntity::isAlive)) {
+                    e.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
+                    for (EquipmentSlot slot : new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET}) {
+                        var st = e.getItemBySlot(slot);
+                        if (!st.isEmpty() && st.isDamageableItem()) st.hurtAndBreak((int) (s * 4), e, slot);   // acid eats at it
+                    }
+                }
+            }
+            case RADIOLOGICAL -> {
+                // the shielding gives way: a dose that falls off as 1/r², and a contaminated cloud left behind
+                for (ServerPlayer pl : level.getEntitiesOfClass(ServerPlayer.class, new AABB(c, c).inflate(s * 4))) {
+                    if (pl.isCreative() || pl.isSpectator()) continue;
+                    double d2 = Math.max(1, pl.position().distanceToSqr(c));
+                    com.theoreticalsciences.science.RadiationService.setDose(pl, com.theoreticalsciences.science.RadiationService.dose(pl)
+                            + 4000 * s / d2 * com.theoreticalsciences.interior.InteriorGear.radiationFactor(pl));
+                }
+                level.explode(null, c.x, c.y, c.z, Math.min(3F, s * 0.25F), false, Level.ExplosionInteraction.NONE);
+                cloud(level, c, s, 2400, new MobEffectInstance(MobEffects.WITHER, 100, 0), net.minecraft.core.particles.ParticleTypes.GLOW);
+                // what the burst caught rises again, still burning with fission products
+                convert(level, c, s * 1.5F, e -> e instanceof net.minecraft.world.entity.monster.Zombie || e instanceof AbstractVillager,
+                        com.theoreticalsciences.interior.InteriorRegistry.FISSION_HUSK.get(), TuningProfile.Hazard.RADIOLOGICAL);
+                for (int i = 0; i < (int) (s / 4); i++)
+                    spawn(level, com.theoreticalsciences.interior.InteriorRegistry.FISSION_HUSK.get(), c, 3, r, TuningProfile.Hazard.RADIOLOGICAL, i * 10);
+                level.sendParticles(net.minecraft.core.particles.ParticleTypes.FLASH, c.x, c.y, c.z, 1, 0, 0, 0, 0);
+            }
+            case MAGNETIC -> {
+                // the magnet quenches: its field collapses, flinging everything outward, arcing, magnetising what it catches
+                for (Entity e : level.getEntitiesOfClass(Entity.class, new AABB(c, c).inflate(s * 2.5), Entity::isAlive)) {
+                    Vec3 d = e.position().subtract(c);
+                    double dist = Math.max(1, d.length());
+                    Vec3 push = d.normalize().scale(Math.min(3, s / dist)).add(0, 0.4, 0);
+                    e.push(push.x, push.y, push.z);
+                    e.hurtMarked = true;
+                    if (e instanceof LivingEntity le) {
+                        le.addEffect(new MobEffectInstance(QHEffects.MAGNETIZED, 1200, 1));
+                        le.hurt(level.damageSources().lightningBolt(), (float) Math.max(1, s * 2 / dist));
+                    }
+                }
+                for (int i = 0; i < 2 + (int) (s / 3); i++) {
+                    var bolt = EntityType.LIGHTNING_BOLT.create(level);
+                    if (bolt == null) continue;
+                    bolt.moveTo(c.x + r.nextGaussian() * s, c.y, c.z + r.nextGaussian() * s);
+                    bolt.setVisualOnly(true);
+                    level.addFreshEntity(bolt);
+                }
+                level.sendParticles(com.theoreticalsciences.registry.QHParticles.ARC_SPARK.get(), c.x, c.y, c.z, 200, s, s * 0.5, s, 0.5);
+                // the collapsing field leaves knots of current that will not die down
+                for (int i = 0; i < (int) (s / 4); i++)
+                    spawn(level, com.theoreticalsciences.interior.InteriorRegistry.GEODYNAMO_WRAITH.get(), c, 3, r, TuningProfile.Hazard.MAGNETIC, i * 10);
+            }
+            case THERMAL -> {
+                // a blast of heat: everything near is set alight, harder the closer it stands
+                level.explode(null, c.x, c.y, c.z, Math.min(5F, s * 0.4F), grief, grief ? Level.ExplosionInteraction.BLOCK : Level.ExplosionInteraction.NONE);
+                for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, new AABB(c, c).inflate(s * 1.8), LivingEntity::isAlive)) {
+                    double d = Math.max(1, e.position().distanceTo(c));
+                    e.igniteForSeconds((int) Math.max(3, 12 - d));
+                    e.hurt(level.damageSources().inFire(), (float) (s * 3 / d));
+                }
+                level.sendParticles(com.theoreticalsciences.registry.QHParticles.VAPOUR.get(), c.x, c.y, c.z, 160, s * 0.6, s * 0.4, s * 0.6, 0.15);
+                level.sendParticles(net.minecraft.core.particles.ParticleTypes.LAVA, c.x, c.y, c.z, 40, s * 0.4, 0.5, s * 0.4, 0.2);
+                // the hottest of it rises as a plume that keeps itself burning
+                for (int i = 0; i < (int) (s / 5); i++)
+                    spawn(level, com.theoreticalsciences.interior.InteriorRegistry.PLUME_ELEMENTAL.get(), c, 3, r, TuningProfile.Hazard.THERMAL, i * 12);
+            }
+            case OPTICAL -> {
+                // its optics fail at full power: a flash that blinds whoever can see it, and flying shards of glass
+                level.sendParticles(net.minecraft.core.particles.ParticleTypes.FLASH, c.x, c.y, c.z, 3, 0.5, 0.5, 0.5, 0);
+                for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, new AABB(c, c).inflate(s * 4), LivingEntity::isAlive)) {
+                    if (!e.hasLineOfSight(new net.minecraft.world.entity.Marker(EntityType.MARKER, level) {{ setPos(c); }})) continue;
+                    double d = Math.max(1, e.position().distanceTo(c));
+                    e.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, (int) (200 * Math.min(1, s / d)) + 40, 0));
+                    if (d < s * 1.5) e.hurt(level.damageSources().generic(), (float) (s * 2 / d));
+                }
+                level.sendParticles(new net.minecraft.core.particles.BlockParticleOption(net.minecraft.core.particles.ParticleTypes.BLOCK,
+                        net.minecraft.world.level.block.Blocks.GLASS.defaultBlockState()), c.x, c.y, c.z, 120, s * 0.5, s * 0.5, s * 0.5, 0.4);
+                level.playSound(null, BlockPos.containing(c), net.minecraft.sounds.SoundEvents.GLASS_BREAK, net.minecraft.sounds.SoundSource.BLOCKS, 3F, 0.6F);
+                // light bent where it should not be: an image that walks off on its own
+                for (int i = 0; i < (int) (s / 4); i++)
+                    spawn(level, com.theoreticalsciences.frontier.FrontierRegistry.LENS_PHANTOM.get(), c, 3, r, TuningProfile.Hazard.OPTICAL, i * 10);
+            }
         }
     }
 

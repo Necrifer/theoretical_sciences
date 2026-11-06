@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r62_cells",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r62_cells.desc",
+  "icon": {
+    "item": "theoreticalsciences:fuel_cell"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 73,
+  "y": 58,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r62_cells.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r62_cells"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r62_cells.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__electrochem"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_haber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galvanic_cells"
+  }
+}

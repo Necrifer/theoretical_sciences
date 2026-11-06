@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__island",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__island.desc",
+  "icon": {
+    "item": "theoreticalsciences:nuclide_forge"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 52,
+  "y": 60,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__island.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__island"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__island.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__exotic"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/island_of_stability"
+  }
+}

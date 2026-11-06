@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_rf_oscillator",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_rf_oscillator.desc",
+  "icon": {
+    "item": "theoreticalsciences:rf_oscillator"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 40,
+  "y": 126,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:rf_oscillator"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_rf_oscillator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_rf_oscillator.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/electromagnetism__cyclotron",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cyclotron_physics"
+  }
+}

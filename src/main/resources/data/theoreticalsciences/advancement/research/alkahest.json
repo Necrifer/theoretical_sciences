@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:alkahest_still"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.alkahest"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.alkahest.short"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/asymmetric_synthesis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

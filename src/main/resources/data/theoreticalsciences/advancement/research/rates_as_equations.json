@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:rate_table"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.rates_as_equations"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.rates_as_equations.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/reaction_kinetics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Phage Lab",
+  "icon": "theoreticalsciences:phage_lab",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Phages land on cells at random, so the share of cells hit at a multiplicity of infection MOI is Poisson's 1 \u2212 e^(\u2212MOI). An infected cell bursts after its latent period, releasing about a hundred new phages: 1 \u2212 e^(\u2212t/\u03c4) of them have burst by time t."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Phages per cell, Time.$(br2)$(thing)Disturbance$(): Clumping: the infection varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too many phages: the cells burst from outside, for nothing.$(br2)$(thing)Rate$(): Shorter runs are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Cells infected: f = 1 \u2212 e^(\u2212MOI)$(br)Cells burst: b = 1 \u2212 e^(\u2212t/\u03c4)"
+    }
+  ]
+}

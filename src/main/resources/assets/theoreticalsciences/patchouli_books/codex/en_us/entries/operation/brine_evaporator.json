@@ -1,0 +1,24 @@
+{
+  "name": "Brine Evaporator",
+  "icon": "theoreticalsciences:brine_evaporator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 23,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "As water is driven off, the brine concentrates by 1/(1 \u2212 f). Each salt comes out when its solubility product is passed: gypsum at about four times, halite at ten to twenty, and the bittern - rich in lithium - at thirty and beyond. Heat drives the water off faster (it follows the vapour pressure), but crystals that grow too fast trap the other salts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Pan temperature, Water driven off.$(br2)$(thing)Disturbance$(): Wind and sun: the evaporation rate varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): The faster the water goes, the faster the salt comes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Concentration factor: CF = 1/(1 \u2212 f)$(br)Evaporation rate: v \u221d e^(\u2212L/R\u00b7(1/T \u2212 1/330 K))$(br)Crystal purity: purity = e^(\u2212(v \u2212 1))"
+    }
+  ]
+}

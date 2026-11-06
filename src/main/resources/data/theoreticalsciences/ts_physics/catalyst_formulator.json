@@ -1,0 +1,70 @@
+{
+  "params": [
+    {
+      "id": "wl",
+      "unit": "%",
+      "min": 1,
+      "max": 30,
+      "step": 0.01,
+      "default": 10
+    },
+    {
+      "id": "Tcal",
+      "unit": "K",
+      "min": 600,
+      "max": 1200,
+      "step": 1,
+      "default": 800
+    }
+  ],
+  "recipe_vars": {
+    "Eb0": 0.4,
+    "Eo": 0.5,
+    "Ts": 900
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Eb",
+      "unit": "eV",
+      "expr": "Eb0 + 0.03*(wl - 10) + 0.0005*(Tcal - 800) + 0.01*d",
+      "formula": "E_b"
+    },
+    {
+      "id": "act",
+      "unit": "",
+      "expr": "exp(-((Eb - Eo)/0.15)^2)",
+      "formula": "Sabatier volcano"
+    },
+    {
+      "id": "surf",
+      "unit": "",
+      "expr": "exp(-pos(Tcal - Ts)/80)",
+      "formula": "S = e^(\u2212(T \u2212 T_s)/80 K)"
+    },
+    {
+      "id": "Y",
+      "unit": "",
+      "expr": "act*surf",
+      "formula": "Y = activity \u00d7 surface"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "furnace",
+      "kind": "stop",
+      "expr": "1150 - Tcal",
+      "formula": "T < 1150 K"
+    }
+  ],
+  "rate": "clamp(Y, 0.25, 1.5)",
+  "rate_formula": "rate = Y",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

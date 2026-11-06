@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.geometers_table",
+  "description": "book.theoreticalsciences.codex.mathematics.geometers_table.desc",
+  "icon": {
+    "item": "theoreticalsciences:geometers_table"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 125,
+  "y": 77,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geometers_table"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.geometers_table.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.geometers_table.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.geometers_table.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.geometers_table.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geometers_table"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.geometers_table.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/mathematics__r73_first_steps"
+    },
+    {
+      "entry": "theoreticalsciences:machines/mathematics__peano_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euclidean_geometry"
+  }
+}

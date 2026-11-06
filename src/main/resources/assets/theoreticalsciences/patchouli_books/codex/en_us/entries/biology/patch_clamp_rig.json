@@ -1,0 +1,32 @@
+{
+  "name": "Patch-Clamp Rig",
+  "icon": "theoreticalsciences:patch_clamp_rig",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 174,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:patch_clamp_rig",
+      "title": "Patch-Clamp Rig",
+      "text": "A glass pipette a micrometre across, pressed to a membrane under a microscope, reading the voltage across it.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the ion concentrations outside and inside. The voltage across the membrane is E = (RT/zF) ln(c_out/c_in) and must land in the recipe's window. Too great a difference and the membrane bursts from osmosis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Ion Channel Membrane, Lipid Bilayer, Living Cell."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:patch_clamp_rig",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/membranes"
+}

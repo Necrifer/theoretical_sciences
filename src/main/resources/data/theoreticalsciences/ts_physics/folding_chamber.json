@@ -1,0 +1,58 @@
+{
+  "params": [
+    {
+      "id": "Tf",
+      "unit": "K",
+      "min": 270,
+      "max": 370,
+      "step": 0.1,
+      "default": 300
+    },
+    {
+      "id": "U",
+      "unit": "M",
+      "min": 0,
+      "max": 8,
+      "step": 0.01,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "dH": 200,
+    "Tm": 340,
+    "mU": 5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "dG",
+      "unit": "kJ/mol",
+      "expr": "(dH*(1 - Tf/Tm) - mU*U)*(1 - 0.02*d)",
+      "formula": "\u0394G = \u0394H(1 \u2212 T/Tm) \u2212 m\u00b7U"
+    },
+    {
+      "id": "fold",
+      "unit": "",
+      "expr": "1/(1 + exp(-dG/(0.008314*Tf)))",
+      "formula": "f = 1/(1 + e^(\u2212\u0394G/RT))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "clump",
+      "kind": "stop",
+      "expr": "Tf - 278 + 10*U",
+      "formula": "T > 278 K (urea helps)"
+    }
+  ],
+  "rate": "clamp((Tf - 270)/20, 0.1, 4)",
+  "rate_formula": "rate = (T \u2212 270) / 20",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

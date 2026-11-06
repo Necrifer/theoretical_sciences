@@ -32,7 +32,9 @@ import net.minecraft.world.item.Item.TooltipContext;
  * and puts them in your inventory (what does not fit is dropped at your feet). Sneak-use on a controller in this mode
  * lists what you would get back without touching anything.
  * Tiered components (coils, field emitters) use the best tier in your inventory; in creative, hold the tier you
- * want in your off-hand. Positions that accept an Interface Port get one from your inventory first (1.3.7); the
+ * want in your off-hand. 1.2.0: each kind is built in one tier, the highest you have enough of for the whole structure
+ * (your inventory and a bound network together; creative: the highest there is), and a third mode, coils, changes every
+ * coil of a built structure to another tier (see {@link #changeCoils}). Positions that accept an Interface Port get one from your inventory first (1.3.7); the
  * plain casing goes in only when you have no more ports.
  */
 public class StructureAssemblerItem extends LoreItem {
@@ -40,15 +42,38 @@ public class StructureAssemblerItem extends LoreItem {
         super(props.stacksTo(1));
     }
 
-    // ------------------------------------------------------------------ mode (build / disassemble)
-    public static boolean disassembling(ItemStack stack) {
+    // ------------------------------------------------------------------ mode (build / disassemble / coils)
+    /** 0 build, 1 disassemble, 2 (1.2.0) change coils. */
+    public static int mode(ItemStack stack) {
         net.minecraft.world.item.component.CustomData d = stack.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
-        return d != null && d.copyTag().getBoolean("Disassemble");
+        if (d == null) return 0;
+        var t = d.copyTag();
+        return t.contains("Mode") ? Math.floorMod(t.getInt("Mode"), 3) : t.getBoolean("Disassemble") ? 1 : 0;
     }
 
-    private static void setDisassembling(ItemStack stack, boolean on) {
-        net.minecraft.world.item.component.CustomData.update(net.minecraft.core.component.DataComponents.CUSTOM_DATA, stack, t -> t.putBoolean("Disassemble", on));
+    public static boolean disassembling(ItemStack stack) {
+        return mode(stack) == 1;
     }
+
+    private static void setMode(ItemStack stack, int m) {
+        net.minecraft.world.item.component.CustomData.update(net.minecraft.core.component.DataComponents.CUSTOM_DATA, stack, t -> {
+            t.putInt("Mode", m);
+            t.putBoolean("Disassemble", m == 1);
+        });
+    }
+
+    /** The coil tier chosen in coils mode (0: the best you have enough of). */
+    static int coilTarget(ItemStack stack) {
+        net.minecraft.world.item.component.CustomData d = stack.get(net.minecraft.core.component.DataComponents.CUSTOM_DATA);
+        return d == null ? 0 : d.copyTag().getInt("CoilTier");
+    }
+
+    private static void setCoilTarget(ItemStack stack, int tier) {
+        net.minecraft.world.item.component.CustomData.update(net.minecraft.core.component.DataComponents.CUSTOM_DATA, stack, t -> t.putInt("CoilTier", tier));
+    }
+
+    static final String[] MODE_KEYS = {"build", "disassemble", "coils"};
+    static final ChatFormatting[] MODE_COLOURS = {ChatFormatting.AQUA, ChatFormatting.RED, ChatFormatting.GOLD};
 
     // ------------------------------------------------------------------ 1.1.0: bound to an ME network (AE2)
     /**
@@ -104,24 +129,25 @@ public class StructureAssemblerItem extends LoreItem {
         ItemStack stack = player.getItemInHand(hand);
         if (!player.isShiftKeyDown()) return net.minecraft.world.InteractionResultHolder.pass(stack);
         if (!level.isClientSide) {
-            boolean on = !disassembling(stack);
-            setDisassembling(stack, on);
-            player.displayClientMessage(Component.translatable(on ? "message.theoreticalsciences.assembler_mode_disassemble"
-                    : "message.theoreticalsciences.assembler_mode_build").withStyle(on ? ChatFormatting.RED : ChatFormatting.AQUA), true);
-            level.playSound(null, player.blockPosition(), com.theoreticalsciences.registry.QHSounds.CONFIRM.get(), SoundSource.PLAYERS, 0.6F, on ? 0.7F : 1.4F);
+            int m = (mode(stack) + 1) % 3;
+            setMode(stack, m);
+            player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_mode_" + MODE_KEYS[m]).withStyle(MODE_COLOURS[m]), true);
+            level.playSound(null, player.blockPosition(), com.theoreticalsciences.registry.QHSounds.CONFIRM.get(), SoundSource.PLAYERS, 0.6F, 0.7F + 0.35F * m);
         }
         return net.minecraft.world.InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
 
     @Override
     public boolean isFoil(ItemStack stack) {
-        return disassembling(stack) || super.isFoil(stack);
+        return mode(stack) != 0 || super.isFoil(stack);
     }
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> tooltip, net.minecraft.world.item.TooltipFlag flag) {
-        tooltip.add(Component.translatable(disassembling(stack) ? "tooltip.theoreticalsciences.assembler_mode_disassemble"
-                : "tooltip.theoreticalsciences.assembler_mode_build").withStyle(disassembling(stack) ? ChatFormatting.RED : ChatFormatting.AQUA));
+        int m = mode(stack);
+        tooltip.add(Component.translatable("tooltip.theoreticalsciences.assembler_mode_" + MODE_KEYS[m]).withStyle(MODE_COLOURS[m]));
+        if (m == 2) tooltip.add(coilTarget(stack) > 0 ? Component.translatable("tooltip.theoreticalsciences.assembler_coil_target", coilTarget(stack)).withStyle(ChatFormatting.GOLD)
+                : Component.translatable("tooltip.theoreticalsciences.assembler_coil_best").withStyle(ChatFormatting.GOLD));
         long[] b = binding(stack);
         if (b != null) tooltip.add(Component.translatable("tooltip.theoreticalsciences.assembler_bound", BlockPos.of(b[0]).toShortString(), bindingDim(stack))
                 .withStyle(ChatFormatting.DARK_AQUA));
@@ -146,6 +172,7 @@ public class StructureAssemblerItem extends LoreItem {
         if (binding(ctx.getItemInHand()) != null && grid == null)
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_me_offline").withStyle(ChatFormatting.GOLD), false);
         if (disassembling(ctx.getItemInHand())) return disassemble(level, player, controller, grid);
+        if (mode(ctx.getItemInHand()) == 2) return changeCoils(level, player, controller, grid, ctx.getItemInHand());
         MultiblockDefinition def = controller.definition();
         MultiblockDefinition.ScanResult scan = def.scan(level, controller.getBlockPos(), controller.facing(),
                 net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("theoreticalsciences", "interface_port"));
@@ -171,6 +198,31 @@ public class StructureAssemblerItem extends LoreItem {
         Map<Block, Integer> lacking = new LinkedHashMap<>();
         int placed = 0, blocked = 0;
         int portsLeft = creative ? Integer.MAX_VALUE : count(player.getInventory(), ControllerBlockEntity.portBlock());   // (ports only from your own inventory, never the network)
+        // 1.2.0: each tiered kind of part (coils, emitters) is built in one tier, the highest you have enough of for every
+        // place it goes (your inventory and a bound network together); short of that, the highest you have any of
+        Map<Character, Block> chosen = new HashMap<>();
+        if (!creative || !(player.getOffhandItem().getItem() instanceof BlockItem)) {
+            Map<Character, Integer> needs = new HashMap<>();
+            for (BlockPos p : todo) {
+                char c = scan.expected().get(p);
+                if (c != '.' && def.tiers.containsKey(c)) needs.merge(c, 1, Integer::sum);
+            }
+            for (Map.Entry<Character, Integer> e : needs.entrySet()) {
+                List<Block> opts = def.componentsFor(e.getKey(), ControllerBlockEntity.portBlock());
+                if (opts.isEmpty()) continue;
+                if (creative) {
+                    chosen.put(e.getKey(), opts.get(opts.size() - 1));
+                    continue;
+                }
+                Block best = null, any = null;
+                for (int k = opts.size() - 1; k >= 0 && best == null; k--) {
+                    long have = count(player, grid, opts.get(k));
+                    if (have >= e.getValue()) best = opts.get(k);
+                    else if (have > 0 && any == null) any = opts.get(k);
+                }
+                if (best != null || any != null) chosen.put(e.getKey(), best != null ? best : any);
+            }
+        }
         for (BlockPos p : todo) {
             char c = scan.expected().get(p);
             BlockState current = level.getBlockState(p);
@@ -193,6 +245,9 @@ public class StructureAssemblerItem extends LoreItem {
                 // survival uses the best tier you are carrying
                 if (creative) {
                     if (player.getOffhandItem().getItem() instanceof BlockItem bi && options.contains(bi.getBlock())) want = bi.getBlock();
+                    else if (chosen.containsKey(c)) want = chosen.get(c);
+                } else if (chosen.containsKey(c) && count(player, grid, chosen.get(c)) > 0) {
+                    want = chosen.get(c);
                 } else {
                     for (int k = options.size() - 1; k >= 0; k--)
                         if (count(player, grid, options.get(k)) > 0) {
@@ -348,6 +403,121 @@ public class StructureAssemblerItem extends LoreItem {
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_disassemble_kept", kept).withStyle(ChatFormatting.RED), false);
         if (dropped > 0)
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_disassemble_dropped").withStyle(ChatFormatting.GOLD), false);
+        return InteractionResult.CONSUME;
+    }
+
+    /**
+     * 1.2.0, coils mode: changes every coil of the structure to one tier. Sneak-use on the controller picks the tier
+     * (round the tiers this structure takes, and "the best you have enough of"); use swaps them, taking the new coils
+     * from your inventory (then a bound network) and giving the old ones back. The structure stays standing; the
+     * machine checks itself again at once and runs at the new tier.
+     */
+    private static InteractionResult changeCoils(ServerLevel level, ServerPlayer player, ControllerBlockEntity controller, @javax.annotation.Nullable Object grid,
+                                                 ItemStack tool) {
+        MultiblockDefinition def = controller.definition();
+        BlockPos cpos = controller.getBlockPos();
+        Block port = ControllerBlockEntity.portBlock();
+        // every coil position of the structure, and the tiers it takes (the same family at every coil position)
+        List<BlockPos> spots = new ArrayList<>();
+        Map<BlockPos, Character> chars = new HashMap<>();
+        TreeMap<Integer, Block> tiers = new TreeMap<>();
+        for (int y = 0; y < def.sizeY; y++) {
+            List<String> rows = def.layers.get(y);
+            for (int z = 0; z < rows.size(); z++) {
+                String row = rows.get(z);
+                for (int x = 0; x < row.length(); x++) {
+                    char c = row.charAt(x);
+                    var ts = def.tiers.get(c);
+                    if (ts == null || !ts.family().equals("coil")) continue;
+                    BlockPos p = def.toWorld(cpos, controller.facing(), x, y, z).immutable();
+                    spots.add(p);
+                    chars.put(p, c);
+                    for (var o : def.tierOptions(c, port)) tiers.putIfAbsent(o.tier(), o.block());
+                }
+            }
+        }
+        if (spots.isEmpty()) {
+            player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_no_coils").withStyle(ChatFormatting.GRAY), true);
+            return InteractionResult.FAIL;
+        }
+        boolean creative = player.getAbilities().instabuild;
+        if (player.isShiftKeyDown()) {
+            // pick the next tier: 0 (the best you have enough of), then each tier in turn
+            List<Integer> order = new ArrayList<>(tiers.keySet());
+            int cur = coilTarget(tool), i = order.indexOf(cur);
+            int next = i < 0 ? order.get(0) : i + 1 < order.size() ? order.get(i + 1) : 0;
+            setCoilTarget(tool, next);
+            if (next == 0) player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_best").withStyle(ChatFormatting.GOLD), true);
+            else {
+                Block b = tiers.get(next);
+                long have = creative ? spots.size() : count(player, grid, b);
+                player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_pick", next, b.getName(), spots.size(), have)
+                        .withStyle(ChatFormatting.GOLD), true);
+            }
+            level.playSound(null, cpos, com.theoreticalsciences.registry.QHSounds.CONFIRM.get(), SoundSource.PLAYERS, 0.5F, 1.0F + 0.1F * next);
+            return InteractionResult.CONSUME;
+        }
+        // the tier to change to
+        int target = coilTarget(tool);
+        if (target == 0 || !tiers.containsKey(target)) {
+            target = -1;
+            for (int t : tiers.descendingKeySet()) {
+                Block b = tiers.get(t);
+                long already = spots.stream().filter(p -> level.getBlockState(p).is(b)).count();
+                if (creative || count(player, grid, b) + already >= spots.size()) {
+                    target = t;
+                    break;
+                }
+            }
+            if (target < 0) {
+                player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_none", spots.size()).withStyle(ChatFormatting.GOLD), false);
+                return InteractionResult.FAIL;
+            }
+        }
+        Block want = tiers.get(target);
+        int changed = 0, kept = 0, lacking = 0;
+        List<ItemStack> back = new ArrayList<>();
+        for (BlockPos p : spots) {
+            if (!level.isLoaded(p)) continue;
+            BlockState st = level.getBlockState(p);
+            if (st.is(want)) continue;
+            // only a coil of this structure (or an empty spot) is changed; anything else is left alone
+            boolean ours = st.isAir() || st.canBeReplaced() || def.matches(chars.get(p), st);
+            if (!ours || !player.mayBuild() || !level.mayInteract(player, p) || st.getDestroySpeed(level, p) < 0) {
+                kept++;
+                continue;
+            }
+            if (!creative && !take(player, grid, want)) {
+                lacking++;
+                continue;
+            }
+            if (!st.isAir() && !st.canBeReplaced() && !creative) back.add(new ItemStack(st.getBlock().asItem()));
+            level.setBlock(p, want.defaultBlockState(), 3);
+            level.sendParticles(com.theoreticalsciences.registry.QHParticles.PHOTON.get(), p.getX() + 0.5, p.getY() + 0.5, p.getZ() + 0.5, 2, 0.25, 0.25, 0.25, 0.01);
+            changed++;
+        }
+        // the old coils come back as items (to a bound network first)
+        Map<net.minecraft.world.item.Item, Integer> sum = new LinkedHashMap<>();
+        for (ItemStack b : back) sum.merge(b.getItem(), b.getCount(), Integer::sum);
+        for (Map.Entry<net.minecraft.world.item.Item, Integer> e : sum.entrySet()) {
+            int n = e.getValue();
+            while (n > 0) {
+                ItemStack st = new ItemStack(e.getKey(), Math.min(n, 64));
+                n -= st.getCount();
+                if (grid != null) {
+                    long in = com.theoreticalsciences.compat.MEBridge.put(grid, st, player);
+                    st.shrink((int) Math.min(in, st.getCount()));
+                }
+                if (!st.isEmpty() && !player.getInventory().add(st) && !st.isEmpty()) player.drop(st, false);
+            }
+        }
+        controller.recheckSoon();
+        if (changed > 0) level.playSound(null, cpos, com.theoreticalsciences.registry.QHSounds.CONFIRM.get(), SoundSource.BLOCKS, 0.8F, 1.6F);
+        player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_done", changed, want.getName(), target).withStyle(ChatFormatting.AQUA), false);
+        if (lacking > 0)
+            player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_short", lacking, want.getName()).withStyle(ChatFormatting.GOLD), false);
+        if (kept > 0)
+            player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_blocked", kept).withStyle(ChatFormatting.RED), false);
         return InteractionResult.CONSUME;
     }
 

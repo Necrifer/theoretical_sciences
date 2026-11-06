@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:stable_strategy"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.nash_equilibrium"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.nash_equilibrium.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/game_theory",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

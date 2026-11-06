@@ -1,0 +1,19 @@
+{
+  "name": "Shortest Paths",
+  "icon": "theoreticalsciences:photonic_processor",
+  "advancement": "theoreticalsciences:research/shortest_paths",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photonic_processor",
+      "title": "Shortest Paths",
+      "text": "$(thing)Shortest Paths$()$(br2)Dijkstra's idea: settle the nearest unsettled place, then see whether it gives a shorter way to its neighbours. Unlocks routed Photonic Processors."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 100$(br2)$(thing)Builds on$(): Networks, Algorithms.$(br2)$(thing)Samples$(): 1 Network Map.$(br2)$(thing)Derivation$(): Dijkstra settles V junctions over L links, keeping the nearest unsettled one in a heap that takes log\u2082 V steps per change. Write the work T."
+    }
+  ]
+}

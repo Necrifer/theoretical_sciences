@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.r91_body",
+  "description": "book.theoreticalsciences.codex.biology.r91_body.desc",
+  "icon": {
+    "item": "theoreticalsciences:perfusion_rig"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 22,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:perfusion_rig"
+      },
+      "text": "book.theoreticalsciences.codex.biology.r91_body.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r91_body.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r91_body.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r91_body.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__r88_cell"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__patch_clamp_rig"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/physiology"
+  }
+}

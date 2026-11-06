@@ -1,0 +1,24 @@
+{
+  "name": "Selection Chamber",
+  "icon": "theoreticalsciences:selection_chamber",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 118,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A new trait of advantage s in a population of N fixes with chance (1 - e^(-2s)) / (1 - e^(-4Ns)) (Kimura). Weak selection (4Ns << 1) leaves it to drift, p = 1/2N; strong selection drives it to about 2s."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Selection strength, Population size.$(br2)$(thing)Disturbance$(): Founder effect: the chance varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too hard a pressure: the culture dies.$(br2)$(thing)Rate$(): A trait that fixes surely is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Fixation chance: p = (1 - e^(-2s)) / (1 - e^(-4Ns))"
+    }
+  ]
+}

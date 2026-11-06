@@ -64,6 +64,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     public ControllerBlockEntity(MachineType type, BlockPos pos, BlockState state) {
         super(type, pos, state);
+        // 1.2.0: after a load, the controllers' first structure checks are spread over two seconds, not all on one tick
+        this.checkTimer = 1 + Math.floorMod(pos.hashCode(), 40);
         this.physics = new com.theoreticalsciences.machine.physics.PhysicsState(type.id(), () -> {
             markSync();
             setChanged();
@@ -74,13 +76,18 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     /** The machine's physics: operator settings, temperature, coolant loop and the last evaluation. */
     public final com.theoreticalsciences.machine.physics.PhysicsState physics;
 
+    @Override
+    protected boolean wearHot() {
+        return physics != null && physics.wearIdx >= 0;
+    }
+
     /** True when this multiblock runs on a physics model (every multiblock that has one shipped). */
     public boolean hasPhysics() {
         return physics.model() != null;
     }
 
     /**
-     * 1.4.0: what the machine's physics sees of the world (the telescopes need a dark, clear, open sky; the Solar
+     * 1.2.0: what the machine's physics sees of the world (the telescopes need a dark, clear, open sky; the Solar
      * Furnace the Sun; the Radio Telescope quiet): the sky above the structure's top, day and night from the Sun's
      * elevation, the Moon's phase, rain, the height it stands at, and how many other machines are running nearby.
      */
@@ -147,6 +154,290 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         return n;
     }
 
+    // ------------------------------------------------------------------ 1.2.0: precision (see Precision)
+    public final com.theoreticalsciences.machine.tuning.Precision precision = new com.theoreticalsciences.machine.tuning.Precision();
+    /** 1.2.0: the applied-mathematics upgrade fitted to this machine (one at a time; see UpgradeItem). */
+    public net.minecraft.world.item.ItemStack upgrade = net.minecraft.world.item.ItemStack.EMPTY;
+
+    /** 1.2.0: a Symbiont Lining repairs the catalysts as they work: they wear 40% slower. */
+    @Override
+    protected double wearScale() {
+        return "symbiont_lining".equals(upgradeKind()) ? 0.6 : 1.0;
+    }
+
+    public String upgradeKind() {
+        return upgrade.getItem() instanceof com.theoreticalsciences.machine.tuning.UpgradeItem u ? u.kind : "";
+    }
+
+    public void fitUpgrade(net.minecraft.world.item.ItemStack s) {
+        upgrade = s;
+        markSync();
+        setChanged();
+    }
+
+    @Override
+    public void dropContents() {
+        super.dropContents();
+        if (level != null && !upgrade.isEmpty())
+            net.minecraft.world.Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 0.5, worldPosition.getZ() + 0.5, upgrade.copy());
+        upgrade = net.minecraft.world.item.ItemStack.EMPTY;
+    }
+
+    /** 1.2.0: Proof Certificates on this machine (each catches one containment failure). */
+    public int proofs;
+
+    // ------------------------------------------------------------------ 1.2.0: contamination (the Biology consoles)
+    /** How clean the machine is, 1 when just sterilised. Each run handles the culture and costs it a little. */
+    public float sterility = 1F;
+    /** Contaminated: it stops until it is cleaned (a Sterile Pack, or an Antibiotic). */
+    public boolean contaminated;
+    /** Antibiotics used on it: each one selects for what survives, so the next works less often. */
+    public int resistance;
+    public static final float STERILITY_PER_RUN = 0.04F, RISKY = 0.5F;
+
+    /** Whether this machine can be contaminated (the Autoclave is what sterilises; a Probiotic Seal keeps one clean). */
+    public boolean contaminates() {
+        return type.biology() && type != MachineType.AUTOCLAVE && !"probiotic_seal".equals(upgradeKind());
+    }
+
+    /** A run's handling: sterility falls, and once it is low a run may bring something in (the lower, the likelier). */
+    private void handle(ServerLevel level, int runs) {
+        if (!contaminates() || contaminated) return;
+        for (int k = 0; k < runs; k++) {
+            float was = sterility;
+            sterility = Math.max(0F, sterility - STERILITY_PER_RUN);
+            if (was >= RISKY && sterility < RISKY) {
+                var p = owner == null ? null : level.getServer().getPlayerList().getPlayer(owner);
+                if (p != null) p.displayClientMessage(Component.translatable("message.theoreticalsciences.sterility_low",
+                        Component.translatable("block.theoreticalsciences." + type.id())).withStyle(ChatFormatting.GOLD), false);
+            }
+            if (sterility < RISKY && level.random.nextFloat() < (RISKY - sterility) * 2F) {
+                contaminated = true;
+                var p = owner == null ? null : level.getServer().getPlayerList().getPlayer(owner);
+                if (p != null) p.displayClientMessage(Component.translatable("message.theoreticalsciences.contaminated",
+                        Component.translatable("block.theoreticalsciences." + type.id())).withStyle(ChatFormatting.YELLOW), false);
+                break;
+            }
+        }
+        markSync();
+        setChanged();
+    }
+
+    /** Cleaned: a Sterile Pack always works; an Antibiotic works with chance 1 / (1 + resistance) and adds to the resistance. */
+    public boolean clean(boolean antibiotic, net.minecraft.util.RandomSource r) {
+        if (antibiotic) {
+            boolean works = r.nextFloat() < 1F / (1F + resistance);
+            resistance++;
+            if (!works) {
+                setChanged();
+                return false;
+            }
+        }
+        sterility = 1F;
+        contaminated = false;
+        markSync();
+        setChanged();
+        return true;
+    }
+    public static final int MAX_PROOFS = 4;
+
+    private com.theoreticalsciences.machine.physics.DemonSolver solver(com.theoreticalsciences.machine.physics.RecipePhysics phys) {
+        return new com.theoreticalsciences.machine.physics.DemonSolver(type.id(), phys, coilTier, emitterTier, overclockNow(),
+                tuningProfile() == null ? 1 : tuning.parallel, physics.params.clone(), physics.coolant.getFluid().isEmpty() ? null : physics.coolant.getFluid().getFluid(),
+                worldPosition.asLong()).size(units()).world(physics.world).lockCoolant(true);      // the best with what it holds
+    }
+
+    /** Every half second: how finely tuned the machine is for what it runs (the ideal point is found once per recipe, off-thread). */
+    /**
+     * 1.2.0: the physics solves run on a thread of their own at low priority (not the game's shared background pool,
+     * which world generation uses), one at a time.
+     */
+    public static final java.util.concurrent.ExecutorService SOLVER = java.util.concurrent.Executors.newSingleThreadExecutor(r -> {
+        Thread t = new Thread(r, "Theoretical Sciences physics solver");
+        t.setDaemon(true);
+        t.setPriority(Thread.MIN_PRIORITY);
+        return t;
+    });
+
+    /** The player-asked tunings (the Tuning Fork, the demon): their own thread, so they never wait behind the above. */
+    public static final java.util.concurrent.ExecutorService TUNER = java.util.concurrent.Executors.newSingleThreadExecutor(r -> {
+        Thread t = new Thread(r, "Theoretical Sciences tuning");
+        t.setDaemon(true);
+        t.setPriority(Thread.NORM_PRIORITY - 1);
+        return t;
+    });
+
+    /** 1.2.0: solves that found nothing, by recipe and tiers: when to try again (game time) and how long the wait was. */
+    private final java.util.Map<String, long[]> solveFailed = new java.util.HashMap<>();
+
+    private String solveKey(Object rp) {
+        return System.identityHashCode(rp) + ":" + coilTier + ":" + emitterTier;
+    }
+
+    private void updatePrecision(ServerLevel level) {
+        double v = 0;
+        if (hasPhysics()) {
+            var m = physics.model();
+            var rp = physics.recipe;
+            if (m != null && rp != null && rp != com.theoreticalsciences.machine.physics.RecipePhysics.NONE) {
+                String key = solveKey(rp);
+                long[] failed = solveFailed.get(key);
+                boolean waiting = failed != null && level.getGameTime() < failed[0];
+                if (!precision.knows(rp) && !precision.busy && !waiting && level.getGameTime() - precision.lastTry > 200) {
+                    precision.busy = true;
+                    precision.lastTry = level.getGameTime();
+                    var job = solver(rp);
+                    var server = level.getServer();
+                    java.util.concurrent.CompletableFuture.supplyAsync(job::solve, SOLVER).whenComplete((sol, err) -> server.execute(() -> {
+                        precision.busy = false;
+                        if (err == null && sol != null && sol.ok() && !isRemoved()) {
+                            precision.set(rp, sol.params(), sol.readout());
+                            solveFailed.remove(key);
+                            markSync();                       // the console's readout lists the ideal settings
+                        } else if (!isRemoved()) {
+                            // no solution for this recipe at these tiers: wait longer each time (10 s, 20 s ... 20 min)
+                            long[] f = solveFailed.computeIfAbsent(key, k -> new long[]{0, 100});
+                            f[1] = Math.min(24000, f[1] * 2);
+                            f[0] = level.getGameTime() + f[1];
+                        }
+                    }));
+                }
+                if (precision.knows(rp) && !physics.stopped() && physics.windowIdx < 0)
+                    v = precision.of(com.theoreticalsciences.machine.tuning.Precision.quantities(m, physics),
+                            "stability_margin".equals(upgradeKind()) ? 2.0 : 1.0);
+            }
+        } else if (tuningProfile() != null && !tuning.faulted)
+            v = com.theoreticalsciences.machine.tuning.Precision.ofDial(tuning.setting, tuning.target,
+                    "stability_margin".equals(upgradeKind()) ? 2.0 : 1.0);
+        if (Math.abs(v - precision.value) > 0.005) {
+            precision.value = v;
+            markSync();
+        }
+    }
+
+    /**
+     * The Tuning Fork's calibration: the machine is brought to a point where it works (every limit and window met) but
+     * deliberately a little off its ideal, so the console's fine tuning still has something to earn.
+     */
+    public boolean forkTune(ServerLevel level, @javax.annotation.Nullable com.theoreticalsciences.recipe.QHRecipe r, java.util.function.Consumer<DemonResult> done) {
+        return demonTune(level, r, true, res -> {
+            if (hasPhysics() && res.ok()) {
+                var m = physics.model();
+                double[] best = physics.params.clone();
+                precision.set(physics.recipe, best, res.readout());
+                // try offsets from 6% of each range down: keep the first that still works and is clearly short of ideal
+                for (double frac : new double[]{0.06, 0.045, 0.035, 0.025, 0.018, 0.012}) {
+                    for (int i = 0; i < m.params.size(); i++) {
+                        var p = m.params.get(i);
+                        double off = (level.random.nextBoolean() ? 1 : -1) * frac * (p.max() - p.min());
+                        physics.setParam(i, best[i] + off);
+                        if (Math.abs(physics.params[i] - best[i]) < 1e-12) physics.setParam(i, best[i] - off);
+                    }
+                    evaluatePhysics(true);
+                    if (!physics.stopped() && physics.windowIdx < 0 && physics.damageIdx < 0
+                            && precision.of(com.theoreticalsciences.machine.tuning.Precision.quantities(m, physics), 1.0) < 0.5) break;
+                    for (int i = 0; i < m.params.size(); i++) physics.setParam(i, best[i]);
+                }
+                evaluatePhysics(isActive());
+                markSync();
+                setChanged();
+            } else if (!hasPhysics() && tuningProfile() != null) {
+                // the dial a few points off its target: it runs well, but not perfectly
+                tuning.setting = net.minecraft.util.Mth.clamp(tuning.target + (level.random.nextBoolean() ? 1 : -1) * (2F + level.random.nextFloat() * 2F), 0F, 100F);
+                markSync();
+                setChanged();
+            }
+            done.accept(res);
+        });
+    }
+
+
+    /** 1.2.0: the precision a Governor brings a machine up to (it never takes one down: the console's work is kept). */
+    public static final double GOVERNOR_TARGET = 0.75;
+
+    /**
+     * 1.2.0: one step of a Governor's feedback (see GovernorBlockEntity). While the machine is short of the Governor's
+     * precision it moves each setting a fifth of the way toward the machine's best point for the recipe it runs, and
+     * stops once there: the machine runs well and stays there as its recipe changes, and the last margin is the
+     * console's. If the machine is not working at all, it goes to the best point itself. Returns whether it is held.
+     */
+    public boolean govern(ServerLevel level) {
+        if (hasPhysics()) {
+            var m = physics.model();
+            var rp = physics.recipe;
+            if (m == null || rp == null || rp == com.theoreticalsciences.machine.physics.RecipePhysics.NONE) return false;
+            double[] ideal = precision.ideal(rp);
+            if (ideal == null) return false;                   // still being found (updatePrecision)
+            double[] before = physics.params.clone();
+            int n = Math.min(m.params.size(), ideal.length);
+            evaluatePhysics(true);
+            boolean working = !physics.stopped() && physics.windowIdx < 0 && physics.damageIdx < 0;
+            double now = working ? precision.of(com.theoreticalsciences.machine.tuning.Precision.quantities(m, physics), 1.0) : 0;
+            if (!working) {
+                for (int i = 0; i < n; i++) physics.setParam(i, ideal[i]);
+            } else if (now < GOVERNOR_TARGET) {
+                for (int i = 0; i < n; i++) {
+                    var p = m.params.get(i);
+                    double next = physics.params[i] + 0.2 * (ideal[i] - physics.params[i]);
+                    if (Math.abs(ideal[i] - next) < Math.max(p.step(), 1e-9)) next = ideal[i];
+                    physics.setParam(i, next);
+                }
+            }
+            evaluatePhysics(isActive());
+            if (!java.util.Arrays.equals(before, physics.params)) {
+                markSync();
+                setChanged();
+            }
+            return !physics.stopped() && physics.windowIdx < 0;
+        }
+        if (tuningProfile() != null && !tuning.faulted) {
+            float side = Math.signum(tuning.setting - tuning.target);
+            float goal = tuning.target + (side == 0 ? 1 : side) * 0.3F;
+            float next = tuning.setting + 0.35F * (goal - tuning.setting);
+            if (Math.abs(next - tuning.setting) > 0.01F) {
+                tuning.setting = net.minecraft.util.Mth.clamp(next, 0F, 100F);
+                markSync();
+                setChanged();
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private boolean eccSkip;
+
+    /** Error-Correcting Code: catalysts wear on only every other run. */
+    @Override
+    protected void wearCatalysts(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe r) {
+        if ("error_code".equals(upgradeKind())) {
+            eccSkip = !eccSkip;
+            if (eccSkip) return;
+        }
+        super.wearCatalysts(level, r);
+    }
+
+    /** Extra products per cycle: precision, plus a Rate Table (which goes past perfect). */
+    public double productBonus() {
+        return precision.bonus() + ("rate_table".equals(upgradeKind()) ? 0.2 : 0);
+    }
+
+    @Override
+    protected void bonusOutputs(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe r) {
+        double b = productBonus();
+        if (b <= 0.001) return;
+        for (int oi = 0; oi < r.itemOutputs.size(); oi++) {
+            if (rolled != null && oi < rolled.length && !rolled[oi]) continue;
+            net.minecraft.world.item.ItemStack o = r.itemOutputs.get(oi);
+            double want = o.getCount() * b;
+            int n = (int) want + (level.random.nextDouble() < want - (int) want ? 1 : 0);
+            if (n > 0) addOutput(o.copyWithCount(n));
+        }
+        for (var f : r.fluidOutputs) {
+            int n = (int) Math.round(f.getAmount() * b);
+            if (n > 0) addFluidOutput(f.copyWithAmount(n));
+        }
+    }
+
     /** Re-evaluates the model for the current structure. */
     private void evaluatePhysics(boolean on) {
         physics.size = units();
@@ -155,7 +446,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     // ------------------------------------------------------------------ Laplace's Demon (creative tuning)
     /** What the demon did: whether it found a point inside every limit and window, the rate there, and the coolant used. */
-    public record DemonResult(boolean ok, double rate, String coolant, int violations) {}
+    public record DemonResult(boolean ok, double rate, String coolant, int violations, double[] readout) {}
 
     private boolean demonBusy;
 
@@ -165,46 +456,72 @@ public class ControllerBlockEntity extends MachineBlockEntity {
      * Returns false if a search is already running for this controller.
      */
     public boolean demonTune(ServerLevel level, @javax.annotation.Nullable com.theoreticalsciences.recipe.QHRecipe r, java.util.function.Consumer<DemonResult> done) {
+        return demonTune(level, r, false, done);
+    }
+
+    /**
+     * survival (1.2.0, the Tuning Fork): only the settings change. The search keeps to the coolant the machine holds;
+     * nothing is filled, emptied or cooled. If no setting works with it, the result names a coolant that would
+     * (DemonResult.coolant, with ok false), so the player knows what to bring.
+     */
+    public boolean demonTune(ServerLevel level, @javax.annotation.Nullable com.theoreticalsciences.recipe.QHRecipe r, boolean survival,
+                             java.util.function.Consumer<DemonResult> done) {
         if (demonBusy) return false;
-        tuning.calibrate();
+        if (!survival) tuning.calibrate();             // (the fork restores no containment: that is the Field Calibrator's job)
         if (!hasPhysics()) {
             if (tuningProfile() != null) tuning.setting = tuning.target;
             markSync();
             setChanged();
-            done.accept(new DemonResult(true, 1, "", 0));
+            done.accept(new DemonResult(true, 1, "", 0, null));
             return true;
         }
         demonBusy = true;
         var phys = r == null ? com.theoreticalsciences.machine.physics.RecipePhysics.NONE : r.physics;
         var job = new com.theoreticalsciences.machine.physics.DemonSolver(type.id(), phys, coilTier, emitterTier, overclockNow(),
                 tuningProfile() == null ? 1 : tuning.parallel, physics.params.clone(), physics.coolant.getFluid().isEmpty() ? null : physics.coolant.getFluid().getFluid(),
-                worldPosition.asLong()).size(units()).world(physics.world);
+                worldPosition.asLong()).size(units()).world(physics.world).lockCoolant(survival);
         var server = level.getServer();
-        java.util.concurrent.CompletableFuture.supplyAsync(job::solve, net.minecraft.Util.backgroundExecutor()).whenComplete((sol, err) -> server.execute(() -> {
+        var held = physics.coolant.getFluid().isEmpty() ? null : physics.coolant.getFluid().getFluid();
+        java.util.function.Supplier<com.theoreticalsciences.machine.physics.DemonSolver.Solution[]> work = () -> {
+            var a = job.solve();
+            // the fork could not make it work with what it holds: find which coolant would (only to say so)
+            var b = survival && a != null && !a.ok() ? new com.theoreticalsciences.machine.physics.DemonSolver(type.id(), phys, coilTier, emitterTier,
+                    overclockNow(), tuningProfile() == null ? 1 : tuning.parallel, physics.params.clone(), held, worldPosition.asLong())
+                    .size(units()).world(physics.world).solve() : null;
+            return new com.theoreticalsciences.machine.physics.DemonSolver.Solution[]{a, b};
+        };
+        java.util.concurrent.CompletableFuture.supplyAsync(work, TUNER).whenComplete((both, err) -> server.execute(() -> {
+            var sol = both == null ? null : both[0];
+            var hint = both == null ? null : both[1];
             demonBusy = false;
             // round 35: a model the search cannot work with (a pack's broken edit) fails politely - said in chat, logged here
             if (err != null) com.theoreticalsciences.TheoreticalSciences.LOGGER.warn("Laplace's Demon could not search {} at {}: {}", type.id(), worldPosition, err.toString());
             if (isRemoved() || sol == null) {
-                done.accept(new DemonResult(false, 0, "", -1));
+                done.accept(new DemonResult(false, 0, "", -1, null));
                 return;
             }
             var m = physics.model();
             if (m == null) return;
             physics.recipe = phys;
             for (int i = 0; i < Math.min(sol.params().length, m.params.size()); i++) physics.setParam(i, sol.params()[i]);
-            if (sol.coolant() != null) physics.coolant.setFluid(new net.neoforged.neoforge.fluids.FluidStack(sol.coolant(), physics.coolant.getCapacity()));
-            physics.spent.setFluid(net.neoforged.neoforge.fluids.FluidStack.EMPTY);
-            physics.calibrate();
-            physics.temperature = sol.temperature();
+            if (survival) {
+                physics.disturbance = 0;                       // calibrated: its drift is zeroed, nothing else is given
+            } else {
+                if (sol.coolant() != null) physics.coolant.setFluid(new net.neoforged.neoforge.fluids.FluidStack(sol.coolant(), physics.coolant.getCapacity()));
+                physics.spent.setFluid(net.neoforged.neoforge.fluids.FluidStack.EMPTY);
+                physics.calibrate();
+                physics.temperature = sol.temperature();
+            }
             for (int i = 0; i < m.params.size(); i++)
                 if ("setting".equals(m.params.get(i).bind())) tuning.setting = (float) physics.params[i];
-            tuning.calibrate();
+            if (!survival) tuning.calibrate();
             evaluatePhysics(isActive());
             markSync();
             setChanged();
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 2);
-            String cname = sol.coolant() == null ? "" : net.minecraft.core.registries.BuiltInRegistries.FLUID.getKey(sol.coolant()).toString();
-            done.accept(new DemonResult(sol.ok(), sol.rate(), cname, sol.ok() ? 0 : 1));
+            var named = survival && !sol.ok() ? (hint != null && hint.ok() ? hint.coolant() : null) : sol.coolant();
+            String cname = named == null ? "" : net.minecraft.core.registries.BuiltInRegistries.FLUID.getKey(named).toString();
+            done.accept(new DemonResult(sol.ok(), sol.rate(), cname, sol.ok() ? 0 : 1, sol.readout()));
         }));
         return true;
     }
@@ -390,6 +707,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     @Override
     protected double energyFactor() {
+        double f = baseEnergyFactor();
+        // 1.2.0: an Optimised Pathway saves a quarter of the power a run takes (not for generators, which make it)
+        return !type.generator && "optimised_pathway".equals(upgradeKind()) ? f * 0.75 : f;
+    }
+
+    private double baseEnergyFactor() {
         if (tuningProfile() == null) return 1.0;
         double f = Math.pow(4, overclockNow()) * parallelCount();
         if (hasPhysics() && type.generator) return 1.0;
@@ -547,6 +870,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         if (moved) onInventoryChanged();
     }
 
+    /** 1.2.0: check the structure again on the next tick (after the Structure Assembler changed its coils). */
+    public void recheckSoon() {
+        checkTimer = 1;
+        lookRefresh = 0;
+    }
+
     @Override
     protected void preTick(ServerLevel level) {
         if (level.getGameTime() % 5 == 1 && hasOutput()) pushToME();     // 4x a second, only with something to push
@@ -557,15 +886,21 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             checkTimer = 40;
             pickSize(level);
             MultiblockDefinition def = definition();
-            if (def == null) return;
-            MultiblockDefinition.ScanResult scan = def.scan(level, worldPosition, facing(), portId());
+            // 1.2.0: the giants are checked less often (a check reads every block of the structure)
+            if (def != null) checkTimer += Math.min(160, def.sizeX * def.sizeY * def.sizeZ / 4000);
+            if (def == null && !type.standaloneConsole()) return;
+            MultiblockDefinition.ScanResult scan = def == null ? null : def.scan(level, worldPosition, facing(), portId());
+            // 1.2.0: a single-block console machine is always complete
+            if (def == null) {
+                if (!formed) setFormed(level, true, List.of());
+            } else
             // round 36: part of the structure sits in an unloaded chunk (a chunk loader keeps only this one): keep
             // the state from the last full check rather than "breaking" it - nothing outside loaded chunks is touched
             if (!scan.partial()) {
                 setFormed(level, scan.complete(), scan.ports());
                 updateTiers(scan);
                 // casings that were unloaded when the structure formed get their formed look once they are back
-                if (formed && ++lookRefresh % 10 == 0) applyFormedLook(level, true);
+                if (formed && lookRefresh++ % 10 == 0) applyFormedLook(level, true);       // 1.2.0: also on the first check after loading
             }
             // round 31: a /reload may have lowered this machine's limits (data/<ns>/ts_machines)
             var lim = tuningProfile();
@@ -577,6 +912,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             }
         }
         com.theoreticalsciences.machine.tuning.TuningProfile tp = tuningProfile();
+        if ((level.getGameTime() + worldPosition.hashCode()) % 10 == 0 && formed) updatePrecision(level);
         if (hasPhysics()) tickPhysics(level, tp);
         else if (tp != null) {
             boolean wasFaulted = tuning.faulted;
@@ -588,7 +924,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             }
             if (tuning.faulted && !wasFaulted) beginMeltdown(level);
             if (meltdown > 0) tickMeltdown(level);
-            if ((int) tuning.integrity != before || level.getGameTime() % 20 == 0) markSync();
+            if ((int) tuning.integrity != before || level.getGameTime() % readoutPeriod(formed && isActive()) == 0) markSync();
             if (level.getGameTime() % 200 == 0) setChanged();
         }
         if (formed && isActive()) {
@@ -637,15 +973,21 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             } else physicsBlock = null;
         }
         float stress = physics.wearIdx >= 0 || physics.damageIdx >= 0 ? 4F : 1F;
-        tuning.tickPhysics(tp, running, stress);
+        tuning.tickPhysics(tp, running && !type.standaloneConsole(), stress);     // (a single-block console has no containment to wear)
         if (type == MachineType.VACUUM_HARVESTER && !wrongDimension()) {
             int m = harvestTarget(level, null);
             tuning.target = (float) com.theoreticalsciences.foam.FoamField.resonance(level, m, worldPosition);
         }
         if (tuning.faulted && !wasFaulted && meltdown <= 0) beginMeltdown(level);
         if (meltdown > 0) tickMeltdown(level);
-        if ((int) tuning.integrity != before || level.getGameTime() % 10 == 0) markSync();
+        // 1.2.0: the live readout goes out twice a second while someone watches the screen, once a second while it runs,
+        // and every ten seconds idle (each send is the whole machine, to everyone near): not twice a second always
+        if ((int) tuning.integrity != before || level.getGameTime() % readoutPeriod(on) == 0) markSync();
         if (level.getGameTime() % 200 == 0) setChanged();
+    }
+
+    private int readoutPeriod(boolean on) {
+        return viewers > 0 ? 10 : on ? 20 : 200;
     }
 
     private void updateTiers(MultiblockDefinition.ScanResult scan) {
@@ -704,6 +1046,19 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         MultiblockDefinition md = definition();
         // measured from the effect centre, which can sit off the middle of a long machine: use the whole length to be sure
         double reach = md == null ? 3 : Math.max(md.sizeX, md.sizeZ);
+        // 1.2.0: a Proof Certificate on the machine proves it safe once: the failure is caught, nothing is released
+        if (proofs > 0) {
+            proofs--;
+            markSync();
+            setChanged();
+            level.playSound(null, worldPosition, net.minecraft.sounds.SoundEvents.BOOK_PAGE_TURN, net.minecraft.sounds.SoundSource.BLOCKS, 1.5F, 0.7F);
+            if (owner != null) {
+                ServerPlayer p = level.getServer().getPlayerList().getPlayer(owner);
+                if (p != null) p.displayClientMessage(Component.translatable("message.theoreticalsciences.proof_caught",
+                        Component.translatable("block.theoreticalsciences." + type.id()), proofs).withStyle(ChatFormatting.GOLD), false);
+            }
+            return;
+        }
         if (tp != null) com.theoreticalsciences.machine.tuning.ContainmentHazards.release(level, c, tp, tuning.overclock, reach);
         if (owner != null) {
             ServerPlayer p = level.getServer().getPlayerList().getPlayer(owner);
@@ -765,6 +1120,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         tuning.autoCalibrator = false;
     }
 
+    @Override
+    public void setRemoved() {
+        super.setRemoved();
+        if (level != null && !level.isClientSide) com.theoreticalsciences.multiblock.MovingClaims.release(level, this);
+    }
+
     public void onBroken() {
         if (level instanceof ServerLevel sl) {
             for (BlockPos p : ports) PortBlock.setLinked(sl, p, null);
@@ -782,6 +1143,9 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         MultiblockDefinition def = definition();
         if (def == null) return;
         Direction f = facing();
+        Set<Long> moving = com.theoreticalsciences.QHConfig.MOVING_PARTS.get() ? def.movingCells() : Set.of();
+        com.theoreticalsciences.multiblock.MovingClaims.release(level, this);
+        List<Long> claims = new java.util.ArrayList<>();
         for (int y = 0; y < def.sizeY; y++) {
             List<String> rows = def.layers.get(y);
             for (int z = 0; z < rows.size(); z++) {
@@ -792,11 +1156,17 @@ public class ControllerBlockEntity extends MachineBlockEntity {
                     BlockPos p = def.toWorld(worldPosition, f, x, y, z);
                     if (!level.isLoaded(p)) continue;
                     BlockState st = level.getBlockState(p);
-                    if (st.hasProperty(com.theoreticalsciences.block.CasingBlock.FORMED) && st.getValue(com.theoreticalsciences.block.CasingBlock.FORMED) != value)
-                        level.setBlock(p, st.setValue(com.theoreticalsciences.block.CasingBlock.FORMED, value), 2);
+                    BlockState ns = st;
+                    if (ns.hasProperty(com.theoreticalsciences.block.CasingBlock.FORMED)) ns = ns.setValue(com.theoreticalsciences.block.CasingBlock.FORMED, value);
+                    // 1.2.0: blocks of the structure's moving parts are hidden while it is formed (the renderer draws them, moving)
+                    if (ns.hasProperty(com.theoreticalsciences.block.CasingBlock.MOVING))
+                        ns = ns.setValue(com.theoreticalsciences.block.CasingBlock.MOVING, value && moving.contains(BlockPos.asLong(x, y, z)));
+                    if (ns.hasProperty(com.theoreticalsciences.block.CasingBlock.MOVING) && ns.getValue(com.theoreticalsciences.block.CasingBlock.MOVING)) claims.add(p.asLong());
+                    if (ns != st) level.setBlock(p, ns, 2);
                 }
             }
         }
+        if (value) com.theoreticalsciences.multiblock.MovingClaims.claim(level, this, claims);
     }
 
     /** Active singularities tug on loose items and creatures nearby. */
@@ -864,6 +1234,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     @Override
     protected MachineStatus gate(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe r) {
+        if (contaminated && contaminates()) return MachineStatus.CONTAMINATED;      // 1.2.0
         if (hasPhysics()) {
             if (physics.recipe != r.physics) {
                 physics.recipe = r.physics;
@@ -961,6 +1332,15 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     @Override
     protected void rollChances(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe r) {
+        if (type != MachineType.VACUUM_HARVESTER && "confidence_seal".equals(upgradeKind())) {
+            // 1.2.0, Confidence Seal: every chance product comes out halfway closer to certain
+            rolled = new boolean[r.itemOutputs.size()];
+            for (int i = 0; i < rolled.length; i++) {
+                float p = r.chance(i);
+                rolled[i] = level.random.nextFloat() < p + (1 - p) / 2;
+            }
+            return;
+        }
         if (type != MachineType.VACUUM_HARVESTER) {
             super.rollChances(level, r);
             return;
@@ -989,6 +1369,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     @Override
     protected void onRecipeFinished(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe recipe, int runs) {
+        handle(level, runs);              // 1.2.0: each run handles the culture
         // the Research Nexus: every dossier fed in counts, so parallel runs speed the research up that many times
         if (type == MachineType.RESEARCH_NEXUS) {
             com.theoreticalsciences.research.ResearchNexus.apply(level, owner, recipe, runs);
@@ -1028,6 +1409,32 @@ public class ControllerBlockEntity extends MachineBlockEntity {
      * coolant) into the inventories and tanks beside it, and each port set to import pulls what this machine's recipes
      * can use (ingredients, catalysts, input fluids, coolant) from them. Never into or out of the machine's own blocks.
      */
+    /** 1.2.0: the ports' neighbours' handlers, looked up once and kept current by the game. */
+    private final java.util.Map<Long, net.neoforged.neoforge.capabilities.BlockCapabilityCache<net.neoforged.neoforge.items.IItemHandler, net.minecraft.core.Direction>> itemCaches = new java.util.HashMap<>();
+    private final java.util.Map<Long, net.neoforged.neoforge.capabilities.BlockCapabilityCache<net.neoforged.neoforge.fluids.capability.IFluidHandler, net.minecraft.core.Direction>> fluidCaches = new java.util.HashMap<>();
+
+    private net.neoforged.neoforge.items.IItemHandler itemCapAt(ServerLevel level, BlockPos t, net.minecraft.core.Direction side) {
+        long k = t.asLong() * 6 + side.ordinal();
+        var c = itemCaches.get(k);
+        if (c == null || c.level() != level) {
+            c = net.neoforged.neoforge.capabilities.BlockCapabilityCache.create(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, level, t.immutable(), side);
+            if (itemCaches.size() > 256) itemCaches.clear();
+            itemCaches.put(k, c);
+        }
+        return c.getCapability();
+    }
+
+    private net.neoforged.neoforge.fluids.capability.IFluidHandler fluidCapAt(ServerLevel level, BlockPos t, net.minecraft.core.Direction side) {
+        long k = t.asLong() * 6 + side.ordinal();
+        var c = fluidCaches.get(k);
+        if (c == null || c.level() != level) {
+            c = net.neoforged.neoforge.capabilities.BlockCapabilityCache.create(net.neoforged.neoforge.capabilities.Capabilities.FluidHandler.BLOCK, level, t.immutable(), side);
+            if (fluidCaches.size() > 256) fluidCaches.clear();
+            fluidCaches.put(k, c);
+        }
+        return c.getCapability();
+    }
+
     private void portIO(ServerLevel level) {
         MEWanted wanted = null;
         for (BlockPos p : ports) {
@@ -1036,8 +1443,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             for (net.minecraft.core.Direction d : net.minecraft.core.Direction.values()) {
                 BlockPos t = p.relative(d);
                 if (t.equals(worldPosition) || ports.contains(t) || !level.isLoaded(t)) continue;
-                var inv = level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.ItemHandler.BLOCK, t, d.getOpposite());
-                var tank = level.getCapability(net.neoforged.neoforge.capabilities.Capabilities.FluidHandler.BLOCK, t, d.getOpposite());
+                var inv = itemCapAt(level, t, d.getOpposite());
+                var tank = fluidCapAt(level, t, d.getOpposite());
                 if (inv == null && tank == null) continue;
                 if ((mode & 1) != 0) {
                     if (inv != null) exportItems(inv);
@@ -1052,6 +1459,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         }
     }
 
+    /** 1.2.0: items nothing would take back, dropped at the controller rather than lost. */
+    private void spillAtController(net.minecraft.world.item.ItemStack s) {
+        if (level != null && !s.isEmpty())
+            net.minecraft.world.Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1.0, worldPosition.getZ() + 0.5, s);
+    }
+
     private void exportItems(net.neoforged.neoforge.items.IItemHandler inv) {
         for (int slot = type.itemInputs; slot < itemCap.getSlots(); slot++) {
             net.minecraft.world.item.ItemStack s = itemCap.extractItem(slot, 64, true);
@@ -1060,7 +1473,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             if (n <= 0) continue;
             net.minecraft.world.item.ItemStack got = itemCap.extractItem(slot, n, false);
             net.minecraft.world.item.ItemStack left = net.neoforged.neoforge.items.ItemHandlerHelper.insertItemStacked(inv, got, false);
-            if (!left.isEmpty()) items.insertItem(slot, left, false);         // (the neighbour changed its mind: back it goes)
+            if (!left.isEmpty()) left = items.insertItem(slot, left, false);         // (the neighbour changed its mind: back it goes)
+            if (!left.isEmpty()) spillAtController(left);                    // 1.2.0: never lost
         }
     }
 
@@ -1073,7 +1487,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             if (n <= 0) continue;
             net.minecraft.world.item.ItemStack got = inv.extractItem(slot, n, false);
             net.minecraft.world.item.ItemStack left = net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(itemCap, got, false);
-            if (!left.isEmpty()) net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(inv, left, false);
+            if (!left.isEmpty()) left = net.neoforged.neoforge.items.ItemHandlerHelper.insertItem(inv, left, false);
+            if (!left.isEmpty()) spillAtController(left);                    // 1.2.0: never lost
             moved++;
         }
     }
@@ -1086,8 +1501,10 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             var s = ft.drain(16000, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE);
             int n = tank.fill(s, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE);
             if (n <= 0) continue;
-            tank.fill(ft.drain(n, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE),
-                    net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+            var out = ft.drain(n, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+            int took = tank.fill(out.copy(), net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+            // 1.2.0: whatever the neighbour did not take after all goes back into the tank it came from
+            if (took < out.getAmount()) ft.fill(out.copyWithAmount(out.getAmount() - took), net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
         }
     }
 
@@ -1099,7 +1516,9 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             int n = fluidCap.fill(want, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.SIMULATE);
             if (n <= 0) continue;
             var got = tank.drain(want.copyWithAmount(n), net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
-            if (!got.isEmpty()) fluidCap.fill(got, net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+            if (got.isEmpty()) continue;
+            int took = fluidCap.fill(got.copy(), net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
+            if (took < got.getAmount()) tank.fill(got.copyWithAmount(got.getAmount() - took), net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction.EXECUTE);
         }
     }
 
@@ -1170,6 +1589,15 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         super.writeShared(tag, regs);
         tag.putBoolean("Formed", formed);
         tag.put("Tuning", tuning.save());
+        tag.put("Precision", precision.save(hasPhysics() ? physics.recipe : null));
+        tag.putInt("Proofs", proofs);
+        if (meltdown > 0) tag.putInt("Meltdown", meltdown);       // 1.2.0: a save mid-failure still fails afterwards
+        if (type.biology()) {
+            tag.putFloat("Sterility", sterility);
+            tag.putBoolean("Contaminated", contaminated);
+            tag.putInt("Resistance", resistance);
+        }
+        if (!upgrade.isEmpty()) tag.put("Upgrade", upgrade.save(regs));
         tag.put("Physics", physics.save(regs));
         tag.putInt("Confirm", confirm.ordinal());
         tag.putInt("CoilTier", coilTier);
@@ -1188,8 +1616,19 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider regs) {
         super.loadAdditional(tag, regs);
+        boolean was = formed;
         formed = tag.getBoolean("Formed");
+        // 1.2.0: the client looks at its moving blocks again when the structure forms or breaks (not every few seconds)
+        if (was != formed && level != null && level.isClientSide) com.theoreticalsciences.client.ClientHooks.movingChanged(this);
         if (tag.contains("Tuning")) tuning.load(tag.getCompound("Tuning"));
+        if (tag.contains("Precision")) precision.load(tag.getCompound("Precision"));
+        proofs = tag.getInt("Proofs");
+        meltdown = tag.getInt("Meltdown");
+        sterility = tag.contains("Sterility") ? tag.getFloat("Sterility") : 1F;
+        contaminated = tag.getBoolean("Contaminated");
+        resistance = tag.getInt("Resistance");
+        upgrade = tag.contains("Upgrade") ? net.minecraft.world.item.ItemStack.parse(regs, tag.getCompound("Upgrade")).orElse(net.minecraft.world.item.ItemStack.EMPTY)
+                : net.minecraft.world.item.ItemStack.EMPTY;
         if (tag.contains("Physics")) physics.load(tag.getCompound("Physics"), regs);
         int cf = tag.getInt("Confirm");
         confirm = cf >= 0 && cf < Confirm.values().length ? Confirm.values()[cf] : Confirm.NONE;

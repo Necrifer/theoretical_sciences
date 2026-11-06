@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.graph_loom",
+  "description": "book.theoreticalsciences.codex.mathematics.graph_loom.desc",
+  "icon": {
+    "item": "theoreticalsciences:graph_loom"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 137,
+  "y": 75,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graph_loom"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.graph_loom.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.graph_loom.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.graph_loom.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.graph_loom.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:graph_loom"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.graph_loom.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/mathematics__topology_kiln"
+    },
+    {
+      "entry": "theoreticalsciences:machines/mathematics__geometers_table"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/graph_theory"
+  }
+}

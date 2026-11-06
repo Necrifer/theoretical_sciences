@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.intro__r46_overview",
+  "description": "book.theoreticalsciences.codex.optics.intro__r46_overview.desc",
+  "icon": {
+    "item": "theoreticalsciences:fluorite_lens"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 17,
+  "y": 60,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.intro__r46_overview.p0",
+      "title": "book.theoreticalsciences.codex.optics.intro__r46_overview"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.intro__r46_overview.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/crystallography"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Control",
+  "icon": "theoreticalsciences:governor",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:governor",
+      "text": "Feedback: measure, compare, correct."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Governor$() ($(thing)Control Theory$()) is set against a machine with a console: a multiblock's controller, or a console machine. Once a second, while the machine is short of 75% precision, it moves each setting a fifth of the way toward the recipe's best point; if the machine is not working at all, it sets it there. The machine runs at about 75% precision and stays there, whatever recipe it changes to. It never lowers a machine you have tuned higher."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It never goes all the way: the last quarter, and the extra products it brings, is the console's fine work. A Governor is the way to run many machines well; the console is the way to run one perfectly. On older multiblocks it keeps the tuning dial on its drifting target. It needs 32 FE a tick; right-click it to see what it holds."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/control_theory"
+}

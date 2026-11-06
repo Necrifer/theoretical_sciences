@@ -1,0 +1,67 @@
+{
+  "title": "Reaction Kinetics",
+  "description": "How fast a reaction goes: the rate constant k = A\u00b7e^(\u2212E\u2090/RT) of Arrhenius, roughly doubling every ten degrees. Unlocks the Air Separation Unit and hydrogen from coal and steam.",
+  "icon": "theoreticalsciences:air_separation_unit",
+  "x": 15,
+  "y": 0,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:chemical_bonding"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:clock",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A reaction has activation energy E. Write how many times faster r it goes at temperature U than at T, with the gas constant R, if its rate constant is A\u00b7e^(\u2212E/RT).",
+    "name": "Arrhenius ratio",
+    "lhs": "r",
+    "form": "exp ( E / R * ( 1 / T - 1 / U ) )",
+    "expr": "exp ( E / R * ( 1 / T - 1 / U ) )",
+    "ask": "Find r for E = @{E} J/mol, R = 8.314 J/(mol\u00b7K), T = @{T} K and U = @{U} K.",
+    "vars": {
+      "r": "rate ratio",
+      "E": "activation energy (J/mol)",
+      "R": "gas constant",
+      "T": "lower temperature (K)",
+      "U": "higher temperature (K)"
+    },
+    "given": {
+      "E": 50000,
+      "R": 8.314,
+      "T": 300,
+      "U": 310
+    },
+    "unit": "",
+    "method": "k = A\u00b7e^(\u2212E/RT) at each temperature; the A cancels in the ratio.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "P"
+    ],
+    "vary": {
+      "E": [
+        37500.0,
+        62500.0,
+        1.0
+      ],
+      "T": [
+        225.0,
+        375.0,
+        1.0
+      ],
+      "U": [
+        232.0,
+        388.0,
+        1.0
+      ]
+    }
+  }
+}

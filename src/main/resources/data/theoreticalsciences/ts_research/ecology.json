@@ -1,0 +1,66 @@
+{
+  "title": "Ecology",
+  "description": "No creature lives alone: predators and prey, grazers and plants, rise and fall around each other. Unlocks the Ecosphere.",
+  "icon": "theoreticalsciences:ecosphere",
+  "x": 10,
+  "y": 23,
+  "insight": 150,
+  "requires": [
+    "theoreticalsciences:physiology",
+    "theoreticalsciences:stability"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 2
+    },
+    {
+      "item": "minecraft:oak_sapling",
+      "count": 4
+    }
+  ],
+  "time": 510,
+  "puzzle": {
+    "goal": "Prey grow at rate a and are eaten at rate b per predator. With y predators about, write the prey's net growth rate G.",
+    "name": "Net birth",
+    "lhs": "G",
+    "form": "a - b * y",
+    "expr": "a - b * y",
+    "ask": "Find G for a = @{a}, b = @{b} and y = @{y}.",
+    "vars": {
+      "G": "prey growth",
+      "a": "birth rate",
+      "b": "predation",
+      "y": "predators"
+    },
+    "given": {
+      "a": 1,
+      "b": 0.04,
+      "y": 10
+    },
+    "unit": "1/day",
+    "method": "Births minus what the predators take; it is zero at the balance y = a/b, where the prey hold steady.",
+    "distractors": [
+      "+",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "a": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "b": [
+        0.024,
+        0.056,
+        0.0001
+      ],
+      "y": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

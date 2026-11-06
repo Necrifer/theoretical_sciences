@@ -1,0 +1,24 @@
+{
+  "name": "Ecosphere",
+  "icon": "theoreticalsciences:ecosphere",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 49,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Prey grow and predators eat them: dx/dt = ax - bxy, dy/dt = -gy + dxy (Lotka-Volterra). The cycle turns around a balance point (g/d, a/b); the further you stock from it, the wider the swing, until a crash."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Prey, Predators.$(br2)$(thing)Disturbance$(): Weather: the balance varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): A crash: one side is dying out.$(br2)$(thing)Rate$(): A balanced world is fastest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Prey, against balance: x / (g/d)$(br)Predators, against balance: y / (a/b)$(br)Nearness to balance: close to 1 at the balance point"
+    }
+  ]
+}

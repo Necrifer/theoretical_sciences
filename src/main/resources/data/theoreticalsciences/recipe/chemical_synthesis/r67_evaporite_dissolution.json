@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:evaporite_crust",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methanol",
+      "amount": 59
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:organic_evaporite",
+      "count": 8
+    }
+  ],
+  "energy": 74,
+  "duration": 50,
+  "research": "theoreticalsciences:titan_lakes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 52.3,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,49 +1,49 @@
 {
-  "title": "The Equivalence Principle",
-  "description": "Drop a hammer and a feather on the Moon and they land together. Gravity pulls everything with the same acceleration, so in free fall gravity vanishes - Einstein's happiest thought. Unlocks the Proof Mass.",
-  "icon": "theoreticalsciences:proof_mass",
-  "x": 5,
-  "y": 6,
-  "insight": 40,
-  "requires": [
-    "theoreticalsciences:special_relativity"
-  ],
-  "cost": [
-    {
-      "item": "minecraft:gold_ingot",
-      "count": 4
-    }
-  ],
-  "time": 0,
-  "puzzle": {
-    "goal": "A hammer and a feather are dropped together from height h in a vacuum. They land at the same moment, because a body's inertia and its weight are always in proportion. Write how long t they take to reach the ground under acceleration g.",
-    "name": "Universality of free fall",
-    "lhs": "t",
-    "form": "sqrt ( 2 * h / g )",
-    "expr": "sqrt ( 2 * h / g )",
-    "ask": "Find t in seconds for the drop made on the Moon in 1971: h = 1.6 m, g = @{g} m/s\u00b2.",
-    "vars": {
-      "t": "seconds to land",
-      "h": "height (m)",
-      "g": "acceleration (m/s\u00b2)"
-    },
-    "given": {
-      "h": 1.6,
-      "g": 1.62
-    },
-    "unit": "s",
-    "method": "Starting from rest with constant acceleration, h = \u00bdgt\u00b2. The mass of the body appears nowhere.",
-    "distractors": [
-      "m",
-      "v",
-      "4"
-    ],
-    "vary": {
-      "g": [
-        0.97,
-        2.27,
-        0.01
-      ]
-    }
+ "title": "The Equivalence Principle",
+ "description": "Drop a hammer and a feather on the Moon and they land together. Gravity pulls everything with the same acceleration, so in free fall gravity vanishes, Einstein's happiest thought. Unlocks the Proof Mass.",
+ "icon": "theoreticalsciences:proof_mass",
+ "x": 5,
+ "y": 6,
+ "insight": 40,
+ "requires": [
+  "theoreticalsciences:special_relativity"
+ ],
+ "cost": [
+  {
+   "item": "minecraft:gold_ingot",
+   "count": 4
   }
+ ],
+ "time": 0,
+ "puzzle": {
+  "goal": "A hammer and a feather are dropped together from height h in a vacuum. They land at the same moment, because a body's inertia and its weight are always in proportion. Write how long t they take to reach the ground under acceleration g.",
+  "name": "Universality of free fall",
+  "lhs": "t",
+  "form": "sqrt ( 2 * h / g )",
+  "expr": "sqrt ( 2 * h / g )",
+  "ask": "Find t in seconds for the drop made on the Moon in 1971: h = 1.6 m, g = @{g} m/s².",
+  "vars": {
+   "t": "seconds to land",
+   "h": "height (m)",
+   "g": "acceleration (m/s²)"
+  },
+  "given": {
+   "h": 1.6,
+   "g": 1.62
+  },
+  "unit": "s",
+  "method": "Starting from rest with constant acceleration, h = ½gt². The mass of the body appears nowhere.",
+  "distractors": [
+   "m",
+   "v",
+   "4"
+  ],
+  "vary": {
+   "g": [
+    0.97,
+    2.27,
+    0.01
+   ]
+  }
+ }
 }

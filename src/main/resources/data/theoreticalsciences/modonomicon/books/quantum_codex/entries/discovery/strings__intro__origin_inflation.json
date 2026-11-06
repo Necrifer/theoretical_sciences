@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.intro__origin_inflation",
+  "description": "book.theoreticalsciences.codex.strings.intro__origin_inflation.desc",
+  "icon": {
+    "item": "theoreticalsciences:inflaton_condensate"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.intro__origin_inflation.p0",
+      "title": "book.theoreticalsciences.codex.strings.intro__origin_inflation"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.intro__origin_inflation.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/strings__intro__origin_branch"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cosmic_inflation"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Ribosome Assembler",
+  "icon": "theoreticalsciences:ribosome_assembler",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 177,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ribosome_assembler",
+      "title": "Ribosome Assembler",
+      "text": "A cell's protein factory, scaled up: it reads messages codon by codon and strings amino acids together.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the reading speed and the magnesium. Faster reading makes more mistakes per codon, and a protein of L codons comes out right with chance (1 \u2212 \u03b5)^L; that must reach the recipe's yield. Magnesium away from 10 mM makes it sloppier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Engineered Enzyme, Messenger RNA, Minimal Synthetic Cell."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ribosome_assembler",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Ribosome Assembler$(): Gene Circuit Loom"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/transcription"
+}

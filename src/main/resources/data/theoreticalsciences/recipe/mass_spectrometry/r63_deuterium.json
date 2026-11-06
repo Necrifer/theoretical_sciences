@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:mass_spectrometry",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molecular_cloud",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:deuterium",
+      "amount": 100
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:mass_spectrometry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "mz": 4.0
+    },
+    "windows": [
+      {
+        "q": "rr",
+        "min": 0.495,
+        "max": 0.505
+      }
+    ]
+  }
+}

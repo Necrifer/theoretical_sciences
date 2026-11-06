@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:fermentation",
+  "item_inputs": [
+    {
+      "item": "minecraft:rotten_flesh",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 679
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 8000
+    }
+  ],
+  "energy": 43,
+  "duration": 75,
+  "research": "theoreticalsciences:fermentation",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ks": 20.0,
+      "Si": 200.0
+    },
+    "windows": [
+      {
+        "q": "gr",
+        "min": 0.8,
+        "max": 2.0
+      },
+      {
+        "q": "air",
+        "min": 0.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

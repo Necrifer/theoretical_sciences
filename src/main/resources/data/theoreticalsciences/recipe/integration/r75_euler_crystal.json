@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:integration",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:euler_crystal",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:euler_number",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "k": 5.0,
+      "tol": 0.001
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.001
+      }
+    ]
+  }
+}

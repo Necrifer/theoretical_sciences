@@ -1,0 +1,36 @@
+{
+  "name": "Pattern Basin",
+  "icon": "theoreticalsciences:pattern_basin",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 172,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pattern_basin",
+      "title": "Pattern Basin",
+      "text": "A shallow dish of two chemicals: one makes more of itself, the other holds it back, and between them stripes appear.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the spreading ratio r and the reaction rate k. Below r of about 5.8 nothing forms. Above it the pattern's spacing is about 2\u03c0\u00b7r^\u00bc/\u221ak, which must be inside the recipe's window. A faster reaction is quicker, but needs a larger ratio for the same spacing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Pattern Template, Turing Morphogen."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pattern_basin",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Pattern Basin$(): Regeneration Tank"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_diffusion"
+}

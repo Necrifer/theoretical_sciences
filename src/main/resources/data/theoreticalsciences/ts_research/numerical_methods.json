@@ -1,0 +1,49 @@
+{
+  "title": "Numerical Methods",
+  "description": "When an equation will not be solved, guess, and improve the guess. Newton's method doubles the correct digits at every step.",
+  "icon": "theoreticalsciences:rate_table",
+  "x": 23,
+  "y": 0,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:fixed_points"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "To find the square root of S from a guess x, write the next, better guess X (Heron's way).",
+    "name": "Newton step",
+    "lhs": "X",
+    "form": "( x + S / x ) / 2",
+    "expr": "( x + S / x ) / 2",
+    "ask": "Find X for x = 3 and S = @{S}.",
+    "vars": {
+      "X": "next guess",
+      "x": "guess",
+      "S": "the number"
+    },
+    "given": {
+      "x": 3,
+      "S": 10
+    },
+    "unit": "",
+    "method": "Newton on f(x) = x\u00b2 \u2212 S: x \u2212 f/f\u2032 = x \u2212 (x\u00b2 \u2212 S)/(2x) = (x + S/x)/2.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "S": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

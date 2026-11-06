@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_chemical_clock",
+  "description": "book.theoreticalsciences.codex.chemistry.node_chemical_clock.desc",
+  "icon": {
+    "item": "theoreticalsciences:chemical_clock"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 95,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chemical_clock"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_chemical_clock.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_chemical_clock.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__oscillator_vessel",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/oscillating_reactions"
+  }
+}

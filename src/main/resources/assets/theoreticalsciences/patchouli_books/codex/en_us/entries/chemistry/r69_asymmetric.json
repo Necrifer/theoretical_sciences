@@ -1,0 +1,22 @@
+{
+  "name": "Asymmetric Synthesis",
+  "icon": "theoreticalsciences:asymmetric_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 29,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:asymmetric_reactor,theoreticalsciences:chiral_ligand,theoreticalsciences:enantiopure_reagent",
+      "text": "Many molecules come in two mirror-image forms, like hands. Living things use only one: the wrong hand of a drug can be useless, or a poison. A $(thing)chiral catalyst$() lowers the barrier to one hand by \u0394\u0394G\u2021 more than to the other, so that one forms $(thing)s = e^(\u0394\u0394G\u2021/RT)$() times faster; the enantiomeric excess is ee = (s \u2212 1)/(s + 1)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Chiral Ligand$() is made at the Synthesis Bench with the Ouroboros's $(item)Kekule Ring$() in its catalyst slot (the ring never wears). In the $(item)Asymmetric Reactor$()'s catalyst slot it makes $(item)Enantiopure Reagent$() from Fine Reagent and hydrogen. Run it cold enough for ee \u2265 0.9: colder is purer, and slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Two routes, by choice: the reactor is $(thing)fast but random$() (60% of runs give the reagent); the Chromatography Column $(thing)resolves$() two Fine Reagents into one, slowly, every time - it separates the two hands and throws one away."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/asymmetric_synthesis"
+}

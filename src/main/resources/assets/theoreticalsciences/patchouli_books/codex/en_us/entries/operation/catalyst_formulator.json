@@ -1,0 +1,24 @@
+{
+  "name": "Catalyst Formulator",
+  "icon": "theoreticalsciences:catalyst_formulator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 27,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A catalyst binds the molecule it works on with an energy E_b. Too weak and nothing sticks; too strong and nothing leaves: the activity lies on a volcano, highest at E\u2080. More metal binds a little harder; calcining hotter turns more of it to oxide, harder again - and past the support's limit the grains sinter and the surface collapses."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Metal loading, Calcination temperature.$(br2)$(thing)Disturbance$(): Furnace drift: the binding varies by \u00b10.01 eV\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The furnace is over its rating.$(br2)$(thing)Rate$(): A better batch is made faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Binding energy: E_b$(br)Activity: Sabatier volcano$(br)Surface left: S = e^(\u2212(T \u2212 T_s)/80 K)$(br)Yield: Y = activity \u00d7 surface"
+    }
+  ]
+}

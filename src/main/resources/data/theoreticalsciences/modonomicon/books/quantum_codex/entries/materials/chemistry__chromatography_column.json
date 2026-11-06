@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.chromatography_column",
+  "description": "book.theoreticalsciences.codex.chemistry.chromatography_column.desc",
+  "icon": {
+    "item": "theoreticalsciences:chromatography_column"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 194,
+  "y": 58,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chromatography_column"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.chromatography_column.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.chromatography_column.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.chromatography_column.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.chromatography_column.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.chromatography_column.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chromatography_column"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.chromatography_column.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__titration_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/chromatography"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Enzyme Kinetics",
+  "description": "An enzyme speeds up with more substrate, but only until it is busy all the time. Michaelis and Menten wrote the curve. Unlocks the Enzyme Assay Bench.",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "x": 20,
+  "y": 3,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:fixed_points",
+    "theoreticalsciences:genomics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "An enzyme with top speed V and constant K is given substrate at level S. Write how fast it works, v.",
+    "name": "Michaelis-Menten",
+    "lhs": "v",
+    "form": "V * S / ( K + S )",
+    "expr": "V * S / ( K + S )",
+    "ask": "Find v for V = @{V}, S = @{S} and K = @{K}.",
+    "vars": {
+      "v": "speed",
+      "V": "top speed",
+      "S": "substrate",
+      "K": "Michaelis constant"
+    },
+    "given": {
+      "V": 10,
+      "S": 2,
+      "K": 2
+    },
+    "unit": "",
+    "method": "The enzyme is busy a fraction S/(K + S) of the time (binding is quick, turnover slow): at S = K, half speed.",
+    "distractors": [
+      "-",
+      "2",
+      "n"
+    ],
+    "vary": {
+      "V": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "S": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "K": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

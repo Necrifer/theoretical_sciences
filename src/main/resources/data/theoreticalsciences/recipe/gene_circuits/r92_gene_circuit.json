@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:gene_circuits",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:error_code",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:gene_circuit",
+      "count": 10
+    }
+  ],
+  "energy": 1024,
+  "duration": 75,
+  "research": "theoreticalsciences:gene_circuits",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "b1": 3.0
+    },
+    "windows": [
+      {
+        "q": "bist",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

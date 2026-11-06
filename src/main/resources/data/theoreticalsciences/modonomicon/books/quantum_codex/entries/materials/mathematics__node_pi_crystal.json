@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_pi_crystal",
+  "description": "book.theoreticalsciences.codex.mathematics.node_pi_crystal.desc",
+  "icon": {
+    "item": "theoreticalsciences:pi_crystal"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 128,
+  "y": 125,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pi_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_pi_crystal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_pi_crystal.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__geometers_table",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euclidean_geometry"
+  }
+}

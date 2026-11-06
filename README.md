@@ -12,14 +12,14 @@ at the end of everything.
 
 ## What is in it
 
-* **127 machines, 70 of them multiblocks.** The big ones run on real physics models: the operator sets fields,
+* **Many machines, equally many multiblocks.** The big ones run on real physics models: the operator sets fields,
   temperatures and beam energies on a console, and each recipe needs its quantities held inside a window. Tuned
   multiblocks drift, wear their containment, overclock and run parallel recipes. A failing containment releases
   hazards.
-* **A research tree of 232 entries**, with seven branches added in 1.1: astrophysics, Earth & mapping, nuclear
+* **A massive research tree with multiple entries**, with seven branches added in 1.1: astrophysics, Earth & mapping, nuclear
   science, electromagnetism, general relativity, optics and probability. Many entries are unlocked by solving a
   derivation puzzle (build the equation, find the answer) with values that differ in every world.
-* **Twelve dimensions:** the Quantum Foam, the Bulk, Hyperdimensional Reality, the Platonic Realm, the Transfinite
+* **Fifteen dimensions:** the Quantum Foam, the Bulk, Hyperdimensional Reality, the Platonic Realm, the Transfinite
   Hierarchy, the Antiverse, black and white hole interiors, the Living Proof, the Transcendental, the Planetary
   Interior and the Accretion Frontier. Each has its own laws, creatures and soundtrack.
 * **The endgame:** the Omnilex Engine's impossible recipe opens the Transcendental; Alpha Omega waits in the Living
@@ -28,7 +28,7 @@ at the end of everything.
   own that must be attuned to every place it stands in.
 * **Singularities for every mod:** every ingot of every installed mod gets one automatically.
 * **The Quantum Codex:** the mod's own guide book, revealed as you progress, with every recipe in it.
-* **About 1,260 items and blocks, 69 fluids, 35 creatures**, all with generated art and a synthesised soundtrack.
+* **Way too much items, fluids and creatures**, all with generated art and a synthesised soundtrack.
 
 ## Compatibility
 

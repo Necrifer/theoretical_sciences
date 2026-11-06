@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sulfur_dioxide",
+      "amount": 2434
+    }
+  ],
+  "energy": 512,
+  "duration": 50,
+  "research": "theoreticalsciences:contact_process",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 63.1,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

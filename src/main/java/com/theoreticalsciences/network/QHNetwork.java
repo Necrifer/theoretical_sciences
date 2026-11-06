@@ -64,6 +64,12 @@ public final class QHNetwork {
             com.theoreticalsciences.extreme.Singularities.receive(p.json());
             com.theoreticalsciences.client.SingularityColours.clear();
         });
+        // 1.2.0: calibration games (the Tuning Fork)
+        r.playToClient(com.theoreticalsciences.machine.tuning.TuningForkItem.Open.TYPE, com.theoreticalsciences.machine.tuning.TuningForkItem.Open.CODEC,
+                (p, ctx) -> com.theoreticalsciences.client.ClientHooks.calibrate(p.pos(), p.kind(), p.seed(), p.tier(), p.colour()));
+        r.playToServer(com.theoreticalsciences.machine.tuning.TuningForkItem.Answer.TYPE, com.theoreticalsciences.machine.tuning.TuningForkItem.Answer.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.machine.tuning.TuningForkItem.answer(sp, p);
+        });
         r.playToClient(GlyphDefsPayload.TYPE, GlyphDefsPayload.CODEC,
                 (p, ctx) -> com.theoreticalsciences.research.GlyphRegistry.loadClient(p.json()));
         r.playToClient(PhysicsDefsPayload.TYPE, PhysicsDefsPayload.CODEC,

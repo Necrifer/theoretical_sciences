@@ -1,0 +1,22 @@
+{
+  "name": "e Everywhere",
+  "icon": "theoreticalsciences:euler_crystal",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:euler_crystal",
+      "text": "Wherever something changes in proportion to how much of it there is, e appears. Some of the places it turns up in the mod:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Reaction rates$(): Arrhenius, k = A\u00b7e^(\u2212E\u2090/RT): every chemical machine's speed.$(li)$(thing)Radioactive decay$(): a source keeps e^(\u2212t/\u03c4) of its activity.$(li)$(thing)Boltzmann$(): a state of energy E is e^(\u2212E/kT) as likely.$(li)$(thing)The Zeno Anchor$(): a system watched often enough never gets the chance to decay away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(thing)Waiting times$(): Gillespie, the next reaction after \u2212ln(u)/a.$(li)$(thing)Control$(): a Governor's error falls as e^(\u2212kt).$(li)$(thing)Statistics$(): the bell curve is e^(\u2212x\u00b2/2); precision on a console falls off the same way.$(li)$(thing)The circle$(): e^(i\u03b8) goes round it, and at \u03b8 = \u03c0 reaches \u22121."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/euler_number"
+}

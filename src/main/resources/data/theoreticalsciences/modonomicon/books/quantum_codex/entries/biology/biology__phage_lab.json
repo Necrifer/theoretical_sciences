@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.phage_lab",
+  "description": "book.theoreticalsciences.codex.biology.phage_lab.desc",
+  "icon": {
+    "item": "theoreticalsciences:phage_lab"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 42,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:phage_lab"
+      },
+      "text": "book.theoreticalsciences.codex.biology.phage_lab.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.phage_lab.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.phage_lab.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.phage_lab.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:phage_lab"
+      },
+      "text": "book.theoreticalsciences.codex.biology.phage_lab.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__ribosome_assembler"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__r89_microbes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/viruses"
+  }
+}

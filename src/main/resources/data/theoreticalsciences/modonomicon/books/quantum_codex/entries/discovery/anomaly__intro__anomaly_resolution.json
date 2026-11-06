@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.intro__anomaly_resolution",
+  "description": "book.theoreticalsciences.codex.anomaly.intro__anomaly_resolution.desc",
+  "icon": {
+    "item": "theoreticalsciences:resolved_anomaly"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 78,
+  "y": 69,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_resolution.p0",
+      "title": "book.theoreticalsciences.codex.anomaly.intro__anomaly_resolution"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_resolution.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_extent"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_therapy"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/anomaly_resolution"
+  }
+}

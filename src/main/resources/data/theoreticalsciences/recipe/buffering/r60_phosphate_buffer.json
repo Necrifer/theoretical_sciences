@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:buffering",
+  "item_inputs": [
+    {
+      "item": "minecraft:bone_meal",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 250
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:phosphate_buffer",
+      "amount": 1000
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:buffer_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "pKa": 7.21
+    },
+    "windows": [
+      {
+        "q": "pH",
+        "min": 7.35,
+        "max": 7.45
+      }
+    ]
+  }
+}

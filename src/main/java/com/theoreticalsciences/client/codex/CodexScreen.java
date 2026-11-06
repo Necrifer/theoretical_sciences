@@ -846,8 +846,11 @@ public class CodexScreen extends Screen {
                 int cx = (int) Math.round(sx(n)), cy = (int) Math.round(sy(n));
                 int nx = cx - S / 2, ny = cy - S / 2;
                 boolean open = CodexState.unlocked(e), guide = CodexState.isGuide(e.id);
-                if (guide && e.id.equals(CodexState.START))
-                    g.drawString(font, Component.translatable("gui.theoreticalsciences.codex.start_here").withStyle(ChatFormatting.BOLD), nx + S + 8, cy - 4, 0xFFFFD060, true);
+                if (guide && e.id.equals(CodexState.START)) {
+                    // 1.2.0: above the node, centred - Getting Started now runs in a row, so the space beside it is taken
+                    Component sh = Component.translatable("gui.theoreticalsciences.codex.start_here").withStyle(ChatFormatting.BOLD);
+                    g.drawString(font, sh, cx - font.width(sh) / 2, ny - 11, 0xFFFFD060, true);
+                }
                 if (!open) {
                     g.fill(nx + 1, ny + 1, nx + S - 1, ny + S - 1, 0xA0000000);
                     if (S >= 14) padlock(g, cx, cy);

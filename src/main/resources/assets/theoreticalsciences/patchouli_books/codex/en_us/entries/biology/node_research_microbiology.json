@@ -1,0 +1,19 @@
+{
+  "name": "Microbiology",
+  "icon": "theoreticalsciences:bacterial_culture",
+  "advancement": "theoreticalsciences:research/microbiology",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bacterial_culture",
+      "title": "Microbiology",
+      "text": "$(thing)Microbiology$()$(br2)Most life is too small to see, and doubles every twenty minutes while the food lasts. Unlocks Bacterial Cultures."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): Fermentation.$(br2)$(thing)Samples$(): 2 Yeast Culture, 4 Bone Meal.$(br2)$(thing)Derivation$(): Bacteria double every g minutes. Starting from N cells, write how many there are, M, after t minutes."
+    }
+  ]
+}

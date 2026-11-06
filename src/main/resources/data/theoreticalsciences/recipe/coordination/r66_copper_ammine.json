@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:coordination",
+  "item_inputs": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:copper_ammine_complex",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:coordination_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "D0": 1.6,
+      "Pp": 2.2,
+      "sg": -1.0
+    },
+    "windows": [
+      {
+        "q": "sel",
+        "min": 0.2,
+        "max": 99.0
+      }
+    ]
+  }
+}

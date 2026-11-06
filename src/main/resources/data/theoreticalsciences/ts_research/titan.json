@@ -1,0 +1,68 @@
+{
+  "title": "Titan",
+  "description": "Saturn's largest moon: an orange sky, a seventh of Earth's gravity, and seas of methane at 94 K. Unlocks the Cryogenic Lander that reaches it, the Oxygen Rebreather that keeps you breathing there, and the chemistry of its tholin sand.",
+  "icon": "theoreticalsciences:cryogenic_lander",
+  "x": 24,
+  "y": 0,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:petrochemistry",
+    "theoreticalsciences:exoplanetology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:silica_aerogel",
+      "count": 4
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "An atmosphere of gas of molar mass M at temperature T, on a world with surface gravity g: write the height H over which its pressure falls by a factor of e, with the gas constant R.",
+    "name": "Scale height",
+    "lhs": "H",
+    "form": "R * T / ( M * g )",
+    "expr": "R * T / ( M * g )",
+    "ask": "Find H in metres for Titan: R = 8.314, T = @{T} K, M = @{M} kg/mol (nitrogen), g = @{g} m/s\u00b2.",
+    "vars": {
+      "H": "height (m)",
+      "R": "gas constant",
+      "T": "temperature (K)",
+      "M": "molar mass (kg/mol)",
+      "g": "surface gravity (m/s\u00b2)"
+    },
+    "given": {
+      "R": 8.314,
+      "T": 94,
+      "M": 0.028,
+      "g": 1.35
+    },
+    "unit": "m",
+    "method": "Each layer holds up the weight of the gas above it: dp/dz = \u2212\u03c1g, and the ideal gas law gives \u03c1 = pM/RT.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "p"
+    ],
+    "vary": {
+      "T": [
+        56.0,
+        132.0,
+        1.0
+      ],
+      "M": [
+        0.0167,
+        0.0392,
+        0.0001
+      ],
+      "g": [
+        0.81,
+        1.89,
+        0.01
+      ]
+    }
+  }
+}

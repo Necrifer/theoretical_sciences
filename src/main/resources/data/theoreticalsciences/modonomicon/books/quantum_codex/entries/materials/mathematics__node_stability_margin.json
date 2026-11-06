@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_stability_margin",
+  "description": "book.theoreticalsciences.codex.mathematics.node_stability_margin.desc",
+  "icon": {
+    "item": "theoreticalsciences:stability_margin"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 228,
+  "y": 114,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stability_margin"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_stability_margin.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_stability_margin.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__integrator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/rates_as_equations"
+  }
+}

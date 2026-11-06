@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:geodesic_thread"
+    },
+    "title": "Curved Space",
+    "description": {
+      "translate": "advancements.theoreticalsciences.curved_space_arrival.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/manifolds_curvature",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "dimension": "theoreticalsciences:platonic_realm",
+                "position": {
+                  "y": {
+                    "min": 520,
+                    "max": 859
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Tumour Specimen",
+  "icon": "theoreticalsciences:tumour_specimen",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tumour_specimen",
+      "title": "Tumour Specimen",
+      "text": "A sample of cells that have forgotten how to stop dividing. Found in tumour nodules in Inner Space's Tumour, and dropped by the Tumour Hydra; an Immortal Cell Line grows more in the Bioreactor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Mined$(): from $(item)Tumour Nodule$(), in veins through the rock.$(br2)$(thing)Dropped by$(): Tumour Hydra.$(br2)$(thing)Unlocked by$(): Inner Space.$(br2)$(thing)Used in$(): CAR-T Cell Culture, Metastasis Ward, Tumour Mass, Tumour Nodule."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/physiology"
+}

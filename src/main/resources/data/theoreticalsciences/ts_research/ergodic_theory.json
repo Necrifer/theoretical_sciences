@@ -1,67 +1,67 @@
 {
-  "title": "Ergodic Theory",
-  "description": "A system that, given time, passes through every state open to it: averaging over time is then the same as averaging over all states. Unlocks the Markov Chain Refinery and the Ergodic Mixer Core.",
-  "icon": "theoreticalsciences:ergodic_mixer_core",
-  "x": 9,
-  "y": -3,
-  "insight": 220,
-  "requires": [
-    "theoreticalsciences:statistical_mechanics",
-    "theoreticalsciences:topology"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:partition_function_matrix",
-      "count": 2
-    },
-    {
-      "item": "theoreticalsciences:markov_chain_link",
-      "count": 8
-    }
-  ],
-  "time": 870,
-  "puzzle": {
-    "goal": "Two copies of a chaotic system start a distance x apart, and the gap grows by a factor e^\u03bb every second. Write the gap X after t seconds.",
-    "name": "Lyapunov divergence",
-    "lhs": "X",
-    "form": "x * exp ( \u03bb * t )",
-    "expr": "x * exp ( L * t )",
-    "ask": "Find X for x = @{x}, L = @{L} per second (for \u03bb) and t = @{t} s.",
-    "vars": {
-      "X": "gap after t",
-      "x": "starting gap",
-      "\u03bb": "Lyapunov exponent",
-      "L": "\u03bb (1/s)",
-      "t": "time (s)"
-    },
-    "given": {
-      "x": 1e-06,
-      "L": 1,
-      "t": 10
-    },
-    "unit": "",
-    "method": "A small gap grows in proportion to itself: dX/dt = \u03bbX. That is why a chaotic system forgets where it began - and mixes.",
-    "distractors": [
-      "2",
-      "\u03c0",
-      "n"
-    ],
-    "vary": {
-      "x": [
-        9.2e-07,
-        1.08e-06,
-        1e-08
-      ],
-      "L": [
-        1.0,
-        3.0,
-        1.0
-      ],
-      "t": [
-        9.0,
-        11.0,
-        1.0
-      ]
-    }
+ "title": "Ergodic Theory",
+ "description": "A system that, given time, passes through every state open to it: averaging over time is then the same as averaging over all states. Unlocks the Markov Chain Refinery and the Ergodic Mixer Core.",
+ "icon": "theoreticalsciences:ergodic_mixer_core",
+ "x": 9,
+ "y": -3,
+ "insight": 220,
+ "requires": [
+  "theoreticalsciences:statistical_mechanics",
+  "theoreticalsciences:topology"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:partition_function_matrix",
+   "count": 2
+  },
+  {
+   "item": "theoreticalsciences:markov_chain_link",
+   "count": 8
   }
+ ],
+ "time": 870,
+ "puzzle": {
+  "goal": "Two copies of a chaotic system start a distance x apart, and the gap grows by a factor e^λ every second. Write the gap X after t seconds.",
+  "name": "Lyapunov divergence",
+  "lhs": "X",
+  "form": "x * exp ( λ * t )",
+  "expr": "x * exp ( L * t )",
+  "ask": "Find X for x = @{x}, L = @{L} per second (for λ) and t = @{t} s.",
+  "vars": {
+   "X": "gap after t",
+   "x": "starting gap",
+   "λ": "Lyapunov exponent",
+   "L": "λ (1/s)",
+   "t": "time (s)"
+  },
+  "given": {
+   "x": 1e-06,
+   "L": 1,
+   "t": 10
+  },
+  "unit": "",
+  "method": "A small gap grows in proportion to itself: dX/dt = λX. That is why a chaotic system forgets where it began, and mixes.",
+  "distractors": [
+   "2",
+   "π",
+   "n"
+  ],
+  "vary": {
+   "x": [
+    9.2e-07,
+    1.08e-06,
+    1e-08
+   ],
+   "L": [
+    1.0,
+    3.0,
+    1.0
+   ],
+   "t": [
+    9.0,
+    11.0,
+    1.0
+   ]
+  }
+ }
 }

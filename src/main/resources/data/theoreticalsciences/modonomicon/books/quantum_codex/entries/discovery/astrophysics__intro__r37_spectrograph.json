@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.intro__r37_spectrograph",
+  "description": "book.theoreticalsciences.codex.astrophysics.intro__r37_spectrograph.desc",
+  "icon": {
+    "item": "theoreticalsciences:spectrograph"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 17,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r37_spectrograph.p0",
+      "title": "book.theoreticalsciences.codex.astrophysics.intro__r37_spectrograph"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r37_spectrograph.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r37_telescopes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/spectroscopy"
+  }
+}

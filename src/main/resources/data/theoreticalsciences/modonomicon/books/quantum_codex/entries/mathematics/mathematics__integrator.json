@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.integrator",
+  "description": "book.theoreticalsciences.codex.mathematics.integrator.desc",
+  "icon": {
+    "item": "theoreticalsciences:integrator"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 110,
+  "y": 14,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:integrator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.integrator.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.integrator.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.integrator.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.integrator.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:integrator"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.integrator.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__math_overview"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__r73_first_steps"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/rates_as_equations"
+  }
+}

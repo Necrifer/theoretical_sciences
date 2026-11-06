@@ -1,0 +1,41 @@
+{
+  "title": "Cardinality",
+  "description": "How many members a set has. Von Neumann built every number from nothing: zero is the empty set, one is the set holding it. Unlocks Zero and Unity.",
+  "icon": "theoreticalsciences:zero",
+  "x": 3,
+  "y": 8,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:formal_logic",
+    "theoreticalsciences:combinatorics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:empty_set",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A set has n members. A relation on it says, for every ordered pair of members, whether the pair is related. Write how many different relations there are.",
+    "name": "Counting relations",
+    "lhs": "R",
+    "form": "2 ^ ( n * n )",
+    "expr": "2 ^ ( n * n )",
+    "ask": "Find R for n = 3.",
+    "vars": {
+      "R": "number of relations",
+      "n": "members"
+    },
+    "given": {
+      "n": 3
+    },
+    "unit": "",
+    "method": "There are n\u00b2 ordered pairs, and each is either in the relation or not: two choices, n\u00b2 times over (a subset of the pairs, so the size of a power set).",
+    "distractors": [
+      "+",
+      "3",
+      "m"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:nmr_spectroscopy",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:structure_card",
+      "count": 4
+    },
+    {
+      "id": "theoreticalsciences:fine_reagent",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:nmr_spectroscopy",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "gm": 42.58
+    },
+    "windows": [
+      {
+        "q": "off",
+        "min": 0.0,
+        "max": 5.0
+      }
+    ]
+  }
+}

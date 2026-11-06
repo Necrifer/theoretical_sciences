@@ -1,0 +1,24 @@
+{
+  "name": "Doping Furnace",
+  "icon": "theoreticalsciences:doping_furnace",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 45,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A dopant soaks into silicon by diffusion: the depth grows as \u221a(Dt), and the carriers it leaves set the conductivity. A junction needs 10\u00b9\u2076 to 10\u00b9\u2078 carriers per cm\u00b3; over-doped, the wafer conducts like a metal and the junction is gone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Dopant dose (log\u2081\u2080 /cm\u00b2), Diffusion time.$(br2)$(thing)Disturbance$(): Furnace drift: the diffusion varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Shorter diffusion, more wafers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Junction depth: x \u221d \u221a(Dt)$(br)Carriers (log\u2081\u2080 /cm\u00b3): n = dose / depth"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.patch_clamp_rig",
+  "description": "book.theoreticalsciences.codex.biology.patch_clamp_rig.desc",
+  "icon": {
+    "item": "theoreticalsciences:patch_clamp_rig"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 131,
+  "y": 85,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:patch_clamp_rig"
+      },
+      "text": "book.theoreticalsciences.codex.biology.patch_clamp_rig.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.patch_clamp_rig.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.patch_clamp_rig.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.patch_clamp_rig.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:patch_clamp_rig"
+      },
+      "text": "book.theoreticalsciences.codex.biology.patch_clamp_rig.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__bioreactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/membranes"
+  }
+}

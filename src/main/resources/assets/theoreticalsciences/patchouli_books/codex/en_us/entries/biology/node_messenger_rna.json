@@ -1,0 +1,19 @@
+{
+  "name": "Messenger RNA",
+  "icon": "theoreticalsciences:messenger_rna",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:messenger_rna",
+      "title": "Messenger RNA",
+      "text": "A working copy of one gene, read off the DNA to be carried to a ribosome: the message between the genome and the protein. Made on the Ribosome Assembler."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Ribosome Assembler$().$(br2)$(thing)Dropped by$(): Polymerase.$(br2)$(thing)Found in$(): Nuclear Pore, Ribosome Workshop chests.$(br2)$(thing)Unlocked by$(): Transcription.$(br2)$(thing)Used in$(): Engineered Enzyme, Folded Protein Crystal, Gene Circuit, Gene Circuit Loom, Living Cell."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/transcription"
+}

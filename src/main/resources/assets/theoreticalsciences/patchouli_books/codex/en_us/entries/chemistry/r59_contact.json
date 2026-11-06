@@ -1,0 +1,18 @@
+{
+  "name": "The Contact Process",
+  "icon": "theoreticalsciences:contact_process_tower",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:contact_process_tower,theoreticalsciences:vanadium_bed",
+      "text": "Burn sulfur (or gunpowder) in oxygen for $(fluid)Sulfur Dioxide$(). Over vanadium, 2SO\u2082 + O\u2082 \u21cc 2SO\u2083 - exothermic again, so the equilibrium falls back as it heats, but the $(item)Vanadium Bed$() only lights off near 670 K."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Contact Process Tower$() cools the gas between its three beds. Set the bed temperature and the oxygen excess; a pass must convert 95%. The sulfur trioxide is absorbed into $(fluid)Sulfuric Acid$(). Above 873 K the bed sinters. Iron ore carries a little vanadium: eight raw iron make a bed."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/contact_process"
+}

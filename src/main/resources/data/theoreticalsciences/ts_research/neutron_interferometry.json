@@ -1,80 +1,80 @@
 {
-  "title": "Neutron Interferometry",
-  "description": "A neutron is a wave too. Split it with a perfect crystal, let gravity pull on one path a little more than the other, and the waves no longer meet in step: gravity, measured on a single quantum particle. Unlocks the Neutron Interferometer and the Silicon Boule.",
-  "icon": "theoreticalsciences:neutron_interferometer",
-  "x": 8,
-  "y": 7,
-  "insight": 150,
-  "requires": [
-    "theoreticalsciences:gravitational_redshift",
-    "theoreticalsciences:crystal_growth_physics"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:laue_pattern",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:redshift_record",
-      "count": 2
-    }
-  ],
-  "time": 510,
-  "puzzle": {
-    "goal": "A neutron of mass m and wavelength \u03bb is split into two paths that enclose an area A, the plane of the paths tilted by \u03b1. Gravity g changes the higher path's momentum; write the phase difference \u03c6 that builds up between them, from the quantum of action h.",
-    "name": "Gravitationally induced quantum phase",
-    "lhs": "\u03c6",
-    "form": "2 * \u03c0 * m ^ 2 * g * \u03bb * A * sin ( \u03b1 ) / h ^ 2",
-    "expr": "6.28318 * m ^ 2 * g * L * A * sin ( a ) / h ^ 2",
-    "ask": "Find \u03c6 in radians for m = 1.675e-27 kg, g = @{g} m/s\u00b2, L = @{L} m, A = @{A} m\u00b2, a = @{a} rad (30\u00b0), h = 6.626e-34 J\u00b7s.",
-    "vars": {
-      "\u03c6": "phase difference (rad)",
-      "m": "neutron mass (kg)",
-      "g": "gravity (m/s\u00b2)",
-      "\u03bb": "wavelength",
-      "A": "enclosed area (m\u00b2)",
-      "\u03b1": "tilt",
-      "h": "Planck constant (J\u00b7s)",
-      "\u03c0": "pi",
-      "L": "wavelength (m)",
-      "a": "tilt (rad)"
-    },
-    "given": {
-      "m": 1.675e-27,
-      "g": 9.81,
-      "L": 1.4e-10,
-      "A": 0.001,
-      "a": 0.5236,
-      "h": 6.626e-34
-    },
-    "unit": "rad",
-    "method": "Climbing a height H costs the neutron mgH of kinetic energy, so its wavenumber falls by m\u00b2gH\u03bb/h\u00b2\u00b72\u03c0; over a path length L at that height, the phases part by that times L - and H\u00b7L = A\u00b7sin \u03b1.",
-    "distractors": [
-      "c",
-      "\u0127",
-      "4"
-    ],
-    "vary": {
-      "g": [
-        5.88,
-        13.74,
-        0.01
-      ],
-      "L": [
-        8.4e-11,
-        1.96e-10,
-        1e-12
-      ],
-      "A": [
-        0.00059,
-        0.0014,
-        1e-05
-      ],
-      "a": [
-        0.314,
-        0.734,
-        0.001
-      ]
-    }
+ "title": "Neutron Interferometry",
+ "description": "A neutron is a wave too. Split it with a perfect crystal, let gravity pull on one path a little more than the other, and the waves no longer meet in step: gravity, measured on a single quantum particle. Unlocks the Neutron Interferometer and the Silicon Boule.",
+ "icon": "theoreticalsciences:neutron_interferometer",
+ "x": 8,
+ "y": 7,
+ "insight": 150,
+ "requires": [
+  "theoreticalsciences:gravitational_redshift",
+  "theoreticalsciences:crystal_growth_physics"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:laue_pattern",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:redshift_record",
+   "count": 2
   }
+ ],
+ "time": 510,
+ "puzzle": {
+  "goal": "A neutron of mass m and wavelength λ is split into two paths that enclose an area A, the plane of the paths tilted by α. Gravity g changes the higher path's momentum; write the phase difference φ that builds up between them, from the quantum of action h.",
+  "name": "Gravitationally induced quantum phase",
+  "lhs": "φ",
+  "form": "2 * π * m ^ 2 * g * λ * A * sin ( α ) / h ^ 2",
+  "expr": "6.28318 * m ^ 2 * g * L * A * sin ( a ) / h ^ 2",
+  "ask": "Find φ in radians for m = 1.675e-27 kg, g = @{g} m/s², L = @{L} m, A = @{A} m², a = @{a} rad (30°), h = 6.626e-34 J·s.",
+  "vars": {
+   "φ": "phase difference (rad)",
+   "m": "neutron mass (kg)",
+   "g": "gravity (m/s²)",
+   "λ": "wavelength",
+   "A": "enclosed area (m²)",
+   "α": "tilt",
+   "h": "Planck constant (J·s)",
+   "π": "pi",
+   "L": "wavelength (m)",
+   "a": "tilt (rad)"
+  },
+  "given": {
+   "m": 1.675e-27,
+   "g": 9.81,
+   "L": 1.4e-10,
+   "A": 0.001,
+   "a": 0.5236,
+   "h": 6.626e-34
+  },
+  "unit": "rad",
+  "method": "Climbing a height H costs the neutron mgH of kinetic energy, so its wavenumber falls by m²gHλ/h²·2π; over a path length L at that height, the phases part by that times L, and H·L = A·sin α.",
+  "distractors": [
+   "c",
+   "ħ",
+   "4"
+  ],
+  "vary": {
+   "g": [
+    5.88,
+    13.74,
+    0.01
+   ],
+   "L": [
+    8.4e-11,
+    1.96e-10,
+    1e-12
+   ],
+   "A": [
+    0.00059,
+    0.0014,
+    1e-05
+   ],
+   "a": [
+    0.314,
+    0.734,
+    0.001
+   ]
+  }
+ }
 }

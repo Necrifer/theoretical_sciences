@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:nmr_spectrometer"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.nmr_spectroscopy"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.nmr_spectroscopy.short"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/magnetic_confinement",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

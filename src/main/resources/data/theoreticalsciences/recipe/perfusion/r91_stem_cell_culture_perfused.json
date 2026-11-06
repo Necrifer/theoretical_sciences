@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:perfusion",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:recombinant_dna",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:perfused_tissue",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stem_cell_culture",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:stem_cells",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "eta": 3.0,
+      "Lv": 10.0
+    },
+    "windows": [
+      {
+        "q": "Qf",
+        "min": 20.0,
+        "max": 1000000.0
+      },
+      {
+        "q": "shear",
+        "min": 0.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

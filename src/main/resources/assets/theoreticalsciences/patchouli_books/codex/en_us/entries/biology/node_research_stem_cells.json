@@ -1,0 +1,19 @@
+{
+  "name": "Stem Cells",
+  "icon": "theoreticalsciences:regeneration_tank",
+  "advancement": "theoreticalsciences:research/stem_cells",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:regeneration_tank",
+      "title": "Stem Cells",
+      "text": "$(thing)Stem Cells$()$(br2)A cell that can become any other, waiting to be told which. The seed of every organ, and of regrowing one. Unlocks the Regeneration Tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 130$(br2)$(thing)Builds on$(): Physiology, Synthetic Biology.$(br2)$(thing)Samples$(): 2 Stem Cell Culture.$(br2)$(thing)Derivation$(): A culture of stem cells doubles every d days. Write how many, M, there are after t days, from a start of N."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Nitrogen",
+  "icon": "theoreticalsciences:nitrogen_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nitrogen_cell",
+      "title": "Nitrogen",
+      "text": "Four fifths of the air, and so unreactive that its triple bond took a century of chemistry - and the Haber-Bosch process - to break."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Air Separation Unit$().$(br2)$(thing)Unlocked by$(): Reaction Kinetics.$(br2)$(thing)Used in$(): Ammonia, Bacterial Culture, Hydrogen Cyanide, Nitrogen, Tholin."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_kinetics"
+}

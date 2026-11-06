@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:membrane_clamping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cell_membrane",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lipid_bilayer",
+      "count": 7
+    }
+  ],
+  "energy": 256,
+  "duration": 40,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "zi": 1.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": -100.0,
+        "max": -80.0
+      }
+    ]
+  }
+}

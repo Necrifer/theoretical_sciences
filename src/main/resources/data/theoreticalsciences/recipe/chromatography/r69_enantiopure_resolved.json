@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:chromatography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methanol",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:enantiopure_reagent",
+      "count": 4
+    }
+  ],
+  "energy": 128,
+  "duration": 150,
+  "research": "theoreticalsciences:asymmetric_synthesis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 1.6,
+      "k0": 2.0
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 1.5,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

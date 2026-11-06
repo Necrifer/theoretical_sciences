@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.r92_scale",
+  "description": "book.theoreticalsciences.codex.biology.r92_scale.desc",
+  "icon": {
+    "item": "theoreticalsciences:ecosphere"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 73,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ecosphere"
+      },
+      "text": "book.theoreticalsciences.codex.biology.r92_scale.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r92_scale.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r92_scale.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r92_scale.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r92_scale.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__r91_body"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__perfusion_rig"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ecology"
+  }
+}

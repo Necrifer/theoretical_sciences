@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:encoding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:random_number_chip",
+      "count": 1
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:one_time_pad",
+      "count": 4
+    }
+  ],
+  "energy": 384,
+  "duration": 240,
+  "research": "theoreticalsciences:cryptography",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "eps": 0.002,
+      "tol": 0.0005
+    },
+    "windows": [
+      {
+        "q": "fail",
+        "min": -1.0,
+        "max": 0.0005
+      }
+    ]
+  }
+}

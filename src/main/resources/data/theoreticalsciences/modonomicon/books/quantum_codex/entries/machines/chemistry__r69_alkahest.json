@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r69_alkahest",
+  "description": "book.theoreticalsciences.codex.chemistry.r69_alkahest.desc",
+  "icon": {
+    "item": "theoreticalsciences:alkahest_still"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 198,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:alkahest_still"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r69_alkahest.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r69_alkahest.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r69_alkahest.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r69_alkahest.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r69_oscillating"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__oscillator_vessel"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alkahest"
+  }
+}

@@ -58,6 +58,8 @@ public final class EndgameRegistry {
         bus.addListener(ScepterEffects::onServerStopped);
         // Raiment of Transcendence
         bus.addListener(Raiment::onPlayerTick);
+        bus.addListener(Raiment::onPlayerTickPre);          // 1.2.0: the Greaves' drive (on the moving player's own side)
+        bus.addListener(Raiment::onMobTick);                // 1.2.0: mobs' endgame gear spends its charge as players' does
         bus.addListener(Raiment::onIncomingDamage);
         bus.addListener(Raiment::onFall);
         // Lawgiver's Codex
@@ -69,10 +71,13 @@ public final class EndgameRegistry {
         // round 32: Eschaton Charge, the Edge's harvest, the Dodecaract Excavator
         bus.addListener(EschatonCharge::onTooltip);
         bus.addListener(OmnipotentEdgeItem::onDrops);
+        bus.addListener(OmnipotentEdgeItem::onServerTick);      // 1.2.0: the harvest handed over once a tick
         bus.addListener(OmnipotentEdgeItem::onExperience);
         bus.addListener(net.neoforged.bus.api.EventPriority.LOWEST, DodecaractExcavatorItem::onBreak);
         bus.addListener(ExcavatorJobs::onServerTick);
         bus.addListener((net.neoforged.neoforge.event.server.ServerStoppedEvent e) -> ExcavatorJobs.onServerStopped());
+        // 1.2.0: a job still running when the server stops hands over what it gathered (players are still there now)
+        bus.addListener((net.neoforged.neoforge.event.server.ServerStoppingEvent e) -> ExcavatorJobs.onServerStopping(e.getServer()));
         bus.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> ExcavatorJobs.clearCache());
     }
 

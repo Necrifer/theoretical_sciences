@@ -1,0 +1,24 @@
+{
+  "name": "Buffer Tank",
+  "icon": "theoreticalsciences:buffer_tank",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A weak acid HA and its salt A\u207b hold a pH set by their ratio: pH = pKa + log\u2081\u2080([A\u207b]/[HA]) (Henderson-Hasselbalch). Added acid or base only shifts the ratio a little - as long as there is plenty of both. The buffer capacity, 4r/(1 + r)\u00b2, is best at a ratio of 1."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Salt to acid ratio.$(br2)$(thing)Disturbance$(): Mixing error: the ratio is off by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): No buffering left: the ratio is too far from 1.$(br2)$(thing)Rate$(): A better buffer is made faster (less correcting)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)pH: pH = pKa + log\u2081\u2080([A\u207b]/[HA])$(br)Buffer capacity: \u03b2 = 4r/(1 + r)\u00b2"
+    }
+  ]
+}

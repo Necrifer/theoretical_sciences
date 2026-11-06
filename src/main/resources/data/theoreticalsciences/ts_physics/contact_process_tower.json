@@ -1,0 +1,85 @@
+{
+  "params": [
+    {
+      "id": "Tb",
+      "unit": "K",
+      "min": 600,
+      "max": 1000,
+      "step": 1,
+      "default": 700
+    },
+    {
+      "id": "ex",
+      "unit": "\u00d7",
+      "min": 1,
+      "max": 3,
+      "step": 0.01,
+      "default": 1.5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "G0",
+      "unit": "kJ/mol",
+      "expr": "(-198000 + 188*Tb)/1000",
+      "formula": "\u0394G\u00b0 = \u0394H \u2212 T\u0394S"
+    },
+    {
+      "id": "Kp",
+      "unit": "atm\u207b\u00b9",
+      "expr": "exp(-G0*1000/(8.314*Tb))",
+      "formula": "K = e^(\u2212\u0394G\u00b0/RT)"
+    },
+    {
+      "id": "sq",
+      "unit": "",
+      "expr": "sqrt(Kp*0.1*ex)",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "Xe",
+      "unit": "",
+      "expr": "sq/(1 + sq)",
+      "formula": "X/(1 \u2212 X) = \u221a(K\u00b7p_O\u2082)"
+    },
+    {
+      "id": "kr",
+      "unit": "",
+      "expr": "exp(-10825*(1/(Tb*(1 + 0.005*d)) - 1/723))",
+      "formula": "k/k\u2087\u2082\u2083 = e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/723 K))"
+    },
+    {
+      "id": "Xp",
+      "unit": "",
+      "expr": "Xe*(1 - exp(-3*kr))",
+      "formula": "X = X_eq\u00b7(1 \u2212 e^(\u22123k))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "lightoff",
+      "kind": "stop",
+      "expr": "Tb - 670",
+      "formula": "T > 670 K"
+    },
+    {
+      "id": "sinter",
+      "kind": "wear",
+      "expr": "873 - Tb",
+      "formula": "T < 873 K"
+    }
+  ],
+  "rate": "clamp(Xp*kr/(1 + 0.4*(ex - 1)), 0, 4)",
+  "rate_formula": "rate = X\u00b7(k/k\u2087\u2082\u2083)/(1 + 0.4(excess \u2212 1))",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

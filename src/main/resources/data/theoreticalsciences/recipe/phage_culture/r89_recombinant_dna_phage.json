@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:phage_culture",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bacteriophage",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:recombinant_dna",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:lysogeny",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "lat": 40.0
+    },
+    "windows": [
+      {
+        "q": "inf",
+        "min": 0.95,
+        "max": 1.0
+      },
+      {
+        "q": "burst",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

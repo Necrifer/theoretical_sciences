@@ -1,0 +1,62 @@
+{
+  "title": "Projective Geometry",
+  "description": "What a painter sees: parallel lines meet at the horizon, and lengths change, but straight lines stay straight.",
+  "icon": "theoreticalsciences:golden_ratio_glass",
+  "x": 5,
+  "y": 8,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:coordinates",
+    "theoreticalsciences:curved_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pi_crystal",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A camera has its screen a length f behind a pinhole and sees a thing of height H at a range Z. Write how tall its image I is.",
+    "name": "Perspective",
+    "lhs": "I",
+    "form": "f * H / Z",
+    "expr": "f * H / Z",
+    "ask": "Find I for f = @{f}, H = @{H} and Z = @{Z}.",
+    "vars": {
+      "I": "image",
+      "f": "screen depth",
+      "H": "height",
+      "Z": "range"
+    },
+    "given": {
+      "f": 2,
+      "H": 30,
+      "Z": 60
+    },
+    "unit": "",
+    "method": "Similar triangles through the pinhole: I/f = H/Z. Twice as far, half as tall.",
+    "distractors": [
+      "+",
+      "-",
+      "e"
+    ],
+    "vary": {
+      "f": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "H": [
+        18.0,
+        42.0,
+        1.0
+      ],
+      "Z": [
+        36.0,
+        84.0,
+        1.0
+      ]
+    }
+  }
+}

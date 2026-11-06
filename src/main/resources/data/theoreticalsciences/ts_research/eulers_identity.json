@@ -1,0 +1,64 @@
+{
+  "title": "Euler's Identity",
+  "description": "e to the power i\u03c0, plus one, is nothing: the constants of growth, of the circle, of the imaginary, of one and of none, in a single line. Unlocks Euler's Identity.",
+  "icon": "theoreticalsciences:eulers_identity",
+  "x": 7,
+  "y": 6,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:euler_formula",
+    "theoreticalsciences:pi_constant",
+    "theoreticalsciences:cardinality"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:imaginary_unit",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:zero",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:unity",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A point at r\u00b7e^(i\u03b8) in the complex plane has turned through \u03b8 round a circle of radius r. Write how far up from the axis it is, Y.",
+    "name": "Imaginary part",
+    "lhs": "Y",
+    "form": "r * sin ( \u03b8 )",
+    "expr": "r * sin ( \u03b8 )",
+    "ask": "Find Y for r = @{r} and \u03b8 = @{\u03b8} (\u03c0/6).",
+    "vars": {
+      "Y": "height",
+      "r": "radius",
+      "\u03b8": "angle"
+    },
+    "given": {
+      "r": 2,
+      "\u03b8": 0.5236
+    },
+    "unit": "",
+    "method": "e^(i\u03b8) = cos \u03b8 + i\u00b7sin \u03b8: the height is the sine. At \u03b8 = \u03c0 the height is 0 and the point is at \u22121: e^(i\u03c0) = \u22121.",
+    "distractors": [
+      "+",
+      "exp",
+      "e"
+    ],
+    "vary": {
+      "r": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "\u03b8": [
+        0.314,
+        0.734,
+        0.001
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Cryptography",
+  "icon": "theoreticalsciences:one_time_pad",
+  "advancement": "theoreticalsciences:research/cryptography",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:one_time_pad",
+      "title": "Cryptography",
+      "text": "$(thing)Cryptography$()$(br2)A secret only stays secret if breaking it takes longer than the secret matters. Unlocks the One-Time Pad."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 100$(br2)$(thing)Builds on$(): Error Correction, Modular Arithmetic.$(br2)$(thing)Samples$(): 1 Error-Correcting Code.$(br2)$(thing)Derivation$(): A key has b bits, and a machine can try s keys a second. Write the longest time T it can take to find the key by trying them all."
+    }
+  ]
+}

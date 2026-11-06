@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.strings.intro__origin_nothing",
+  "description": "book.theoreticalsciences.codex.strings.intro__origin_nothing.desc",
+  "icon": {
+    "item": "theoreticalsciences:no_boundary_seed"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.intro__origin_nothing.p0",
+      "title": "book.theoreticalsciences.codex.strings.intro__origin_nothing"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.strings.intro__origin_nothing.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/exotic__intro__standard_model"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/strings__intro__origin_inflation"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/vacuum_stability"
+  }
+}

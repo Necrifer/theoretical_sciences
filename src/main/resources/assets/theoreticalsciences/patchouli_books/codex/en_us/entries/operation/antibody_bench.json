@@ -1,0 +1,24 @@
+{
+  "name": "Antibody Bench",
+  "icon": "theoreticalsciences:antibody_bench",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A response grows with the dose as a Hill curve, D^2/(K^2 + D^2): too little does nothing, enough saturates. An adjuvant raises the whole curve, (1 + a). Enough binding, and the body remembers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Dose, Adjuvant.$(br2)$(thing)Disturbance$(): Warm store: the response varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too strong: the imprint resonates.$(br2)$(thing)Rate$(): A strong response is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Response: r = [D^2/(K^2 + D^2)].(1 + a)"
+    }
+  ]
+}

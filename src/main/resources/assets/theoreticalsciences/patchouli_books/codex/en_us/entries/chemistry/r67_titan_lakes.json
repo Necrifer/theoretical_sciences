@@ -1,0 +1,22 @@
+{
+  "name": "Lakes of Titan",
+  "icon": "theoreticalsciences:lake_pump",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 27,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lake_pump,theoreticalsciences:liquid_methane_cell,theoreticalsciences:cryolava_cell,theoreticalsciences:organic_evaporite",
+      "text": "On Titan, methane does what water does on Earth: it rains, runs in rivers, pools in seas and evaporates again. At 94 K its vapour pressure is about a sixth of an atmosphere (Clausius-Clapeyron) - enough to make clouds and rain."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Lake Pump$() draws from a lake it touches on Titan: $(fluid)Liquid Methane$() from the seas and lakes, $(fluid)Cryolava$() from the cryovolcanoes' lakes. The Fractionation Spire boils liquid methane off into $(fluid)Methane$() gas, with the $(fluid)Nitrogen$() dissolved in it, and splits cryolava into $(fluid)Ammonia$() and water."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Where a lake dries, what it had dissolved is left as a crust. $(item)Organic Evaporite$() - co-crystals of benzene and ethane, acetylene and butane - hydrogenated over a Nickel Catalyst gives $(fluid)Ethylene$(). It can be made again, as Titan makes it: liquid methane boiled down in the Brine Evaporator leaves its evaporites (20 to 50 times concentrated). Evaporite Crust dissolved in methanol gives them up too, and Cryolava Rock remelts into cryolava in the Chemical Reactor. Two Packed Ice, chilled hard, make Water-Ice Bedrock."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/titan_lakes"
+}

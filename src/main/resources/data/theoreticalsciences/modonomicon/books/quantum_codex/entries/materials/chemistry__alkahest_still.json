@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.alkahest_still",
+  "description": "book.theoreticalsciences.codex.chemistry.alkahest_still.desc",
+  "icon": {
+    "item": "theoreticalsciences:alkahest_still"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 253,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:alkahest_still"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.alkahest_still.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.alkahest_still.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.alkahest_still.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.alkahest_still.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:alkahest_still"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.alkahest_still.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__oscillator_vessel"
+    },
+    {
+      "entry": "theoreticalsciences:materials/chemistry__coordination_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/alkahest"
+  }
+}

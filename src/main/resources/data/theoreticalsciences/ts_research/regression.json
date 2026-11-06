@@ -1,0 +1,62 @@
+{
+  "title": "Regression",
+  "description": "Draw the straight line that misses a cloud of points by the least. Turn an enzyme's curve upside down and it becomes one (Lineweaver and Burk).",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "x": 7,
+  "y": 10,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:statistics",
+    "theoreticalsciences:enzyme_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:confidence_seal",
+      "count": 1
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Turn an enzyme's speed upside down: write 1/v, R, as a straight line in 1/S, from its top speed V and constant K.",
+    "name": "Lineweaver-Burk",
+    "lhs": "R",
+    "form": "( K / V ) * ( 1 / S ) + 1 / V",
+    "expr": "( K / V ) * ( 1 / S ) + 1 / V",
+    "ask": "Find R for K = @{K}, V = @{V} and S = @{S}.",
+    "vars": {
+      "R": "1 / speed",
+      "K": "Michaelis constant",
+      "V": "top speed",
+      "S": "substrate"
+    },
+    "given": {
+      "K": 2,
+      "V": 10,
+      "S": 2
+    },
+    "unit": "",
+    "method": "v = VS/(K + S), so 1/v = (K + S)/(VS) = (K/V)(1/S) + 1/V: slope K/V, intercept 1/V.",
+    "distractors": [
+      "-",
+      "n",
+      "e"
+    ],
+    "vary": {
+      "K": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "V": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "S": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

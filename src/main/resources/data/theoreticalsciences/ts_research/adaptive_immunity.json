@@ -1,0 +1,50 @@
+{
+  "title": "Adaptive Immunity",
+  "description": "The second answer, learned: cells that make a shape to fit one invader exactly, and keep the pattern for next time. Unlocks the Antibody Bench.",
+  "icon": "theoreticalsciences:antibody_bench",
+  "x": 5,
+  "y": 23,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:innate_immunity",
+    "theoreticalsciences:genomics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "One cell that recognises the invader divides every h hours. Write how many, M, there are after t hours, from one.",
+    "name": "Clonal expansion",
+    "lhs": "M",
+    "form": "2 ^ ( t / h )",
+    "expr": "2 ^ ( t / h )",
+    "ask": "Find M for t = @{t} and h = 8.",
+    "vars": {
+      "M": "cells",
+      "t": "time",
+      "h": "division time"
+    },
+    "given": {
+      "t": 48,
+      "h": 8
+    },
+    "unit": "",
+    "method": "Each division time doubles the count: the chosen cell makes an army to fit one invader.",
+    "distractors": [
+      "e",
+      "+",
+      "3"
+    ],
+    "vary": {
+      "t": [
+        29.0,
+        67.0,
+        1.0
+      ]
+    }
+  }
+}

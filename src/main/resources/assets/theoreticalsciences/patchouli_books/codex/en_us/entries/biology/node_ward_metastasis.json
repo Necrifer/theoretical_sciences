@@ -1,0 +1,19 @@
+{
+  "name": "Metastasis Ward",
+  "icon": "theoreticalsciences:ward_metastasis",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ward_metastasis",
+      "title": "Metastasis Ward",
+      "text": "A ward against Metastasis, the Tumour Hydra's bite, which hides from any plain ward. Use it on yourself: held safe for three in-game days. Renew it while more than half of that is left and the imprint overloads instead. Made in the Clonal Selector."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Clonal Selector$().$(br2)$(thing)Unlocked by$(): Affinity Maturation.$(br2)$(thing)Used in$(): Lasting Metastasis Ward."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/affinity_maturation"
+}

@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:adaptive_immunity",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ward_hollowing",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:telomerase_complex",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lasting_ward_hollowing",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:immune_memory",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Kd": 20.0
+    },
+    "windows": [
+      {
+        "q": "resp",
+        "min": 0.95,
+        "max": 2.0
+      }
+    ]
+  }
+}

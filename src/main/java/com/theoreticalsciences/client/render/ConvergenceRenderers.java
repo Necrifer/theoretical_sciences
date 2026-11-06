@@ -104,7 +104,7 @@ public final class ConvergenceRenderers {
         @Override
         public void render(AltarBlockEntity be, float pt, PoseStack ps, MultiBufferSource buf, int light, int overlay) {
             if (be.getLevel() == null) return;
-            float t = be.getLevel().getGameTime() + pt;
+            float t = (be.getLevel().getGameTime() % 72000L) + pt;      // (wrapped hourly: a float of the whole age loses the partial tick)
             if (!be.output().isEmpty()) {
                 ps.pushPose();
                 ps.translate(0.5, 0.86, 0.5);

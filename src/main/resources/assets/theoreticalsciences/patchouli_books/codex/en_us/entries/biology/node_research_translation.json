@@ -1,0 +1,19 @@
+{
+  "name": "Translation",
+  "icon": "theoreticalsciences:ribosome_assembler",
+  "advancement": "theoreticalsciences:research/translation",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ribosome_assembler",
+      "title": "Translation",
+      "text": "$(thing)Translation$()$(br2)The ribosome reads the message three letters at a time and strings the amino acids together: the genetic code. Unlocks cheap Engineered Enzymes and a new Synthetic Cell route."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): Transcription.$(br2)$(thing)Samples$(): 2 Messenger RNA, 4 Amino Acid Mixture.$(br2)$(thing)Derivation$(): A ribosome gets each of L codons wrong with chance \u03b5. Write the share Y of chains with no mistake at all."
+    }
+  ]
+}

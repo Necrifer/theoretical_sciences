@@ -1,0 +1,49 @@
+{
+  "params": [
+    {
+      "id": "Pf",
+      "unit": "bar",
+      "min": 1,
+      "max": 100,
+      "step": 0.1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "M": 0.6,
+    "ii": 2
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "posm",
+      "unit": "bar",
+      "expr": "ii*M*0.08314*298",
+      "formula": "\u03c0 = iMRT"
+    },
+    {
+      "id": "J",
+      "unit": "L/m\u00b2\u00b7h",
+      "expr": "0.05*(Pf - posm)*(1 + 0.01*d)",
+      "formula": "J = A\u00b7(P \u2212 \u03c0)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "membrane",
+      "kind": "stop",
+      "expr": "80 - Pf",
+      "formula": "P < 80 bar"
+    }
+  ],
+  "rate": "clamp(J/1.5, 0, 4)",
+  "rate_formula": "rate = J / 1.5",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

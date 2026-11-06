@@ -115,6 +115,10 @@ public class MultiblockView {
         Lighting.setupFor3DItems();
         MultiBufferSource.BufferSource buffers = mc.renderBuffers().bufferSource();
         Block port = ControllerBlockEntity.portBlock();
+        // 1.2.0: a big structure's still blocks are baked once into GPU buffers (thousands of blocks drawn one by one
+        // each frame would slow the page); only the tiered parts, which cycle, are drawn one by one
+        com.theoreticalsciences.client.render.animation.Animations.Baked big = bigBake(port);
+        if (big != null) drawBaked(big, pose, buffers);
         for (int y = 0; y < def.sizeY; y++) {
             if (!visibleLayer(y)) continue;
             List<String> rows = def.layers.get(y);
@@ -123,6 +127,7 @@ public class MultiblockView {
                 for (int x = 0; x < row.length(); x++) {
                     char c = row.charAt(x);
                     if (c == ' ' || c == '.') continue;
+                    if (big != null && !def.tiers.containsKey(c)) continue;
                     BlockState st = stateFor(c, t, port);
                     if (st == null) continue;
                     pose.pushPose();
@@ -181,6 +186,71 @@ public class MultiblockView {
         g.renderOutline(bx, by, 12, 12, 0xFF5080A0);
         var font = Minecraft.getInstance().font;
         g.drawString(font, label, bx + 6 - font.width(label) / 2, by + 2, 0xFFFFFF, false);
+    }
+
+    private static final java.util.LinkedHashMap<String, com.theoreticalsciences.client.render.animation.Animations.Baked> BIG = new java.util.LinkedHashMap<>();
+
+    /** The structure's untiered blocks baked (for the layer shown), or null for a small structure (drawn as before). */
+    private com.theoreticalsciences.client.render.animation.Animations.Baked bigBake(Block port) {
+        int n = 0;
+        for (List<String> rows : def.layers) for (String r : rows) for (int i = 0; i < r.length(); i++) if (r.charAt(i) != ' ' && r.charAt(i) != '.') n++;
+        if (n < 1500) return null;
+        String k = def.id + "#" + def.sizeY + "#" + layer;
+        var b = BIG.get(k);
+        if (b != null) return b;
+        List<com.theoreticalsciences.client.render.animation.Animations.Cell> cells = new java.util.ArrayList<>();
+        for (int y = 0; y < def.sizeY; y++) {
+            if (!visibleLayer(y)) continue;
+            List<String> rows = def.layers.get(y);
+            for (int z = 0; z < rows.size(); z++) {
+                String row = rows.get(z);
+                for (int x = 0; x < row.length(); x++) {
+                    char c = row.charAt(x);
+                    if (c == ' ' || c == '.' || def.tiers.containsKey(c)) continue;
+                    BlockState st = stateFor(c, 0, port);
+                    if (st != null) cells.add(new com.theoreticalsciences.client.render.animation.Animations.Cell(x, y, z, st));
+                }
+            }
+        }
+        com.google.gson.JsonObject j = new com.google.gson.JsonObject();
+        com.google.gson.JsonArray parts = new com.google.gson.JsonArray();
+        com.google.gson.JsonObject part = new com.google.gson.JsonObject();
+        part.addProperty("id", "all");
+        com.google.gson.JsonObject src = new com.google.gson.JsonObject();
+        src.addProperty("type", "cells");
+        part.add("source", src);
+        parts.add(part);
+        j.add("parts", parts);
+        var anim = com.theoreticalsciences.client.render.animation.StructureAnimation.parse(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("theoreticalsciences", "view"), j);
+        anim.parts.get(0).cells = cells;
+        b = com.theoreticalsciences.client.render.animation.Animations.bakeLive(anim);
+        BIG.put(k, b);
+        while (BIG.size() > 6) {
+            String first = BIG.keySet().iterator().next();
+            com.theoreticalsciences.client.render.animation.Animations.close(BIG.remove(first));
+        }
+        return b;
+    }
+
+    /** Draws the baked blocks with the page's transform (cells are centred on whole numbers; the page draws from corners). */
+    private static void drawBaked(com.theoreticalsciences.client.render.animation.Animations.Baked b, PoseStack pose, MultiBufferSource buffers) {
+        pose.pushPose();
+        pose.translate(0.5F, 0.5F, 0.5F);
+        var bp = b.parts[0];
+        RenderType[] gui = {net.minecraft.client.renderer.Sheets.solidBlockSheet(), net.minecraft.client.renderer.Sheets.cutoutBlockSheet(),
+                net.minecraft.client.renderer.Sheets.cutoutBlockSheet(), net.minecraft.client.renderer.Sheets.translucentCullBlockSheet()};
+        for (int L = 0; L < bp.cpu.length; L++) {
+            var r = bp.cpu[L];
+            if (r == null || r.n == 0) continue;
+            r.emit(buffers.getBuffer(gui[L]), pose.last(), LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
+        }
+        pose.popPose();
+    }
+
+    /** Frees the baked pages (resources reloaded). */
+    public static void releaseBaked() {
+        for (var b : BIG.values()) com.theoreticalsciences.client.render.animation.Animations.close(b);
+        BIG.clear();
     }
 
     private BlockState stateFor(char c, float t, Block port) {

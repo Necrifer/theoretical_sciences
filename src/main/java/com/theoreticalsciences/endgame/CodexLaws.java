@@ -252,7 +252,55 @@ public final class CodexLaws {
 
     static void sendState(ServerPlayer sp) {
         Rules r = data(sp.server).rules.getOrDefault(sp.level().dimension(), new Rules());
-        PacketDistributor.sendToPlayer(sp, new CodexStatePayload(r.gravity, r.hostile, r.passive, r.health, r.damage, r.speed));
+        PacketDistributor.sendToPlayer(sp, new CodexStatePayload(r.gravity, r.hostile, r.passive, r.health, r.damage, r.speed, mayWriteWorldLaws(sp)));
+    }
+
+    /** 1.2.0: the laws over a whole dimension: gravity, time, weather, spawning, mob strength, and restoring them all. */
+    static boolean worldLaw(int action) {
+        return switch (action) {
+            case SET_GRAVITY, SET_TIME, SET_WEATHER, SET_HOSTILE, SET_PASSIVE, SET_HEALTH, SET_DAMAGE, SET_SPEED, RESTORE -> true;
+            default -> false;
+        };
+    }
+
+    /** Operators (by default; the common config sets the level), and always the owner of a single-player world. */
+    static boolean mayWriteWorldLaws(ServerPlayer sp) {
+        int need = com.theoreticalsciences.QHConfig.CODEX_WORLD_LAWS_PERMISSION.get();
+        return need <= 0 || sp.server.isSingleplayerOwner(sp.getGameProfile()) || sp.hasPermissions(need);
+    }
+
+    /**
+     * 1.2.0: whether the action may be done here at all, asked before any charge is spent (so a refused law costs
+     * nothing): the dimension-wide laws need permission; creating and rewriting creatures follow claimed land and spawn
+     * protection (healing excepted). Says why when not.
+     */
+    private static boolean allowed(ServerPlayer sp, ServerLevel level, CodexActionPayload p) {
+        if (worldLaw(p.action())) {
+            if (mayWriteWorldLaws(sp)) return true;
+            say(sp, "world_laws_locked", ChatFormatting.RED);
+            return false;
+        }
+        if (p.action() == CREATE) {
+            BlockPos pos = createAt(sp);
+            if (com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, pos, null, com.theoreticalsciences.compat.ClaimChecks.Kind.PLACE)) return true;
+            say(sp, "claimed", ChatFormatting.RED);
+            return false;
+        }
+        if (p.action() == UNMAKE || p.action() == PACIFY || p.action() == TRANSMUTE || p.action() == GROW || p.action() == SHRINK) {
+            Entity ent = level.getEntity(p.target());
+            if (ent == null) return true;               // (rewrite says "no target" itself, free)
+            if (com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, ent.blockPosition(), ent, com.theoreticalsciences.compat.ClaimChecks.Kind.ENTITY)) return true;
+            say(sp, "claimed", ChatFormatting.RED);
+            return false;
+        }
+        return true;
+    }
+
+    /** Where Create puts its creatures: the face of the block looked at, or the point looked at. */
+    private static BlockPos createAt(ServerPlayer sp) {
+        HitResult hit = SingularityScepterItem.aim(sp, 64);
+        return hit instanceof BlockHitResult bh && hit.getType() == HitResult.Type.BLOCK
+                ? bh.getBlockPos().relative(bh.getDirection()) : BlockPos.containing(hit.getLocation());
     }
 
     private static final String HEALTH_FRAC = "theoreticalsciences_codex_hpfrac";
@@ -278,6 +326,11 @@ public final class CodexLaws {
             long now = level.getGameTime();
             if (now < NEXT.getOrDefault(sp.getUUID(), 0L)) return;
             NEXT.put(sp.getUUID(), now + (p.action() == CREATE || p.action() == TRANSMUTE ? 20 : 4));
+            // 1.2.0: refused before anything is spent
+            if (!allowed(sp, level, p)) {
+                sendState(sp);
+                return;
+            }
             // round 32: every law written costs Eschaton Charge
             ItemStack codex = sp.getMainHandItem().getItem() instanceof LawgiversCodexItem ? sp.getMainHandItem() : sp.getOffhandItem();
             if (!EschatonCharge.spendOrSay(sp, codex, EschatonCharge.CODEX_LAW)) return;
@@ -381,9 +434,7 @@ public final class CodexLaws {
             say(sp, "unknown", ChatFormatting.RED, text);
             return;
         }
-        HitResult hit = SingularityScepterItem.aim(sp, 64);
-        BlockPos pos = hit instanceof BlockHitResult bh && hit.getType() == HitResult.Type.BLOCK
-                ? bh.getBlockPos().relative(bh.getDirection()) : BlockPos.containing(hit.getLocation());
+        BlockPos pos = createAt(sp);
         if (!level.isLoaded(pos) || !level.getWorldBorder().isWithinBounds(pos) || level.isOutsideBuildHeight(pos)) {
             say(sp, "nowhere", ChatFormatting.RED);
             return;

@@ -6,34 +6,43 @@
   "nodes": [
     {
       "entry": "quantum/casimir_press",
-      "x": 0,
-      "y": 1,
+      "x": 1,
+      "y": 7,
       "parents": [
         "basics/guide_09_press"
       ]
     },
     {
       "entry": "geography/r37_mapping",
-      "x": 0,
-      "y": 4,
+      "x": 130,
+      "y": 54,
       "parents": []
     },
     {
       "entry": "geography/r39_sites",
-      "x": 0,
-      "y": 7,
+      "x": 130,
+      "y": 57,
       "parents": []
     },
     {
       "entry": "quantum/quantum_entangler",
-      "x": 2,
-      "y": 12,
+      "x": 8,
+      "y": 7,
       "parents": []
     },
     {
       "entry": "quantum/node_crystalline_matrix_ingot",
-      "x": 2,
-      "y": 10,
+      "x": 10,
+      "y": 7,
+      "parents": [
+        "quantum/quantum_entangler"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_entangled_link",
+      "x": 8,
+      "y": 3,
       "parents": [
         "quantum/quantum_entangler"
       ],
@@ -41,8 +50,8 @@
     },
     {
       "entry": "quantum/node_entangled_photon_pair",
-      "x": 0,
-      "y": 12,
+      "x": 8,
+      "y": 9,
       "parents": [
         "quantum/quantum_entangler"
       ],
@@ -50,8 +59,35 @@
     },
     {
       "entry": "quantum/node_qubit",
-      "x": 4,
-      "y": 12,
+      "x": 6,
+      "y": 5,
+      "parents": [
+        "quantum/quantum_entangler"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_research_entanglement_links",
+      "x": 8,
+      "y": 5,
+      "parents": [
+        "quantum/quantum_entangler"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_research_quantum_zeno_effect",
+      "x": 6,
+      "y": 7,
+      "parents": [
+        "quantum/quantum_entangler"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_resonant_tuning_fork",
+      "x": 10,
+      "y": 5,
       "parents": [
         "quantum/quantum_entangler"
       ],
@@ -59,8 +95,17 @@
     },
     {
       "entry": "quantum/node_superposition_crystal",
-      "x": 2,
-      "y": 14,
+      "x": 6,
+      "y": 9,
+      "parents": [
+        "quantum/quantum_entangler"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_tuning_fork",
+      "x": 10,
+      "y": 9,
       "parents": [
         "quantum/quantum_entangler"
       ],
@@ -68,8 +113,17 @@
     },
     {
       "entry": "quantum/node_weaver_casing",
-      "x": 0,
-      "y": 10,
+      "x": 12,
+      "y": 7,
+      "parents": [
+        "quantum/quantum_entangler"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_zeno_anchor",
+      "x": 4,
+      "y": 7,
       "parents": [
         "quantum/quantum_entangler"
       ],
@@ -77,14 +131,14 @@
     },
     {
       "entry": "astrophysics/r37_telescopes",
-      "x": 0,
-      "y": 17,
+      "x": 130,
+      "y": 37,
       "parents": []
     },
     {
       "entry": "geography/r37_ground",
-      "x": 0,
-      "y": 20,
+      "x": 133,
+      "y": 55,
       "parents": [
         "geography/r37_mapping",
         "geography/r39_sites"
@@ -92,41 +146,32 @@
     },
     {
       "entry": "nuclear/r37_radioactivity",
-      "x": 2,
-      "y": 25,
+      "x": 130,
+      "y": 7,
       "parents": []
     },
     {
-      "entry": "nuclear/node_prussian_blue_tablet",
-      "x": 2,
-      "y": 23,
-      "parents": [
-        "nuclear/r37_radioactivity"
-      ],
-      "node": true
-    },
-    {
       "entry": "nuclear/r38_radiation",
-      "x": 0,
-      "y": 30,
+      "x": 130,
+      "y": 10,
       "parents": []
     },
     {
       "entry": "electromagnetism/r37_fields",
-      "x": 0,
-      "y": 33,
+      "x": 1,
+      "y": 91,
       "parents": []
     },
     {
       "entry": "quantum/bose_einstein_condenser",
-      "x": 2,
-      "y": 38,
+      "x": 17,
+      "y": 7,
       "parents": []
     },
     {
       "entry": "quantum/node_bose_einstein_condensate",
-      "x": 4,
-      "y": 38,
+      "x": 19,
+      "y": 7,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -134,8 +179,8 @@
     },
     {
       "entry": "quantum/node_cryocooler_unit",
-      "x": 2,
-      "y": 36,
+      "x": 17,
+      "y": 5,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -143,8 +188,17 @@
     },
     {
       "entry": "quantum/node_cryogenic_cooling_jacket",
-      "x": 0,
-      "y": 36,
+      "x": 19,
+      "y": 5,
+      "parents": [
+        "quantum/bose_einstein_condenser"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/node_nmr_magnet_coil",
+      "x": 15,
+      "y": 5,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -152,8 +206,8 @@
     },
     {
       "entry": "quantum/node_observatory_cache",
-      "x": 4,
-      "y": 36,
+      "x": 15,
+      "y": 9,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -161,8 +215,8 @@
     },
     {
       "entry": "quantum/node_superconducting_coil",
-      "x": 0,
-      "y": 38,
+      "x": 15,
+      "y": 7,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -170,8 +224,8 @@
     },
     {
       "entry": "quantum/node_superfluid_helium",
-      "x": 2,
-      "y": 40,
+      "x": 17,
+      "y": 9,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -179,8 +233,8 @@
     },
     {
       "entry": "quantum/node_turbomolecular_vacuum_pump",
-      "x": 0,
-      "y": 40,
+      "x": 19,
+      "y": 9,
       "parents": [
         "quantum/bose_einstein_condenser"
       ],
@@ -188,16 +242,16 @@
     },
     {
       "entry": "astrophysics/r45_meteorites",
-      "x": 2,
-      "y": 45,
+      "x": 135,
+      "y": 37,
       "parents": [
         "astrophysics/r37_telescopes"
       ]
     },
     {
       "entry": "astrophysics/node_presolar_grains",
-      "x": 2,
-      "y": 43,
+      "x": 135,
+      "y": 35,
       "parents": [
         "astrophysics/r45_meteorites"
       ],
@@ -205,24 +259,24 @@
     },
     {
       "entry": "geography/r53_water",
-      "x": 140,
-      "y": 49,
+      "x": 196,
+      "y": 51,
       "parents": [
         "geography/r37_ground"
       ]
     },
     {
       "entry": "geography/aquifer_pump",
-      "x": 142,
-      "y": 54,
+      "x": 196,
+      "y": 56,
       "parents": [
         "geography/r37_ground"
       ]
     },
     {
       "entry": "geography/node_aquifer_sample",
-      "x": 142,
-      "y": 52,
+      "x": 196,
+      "y": 54,
       "parents": [
         "geography/aquifer_pump"
       ],
@@ -230,16 +284,7 @@
     },
     {
       "entry": "geography/node_deep_brine",
-      "x": 140,
-      "y": 54,
-      "parents": [
-        "geography/aquifer_pump"
-      ],
-      "node": true
-    },
-    {
-      "entry": "geography/node_salt_heat_exchanger",
-      "x": 142,
+      "x": 194,
       "y": 56,
       "parents": [
         "geography/aquifer_pump"
@@ -248,8 +293,8 @@
     },
     {
       "entry": "geography/node_supercritical_water",
-      "x": 144,
-      "y": 54,
+      "x": 198,
+      "y": 56,
       "parents": [
         "geography/aquifer_pump"
       ],
@@ -257,41 +302,41 @@
     },
     {
       "entry": "electromagnetism/r37_induction",
-      "x": 2,
-      "y": 52,
+      "x": 4,
+      "y": 89,
       "parents": [
         "electromagnetism/r37_fields"
       ]
     },
     {
-      "entry": "electromagnetism/node_magnetite",
-      "x": 2,
-      "y": 50,
-      "parents": [
-        "electromagnetism/r37_induction"
-      ],
-      "node": true
-    },
-    {
       "entry": "electromagnetism/r38_generator",
-      "x": 0,
-      "y": 57,
+      "x": 4,
+      "y": 92,
       "parents": [
         "electromagnetism/r37_fields"
       ]
     },
     {
       "entry": "electromagnetism/induction_generator",
-      "x": 0,
-      "y": 60,
+      "x": 9,
+      "y": 91,
       "parents": [
         "electromagnetism/r37_fields"
       ]
     },
     {
-      "entry": "quantum/metamaterial_weaver",
+      "entry": "electromagnetism/node_electrical_steel_lamination",
       "x": 9,
-      "y": 16,
+      "y": 89,
+      "parents": [
+        "electromagnetism/induction_generator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "quantum/metamaterial_weaver",
+      "x": 24,
+      "y": 7,
       "parents": [
         "quantum/quantum_entangler",
         "quantum/bose_einstein_condenser"
@@ -299,8 +344,8 @@
     },
     {
       "entry": "quantum/node_metamaterial_sheet",
-      "x": 9,
-      "y": 14,
+      "x": 24,
+      "y": 5,
       "parents": [
         "quantum/metamaterial_weaver"
       ],
@@ -308,8 +353,8 @@
     },
     {
       "entry": "quantum/node_vacuum_beam_pipe",
-      "x": 7,
-      "y": 16,
+      "x": 22,
+      "y": 7,
       "parents": [
         "quantum/metamaterial_weaver"
       ],
@@ -317,17 +362,16 @@
     },
     {
       "entry": "exotic/antimatter_penning_trap",
-      "x": 9,
-      "y": 23,
+      "x": 3,
+      "y": 59,
       "parents": [
-        "quantum/quantum_entangler",
-        "quantum/bose_einstein_condenser"
+        "quantum/quantum_entangler"
       ]
     },
     {
       "entry": "exotic/node_antimatter_pellet",
-      "x": 9,
-      "y": 21,
+      "x": 3,
+      "y": 57,
       "parents": [
         "exotic/antimatter_penning_trap"
       ],
@@ -335,24 +379,24 @@
     },
     {
       "entry": "astrophysics/r37_spectrograph",
-      "x": 7,
-      "y": 0,
+      "x": 144,
+      "y": 31,
       "parents": [
         "astrophysics/r37_telescopes"
       ]
     },
     {
       "entry": "astrophysics/spectrograph",
-      "x": 11,
-      "y": 7,
+      "x": 144,
+      "y": 38,
       "parents": [
         "astrophysics/r37_telescopes"
       ]
     },
     {
       "entry": "astrophysics/node_aerosol_sprayer",
-      "x": 15,
-      "y": 7,
+      "x": 148,
+      "y": 38,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -360,8 +404,8 @@
     },
     {
       "entry": "astrophysics/node_asteroid_rock",
-      "x": 11,
-      "y": 11,
+      "x": 144,
+      "y": 42,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -369,17 +413,8 @@
     },
     {
       "entry": "astrophysics/node_chondrite_fragment",
-      "x": 9,
-      "y": 7,
-      "parents": [
-        "astrophysics/spectrograph"
-      ],
-      "node": true
-    },
-    {
-      "entry": "astrophysics/node_colloid_cell",
-      "x": 9,
-      "y": 3,
+      "x": 142,
+      "y": 38,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -387,8 +422,8 @@
     },
     {
       "entry": "astrophysics/node_exoplanet_core_sample",
-      "x": 13,
-      "y": 7,
+      "x": 146,
+      "y": 38,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -396,8 +431,8 @@
     },
     {
       "entry": "astrophysics/node_interstellar_dust",
-      "x": 11,
-      "y": 9,
+      "x": 144,
+      "y": 40,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -405,8 +440,8 @@
     },
     {
       "entry": "astrophysics/node_meteoric_iron",
-      "x": 9,
-      "y": 5,
+      "x": 142,
+      "y": 36,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -414,8 +449,8 @@
     },
     {
       "entry": "astrophysics/node_planetary_core_sample",
-      "x": 13,
-      "y": 5,
+      "x": 146,
+      "y": 36,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -423,8 +458,8 @@
     },
     {
       "entry": "astrophysics/node_raw_pitchblende",
-      "x": 9,
-      "y": 9,
+      "x": 142,
+      "y": 40,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -432,8 +467,8 @@
     },
     {
       "entry": "astrophysics/node_research_exoplanetology",
-      "x": 11,
-      "y": 5,
+      "x": 144,
+      "y": 36,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -441,8 +476,8 @@
     },
     {
       "entry": "astrophysics/node_ringwoodite",
-      "x": 13,
-      "y": 9,
+      "x": 146,
+      "y": 40,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -450,8 +485,8 @@
     },
     {
       "entry": "astrophysics/node_spectral_plate",
-      "x": 11,
-      "y": 3,
+      "x": 144,
+      "y": 34,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -459,8 +494,8 @@
     },
     {
       "entry": "astrophysics/node_transit_light_curve",
-      "x": 7,
-      "y": 7,
+      "x": 140,
+      "y": 38,
       "parents": [
         "astrophysics/spectrograph"
       ],
@@ -468,24 +503,24 @@
     },
     {
       "entry": "geography/r38_seismology",
-      "x": 32,
-      "y": 24,
+      "x": 143,
+      "y": 50,
       "parents": [
         "geography/r37_ground"
       ]
     },
     {
       "entry": "geography/seismograph",
-      "x": 36,
-      "y": 31,
+      "x": 143,
+      "y": 57,
       "parents": [
         "geography/r37_ground"
       ]
     },
     {
       "entry": "geography/node_core_drill",
-      "x": 34,
-      "y": 29,
+      "x": 141,
+      "y": 55,
       "parents": [
         "geography/seismograph"
       ],
@@ -493,8 +528,8 @@
     },
     {
       "entry": "geography/node_geoid_model",
-      "x": 38,
-      "y": 29,
+      "x": 145,
+      "y": 55,
       "parents": [
         "geography/seismograph"
       ],
@@ -502,8 +537,8 @@
     },
     {
       "entry": "geography/node_lithospheric_plate_fragment",
-      "x": 34,
-      "y": 33,
+      "x": 141,
+      "y": 59,
       "parents": [
         "geography/seismograph"
       ],
@@ -511,8 +546,8 @@
     },
     {
       "entry": "geography/node_peridotite",
-      "x": 32,
-      "y": 31,
+      "x": 147,
+      "y": 57,
       "parents": [
         "geography/seismograph"
       ],
@@ -520,8 +555,8 @@
     },
     {
       "entry": "geography/node_research_mantle_geodynamics",
-      "x": 36,
-      "y": 29,
+      "x": 143,
+      "y": 55,
       "parents": [
         "geography/seismograph"
       ],
@@ -529,8 +564,8 @@
     },
     {
       "entry": "geography/node_research_planetary_geology",
-      "x": 34,
-      "y": 31,
+      "x": 141,
+      "y": 57,
       "parents": [
         "geography/seismograph"
       ],
@@ -538,8 +573,8 @@
     },
     {
       "entry": "geography/node_research_plate_tectonics",
-      "x": 38,
-      "y": 31,
+      "x": 145,
+      "y": 57,
       "parents": [
         "geography/seismograph"
       ],
@@ -547,8 +582,8 @@
     },
     {
       "entry": "geography/node_research_remote_sensing",
-      "x": 36,
-      "y": 33,
+      "x": 143,
+      "y": 59,
       "parents": [
         "geography/seismograph"
       ],
@@ -556,8 +591,8 @@
     },
     {
       "entry": "geography/node_satellite_image_plate",
-      "x": 38,
-      "y": 33,
+      "x": 145,
+      "y": 59,
       "parents": [
         "geography/seismograph"
       ],
@@ -565,8 +600,17 @@
     },
     {
       "entry": "geography/node_seismic_recorder_drum",
-      "x": 36,
-      "y": 27,
+      "x": 143,
+      "y": 53,
+      "parents": [
+        "geography/seismograph"
+      ],
+      "node": true
+    },
+    {
+      "entry": "geography/node_survey_map",
+      "x": 139,
+      "y": 57,
       "parents": [
         "geography/seismograph"
       ],
@@ -574,8 +618,8 @@
     },
     {
       "entry": "nuclear/r37_binding",
-      "x": 7,
-      "y": 34,
+      "x": 133,
+      "y": 8,
       "parents": [
         "nuclear/r37_radioactivity",
         "nuclear/r38_radiation"
@@ -583,16 +627,16 @@
     },
     {
       "entry": "electromagnetism/r38_magnets",
-      "x": 9,
-      "y": 39,
+      "x": 18,
+      "y": 85,
       "parents": [
         "electromagnetism/r37_fields"
       ]
     },
     {
       "entry": "electromagnetism/node_rare_earth_oxide",
-      "x": 9,
-      "y": 37,
+      "x": 18,
+      "y": 83,
       "parents": [
         "electromagnetism/r38_magnets"
       ],
@@ -600,8 +644,8 @@
     },
     {
       "entry": "electromagnetism/r49_tesla",
-      "x": 34,
-      "y": 47,
+      "x": 30,
+      "y": 87,
       "parents": [
         "electromagnetism/r37_induction",
         "electromagnetism/r38_generator"
@@ -609,8 +653,8 @@
     },
     {
       "entry": "electromagnetism/node_tesla_toroid",
-      "x": 34,
-      "y": 45,
+      "x": 30,
+      "y": 85,
       "parents": [
         "electromagnetism/r49_tesla"
       ],
@@ -618,16 +662,16 @@
     },
     {
       "entry": "electromagnetism/magnetizer",
-      "x": 11,
-      "y": 48,
+      "x": 18,
+      "y": 94,
       "parents": [
         "electromagnetism/r37_fields"
       ]
     },
     {
       "entry": "electromagnetism/node_bending_magnet",
-      "x": 9,
-      "y": 50,
+      "x": 20,
+      "y": 96,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -635,8 +679,17 @@
     },
     {
       "entry": "electromagnetism/node_central_solenoid",
-      "x": 13,
-      "y": 50,
+      "x": 18,
+      "y": 90,
+      "parents": [
+        "electromagnetism/magnetizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_centrifuge_rotor",
+      "x": 14,
+      "y": 94,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -644,8 +697,8 @@
     },
     {
       "entry": "electromagnetism/node_ferrite_magnet",
-      "x": 11,
-      "y": 46,
+      "x": 18,
+      "y": 92,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -653,8 +706,8 @@
     },
     {
       "entry": "electromagnetism/node_ferrofluid",
-      "x": 13,
-      "y": 46,
+      "x": 16,
+      "y": 96,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -662,8 +715,26 @@
     },
     {
       "entry": "electromagnetism/node_gauss_meter",
-      "x": 9,
-      "y": 48,
+      "x": 16,
+      "y": 94,
+      "parents": [
+        "electromagnetism/magnetizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_litz_wire",
+      "x": 20,
+      "y": 94,
+      "parents": [
+        "electromagnetism/magnetizer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_mhd_field_magnet",
+      "x": 22,
+      "y": 94,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -671,8 +742,8 @@
     },
     {
       "entry": "electromagnetism/node_monazite_sand",
-      "x": 13,
-      "y": 48,
+      "x": 18,
+      "y": 96,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -680,8 +751,8 @@
     },
     {
       "entry": "electromagnetism/node_neodymium_magnet",
-      "x": 11,
-      "y": 50,
+      "x": 16,
+      "y": 92,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -689,8 +760,8 @@
     },
     {
       "entry": "electromagnetism/node_samarium_cobalt_magnet",
-      "x": 9,
-      "y": 46,
+      "x": 20,
+      "y": 92,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -698,8 +769,8 @@
     },
     {
       "entry": "electromagnetism/node_toroidal_field_coil",
-      "x": 11,
-      "y": 44,
+      "x": 18,
+      "y": 98,
       "parents": [
         "electromagnetism/magnetizer"
       ],
@@ -707,8 +778,8 @@
     },
     {
       "entry": "electromagnetism/tesla_coil",
-      "x": 34,
-      "y": 54,
+      "x": 30,
+      "y": 94,
       "parents": [
         "electromagnetism/r37_induction",
         "electromagnetism/r38_generator"
@@ -716,8 +787,17 @@
     },
     {
       "entry": "electromagnetism/node_bec_trap",
-      "x": 32,
-      "y": 52,
+      "x": 30,
+      "y": 96,
+      "parents": [
+        "electromagnetism/tesla_coil"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_capacitor_bank",
+      "x": 28,
+      "y": 92,
       "parents": [
         "electromagnetism/tesla_coil"
       ],
@@ -725,8 +805,8 @@
     },
     {
       "entry": "electromagnetism/node_fused_silica",
-      "x": 34,
-      "y": 52,
+      "x": 30,
+      "y": 92,
       "parents": [
         "electromagnetism/tesla_coil"
       ],
@@ -734,26 +814,8 @@
     },
     {
       "entry": "electromagnetism/node_light_sail",
-      "x": 32,
-      "y": 54,
-      "parents": [
-        "electromagnetism/tesla_coil"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_photographic_plate",
-      "x": 36,
-      "y": 54,
-      "parents": [
-        "electromagnetism/tesla_coil"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_radiometer_mast",
-      "x": 36,
-      "y": 52,
+      "x": 28,
+      "y": 94,
       "parents": [
         "electromagnetism/tesla_coil"
       ],
@@ -761,8 +823,17 @@
     },
     {
       "entry": "electromagnetism/node_strain_sensor",
-      "x": 34,
-      "y": 56,
+      "x": 32,
+      "y": 94,
+      "parents": [
+        "electromagnetism/tesla_coil"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_tesla_primary",
+      "x": 32,
+      "y": 92,
       "parents": [
         "electromagnetism/tesla_coil"
       ],
@@ -770,8 +841,8 @@
     },
     {
       "entry": "electromagnetism/node_test_mass_chamber",
-      "x": 32,
-      "y": 56,
+      "x": 28,
+      "y": 96,
       "parents": [
         "electromagnetism/tesla_coil"
       ],
@@ -780,15 +851,15 @@
     {
       "entry": "quantum/topological_transmuter",
       "x": 34,
-      "y": 5,
+      "y": 7,
       "parents": [
-        "quantum/metamaterial_weaver"
+        "geography/r37_mapping"
       ]
     },
     {
       "entry": "quantum/node_dimensional_residue",
       "x": 36,
-      "y": 7,
+      "y": 9,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -797,7 +868,7 @@
     {
       "entry": "quantum/node_hall_bar_chip",
       "x": 34,
-      "y": 3,
+      "y": 5,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -806,7 +877,7 @@
     {
       "entry": "quantum/node_klein_bottle",
       "x": 32,
-      "y": 5,
+      "y": 7,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -815,7 +886,7 @@
     {
       "entry": "quantum/node_mobius_strip",
       "x": 36,
-      "y": 5,
+      "y": 7,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -824,7 +895,7 @@
     {
       "entry": "quantum/node_topological_boule",
       "x": 34,
-      "y": 7,
+      "y": 9,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -833,7 +904,7 @@
     {
       "entry": "quantum/node_topological_die",
       "x": 32,
-      "y": 3,
+      "y": 5,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -842,7 +913,7 @@
     {
       "entry": "quantum/node_topological_insulator",
       "x": 36,
-      "y": 3,
+      "y": 5,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -851,7 +922,7 @@
     {
       "entry": "quantum/node_topological_logic_wafer",
       "x": 32,
-      "y": 7,
+      "y": 9,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -859,16 +930,16 @@
     },
     {
       "entry": "exotic/tachyon_resonator",
-      "x": 34,
-      "y": 12,
+      "x": 13,
+      "y": 59,
       "parents": [
         "quantum/metamaterial_weaver"
       ]
     },
     {
       "entry": "exotic/node_tachyon_crystal",
-      "x": 34,
-      "y": 10,
+      "x": 13,
+      "y": 57,
       "parents": [
         "exotic/tachyon_resonator"
       ],
@@ -876,8 +947,8 @@
     },
     {
       "entry": "exotic/node_tachyon_flux",
-      "x": 32,
-      "y": 12,
+      "x": 11,
+      "y": 59,
       "parents": [
         "exotic/tachyon_resonator"
       ],
@@ -885,16 +956,16 @@
     },
     {
       "entry": "exotic/quark_gluon_collider",
-      "x": 47,
-      "y": 28,
+      "x": 22,
+      "y": 59,
       "parents": [
         "exotic/antimatter_penning_trap"
       ]
     },
     {
       "entry": "exotic/node_black_swan_feather",
-      "x": 47,
-      "y": 26,
+      "x": 22,
+      "y": 57,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -902,8 +973,8 @@
     },
     {
       "entry": "exotic/node_calorimeter_detector_array",
-      "x": 45,
-      "y": 32,
+      "x": 18,
+      "y": 61,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -911,8 +982,8 @@
     },
     {
       "entry": "exotic/node_dipole_bending_magnet",
-      "x": 49,
-      "y": 32,
+      "x": 26,
+      "y": 61,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -920,8 +991,8 @@
     },
     {
       "entry": "exotic/node_dipole_winding",
-      "x": 45,
-      "y": 28,
+      "x": 20,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -929,8 +1000,8 @@
     },
     {
       "entry": "exotic/node_feynman_diagram",
-      "x": 49,
-      "y": 28,
+      "x": 24,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -938,8 +1009,8 @@
     },
     {
       "entry": "exotic/node_higgs_field_capacitor",
-      "x": 47,
-      "y": 30,
+      "x": 22,
+      "y": 61,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -947,17 +1018,8 @@
     },
     {
       "entry": "exotic/node_magnetic_monopole",
-      "x": 45,
-      "y": 26,
-      "parents": [
-        "exotic/quark_gluon_collider"
-      ],
-      "node": true
-    },
-    {
-      "entry": "exotic/node_octonion_crystal",
-      "x": 49,
-      "y": 26,
+      "x": 20,
+      "y": 57,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -965,8 +1027,8 @@
     },
     {
       "entry": "exotic/node_penrose_spindle",
-      "x": 45,
-      "y": 30,
+      "x": 24,
+      "y": 57,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -974,8 +1036,8 @@
     },
     {
       "entry": "exotic/node_pixel_tracker_module",
-      "x": 49,
-      "y": 30,
+      "x": 20,
+      "y": 61,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -983,8 +1045,8 @@
     },
     {
       "entry": "exotic/node_quadrupole_pole_tip",
-      "x": 47,
-      "y": 24,
+      "x": 24,
+      "y": 61,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -992,8 +1054,8 @@
     },
     {
       "entry": "exotic/node_quantum_field_lattice",
-      "x": 43,
-      "y": 28,
+      "x": 22,
+      "y": 55,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1001,17 +1063,8 @@
     },
     {
       "entry": "exotic/node_quark_gluon_plasma",
-      "x": 43,
-      "y": 30,
-      "parents": [
-        "exotic/quark_gluon_collider"
-      ],
-      "node": true
-    },
-    {
-      "entry": "exotic/node_quaternion_crystal",
-      "x": 51,
-      "y": 28,
+      "x": 18,
+      "y": 57,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1019,8 +1072,8 @@
     },
     {
       "entry": "exotic/node_rf_accelerating_cavity",
-      "x": 43,
-      "y": 24,
+      "x": 20,
+      "y": 63,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1028,8 +1081,8 @@
     },
     {
       "entry": "exotic/node_rf_resonator_cell",
-      "x": 47,
-      "y": 32,
+      "x": 18,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1037,8 +1090,8 @@
     },
     {
       "entry": "exotic/node_scintillator_crystal",
-      "x": 45,
-      "y": 24,
+      "x": 26,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1046,8 +1099,8 @@
     },
     {
       "entry": "exotic/node_spinor_lattice",
-      "x": 49,
-      "y": 24,
+      "x": 22,
+      "y": 63,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1055,8 +1108,8 @@
     },
     {
       "entry": "exotic/node_strange_matter",
-      "x": 51,
-      "y": 30,
+      "x": 26,
+      "y": 57,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1064,8 +1117,8 @@
     },
     {
       "entry": "exotic/node_tachyon_klystron",
-      "x": 43,
-      "y": 26,
+      "x": 20,
+      "y": 55,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1073,8 +1126,8 @@
     },
     {
       "entry": "exotic/node_wave_packet",
-      "x": 51,
-      "y": 26,
+      "x": 24,
+      "y": 55,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -1082,16 +1135,16 @@
     },
     {
       "entry": "nanotech/nanite_assembler",
-      "x": 34,
-      "y": 19,
+      "x": 132,
+      "y": 115,
       "parents": [
         "quantum/metamaterial_weaver"
       ]
     },
     {
       "entry": "nanotech/node_claytronic_catom",
-      "x": 34,
-      "y": 17,
+      "x": 132,
+      "y": 113,
       "parents": [
         "nanotech/nanite_assembler"
       ],
@@ -1099,8 +1152,8 @@
     },
     {
       "entry": "nanotech/node_nanite_slurry",
-      "x": 34,
-      "y": 21,
+      "x": 132,
+      "y": 117,
       "parents": [
         "nanotech/nanite_assembler"
       ],
@@ -1108,8 +1161,8 @@
     },
     {
       "entry": "nanotech/node_nanite_swarm",
-      "x": 32,
-      "y": 19,
+      "x": 130,
+      "y": 115,
       "parents": [
         "nanotech/nanite_assembler"
       ],
@@ -1117,8 +1170,8 @@
     },
     {
       "entry": "nanotech/node_programmable_matter",
-      "x": 36,
-      "y": 19,
+      "x": 134,
+      "y": 115,
       "parents": [
         "nanotech/nanite_assembler"
       ],
@@ -1126,16 +1179,16 @@
     },
     {
       "entry": "cosmic/annihilation_reactor",
-      "x": 34,
-      "y": 40,
+      "x": 132,
+      "y": 71,
       "parents": [
         "exotic/antimatter_penning_trap"
       ]
     },
     {
       "entry": "cosmic/node_annihilation_core",
-      "x": 34,
-      "y": 38,
+      "x": 132,
+      "y": 69,
       "parents": [
         "cosmic/annihilation_reactor"
       ],
@@ -1143,8 +1196,8 @@
     },
     {
       "entry": "astrophysics/r45_telescope",
-      "x": 32,
-      "y": 0,
+      "x": 156,
+      "y": 31,
       "parents": [
         "astrophysics/r37_spectrograph",
         "astrophysics/spectrograph"
@@ -1152,8 +1205,8 @@
     },
     {
       "entry": "astrophysics/r51_ism",
-      "x": 140,
-      "y": 0,
+      "x": 207,
+      "y": 31,
       "parents": [
         "astrophysics/r37_spectrograph",
         "astrophysics/spectrograph"
@@ -1161,8 +1214,8 @@
     },
     {
       "entry": "astrophysics/r51_exoplanets",
-      "x": 97,
-      "y": 0,
+      "x": 192,
+      "y": 34,
       "parents": [
         "astrophysics/r37_spectrograph",
         "astrophysics/spectrograph"
@@ -1170,8 +1223,8 @@
     },
     {
       "entry": "astrophysics/reflecting_telescope",
-      "x": 45,
-      "y": 2,
+      "x": 156,
+      "y": 36,
       "parents": [
         "astrophysics/r37_spectrograph",
         "astrophysics/spectrograph"
@@ -1179,8 +1232,8 @@
     },
     {
       "entry": "astrophysics/node_planetary_plate",
-      "x": 45,
-      "y": 0,
+      "x": 156,
+      "y": 34,
       "parents": [
         "astrophysics/reflecting_telescope"
       ],
@@ -1188,8 +1241,8 @@
     },
     {
       "entry": "astrophysics/node_star_field_plate",
-      "x": 43,
-      "y": 2,
+      "x": 154,
+      "y": 36,
       "parents": [
         "astrophysics/reflecting_telescope"
       ],
@@ -1197,8 +1250,8 @@
     },
     {
       "entry": "astrophysics/node_stellar_spectrum_plate",
-      "x": 47,
-      "y": 2,
+      "x": 158,
+      "y": 36,
       "parents": [
         "astrophysics/reflecting_telescope"
       ],
@@ -1206,8 +1259,8 @@
     },
     {
       "entry": "astrophysics/node_telescope_pier",
-      "x": 45,
-      "y": 4,
+      "x": 156,
+      "y": 38,
       "parents": [
         "astrophysics/reflecting_telescope"
       ],
@@ -1215,8 +1268,8 @@
     },
     {
       "entry": "astrophysics/node_telescope_tube",
-      "x": 43,
-      "y": 0,
+      "x": 154,
+      "y": 34,
       "parents": [
         "astrophysics/reflecting_telescope"
       ],
@@ -1224,8 +1277,8 @@
     },
     {
       "entry": "astrophysics/interstellar_scoop",
-      "x": 142,
-      "y": 5,
+      "x": 207,
+      "y": 36,
       "parents": [
         "astrophysics/r37_spectrograph",
         "astrophysics/spectrograph"
@@ -1233,8 +1286,8 @@
     },
     {
       "entry": "astrophysics/node_cosmic_ray_shard",
-      "x": 142,
-      "y": 3,
+      "x": 207,
+      "y": 34,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1242,8 +1295,8 @@
     },
     {
       "entry": "astrophysics/node_cosmic_web_filament",
-      "x": 140,
-      "y": 5,
+      "x": 205,
+      "y": 36,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1251,8 +1304,8 @@
     },
     {
       "entry": "astrophysics/node_interstellar_medium",
-      "x": 142,
-      "y": 7,
+      "x": 207,
+      "y": 38,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1260,8 +1313,8 @@
     },
     {
       "entry": "astrophysics/node_molecular_cloud",
-      "x": 140,
-      "y": 3,
+      "x": 205,
+      "y": 34,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1269,8 +1322,8 @@
     },
     {
       "entry": "astrophysics/node_nebular_ice",
-      "x": 144,
-      "y": 3,
+      "x": 209,
+      "y": 34,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1278,8 +1331,8 @@
     },
     {
       "entry": "astrophysics/node_planetary_nebula_shell",
-      "x": 144,
-      "y": 5,
+      "x": 209,
+      "y": 36,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1287,8 +1340,8 @@
     },
     {
       "entry": "astrophysics/node_scintillator_panel",
-      "x": 140,
-      "y": 7,
+      "x": 205,
+      "y": 38,
       "parents": [
         "astrophysics/interstellar_scoop"
       ],
@@ -1296,8 +1349,8 @@
     },
     {
       "entry": "geography/r40_interior",
-      "x": 43,
-      "y": 21,
+      "x": 150,
+      "y": 52,
       "parents": [
         "geography/r37_ground",
         "geography/r38_seismology"
@@ -1305,8 +1358,8 @@
     },
     {
       "entry": "geography/r53_climate",
-      "x": 151,
-      "y": 21,
+      "x": 203,
+      "y": 50,
       "parents": [
         "geography/r53_water",
         "geography/aquifer_pump"
@@ -1314,17 +1367,16 @@
     },
     {
       "entry": "geography/r53_orbit",
-      "x": 97,
-      "y": 41,
+      "x": 188,
+      "y": 50,
       "parents": [
-        "astrophysics/r37_telescopes",
         "geography/r38_seismology"
       ]
     },
     {
       "entry": "geography/climate_engine",
-      "x": 153,
-      "y": 26,
+      "x": 203,
+      "y": 55,
       "parents": [
         "geography/r53_water",
         "geography/aquifer_pump"
@@ -1332,8 +1384,8 @@
     },
     {
       "entry": "geography/node_cloud_seeder_stack",
-      "x": 155,
-      "y": 26,
+      "x": 205,
+      "y": 55,
       "parents": [
         "geography/climate_engine"
       ],
@@ -1341,8 +1393,8 @@
     },
     {
       "entry": "geography/node_ice_core",
-      "x": 153,
-      "y": 24,
+      "x": 203,
+      "y": 53,
       "parents": [
         "geography/climate_engine"
       ],
@@ -1350,8 +1402,17 @@
     },
     {
       "entry": "geography/node_permafrost_sample",
-      "x": 151,
-      "y": 26,
+      "x": 201,
+      "y": 55,
+      "parents": [
+        "geography/climate_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "geography/node_radiometer_mast",
+      "x": 203,
+      "y": 57,
       "parents": [
         "geography/climate_engine"
       ],
@@ -1359,8 +1420,8 @@
     },
     {
       "entry": "nuclear/r38_decay",
-      "x": 43,
-      "y": 35,
+      "x": 143,
+      "y": 3,
       "parents": [
         "nuclear/r37_radioactivity",
         "nuclear/r38_radiation"
@@ -1368,8 +1429,8 @@
     },
     {
       "entry": "nuclear/decay_chamber",
-      "x": 47,
-      "y": 42,
+      "x": 143,
+      "y": 10,
       "parents": [
         "nuclear/r37_radioactivity",
         "nuclear/r38_radiation"
@@ -1377,8 +1438,8 @@
     },
     {
       "entry": "nuclear/node_cascade_casing",
-      "x": 47,
-      "y": 46,
+      "x": 141,
+      "y": 6,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1386,8 +1447,17 @@
     },
     {
       "entry": "nuclear/node_evaporator_shield",
-      "x": 45,
-      "y": 38,
+      "x": 145,
+      "y": 6,
+      "parents": [
+        "nuclear/decay_chamber"
+      ],
+      "node": true
+    },
+    {
+      "entry": "nuclear/node_lead_pig",
+      "x": 141,
+      "y": 10,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1395,8 +1465,8 @@
     },
     {
       "entry": "nuclear/node_lead_shielding_block",
-      "x": 49,
-      "y": 38,
+      "x": 139,
+      "y": 8,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1404,8 +1474,8 @@
     },
     {
       "entry": "nuclear/node_lead_shielding_plate",
-      "x": 45,
-      "y": 42,
+      "x": 145,
+      "y": 10,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1413,8 +1483,8 @@
     },
     {
       "entry": "nuclear/node_leaded_glass",
-      "x": 43,
-      "y": 40,
+      "x": 147,
+      "y": 8,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1422,8 +1492,8 @@
     },
     {
       "entry": "nuclear/node_light_radiation_plating",
-      "x": 49,
-      "y": 42,
+      "x": 143,
+      "y": 12,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1431,8 +1501,8 @@
     },
     {
       "entry": "nuclear/node_mossbauer_absorber",
-      "x": 51,
-      "y": 40,
+      "x": 139,
+      "y": 12,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1440,8 +1510,8 @@
     },
     {
       "entry": "nuclear/node_neutron_guide",
-      "x": 43,
-      "y": 44,
+      "x": 147,
+      "y": 12,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1449,8 +1519,8 @@
     },
     {
       "entry": "nuclear/node_nuclear_waste_glass",
-      "x": 47,
-      "y": 44,
+      "x": 141,
+      "y": 8,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1458,8 +1528,8 @@
     },
     {
       "entry": "nuclear/node_polonium_210_source",
-      "x": 45,
-      "y": 40,
+      "x": 145,
+      "y": 8,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1467,8 +1537,8 @@
     },
     {
       "entry": "nuclear/node_radiogenic_lead",
-      "x": 49,
-      "y": 40,
+      "x": 141,
+      "y": 12,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1476,8 +1546,8 @@
     },
     {
       "entry": "nuclear/node_radium_lamp",
-      "x": 51,
-      "y": 44,
+      "x": 141,
+      "y": 14,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1485,8 +1555,8 @@
     },
     {
       "entry": "nuclear/node_radium_salt",
-      "x": 45,
-      "y": 44,
+      "x": 145,
+      "y": 12,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1494,8 +1564,8 @@
     },
     {
       "entry": "nuclear/node_radon",
-      "x": 51,
-      "y": 42,
+      "x": 143,
+      "y": 14,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1503,8 +1573,8 @@
     },
     {
       "entry": "nuclear/node_reactor_vessel_casing",
-      "x": 45,
-      "y": 46,
+      "x": 145,
+      "y": 14,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1512,8 +1582,8 @@
     },
     {
       "entry": "nuclear/node_research_decay_chains",
-      "x": 47,
-      "y": 40,
+      "x": 143,
+      "y": 8,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1521,8 +1591,8 @@
     },
     {
       "entry": "nuclear/node_spent_fuel_rod",
-      "x": 49,
-      "y": 44,
+      "x": 143,
+      "y": 6,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1530,8 +1600,8 @@
     },
     {
       "entry": "nuclear/node_technetium_99m_vial",
-      "x": 47,
-      "y": 38,
+      "x": 139,
+      "y": 10,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1539,8 +1609,8 @@
     },
     {
       "entry": "nuclear/node_uranium_238_pellet",
-      "x": 43,
-      "y": 42,
+      "x": 147,
+      "y": 10,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1548,8 +1618,8 @@
     },
     {
       "entry": "nuclear/node_xray_cabinet",
-      "x": 49,
-      "y": 46,
+      "x": 139,
+      "y": 6,
       "parents": [
         "nuclear/decay_chamber"
       ],
@@ -1557,8 +1627,8 @@
     },
     {
       "entry": "nuclear/decontamination_scrubber",
-      "x": 43,
-      "y": 49,
+      "x": 150,
+      "y": 8,
       "parents": [
         "nuclear/r37_radioactivity",
         "nuclear/r38_radiation"
@@ -1566,35 +1636,32 @@
     },
     {
       "entry": "optics/r46_overview",
-      "x": 7,
-      "y": 28,
+      "x": 1,
+      "y": 108,
       "parents": [
-        "astrophysics/r37_spectrograph",
-        "astrophysics/spectrograph"
+        "astrophysics/r37_spectrograph"
       ]
     },
     {
       "entry": "optics/r46_diffraction",
-      "x": 7,
-      "y": 31,
+      "x": 4,
+      "y": 108,
       "parents": [
-        "astrophysics/r37_spectrograph",
-        "astrophysics/spectrograph"
+        "astrophysics/r37_spectrograph"
       ]
     },
     {
       "entry": "optics/x_ray_diffractometer",
-      "x": 22,
-      "y": 4,
+      "x": 11,
+      "y": 108,
       "parents": [
-        "astrophysics/r37_spectrograph",
-        "astrophysics/spectrograph"
+        "astrophysics/r37_spectrograph"
       ]
     },
     {
       "entry": "optics/node_corundum_crystal",
-      "x": 22,
-      "y": 0,
+      "x": 11,
+      "y": 104,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1602,8 +1669,8 @@
     },
     {
       "entry": "optics/node_faraday_isolator",
-      "x": 22,
-      "y": 2,
+      "x": 11,
+      "y": 106,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1611,8 +1678,8 @@
     },
     {
       "entry": "optics/node_fluorite_boule",
-      "x": 20,
-      "y": 4,
+      "x": 9,
+      "y": 108,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1620,8 +1687,8 @@
     },
     {
       "entry": "optics/node_garnet_boule",
-      "x": 24,
-      "y": 4,
+      "x": 13,
+      "y": 108,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1629,8 +1696,8 @@
     },
     {
       "entry": "optics/node_laue_pattern",
-      "x": 22,
-      "y": 6,
+      "x": 11,
+      "y": 110,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1638,8 +1705,8 @@
     },
     {
       "entry": "optics/node_mhd_electrode",
-      "x": 18,
-      "y": 4,
+      "x": 7,
+      "y": 108,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1647,8 +1714,8 @@
     },
     {
       "entry": "optics/node_moissanite",
-      "x": 20,
-      "y": 2,
+      "x": 9,
+      "y": 106,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1656,8 +1723,8 @@
     },
     {
       "entry": "optics/node_moissanite_crystal",
-      "x": 26,
-      "y": 4,
+      "x": 15,
+      "y": 108,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1665,8 +1732,8 @@
     },
     {
       "entry": "optics/node_moissanite_drill",
-      "x": 24,
-      "y": 2,
+      "x": 13,
+      "y": 106,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1674,8 +1741,8 @@
     },
     {
       "entry": "optics/node_press_ram",
-      "x": 22,
-      "y": 8,
+      "x": 11,
+      "y": 112,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1683,8 +1750,8 @@
     },
     {
       "entry": "optics/node_sapphire_boule",
-      "x": 20,
-      "y": 6,
+      "x": 9,
+      "y": 110,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1692,8 +1759,17 @@
     },
     {
       "entry": "optics/node_silicon_boule",
-      "x": 24,
-      "y": 6,
+      "x": 13,
+      "y": 110,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_xray_tube",
+      "x": 9,
+      "y": 104,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
@@ -1701,16 +1777,16 @@
     },
     {
       "entry": "exotic/chronon_field_inverter",
-      "x": 56,
-      "y": 12,
+      "x": 31,
+      "y": 59,
       "parents": [
         "exotic/tachyon_resonator"
       ]
     },
     {
       "entry": "exotic/node_causal_shield_lattice",
-      "x": 56,
-      "y": 10,
+      "x": 31,
+      "y": 57,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1718,8 +1794,8 @@
     },
     {
       "entry": "exotic/node_chronon_capacitor",
-      "x": 54,
-      "y": 12,
+      "x": 29,
+      "y": 59,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1727,8 +1803,8 @@
     },
     {
       "entry": "exotic/node_chronon_gas",
-      "x": 54,
-      "y": 10,
+      "x": 29,
+      "y": 57,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1736,8 +1812,17 @@
     },
     {
       "entry": "exotic/node_chronoplastic_casing",
-      "x": 58,
-      "y": 10,
+      "x": 29,
+      "y": 61,
+      "parents": [
+        "exotic/chronon_field_inverter"
+      ],
+      "node": true
+    },
+    {
+      "entry": "exotic/node_chronostatic_vault",
+      "x": 33,
+      "y": 57,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1745,8 +1830,8 @@
     },
     {
       "entry": "exotic/node_entangled_relay",
-      "x": 54,
-      "y": 14,
+      "x": 33,
+      "y": 61,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1754,8 +1839,8 @@
     },
     {
       "entry": "exotic/node_fractured_essence",
-      "x": 58,
-      "y": 12,
+      "x": 33,
+      "y": 59,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1763,8 +1848,8 @@
     },
     {
       "entry": "exotic/node_penning_harness",
-      "x": 56,
-      "y": 14,
+      "x": 31,
+      "y": 61,
       "parents": [
         "exotic/chronon_field_inverter"
       ],
@@ -1772,17 +1857,16 @@
     },
     {
       "entry": "exotic/dark_matter_collector",
-      "x": 56,
-      "y": 19,
+      "x": 38,
+      "y": 59,
       "parents": [
-        "quantum/topological_transmuter",
         "exotic/quark_gluon_collider"
       ]
     },
     {
       "entry": "exotic/node_dark_matter",
-      "x": 54,
-      "y": 17,
+      "x": 36,
+      "y": 57,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1790,8 +1874,8 @@
     },
     {
       "entry": "exotic/node_dark_matter_lens",
-      "x": 56,
-      "y": 17,
+      "x": 38,
+      "y": 57,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1799,8 +1883,8 @@
     },
     {
       "entry": "exotic/node_entanglement_node",
-      "x": 58,
-      "y": 17,
+      "x": 40,
+      "y": 57,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1808,8 +1892,8 @@
     },
     {
       "entry": "exotic/node_exotic_matter_crystal",
-      "x": 54,
-      "y": 19,
+      "x": 36,
+      "y": 59,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1817,8 +1901,8 @@
     },
     {
       "entry": "exotic/node_negative_energy_lattice",
-      "x": 58,
-      "y": 19,
+      "x": 40,
+      "y": 59,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1826,8 +1910,8 @@
     },
     {
       "entry": "exotic/node_void_essence",
-      "x": 56,
-      "y": 21,
+      "x": 38,
+      "y": 61,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1835,8 +1919,8 @@
     },
     {
       "entry": "exotic/node_warp_casing",
-      "x": 54,
-      "y": 21,
+      "x": 36,
+      "y": 61,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -1844,16 +1928,16 @@
     },
     {
       "entry": "cosmic/neutrino_condenser",
-      "x": 56,
-      "y": 46,
+      "x": 139,
+      "y": 71,
       "parents": [
         "exotic/quark_gluon_collider"
       ]
     },
     {
       "entry": "cosmic/node_baryon_asymmetry_crystal",
-      "x": 56,
-      "y": 44,
+      "x": 139,
+      "y": 69,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -1861,8 +1945,8 @@
     },
     {
       "entry": "cosmic/node_neutrino_flux",
-      "x": 58,
-      "y": 46,
+      "x": 141,
+      "y": 71,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -1870,8 +1954,8 @@
     },
     {
       "entry": "cosmic/node_sterile_neutrino",
-      "x": 54,
-      "y": 46,
+      "x": 137,
+      "y": 71,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -1879,8 +1963,8 @@
     },
     {
       "entry": "astrophysics/r45_solar",
-      "x": 54,
-      "y": 0,
+      "x": 163,
+      "y": 30,
       "parents": [
         "astrophysics/r45_telescope",
         "astrophysics/reflecting_telescope"
@@ -1888,17 +1972,26 @@
     },
     {
       "entry": "astrophysics/solar_furnace",
-      "x": 56,
-      "y": 5,
+      "x": 163,
+      "y": 35,
       "parents": [
         "astrophysics/r45_telescope",
         "astrophysics/reflecting_telescope"
       ]
     },
     {
+      "entry": "astrophysics/node_concentrator_mirror",
+      "x": 161,
+      "y": 35,
+      "parents": [
+        "astrophysics/solar_furnace"
+      ],
+      "node": true
+    },
+    {
       "entry": "astrophysics/node_deep_sky_plate",
-      "x": 56,
-      "y": 3,
+      "x": 163,
+      "y": 33,
       "parents": [
         "astrophysics/solar_furnace"
       ],
@@ -1906,8 +1999,8 @@
     },
     {
       "entry": "astrophysics/node_solar_receiver",
-      "x": 54,
-      "y": 5,
+      "x": 165,
+      "y": 35,
       "parents": [
         "astrophysics/solar_furnace"
       ],
@@ -1915,16 +2008,16 @@
     },
     {
       "entry": "geography/r41_riches",
-      "x": 56,
-      "y": 26,
+      "x": 155,
+      "y": 52,
       "parents": [
         "geography/r40_interior"
       ]
     },
     {
       "entry": "geography/node_corundum",
-      "x": 56,
-      "y": 24,
+      "x": 155,
+      "y": 50,
       "parents": [
         "geography/r41_riches"
       ],
@@ -1932,8 +2025,8 @@
     },
     {
       "entry": "geography/node_peridot",
-      "x": 54,
-      "y": 26,
+      "x": 153,
+      "y": 52,
       "parents": [
         "geography/r41_riches"
       ],
@@ -1941,24 +2034,24 @@
     },
     {
       "entry": "geography/r42_press",
-      "x": 54,
-      "y": 31,
+      "x": 155,
+      "y": 57,
       "parents": [
         "geography/r40_interior"
       ]
     },
     {
       "entry": "geography/r44_creatures",
-      "x": 63,
-      "y": 4,
+      "x": 162,
+      "y": 52,
       "parents": [
         "geography/r40_interior"
       ]
     },
     {
       "entry": "geography/node_fission_husk",
-      "x": 61,
-      "y": 4,
+      "x": 160,
+      "y": 52,
       "parents": [
         "geography/r44_creatures"
       ],
@@ -1966,8 +2059,8 @@
     },
     {
       "entry": "geography/node_geodynamo_wraith",
-      "x": 65,
-      "y": 4,
+      "x": 164,
+      "y": 52,
       "parents": [
         "geography/r44_creatures"
       ],
@@ -1975,8 +2068,8 @@
     },
     {
       "entry": "geography/node_plume_elemental",
-      "x": 63,
-      "y": 2,
+      "x": 162,
+      "y": 50,
       "parents": [
         "geography/r44_creatures"
       ],
@@ -1984,24 +2077,24 @@
     },
     {
       "entry": "geography/r44_suits",
-      "x": 61,
-      "y": 9,
+      "x": 162,
+      "y": 57,
       "parents": [
         "geography/r40_interior"
       ]
     },
     {
       "entry": "geography/tectonic_press",
-      "x": 65,
-      "y": 16,
+      "x": 171,
+      "y": 54,
       "parents": [
         "geography/r40_interior"
       ]
     },
     {
       "entry": "geography/node_basalt_column",
-      "x": 69,
-      "y": 16,
+      "x": 171,
+      "y": 58,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2009,8 +2102,8 @@
     },
     {
       "entry": "geography/node_boron_control_rod",
-      "x": 65,
-      "y": 14,
+      "x": 171,
+      "y": 52,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2018,8 +2111,8 @@
     },
     {
       "entry": "geography/node_bridgmanite",
-      "x": 63,
-      "y": 16,
+      "x": 169,
+      "y": 54,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2027,8 +2120,8 @@
     },
     {
       "entry": "geography/node_control_rod_drive",
-      "x": 65,
-      "y": 20,
+      "x": 169,
+      "y": 50,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2036,8 +2129,8 @@
     },
     {
       "entry": "geography/node_core_iron",
-      "x": 63,
-      "y": 12,
+      "x": 173,
+      "y": 50,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2045,8 +2138,8 @@
     },
     {
       "entry": "geography/node_decorative_telescope",
-      "x": 67,
-      "y": 12,
+      "x": 167,
+      "y": 52,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2054,8 +2147,8 @@
     },
     {
       "entry": "geography/node_fusion_blanket_tile",
-      "x": 67,
-      "y": 16,
+      "x": 173,
+      "y": 54,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2063,8 +2156,8 @@
     },
     {
       "entry": "geography/node_garnet",
-      "x": 65,
-      "y": 18,
+      "x": 171,
+      "y": 56,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2072,8 +2165,17 @@
     },
     {
       "entry": "geography/node_garnet_crystal",
-      "x": 61,
-      "y": 14,
+      "x": 175,
+      "y": 52,
+      "parents": [
+        "geography/tectonic_press"
+      ],
+      "node": true
+    },
+    {
+      "entry": "geography/node_geodetic_surveyor",
+      "x": 169,
+      "y": 52,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2081,8 +2183,8 @@
     },
     {
       "entry": "geography/node_graphite_moderator",
-      "x": 63,
-      "y": 14,
+      "x": 173,
+      "y": 52,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2090,8 +2192,8 @@
     },
     {
       "entry": "geography/node_graphite_moderator_block",
-      "x": 69,
-      "y": 14,
+      "x": 167,
+      "y": 56,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2099,8 +2201,8 @@
     },
     {
       "entry": "geography/node_heavy_radiation_plating",
-      "x": 67,
-      "y": 14,
+      "x": 169,
+      "y": 56,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2108,8 +2210,8 @@
     },
     {
       "entry": "geography/node_interferometer",
-      "x": 61,
-      "y": 18,
+      "x": 175,
+      "y": 56,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2117,8 +2219,8 @@
     },
     {
       "entry": "geography/node_lithostatic_casing",
-      "x": 69,
-      "y": 18,
+      "x": 169,
+      "y": 58,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2126,8 +2228,8 @@
     },
     {
       "entry": "geography/node_medium_radiation_plating",
-      "x": 63,
-      "y": 18,
+      "x": 173,
+      "y": 56,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2135,8 +2237,8 @@
     },
     {
       "entry": "geography/node_metamorphic_schist",
-      "x": 67,
-      "y": 18,
+      "x": 171,
+      "y": 50,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2144,8 +2246,8 @@
     },
     {
       "entry": "geography/node_primary_mirror_cell",
-      "x": 63,
-      "y": 20,
+      "x": 173,
+      "y": 58,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2153,8 +2255,8 @@
     },
     {
       "entry": "geography/node_telescope_mirror_blank",
-      "x": 65,
-      "y": 12,
+      "x": 167,
+      "y": 54,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2162,8 +2264,8 @@
     },
     {
       "entry": "geography/node_theodolite_lens",
-      "x": 61,
-      "y": 16,
+      "x": 175,
+      "y": 54,
       "parents": [
         "geography/tectonic_press"
       ],
@@ -2171,17 +2273,26 @@
     },
     {
       "entry": "optics/r46_growth",
-      "x": 43,
-      "y": 52,
+      "x": 23,
+      "y": 107,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
       ]
     },
     {
+      "entry": "optics/node_iridium_crucible",
+      "x": 23,
+      "y": 105,
+      "parents": [
+        "optics/r46_growth"
+      ],
+      "node": true
+    },
+    {
       "entry": "optics/crystal_growth_furnace",
-      "x": 45,
-      "y": 57,
+      "x": 30,
+      "y": 107,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
@@ -2189,8 +2300,8 @@
     },
     {
       "entry": "optics/node_growth_furnace_casing",
-      "x": 45,
-      "y": 55,
+      "x": 30,
+      "y": 105,
       "parents": [
         "optics/crystal_growth_furnace"
       ],
@@ -2198,24 +2309,24 @@
     },
     {
       "entry": "singularities/lensing",
-      "x": 72,
-      "y": 16,
+      "x": 130,
+      "y": 87,
       "parents": [
         "exotic/dark_matter_collector"
       ]
     },
     {
       "entry": "singularities/kugelblitz_chamber",
-      "x": 76,
-      "y": 23,
+      "x": 137,
+      "y": 87,
       "parents": [
         "exotic/dark_matter_collector"
       ]
     },
     {
       "entry": "singularities/node_evaporation_flash",
-      "x": 76,
-      "y": 21,
+      "x": 137,
+      "y": 85,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2223,8 +2334,8 @@
     },
     {
       "entry": "singularities/node_gravitic_lens_element",
-      "x": 74,
-      "y": 23,
+      "x": 135,
+      "y": 87,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2232,8 +2343,8 @@
     },
     {
       "entry": "singularities/node_graviton_lens_array",
-      "x": 78,
-      "y": 25,
+      "x": 139,
+      "y": 89,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2241,8 +2352,8 @@
     },
     {
       "entry": "singularities/node_hawking_absorber_plate",
-      "x": 78,
-      "y": 23,
+      "x": 139,
+      "y": 87,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2250,8 +2361,8 @@
     },
     {
       "entry": "singularities/node_hawking_emitter",
-      "x": 76,
-      "y": 25,
+      "x": 137,
+      "y": 89,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2259,8 +2370,8 @@
     },
     {
       "entry": "singularities/node_hawking_radiation",
-      "x": 74,
-      "y": 25,
+      "x": 135,
+      "y": 89,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2268,8 +2379,8 @@
     },
     {
       "entry": "singularities/node_hawking_radiation_collector",
-      "x": 76,
-      "y": 19,
+      "x": 137,
+      "y": 83,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2277,8 +2388,8 @@
     },
     {
       "entry": "singularities/node_kugelblitz_seed",
-      "x": 74,
-      "y": 21,
+      "x": 135,
+      "y": 85,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -2286,166 +2397,33 @@
     },
     {
       "entry": "singularities/node_metric_tensor",
-      "x": 78,
-      "y": 21,
+      "x": 139,
+      "y": 85,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/relativity",
-      "x": 47,
-      "y": 11,
-      "parents": [
-        "exotic/tachyon_resonator"
-      ]
-    },
-    {
-      "entry": "spacetime/node_gravitational_wave_crystal",
-      "x": 49,
-      "y": 13,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_kerr_metric_shard",
-      "x": 47,
-      "y": 7,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_lorentz_transform_crystal",
-      "x": 43,
-      "y": 11,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_minkowski_lattice",
-      "x": 51,
-      "y": 11,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_primordial_ash",
-      "x": 47,
-      "y": 15,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_big_bang_cosmology",
-      "x": 47,
-      "y": 9,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_cosmic_eschatology",
-      "x": 45,
-      "y": 11,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_equivalence_principle",
-      "x": 49,
-      "y": 11,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_frame_dragging",
-      "x": 47,
-      "y": 13,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_general_relativity",
-      "x": 45,
-      "y": 9,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_geodesics",
-      "x": 49,
-      "y": 9,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_primordial_nucleosynthesis",
-      "x": 45,
-      "y": 13,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_riemann_curvature_tensor",
-      "x": 45,
-      "y": 7,
-      "parents": [
-        "spacetime/relativity"
-      ],
-      "node": true
-    },
-    {
       "entry": "spacetime/temporal_mechanics",
-      "x": 54,
-      "y": 34,
+      "x": 14,
+      "y": 23,
       "parents": [
         "exotic/chronon_field_inverter"
       ]
     },
     {
-      "entry": "spacetime/tensor_engine",
-      "x": 43,
-      "y": 18,
-      "parents": [
-        "exotic/tachyon_resonator"
-      ]
-    },
-    {
       "entry": "spacetime/chrono_loom",
-      "x": 56,
-      "y": 39,
+      "x": 14,
+      "y": 28,
       "parents": [
         "exotic/chronon_field_inverter"
       ]
     },
     {
       "entry": "spacetime/node_arrow_of_time_shard",
-      "x": 56,
-      "y": 37,
+      "x": 14,
+      "y": 26,
       "parents": [
         "spacetime/chrono_loom"
       ],
@@ -2453,8 +2431,8 @@
     },
     {
       "entry": "spacetime/node_chronal_anchor",
-      "x": 54,
-      "y": 39,
+      "x": 12,
+      "y": 28,
       "parents": [
         "spacetime/chrono_loom"
       ],
@@ -2462,8 +2440,8 @@
     },
     {
       "entry": "spacetime/node_chronal_field_projector",
-      "x": 56,
-      "y": 41,
+      "x": 14,
+      "y": 30,
       "parents": [
         "spacetime/chrono_loom"
       ],
@@ -2471,8 +2449,8 @@
     },
     {
       "entry": "spacetime/node_temporal_knot",
-      "x": 58,
-      "y": 39,
+      "x": 16,
+      "y": 28,
       "parents": [
         "spacetime/chrono_loom"
       ],
@@ -2480,17 +2458,17 @@
     },
     {
       "entry": "astrophysics/r46_better_telescopes",
-      "x": 61,
-      "y": 23,
+      "x": 172,
+      "y": 30,
       "parents": [
-        "optics/r46_overview",
-        "optics/r46_diffraction"
+        "astrophysics/r45_solar",
+        "astrophysics/solar_furnace"
       ]
     },
     {
       "entry": "geography/r42_drilling",
-      "x": 72,
-      "y": 47,
+      "x": 180,
+      "y": 51,
       "parents": [
         "geography/r41_riches",
         "geography/r42_press"
@@ -2498,8 +2476,8 @@
     },
     {
       "entry": "geography/deep_drilling_rig",
-      "x": 74,
-      "y": 52,
+      "x": 180,
+      "y": 56,
       "parents": [
         "geography/r41_riches",
         "geography/r42_press"
@@ -2507,8 +2485,8 @@
     },
     {
       "entry": "geography/node_basaltic_magma",
-      "x": 74,
-      "y": 54,
+      "x": 180,
+      "y": 58,
       "parents": [
         "geography/deep_drilling_rig"
       ],
@@ -2516,8 +2494,8 @@
     },
     {
       "entry": "geography/node_crustal_rock",
-      "x": 72,
-      "y": 50,
+      "x": 178,
+      "y": 54,
       "parents": [
         "geography/deep_drilling_rig"
       ],
@@ -2525,8 +2503,8 @@
     },
     {
       "entry": "geography/node_drill_string",
-      "x": 76,
-      "y": 50,
+      "x": 182,
+      "y": 54,
       "parents": [
         "geography/deep_drilling_rig"
       ],
@@ -2534,8 +2512,8 @@
     },
     {
       "entry": "geography/node_rich_copper_chunk",
-      "x": 74,
-      "y": 50,
+      "x": 180,
+      "y": 54,
       "parents": [
         "geography/deep_drilling_rig"
       ],
@@ -2543,8 +2521,8 @@
     },
     {
       "entry": "geography/node_rich_iron_chunk",
-      "x": 72,
-      "y": 52,
+      "x": 178,
+      "y": 56,
       "parents": [
         "geography/deep_drilling_rig"
       ],
@@ -2552,8 +2530,8 @@
     },
     {
       "entry": "geography/node_sediment_core",
-      "x": 76,
-      "y": 52,
+      "x": 182,
+      "y": 56,
       "parents": [
         "geography/deep_drilling_rig"
       ],
@@ -2561,8 +2539,8 @@
     },
     {
       "entry": "nuclear/r42_enrichment",
-      "x": 61,
-      "y": 40,
+      "x": 155,
+      "y": 3,
       "parents": [
         "nuclear/r38_decay",
         "nuclear/decay_chamber"
@@ -2570,8 +2548,8 @@
     },
     {
       "entry": "nuclear/gas_centrifuge_cascade",
-      "x": 63,
-      "y": 45,
+      "x": 155,
+      "y": 8,
       "parents": [
         "nuclear/r38_decay",
         "nuclear/decay_chamber"
@@ -2579,8 +2557,8 @@
     },
     {
       "entry": "nuclear/node_fluorspar",
-      "x": 63,
-      "y": 43,
+      "x": 155,
+      "y": 6,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
@@ -2588,8 +2566,8 @@
     },
     {
       "entry": "nuclear/node_geode_shell",
-      "x": 61,
-      "y": 47,
+      "x": 153,
+      "y": 10,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
@@ -2597,8 +2575,8 @@
     },
     {
       "entry": "nuclear/node_heavy_water",
-      "x": 61,
-      "y": 43,
+      "x": 153,
+      "y": 6,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
@@ -2606,8 +2584,8 @@
     },
     {
       "entry": "nuclear/node_lithium_6_ingot",
-      "x": 61,
-      "y": 45,
+      "x": 153,
+      "y": 8,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
@@ -2615,8 +2593,8 @@
     },
     {
       "entry": "nuclear/node_uranium_235_pellet",
-      "x": 65,
-      "y": 45,
+      "x": 157,
+      "y": 8,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
@@ -2624,8 +2602,8 @@
     },
     {
       "entry": "nuclear/node_uranium_hexafluoride",
-      "x": 65,
-      "y": 43,
+      "x": 157,
+      "y": 6,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
@@ -2633,98 +2611,17 @@
     },
     {
       "entry": "nuclear/node_yellowcake",
-      "x": 63,
-      "y": 47,
+      "x": 155,
+      "y": 10,
       "parents": [
         "nuclear/gas_centrifuge_cascade"
       ],
       "node": true
     },
     {
-      "entry": "electromagnetism/r52_maxwell",
-      "x": 151,
-      "y": 45,
-      "parents": [
-        "electromagnetism/r37_induction",
-        "electromagnetism/r38_generator"
-      ]
-    },
-    {
-      "entry": "electromagnetism/r52_railgun",
-      "x": 151,
-      "y": 48,
-      "parents": [
-        "electromagnetism/r37_induction",
-        "electromagnetism/r38_generator"
-      ]
-    },
-    {
-      "entry": "electromagnetism/hypervelocity_impact_forge",
-      "x": 153,
-      "y": 53,
-      "parents": [
-        "electromagnetism/r37_induction",
-        "electromagnetism/r38_generator"
-      ]
-    },
-    {
-      "entry": "electromagnetism/node_acceleration_cavity",
-      "x": 153,
-      "y": 55,
-      "parents": [
-        "electromagnetism/hypervelocity_impact_forge"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_armature_breech",
-      "x": 151,
-      "y": 51,
-      "parents": [
-        "electromagnetism/hypervelocity_impact_forge"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_impact_chamber",
-      "x": 155,
-      "y": 51,
-      "parents": [
-        "electromagnetism/hypervelocity_impact_forge"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_lonsdaleite",
-      "x": 153,
-      "y": 51,
-      "parents": [
-        "electromagnetism/hypervelocity_impact_forge"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_rail_armature",
-      "x": 151,
-      "y": 53,
-      "parents": [
-        "electromagnetism/hypervelocity_impact_forge"
-      ],
-      "node": true
-    },
-    {
-      "entry": "electromagnetism/node_waveguide",
-      "x": 155,
-      "y": 53,
-      "parents": [
-        "electromagnetism/hypervelocity_impact_forge"
-      ],
-      "node": true
-    },
-    {
       "entry": "optics/r46_workshop",
-      "x": 61,
-      "y": 26,
+      "x": 35,
+      "y": 107,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
@@ -2732,8 +2629,8 @@
     },
     {
       "entry": "optics/optical_workshop",
-      "x": 65,
-      "y": 33,
+      "x": 42,
+      "y": 108,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
@@ -2741,8 +2638,8 @@
     },
     {
       "entry": "optics/node_apochromatic_objective",
-      "x": 65,
-      "y": 31,
+      "x": 42,
+      "y": 106,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2750,8 +2647,8 @@
     },
     {
       "entry": "optics/node_cryogenic_receiver",
-      "x": 63,
-      "y": 33,
+      "x": 40,
+      "y": 108,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2759,8 +2656,17 @@
     },
     {
       "entry": "optics/node_echelle_grating",
-      "x": 67,
-      "y": 33,
+      "x": 44,
+      "y": 108,
+      "parents": [
+        "optics/optical_workshop"
+      ],
+      "node": true
+    },
+    {
+      "entry": "optics/node_feed_horn",
+      "x": 46,
+      "y": 108,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2768,8 +2674,8 @@
     },
     {
       "entry": "optics/node_fluorite_lens",
-      "x": 65,
-      "y": 35,
+      "x": 42,
+      "y": 110,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2777,8 +2683,8 @@
     },
     {
       "entry": "optics/node_fused_silica_lens",
-      "x": 63,
-      "y": 31,
+      "x": 40,
+      "y": 106,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2786,8 +2692,8 @@
     },
     {
       "entry": "optics/node_laser_head",
-      "x": 67,
-      "y": 31,
+      "x": 44,
+      "y": 106,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2795,8 +2701,8 @@
     },
     {
       "entry": "optics/node_lens_grinder",
-      "x": 69,
-      "y": 33,
+      "x": 42,
+      "y": 112,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2804,8 +2710,8 @@
     },
     {
       "entry": "optics/node_microscope_column",
-      "x": 65,
-      "y": 37,
+      "x": 40,
+      "y": 104,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2813,8 +2719,8 @@
     },
     {
       "entry": "optics/node_moissanite_lens",
-      "x": 63,
-      "y": 35,
+      "x": 40,
+      "y": 110,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2822,8 +2728,8 @@
     },
     {
       "entry": "optics/node_photonic_lens",
-      "x": 67,
-      "y": 35,
+      "x": 44,
+      "y": 110,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2831,8 +2737,8 @@
     },
     {
       "entry": "optics/node_sapphire_window",
-      "x": 65,
-      "y": 29,
+      "x": 42,
+      "y": 104,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2840,8 +2746,8 @@
     },
     {
       "entry": "optics/node_schmidt_corrector",
-      "x": 61,
-      "y": 33,
+      "x": 38,
+      "y": 108,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2849,8 +2755,8 @@
     },
     {
       "entry": "optics/node_step_laser",
-      "x": 63,
-      "y": 29,
+      "x": 44,
+      "y": 104,
       "parents": [
         "optics/optical_workshop"
       ],
@@ -2858,16 +2764,16 @@
     },
     {
       "entry": "exotic/synchrotron",
-      "x": 74,
-      "y": 42,
+      "x": 45,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider"
       ]
     },
     {
       "entry": "exotic/node_glueball_core",
-      "x": 74,
-      "y": 40,
+      "x": 45,
+      "y": 57,
       "parents": [
         "exotic/synchrotron"
       ],
@@ -2875,8 +2781,8 @@
     },
     {
       "entry": "exotic/node_hyperon_crystal",
-      "x": 72,
-      "y": 42,
+      "x": 43,
+      "y": 59,
       "parents": [
         "exotic/synchrotron"
       ],
@@ -2884,8 +2790,8 @@
     },
     {
       "entry": "exotic/node_pentaquark_shard",
-      "x": 76,
-      "y": 42,
+      "x": 47,
+      "y": 59,
       "parents": [
         "exotic/synchrotron"
       ],
@@ -2893,8 +2799,8 @@
     },
     {
       "entry": "singularities/penrose_ergosphere",
-      "x": 97,
-      "y": 38,
+      "x": 147,
+      "y": 87,
       "parents": [
         "singularities/lensing",
         "singularities/kugelblitz_chamber"
@@ -2902,17 +2808,16 @@
     },
     {
       "entry": "singularities/white_hole_emitter",
-      "x": 101,
-      "y": 21,
+      "x": 154,
+      "y": 87,
       "parents": [
-        "exotic/chronon_field_inverter",
         "singularities/lensing"
       ]
     },
     {
       "entry": "singularities/node_biosphere_compendium",
-      "x": 99,
-      "y": 21,
+      "x": 152,
+      "y": 87,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2920,8 +2825,8 @@
     },
     {
       "entry": "singularities/node_cosmic_neutronium_block",
-      "x": 101,
-      "y": 17,
+      "x": 154,
+      "y": 83,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2929,8 +2834,8 @@
     },
     {
       "entry": "singularities/node_cosmic_neutronium_ingot",
-      "x": 103,
-      "y": 21,
+      "x": 156,
+      "y": 87,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2938,8 +2843,8 @@
     },
     {
       "entry": "singularities/node_cosmic_string_segment",
-      "x": 101,
-      "y": 23,
+      "x": 154,
+      "y": 89,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2947,8 +2852,8 @@
     },
     {
       "entry": "singularities/node_exotic_matter",
-      "x": 103,
-      "y": 23,
+      "x": 156,
+      "y": 89,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2956,8 +2861,8 @@
     },
     {
       "entry": "singularities/node_primordial_harvest",
-      "x": 99,
-      "y": 19,
+      "x": 152,
+      "y": 85,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2965,8 +2870,8 @@
     },
     {
       "entry": "singularities/node_research_stellar_engineering",
-      "x": 101,
-      "y": 19,
+      "x": 154,
+      "y": 85,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2974,8 +2879,8 @@
     },
     {
       "entry": "singularities/node_singularity_energy_cell",
-      "x": 97,
-      "y": 21,
+      "x": 150,
+      "y": 87,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2983,8 +2888,8 @@
     },
     {
       "entry": "singularities/node_solar_statite",
-      "x": 103,
-      "y": 19,
+      "x": 156,
+      "y": 85,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -2992,8 +2897,8 @@
     },
     {
       "entry": "singularities/node_white_hole_fragment",
-      "x": 99,
-      "y": 23,
+      "x": 152,
+      "y": 89,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3001,24 +2906,24 @@
     },
     {
       "entry": "stellar/stellar_evolution",
-      "x": 97,
-      "y": 28,
+      "x": 130,
+      "y": 22,
       "parents": [
         "exotic/dark_matter_collector"
       ]
     },
     {
       "entry": "stellar/nucleosynthesis_chamber",
-      "x": 99,
-      "y": 33,
+      "x": 135,
+      "y": 22,
       "parents": [
         "exotic/dark_matter_collector"
       ]
     },
     {
       "entry": "stellar/node_nebular_gas",
-      "x": 97,
-      "y": 35,
+      "x": 133,
+      "y": 24,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
@@ -3026,8 +2931,8 @@
     },
     {
       "entry": "stellar/node_r_process_cluster",
-      "x": 97,
-      "y": 33,
+      "x": 133,
+      "y": 22,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
@@ -3035,8 +2940,8 @@
     },
     {
       "entry": "stellar/node_red_giant_envelope",
-      "x": 101,
-      "y": 33,
+      "x": 137,
+      "y": 22,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
@@ -3044,8 +2949,8 @@
     },
     {
       "entry": "stellar/node_research_nucleosynthesis",
-      "x": 99,
-      "y": 31,
+      "x": 135,
+      "y": 20,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
@@ -3053,8 +2958,8 @@
     },
     {
       "entry": "stellar/node_stellar_iron_ingot",
-      "x": 99,
-      "y": 35,
+      "x": 135,
+      "y": 24,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
@@ -3062,8 +2967,8 @@
     },
     {
       "entry": "stellar/node_supernova_remnant",
-      "x": 97,
-      "y": 31,
+      "x": 133,
+      "y": 20,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
@@ -3071,170 +2976,168 @@
     },
     {
       "entry": "stellar/node_white_dwarf_core",
-      "x": 101,
-      "y": 31,
+      "x": 137,
+      "y": 20,
       "parents": [
         "stellar/nucleosynthesis_chamber"
       ],
       "node": true
     },
     {
-      "entry": "antimatter/cpt",
-      "x": 140,
-      "y": 35,
+      "entry": "spacetime/relativity",
+      "x": 5,
+      "y": 25,
       "parents": [
-        "exotic/antimatter_penning_trap",
-        "spacetime/relativity"
+        "exotic/tachyon_resonator"
       ]
     },
     {
-      "entry": "antimatter/antiverse_life",
-      "x": 144,
-      "y": 42,
+      "entry": "spacetime/node_gravitational_wave_crystal",
+      "x": 7,
+      "y": 27,
       "parents": [
-        "exotic/antimatter_penning_trap",
         "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_kerr_metric_shard",
+      "x": 5,
+      "y": 21,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_lorentz_transform_crystal",
+      "x": 1,
+      "y": 25,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_minkowski_lattice",
+      "x": 9,
+      "y": 25,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_primordial_ash",
+      "x": 5,
+      "y": 29,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_big_bang_cosmology",
+      "x": 5,
+      "y": 23,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_cosmic_eschatology",
+      "x": 3,
+      "y": 25,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_equivalence_principle",
+      "x": 7,
+      "y": 25,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_frame_dragging",
+      "x": 5,
+      "y": 27,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_general_relativity",
+      "x": 3,
+      "y": 23,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_geodesics",
+      "x": 7,
+      "y": 23,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_primordial_nucleosynthesis",
+      "x": 3,
+      "y": 27,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_riemann_curvature_tensor",
+      "x": 3,
+      "y": 21,
+      "parents": [
+        "spacetime/relativity"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/tensor_engine",
+      "x": 5,
+      "y": 32,
+      "parents": [
+        "exotic/tachyon_resonator"
       ]
-    },
-    {
-      "entry": "antimatter/node_annihilator",
-      "x": 148,
-      "y": 42,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_anticarbon_crystal",
-      "x": 144,
-      "y": 40,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antihydrogen_crystal",
-      "x": 142,
-      "y": 42,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antihydrogen_wisp",
-      "x": 144,
-      "y": 46,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antiquark_shard",
-      "x": 146,
-      "y": 42,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antisilicon_shard",
-      "x": 144,
-      "y": 44,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antistone",
-      "x": 146,
-      "y": 44,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antistone_bricks",
-      "x": 144,
-      "y": 38,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antiverse_cache",
-      "x": 140,
-      "y": 42,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antiwater",
-      "x": 142,
-      "y": 44,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_positronium_skitterer",
-      "x": 142,
-      "y": 38,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_raw_antigold",
-      "x": 142,
-      "y": 40,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_raw_antiiron",
-      "x": 146,
-      "y": 40,
-      "parents": [
-        "antimatter/antiverse_life"
-      ],
-      "node": true
     },
     {
       "entry": "astrophysics/r45_radio",
-      "x": 61,
-      "y": 50,
+      "x": 172,
+      "y": 33,
       "parents": [
-        "electromagnetism/r37_induction",
-        "electromagnetism/r38_generator"
+        "astrophysics/r45_solar",
+        "astrophysics/solar_furnace"
       ]
     },
     {
       "entry": "astrophysics/radio_telescope",
-      "x": 65,
-      "y": 57,
+      "x": 172,
+      "y": 40,
       "parents": [
-        "electromagnetism/r37_induction",
-        "electromagnetism/r38_generator"
+        "astrophysics/r45_solar",
+        "astrophysics/solar_furnace"
       ]
     },
     {
       "entry": "astrophysics/node_alt_az_mount",
-      "x": 65,
-      "y": 53,
+      "x": 172,
+      "y": 36,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3242,8 +3145,8 @@
     },
     {
       "entry": "astrophysics/node_cepheid_standard_candle",
-      "x": 67,
-      "y": 57,
+      "x": 174,
+      "y": 40,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3251,8 +3154,8 @@
     },
     {
       "entry": "astrophysics/node_dish_truss",
-      "x": 61,
-      "y": 57,
+      "x": 168,
+      "y": 40,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3260,8 +3163,8 @@
     },
     {
       "entry": "astrophysics/node_galactic_filament",
-      "x": 65,
-      "y": 59,
+      "x": 172,
+      "y": 42,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3269,8 +3172,8 @@
     },
     {
       "entry": "astrophysics/node_hydrogen_line_map",
-      "x": 63,
-      "y": 55,
+      "x": 170,
+      "y": 38,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3278,8 +3181,8 @@
     },
     {
       "entry": "astrophysics/node_pulsar_timing_record",
-      "x": 67,
-      "y": 55,
+      "x": 174,
+      "y": 38,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3287,8 +3190,8 @@
     },
     {
       "entry": "astrophysics/node_redshift_lens",
-      "x": 63,
-      "y": 59,
+      "x": 170,
+      "y": 42,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3296,8 +3199,8 @@
     },
     {
       "entry": "astrophysics/node_research_cosmic_web",
-      "x": 65,
-      "y": 55,
+      "x": 172,
+      "y": 38,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3305,8 +3208,8 @@
     },
     {
       "entry": "astrophysics/node_research_galactic_dynamics",
-      "x": 63,
-      "y": 57,
+      "x": 170,
+      "y": 40,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3314,8 +3217,8 @@
     },
     {
       "entry": "astrophysics/node_survey_satellite",
-      "x": 67,
-      "y": 59,
+      "x": 174,
+      "y": 42,
       "parents": [
         "astrophysics/radio_telescope"
       ],
@@ -3323,8 +3226,8 @@
     },
     {
       "entry": "nuclear/r42_msr",
-      "x": 72,
-      "y": 57,
+      "x": 160,
+      "y": 3,
       "parents": [
         "nuclear/r37_binding",
         "nuclear/r42_enrichment"
@@ -3332,8 +3235,8 @@
     },
     {
       "entry": "nuclear/molten_salt_reactor",
-      "x": 72,
-      "y": 60,
+      "x": 160,
+      "y": 6,
       "parents": [
         "nuclear/r37_binding",
         "nuclear/r42_enrichment"
@@ -3341,8 +3244,8 @@
     },
     {
       "entry": "nuclear/irradiation_chamber",
-      "x": 85,
-      "y": 42,
+      "x": 165,
+      "y": 5,
       "parents": [
         "nuclear/r37_binding",
         "nuclear/r42_enrichment"
@@ -3350,8 +3253,8 @@
     },
     {
       "entry": "nuclear/node_californium_252_neutron_source",
-      "x": 83,
-      "y": 42,
+      "x": 163,
+      "y": 5,
       "parents": [
         "nuclear/irradiation_chamber"
       ],
@@ -3359,8 +3262,8 @@
     },
     {
       "entry": "nuclear/node_fission_fragment_mix",
-      "x": 87,
-      "y": 42,
+      "x": 167,
+      "y": 5,
       "parents": [
         "nuclear/irradiation_chamber"
       ],
@@ -3368,8 +3271,8 @@
     },
     {
       "entry": "nuclear/node_molten_salt_fuel",
-      "x": 83,
-      "y": 40,
+      "x": 163,
+      "y": 3,
       "parents": [
         "nuclear/irradiation_chamber"
       ],
@@ -3377,8 +3280,8 @@
     },
     {
       "entry": "nuclear/node_plutonium_239_pellet",
-      "x": 85,
-      "y": 44,
+      "x": 165,
+      "y": 7,
       "parents": [
         "nuclear/irradiation_chamber"
       ],
@@ -3386,8 +3289,8 @@
     },
     {
       "entry": "nuclear/node_research_transuranic_synthesis",
-      "x": 85,
-      "y": 40,
+      "x": 165,
+      "y": 3,
       "parents": [
         "nuclear/irradiation_chamber"
       ],
@@ -3395,8 +3298,8 @@
     },
     {
       "entry": "nuclear/node_spent_fuel_salt",
-      "x": 87,
-      "y": 40,
+      "x": 167,
+      "y": 3,
       "parents": [
         "nuclear/irradiation_chamber"
       ],
@@ -3404,8 +3307,44 @@
     },
     {
       "entry": "electromagnetism/r42_mhd",
-      "x": 54,
-      "y": 51,
+      "x": 37,
+      "y": 87,
+      "parents": [
+        "electromagnetism/r37_induction",
+        "electromagnetism/r38_generator"
+      ]
+    },
+    {
+      "entry": "electromagnetism/r52_maxwell",
+      "x": 72,
+      "y": 89,
+      "parents": [
+        "electromagnetism/r37_induction",
+        "electromagnetism/r38_generator"
+      ]
+    },
+    {
+      "entry": "electromagnetism/node_faraday_cage_mesh",
+      "x": 72,
+      "y": 87,
+      "parents": [
+        "electromagnetism/r52_maxwell"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_mu_metal_shield",
+      "x": 70,
+      "y": 89,
+      "parents": [
+        "electromagnetism/r52_maxwell"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/r52_railgun",
+      "x": 72,
+      "y": 94,
       "parents": [
         "electromagnetism/r37_induction",
         "electromagnetism/r38_generator"
@@ -3413,8 +3352,8 @@
     },
     {
       "entry": "electromagnetism/mhd_generator",
-      "x": 56,
-      "y": 56,
+      "x": 37,
+      "y": 92,
       "parents": [
         "electromagnetism/r37_induction",
         "electromagnetism/r38_generator"
@@ -3422,8 +3361,8 @@
     },
     {
       "entry": "electromagnetism/node_jet_collimator",
-      "x": 54,
-      "y": 56,
+      "x": 35,
+      "y": 92,
       "parents": [
         "electromagnetism/mhd_generator"
       ],
@@ -3431,8 +3370,8 @@
     },
     {
       "entry": "electromagnetism/node_mhd_channel_casing",
-      "x": 58,
-      "y": 56,
+      "x": 39,
+      "y": 92,
       "parents": [
         "electromagnetism/mhd_generator"
       ],
@@ -3440,26 +3379,88 @@
     },
     {
       "entry": "electromagnetism/node_plasma_thruster_nozzle",
-      "x": 56,
-      "y": 54,
+      "x": 37,
+      "y": 90,
       "parents": [
         "electromagnetism/mhd_generator"
       ],
       "node": true
     },
     {
-      "entry": "electromagnetism/laser_cutter",
-      "x": 85,
-      "y": 52,
+      "entry": "electromagnetism/hypervelocity_impact_forge",
+      "x": 79,
+      "y": 90,
       "parents": [
-        "optics/r46_growth",
-        "optics/crystal_growth_furnace"
+        "electromagnetism/r37_induction",
+        "electromagnetism/r38_generator"
+      ]
+    },
+    {
+      "entry": "electromagnetism/node_acceleration_cavity",
+      "x": 79,
+      "y": 92,
+      "parents": [
+        "electromagnetism/hypervelocity_impact_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_armature_breech",
+      "x": 77,
+      "y": 88,
+      "parents": [
+        "electromagnetism/hypervelocity_impact_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_impact_chamber",
+      "x": 81,
+      "y": 88,
+      "parents": [
+        "electromagnetism/hypervelocity_impact_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_lonsdaleite",
+      "x": 79,
+      "y": 88,
+      "parents": [
+        "electromagnetism/hypervelocity_impact_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_rail_armature",
+      "x": 77,
+      "y": 90,
+      "parents": [
+        "electromagnetism/hypervelocity_impact_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_waveguide",
+      "x": 81,
+      "y": 90,
+      "parents": [
+        "electromagnetism/hypervelocity_impact_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/laser_cutter",
+      "x": 51,
+      "y": 89,
+      "parents": [
+        "optics/r46_growth"
       ]
     },
     {
       "entry": "electromagnetism/node_beam_splitter",
-      "x": 85,
-      "y": 50,
+      "x": 51,
+      "y": 87,
       "parents": [
         "electromagnetism/laser_cutter"
       ],
@@ -3467,8 +3468,8 @@
     },
     {
       "entry": "electromagnetism/node_laser_rod",
-      "x": 83,
-      "y": 52,
+      "x": 49,
+      "y": 89,
       "parents": [
         "electromagnetism/laser_cutter"
       ],
@@ -3476,8 +3477,8 @@
     },
     {
       "entry": "electromagnetism/node_pair_source",
-      "x": 87,
-      "y": 52,
+      "x": 53,
+      "y": 89,
       "parents": [
         "electromagnetism/laser_cutter"
       ],
@@ -3485,8 +3486,8 @@
     },
     {
       "entry": "optics/r47_lasers",
-      "x": 83,
-      "y": 57,
+      "x": 49,
+      "y": 107,
       "parents": [
         "optics/r46_growth",
         "optics/crystal_growth_furnace"
@@ -3494,8 +3495,8 @@
     },
     {
       "entry": "exotic/standard_model",
-      "x": 83,
-      "y": 26,
+      "x": 50,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider",
         "exotic/synchrotron"
@@ -3503,8 +3504,8 @@
     },
     {
       "entry": "exotic/particle_spectrometer",
-      "x": 87,
-      "y": 33,
+      "x": 57,
+      "y": 59,
       "parents": [
         "exotic/quark_gluon_collider",
         "exotic/synchrotron"
@@ -3512,8 +3513,8 @@
     },
     {
       "entry": "exotic/node_bottom_top_quarks",
-      "x": 89,
-      "y": 33,
+      "x": 59,
+      "y": 59,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3521,8 +3522,8 @@
     },
     {
       "entry": "exotic/node_gauge_boson_cluster",
-      "x": 87,
-      "y": 35,
+      "x": 57,
+      "y": 61,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3530,8 +3531,8 @@
     },
     {
       "entry": "exotic/node_higgs_boson_crystal",
-      "x": 85,
-      "y": 31,
+      "x": 55,
+      "y": 57,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3539,8 +3540,8 @@
     },
     {
       "entry": "exotic/node_lepton_triplet",
-      "x": 89,
-      "y": 31,
+      "x": 59,
+      "y": 57,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3548,8 +3549,8 @@
     },
     {
       "entry": "exotic/node_research_grand_unification",
-      "x": 87,
-      "y": 31,
+      "x": 57,
+      "y": 57,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3557,8 +3558,8 @@
     },
     {
       "entry": "exotic/node_research_supersymmetry",
-      "x": 85,
-      "y": 33,
+      "x": 55,
+      "y": 59,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3566,8 +3567,8 @@
     },
     {
       "entry": "exotic/node_strange_charm_quarks",
-      "x": 85,
-      "y": 35,
+      "x": 55,
+      "y": 61,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3575,8 +3576,8 @@
     },
     {
       "entry": "exotic/node_superpartner_shard",
-      "x": 89,
-      "y": 35,
+      "x": 59,
+      "y": 61,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3584,8 +3585,8 @@
     },
     {
       "entry": "exotic/node_up_down_quarks",
-      "x": 87,
-      "y": 29,
+      "x": 57,
+      "y": 55,
       "parents": [
         "exotic/particle_spectrometer"
       ],
@@ -3593,17 +3594,16 @@
     },
     {
       "entry": "hyperdimensions/tesseract",
-      "x": 101,
-      "y": 7,
+      "x": 134,
+      "y": 103,
       "parents": [
-        "quantum/topological_transmuter",
-        "singularities/white_hole_emitter"
+        "quantum/topological_transmuter"
       ]
     },
     {
       "entry": "hyperdimensions/node_alcubierre_coil",
-      "x": 101,
-      "y": 5,
+      "x": 134,
+      "y": 101,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3611,8 +3611,8 @@
     },
     {
       "entry": "hyperdimensions/node_autonomous_calibrator",
-      "x": 99,
-      "y": 7,
+      "x": 132,
+      "y": 103,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3620,8 +3620,8 @@
     },
     {
       "entry": "hyperdimensions/node_calabi_yau_manifold",
-      "x": 103,
-      "y": 7,
+      "x": 136,
+      "y": 103,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3629,8 +3629,8 @@
     },
     {
       "entry": "hyperdimensions/node_computronium_block",
-      "x": 99,
-      "y": 11,
+      "x": 132,
+      "y": 107,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3638,8 +3638,8 @@
     },
     {
       "entry": "hyperdimensions/node_computronium_ingot",
-      "x": 101,
-      "y": 9,
+      "x": 134,
+      "y": 105,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3647,8 +3647,8 @@
     },
     {
       "entry": "hyperdimensions/node_computronium_lamp",
-      "x": 103,
-      "y": 11,
+      "x": 136,
+      "y": 107,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3656,8 +3656,8 @@
     },
     {
       "entry": "hyperdimensions/node_dimensional_lift_projector",
-      "x": 97,
-      "y": 3,
+      "x": 130,
+      "y": 99,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3665,8 +3665,8 @@
     },
     {
       "entry": "hyperdimensions/node_hyperdimensional_boule",
-      "x": 99,
-      "y": 5,
+      "x": 132,
+      "y": 101,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3674,8 +3674,8 @@
     },
     {
       "entry": "hyperdimensions/node_hyperdimensional_die",
-      "x": 103,
-      "y": 5,
+      "x": 136,
+      "y": 101,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3683,8 +3683,8 @@
     },
     {
       "entry": "hyperdimensions/node_hyperdimensional_logic_wafer",
-      "x": 99,
-      "y": 9,
+      "x": 132,
+      "y": 105,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3692,8 +3692,8 @@
     },
     {
       "entry": "hyperdimensions/node_hyperdimensional_processor",
-      "x": 103,
-      "y": 9,
+      "x": 136,
+      "y": 105,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3701,8 +3701,8 @@
     },
     {
       "entry": "hyperdimensions/node_hyperlattice_frame",
-      "x": 101,
-      "y": 3,
+      "x": 134,
+      "y": 99,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3710,8 +3710,8 @@
     },
     {
       "entry": "hyperdimensions/node_predictive_lattice_governor",
-      "x": 97,
-      "y": 7,
+      "x": 130,
+      "y": 103,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3719,8 +3719,8 @@
     },
     {
       "entry": "hyperdimensions/node_reality_lattice_casing",
-      "x": 105,
-      "y": 3,
+      "x": 138,
+      "y": 99,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3728,8 +3728,8 @@
     },
     {
       "entry": "hyperdimensions/node_spacetime_alloy_block",
-      "x": 97,
-      "y": 11,
+      "x": 130,
+      "y": 107,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3737,8 +3737,8 @@
     },
     {
       "entry": "hyperdimensions/node_spacetime_alloy_ingot",
-      "x": 105,
-      "y": 7,
+      "x": 138,
+      "y": 103,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3746,8 +3746,8 @@
     },
     {
       "entry": "hyperdimensions/node_spacetime_catalyst",
-      "x": 101,
-      "y": 11,
+      "x": 134,
+      "y": 107,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3755,8 +3755,8 @@
     },
     {
       "entry": "hyperdimensions/node_superintelligence_core",
-      "x": 99,
-      "y": 3,
+      "x": 132,
+      "y": 99,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3764,8 +3764,8 @@
     },
     {
       "entry": "hyperdimensions/node_tesseract_lens",
-      "x": 103,
-      "y": 3,
+      "x": 136,
+      "y": 99,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3773,8 +3773,8 @@
     },
     {
       "entry": "hyperdimensions/node_theoretical_dossier",
-      "x": 97,
-      "y": 5,
+      "x": 130,
+      "y": 101,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3782,8 +3782,8 @@
     },
     {
       "entry": "hyperdimensions/node_theoretical_notes_1",
-      "x": 105,
-      "y": 5,
+      "x": 138,
+      "y": 101,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3791,8 +3791,8 @@
     },
     {
       "entry": "hyperdimensions/node_theoretical_notes_2",
-      "x": 97,
-      "y": 9,
+      "x": 130,
+      "y": 105,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3800,8 +3800,8 @@
     },
     {
       "entry": "hyperdimensions/node_theoretical_notes_3",
-      "x": 105,
-      "y": 9,
+      "x": 138,
+      "y": 105,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3809,8 +3809,8 @@
     },
     {
       "entry": "hyperdimensions/node_warp_coil_ring",
-      "x": 105,
-      "y": 11,
+      "x": 138,
+      "y": 107,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -3818,35 +3818,32 @@
     },
     {
       "entry": "hyperdimensions/tesseract_assembler",
-      "x": 97,
-      "y": 14,
+      "x": 141,
+      "y": 103,
       "parents": [
-        "quantum/topological_transmuter",
-        "singularities/white_hole_emitter"
+        "quantum/topological_transmuter"
       ]
     },
     {
       "entry": "nanotech/higgs_field_modulator",
-      "x": 83,
-      "y": 13,
+      "x": 137,
+      "y": 115,
       "parents": [
-        "exotic/quark_gluon_collider",
         "nanotech/nanite_assembler"
       ]
     },
     {
       "entry": "cosmic/neutron_star_forge",
-      "x": 112,
-      "y": 40,
+      "x": 151,
+      "y": 71,
       "parents": [
-        "cosmic/neutrino_condenser",
-        "singularities/penrose_ergosphere"
+        "cosmic/neutrino_condenser"
       ]
     },
     {
       "entry": "cosmic/node_bounce_core",
-      "x": 110,
-      "y": 40,
+      "x": 149,
+      "y": 71,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3854,8 +3851,8 @@
     },
     {
       "entry": "cosmic/node_degenerate_armour_plate",
-      "x": 114,
-      "y": 40,
+      "x": 153,
+      "y": 71,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3863,8 +3860,8 @@
     },
     {
       "entry": "cosmic/node_horizon_containment",
-      "x": 108,
-      "y": 40,
+      "x": 147,
+      "y": 71,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3872,8 +3869,8 @@
     },
     {
       "entry": "cosmic/node_kilonova_ash",
-      "x": 112,
-      "y": 42,
+      "x": 151,
+      "y": 73,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3881,8 +3878,8 @@
     },
     {
       "entry": "cosmic/node_magnetar_shard",
-      "x": 110,
-      "y": 38,
+      "x": 149,
+      "y": 69,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3890,8 +3887,8 @@
     },
     {
       "entry": "cosmic/node_metallic_hydrogen",
-      "x": 112,
-      "y": 36,
+      "x": 151,
+      "y": 67,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3899,8 +3896,8 @@
     },
     {
       "entry": "cosmic/node_metallic_hydrogen_ingot",
-      "x": 114,
-      "y": 38,
+      "x": 153,
+      "y": 69,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3908,8 +3905,8 @@
     },
     {
       "entry": "cosmic/node_neutronium_block",
-      "x": 116,
-      "y": 40,
+      "x": 155,
+      "y": 71,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3917,8 +3914,8 @@
     },
     {
       "entry": "cosmic/node_pulsar_timing_crystal",
-      "x": 110,
-      "y": 42,
+      "x": 149,
+      "y": 73,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3926,8 +3923,8 @@
     },
     {
       "entry": "cosmic/node_quark_star_core",
-      "x": 114,
-      "y": 42,
+      "x": 153,
+      "y": 73,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -3935,332 +3932,195 @@
     },
     {
       "entry": "cosmic/node_research_kilonovae",
-      "x": 112,
-      "y": 38,
+      "x": 151,
+      "y": 69,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/black_hole_interior",
-      "x": 112,
-      "y": 16,
+      "entry": "antimatter/cpt",
+      "x": 1,
+      "y": 45,
       "parents": [
-        "singularities/lensing",
-        "singularities/kugelblitz_chamber"
+        "exotic/antimatter_penning_trap"
       ]
     },
     {
-      "entry": "spacetime/node_bubble_pedestal",
-      "x": 114,
-      "y": 12,
+      "entry": "antimatter/antiverse_life",
+      "x": 8,
+      "y": 45,
       "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_christoffel_symbol",
-      "x": 110,
-      "y": 16,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_einstein_rosen_bridge",
-      "x": 108,
-      "y": 14,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_einstein_rosen_core",
-      "x": 114,
-      "y": 16,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_ejecta_cache",
-      "x": 116,
-      "y": 14,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_ejecta_rock",
-      "x": 108,
-      "y": 18,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_frozen_photon",
-      "x": 112,
-      "y": 18,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_geodesic_thread",
-      "x": 110,
-      "y": 14,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_horizon_cache",
-      "x": 116,
-      "y": 18,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_horizon_glass",
-      "x": 110,
-      "y": 20,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_infall_rock",
-      "x": 114,
-      "y": 20,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_lense_thirring_vortex_core",
-      "x": 114,
-      "y": 14,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_photon_moth",
-      "x": 108,
-      "y": 12,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_primordial_ejecta",
-      "x": 110,
-      "y": 18,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_tidal_physics",
-      "x": 112,
-      "y": 14,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_retrocausal_crystal",
-      "x": 114,
-      "y": 18,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_strained_spacetime",
-      "x": 112,
-      "y": 20,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_stress_energy_tensor",
-      "x": 112,
-      "y": 12,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_tidal_alloy_scrap",
-      "x": 108,
-      "y": 16,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_tidal_horror",
-      "x": 116,
-      "y": 12,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_tidal_plasma",
-      "x": 110,
-      "y": 12,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_tidal_shear_crystal",
-      "x": 116,
-      "y": 16,
-      "parents": [
-        "spacetime/black_hole_interior"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/r53_dilation",
-      "x": 72,
-      "y": 0,
-      "parents": [
-        "spacetime/relativity",
-        "spacetime/tensor_engine"
+        "exotic/antimatter_penning_trap"
       ]
     },
     {
-      "entry": "spacetime/time_dilation_chamber",
-      "x": 72,
-      "y": 3,
+      "entry": "antimatter/node_annihilator",
+      "x": 12,
+      "y": 45,
       "parents": [
-        "spacetime/relativity",
-        "spacetime/tensor_engine"
-      ]
-    },
-    {
-      "entry": "antimatter/antiatoms",
-      "x": 164,
-      "y": 32,
-      "parents": [
-        "antimatter/cpt",
         "antimatter/antiverse_life"
-      ]
-    },
-    {
-      "entry": "antimatter/node_antihydrogen",
-      "x": 162,
-      "y": 32,
-      "parents": [
-        "antimatter/antiatoms"
       ],
       "node": true
     },
     {
-      "entry": "antimatter/node_antiproton_bundle",
-      "x": 164,
-      "y": 30,
+      "entry": "antimatter/node_anticarbon_crystal",
+      "x": 8,
+      "y": 43,
       "parents": [
-        "antimatter/antiatoms"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/antiproton_decelerator",
-      "x": 162,
-      "y": 37,
-      "parents": [
-        "antimatter/cpt",
         "antimatter/antiverse_life"
-      ]
+      ],
+      "node": true
     },
     {
-      "entry": "astrophysics/r38_clocks",
-      "x": 72,
-      "y": 6,
+      "entry": "antimatter/node_antihydrogen_crystal",
+      "x": 6,
+      "y": 45,
       "parents": [
-        "spacetime/relativity",
-        "spacetime/tensor_engine"
-      ]
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antihydrogen_wisp",
+      "x": 8,
+      "y": 49,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antiquark_shard",
+      "x": 10,
+      "y": 45,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antisilicon_shard",
+      "x": 8,
+      "y": 47,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antistone",
+      "x": 10,
+      "y": 47,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antistone_bricks",
+      "x": 8,
+      "y": 41,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antiverse_cache",
+      "x": 4,
+      "y": 45,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antiwater",
+      "x": 6,
+      "y": 47,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_positronium_skitterer",
+      "x": 6,
+      "y": 41,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_raw_antigold",
+      "x": 6,
+      "y": 43,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_raw_antiiron",
+      "x": 10,
+      "y": 43,
+      "parents": [
+        "antimatter/antiverse_life"
+      ],
+      "node": true
     },
     {
       "entry": "astrophysics/r45_galaxy",
-      "x": 83,
-      "y": 47,
+      "x": 186,
+      "y": 36,
       "parents": [
         "astrophysics/r45_radio",
         "astrophysics/radio_telescope"
       ]
     },
     {
-      "entry": "astrophysics/atomic_clock",
-      "x": 74,
-      "y": 11,
-      "parents": [
-        "spacetime/relativity",
-        "spacetime/tensor_engine"
-      ]
-    },
-    {
-      "entry": "astrophysics/node_time_dilated_sample",
-      "x": 74,
-      "y": 9,
-      "parents": [
-        "astrophysics/atomic_clock"
-      ],
-      "node": true
-    },
-    {
       "entry": "electromagnetism/r49_cyclotron",
-      "x": 72,
-      "y": 30,
+      "x": 44,
+      "y": 87,
       "parents": [
-        "nuclear/r37_radioactivity",
-        "nuclear/r38_radiation"
+        "electromagnetism/r49_tesla",
+        "electromagnetism/tesla_coil"
       ]
     },
     {
       "entry": "electromagnetism/cyclotron",
-      "x": 74,
-      "y": 35,
+      "x": 44,
+      "y": 92,
       "parents": [
-        "nuclear/r37_radioactivity",
-        "nuclear/r38_radiation"
+        "electromagnetism/r49_tesla",
+        "electromagnetism/tesla_coil"
       ]
     },
     {
       "entry": "electromagnetism/node_cobalt_57_source",
-      "x": 74,
-      "y": 33,
+      "x": 44,
+      "y": 90,
+      "parents": [
+        "electromagnetism/cyclotron"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_cyclotron_dee",
+      "x": 42,
+      "y": 92,
+      "parents": [
+        "electromagnetism/cyclotron"
+      ],
+      "node": true
+    },
+    {
+      "entry": "electromagnetism/node_rf_oscillator",
+      "x": 46,
+      "y": 92,
       "parents": [
         "electromagnetism/cyclotron"
       ],
@@ -4268,17 +4128,16 @@
     },
     {
       "entry": "strings/string_resonance_loom",
-      "x": 110,
-      "y": 7,
+      "x": 16,
+      "y": 73,
       "parents": [
-        "hyperdimensions/tesseract",
-        "hyperdimensions/tesseract_assembler"
+        "hyperdimensions/tesseract"
       ]
     },
     {
       "entry": "strings/node_grand_unified_core",
-      "x": 108,
-      "y": 7,
+      "x": 14,
+      "y": 73,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -4286,8 +4145,8 @@
     },
     {
       "entry": "strings/node_m_brane",
-      "x": 112,
-      "y": 7,
+      "x": 18,
+      "y": 73,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -4295,8 +4154,8 @@
     },
     {
       "entry": "strings/node_m_theory_core",
-      "x": 110,
-      "y": 9,
+      "x": 16,
+      "y": 75,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -4304,8 +4163,8 @@
     },
     {
       "entry": "strings/node_quantum_string",
-      "x": 108,
-      "y": 5,
+      "x": 14,
+      "y": 71,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -4313,8 +4172,8 @@
     },
     {
       "entry": "strings/node_research_m_theory",
-      "x": 110,
-      "y": 5,
+      "x": 16,
+      "y": 71,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -4322,8 +4181,8 @@
     },
     {
       "entry": "strings/node_stabiliser_matrix",
-      "x": 112,
-      "y": 5,
+      "x": 18,
+      "y": 71,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -4331,26 +4190,24 @@
     },
     {
       "entry": "strings/origin_branch",
-      "x": 108,
-      "y": 23,
+      "x": 1,
+      "y": 73,
       "parents": [
-        "singularities/lensing",
-        "singularities/kugelblitz_chamber"
+        "singularities/lensing"
       ]
     },
     {
       "entry": "stellar/dyson_array",
-      "x": 121,
-      "y": 25,
+      "x": 142,
+      "y": 22,
       "parents": [
-        "singularities/white_hole_emitter",
         "stellar/stellar_evolution"
       ]
     },
     {
       "entry": "stellar/node_dyson_shell_segment",
-      "x": 119,
-      "y": 25,
+      "x": 140,
+      "y": 22,
       "parents": [
         "stellar/dyson_array"
       ],
@@ -4358,8 +4215,8 @@
     },
     {
       "entry": "stellar/node_dyson_swarm_satellite",
-      "x": 123,
-      "y": 25,
+      "x": 144,
+      "y": 22,
       "parents": [
         "stellar/dyson_array"
       ],
@@ -4367,8 +4224,8 @@
     },
     {
       "entry": "stellar/node_research_dyson_sphere",
-      "x": 121,
-      "y": 23,
+      "x": 142,
+      "y": 20,
       "parents": [
         "stellar/dyson_array"
       ],
@@ -4376,35 +4233,233 @@
     },
     {
       "entry": "stellar/node_von_neumann_probe",
-      "x": 121,
-      "y": 27,
+      "x": 142,
+      "y": 24,
       "parents": [
         "stellar/dyson_array"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/r47_redshift",
-      "x": 83,
-      "y": 16,
+      "entry": "spacetime/black_hole_interior",
+      "x": 50,
+      "y": 35,
       "parents": [
-        "nuclear/r37_radioactivity",
-        "nuclear/r38_radiation"
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
       ]
     },
     {
-      "entry": "spacetime/wormhole_projector",
-      "x": 121,
-      "y": 2,
+      "entry": "spacetime/node_bubble_pedestal",
+      "x": 52,
+      "y": 31,
       "parents": [
-        "singularities/white_hole_emitter",
-        "nanotech/higgs_field_modulator"
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_christoffel_symbol",
+      "x": 48,
+      "y": 35,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_einstein_rosen_bridge",
+      "x": 46,
+      "y": 33,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_einstein_rosen_core",
+      "x": 52,
+      "y": 35,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_ejecta_cache",
+      "x": 54,
+      "y": 33,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_ejecta_rock",
+      "x": 46,
+      "y": 37,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_frozen_photon",
+      "x": 50,
+      "y": 37,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_geodesic_thread",
+      "x": 48,
+      "y": 33,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_horizon_cache",
+      "x": 54,
+      "y": 37,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_horizon_glass",
+      "x": 48,
+      "y": 39,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_infall_rock",
+      "x": 52,
+      "y": 39,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_lense_thirring_vortex_core",
+      "x": 52,
+      "y": 33,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_photon_moth",
+      "x": 46,
+      "y": 31,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_primordial_ejecta",
+      "x": 48,
+      "y": 37,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_tidal_physics",
+      "x": 50,
+      "y": 33,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_retrocausal_crystal",
+      "x": 52,
+      "y": 37,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_strained_spacetime",
+      "x": 50,
+      "y": 39,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_stress_energy_tensor",
+      "x": 50,
+      "y": 31,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_tidal_alloy_scrap",
+      "x": 46,
+      "y": 35,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_tidal_horror",
+      "x": 54,
+      "y": 31,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_tidal_plasma",
+      "x": 48,
+      "y": 31,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_tidal_shear_crystal",
+      "x": 54,
+      "y": 35,
+      "parents": [
+        "spacetime/black_hole_interior"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/wormhole_projector",
+      "x": 70,
+      "y": 23,
+      "parents": [
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
       ]
     },
     {
       "entry": "spacetime/node_multiverse_shard",
-      "x": 121,
-      "y": 0,
+      "x": 70,
+      "y": 21,
       "parents": [
         "spacetime/wormhole_projector"
       ],
@@ -4412,176 +4467,121 @@
     },
     {
       "entry": "spacetime/node_wormhole_throat",
-      "x": 119,
-      "y": 2,
+      "x": 68,
+      "y": 23,
       "parents": [
         "spacetime/wormhole_projector"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/r53_lensing",
-      "x": 119,
-      "y": 7,
+      "entry": "spacetime/r53_dilation",
+      "x": 19,
+      "y": 27,
       "parents": [
-        "astrophysics/r37_telescopes"
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
       ]
     },
     {
-      "entry": "spacetime/r53_drag",
-      "x": 140,
-      "y": 59,
+      "entry": "spacetime/time_dilation_chamber",
+      "x": 19,
+      "y": 30,
       "parents": [
-        "singularities/penrose_ergosphere"
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
       ]
     },
     {
-      "entry": "spacetime/pound_rebka_tower",
-      "x": 85,
-      "y": 21,
+      "entry": "antimatter/antiatoms",
+      "x": 17,
+      "y": 45,
       "parents": [
-        "nuclear/r37_radioactivity",
-        "nuclear/r38_radiation"
+        "antimatter/cpt",
+        "antimatter/antiverse_life"
       ]
     },
     {
-      "entry": "spacetime/node_redshift_record",
-      "x": 85,
-      "y": 19,
+      "entry": "antimatter/node_antihydrogen",
+      "x": 15,
+      "y": 45,
       "parents": [
-        "spacetime/pound_rebka_tower"
+        "antimatter/antiatoms"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/lensing_concentrator",
-      "x": 128,
-      "y": 13,
-      "parents": [
-        "astrophysics/r37_telescopes"
-      ]
-    },
-    {
-      "entry": "spacetime/node_einstein_ring_lens",
-      "x": 128,
-      "y": 11,
-      "parents": [
-        "spacetime/lensing_concentrator"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_geodesic_compass",
-      "x": 126,
-      "y": 13,
-      "parents": [
-        "spacetime/lensing_concentrator"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_lens_array_block",
-      "x": 130,
-      "y": 13,
-      "parents": [
-        "spacetime/lensing_concentrator"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_void_glass",
-      "x": 128,
-      "y": 15,
-      "parents": [
-        "spacetime/lensing_concentrator"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/mirror_metallurgy",
-      "x": 187,
+      "entry": "antimatter/node_antiproton_bundle",
+      "x": 17,
       "y": 43,
       "parents": [
-        "antimatter/antiatoms",
-        "antimatter/antiproton_decelerator"
+        "antimatter/antiatoms"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/antiproton_decelerator",
+      "x": 22,
+      "y": 45,
+      "parents": [
+        "antimatter/cpt",
+        "antimatter/antiverse_life"
       ]
     },
     {
-      "entry": "antimatter/mirror_foundry",
-      "x": 189,
-      "y": 48,
+      "entry": "astrophysics/r38_clocks",
+      "x": 181,
+      "y": 33,
       "parents": [
-        "antimatter/antiatoms",
-        "antimatter/antiproton_decelerator"
+        "spacetime/relativity"
       ]
-    },
-    {
-      "entry": "antimatter/node_antigold_ingot",
-      "x": 189,
-      "y": 46,
-      "parents": [
-        "antimatter/mirror_foundry"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_antiiron_ingot",
-      "x": 187,
-      "y": 48,
-      "parents": [
-        "antimatter/mirror_foundry"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_liquid_antihelium",
-      "x": 187,
-      "y": 46,
-      "parents": [
-        "antimatter/mirror_foundry"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_mirror_alloy_ingot",
-      "x": 191,
-      "y": 48,
-      "parents": [
-        "antimatter/mirror_foundry"
-      ],
-      "node": true
-    },
-    {
-      "entry": "antimatter/node_mirror_processor",
-      "x": 189,
-      "y": 50,
-      "parents": [
-        "antimatter/mirror_foundry"
-      ],
-      "node": true
     },
     {
       "entry": "astrophysics/r51_accretion",
-      "x": 126,
-      "y": 48,
+      "x": 197,
+      "y": 32,
       "parents": [
-        "cosmic/neutron_star_forge",
         "astrophysics/r45_galaxy"
       ]
     },
     {
-      "entry": "astrophysics/accretion_disk_reactor",
-      "x": 128,
-      "y": 53,
+      "entry": "astrophysics/atomic_clock",
+      "x": 181,
+      "y": 38,
       "parents": [
-        "cosmic/neutron_star_forge",
+        "spacetime/relativity"
+      ]
+    },
+    {
+      "entry": "astrophysics/node_proof_mass",
+      "x": 181,
+      "y": 36,
+      "parents": [
+        "astrophysics/atomic_clock"
+      ],
+      "node": true
+    },
+    {
+      "entry": "astrophysics/node_time_dilated_sample",
+      "x": 179,
+      "y": 38,
+      "parents": [
+        "astrophysics/atomic_clock"
+      ],
+      "node": true
+    },
+    {
+      "entry": "astrophysics/accretion_disk_reactor",
+      "x": 197,
+      "y": 37,
+      "parents": [
         "astrophysics/r45_galaxy"
       ]
     },
     {
       "entry": "astrophysics/node_accretion_casing",
-      "x": 130,
-      "y": 51,
+      "x": 199,
+      "y": 35,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4589,8 +4589,8 @@
     },
     {
       "entry": "astrophysics/node_accretion_disk_fragment",
-      "x": 128,
-      "y": 51,
+      "x": 197,
+      "y": 35,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4598,8 +4598,8 @@
     },
     {
       "entry": "astrophysics/node_accretion_disk_plasma",
-      "x": 126,
-      "y": 51,
+      "x": 195,
+      "y": 35,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4607,8 +4607,8 @@
     },
     {
       "entry": "astrophysics/node_brown_dwarf_core",
-      "x": 126,
-      "y": 53,
+      "x": 195,
+      "y": 37,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4616,8 +4616,8 @@
     },
     {
       "entry": "astrophysics/node_protostellar_ember",
-      "x": 130,
-      "y": 53,
+      "x": 199,
+      "y": 37,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4625,8 +4625,8 @@
     },
     {
       "entry": "astrophysics/node_quasar_jet_filament",
-      "x": 128,
-      "y": 55,
+      "x": 197,
+      "y": 39,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4634,8 +4634,8 @@
     },
     {
       "entry": "astrophysics/node_rim_slag",
-      "x": 126,
-      "y": 55,
+      "x": 195,
+      "y": 39,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4643,8 +4643,8 @@
     },
     {
       "entry": "astrophysics/node_station_hull",
-      "x": 130,
-      "y": 55,
+      "x": 199,
+      "y": 39,
       "parents": [
         "astrophysics/accretion_disk_reactor"
       ],
@@ -4652,16 +4652,16 @@
     },
     {
       "entry": "strings/graviton_condenser",
-      "x": 130,
-      "y": 4,
+      "x": 25,
+      "y": 73,
       "parents": [
         "strings/string_resonance_loom"
       ]
     },
     {
       "entry": "strings/node_anchor_core",
-      "x": 132,
-      "y": 4,
+      "x": 27,
+      "y": 73,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4669,8 +4669,8 @@
     },
     {
       "entry": "strings/node_causal_set_seed",
-      "x": 130,
-      "y": 6,
+      "x": 25,
+      "y": 75,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4678,8 +4678,8 @@
     },
     {
       "entry": "strings/node_coherence_stabiliser",
-      "x": 128,
-      "y": 2,
+      "x": 23,
+      "y": 71,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4687,8 +4687,8 @@
     },
     {
       "entry": "strings/node_cosmogenic_casing",
-      "x": 132,
-      "y": 6,
+      "x": 27,
+      "y": 75,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4696,8 +4696,8 @@
     },
     {
       "entry": "strings/node_no_boundary_seed",
-      "x": 132,
-      "y": 2,
+      "x": 27,
+      "y": 71,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4705,8 +4705,8 @@
     },
     {
       "entry": "strings/node_research_causal_set_theory",
-      "x": 130,
-      "y": 2,
+      "x": 25,
+      "y": 71,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4714,8 +4714,8 @@
     },
     {
       "entry": "strings/node_research_conformal_cyclic_cosmology",
-      "x": 128,
-      "y": 4,
+      "x": 23,
+      "y": 73,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4723,8 +4723,8 @@
     },
     {
       "entry": "strings/node_spacetime_anchor_pylon",
-      "x": 130,
-      "y": 0,
+      "x": 25,
+      "y": 69,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4732,8 +4732,8 @@
     },
     {
       "entry": "strings/node_spin_foam_lattice",
-      "x": 128,
-      "y": 6,
+      "x": 23,
+      "y": 75,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -4741,16 +4741,16 @@
     },
     {
       "entry": "strings/compactification",
-      "x": 144,
-      "y": 14,
+      "x": 42,
+      "y": 73,
       "parents": [
         "strings/string_resonance_loom"
       ]
     },
     {
       "entry": "strings/node_brane_strider",
-      "x": 144,
-      "y": 10,
+      "x": 42,
+      "y": 69,
       "parents": [
         "strings/compactification"
       ],
@@ -4758,8 +4758,8 @@
     },
     {
       "entry": "strings/node_d_brane_sheet",
-      "x": 144,
-      "y": 12,
+      "x": 42,
+      "y": 71,
       "parents": [
         "strings/compactification"
       ],
@@ -4767,8 +4767,8 @@
     },
     {
       "entry": "strings/node_g2_manifold",
-      "x": 142,
-      "y": 14,
+      "x": 40,
+      "y": 73,
       "parents": [
         "strings/compactification"
       ],
@@ -4776,8 +4776,8 @@
     },
     {
       "entry": "strings/node_geodesic_anchor",
-      "x": 146,
-      "y": 14,
+      "x": 44,
+      "y": 73,
       "parents": [
         "strings/compactification"
       ],
@@ -4785,8 +4785,8 @@
     },
     {
       "entry": "strings/node_graviton_crystal",
-      "x": 144,
-      "y": 16,
+      "x": 42,
+      "y": 75,
       "parents": [
         "strings/compactification"
       ],
@@ -4794,8 +4794,8 @@
     },
     {
       "entry": "strings/node_graviton_harness",
-      "x": 142,
-      "y": 12,
+      "x": 40,
+      "y": 71,
       "parents": [
         "strings/compactification"
       ],
@@ -4803,8 +4803,8 @@
     },
     {
       "entry": "strings/node_graviton_wisp",
-      "x": 140,
-      "y": 14,
+      "x": 38,
+      "y": 73,
       "parents": [
         "strings/compactification"
       ],
@@ -4812,8 +4812,8 @@
     },
     {
       "entry": "strings/node_rift_frame_casing",
-      "x": 142,
-      "y": 16,
+      "x": 40,
+      "y": 75,
       "parents": [
         "strings/compactification"
       ],
@@ -4821,8 +4821,8 @@
     },
     {
       "entry": "strings/node_string_coupling_crystal",
-      "x": 146,
-      "y": 12,
+      "x": 44,
+      "y": 71,
       "parents": [
         "strings/compactification"
       ],
@@ -4830,8 +4830,8 @@
     },
     {
       "entry": "strings/node_vacuum_energy_cell",
-      "x": 146,
-      "y": 16,
+      "x": 44,
+      "y": 75,
       "parents": [
         "strings/compactification"
       ],
@@ -4839,52 +4839,33 @@
     },
     {
       "entry": "strings/compactification_lathe",
-      "x": 140,
-      "y": 21,
+      "x": 49,
+      "y": 73,
       "parents": [
         "strings/string_resonance_loom"
       ]
     },
     {
-      "entry": "spacetime/r47_waves",
-      "x": 108,
-      "y": 47,
+      "entry": "spacetime/r47_redshift",
+      "x": 24,
+      "y": 25,
       "parents": [
-        "electromagnetism/laser_cutter",
-        "optics/r47_lasers"
-      ]
-    },
-    {
-      "entry": "spacetime/r47_frame_drag",
-      "x": 108,
-      "y": 50,
-      "parents": [
-        "electromagnetism/laser_cutter",
-        "optics/r47_lasers"
-      ]
-    },
-    {
-      "entry": "spacetime/r50_cow",
-      "x": 97,
-      "y": 54,
-      "parents": [
-        "optics/r46_growth",
-        "optics/crystal_growth_furnace"
+        "spacetime/r53_dilation",
+        "spacetime/time_dilation_chamber"
       ]
     },
     {
       "entry": "spacetime/causality_loop_engine",
-      "x": 128,
-      "y": 23,
+      "x": 77,
+      "y": 22,
       "parents": [
-        "exotic/chronon_field_inverter",
         "spacetime/temporal_mechanics"
       ]
     },
     {
       "entry": "spacetime/node_bootstrap_artifact",
-      "x": 128,
-      "y": 21,
+      "x": 77,
+      "y": 20,
       "parents": [
         "spacetime/causality_loop_engine"
       ],
@@ -4892,8 +4873,8 @@
     },
     {
       "entry": "spacetime/node_causal_solder",
-      "x": 126,
-      "y": 21,
+      "x": 75,
+      "y": 20,
       "parents": [
         "spacetime/causality_loop_engine"
       ],
@@ -4901,8 +4882,8 @@
     },
     {
       "entry": "spacetime/node_chronal_accelerator",
-      "x": 130,
-      "y": 21,
+      "x": 79,
+      "y": 20,
       "parents": [
         "spacetime/causality_loop_engine"
       ],
@@ -4910,8 +4891,8 @@
     },
     {
       "entry": "spacetime/node_closed_timelike_curve",
-      "x": 126,
-      "y": 23,
+      "x": 75,
+      "y": 22,
       "parents": [
         "spacetime/causality_loop_engine"
       ],
@@ -4919,8 +4900,8 @@
     },
     {
       "entry": "spacetime/node_paradox_residue",
-      "x": 130,
-      "y": 23,
+      "x": 79,
+      "y": 22,
       "parents": [
         "spacetime/causality_loop_engine"
       ],
@@ -4928,8 +4909,8 @@
     },
     {
       "entry": "spacetime/node_pocket_universe",
-      "x": 128,
-      "y": 25,
+      "x": 77,
+      "y": 24,
       "parents": [
         "spacetime/causality_loop_engine"
       ],
@@ -4937,17 +4918,16 @@
     },
     {
       "entry": "spacetime/dark_energy_siphon",
-      "x": 144,
-      "y": 28,
+      "x": 92,
+      "y": 24,
       "parents": [
-        "exotic/dark_matter_collector",
         "spacetime/wormhole_projector"
       ]
     },
     {
       "entry": "spacetime/node_cosmological_constant",
-      "x": 146,
-      "y": 26,
+      "x": 94,
+      "y": 22,
       "parents": [
         "spacetime/dark_energy_siphon"
       ],
@@ -4955,79 +4935,7 @@
     },
     {
       "entry": "spacetime/node_dark_energy",
-      "x": 140,
-      "y": 28,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_proton_decay_residue",
-      "x": 142,
-      "y": 30,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_big_crunch",
-      "x": 144,
-      "y": 26,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_big_rip",
-      "x": 142,
-      "y": 28,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_black_hole_era",
-      "x": 146,
-      "y": 28,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_proton_decay",
-      "x": 144,
-      "y": 30,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_vacuum_decay",
-      "x": 142,
-      "y": 26,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_true_vacuum_seed",
-      "x": 146,
-      "y": 30,
-      "parents": [
-        "spacetime/dark_energy_siphon"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_universe_seed",
-      "x": 144,
+      "x": 88,
       "y": 24,
       "parents": [
         "spacetime/dark_energy_siphon"
@@ -5035,198 +4943,259 @@
       "node": true
     },
     {
-      "entry": "spacetime/r54_er_epr",
-      "x": 162,
-      "y": 0,
+      "entry": "spacetime/node_proton_decay_residue",
+      "x": 90,
+      "y": 26,
       "parents": [
-        "quantum/quantum_entangler",
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_big_crunch",
+      "x": 92,
+      "y": 22,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_big_rip",
+      "x": 90,
+      "y": 24,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_black_hole_era",
+      "x": 94,
+      "y": 24,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_proton_decay",
+      "x": 92,
+      "y": 26,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_vacuum_decay",
+      "x": 90,
+      "y": 22,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_true_vacuum_seed",
+      "x": 94,
+      "y": 26,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_universe_seed",
+      "x": 92,
+      "y": 20,
+      "parents": [
+        "spacetime/dark_energy_siphon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/r53_lensing",
+      "x": 84,
+      "y": 24,
+      "parents": [
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
+      ]
+    },
+    {
+      "entry": "spacetime/r53_drag",
+      "x": 92,
+      "y": 31,
+      "parents": [
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
+      ]
+    },
+    {
+      "entry": "spacetime/r54_er_epr",
+      "x": 108,
+      "y": 20,
+      "parents": [
         "spacetime/wormhole_projector"
       ]
     },
     {
-      "entry": "spacetime/laser_interferometer",
-      "x": 112,
-      "y": 57,
+      "entry": "spacetime/pound_rebka_tower",
+      "x": 24,
+      "y": 30,
       "parents": [
-        "electromagnetism/laser_cutter",
-        "optics/r47_lasers"
+        "spacetime/r53_dilation",
+        "spacetime/time_dilation_chamber"
       ]
     },
     {
-      "entry": "spacetime/node_chirp_signal_record",
-      "x": 110,
-      "y": 57,
+      "entry": "spacetime/node_doppler_drive",
+      "x": 22,
+      "y": 30,
       "parents": [
-        "spacetime/laser_interferometer"
+        "spacetime/pound_rebka_tower"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/node_gravitational_wave_echo",
-      "x": 114,
-      "y": 57,
+      "entry": "spacetime/node_redshift_record",
+      "x": 24,
+      "y": 28,
       "parents": [
-        "spacetime/laser_interferometer"
+        "spacetime/pound_rebka_tower"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/node_gw_record_bbh",
-      "x": 112,
-      "y": 59,
+      "entry": "spacetime/lensing_concentrator",
+      "x": 84,
+      "y": 29,
       "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_gw_record_bns",
-      "x": 110,
-      "y": 55,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_merger_remnant",
-      "x": 114,
-      "y": 55,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_precision_gyroscope",
-      "x": 110,
-      "y": 59,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_binary_mergers",
-      "x": 112,
-      "y": 55,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_seismic_isolator",
-      "x": 112,
-      "y": 53,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_test_mass",
-      "x": 114,
-      "y": 59,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_unruh_detector",
-      "x": 108,
-      "y": 57,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_vacuum_beam_tube",
-      "x": 116,
-      "y": 57,
-      "parents": [
-        "spacetime/laser_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/neutron_interferometer",
-      "x": 99,
-      "y": 59,
-      "parents": [
-        "optics/r46_growth",
-        "optics/crystal_growth_furnace"
+        "spacetime/relativity",
+        "spacetime/tensor_engine"
       ]
     },
     {
-      "entry": "spacetime/node_cow_record",
-      "x": 97,
-      "y": 59,
+      "entry": "spacetime/node_einstein_ring_lens",
+      "x": 84,
+      "y": 27,
       "parents": [
-        "spacetime/neutron_interferometer"
+        "spacetime/lensing_concentrator"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/node_crystal_interferometer_mount",
-      "x": 99,
-      "y": 61,
+      "entry": "spacetime/node_geodesic_compass",
+      "x": 82,
+      "y": 29,
       "parents": [
-        "spacetime/neutron_interferometer"
+        "spacetime/lensing_concentrator"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/node_perfect_crystal_interferometer",
-      "x": 101,
-      "y": 59,
+      "entry": "spacetime/node_lens_array_block",
+      "x": 86,
+      "y": 29,
       "parents": [
-        "spacetime/neutron_interferometer"
+        "spacetime/lensing_concentrator"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/node_research_semiclassical_gravity",
-      "x": 99,
-      "y": 57,
+      "entry": "spacetime/node_void_glass",
+      "x": 84,
+      "y": 31,
       "parents": [
-        "spacetime/neutron_interferometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_tilt_table",
-      "x": 97,
-      "y": 57,
-      "parents": [
-        "spacetime/neutron_interferometer"
+        "spacetime/lensing_concentrator"
       ],
       "node": true
     },
     {
       "entry": "spacetime/er_epr_weaver",
-      "x": 164,
-      "y": 5,
+      "x": 108,
+      "y": 25,
       "parents": [
-        "quantum/quantum_entangler",
         "spacetime/wormhole_projector"
       ]
     },
     {
       "entry": "spacetime/node_er_bridge_thread",
-      "x": 164,
-      "y": 3,
+      "x": 108,
+      "y": 23,
       "parents": [
         "spacetime/er_epr_weaver"
       ],
       "node": true
     },
     {
+      "entry": "antimatter/mirror_metallurgy",
+      "x": 28,
+      "y": 45,
+      "parents": [
+        "antimatter/antiatoms",
+        "antimatter/antiproton_decelerator"
+      ]
+    },
+    {
+      "entry": "antimatter/mirror_foundry",
+      "x": 33,
+      "y": 45,
+      "parents": [
+        "antimatter/antiatoms",
+        "antimatter/antiproton_decelerator"
+      ]
+    },
+    {
+      "entry": "antimatter/node_antigold_ingot",
+      "x": 33,
+      "y": 43,
+      "parents": [
+        "antimatter/mirror_foundry"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_antiiron_ingot",
+      "x": 31,
+      "y": 45,
+      "parents": [
+        "antimatter/mirror_foundry"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_liquid_antihelium",
+      "x": 31,
+      "y": 43,
+      "parents": [
+        "antimatter/mirror_foundry"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_mirror_alloy_ingot",
+      "x": 35,
+      "y": 45,
+      "parents": [
+        "antimatter/mirror_foundry"
+      ],
+      "node": true
+    },
+    {
+      "entry": "antimatter/node_mirror_processor",
+      "x": 33,
+      "y": 47,
+      "parents": [
+        "antimatter/mirror_foundry"
+      ],
+      "node": true
+    },
+    {
       "entry": "astrophysics/r51_cosmic_web",
-      "x": 151,
-      "y": 5,
+      "x": 212,
+      "y": 33,
       "parents": [
         "astrophysics/r51_ism",
         "astrophysics/interstellar_scoop"
@@ -5234,26 +5203,24 @@
     },
     {
       "entry": "nuclear/r52_isomers",
-      "x": 162,
-      "y": 47,
+      "x": 185,
+      "y": 3,
       "parents": [
-        "exotic/synchrotron",
         "nuclear/r42_msr"
       ]
     },
     {
       "entry": "nuclear/isomer_trigger",
-      "x": 164,
-      "y": 52,
+      "x": 185,
+      "y": 8,
       "parents": [
-        "exotic/synchrotron",
         "nuclear/r42_msr"
       ]
     },
     {
       "entry": "nuclear/node_hafnium_178m2_isomer",
-      "x": 164,
-      "y": 50,
+      "x": 185,
+      "y": 6,
       "parents": [
         "nuclear/isomer_trigger"
       ],
@@ -5261,8 +5228,8 @@
     },
     {
       "entry": "nuclear/node_hafnium_dust",
-      "x": 162,
-      "y": 52,
+      "x": 183,
+      "y": 8,
       "parents": [
         "nuclear/isomer_trigger"
       ],
@@ -5270,8 +5237,8 @@
     },
     {
       "entry": "electromagnetism/r52_pulsed",
-      "x": 151,
-      "y": 31,
+      "x": 63,
+      "y": 83,
       "parents": [
         "electromagnetism/r42_mhd",
         "electromagnetism/mhd_generator"
@@ -5279,16 +5246,16 @@
     },
     {
       "entry": "electromagnetism/r52_qhe",
-      "x": 83,
-      "y": 10,
+      "x": 51,
+      "y": 94,
       "parents": [
         "quantum/topological_transmuter"
       ]
     },
     {
       "entry": "electromagnetism/pulsed_magnet_lab",
-      "x": 155,
-      "y": 38,
+      "x": 63,
+      "y": 90,
       "parents": [
         "electromagnetism/r42_mhd",
         "electromagnetism/mhd_generator"
@@ -5296,8 +5263,8 @@
     },
     {
       "entry": "electromagnetism/node_bitter_plate",
-      "x": 157,
-      "y": 38,
+      "x": 65,
+      "y": 90,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5305,8 +5272,8 @@
     },
     {
       "entry": "electromagnetism/node_bitter_plate_stack",
-      "x": 157,
-      "y": 36,
+      "x": 65,
+      "y": 88,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5314,8 +5281,8 @@
     },
     {
       "entry": "electromagnetism/node_disk_confinement_ring",
-      "x": 153,
-      "y": 40,
+      "x": 61,
+      "y": 92,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5323,8 +5290,8 @@
     },
     {
       "entry": "electromagnetism/node_horizon_cage",
-      "x": 157,
-      "y": 40,
+      "x": 65,
+      "y": 92,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5332,8 +5299,8 @@
     },
     {
       "entry": "electromagnetism/node_magnetar_crust_fragment",
-      "x": 155,
-      "y": 40,
+      "x": 63,
+      "y": 92,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5341,8 +5308,8 @@
     },
     {
       "entry": "electromagnetism/node_magnetized_plasma",
-      "x": 153,
-      "y": 36,
+      "x": 61,
+      "y": 88,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5350,8 +5317,8 @@
     },
     {
       "entry": "electromagnetism/node_pulsar_crust",
-      "x": 155,
-      "y": 34,
+      "x": 63,
+      "y": 86,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5359,8 +5326,8 @@
     },
     {
       "entry": "electromagnetism/node_research_magnetars",
-      "x": 155,
-      "y": 36,
+      "x": 63,
+      "y": 88,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5368,8 +5335,8 @@
     },
     {
       "entry": "electromagnetism/node_research_magnetic_monopoles",
-      "x": 153,
-      "y": 38,
+      "x": 61,
+      "y": 90,
       "parents": [
         "electromagnetism/pulsed_magnet_lab"
       ],
@@ -5377,24 +5344,26 @@
     },
     {
       "entry": "quantum/quantum_foam",
-      "x": 126,
-      "y": 31,
+      "x": 42,
+      "y": 7,
       "parents": [
-        "strings/graviton_condenser"
+        "quantum/topological_transmuter",
+        "quantum/metamaterial_weaver"
       ]
     },
     {
       "entry": "quantum/foam_boundaries",
-      "x": 130,
-      "y": 38,
+      "x": 49,
+      "y": 7,
       "parents": [
-        "strings/graviton_condenser"
+        "quantum/topological_transmuter",
+        "quantum/metamaterial_weaver"
       ]
     },
     {
       "entry": "quantum/node_eigenstate_lattice",
-      "x": 130,
-      "y": 36,
+      "x": 49,
+      "y": 5,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5402,8 +5371,8 @@
     },
     {
       "entry": "quantum/node_false_vacuum_membrane",
-      "x": 128,
-      "y": 38,
+      "x": 47,
+      "y": 7,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5411,8 +5380,8 @@
     },
     {
       "entry": "quantum/node_foam_cache",
-      "x": 130,
-      "y": 42,
+      "x": 49,
+      "y": 11,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5420,8 +5389,8 @@
     },
     {
       "entry": "quantum/node_foam_substrate",
-      "x": 128,
-      "y": 34,
+      "x": 47,
+      "y": 3,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5429,8 +5398,8 @@
     },
     {
       "entry": "quantum/node_hamiltonian_operator",
-      "x": 132,
-      "y": 38,
+      "x": 51,
+      "y": 7,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5438,8 +5407,8 @@
     },
     {
       "entry": "quantum/node_path_integral",
-      "x": 130,
-      "y": 40,
+      "x": 49,
+      "y": 9,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5447,8 +5416,8 @@
     },
     {
       "entry": "quantum/node_planck_mite",
-      "x": 132,
-      "y": 34,
+      "x": 51,
+      "y": 3,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5456,8 +5425,8 @@
     },
     {
       "entry": "quantum/node_relativity_breakdown",
-      "x": 126,
-      "y": 38,
+      "x": 45,
+      "y": 7,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5465,8 +5434,8 @@
     },
     {
       "entry": "quantum/node_schrodinger_limit",
-      "x": 134,
-      "y": 38,
+      "x": 53,
+      "y": 7,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5474,8 +5443,8 @@
     },
     {
       "entry": "quantum/node_vacuum_drifter",
-      "x": 126,
-      "y": 36,
+      "x": 45,
+      "y": 5,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5483,8 +5452,8 @@
     },
     {
       "entry": "quantum/node_virtual_graviton",
-      "x": 128,
-      "y": 36,
+      "x": 47,
+      "y": 5,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5492,8 +5461,8 @@
     },
     {
       "entry": "quantum/node_virtual_monopole",
-      "x": 132,
-      "y": 36,
+      "x": 51,
+      "y": 5,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5501,8 +5470,8 @@
     },
     {
       "entry": "quantum/node_virtual_pair",
-      "x": 134,
-      "y": 36,
+      "x": 53,
+      "y": 5,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5510,8 +5479,8 @@
     },
     {
       "entry": "quantum/node_virtual_photon",
-      "x": 128,
-      "y": 40,
+      "x": 47,
+      "y": 9,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5519,8 +5488,8 @@
     },
     {
       "entry": "quantum/node_virtual_quark",
-      "x": 132,
-      "y": 40,
+      "x": 51,
+      "y": 9,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5528,8 +5497,8 @@
     },
     {
       "entry": "quantum/node_wavefunction",
-      "x": 130,
-      "y": 34,
+      "x": 49,
+      "y": 3,
       "parents": [
         "quantum/foam_boundaries"
       ],
@@ -5537,26 +5506,24 @@
     },
     {
       "entry": "strings/origin_inflation",
-      "x": 119,
-      "y": 10,
+      "x": 4,
+      "y": 73,
       "parents": [
-        "strings/origin_branch",
-        "spacetime/dark_energy_siphon"
+        "strings/origin_branch"
       ]
     },
     {
       "entry": "strings/inflation_chamber",
-      "x": 121,
-      "y": 15,
+      "x": 9,
+      "y": 73,
       "parents": [
-        "strings/origin_branch",
-        "spacetime/dark_energy_siphon"
+        "strings/origin_branch"
       ]
     },
     {
       "entry": "strings/node_inflaton_condensate",
-      "x": 119,
-      "y": 13,
+      "x": 7,
+      "y": 71,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5564,8 +5531,8 @@
     },
     {
       "entry": "strings/node_metastable_vacuum_lattice",
-      "x": 123,
-      "y": 13,
+      "x": 11,
+      "y": 71,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5573,8 +5540,8 @@
     },
     {
       "entry": "strings/node_reheating_plasma",
-      "x": 119,
-      "y": 17,
+      "x": 7,
+      "y": 75,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5582,8 +5549,8 @@
     },
     {
       "entry": "strings/node_research_leptogenesis",
-      "x": 121,
-      "y": 13,
+      "x": 9,
+      "y": 71,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5591,8 +5558,8 @@
     },
     {
       "entry": "strings/node_research_quantum_cosmology",
-      "x": 119,
-      "y": 15,
+      "x": 7,
+      "y": 73,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5600,8 +5567,8 @@
     },
     {
       "entry": "strings/node_research_reheating",
-      "x": 123,
-      "y": 15,
+      "x": 11,
+      "y": 73,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5609,8 +5576,8 @@
     },
     {
       "entry": "strings/node_research_vacuum_stability",
-      "x": 121,
-      "y": 17,
+      "x": 9,
+      "y": 75,
       "parents": [
         "strings/inflation_chamber"
       ],
@@ -5618,86 +5585,213 @@
     },
     {
       "entry": "spacetime/finality_branch",
-      "x": 119,
-      "y": 20,
+      "x": 70,
+      "y": 18,
       "parents": [
-        "strings/origin_branch",
         "spacetime/dark_energy_siphon"
       ]
     },
     {
-      "entry": "spacetime/r50_hawking",
-      "x": 119,
-      "y": 40,
+      "entry": "spacetime/r47_waves",
+      "x": 41,
+      "y": 31,
       "parents": [
-        "quantum/bose_einstein_condenser",
-        "spacetime/r47_waves"
+        "spacetime/pound_rebka_tower",
+        "spacetime/r47_redshift"
       ]
     },
     {
-      "entry": "spacetime/r53_warp",
-      "x": 189,
-      "y": 2,
+      "entry": "spacetime/r47_frame_drag",
+      "x": 50,
+      "y": 17,
       "parents": [
-        "spacetime/wormhole_projector"
+        "spacetime/pound_rebka_tower",
+        "spacetime/r47_redshift"
       ]
     },
     {
-      "entry": "spacetime/node_anchored_warp_bubble",
-      "x": 189,
-      "y": 0,
+      "entry": "spacetime/r50_cow",
+      "x": 34,
+      "y": 28,
       "parents": [
-        "spacetime/r53_warp"
-      ],
-      "node": true
+        "spacetime/pound_rebka_tower",
+        "spacetime/r47_redshift"
+      ]
     },
     {
       "entry": "spacetime/vacuum_harvester",
-      "x": 126,
-      "y": 45,
+      "x": 77,
+      "y": 27,
       "parents": [
         "strings/graviton_condenser"
       ]
     },
     {
-      "entry": "spacetime/analog_black_hole",
-      "x": 121,
-      "y": 45,
+      "entry": "spacetime/laser_interferometer",
+      "x": 50,
+      "y": 24,
       "parents": [
-        "quantum/bose_einstein_condenser",
-        "spacetime/r47_waves"
+        "spacetime/pound_rebka_tower",
+        "spacetime/r47_redshift"
       ]
     },
     {
-      "entry": "spacetime/node_hawking_record",
-      "x": 121,
-      "y": 43,
+      "entry": "spacetime/node_chirp_signal_record",
+      "x": 48,
+      "y": 24,
       "parents": [
-        "spacetime/analog_black_hole"
+        "spacetime/laser_interferometer"
       ],
       "node": true
     },
     {
-      "entry": "spacetime/warp_field_forge",
-      "x": 189,
-      "y": 9,
+      "entry": "spacetime/node_gravitational_wave_echo",
+      "x": 52,
+      "y": 24,
       "parents": [
-        "spacetime/wormhole_projector"
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_gw_record_bbh",
+      "x": 50,
+      "y": 26,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_gw_record_bns",
+      "x": 48,
+      "y": 22,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_merger_remnant",
+      "x": 52,
+      "y": 22,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_precision_gyroscope",
+      "x": 48,
+      "y": 26,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_binary_mergers",
+      "x": 50,
+      "y": 22,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_seismic_isolator",
+      "x": 50,
+      "y": 20,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_test_mass",
+      "x": 52,
+      "y": 26,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_unruh_detector",
+      "x": 46,
+      "y": 24,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_vacuum_beam_tube",
+      "x": 54,
+      "y": 24,
+      "parents": [
+        "spacetime/laser_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/neutron_interferometer",
+      "x": 34,
+      "y": 33,
+      "parents": [
+        "spacetime/pound_rebka_tower",
+        "spacetime/r47_redshift"
       ]
     },
     {
-      "entry": "spacetime/node_warp_bubble_core",
-      "x": 189,
-      "y": 7,
+      "entry": "spacetime/node_cow_record",
+      "x": 32,
+      "y": 33,
       "parents": [
-        "spacetime/warp_field_forge"
+        "spacetime/neutron_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_crystal_interferometer_mount",
+      "x": 34,
+      "y": 35,
+      "parents": [
+        "spacetime/neutron_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_perfect_crystal_interferometer",
+      "x": 36,
+      "y": 33,
+      "parents": [
+        "spacetime/neutron_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_semiclassical_gravity",
+      "x": 34,
+      "y": 31,
+      "parents": [
+        "spacetime/neutron_interferometer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_tilt_table",
+      "x": 32,
+      "y": 31,
+      "parents": [
+        "spacetime/neutron_interferometer"
       ],
       "node": true
     },
     {
       "entry": "nuclear/r52_fuels",
-      "x": 151,
-      "y": 58,
+      "x": 173,
+      "y": 3,
       "parents": [
         "nuclear/r42_msr",
         "nuclear/molten_salt_reactor"
@@ -5705,8 +5799,8 @@
     },
     {
       "entry": "nuclear/r52_tokamak",
-      "x": 151,
-      "y": 61,
+      "x": 173,
+      "y": 6,
       "parents": [
         "nuclear/r42_msr",
         "nuclear/molten_salt_reactor"
@@ -5714,26 +5808,17 @@
     },
     {
       "entry": "nuclear/tokamak",
-      "x": 164,
-      "y": 59,
+      "x": 178,
+      "y": 5,
       "parents": [
         "nuclear/r42_msr",
         "nuclear/molten_salt_reactor"
       ]
     },
     {
-      "entry": "nuclear/node_deuterium",
-      "x": 162,
-      "y": 59,
-      "parents": [
-        "nuclear/tokamak"
-      ],
-      "node": true
-    },
-    {
       "entry": "nuclear/node_research_nuclear_astrophysics",
-      "x": 164,
-      "y": 57,
+      "x": 178,
+      "y": 3,
       "parents": [
         "nuclear/tokamak"
       ],
@@ -5741,8 +5826,8 @@
     },
     {
       "entry": "nuclear/node_tritium",
-      "x": 166,
-      "y": 59,
+      "x": 176,
+      "y": 5,
       "parents": [
         "nuclear/tokamak"
       ],
@@ -5750,16 +5835,16 @@
     },
     {
       "entry": "strings/multiverse_rift",
-      "x": 153,
-      "y": 10,
+      "x": 54,
+      "y": 73,
       "parents": [
         "strings/graviton_condenser"
       ]
     },
     {
       "entry": "strings/node_absolute_pedestal",
-      "x": 155,
-      "y": 12,
+      "x": 56,
+      "y": 75,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5767,8 +5852,8 @@
     },
     {
       "entry": "strings/node_cosmic_board",
-      "x": 153,
-      "y": 8,
+      "x": 54,
+      "y": 71,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5776,8 +5861,8 @@
     },
     {
       "entry": "strings/node_cosmic_die",
-      "x": 151,
-      "y": 10,
+      "x": 52,
+      "y": 73,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5785,8 +5870,8 @@
     },
     {
       "entry": "strings/node_cosmic_lens",
-      "x": 155,
-      "y": 10,
+      "x": 56,
+      "y": 73,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5794,8 +5879,8 @@
     },
     {
       "entry": "strings/node_cosmic_logic_wafer",
-      "x": 153,
-      "y": 12,
+      "x": 54,
+      "y": 75,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5803,8 +5888,8 @@
     },
     {
       "entry": "strings/node_cosmic_processor",
-      "x": 151,
-      "y": 8,
+      "x": 52,
+      "y": 71,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5812,8 +5897,8 @@
     },
     {
       "entry": "strings/node_false_vacuum",
-      "x": 151,
-      "y": 12,
+      "x": 52,
+      "y": 75,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5821,8 +5906,8 @@
     },
     {
       "entry": "strings/node_rift_anchor",
-      "x": 155,
-      "y": 8,
+      "x": 56,
+      "y": 71,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -5830,59 +5915,109 @@
     },
     {
       "entry": "strings/origin_nothing",
-      "x": 126,
-      "y": 28,
+      "x": 32,
+      "y": 73,
       "parents": [
-        "exotic/standard_model",
-        "exotic/particle_spectrometer"
+        "strings/inflation_chamber",
+        "strings/origin_inflation"
       ]
     },
     {
       "entry": "spacetime/finality_eras",
-      "x": 126,
-      "y": 18,
+      "x": 77,
+      "y": 17,
       "parents": [
         "spacetime/finality_branch"
       ]
     },
     {
       "entry": "spacetime/finality_violent",
-      "x": 151,
-      "y": 15,
+      "x": 92,
+      "y": 17,
       "parents": [
-        "nanotech/higgs_field_modulator",
         "spacetime/finality_branch"
       ]
     },
     {
-      "entry": "spacetime/r50_unification",
-      "x": 126,
-      "y": 58,
+      "entry": "spacetime/r50_hawking",
+      "x": 70,
+      "y": 28,
       "parents": [
-        "spacetime/r50_cow",
-        "spacetime/neutron_interferometer"
+        "spacetime/r47_waves"
       ]
     },
     {
-      "entry": "strings/origin_matter",
-      "x": 151,
-      "y": 18,
+      "entry": "spacetime/r53_warp",
+      "x": 118,
+      "y": 19,
       "parents": [
-        "cosmic/neutrino_condenser"
+        "spacetime/wormhole_projector"
+      ]
+    },
+    {
+      "entry": "spacetime/node_anchored_warp_bubble",
+      "x": 118,
+      "y": 17,
+      "parents": [
+        "spacetime/r53_warp"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/analog_black_hole",
+      "x": 70,
+      "y": 33,
+      "parents": [
+        "spacetime/r47_waves"
+      ]
+    },
+    {
+      "entry": "spacetime/node_hawking_record",
+      "x": 70,
+      "y": 31,
+      "parents": [
+        "spacetime/analog_black_hole"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/warp_field_forge",
+      "x": 118,
+      "y": 26,
+      "parents": [
+        "spacetime/wormhole_projector"
+      ]
+    },
+    {
+      "entry": "spacetime/node_warp_bubble_core",
+      "x": 118,
+      "y": 24,
+      "parents": [
+        "spacetime/warp_field_forge"
+      ],
+      "node": true
+    },
+    {
+      "entry": "strings/origin_matter",
+      "x": 59,
+      "y": 73,
+      "parents": [
+        "strings/inflation_chamber",
+        "strings/origin_inflation"
       ]
     },
     {
       "entry": "strings/universe_forge",
-      "x": 164,
-      "y": 12,
+      "x": 64,
+      "y": 73,
       "parents": [
         "strings/multiverse_rift"
       ]
     },
     {
       "entry": "strings/node_heat_death_remnant",
-      "x": 164,
-      "y": 10,
+      "x": 64,
+      "y": 71,
       "parents": [
         "strings/universe_forge"
       ],
@@ -5890,31 +6025,24 @@
     },
     {
       "entry": "spacetime/finality_heat_death",
-      "x": 162,
+      "x": 101,
       "y": 17,
       "parents": [
         "spacetime/finality_eras"
       ]
     },
     {
-      "entry": "spacetime/r54_unruh",
-      "x": 108,
-      "y": 26,
+      "entry": "spacetime/r50_unification",
+      "x": 84,
+      "y": 34,
       "parents": [
-        "spacetime/r50_unification"
-      ]
-    },
-    {
-      "entry": "spacetime/r54_hawking",
-      "x": 97,
-      "y": 44,
-      "parents": [
-        "spacetime/r50_unification"
+        "spacetime/r50_cow",
+        "spacetime/neutron_interferometer"
       ]
     },
     {
       "entry": "spacetime/entropy_horizon",
-      "x": 164,
+      "x": 101,
       "y": 22,
       "parents": [
         "spacetime/finality_eras"
@@ -5922,7 +6050,7 @@
     },
     {
       "entry": "spacetime/node_aeon_boundary_shard",
-      "x": 162,
+      "x": 99,
       "y": 22,
       "parents": [
         "spacetime/entropy_horizon"
@@ -5931,7 +6059,7 @@
     },
     {
       "entry": "spacetime/node_boltzmann_fluctuation",
-      "x": 166,
+      "x": 103,
       "y": 22,
       "parents": [
         "spacetime/entropy_horizon"
@@ -5940,7 +6068,7 @@
     },
     {
       "entry": "spacetime/node_dark_era_haze",
-      "x": 166,
+      "x": 103,
       "y": 20,
       "parents": [
         "spacetime/entropy_horizon"
@@ -5949,7 +6077,7 @@
     },
     {
       "entry": "spacetime/node_de_sitter_horizon_shard",
-      "x": 164,
+      "x": 101,
       "y": 24,
       "parents": [
         "spacetime/entropy_horizon"
@@ -5958,7 +6086,7 @@
     },
     {
       "entry": "spacetime/node_heat_death_ember",
-      "x": 162,
+      "x": 99,
       "y": 20,
       "parents": [
         "spacetime/entropy_horizon"
@@ -5967,7 +6095,7 @@
     },
     {
       "entry": "spacetime/node_research_poincare_recurrence",
-      "x": 164,
+      "x": 101,
       "y": 20,
       "parents": [
         "spacetime/entropy_horizon"
@@ -5975,61 +6103,17 @@
       "node": true
     },
     {
-      "entry": "spacetime/unruh_accelerator",
-      "x": 110,
-      "y": 31,
-      "parents": [
-        "spacetime/r50_unification"
-      ]
-    },
-    {
-      "entry": "spacetime/node_unruh_thermometer",
-      "x": 110,
-      "y": 29,
-      "parents": [
-        "spacetime/unruh_accelerator"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/micro_black_hole_evaporator",
-      "x": 99,
-      "y": 49,
-      "parents": [
-        "spacetime/r50_unification"
-      ]
-    },
-    {
-      "entry": "spacetime/node_hawking_quanta",
-      "x": 97,
-      "y": 49,
-      "parents": [
-        "spacetime/micro_black_hole_evaporator"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_black_hole_thermodynamics",
-      "x": 99,
-      "y": 47,
-      "parents": [
-        "spacetime/micro_black_hole_evaporator"
-      ],
-      "node": true
-    },
-    {
       "entry": "strings/origin_ccc",
-      "x": 169,
-      "y": 6,
+      "x": 69,
+      "y": 73,
       "parents": [
-        "strings/universe_forge",
-        "spacetime/finality_heat_death"
+        "strings/universe_forge"
       ]
     },
     {
       "entry": "spacetime/finality_after",
-      "x": 162,
-      "y": 27,
+      "x": 108,
+      "y": 17,
       "parents": [
         "spacetime/finality_heat_death",
         "spacetime/entropy_horizon"
@@ -6037,17 +6121,76 @@
     },
     {
       "entry": "spacetime/r53_mergers",
-      "x": 194,
-      "y": 40,
+      "x": 123,
+      "y": 23,
       "parents": [
         "spacetime/r47_waves",
         "spacetime/r47_frame_drag"
       ]
     },
     {
+      "entry": "spacetime/r54_unruh",
+      "x": 41,
+      "y": 21,
+      "parents": [
+        "spacetime/r50_unification"
+      ]
+    },
+    {
+      "entry": "spacetime/r54_hawking",
+      "x": 34,
+      "y": 18,
+      "parents": [
+        "spacetime/r50_unification"
+      ]
+    },
+    {
+      "entry": "spacetime/unruh_accelerator",
+      "x": 41,
+      "y": 26,
+      "parents": [
+        "spacetime/r50_unification"
+      ]
+    },
+    {
+      "entry": "spacetime/node_unruh_thermometer",
+      "x": 41,
+      "y": 24,
+      "parents": [
+        "spacetime/unruh_accelerator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/micro_black_hole_evaporator",
+      "x": 34,
+      "y": 23,
+      "parents": [
+        "spacetime/r50_unification"
+      ]
+    },
+    {
+      "entry": "spacetime/node_hawking_quanta",
+      "x": 32,
+      "y": 23,
+      "parents": [
+        "spacetime/micro_black_hole_evaporator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_black_hole_thermodynamics",
+      "x": 34,
+      "y": 21,
+      "parents": [
+        "spacetime/micro_black_hole_evaporator"
+      ],
+      "node": true
+    },
+    {
       "entry": "antimatter/baryogenesis",
-      "x": 189,
-      "y": 35,
+      "x": 40,
+      "y": 45,
       "parents": [
         "antimatter/mirror_metallurgy",
         "antimatter/mirror_foundry"
@@ -6055,8 +6198,8 @@
     },
     {
       "entry": "antimatter/node_omniscience_catalyst",
-      "x": 189,
-      "y": 33,
+      "x": 40,
+      "y": 43,
       "parents": [
         "antimatter/baryogenesis"
       ],
@@ -6064,8 +6207,8 @@
     },
     {
       "entry": "astrophysics/r52_bursts",
-      "x": 187,
-      "y": 53,
+      "x": 220,
+      "y": 31,
       "parents": [
         "astrophysics/r51_accretion",
         "astrophysics/accretion_disk_reactor"
@@ -6073,8 +6216,8 @@
     },
     {
       "entry": "astrophysics/burst_observatory",
-      "x": 189,
-      "y": 58,
+      "x": 220,
+      "y": 36,
       "parents": [
         "astrophysics/r51_accretion",
         "astrophysics/accretion_disk_reactor"
@@ -6082,8 +6225,8 @@
     },
     {
       "entry": "astrophysics/node_burst_afterglow_crystal",
-      "x": 189,
-      "y": 56,
+      "x": 220,
+      "y": 34,
       "parents": [
         "astrophysics/burst_observatory"
       ],
@@ -6091,17 +6234,17 @@
     },
     {
       "entry": "stellar/transcendent_plasma_forge",
-      "x": 164,
-      "y": 42,
+      "x": 152,
+      "y": 22,
       "parents": [
-        "exotic/synchrotron",
-        "cosmic/neutron_star_forge"
+        "stellar/dyson_array",
+        "stellar/nucleosynthesis_chamber"
       ]
     },
     {
       "entry": "stellar/node_hypernova_alloy_ingot",
-      "x": 164,
-      "y": 40,
+      "x": 152,
+      "y": 20,
       "parents": [
         "stellar/transcendent_plasma_forge"
       ],
@@ -6109,8 +6252,8 @@
     },
     {
       "entry": "stellar/node_hypernova_plasma",
-      "x": 166,
-      "y": 42,
+      "x": 154,
+      "y": 22,
       "parents": [
         "stellar/transcendent_plasma_forge"
       ],
@@ -6118,8 +6261,8 @@
     },
     {
       "entry": "stellar/node_residual_starlight",
-      "x": 164,
-      "y": 44,
+      "x": 152,
+      "y": 24,
       "parents": [
         "stellar/transcendent_plasma_forge"
       ],
@@ -6127,8 +6270,8 @@
     },
     {
       "entry": "stellar/node_transcendent_metal_ingot",
-      "x": 162,
-      "y": 42,
+      "x": 150,
+      "y": 22,
       "parents": [
         "stellar/transcendent_plasma_forge"
       ],
@@ -6136,8 +6279,8 @@
     },
     {
       "entry": "stellar/node_transcendent_plasma",
-      "x": 162,
-      "y": 40,
+      "x": 150,
+      "y": 20,
       "parents": [
         "stellar/transcendent_plasma_forge"
       ],
@@ -6145,168 +6288,42 @@
     },
     {
       "entry": "stellar/node_transfinite_coil_block",
-      "x": 166,
-      "y": 40,
+      "x": 154,
+      "y": 20,
       "parents": [
         "stellar/transcendent_plasma_forge"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/r54_information",
-      "x": 119,
-      "y": 50,
-      "parents": [
-        "spacetime/r54_hawking",
-        "spacetime/micro_black_hole_evaporator"
-      ]
-    },
-    {
-      "entry": "spacetime/r54_quantum_geometry",
-      "x": 119,
-      "y": 30,
-      "parents": [
-        "strings/graviton_condenser"
-      ]
-    },
-    {
-      "entry": "spacetime/spin_network_loom",
-      "x": 121,
-      "y": 35,
-      "parents": [
-        "strings/graviton_condenser"
-      ]
-    },
-    {
-      "entry": "spacetime/node_fixed_point_lattice",
-      "x": 119,
-      "y": 35,
-      "parents": [
-        "spacetime/spin_network_loom"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_planck_area_tile",
-      "x": 123,
-      "y": 35,
-      "parents": [
-        "spacetime/spin_network_loom"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_quantum_spacetime_condensate",
-      "x": 119,
-      "y": 33,
-      "parents": [
-        "spacetime/spin_network_loom"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_asymptotic_safety",
-      "x": 121,
-      "y": 33,
-      "parents": [
-        "spacetime/spin_network_loom"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_spin_network_node",
-      "x": 121,
-      "y": 37,
-      "parents": [
-        "spacetime/spin_network_loom"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/page_curve_analyzer",
-      "x": 121,
-      "y": 55,
-      "parents": [
-        "spacetime/r54_hawking",
-        "spacetime/micro_black_hole_evaporator"
-      ]
-    },
-    {
-      "entry": "spacetime/node_firewall_shard",
-      "x": 119,
-      "y": 55,
-      "parents": [
-        "spacetime/page_curve_analyzer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_island_fragment",
-      "x": 123,
-      "y": 55,
-      "parents": [
-        "spacetime/page_curve_analyzer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_page_curve_record",
-      "x": 121,
-      "y": 57,
-      "parents": [
-        "spacetime/page_curve_analyzer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_research_page_curve",
-      "x": 121,
-      "y": 53,
-      "parents": [
-        "spacetime/page_curve_analyzer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "spacetime/node_soft_hair_filament",
-      "x": 119,
-      "y": 53,
-      "parents": [
-        "spacetime/page_curve_analyzer"
       ],
       "node": true
     },
     {
       "entry": "anomaly/anomaly_intro",
-      "x": 169,
-      "y": 0,
+      "x": 130,
+      "y": 125,
       "parents": [
-        "hyperdimensions/tesseract",
-        "hyperdimensions/tesseract_assembler"
+        "hyperdimensions/tesseract"
       ]
     },
     {
       "entry": "anomaly/anomaly_containment_ward",
-      "x": 169,
-      "y": 3,
+      "x": 130,
+      "y": 128,
       "parents": [
-        "hyperdimensions/tesseract",
-        "hyperdimensions/tesseract_assembler"
+        "hyperdimensions/tesseract"
       ]
     },
     {
       "entry": "singularities/eye_of_the_horizon",
-      "x": 175,
-      "y": 31,
+      "x": 170,
+      "y": 87,
       "parents": [
-        "strings/universe_forge",
-        "stellar/transcendent_plasma_forge"
+        "singularities/penrose_ergosphere",
+        "singularities/kugelblitz_chamber"
       ]
     },
     {
       "entry": "singularities/node_burst_casing",
-      "x": 173,
-      "y": 33,
+      "x": 168,
+      "y": 89,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6314,8 +6331,8 @@
     },
     {
       "entry": "singularities/node_convergence_altar",
-      "x": 177,
-      "y": 33,
+      "x": 172,
+      "y": 89,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6323,8 +6340,8 @@
     },
     {
       "entry": "singularities/node_cosmic_record_fragment",
-      "x": 175,
-      "y": 29,
+      "x": 170,
+      "y": 85,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6332,8 +6349,8 @@
     },
     {
       "entry": "singularities/node_dense_mass_core",
-      "x": 175,
-      "y": 27,
+      "x": 170,
+      "y": 83,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6341,8 +6358,8 @@
     },
     {
       "entry": "singularities/node_dimensional_stabiliser",
-      "x": 171,
-      "y": 31,
+      "x": 166,
+      "y": 87,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6350,8 +6367,8 @@
     },
     {
       "entry": "singularities/node_event_horizon_casing",
-      "x": 179,
-      "y": 31,
+      "x": 174,
+      "y": 87,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6359,8 +6376,17 @@
     },
     {
       "entry": "singularities/node_field_emitter",
-      "x": 175,
-      "y": 35,
+      "x": 170,
+      "y": 91,
+      "parents": [
+        "singularities/eye_of_the_horizon"
+      ],
+      "node": true
+    },
+    {
+      "entry": "singularities/node_focus_receiver",
+      "x": 168,
+      "y": 83,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6368,8 +6394,8 @@
     },
     {
       "entry": "singularities/node_harmonic_pedestal",
-      "x": 173,
-      "y": 27,
+      "x": 172,
+      "y": 83,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6377,8 +6403,8 @@
     },
     {
       "entry": "singularities/node_horizon_shard",
-      "x": 173,
-      "y": 31,
+      "x": 168,
+      "y": 87,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6386,8 +6412,8 @@
     },
     {
       "entry": "singularities/node_hyperframe_casing",
-      "x": 177,
-      "y": 27,
+      "x": 166,
+      "y": 85,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6395,8 +6421,8 @@
     },
     {
       "entry": "singularities/node_lens_pylon",
-      "x": 171,
-      "y": 29,
+      "x": 174,
+      "y": 85,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6404,8 +6430,8 @@
     },
     {
       "entry": "singularities/node_liquid_spacetime",
-      "x": 173,
-      "y": 29,
+      "x": 168,
+      "y": 85,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6413,8 +6439,8 @@
     },
     {
       "entry": "singularities/node_magnetic_confinement_casing",
-      "x": 179,
-      "y": 29,
+      "x": 166,
+      "y": 89,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6422,8 +6448,8 @@
     },
     {
       "entry": "singularities/node_neutronium_ingot",
-      "x": 177,
-      "y": 31,
+      "x": 172,
+      "y": 87,
       "parents": [
         "singularities/eye_of_the_horizon",
         "basics/guide_04_neutronium"
@@ -6432,8 +6458,8 @@
     },
     {
       "entry": "singularities/node_neutronium_plate",
-      "x": 175,
-      "y": 33,
+      "x": 170,
+      "y": 89,
       "parents": [
         "singularities/eye_of_the_horizon",
         "basics/guide_09_press"
@@ -6442,8 +6468,8 @@
     },
     {
       "entry": "singularities/node_plasma_injection_nozzle",
-      "x": 171,
-      "y": 33,
+      "x": 174,
+      "y": 89,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6451,8 +6477,8 @@
     },
     {
       "entry": "singularities/node_precision_assembly_casing",
-      "x": 179,
-      "y": 33,
+      "x": 168,
+      "y": 91,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6460,8 +6486,8 @@
     },
     {
       "entry": "singularities/node_quadrupole_focusing_magnet",
-      "x": 173,
-      "y": 35,
+      "x": 172,
+      "y": 91,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6469,8 +6495,8 @@
     },
     {
       "entry": "singularities/node_raw_star_matter",
-      "x": 177,
-      "y": 29,
+      "x": 172,
+      "y": 85,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6478,8 +6504,8 @@
     },
     {
       "entry": "singularities/node_refinery_casing",
-      "x": 177,
-      "y": 35,
+      "x": 166,
+      "y": 83,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6487,8 +6513,8 @@
     },
     {
       "entry": "singularities/node_resonance_pedestal",
-      "x": 171,
-      "y": 27,
+      "x": 174,
+      "y": 83,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6496,8 +6522,8 @@
     },
     {
       "entry": "singularities/node_stellar_containment_plate",
-      "x": 179,
-      "y": 27,
+      "x": 166,
+      "y": 91,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6505,8 +6531,8 @@
     },
     {
       "entry": "singularities/node_stellar_frame_casing",
-      "x": 171,
-      "y": 35,
+      "x": 174,
+      "y": 91,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6514,8 +6540,8 @@
     },
     {
       "entry": "singularities/node_stellar_lamp",
-      "x": 179,
-      "y": 35,
+      "x": 170,
+      "y": 81,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6523,8 +6549,8 @@
     },
     {
       "entry": "singularities/node_superconducting_coil_block",
-      "x": 175,
-      "y": 25,
+      "x": 164,
+      "y": 87,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6532,8 +6558,8 @@
     },
     {
       "entry": "singularities/node_tokamak_casing",
-      "x": 169,
-      "y": 31,
+      "x": 176,
+      "y": 87,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6541,8 +6567,8 @@
     },
     {
       "entry": "singularities/node_unruh_ring_casing",
-      "x": 181,
-      "y": 31,
+      "x": 170,
+      "y": 93,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
@@ -6550,17 +6576,143 @@
     },
     {
       "entry": "singularities/node_vacuum_state_projector",
-      "x": 175,
-      "y": 37,
+      "x": 168,
+      "y": 81,
       "parents": [
         "singularities/eye_of_the_horizon"
       ],
       "node": true
     },
     {
+      "entry": "spacetime/r54_information",
+      "x": 63,
+      "y": 17,
+      "parents": [
+        "spacetime/r54_hawking",
+        "spacetime/micro_black_hole_evaporator"
+      ]
+    },
+    {
+      "entry": "spacetime/r54_quantum_geometry",
+      "x": 63,
+      "y": 20,
+      "parents": [
+        "spacetime/micro_black_hole_evaporator",
+        "spacetime/r54_hawking"
+      ]
+    },
+    {
+      "entry": "spacetime/spin_network_loom",
+      "x": 63,
+      "y": 25,
+      "parents": [
+        "spacetime/micro_black_hole_evaporator",
+        "spacetime/r54_hawking"
+      ]
+    },
+    {
+      "entry": "spacetime/node_fixed_point_lattice",
+      "x": 61,
+      "y": 25,
+      "parents": [
+        "spacetime/spin_network_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_planck_area_tile",
+      "x": 65,
+      "y": 25,
+      "parents": [
+        "spacetime/spin_network_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_quantum_spacetime_condensate",
+      "x": 61,
+      "y": 23,
+      "parents": [
+        "spacetime/spin_network_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_asymptotic_safety",
+      "x": 63,
+      "y": 23,
+      "parents": [
+        "spacetime/spin_network_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_spin_network_node",
+      "x": 63,
+      "y": 27,
+      "parents": [
+        "spacetime/spin_network_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/page_curve_analyzer",
+      "x": 63,
+      "y": 32,
+      "parents": [
+        "spacetime/r54_hawking",
+        "spacetime/micro_black_hole_evaporator"
+      ]
+    },
+    {
+      "entry": "spacetime/node_firewall_shard",
+      "x": 61,
+      "y": 32,
+      "parents": [
+        "spacetime/page_curve_analyzer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_island_fragment",
+      "x": 65,
+      "y": 32,
+      "parents": [
+        "spacetime/page_curve_analyzer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_page_curve_record",
+      "x": 63,
+      "y": 34,
+      "parents": [
+        "spacetime/page_curve_analyzer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_research_page_curve",
+      "x": 63,
+      "y": 30,
+      "parents": [
+        "spacetime/page_curve_analyzer"
+      ],
+      "node": true
+    },
+    {
+      "entry": "spacetime/node_soft_hair_filament",
+      "x": 61,
+      "y": 30,
+      "parents": [
+        "spacetime/page_curve_analyzer"
+      ],
+      "node": true
+    },
+    {
       "entry": "anomaly/anomaly_origin_defects",
-      "x": 169,
-      "y": 9,
+      "x": 135,
+      "y": 123,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -6568,8 +6720,8 @@
     },
     {
       "entry": "anomaly/anomaly_origin_autocatalysis",
-      "x": 171,
-      "y": 14,
+      "x": 135,
+      "y": 128,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -6577,8 +6729,8 @@
     },
     {
       "entry": "anomaly/node_autocatalytic_broth",
-      "x": 171,
-      "y": 12,
+      "x": 135,
+      "y": 126,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis"
       ],
@@ -6586,8 +6738,8 @@
     },
     {
       "entry": "anomaly/anomaly_origin_oncogenesis",
-      "x": 169,
-      "y": 19,
+      "x": 140,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -6595,8 +6747,8 @@
     },
     {
       "entry": "anomaly/anomaly_origin_pathology",
-      "x": 169,
-      "y": 22,
+      "x": 140,
+      "y": 128,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -6604,16 +6756,16 @@
     },
     {
       "entry": "anomaly/anomaly_escape",
-      "x": 189,
-      "y": 22,
+      "x": 148,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_origin_oncogenesis"
       ]
     },
     {
       "entry": "anomaly/node_immortal_cell_line",
-      "x": 189,
-      "y": 20,
+      "x": 148,
+      "y": 123,
       "parents": [
         "anomaly/anomaly_escape"
       ],
@@ -6621,8 +6773,8 @@
     },
     {
       "entry": "anomaly/anomaly_selfref",
-      "x": 187,
-      "y": 17,
+      "x": 148,
+      "y": 130,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis",
         "anomaly/anomaly_origin_pathology"
@@ -6630,8 +6782,8 @@
     },
     {
       "entry": "anomaly/anomaly_clonal",
-      "x": 187,
-      "y": 27,
+      "x": 153,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
@@ -6639,8 +6791,8 @@
     },
     {
       "entry": "anomaly/anomaly_systems",
-      "x": 187,
-      "y": 30,
+      "x": 153,
+      "y": 128,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
@@ -6648,8 +6800,8 @@
     },
     {
       "entry": "anomaly/anomaly_epidemics",
-      "x": 187,
-      "y": 40,
+      "x": 159,
+      "y": 126,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_systems"
@@ -6657,8 +6809,8 @@
     },
     {
       "entry": "anomaly/anomaly_leakage",
-      "x": 187,
-      "y": 14,
+      "x": 156,
+      "y": 126,
       "parents": [
         "anomaly/anomaly_origin_defects",
         "anomaly/anomaly_systems"
@@ -6666,8 +6818,8 @@
     },
     {
       "entry": "anomaly/anomaly_symbiosis",
-      "x": 194,
-      "y": 37,
+      "x": 156,
+      "y": 123,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_epidemics"
@@ -6675,8 +6827,8 @@
     },
     {
       "entry": "anomaly/anomaly_extent",
-      "x": 194,
-      "y": 21,
+      "x": 162,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_epidemics",
         "anomaly/anomaly_leakage"
@@ -6684,16 +6836,16 @@
     },
     {
       "entry": "anomaly/anomaly_containment",
-      "x": 194,
-      "y": 34,
+      "x": 165,
+      "y": 123,
       "parents": [
         "anomaly/anomaly_extent"
       ]
     },
     {
       "entry": "anomaly/anomaly_therapy",
-      "x": 194,
-      "y": 24,
+      "x": 165,
+      "y": 126,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
@@ -6701,8 +6853,8 @@
     },
     {
       "entry": "anomaly/anomaly_resolution_engine",
-      "x": 196,
-      "y": 29,
+      "x": 170,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
@@ -6710,8 +6862,8 @@
     },
     {
       "entry": "anomaly/node_car_t_culture",
-      "x": 196,
-      "y": 27,
+      "x": 170,
+      "y": 123,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
@@ -6719,8 +6871,8 @@
     },
     {
       "entry": "anomaly/node_renormalised_essence",
-      "x": 194,
-      "y": 29,
+      "x": 168,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
@@ -6728,8 +6880,8 @@
     },
     {
       "entry": "anomaly/anomaly_resolution",
-      "x": 204,
-      "y": 21,
+      "x": 178,
+      "y": 125,
       "parents": [
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
@@ -6739,51 +6891,131 @@
   "regions": [
     {
       "tier": 0,
-      "label": "I \u00b7 Foundations",
+      "label": "Quantum Engineering",
       "x0": -1.5,
-      "x1": 27.5,
-      "y0": -2.5,
-      "y1": 61.5
+      "x1": 125.5,
+      "y0": 0,
+      "y1": 12.5
     },
     {
       "tier": 1,
-      "label": "II \u00b7 Quanta & Matter",
-      "x0": 30.5,
-      "x1": 90.5,
-      "y0": -2.5,
-      "y1": 61.5
+      "label": "Wormholes & Causality",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 14,
+      "y1": 36.5
     },
     {
       "tier": 2,
-      "label": "III \u00b7 Stars & Spacetime",
-      "x0": 95.5,
-      "x1": 135.5,
-      "y0": -2.5,
-      "y1": 62.5
+      "label": "Antimatter",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 38,
+      "y1": 50.5
     },
     {
       "tier": 3,
-      "label": "IV \u00b7 The Cosmos",
-      "x0": 138.5,
-      "x1": 182.5,
-      "y0": -2.5,
-      "y1": 62.5
+      "label": "Exotic Matter",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 52,
+      "y1": 64.5
     },
     {
       "tier": 4,
-      "label": "V \u00b7 Beyond Physics",
-      "x0": 185.5,
-      "x1": 197.5,
-      "y0": -2.5,
-      "y1": 59.5
+      "label": "Strings & the Multiverse",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 66,
+      "y1": 78.5
     },
     {
       "tier": 5,
-      "label": "VI \u00b7 Transcendence",
-      "x0": 202.5,
-      "x1": 205.5,
-      "y0": 18.5,
-      "y1": 22.5
+      "label": "Electromagnetism",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 80,
+      "y1": 99.5
+    },
+    {
+      "tier": 6,
+      "label": "Optics & Crystals",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 101,
+      "y1": 113.5
+    },
+    {
+      "tier": 7,
+      "label": "Nuclear Science",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 0,
+      "y1": 15.5
+    },
+    {
+      "tier": 8,
+      "label": "Stellar Engineering",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 17,
+      "y1": 25.5
+    },
+    {
+      "tier": 9,
+      "label": "Astrophysics",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 27,
+      "y1": 45.5
+    },
+    {
+      "tier": 10,
+      "label": "Earth & Mapping",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 47,
+      "y1": 62.5
+    },
+    {
+      "tier": 11,
+      "label": "Compact Stars & Annihilation",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 64,
+      "y1": 76.5
+    },
+    {
+      "tier": 12,
+      "label": "Singularities",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 78,
+      "y1": 94.5
+    },
+    {
+      "tier": 13,
+      "label": "Hyperdimensions",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 96,
+      "y1": 108.5
+    },
+    {
+      "tier": 14,
+      "label": "Nanotech & Mass",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 110,
+      "y1": 118.5
+    },
+    {
+      "tier": 15,
+      "label": "Abnormality & Infection",
+      "x0": 127.5,
+      "x1": 224.5,
+      "y0": 120,
+      "y1": 131.5
     }
   ]
 }

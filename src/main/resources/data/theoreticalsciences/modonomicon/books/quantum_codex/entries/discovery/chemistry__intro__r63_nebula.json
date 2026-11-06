@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r63_nebula",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r63_nebula.desc",
+  "icon": {
+    "item": "theoreticalsciences:cloud_siphon"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 58,
+  "y": 59,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r63_nebula.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r63_nebula"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r63_nebula.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r63_chromatography"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nebular_chemistry"
+  }
+}

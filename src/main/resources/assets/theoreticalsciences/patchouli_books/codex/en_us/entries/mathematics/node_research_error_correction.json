@@ -1,0 +1,19 @@
+{
+  "name": "Error Correction",
+  "icon": "theoreticalsciences:error_code",
+  "advancement": "theoreticalsciences:research/error_correction",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:error_code",
+      "title": "Error Correction",
+      "text": "$(thing)Error Correction$()$(br2)Add a few check bits, cleverly placed, and a flipped bit can be found and flipped back. Unlocks the Error-Correcting Code."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Information Theory, Modular Arithmetic.$(br2)$(thing)Samples$(): 4 Prime Shard.$(br2)$(thing)Derivation$(): A Hamming code uses r check bits on a block of 2^r \u2212 1 bits. Write the share C of the bits that carry data."
+    }
+  ]
+}

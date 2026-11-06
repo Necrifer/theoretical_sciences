@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:cryogenic_lander"
+    },
+    "title": {
+      "translate": "advancements.theoreticalsciences.titan_arrival.title"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.titan_arrival.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/titan",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "theoreticalsciences:titan"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

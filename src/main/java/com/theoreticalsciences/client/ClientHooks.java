@@ -31,6 +31,11 @@ public final class ClientHooks {
         FAILURES.put(pos.immutable(), new long[]{mc.level.getGameTime(), hazard});
     }
 
+    /** 1.2.0: a controller formed or broke: its moving parts are looked for again. */
+    public static void movingChanged(ControllerBlockEntity c) {
+        com.theoreticalsciences.client.render.animation.MovingParts.invalidate(c);
+    }
+
     public static final Set<ControllerBlockEntity> CONTROLLERS = Collections.newSetFromMap(new WeakHashMap<>());
 
     /** Loaded fractured-reality blocks (the effect renderer glitches the view around clusters of them). */
@@ -70,6 +75,11 @@ public final class ClientHooks {
     public static final Set<net.minecraft.world.entity.Entity> SENTINELS = Collections.newSetFromMap(new WeakHashMap<>());
 
     /** Round 34c: the forged Core's attunement state - opens its screen, or updates the open one. */
+    /** 1.2.0: a calibration game from the Tuning Fork. */
+    public static void calibrate(BlockPos pos, int kind, long seed, int tier, int colour) {
+        Minecraft.getInstance().setScreen(new com.theoreticalsciences.client.screen.CalibrationScreen(pos, kind, seed, tier & 15, (tier & 16) != 0, colour));
+    }
+
     public static void attune(BlockPos core, net.minecraft.nbt.CompoundTag tag) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.screen instanceof com.theoreticalsciences.client.screen.AttuneScreen s && s.core().equals(core)) s.receive(tag);

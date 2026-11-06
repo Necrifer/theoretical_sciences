@@ -1,0 +1,61 @@
+{
+  "title": "Games and Strategy",
+  "description": "Von Neumann and Morgenstern: when what is best for you depends on what others do, choosing becomes a game, and games have mathematics. Unlocks the Strategy Table.",
+  "icon": "theoreticalsciences:stable_strategy",
+  "x": 11,
+  "y": 7,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:probability_theory",
+    "theoreticalsciences:optimisation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "You play your first move with chance p and then win a; otherwise you play your second and win b. Write what you win on average, W.",
+    "name": "Mixed strategy",
+    "lhs": "W",
+    "form": "p * a + ( 1 - p ) * b",
+    "expr": "p * a + ( 1 - p ) * b",
+    "ask": "Find W for p = 0.3, a = @{a} and b = @{b}.",
+    "vars": {
+      "W": "average win",
+      "p": "chance of the first",
+      "a": "first win",
+      "b": "second win"
+    },
+    "given": {
+      "p": 0.3,
+      "a": 10,
+      "b": 4
+    },
+    "unit": "",
+    "method": "Each outcome counts in proportion to how often it happens.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "a": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "b": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

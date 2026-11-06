@@ -1,0 +1,58 @@
+{
+  "title": "Translation",
+  "description": "The ribosome reads the message three letters at a time and strings the amino acids together: the genetic code. Unlocks cheap Engineered Enzymes and a new Synthetic Cell route.",
+  "icon": "theoreticalsciences:ribosome_assembler",
+  "x": 8,
+  "y": 18,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:transcription"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 4
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A ribosome gets each of L codons wrong with chance \u03b5. Write the share Y of chains with no mistake at all.",
+    "name": "Error-free chains",
+    "lhs": "Y",
+    "form": "( 1 - \u03b5 ) ^ L",
+    "expr": "( 1 - \u03b5 ) ^ L",
+    "ask": "Find Y for \u03b5 = @{\u03b5} and L = @{L}.",
+    "vars": {
+      "Y": "share right",
+      "\u03b5": "error per codon",
+      "L": "codons"
+    },
+    "given": {
+      "\u03b5": 0.0001,
+      "L": 300
+    },
+    "unit": "",
+    "method": "Each codon is right with chance 1 \u2212 \u03b5, independently, so all L are right with chance (1 \u2212 \u03b5)^L \u2248 e^(\u2212\u03b5L).",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "\u03b5": [
+        6e-05,
+        0.00014,
+        1e-06
+      ],
+      "L": [
+        180.0,
+        420.0,
+        1.0
+      ]
+    }
+  }
+}

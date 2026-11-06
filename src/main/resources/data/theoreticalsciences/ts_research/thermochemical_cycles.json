@@ -1,0 +1,49 @@
+{
+  "title": "Thermochemical Cycles",
+  "description": "Heat is a state function: the heat of a reaction is the same whatever route it takes, so it can be added up from reactions already measured. Unlocks the Heat-Pack Reactor, ammonium nitrate and the cold packs.",
+  "icon": "theoreticalsciences:heat_pack_reactor",
+  "x": 21,
+  "y": -1,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:calorimetry",
+    "theoreticalsciences:ostwald_process"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:thermochemical_data_card",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:nitric_acid_cell",
+      "count": 1
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Carbon burns to carbon monoxide (heat a), carbon monoxide to carbon dioxide (heat b); a third reaction gives back c. Write the heat h of the whole route, start to end.",
+    "name": "Hess",
+    "lhs": "h",
+    "form": "a + b - c",
+    "expr": "a + b - c",
+    "ask": "Find h in kJ/mol for a = \u2212110.5, b = \u2212283.0 and c = 0.",
+    "vars": {
+      "h": "heat of the route (kJ/mol)",
+      "a": "first step (kJ/mol)",
+      "b": "second step (kJ/mol)",
+      "c": "step run backwards (kJ/mol)"
+    },
+    "given": {
+      "a": -110.5,
+      "b": -283.0,
+      "c": 0
+    },
+    "unit": "kJ/mol",
+    "method": "Enthalpy is a state function: add the steps of any route; a step run backwards counts with its sign changed.",
+    "distractors": [
+      "2",
+      "T",
+      "R"
+    ]
+  }
+}

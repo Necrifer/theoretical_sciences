@@ -1,0 +1,19 @@
+{
+  "name": "Aluminium Ingot",
+  "icon": "theoreticalsciences:aluminium_ingot",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:aluminium_ingot",
+      "title": "Aluminium Ingot",
+      "text": "Light, bright and once dearer than gold, until electrolysis (Hall-H\u00e9roult) made it cheap."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Quasicrystals.$(br2)$(thing)Used in$(): Quasicrystal Plate."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/quasicrystals"
+}

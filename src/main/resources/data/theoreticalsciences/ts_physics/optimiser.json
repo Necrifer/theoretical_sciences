@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "h",
+      "unit": "",
+      "min": 0.001,
+      "max": 2,
+      "step": 0.001,
+      "default": 0.05
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "min": 1,
+      "max": 400,
+      "step": 1,
+      "default": 40
+    }
+  ],
+  "recipe_vars": {
+    "lam": 5,
+    "tol": 0.001
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "fac",
+      "unit": "",
+      "expr": "abs(1 - h*lam*(1 + 0.02*d))",
+      "formula": "|1 \u2212 h\u03bb|"
+    },
+    {
+      "id": "err",
+      "unit": "",
+      "expr": "fac^n",
+      "formula": "|1 \u2212 h\u03bb|\u207f"
+    },
+    {
+      "id": "hl",
+      "unit": "",
+      "expr": "h*lam",
+      "formula": "h\u03bb"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "stop",
+      "expr": "2 - h*lam",
+      "formula": "h\u03bb < 2"
+    }
+  ],
+  "rate": "clamp(40/n, 0.1, 4)",
+  "rate_formula": "rate = 40 / n",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

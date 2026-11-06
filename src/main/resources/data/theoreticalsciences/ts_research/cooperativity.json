@@ -1,0 +1,61 @@
+{
+  "title": "Cooperativity",
+  "description": "Haemoglobin's four sites help each other: once one holds oxygen, the rest grab it faster. Its curve is an S, not a bend (Hill).",
+  "icon": "theoreticalsciences:porphyrin_oxygen_carrier",
+  "x": 21,
+  "y": 4,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:enzyme_inhibition"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "Sites that help each other bind as an S-curve with steepness n. Write the share Y of sites filled at level S, for half-filling at K.",
+    "name": "Hill equation",
+    "lhs": "Y",
+    "form": "S ^ n / ( K ^ n + S ^ n )",
+    "expr": "S ^ n / ( K ^ n + S ^ n )",
+    "ask": "Find Y for S = @{S}, K = @{K} and n = @{n} (about haemoglobin's steepness is 2.8).",
+    "vars": {
+      "Y": "share filled",
+      "S": "level",
+      "K": "half level",
+      "n": "steepness"
+    },
+    "given": {
+      "S": 2,
+      "K": 1,
+      "n": 4
+    },
+    "unit": "",
+    "method": "With n sites binding together, filling goes as S\u207f; at S = K it is exactly half.",
+    "distractors": [
+      "-",
+      "2",
+      "V"
+    ],
+    "vary": {
+      "S": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "K": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "n": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

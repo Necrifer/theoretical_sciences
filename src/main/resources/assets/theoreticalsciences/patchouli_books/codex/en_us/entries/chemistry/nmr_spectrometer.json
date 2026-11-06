@@ -1,0 +1,84 @@
+{
+  "name": "NMR Spectrometer",
+  "icon": "theoreticalsciences:nmr_spectrometer",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 152,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nmr_spectrometer",
+      "title": "NMR Spectrometer",
+      "text": "Nuclei spinning in a superconducting magnet, listened to with radio: the whole shape of a molecule, atom by atom.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the magnetic field and the radio frequency: a nucleus resonates at f = \u03b3B/2\u03c0 (protons 42.58 MHz per tesla) - within 5 parts per million. The magnet is superconducting: keep the coolant below 10 K, and the field below 22 T, or it quenches."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "NMR Spectrometer",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____",
+            "_AAA_",
+            "_AAA_",
+            "_AAA_",
+            "_____"
+          ],
+          [
+            "_AAA_",
+            "ABBBA",
+            "ABABA",
+            "ABBBA",
+            "_AAA_"
+          ],
+          [
+            "_AAA_",
+            "ABBBA",
+            "ABDBA",
+            "ABBBA",
+            "_AAA_"
+          ],
+          [
+            "_AAA_",
+            "ABBBA",
+            "ABABA",
+            "ABBBA",
+            "_AAA_"
+          ],
+          [
+            "AA0AA",
+            "AAAAA",
+            "EAAAE",
+            "AAAAA",
+            "AAEAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:nmr_spectrometer",
+          "A": "theoreticalsciences:nmr_casing",
+          "B": "theoreticalsciences:nmr_magnet_coil",
+          "D": "theoreticalsciences:nmr_probe",
+          "E": "#theoreticalsciences:multiblock/nmr_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Amino Acid Mixture, Fine Reagent, Structure Card."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nmr_spectrometer",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nmr_spectroscopy"
+}

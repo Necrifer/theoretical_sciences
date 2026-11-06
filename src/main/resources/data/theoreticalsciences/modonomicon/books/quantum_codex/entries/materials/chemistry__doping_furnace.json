@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.doping_furnace",
+  "description": "book.theoreticalsciences.codex.chemistry.doping_furnace.desc",
+  "icon": {
+    "item": "theoreticalsciences:doping_furnace"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 267,
+  "y": 56,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:doping_furnace"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.doping_furnace.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.doping_furnace.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.doping_furnace.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.doping_furnace.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:doping_furnace"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.doping_furnace.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__sintering_press"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/semiconductor_doping"
+  }
+}

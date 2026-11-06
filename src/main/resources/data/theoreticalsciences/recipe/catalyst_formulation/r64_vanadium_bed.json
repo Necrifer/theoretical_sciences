@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:catalyst_formulation",
+  "item_inputs": [
+    {
+      "item": "minecraft:raw_iron",
+      "count": 4
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:vanadium_bed",
+      "count": 3
+    }
+  ],
+  "energy": 256,
+  "duration": 75,
+  "research": "theoreticalsciences:heterogeneous_catalysis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Eb0": 0.3,
+      "Eo": 0.42,
+      "Ts": 1000.0
+    },
+    "windows": [
+      {
+        "q": "Y",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

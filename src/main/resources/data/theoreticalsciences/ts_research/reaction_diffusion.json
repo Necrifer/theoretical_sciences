@@ -1,0 +1,66 @@
+{
+  "title": "Reaction and Diffusion",
+  "description": "Two chemicals that react and spread: Turing showed that an even mixture of them can be unstable, and paint itself into stripes. Unlocks the Pattern Basin and the Pattern Template.",
+  "icon": "theoreticalsciences:pattern_template",
+  "x": 23,
+  "y": 3,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:stability",
+    "theoreticalsciences:enzyme_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "An activator spreads with D and an inhibitor r times as fast, reacting at a rate k. Write the spacing L of the stripes that form, about 2\u03c0 times the fourth root of r over the square root of k/D.",
+    "name": "Turing wavelength",
+    "lhs": "L",
+    "form": "2 * \u03c0 * r ^ 0.25 * sqrt ( D / k )",
+    "expr": "2 * \u03c0 * r ^ 0.25 * sqrt ( D / k )",
+    "ask": "Find L for r = @{r}, D = @{D} and k = @{k}.",
+    "vars": {
+      "L": "spacing",
+      "r": "spreading ratio",
+      "D": "activator spreading",
+      "k": "reaction rate"
+    },
+    "given": {
+      "r": 16,
+      "D": 1,
+      "k": 4
+    },
+    "unit": "",
+    "method": "The fastest-growing bump is the one whose size balances spreading (D/\u03bb\u00b2) against reaction (k): \u03bb \u221d \u221a(D/k).",
+    "distractors": [
+      "+",
+      "exp",
+      "e"
+    ],
+    "vary": {
+      "r": [
+        10.0,
+        22.0,
+        1.0
+      ],
+      "D": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "k": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

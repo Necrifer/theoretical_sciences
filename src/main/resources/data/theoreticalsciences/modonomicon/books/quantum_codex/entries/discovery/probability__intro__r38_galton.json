@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.intro__r38_galton",
+  "description": "book.theoreticalsciences.codex.probability.intro__r38_galton.desc",
+  "icon": {
+    "item": "theoreticalsciences:galton_board"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 17,
+  "y": 82,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r38_galton.p0",
+      "title": "book.theoreticalsciences.codex.probability.intro__r38_galton"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r38_galton.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r37_chance"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/combinatorics"
+  }
+}

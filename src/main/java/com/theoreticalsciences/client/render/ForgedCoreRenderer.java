@@ -31,7 +31,7 @@ public class ForgedCoreRenderer implements BlockEntityRenderer<ForgedCoreBlockEn
     @Override
     public void render(ForgedCoreBlockEntity be, float pt, PoseStack ps, MultiBufferSource buf, int light, int overlay) {
         if (be.getLevel() == null) return;
-        float t = be.getLevel().getGameTime() + pt + (be.getBlockPos().hashCode() & 255);
+        float t = (be.getLevel().getGameTime() % 72000L) + pt + (be.getBlockPos().hashCode() & 255);
         // ease the waking (about two seconds) and sleeping (one)
         float target = be.active() ? 1 : 0;
         if (be.wakeShown < 0) be.wakeShown = target;

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.intro__r45_solar",
+  "description": "book.theoreticalsciences.codex.astrophysics.intro__r45_solar.desc",
+  "icon": {
+    "item": "theoreticalsciences:solar_furnace"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 24,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r45_solar.p0",
+      "title": "book.theoreticalsciences.codex.astrophysics.intro__r45_solar"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r45_solar.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r45_telescope"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_astrophysics"
+  }
+}

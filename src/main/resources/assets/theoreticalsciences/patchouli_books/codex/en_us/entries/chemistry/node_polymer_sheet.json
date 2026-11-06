@@ -1,0 +1,19 @@
+{
+  "name": "Polymer Sheet",
+  "icon": "theoreticalsciences:polymer_sheet",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:polymer_sheet",
+      "title": "Polymer Sheet",
+      "text": "Polyethylene: chains of ten thousand ethylene units, tangled. Light, tough and waterproof - the commonest plastic there is."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Polymeriser$().$(br2)$(thing)Found in$(): Abandoned Refinery chests.$(br2)$(thing)Unlocked by$(): Polymer Chemistry.$(br2)$(thing)Used in$(): Hydrophobic Coating, Lake Pump, Oxygen Rebreather."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/polymer_chemistry"
+}

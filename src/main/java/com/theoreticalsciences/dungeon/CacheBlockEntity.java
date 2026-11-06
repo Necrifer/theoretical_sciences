@@ -54,6 +54,11 @@ public class CacheBlockEntity extends RandomizableContainerBlockEntity {
         super(QHLogistics.CACHE.get(), pos, state);
     }
 
+    /** 1.2.0: for caches with their own block entity (the Chronostatic Vault). */
+    protected CacheBlockEntity(net.minecraft.world.level.block.entity.BlockEntityType<?> type, BlockPos pos, BlockState state) {
+        super(type, pos, state);
+    }
+
     @Override
     public int getContainerSize() {
         return 27;

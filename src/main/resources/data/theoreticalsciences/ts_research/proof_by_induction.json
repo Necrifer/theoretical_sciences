@@ -1,0 +1,47 @@
+{
+  "title": "Proof by Induction",
+  "description": "Show it for the first case, and show that each case gives the next: then it holds for all of them, like dominoes. Unlocks the Proof Certificate.",
+  "icon": "theoreticalsciences:proof_certificate",
+  "x": 3,
+  "y": 9,
+  "insight": 25,
+  "requires": [
+    "theoreticalsciences:formal_logic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:axiom_schema",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Write the sum S of the first n squares, 1 + 4 + 9 + ... + n\u00b2, the formula that induction proves.",
+    "name": "Sum of squares",
+    "lhs": "S",
+    "form": "n * ( n + 1 ) * ( 2 * n + 1 ) / 6",
+    "expr": "n * ( n + 1 ) * ( 2 * n + 1 ) / 6",
+    "ask": "Find S for n = @{n}.",
+    "vars": {
+      "S": "the sum",
+      "n": "how many squares"
+    },
+    "given": {
+      "n": 10
+    },
+    "unit": "",
+    "method": "True for n = 1 (1 = 1\u00b72\u00b73/6); adding (n + 1)\u00b2 to the formula for n gives the formula for n + 1.",
+    "distractors": [
+      "3",
+      "k",
+      "m"
+    ],
+    "vary": {
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

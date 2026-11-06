@@ -16,29 +16,29 @@ public final class ProofQuestions {
     /** Chamber 4 - Hilbert's Hotel: infinities. */
     public static final List<Q> TRANSFINITE = List.of(
             new Q("Every room of Hilbert's Hotel is taken. One new guest arrives. Where do they sleep?",
-                    "Room 1 - every guest moves from room n to n+1", "Nowhere: the hotel is full", "Room ∞", "They share someone's room"),
+                    "Room 1, every guest moves from room n to n+1", "Nowhere: the hotel is full", "Room ∞", "They share someone's room"),
             new Q("The full hotel now meets a coach with infinitely many new guests. Which rooms do they get?",
-                    "The odd rooms - every guest moves from n to 2n", "The even rooms", "None: there is no room left", "Room ω and beyond"),
+                    "The odd rooms, every guest moves from n to 2n", "The even rooms", "None: there is no room left", "Room ω and beyond"),
             new Q("Which set is bigger: all counting numbers, or only the even ones?",
-                    "Neither - both have size ℵ₀", "The counting numbers", "The even numbers", "They cannot be compared"),
+                    "Neither, both have size ℵ₀", "The counting numbers", "The even numbers", "They cannot be compared"),
             new Q("What comes right after every counting number 1, 2, 3, ...?",
                     "ω (omega), the first infinite ordinal", "∞ + 1", "ℵ₁", "Nothing: they never end"),
             new Q("Can the real numbers be listed one after another, like the counting numbers?",
-                    "No - the diagonal argument always finds a missing one", "Yes, given infinite time", "Yes, by size", "Only the rational ones are missing"),
+                    "No; the diagonal argument always finds a missing one", "Yes, given infinite time", "Yes, by size", "Only the rational ones are missing"),
             new Q("Is 1 + ω equal to ω + 1?",
                     "No: 1 + ω = ω, but ω + 1 is larger than ω", "Yes, addition always commutes", "Both equal ω", "Both equal ω + 1"),
-            new Q("What does Cantor's diagonal argument prove?", "The real numbers cannot be listed - there are more of them than counting numbers",
+            new Q("What does Cantor's diagonal argument prove?", "The real numbers cannot be listed; there are more of them than counting numbers",
                     "Every infinite set is the same size", "The rationals are uncountable", "Infinity is a number"),
-            new Q("Which is bigger: the rational numbers or the counting numbers?", "Neither - both are countable (ℵ₀)", "The rationals",
+            new Q("Which is bigger: the rational numbers or the counting numbers?", "Neither, both are countable (ℵ₀)", "The rationals",
                     "The counting numbers", "They cannot be compared"),
-            new Q("Is there a largest ordinal?", "No - add one to any ordinal and you get a bigger one", "Yes, ω", "Yes, ε₀", "Yes, ℵ₁"),
+            new Q("Is there a largest ordinal?", "No; add one to any ordinal and you get a bigger one", "Yes, ω", "Yes, ε₀", "Yes, ℵ₁"),
             new Q("What is an inaccessible cardinal?",
                     "An infinity too big to reach from smaller ones by sums and power sets", "An infinity no one has named yet",
                     "A number larger than every ordinal", "The size of the real numbers"));
 
     /** Chamber 5 - the Platonic Forms: geometry, shape and higher dimensions. */
     public static final List<Q> FORMS = List.of(
-            new Q("How many perfectly regular convex solids - Platonic solids - exist?", "Five", "Four", "Seven", "Infinitely many"),
+            new Q("How many perfectly regular convex solids, Platonic solids, exist?", "Five", "Four", "Seven", "Infinitely many"),
             new Q("For any convex polyhedron, vertices − edges + faces equals:", "2", "0", "1", "It depends on the shape"),
             new Q("After infinitely many steps, the Koch snowflake has:", "An infinite perimeter but a finite area", "A finite perimeter and area",
                     "An infinite area", "No area at all"),
@@ -49,7 +49,7 @@ public final class ProofQuestions {
             new Q("A fractal's dimension can be:", "A non-whole number, like 1.26", "Only 1, 2 or 3", "Always larger than 3", "Negative"),
             new Q("The golden ratio φ satisfies:", "φ² = φ + 1", "φ² = 2", "φ = π / 2", "φ + 1 = 0"),
             new Q("A Möbius strip has how many sides?", "One", "Two", "Zero", "Infinitely many"),
-            new Q("What is a Menger sponge's volume after infinitely many steps?", "Zero - yet its surface area is infinite", "One cube",
+            new Q("What is a Menger sponge's volume after infinitely many steps?", "Zero, yet its surface area is infinite", "One cube",
                     "Infinite", "Half the original"),
             new Q("How many regular polytopes exist in four dimensions?", "Six", "Five", "Three", "Infinitely many"));
 
@@ -57,12 +57,12 @@ public final class ProofQuestions {
     public static final List<Q> BULK = List.of(
             new Q("Why might gravity be so much weaker than the other forces?", "It leaks into extra dimensions of the bulk",
                     "Gravitons are very heavy", "It only works on large objects", "It is slowly decaying"),
-            new Q("Where are string theory's extra dimensions hidden?", "Curled up too small to see - compactified",
+            new Q("Where are string theory's extra dimensions hidden?", "Curled up too small to see, compactified",
                     "Inside black holes", "Beyond the edge of the universe", "In the past"),
             new Q("In string theory, what is a brane?", "A surface in higher-dimensional space on which open strings end",
                     "A particle of gravity", "A kind of black hole", "A loop of time"),
             new Q("One twin flies near light speed and returns. Who has aged less?", "The twin who travelled", "The twin who stayed",
-                    "Neither - they age the same", "Whoever is heavier"),
+                    "Neither; they age the same", "Whoever is heavier"),
             new Q("What does a geodesic describe?", "The straightest possible path through curved spacetime",
                     "The shortest path on a flat map", "The orbit of a photon around a star", "The edge of a black hole"),
             new Q("Seen from far away, someone falling into a black hole appears to:", "Slow down, redden and freeze at the horizon",
@@ -75,7 +75,7 @@ public final class ProofQuestions {
                     "They are colder", "Their orbit is retrograde", "Radio waves speed them up"),
             new Q("What does E = mc² say?", "Mass and energy are equivalent", "Energy grows with the speed of light",
                     "Mass can never change", "Light has mass"),
-            new Q("In general relativity, what tells spacetime how to curve?", "Matter and energy - the stress-energy tensor",
+            new Q("In general relativity, what tells spacetime how to curve?", "Matter and energy, the stress-energy tensor",
                     "The speed of light", "Magnetic fields", "The observer's choice of coordinates"));
 
     /** Chamber 7 - Foundations: quantum mechanics, information and logic. */
@@ -83,9 +83,9 @@ public final class ProofQuestions {
             new Q("In the double-slit experiment, what destroys the interference pattern?", "Measuring which slit each particle went through",
                     "Turning off the lights", "Firing particles faster", "Using electrons instead of photons"),
             new Q("If a particle's position is known more precisely, its momentum becomes:", "Less certain", "More certain", "Zero", "Unchanged"),
-            new Q("Two entangled particles are measured light-years apart. Can this send a message?", "No - each result alone looks random",
+            new Q("Two entangled particles are measured light-years apart. Can this send a message?", "No, each result alone looks random",
                     "Yes, instantly", "Yes, at light speed", "Only if they are photons"),
-            new Q("What does a system's Hamiltonian give you?", "Its energy - and so how its state changes in time",
+            new Q("What does a system's Hamiltonian give you?", "Its energy, and so how its state changes in time",
                     "Its position", "Its mass", "Its temperature only"),
             new Q("Why can't Maxwell's demon beat the second law of thermodynamics?", "Erasing its memory produces entropy",
                     "Demons do not exist", "Molecules are too fast to sort", "The box always leaks"),
@@ -104,11 +104,11 @@ public final class ProofQuestions {
 
     /** Chamber 8 - the Codex: what the player has learned in this mod. */
     public static final List<Q> CODEX = List.of(
-            new Q("What must you carry to survive inside a black hole?", "A Geodesic Anchor", "A Brane Tether", "A Cantor Key", "Nothing - just armour"),
+            new Q("What must you carry to survive inside a black hole?", "A Geodesic Anchor", "A Brane Tether", "A Cantor Key", "Nothing, just armour"),
             new Q("What lies at the very bottom of the Quantum Foam?", "Schrödinger's Limit", "Relativity Breakdown", "Bedrock", "The void"),
             new Q("What is Pleroma made from?", "Every other fluid, all at once", "Liquid light", "Dark energy and water", "Molten Omnium"),
             new Q("Which instrument opens the Transfinite Hierarchy?", "The Cantor Key", "The Horizon Diver", "The Brane Shifter", "The Planck Diver"),
-            new Q("Inside the white hole, which way does gravity pull?", "Up - sneak to fall back down", "Down, as usual", "Toward the centre",
+            new Q("Inside the white hole, which way does gravity pull?", "Up; sneak to fall back down", "Down, as usual", "Toward the centre",
                     "Nowhere: there is none"),
             new Q("In the Platonic Realm, what can still dig?", "Only a sword", "Only a pickaxe", "Only your hand", "Nothing at all"),
             new Q("What did the Einstein-Rosen bridge connect?", "The black hole and the white hole", "The Bulk and the Overworld",

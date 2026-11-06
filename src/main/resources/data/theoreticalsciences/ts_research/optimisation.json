@@ -1,0 +1,62 @@
+{
+  "title": "Optimisation",
+  "description": "The best of all choices is at the bottom of a valley: walk against the slope, a step at a time. Unlocks the Optimiser and the Optimised Pathway.",
+  "icon": "theoreticalsciences:optimised_pathway",
+  "x": 10,
+  "y": 6,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:stability",
+    "theoreticalsciences:linear_algebra",
+    "theoreticalsciences:numerical_methods"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A ball sits on a bowl f = \u00bd\u03bbx\u00b2. Write where it is, X, after one move of size h against the slope, starting from x.",
+    "name": "Downhill update",
+    "lhs": "X",
+    "form": "x - h * \u03bb * x",
+    "expr": "x - h * \u03bb * x",
+    "ask": "Find X for x = @{x}, h = 0.1 and \u03bb = @{\u03bb}.",
+    "vars": {
+      "X": "new place",
+      "x": "old place",
+      "h": "move size",
+      "\u03bb": "curvature"
+    },
+    "given": {
+      "x": 4,
+      "h": 0.1,
+      "\u03bb": 5
+    },
+    "unit": "",
+    "method": "The slope of \u00bd\u03bbx\u00b2 at x is \u03bbx; moving h against it subtracts h\u03bbx.",
+    "distractors": [
+      "+",
+      "\u03c0",
+      "2"
+    ],
+    "vary": {
+      "x": [
+        2.0,
+        6.0,
+        1.0
+      ],
+      "\u03bb": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

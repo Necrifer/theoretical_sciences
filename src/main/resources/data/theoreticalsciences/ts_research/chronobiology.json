@@ -1,0 +1,63 @@
+{
+  "title": "Chronobiology",
+  "description": "Every cell keeps a clock, a loop of genes that switches itself off and on across a day. Unlocks the Circadian Incubator.",
+  "icon": "theoreticalsciences:circadian_incubator",
+  "x": 7,
+  "y": 24,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:physiology",
+    "theoreticalsciences:bifurcations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glowstone",
+      "count": 2
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A gene clock has an active level that rises and falls over a day of period T. Write the level A at time t, from a mean m and a swing s, with the cosine of 2.pi.t over T.",
+    "name": "Daily rhythm",
+    "lhs": "A",
+    "form": "m + s * cos ( 2 * \u03c0 * t / T )",
+    "expr": "m + s * cos ( 2 * \u03c0 * t / T )",
+    "ask": "Find A for m = @{m}, s = 3, t = 0 and T = @{T}.",
+    "vars": {
+      "A": "activity",
+      "m": "mean",
+      "s": "swing",
+      "t": "time",
+      "T": "period"
+    },
+    "given": {
+      "m": 5,
+      "s": 3,
+      "t": 0,
+      "T": 24
+    },
+    "unit": "",
+    "method": "A self-repressing loop oscillates; to a good approximation its level is a cosine about its mean.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "m": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "T": [
+        14.0,
+        34.0,
+        1.0
+      ]
+    }
+  }
+}

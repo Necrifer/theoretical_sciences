@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.autoclave",
+  "description": "book.theoreticalsciences.codex.biology.autoclave.desc",
+  "icon": {
+    "item": "theoreticalsciences:autoclave"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 3,
+  "y": 11,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:autoclave"
+      },
+      "text": "book.theoreticalsciences.codex.biology.autoclave.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.autoclave.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.autoclave.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.autoclave.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:autoclave"
+      },
+      "text": "book.theoreticalsciences.codex.biology.autoclave.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.autoclave.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__life"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__bioreactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/sterile_technique"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "params": [
+    {
+      "id": "Il",
+      "unit": "\u00b5mol/m\u00b2s",
+      "min": 10,
+      "max": 2000,
+      "step": 1,
+      "default": 300
+    },
+    {
+      "id": "CO",
+      "unit": "%",
+      "min": 0.04,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Kl": 150,
+    "Ii": 1000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ph",
+      "unit": "",
+      "expr": "(Il/(Kl + Il))*exp(-Il/Ii)/((sqrt(Kl*Ii)/(Kl + sqrt(Kl*Ii)))*exp(-sqrt(Kl*Ii)/Ii))*(CO/(0.5 + CO))*1.5*(1 - 0.02*d)",
+      "formula": "P/P_best = [I/(K + I)]\u00b7e^(\u2212I/Ii)\u00b7[CO\u2082/(0.5 + CO\u2082)] / its peak"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "burn",
+      "kind": "stop",
+      "expr": "1800 - Il",
+      "formula": "I < 1800 \u00b5mol/m\u00b2s"
+    }
+  ],
+  "rate": "clamp(ph*3, 0.1, 4)",
+  "rate_formula": "rate = 3 \u00b7 photosynthesis",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.oscillator_vessel",
+  "description": "book.theoreticalsciences.codex.chemistry.oscillator_vessel.desc",
+  "icon": {
+    "item": "theoreticalsciences:oscillator_vessel"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 208,
+  "y": 53,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:oscillator_vessel"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.oscillator_vessel.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.oscillator_vessel.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.oscillator_vessel.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.oscillator_vessel.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:oscillator_vessel"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.oscillator_vessel.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__air_separation_unit"
+    },
+    {
+      "entry": "theoreticalsciences:materials/chemistry__chromatography_column"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/oscillating_reactions"
+  }
+}

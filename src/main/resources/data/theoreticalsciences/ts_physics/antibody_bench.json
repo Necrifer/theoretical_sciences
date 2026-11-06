@@ -1,0 +1,50 @@
+{
+  "params": [
+    {
+      "id": "Dz",
+      "unit": "ug",
+      "min": 1,
+      "max": 200,
+      "step": 0.1,
+      "default": 30
+    },
+    {
+      "id": "adj",
+      "unit": "",
+      "min": 0,
+      "max": 3,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Kd": 30
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "resp",
+      "unit": "",
+      "expr": "Dz^2/(Kd^2 + Dz^2)*(1 + adj)*(1 - 0.02*d)",
+      "formula": "r = [D^2/(K^2 + D^2)].(1 + a)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "storm",
+      "kind": "stop",
+      "expr": "150 - Dz*(1 + adj)",
+      "formula": "D.(1 + a) < 150"
+    }
+  ],
+  "rate": "clamp(resp*1.5, 0.1, 4)",
+  "rate_formula": "rate = 1.5 . response",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

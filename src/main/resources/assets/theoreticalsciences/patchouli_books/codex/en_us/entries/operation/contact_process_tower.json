@@ -1,0 +1,24 @@
+{
+  "name": "Contact Process Tower",
+  "icon": "theoreticalsciences:contact_process_tower",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 37,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "2SO\u2082 + O\u2082 \u21cc 2SO\u2083 gives out heat (\u0394H = \u2212198 kJ/mol, \u0394S = \u2212188 J/mol\u00b7K): the cooler the bed, the further it goes - but vanadium only lights off near 670 K, and is faster hotter (E\u2090 \u2248 90 kJ/mol). The gas is cooled between three beds so each runs where the equilibrium still allows a high conversion. More oxygen pushes it on, but dilutes the gas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Bed temperature, Oxygen excess.$(br2)$(thing)Disturbance$(): Bed temperature drift: the rate sees T\u00b7(1 \u00b1 0.5%\u00b7d)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The vanadium beds are below light-off: they do nothing; The vanadium beds are over 600 \u00b0C: they sinter.$(br2)$(thing)Rate$(): Sulfur trioxide made: the conversion, how fast the bed works, and how much the extra air dilutes the gas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)\u0394G\u00b0: \u0394G\u00b0 = \u0394H \u2212 T\u0394S$(br)Equilibrium constant: K = e^(\u2212\u0394G\u00b0/RT)$(br)Equilibrium conversion: X/(1 \u2212 X) = \u221a(K\u00b7p_O\u2082)$(br)Bed activity: k/k\u2087\u2082\u2083 = e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/723 K))$(br)Conversion per pass: X = X_eq\u00b7(1 \u2212 e^(\u22123k))"
+    }
+  ]
+}

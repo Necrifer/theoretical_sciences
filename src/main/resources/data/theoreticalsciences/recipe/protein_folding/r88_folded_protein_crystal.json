@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:protein_folding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:folded_protein_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:protein_folding",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "dH": 200.0,
+      "Tm": 340.0,
+      "mU": 5.0
+    },
+    "windows": [
+      {
+        "q": "fold",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

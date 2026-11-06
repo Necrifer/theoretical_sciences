@@ -1,0 +1,19 @@
+{
+  "name": "Mould Culture",
+  "icon": "theoreticalsciences:mould_culture",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mould_culture",
+      "title": "Mould Culture",
+      "text": "Penicillium, the blue-green mould on old bread. Fleming saw it kill the bacteria around it in 1928. It dies if carried about too long. Made on the Mycelium Bed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mycelium Bed$().$(br2)$(thing)Found in$(): Bsl4 Field Station chests.$(br2)$(thing)Unlocked by$(): Mycology.$(br2)$(thing)Used in$(): Antibiotic, Physarum Culture."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mycology"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Defence",
+  "icon": "theoreticalsciences:antibody_bench",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antibody_bench,theoreticalsciences:antibody,theoreticalsciences:ward_fracture",
+      "text": "The body is attacked all the time, and answers: first the same for every invader, then learned, and remembered. The Anomaly is an invader like any other, and now you can be ready for it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Infections$(): the creatures a failed machine releases now leave a lasting mark when they hit you. A $(thing)Destabilised Husk$() gives $(thing)Fracture$() (you slip a few blocks through space); a $(thing)Nanite Swarm$(), $(thing)Grey Goo$() (your food burns away); a $(thing)Paradox Echo$(), $(thing)Rewind$() (back where you stood ten seconds ago); a $(thing)Void Wraith$(), $(thing)Hollowing$() (six less health). They run their course."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Innate$() and $(thing)Adaptive Immunity$(): the $(item)Antibody Bench$() grows a trace of an invader and measures the body's answer, a Hill curve in the dose, raised by the adjuvant. Too much of both and it resonates. It makes $(item)Antibodies$() and, from what each creature drops, an $(item)Anomaly Ward$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Immunisation$(): use a Ward on yourself and its infection cannot touch you for three in-game days. Renew it too soon (more than half its time left) and the imprint overloads: a Ward Overload. After $(thing)Immune Memory$() (you must have studied $(thing)Directed Evolution$()), a lasting Ward holds for good."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Tolerance$(): the body must also know not to attack itself, and so must reality. The $(item)Law Wraiths$() that pour from a dimensional breach are reality's own antibodies, striking the breach and whoever stands by it. Study Tolerance and you are read as self: they leave you be."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/adaptive_immunity"
+}

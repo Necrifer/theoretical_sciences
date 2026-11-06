@@ -1,0 +1,19 @@
+{
+  "name": "Membrane Potential",
+  "icon": "theoreticalsciences:ion_channel_membrane",
+  "advancement": "theoreticalsciences:research/membrane_potential",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ion_channel_membrane",
+      "title": "Membrane Potential",
+      "text": "$(thing)Membrane Potential$()$(br2)Let potassium leak out through its channels and the inside of the cell goes negative, until the voltage holds it back: Nernst. Unlocks Ion Channel Membranes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 60$(br2)$(thing)Builds on$(): Membranes, Galvanic Cells.$(br2)$(thing)Samples$(): 4 Lipid Bilayer.$(br2)$(thing)Derivation$(): Ions of charge z are at c outside and q inside. Write the voltage E (in mV, at body heat) that holds them in balance."
+    }
+  ]
+}

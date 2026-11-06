@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__r81_games",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__r81_games.desc",
+  "icon": {
+    "item": "theoreticalsciences:strategy_table"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 81,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r81_games.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__r81_games"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r81_games.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r37_chance"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__intro__r79_optimisation"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/game_theory"
+  }
+}

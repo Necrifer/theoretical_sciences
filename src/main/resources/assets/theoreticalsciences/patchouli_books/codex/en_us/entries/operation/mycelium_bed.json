@@ -1,0 +1,24 @@
+{
+  "name": "Mycelium Bed",
+  "icon": "theoreticalsciences:mycelium_bed",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 86,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A fungus grows fastest at its own temperature, falling off either side as e^(\u2212((T \u2212 T_opt)/8)\u00b2), and it needs water, w/(0.3 + w); too wet, and bacteria outgrow it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Moisture, Temperature.$(br2)$(thing)Disturbance$(): Drafts: growth varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too wet: bacteria take the bed.$(br2)$(thing)Rate$(): A mould near its best is fastest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Growth, against its best: g = e^(\u2212((T \u2212 T_opt)/8)\u00b2)\u00b7w/(0.3 + w) / its peak"
+    }
+  ]
+}

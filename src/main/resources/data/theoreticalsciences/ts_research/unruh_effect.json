@@ -1,59 +1,59 @@
 {
-  "title": "Unruh Effect",
-  "description": "Empty space is empty only for an observer who is not accelerating. Accelerate, and the vacuum fills with a warm glow - at a temperature proportional to the acceleration. Unlocks the Unruh Accelerator.",
-  "icon": "theoreticalsciences:unruh_thermometer",
-  "x": 9,
-  "y": 0,
-  "insight": 200,
-  "requires": [
-    "theoreticalsciences:semiclassical_gravity"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:hall_bar_chip",
-      "count": 2
-    },
-    {
-      "item": "theoreticalsciences:test_mass",
-      "count": 1
-    }
-  ],
-  "time": 780,
-  "puzzle": {
-    "goal": "An observer accelerating at a through empty space sees it filled with thermal radiation. Write its temperature T, from \u0127, the speed of light c and Boltzmann's constant k.",
-    "name": "Unruh temperature",
-    "lhs": "T",
-    "form": "\u0127 * a / ( 2 * \u03c0 * c * k )",
-    "expr": "h * a / ( 6.28318 * c * k )",
-    "ask": "Find T in kelvin for a = @{a} m/s\u00b2 (h = 1.0546e-34 for \u0127, c = 2.998e8, k = 1.381e-23).",
-    "vars": {
-      "T": "temperature (K)",
-      "\u0127": "reduced Planck constant",
-      "a": "acceleration (m/s\u00b2)",
-      "\u03c0": "pi",
-      "c": "speed of light",
-      "k": "Boltzmann constant",
-      "h": "\u0127 (J\u00b7s)"
-    },
-    "given": {
-      "h": 1.0546e-34,
-      "a": 2.47e+20,
-      "c": 299800000.0,
-      "k": 1.381e-23
-    },
-    "unit": "K",
-    "method": "The accelerated observer's horizon sits a distance c\u00b2/a behind them; seen from their frame the vacuum modes are thermal at that horizon's surface gravity.",
-    "distractors": [
-      "G",
-      "M",
-      "4"
-    ],
-    "vary": {
-      "a": [
-        1.48e+20,
-        3.46e+20,
-        1e+18
-      ]
-    }
+ "title": "Unruh Effect",
+ "description": "Empty space is empty only for an observer who is not accelerating. Accelerate, and the vacuum fills with a warm glow, at a temperature proportional to the acceleration. Unlocks the Unruh Accelerator.",
+ "icon": "theoreticalsciences:unruh_thermometer",
+ "x": 9,
+ "y": 0,
+ "insight": 200,
+ "requires": [
+  "theoreticalsciences:semiclassical_gravity"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:hall_bar_chip",
+   "count": 2
+  },
+  {
+   "item": "theoreticalsciences:test_mass",
+   "count": 1
   }
+ ],
+ "time": 780,
+ "puzzle": {
+  "goal": "An observer accelerating at a through empty space sees it filled with thermal radiation. Write its temperature T, from ħ, the speed of light c and Boltzmann's constant k.",
+  "name": "Unruh temperature",
+  "lhs": "T",
+  "form": "ħ * a / ( 2 * π * c * k )",
+  "expr": "h * a / ( 6.28318 * c * k )",
+  "ask": "Find T in kelvin for a = @{a} m/s² (h = 1.0546e-34 for ħ, c = 2.998e8, k = 1.381e-23).",
+  "vars": {
+   "T": "temperature (K)",
+   "ħ": "reduced Planck constant",
+   "a": "acceleration (m/s²)",
+   "π": "pi",
+   "c": "speed of light",
+   "k": "Boltzmann constant",
+   "h": "ħ (J·s)"
+  },
+  "given": {
+   "h": 1.0546e-34,
+   "a": 2.47e+20,
+   "c": 299800000.0,
+   "k": 1.381e-23
+  },
+  "unit": "K",
+  "method": "The accelerated observer's horizon sits a distance c²/a behind them; seen from their frame the vacuum modes are thermal at that horizon's surface gravity.",
+  "distractors": [
+   "G",
+   "M",
+   "4"
+  ],
+  "vary": {
+   "a": [
+    1.48e+20,
+    3.46e+20,
+    1e+18
+   ]
+  }
+ }
 }

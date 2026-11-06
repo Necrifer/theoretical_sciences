@@ -81,6 +81,7 @@ public final class StructureZones extends SavedData {
     public static void reset() {
         QUEUE.clear();
         SENT.clear();
+        ENGINE_CHECK.clear();
     }
 
     // ------------------------------------------------------------------ who is inside what
@@ -93,7 +94,9 @@ public final class StructureZones extends SavedData {
         int bx = 0, by = 0, bz = 0, br = 1;
         List<Zone> zs = get(sp.serverLevel()).byChunk.get(ChunkPos.asLong(sp.getBlockX() >> 4, sp.getBlockZ() >> 4));
         if (zs != null)
-            for (Zone z : zs) {
+            for (Zone z : List.copyOf(zs)) {
+                // 1.2.0: a ruin's glitching is the breached engine's doing - once every one of them is broken, it stops
+                if (z.mode == Mode.GLITCH && !engineAlive(sp.serverLevel(), z)) continue;
                 double d = Math.sqrt(sp.distanceToSqr(z.x + 0.5, z.y + 0.5, z.z + 0.5));
                 // strongest at the heart, fading out over the outer third
                 float i = (float) Math.min(1, Math.max(0, (z.r - d) / (z.r * 0.35)));
@@ -116,6 +119,71 @@ public final class StructureZones extends SavedData {
         if (prev != null && prev[0] == best.ordinal() && prev[1] == q) return;
         SENT.put(sp.getUUID(), new int[]{best.ordinal(), q});
         PacketDistributor.sendToPlayer(sp, new DistortionPayload(best.ordinal(), q / 20F, new BlockPos(bx, by, bz), br));
+    }
+
+    /** 1.2.0: the nearest zone of a kind round pos (in its chunk), and how far in: {zone, depth 0..1 at the heart}, or null. */
+    public static Zone nearest(ServerLevel level, net.minecraft.core.BlockPos pos, Mode mode) {
+        List<Zone> zs = get(level).byChunk.get(ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4));
+        if (zs == null) return null;
+        Zone best = null;
+        double bd = Double.MAX_VALUE;
+        for (Zone z : List.copyOf(zs)) {
+            if (z.mode != mode) continue;
+            double d = pos.distSqr(new net.minecraft.core.BlockPos(z.x, z.y, z.z));
+            if (d < bd && d <= (double) z.r * z.r) {
+                bd = d;
+                best = z;
+            }
+        }
+        return best;
+    }
+
+    /** When each glitch zone's engines were last looked for, and whether one was found (zone -> {tick, 1|0}). */
+    private static final Map<Zone, long[]> ENGINE_CHECK = new ConcurrentHashMap<>();
+
+    /** Whether a breached anomaly engine still stands inside this zone (looked for at most every two seconds). */
+    static boolean engineAlive(ServerLevel level, Zone z) {
+        long now = level.getGameTime();
+        long[] c = ENGINE_CHECK.get(z);
+        if (c != null && now - c[0] < 40) return c[1] == 1;
+        boolean found = false, unknown = false;
+        var engine = com.theoreticalsciences.registry.QHBlocks.get("breached_anomaly_engine");
+        int r = Math.min(z.r, 14);
+        BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
+        search:
+        for (int dy = -8; dy <= 8; dy++)
+            for (int dx = -r; dx <= r; dx++)
+                for (int dz = -r; dz <= r; dz++) {
+                    p.set(z.x + dx, z.y + dy, z.z + dz);
+                    if (!level.isLoaded(p)) {
+                        unknown = true;          // 1.2.0: part of the ruin is not loaded: the engine may be there
+                        continue;
+                    }
+                    if (level.getBlockState(p).is(engine)) {
+                        found = true;
+                        break search;
+                    }
+                }
+        if (!found && unknown) {
+            // not seen, but not all of it could be looked at: no zone for now, and nothing forgotten
+            ENGINE_CHECK.put(z, new long[]{now, 0});
+            return false;
+        }
+        if (!found) {
+            // the ruin is quiet for good: the zone is forgotten
+            StructureZones data = get(level);
+            data.byChunk.values().forEach(l -> l.remove(z));
+            data.setDirty();
+            ENGINE_CHECK.remove(z);
+            return false;
+        }
+        ENGINE_CHECK.put(z, new long[]{now, 1});
+        return true;
+    }
+
+    /** A breached engine was broken: its zone is looked at again at once. */
+    public static void engineBroken(ServerLevel level, BlockPos pos) {
+        ENGINE_CHECK.keySet().removeIf(z -> Math.abs(z.x - pos.getX()) <= z.r && Math.abs(z.z - pos.getZ()) <= z.r);
     }
 
     public static void forget(UUID id) {

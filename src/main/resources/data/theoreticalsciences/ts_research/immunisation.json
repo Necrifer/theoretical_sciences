@@ -1,0 +1,51 @@
+{
+  "title": "Immunisation",
+  "description": "Show the body a harmless trace of an invader and it is ready for the real one. Unlocks an Anomaly Ward for each of the Anomaly's infections.",
+  "icon": "theoreticalsciences:ward_fracture",
+  "x": 7,
+  "y": 23,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:antibodies"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:fractured_essence",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A disease spreads at R0. Write the share H that must be held safe so each case makes less than one more (herd immunity).",
+    "name": "Threshold",
+    "lhs": "H",
+    "form": "1 - 1 / R",
+    "expr": "1 - 1 / R",
+    "ask": "Find H for R = @{R}.",
+    "vars": {
+      "H": "share immune",
+      "R": "basic reproduction number"
+    },
+    "given": {
+      "R": 5
+    },
+    "unit": "",
+    "method": "Each case meets R0 others; if a share H is immune it makes R0(1 - H). Below one when H > 1 - 1/R0.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "R": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

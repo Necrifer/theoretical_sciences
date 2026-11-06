@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter",
+  "description": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter.desc",
+  "icon": {
+    "item": "theoreticalsciences:bomb_calorimeter"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 201,
+  "y": 54,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bomb_calorimeter"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:bomb_calorimeter"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.bomb_calorimeter.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__air_separation_unit"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/calorimetry"
+  }
+}

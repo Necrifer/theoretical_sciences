@@ -1,0 +1,42 @@
+{
+  "params": [
+    {
+      "id": "ns",
+      "unit": "",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 6
+    }
+  ],
+  "recipe_vars": {
+    "nmin": 4
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Yt",
+      "unit": "",
+      "expr": "(0.92*(1 + 0.005*d))^ns",
+      "formula": "Y = y\u207f"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "route",
+      "kind": "stop",
+      "expr": "ns - nmin",
+      "formula": "n \u2265 n_min"
+    }
+  ],
+  "rate": "clamp(3/ns, 0.25, 3)",
+  "rate_formula": "rate = 3/n",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

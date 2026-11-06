@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:adaptive_immunity",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antibody",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:innate_immunity",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Kd": 30.0
+    },
+    "windows": [
+      {
+        "q": "resp",
+        "min": 0.7,
+        "max": 2.0
+      }
+    ]
+  }
+}

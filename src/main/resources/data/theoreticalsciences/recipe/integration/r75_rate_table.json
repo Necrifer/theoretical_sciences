@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:integration",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 1
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rate_table",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 240,
+  "research": "theoreticalsciences:rates_as_equations",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "k": 5.0,
+      "tol": 0.01
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.01
+      }
+    ]
+  }
+}

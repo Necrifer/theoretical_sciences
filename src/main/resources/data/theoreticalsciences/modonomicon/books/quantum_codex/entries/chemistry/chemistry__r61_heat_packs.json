@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r61_heat_packs",
+  "description": "book.theoreticalsciences.codex.chemistry.r61_heat_packs.desc",
+  "icon": {
+    "item": "theoreticalsciences:heat_pack_reactor"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 119,
+  "y": 37,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:heat_pack_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r61_heat_packs.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r61_heat_packs.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r61_calorimetry"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__bomb_calorimeter"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermochemical_cycles"
+  }
+}

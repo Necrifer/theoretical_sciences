@@ -1,0 +1,62 @@
+{
+  "params": [
+    {
+      "id": "Bn",
+      "unit": "T",
+      "min": 1,
+      "max": 25,
+      "step": 0.0001,
+      "default": 9.4
+    },
+    {
+      "id": "fr",
+      "unit": "MHz",
+      "min": 10,
+      "max": 1100,
+      "step": 0.0001,
+      "default": 400
+    }
+  ],
+  "recipe_vars": {
+    "gm": 42.58
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "fL",
+      "unit": "MHz",
+      "expr": "gm*Bn*(1 + 0.000001*d)",
+      "formula": "f = \u03b3B/2\u03c0"
+    },
+    {
+      "id": "off",
+      "unit": "ppm",
+      "expr": "abs(fr - fL)/fL*1000000",
+      "formula": "|f \u2212 f_L|/f_L"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "10 - T",
+      "formula": "T < 10 K"
+    },
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "22 - Bn",
+      "formula": "B < 22 T"
+    }
+  ],
+  "rate": "clamp(Bn/9.4, 0.25, 2.5)",
+  "rate_formula": "rate = B / 9.4 T",
+  "heat": "0.2",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

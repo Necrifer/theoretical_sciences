@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.topology_kiln",
+  "description": "book.theoreticalsciences.codex.mathematics.topology_kiln.desc",
+  "icon": {
+    "item": "theoreticalsciences:topology_kiln"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 131,
+  "y": 75,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:topology_kiln"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.topology_kiln.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.topology_kiln.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.topology_kiln.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.topology_kiln.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:topology_kiln"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.topology_kiln.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/mathematics__geometers_table"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euler_characteristic"
+  }
+}

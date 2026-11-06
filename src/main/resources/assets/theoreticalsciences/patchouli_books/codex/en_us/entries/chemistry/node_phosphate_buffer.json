@@ -1,0 +1,19 @@
+{
+  "name": "Phosphate Buffer",
+  "icon": "theoreticalsciences:phosphate_buffer_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phosphate_buffer_cell",
+      "title": "Phosphate Buffer",
+      "text": "Phosphoric acid and its salt, held at pH 7.4 - the pH of blood. Add acid or base and it barely moves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Buffer Tank$().$(br2)$(thing)Unlocked by$(): Buffers."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/buffer_chemistry"
+}

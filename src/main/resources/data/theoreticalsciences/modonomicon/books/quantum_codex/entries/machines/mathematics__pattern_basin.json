@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.pattern_basin",
+  "description": "book.theoreticalsciences.codex.mathematics.pattern_basin.desc",
+  "icon": {
+    "item": "theoreticalsciences:pattern_basin"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 174,
+  "y": 79,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pattern_basin"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.pattern_basin.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.pattern_basin.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.pattern_basin.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.pattern_basin.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pattern_basin"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.pattern_basin.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.pattern_basin.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/mathematics__enzyme_assay_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reaction_diffusion"
+  }
+}

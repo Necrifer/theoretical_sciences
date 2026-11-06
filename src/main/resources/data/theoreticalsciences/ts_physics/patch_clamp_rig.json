@@ -1,0 +1,50 @@
+{
+  "params": [
+    {
+      "id": "co",
+      "unit": "mM",
+      "min": 1,
+      "max": 500,
+      "step": 0.1,
+      "default": 100
+    },
+    {
+      "id": "ci",
+      "unit": "mM",
+      "min": 1,
+      "max": 500,
+      "step": 0.1,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {
+    "zi": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "E",
+      "unit": "mV",
+      "expr": "26.7/zi*ln(co/ci)*(1 + 0.02*d)",
+      "formula": "E = (RT/zF) ln(c_out/c_in)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "lyse",
+      "kind": "stop",
+      "expr": "400 - abs(co - ci)",
+      "formula": "|c_out \u2212 c_in| < 400 mM"
+    }
+  ],
+  "rate": "clamp((co + ci)/150, 0.1, 4)",
+  "rate_formula": "rate = (c_out + c_in) / 150",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

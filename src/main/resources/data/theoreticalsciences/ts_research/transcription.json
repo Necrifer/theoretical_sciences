@@ -1,0 +1,61 @@
+{
+  "title": "Transcription",
+  "description": "A gene is read off the DNA into a working copy, messenger RNA, to be carried out to the ribosomes. Unlocks the Ribosome Assembler and Messenger RNA.",
+  "icon": "theoreticalsciences:messenger_rna",
+  "x": 7,
+  "y": 18,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:genomics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 4
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "RNA polymerase takes s seconds to settle on a gene, then copies g bases a second. Write how long, t, it takes to copy a gene of L bases.",
+    "name": "Transcription time",
+    "lhs": "t",
+    "form": "s + L / g",
+    "expr": "s + L / g",
+    "ask": "Find t for s = @{s}, L = @{L} and g = @{g}.",
+    "vars": {
+      "t": "time",
+      "s": "start-up",
+      "L": "gene length",
+      "g": "copying speed"
+    },
+    "given": {
+      "s": 20,
+      "L": 3000,
+      "g": 50
+    },
+    "unit": "s",
+    "method": "A wait to start, then one base at a time at a steady speed: length over speed.",
+    "distractors": [
+      "2",
+      "+",
+      "e"
+    ],
+    "vary": {
+      "s": [
+        12.0,
+        28.0,
+        1.0
+      ],
+      "L": [
+        1800.0,
+        4200.0,
+        1.0
+      ],
+      "g": [
+        30.0,
+        70.0,
+        1.0
+      ]
+    }
+  }
+}

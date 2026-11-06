@@ -1,0 +1,65 @@
+{
+  "params": [
+    {
+      "id": "prey",
+      "unit": "",
+      "min": 1,
+      "max": 100,
+      "step": 0.1,
+      "default": 25
+    },
+    {
+      "id": "pred",
+      "unit": "",
+      "min": 1,
+      "max": 100,
+      "step": 0.1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "ar": 1,
+    "br": 0.04,
+    "gr": 1,
+    "dr": 0.04
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "preyb",
+      "unit": "",
+      "expr": "prey/(gr/dr)*(1 - 0.02*d)",
+      "formula": "x / (g/d)"
+    },
+    {
+      "id": "predb",
+      "unit": "",
+      "expr": "pred/(ar/br)",
+      "formula": "y / (a/b)"
+    },
+    {
+      "id": "swing",
+      "unit": "",
+      "expr": "1/(1 + abs(prey/(gr/dr) - 1) + abs(pred/(ar/br) - 1))",
+      "formula": "close to 1 at the balance point"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "crash",
+      "kind": "stop",
+      "expr": "min(preyb, predb) - 0.1",
+      "formula": "both above a tenth of balance"
+    }
+  ],
+  "rate": "clamp(swing*4, 0.1, 4)",
+  "rate_formula": "rate = 4 . nearness",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

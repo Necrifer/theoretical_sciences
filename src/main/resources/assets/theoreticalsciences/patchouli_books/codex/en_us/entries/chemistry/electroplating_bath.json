@@ -1,0 +1,32 @@
+{
+  "name": "Electroplating Bath",
+  "icon": "theoreticalsciences:electroplating_bath",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 139,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electroplating_bath",
+      "title": "Electroplating Bath",
+      "text": "A bath of metal salt and a current through it: the metal leaves the solution and coats whatever hangs from the cathode.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the current density and the plating time. Faraday: the coat grows as current \u00d7 time; it must end up 20 to 50 \u00b5m thick. Above 8 A/dm\u00b2 the coat burns. Shorter runs are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Nickel-Plated Iron."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:electroplating_bath",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electroplating"
+}

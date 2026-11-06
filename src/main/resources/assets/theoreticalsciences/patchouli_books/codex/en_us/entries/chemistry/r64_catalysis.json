@@ -1,0 +1,22 @@
+{
+  "name": "Heterogeneous Catalysis",
+  "icon": "theoreticalsciences:catalyst_formulator",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:catalyst_formulator,theoreticalsciences:nickel_catalyst,theoreticalsciences:regeneration_kiln",
+      "text": "A catalyst holds a molecule on its surface just long enough to change it. Too weakly and nothing sticks, too tightly and nothing leaves: plotted against the binding energy, the activity is a $(thing)volcano$() (Sabatier). The coverage of a surface follows $(thing)\u03b8 = KP/(1 + KP)$() (Langmuir)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Catalyst Formulator$() makes the catalysts more cheaply than the Chemical Reactor: set the metal loading and the calcination temperature so the binding sits at the volcano's peak - but calcine too hot and the metal sinters. It also makes the $(item)Nickel Catalyst$(), for hydrogenation."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Regeneration Kiln$() now has a console too: burn the coke off hot enough and with air enough, but below about 900 K, where the metal starts to sinter. 90% must come back."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/heterogeneous_catalysis"
+}

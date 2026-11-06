@@ -1,0 +1,54 @@
+{
+  "title": "Population Genetics",
+  "description": "Evolution is bookkeeping on genes: a better one spreads, a worse one fades, and chance can lose either. Unlocks the Selection Chamber.",
+  "icon": "theoreticalsciences:selection_chamber",
+  "x": 10,
+  "y": 25,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:ecology",
+    "theoreticalsciences:evolutionary_games"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stable_strategy",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 4
+    }
+  ],
+  "time": 630,
+  "puzzle": {
+    "goal": "Two alleles are at frequencies p and q = 1 - p. Write the share H of the population carrying one of each (Hardy-Weinberg heterozygotes), as two p q.",
+    "name": "Mixed carriers",
+    "lhs": "H",
+    "form": "2 * p * q",
+    "expr": "2 * p * q",
+    "ask": "Find H for p = @{p} and q = 0.4.",
+    "vars": {
+      "H": "share mixed",
+      "p": "first frequency",
+      "q": "second frequency"
+    },
+    "given": {
+      "p": 0.6,
+      "q": 0.4
+    },
+    "unit": "",
+    "method": "Two ways to inherit one of each (p then q, or q then p), so 2pq; the homozygotes are p^2 and q^2.",
+    "distractors": [
+      "+",
+      "e",
+      "n"
+    ],
+    "vary": {
+      "p": [
+        0.36,
+        0.84,
+        0.001
+      ]
+    }
+  }
+}

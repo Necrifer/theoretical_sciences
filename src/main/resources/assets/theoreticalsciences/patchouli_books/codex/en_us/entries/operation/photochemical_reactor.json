@@ -1,0 +1,24 @@
+{
+  "name": "Photochemical Reactor",
+  "icon": "theoreticalsciences:photochemical_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 103,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A photon absorbed breaks one bond, and the chain of reactions it starts makes \u03a6 molecules of product (the quantum yield). The mixture absorbs a fraction 1 \u2212 10^(\u2212A) of the light, where A = \u03b5cl (Beer-Lambert): \u03b5 how strongly the molecule absorbs, c its concentration, l the path through the cell."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Lamp intensity, Path length.$(br2)$(thing)Disturbance$(): Lamp ageing: the intensity varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The lamp is cooking the cell.$(br2)$(thing)Rate$(): More light absorbed, more product."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Absorbance: A = \u03b5cl$(br)Fraction absorbed: f = 1 \u2212 10^(\u2212A)$(br)Reaction rate: r = \u03a6\u00b7I\u00b7f"
+    }
+  ]
+}

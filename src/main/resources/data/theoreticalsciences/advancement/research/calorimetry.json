@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:bomb_calorimeter"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.calorimetry"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.calorimetry.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/reaction_kinetics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

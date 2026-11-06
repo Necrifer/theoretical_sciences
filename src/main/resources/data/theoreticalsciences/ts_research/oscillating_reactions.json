@@ -1,0 +1,52 @@
+{
+  "title": "Oscillating Reactions",
+  "description": "Belousov was told his reaction was impossible: a mixture that changes colour and back again, on a beat, all by itself. Unlocks the Oscillator Vessel.",
+  "icon": "theoreticalsciences:chemical_clock",
+  "x": 19,
+  "y": -5,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:reaction_kinetics",
+    "theoreticalsciences:chromatography"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:clock",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:phosphate_buffer_cell",
+      "count": 1
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "In the simplest model of a reaction that keeps a beat, with feeds A and B, the steady mixture turns unstable and starts to oscillate once B passes a threshold b. Write b.",
+    "name": "Hopf threshold",
+    "lhs": "b",
+    "form": "1 + A ^ 2",
+    "expr": "1 + A ^ 2",
+    "ask": "Find b for A = @{A} mol/L.",
+    "vars": {
+      "b": "threshold for B (mol/L)",
+      "A": "the first feed (mol/L)"
+    },
+    "given": {
+      "A": 1.5
+    },
+    "unit": "mol/L",
+    "method": "Linearise round the steady state X = A, Y = B/A: the trace of the matrix, B \u2212 1 \u2212 A\u00b2, changes sign there.",
+    "distractors": [
+      "B",
+      "\u03c0",
+      "3"
+    ],
+    "vary": {
+      "A": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

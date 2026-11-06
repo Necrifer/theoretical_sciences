@@ -10,10 +10,6 @@
       "count": 8
     },
     {
-      "item": "theoreticalsciences:zeolite_catalyst",
-      "count": 4
-    },
-    {
       "item": "theoreticalsciences:cosmic_record_fragment",
       "count": 8
     }
@@ -34,5 +30,25 @@
   "duration": 300,
   "research": "theoreticalsciences:quantum_chemistry",
   "scaled": 4,
-  "expanded": true
+  "physics": {
+    "vars": {
+      "Ea": 53.5,
+      "Af": 10000000.0,
+      "Xt": 0.95,
+      "Ts": 700.0
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  },
+  "expanded": true,
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst"
+    }
+  ]
 }

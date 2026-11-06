@@ -1,0 +1,19 @@
+{
+  "name": "Living Catalyst",
+  "icon": "theoreticalsciences:living_catalyst",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:living_catalyst",
+      "title": "Living Catalyst",
+      "text": "An enzyme in a living cell that remakes it as fast as it wears: a catalyst that never quite runs down while it is fed. Used as a catalyst, it heals its own wear. Made on the Gene Circuit Loom."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Gene Circuit Loom$().$(br2)$(thing)Unlocked by$(): Gene Circuits."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/gene_circuits"
+}

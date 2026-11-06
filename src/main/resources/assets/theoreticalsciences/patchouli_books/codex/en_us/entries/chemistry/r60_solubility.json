@@ -1,0 +1,18 @@
+{
+  "name": "Solubility and Brines",
+  "icon": "theoreticalsciences:brine_evaporator",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 16,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:brine_evaporator,theoreticalsciences:halite,theoreticalsciences:gypsum_crystal,theoreticalsciences:lithium_carbonate",
+      "text": "A salt dissolves until its ions' product reaches the $(thing)solubility product K_sp$(). Drive the water off a brine and its salts come out in order: in the $(item)Brine Evaporator$(), $(item)Gypsum$() at four times the strength, $(item)Halite$() at ten to twenty, and $(item)Lithium Carbonate$() from the bittern beyond thirty."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the pan temperature and the water driven off. Hotter is faster, but above about 335 K the crystals grow too fast and trap the other salts: the purity must stay above 80%."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/solubility"
+}

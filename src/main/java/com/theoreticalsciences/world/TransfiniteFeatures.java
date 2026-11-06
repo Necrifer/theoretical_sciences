@@ -54,7 +54,9 @@ public final class TransfiniteFeatures {
 
     static BlockPos centre(FeaturePlaceContext<?> ctx, int lo, int hi) {
         BlockPos o = ctx.origin();
-        return new BlockPos((o.getX() & ~15) + 8, lo + ctx.random().nextInt(hi - lo + 1), (o.getZ() & ~15) + 8);
+        // 1.2.0: in the Platonic Realm the Hierarchy is its upper strata, from y 1280 (Strata.Y)
+        int up = ctx.level().getLevel().dimension() == com.theoreticalsciences.world.QHDimensions.PLATONIC ? com.theoreticalsciences.world.Strata.Y : 0;
+        return new BlockPos((o.getX() & ~15) + 8, up + lo + ctx.random().nextInt(hi - lo + 1), (o.getZ() & ~15) + 8);
     }
 
     static void chest(WorldGenLevel l, BlockPos p, ResourceKey<LootTable> loot, net.minecraft.util.RandomSource r) {
@@ -199,6 +201,7 @@ public final class TransfiniteFeatures {
             BlockPos o = ctx.origin();
             BlockPos base = l.getHeightmapPos(net.minecraft.world.level.levelgen.Heightmap.Types.WORLD_SURFACE_WG, new BlockPos((o.getX() & ~15) + 8, 0, (o.getZ() & ~15) + 8));
             if (base.getY() <= l.getMinBuildHeight() + 4) return false;
+            if (l.getLevel().dimension() == com.theoreticalsciences.world.QHDimensions.PLATONIC && base.getY() < com.theoreticalsciences.world.Strata.Y) return false;
             BlockState wall = b("hilbert_brick"), glass = b("aleph_glass");
             int y = base.getY(), h = 16, r = 7;
             while (h >= 1 && r >= 1) {

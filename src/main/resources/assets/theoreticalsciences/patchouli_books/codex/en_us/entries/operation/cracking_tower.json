@@ -1,0 +1,24 @@
+{
+  "name": "Cracking Tower",
+  "icon": "theoreticalsciences:cracking_tower",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 39,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In the cracking coil, hydrocarbon chains break at random bonds, faster the hotter. Each product comes out best at its own temperature - the spread is roughly a bell around it. Coke (carbon) grows exponentially with heat; steam gasifies it away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Coil temperature, Steam ratio.$(br2)$(thing)Disturbance$(): Burner drift: the coil temperature varies by \u00b10.5%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Coke is fouling the catalyst.$(br2)$(thing)Rate$(): Hotter cracks faster; steam dilutes the oil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Ethylene share: S \u2248 e^(\u2212((T \u2212 T*)/80 K)\u00b2)$(br)Propylene share: S \u2248 e^(\u2212((T \u2212 T*)/80 K)\u00b2)$(br)Coking rate: coke \u221d e^((T \u2212 1150 K)/40 K) / (1 + 2\u00b7steam)"
+    }
+  ]
+}

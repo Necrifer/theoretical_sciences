@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nitric_acid",
+      "amount": 500
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nickel_sulfate_solution",
+      "amount": 500
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:electroplating",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 66.2,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -39,6 +39,34 @@ public final class MultiblockDefinition {
     public final double ex, ey, ez;
     /** 1.3.8: {@code effect_scale} - the effect drawn bigger, for the giant machines (1 = standard). */
     public final double escale;
+    /**
+     * 1.2.0: {@code animation} - a structure animation ({@code assets/<ns>/ts_animations/<path>.json}) drawn while the
+     * structure is formed and set moving while it runs. Null for none. See docs/ANIMATIONS.md.
+     */
+    public final ResourceLocation animation;
+
+    /**
+     * 1.2.0: {@code moving} - the structure's own moving parts. Each names key characters whose blocks move; while
+     * the structure is formed those blocks are hidden in the world (their {@code moving} blockstate draws nothing) and
+     * the renderer draws them instead, turning or sliding while the machine runs. The blocks stay real and in place, so
+     * nothing has to be rebuilt. See docs/ANIMATIONS.md.
+     *
+     * @param chars   the key characters whose blocks move
+     * @param split   "none" (one part), "layers" (each layer its own part) or "components" (each connected piece)
+     * @param pivot   "centre" (the effect centre), "self" (each part's own middle) or [x, y, z] in pattern coordinates
+     * @param layers  pattern layers allowed (of the smallest build), empty for all
+     * @param alternate each further part (of a split) turns the other way
+     * @param stagger each further part starts this much later in its swing (0 to 1)
+     */
+    public record MovingSpec(String id, String chars, String split, JsonElement pivot, JsonArray motion, String parent, float ramp,
+                             boolean alternate, float stagger, Set<Integer> layers) {}
+
+    public final List<MovingSpec> moving;
+    /** 1.2.0: {@code fx} - working effects drawn from data (glowing coils, energy flowing in, beams, a mini universe...). */
+    public final JsonArray fx;
+    /** For a taller build (repeat): the layer of the smallest build each layer copies (null: the same layer). */
+    int[] baseY;
+    private Set<Long> movingCells;
     public final int sizeX, sizeY, sizeZ;
     /**
      * GT-style tiered components: a key character whose accepted blocks are listed lowest tier first.
@@ -132,6 +160,65 @@ public final class MultiblockDefinition {
         this.ey = ec != null ? ec.get(1).getAsDouble() : (layers.size() - 1) / 2.0;
         this.ez = ec != null ? ec.get(2).getAsDouble() : (mz - 1) / 2.0;
         this.escale = json.has("effect_scale") ? json.get("effect_scale").getAsDouble() : 1.0;
+        this.animation = json.has("animation") ? ResourceLocation.tryParse(json.get("animation").getAsString()) : null;
+        List<MovingSpec> mv = new ArrayList<>();
+        if (json.has("moving")) for (JsonElement e : json.getAsJsonArray("moving")) {
+            JsonObject o = e.getAsJsonObject();
+            Set<Integer> ly = new HashSet<>();
+            if (o.has("layers")) for (JsonElement l : o.getAsJsonArray("layers")) ly.add(l.getAsInt());
+            mv.add(new MovingSpec(o.has("id") ? o.get("id").getAsString() : "part" + mv.size(), o.get("chars").getAsString(),
+                    o.has("split") ? o.get("split").getAsString() : "none", o.has("pivot") ? o.get("pivot") : null,
+                    o.has("motion") ? o.getAsJsonArray("motion") : new JsonArray(), o.has("parent") ? o.get("parent").getAsString() : null,
+                    o.has("ramp_seconds") ? o.get("ramp_seconds").getAsFloat() : 3F, o.has("alternate") && o.get("alternate").getAsBoolean(),
+                    o.has("stagger") ? o.get("stagger").getAsFloat() : 0F, Set.copyOf(ly)));
+        }
+        this.moving = List.copyOf(mv);
+        this.fx = json.has("fx") ? json.getAsJsonArray("fx") : new JsonArray();
+    }
+
+    /** The layer of the smallest build that layer y of this one copies. */
+    public int baseLayer(int y) {
+        return baseY == null || y < 0 || y >= baseY.length ? y : baseY[y];
+    }
+
+    /** Whether the cell (pattern coordinates) holds a block of spec s. */
+    public boolean inMoving(MovingSpec s, int x, int y, int z) {
+        if (y < 0 || y >= layers.size()) return false;
+        List<String> rows = layers.get(y);
+        if (z < 0 || z >= rows.size() || x < 0 || x >= rows.get(z).length()) return false;
+        char c = rows.get(z).charAt(x);
+        return c != ' ' && c != '.' && c != controllerChar && s.chars().indexOf(c) >= 0 && (s.layers().isEmpty() || s.layers().contains(baseLayer(y)));
+    }
+
+    private List<List<int[]>> specCells;
+
+    /** The cells (pattern coordinates) of each moving spec, in order (worked out once). */
+    public synchronized List<List<int[]>> movingCellsBySpec() {
+        if (specCells != null) return specCells;
+        List<List<int[]>> out = new ArrayList<>();
+        for (MovingSpec s : moving) {
+            List<int[]> cs = new ArrayList<>();
+            for (int y = 0; y < layers.size(); y++)
+                for (int z = 0; z < layers.get(y).size(); z++)
+                    for (int x = 0; x < layers.get(y).get(z).length(); x++)
+                        if (inMoving(s, x, y, z)) cs.add(new int[]{x, y, z});
+            out.add(List.copyOf(cs));
+        }
+        specCells = List.copyOf(out);
+        return specCells;
+    }
+
+    /** Every cell (pattern coordinates, packed as BlockPos longs) of a moving part. */
+    public synchronized Set<Long> movingCells() {
+        if (movingCells != null) return movingCells;
+        Set<Long> out = new HashSet<>();
+        if (!moving.isEmpty())
+            for (int y = 0; y < layers.size(); y++)
+                for (int z = 0; z < layers.get(y).size(); z++)
+                    for (int x = 0; x < layers.get(y).get(z).length(); x++)
+                        for (MovingSpec s : moving) if (inMoving(s, x, y, z)) { out.add(BlockPos.asLong(x, y, z)); break; }
+        movingCells = Collections.unmodifiableSet(out);
+        return movingCells;
     }
 
     static MultiblockDefinition parse(String id, JsonObject json) {
@@ -170,6 +257,15 @@ public final class MultiblockDefinition {
             ec.add(ez);
             j.add("effect_center", ec);
             variants[extra] = new MultiblockDefinition(id, j);
+            int[] by = new int[out.size()];
+            int n = 0;
+            for (int y = 0; y < src.size(); y++) {
+                by[n++] = y;
+                if (y == repeatTo)
+                    for (int k = 0; k < extra; k++)
+                        for (int r = repeatFrom; r <= repeatTo; r++) by[n++] = r;
+            }
+            variants[extra].baseY = by;
         }
         return variants[extra];
     }

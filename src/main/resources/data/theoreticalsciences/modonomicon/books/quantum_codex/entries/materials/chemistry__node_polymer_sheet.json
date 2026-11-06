@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_polymer_sheet",
+  "description": "book.theoreticalsciences.codex.chemistry.node_polymer_sheet.desc",
+  "icon": {
+    "item": "theoreticalsciences:polymer_sheet"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 262,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:polymer_sheet"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_polymer_sheet.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_polymer_sheet.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__polymeriser",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/polymer_chemistry"
+  }
+}

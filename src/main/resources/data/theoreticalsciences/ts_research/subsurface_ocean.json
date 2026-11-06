@@ -1,0 +1,61 @@
+{
+  "title": "Titan's Hidden Ocean",
+  "description": "Under a hundred kilometres of ice, Titan hides an ocean of salty water, larger than all of Earth's. Unlocks the Cryobot that melts down into it, and the ecosystem round its vents.",
+  "icon": "theoreticalsciences:cryobot",
+  "x": 17,
+  "y": 11,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:titan",
+    "theoreticalsciences:ecology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:titan_ice",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:stable_ecosystem",
+      "count": 1
+    }
+  ],
+  "time": 870,
+  "puzzle": {
+    "goal": "Under a layer of ice of density r and thickness h, on a world whose surface gravity is g, write the load P the ice puts on each square metre of the ocean below.",
+    "name": "Stevin's law",
+    "lhs": "P",
+    "form": "r * g * h",
+    "expr": "r * g * h",
+    "ask": "Find P in pascals under Titan's ice: r = @{r} kg/m\u00b3, g = @{g} m/s\u00b2, h = 100000 m.",
+    "vars": {
+      "P": "load (Pa)",
+      "r": "density (kg/m\u00b3)",
+      "g": "gravity (m/s\u00b2)",
+      "h": "thickness (m)"
+    },
+    "given": {
+      "r": 920,
+      "g": 1.35,
+      "h": 100000
+    },
+    "unit": "Pa",
+    "method": "Each square metre carries the weight of the column above it: its mass, r\u00b7h, times g.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "+"
+    ],
+    "vary": {
+      "r": [
+        552.0,
+        1288.0,
+        1.0
+      ],
+      "g": [
+        0.81,
+        1.89,
+        0.01
+      ]
+    }
+  }
+}

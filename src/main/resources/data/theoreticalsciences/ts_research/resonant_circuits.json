@@ -1,59 +1,59 @@
 {
-  "title": "Resonant Circuits",
-  "description": "A capacitor and a coil pass energy back and forth, electric then magnetic, at one frequency of their own. Two such circuits in tune trade it between them - and one can step the voltage up enormously. Unlocks the Tesla Coil.",
-  "icon": "theoreticalsciences:tesla_coil",
-  "x": 4,
-  "y": -6,
-  "insight": 50,
-  "requires": [
-    "theoreticalsciences:electromagnetic_induction"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:electrical_steel_lamination",
-      "count": 4
-    },
-    {
-      "item": "minecraft:copper_ingot",
-      "count": 16
-    }
-  ],
-  "time": 0,
-  "puzzle": {
-    "goal": "A capacitor of capacitance C discharges through a coil of inductance L; the current swings back and forth, its energy moving between the two. Write the frequency f it rings at.",
-    "name": "Resonance of an LC circuit",
-    "lhs": "f",
-    "form": "1 / ( 2 * \u03c0 * sqrt ( L * C ) )",
-    "expr": "1 / ( 6.28318 * ( L * C ) ^ 0.5 ) / 1000",
-    "ask": "Find f in kHz for a Tesla secondary of L = @{L} H and C = @{C} F.",
-    "vars": {
-      "f": "frequency (kHz)",
-      "L": "inductance (H)",
-      "C": "capacitance (F)",
-      "\u03c0": "pi"
-    },
-    "given": {
-      "L": 0.05,
-      "C": 2e-11
-    },
-    "unit": "kHz",
-    "method": "Charge obeys L d\u00b2q/dt\u00b2 = \u2212q/C: a harmonic oscillator of angular frequency 1/\u221a(LC).",
-    "distractors": [
-      "R",
-      "4",
-      "+"
-    ],
-    "vary": {
-      "L": [
-        0.03,
-        0.07,
-        0.0001
-      ],
-      "C": [
-        1.19e-11,
-        2.8e-11,
-        1e-13
-      ]
-    }
+ "title": "Resonant Circuits",
+ "description": "A capacitor and a coil pass energy back and forth, electric then magnetic, at one frequency of their own. Two such circuits in tune trade it between them, and one can step the voltage up enormously. Unlocks the Tesla Coil.",
+ "icon": "theoreticalsciences:tesla_coil",
+ "x": 4,
+ "y": -6,
+ "insight": 50,
+ "requires": [
+  "theoreticalsciences:electromagnetic_induction"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:electrical_steel_lamination",
+   "count": 4
+  },
+  {
+   "item": "minecraft:copper_ingot",
+   "count": 16
   }
+ ],
+ "time": 0,
+ "puzzle": {
+  "goal": "A capacitor of capacitance C discharges through a coil of inductance L; the current swings back and forth, its energy moving between the two. Write the frequency f it rings at.",
+  "name": "Resonance of an LC circuit",
+  "lhs": "f",
+  "form": "1 / ( 2 * π * sqrt ( L * C ) )",
+  "expr": "1 / ( 6.28318 * ( L * C ) ^ 0.5 ) / 1000",
+  "ask": "Find f in kHz for a Tesla secondary of L = @{L} H and C = @{C} F.",
+  "vars": {
+   "f": "frequency (kHz)",
+   "L": "inductance (H)",
+   "C": "capacitance (F)",
+   "π": "pi"
+  },
+  "given": {
+   "L": 0.05,
+   "C": 2e-11
+  },
+  "unit": "kHz",
+  "method": "Charge obeys L d²q/dt² = −q/C: a harmonic oscillator of angular frequency 1/√(LC).",
+  "distractors": [
+   "R",
+   "4",
+   "+"
+  ],
+  "vary": {
+   "L": [
+    0.03,
+    0.07,
+    0.0001
+   ],
+   "C": [
+    1.19e-11,
+    2.8e-11,
+    1e-13
+   ]
+  }
+ }
 }

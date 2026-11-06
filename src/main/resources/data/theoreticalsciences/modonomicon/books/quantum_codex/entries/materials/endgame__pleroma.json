@@ -1,0 +1,49 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.pleroma",
+  "description": "book.theoreticalsciences.codex.endgame.pleroma.desc",
+  "icon": {
+    "item": "theoreticalsciences:pleroma_confluence"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 175,
+  "y": 197,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_confluence"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.pleroma.p1"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_confluence"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma.p2"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_cell"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.pleroma.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__omnilex_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/pleroma"
+  }
+}

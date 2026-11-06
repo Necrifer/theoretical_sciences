@@ -1,0 +1,19 @@
+{
+  "name": "Metabolism",
+  "icon": "theoreticalsciences:fermenter",
+  "advancement": "theoreticalsciences:research/metabolism",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fermenter",
+      "title": "Metabolism",
+      "text": "$(thing)Metabolism$()$(br2)A cell is a chemical network: hundreds of enzymes in chains and cycles, each feeding the next. Unlocks the Fermenter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 70$(br2)$(thing)Builds on$(): Membranes, Enzyme Kinetics.$(br2)$(thing)Samples$(): 2 Assayed Enzyme.$(br2)$(thing)Derivation$(): A chain of n enzymes each passes on a share f of what it is given. A amount of sugar goes in; write the amount Y that reaches the end."
+    }
+  ]
+}

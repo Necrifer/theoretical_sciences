@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.intro__alpha_omega",
+  "description": "book.theoreticalsciences.codex.endgame.intro__alpha_omega.desc",
+  "icon": {
+    "item": "theoreticalsciences:proof_of_everything"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 78,
+  "y": 107,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.intro__alpha_omega.p0",
+      "title": "book.theoreticalsciences.codex.endgame.intro__alpha_omega"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.intro__alpha_omega.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/endgame__omnilex_goal"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/endgame__omnilex_memory"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/conquered_alpha_omega"
+  }
+}

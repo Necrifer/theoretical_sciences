@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:pah_soot",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:graphene_sheet",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 48.1,
+      "Af": 10000000.0,
+      "Xt": 0.95,
+      "Ts": 700.0
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.intro__r52_fuels",
+  "description": "book.theoreticalsciences.codex.nuclear.intro__r52_fuels.desc",
+  "icon": {
+    "item": "theoreticalsciences:lithium_6_ingot"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 54,
+  "y": 32,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.intro__r52_fuels.p0",
+      "title": "book.theoreticalsciences.codex.nuclear.intro__r52_fuels"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.intro__r52_fuels.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/nuclear__intro__r42_msr"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r52_pulsed"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/fusion_ignition"
+  }
+}

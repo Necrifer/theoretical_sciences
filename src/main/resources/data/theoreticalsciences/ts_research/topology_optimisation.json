@@ -1,0 +1,64 @@
+{
+  "title": "Topology Optimisation",
+  "description": "Let the mathematics decide where material goes: fill a cell only if it carries load. Structures come out like bone. Unlocks a cheaper Metamaterial Sheet.",
+  "icon": "theoreticalsciences:metamaterial_sheet",
+  "x": 12,
+  "y": 6,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:optimisation",
+    "theoreticalsciences:metamaterials"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:optimised_pathway",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "Each cell of a design holds a share r of material. Write its stiffness Y, from the solid's E and the empty cell's m, with the share raised to a power p, so half-filled cells are not worth keeping.",
+    "name": "Penalised density",
+    "lhs": "Y",
+    "form": "m + r ^ p * ( E - m )",
+    "expr": "m + r ^ p * ( E - m )",
+    "ask": "Find Y for r = @{r}, p = 3, E = @{E} and m = @{m}.",
+    "vars": {
+      "Y": "stiffness",
+      "r": "material share",
+      "p": "power",
+      "E": "solid stiffness",
+      "m": "empty stiffness"
+    },
+    "given": {
+      "r": 0.5,
+      "p": 3,
+      "E": 200,
+      "m": 1
+    },
+    "unit": "",
+    "method": "Raising the share to a power above one makes half a cell give an eighth of the stiffness: the optimiser stops using it.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "2"
+    ],
+    "vary": {
+      "r": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "E": [
+        120.0,
+        280.0,
+        1.0
+      ],
+      "m": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

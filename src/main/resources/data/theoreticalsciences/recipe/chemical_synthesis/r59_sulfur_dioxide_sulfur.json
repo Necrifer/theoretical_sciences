@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "tag": "c:dusts/sulfur",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sulfur_dioxide",
+      "amount": 1000
+    }
+  ],
+  "energy": 512,
+  "duration": 100,
+  "research": "theoreticalsciences:contact_process",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 63.8,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:surface_firing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:hyperbolic_stone",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:function_graph",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mobius_strip",
+      "count": 2
+    }
+  ],
+  "energy": 768,
+  "duration": 65,
+  "research": "theoreticalsciences:euler_characteristic",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "X": 1.0,
+      "N": 1.0
+    },
+    "windows": [
+      {
+        "q": "match",
+        "min": 1.0,
+        "max": 1.0
+      }
+    ]
+  }
+}

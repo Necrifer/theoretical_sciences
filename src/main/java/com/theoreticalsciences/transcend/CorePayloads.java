@@ -37,6 +37,7 @@ public final class CorePayloads {
         public static void handle(ServerPlayer sp, Action a) {
             Level l = sp.level();
             if (!sp.blockPosition().closerThan(a.core(), 12)) return;
+            if (!inSession(sp, a.core())) return;            // 1.2.0: only from the screen this player opened
             boolean forged = ForgedCoreBlock.awake(l, a.core());      // round 27: a Core forged anew, awake
             if (!forged && !l.getBlockState(a.core()).is(TranscendRegistry.CORE.get())) return;
             switch (a.action()) {
@@ -70,12 +71,46 @@ public final class CorePayloads {
     }
 
     /** A forged Core's screen: always "rekindled" (its Forge works, it has no Shutdown Sequence). */
+    // ------------------------------------------------------------------ 1.2.0: sessions
+    /** A player's open Core screen: which Core (and dimension), and until when (game time). */
+    private record Session(BlockPos core, net.minecraft.resources.ResourceKey<Level> dim, long until) {}
+
+    private static final java.util.Map<java.util.UUID, Session> SESSIONS =
+            com.theoreticalsciences.world.SessionMaps.perPlayer(new java.util.concurrent.ConcurrentHashMap<>());
+    private static final long SESSION_TICKS = 20 * 60 * 10;      // ten minutes, renewed by every action
+
+    /** Opening the screen (by using the Core, which the game checks for reach) starts a session, if the land allows. */
+    static boolean begin(ServerPlayer sp, BlockPos core) {
+        if (sp.isSpectator() || !com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, core, null, com.theoreticalsciences.compat.ClaimChecks.Kind.PLACE)) {
+            sp.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.claimed")
+                    .withStyle(net.minecraft.ChatFormatting.RED), true);
+            return false;
+        }
+        SESSIONS.put(sp.getUUID(), new Session(core.immutable(), sp.level().dimension(), sp.level().getGameTime() + SESSION_TICKS));
+        return true;
+    }
+
+    /**
+     * True when sp opened this Core's screen (by using it) and is still near it: the Core's packets are refused
+     * otherwise, so a modified client cannot work someone else's Core from behind a wall, in a claim, or as a spectator.
+     */
+    public static boolean inSession(ServerPlayer sp, BlockPos core) {
+        if (sp.isSpectator()) return false;
+        Session s = SESSIONS.get(sp.getUUID());
+        long now = sp.level().getGameTime();
+        if (s == null || !s.core().equals(core) || s.dim() != sp.level().dimension() || now > s.until()) return false;
+        SESSIONS.put(sp.getUUID(), new Session(s.core(), s.dim(), now + SESSION_TICKS));
+        return true;
+    }
+
     public static void openForged(ServerPlayer sp, BlockPos core) {
+        if (!begin(sp, core)) return;
         ForgeDrift.sync(sp);
         net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(sp, new Open(core, Omnipotence.Phase.REBORN.ordinal(), 0));
     }
 
     public static void open(ServerPlayer sp, BlockPos core) {
+        if (!begin(sp, core)) return;
         ForgeDrift.sync(sp);
         net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(sp,
                 new Open(core, Omnipotence.phase(sp.server).ordinal(), Omnipotence.secondsLeft(sp.server)));

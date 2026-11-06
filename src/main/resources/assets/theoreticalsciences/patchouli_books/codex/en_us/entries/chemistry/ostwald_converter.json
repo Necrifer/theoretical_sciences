@@ -1,0 +1,92 @@
+{
+  "name": "Ostwald Converter",
+  "icon": "theoreticalsciences:ostwald_converter",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 129,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ostwald_converter",
+      "title": "Ostwald Converter",
+      "text": "Ammonia and air through a glowing platinum gauze in a thousandth of a second, then into water: nitric acid.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the gauze temperature and the contact time. Hot enough (above about 1100 K) and brief enough (a millisecond or two), ammonia burns to nitric oxide; too cool, or too long, and it burns to plain nitrogen. The selectivity must reach 90%. Above 1250 K the gauze loses platinum (it wears ten times as fast). Needs a Platinum-Rhodium Gauze in its catalyst slot."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Ostwald Converter",
+      "multiblock": {
+        "pattern": [
+          [
+            "_______",
+            "_______",
+            "______A",
+            "_______",
+            "_______"
+          ],
+          [
+            "BBBBB__",
+            "BBBBB__",
+            "BBDBB_A",
+            "BBBBB__",
+            "BBBBB__"
+          ],
+          [
+            "BBBBB__",
+            "B   B__",
+            "B   BBA",
+            "B   B__",
+            "BBBBB__"
+          ],
+          [
+            "BBBBB__",
+            "BEEEB__",
+            "BEEEB_A",
+            "BEEEB__",
+            "BBBBB__"
+          ],
+          [
+            "BB0BB__",
+            "B   B__",
+            "B   B_A",
+            "B   B__",
+            "BBBBB__"
+          ],
+          [
+            "BBFBBBB",
+            "BBBBBBB",
+            "FBBBBBF",
+            "BBBBBBB",
+            "BBFBBBB"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:ostwald_converter",
+          "A": "theoreticalsciences:absorption_column",
+          "B": "theoreticalsciences:ostwald_casing",
+          "D": "theoreticalsciences:containment_field_glass",
+          "E": "theoreticalsciences:gauze_pack",
+          "F": "#theoreticalsciences:multiblock/ostwald_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Nitric Acid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ostwald_converter",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ostwald_process"
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Pharmacokinetics",
+  "description": "A drug does its work only while its level stays between too little and too much; the body clears it steadily. Unlocks the Dosing Pump.",
+  "icon": "theoreticalsciences:dosing_pump",
+  "x": 8,
+  "y": 24,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:physiology",
+    "theoreticalsciences:rates_as_equations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "A dose gives a level L that falls by first-order clearance at rate k. Write the level C after a time t.",
+    "name": "One-compartment decay",
+    "lhs": "C",
+    "form": "L * exp ( - k * t )",
+    "expr": "L * exp ( - k * t )",
+    "ask": "Find C for L = @{L}, k = @{k} and t = @{t}.",
+    "vars": {
+      "C": "level later",
+      "L": "level at first",
+      "k": "clearance rate",
+      "t": "time"
+    },
+    "given": {
+      "L": 20,
+      "k": 0.15,
+      "t": 8
+    },
+    "unit": "mg/L",
+    "method": "The body clears a fixed share each hour, so the level decays exponentially; half-life ln(2)/k.",
+    "distractors": [
+      "+",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "L": [
+        12.0,
+        28.0,
+        1.0
+      ],
+      "k": [
+        0.09,
+        0.21,
+        0.001
+      ],
+      "t": [
+        5.0,
+        11.0,
+        1.0
+      ]
+    }
+  }
+}

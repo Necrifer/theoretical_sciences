@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:tree_of_life"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.tree_of_life"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.tree_of_life.short"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/abiogenesis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

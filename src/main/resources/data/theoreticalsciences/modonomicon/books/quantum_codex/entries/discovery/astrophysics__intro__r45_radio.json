@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.intro__r45_radio",
+  "description": "book.theoreticalsciences.codex.astrophysics.intro__r45_radio.desc",
+  "icon": {
+    "item": "theoreticalsciences:radio_telescope"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 26,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r45_radio.p0",
+      "title": "book.theoreticalsciences.codex.astrophysics.intro__r45_radio"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r45_radio.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r45_solar"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r46_better_telescopes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radio_astronomy"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "params": [
+    {
+      "id": "S",
+      "unit": "mM",
+      "min": 0.01,
+      "max": 100,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "E",
+      "unit": "\u00b5M",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Km": 2,
+    "Ii": 0,
+    "Ki": 1,
+    "nH": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Kap",
+      "unit": "mM",
+      "expr": "Km*(1 + Ii/Ki)",
+      "formula": "K_app = K_m(1 + I/K_i)"
+    },
+    {
+      "id": "sat",
+      "unit": "",
+      "expr": "S^nH/(Kap^nH + S^nH)*(1 - 0.02*d)",
+      "formula": "v/Vmax = S\u207f/(K_app\u207f + S\u207f)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "choke",
+      "kind": "stop",
+      "expr": "40*Kap - S",
+      "formula": "S < 40 K_app"
+    },
+    {
+      "id": "clump",
+      "kind": "stop",
+      "expr": "8 - E",
+      "formula": "E < 8 \u00b5M"
+    }
+  ],
+  "rate": "clamp(sat*E/3, 0.1, 4)",
+  "rate_formula": "rate = saturation \u00b7 E / 3",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

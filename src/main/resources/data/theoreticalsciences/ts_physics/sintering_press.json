@@ -1,0 +1,47 @@
+{
+  "params": [
+    {
+      "id": "Ps",
+      "unit": "MPa",
+      "min": 1,
+      "max": 200,
+      "step": 0.1,
+      "default": 50
+    },
+    {
+      "id": "Ts",
+      "unit": "K",
+      "min": 1200,
+      "max": 2100,
+      "step": 1,
+      "default": 1600
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "rho",
+      "unit": "%",
+      "expr": "clamp(100*(1 - exp(-(Ps/50)*exp(-30000*(1/Ts - 1/1700))))*(1 + 0.003*d), 0, 100)",
+      "formula": "\u03c1(P, T)"
+    },
+    {
+      "id": "gs",
+      "unit": "\u00b5m",
+      "expr": "1*exp((Ts - 1600)/150)",
+      "formula": "g \u221d e^((T \u2212 1600 K)/150 K)"
+    }
+  ],
+  "constraints": [],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

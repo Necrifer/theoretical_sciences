@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__transfinite",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__transfinite.desc",
+  "icon": {
+    "item": "theoreticalsciences:cantor_key"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 58,
+  "y": 81,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__transfinite.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__transfinite"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__transfinite.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/simulation__intro__omega"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__intro__logic_sets"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

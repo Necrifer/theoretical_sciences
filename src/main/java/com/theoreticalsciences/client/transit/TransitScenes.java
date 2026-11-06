@@ -42,8 +42,65 @@ public final class TransitScenes {
             case TRANSCENDENTAL -> transcendental(g, s, w, h, t, p, rev);
             case INTERIOR -> interior(g, s, w, h, t, p, rev);
             case FRONTIER -> frontier(g, s, w, h, t, p, rev);
+            case TITAN -> titan(g, s, w, h, t, p, rev);
+            case INNER -> inner(g, s, w, h, t, p, rev);
+            case TITAN_OCEAN -> titanOcean(g, s, w, h, t, p, rev);
         }
         g.flush();
+    }
+
+    // ================================================================== Titan's hidden ocean
+    /**
+     * Melting down through the ice: pale walls rush upward past a glowing probe, its tether trailing above; then the ice
+     * opens into dark water, and far below the vents glow. Leaving, the shaft runs the other way, up to the haze.
+     */
+    private static void titanOcean(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, u = Math.min(w, h), ep = smooth(p), dir = rev ? -1 : 1;
+        float through = rev ? 1 - ep : ep;                    // 0 = in the ice, 1 = in the ocean
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        float shaft = u * 0.18F * (1 - through * 0.9F);
+        for (int i = 0; i < 12; i++) {
+            float y = frac(i / 12F - t * 0.3F * dir) * h;
+            d.rect(0, y, cx - shaft, y + h / 24F, 0xA0C8D8, p * 0.35F * (1 - through));
+            d.rect(cx + shaft, y, w, y + h / 24F, 0xA0C8D8, p * 0.35F * (1 - through));
+        }
+        d.end();
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        float py = h * (0.35F + 0.15F * through);
+        f.line(cx, 0, cx, py, 1, 0xD0F0FF, 0.6F * p);
+        f.disc(cx, py, u * 0.02F, 16, 0xFFB060, p, 0xFF6020, 0.2F * p);
+        for (int i = 0; i < 14; i++) {
+            float x = rnd(i, 1) * w, y = h * (0.8F + 0.2F * rnd(i, 2));
+            f.disc(x, y, u * 0.01F * (1 + rnd(i, 3)), 10, s.accent, through * p * (0.5F + 0.5F * (float) Math.sin(t * 2 + i)), s.ink, 0);
+        }
+        f.end();
+    }
+
+    // ================================================================== Inner Space
+    /**
+     * Shrinking into a body: rings rush outward from the centre as everything grows past you (a zoom of a hundred
+     * thousand times), and the red cells of the bloodstream swell from specks to discs and drift by, all to the beat of a
+     * heart. Leaving, the rings fall inward and the cells shrink away to nothing.
+     */
+    private static void inner(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, cy = h / 2F, u = Math.min(w, h), ep = smooth(p), dir = rev ? -1 : 1;
+        float beat = (float) Math.pow(Math.max(0, Math.sin(t * 6.0F)), 8);           // lub-dub
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        for (int i = 0; i < 9; i++) {
+            float q = frac(i / 9F + t * 0.35F * dir);
+            float r = u * 0.05F + q * q * u * 0.9F;
+            f.ring(cx, cy, r, 2 + 6 * q, 64, i % 2 == 0 ? s.ink : s.accent, p * (1 - q) * (0.4F + 0.3F * beat));
+        }
+        f.end();
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        float grow = rev ? 1 - ep : ep;
+        for (int i = 0; i < 26; i++) {
+            float x = rnd(i, 1) * w, y = frac(rnd(i, 2) + t * (0.04F + 0.05F * rnd(i, 3))) * h;
+            float r = u * (0.006F + 0.05F * grow * (0.5F + rnd(i, 4)));
+            d.disc(x, y, r, 24, 0x801018, 0.9F * p, 0xE03040, 0.9F * p);
+            d.disc(x, y, r * 0.45F, 16, 0x500810, 0.7F * p, 0x801018, 0.0F);     // the dimple of a biconcave disc
+        }
+        d.end();
     }
 
     // ================================================================== The Bulk
@@ -322,6 +379,56 @@ public final class TransitScenes {
         }
     }
 
+    // ================================================================== Titan
+    /**
+     * Down through Titan's haze under a parachute: layers of orange smog (tholins, made by sunlight from methane) rise
+     * past you, thicker and darker the lower you go, while Saturn's pale crescent and rings fade out overhead. Near the
+     * ground the methane drizzle begins, in slow streaks - it falls at a walking pace here. The capsule swings under its
+     * canopy at the centre. Leaving, the haze falls away below, the rain stops, and Saturn grows clear.
+     */
+    private static void titan(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, u = Math.min(w, h), ep = smooth(p), dir = rev ? -1 : 1;
+        float depth = rev ? 1 - ep : ep;                      // 0 = above the haze, 1 = at the surface
+        // Saturn: a crescent with its rings, high up and fading as the haze closes over it
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        float sx = w * 0.72F, sy = h * (0.18F - 0.12F * depth), sr = u * 0.11F, sa = p * (1 - 0.85F * depth);
+        f.disc(sx, sy, sr, 48, 0xFFE8B0, 0.55F * sa, 0xC09050, 0.25F * sa);
+        f.band(sx, sy, sr * 1.35F, sr * 2.2F, 0.22F, 0, TAU, 64, 0xFFF0D0, 0.35F * sa, 0xA08060, 0.1F * sa);
+        f.end();
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        // Saturn's night side, so it reads as a crescent
+        d.disc(sx + sr * 0.35F, sy + sr * 0.1F, sr * 0.92F, 48, s.bg, 0.8F * sa, s.bg, 0.8F * sa);
+        // haze layers rising past
+        float bandH = h / 5F, scroll = t * (0.25F + 0.9F * ep) * dir;
+        for (int i = -1; i < 7; i++) {
+            float y0 = (i - frac(scroll)) * bandH;
+            int k = Math.floorMod(i + (int) Math.floor(scroll), 5);
+            int col = Fx2D.lerpRgb(0xC07830, 0x5A3010, (y0 / h) * 0.6F + 0.4F * depth);
+            float a = p * (0.25F + 0.35F * depth) * (0.6F + 0.4F * (float) Math.sin(k * 2.1F + t * 0.3F));
+            d.rectV(0, y0, w, y0 + bandH, col, 0, col, a);
+            d.rectV(0, y0 + bandH * 0.5F, w, y0 + bandH, col, a, col, 0);
+        }
+        d.end();
+        // the capsule under its canopy, swinging
+        f = Fx2D.begin(g, Blend.NORMAL);
+        float sw = 0.12F * (float) Math.sin(t * 1.3F), py = h * 0.52F + 6 * (float) Math.sin(t * 0.9F);
+        float cr = u * 0.07F, ly = py - u * 0.16F, lx = cx + sw * u * 0.16F;
+        f.band(lx, ly, cr * 0.2F, cr, 0.55F, (float) Math.PI, (float) Math.PI, 24, 0xF0E0C8, 0.9F * p, 0xD06020, 0.9F * p);
+        f.line(lx - cr, ly, cx - 4, py - 5, 1, 0x302010, 0.8F * p);
+        f.line(lx + cr, ly, cx + 4, py - 5, 1, 0x302010, 0.8F * p);
+        f.tri(cx, py - 7, 0xD0C8B8, p, cx - 7, py + 6, 0x807060, p, cx + 7, py + 6, 0x807060, p);
+        f.end();
+        // methane drizzle near the ground: slow, fat streaks
+        f = Fx2D.begin(g, Blend.ADD);
+        int n = (int) (160 * clamp((depth - 0.35F) / 0.65F) * p);
+        for (int i = 0; i < n; i++) {
+            float x = rnd(i, 1) * w, q = frac(rnd(i, 2) + t * (0.12F + 0.1F * rnd(i, 3)));
+            float y = h * q, len = 5 + 6 * rnd(i, 4);
+            f.line(x, y, x - 1, y + len, 1.2F, s.accent, 0.35F * p, s.accent, 0);
+        }
+        f.end();
+    }
+
     // ================================================================== The Transfinite Hierarchy
     /**
      * The Cantor set: take a bar, remove its middle third, repeat forever. Rows of ever finer bars scroll upward while
@@ -598,6 +705,25 @@ public final class TransitScenes {
                 for (int i = 0; i < 5; i++) f.rect(cx - half + i * 28, cy - 4, cx - half + i * 28 + 26, cy + 4, i <= done * 5 ? accent : ink, 0.3F + 0.1F * i);
                 float x = cx - half + 2 * half * done;
                 f.tri(x, cy + 7, accent, 1, x - 4, cy - 5, ink, 0.8F, x + 4, cy - 5, ink, 0.8F);
+            }
+            case TITAN_OCEAN -> {
+                // a probe melting down through a band of ice
+                f.rect(cx - half, cy - 3, cx + half, cy + 3, ink, 0.3F);
+                float x = cx - half + 2 * half * done;
+                f.disc(x, cy, 2.5F, 10, accent, 1, accent, 0.4F);
+            }
+            case INNER -> {
+                // a lens shrinking a figure to a speck
+                float r = 8 * (1 - done) + 1.5F;
+                f.ring(cx, cy, 9, 1.2F, 24, accent, 0.8F);
+                f.disc(cx, cy, r, 12, ink, 1, ink, 0.4F);
+            }
+            case TITAN -> {
+                // a parachute coming down to a sea
+                f.rect(cx - half, cy + 6, cx + half, cy + 8, accent, 0.5F);
+                float x = cx - half + 2 * half * done, y = cy - 6 + 10 * done;
+                f.band(x, y - 4, 1, 5, 0.6F, (float) Math.PI, (float) Math.PI, 12, 0xFFFFFF, 0.9F, ink, 0.9F);
+                f.disc(x, y + 2, 1.6F, 6, ink, 1, ink, 0.6F);
             }
             case FRONTIER -> {
                 // a sail on its way out to a hole

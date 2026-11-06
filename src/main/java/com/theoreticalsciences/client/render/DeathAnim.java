@@ -42,14 +42,14 @@ public final class DeathAnim {
             case "planck_mite", "positronium_skitterer", "magma_crawler" -> Style.FLIP;
             case "fission_husk" -> Style.CRUMPLE;
             case "tidal_stretcher", "tidal_horror" -> Style.STRETCH;
-            case "nebuloid", "photon_moth" -> Style.DISPERSE;
+            case "nebuloid", "photon_moth", "fourier_wisp" -> Style.DISPERSE;
             case "hawking_imp", "virtual_pair", "annihilator" -> Style.FLASH;
-            case "hypercube_drifter" -> Style.FOLD;
+            case "hypercube_drifter", "tessellate" -> Style.FOLD;
             case "vacuum_drifter" -> Style.SINK;
             case "plume_elemental" -> Style.COLLAPSE;
             case "geodynamo_wraith", "binary_serpent" -> Style.SPIN_SINK;
             case "pulsar_wisp" -> Style.SPIN_DOWN;
-            case "lens_phantom", "antihydrogen_wisp" -> Style.FLICKER;
+            case "lens_phantom", "antihydrogen_wisp", "paradox_shade" -> Style.FLICKER;
             case "random_walker" -> Style.SCATTER;
             case "boltzmann_brain" -> Style.FLUCTUATE;
             default -> Style.TOPPLE;

@@ -48,7 +48,10 @@ public class OmnipotentEdgeItem extends SwordItem implements EschatonPowered {
         @Override public int getEnchantmentValue() { return 30; }
         @Override public Ingredient getRepairIngredient() { return Ingredient.EMPTY; }
     };
-    private static final int ERASE_RANGE = 16;
+    /** 1.2.0: Erasure reaches every creature within this many blocks (common config edgeErasureRadius). */
+    static int eraseRange() {
+        return com.theoreticalsciences.QHConfig.EDGE_ERASURE_RADIUS.get();
+    }
 
     public OmnipotentEdgeItem(Properties p) {
         // (no attributes on the properties: they depend on the charge, see getDefaultAttributeModifiers below)
@@ -95,26 +98,35 @@ public class OmnipotentEdgeItem extends SwordItem implements EschatonPowered {
         return s.getItem() instanceof OmnipotentEdgeItem && EschatonCharge.active(sp, s) ? sp : null;
     }
 
-    /** Round 32: what the Edge kills goes straight into the wielder's inventory (overflow lands at their feet). */
+    /**
+     * Round 32: what the Edge kills goes to its wielder. 1.2.0: gathered over the tick and handed over at its end, so a
+     * single kill's few drops go into the inventory as before, and an Erasure's hundreds come as Folded Matter, never as
+     * a field of items on the ground.
+     */
+    private static final java.util.Map<java.util.UUID, FoldedMatter.Gatherer> HARVEST =
+            com.theoreticalsciences.world.SessionMaps.perPlayer(new java.util.concurrent.ConcurrentHashMap<>());
+
     public static void onDrops(net.neoforged.neoforge.event.entity.living.LivingDropsEvent e) {
         if (e.getEntity() instanceof Player) return;            // a fallen player's belongings stay where they fell
         ServerPlayer sp = harvester(e.getSource());
         if (sp == null || e.getDrops().isEmpty()) return;
         if (!EschatonCharge.spend(sp, sp.getMainHandItem(), EschatonCharge.EDGE_HARVEST)) return;
-        var it = e.getDrops().iterator();
-        while (it.hasNext()) {
-            net.minecraft.world.entity.item.ItemEntity ie = it.next();
-            ItemStack st = ie.getItem().copy();
-            sp.getInventory().add(st);
-            if (st.isEmpty()) it.remove();
-            else {
-                ie.setItem(st);
-                ie.setPos(sp.getX(), sp.getY(), sp.getZ());
-                ie.setNoPickUpDelay();
-            }
-        }
-        if (sp.level() instanceof ServerLevel sl)
+        FoldedMatter.Gatherer g = HARVEST.computeIfAbsent(sp.getUUID(), k -> new FoldedMatter.Gatherer());
+        for (net.minecraft.world.entity.item.ItemEntity ie : e.getDrops()) g.add(ie.getItem().copy());
+        e.getDrops().clear();
+        if (sp.level() instanceof ServerLevel sl && g.items() < 512)
             sl.sendParticles(com.theoreticalsciences.registry.QHParticles.PHASE_MOTE.get(), e.getEntity().getX(), e.getEntity().getY(0.5), e.getEntity().getZ(), 12, 0.3, 0.4, 0.3, 0.05);
+    }
+
+    /** The end of each server tick: what each wielder gathered is handed over. */
+    public static void onServerTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
+        if (HARVEST.isEmpty()) return;
+        for (var it = HARVEST.entrySet().iterator(); it.hasNext(); ) {
+            var en = it.next();
+            it.remove();
+            ServerPlayer sp = e.getServer().getPlayerList().getPlayer(en.getKey());
+            if (sp != null) en.getValue().deliver(sp);
+        }
     }
 
     /** ...and so does the experience. */
@@ -140,6 +152,9 @@ public class OmnipotentEdgeItem extends SwordItem implements EschatonPowered {
 
     @Override
     public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        // 1.2.0: a mob given a charged Edge strikes with its full weight, but each blow spends charge as a player's
+        // does, so it runs down (then it is only a blade). The unmaking itself is a player's alone.
+        if (!attacker.level().isClientSide && !(attacker instanceof Player) && EschatonCharge.get(stack) > 0) EschatonCharge.drain(attacker, stack, EschatonCharge.EDGE_HIT);
         // the unmaking costs charge; with none left the Edge is only a blade
         if (!attacker.level().isClientSide && attacker instanceof Player p && mayUnmake(p, target) && EschatonCharge.spend(p, stack, EschatonCharge.EDGE_HIT)) {
             float extra = Math.max(50F, target.getMaxHealth() * 0.25F);
@@ -170,30 +185,43 @@ public class OmnipotentEdgeItem extends SwordItem implements EschatonPowered {
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
     }
 
+    /**
+     * Erasure. 1.2.0: no longer a cone before you, but everything around you: every hostile creature within
+     * {@link #eraseRange()} blocks (by default; the config can take every creature that is not a player, a villager or
+     * someone else's), seen or not, ceases to exist. Their drops come folded.
+     */
     private static int erase(ServerLevel level, Player player) {
-        Vec3 eye = player.getEyePosition(), look = player.getLookAngle();
-        // the cone itself, drawn in light
+        int R = eraseRange();
+        boolean all = com.theoreticalsciences.QHConfig.EDGE_ERASURE_ALL.get();
+        Vec3 at = player.position().add(0, player.getBbHeight() * 0.5, 0);
+        // the sweep, drawn in light: rings running out to the edge of its reach
         com.theoreticalsciences.registry.QHGlowOptions gold = com.theoreticalsciences.registry.QHGlowOptions.of(1F, 0.86F, 0.4F, 1.4F);
-        for (int d = 1; d <= ERASE_RANGE; d++) {
-            Vec3 c = eye.add(look.scale(d));
-            double spread = d * 0.35;
-            level.sendParticles(gold, c.x, c.y, c.z, 3 + d / 2, spread, spread, spread, 0);
-            if (d % 3 == 0) level.sendParticles(com.theoreticalsciences.registry.QHParticles.PHOTON.get(), c.x, c.y, c.z, 2, spread * 0.5, spread * 0.5, spread * 0.5, 0.02);
+        for (int ring = 1; ring <= 6; ring++) {
+            double r = R * ring / 6.0;
+            int n = (int) Math.min(160, r * 3);
+            for (int i = 0; i < n; i++) {
+                double a = Math.PI * 2 * i / n;
+                level.sendParticles(gold, at.x + Math.cos(a) * r, at.y, at.z + Math.sin(a) * r, 1, 0, 0.2, 0, 0);
+            }
         }
-        level.playSound(null, player.blockPosition(), com.theoreticalsciences.registry.QHSounds.SHOCKWAVE.get(), SoundSource.PLAYERS, 1.2F, 1.6F);
+        level.sendParticles(com.theoreticalsciences.registry.QHParticles.SHOCKWAVE.get(), at.x, at.y, at.z, 1, 0, 0, 0, 0);
+        level.playSound(null, player.blockPosition(), com.theoreticalsciences.registry.QHSounds.SHOCKWAVE.get(), SoundSource.PLAYERS, 1.6F, 1.2F);
         level.playSound(null, player.blockPosition(), com.theoreticalsciences.registry.QHSounds.POWER_DOWN.get(), SoundSource.PLAYERS, 1.0F, 0.6F);
         int killed = 0;
-        var box = player.getBoundingBox().inflate(ERASE_RANGE);
-        for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, box, e -> e instanceof Enemy && e.isAlive())) {
-            Vec3 to = e.getBoundingBox().getCenter().subtract(eye);
-            double dist = to.length();
-            if (dist > ERASE_RANGE || dist < 1e-3) continue;
-            if (to.normalize().dot(look) < 0.82) continue;               // about 35 degrees either side
+        var box = new net.minecraft.world.phys.AABB(at, at).inflate(R);
+        double r2 = (double) R * R;
+        for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, box, e -> e.isAlive() && !(e instanceof Player))) {
+            if (e.distanceToSqr(at) > r2) continue;
+            boolean hostile = e instanceof Enemy;
+            if (!hostile) {
+                if (!all || e instanceof net.minecraft.world.entity.npc.Npc) continue;
+                if (e instanceof net.minecraft.world.entity.OwnableEntity own && own.getOwnerUUID() != null && !own.getOwnerUUID().equals(player.getUUID())) continue;
+                if (player instanceof ServerPlayer sp && !com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, e.blockPosition(), e, com.theoreticalsciences.compat.ClaimChecks.Kind.ENTITY)) continue;
+            }
             if (!mayUnmake(player, e)) continue;
             e.invulnerableTime = 0;
             e.hurt(unmaking(level, player), Math.max(1000F, e.getMaxHealth() * 10F));
-            level.sendParticles(com.theoreticalsciences.registry.QHParticles.SHOCKWAVE.get(), e.getX(), e.getY(0.5), e.getZ(), 1, 0, 0, 0, 0);
-            level.sendParticles(com.theoreticalsciences.registry.QHParticles.FLASH.get(), e.getX(), e.getY(0.5), e.getZ(), 1, 0, 0, 0, 0);
+            if (killed < 48) level.sendParticles(com.theoreticalsciences.registry.QHParticles.FLASH.get(), e.getX(), e.getY(0.5), e.getZ(), 1, 0, 0, 0, 0);
             if (!e.isAlive()) killed++;
         }
         return killed;

@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:alkahest_distillation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:structure_card",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:quasicrystal_plate",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:balance_tincture",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:ethylene",
+      "amount": 500
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:form_tincture",
+      "amount": 500
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:alkahest",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Tb": 420.0
+    },
+    "windows": [
+      {
+        "q": "pur",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r93_inner_space",
+  "description": "book.theoreticalsciences.codex.world.intro__r93_inner_space.desc",
+  "icon": {
+    "item": "theoreticalsciences:miniaturiser"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 41,
+  "y": 90,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r93_inner_space.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r93_inner_space"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r93_inner_space.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/world__intro__r87_axioms"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/inner_space"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "title": "Nuclear Magnetic Resonance",
+  "description": "Nuclei spinning in a strong field answer radio at a frequency set by the field and their surroundings: the whole shape of a molecule, atom by atom. Unlocks the NMR Spectrometer.",
+  "icon": "theoreticalsciences:nmr_spectrometer",
+  "x": 20,
+  "y": 1,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:infrared_spectroscopy",
+    "theoreticalsciences:magnetic_confinement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:structure_card",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 4
+    }
+  ],
+  "time": 660,
+  "puzzle": {
+    "goal": "A nucleus with gyromagnetic ratio g sits in a field B. Write the frequency f it precesses at, in hertz.",
+    "name": "Larmor",
+    "lhs": "f",
+    "form": "g * B / ( 2 * \u03c0 )",
+    "expr": "g * B / ( 2 * 3.14159265 )",
+    "ask": "Find f for a proton, g = @{g} rad/(s\u00b7T), in B = @{B} T.",
+    "vars": {
+      "f": "frequency (Hz)",
+      "g": "gyromagnetic ratio (rad/(s\u00b7T))",
+      "B": "field (T)"
+    },
+    "given": {
+      "g": 267500000.0,
+      "B": 9.4
+    },
+    "unit": "Hz",
+    "method": "The magnetic moment precesses round the field like a top under gravity, at \u03c9 = \u03b3B.",
+    "distractors": [
+      "2",
+      "T",
+      "k"
+    ],
+    "vary": {
+      "g": [
+        160000000.0,
+        375000000.0,
+        1000000.0
+      ],
+      "B": [
+        5.64,
+        13.16,
+        0.01
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r59_haber",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r59_haber.desc",
+  "icon": {
+    "item": "theoreticalsciences:haber_bosch_reactor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 65,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_haber.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r59_haber"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r59_haber.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_kinetics"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/chemical_equilibrium"
+  }
+}

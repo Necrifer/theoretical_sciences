@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.lake_pump",
+  "description": "book.theoreticalsciences.codex.chemistry.lake_pump.desc",
+  "icon": {
+    "item": "theoreticalsciences:lake_pump"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 253,
+  "y": 50,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lake_pump"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.lake_pump.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.lake_pump.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.lake_pump.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.lake_pump.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lake_pump"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.lake_pump.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__brine_evaporator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/titan_lakes"
+  }
+}

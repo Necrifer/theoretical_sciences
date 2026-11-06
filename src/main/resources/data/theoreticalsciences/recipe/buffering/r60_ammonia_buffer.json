@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:buffering",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 250
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ammonia_buffer",
+      "amount": 1000
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:buffer_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "pKa": 9.25
+    },
+    "windows": [
+      {
+        "q": "pH",
+        "min": 8.95,
+        "max": 9.05
+      }
+    ]
+  }
+}

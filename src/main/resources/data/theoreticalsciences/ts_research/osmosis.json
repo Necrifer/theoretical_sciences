@@ -1,0 +1,72 @@
+{
+  "title": "Osmosis",
+  "description": "Water crosses a membrane toward the saltier side, pulled with the pressure \u03c0 = iMRT. Push back harder and it flows the other way. Unlocks the Reverse Osmosis Cell.",
+  "icon": "theoreticalsciences:reverse_osmosis_cell",
+  "x": 23,
+  "y": -3,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:solubility"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:paper",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:halite",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A salt splitting into i ions is dissolved at M moles a litre. Write the pressure p that pulls water toward it at temperature T, with the gas constant R.",
+    "name": "Van 't Hoff law",
+    "lhs": "p",
+    "form": "i * M * R * T",
+    "expr": "i * M * R * T",
+    "ask": "Find p in bar for seawater: i = @{i}, M = @{M} mol/L, R = @{R} L\u00b7bar/(mol\u00b7K), T = @{T} K.",
+    "vars": {
+      "p": "pressure (bar)",
+      "i": "ions per formula unit",
+      "M": "concentration (mol/L)",
+      "R": "gas constant",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "i": 2,
+      "M": 0.6,
+      "R": 0.08314,
+      "T": 298
+    },
+    "unit": "bar",
+    "method": "Dissolved particles act like a gas in the water: pV = nRT, per litre.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "K"
+    ],
+    "vary": {
+      "i": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "M": [
+        0.36,
+        0.84,
+        0.001
+      ],
+      "R": [
+        0.0498,
+        0.1164,
+        0.0001
+      ],
+      "T": [
+        179.0,
+        417.0,
+        1.0
+      ]
+    }
+  }
+}

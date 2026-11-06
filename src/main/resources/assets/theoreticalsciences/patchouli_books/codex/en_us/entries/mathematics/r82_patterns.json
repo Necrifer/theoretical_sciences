@@ -1,0 +1,18 @@
+{
+  "name": "Patterns",
+  "icon": "theoreticalsciences:pattern_basin",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pattern_basin,theoreticalsciences:pattern_template,theoreticalsciences:turing_morphogen",
+      "text": "How an even mixture paints itself into stripes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Reaction and Diffusion$(): the $(item)Pattern Basin$() holds an activator and an inhibitor. Set how many times faster the inhibitor spreads (the ratio r) and the reaction rate k. Below r of about 5.8 nothing happens; above it stripes and spots form, about 2\u03c0\u00b7r^\u00bc/\u221ak apart, and that spacing must be inside the recipe's window. A faster reaction is quicker but needs a larger ratio for the same spacing. It makes $(item)Pattern Templates$(); with $(thing)Turing Patterns$(), Turing Morphogens from an Assayed Enzyme, Rational Fields and slime, and with both, Bioculture grows Morphogenic Serum cheaply. Its calibration: complete a symmetric pattern."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_diffusion"
+}

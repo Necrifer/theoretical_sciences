@@ -1,0 +1,65 @@
+{
+  "title": "Solubility",
+  "description": "How much of a salt water will hold is a solubility product, K_sp. Concentrate a brine and its salts come out in order. Unlocks the Brine Evaporator.",
+  "icon": "theoreticalsciences:brine_evaporator",
+  "x": 21,
+  "y": -3,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:acids_and_bases"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:clay_ball",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:aquifer_sample",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A salt that splits into two ions has solubility product K. Write how many grams g dissolve in V litres, if one mole of it weighs m grams.",
+    "name": "Saturation",
+    "lhs": "g",
+    "form": "sqrt ( K ) * m * V",
+    "expr": "sqrt ( K ) * m * V",
+    "ask": "Find g for gypsum: K = @{K}, m = @{m} g/mol, V = @{V} L.",
+    "vars": {
+      "g": "grams dissolved",
+      "K": "solubility product",
+      "m": "molar mass (g/mol)",
+      "V": "volume (L)"
+    },
+    "given": {
+      "K": 2.4e-05,
+      "m": 136,
+      "V": 1
+    },
+    "unit": "g",
+    "method": "Each ion is at s mol/L, so K = s\u00b2: s = \u221aK moles a litre.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "K": [
+        1.44e-05,
+        3.36e-05,
+        1e-07
+      ],
+      "m": [
+        82.0,
+        190.0,
+        1.0
+      ],
+      "V": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

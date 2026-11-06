@@ -1,0 +1,19 @@
+{
+  "name": "Fracture Ward",
+  "icon": "theoreticalsciences:ward_fracture",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ward_fracture",
+      "title": "Fracture Ward",
+      "text": "A trace of what the Destabilised Husk carries, prepared so the body is ready for it. Use it on yourself: held safe from Fracture for three in-game days. Renew it while more than half of that is left and the imprint overloads instead. Made on the Antibody Bench."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Antibody Bench$().$(br2)$(thing)Found in$(): Germinal Centre chests.$(br2)$(thing)Unlocked by$(): Immunisation.$(br2)$(thing)Used in$(): Lasting Fracture Ward."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/adaptive_immunity"
+}

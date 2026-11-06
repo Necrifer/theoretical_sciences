@@ -1,0 +1,24 @@
+{
+  "name": "Regeneration Tank",
+  "icon": "theoreticalsciences:regeneration_tank",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 114,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A morphogen made at one end and broken down everywhere spreads into a gradient c = c0.e^(-x/lambda), lambda = sqrt(D/k). Each cell reads the level and so learns where it stands, and what to become (the French-flag model)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Source, Decay length.$(br2)$(thing)Disturbance$(): Stirring: the gradient varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too steep: the far end is blank.$(br2)$(thing)Rate$(): A stronger source is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Signal at the far edge: c(L) = c0.e^(-L/lambda)$(br)Read across the organ: c(L) > threshold"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Nebular Chemistry",
+  "description": "The molecular clouds are the chemistry of space: water, ammonia, methane, cyanide and soot, frozen on dust and waiting. Unlocks the Cloud Siphon, the cloud's fractions and the Strecker route to amino acids.",
+  "icon": "theoreticalsciences:cloud_siphon",
+  "x": 15,
+  "y": -2,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:chromatography",
+    "theoreticalsciences:interstellar_medium"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:interstellar_dust",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:molecular_cloud_cell",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "In a cold cloud at temperature T, a molecule holding deuterium is favoured over its ordinary twin by a zero-point energy E. Write how many times f deuterium is enriched, with Boltzmann's k.",
+    "name": "Fractionation",
+    "lhs": "f",
+    "form": "exp ( E / ( k * T ) )",
+    "expr": "exp ( E / ( k * T ) )",
+    "ask": "Find f for E = @{E} J, k = 1.381e-23 J/K and T = @{T} K.",
+    "vars": {
+      "f": "enrichment",
+      "E": "zero-point energy difference (J)",
+      "k": "Boltzmann constant",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "E": 3.2e-21,
+      "k": 1.381e-23,
+      "T": 25
+    },
+    "unit": "",
+    "method": "The heavier molecule sits lower in its well; at low temperature the Boltzmann factor makes that tiny difference count.",
+    "distractors": [
+      "2",
+      "R",
+      "\u03c0"
+    ],
+    "vary": {
+      "E": [
+        1.92e-21,
+        4.48e-21,
+        1e-23
+      ],
+      "T": [
+        15.0,
+        35.0,
+        1.0
+      ]
+    }
+  }
+}

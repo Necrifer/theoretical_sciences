@@ -20,7 +20,7 @@ import java.util.List;
  * confirm that every recipe has a working point.
  */
 public final class DemonSolver {
-    public record Solution(boolean ok, double[] params, @Nullable Fluid coolant, double temperature, double rate) {}
+    public record Solution(boolean ok, double[] params, @Nullable Fluid coolant, double temperature, double rate, double[] readout) {}
 
     private final String machine;
     private final RecipePhysics recipe;
@@ -33,6 +33,13 @@ public final class DemonSolver {
     private double sink, kappa;
 
     private int size = 1;
+    private boolean lockCoolant;
+
+    /** 1.2.0: search only with the coolant the machine actually holds (or none): the Tuning Fork gives nothing away. */
+    public DemonSolver lockCoolant(boolean lock) {
+        this.lockCoolant = lock;
+        return this;
+    }
 
     /** 1.3.5: units built in a variable-height structure. */
     public DemonSolver size(int n) {
@@ -42,7 +49,7 @@ public final class DemonSolver {
 
     private double[] world;
 
-    /** 1.4.0: the sky, weather and surroundings the machine stands in (the demon tunes for them as they are now). */
+    /** 1.2.0: the sky, weather and surroundings the machine stands in (the demon tunes for them as they are now). */
     public DemonSolver world(double[] w) {
         this.world = w.clone();
         return this;
@@ -80,7 +87,7 @@ public final class DemonSolver {
         RandomSource rnd = RandomSource.create(seed);
         List<Fluid> fluids = new ArrayList<>();
         if (current != null) fluids.add(current);
-        for (String id : PhysicsManager.coolants().keySet()) {
+        if (!lockCoolant) for (String id : PhysicsManager.coolants().keySet()) {
             Fluid f = BuiltInRegistries.FLUID.getOptional(ResourceLocation.tryParse(id)).orElse(null);
             if (f != null && !fluids.contains(f)) fluids.add(f);
         }
@@ -132,7 +139,9 @@ public final class DemonSolver {
         }
         setCoolant(bestFluid);
         score(best, !m.states.isEmpty());
-        return new Solution(bestScore >= 1000, best, bestFluid, ps.temperature, ps.rate);
+        // 1.2.0: the readout at the best point (each window's quantity, then the speed): what precision is measured against
+        double[] readout = com.theoreticalsciences.machine.tuning.Precision.quantities(m, ps);
+        return new Solution(bestScore >= 1000, best, bestFluid, ps.temperature, ps.rate, readout);
     }
 
     private double[] defaults() {

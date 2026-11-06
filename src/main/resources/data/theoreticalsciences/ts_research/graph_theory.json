@@ -1,0 +1,59 @@
+{
+  "title": "Graph Theory",
+  "description": "K\u00f6nigsberg had seven bridges, and nobody could cross each exactly once. Euler showed why not, and drew the first graph. Unlocks the Graph Loom.",
+  "icon": "theoreticalsciences:network_map",
+  "x": 5,
+  "y": 4,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:euler_characteristic",
+    "theoreticalsciences:combinatorics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A map drawn on a sheet without crossings has V junctions and L links. Write how many regions F it cuts the sheet into, the outside included.",
+    "name": "Euler's relation",
+    "lhs": "F",
+    "form": "L - V + 2",
+    "expr": "L - V + 2",
+    "ask": "Find F for V = @{V} and L = @{L}.",
+    "vars": {
+      "F": "regions",
+      "V": "junctions",
+      "L": "links"
+    },
+    "given": {
+      "V": 8,
+      "L": 12
+    },
+    "unit": "",
+    "method": "A tree has V \u2212 1 links and one region; every link added after that closes a loop and splits a region in two.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "V": [
+        5.0,
+        11.0,
+        1.0
+      ],
+      "L": [
+        7.0,
+        17.0,
+        1.0
+      ]
+    }
+  }
+}

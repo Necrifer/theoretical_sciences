@@ -1,0 +1,72 @@
+{
+  "title": "Chromatography",
+  "description": "Carry a mixture down a long packed column and each part sticks for its own time: they come out one after another. Unlocks the Chromatography Column, and the purity tag for gases.",
+  "icon": "theoreticalsciences:chromatography_column",
+  "x": 18,
+  "y": -4,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:acids_and_bases"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:paper",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:titration_bench",
+      "count": 1
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Bands spread by eddies a, by diffusion along the column b (worse the slower the gas), and by slow exchange c (worse the faster). Write the plate height H at carrier speed u.",
+    "name": "Van Deemter",
+    "lhs": "H",
+    "form": "a + b / u + c * u",
+    "expr": "a + b / u + c * u",
+    "ask": "Find H in cm for a = @{a}, b = @{b}, c = @{c} and u = @{u} cm/s.",
+    "vars": {
+      "H": "plate height (cm)",
+      "a": "eddy term (cm)",
+      "b": "diffusion term (cm\u00b2/s)",
+      "c": "exchange term (s)",
+      "u": "carrier speed (cm/s)"
+    },
+    "given": {
+      "a": 0.02,
+      "b": 0.5,
+      "c": 0.02,
+      "u": 5
+    },
+    "unit": "cm",
+    "method": "Three independent spreadings add; the smallest H, and so the best column, is at u = \u221a(b/c).",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "a": [
+        0.012,
+        0.028,
+        0.0001
+      ],
+      "b": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "c": [
+        0.012,
+        0.028,
+        0.0001
+      ],
+      "u": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:mycelium_growth",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:mould_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antibiotic",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 240,
+  "research": "theoreticalsciences:mycology",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Topt": 298.0
+    },
+    "windows": [
+      {
+        "q": "grow",
+        "min": 0.9,
+        "max": 2.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.intro__r46_workshop",
+  "description": "book.theoreticalsciences.codex.optics.intro__r46_workshop.desc",
+  "icon": {
+    "item": "theoreticalsciences:optical_workshop"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 26,
+  "y": 62,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.intro__r46_workshop.p0",
+      "title": "book.theoreticalsciences.codex.optics.intro__r46_workshop"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.intro__r46_workshop.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/optics__intro__r46_overview"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/optics__intro__r46_diffraction"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/geometric_optics"
+  }
+}

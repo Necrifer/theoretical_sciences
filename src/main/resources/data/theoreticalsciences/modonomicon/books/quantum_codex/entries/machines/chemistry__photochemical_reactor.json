@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.photochemical_reactor",
+  "description": "book.theoreticalsciences.codex.chemistry.photochemical_reactor.desc",
+  "icon": {
+    "item": "theoreticalsciences:photochemical_reactor"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 204,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:photochemical_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.photochemical_reactor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.photochemical_reactor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.photochemical_reactor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.photochemical_reactor.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:photochemical_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.photochemical_reactor.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r67_titan_lakes"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r66_spectroscopy"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/photochemistry"
+  }
+}

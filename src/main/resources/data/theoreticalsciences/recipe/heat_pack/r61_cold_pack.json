@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:heat_pack",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ammonium_nitrate",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:cold_pack_solution",
+      "amount": 1000
+    }
+  ],
+  "energy": 64,
+  "duration": 200,
+  "research": "theoreticalsciences:thermochemical_cycles",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": -1.0,
+      "hh": 6.0
+    },
+    "windows": [
+      {
+        "q": "To",
+        "min": 266.0,
+        "max": 272.0
+      }
+    ]
+  }
+}

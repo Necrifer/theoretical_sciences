@@ -1,0 +1,19 @@
+{
+  "name": "Blood Plasma",
+  "icon": "theoreticalsciences:blood_plasma_cell",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:blood_plasma_cell",
+      "title": "Blood Plasma",
+      "text": "Blood with the cells taken out: water, salts, sugar and a host of proteins, the antibodies among them. It carries everything a body sends anywhere. Found in the seas and channels of Inner Space's Bloodstream; the Lake Pump draws it, without end."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Lake Pump$().$(br2)$(thing)Unlocked by$(): Inner Space.$(br2)$(thing)Used in$(): Antibody, Grown Organ, Nutrient Broth, Panacea."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/physiology"
+}

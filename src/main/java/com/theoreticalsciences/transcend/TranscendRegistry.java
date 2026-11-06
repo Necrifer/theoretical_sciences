@@ -210,19 +210,29 @@ public final class TranscendRegistry {
         });
         bus.addListener((RegisterSpawnPlacementsEvent e) -> {
             var op = RegisterSpawnPlacementsEvent.Operation.REPLACE;
-            e.register(FRACTAL_WYRM.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules, op);
-            e.register(AXIOM_SENTINEL.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkAnyLightMonsterSpawnRules, op);
+            // 1.2.0: one dimension, three layers - the Realm's hunters on the Number Line (the Elements are safe), the Hierarchy's in the Infinite
+            e.register(FRACTAL_WYRM.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    (t, l, r, p, rnd) -> p.getY() >= 0 && p.getY() < com.theoreticalsciences.world.Strata.ELEMENTS && Monster.checkAnyLightMonsterSpawnRules(t, l, r, p, rnd), op);
+            e.register(AXIOM_SENTINEL.get(), SpawnPlacementTypes.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    (t, l, r, p, rnd) -> p.getY() >= 0 && p.getY() < com.theoreticalsciences.world.Strata.ELEMENTS && Monster.checkAnyLightMonsterSpawnRules(t, l, r, p, rnd), op);
             var air = SpawnPlacementTypes.NO_RESTRICTIONS;
             var hm = Heightmap.Types.MOTION_BLOCKING_NO_LEAVES;
-            for (var t : List.of(VIRTUAL_PAIR, HYPERCUBE_DRIFTER, PHOTON_MOTH, ANTIHYDROGEN_WISP))
+            for (var t : List.of(VIRTUAL_PAIR, PHOTON_MOTH, ANTIHYDROGEN_WISP))
                 e.register(t.get(), air, hm, (type, level, reason, pos, r) -> level.getBlockState(pos).isAir(), op);
+            e.register(HYPERCUBE_DRIFTER.get(), air, hm, (type, level, reason, pos, r) -> strata(level, pos) && level.getBlockState(pos).isAir(), op);
             for (var t : List.of(VACUUM_DRIFTER, TIDAL_HORROR, ANNIHILATOR))
                 e.register(t.get(), air, hm, (type, level, reason, pos, r) -> level.getDifficulty() != net.minecraft.world.Difficulty.PEACEFUL && level.getBlockState(pos).isAir(), op);
             e.register(PLANCK_MITE.get(), SpawnPlacementTypes.ON_GROUND, hm, Monster::checkAnyLightMonsterSpawnRules, op);
             e.register(POSITRONIUM_SKITTERER.get(), SpawnPlacementTypes.ON_GROUND, hm, Monster::checkAnyLightMonsterSpawnRules, op);
-            e.register(ORDINAL_HOUND.get(), SpawnPlacementTypes.ON_GROUND, hm, Monster::checkAnyLightMonsterSpawnRules, op);
-            e.register(HILBERT_BELLHOP.get(), SpawnPlacementTypes.ON_GROUND, hm, (type, level, reason, pos, r) -> level.getBlockState(pos.below()).isSolid(), op);
+            e.register(ORDINAL_HOUND.get(), SpawnPlacementTypes.ON_GROUND, hm,
+                    (t, l, r, p, rnd) -> strata(l, p) && Monster.checkAnyLightMonsterSpawnRules(t, l, r, p, rnd), op);
+            e.register(HILBERT_BELLHOP.get(), SpawnPlacementTypes.ON_GROUND, hm, (type, level, reason, pos, r) -> strata(level, pos) && level.getBlockState(pos.below()).isSolid(), op);
         });
+    }
+
+    /** In the Platonic Realm, only the upper strata (the Transfinite Hierarchy); anywhere else, as before. */
+    private static boolean strata(net.minecraft.world.level.ServerLevelAccessor level, net.minecraft.core.BlockPos pos) {
+        return level.getLevel().dimension() != com.theoreticalsciences.world.QHDimensions.PLATONIC || pos.getY() >= com.theoreticalsciences.world.Strata.Y;
     }
 
     private TranscendRegistry() {}

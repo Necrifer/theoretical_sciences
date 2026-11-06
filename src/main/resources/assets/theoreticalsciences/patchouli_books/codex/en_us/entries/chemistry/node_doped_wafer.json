@@ -1,0 +1,19 @@
+{
+  "name": "Doped Wafer",
+  "icon": "theoreticalsciences:doped_wafer",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:doped_wafer",
+      "title": "Doped Wafer",
+      "text": "A wafer with boron diffused into one face and phosphorus into the other: a junction, ready for lithography."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Doping Furnace$().$(br2)$(thing)Unlocked by$(): Semiconductor Doping.$(br2)$(thing)Used in$(): Alkahest, Photonic Logic Wafer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/semiconductor_doping"
+}

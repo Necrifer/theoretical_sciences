@@ -13,7 +13,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-/** Round 40 (1.3.0): a hole drilled through bedrock. Step into it to pass between the Overworld and the Planetary Interior. */
+/** Round 40 (1.2.0): a hole drilled through bedrock. Step into it to pass between the Overworld and the Planetary Interior. */
 public class MantleBreachBlock extends Block {
     public MantleBreachBlock(Properties p) {
         super(p);

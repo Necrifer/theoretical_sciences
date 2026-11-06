@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r54_hawking",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r54_hawking.desc",
+  "icon": {
+    "item": "theoreticalsciences:micro_black_hole_evaporator"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 41,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_hawking.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r54_hawking"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_hawking.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r50_unification"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hawking_radiation"
+  }
+}

@@ -13,12 +13,12 @@ import net.neoforged.neoforge.fluids.FluidStack;
 /** One small gauge per fluid; when every gauge is full, a batch of Pleroma is made. */
 public class ConfluenceScreen extends AbstractContainerScreen<ConfluenceMenu> {
     private static final int GX = 8, GY = 30;
-    /** Round 26: with every mod's Essence the list can be long - the cells shrink until they all fit. */
+    /** The cells shrink until they all fit (1.2.0: five fluids, so in practice the largest). */
     private int cols = 12, cw = 20, ch = 26;
 
     private void layout() {
         int n = menu.be.required.size(), w = 210, h = 106;
-        int[][] sizes = {{20, 26}, {16, 21}, {13, 17}, {10, 13}, {8, 10}, {6, 8}};
+        int[][] sizes = {{38, 52}, {20, 26}, {16, 21}, {13, 17}, {10, 13}, {8, 10}, {6, 8}};
         for (int[] sz : sizes) {
             cw = sz[0];
             ch = sz[1];
@@ -49,13 +49,14 @@ public class ConfluenceScreen extends AbstractContainerScreen<ConfluenceMenu> {
             int cx = x + GX + (i % cols) * cw, cy = y + GY + (i / cols) * ch;
             int fcx = cx, fcy = cy;
             g.drawManaged(() -> HoloStyle.tubeBack(g, fcx, fcy, bw, bh, 0xC080FF));
-            float f = (float) Math.min(1.0, be.stored[i] / (double) be.target(i));
+            float f = (float) Math.min(1.0, be.stored[i] / (double) ConfluenceBlockEntity.BUFFER);
+            boolean ready = be.stored[i] >= be.target(i);
             int h = (int) (bh * f);
             int tint = IClientFluidTypeExtensions.of(be.required.get(i).getFluid()).getTintColor(be.required.get(i));
-            int col = (tint & 0xFFFFFF) == 0xFFFFFF ? (i == 0 ? 0x3F76E4 : 0xFF6A00) : tint & 0xFFFFFF;
+            int col = (tint & 0xFFFFFF) == 0xFFFFFF ? 0xE0C0FF : tint & 0xFFFFFF;
             g.fill(cx, cy + bh - h, cx + bw, cy + bh, 0xFF000000 | col);
             int ftop = h > 0 ? cy + bh - h : -1;
-            g.drawManaged(() -> HoloStyle.tubeFront(g, fcx, fcy, bw, bh, f >= 1 ? 0x60FF90 : 0xC080FF, false, ftop));
+            g.drawManaged(() -> HoloStyle.tubeFront(g, fcx, fcy, bw, bh, ready ? 0x60FF90 : 0xC080FF, false, ftop));
         }
         // the output
         int ox = x + imageWidth - 30, oy = y + GY;
@@ -71,7 +72,7 @@ public class ConfluenceScreen extends AbstractContainerScreen<ConfluenceMenu> {
         TextFit.draw(g, font, title, 10, 5, imageWidth - 18, HoloStyle.bright(0xC080FF));
         ConfluenceBlockEntity be = menu.be;
         TextFit.draw(g, font, Component.translatable("gui.theoreticalsciences.confluence_status", be.filledCount(), be.required.size(),
-                String.format("%,d", ConfluenceBlockEntity.TARGET), String.format("%,d", ConfluenceBlockEntity.ESSENCE_TARGET)), 8, 17, imageWidth - 16, 0xFFA0A0C0);
+                String.format("%,d", ConfluenceBlockEntity.TARGET), String.format("%,d", ConfluenceBlockEntity.BATCH)), 8, 17, imageWidth - 16, 0xFFA0A0C0);
         g.drawString(font, playerInventoryTitle, inventoryLabelX, inventoryLabelY, HoloStyle.mix(0x8899AA, 0xC080FF, 0.35F), false);
     }
 
@@ -85,7 +86,8 @@ public class ConfluenceScreen extends AbstractContainerScreen<ConfluenceMenu> {
             if (mx >= cx && my >= cy && mx < cx + cw - 4 && my < cy + ch - 4) {
                 FluidStack fs = be.required.get(i);
                 TextFit.tooltip(g, font, java.util.List.of(fs.getHoverName(),
-                        Component.literal(String.format("%,d / %,d mB", be.stored[i], be.target(i)))), mx, my);
+                        Component.literal(String.format("%,d / %,d mB", be.stored[i], ConfluenceBlockEntity.BUFFER)),
+                        Component.translatable("gui.theoreticalsciences.confluence_needs", String.format("%,d", be.target(i)))), mx, my);
             }
         }
         int ox = leftPos + imageWidth - 30, oy = topPos + GY;

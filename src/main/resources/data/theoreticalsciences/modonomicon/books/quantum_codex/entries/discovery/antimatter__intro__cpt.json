@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.antimatter.intro__cpt",
+  "description": "book.theoreticalsciences.codex.antimatter.intro__cpt.desc",
+  "icon": {
+    "item": "theoreticalsciences:cpt_mirror"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 52,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.intro__cpt.p0",
+      "title": "book.theoreticalsciences.codex.antimatter.intro__cpt"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.antimatter.intro__cpt.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__relativity"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cpt_symmetry"
+  }
+}

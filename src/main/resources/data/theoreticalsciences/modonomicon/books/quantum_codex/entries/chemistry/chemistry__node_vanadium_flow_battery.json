@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_vanadium_flow_battery",
+  "description": "book.theoreticalsciences.codex.chemistry.node_vanadium_flow_battery.desc",
+  "icon": {
+    "item": "theoreticalsciences:vanadium_flow_battery"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 86,
+  "y": 30,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:vanadium_flow_battery"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_vanadium_flow_battery.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_vanadium_flow_battery.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__contact_process_tower",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/contact_process"
+  }
+}

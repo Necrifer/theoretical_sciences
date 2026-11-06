@@ -1,0 +1,80 @@
+{
+  "title": "Biomineralisation",
+  "description": "Some bacteria grow chains of magnetite crystals and steer by the Earth's field. Kept short of air, they mine iron for you. Unlocks bacterial Magnetite.",
+  "icon": "theoreticalsciences:magnetite",
+  "x": 4,
+  "y": 22,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:microbiology",
+    "theoreticalsciences:ferromagnetism"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 2
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "count": 8
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A chain of n magnetite crystals, each of moment m, lines up in a field B against the jostling of heat, kT. Write the share A it lines up by, for a weak field, m\u00b7n\u00b7B over three kT.",
+    "name": "Langevin alignment",
+    "lhs": "A",
+    "form": "m * n * B / ( 3 * k * T )",
+    "expr": "m * n * B / ( 3 * k * T )",
+    "ask": "Find A for m = @{m}, n = @{n}, B = @{B}, k = @{k} and T = @{T}.",
+    "vars": {
+      "A": "alignment",
+      "m": "moment each",
+      "n": "crystals",
+      "B": "field",
+      "k": "Boltzmann constant",
+      "T": "temperature"
+    },
+    "given": {
+      "m": 2,
+      "n": 20,
+      "B": 0.05,
+      "k": 1,
+      "T": 4
+    },
+    "unit": "",
+    "method": "For a small field the Langevin function is about x/3, with x = mnB/kT: a longer chain steers better.",
+    "distractors": [
+      "2",
+      "+",
+      "e"
+    ],
+    "vary": {
+      "m": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "n": [
+        12.0,
+        28.0,
+        1.0
+      ],
+      "B": [
+        0.03,
+        0.07,
+        0.0001
+      ],
+      "k": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "T": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

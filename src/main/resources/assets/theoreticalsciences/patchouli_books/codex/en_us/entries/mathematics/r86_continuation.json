@@ -1,0 +1,18 @@
+{
+  "name": "Analytic Continuation",
+  "icon": "theoreticalsciences:analytic_continuator",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:analytic_continuator",
+      "text": "The $(item)Analytic Continuator$() is a console now, and built from early parts (Rational Fields, glass, clocks, iron and redstone)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It carries a function from where it is known to where it is wanted, a disc at a time. Set the disc radius \u03c1 and the terms N: each disc leaves about (\u03c1/R)^(N+1) of error, L/\u03c1 discs cover the distance, and the total must be under the recipe's tolerance. Bigger discs need fewer steps but more terms; past the radius of convergence the series diverges. Harder recipes carry it further and finer. Its calibration: match a waveform."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/real_analysis"
+}

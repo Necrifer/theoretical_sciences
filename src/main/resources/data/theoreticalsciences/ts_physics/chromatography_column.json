@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "u",
+      "unit": "cm/s",
+      "min": 0.5,
+      "max": 50,
+      "step": 0.01,
+      "default": 5
+    },
+    {
+      "id": "Tc",
+      "unit": "K",
+      "min": 300,
+      "max": 550,
+      "step": 0.1,
+      "default": 400
+    }
+  ],
+  "recipe_vars": {
+    "al": 2,
+    "k0": 2,
+    "hh": 1500
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Hh",
+      "unit": "cm",
+      "expr": "(0.02 + 0.5*(Tc/400)^1.75/u + 0.02*u)*(1 + 0.03*d)",
+      "formula": "H = A + B/u + C\u00b7u"
+    },
+    {
+      "id": "Np",
+      "unit": "",
+      "expr": "100*size/Hh",
+      "formula": "N = L/H"
+    },
+    {
+      "id": "kf",
+      "unit": "",
+      "expr": "k0*exp(hh*(1/Tc - 1/400))",
+      "formula": "k = k\u2080\u00b7e^(h(1/T \u2212 1/T\u2080))"
+    },
+    {
+      "id": "Rs",
+      "unit": "",
+      "expr": "sqrt(Np)/4*(al - 1)/al*kf/(1 + kf)",
+      "formula": "Rs = (\u221aN/4)\u00b7((\u03b1\u22121)/\u03b1)\u00b7(k/(1+k))"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(u/5, 0.1, 4)",
+  "rate_formula": "rate = u / 5 cm/s",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

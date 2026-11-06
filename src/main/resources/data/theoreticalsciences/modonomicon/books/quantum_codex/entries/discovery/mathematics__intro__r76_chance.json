@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__r76_chance",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__r76_chance.desc",
+  "icon": {
+    "item": "theoreticalsciences:statistics_engine"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 26,
+  "y": 81,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r76_chance.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__r76_chance"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r76_chance.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r37_chance"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/statistics"
+  }
+}

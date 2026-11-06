@@ -31,13 +31,16 @@ public final class FieldEnvironment {
     static final Map<ResourceKey<Level>, Map<BlockPos, FieldProjectorBlockEntity>> ACTIVE = new ConcurrentHashMap<>();
 
     static void add(FieldProjectorBlockEntity be) {
+        if (be.getLevel() == null || be.getLevel().isClientSide) return;        // 1.2.0: the server's own map only
         ACTIVE.computeIfAbsent(be.getLevel().dimension(), k -> new ConcurrentHashMap<>()).put(be.getBlockPos(), be);
     }
 
     static void remove(FieldProjectorBlockEntity be) {
-        if (be.getLevel() == null) return;
+        // 1.2.0: only the server's projector takes itself out, and only itself: in single player the client's copy
+        // unloading (with the chunk still loaded on the server) used to remove the server's field from this shared map
+        if (be.getLevel() == null || be.getLevel().isClientSide) return;
         var m = ACTIVE.get(be.getLevel().dimension());
-        if (m != null) m.remove(be.getBlockPos());
+        if (m != null) m.remove(be.getBlockPos(), be);
     }
 
     public static State natural(ResourceKey<Level> d) {
@@ -48,6 +51,7 @@ public final class FieldEnvironment {
         if (d == QHDimensions.BLACK_HOLE) return new State(1000, 3, 0.01, 0);
         if (d == QHDimensions.WHITE_HOLE) return new State(0.01, 3, 100, 0);
         if (d == QHDimensions.TRANSCENDENTAL) return new State(1, 11, 1, 3);
+        if (d == QHDimensions.TITAN) return new State(0.14, 3, 1, 0);      // 1.2.0: a seventh of Earth's gravity
         return State.NORMAL;
     }
 
@@ -78,7 +82,7 @@ public final class FieldEnvironment {
     }
 
     public static State at(Level level, BlockPos pos) {
-        State n = natural(level.dimension()), p = projected(level, pos);
+        State n = natural(com.theoreticalsciences.world.Strata.effective(level.dimension(), pos.getY())), p = projected(level, pos);
         if (p == null) return n;
         return new State(Double.isNaN(p.gravity()) ? n.gravity() : p.gravity(), p.dimensions() < 0 ? n.dimensions() : Math.max(n.dimensions(), p.dimensions()),
                 Double.isNaN(p.time()) ? n.time() : p.time(), p.vacuum() < 0 ? n.vacuum() : Math.max(n.vacuum(), p.vacuum()));

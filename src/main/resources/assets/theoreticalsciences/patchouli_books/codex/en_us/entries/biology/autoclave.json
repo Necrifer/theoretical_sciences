@@ -1,0 +1,36 @@
+{
+  "name": "Autoclave",
+  "icon": "theoreticalsciences:autoclave",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 173,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autoclave",
+      "title": "Autoclave",
+      "text": "A thick steel drum that fills with steam under pressure, hotter than boiling, until nothing alive is left inside.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the hold time and the steam temperature. Each D minutes at temperature kill nine in ten of what is there, and D falls tenfold for every 10 K hotter; the hold must reach the recipe's number of tenfold reductions (12 for a Sterile Pack). Shorter holds are faster. Above 410 K the packs scorch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Sterile Pack."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autoclave",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Autoclave$(): Antibody Bench"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/sterile_technique"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_anima_mundi",
+  "description": "book.theoreticalsciences.codex.chemistry.node_anima_mundi.desc",
+  "icon": {
+    "item": "theoreticalsciences:anima_mundi_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 151,
+  "y": 57,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:anima_mundi_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_anima_mundi.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__essence_distillery",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/fractional_distillation"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Ammonium Nitrate",
+  "icon": "theoreticalsciences:ammonium_nitrate",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ammonium_nitrate",
+      "title": "Ammonium Nitrate",
+      "text": "NH\u2084NO\u2083: half the world's fertiliser. It dissolves so endothermically that a bag of it in water goes ice-cold - and, heated, it can detonate."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Heat-Pack Reactor$().$(br2)$(thing)Unlocked by$(): Thermochemical Cycles.$(br2)$(thing)Used in$(): Cold Pack Solution, Tincture of Balance."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/thermochemical_cycles"
+}

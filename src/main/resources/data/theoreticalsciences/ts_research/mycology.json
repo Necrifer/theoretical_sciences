@@ -1,0 +1,60 @@
+{
+  "title": "Mycology",
+  "description": "Fungi are threads, not plants: they feel their way through the ground and digest it from outside. Unlocks the Mycelium Bed, Mould Cultures and Antibiotics.",
+  "icon": "theoreticalsciences:mould_culture",
+  "x": 7,
+  "y": 21,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:microbiology"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:bread",
+      "count": 4
+    },
+    {
+      "item": "minecraft:brown_mushroom",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A mould colony starts at radius a and its edge advances v millimetres a day. Write its radius R after t days.",
+    "name": "Hyphal front",
+    "lhs": "R",
+    "form": "a + v * t",
+    "expr": "a + v * t",
+    "ask": "Find R for a = @{a}, v = 3 and t = @{t}.",
+    "vars": {
+      "R": "radius",
+      "a": "starting radius",
+      "v": "edge speed",
+      "t": "days"
+    },
+    "given": {
+      "a": 2,
+      "v": 3,
+      "t": 5
+    },
+    "unit": "mm",
+    "method": "Only the tips of the threads grow, so the edge moves at a steady speed: a straight line in time.",
+    "distractors": [
+      "e",
+      "2",
+      "-"
+    ],
+    "vary": {
+      "a": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "t": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

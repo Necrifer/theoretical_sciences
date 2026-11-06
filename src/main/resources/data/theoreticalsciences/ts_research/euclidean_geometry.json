@@ -1,0 +1,61 @@
+{
+  "title": "Euclid's Elements",
+  "description": "Five postulates, a compass and a straightedge, and from them every triangle, circle and solid of the old geometry. Unlocks the Geometer's Table.",
+  "icon": "theoreticalsciences:pi_crystal",
+  "x": 1,
+  "y": 6,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:number_systems",
+    "theoreticalsciences:geodesy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "minecraft:compass",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A triangle has sides a and b with the angle C between them. Write Q, the square of the third side.",
+    "name": "Law of cosines",
+    "lhs": "Q",
+    "form": "a ^ 2 + b ^ 2 - 2 * a * b * cos ( C )",
+    "expr": "a ^ 2 + b ^ 2 - 2 * a * b * cos ( C )",
+    "ask": "Find Q for a = 3, b = @{b} and C = @{C} rad (a right angle).",
+    "vars": {
+      "Q": "third side squared",
+      "a": "first side",
+      "b": "second side",
+      "C": "angle between them (rad)"
+    },
+    "given": {
+      "a": 3,
+      "b": 4,
+      "C": 1.5708
+    },
+    "unit": "",
+    "method": "Drop a perpendicular from the far corner and use Pythagoras twice; at a right angle cos C = 0 and it is Pythagoras.",
+    "distractors": [
+      "sin",
+      "+",
+      "c"
+    ],
+    "vary": {
+      "b": [
+        2.0,
+        6.0,
+        1.0
+      ],
+      "C": [
+        0.94,
+        2.2,
+        0.01
+      ]
+    }
+  }
+}

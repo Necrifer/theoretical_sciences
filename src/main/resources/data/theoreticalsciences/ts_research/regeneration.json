@@ -1,0 +1,62 @@
+{
+  "title": "Regeneration",
+  "description": "An axolotl regrows a whole limb from the stump, reading a gradient to know what goes where. Unlocks Grown Organs, which mend worn gear.",
+  "icon": "theoreticalsciences:grown_organ",
+  "x": 6,
+  "y": 25,
+  "insight": 150,
+  "requires": [
+    "theoreticalsciences:stem_cells",
+    "theoreticalsciences:morphogenesis",
+    "theoreticalsciences:circulation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stem_cell_culture",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bone",
+      "count": 4
+    }
+  ],
+  "time": 510,
+  "puzzle": {
+    "goal": "A morphogen made at one end and broken down everywhere falls off as it spreads. Write its level c at distance x, from a source c0 and a decay length L.",
+    "name": "Exponential gradient",
+    "lhs": "y",
+    "form": "a * exp ( - x / L )",
+    "expr": "a * exp ( - x / L )",
+    "ask": "Find y for a = @{a}, x = 3 and L = @{L}.",
+    "vars": {
+      "y": "level",
+      "a": "source level",
+      "x": "distance",
+      "L": "decay length"
+    },
+    "given": {
+      "a": 100,
+      "x": 3,
+      "L": 2
+    },
+    "unit": "",
+    "method": "Spread balanced against breakdown gives an exponential fall, decay length sqrt(D/k): each cell reads its own place.",
+    "distractors": [
+      "+",
+      "2",
+      "ln"
+    ],
+    "vary": {
+      "a": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "L": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

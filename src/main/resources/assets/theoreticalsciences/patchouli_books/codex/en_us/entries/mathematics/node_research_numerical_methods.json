@@ -1,0 +1,19 @@
+{
+  "name": "Numerical Methods",
+  "icon": "theoreticalsciences:rate_table",
+  "advancement": "theoreticalsciences:research/numerical_methods",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 508,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:rate_table",
+      "title": "Numerical Methods",
+      "text": "$(thing)Numerical Methods$()$(br2)When an equation will not be solved, guess, and improve the guess. Newton's method doubles the correct digits at every step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): Fixed Points.$(br2)$(thing)Samples$(): 1 Rate Table.$(br2)$(thing)Derivation$(): To find the square root of S from a guess x, write the next, better guess X (Heron's way)."
+    }
+  ]
+}

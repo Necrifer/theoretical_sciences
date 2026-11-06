@@ -1,51 +1,51 @@
 {
-  "title": "Extreme Value Theory",
-  "description": "The largest of many random draws follows its own law - and the rarest events are less rare than a bell curve says. Black swans happen.",
-  "icon": "theoreticalsciences:large_deviation_shard",
-  "x": 12,
-  "y": -4,
-  "insight": 130,
-  "requires": [
-    "theoreticalsciences:distributions"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:normal_distribution_crystal",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:entropy_die",
-      "count": 1
-    }
-  ],
-  "time": 420,
-  "puzzle": {
-    "goal": "Draw n numbers from a standard bell curve. Write the size m the largest of them typically has.",
-    "name": "Gumbel scaling",
-    "lhs": "m",
-    "form": "sqrt ( 2 * ln ( n ) )",
-    "expr": "sqrt ( 2 * ln ( n ) )",
-    "ask": "Find m for n = @{n} draws.",
-    "vars": {
-      "m": "typical maximum (\u03c3)",
-      "n": "draws"
-    },
-    "given": {
-      "n": 1000000
-    },
-    "unit": "\u03c3",
-    "method": "The maximum sits where the tail's chance, about e^(\u2212m\u00b2/2), times n is about one.",
-    "distractors": [
-      "\u03c0",
-      "e",
-      "3"
-    ],
-    "vary": {
-      "n": [
-        600000.0,
-        1400000.0,
-        10000.0
-      ]
-    }
+ "title": "Extreme Value Theory",
+ "description": "The largest of many random draws follows its own law, and the rarest events are less rare than a bell curve says. Black swans happen.",
+ "icon": "theoreticalsciences:large_deviation_shard",
+ "x": 12,
+ "y": -4,
+ "insight": 130,
+ "requires": [
+  "theoreticalsciences:distributions"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:normal_distribution_crystal",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:entropy_die",
+   "count": 1
   }
+ ],
+ "time": 420,
+ "puzzle": {
+  "goal": "Draw n numbers from a standard bell curve. Write the size m the largest of them typically has.",
+  "name": "Gumbel scaling",
+  "lhs": "m",
+  "form": "sqrt ( 2 * ln ( n ) )",
+  "expr": "sqrt ( 2 * ln ( n ) )",
+  "ask": "Find m for n = @{n} draws.",
+  "vars": {
+   "m": "typical maximum (σ)",
+   "n": "draws"
+  },
+  "given": {
+   "n": 1000000
+  },
+  "unit": "σ",
+  "method": "The maximum sits where the tail's chance, about e^(−m²/2), times n is about one.",
+  "distractors": [
+   "π",
+   "e",
+   "3"
+  ],
+  "vary": {
+   "n": [
+    600000.0,
+    1400000.0,
+    10000.0
+   ]
+  }
+ }
 }

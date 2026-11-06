@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_capacitor_bank",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_capacitor_bank.desc",
+  "icon": {
+    "item": "theoreticalsciences:capacitor_bank"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 28,
+  "y": 92,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:capacitor_bank"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_capacitor_bank.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_capacitor_bank.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__tesla_coil",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/resonant_circuits"
+  }
+}

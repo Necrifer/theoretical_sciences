@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:graph_weaving",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photonic_board",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:photonic_die",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:network_map",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:photonic_processor",
+      "count": 5
+    }
+  ],
+  "energy": 768,
+  "duration": 75,
+  "research": "theoreticalsciences:shortest_paths",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "q": 0.05,
+      "tol": 1e-05,
+      "vmin": 12.0
+    },
+    "windows": [
+      {
+        "q": "fail",
+        "min": -1.0,
+        "max": 1e-05
+      },
+      {
+        "q": "reach",
+        "min": 12.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

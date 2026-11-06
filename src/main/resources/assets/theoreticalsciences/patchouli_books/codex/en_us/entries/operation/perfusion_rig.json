@@ -1,0 +1,24 @@
+{
+  "name": "Perfusion Rig",
+  "icon": "theoreticalsciences:perfusion_rig",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 99,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Flow through a fine vessel follows Poiseuille: Q = pi.r^4.dP / 8.eta.L, so halving the radius cuts the flow sixteenfold. The wall feels a shear pi.r.dP / 2.L.A; too much and it tears."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Vessel radius, Pressure.$(br2)$(thing)Disturbance$(): Pulsing pump: the flow varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too much shear: the vessel tears.$(br2)$(thing)Rate$(): More flow is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Flow: Q = pi.r^4.dP / 8.eta.L$(br)Wall shear: tau = r.dP / 2.L"
+    }
+  ]
+}

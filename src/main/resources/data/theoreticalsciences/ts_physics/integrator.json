@@ -1,0 +1,57 @@
+{
+  "params": [
+    {
+      "id": "h",
+      "unit": "s",
+      "min": 0.001,
+      "max": 1,
+      "step": 0.001,
+      "default": 0.1
+    },
+    {
+      "id": "m",
+      "unit": "",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "k": 5,
+    "tol": 0.01
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "z",
+      "unit": "",
+      "expr": "h*k",
+      "formula": "z = hk"
+    },
+    {
+      "id": "err",
+      "unit": "",
+      "expr": "z^(m + 1)/(m + 1)*(1 + 0.02*d)",
+      "formula": "\u03b5 \u2248 (hk)^(m+1)/(m+1)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "blowup",
+      "kind": "stop",
+      "expr": "2 + 0.785*step(m - 3.5) - z",
+      "formula": "hk < 2 (2.785 at order 4)"
+    }
+  ],
+  "rate": "clamp(z*6/m, 0.1, 4)",
+  "rate_formula": "rate = 6hk / m",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

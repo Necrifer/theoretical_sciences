@@ -1,0 +1,55 @@
+{
+  "title": "Groups and Symmetry",
+  "description": "A symmetry is a way to move something and leave it looking the same. Do two, and that is a symmetry too: they form a group. Unlocks the Symmetry Lathe.",
+  "icon": "theoreticalsciences:symmetry_crystal",
+  "x": 0,
+  "y": 8,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:euclidean_geometry",
+    "theoreticalsciences:combinatorics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A necklace has n beads (n a prime) in k colours; two necklaces are the same if one turns into the other. Write how many different necklaces N there are.",
+    "name": "Counting by symmetry",
+    "lhs": "N",
+    "form": "( k ^ n + ( n - 1 ) * k ) / n",
+    "expr": "( k ^ n + ( n - 1 ) * k ) / n",
+    "ask": "Find N for n = @{n} beads and k = @{k} colours.",
+    "vars": {
+      "N": "different necklaces",
+      "n": "beads (prime)",
+      "k": "colours"
+    },
+    "given": {
+      "n": 5,
+      "k": 2
+    },
+    "unit": "",
+    "method": "Average, over the n turns, the colourings each one leaves alone: all k\u207f for no turn, only the k plain ones for every other.",
+    "distractors": [
+      "\u03c0",
+      "2",
+      "m"
+    ],
+    "vary": {
+      "n": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "k": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "params": [
+    {
+      "id": "per",
+      "unit": "h",
+      "min": 20,
+      "max": 28,
+      "step": 0.1,
+      "default": 24
+    },
+    {
+      "id": "ph",
+      "unit": "h",
+      "min": 0,
+      "max": 24,
+      "step": 0.1,
+      "default": 6
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "lock",
+      "unit": "",
+      "expr": "(1 - min(1, abs(per - 24)/4))*(1 - 0.02*d)",
+      "formula": "locks when |period - 24| is small"
+    },
+    {
+      "id": "active",
+      "unit": "",
+      "expr": "(0.5 + 0.5*cos((ph - 6)*0.2618))",
+      "formula": "peaks when the active phase meets daylight"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(lock*active*4, 0.1, 4)",
+  "rate_formula": "rate = 4 . entrainment . active",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

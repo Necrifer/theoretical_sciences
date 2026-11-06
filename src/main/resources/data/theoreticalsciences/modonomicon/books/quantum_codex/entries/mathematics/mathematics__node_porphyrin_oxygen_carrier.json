@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_porphyrin_oxygen_carrier",
+  "description": "book.theoreticalsciences.codex.mathematics.node_porphyrin_oxygen_carrier.desc",
+  "icon": {
+    "item": "theoreticalsciences:porphyrin_oxygen_carrier"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 120,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:porphyrin_oxygen_carrier"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_porphyrin_oxygen_carrier.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_porphyrin_oxygen_carrier.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__enzyme_assay_bench",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/enzyme_kinetics"
+  }
+}

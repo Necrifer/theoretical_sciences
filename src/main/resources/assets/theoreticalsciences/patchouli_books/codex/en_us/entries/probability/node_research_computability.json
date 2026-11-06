@@ -1,0 +1,19 @@
+{
+  "name": "Computability",
+  "icon": "theoreticalsciences:random_number_chip",
+  "advancement": "theoreticalsciences:research/computability",
+  "category": "theoreticalsciences:probability",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:random_number_chip",
+      "title": "Computability",
+      "text": "$(thing)Computability$()$(br2)Turing imagined the simplest machine that can compute anything, and proved it cannot always tell whether it will ever stop."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 110$(br2)$(thing)Builds on$(): Algorithms, Formal Logic.$(br2)$(thing)Samples$(): 2 Proof Certificate.$(br2)$(thing)Derivation$(): Count the Turing machines with n states that read and write two symbols: each state and symbol needs a symbol to write, a way to move and a next state (or halt). Write how many machines N there are."
+    }
+  ]
+}

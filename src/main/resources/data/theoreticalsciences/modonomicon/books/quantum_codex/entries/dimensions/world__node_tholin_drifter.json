@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_tholin_drifter",
+  "description": "book.theoreticalsciences.codex.world.node_tholin_drifter.desc",
+  "icon": {
+    "item": "theoreticalsciences:tholin_drifter_spawn_egg"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 127,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tholin_drifter_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_tholin_drifter.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r68_titan_life",
+      "draw_arrow": false
+    }
+  ]
+}

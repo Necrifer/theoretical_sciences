@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.intro__r52_maxwell",
+  "description": "book.theoreticalsciences.codex.electromagnetism.intro__r52_maxwell.desc",
+  "icon": {
+    "item": "theoreticalsciences:waveguide"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 54,
+  "y": 36,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r52_maxwell.p0",
+      "title": "book.theoreticalsciences.codex.electromagnetism.intro__r52_maxwell"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r52_maxwell.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r37_induction"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r38_generator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

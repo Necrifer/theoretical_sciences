@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:mycelium_growth",
+  "item_inputs": [
+    {
+      "item": "minecraft:bread",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mould_culture",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:mycology",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Topt": 298.0
+    },
+    "windows": [
+      {
+        "q": "grow",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

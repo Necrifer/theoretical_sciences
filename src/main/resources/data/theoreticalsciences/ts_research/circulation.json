@@ -1,0 +1,53 @@
+{
+  "title": "Circulation",
+  "description": "The heart pushes blood through vessels that branch finer and finer; the flow in each follows the fourth power of its radius. Unlocks Perfused Tissue.",
+  "icon": "theoreticalsciences:perfused_tissue",
+  "x": 3,
+  "y": 25,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:physiology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 2
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 4
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "Flow through a vessel goes as the fourth power of its radius (Poiseuille). A vessel of radius r carries a base flow; write the flow Q for radius r, from a constant c.",
+    "name": "Fourth-power flow",
+    "lhs": "Q",
+    "form": "c * r ^ 4",
+    "expr": "c * r ^ 4",
+    "ask": "Find Q for c = @{c} and r = 3.",
+    "vars": {
+      "Q": "flow",
+      "c": "constant",
+      "r": "radius"
+    },
+    "given": {
+      "c": 2,
+      "r": 3
+    },
+    "unit": "",
+    "method": "Poiseuille: Q = pi.r^4.dP / 8.eta.L, so a small change in radius is a large change in flow.",
+    "distractors": [
+      "+",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "c": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

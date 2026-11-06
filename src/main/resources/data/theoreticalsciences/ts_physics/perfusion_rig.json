@@ -1,0 +1,57 @@
+{
+  "params": [
+    {
+      "id": "rv",
+      "unit": "um",
+      "min": 5,
+      "max": 200,
+      "step": 0.1,
+      "default": 50
+    },
+    {
+      "id": "dP",
+      "unit": "kPa",
+      "min": 1,
+      "max": 50,
+      "step": 0.1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "eta": 3,
+    "Lv": 10
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Qf",
+      "unit": "nL/s",
+      "expr": "3.14159*rv^4*dP/(8*eta*Lv)*1e-6*(1 - 0.02*d)",
+      "formula": "Q = pi.r^4.dP / 8.eta.L"
+    },
+    {
+      "id": "shear",
+      "unit": "Pa",
+      "expr": "rv*dP/(2*Lv)",
+      "formula": "tau = r.dP / 2.L"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "tear",
+      "kind": "stop",
+      "expr": "10 - shear",
+      "formula": "tau < 10 Pa"
+    }
+  ],
+  "rate": "clamp(Qf/20, 0.1, 4)",
+  "rate_formula": "rate = Q / 20",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

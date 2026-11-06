@@ -1,0 +1,19 @@
+{
+  "name": "Methanol",
+  "icon": "theoreticalsciences:methanol_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:methanol_cell",
+      "title": "Methanol",
+      "text": "Wood alcohol: made from carbon monoxide and hydrogen over copper, and a fuel and solvent in its own right."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Nebular Chemistry.$(br2)$(thing)Used in$(): Chiral Ligand, Enantiopure Reagent, Fine Reagent, MOF Gas Sorbent, Metal-Organic Framework, Organic Evaporite, Silica Aerogel, Tholin."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/nebular_chemistry"
+}

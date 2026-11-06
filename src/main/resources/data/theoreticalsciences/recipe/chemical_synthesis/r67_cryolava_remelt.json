@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cryolava_rock",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:cryolava",
+      "amount": 3297
+    }
+  ],
+  "energy": 128,
+  "duration": 50,
+  "research": "theoreticalsciences:titan_lakes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 51.5,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

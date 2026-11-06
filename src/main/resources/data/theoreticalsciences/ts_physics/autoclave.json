@@ -1,0 +1,56 @@
+{
+  "params": [
+    {
+      "id": "th",
+      "unit": "min",
+      "min": 1,
+      "max": 60,
+      "step": 0.1,
+      "default": 15
+    },
+    {
+      "id": "Ts",
+      "unit": "K",
+      "min": 373,
+      "max": 420,
+      "step": 0.1,
+      "default": 394
+    }
+  ],
+  "recipe_vars": {
+    "D121": 1.5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Dv",
+      "unit": "min",
+      "expr": "D121*10^((394.15 - Ts)/10)",
+      "formula": "D(T) = D\u2081\u2082\u2081\u00b710^((394 \u2212 T)/10)"
+    },
+    {
+      "id": "logred",
+      "unit": "",
+      "expr": "th/Dv*(1 - 0.02*d)",
+      "formula": "log N\u2080/N = t / D"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "scorch",
+      "kind": "stop",
+      "expr": "410 - Ts",
+      "formula": "T < 410 K"
+    }
+  ],
+  "rate": "clamp(30/th, 0.1, 4)",
+  "rate_formula": "rate = 30 / t",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

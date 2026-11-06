@@ -1,0 +1,18 @@
+{
+  "name": "Spectroscopy",
+  "icon": "theoreticalsciences:infrared_spectrometer",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 31,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:infrared_spectrometer,theoreticalsciences:nmr_spectrometer,theoreticalsciences:structure_card",
+      "text": "Each bond absorbs infrared at its own vibration, $(thing)\u03bd = \u221a(k/\u03bc)/2\u03c0$(). The $(item)Infrared Spectrometer$() must scan across the band, narrowly enough to resolve it: a $(item)Structure Card$(). With one in its catalyst slot, the Synthesis Bench knows its target and takes a shorter route."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)NMR Spectrometer$() listens to nuclei in a superconducting magnet: they resonate at $(thing)f = \u03b3B/2\u03c0$(). Keep it below 10 K (superfluid helium in its coolant loop) and the field under 22 T, or it quenches. Its readings are worth Insight."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/infrared_spectroscopy"
+}

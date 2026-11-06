@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.intro__anomaly_origin_pathology",
+  "description": "book.theoreticalsciences.codex.anomaly.intro__anomaly_origin_pathology.desc",
+  "icon": {
+    "item": "theoreticalsciences:undecidable_kernel"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 60,
+  "y": 71,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_origin_pathology.p0",
+      "title": "book.theoreticalsciences.codex.anomaly.intro__anomaly_origin_pathology"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_origin_pathology.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_intro"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/pathological_objects"
+  }
+}

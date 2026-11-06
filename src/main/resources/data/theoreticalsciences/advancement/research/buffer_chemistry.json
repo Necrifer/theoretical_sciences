@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:buffer_tank"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.buffer_chemistry"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.buffer_chemistry.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/acids_and_bases",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

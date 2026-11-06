@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:mycelium_growth",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:physarum_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:wheat",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:network_map",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:slime_moulds",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Topt": 295.0
+    },
+    "windows": [
+      {
+        "q": "grow",
+        "min": 0.9,
+        "max": 2.0
+      }
+    ]
+  }
+}

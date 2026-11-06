@@ -1,0 +1,30 @@
+{
+  "name": "Microbes",
+  "icon": "theoreticalsciences:phage_lab",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phage_lab,theoreticalsciences:mycelium_bed,theoreticalsciences:bacterial_culture,theoreticalsciences:antibiotic",
+      "text": "Life too small to see: bacteria, the viruses that eat them, and the fungi that feel their way through the ground."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Microbiology$(): the $(item)Fermenter$() grows $(item)Bacterial Cultures$() with air. $(thing)Biomineralisation$(): magnetotactic bacteria, kept short of air (1 to 10%), grow $(item)Magnetite$() from iron nuggets. $(thing)Probiotics$(): lactobacilli, with no air at all, make the $(item)Probiotic Seal$(), an upgrade that keeps a Biology console from ever being contaminated."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Viruses$(): the $(item)Phage Lab$() sets how many phages each cell meets. The share hit is 1 \u2212 e^(\u2212MOI), and each bursts after its latent period; too many phages burst the cells from outside. $(thing)Lysogeny$(): phages that write themselves into a genome deliver genes, a cheap Recombinant DNA."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Mycology$(): the $(item)Mycelium Bed$() grows mould from old bread: growth peaks at its temperature and wants damp, but too wet and bacteria take the bed. Mould gives $(item)Antibiotics$(): cheap cleaning for a contaminated machine, but each dose on the same machine works less often. That is resistance, made by selection."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Slime Moulds$(): $(item)Physarum$() links food sources with the shortest network it can, and makes Network Maps cheaply: Mathematics' graphs, alive."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/microbiology"
+}

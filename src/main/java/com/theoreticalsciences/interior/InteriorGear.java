@@ -56,9 +56,11 @@ public final class InteriorGear {
         REFRACTORY("refractory_suit", 3, 7, 6, 3, 2F, 0.1F, "corundum"),
         PRESSURE("pressure_suit", 3, 8, 6, 3, 3F, 0.15F, "bridgmanite"),
         /** 1.10.0: a thin bumper that shatters micrometeorites before they reach the wall behind it (the Asteroid Belt). */
-        WHIPPLE("whipple_shield", 2, 6, 5, 2, 1F, 0F, "fused_silica"),
+        WHIPPLE("whipple_shield", 2, 6, 5, 2, 1F, 0F, "ceramic_armour_plate"),   // 1.2.0: mended with its own ceramic
         /** 1.10.1: one piece for each of the Frontier's other hazards (see FrontierHazards). */
-        FRONTIER("frontier_suit", 3, 7, 6, 3, 2F, 0.05F, "station_hull");
+        FRONTIER("frontier_suit", 3, 7, 6, 3, 2F, 0.05F, "station_hull"),
+        /** 1.2.0: a Pressure Suit lined with aerogel and threaded with heating wire, against Titan's 94 K (see TitanHazards). */
+        HEATED("heated_pressure_suit", 3, 8, 6, 3, 3F, 0.15F, "silica_aerogel");
 
         public final String id;
         final Holder<ArmorMaterial> material;
@@ -115,7 +117,7 @@ public final class InteriorGear {
 
     /** Levels of Lithostatic Pressure the player's pressure suit takes off. */
     public static int pressureRelief(Player p) {
-        int n = pieces(p, Suit.PRESSURE);
+        int n = pieces(p, Suit.PRESSURE) + pieces(p, Suit.HEATED);     // 1.2.0: the heated suit is still a pressure suit underneath
         return n >= 4 ? 99 : n;
     }
 

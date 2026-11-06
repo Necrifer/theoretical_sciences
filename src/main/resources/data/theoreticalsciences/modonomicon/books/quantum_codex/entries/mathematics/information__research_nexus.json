@@ -5,8 +5,8 @@
     "item": "theoreticalsciences:research_nexus"
   },
   "category": "theoreticalsciences:mathematics",
-  "x": 47,
-  "y": 26,
+  "x": 18,
+  "y": 55,
   "hide_while_locked": false,
   "background_u_index": 0,
   "background_v_index": 0,
@@ -42,7 +42,11 @@
       "text": "book.theoreticalsciences.codex.information.research_nexus.p5"
     }
   ],
-  "parents": [],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__r74_structure"
+    }
+  ],
   "condition": {
     "type": "modonomicon:advancement",
     "advancement_id": "theoreticalsciences:research/research_synthesis"

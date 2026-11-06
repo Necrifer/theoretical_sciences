@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:symmetry_turning",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lie_group_lattice",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:complex_plane",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:magnetic_monopole",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quaternion_crystal",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:abstract_algebra",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "G": 8.0
+    },
+    "windows": [
+      {
+        "q": "match",
+        "min": 1.0,
+        "max": 1.0
+      }
+    ]
+  }
+}

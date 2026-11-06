@@ -1,0 +1,19 @@
+{
+  "name": "Eutectic Brine",
+  "icon": "theoreticalsciences:eutectic_brine_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:eutectic_brine_cell",
+      "title": "Eutectic Brine",
+      "text": "Salt and ice together melt at minus twenty-one degrees - the coldest a mixture of the two can get, and the old way to make ice cream."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Heat-Pack Reactor$().$(br2)$(thing)Unlocked by$(): Thermochemical Cycles."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/thermochemical_cycles"
+}

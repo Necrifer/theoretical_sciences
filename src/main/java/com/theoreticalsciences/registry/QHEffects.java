@@ -130,6 +130,121 @@ public final class QHEffects {
                 }
             }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, TheoreticalSciences.id("spaghetti_speed"), -0.35, MUL));
 
+    // ------------------------------------------------------------------ 1.2.0: infections (from the containment-failure creatures)
+    /** Fracture (a Destabilised Husk's hit): every so often you slip a few blocks through space. */
+    public static final DeferredHolder<MobEffect, MobEffect> FRACTURE = EFFECTS.register("fracture",
+            () -> new com.theoreticalsciences.bio.InfectionEffect(MobEffectCategory.HARMFUL, 0x80FFE0) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    for (int k = 0; k < 8; k++) {
+                        double dx = (e.getRandom().nextDouble() - 0.5) * 6, dz = (e.getRandom().nextDouble() - 0.5) * 6;
+                        if (e.level().noCollision(e, e.getBoundingBox().move(dx, 0, dz))
+                                && !e.level().getBlockState(e.blockPosition().offset((int) Math.floor(dx), -1, (int) Math.floor(dz))).isAir()) {
+                            e.teleportTo(e.getX() + dx, e.getY(), e.getZ() + dz);
+                            break;
+                        }
+                    }
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 200 == 0;
+                }
+            });
+    /** Grey Goo (a Nanite Swarm's hit): the nanites burn your food from inside. */
+    public static final DeferredHolder<MobEffect, MobEffect> GREY_GOO = EFFECTS.register("grey_goo",
+            () -> new com.theoreticalsciences.bio.InfectionEffect(MobEffectCategory.HARMFUL, 0x909090) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    if (e instanceof Player p) p.causeFoodExhaustion(0.6F);
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 20 == 0;
+                }
+            });
+    /** Rewind (a Paradox Echo's hit): every fifteen seconds you are pulled back to where you stood ten seconds before (bio.Immunity). */
+    public static final DeferredHolder<MobEffect, MobEffect> REWIND = EFFECTS.register("rewind",
+            () -> new com.theoreticalsciences.bio.InfectionEffect(MobEffectCategory.HARMFUL, 0xFFC040) {});
+    /** Hollowing (a Void Wraith's hit): a little of you is nothing now. Less health while it lasts. */
+    public static final DeferredHolder<MobEffect, MobEffect> HOLLOWING = EFFECTS.register("hollowing",
+            () -> new com.theoreticalsciences.bio.InfectionEffect(MobEffectCategory.HARMFUL, 0x202030) {}
+                    .addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, TheoreticalSciences.id("hollowing_health"), -6,
+                            net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE));
+    /** 1.2.0: Metastasis (the Tumour Hydra's bite): every ten seconds the growth spreads to somewhere new: weakness, hunger or slowness. */
+    public static final DeferredHolder<MobEffect, MobEffect> METASTASIS = EFFECTS.register("metastasis",
+            () -> new com.theoreticalsciences.bio.InfectionEffect(MobEffectCategory.HARMFUL, 0xFF6090) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    var all = java.util.List.of(net.minecraft.world.effect.MobEffects.WEAKNESS, net.minecraft.world.effect.MobEffects.HUNGER,
+                            net.minecraft.world.effect.MobEffects.MOVEMENT_SLOWDOWN);
+                    e.addEffect(new net.minecraft.world.effect.MobEffectInstance(all.get(e.getRandom().nextInt(all.size())), 120, 0));
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 200 == 0;
+                }
+            });
+    /** 1.2.0: the Mirror Plague (a Mirror Microbe's touch): nothing in you can break it down. Less health, and it burns your food. */
+    public static final DeferredHolder<MobEffect, MobEffect> MIRROR_PLAGUE = EFFECTS.register("mirror_plague",
+            () -> new com.theoreticalsciences.bio.InfectionEffect(MobEffectCategory.HARMFUL, 0xC0F0FF) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    if (e instanceof Player p) p.causeFoodExhaustion(0.4F);
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 20 == 0;
+                }
+            }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, TheoreticalSciences.id("mirror_plague_health"), -4,
+                    net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE));
+    /** 1.2.0, Inner Space's Tissue: inflammation where fighting breaks out. Slower, and the heat hurts a little. */
+    public static final DeferredHolder<MobEffect, MobEffect> INFLAMMATION = EFFECTS.register("inflammation",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0xFF6040) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    e.hurt(e.damageSources().hotFloor(), 1.0F);
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 60 == 0;
+                }
+            }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, TheoreticalSciences.id("inflammation_speed"), -0.15, MUL));
+    /** Ward Overload (a ward renewed too soon): the imprint resonates against itself. */
+    public static final DeferredHolder<MobEffect, MobEffect> WARD_OVERLOAD = EFFECTS.register("ward_overload",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0xFF4040) {
+                @Override
+                public boolean applyEffectTick(LivingEntity e, int amp) {
+                    e.hurt(e.damageSources().magic(), 1.0F);
+                    return true;
+                }
+
+                @Override
+                public boolean shouldApplyEffectTickThisTick(int duration, int amp) {
+                    return duration % 40 == 0;
+                }
+            }.addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, TheoreticalSciences.id("storm_speed"), -0.25, MUL));
+
+    /** 1.2.0, Curved Space: through a Möbius arch and out mirrored. Left is right (the client swaps them) until it wears off. */
+    public static final DeferredHolder<MobEffect, MobEffect> MIRRORED = EFFECTS.register("mirrored",
+            () -> new MobEffect(MobEffectCategory.NEUTRAL, 0xA0C0FF) {});
+    /** 1.2.0, the Axioms: two contradictory effects at once (it is shown while the pair lasts). */
+    public static final DeferredHolder<MobEffect, MobEffect> CONTRADICTION = EFFECTS.register("contradiction",
+            () -> new MobEffect(MobEffectCategory.NEUTRAL, 0xFFFFFF) {});
+    /** 1.2.0, the Continuum: near a Fourier harp, the closer you get the slower you go (Zeno). */
+    public static final DeferredHolder<MobEffect, MobEffect> LIMIT = EFFECTS.register("limit",
+            () -> new MobEffect(MobEffectCategory.HARMFUL, 0x80FFC0) {}
+                    .addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, TheoreticalSciences.id("limit_speed"), -0.18, MUL));
+
     /** Time Dilation (inside the black and white holes): your clock runs slow against the world's. Slower moving, attacking and digging. */
     public static final DeferredHolder<MobEffect, MobEffect> TIME_DILATION = EFFECTS.register("time_dilation",
             () -> new MobEffect(MobEffectCategory.NEUTRAL, 0x8060FF) {}

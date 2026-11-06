@@ -1,0 +1,34 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r65_synthesis",
+  "description": "book.theoreticalsciences.codex.chemistry.r65_synthesis.desc",
+  "icon": {
+    "item": "theoreticalsciences:synthesis_bench"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 192,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:synthesis_bench"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r65_synthesis.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r60_acids"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__titration_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/organic_synthesis"
+  }
+}

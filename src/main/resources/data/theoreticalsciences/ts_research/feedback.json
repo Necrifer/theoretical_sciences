@@ -1,0 +1,49 @@
+{
+  "title": "Feedback",
+  "description": "Measure what a machine does, compare it with what it should do, and push it back by the difference. Every thermostat works this way.",
+  "icon": "theoreticalsciences:governor",
+  "x": 22,
+  "y": 2,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:stability"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A machine multiplies what goes in by G; what comes out is scaled by H and taken away from what goes in. Write the overall gain T, out over in.",
+    "name": "Black's loop",
+    "lhs": "T",
+    "form": "G / ( 1 + G * H )",
+    "expr": "G / ( 1 + G * H )",
+    "ask": "Find T for G = 100 and H = @{H}.",
+    "vars": {
+      "T": "overall gain",
+      "G": "forward gain",
+      "H": "returned share"
+    },
+    "given": {
+      "G": 100,
+      "H": 0.1
+    },
+    "unit": "",
+    "method": "out = G(in \u2212 H\u00b7out), so out(1 + GH) = G\u00b7in. With a large G it is close to 1/H, whatever G does.",
+    "distractors": [
+      "-",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "H": [
+        0.06,
+        0.14,
+        0.001
+      ]
+    }
+  }
+}

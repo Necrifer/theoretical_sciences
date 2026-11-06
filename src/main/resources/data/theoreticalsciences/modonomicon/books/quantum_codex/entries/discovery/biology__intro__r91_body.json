@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.intro__r91_body",
+  "description": "book.theoreticalsciences.codex.biology.intro__r91_body.desc",
+  "icon": {
+    "item": "theoreticalsciences:perfusion_rig"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 22,
+  "y": 71,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__r91_body.p0",
+      "title": "book.theoreticalsciences.codex.biology.intro__r91_body"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__r91_body.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__r88_cell"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__r88_cell"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/physiology"
+  }
+}

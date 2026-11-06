@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:construction",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:golden_ratio_glass",
+      "count": 15
+    }
+  ],
+  "energy": 256,
+  "duration": 50,
+  "research": "theoreticalsciences:constructions",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "tol": 0.01
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.01
+      }
+    ]
+  }
+}

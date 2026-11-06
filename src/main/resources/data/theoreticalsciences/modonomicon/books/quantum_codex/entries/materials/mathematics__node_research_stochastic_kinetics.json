@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_stochastic_kinetics",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_stochastic_kinetics.desc",
+  "icon": {
+    "item": "theoreticalsciences:microstate_tally"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 181,
+  "y": 117,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:microstate_tally"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_stochastic_kinetics.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_stochastic_kinetics.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__statistics_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stochastic_kinetics"
+  }
+}

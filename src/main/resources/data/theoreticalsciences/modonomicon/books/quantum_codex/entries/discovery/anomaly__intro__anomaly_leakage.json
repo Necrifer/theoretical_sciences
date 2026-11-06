@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.intro__anomaly_leakage",
+  "description": "book.theoreticalsciences.codex.anomaly.intro__anomaly_leakage.desc",
+  "icon": {
+    "item": "theoreticalsciences:law_violation_shard"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 69,
+  "y": 71,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_leakage.p0",
+      "title": "book.theoreticalsciences.codex.anomaly.intro__anomaly_leakage"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_leakage.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_origin_defects"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_systems"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/anomalous_leakage"
+  }
+}

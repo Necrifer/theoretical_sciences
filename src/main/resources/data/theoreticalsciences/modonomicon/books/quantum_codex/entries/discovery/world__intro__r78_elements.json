@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r78_elements",
+  "description": "book.theoreticalsciences.codex.world.intro__r78_elements.desc",
+  "icon": {
+    "item": "theoreticalsciences:euclidean_marble"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 13,
+  "y": 96,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r78_elements.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r78_elements"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r78_elements.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/geography__intro__r37_mapping"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/geography__intro__r39_sites"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euclidean_geometry"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r87_layers",
+  "description": "book.theoreticalsciences.codex.world.intro__r87_layers.desc",
+  "icon": {
+    "item": "theoreticalsciences:platonic_compass"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 15,
+  "y": 89,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r87_layers.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r87_layers"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r87_layers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__intro__math_overview"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/platonic_realm"
+  }
+}

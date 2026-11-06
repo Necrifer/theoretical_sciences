@@ -68,10 +68,12 @@ public class PlatonicSolidFeature extends Feature<NoneFeatureConfiguration> {
             case 1, 2 -> 5 + r.nextInt(3);
             default -> 6 + r.nextInt(4);
         };
-        BlockPos c = ctx.origin().atY(70 + r.nextInt(70));
-        BlockState stone = QHBlocks.get("axiom_stone").defaultBlockState();
+        // 1.2.0: placed with a height (the Elements' solids, y 214 to 244), it floats there, in Euclid's marble
+        boolean elements = ctx.origin().getY() >= Strata.ELEMENTS;
+        BlockPos c = elements ? ctx.origin() : ctx.origin().atY(70 + r.nextInt(70));
+        BlockState stone = QHBlocks.get(elements ? "euclidean_marble" : "axiom_stone").defaultBlockState();
         BlockState glass = QHBlocks.get("golden_ratio_glass").defaultBlockState();
-        BlockState prime = QHBlocks.get("prime_number_ore").defaultBlockState();
+        BlockState prime = QHBlocks.get(elements ? "euclidean_ore" : "prime_number_ore").defaultBlockState();
         int R = 15;
         for (int x = -R; x <= R; x++)
             for (int y = -R; y <= R; y++)

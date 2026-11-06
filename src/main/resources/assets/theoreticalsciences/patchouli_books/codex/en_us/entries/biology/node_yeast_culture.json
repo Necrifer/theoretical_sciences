@@ -1,0 +1,19 @@
+{
+  "name": "Yeast Culture",
+  "icon": "theoreticalsciences:yeast_culture",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:yeast_culture",
+      "title": "Yeast Culture",
+      "text": "Budding yeast, Saccharomyces cerevisiae: given air it grows, and without air it ferments sugar to alcohol and carbon dioxide. It dies if carried about too long. Made in the Fermenter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Fermenter$().$(br2)$(thing)Found in$(): Bsl4 Field Station chests.$(br2)$(thing)Unlocked by$(): Fermentation.$(br2)$(thing)Used in$(): Nucleotide, Nutrient Broth."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fermentation"
+}

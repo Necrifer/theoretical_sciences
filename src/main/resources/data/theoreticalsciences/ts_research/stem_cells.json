@@ -1,0 +1,57 @@
+{
+  "title": "Stem Cells",
+  "description": "A cell that can become any other, waiting to be told which. The seed of every organ, and of regrowing one. Unlocks the Regeneration Tank.",
+  "icon": "theoreticalsciences:regeneration_tank",
+  "x": 5,
+  "y": 24,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:physiology",
+    "theoreticalsciences:synthetic_biology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stem_cell_culture",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "A culture of stem cells doubles every d days. Write how many, M, there are after t days, from a start of N.",
+    "name": "Doubling count",
+    "lhs": "M",
+    "form": "N * 2 ^ ( t / h )",
+    "expr": "N * 2 ^ ( t / h )",
+    "ask": "Find M for N = @{N}, t = @{t} and h = 2.",
+    "vars": {
+      "M": "cells",
+      "N": "at first",
+      "t": "time",
+      "h": "doubling time"
+    },
+    "given": {
+      "N": 50,
+      "t": 6,
+      "h": 2
+    },
+    "unit": "",
+    "method": "Each doubling time multiplies the count by two: an exponential, until something tells them to stop and become.",
+    "distractors": [
+      "e",
+      "+",
+      "3"
+    ],
+    "vary": {
+      "N": [
+        30.0,
+        70.0,
+        1.0
+      ],
+      "t": [
+        4.0,
+        8.0,
+        1.0
+      ]
+    }
+  }
+}

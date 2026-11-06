@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r59_haber",
+  "description": "book.theoreticalsciences.codex.chemistry.r59_haber.desc",
+  "icon": {
+    "item": "theoreticalsciences:haber_bosch_reactor"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 146,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:haber_bosch_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r59_haber.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r59_haber.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r59_kinetics"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__air_separation_unit"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/chemical_equilibrium"
+  }
+}

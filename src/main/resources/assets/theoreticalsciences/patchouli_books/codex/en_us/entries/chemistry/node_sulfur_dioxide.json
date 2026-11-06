@@ -1,0 +1,19 @@
+{
+  "name": "Sulfur Dioxide",
+  "icon": "theoreticalsciences:sulfur_dioxide_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:sulfur_dioxide_cell",
+      "title": "Sulfur Dioxide",
+      "text": "The choking smell of burning sulfur, and the first step to the chemical industry's most used reagent."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Acids and Bases.$(br2)$(thing)Used in$(): Sulfur Dioxide, Sulfuric Acid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/acids_and_bases"
+}

@@ -107,7 +107,7 @@ public enum MachineType {
     MHD_GENERATOR           ("magnetohydrodynamic",  0, 1, 1, 0, true,  "mhd_generator",           64_000_000, 2_000_000, Effect.MHD_FLOW,      0x60A0FF),
     // round 43 (1.3.6): the Forge's last materials, made in bulk - each only once its owner has forged it by hand
     ESCHATON_FOUNDRY        ("eschaton_founding",    6, 2, 1, 0, false, "eschaton_foundry",     2_000_000_000, 500_000_000, Effect.HEAT_DEATH, 0xFFD0A0),
-    // round 45 (1.4.0): Astrophysics, Tier II - instruments that need the real sky above them
+    // round 45 (1.2.0): Astrophysics, Tier II - instruments that need the real sky above them
     REFLECTING_TELESCOPE    ("astrophotography",     2, 0, 2, 0, false, "reflecting_telescope",     4_000_000,   100_000, Effect.STARLIGHT, 0xC0D8FF),
     SOLAR_FURNACE           ("solar_melting",        2, 0, 2, 0, false, "solar_furnace",            4_000_000,   100_000, Effect.SOLAR,     0xFFE080),
     RADIO_TELESCOPE         ("radio_observation",    1, 0, 2, 0, false, "radio_telescope",          8_000_000,   200_000, Effect.RADIO,     0x80FFC0),
@@ -152,7 +152,89 @@ public enum MachineType {
     SPIN_NETWORK_LOOM       ("spin_weaving",         2, 1, 1, 1, false, null,                       4_000_000,   80_000, Effect.NONE,        0xA0C0FF),
     PAGE_CURVE_ANALYZER     ("page_analysis",        2, 0, 2, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0x80E0FF),
     // round 55 (1.14.0): Ensembles - the rest of Statistical Probability
-    MARKOV_CHAIN_REFINERY   ("markov_refining",      1, 1, 1, 1, false, "markov_chain_refinery",    32_000_000, 1_000_000, Effect.MARKOV_HOPS, 0xC0C0FF);
+    MARKOV_CHAIN_REFINERY   ("markov_refining",      1, 1, 1, 1, false, "markov_chain_refinery",    32_000_000, 1_000_000, Effect.MARKOV_HOPS, 0xC0C0FF),
+    // 1.2.0: Chemistry - restoring worn catalysts
+    REGENERATION_KILN       ("catalyst_regeneration", 2, 1, 1, 0, false, null,                        400_000,    8_000, Effect.NONE,        0xFF9040),
+    // 1.2.0: Kinetics & Equilibrium
+    HABER_BOSCH_REACTOR     ("ammonia_synthesis",    1, 2, 1, 1, false, "haber_bosch_reactor",       8_000_000,   200_000, Effect.NONE,        0xA0C0FF),
+    OSTWALD_CONVERTER       ("ammonia_oxidation",    1, 2, 1, 1, false, "ostwald_converter",         8_000_000,   200_000, Effect.NONE,        0xFF8040),
+    CONTACT_PROCESS_TOWER   ("contact_process",      1, 3, 1, 1, false, "contact_process_tower",     8_000_000,   200_000, Effect.NONE,        0xFFE060),
+    AIR_SEPARATION_UNIT     ("air_separation",       1, 0, 1, 2, false, null,                         400_000,    8_000, Effect.NONE,        0x80C0FF),
+    // 1.2.0: Acids, Bases & Solutions (single blocks on a console)
+    TITRATION_BENCH         ("titration",            1, 1, 1, 1, false, null,                         400_000,    8_000, Effect.NONE,        0xE080FF),
+    BUFFER_TANK             ("buffering",            2, 2, 1, 1, false, null,                         400_000,    8_000, Effect.NONE,        0x80FFC0),
+    BRINE_EVAPORATOR        ("brine_evaporation",    1, 1, 2, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xF0F0E0),
+    REVERSE_OSMOSIS_CELL    ("reverse_osmosis",      1, 1, 1, 2, false, null,                         400_000,    8_000, Effect.NONE,        0x60C0FF),
+    // 1.2.0: Thermochemistry
+    BOMB_CALORIMETER        ("calorimetry",          2, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xFFB060),
+    HEAT_PACK_REACTOR       ("heat_pack",            2, 2, 1, 1, false, null,                         400_000,    8_000, Effect.NONE,        0x80E0FF),
+    // 1.2.0: Electrochemistry
+    FUEL_CELL               ("fuel_cell_power",      1, 2, 1, 1, true,  null,                       1_000_000,   20_000, Effect.NONE,        0x80FFA0),
+    ELECTROPLATING_BATH     ("electroplating",       2, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0x60FFC0),
+    // 1.2.0: Analytical Chemistry and the nebula gases
+    CHROMATOGRAPHY_COLUMN   ("chromatography",       1, 1, 1, 2, false, "chromatography_column",     8_000_000,   200_000, Effect.NONE,        0x80E0F0),
+    MASS_SPECTROMETER       ("mass_spectrometry",    1, 1, 1, 1, false, null,                       1_000_000,   20_000, Effect.NONE,        0xC080FF),
+    CLOUD_SIPHON            ("cloud_siphoning",      1, 0, 1, 1, false, null,                         100_000,    2_000, Effect.NONE,        0xA0B0FF),
+    // 1.2.0: Catalysis & Surfaces
+    CATALYST_FORMULATOR     ("catalyst_formulation", 2, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xFFC080),
+    // 1.2.0: Organic Synthesis & Polymers, Frameworks & Porous Materials
+    CRACKING_TOWER          ("cracking",             1, 2, 1, 2, false, "cracking_tower",            8_000_000,   200_000, Effect.NONE,        0xFF9050),
+    POLYMERISER             ("polymerisation",       2, 3, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xE0E8F0),
+    SYNTHESIS_BENCH         ("organic_synthesis",    2, 2, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xC0A0FF),
+    FRAMEWORK_ASSEMBLER     ("framework_assembly",   2, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0x80E0FF),
+    QUASICRYSTAL_FURNACE    ("quasicrystal_casting", 3, 0, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xFFE0B0),
+    // 1.2.0: Inorganic & Coordination, Spectroscopy, Materials & Solid-State
+    COORDINATION_REACTOR    ("coordination",         3, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0x4080FF),
+    CHELATION_COLUMN        ("chelation",            1, 1, 1, 1, false, null,                         400_000,    8_000, Effect.NONE,        0xA0FFA0),
+    INFRARED_SPECTROMETER   ("infrared_spectroscopy", 1, 0, 2, 0, false, null,                        400_000,    8_000, Effect.NONE,        0xFF6040),
+    NMR_SPECTROMETER        ("nmr_spectroscopy",     1, 0, 2, 0, false, "nmr_spectrometer",          8_000_000,   200_000, Effect.NONE,        0x80C0FF),
+    PHASE_DIAGRAM_KILN      ("eutectic_alloying",    2, 0, 1, 1, false, null,                         400_000,    8_000, Effect.NONE,        0xC0C0C0),
+    DOPING_FURNACE          ("doping",               2, 0, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xC0C0FF),
+    SINTERING_PRESS         ("sintering",            1, 0, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xF0F0E0),
+    // 1.2.0: Titan
+    LAKE_PUMP               ("lake_pumping",         1, 0, 1, 1, false, null,                         100_000,    2_000, Effect.NONE,        0xE0A040),
+    PHOTOCHEMICAL_REACTOR   ("photolysis",           1, 2, 1, 1, false, null,                         400_000,    8_000, Effect.NONE,        0xC080FF),
+    // 1.2.0: Asymmetric Synthesis, Oscillating Reactions, Alkahest
+    ASYMMETRIC_REACTOR      ("asymmetric_synthesis", 2, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0x80FFE0),
+    OSCILLATOR_VESSEL       ("oscillation",          1, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xFF8040),
+    ALKAHEST_STILL          ("alkahest_distillation", 3, 2, 1, 1, false, null,                     16_000_000,  400_000, Effect.NONE,        0xFFE0FF),
+    // 1.2.0: Mathematics
+    ERATOSTHENES_SIEVE      ("sieving",              2, 0, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xFFD060),
+    GEOMETERS_TABLE         ("construction",         2, 0, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0x80D0FF),
+    SYMMETRY_LATHE          ("symmetry_turning",     3, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xE0A0FF),
+    TOPOLOGY_KILN           ("surface_firing",       3, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xFF9A60),
+    INTEGRATOR              ("integration",          3, 0, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xA0FF80),
+    ENZYME_ASSAY_BENCH      ("enzyme_assay",         2, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xFFD080),
+    STATISTICS_ENGINE       ("statistical_inference", 3, 0, 1, 0, false, null,                      1_000_000,   20_000, Effect.NONE,        0xFFE080),
+    CIPHER_LOOM             ("encoding",             3, 0, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0x80FF90),
+    // 1.2.0, Mathematics Phase 5: optimisation, graphs, control and games
+    OPTIMISER               ("gradient_descent",     3, 0, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xFF9050),
+    GRAPH_LOOM              ("graph_weaving",        4, 0, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0x50C0FF),
+    STRATEGY_TABLE          ("strategy_play",        3, 0, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xE060A0),
+    PATTERN_BASIN           ("pattern_forming",      3, 0, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0x60E0A0),
+    // 1.2.0: Biology, Phase 1 (the cell) and Phase 2 (microbes)
+    AUTOCLAVE               ("sterilising",          2, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xE0E8F0),
+    PATCH_CLAMP_RIG         ("membrane_clamping",    3, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xF0D070),
+    FERMENTER               ("fermentation",         3, 1, 1, 1, false, null,                       1_000_000,   20_000, Effect.NONE,        0xE0B060),
+    PHOTOBIOREACTOR         ("photosynthesis",       3, 1, 1, 1, false, null,                       1_000_000,   20_000, Effect.NONE,        0x60E060),
+    RIBOSOME_ASSEMBLER      ("translation",          3, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xF080A0),
+    FOLDING_CHAMBER         ("protein_folding",      3, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0xA0A0FF),
+    PHAGE_LAB               ("phage_culture",        3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xC060FF),
+    MYCELIUM_BED            ("mycelium_growth",      3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xD0C0A0),
+    // 1.2.0: Biology, Phase 4 (defence)
+    ANTIBODY_BENCH          ("adaptive_immunity",    3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xF0A0F0),
+    // 1.2.0: Biology, Phase 3 (the body)
+    PERFUSION_RIG           ("perfusion",            3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xF07070),
+    REGENERATION_TANK       ("regeneration",         3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xF06090),
+    CIRCADIAN_INCUBATOR     ("chronobiology",        3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0xB080FF),
+    DOSING_PUMP             ("pharmacokinetics",     3, 1, 1, 0, false, null,                       2_000_000,   40_000, Effect.NONE,        0x80C0A0),
+    // 1.2.0: Biology, Phase 5 (life at scale)
+    ECOSPHERE               ("ecology",              3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0x60D060),
+    SELECTION_CHAMBER       ("population_genetics",  3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0xD0B070),
+    GENE_CIRCUIT_LOOM       ("gene_circuits",        3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0x6090D0),
+    MIRROR_CULTURE_VAT      ("mirror_life",          3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0xD0D0F0),
+    // 1.2.0: Biology, Phase 4 part 2 (the Anomaly, lived)
+    CLONAL_SELECTOR         ("affinity_maturation",  3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0xA0B0FF);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
@@ -235,6 +317,37 @@ public enum MachineType {
             c.append(dimensionName(ids.get(i)));
         }
         return c;
+    }
+
+    /**
+     * 1.2.0: a single-block machine that runs on a physics console like the multiblocks (the Chemical Reactor): it has a
+     * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
+     */
+    public boolean standaloneConsole() {
+        return this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
+                || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
+                || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN
+                || this == POLYMERISER || this == SYNTHESIS_BENCH || this == FRAMEWORK_ASSEMBLER || this == QUASICRYSTAL_FURNACE
+                || this == COORDINATION_REACTOR || this == CHELATION_COLUMN || this == INFRARED_SPECTROMETER || this == PHASE_DIAGRAM_KILN
+                || this == DOPING_FURNACE || this == SINTERING_PRESS || this == PHOTOCHEMICAL_REACTOR
+                || this == ASYMMETRIC_REACTOR || this == OSCILLATOR_VESSEL || this == ALKAHEST_STILL
+                || this == ERATOSTHENES_SIEVE || this == GEOMETERS_TABLE || this == SYMMETRY_LATHE || this == TOPOLOGY_KILN
+                || this == INTEGRATOR || this == ENZYME_ASSAY_BENCH || this == STATISTICS_ENGINE || this == CIPHER_LOOM
+                || this == OPTIMISER || this == GRAPH_LOOM || this == STRATEGY_TABLE || this == PATTERN_BASIN
+                || this == ANALYTIC_CONTINUATOR          // 1.2.0: revamped as a console
+                || biology();
+    }
+
+    /**
+     * 1.2.0: the Biology consoles. They do not fail and release anything; they get contaminated (see
+     * ControllerBlockEntity.sterility): each run handles the culture a little, and a machine far from sterile may catch
+     * something and stop until it is cleaned.
+     */
+    public boolean biology() {
+        return this == AUTOCLAVE || this == PATCH_CLAMP_RIG || this == FERMENTER || this == PHOTOBIOREACTOR || this == RIBOSOME_ASSEMBLER
+                || this == FOLDING_CHAMBER || this == PHAGE_LAB || this == MYCELIUM_BED || this == ANTIBODY_BENCH
+                || this == PERFUSION_RIG || this == REGENERATION_TANK || this == CIRCADIAN_INCUBATOR || this == DOSING_PUMP
+                || this == ECOSPHERE || this == SELECTION_CHAMBER || this == GENE_CIRCUIT_LOOM || this == MIRROR_CULTURE_VAT || this == CLONAL_SELECTOR;
     }
 
     public boolean isMultiblock() {

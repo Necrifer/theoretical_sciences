@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:affinity_maturation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:matured_antibody",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:tumour_specimen",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:sterile_pack",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ward_metastasis",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 300,
+  "research": "theoreticalsciences:affinity_maturation",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "windows": [
+      {
+        "q": "aff",
+        "min": 20.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

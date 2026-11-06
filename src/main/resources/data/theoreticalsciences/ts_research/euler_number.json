@@ -1,0 +1,47 @@
+{
+  "title": "e",
+  "description": "Grow by 100% once, and you double. Grow by 1% a hundred times, and you get 2.70... Grow continuously, and you get e. Unlocks the e Crystal.",
+  "icon": "theoreticalsciences:euler_crystal",
+  "x": 17,
+  "y": 2,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:rates_as_equations"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Grow by 1/n of the whole, n times in a row. Write the factor G you end up multiplied by.",
+    "name": "Compound growth",
+    "lhs": "G",
+    "form": "( 1 + 1 / n ) ^ n",
+    "expr": "( 1 + 1 / n ) ^ n",
+    "ask": "Find G for n = @{n} (nearly continuous growth).",
+    "vars": {
+      "G": "growth factor",
+      "n": "steps"
+    },
+    "given": {
+      "n": 1000000
+    },
+    "unit": "",
+    "method": "Each step multiplies by 1 + 1/n; as n grows the product settles on 2.71828..., which is e.",
+    "distractors": [
+      "2",
+      "-",
+      "k"
+    ],
+    "vary": {
+      "n": [
+        600000.0,
+        1400000.0,
+        10000.0
+      ]
+    }
+  }
+}

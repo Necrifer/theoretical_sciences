@@ -1,0 +1,19 @@
+{
+  "name": "Innate Immunity",
+  "icon": "theoreticalsciences:antibody",
+  "advancement": "theoreticalsciences:research/innate_immunity",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antibody",
+      "title": "Innate Immunity",
+      "text": "$(thing)Innate Immunity$()$(br2)The body's first answer, the same for every invader: cells that engulf what does not belong, and inflammation that walls it off. Unlocks Antibodies."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 110$(br2)$(thing)Builds on$(): Microbiology, Respiration.$(br2)$(thing)Samples$(): 2 Bacterial Culture, 1 Living Cell.$(br2)$(thing)Derivation$(): A phagocyte clears invaders at a rate proportional to how many are left: dN/dt = -cN. Write how many remain, M, after time t, from a start of N."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Catalyst Formulator",
+  "icon": "theoreticalsciences:catalyst_formulator",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 143,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:catalyst_formulator",
+      "title": "Catalyst Formulator",
+      "text": "Metal salt soaked into a porous support, dried, and calcined in a furnace: a catalyst made to a recipe, at the top of its volcano.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the metal loading and the calcination temperature. The binding energy must sit at the peak of the Sabatier volcano for this catalyst (the page gives the peak), and calcining too hot sinters the metal and loses its surface: the yield must reach 80%. The furnace is rated to 1150 K."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Iron Catalyst, Nickel Catalyst, Vanadium Bed, Zeolite Catalyst."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:catalyst_formulator",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/heterogeneous_catalysis"
+}

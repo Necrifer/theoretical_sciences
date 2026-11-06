@@ -1,0 +1,26 @@
+{
+  "name": "Chance and Computation",
+  "icon": "theoreticalsciences:statistics_engine",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:statistics_engine,theoreticalsciences:cipher_loom,theoreticalsciences:confidence_seal,theoreticalsciences:error_code",
+      "text": "Statistics, information and computation: how sure, how much, and how long."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Statistics$(): the $(item)Statistics Engine$() samples until it is sure. Set the sample size and the confidence: the margin z\u00b7\u03c3/\u221an must be under the recipe's tolerance. It makes the $(item)Confidence Seal$() upgrade (every chance product halfway closer to certain). $(thing)Regression$() gives Assayed Enzymes from the statistics alone; $(thing)Stochastic Kinetics$() counts Microstate Tallies in bulk. Its calibration: prove it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Information Theory$(): the $(item)Cipher Loom$() weaves Hamming codes. Set the block length and the check bits: the code must cover the block, and blocks that fail must be rarer than the recipe allows. It makes the $(item)Error-Correcting Code$() upgrade (catalysts wear on only every other run) and, with $(thing)Cryptography$(), $(item)One-Time Pads$(), which tune Entanglement Tuners two at a time. Its calibration: break a cipher."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Algorithms$() and $(thing)Computability$(): how much work a recipe takes, and what no machine can ever decide."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/statistics"
+}

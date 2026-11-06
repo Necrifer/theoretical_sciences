@@ -1,0 +1,19 @@
+{
+  "name": "Algae Culture",
+  "icon": "theoreticalsciences:algae_culture",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:algae_culture",
+      "title": "Algae Culture",
+      "text": "Green algae in a flask, turning light, water and carbon dioxide into sugar and oxygen: photosynthesis, a cell at a time. It dies if carried about too long. Made in the Photobioreactor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Photobioreactor$().$(br2)$(thing)Unlocked by$(): Photosynthesis.$(br2)$(thing)Used in$(): Algae Culture, Oxygen, Quantum Chlorophyll, Stable Ecosystem."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/photosynthesis"
+}

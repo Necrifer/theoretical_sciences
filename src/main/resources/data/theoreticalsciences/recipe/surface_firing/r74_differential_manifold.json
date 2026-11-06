@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:surface_firing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:derivative_operator",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:pi_crystal",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:topological_insulator",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:differential_manifold",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:manifolds_curvature",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "X": 2.0,
+      "N": 0.0
+    },
+    "windows": [
+      {
+        "q": "match",
+        "min": 1.0,
+        "max": 1.0
+      }
+    ]
+  }
+}

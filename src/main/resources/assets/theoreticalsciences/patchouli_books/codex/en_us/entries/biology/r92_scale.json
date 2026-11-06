@@ -1,0 +1,30 @@
+{
+  "name": "Life at Scale",
+  "icon": "theoreticalsciences:ecosphere",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ecosphere,theoreticalsciences:selection_chamber,theoreticalsciences:gene_circuit_loom,theoreticalsciences:mirror_culture_vat",
+      "text": "Life above the single creature: whole populations, their evolution, life built to a plan, and life built backwards. And the keystone that ties the branch together."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Ecology$(): the $(item)Ecosphere$() holds a world in balance. Stock predator and prey near their Lotka-Volterra balance point and the cycle holds; stock too far off and it swings until one side crashes. It makes $(item)Stable Ecosystems$() and the $(item)Symbiont Lining$() (catalysts wear 40% slower)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Population Genetics$(): the $(item)Selection Chamber$() breeds a trait in. A useful one fixes with chance (1 - e^(-2s)) / (1 - e^(-4Ns)): too weak and drift loses it, too strong and the culture dies. It feeds the Evolution Engine cheaply. $(thing)Gene Circuits$(): the $(item)Gene Circuit Loom$() wires genes into switches (bistable only when the cooperativity is over one) and makes the $(item)Living Catalyst$(), which heals its own wear while fed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Mirror Life$(): the $(item)Mirror Culture Vat$() grows cells built the wrong way round, on mirror food (natural food poisons them). Their $(item)Mirror Antibodies$() are the only answer to the Antiverse's Mirror Microbes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)The Tree of Life$(): the five pieces of life, one from each phase, a $(item)Living Cell$(), a Pure Culture, a $(item)Grown Organ$(), an $(item)Antibody$() and a $(item)Stable Ecosystem$(), together make the $(item)Tree of Life$(): an endgame catalyst that never wears, the keystone of the branch."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ecology"
+}

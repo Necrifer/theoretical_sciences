@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:chromatography",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:interstellar_medium",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pah_soot",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 1.4,
+      "k0": 4.0,
+      "hh": 3000.0
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 1.5,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

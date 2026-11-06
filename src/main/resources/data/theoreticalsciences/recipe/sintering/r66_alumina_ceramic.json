@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:sintering",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:alumina",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:alumina_ceramic_plate",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:ceramics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "rho",
+        "min": 97.0,
+        "max": 100.0
+      },
+      {
+        "q": "gs",
+        "min": 0.0,
+        "max": 5.0
+      }
+    ]
+  }
+}

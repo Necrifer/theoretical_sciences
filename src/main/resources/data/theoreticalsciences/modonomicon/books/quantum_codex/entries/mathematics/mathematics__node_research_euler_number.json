@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_euler_number",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_euler_number.desc",
+  "icon": {
+    "item": "theoreticalsciences:euler_crystal"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 110,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:euler_crystal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_euler_number.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_euler_number.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__integrator",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euler_number"
+  }
+}

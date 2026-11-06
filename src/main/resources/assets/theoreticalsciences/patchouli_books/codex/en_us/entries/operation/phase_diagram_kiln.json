@@ -1,0 +1,24 @@
+{
+  "name": "Phase Diagram Kiln",
+  "icon": "theoreticalsciences:phase_diagram_kiln",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 101,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two metals mixed melt lower than either alone; at one ratio - the eutectic - they melt all at once, at the lowest temperature, and set in a fine, even structure. Off it, one metal freezes first and leaves a mush."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Alloy ratio, Kiln temperature.$(br2)$(thing)Disturbance$(): Weighing error: the ratio is off by \u00b10.002\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): A little hotter pours faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Off the eutectic: |x \u2212 x_e|$(br)Above the melt: T \u2212 T_e"
+    }
+  ]
+}

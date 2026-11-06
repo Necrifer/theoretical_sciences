@@ -1,0 +1,19 @@
+{
+  "name": "Halite",
+  "icon": "theoreticalsciences:halite",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:halite",
+      "title": "Halite",
+      "text": "Rock salt: sodium chloride in clear cubes. The first thing the sea leaves behind that people wanted - and paid soldiers in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Brine Evaporator$().$(br2)$(thing)Unlocked by$(): Solubility.$(br2)$(thing)Used in$(): Caustic Soda, Chlorine, Eutectic Brine."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/solubility"
+}

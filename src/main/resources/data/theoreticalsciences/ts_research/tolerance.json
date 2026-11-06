@@ -1,0 +1,60 @@
+{
+  "title": "Tolerance",
+  "description": "The body must also know not to attack itself: regulatory cells that call off the response. Reality has them too, and a breach is read as self. Law Wraiths leave you be.",
+  "icon": "theoreticalsciences:antibody",
+  "x": 8,
+  "y": 23,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:adaptive_immunity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:law_crystal",
+      "count": 1
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "Effector cells of number E are held down by regulatory cells R, each damping by g. Write the net drive D they have left.",
+    "name": "Net drive",
+    "lhs": "D",
+    "form": "E - g * R",
+    "expr": "E - g * R",
+    "ask": "Find D for E = @{E}, g = 3 and R = @{R}.",
+    "vars": {
+      "D": "net drive",
+      "E": "effector cells",
+      "g": "damping each",
+      "R": "regulatory cells"
+    },
+    "given": {
+      "E": 100,
+      "g": 3,
+      "R": 20
+    },
+    "unit": "",
+    "method": "Regulatory cells subtract from the response; enough of them hold it at zero, so the body tolerates itself.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "E": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "R": [
+        12.0,
+        28.0,
+        1.0
+      ]
+    }
+  }
+}

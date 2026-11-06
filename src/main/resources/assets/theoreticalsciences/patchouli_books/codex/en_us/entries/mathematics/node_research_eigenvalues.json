@@ -1,0 +1,19 @@
+{
+  "name": "Eigenvalues",
+  "icon": "theoreticalsciences:lie_group_lattice",
+  "advancement": "theoreticalsciences:research/eigenvalues",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lie_group_lattice",
+      "title": "Eigenvalues",
+      "text": "$(thing)Eigenvalues$()$(br2)Some directions a matrix only stretches, never turns. How much it stretches them decides whether a system grows, shrinks or circles."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 70$(br2)$(thing)Builds on$(): Vectors and Matrices.$(br2)$(thing)Samples$(): 2 Rational Field.$(br2)$(thing)Derivation$(): A 2 \u00d7 2 matrix has trace T and determinant D. Write the larger of the two amounts L it stretches its own directions by."
+    }
+  ]
+}

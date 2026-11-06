@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:photolysis",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methane",
+      "amount": 3
+    },
+    {
+      "fluid": "theoreticalsciences:nitrogen",
+      "amount": 3
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hydrogen_cyanide",
+      "amount": 2003
+    }
+  ],
+  "energy": 13,
+  "duration": 30,
+  "research": "theoreticalsciences:photochemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "eps": 60.0,
+      "cc": 0.02,
+      "Phi": 1.0
+    },
+    "windows": [
+      {
+        "q": "fa",
+        "min": 0.9,
+        "max": 0.999
+      }
+    ]
+  }
+}

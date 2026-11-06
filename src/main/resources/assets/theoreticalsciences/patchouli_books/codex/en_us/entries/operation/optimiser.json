@@ -1,0 +1,24 @@
+{
+  "name": "Optimiser",
+  "icon": "theoreticalsciences:optimiser",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 93,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gradient descent on a bowl f = \u00bd\u03bbx\u00b2: from x, a step h against the slope \u03bbx lands at x(1 \u2212 h\u03bb). So each step multiplies the distance from the bottom by |1 \u2212 h\u03bb|. Below h\u03bb = 1 it creeps in; at exactly 1 it lands; between 1 and 2 it overshoots and swings back; above 2 every swing is wider than the last."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Step size, Steps.$(br2)$(thing)Disturbance$(): A warped bowl: the curvature \u03bb varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The step is so big that every swing is wider than the last.$(br2)$(thing)Rate$(): Fewer steps are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Shrink per step: |1 \u2212 h\u03bb|$(br)Left after n steps: |1 \u2212 h\u03bb|\u207f$(br)Step \u00d7 curvature: h\u03bb"
+    }
+  ]
+}

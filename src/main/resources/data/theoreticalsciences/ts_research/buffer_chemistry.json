@@ -1,0 +1,60 @@
+{
+  "title": "Buffers",
+  "description": "A weak acid and its salt together hold a pH steady, because added acid or base only shifts their ratio. Unlocks the Buffer Tank.",
+  "icon": "theoreticalsciences:buffer_tank",
+  "x": 19,
+  "y": -3,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:acids_and_bases"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:bone_meal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:ammonia_cell",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A weak acid of pKa p is mixed with its salt, a parts of salt to h parts of acid. Write the pH y it holds, using natural logs.",
+    "name": "Henderson-Hasselbalch",
+    "lhs": "y",
+    "form": "p + ln ( a / h ) / ln ( 10 )",
+    "expr": "p + ln ( a / h ) / ln ( 10 )",
+    "ask": "Find the pH for p = @{p}, a = @{a} and h = 1.",
+    "vars": {
+      "y": "pH",
+      "p": "pKa",
+      "a": "salt (parts)",
+      "h": "acid (parts)"
+    },
+    "given": {
+      "p": 7.21,
+      "a": 1.55,
+      "h": 1
+    },
+    "unit": "",
+    "method": "Ka = [H\u207a][A\u207b]/[HA]; take \u2212log\u2081\u2080 of both sides and rearrange.",
+    "distractors": [
+      "2",
+      "T",
+      "K"
+    ],
+    "vary": {
+      "p": [
+        4.32,
+        10.1,
+        0.01
+      ],
+      "a": [
+        0.92,
+        2.17,
+        0.01
+      ]
+    }
+  }
+}

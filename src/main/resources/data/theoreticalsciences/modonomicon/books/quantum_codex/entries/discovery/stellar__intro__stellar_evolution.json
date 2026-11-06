@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.stellar.intro__stellar_evolution",
+  "description": "book.theoreticalsciences.codex.stellar.intro__stellar_evolution.desc",
+  "icon": {
+    "item": "theoreticalsciences:protostar_core"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 41,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.intro__stellar_evolution.p0",
+      "title": "book.theoreticalsciences.codex.stellar.intro__stellar_evolution"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.stellar.intro__stellar_evolution.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/stellar_evolution"
+  }
+}

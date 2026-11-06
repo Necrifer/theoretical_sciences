@@ -1,0 +1,32 @@
+{
+  "name": "Quasicrystal Furnace",
+  "icon": "theoreticalsciences:quasicrystal_furnace",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 148,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quasicrystal_furnace",
+      "title": "Quasicrystal Furnace",
+      "text": "A melt spun onto a cold wheel: cooled fast enough, its atoms freeze in an order that never repeats.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the cooling rate (as a power of ten, K/s) and the alloy's aluminium fraction. Five-fold order forms only between 10\u00b2 and 10\u2074 K/s, near 63% aluminium; slower, an ordinary crystal grows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Quasicrystal Plate."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:quasicrystal_furnace",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/quasicrystals"
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:zeno_anchor"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.quantum_zeno_effect"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.quantum_zeno_effect.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/entanglement_links",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

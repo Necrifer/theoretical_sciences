@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:catalyst_formulation",
+  "item_inputs": [
+    {
+      "item": "minecraft:clay_ball",
+      "count": 4
+    },
+    {
+      "item": "minecraft:quartz",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:zeolite_catalyst",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:heterogeneous_catalysis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Eb0": 0.2,
+      "Eo": 0.32,
+      "Ts": 1050.0
+    },
+    "windows": [
+      {
+        "q": "Y",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

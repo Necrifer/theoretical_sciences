@@ -1,0 +1,19 @@
+{
+  "name": "Control Theory",
+  "icon": "theoreticalsciences:governor",
+  "advancement": "theoreticalsciences:research/control_theory",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:governor",
+      "title": "Control Theory",
+      "text": "$(thing)Control Theory$()$(br2)Feed back too hard and a machine overshoots and rings; too gently and it drifts. Maxwell worked out where the line is. Unlocks the Governor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 100$(br2)$(thing)Builds on$(): Feedback, Optimisation.$(br2)$(thing)Samples$(): 1 Stability Margin, 2 Euclidean Shard.$(br2)$(thing)Derivation$(): A controller corrects an error e by a gain k each second. Write how much error E is left after t seconds of smooth correction."
+    }
+  ]
+}

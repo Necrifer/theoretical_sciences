@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bone_matrix",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:bone_meal",
+      "count": 4
+    }
+  ],
+  "energy": 64,
+  "duration": 100,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 50.0,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

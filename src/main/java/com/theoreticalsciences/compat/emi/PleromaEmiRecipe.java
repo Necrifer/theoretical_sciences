@@ -23,7 +23,7 @@ public class PleromaEmiRecipe extends BasicEmiRecipe {
         for (FluidStack f : wanted) if (Essences.isEssence(f)) e++;
         this.essences = e;
         this.plain = wanted.size() - e;
-        this.height = Math.max(112, essenceTop() + ((e + 7) / 8) * 18 + 2);
+        this.height = Math.max(60, essenceTop() + ((e + 7) / 8) * 18 + 2);
         for (FluidStack f : wanted) inputs.add(QHEmi.fluid(f.copyWithAmount(ConfluenceBlockEntity.target(f))));
         outputs.add(QHEmi.fluid(QHFluids.ALL.get("pleroma").source.get(), ConfluenceBlockEntity.BATCH));
     }
@@ -42,9 +42,6 @@ public class PleromaEmiRecipe extends BasicEmiRecipe {
     @Override
     public void addWidgets(WidgetHolder w) {
         w.addText(Component.translatable("jei.theoreticalsciences.pleroma_each", String.format("%,d", ConfluenceBlockEntity.TARGET)), 1, 0, 0xFF606060, false);
-        if (essences > 0)
-            w.addText(Component.translatable("jei.theoreticalsciences.pleroma_essences", essences, String.format("%,d", ConfluenceBlockEntity.ESSENCE_TARGET)),
-                    1, essenceTop() - 10, 0xFF606060, false);
         for (int i = 0; i < wanted.size(); i++) {
             int[] p = pos(i);
             w.addTank(inputs.get(i), p[0], p[1], 18, 18, MachineEmiRecipe.cap(inputs.get(i)));

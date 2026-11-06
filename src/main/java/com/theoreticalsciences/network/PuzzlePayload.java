@@ -14,8 +14,8 @@ public record PuzzlePayload(ResourceLocation id, int action, List<String> tokens
     public static final Type<PuzzlePayload> TYPE = new Type<>(TheoreticalSciences.id("puzzle"));
     public static final StreamCodec<ByteBuf, PuzzlePayload> CODEC = StreamCodec.composite(
             ResourceLocation.STREAM_CODEC, PuzzlePayload::id, ByteBufCodecs.VAR_INT, PuzzlePayload::action,
-            ByteBufCodecs.STRING_UTF8.apply(ByteBufCodecs.list(400)), PuzzlePayload::tokens, ByteBufCodecs.DOUBLE, PuzzlePayload::answer,
-            ByteBufCodecs.STRING_UTF8, PuzzlePayload::kind, PuzzlePayload::new);
+            ByteBufCodecs.stringUtf8(64).apply(ByteBufCodecs.list(400)), PuzzlePayload::tokens, ByteBufCodecs.DOUBLE, PuzzlePayload::answer,
+            ByteBufCodecs.stringUtf8(32), PuzzlePayload::kind, PuzzlePayload::new);      // 1.2.0: tight bounds (tokens are short)
 
     @Override
     public Type<? extends CustomPacketPayload> type() {

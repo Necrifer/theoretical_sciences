@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_miniaturiser",
+  "description": "book.theoreticalsciences.codex.biology.node_miniaturiser.desc",
+  "icon": {
+    "item": "theoreticalsciences:miniaturiser"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 168,
+  "y": 87,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:miniaturiser"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_miniaturiser.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_miniaturiser.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__dosing_pump",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/pharmacokinetics"
+  }
+}

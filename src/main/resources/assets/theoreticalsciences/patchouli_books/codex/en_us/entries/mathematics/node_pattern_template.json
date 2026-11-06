@@ -1,0 +1,19 @@
+{
+  "name": "Pattern Template",
+  "icon": "theoreticalsciences:pattern_template",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:pattern_template",
+      "title": "Pattern Template",
+      "text": "A Turing pattern set in gel: stripes and spots at exactly the spacing asked for, as a leopard's are laid down before it is born. Made in the Pattern Basin. With a Turing Morphogen, Bioculture grows Morphogenic Serum cheaply from it; the growing tissues of Biology are laid out by it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Pattern Basin$().$(br2)$(thing)Unlocked by$(): Reaction and Diffusion.$(br2)$(thing)Used in$(): Morphogenic Serum."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_diffusion"
+}

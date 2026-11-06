@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_research_slime_moulds",
+  "description": "book.theoreticalsciences.codex.biology.node_research_slime_moulds.desc",
+  "icon": {
+    "item": "theoreticalsciences:physarum_culture"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 158,
+  "y": 83,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:physarum_culture"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_research_slime_moulds.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_research_slime_moulds.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__mycelium_bed",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/slime_moulds"
+  }
+}

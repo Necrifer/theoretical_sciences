@@ -1,0 +1,57 @@
+{
+  "title": "Stability",
+  "description": "A ball in a bowl comes back when pushed; a ball on a hill does not. Whether a fixed point is a bowl or a hill decides everything. Unlocks the Stability Margin.",
+  "icon": "theoreticalsciences:stability_margin",
+  "x": 19,
+  "y": 2,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:fixed_points",
+    "theoreticalsciences:eigenvalues"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 2
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "Near a fixed point a disturbance x grows or shrinks as dx/dt = \u03bbx. Write the disturbance X after a time t, starting from x.",
+    "name": "Linear growth or decay",
+    "lhs": "X",
+    "form": "x * exp ( \u03bb * t )",
+    "expr": "x * exp ( \u03bb * t )",
+    "ask": "Find X for x = @{x}, \u03bb = \u22120.5 and t = @{t} (a stable point: it dies away).",
+    "vars": {
+      "X": "disturbance later",
+      "x": "disturbance now",
+      "\u03bb": "growth rate",
+      "t": "time"
+    },
+    "given": {
+      "x": 2,
+      "\u03bb": -0.5,
+      "t": 4
+    },
+    "unit": "",
+    "method": "The solution of dx/dt = \u03bbx is an exponential: for \u03bb < 0 it shrinks (stable), for \u03bb > 0 it grows (unstable).",
+    "distractors": [
+      "ln",
+      "+",
+      "k"
+    ],
+    "vary": {
+      "x": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "t": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

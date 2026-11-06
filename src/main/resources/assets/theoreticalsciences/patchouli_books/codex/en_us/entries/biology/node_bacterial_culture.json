@@ -1,0 +1,19 @@
+{
+  "name": "Bacterial Culture",
+  "icon": "theoreticalsciences:bacterial_culture",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bacterial_culture",
+      "title": "Bacterial Culture",
+      "text": "A flask of bacteria doubling every twenty minutes while the food lasts. The workhorses of biology: they make what they are told to, and some make magnets. They die if carried about too long. Made in the Fermenter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Fermenter$().$(br2)$(thing)Found in$(): Bsl4 Field Station chests.$(br2)$(thing)Unlocked by$(): Microbiology.$(br2)$(thing)Used in$(): Ammonia, Antibody, Bacterial Culture, Bacteriophage, Evolved Strain, Magnetite, Probiotic Seal, Stable Ecosystem and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/fermentation"
+}

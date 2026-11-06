@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.intro__r37_radioactivity",
+  "description": "book.theoreticalsciences.codex.nuclear.intro__r37_radioactivity.desc",
+  "icon": {
+    "item": "theoreticalsciences:radium_salt"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 9,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.intro__r37_radioactivity.p0",
+      "title": "book.theoreticalsciences.codex.nuclear.intro__r37_radioactivity"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.intro__r37_radioactivity.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/radioactivity"
+  }
+}

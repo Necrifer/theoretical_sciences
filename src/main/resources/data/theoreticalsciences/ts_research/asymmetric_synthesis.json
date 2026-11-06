@@ -1,0 +1,61 @@
+{
+  "title": "Asymmetric Synthesis",
+  "description": "Molecules come in mirror-image pairs, and living things use only one of each. A handed catalyst makes one and not the other. Unlocks the Asymmetric Reactor and the Chiral Ligand.",
+  "icon": "theoreticalsciences:enantiopure_reagent",
+  "x": 28,
+  "y": -4,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:photochemistry",
+    "theoreticalsciences:organic_synthesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:kekule_ring",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:chiral_crystal",
+      "count": 2
+    }
+  ],
+  "time": 660,
+  "puzzle": {
+    "goal": "A catalyst lowers the barrier to one mirror image of a product by an energy E more than to the other, at temperature T. Write how many times faster the favoured one forms, s, with the gas constant R.",
+    "name": "Selectivity",
+    "lhs": "s",
+    "form": "exp ( E / ( R * T ) )",
+    "expr": "exp ( E / ( R * T ) )",
+    "ask": "Find s for E = @{E} J/mol, R = 8.314 and T = @{T} K.",
+    "vars": {
+      "s": "selectivity",
+      "E": "barrier difference (J/mol)",
+      "R": "gas constant",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "E": 6000,
+      "R": 8.314,
+      "T": 250
+    },
+    "unit": "",
+    "method": "Each rate goes as e^(\u2212barrier/RT) (Arrhenius, with the same prefactor): their ratio is e^(E/RT).",
+    "distractors": [
+      "2",
+      "k",
+      "ln"
+    ],
+    "vary": {
+      "E": [
+        3600.0,
+        8400.0,
+        1.0
+      ],
+      "T": [
+        150.0,
+        350.0,
+        1.0
+      ]
+    }
+  }
+}

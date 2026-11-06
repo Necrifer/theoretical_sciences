@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__r82_patterns",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__r82_patterns.desc",
+  "icon": {
+    "item": "theoreticalsciences:pattern_basin"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 86,
+  "y": 76,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r82_patterns.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__r82_patterns"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r82_patterns.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__intro__logic_sets"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reaction_diffusion"
+  }
+}

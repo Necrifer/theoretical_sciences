@@ -1,0 +1,59 @@
+{
+ "title": "Coordination Chemistry",
+ "description": "A metal ion holds a ring of molecules round it, and their field decides its colour, its magnetism and what it catches; haem's iron, holding oxygen and letting it go. Unlocks the Coordination Reactor.",
+ "icon": "theoreticalsciences:coordination_reactor",
+ "x": 22,
+ "y": 0,
+ "insight": 130,
+ "requires": [
+  "theoreticalsciences:heterogeneous_catalysis",
+  "theoreticalsciences:nebular_chemistry"
+ ],
+ "cost": [
+  {
+   "item": "minecraft:copper_ingot",
+   "count": 8
+  },
+  {
+   "item": "theoreticalsciences:ammonia_cell",
+   "count": 1
+  }
+ ],
+ "time": 420,
+ "puzzle": {
+  "goal": "Six ligands split a metal's orbitals by D; pairing two electrons costs P. For a d⁶ ion, write the energy gained g by going low spin (all six paired in the lower three orbitals) instead of high spin.",
+  "name": "Crystal-field balance",
+  "lhs": "g",
+  "form": "2 * D - 2 * P",
+  "expr": "2 * D - 2 * P",
+  "ask": "Find g in eV for D = @{D} eV and P = @{P} eV.",
+  "vars": {
+   "g": "energy gained (eV)",
+   "D": "splitting (eV)",
+   "P": "pairing energy (eV)"
+  },
+  "given": {
+   "D": 2.4,
+   "P": 2.1
+  },
+  "unit": "eV",
+  "method": "High spin: four low, two high (−0.4·4 + 0.6·2 = −0.4 Δ). Low spin: six low (−2.4 Δ) but two more pairs (2P).",
+  "distractors": [
+   "3",
+   "T",
+   "k"
+  ],
+  "vary": {
+   "D": [
+    2.04,
+    2.76,
+    0.01
+   ],
+   "P": [
+    1.78,
+    2.42,
+    0.01
+   ]
+  }
+ }
+}

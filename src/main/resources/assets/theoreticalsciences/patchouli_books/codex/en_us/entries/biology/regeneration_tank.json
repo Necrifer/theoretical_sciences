@@ -1,0 +1,32 @@
+{
+  "name": "Regeneration Tank",
+  "icon": "theoreticalsciences:regeneration_tank",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 183,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:regeneration_tank",
+      "title": "Regeneration Tank",
+      "text": "A clear vat of gel where a source at one end sets up a gradient, and cells read it to know where they are.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the morphogen source and its decay length. The gradient is c = c0.e^(-x/lambda), and it must still be read (above threshold) across the whole organ: lambda must span it. Too steep (lambda under a tenth of the organ) and the far end is blank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Grown Organ, Matrix Fibre."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:regeneration_tank",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/regeneration"
+}

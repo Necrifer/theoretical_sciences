@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.intro__r48_monte_carlo",
+  "description": "book.theoreticalsciences.codex.probability.intro__r48_monte_carlo.desc",
+  "icon": {
+    "item": "theoreticalsciences:monte_carlo_engine"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 17,
+  "y": 80,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r48_monte_carlo.p0",
+      "title": "book.theoreticalsciences.codex.probability.intro__r48_monte_carlo"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r48_monte_carlo.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r38_galton"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r38_bayes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/monte_carlo_methods"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "EDTA",
+  "icon": "theoreticalsciences:edta",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:edta",
+      "title": "EDTA",
+      "text": "A claw of a molecule with six grips: it wraps a metal ion and will not let it go."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Synthesis Bench$().$(br2)$(thing)Unlocked by$(): Chelation.$(br2)$(thing)Used in$(): Chelation Column."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chelation"
+}

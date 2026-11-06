@@ -1,0 +1,24 @@
+{
+  "name": "Chemical Reactor",
+  "icon": "theoreticalsciences:chemical_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 30,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A reaction goes at the rate constant k = A\u00b7e^(\u2212E\u2090/RT): hotter is faster, and the higher its activation energy E\u2090, the more heat it needs. In a stirred vessel a batch held for a residence time \u03c4 reaches the conversion X = 1 \u2212 e^(\u2212k\u03c4). Each recipe needs its own conversion; a shorter \u03c4 runs more batches. A catalyst lowers E\u2090 - but sinters if run too hot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Heater temperature, Residence time.$(br2)$(thing)Disturbance$(): Heater drift: the temperature the reaction sees varies by \u00b10.5%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The vessel is over its rated temperature; The catalyst is sintering: it wears ten times as fast.$(br2)$(thing)Rate$(): Batches follow the residence time: 60 s is the normal pace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Rate constant: k = A\u00b7e^(\u2212E\u2090/RT)$(br)Conversion: X = 1 \u2212 e^(\u2212k\u03c4)$(br)Time to the target: t = \u2212ln(1 \u2212 X_target)/k"
+    }
+  ]
+}

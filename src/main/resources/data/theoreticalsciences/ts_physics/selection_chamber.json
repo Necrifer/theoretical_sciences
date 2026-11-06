@@ -1,0 +1,48 @@
+{
+  "params": [
+    {
+      "id": "sel",
+      "unit": "",
+      "min": 0.001,
+      "max": 0.5,
+      "step": 0.001,
+      "default": 0.05
+    },
+    {
+      "id": "Ne",
+      "unit": "",
+      "min": 10,
+      "max": 10000,
+      "step": 1,
+      "default": 1000
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "fix",
+      "unit": "",
+      "expr": "(1 - exp(-2*sel))/(1 - exp(-4*Ne*sel))*(1 - 0.02*d)",
+      "formula": "p = (1 - e^(-2s)) / (1 - e^(-4Ns))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "kill",
+      "kind": "stop",
+      "expr": "0.5 - sel",
+      "formula": "s < 0.5"
+    }
+  ],
+  "rate": "clamp(fix*40, 0.1, 4)",
+  "rate_formula": "rate = 40 . fixation",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

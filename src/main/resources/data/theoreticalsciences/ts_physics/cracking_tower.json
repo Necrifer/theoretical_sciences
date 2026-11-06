@@ -1,0 +1,67 @@
+{
+  "params": [
+    {
+      "id": "Tk",
+      "unit": "K",
+      "min": 700,
+      "max": 1250,
+      "step": 1,
+      "default": 900
+    },
+    {
+      "id": "sr",
+      "unit": "",
+      "min": 0,
+      "max": 2,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Te",
+      "unit": "K",
+      "expr": "Tk*(1 + 0.005*d)",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "Se",
+      "unit": "",
+      "expr": "exp(-((Te - 1100)/80)^2)",
+      "formula": "S \u2248 e^(\u2212((T \u2212 T*)/80 K)\u00b2)"
+    },
+    {
+      "id": "Sp",
+      "unit": "",
+      "expr": "exp(-((Te - 1000)/80)^2)",
+      "formula": "S \u2248 e^(\u2212((T \u2212 T*)/80 K)\u00b2)"
+    },
+    {
+      "id": "ck",
+      "unit": "",
+      "expr": "exp((Te - 1150)/40)/(1 + 2*sr)",
+      "formula": "coke \u221d e^((T \u2212 1150 K)/40 K) / (1 + 2\u00b7steam)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "coke",
+      "kind": "wear",
+      "expr": "1 - ck",
+      "formula": "coke < 1"
+    }
+  ],
+  "rate": "clamp(exp(-15000*(1/Te - 1/1000))/(1 + 0.3*sr), 0.25, 3)",
+  "rate_formula": "rate = e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/1000 K))/(1 + 0.3\u00b7steam)",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

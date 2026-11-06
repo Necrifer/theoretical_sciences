@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.intro__anomaly_extent",
+  "description": "book.theoreticalsciences.codex.anomaly.intro__anomaly_extent.desc",
+  "icon": {
+    "item": "theoreticalsciences:anomaly_catalogue"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 71,
+  "y": 70,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_extent.p0",
+      "title": "book.theoreticalsciences.codex.anomaly.intro__anomaly_extent"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_extent.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_epidemics"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_leakage"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/anomaly_scaling"
+  }
+}

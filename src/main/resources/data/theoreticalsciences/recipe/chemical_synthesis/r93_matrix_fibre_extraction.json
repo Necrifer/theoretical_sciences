@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:extracellular_matrix",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:matrix_fibre",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 53.1,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Cryogenic Survival",
+  "icon": "theoreticalsciences:heated_pressure_suit_chestplate",
+  "advancement": "theoreticalsciences:research/cryogenic_survival",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:heated_pressure_suit_chestplate",
+      "title": "Cryogenic Survival",
+      "text": "$(thing)Cryogenic Survival$()$(br2)At 94 K the trick is not to make heat but to keep it. Unlocks the Heated Pressure Suit and the Hydrophobic Coating that keeps methane rain out of its lining."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Titan, Calorimetry.$(br2)$(thing)Samples$(): 8 Tholin Sand, 4 Silica Aerogel.$(br2)$(thing)Derivation$(): Heat leaks through a slab of insulation of thermal conductivity k, area A and thickness l, with a difference T between the temperatures of its faces. Write the heat flow q."
+    }
+  ]
+}

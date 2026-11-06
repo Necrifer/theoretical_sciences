@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.r74_structure",
+  "description": "book.theoreticalsciences.codex.mathematics.r74_structure.desc",
+  "icon": {
+    "item": "theoreticalsciences:pi_crystal"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 23,
+  "y": 3,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:geometers_table"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.r74_structure.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r74_structure.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r74_structure.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r74_structure.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r74_structure.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__math_overview"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__r73_first_steps"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euclidean_geometry"
+  }
+}

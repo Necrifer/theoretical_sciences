@@ -1,0 +1,48 @@
+{
+  "title": "Information Theory",
+  "description": "Shannon measured information in bits: how surprised you are, on average. A fair coin gives one bit; a loaded one less. Unlocks the Cipher Loom.",
+  "icon": "theoreticalsciences:error_code",
+  "x": 0,
+  "y": 11,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:thermodynamics_of_information",
+    "theoreticalsciences:probability_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:random_number_chip",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A coin lands heads with chance p. Write the information H, in bits, that one toss gives on average.",
+    "name": "Shannon entropy",
+    "lhs": "H",
+    "form": "- p * ln ( p ) / ln ( 2 ) - ( 1 - p ) * ln ( 1 - p ) / ln ( 2 )",
+    "expr": "- p * ln ( p ) / ln ( 2 ) - ( 1 - p ) * ln ( 1 - p ) / ln ( 2 )",
+    "ask": "Find H for p = @{p}.",
+    "vars": {
+      "H": "bits per toss",
+      "p": "chance of heads"
+    },
+    "given": {
+      "p": 0.25
+    },
+    "unit": "bits",
+    "method": "Each outcome surprises by \u2212log\u2082 of its chance; average the surprises over both outcomes.",
+    "distractors": [
+      "exp",
+      "+",
+      "n"
+    ],
+    "vary": {
+      "p": [
+        0.15,
+        0.35,
+        0.001
+      ]
+    }
+  }
+}

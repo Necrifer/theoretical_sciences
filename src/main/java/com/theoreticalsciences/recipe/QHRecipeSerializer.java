@@ -77,6 +77,28 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
         return m.size() == in.size() ? in : new java.util.ArrayList<>(m.values());
     }
 
+    /**
+     * 1.2.0: the everyday chemicals other mods make too. A recipe that names one of the mod's own (theoreticalsciences:hydrogen)
+     * takes any fluid in the matching common tag (c:hydrogen - Mekanism's, NuclearCraft's, GregTech's...); the mod's own
+     * fluids are in those tags as well.
+     */
+    public static final java.util.Set<String> SHARED = java.util.Set.of("hydrogen", "oxygen", "nitrogen", "ammonia", "nitric_acid",
+            "sulfuric_acid", "sulfur_dioxide", "heavy_water", "deuterium", "tritium", "chlorine", "crude_oil");
+
+    static List<SizedFluidIngredient> shared(List<SizedFluidIngredient> in) {
+        List<SizedFluidIngredient> out = null;
+        for (int i = 0; i < in.size(); i++) {
+            SizedFluidIngredient s = in.get(i);
+            if (!(s.ingredient() instanceof net.neoforged.neoforge.fluids.crafting.SingleFluidIngredient one)) continue;
+            var id = net.minecraft.core.registries.BuiltInRegistries.FLUID.getKey(one.fluid().value());
+            if (!com.theoreticalsciences.TheoreticalSciences.MODID.equals(id.getNamespace()) || !SHARED.contains(id.getPath())) continue;
+            if (out == null) out = new java.util.ArrayList<>(in);
+            var tag = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.FLUID, net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c", id.getPath()));
+            out.set(i, new SizedFluidIngredient(net.neoforged.neoforge.fluids.crafting.FluidIngredient.tag(tag), s.amount()));
+        }
+        return out == null ? in : out;
+    }
+
     static List<SizedFluidIngredient> mergeFluids(List<SizedFluidIngredient> in) {
         if (in.size() < 2) return in;
         java.util.LinkedHashMap<String, SizedFluidIngredient> m = new java.util.LinkedHashMap<>();
@@ -137,7 +159,7 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
                 OptionalFluid.CODEC.listOf().optionalFieldOf("optional_fluid_inputs", List.of()).forGetter(r -> List.of()),
                 Codec.intRange(0, 1_000_000).optionalFieldOf("insight_per_run", 0).forGetter(r -> r.insight)
         ).apply(i, (a, b, c, d, e, f, g, h, k, t, sec, env, ph, opt, optf, ins) -> {
-            QHRecipe r = new QHRecipe(typeId, withOptional(typeId, a, opt), scaledFluids(typeId, b, optf), c, d, e, f, g, h, k, t);
+            QHRecipe r = new QHRecipe(typeId, withOptional(typeId, a, opt), scaledFluids(typeId, shared(b), optf), c, d, e, f, g, h, k, t);
             r.secret = sec;
             r.insight = ins;
             r.environment = env;

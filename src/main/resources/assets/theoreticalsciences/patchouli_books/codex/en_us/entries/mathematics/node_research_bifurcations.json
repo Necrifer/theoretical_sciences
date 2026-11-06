@@ -1,0 +1,19 @@
+{
+  "name": "Bifurcations",
+  "icon": "theoreticalsciences:chemical_clock",
+  "advancement": "theoreticalsciences:research/bifurcations",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chemical_clock",
+      "title": "Bifurcations",
+      "text": "$(thing)Bifurcations$()$(br2)Turn a setting slowly and, at one value, a steady state turns unstable and the system starts to oscillate: the Belousov reaction's threshold, and a heartbeat's."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Stability, Oscillating Reactions.$(br2)$(thing)Samples$(): 1 Stability Margin, 1 Chemical Clock.$(br2)$(thing)Derivation$(): In the Brusselator with feeds A and B the steady state turns unstable, and the mixture oscillates, past one value of B. Write that value H."
+    }
+  ]
+}

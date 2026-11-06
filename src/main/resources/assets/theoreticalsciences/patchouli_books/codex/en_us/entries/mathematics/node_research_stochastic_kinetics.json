@@ -1,0 +1,19 @@
+{
+  "name": "Stochastic Kinetics",
+  "icon": "theoreticalsciences:microstate_tally",
+  "advancement": "theoreticalsciences:research/stochastic_kinetics",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:microstate_tally",
+      "title": "Stochastic Kinetics",
+      "text": "$(thing)Stochastic Kinetics$()$(br2)In a cell there may be ten molecules of something: reactions happen one at a time, at random moments. Gillespie simulated them exactly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Statistics, Monte Carlo Methods, Markov Chains.$(br2)$(thing)Samples$(): 8 Microstate Tally.$(br2)$(thing)Derivation$(): Reactions fire at a total rate a. With a random number u between 0 and 1, write how long W to wait until the next one."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:chromatography",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molecular_cloud",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 300
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 1.6,
+      "k0": 1.5
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 1.5,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

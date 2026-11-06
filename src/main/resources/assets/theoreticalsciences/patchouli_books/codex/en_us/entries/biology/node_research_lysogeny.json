@@ -1,0 +1,19 @@
+{
+  "name": "Lysogeny",
+  "icon": "theoreticalsciences:recombinant_dna",
+  "advancement": "theoreticalsciences:research/lysogeny",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:recombinant_dna",
+      "title": "Lysogeny",
+      "text": "$(thing)Lysogeny$()$(br2)Some phages do not burst their host at once: they write themselves into its genome and wait. A way to deliver genes. Unlocks cheap Recombinant DNA."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 110$(br2)$(thing)Builds on$(): Viruses.$(br2)$(thing)Samples$(): 4 Bacteriophage.$(br2)$(thing)Derivation$(): c cells are infected; a share f of them burst at once, each releasing B phages. Write how many new phages, P, come out."
+    }
+  ]
+}

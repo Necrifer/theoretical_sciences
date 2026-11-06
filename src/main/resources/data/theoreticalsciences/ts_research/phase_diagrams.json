@@ -1,0 +1,59 @@
+{
+  "title": "Phase Diagrams",
+  "description": "Two metals mixed melt lower than either alone, and at one ratio all at once. Unlocks the Phase Diagram Kiln.",
+  "icon": "theoreticalsciences:phase_diagram_kiln",
+  "x": 25,
+  "y": -5,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:quasicrystals"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:alumina",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:radiogenic_lead",
+      "count": 4
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Two metals are mixed, a of the first and b of the second by weight. Write the share x of the second.",
+    "name": "Lever rule",
+    "lhs": "x",
+    "form": "b / ( a + b )",
+    "expr": "b / ( a + b )",
+    "ask": "Find x for a = @{a} g of lead and b = @{b} g of tin.",
+    "vars": {
+      "x": "share of the second",
+      "a": "first metal (g)",
+      "b": "second metal (g)"
+    },
+    "given": {
+      "a": 38,
+      "b": 62
+    },
+    "unit": "",
+    "method": "A share is the part over the whole. Tin-lead is eutectic at 62% tin, 456 K.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0",
+      "c"
+    ],
+    "vary": {
+      "a": [
+        23.0,
+        53.0,
+        1.0
+      ],
+      "b": [
+        37.0,
+        87.0,
+        1.0
+      ]
+    }
+  }
+}

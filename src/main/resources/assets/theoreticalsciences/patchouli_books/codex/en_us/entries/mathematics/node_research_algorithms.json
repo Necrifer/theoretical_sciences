@@ -1,0 +1,19 @@
+{
+  "name": "Algorithms",
+  "icon": "theoreticalsciences:random_number_chip",
+  "advancement": "theoreticalsciences:research/algorithms",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:random_number_chip",
+      "title": "Algorithms",
+      "text": "$(thing)Algorithms$()$(br2)A recipe precise enough for a machine. Some take steps in proportion to the input, some its square: sorting a million things can take twenty million steps, or a trillion."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): Vectors and Matrices, Combinatorics.$(br2)$(thing)Samples$(): 16 Natural Number Lattice.$(br2)$(thing)Derivation$(): A good sort of n things compares them about n\u00b7log\u2082 n times. Write that count M."
+    }
+  ]
+}

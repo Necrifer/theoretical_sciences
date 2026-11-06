@@ -1,0 +1,19 @@
+{
+  "name": "Probiotics",
+  "icon": "theoreticalsciences:probiotic_seal",
+  "advancement": "theoreticalsciences:research/probiotics",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:probiotic_seal",
+      "title": "Probiotics",
+      "text": "$(thing)Probiotics$()$(br2)Fill every surface with harmless bacteria and nothing harmful finds room: competitive exclusion. Unlocks the Probiotic Seal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 100$(br2)$(thing)Builds on$(): Microbiology, Sterile Technique.$(br2)$(thing)Samples$(): 4 Bacterial Culture, 2 Sterile Pack.$(br2)$(thing)Derivation$(): A harmful strain grows at rate r, but only into the room the friendly ones leave: N of a capacity K is already taken. Write its growth rate G."
+    }
+  ]
+}

@@ -4,7 +4,7 @@
       "id": "theoreticalsciences:cantor_key"
     },
     "title": "Past Every Finite Step",
-    "description": "Enter the Transfinite Hierarchy",
+    "description": "Climb into the Transfinite Hierarchy",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
@@ -13,9 +13,24 @@
   "parent": "theoreticalsciences:research/transfinite_hierarchy",
   "criteria": {
     "arrived": {
-      "trigger": "minecraft:changed_dimension",
+      "trigger": "minecraft:location",
       "conditions": {
-        "to": "theoreticalsciences:transfinite_hierarchy"
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "dimension": "theoreticalsciences:platonic_realm",
+                "position": {
+                  "y": {
+                    "min": 1280
+                  }
+                }
+              }
+            }
+          }
+        ]
       }
     }
   },

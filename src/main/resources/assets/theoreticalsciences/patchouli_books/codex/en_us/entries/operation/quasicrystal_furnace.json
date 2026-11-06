@@ -1,0 +1,24 @@
+{
+  "name": "Quasicrystal Furnace",
+  "icon": "theoreticalsciences:quasicrystal_furnace",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 109,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Al-Cu-Fe melts near 63% aluminium can freeze into an icosahedral quasicrystal - ordered, but never repeating. Cool too slowly and the atoms have time to find an ordinary crystal; too fast and they freeze as a glass. Five-fold order forms only in between, and only near the right ratio."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Cooling rate (log\u2081\u2080 K/s), Aluminium fraction.$(br2)$(thing)Disturbance$(): Wheel speed: the cooling rate varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): One cast at a time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Quasicrystalline share: S(rate, ratio)"
+    }
+  ]
+}

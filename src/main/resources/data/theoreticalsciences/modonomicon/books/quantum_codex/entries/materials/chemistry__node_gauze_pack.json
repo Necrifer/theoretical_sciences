@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_gauze_pack",
+  "description": "book.theoreticalsciences.codex.chemistry.node_gauze_pack.desc",
+  "icon": {
+    "item": "theoreticalsciences:gauze_pack"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 217,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gauze_pack"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_gauze_pack.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_gauze_pack.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__ostwald_converter",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ostwald_process"
+  }
+}

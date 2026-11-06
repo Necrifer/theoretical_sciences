@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.gene_circuit_loom",
+  "description": "book.theoreticalsciences.codex.biology.gene_circuit_loom.desc",
+  "icon": {
+    "item": "theoreticalsciences:gene_circuit_loom"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 101,
+  "y": 7,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gene_circuit_loom"
+      },
+      "text": "book.theoreticalsciences.codex.biology.gene_circuit_loom.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_circuit_loom.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_circuit_loom.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.gene_circuit_loom.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:gene_circuit_loom"
+      },
+      "text": "book.theoreticalsciences.codex.biology.gene_circuit_loom.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__synthetic"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__selection_chamber"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gene_circuits"
+  }
+}

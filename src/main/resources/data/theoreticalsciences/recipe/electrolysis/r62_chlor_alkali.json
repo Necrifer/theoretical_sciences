@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:electrolysis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:halite",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:caustic_soda",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:chlorine",
+      "amount": 500
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:galvanic_cells",
+  "unscaled": true
+}

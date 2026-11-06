@@ -1,0 +1,65 @@
+{
+  "title": "The Quantum Zeno Effect",
+  "description": "Measure a system often enough and it never gets the chance to change: each measurement starts it over. Unlocks the Zeno Anchor, which keeps chunks loaded.",
+  "icon": "theoreticalsciences:zeno_anchor",
+  "x": 3,
+  "y": 1,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:entanglement_links"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 2
+    },
+    {
+      "item": "minecraft:clock",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A system that would leave its state on a timescale T is measured N times, evenly, over a time t. Write the chance P that it is still found where it started.",
+    "name": "Zeno survival",
+    "lhs": "P",
+    "form": "1 / exp ( t ^ 2 / ( N * T ^ 2 ) )",
+    "expr": "1 / exp ( t ^ 2 / ( N * T ^ 2 ) )",
+    "ask": "Find P for t = @{t} s, T = @{T} s and N = @{N} measurements.",
+    "vars": {
+      "P": "survival chance",
+      "t": "time (s)",
+      "T": "timescale of change (s)",
+      "N": "measurements"
+    },
+    "given": {
+      "t": 1,
+      "T": 1,
+      "N": 100
+    },
+    "unit": "",
+    "method": "Between looks it leaks out only quadratically, (\u0394t/T)\u00b2, with \u0394t = t/N; N such steps give e^(\u2212t\u00b2/(NT\u00b2)).",
+    "distractors": [
+      "2",
+      "ln",
+      "n"
+    ],
+    "vary": {
+      "t": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "T": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "N": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

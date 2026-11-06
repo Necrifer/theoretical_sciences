@@ -1,67 +1,67 @@
 {
-  "title": "Transuranic Synthesis",
-  "description": "Beyond uranium every element is made: a nucleus is fed neutrons until it beta-decays up the table - plutonium, americium, curium, californium. Unlocks Californium-252.",
-  "icon": "theoreticalsciences:californium_252_neutron_source",
-  "x": 12,
-  "y": -2,
-  "insight": 160,
-  "requires": [
-    "theoreticalsciences:nuclear_fission",
-    "theoreticalsciences:accelerator_physics"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:plutonium_239_pellet",
-      "count": 2
-    },
-    {
-      "item": "theoreticalsciences:uranium_238_pellet",
-      "count": 4
-    }
-  ],
-  "time": 570,
-  "puzzle": {
-    "goal": "N nuclei of a sample with half-life \u03c4 are left to wait a time t. Write how many n are left.",
-    "name": "Radioactive decay law",
-    "lhs": "n",
-    "form": "N / 2 ^ ( t / \u03c4 )",
-    "expr": "N / 2 ^ ( t / T )",
-    "ask": "Find n for N = @{N} nuclei of californium-252 (T = @{T} years) after t = @{t} years.",
-    "vars": {
-      "n": "nuclei left",
-      "N": "nuclei at the start",
-      "t": "time waited (years)",
-      "\u03c4": "half-life",
-      "T": "half-life (years)"
-    },
-    "given": {
-      "N": 1000,
-      "t": 5.29,
-      "T": 2.645
-    },
-    "unit": "",
-    "method": "Every half-life halves what is left: after t/\u03c4 of them, N is divided by 2 that many times.",
-    "distractors": [
-      "e",
-      "3",
-      "\u03bb"
-    ],
-    "vary": {
-      "N": [
-        600.0,
-        1400.0,
-        1.0
-      ],
-      "t": [
-        3.17,
-        7.41,
-        0.01
-      ],
-      "T": [
-        1.58,
-        3.71,
-        0.01
-      ]
-    }
+ "title": "Transuranic Synthesis",
+ "description": "Beyond uranium every element is made: a nucleus is fed neutrons until it beta-decays up the table; plutonium, americium, curium, californium. Unlocks Californium-252.",
+ "icon": "theoreticalsciences:californium_252_neutron_source",
+ "x": 12,
+ "y": -2,
+ "insight": 160,
+ "requires": [
+  "theoreticalsciences:nuclear_fission",
+  "theoreticalsciences:accelerator_physics"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:plutonium_239_pellet",
+   "count": 2
+  },
+  {
+   "item": "theoreticalsciences:uranium_238_pellet",
+   "count": 4
   }
+ ],
+ "time": 570,
+ "puzzle": {
+  "goal": "N nuclei of a sample with half-life τ are left to wait a time t. Write how many n are left.",
+  "name": "Radioactive decay law",
+  "lhs": "n",
+  "form": "N / 2 ^ ( t / τ )",
+  "expr": "N / 2 ^ ( t / T )",
+  "ask": "Find n for N = @{N} nuclei of californium-252 (T = @{T} years) after t = @{t} years.",
+  "vars": {
+   "n": "nuclei left",
+   "N": "nuclei at the start",
+   "t": "time waited (years)",
+   "τ": "half-life",
+   "T": "half-life (years)"
+  },
+  "given": {
+   "N": 1000,
+   "t": 5.29,
+   "T": 2.645
+  },
+  "unit": "",
+  "method": "Every half-life halves what is left: after t/τ of them, N is divided by 2 that many times.",
+  "distractors": [
+   "e",
+   "3",
+   "λ"
+  ],
+  "vary": {
+   "N": [
+    600.0,
+    1400.0,
+    1.0
+   ],
+   "t": [
+    3.17,
+    7.41,
+    0.01
+   ],
+   "T": [
+    1.58,
+    3.71,
+    0.01
+   ]
+  }
+ }
 }

@@ -1,0 +1,18 @@
+{
+  "name": "Frameworks",
+  "icon": "theoreticalsciences:framework_assembler",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 29,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:framework_assembler,theoreticalsciences:mof_gas_storage_cell,theoreticalsciences:quasicrystal_plate",
+      "text": "A framework is a crystal of nodes and struts, mostly empty. On the $(item)Framework Assembler$() the linker sets the pore: it must fit the target molecule, and the solvent must be dried out slowly or the pores collapse. $(item)MOF Gas Sorbent$() fills a $(item)MOF Gas Storage Cell$(), which holds 256,000 mB of one gas - sixteen tanks' worth, because the framework holds gas on its inner surface (Langmuir). $(item)Silica Aerogel$() is ninety-nine parts air."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Clay digested in caustic soda gives $(item)Alumina$() (Bayer); electrolysed, $(item)Aluminium$() (Hall-H\u00e9roult). In the $(item)Quasicrystal Furnace$() an aluminium-copper-iron melt quenched at 10\u00b2 to 10\u2074 K/s, near 63% aluminium, freezes into a $(item)Quasicrystal Plate$(): order without repetition."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reticular_chemistry"
+}

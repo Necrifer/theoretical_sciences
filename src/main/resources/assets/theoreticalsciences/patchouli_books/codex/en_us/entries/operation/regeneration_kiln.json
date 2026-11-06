@@ -1,0 +1,24 @@
+{
+  "name": "Regeneration Kiln",
+  "icon": "theoreticalsciences:regeneration_kiln",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 113,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A worn catalyst is choked with coke. Burning it off in air goes faster hotter (k \u221d e^(\u2212E\u2090/RT)) and with more oxygen - but above about 900 K the metal grains merge, and what sinters is lost. Run it where the coke goes and the metal stays."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Burn-off temperature, Oxygen flow.$(br2)$(thing)Disturbance$(): Draught: the oxygen reaching the bed varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): The faster the coke burns, the faster each batch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Burn rate: k \u221d e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/800 K))$(br)Coke removed: C = 1 \u2212 e^(\u2212k\u00b7f/2)$(br)Sintered: S = 1 \u2212 e^(\u2212(T \u2212 900 K)/60 K)$(br)Restored: R = C\u00b7(1 \u2212 S)"
+    }
+  ]
+}

@@ -118,6 +118,9 @@ public class EntropyCenserItem extends Item implements EschatonPowered {
 
     /** Other players only where the server allows PvP and teams allow it. */
     static boolean mayAffect(Player user, LivingEntity target) {
+        // 1.2.0: not into someone's claim (a hostile mob there is anyone's to fight)
+        if (!(target instanceof Player) && !(target instanceof net.minecraft.world.entity.monster.Enemy) && user instanceof net.minecraft.server.level.ServerPlayer sp
+                && !com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, target.blockPosition(), target, com.theoreticalsciences.compat.ClaimChecks.Kind.ENTITY)) return false;
         if (!(target instanceof Player other) || other == user) return true;
         var server = user.getServer();
         return (server == null || server.isPvpAllowed()) && user.canHarmPlayer(other);

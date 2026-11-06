@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.optics.intro__r47_lasers",
+  "description": "book.theoreticalsciences.codex.optics.intro__r47_lasers.desc",
+  "icon": {
+    "item": "theoreticalsciences:laser_head"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 28,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.intro__r47_lasers.p0",
+      "title": "book.theoreticalsciences.codex.optics.intro__r47_lasers"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.optics.intro__r47_lasers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/optics__intro__r46_growth"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/laser_physics"
+  }
+}

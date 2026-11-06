@@ -1,0 +1,57 @@
+{
+  "title": "Topology of Surfaces",
+  "description": "Stretch a surface any way, without tearing, and one number never changes: V \u2212 E + F. A sphere has 2, a doughnut 0. Unlocks the Topology Kiln.",
+  "icon": "theoreticalsciences:mobius_strip",
+  "x": 3,
+  "y": 6,
+  "insight": 45,
+  "requires": [
+    "theoreticalsciences:euclidean_geometry",
+    "theoreticalsciences:cardinality"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A net of V corners, E edges and F faces is drawn on a surface. Write the number \u03c7 that no stretching can change.",
+    "name": "Euler characteristic",
+    "lhs": "\u03c7",
+    "form": "V - E + F",
+    "expr": "V - E + F",
+    "ask": "Find \u03c7 for a cube: V = @{V}, E = @{E}, F = 6.",
+    "vars": {
+      "\u03c7": "Euler characteristic",
+      "V": "corners",
+      "E": "edges",
+      "F": "faces"
+    },
+    "given": {
+      "V": 8,
+      "E": 12,
+      "F": 6
+    },
+    "unit": "",
+    "method": "Adding an edge across a face adds one face; adding a corner on an edge adds one edge: \u03c7 never moves.",
+    "distractors": [
+      "\u03c0",
+      "2",
+      "n"
+    ],
+    "vary": {
+      "V": [
+        7.0,
+        9.0,
+        1.0
+      ],
+      "E": [
+        10.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Assayed Enzyme",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:assayed_enzyme",
+      "title": "Assayed Enzyme",
+      "text": "An Engineered Enzyme with its Michaelis constant and top speed measured, so it is always fed exactly as much substrate as it can use. Made on the Enzyme Assay Bench; Bioculture wastes far less with it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Enzyme Assay Bench$().$(br2)$(thing)Unlocked by$(): Enzyme Kinetics.$(br2)$(thing)Used in$(): Folding Chamber, Grown Organ, Living Cell, Nutrient Broth, Pattern Template, Porphyrin Oxygen Carrier, Regeneration Tank, Stable Dose and more."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/enzyme_kinetics"
+}

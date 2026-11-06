@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:contact_process_tower"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.contact_process"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.contact_process.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/chemical_equilibrium",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

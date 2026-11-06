@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:fuel_cell_power",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 250
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:galvanic_cells",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "E0": 1.229
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": 0.2,
+        "max": 9.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r54_er_epr",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r54_er_epr.desc",
+  "icon": {
+    "item": "theoreticalsciences:er_epr_weaver"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 56,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_er_epr.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r54_er_epr"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_er_epr.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/singularities__intro__lensing"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__relativity"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/er_epr"
+  }
+}

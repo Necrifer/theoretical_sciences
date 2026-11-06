@@ -1,0 +1,19 @@
+{
+  "name": "Vanadium Bed",
+  "icon": "theoreticalsciences:vanadium_bed",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:vanadium_bed",
+      "title": "Vanadium Bed",
+      "text": "Vanadium pentoxide on a silica support, in rings. At four hundred degrees it hands oxygen to sulfur dioxide and takes it back from the air, over and over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Catalyst Formulator$().$(br2)$(thing)Unlocked by$(): The Contact Process.$(br2)$(thing)Used in$(): Vanadium Flow Battery."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/contact_process"
+}

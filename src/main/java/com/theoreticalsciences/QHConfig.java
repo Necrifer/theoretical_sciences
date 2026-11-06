@@ -21,6 +21,10 @@ public final class QHConfig {
     public static final ModConfigSpec.DoubleValue TUNING_WEAR;
     public static final ModConfigSpec.BooleanValue FAILURE_HAZARDS;
     public static final ModConfigSpec.IntValue NANITE_CAP;
+    public static final ModConfigSpec.IntValue CODEX_WORLD_LAWS_PERMISSION;
+    public static final ModConfigSpec.IntValue EDGE_ERASURE_RADIUS;
+    public static final ModConfigSpec.BooleanValue EDGE_ERASURE_ALL;
+    public static final ModConfigSpec.DoubleValue GREAVES_SPEED;
     public static final ModConfigSpec.BooleanValue FAILURE_DESTROYS_BLOCKS;
     public static final ModConfigSpec.BooleanValue RADIATION_SICKNESS;
     public static final ModConfigSpec.BooleanValue RADIATION_SHARE;
@@ -34,6 +38,11 @@ public final class QHConfig {
 
     public static final ModConfigSpec.BooleanValue LENSING_ENABLED;
     public static final ModConfigSpec.IntValue LENSING_MAX_DISTANCE;
+    public static final ModConfigSpec.BooleanValue ANIMATED_MULTIBLOCKS;
+    public static final ModConfigSpec.BooleanValue MOVING_PARTS;
+    public static final ModConfigSpec.IntValue ANIMATION_DISTANCE;
+    public static final ModConfigSpec.IntValue ANIMATION_FREEZE_DISTANCE;
+    public static final ModConfigSpec.BooleanValue MOVING_PARTS_COMPAT;
     public static final ModConfigSpec.BooleanValue FANCY_SKY;
     public static final ModConfigSpec.IntValue PARTICLE_DENSITY;
     public static final ModConfigSpec.BooleanValue STRUCTURE_DISTORTION;
@@ -55,6 +64,18 @@ public final class QHConfig {
         DURATION_MULTIPLIER = b.comment("Multiplier on recipe durations.").defineInRange("durationMultiplier", 1.0, 0.01, 100.0);
         INGREDIENT_MULTIPLIER = b.comment("Multiplier on every machine recipe's item and fluid inputs (not generator fuel), applied when recipes load (/reload after changing).",
                 "Item inputs are capped at what one slot holds, fluids at what one tank holds (2,147,483,647 each). Use it to tune the whole mod's cost for a pack.").defineInRange("recipeIngredientMultiplier", 1.0, 0.01, 64.0);
+        MOVING_PARTS = b.comment("1.2.0: formed multiblocks hand their moving parts (rings, rotors, rams, dishes) to the renderer, which draws them moving while the machine runs.",
+                "Off: those blocks stay as ordinary still blocks (nothing else changes).").define("movingMultiblockParts", true);
+        b.pop();
+        b.push("codex");
+        CODEX_WORLD_LAWS_PERMISSION = b.comment("1.2.0: the permission level a player needs to set the Lawgiver's Codex's laws over a whole dimension (gravity, time,",
+                "weather, spawning, mob strength, and restoring them). 2 = operators (the default), 0 = anyone. In single player the world's owner",
+                "always may; LAN guests follow this. The Codex's other powers (creating and rewriting creatures) follow claimed land instead.").defineInRange("codexWorldLawsPermissionLevel", 2, 0, 4);
+        b.pop();
+        b.push("endgame_gear");
+        EDGE_ERASURE_RADIUS = b.comment("1.2.0: how far the Omnipotent Edge's Erasure reaches (blocks, all round the wielder).").defineInRange("edgeErasureRadius", 64, 8, 256);
+        EDGE_ERASURE_ALL = b.comment("If true, Erasure takes every creature in reach that is not a player, a villager or someone else's pet (still not in others' claims). False: hostile creatures only.").define("edgeErasureAllCreatures", false);
+        GREAVES_SPEED = b.comment("How strongly the Greaves of the Absolute drive their wearer on (1 = as fast as Avaritia's Infinity Boots, 0 = only the plain speed bonus).").defineInRange("greavesSpeed", 1.0, 0.0, 4.0);
         b.pop();
         b.push("tuning");
         TUNING_DIFFICULTY = b.comment("How fast multiblock tuning targets drift (0 = never drifts: tuning is set-and-forget).").defineInRange("driftSpeed", 1.0, 0.0, 10.0);
@@ -111,6 +132,10 @@ public final class QHConfig {
         FANCY_SKY = c.comment("Custom animated sky in The Bulk.").define("fancyBulkSky", true);
         PARTICLE_DENSITY = c.comment("Particle density for machine effects (0 = none, 3 = maximum).").defineInRange("particleDensity", 2, 0, 3);
         STRUCTURE_DISTORTION = c.comment("Inside higher-dimensional structures (tesseracts, fractals, Platonic solids, the Hilbert Hotel...) the view itself is folded to match. Turn off if it conflicts with a shader pack or causes discomfort.").define("structureDistortion", true);
+        ANIMATED_MULTIBLOCKS = c.comment("1.2.0: moving parts of this mod's multiblocks and their working effects (star, shell, orbiters, beams and the rest).").define("animatedMultiblocks", true);
+        ANIMATION_DISTANCE = c.comment("How far away (blocks, to the nearest edge of the effect) animated multiblocks are still drawn.").defineInRange("animationDistance", 256, 32, 1024);
+        ANIMATION_FREEZE_DISTANCE = c.comment("Beyond this distance (blocks) animated parts are still drawn, but stop moving.").defineInRange("animationFreezeDistance", 160, 16, 1024);
+        MOVING_PARTS_COMPAT = c.comment("Draw multiblocks' moving parts through the game's own block buffers (slower) instead of from cached buffers on the graphics card. Only for a mod that moves block entities about (it is used anyway with Sable installed). Takes effect when resources are next reloaded (F3+T) or the world is rejoined.").define("movingPartsCompatibility", false);
         c.pop();
         CLIENT_SPEC = c.build();
     }

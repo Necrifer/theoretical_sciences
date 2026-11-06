@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:blood_plasma",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nutrient_broth",
+      "amount": 700
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 53.8,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

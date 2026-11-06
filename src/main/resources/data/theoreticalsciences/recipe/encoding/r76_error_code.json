@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:encoding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:prime_shard",
+      "count": 2
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 4
+    },
+    {
+      "item": "minecraft:string",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:error_code",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:error_correction",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "eps": 0.001,
+      "tol": 0.001
+    },
+    "windows": [
+      {
+        "q": "fail",
+        "min": -1.0,
+        "max": 0.001
+      }
+    ]
+  }
+}

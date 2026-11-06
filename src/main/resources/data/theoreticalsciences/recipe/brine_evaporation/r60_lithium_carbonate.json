@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:brine_evaporation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:deep_brine",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lithium_carbonate",
+      "count": 1
+    }
+  ],
+  "energy": 64,
+  "duration": 800,
+  "research": "theoreticalsciences:solubility",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "CF",
+        "min": 30.0,
+        "max": 100.0
+      },
+      {
+        "q": "Pu",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

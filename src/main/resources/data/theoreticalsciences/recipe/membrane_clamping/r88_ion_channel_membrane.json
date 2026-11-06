@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:membrane_clamping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lipid_bilayer",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ion_channel_membrane",
+      "count": 2
+    }
+  ],
+  "energy": 384,
+  "duration": 240,
+  "research": "theoreticalsciences:membrane_potential",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "zi": 1.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": 50.0,
+        "max": 70.0
+      }
+    ]
+  }
+}

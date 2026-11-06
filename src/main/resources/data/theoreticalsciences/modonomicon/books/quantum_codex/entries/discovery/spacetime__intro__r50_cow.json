@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r50_cow",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r50_cow.desc",
+  "icon": {
+    "item": "theoreticalsciences:neutron_interferometer"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 41,
+  "y": 51,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r50_cow.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r50_cow"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r50_cow.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r47_redshift"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/neutron_interferometry"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:chemical_clock"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.bifurcations"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.bifurcations.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/oscillating_reactions",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

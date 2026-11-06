@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_methane",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 900
+    },
+    {
+      "id": "theoreticalsciences:nitrogen",
+      "amount": 100
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:titan_lakes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 3.0,
+      "xF": 0.9,
+      "Tb": 111.7,
+      "dH": 8.2
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.99,
+        "max": 1.0
+      }
+    ]
+  }
+}

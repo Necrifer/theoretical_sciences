@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:membrane_clamping",
+  "item_inputs": [
+    {
+      "item": "minecraft:egg",
+      "count": 2
+    },
+    {
+      "item": "minecraft:slime_ball",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lipid_bilayer",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:membranes",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "zi": 1.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": -100.0,
+        "max": -80.0
+      }
+    ]
+  }
+}

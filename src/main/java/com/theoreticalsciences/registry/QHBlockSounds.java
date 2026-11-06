@@ -7,7 +7,8 @@ public final class QHBlockSounds {
     public static SoundType of(String id) {
         return switch (id) {
             case "aleph_glass", "bulk_crystal", "cherenkov_quartz_block", "corundum_crystal", "dilithium_block", "fractal_lattice_block",
-                 "garnet_crystal", "koch_crystal", "moissanite_crystal", "peridot_crystal", "polished_dilithium", "void_lattice_block" -> SoundType.AMETHYST;
+                 "garnet_crystal", "hyperbolic_stone", "koch_crystal", "moissanite_crystal", "peridot_crystal", "polished_dilithium",
+                 "titan_ice", "void_lattice_block" -> SoundType.AMETHYST;
             case "accretion_fragment_ore", "basalt_column", "rich_gold_ore", "rim_slag" -> SoundType.BASALT;
             case "arbor_planks", "arbor_planks_slab", "arbor_planks_stairs" -> SoundType.CHERRY_WOOD;
             case "deepslate_cherenkov_quartz_ore", "deepslate_pitchblende_ore" -> SoundType.DEEPSLATE;
@@ -18,17 +19,20 @@ public final class QHBlockSounds {
             case "antisoil", "frontier_regolith" -> SoundType.GRAVEL;
             case "cosmic_ray_ore", "magnetar_crust_ore", "pulsar_crust", "pulsar_timing_ore" -> SoundType.METAL;
             case "dilithium_ore" -> SoundType.NETHER_ORE;
-            case "anticarbon_ore", "antigold_ore", "antihydrogen_ice", "antiiron_ore", "antisilicon_ore", "antistone",
-                 "antistone_bricks", "asteroid_rock", "axiom_stone", "bridgmanite_ore", "brown_dwarf_ore", "bulk_stone",
-                 "cardinal_ore", "cherenkov_bricks", "cherenkov_bricks_slab", "cherenkov_bricks_stairs", "cherenkov_bricks_wall", "cherenkov_pillar",
-                 "core_iron", "core_magnetite_ore", "crustal_rock", "degenerate_matter_ore", "dilaton_ore", "ejecta_ore",
-                 "ejecta_rock", "fission_fragment_ore", "fractal_ore", "frozen_light_ore", "geode_shell", "hilbert_brick",
-                 "hyperspherical_ore", "infall_rock", "kaluza_klein_ore", "magnetite_block", "magnetite_bricks", "moduli_ore",
-                 "oklo_rock", "oklo_uraninite_ore", "ordinal_ore", "ordinal_stone", "peridotite", "pitchblende_ore",
-                 "planetesimal_core_ore", "polished_cherenkov_quartz", "prime_number_ore", "retrocausal_ore", "rich_copper_ore", "rich_iron_ore",
-                 "ringwoodite_ore", "spacetime_bricks", "spacetime_bricks_slab", "spacetime_bricks_stairs", "spacetime_bricks_wall", "tidal_ore",
-                 "transcendent_stone", "transcendental_ore", "void_bricks", "void_bricks_slab", "void_bricks_stairs", "void_bricks_wall",
-                 "void_lattice_ore" -> SoundType.STONE;
+            case "abyssal_silicate", "anticarbon_ore", "antigold_ore", "antihydrogen_ice", "antiiron_ore", "antisilicon_ore",
+                 "antistone", "antistone_bricks", "asteroid_rock", "axiom_stone", "bone_matrix", "bridgmanite_ore",
+                 "brown_dwarf_ore", "bulk_stone", "cardinal_ore", "cell_membrane", "cherenkov_bricks", "cherenkov_bricks_slab",
+                 "cherenkov_bricks_stairs", "cherenkov_bricks_wall", "cherenkov_pillar", "chromatin", "collagen_seam", "core_iron",
+                 "core_magnetite_ore", "crustal_rock", "cryolava_rock", "degenerate_matter_ore", "dense_stone", "dilaton_ore",
+                 "ejecta_ore", "ejecta_rock", "epsilon_ore", "euclidean_marble", "euclidean_ore", "evaporite_crust",
+                 "evaporite_ore", "extracellular_matrix", "fission_fragment_ore", "fractal_ore", "frozen_light_ore", "geode_shell",
+                 "geodesic_ore", "hilbert_brick", "hyperspherical_ore", "infall_rock", "kaluza_klein_ore", "lymph_tissue",
+                 "magnetite_block", "magnetite_bricks", "moduli_ore", "nucleotide_cluster", "oklo_rock", "oklo_uraninite_ore",
+                 "ordinal_ore", "ordinal_stone", "peridotite", "pitchblende_ore", "planetesimal_core_ore", "polished_cherenkov_quartz",
+                 "postulate_slate", "prime_number_ore", "retrocausal_ore", "rich_copper_ore", "rich_iron_ore", "ringwoodite_ore",
+                 "spacetime_bricks", "spacetime_bricks_slab", "spacetime_bricks_stairs", "spacetime_bricks_wall", "tautology_ore", "tholin_sand",
+                 "tidal_ore", "transcendent_stone", "transcendental_ore", "tumour_mass", "tumour_nodule", "void_bricks",
+                 "void_bricks_slab", "void_bricks_stairs", "void_bricks_wall", "void_lattice_ore" -> SoundType.STONE;
             case "chondrite", "impact_breccia", "iron_meteorite" -> SoundType.TUFF;
             case "dust_cloud", "hydrogen_cloud", "oxygen_cloud" -> SoundType.WOOL;
             default -> null;

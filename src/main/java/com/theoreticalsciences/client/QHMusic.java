@@ -34,6 +34,17 @@ public final class QHMusic {
                 || !mc.level.getEntitiesOfClass(com.theoreticalsciences.boss.GenesisEntity.class, box, a -> true).isEmpty();
         if (boss) return "alpha_omega";
         var dim = mc.level.dimension().location();
+        // 1.2.0: the Platonic Realm has a piece for each layer
+        if (mc.level.dimension() == com.theoreticalsciences.world.QHDimensions.PLATONIC) {
+            switch (com.theoreticalsciences.world.Strata.layer(mc.player.getY())) {
+                case INFINITE -> { return "transfinite_hierarchy"; }
+                case CONTINUUM -> { return "the_continuum"; }
+                case CURVED_SPACE -> { return "curved_space"; }
+                case ELEMENTS -> { return "the_elements"; }
+                case AXIOMS -> { return "the_axioms"; }
+                default -> { }
+            }
+        }
         if (dim.getNamespace().equals(TheoreticalSciences.MODID) && QHSounds.MUSIC.containsKey(dim.getPath())) return dim.getPath();
         return null;
     }

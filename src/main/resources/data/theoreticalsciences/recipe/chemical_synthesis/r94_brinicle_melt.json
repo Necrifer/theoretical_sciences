@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:brinicle",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:concentrated_brine",
+      "amount": 500
+    }
+  ],
+  "energy": 64,
+  "duration": 100,
+  "research": "theoreticalsciences:subsurface_ocean",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 50.8,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

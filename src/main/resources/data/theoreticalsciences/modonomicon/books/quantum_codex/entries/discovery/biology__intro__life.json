@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.intro__life",
+  "description": "book.theoreticalsciences.codex.biology.intro__life.desc",
+  "icon": {
+    "item": "theoreticalsciences:bioreactor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 22,
+  "y": 67,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__life.p0",
+      "title": "book.theoreticalsciences.codex.biology.intro__life"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__life.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__bonds"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/molecular_biology"
+  }
+}

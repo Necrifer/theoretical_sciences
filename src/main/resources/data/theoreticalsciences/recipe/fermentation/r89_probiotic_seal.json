@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:fermentation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:sterile_pack",
+      "count": 1
+    },
+    {
+      "item": "minecraft:milk_bucket",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:probiotic_seal",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:probiotics",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Ks": 5.0,
+      "Si": 100.0
+    },
+    "windows": [
+      {
+        "q": "gr",
+        "min": 0.8,
+        "max": 2.0
+      },
+      {
+        "q": "air",
+        "min": 0.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "The Ostwald Process",
+  "icon": "theoreticalsciences:ostwald_converter",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ostwald_converter,theoreticalsciences:platinum_rhodium_gauze",
+      "text": "On white-hot platinum, ammonia burns to nitric oxide: 4NH\u2083 + 5O\u2082 \u2192 4NO + 6H\u2082O. Too cool, or too long on the gauze, and it burns to plain nitrogen instead. The $(item)Ostwald Converter$() sets the gauze temperature and the contact time: hot (about 1100-1200 K) and brief (a millisecond or two) for 90% selectivity. The nitric oxide is absorbed into $(fluid)Nitric Acid$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Platinum-Rhodium Gauze$() loses platinum above 1250 K. Iron meteorites carry the platinum metals: dissolve the iron away in sulfuric acid and they are left behind."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ostwald_process"
+}

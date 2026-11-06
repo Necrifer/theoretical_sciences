@@ -1,0 +1,19 @@
+{
+  "name": "One-Time Pad",
+  "icon": "theoreticalsciences:one_time_pad",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 504,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:one_time_pad",
+      "title": "One-Time Pad",
+      "text": "A strip of truly random key, as long as the message, used once and burned: the only cipher that can never be broken. Made on the Cipher Loom; an Entanglement Tuner is tuned with one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Cipher Loom$().$(br2)$(thing)Unlocked by$(): Cryptography.$(br2)$(thing)Used in$(): Entanglement Tuner."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/information_theory"
+}

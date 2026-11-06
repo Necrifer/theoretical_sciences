@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_brinicle",
+  "description": "book.theoreticalsciences.codex.chemistry.node_brinicle.desc",
+  "icon": {
+    "item": "theoreticalsciences:brinicle"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 237,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:brinicle"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_brinicle.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_brinicle.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__reverse_osmosis_cell",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/osmosis"
+  }
+}

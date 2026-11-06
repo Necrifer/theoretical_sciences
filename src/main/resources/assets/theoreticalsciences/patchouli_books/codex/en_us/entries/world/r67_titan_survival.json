@@ -1,0 +1,26 @@
+{
+  "name": "Surviving Titan",
+  "icon": "theoreticalsciences:heated_pressure_suit_chestplate",
+  "category": "theoreticalsciences:world",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:heated_pressure_suit_chestplate,theoreticalsciences:hydrophobic_coating,theoreticalsciences:oxygen_rebreather",
+      "text": "$(thing)Cold$(): at 94 K you freeze as in powder snow, then take frost damage. Each piece of a $(item)Heated Pressure Suit$() (a Pressure Suit crafted with two Silica Aerogel and redstone heating wire) keeps out a quarter of it; a full suit, all of it. It is still a pressure suit underneath."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Rain$(): out under the sky in a storm, methane rain soaks through a suit's aerogel and chills you as much again. Use a $(item)Hydrophobic Coating$() while wearing armour to coat each piece (one can a piece): each coated piece sheds a quarter of the soaking. Methane wets almost everything - the coating is fluorinated so that it does not."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Air$(): Titan's air is nitrogen and methane, and your breath runs out as if you were under water. An $(item)Oxygen Rebreather$() anywhere in your inventory holds twenty minutes of oxygen and spends it a second at a time, even in a lake. Craft a spent one with an Oxygen Gas Cell to refill it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)No fire$(): nothing burns without oxygen. Flint and steel and fire charges fail, and anything burning goes out. $(thing)Low gravity$(): a seventh of Earth's - you fall slowly, land softly and jump higher. Liquid methane is less than half as dense as water and too thin to swim in: you sink, and it is 94 K."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/cryogenic_survival"
+}

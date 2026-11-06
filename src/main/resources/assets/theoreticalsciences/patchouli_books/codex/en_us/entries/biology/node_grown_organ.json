@@ -1,0 +1,19 @@
+{
+  "name": "Grown Organ",
+  "icon": "theoreticalsciences:grown_organ",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:grown_organ",
+      "title": "Grown Organ",
+      "text": "A working organ grown from stem cells laid out by a chemical gradient, each cell told where it is and what to become. The fourth piece of the Tree of Life. It dies if carried about too long. Made in the Regeneration Tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Regeneration Tank$().$(br2)$(thing)Unlocked by$(): Regeneration.$(br2)$(thing)Used in$(): Tree of Life."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/regeneration"
+}

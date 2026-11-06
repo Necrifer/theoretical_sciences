@@ -1,0 +1,66 @@
+{
+  "title": "Probiotics",
+  "description": "Fill every surface with harmless bacteria and nothing harmful finds room: competitive exclusion. Unlocks the Probiotic Seal.",
+  "icon": "theoreticalsciences:probiotic_seal",
+  "x": 2,
+  "y": 22,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:microbiology",
+    "theoreticalsciences:sterile_technique"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:sterile_pack",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "A harmful strain grows at rate r, but only into the room the friendly ones leave: N of a capacity K is already taken. Write its growth rate G.",
+    "name": "Competitive exclusion",
+    "lhs": "G",
+    "form": "r * ( 1 - N / K )",
+    "expr": "r * ( 1 - N / K )",
+    "ask": "Find G for r = @{r}, N = @{N} and K = @{K}.",
+    "vars": {
+      "G": "growth rate",
+      "r": "free rate",
+      "N": "room taken",
+      "K": "capacity"
+    },
+    "given": {
+      "r": 2,
+      "N": 95,
+      "K": 100
+    },
+    "unit": "1/h",
+    "method": "Logistic growth: the free rate times the share of room left; a full lining leaves almost none.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "r": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "N": [
+        87.0,
+        103.0,
+        1.0
+      ],
+      "K": [
+        92.0,
+        108.0,
+        1.0
+      ]
+    }
+  }
+}

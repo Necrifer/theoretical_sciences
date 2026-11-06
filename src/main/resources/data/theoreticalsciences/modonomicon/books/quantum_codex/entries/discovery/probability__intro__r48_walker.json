@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.intro__r48_walker",
+  "description": "book.theoreticalsciences.codex.probability.intro__r48_walker.desc",
+  "icon": {
+    "item": "theoreticalsciences:random_walker_spawn_egg"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 24,
+  "y": 84,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r48_walker.p0",
+      "title": "book.theoreticalsciences.codex.probability.intro__r48_walker"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r48_walker.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r38_galton"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r37_chance"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/brownian_motion"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:alkahest_distillation",
+  "item_inputs": [
+    {
+      "item": "minecraft:raw_gold",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:alkahest",
+      "amount": 10
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:gold_ingot",
+      "count": 12
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:alkahest",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tb": 400.0
+    },
+    "windows": [
+      {
+        "q": "pur",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

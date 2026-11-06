@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_matured_antibody",
+  "description": "book.theoreticalsciences.codex.biology.node_matured_antibody.desc",
+  "icon": {
+    "item": "theoreticalsciences:matured_antibody"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 182,
+  "y": 94,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:matured_antibody"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_matured_antibody.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_matured_antibody.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__clonal_selector",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/affinity_maturation"
+  }
+}

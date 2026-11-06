@@ -1,0 +1,61 @@
+{
+  "title": "Rates as Equations",
+  "description": "A rate says how fast something changes; add up the changes, a small step at a time, and you have what happens. Unlocks the Integrator and the Rate Table.",
+  "icon": "theoreticalsciences:rate_table",
+  "x": 17,
+  "y": 0,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:reaction_kinetics",
+    "theoreticalsciences:number_systems"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 4
+    },
+    {
+      "item": "minecraft:clock",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Something decays as dy/dt = \u2212ky. Take one step of size h from the value y. Write the next value Y.",
+    "name": "Euler step",
+    "lhs": "Y",
+    "form": "y - h * k * y",
+    "expr": "y - h * k * y",
+    "ask": "Find Y for y = @{y}, h = 0.1 and k = @{k}.",
+    "vars": {
+      "Y": "next value",
+      "y": "value now",
+      "h": "step",
+      "k": "rate constant"
+    },
+    "given": {
+      "y": 1,
+      "h": 0.1,
+      "k": 2
+    },
+    "unit": "",
+    "method": "Over a short step the rate barely changes: the change is the rate now, \u2212ky, times the step h.",
+    "distractors": [
+      "+",
+      "exp",
+      "t"
+    ],
+    "vary": {
+      "y": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "k": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

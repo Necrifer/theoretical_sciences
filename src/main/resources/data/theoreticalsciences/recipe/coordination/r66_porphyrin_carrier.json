@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:coordination",
+  "item_inputs": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:pah_soot",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:porphyrin_oxygen_carrier",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:coordination_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "D0": 1.9,
+      "Pp": 2.0,
+      "sg": 1.0
+    },
+    "windows": [
+      {
+        "q": "sel",
+        "min": 0.2,
+        "max": 99.0
+      }
+    ]
+  }
+}

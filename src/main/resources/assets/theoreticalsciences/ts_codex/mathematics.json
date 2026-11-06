@@ -6,14 +6,14 @@
   "nodes": [
     {
       "entry": "mathematics/math_overview",
-      "x": 2,
-      "y": 2,
+      "x": 12,
+      "y": 11,
       "parents": []
     },
     {
       "entry": "mathematics/node_integer_ring",
-      "x": 0,
-      "y": 2,
+      "x": 10,
+      "y": 13,
       "parents": [
         "mathematics/math_overview"
       ],
@@ -21,8 +21,53 @@
     },
     {
       "entry": "mathematics/node_rational_field",
-      "x": 4,
-      "y": 2,
+      "x": 14,
+      "y": 13,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_algorithms",
+      "x": 12,
+      "y": 9,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_eigenvalues",
+      "x": 10,
+      "y": 11,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_integers_rationals",
+      "x": 14,
+      "y": 11,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_linear_algebra",
+      "x": 12,
+      "y": 13,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_markov_chains",
+      "x": 10,
+      "y": 9,
       "parents": [
         "mathematics/math_overview"
       ],
@@ -30,38 +75,53 @@
     },
     {
       "entry": "mathematics/node_research_probability_theory",
-      "x": 2,
-      "y": 0,
+      "x": 14,
+      "y": 9,
       "parents": [
         "mathematics/math_overview"
       ],
       "node": true
     },
     {
-      "entry": "mathematics/numbers",
-      "x": 0,
+      "entry": "mathematics/node_symmetry_seed",
+      "x": 12,
       "y": 7,
+      "parents": [
+        "mathematics/math_overview"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/r73_first_steps",
+      "x": 12,
+      "y": 18,
+      "parents": []
+    },
+    {
+      "entry": "mathematics/numbers",
+      "x": 12,
+      "y": 21,
       "parents": []
     },
     {
       "entry": "mathematics/peano_engine",
-      "x": 0,
-      "y": 10,
+      "x": 12,
+      "y": 24,
       "parents": []
     },
     {
       "entry": "mathematics/logic_sets",
-      "x": 4,
-      "y": 17,
+      "x": 34,
+      "y": 7,
       "parents": [
         "mathematics/math_overview",
-        "mathematics/numbers"
+        "mathematics/r73_first_steps"
       ]
     },
     {
       "entry": "mathematics/node_axiom_of_choice",
-      "x": 6,
-      "y": 17,
+      "x": 32,
+      "y": 5,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -69,8 +129,8 @@
     },
     {
       "entry": "mathematics/node_axiom_schema",
-      "x": 4,
-      "y": 19,
+      "x": 36,
+      "y": 5,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -78,8 +138,8 @@
     },
     {
       "entry": "mathematics/node_category_lattice",
-      "x": 2,
-      "y": 15,
+      "x": 32,
+      "y": 9,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -87,8 +147,8 @@
     },
     {
       "entry": "mathematics/node_empty_set",
-      "x": 6,
-      "y": 15,
+      "x": 36,
+      "y": 9,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -96,8 +156,8 @@
     },
     {
       "entry": "mathematics/node_formal_proof_tree",
-      "x": 2,
-      "y": 19,
+      "x": 34,
+      "y": 3,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -105,17 +165,17 @@
     },
     {
       "entry": "mathematics/node_functor_bridge",
-      "x": 6,
-      "y": 19,
+      "x": 30,
+      "y": 7,
       "parents": [
         "mathematics/logic_sets"
       ],
       "node": true
     },
     {
-      "entry": "mathematics/node_modular_form",
-      "x": 4,
-      "y": 13,
+      "entry": "mathematics/node_postulate_slate",
+      "x": 30,
+      "y": 9,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -123,8 +183,8 @@
     },
     {
       "entry": "mathematics/node_power_set",
-      "x": 0,
-      "y": 17,
+      "x": 38,
+      "y": 7,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -132,8 +192,26 @@
     },
     {
       "entry": "mathematics/node_prime_shard",
-      "x": 8,
-      "y": 17,
+      "x": 34,
+      "y": 11,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_proof_certificate",
+      "x": 32,
+      "y": 3,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_cardinality",
+      "x": 34,
+      "y": 5,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -141,8 +219,17 @@
     },
     {
       "entry": "mathematics/node_research_category_theory",
-      "x": 4,
-      "y": 15,
+      "x": 32,
+      "y": 7,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_proof_by_induction",
+      "x": 36,
+      "y": 7,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -150,17 +237,35 @@
     },
     {
       "entry": "mathematics/node_research_set_theory",
-      "x": 2,
-      "y": 17,
+      "x": 34,
+      "y": 9,
       "parents": [
         "mathematics/logic_sets"
       ],
       "node": true
     },
     {
-      "entry": "mathematics/node_riemann_zeta_crystal",
-      "x": 4,
-      "y": 21,
+      "entry": "mathematics/node_tautology_shard",
+      "x": 36,
+      "y": 3,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_unity",
+      "x": 30,
+      "y": 5,
+      "parents": [
+        "mathematics/logic_sets"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_zero",
+      "x": 38,
+      "y": 5,
       "parents": [
         "mathematics/logic_sets"
       ],
@@ -168,17 +273,17 @@
     },
     {
       "entry": "mathematics/platonic_realm",
-      "x": 2,
-      "y": 26,
+      "x": 34,
+      "y": 16,
       "parents": [
         "mathematics/math_overview",
-        "mathematics/numbers"
+        "mathematics/r73_first_steps"
       ]
     },
     {
       "entry": "mathematics/node_fractal_ore",
-      "x": 2,
-      "y": 24,
+      "x": 34,
+      "y": 14,
       "parents": [
         "mathematics/platonic_realm"
       ],
@@ -186,8 +291,8 @@
     },
     {
       "entry": "mathematics/node_prime_number_ore",
-      "x": 0,
-      "y": 26,
+      "x": 32,
+      "y": 16,
       "parents": [
         "mathematics/platonic_realm"
       ],
@@ -195,8 +300,8 @@
     },
     {
       "entry": "mathematics/node_transcendental_ore",
-      "x": 4,
-      "y": 26,
+      "x": 36,
+      "y": 16,
       "parents": [
         "mathematics/platonic_realm"
       ],
@@ -204,17 +309,17 @@
     },
     {
       "entry": "mathematics/fractal_space",
-      "x": 15,
-      "y": 4,
+      "x": 34,
+      "y": 23,
       "parents": [
         "mathematics/math_overview",
-        "mathematics/numbers"
+        "mathematics/r73_first_steps"
       ]
     },
     {
       "entry": "mathematics/node_axiom_sentinel",
-      "x": 13,
-      "y": 6,
+      "x": 32,
+      "y": 21,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -222,17 +327,8 @@
     },
     {
       "entry": "mathematics/node_axiom_stone",
-      "x": 17,
-      "y": 4,
-      "parents": [
-        "mathematics/fractal_space"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_euclid_reliquary",
-      "x": 15,
-      "y": 6,
+      "x": 36,
+      "y": 23,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -240,8 +336,8 @@
     },
     {
       "entry": "mathematics/node_fractal_core",
-      "x": 15,
-      "y": 0,
+      "x": 32,
+      "y": 25,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -249,8 +345,8 @@
     },
     {
       "entry": "mathematics/node_fractal_dust",
-      "x": 15,
-      "y": 2,
+      "x": 34,
+      "y": 21,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -258,17 +354,8 @@
     },
     {
       "entry": "mathematics/node_fractal_wyrm",
-      "x": 17,
-      "y": 6,
-      "parents": [
-        "mathematics/fractal_space"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_golden_ratio_glass",
-      "x": 13,
-      "y": 2,
+      "x": 36,
+      "y": 21,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -276,8 +363,8 @@
     },
     {
       "entry": "mathematics/node_koch_crystal",
-      "x": 17,
-      "y": 2,
+      "x": 34,
+      "y": 25,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -285,8 +372,8 @@
     },
     {
       "entry": "mathematics/node_proof_fragment",
-      "x": 11,
-      "y": 4,
+      "x": 36,
+      "y": 25,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -294,8 +381,8 @@
     },
     {
       "entry": "mathematics/node_transcendental_crystal",
-      "x": 13,
-      "y": 4,
+      "x": 32,
+      "y": 23,
       "parents": [
         "mathematics/fractal_space"
       ],
@@ -303,32 +390,31 @@
     },
     {
       "entry": "mathematics/proof_assistant",
-      "x": 11,
-      "y": 11,
+      "x": 34,
+      "y": 28,
       "parents": [
         "mathematics/math_overview",
-        "mathematics/numbers"
+        "mathematics/r73_first_steps"
       ]
     },
     {
       "entry": "probability/r37_chance",
-      "x": 11,
-      "y": 14,
+      "x": 1,
+      "y": 39,
       "parents": [
-        "mathematics/math_overview",
-        "mathematics/numbers"
+        "mathematics/math_overview"
       ]
     },
     {
       "entry": "information/demon",
-      "x": 15,
-      "y": 21,
+      "x": 5,
+      "y": 55,
       "parents": []
     },
     {
       "entry": "information/node_ergodic_mixer_core",
-      "x": 15,
-      "y": 19,
+      "x": 5,
+      "y": 53,
       "parents": [
         "information/demon"
       ],
@@ -336,8 +422,8 @@
     },
     {
       "entry": "information/node_maxwell_boltzmann_gas",
-      "x": 17,
-      "y": 23,
+      "x": 7,
+      "y": 57,
       "parents": [
         "information/demon"
       ],
@@ -345,8 +431,8 @@
     },
     {
       "entry": "information/node_negentropy_cell",
-      "x": 13,
-      "y": 21,
+      "x": 3,
+      "y": 55,
       "parents": [
         "information/demon"
       ],
@@ -354,8 +440,8 @@
     },
     {
       "entry": "information/node_partition_function_matrix",
-      "x": 17,
-      "y": 21,
+      "x": 7,
+      "y": 55,
       "parents": [
         "information/demon"
       ],
@@ -363,8 +449,8 @@
     },
     {
       "entry": "information/node_planck_casing",
-      "x": 15,
-      "y": 17,
+      "x": 5,
+      "y": 51,
       "parents": [
         "information/demon"
       ],
@@ -372,8 +458,8 @@
     },
     {
       "entry": "information/node_planck_shard",
-      "x": 15,
-      "y": 23,
+      "x": 5,
+      "y": 57,
       "parents": [
         "information/demon"
       ],
@@ -381,8 +467,8 @@
     },
     {
       "entry": "information/node_resonance_probe",
-      "x": 13,
-      "y": 19,
+      "x": 3,
+      "y": 53,
       "parents": [
         "information/demon"
       ],
@@ -390,8 +476,8 @@
     },
     {
       "entry": "information/node_strange_matter_pellet",
-      "x": 17,
-      "y": 19,
+      "x": 7,
+      "y": 53,
       "parents": [
         "information/demon"
       ],
@@ -399,8 +485,8 @@
     },
     {
       "entry": "information/node_void_lattice_block",
-      "x": 11,
-      "y": 21,
+      "x": 1,
+      "y": 55,
       "parents": [
         "information/demon"
       ],
@@ -408,66 +494,165 @@
     },
     {
       "entry": "information/node_void_lattice_shard",
-      "x": 13,
-      "y": 23,
+      "x": 3,
+      "y": 57,
       "parents": [
         "information/demon"
       ],
       "node": true
     },
     {
+      "entry": "mathematics/r74_structure",
+      "x": 23,
+      "y": 3,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
       "entry": "information/maxwell_demon_sorter",
-      "x": 11,
-      "y": 28,
+      "x": 12,
+      "y": 55,
       "parents": []
     },
     {
+      "entry": "mathematics/geometers_table",
+      "x": 23,
+      "y": 10,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/node_euclid_reliquary",
+      "x": 27,
+      "y": 10,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_euclidean_marble",
+      "x": 19,
+      "y": 10,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_euclidean_shard",
+      "x": 25,
+      "y": 8,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_eulers_identity",
+      "x": 21,
+      "y": 12,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_golden_ratio_glass",
+      "x": 23,
+      "y": 14,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_half_turn",
+      "x": 25,
+      "y": 12,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_pi_crystal",
+      "x": 23,
+      "y": 6,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_constructions",
+      "x": 23,
+      "y": 8,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_coordinates",
+      "x": 21,
+      "y": 10,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_curved_geometry",
+      "x": 25,
+      "y": 10,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_pi_constant",
+      "x": 23,
+      "y": 12,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_projective_geometry",
+      "x": 21,
+      "y": 8,
+      "parents": [
+        "mathematics/geometers_table"
+      ],
+      "node": true
+    },
+    {
       "entry": "probability/r38_galton",
-      "x": 22,
-      "y": 0,
+      "x": 8,
+      "y": 34,
       "parents": [
         "probability/r37_chance"
       ]
     },
     {
       "entry": "probability/galton_board",
-      "x": 28,
-      "y": 9,
+      "x": 8,
+      "y": 41,
       "parents": [
         "probability/r37_chance"
       ]
     },
     {
       "entry": "probability/node_brownian_suspension",
-      "x": 30,
-      "y": 13,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_capacitor_bank",
-      "x": 24,
-      "y": 5,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_centrifuge_rotor",
-      "x": 32,
-      "y": 5,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_cyclotron_dee",
-      "x": 24,
-      "y": 13,
+      "x": 6,
+      "y": 37,
       "parents": [
         "probability/galton_board"
       ],
@@ -475,26 +660,8 @@
     },
     {
       "entry": "probability/node_dice_set",
-      "x": 26,
-      "y": 7,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_doppler_drive",
-      "x": 32,
-      "y": 13,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_electrical_steel_lamination",
-      "x": 30,
-      "y": 7,
+      "x": 6,
+      "y": 43,
       "parents": [
         "probability/galton_board"
       ],
@@ -502,80 +669,8 @@
     },
     {
       "entry": "probability/node_entropy_die",
-      "x": 26,
-      "y": 11,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_entropy_sink",
-      "x": 28,
-      "y": 3,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_faraday_cage_mesh",
-      "x": 30,
-      "y": 11,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_feed_horn",
-      "x": 22,
-      "y": 9,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_focus_receiver",
-      "x": 34,
-      "y": 9,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_geiger_counter",
-      "x": 28,
-      "y": 5,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_geiger_tube",
-      "x": 24,
-      "y": 9,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_geodetic_surveyor",
-      "x": 32,
-      "y": 9,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_helium3_detector",
-      "x": 28,
-      "y": 15,
+      "x": 10,
+      "y": 43,
       "parents": [
         "probability/galton_board"
       ],
@@ -583,35 +678,17 @@
     },
     {
       "entry": "probability/node_large_deviation_shard",
-      "x": 28,
-      "y": 13,
+      "x": 8,
+      "y": 37,
       "parents": [
         "probability/galton_board"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_litz_wire",
-      "x": 26,
-      "y": 5,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_mhd_field_magnet",
-      "x": 26,
-      "y": 3,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_mu_metal_shield",
-      "x": 30,
-      "y": 5,
+      "entry": "probability/node_microstate_tally",
+      "x": 4,
+      "y": 41,
       "parents": [
         "probability/galton_board"
       ],
@@ -619,44 +696,26 @@
     },
     {
       "entry": "probability/node_normal_distribution_crystal",
-      "x": 24,
-      "y": 7,
+      "x": 12,
+      "y": 41,
       "parents": [
         "probability/galton_board"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_poisson_clock",
-      "x": 32,
-      "y": 7,
+      "entry": "probability/node_photographic_plate",
+      "x": 8,
+      "y": 45,
       "parents": [
         "probability/galton_board"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_proof_mass",
-      "x": 24,
-      "y": 11,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_pulsed_lab_casing",
-      "x": 30,
-      "y": 3,
-      "parents": [
-        "probability/galton_board"
-      ],
-      "node": true
-    },
-    {
-      "entry": "probability/node_rail_conductor",
-      "x": 22,
-      "y": 7,
+      "entry": "probability/node_research_computability",
+      "x": 8,
+      "y": 39,
       "parents": [
         "probability/galton_board"
       ],
@@ -664,8 +723,8 @@
     },
     {
       "entry": "probability/node_research_distributions",
-      "x": 28,
-      "y": 7,
+      "x": 6,
+      "y": 41,
       "parents": [
         "probability/galton_board"
       ],
@@ -673,8 +732,17 @@
     },
     {
       "entry": "probability/node_research_extreme_value_theory",
-      "x": 26,
-      "y": 9,
+      "x": 10,
+      "y": 41,
+      "parents": [
+        "probability/galton_board"
+      ],
+      "node": true
+    },
+    {
+      "entry": "probability/node_research_permutations",
+      "x": 8,
+      "y": 43,
       "parents": [
         "probability/galton_board"
       ],
@@ -682,8 +750,8 @@
     },
     {
       "entry": "probability/node_research_statistical_mechanics",
-      "x": 30,
-      "y": 9,
+      "x": 6,
+      "y": 39,
       "parents": [
         "probability/galton_board"
       ],
@@ -691,80 +759,368 @@
     },
     {
       "entry": "probability/node_research_stochastic_processes",
-      "x": 28,
-      "y": 11,
+      "x": 10,
+      "y": 39,
       "parents": [
         "probability/galton_board"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_rf_oscillator",
-      "x": 34,
+      "entry": "mathematics/r72_foundations",
+      "x": 23,
+      "y": 17,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/r75_change",
+      "x": 110,
       "y": 7,
       "parents": [
-        "probability/galton_board"
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/eratosthenes_sieve",
+      "x": 23,
+      "y": 22,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/node_modular_form",
+      "x": 25,
+      "y": 22,
+      "parents": [
+        "mathematics/eratosthenes_sieve"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_samarium_cobalt_blank",
-      "x": 32,
-      "y": 11,
+      "entry": "mathematics/node_research_modular_arithmetic",
+      "x": 23,
+      "y": 20,
       "parents": [
-        "probability/galton_board"
+        "mathematics/eratosthenes_sieve"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_survey_map",
-      "x": 26,
-      "y": 13,
+      "entry": "mathematics/node_research_number_theory",
+      "x": 21,
+      "y": 22,
       "parents": [
-        "probability/galton_board"
+        "mathematics/eratosthenes_sieve"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_tesla_primary",
-      "x": 22,
-      "y": 11,
+      "entry": "mathematics/node_riemann_zeta_crystal",
+      "x": 23,
+      "y": 24,
       "parents": [
-        "probability/galton_board"
+        "mathematics/eratosthenes_sieve"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_tesla_secondary",
-      "x": 34,
-      "y": 11,
+      "entry": "mathematics/symmetry_lathe",
+      "x": 3,
+      "y": 12,
       "parents": [
-        "probability/galton_board"
+        "mathematics/r74_structure",
+        "mathematics/geometers_table"
+      ]
+    },
+    {
+      "entry": "mathematics/node_lie_group_lattice",
+      "x": 5,
+      "y": 12,
+      "parents": [
+        "mathematics/symmetry_lathe"
       ],
       "node": true
     },
     {
-      "entry": "probability/node_xray_tube",
-      "x": 26,
-      "y": 15,
+      "entry": "mathematics/node_octonion_crystal",
+      "x": 3,
+      "y": 14,
       "parents": [
-        "probability/galton_board"
+        "mathematics/symmetry_lathe"
       ],
       "node": true
+    },
+    {
+      "entry": "mathematics/node_quaternion_crystal",
+      "x": 1,
+      "y": 10,
+      "parents": [
+        "mathematics/symmetry_lathe"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_abstract_algebra",
+      "x": 3,
+      "y": 10,
+      "parents": [
+        "mathematics/symmetry_lathe"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_lie_groups",
+      "x": 1,
+      "y": 12,
+      "parents": [
+        "mathematics/symmetry_lathe"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_symmetry_crystal",
+      "x": 5,
+      "y": 10,
+      "parents": [
+        "mathematics/symmetry_lathe"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/integrator",
+      "x": 110,
+      "y": 14,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/node_euler_crystal",
+      "x": 114,
+      "y": 14,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_fourier_series",
+      "x": 110,
+      "y": 18,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_governor",
+      "x": 106,
+      "y": 12,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_rate_table",
+      "x": 108,
+      "y": 10,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_bifurcations",
+      "x": 110,
+      "y": 12,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_control_theory",
+      "x": 108,
+      "y": 14,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_euler_formula",
+      "x": 112,
+      "y": 14,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_euler_number",
+      "x": 110,
+      "y": 16,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_eulers_identity",
+      "x": 108,
+      "y": 12,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_feedback",
+      "x": 112,
+      "y": 12,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_fixed_points",
+      "x": 108,
+      "y": 16,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_fourier_series",
+      "x": 112,
+      "y": 16,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_numerical_methods",
+      "x": 110,
+      "y": 10,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_stability",
+      "x": 106,
+      "y": 14,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_stability_margin",
+      "x": 112,
+      "y": 10,
+      "parents": [
+        "mathematics/integrator"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/cipher_loom",
+      "x": 3,
+      "y": 19,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/node_entanglement_tuner",
+      "x": 5,
+      "y": 19,
+      "parents": [
+        "mathematics/cipher_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_error_code",
+      "x": 3,
+      "y": 21,
+      "parents": [
+        "mathematics/cipher_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_one_time_pad",
+      "x": 1,
+      "y": 17,
+      "parents": [
+        "mathematics/cipher_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_cryptography",
+      "x": 3,
+      "y": 17,
+      "parents": [
+        "mathematics/cipher_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_error_correction",
+      "x": 1,
+      "y": 19,
+      "parents": [
+        "mathematics/cipher_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/r86_continuation",
+      "x": 45,
+      "y": 10,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
     },
     {
       "entry": "mathematics/analysis",
-      "x": 26,
-      "y": 22,
+      "x": 45,
+      "y": 17,
       "parents": [
-        "mathematics/platonic_realm",
-        "mathematics/fractal_space"
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
       ]
     },
     {
       "entry": "mathematics/node_complex_plane",
-      "x": 24,
-      "y": 24,
+      "x": 43,
+      "y": 15,
+      "parents": [
+        "mathematics/analysis"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_dense_stone",
+      "x": 43,
+      "y": 13,
       "parents": [
         "mathematics/analysis"
       ],
@@ -772,8 +1128,8 @@
     },
     {
       "entry": "mathematics/node_derivative_operator",
-      "x": 28,
-      "y": 24,
+      "x": 47,
+      "y": 15,
       "parents": [
         "mathematics/analysis"
       ],
@@ -781,17 +1137,17 @@
     },
     {
       "entry": "mathematics/node_differential_manifold",
-      "x": 26,
-      "y": 18,
+      "x": 43,
+      "y": 19,
       "parents": [
         "mathematics/analysis"
       ],
       "node": true
     },
     {
-      "entry": "mathematics/node_fourier_series",
-      "x": 22,
-      "y": 22,
+      "entry": "mathematics/node_epsilon_dust",
+      "x": 47,
+      "y": 19,
       "parents": [
         "mathematics/analysis"
       ],
@@ -799,8 +1155,8 @@
     },
     {
       "entry": "mathematics/node_fractal_set",
-      "x": 30,
-      "y": 22,
+      "x": 45,
+      "y": 13,
       "parents": [
         "mathematics/analysis"
       ],
@@ -808,8 +1164,8 @@
     },
     {
       "entry": "mathematics/node_function_graph",
-      "x": 26,
-      "y": 26,
+      "x": 41,
+      "y": 17,
       "parents": [
         "mathematics/analysis"
       ],
@@ -817,8 +1173,8 @@
     },
     {
       "entry": "mathematics/node_imaginary_unit",
-      "x": 24,
-      "y": 18,
+      "x": 49,
+      "y": 17,
       "parents": [
         "mathematics/analysis"
       ],
@@ -826,17 +1182,8 @@
     },
     {
       "entry": "mathematics/node_infinitesimal",
-      "x": 28,
-      "y": 18,
-      "parents": [
-        "mathematics/analysis"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_research_abstract_algebra",
-      "x": 26,
-      "y": 20,
+      "x": 45,
+      "y": 21,
       "parents": [
         "mathematics/analysis"
       ],
@@ -844,8 +1191,8 @@
     },
     {
       "entry": "mathematics/node_research_calculus",
-      "x": 24,
-      "y": 22,
+      "x": 45,
+      "y": 15,
       "parents": [
         "mathematics/analysis"
       ],
@@ -853,8 +1200,8 @@
     },
     {
       "entry": "mathematics/node_research_complex_analysis",
-      "x": 28,
-      "y": 22,
+      "x": 43,
+      "y": 17,
       "parents": [
         "mathematics/analysis"
       ],
@@ -862,17 +1209,8 @@
     },
     {
       "entry": "mathematics/node_research_geometric_topology",
-      "x": 26,
-      "y": 24,
-      "parents": [
-        "mathematics/analysis"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_research_number_theory",
-      "x": 24,
-      "y": 20,
+      "x": 47,
+      "y": 17,
       "parents": [
         "mathematics/analysis"
       ],
@@ -880,26 +1218,178 @@
     },
     {
       "entry": "mathematics/node_research_quantum_field_theory",
-      "x": 28,
-      "y": 20,
+      "x": 45,
+      "y": 19,
       "parents": [
         "mathematics/analysis"
       ],
       "node": true
     },
     {
+      "entry": "mathematics/r83_e_everywhere",
+      "x": 110,
+      "y": 21,
+      "parents": [
+        "mathematics/r75_change",
+        "mathematics/integrator"
+      ]
+    },
+    {
       "entry": "mathematics/analytic_continuator",
-      "x": 37,
+      "x": 45,
+      "y": 24,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/topology_kiln",
+      "x": 45,
+      "y": 5,
+      "parents": [
+        "mathematics/r74_structure",
+        "mathematics/geometers_table"
+      ]
+    },
+    {
+      "entry": "mathematics/node_hyperbolic_stone",
+      "x": 43,
+      "y": 5,
+      "parents": [
+        "mathematics/topology_kiln"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_manifolds_curvature",
+      "x": 45,
+      "y": 3,
+      "parents": [
+        "mathematics/topology_kiln"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/enzyme_assay_bench",
+      "x": 122,
+      "y": 17,
+      "parents": [
+        "mathematics/logic_sets",
+        "mathematics/proof_assistant"
+      ]
+    },
+    {
+      "entry": "mathematics/node_assayed_enzyme",
+      "x": 122,
+      "y": 19,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_porphyrin_oxygen_carrier",
+      "x": 120,
+      "y": 15,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_cooperativity",
+      "x": 122,
+      "y": 15,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_enzyme_inhibition",
+      "x": 120,
+      "y": 17,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_steady_state",
+      "x": 124,
+      "y": 17,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_stem_cell_culture",
+      "x": 124,
+      "y": 15,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/graph_loom",
+      "x": 57,
+      "y": 8,
+      "parents": [
+        "mathematics/topology_kiln",
+        "mathematics/geometers_table"
+      ]
+    },
+    {
+      "entry": "mathematics/node_network_map",
+      "x": 59,
+      "y": 8,
+      "parents": [
+        "mathematics/graph_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_networks",
+      "x": 57,
+      "y": 6,
+      "parents": [
+        "mathematics/graph_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_shortest_paths",
+      "x": 55,
+      "y": 8,
+      "parents": [
+        "mathematics/graph_loom"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/r79_optimisation",
+      "x": 77,
       "y": 11,
       "parents": [
-        "mathematics/platonic_realm",
-        "mathematics/fractal_space"
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/r82_patterns",
+      "x": 132,
+      "y": 13,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
       ]
     },
     {
       "entry": "information/holographic_encoder",
-      "x": 62,
-      "y": 10,
+      "x": 26,
+      "y": 55,
       "parents": [
         "information/demon",
         "information/maxwell_demon_sorter"
@@ -907,8 +1397,8 @@
     },
     {
       "entry": "information/node_bekenstein_crystal",
-      "x": 60,
-      "y": 10,
+      "x": 24,
+      "y": 55,
       "parents": [
         "information/holographic_encoder"
       ],
@@ -916,8 +1406,8 @@
     },
     {
       "entry": "information/node_boundary_cft_chip",
-      "x": 64,
-      "y": 10,
+      "x": 28,
+      "y": 55,
       "parents": [
         "information/holographic_encoder"
       ],
@@ -925,8 +1415,8 @@
     },
     {
       "entry": "information/node_holographic_matrix",
-      "x": 62,
-      "y": 12,
+      "x": 26,
+      "y": 57,
       "parents": [
         "information/holographic_encoder"
       ],
@@ -934,8 +1424,8 @@
     },
     {
       "entry": "information/node_holographic_screen",
-      "x": 60,
-      "y": 8,
+      "x": 24,
+      "y": 53,
       "parents": [
         "information/holographic_encoder"
       ],
@@ -943,17 +1433,184 @@
     },
     {
       "entry": "information/node_research_ads_cft",
-      "x": 62,
-      "y": 8,
+      "x": 26,
+      "y": 53,
       "parents": [
         "information/holographic_encoder"
       ],
       "node": true
     },
     {
+      "entry": "mathematics/optimiser",
+      "x": 77,
+      "y": 16,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/r73_first_steps"
+      ]
+    },
+    {
+      "entry": "mathematics/node_optimised_pathway",
+      "x": 75,
+      "y": 16,
+      "parents": [
+        "mathematics/optimiser"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_topology_optimisation",
+      "x": 77,
+      "y": 14,
+      "parents": [
+        "mathematics/optimiser"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/pattern_basin",
+      "x": 132,
+      "y": 18,
+      "parents": [
+        "mathematics/enzyme_assay_bench"
+      ]
+    },
+    {
+      "entry": "mathematics/node_pattern_template",
+      "x": 130,
+      "y": 18,
+      "parents": [
+        "mathematics/pattern_basin"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_turing_patterns",
+      "x": 132,
+      "y": 16,
+      "parents": [
+        "mathematics/pattern_basin"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_turing_morphogen",
+      "x": 134,
+      "y": 18,
+      "parents": [
+        "mathematics/pattern_basin"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/r76_chance",
+      "x": 64,
+      "y": 12,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/r80_control",
+      "x": 117,
+      "y": 13,
+      "parents": [
+        "mathematics/r79_optimisation",
+        "mathematics/optimiser"
+      ]
+    },
+    {
+      "entry": "mathematics/r81_games",
+      "x": 84,
+      "y": 7,
+      "parents": [
+        "mathematics/r79_optimisation"
+      ]
+    },
+    {
+      "entry": "mathematics/research_nexus_machine",
+      "x": 57,
+      "y": 3,
+      "parents": [
+        "mathematics/r74_structure",
+        "mathematics/geometers_table"
+      ]
+    },
+    {
+      "entry": "information/research_nexus",
+      "x": 18,
+      "y": 55,
+      "parents": [
+        "mathematics/r74_structure"
+      ]
+    },
+    {
+      "entry": "mathematics/statistics_engine",
+      "x": 64,
+      "y": 17,
+      "parents": [
+        "mathematics/math_overview",
+        "mathematics/numbers"
+      ]
+    },
+    {
+      "entry": "mathematics/node_confidence_seal",
+      "x": 66,
+      "y": 17,
+      "parents": [
+        "mathematics/statistics_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_regression",
+      "x": 64,
+      "y": 15,
+      "parents": [
+        "mathematics/statistics_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_stochastic_kinetics",
+      "x": 62,
+      "y": 17,
+      "parents": [
+        "mathematics/statistics_engine"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/strategy_table",
+      "x": 84,
+      "y": 12,
+      "parents": [
+        "mathematics/r79_optimisation"
+      ]
+    },
+    {
+      "entry": "mathematics/node_research_evolutionary_games",
+      "x": 84,
+      "y": 10,
+      "parents": [
+        "mathematics/strategy_table"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_research_nash_equilibrium",
+      "x": 82,
+      "y": 12,
+      "parents": [
+        "mathematics/strategy_table"
+      ],
+      "node": true
+    },
+    {
       "entry": "probability/r38_bayes",
-      "x": 47,
-      "y": 0,
+      "x": 25,
+      "y": 35,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -961,8 +1618,8 @@
     },
     {
       "entry": "probability/r48_brownian",
-      "x": 47,
-      "y": 3,
+      "x": 25,
+      "y": 38,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -970,8 +1627,8 @@
     },
     {
       "entry": "probability/r48_walker",
-      "x": 47,
-      "y": 6,
+      "x": 30,
+      "y": 34,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -979,17 +1636,26 @@
     },
     {
       "entry": "probability/r55_stochastic",
-      "x": 54,
-      "y": 3,
+      "x": 44,
+      "y": 37,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
       ]
     },
     {
+      "entry": "probability/node_poisson_clock",
+      "x": 44,
+      "y": 35,
+      "parents": [
+        "probability/r55_stochastic"
+      ],
+      "node": true
+    },
+    {
       "entry": "probability/r55_extremes",
-      "x": 72,
-      "y": 2,
+      "x": 70,
+      "y": 37,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -997,8 +1663,8 @@
     },
     {
       "entry": "probability/node_black_swan",
-      "x": 72,
-      "y": 0,
+      "x": 70,
+      "y": 35,
       "parents": [
         "probability/r55_extremes"
       ],
@@ -1006,8 +1672,8 @@
     },
     {
       "entry": "probability/bayesian_analyzer",
-      "x": 49,
-      "y": 11,
+      "x": 30,
+      "y": 39,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -1015,8 +1681,8 @@
     },
     {
       "entry": "probability/node_confidence_interval_gauge",
-      "x": 49,
-      "y": 9,
+      "x": 30,
+      "y": 37,
       "parents": [
         "probability/bayesian_analyzer"
       ],
@@ -1024,8 +1690,8 @@
     },
     {
       "entry": "probability/node_posterior_tablet",
-      "x": 47,
-      "y": 11,
+      "x": 28,
+      "y": 39,
       "parents": [
         "probability/bayesian_analyzer"
       ],
@@ -1033,8 +1699,8 @@
     },
     {
       "entry": "probability/brownian_microscope",
-      "x": 49,
-      "y": 18,
+      "x": 37,
+      "y": 37,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -1042,8 +1708,8 @@
     },
     {
       "entry": "probability/node_avogadro_record",
-      "x": 49,
-      "y": 16,
+      "x": 37,
+      "y": 35,
       "parents": [
         "probability/brownian_microscope"
       ],
@@ -1051,29 +1717,26 @@
     },
     {
       "entry": "probability/node_optical_bench",
-      "x": 47,
-      "y": 18,
+      "x": 35,
+      "y": 37,
       "parents": [
         "probability/brownian_microscope"
       ],
       "node": true
     },
     {
-      "entry": "mathematics/research_nexus_machine",
-      "x": 47,
-      "y": 23,
-      "parents": []
-    },
-    {
-      "entry": "information/research_nexus",
-      "x": 47,
-      "y": 26,
-      "parents": []
+      "entry": "mathematics/r83_euler",
+      "x": 69,
+      "y": 17,
+      "parents": [
+        "mathematics/logic_sets",
+        "mathematics/proof_assistant"
+      ]
     },
     {
       "entry": "probability/r48_monte_carlo",
-      "x": 37,
-      "y": 1,
+      "x": 17,
+      "y": 34,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
@@ -1081,26 +1744,35 @@
     },
     {
       "entry": "probability/r55_statmech",
-      "x": 60,
-      "y": 15,
+      "x": 52,
+      "y": 39,
       "parents": [
-        "information/demon",
-        "information/maxwell_demon_sorter"
+        "probability/r55_stochastic",
+        "probability/galton_board"
       ]
     },
     {
       "entry": "probability/monte_carlo_engine",
-      "x": 39,
-      "y": 6,
+      "x": 17,
+      "y": 39,
       "parents": [
         "probability/r38_galton",
         "probability/galton_board"
       ]
     },
     {
+      "entry": "probability/node_entropy_sink",
+      "x": 15,
+      "y": 37,
+      "parents": [
+        "probability/monte_carlo_engine"
+      ],
+      "node": true
+    },
+    {
       "entry": "probability/node_markov_chain_link",
-      "x": 39,
-      "y": 4,
+      "x": 17,
+      "y": 37,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1108,8 +1780,8 @@
     },
     {
       "entry": "probability/node_monte_carlo_sample_pack",
-      "x": 37,
-      "y": 6,
+      "x": 15,
+      "y": 39,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1117,8 +1789,8 @@
     },
     {
       "entry": "probability/node_prior_tablet",
-      "x": 41,
-      "y": 6,
+      "x": 19,
+      "y": 39,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1126,8 +1798,8 @@
     },
     {
       "entry": "probability/node_random_number_chip",
-      "x": 39,
-      "y": 8,
+      "x": 17,
+      "y": 41,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1135,8 +1807,8 @@
     },
     {
       "entry": "probability/node_satellite_wreck",
-      "x": 37,
-      "y": 4,
+      "x": 19,
+      "y": 37,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1144,8 +1816,8 @@
     },
     {
       "entry": "probability/node_stochastic_core",
-      "x": 41,
-      "y": 4,
+      "x": 15,
+      "y": 41,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1153,8 +1825,8 @@
     },
     {
       "entry": "probability/node_transition_valve",
-      "x": 37,
-      "y": 8,
+      "x": 19,
+      "y": 41,
       "parents": [
         "probability/monte_carlo_engine"
       ],
@@ -1162,24 +1834,24 @@
     },
     {
       "entry": "probability/r55_refinery",
-      "x": 60,
-      "y": 18,
+      "x": 57,
+      "y": 35,
       "parents": [
         "probability/r55_statmech"
       ]
     },
     {
       "entry": "probability/markov_chain_refinery",
-      "x": 62,
-      "y": 23,
+      "x": 57,
+      "y": 40,
       "parents": [
         "probability/r55_statmech"
       ]
     },
     {
       "entry": "probability/node_research_measure_problem",
-      "x": 62,
-      "y": 21,
+      "x": 57,
+      "y": 38,
       "parents": [
         "probability/markov_chain_refinery"
       ],
@@ -1187,60 +1859,67 @@
     },
     {
       "entry": "simulation/omega",
-      "x": 70,
-      "y": 20,
+      "x": 1,
+      "y": 65,
       "parents": [
         "information/holographic_encoder"
       ]
     },
     {
       "entry": "simulation/reality_compiler",
-      "x": 70,
-      "y": 23,
+      "x": 4,
+      "y": 65,
       "parents": [
         "information/holographic_encoder"
       ]
     },
     {
       "entry": "anomaly/anomaly_intro",
-      "x": 70,
-      "y": 7,
+      "x": 1,
+      "y": 73,
       "parents": [
-        "simulation/omega",
-        "simulation/reality_compiler"
+        "simulation/omega"
       ]
     },
     {
       "entry": "anomaly/anomaly_containment_ward",
-      "x": 70,
-      "y": 10,
+      "x": 1,
+      "y": 76,
       "parents": [
-        "simulation/omega",
-        "simulation/reality_compiler"
+        "simulation/omega"
       ]
     },
     {
       "entry": "probability/r55_measure",
-      "x": 60,
-      "y": 28,
+      "x": 62,
+      "y": 37,
       "parents": [
         "probability/r55_refinery",
         "probability/markov_chain_refinery"
       ]
     },
     {
-      "entry": "mathematics/transfinite",
-      "x": 72,
-      "y": 15,
+      "entry": "mathematics/r77_one_realm",
+      "x": 96,
+      "y": 8,
       "parents": [
-        "simulation/omega",
-        "simulation/reality_compiler"
+        "mathematics/logic_sets",
+        "mathematics/proof_assistant"
+      ]
+    },
+    {
+      "entry": "mathematics/transfinite",
+      "x": 96,
+      "y": 13,
+      "parents": [
+        "mathematics/logic_sets",
+        "mathematics/proof_assistant"
       ]
     },
     {
       "entry": "mathematics/node_hilbert_bellhop",
-      "x": 72,
-      "y": 13,
+      "x": 96,
+      "y": 11,
       "parents": [
         "mathematics/transfinite"
       ],
@@ -1248,8 +1927,8 @@
     },
     {
       "entry": "mathematics/node_hypercube_drifter",
-      "x": 70,
-      "y": 15,
+      "x": 94,
+      "y": 13,
       "parents": [
         "mathematics/transfinite"
       ],
@@ -1257,8 +1936,8 @@
     },
     {
       "entry": "mathematics/node_ordinal_hound",
-      "x": 74,
-      "y": 15,
+      "x": 98,
+      "y": 13,
       "parents": [
         "mathematics/transfinite"
       ],
@@ -1266,17 +1945,17 @@
     },
     {
       "entry": "mathematics/ordinal_recursor",
-      "x": 81,
-      "y": 20,
+      "x": 96,
+      "y": 22,
       "parents": [
-        "simulation/omega",
-        "simulation/reality_compiler"
+        "mathematics/logic_sets",
+        "mathematics/proof_assistant"
       ]
     },
     {
       "entry": "mathematics/node_aleph_glass",
-      "x": 79,
-      "y": 16,
+      "x": 94,
+      "y": 18,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1284,8 +1963,8 @@
     },
     {
       "entry": "mathematics/node_aleph_one",
-      "x": 81,
-      "y": 18,
+      "x": 96,
+      "y": 20,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1293,8 +1972,8 @@
     },
     {
       "entry": "mathematics/node_cardinal_shard",
-      "x": 79,
-      "y": 20,
+      "x": 94,
+      "y": 22,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1302,8 +1981,8 @@
     },
     {
       "entry": "mathematics/node_e8_lattice",
-      "x": 83,
-      "y": 20,
+      "x": 98,
+      "y": 22,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1311,8 +1990,8 @@
     },
     {
       "entry": "mathematics/node_epsilon_naught",
-      "x": 81,
-      "y": 22,
+      "x": 96,
+      "y": 24,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1320,8 +1999,8 @@
     },
     {
       "entry": "mathematics/node_hilbert_brick",
-      "x": 83,
-      "y": 16,
+      "x": 98,
+      "y": 18,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1329,8 +2008,8 @@
     },
     {
       "entry": "mathematics/node_hilbert_locker",
-      "x": 77,
-      "y": 18,
+      "x": 92,
+      "y": 20,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1338,8 +2017,8 @@
     },
     {
       "entry": "mathematics/node_hopf_fibration",
-      "x": 79,
-      "y": 18,
+      "x": 94,
+      "y": 20,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1347,8 +2026,8 @@
     },
     {
       "entry": "mathematics/node_hotel_key",
-      "x": 83,
-      "y": 18,
+      "x": 98,
+      "y": 20,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1356,8 +2035,8 @@
     },
     {
       "entry": "mathematics/node_hypersphere_fragment",
-      "x": 79,
-      "y": 22,
+      "x": 94,
+      "y": 24,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1365,8 +2044,8 @@
     },
     {
       "entry": "mathematics/node_inaccessible_cardinal",
-      "x": 83,
-      "y": 22,
+      "x": 98,
+      "y": 24,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1374,8 +2053,8 @@
     },
     {
       "entry": "mathematics/node_omega_one",
-      "x": 81,
-      "y": 16,
+      "x": 96,
+      "y": 18,
       "parents": [
         "mathematics/ordinal_recursor"
       ],
@@ -1383,43 +2062,7 @@
     },
     {
       "entry": "mathematics/node_omega_ordinal",
-      "x": 77,
-      "y": 20,
-      "parents": [
-        "mathematics/ordinal_recursor"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_ordinal_shard",
-      "x": 85,
-      "y": 20,
-      "parents": [
-        "mathematics/ordinal_recursor"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_ordinal_stone",
-      "x": 85,
-      "y": 18,
-      "parents": [
-        "mathematics/ordinal_recursor"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_penteract_lattice",
-      "x": 81,
-      "y": 24,
-      "parents": [
-        "mathematics/ordinal_recursor"
-      ],
-      "node": true
-    },
-    {
-      "entry": "mathematics/node_transcendent_cache",
-      "x": 77,
+      "x": 92,
       "y": 22,
       "parents": [
         "mathematics/ordinal_recursor"
@@ -1427,9 +2070,45 @@
       "node": true
     },
     {
+      "entry": "mathematics/node_ordinal_shard",
+      "x": 100,
+      "y": 22,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_ordinal_stone",
+      "x": 100,
+      "y": 20,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_penteract_lattice",
+      "x": 96,
+      "y": 26,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
+      "entry": "mathematics/node_transcendent_cache",
+      "x": 92,
+      "y": 24,
+      "parents": [
+        "mathematics/ordinal_recursor"
+      ],
+      "node": true
+    },
+    {
       "entry": "anomaly/anomaly_origin_defects",
-      "x": 77,
-      "y": 0,
+      "x": 6,
+      "y": 71,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -1437,8 +2116,8 @@
     },
     {
       "entry": "anomaly/anomaly_origin_autocatalysis",
-      "x": 79,
-      "y": 5,
+      "x": 6,
+      "y": 76,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -1446,8 +2125,8 @@
     },
     {
       "entry": "anomaly/node_autocatalytic_broth",
-      "x": 79,
-      "y": 3,
+      "x": 6,
+      "y": 74,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis"
       ],
@@ -1455,8 +2134,8 @@
     },
     {
       "entry": "anomaly/anomaly_origin_oncogenesis",
-      "x": 77,
-      "y": 10,
+      "x": 11,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -1464,8 +2143,8 @@
     },
     {
       "entry": "anomaly/anomaly_origin_pathology",
-      "x": 77,
-      "y": 13,
+      "x": 11,
+      "y": 76,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
@@ -1473,16 +2152,16 @@
     },
     {
       "entry": "anomaly/anomaly_escape",
-      "x": 93,
-      "y": 26,
+      "x": 19,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_origin_oncogenesis"
       ]
     },
     {
       "entry": "anomaly/node_immortal_cell_line",
-      "x": 93,
-      "y": 24,
+      "x": 19,
+      "y": 71,
       "parents": [
         "anomaly/anomaly_escape"
       ],
@@ -1490,8 +2169,8 @@
     },
     {
       "entry": "anomaly/anomaly_selfref",
-      "x": 91,
-      "y": 21,
+      "x": 19,
+      "y": 78,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis",
         "anomaly/anomaly_origin_pathology"
@@ -1499,8 +2178,8 @@
     },
     {
       "entry": "anomaly/anomaly_clonal",
-      "x": 91,
-      "y": 3,
+      "x": 24,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
@@ -1508,8 +2187,8 @@
     },
     {
       "entry": "anomaly/anomaly_systems",
-      "x": 91,
-      "y": 6,
+      "x": 24,
+      "y": 76,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
@@ -1517,8 +2196,8 @@
     },
     {
       "entry": "anomaly/anomaly_epidemics",
-      "x": 91,
-      "y": 9,
+      "x": 30,
+      "y": 74,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_systems"
@@ -1526,8 +2205,8 @@
     },
     {
       "entry": "anomaly/anomaly_leakage",
-      "x": 91,
-      "y": 0,
+      "x": 27,
+      "y": 74,
       "parents": [
         "anomaly/anomaly_origin_defects",
         "anomaly/anomaly_systems"
@@ -1535,8 +2214,8 @@
     },
     {
       "entry": "anomaly/anomaly_symbiosis",
-      "x": 91,
-      "y": 12,
+      "x": 27,
+      "y": 71,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_epidemics"
@@ -1544,8 +2223,8 @@
     },
     {
       "entry": "anomaly/anomaly_extent",
-      "x": 91,
-      "y": 15,
+      "x": 33,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_epidemics",
         "anomaly/anomaly_leakage"
@@ -1553,16 +2232,16 @@
     },
     {
       "entry": "anomaly/anomaly_containment",
-      "x": 91,
-      "y": 18,
+      "x": 36,
+      "y": 71,
       "parents": [
         "anomaly/anomaly_extent"
       ]
     },
     {
       "entry": "anomaly/anomaly_therapy",
-      "x": 98,
-      "y": 5,
+      "x": 36,
+      "y": 74,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
@@ -1570,8 +2249,8 @@
     },
     {
       "entry": "anomaly/anomaly_resolution_engine",
-      "x": 100,
-      "y": 10,
+      "x": 41,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
@@ -1579,8 +2258,8 @@
     },
     {
       "entry": "anomaly/node_car_t_culture",
-      "x": 100,
-      "y": 8,
+      "x": 41,
+      "y": 71,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
@@ -1588,8 +2267,8 @@
     },
     {
       "entry": "anomaly/node_renormalised_essence",
-      "x": 98,
-      "y": 10,
+      "x": 39,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
@@ -1597,8 +2276,8 @@
     },
     {
       "entry": "anomaly/anomaly_resolution",
-      "x": 108,
-      "y": 8,
+      "x": 49,
+      "y": 73,
       "parents": [
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
@@ -1608,51 +2287,43 @@
   "regions": [
     {
       "tier": 0,
-      "label": "I \u00b7 Foundations",
+      "label": "Mathematics",
       "x0": -1.5,
-      "x1": 42.5,
-      "y0": -2.5,
+      "x1": 136.5,
+      "y0": 0,
       "y1": 29.5
     },
     {
       "tier": 1,
-      "label": "II \u00b7 Quanta & Matter",
-      "x0": 45.5,
-      "x1": 55.5,
-      "y0": -2.5,
-      "y1": 27.5
+      "label": "Probability",
+      "x0": -1.5,
+      "x1": 136.5,
+      "y0": 31,
+      "y1": 46.5
     },
     {
       "tier": 2,
-      "label": "III \u00b7 Stars & Spacetime",
-      "x0": 58.5,
-      "x1": 65.5,
-      "y0": 5.5,
-      "y1": 29.5
+      "label": "Information & Entropy",
+      "x0": -1.5,
+      "x1": 136.5,
+      "y0": 48,
+      "y1": 60.5
     },
     {
       "tier": 3,
-      "label": "IV \u00b7 The Cosmos",
-      "x0": 68.5,
-      "x1": 86.5,
-      "y0": -2.5,
-      "y1": 25.5
+      "label": "Beyond Reality",
+      "x0": -1.5,
+      "x1": 136.5,
+      "y0": 62,
+      "y1": 66.5
     },
     {
       "tier": 4,
-      "label": "V \u00b7 Beyond Physics",
-      "x0": 89.5,
-      "x1": 101.5,
-      "y0": -2.5,
-      "y1": 27.5
-    },
-    {
-      "tier": 5,
-      "label": "VI \u00b7 Transcendence",
-      "x0": 106.5,
-      "x1": 109.5,
-      "y0": 5.5,
-      "y1": 9.5
+      "label": "Abnormality & Infection",
+      "x0": -1.5,
+      "x1": 136.5,
+      "y0": 68,
+      "y1": 79.5
     }
   ]
 }

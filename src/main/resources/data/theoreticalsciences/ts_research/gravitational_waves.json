@@ -1,68 +1,68 @@
 {
-  "title": "Gravitational Waves",
-  "description": "Masses that accelerate send ripples through spacetime itself, stretching and squeezing everything they cross. The strongest reach us from merging black holes - as a strain of one part in 10\u00b2\u00b9. Unlocks the Laser Interferometer and its Test Masses.",
-  "icon": "theoreticalsciences:laser_interferometer",
-  "x": 9,
-  "y": 8,
-  "insight": 140,
-  "requires": [
-    "theoreticalsciences:gravitational_redshift",
-    "theoreticalsciences:laser_physics"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:redshift_record",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:laser_head",
-      "count": 1
-    }
-  ],
-  "time": 480,
-  "puzzle": {
-    "goal": "Two bodies of masses m _ 1 and m _ 2 circle each other a distance a apart, far away at a distance r. Their changing shape sends out gravitational waves; write the strain h they make here, to order of magnitude.",
-    "name": "Quadrupole strain of a binary",
-    "lhs": "h",
-    "form": "4 * G ^ 2 * m _ 1 * m _ 2 / ( c ^ 4 * a * r )",
-    "expr": "4 * G ^ 2 * A * B / ( c ^ 4 * a * r ) * 1000000000000000000000",
-    "ask": "Find h in units of 10\u207b\u00b2\u00b9 for two black holes of A = B = @{B} kg, a = 3.5e5 m apart, r = @{r} m away (G = 6.674e-11, c = 2.998e8).",
-    "vars": {
-      "h": "strain (\u00d710\u207b\u00b2\u00b9)",
-      "G": "gravitational constant",
-      "m": "mass",
-      "c": "speed of light",
-      "a": "separation (m)",
-      "r": "distance (m)",
-      "A": "first mass (kg)",
-      "B": "second mass (kg)"
-    },
-    "given": {
-      "G": 6.674e-11,
-      "A": 5.97e+31,
-      "B": 5.97e+31,
-      "c": 299800000.0,
-      "a": 350000.0,
-      "r": 1.27e+25
-    },
-    "unit": "\u00d710\u207b\u00b2\u00b9",
-    "method": "The quadrupole formula: h \u2248 (2G/c\u2074r)\u00b7d\u00b2Q/dt\u00b2, and for a circular binary the second derivative of its quadrupole is about 2\u03bca\u00b2\u03c9\u00b2, with \u03c9\u00b2 = G(m\u2081+m\u2082)/a\u00b3.",
-    "distractors": [
-      "\u03c0",
-      "2",
-      "ln"
-    ],
-    "vary": {
-      "B": [
-        3.58e+31,
-        8.36e+31,
-        1e+29
-      ],
-      "r": [
-        7.6e+24,
-        1.78e+25,
-        1e+23
-      ]
-    }
+ "title": "Gravitational Waves",
+ "description": "Masses that accelerate send ripples through spacetime itself, stretching and squeezing everything they cross. The strongest reach us from merging black holes, as a strain of one part in 10²¹. Unlocks the Laser Interferometer and its Test Masses.",
+ "icon": "theoreticalsciences:laser_interferometer",
+ "x": 9,
+ "y": 8,
+ "insight": 140,
+ "requires": [
+  "theoreticalsciences:gravitational_redshift",
+  "theoreticalsciences:laser_physics"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:redshift_record",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:laser_head",
+   "count": 1
   }
+ ],
+ "time": 480,
+ "puzzle": {
+  "goal": "Two bodies of masses m _ 1 and m _ 2 circle each other a distance a apart, far away at a distance r. Their changing shape sends out gravitational waves; write the strain h they make here, to order of magnitude.",
+  "name": "Quadrupole strain of a binary",
+  "lhs": "h",
+  "form": "4 * G ^ 2 * m _ 1 * m _ 2 / ( c ^ 4 * a * r )",
+  "expr": "4 * G ^ 2 * A * B / ( c ^ 4 * a * r ) * 1000000000000000000000",
+  "ask": "Find h in units of 10⁻²¹ for two black holes of A = B = @{B} kg, a = 3.5e5 m apart, r = @{r} m away (G = 6.674e-11, c = 2.998e8).",
+  "vars": {
+   "h": "strain (×10⁻²¹)",
+   "G": "gravitational constant",
+   "m": "mass",
+   "c": "speed of light",
+   "a": "separation (m)",
+   "r": "distance (m)",
+   "A": "first mass (kg)",
+   "B": "second mass (kg)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "A": 5.97e+31,
+   "B": 5.97e+31,
+   "c": 299800000.0,
+   "a": 350000.0,
+   "r": 1.27e+25
+  },
+  "unit": "×10⁻²¹",
+  "method": "The quadrupole formula: h ≈ (2G/c⁴r)·d²Q/dt², and for a circular binary the second derivative of its quadrupole is about 2μa²ω², with ω² = G(m₁+m₂)/a³.",
+  "distractors": [
+   "π",
+   "2",
+   "ln"
+  ],
+  "vary": {
+   "B": [
+    3.58e+31,
+    8.36e+31,
+    1e+29
+   ],
+   "r": [
+    7.6e+24,
+    1.78e+25,
+    1e+23
+   ]
+  }
+ }
 }

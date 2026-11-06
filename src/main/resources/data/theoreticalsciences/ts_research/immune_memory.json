@@ -1,0 +1,59 @@
+{
+  "title": "Immune Memory",
+  "description": "Memory cells that outlive the fight and answer at once the next time, for years. Unlocks lasting Wards, held safe for good.",
+  "icon": "theoreticalsciences:lasting_ward_fracture",
+  "x": 6,
+  "y": 24,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:immunisation",
+    "theoreticalsciences:directed_evolution"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ward_fracture",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:telomerase_complex",
+      "count": 1
+    }
+  ],
+  "time": 660,
+  "puzzle": {
+    "goal": "Memory falls off slowly, by a half-life T. Write the share S still protected after a time t.",
+    "name": "Slow decline",
+    "lhs": "S",
+    "form": "2 ^ ( - t / T )",
+    "expr": "2 ^ ( - t / T )",
+    "ask": "Find S for t = @{t} and T = @{T}.",
+    "vars": {
+      "S": "share protected",
+      "t": "time",
+      "T": "half-life"
+    },
+    "given": {
+      "t": 10,
+      "T": 20
+    },
+    "unit": "",
+    "method": "Each half-life halves the protection; a lasting Ward sets the half-life so high it never matters.",
+    "distractors": [
+      "+",
+      "e",
+      "3"
+    ],
+    "vary": {
+      "t": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "T": [
+        12.0,
+        28.0,
+        1.0
+      ]
+    }
+  }
+}

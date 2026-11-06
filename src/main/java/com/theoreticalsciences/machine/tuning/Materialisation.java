@@ -155,6 +155,7 @@ public final class Materialisation {
             case TEMPORAL -> com.theoreticalsciences.registry.QHParticles.PHOTON.get();
             case INFECTIOUS -> com.theoreticalsciences.registry.QHParticles.ARC_SPARK.get();
             case DESTABILISATION -> com.theoreticalsciences.registry.QHParticles.PHASE_MOTE.get();
+            default -> com.theoreticalsciences.registry.QHParticles.VAPOUR.get();       // 1.2.0's failures
         };
     }
 
@@ -165,6 +166,7 @@ public final class Materialisation {
             case TEMPORAL -> com.theoreticalsciences.registry.QHParticles.ARC_SPARK.get();
             case INFECTIOUS -> com.theoreticalsciences.registry.QHGlowOptions.of(0.62F, 0.64F, 0.7F, 1.2F);
             case DESTABILISATION -> com.theoreticalsciences.registry.QHParticles.PHASE_MOTE.get();
+            default -> com.theoreticalsciences.registry.QHParticles.ARC_SPARK.get();
         };
     }
 
@@ -175,6 +177,7 @@ public final class Materialisation {
             case TEMPORAL -> com.theoreticalsciences.registry.QHSounds.POWER_UP.get();
             case INFECTIOUS -> com.theoreticalsciences.registry.QHSounds.SWARM_AMBIENT.get();
             case DESTABILISATION -> com.theoreticalsciences.registry.QHSounds.MUTATE.get();
+            default -> com.theoreticalsciences.registry.QHSounds.EMERGENCE.get();
         };
     }
 
@@ -185,6 +188,7 @@ public final class Materialisation {
             case TEMPORAL -> com.theoreticalsciences.registry.QHSounds.PHASE_SHIFT.get();
             case INFECTIOUS -> com.theoreticalsciences.registry.QHSounds.SWARM_SPLIT.get();
             case DESTABILISATION -> com.theoreticalsciences.registry.QHSounds.MUTATE.get();
+            default -> com.theoreticalsciences.registry.QHSounds.PHASE_SHIFT.get();
         };
     }
 

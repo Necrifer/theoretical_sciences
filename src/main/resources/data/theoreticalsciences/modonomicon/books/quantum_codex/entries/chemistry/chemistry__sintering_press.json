@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.sintering_press",
+  "description": "book.theoreticalsciences.codex.chemistry.sintering_press.desc",
+  "icon": {
+    "item": "theoreticalsciences:sintering_press"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 140,
+  "y": 32,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:sintering_press"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.sintering_press.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.sintering_press.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.sintering_press.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.sintering_press.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:sintering_press"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.sintering_press.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__quasicrystal_furnace"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ceramics"
+  }
+}

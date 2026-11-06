@@ -5,8 +5,8 @@
     "item": "theoreticalsciences:schrodinger_limit_cell"
   },
   "category": "theoreticalsciences:mobs",
-  "x": 36,
-  "y": 8,
+  "x": 3,
+  "y": 28,
   "hide_while_locked": false,
   "background_u_index": 0,
   "background_v_index": 0,
@@ -102,7 +102,11 @@
       "text": "book.theoreticalsciences.codex.quantum.foam_boundaries.p14"
     }
   ],
-  "parents": [],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/world__r78_elements"
+    }
+  ],
   "condition": {
     "type": "modonomicon:advancement",
     "advancement_id": "theoreticalsciences:research/quantum_foam"

@@ -1,0 +1,41 @@
+{
+  "params": [
+    {
+      "id": "lc",
+      "unit": "",
+      "min": 0,
+      "max": 7,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "xa",
+      "unit": "",
+      "min": 0.4,
+      "max": 0.8,
+      "step": 0.001,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Qf",
+      "unit": "",
+      "expr": "exp(-((lc*(1 + 0.02*d) - 3)/0.8)^2)*exp(-((xa - 0.63)/0.02)^2)",
+      "formula": "S(rate, ratio)"
+    }
+  ],
+  "constraints": [],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

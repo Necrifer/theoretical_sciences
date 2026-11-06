@@ -1,0 +1,61 @@
+{
+  "title": "Nash Equilibrium",
+  "description": "A set of choices where nobody does better by changing alone. Nash proved every game has one, if chance is allowed.",
+  "icon": "theoreticalsciences:stable_strategy",
+  "x": 13,
+  "y": 7,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:game_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 4
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "Two firms sell the same thing; its price is A \u2212 B\u00b7(all they make), and each pays c a unit. Write how much Q each makes when neither can earn more by changing alone.",
+    "name": "Cournot duopoly",
+    "lhs": "Q",
+    "form": "( A - c ) / ( 3 * B )",
+    "expr": "( A - c ) / ( 3 * B )",
+    "ask": "Find Q for A = @{A}, c = @{c} and B = @{B}.",
+    "vars": {
+      "Q": "each one's output",
+      "A": "top price",
+      "B": "price drop per unit",
+      "c": "cost a unit"
+    },
+    "given": {
+      "A": 100,
+      "c": 10,
+      "B": 2
+    },
+    "unit": "",
+    "method": "Each firm's best output is (A \u2212 c \u2212 B\u00b7other)/(2B). Where the two best answers meet, both make (A \u2212 c)/(3B).",
+    "distractors": [
+      "+",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "A": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "c": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "B": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

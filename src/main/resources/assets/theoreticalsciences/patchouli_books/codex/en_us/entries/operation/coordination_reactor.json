@@ -1,0 +1,24 @@
+{
+  "name": "Coordination Reactor",
+  "icon": "theoreticalsciences:coordination_reactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 38,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ligands split a metal's d orbitals by \u0394, from weak-field (halides) to strong-field (cyanide, carbon monoxide). If \u0394 is less than the energy P it costs to pair two electrons, they spread out (high spin); if more, they pair (low spin). Colour, magnetism and what the complex catches all follow."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Ligand field strength, Temperature.$(br2)$(thing)Disturbance$(): Ligand exchange: \u0394 varies by \u00b11%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The complex is falling apart (too hot).$(br2)$(thing)Rate$(): Warmer exchanges ligands faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Splitting \u0394: \u0394$(br)\u0394 \u2212 P: \u0394 \u2212 P$(br)Spin margin: margin"
+    }
+  ]
+}

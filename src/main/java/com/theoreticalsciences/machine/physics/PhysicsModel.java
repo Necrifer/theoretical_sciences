@@ -24,7 +24,7 @@ import java.util.Map;
  *   <li>{@code d} - the disturbance (-1..1): field errors, drifting phases, impurities - what the machine fights against</li>
  *   <li>{@code on} - 1 while a recipe is running, else 0</li>
  *   <li>{@code size} - units built in a variable-height structure (1.3.5: the cascade's stages), else 1</li>
- *   <li>1.4.0, the world around the machine: {@code sky} (1 if open sky above it), {@code night} (0 by day .. 1 in full
+ *   <li>1.2.0, the world around the machine: {@code sky} (1 if open sky above it), {@code night} (0 by day .. 1 in full
  *   darkness), {@code sun} (sine of the Sun's elevation, 0 below the horizon), {@code moon} (the Moon's lit fraction),
  *   {@code rain} (1 while it rains or snows on it), {@code alt} (the controller's height, blocks) and {@code rfi}
  *   (other machines running within 24 blocks - radio interference)</li>

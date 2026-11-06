@@ -1,0 +1,49 @@
+{
+  "title": "Antibodies",
+  "description": "A tip that fits one shape alone, out of billions the body can make. Bound to an invader, it marks it for clearing, or blocks the key it uses to get in.",
+  "icon": "theoreticalsciences:antibody",
+  "x": 6,
+  "y": 23,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:adaptive_immunity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "Antibody at level L binds a target with dissociation constant K. Write the share B of targets bound.",
+    "name": "Binding curve",
+    "lhs": "B",
+    "form": "L / ( K + L )",
+    "expr": "L / ( K + L )",
+    "ask": "Find B for L = 3 and K = @{K}.",
+    "vars": {
+      "B": "share bound",
+      "L": "antibody level",
+      "K": "dissociation constant"
+    },
+    "given": {
+      "L": 3,
+      "K": 1
+    },
+    "unit": "",
+    "method": "The same saturating law as an enzyme: at L = K, half the targets are bound; a tighter antibody has a smaller K.",
+    "distractors": [
+      "-",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "K": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

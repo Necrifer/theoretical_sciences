@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_mirror_microbe",
+  "description": "book.theoreticalsciences.codex.biology.node_mirror_microbe.desc",
+  "icon": {
+    "item": "theoreticalsciences:mirror_microbe_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 99,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mirror_microbe_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_mirror_microbe.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/biology__r92_scale",
+      "draw_arrow": false
+    }
+  ]
+}

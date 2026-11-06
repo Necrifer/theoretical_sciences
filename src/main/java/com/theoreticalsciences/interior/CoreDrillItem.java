@@ -28,7 +28,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
 /**
- * Round 40 (1.3.0): the Core Drill - the first tool that cuts bedrock. Hold it against bedrock for three seconds. In the
+ * Round 40 (1.2.0): the Core Drill - the first tool that cuts bedrock. Hold it against bedrock for three seconds. In the
  * floor of the Overworld, or the roof or floor of the Planetary Interior, the hole becomes a Mantle Breach (the way
  * through); anywhere else the bedrock is simply cut away.
  */

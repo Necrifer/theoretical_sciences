@@ -1,61 +1,61 @@
 {
-  "title": "Information Paradox",
-  "description": "If a black hole evaporates into thermal radiation, whatever fell in is lost - and quantum mechanics forbids that. Something must give. Unlocks the Page Curve Analyzer.",
-  "icon": "theoreticalsciences:firewall_shard",
-  "x": 10,
-  "y": 4,
-  "insight": 280,
-  "requires": [
-    "theoreticalsciences:black_hole_thermodynamics"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:hawking_quanta",
-      "count": 8
-    },
-    {
-      "item": "theoreticalsciences:entangled_photon_pair",
-      "count": 4
-    }
-  ],
-  "time": 1200,
-  "puzzle": {
-    "goal": "A black hole of mass M evaporates completely in a time t that grows as the cube of its mass, from G, \u0127 and c. Write t.",
-    "name": "Evaporation time",
-    "lhs": "t",
-    "form": "5120 * \u03c0 * G ^ 2 * M ^ 3 / ( \u0127 * c ^ 4 )",
-    "expr": "5120 * 3.14159 * G ^ 2 * M ^ 3 / ( h * c ^ 4 ) / u",
-    "ask": "Find t in billions of years (u = 3.156e16 s) for M = @{M} kg (G = 6.674e-11, h = 1.0546e-34 for \u0127, c = 2.998e8).",
-    "vars": {
-      "t": "lifetime (Gyr)",
-      "\u03c0": "pi",
-      "G": "gravitational constant",
-      "M": "mass (kg)",
-      "\u0127": "reduced Planck constant",
-      "c": "speed of light",
-      "h": "\u0127 (J\u00b7s)",
-      "u": "s per Gyr"
-    },
-    "given": {
-      "G": 6.674e-11,
-      "M": 100000000000.0,
-      "h": 1.0546e-34,
-      "c": 299800000.0,
-      "u": 3.156e+16
-    },
-    "unit": "Gyr",
-    "method": "Power radiated goes as 1/M\u00b2 (Stefan-Boltzmann at T \u221d 1/M over an area \u221d M\u00b2); dM/dt \u221d \u22121/M\u00b2 integrates to t \u221d M\u00b3.",
-    "distractors": [
-      "k",
-      "2",
-      "\u03c3"
-    ],
-    "vary": {
-      "M": [
-        60000000000.0,
-        140000000000.0,
-        1000000000.0
-      ]
-    }
+ "title": "Information Paradox",
+ "description": "If a black hole evaporates into thermal radiation, whatever fell in is lost, and quantum mechanics forbids that. Something must give. Unlocks the Page Curve Analyzer.",
+ "icon": "theoreticalsciences:firewall_shard",
+ "x": 10,
+ "y": 4,
+ "insight": 280,
+ "requires": [
+  "theoreticalsciences:black_hole_thermodynamics"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:hawking_quanta",
+   "count": 8
+  },
+  {
+   "item": "theoreticalsciences:entangled_photon_pair",
+   "count": 4
   }
+ ],
+ "time": 1200,
+ "puzzle": {
+  "goal": "A black hole of mass M evaporates completely in a time t that grows as the cube of its mass, from G, ħ and c. Write t.",
+  "name": "Evaporation time",
+  "lhs": "t",
+  "form": "5120 * π * G ^ 2 * M ^ 3 / ( ħ * c ^ 4 )",
+  "expr": "5120 * 3.14159 * G ^ 2 * M ^ 3 / ( h * c ^ 4 ) / u",
+  "ask": "Find t in billions of years (u = 3.156e16 s) for M = @{M} kg (G = 6.674e-11, h = 1.0546e-34 for ħ, c = 2.998e8).",
+  "vars": {
+   "t": "lifetime (Gyr)",
+   "π": "pi",
+   "G": "gravitational constant",
+   "M": "mass (kg)",
+   "ħ": "reduced Planck constant",
+   "c": "speed of light",
+   "h": "ħ (J·s)",
+   "u": "s per Gyr"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 100000000000.0,
+   "h": 1.0546e-34,
+   "c": 299800000.0,
+   "u": 3.156e+16
+  },
+  "unit": "Gyr",
+  "method": "Power radiated goes as 1/M² (Stefan-Boltzmann at T ∝ 1/M over an area ∝ M²); dM/dt ∝ −1/M² integrates to t ∝ M³.",
+  "distractors": [
+   "k",
+   "2",
+   "σ"
+  ],
+  "vary": {
+   "M": [
+    60000000000.0,
+    140000000000.0,
+    1000000000.0
+   ]
+  }
+ }
 }

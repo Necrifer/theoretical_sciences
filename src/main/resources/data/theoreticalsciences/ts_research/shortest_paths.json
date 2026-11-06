@@ -1,0 +1,55 @@
+{
+  "title": "Shortest Paths",
+  "description": "Dijkstra's idea: settle the nearest unsettled place, then see whether it gives a shorter way to its neighbours. Unlocks routed Photonic Processors.",
+  "icon": "theoreticalsciences:photonic_processor",
+  "x": 9,
+  "y": 6,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:networks",
+    "theoreticalsciences:algorithms"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:network_map",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "Dijkstra settles V junctions over L links, keeping the nearest unsettled one in a heap that takes log\u2082 V steps per change. Write the work T.",
+    "name": "Running time",
+    "lhs": "T",
+    "form": "( V + L ) * ln ( V ) / ln ( 2 )",
+    "expr": "( V + L ) * ln ( V ) / ln ( 2 )",
+    "ask": "Find T for V = @{V} and L = @{L}.",
+    "vars": {
+      "T": "work",
+      "V": "junctions",
+      "L": "links"
+    },
+    "given": {
+      "V": 1024,
+      "L": 4096
+    },
+    "unit": "",
+    "method": "Every junction is taken out of the heap once and every link may shorten a distance once; each costs log\u2082 V.",
+    "distractors": [
+      "-",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "V": [
+        614.0,
+        1434.0,
+        1.0
+      ],
+      "L": [
+        2458.0,
+        5734.0,
+        1.0
+      ]
+    }
+  }
+}

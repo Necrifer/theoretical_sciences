@@ -1,0 +1,192 @@
+{
+  "type": "theoreticalsciences:inner_space",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "theoreticalsciences:inner_space",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "theoreticalsciences:bloodstream",
+          "parameters": {
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -1.2,
+              -0.19
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:tumour",
+          "parameters": {
+            "temperature": [
+              -1.0,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -0.19,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              0.78,
+              1.0
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:nucleus",
+          "parameters": {
+            "temperature": [
+              -1.0,
+              -0.4
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -0.19,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              0.78
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:lymph_node",
+          "parameters": {
+            "temperature": [
+              -0.4,
+              0.15
+            ],
+            "humidity": [
+              0.2,
+              1.0
+            ],
+            "continentalness": [
+              -0.19,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              0.78
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:tissue",
+          "parameters": {
+            "temperature": [
+              -0.4,
+              0.15
+            ],
+            "humidity": [
+              -1.0,
+              0.2
+            ],
+            "continentalness": [
+              -0.19,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              0.78
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        },
+        {
+          "biome": "theoreticalsciences:tissue",
+          "parameters": {
+            "temperature": [
+              0.15,
+              1.0
+            ],
+            "humidity": [
+              -1.0,
+              1.0
+            ],
+            "continentalness": [
+              -0.19,
+              1.0
+            ],
+            "erosion": [
+              -1.0,
+              1.0
+            ],
+            "weirdness": [
+              -1.0,
+              0.78
+            ],
+            "depth": [
+              -1.0,
+              1.0
+            ],
+            "offset": 0.0
+          }
+        }
+      ]
+    }
+  }
+}

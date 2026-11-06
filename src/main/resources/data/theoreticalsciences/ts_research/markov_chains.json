@@ -1,0 +1,54 @@
+{
+  "title": "Markov Chains",
+  "description": "A process with no memory: where it goes next depends only on where it is. Run it long enough and it settles into a fixed share of time in each state.",
+  "icon": "theoreticalsciences:random_number_chip",
+  "x": 14,
+  "y": -4,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:probability_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A machine breaks with chance a on any day and is mended with chance b. Write the fraction P of days it works in the long run.",
+    "name": "Stationary share",
+    "lhs": "P",
+    "form": "b / ( a + b )",
+    "expr": "b / ( a + b )",
+    "ask": "Find P for a = @{a} and b = @{b}.",
+    "vars": {
+      "P": "working fraction",
+      "a": "breaking",
+      "b": "mending"
+    },
+    "given": {
+      "a": 0.1,
+      "b": 0.4
+    },
+    "unit": "",
+    "method": "Settled, as many machines break each day as are mended: P\u00b7a = (1 \u2212 P)\u00b7b.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "a": [
+        0.06,
+        0.14,
+        0.001
+      ],
+      "b": [
+        0.24,
+        0.56,
+        0.001
+      ]
+    }
+  }
+}

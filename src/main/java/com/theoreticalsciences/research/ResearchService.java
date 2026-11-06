@@ -237,6 +237,7 @@ public final class ResearchService {
                 mark(e, msg.id(), 's');
             }
             default -> {
+                return;             // 1.2.0: an unknown action changes nothing, so it saves and sends nothing
             }
         }
         data.setDirty();
@@ -376,7 +377,7 @@ public final class ResearchService {
     }
 
     /**
-     * This world's puzzle numbers (round 22): worked out from the world seed, so they are the same every time the
+     * This world's puzzle numbers (round 22; 1.2.0: from a random number kept with the world), the same every time the
      * world is opened but different in every world. 0 means the book values.
      */
     public static long puzzleSalt(net.minecraft.server.MinecraftServer server) {
@@ -387,15 +388,16 @@ public final class ResearchService {
             on = true;
         }
         if (!on) return 0;
-        long z = server.getWorldData().worldGenOptions().seed() + 0x5DEECE66DL;
-        z = (z ^ (z >>> 33)) * 0xFF51AFD7ED558CCDL;
-        z = (z ^ (z >>> 33)) * 0xC4CEB9FE1A85EC53L;
-        z ^= z >>> 33;
-        return z == 0 ? 1 : z;
+        // 1.2.0: a random number kept with the world's research, never the seed: the seed hashed could be undone by a
+        // client from the value it is sent, and with it every ore and structure found
+        return ResearchSavedData.get(server).puzzleSalt();
     }
 
     public static void sync(ServerPlayer player) {
         ResearchSavedData.Entry e = ResearchSavedData.get(player.server).of(player.getUUID());
+        // 1.2.0: a secret entry just granted: the client is sent its definition now
+        if (!secretsOf(e.unlocked).equals(SECRETS_SENT.getOrDefault(player.getUUID(), java.util.Set.of())))
+            syncDefinitions(player);
         long now = player.server.overworld().getGameTime();
         String active = e.active == null ? "" : e.active.toString();
         int total = e.active == null ? 0 : (int) Math.min(Integer.MAX_VALUE, (e.activeEnd - e.activeStart) / 20);
@@ -411,8 +413,20 @@ public final class ResearchService {
         PacketDistributor.sendToPlayer(player, new com.theoreticalsciences.network.PuzzleStatePayload(pz));
     }
 
+    private static final java.util.Map<java.util.UUID, java.util.Set<ResourceLocation>> SECRETS_SENT =
+            com.theoreticalsciences.world.SessionMaps.perPlayer(new java.util.concurrent.ConcurrentHashMap<>());
+
+    private static java.util.Set<ResourceLocation> secretsOf(java.util.Set<ResourceLocation> have) {
+        java.util.Set<ResourceLocation> out = new java.util.HashSet<>();
+        for (ResourceLocation id : ResearchManager.INSTANCE.secret()) if (have.contains(id)) out.add(id);
+        return out;
+    }
+
     public static void syncDefinitions(ServerPlayer player) {
-        PacketDistributor.sendToPlayer(player, new ResearchDefsPayload(ResearchManager.INSTANCE.syncJson()));
+        // 1.2.0: secret entries (and their puzzles) only once this player has them
+        java.util.Set<ResourceLocation> have = ResearchSavedData.get(player.server).of(player.getUUID()).unlocked;
+        SECRETS_SENT.put(player.getUUID(), secretsOf(have));
+        PacketDistributor.sendToPlayer(player, new ResearchDefsPayload(ResearchManager.INSTANCE.syncJsonFor(have)));
         PacketDistributor.sendToPlayer(player, new com.theoreticalsciences.network.GlyphDefsPayload(GlyphRegistry.INSTANCE.syncJson()));
         PacketDistributor.sendToPlayer(player, new com.theoreticalsciences.network.SingularityDefsPayload(com.theoreticalsciences.extreme.Singularities.syncJson()));
         PacketDistributor.sendToPlayer(player, new com.theoreticalsciences.network.PhysicsDefsPayload(com.theoreticalsciences.machine.physics.PhysicsManager.INSTANCE.syncJson()));

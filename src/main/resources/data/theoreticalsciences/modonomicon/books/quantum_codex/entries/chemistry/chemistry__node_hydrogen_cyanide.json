@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_hydrogen_cyanide",
+  "description": "book.theoreticalsciences.codex.chemistry.node_hydrogen_cyanide.desc",
+  "icon": {
+    "item": "theoreticalsciences:hydrogen_cyanide_cell"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 55,
+  "y": 28,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:hydrogen_cyanide_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_hydrogen_cyanide.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_hydrogen_cyanide.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__cloud_siphon",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nebular_chemistry"
+  }
+}

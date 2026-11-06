@@ -1,0 +1,40 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_stem_cell_culture",
+  "description": "book.theoreticalsciences.codex.mathematics.node_stem_cell_culture.desc",
+  "icon": {
+    "item": "theoreticalsciences:stem_cell_culture"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 124,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stem_cell_culture"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_stem_cell_culture.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_stem_cell_culture.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_stem_cell_culture.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__enzyme_assay_bench",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/enzyme_kinetics"
+  }
+}

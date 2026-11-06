@@ -1,0 +1,24 @@
+{
+  "name": "Patch-Clamp Rig",
+  "icon": "theoreticalsciences:patch_clamp_rig",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 96,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ions leak through a membrane's channels until the voltage across it holds them back: the Nernst potential E = (RT/zF) ln(c_out/c_in), about 26.7/z mV per e-fold at body heat. Potassium sets a resting cell near \u221290 mV; sodium pulls toward +60."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Outside, Inside.$(br2)$(thing)Disturbance$(): Leaky seal: the voltage varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The membrane bursts (osmosis).$(br2)$(thing)Rate$(): Richer solutions are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Membrane potential: E = (RT/zF) ln(c_out/c_in)"
+    }
+  ]
+}

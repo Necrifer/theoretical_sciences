@@ -16,10 +16,13 @@ public class MachineMenu extends AbstractContainerMenu {
     public final ContainerData data;
     public final MachineLayout layout;
     private final int machineSlots;
+    /** 1.2.0: the catalyst slot's index (after the player's inventory). */
+    public final int catalystSlot;
 
     public MachineMenu(int id, Inventory inv, MachineBlockEntity be, ContainerData data) {
         super(QHMenus.MACHINE.get(), id);
         this.be = be;
+        if (!inv.player.level().isClientSide) be.viewers++;        // 1.2.0: live readouts are sent often only while watched
         this.data = data;
         this.layout = new MachineLayout(be.type);
         MachineType t = be.type;
@@ -58,6 +61,8 @@ public class MachineMenu extends AbstractContainerMenu {
             for (int c = 0; c < 9; c++)
                 addSlot(new Slot(inv, c + r * 9 + 9, layout.invX + c * 18, layout.invY + r * 18));
         for (int c = 0; c < 9; c++) addSlot(new Slot(inv, c, layout.invX + c * 18, layout.invY + 58));
+        catalystSlot = slots.size();
+        addSlot(new SlotItemHandler(be.catalyst, 0, layout.catX, layout.catY));
         addDataSlots(data);
     }
 
@@ -128,9 +133,13 @@ public class MachineMenu extends AbstractContainerMenu {
         if (!slot.hasItem()) return ItemStack.EMPTY;
         ItemStack stack = slot.getItem();
         ItemStack copy = stack.copy();
-        int total = slots.size();
-        if (index < machineSlots) {
+        int total = catalystSlot;
+        if (index < machineSlots || index == catalystSlot) {
             if (!moveItemStackTo(stack, machineSlots, total, true)) return ItemStack.EMPTY;
+        } else if (be.catalyst.getStackInSlot(0).isEmpty() && com.theoreticalsciences.science.Wear.isCatalyst(stack)
+                && !net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem()).getNamespace().equals("minecraft")) {
+            // 1.2.0: a catalyst goes to the catalyst slot first (one of it; plain vanilla materials go to the inputs)
+            if (!moveItemStackTo(stack, catalystSlot, catalystSlot + 1, false)) return ItemStack.EMPTY;
         } else {
             // into the input slots through the storage itself (its limit arithmetic is safe near 2^31; vanilla's merge is not)
             ItemStack rest = stack.copy();
@@ -168,5 +177,11 @@ public class MachineMenu extends AbstractContainerMenu {
             for (net.minecraft.core.BlockPos port : c.ports())
                 if (player.distanceToSqr(port.getCenter()) < 64.0) return true;
         return false;
+    }
+
+    @Override
+    public void removed(net.minecraft.world.entity.player.Player p) {
+        super.removed(p);
+        if (!p.level().isClientSide && be.viewers > 0) be.viewers--;
     }
 }

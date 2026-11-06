@@ -1,62 +1,62 @@
 {
-  "title": "Asymptotic Safety",
-  "description": "Gravity's coupling, followed to ever shorter distances, may settle onto a fixed point instead of blowing up - and then general relativity is a complete quantum theory as it stands.",
-  "icon": "theoreticalsciences:fixed_point_lattice",
-  "x": 13,
-  "y": 5,
-  "insight": 300,
-  "requires": [
-    "theoreticalsciences:loop_quantum_gravity",
-    "theoreticalsciences:quantum_field_theory"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:spin_network_node",
-      "count": 2
-    },
-    {
-      "item": "theoreticalsciences:causal_set_seed",
-      "count": 2
-    }
-  ],
-  "time": 1320,
-  "puzzle": {
-    "goal": "Newton's constant G, probed at momentum k, weakens with a coefficient \u03c9. Write the dimensionless strength g = G k\u00b2 it runs to.",
-    "name": "Running coupling",
-    "lhs": "g",
-    "form": "G * k ^ 2 / ( 1 + \u03c9 * G * k ^ 2 )",
-    "expr": "G * k ^ 2 / ( 1 + w * G * k ^ 2 )",
-    "ask": "Find g for G = 1, k = @{k}, w = @{w} (it approaches the fixed point 1/w as k grows).",
-    "vars": {
-      "g": "dimensionless coupling",
-      "G": "Newton constant",
-      "k": "momentum",
-      "\u03c9": "running coefficient",
-      "w": "\u03c9"
-    },
-    "given": {
-      "G": 1,
-      "k": 10,
-      "w": 1.414
-    },
-    "unit": "",
-    "method": "Solve the renormalisation-group equation dg/d ln k = 2g \u2212 2\u03c9g\u00b2 - it flows to g* = 1/\u03c9.",
-    "distractors": [
-      "c",
-      "\u03c0",
-      "h"
-    ],
-    "vary": {
-      "k": [
-        6.0,
-        14.0,
-        1.0
-      ],
-      "w": [
-        0.84,
-        1.98,
-        0.01
-      ]
-    }
+ "title": "Asymptotic Safety",
+ "description": "Gravity's coupling, followed to ever shorter distances, may settle onto a fixed point instead of blowing up, and then general relativity is a complete quantum theory as it stands.",
+ "icon": "theoreticalsciences:fixed_point_lattice",
+ "x": 13,
+ "y": 5,
+ "insight": 300,
+ "requires": [
+  "theoreticalsciences:loop_quantum_gravity",
+  "theoreticalsciences:quantum_field_theory"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:spin_network_node",
+   "count": 2
+  },
+  {
+   "item": "theoreticalsciences:causal_set_seed",
+   "count": 2
   }
+ ],
+ "time": 1320,
+ "puzzle": {
+  "goal": "Newton's constant G, probed at momentum k, weakens with a coefficient ω. Write the dimensionless strength g = G k² it runs to.",
+  "name": "Running coupling",
+  "lhs": "g",
+  "form": "G * k ^ 2 / ( 1 + ω * G * k ^ 2 )",
+  "expr": "G * k ^ 2 / ( 1 + w * G * k ^ 2 )",
+  "ask": "Find g for G = 1, k = @{k}, w = @{w} (it approaches the fixed point 1/w as k grows).",
+  "vars": {
+   "g": "dimensionless coupling",
+   "G": "Newton constant",
+   "k": "momentum",
+   "ω": "running coefficient",
+   "w": "ω"
+  },
+  "given": {
+   "G": 1,
+   "k": 10,
+   "w": 1.414
+  },
+  "unit": "",
+  "method": "Solve the renormalisation-group equation dg/d ln k = 2g − 2ωg²; it flows to g* = 1/ω.",
+  "distractors": [
+   "c",
+   "π",
+   "h"
+  ],
+  "vary": {
+   "k": [
+    6.0,
+    14.0,
+    1.0
+   ],
+   "w": [
+    0.84,
+    1.98,
+    0.01
+   ]
+  }
+ }
 }

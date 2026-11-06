@@ -1,0 +1,46 @@
+{
+  "title": "Manifolds and Curvature",
+  "description": "Spaces that look flat close up but bend overall, in any number of dimensions. Their total curvature is fixed by their topology (Gauss-Bonnet); string theory asks which six-dimensional one the universe hides.",
+  "icon": "theoreticalsciences:calabi_yau_manifold",
+  "x": 4,
+  "y": 7,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:euler_characteristic",
+    "theoreticalsciences:calculus",
+    "theoreticalsciences:curved_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pi_crystal",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:mobius_strip",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A closed surface has g handles. Write its total curvature K, the curvature added up over the whole surface.",
+    "name": "Gauss-Bonnet",
+    "lhs": "K",
+    "form": "2 * \u03c0 * ( 2 - 2 * g )",
+    "expr": "2 * \u03c0 * ( 2 - 2 * g )",
+    "ask": "Find K for g = 0 (a sphere of any size).",
+    "vars": {
+      "K": "total curvature",
+      "g": "handles"
+    },
+    "given": {
+      "g": 0
+    },
+    "unit": "",
+    "method": "Total curvature is 2\u03c0 times the Euler characteristic, which is 2 \u2212 2g: a sphere of any size has 4\u03c0.",
+    "distractors": [
+      "+",
+      "r",
+      "n"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "title": "The Contact Process",
+  "description": "Sulfur dioxide to sulfur trioxide over vanadium, the gas cooled between beds so the equilibrium never falls back far. Unlocks the Vanadium Bed and the Contact Process Tower.",
+  "icon": "theoreticalsciences:contact_process_tower",
+  "x": 19,
+  "y": -2,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:chemical_equilibrium"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:gunpowder",
+      "count": 8
+    },
+    {
+      "item": "minecraft:raw_iron",
+      "count": 8
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Over the vanadium, X/(1 \u2212 X) = \u221a(K\u00b7p) at equilibrium, where p is the oxygen's pressure. Write the equilibrium conversion X.",
+    "name": "Square-root law",
+    "lhs": "X",
+    "form": "sqrt ( K * p ) / ( 1 + sqrt ( K * p ) )",
+    "expr": "sqrt ( K * p ) / ( 1 + sqrt ( K * p ) )",
+    "ask": "Find X for K = @{K} atm\u207b\u00b9 (750 K) and p = @{p} atm.",
+    "vars": {
+      "X": "conversion",
+      "K": "equilibrium constant (1/atm)",
+      "p": "oxygen pressure (atm)"
+    },
+    "given": {
+      "K": 9330,
+      "p": 0.15
+    },
+    "unit": "",
+    "method": "Solve X/(1 \u2212 X) = s for X: X = s/(1 + s).",
+    "distractors": [
+      "2",
+      "T",
+      "R"
+    ],
+    "vary": {
+      "K": [
+        5598.0,
+        13062.0,
+        1.0
+      ],
+      "p": [
+        0.09,
+        0.21,
+        0.001
+      ]
+    }
+  }
+}

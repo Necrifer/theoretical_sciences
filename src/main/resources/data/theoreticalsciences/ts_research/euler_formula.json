@@ -1,0 +1,52 @@
+{
+  "title": "Euler's Formula",
+  "description": "Raise e to an imaginary power and it does not grow: it turns, round a circle, as cos \u03b8 + i sin \u03b8. A cheaper way to the Imaginary Unit.",
+  "icon": "theoreticalsciences:imaginary_unit",
+  "x": 17,
+  "y": 4,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:euler_number",
+    "theoreticalsciences:complex_analysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:euler_crystal",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:pi_crystal",
+      "count": 1
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "e^(i\u03c9t) goes once round the unit circle and back. Write how long one turn takes, the period T.",
+    "name": "Rotation time",
+    "lhs": "T",
+    "form": "2 * \u03c0 / \u03c9",
+    "expr": "2 * \u03c0 / \u03c9",
+    "ask": "Find T for \u03c9 = @{\u03c9}.",
+    "vars": {
+      "T": "period",
+      "\u03c9": "angular frequency"
+    },
+    "given": {
+      "\u03c9": 4
+    },
+    "unit": "s",
+    "method": "e^(i\u03b8) = cos \u03b8 + i sin \u03b8 comes back to 1 when \u03b8 = 2\u03c0; \u03b8 = \u03c9t, so t = 2\u03c0/\u03c9.",
+    "distractors": [
+      "e",
+      "+",
+      "n"
+    ],
+    "vary": {
+      "\u03c9": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

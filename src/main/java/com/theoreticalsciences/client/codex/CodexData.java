@@ -29,6 +29,8 @@ public final class CodexData {
         public String name = "";
         public List<List<String>> pattern = List.of();
         public Map<String, String> mapping = Map.of();
+        /** 1.2.0: the multiblock a "multiblock" page shows, drawn from its live definition (then pattern is unused). */
+        public String multiblock = "";
     }
 
     public static final class Entry {
@@ -212,6 +214,7 @@ public final class CodexData {
                     p.items = strings(po, "items");
                     p.recipes = strings(po, "recipes");
                     p.name = str(po, "name");
+                    p.multiblock = str(po, "multiblock");
                     if (po.has("pattern")) {
                         List<List<String>> layers = new ArrayList<>();
                         for (JsonElement le : po.getAsJsonArray("pattern")) {

@@ -1,0 +1,24 @@
+{
+  "name": "Pattern Basin",
+  "icon": "theoreticalsciences:pattern_basin",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 97,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Turing's reaction and diffusion: an activator makes more of itself and of an inhibitor; the inhibitor holds the activator back. If the inhibitor spreads r times as fast as the activator, and r is above a critical value (about 5.8 here), an even mixture is unstable: small bumps grow into stripes and spots, spaced about 2\u03c0\u00b7r^\u00bc/\u221ak apart for a reaction rate k."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Spreading ratio, Reaction rate.$(br2)$(thing)Disturbance$(): An uneven dish: the critical ratio varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): No pattern: the inhibitor does not spread fast enough.$(br2)$(thing)Rate$(): Faster reactions are quicker."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Above critical: r \u2212 r_c$(br)Pattern spacing: \u03bb \u2248 2\u03c0\u00b7r^\u00bc/\u221ak"
+    }
+  ]
+}

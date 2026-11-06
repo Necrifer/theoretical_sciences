@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:organic_synthesis",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:kekule_ring"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:organic_evaporite",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methanol",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chiral_ligand",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:asymmetric_synthesis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "nmin": 5.0
+    },
+    "windows": [
+      {
+        "q": "Yt",
+        "min": 0.6,
+        "max": 1.0
+      }
+    ]
+  }
+}

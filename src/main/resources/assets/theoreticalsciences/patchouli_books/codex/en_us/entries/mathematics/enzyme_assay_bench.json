@@ -1,0 +1,32 @@
+{
+  "name": "Enzyme Assay Bench",
+  "icon": "theoreticalsciences:enzyme_assay_bench",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 166,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:enzyme_assay_bench",
+      "title": "Enzyme Assay Bench",
+      "text": "A rack of cuvettes and a spectrophotometer, for timing an enzyme at one substrate level after another.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the substrate level and the enzyme dose. The enzyme must be at least 90% saturated: S\u207f/(K_app\u207f + S\u207f) \u2265 0.9, with K_app raised by any inhibitor. Too much substrate (over 40 K_app) and it chokes; too much enzyme (over 8 \u00b5M) and it clumps."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Assayed Enzyme, Porphyrin Oxygen Carrier."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:enzyme_assay_bench",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/enzyme_kinetics"
+}

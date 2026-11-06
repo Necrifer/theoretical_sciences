@@ -1,0 +1,24 @@
+{
+  "name": "Sintering Press",
+  "icon": "theoreticalsciences:sintering_press",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 120,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pressed powder fired near its melting point densifies as its grains weld - faster hotter and pressed harder. But heat also grows the grains, and big grains make a weak ceramic. The art is dense and fine together."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Pressure, Temperature.$(br2)$(thing)Disturbance$(): Powder lot: the density varies by \u00b10.3%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): One pressing at a time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Density: \u03c1(P, T)$(br)Grain size: g \u221d e^((T \u2212 1600 K)/150 K)"
+    }
+  ]
+}

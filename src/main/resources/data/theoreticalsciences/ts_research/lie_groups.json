@@ -1,0 +1,42 @@
+{
+  "title": "Lie Groups",
+  "description": "Groups of symmetries that turn smoothly, by any amount. The forces of the Standard Model are three of them: U(1), SU(2) and SU(3). Unlocks the Lie Group Lattice.",
+  "icon": "theoreticalsciences:lie_group_lattice",
+  "x": 4,
+  "y": 6,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:group_theory",
+    "theoreticalsciences:linear_algebra",
+    "theoreticalsciences:calculus"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:symmetry_crystal",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "Write the dimension G of the group SU(n), the number of independent ways it can turn.",
+    "name": "Generators of SU(n)",
+    "lhs": "G",
+    "form": "n ^ 2 - 1",
+    "expr": "n ^ 2 - 1",
+    "ask": "Find d for n = 3 (the strong force: the gluons).",
+    "vars": {
+      "G": "dimension",
+      "n": "size of the matrices"
+    },
+    "given": {
+      "n": 3
+    },
+    "unit": "",
+    "method": "An n x n unitary matrix has n\u00b2 real parameters; fixing the determinant at 1 takes one away.",
+    "distractors": [
+      "+",
+      "2",
+      "k"
+    ]
+  }
+}

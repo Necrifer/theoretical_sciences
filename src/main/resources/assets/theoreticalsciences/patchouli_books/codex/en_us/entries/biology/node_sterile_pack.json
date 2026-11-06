@@ -1,0 +1,19 @@
+{
+  "name": "Sterile Pack",
+  "icon": "theoreticalsciences:sterile_pack",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:sterile_pack",
+      "title": "Sterile Pack",
+      "text": "Swabs, wipes and a fresh filter, sealed and steamed in the Autoclave until not one spore in a trillion is left alive. Use it on a Biology machine to bring it back to fully sterile and clear any contamination. Made in the Autoclave."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Autoclave$().$(br2)$(thing)Found in$(): Bsl4 Field Station, Germinal Centre chests.$(br2)$(thing)Unlocked by$(): Sterile Technique.$(br2)$(thing)Used in$(): Antibody Bench, Fracture Ward, Grey Goo Ward, Hollowing Ward, Metastasis Ward, Probiotic Seal, Rewind Ward."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/sterile_technique"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.intro__r42_drilling",
+  "description": "book.theoreticalsciences.codex.geography.intro__r42_drilling.desc",
+  "icon": {
+    "item": "theoreticalsciences:deep_drilling_rig"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 28,
+  "y": 89,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.intro__r42_drilling.p0",
+      "title": "book.theoreticalsciences.codex.geography.intro__r42_drilling"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.intro__r42_drilling.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/geography__intro__r41_riches"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/geography__intro__r42_press"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/deep_drilling"
+  }
+}

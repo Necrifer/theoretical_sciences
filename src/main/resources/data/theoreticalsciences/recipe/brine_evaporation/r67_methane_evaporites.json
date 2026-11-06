@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:brine_evaporation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_methane",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:organic_evaporite",
+      "count": 1
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:titan_lakes",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "CF",
+        "min": 20.0,
+        "max": 50.0
+      },
+      {
+        "q": "Pu",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

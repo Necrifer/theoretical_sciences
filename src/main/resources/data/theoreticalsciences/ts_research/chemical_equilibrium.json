@@ -1,0 +1,57 @@
+{
+ "title": "Chemical Equilibrium",
+ "description": "A reaction runs both ways at once, and settles where ΔG° = −RT ln K. Heat it and it goes faster, but an exothermic one settles further back. Unlocks the Iron Catalyst and the Haber-Bosch Reactor.",
+ "icon": "theoreticalsciences:haber_bosch_reactor",
+ "x": 16,
+ "y": -1,
+ "insight": 70,
+ "requires": [
+  "theoreticalsciences:reaction_kinetics"
+ ],
+ "cost": [
+  {
+   "item": "minecraft:iron_ingot",
+   "count": 8
+  },
+  {
+   "item": "theoreticalsciences:zeolite_catalyst",
+   "count": 1
+  }
+ ],
+ "time": 180,
+ "puzzle": {
+  "goal": "A reaction gives out heat H (negative) and changes the entropy by S. Write its equilibrium constant K at temperature T, with the gas constant R.",
+  "name": "Gibbs relation",
+  "lhs": "K",
+  "form": "exp ( - ( H - T * S ) / ( R * T ) )",
+  "expr": "exp ( - ( H - T * S ) / ( R * T ) )",
+  "ask": "Find K for ammonia: H = −92400 J/mol, S = −198 J/(mol·K), R = 8.314 J/(mol·K), T = @{T} K.",
+  "vars": {
+   "K": "equilibrium constant",
+   "H": "ΔH (J/mol)",
+   "S": "ΔS (J/(mol·K))",
+   "R": "gas constant",
+   "T": "temperature (K)"
+  },
+  "given": {
+   "H": -92400,
+   "S": -198,
+   "R": 8.314,
+   "T": 723
+  },
+  "unit": "atm⁻²",
+  "method": "ΔG° = ΔH − TΔS, and at equilibrium ΔG° = −RT ln K.",
+  "distractors": [
+   "2",
+   "P",
+   "e"
+  ],
+  "vary": {
+   "T": [
+    434.0,
+    1012.0,
+    1.0
+   ]
+  }
+ }
+}

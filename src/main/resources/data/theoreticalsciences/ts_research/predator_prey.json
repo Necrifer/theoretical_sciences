@@ -1,0 +1,60 @@
+{
+  "title": "Predator and Prey",
+  "description": "More prey feed more predators, more predators eat more prey, and so it cycles, round and round. Unlocks Stable Ecosystems and the Symbiont Lining.",
+  "icon": "theoreticalsciences:stable_ecosystem",
+  "x": 11,
+  "y": 24,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:ecology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:algae_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 2
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "Prey settle at the level where predators neither grow nor shrink: predator death g against gain d per prey. Write that prey level X.",
+    "name": "Fixed point",
+    "lhs": "X",
+    "form": "g / k + m",
+    "expr": "g / k + m",
+    "ask": "Find X for g = @{g}, k = @{k} and m = 0.",
+    "vars": {
+      "X": "prey level",
+      "g": "predator death",
+      "k": "predator gain",
+      "m": "immigration"
+    },
+    "given": {
+      "g": 1,
+      "k": 0.04,
+      "m": 0
+    },
+    "unit": "",
+    "method": "Predators hold steady when gain k.x equals death g, so the prey sit at g/k, plus any steady immigration m.",
+    "distractors": [
+      "+",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "g": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "k": [
+        0.024,
+        0.056,
+        0.0001
+      ]
+    }
+  }
+}

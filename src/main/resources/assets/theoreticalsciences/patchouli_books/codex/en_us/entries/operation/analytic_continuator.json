@@ -1,0 +1,24 @@
+{
+  "name": "Analytic Continuator",
+  "icon": "theoreticalsciences:analytic_continuator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 14,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Analytic continuation: a function known near one point is carried to another a disc at a time, re-expanding its series in each. In a disc of radius \u03c1, cutting the series after N terms leaves about (\u03c1/R)^(N+1), where R is how far the series converges. Covering a distance L takes L/\u03c1 discs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Disc radius, Terms.$(br2)$(thing)Disturbance$(): A rough function: its radius of convergence varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The disc reaches past the radius of convergence: the series diverges.$(br2)$(thing)Rate$(): Less summing is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Discs: L / \u03c1$(br)Total error: (L/\u03c1)\u00b7(\u03c1/R)^(N+1)$(br)Terms in all: (L/\u03c1)\u00b7N"
+    }
+  ]
+}

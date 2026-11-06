@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:fuel_cell_power",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 375
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nitrogen",
+      "amount": 250
+    }
+  ],
+  "energy": 384,
+  "duration": 400,
+  "research": "theoreticalsciences:galvanic_cells",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "E0": 1.17
+    },
+    "windows": [
+      {
+        "q": "Pw",
+        "min": 0.2,
+        "max": 9.0
+      }
+    ]
+  }
+}

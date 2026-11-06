@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__research_nexus_machine",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__research_nexus_machine.desc",
+  "icon": {
+    "item": "theoreticalsciences:research_nexus"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 24,
+  "y": 78,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__research_nexus_machine.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__research_nexus_machine"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__research_nexus_machine.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__intro__r74_structure"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/research_synthesis"
+  }
+}

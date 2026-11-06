@@ -1,0 +1,58 @@
+{
+  "type": "theoreticalsciences:fermentation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:living_catalyst"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nitrogen",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:bacterial_culture",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ammonia",
+      "amount": 1000
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:gene_circuits",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ks": 10.0,
+      "Si": 100.0
+    },
+    "windows": [
+      {
+        "q": "gr",
+        "min": 0.6,
+        "max": 2.0
+      },
+      {
+        "q": "air",
+        "min": 0.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

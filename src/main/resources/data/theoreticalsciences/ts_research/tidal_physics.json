@@ -1,58 +1,58 @@
 {
-  "title": "Tidal Physics",
-  "description": "Gravity pulls harder on your near side than your far side. Near a small black hole the difference tears anything apart lengthwise - spaghettification.",
-  "icon": "theoreticalsciences:tidal_shear_crystal",
-  "x": 14,
-  "y": 4,
-  "insight": 220,
-  "requires": [
-    "theoreticalsciences:black_hole_interior",
-    "theoreticalsciences:frame_dragging"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:tidal_shear_crystal",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:micro_singularity",
-      "count": 1
-    }
-  ],
-  "time": 870,
-  "puzzle": {
-    "goal": "A body of length L hangs head-down at distance r from a mass M. Write the difference a between the pull on its two ends, with G.",
-    "name": "Spaghettification",
-    "lhs": "a",
-    "form": "2 * G * M * L / r ^ 3",
-    "expr": "2 * G * M * L / r ^ 3 / 9.81",
-    "ask": "Find a in g for a 2 m body 100 km from a 10-solar-mass black hole: M = @{M} kg, L = 2, r = 1e5, G = 6.674e-11.",
-    "vars": {
-      "a": "stretching (g)",
-      "G": "gravitational constant",
-      "M": "mass (kg)",
-      "L": "length (m)",
-      "r": "distance (m)"
-    },
-    "given": {
-      "G": 6.674e-11,
-      "M": 1.989e+31,
-      "L": 2,
-      "r": 100000.0
-    },
-    "unit": "g",
-    "method": "Differentiate GM/r\u00b2 with respect to r and multiply by L.",
-    "distractors": [
-      "c",
-      "\u03c0",
-      "3"
-    ],
-    "vary": {
-      "M": [
-        1.19e+31,
-        2.79e+31,
-        1e+29
-      ]
-    }
+ "title": "Tidal Physics",
+ "description": "Gravity pulls harder on your near side than your far side. Near a small black hole the difference tears anything apart lengthwise, spaghettification.",
+ "icon": "theoreticalsciences:tidal_shear_crystal",
+ "x": 14,
+ "y": 4,
+ "insight": 220,
+ "requires": [
+  "theoreticalsciences:black_hole_interior",
+  "theoreticalsciences:frame_dragging"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:tidal_shear_crystal",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:micro_singularity",
+   "count": 1
   }
+ ],
+ "time": 870,
+ "puzzle": {
+  "goal": "A body of length L hangs head-down at distance r from a mass M. Write the difference a between the pull on its two ends, with G.",
+  "name": "Spaghettification",
+  "lhs": "a",
+  "form": "2 * G * M * L / r ^ 3",
+  "expr": "2 * G * M * L / r ^ 3 / 9.81",
+  "ask": "Find a in g for a 2 m body 100 km from a 10-solar-mass black hole: M = @{M} kg, L = 2, r = 1e5, G = 6.674e-11.",
+  "vars": {
+   "a": "stretching (g)",
+   "G": "gravitational constant",
+   "M": "mass (kg)",
+   "L": "length (m)",
+   "r": "distance (m)"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 1.989e+31,
+   "L": 2,
+   "r": 100000.0
+  },
+  "unit": "g",
+  "method": "Differentiate GM/r² with respect to r and multiply by L.",
+  "distractors": [
+   "c",
+   "π",
+   "3"
+  ],
+  "vary": {
+   "M": [
+    1.19e+31,
+    2.79e+31,
+    1e+29
+   ]
+  }
+ }
 }

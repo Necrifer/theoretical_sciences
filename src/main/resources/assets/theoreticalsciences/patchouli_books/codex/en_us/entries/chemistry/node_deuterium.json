@@ -1,0 +1,19 @@
+{
+  "name": "Deuterium",
+  "icon": "theoreticalsciences:deuterium_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:deuterium_cell",
+      "title": "Deuterium",
+      "text": "$(fluid)Deuterium$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Mass Spectrometry.$(br2)$(thing)Used in$(): Tritium, Warm Helium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mass_spectrometry"
+}

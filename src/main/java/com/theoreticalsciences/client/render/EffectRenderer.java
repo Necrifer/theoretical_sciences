@@ -38,6 +38,8 @@ import java.util.Random;
  * All GL state touched here is restored afterwards so other mods' rendering (and lighting) is unaffected.
  */
 public final class EffectRenderer {
+    private static final java.util.Map<Object, Long> lastSparkTick = new java.util.WeakHashMap<>();
+
     private static TextureTarget sceneCopy;
 
     private record Lens(Vec3 pos, float worldRadius, float quadRadius, int mode, float strength) {}
@@ -66,12 +68,12 @@ public final class EffectRenderer {
         left = new Vector3f(camera.getLeftVector());
         up = new Vector3f(camera.getUpVector());
         float partial = event.getPartialTick().getGameTimeDeltaPartialTick(false);
-        time = (mc.level.getGameTime() + partial) / 20.0F;
+        time = com.theoreticalsciences.client.render.effects.FxFrame.wrapSeconds((double) mc.level.getGameTime() + partial);   // 1.2.0: kept precise on old worlds
         double maxDist = QHConfig.LENSING_MAX_DISTANCE.get();
 
         List<ControllerBlockEntity> visible = new ArrayList<>();
         List<ControllerBlockEntity> sweeping = new ArrayList<>();
-        double tick = mc.level.getGameTime() + partial;
+        double tick = (double) mc.level.getGameTime() + partial;
         for (ControllerBlockEntity c : List.copyOf(ClientHooks.CONTROLLERS)) {
             if (c.isRemoved() || c.getLevel() != mc.level || !c.isFormed()) continue;
             PowerAnimator.State ps = PowerAnimator.update(c, tick);
@@ -81,6 +83,7 @@ public final class EffectRenderer {
             if (since < (ps.on ? PowerAnimator.WAVE_UP : PowerAnimator.WAVE_DOWN) + 0.2) sweeping.add(c);
             if (ps.power(tick) <= 0.001F) continue;
             if (c.type.effect == MachineType.Effect.NONE) continue;
+            if (com.theoreticalsciences.client.render.effects.EndgameFx.owns(c.definition())) continue;     // 1.2.0: it has its own animation now
             if (!event.getFrustum().isVisible(new AABB(ctr, ctr).inflate(6 * c.effectScale()))) continue;
             visible.add(c);
         }
@@ -276,13 +279,19 @@ public final class EffectRenderer {
         BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
         int n = 0;
         Random rnd = new Random((long) (tick * 7));
+        // 1.2.0: the sparks follow the particle density setting, and come at most once a game tick (not once a frame)
+        int density = QHConfig.PARTICLE_DENSITY.get();
+        long gt = (long) tick;
+        boolean sparks = !up && density > 0 && lastSparkTick.getOrDefault(c, -1L) != gt;
+        if (sparks) lastSparkTick.put(c, gt);
+        int odds = density >= 3 ? 30 : density == 2 ? 40 : 120;
         for (net.minecraft.core.BlockPos bp : ps.parts) {
             double d = Math.sqrt(bp.distSqr(o));
             double k = 1 - Math.abs(d - front) / 2.2;
             if (k <= 0) continue;
             cube(bb, bp, (float) (k * k) * 0.55F * fade, rgb);
             if (++n > 4000) break;
-            if (!up && rnd.nextInt(40) == 0 && Minecraft.getInstance().level != null)     // sparks jump off the casing as it powers down
+            if (sparks && rnd.nextInt(odds) == 0 && Minecraft.getInstance().level != null)     // sparks jump off the casing as it powers down
                 Minecraft.getInstance().level.addParticle(com.theoreticalsciences.registry.QHParticles.ARC_SPARK.get(),
                         bp.getX() + rnd.nextDouble(), bp.getY() + rnd.nextDouble(), bp.getZ() + rnd.nextDouble(), 0, 0.05, 0);
         }
@@ -294,7 +303,8 @@ public final class EffectRenderer {
     // ------------------------------------------------------------------ containment failure
 
     static final int MELTDOWN = com.theoreticalsciences.machine.ControllerBlockEntity.MELTDOWN_TICKS;
-    static final int[] HAZARD_RGB = {0x80FFE0, 0x8060FF, 0x40FF80, 0xFFC23D, 0xFF60FF};
+    static final int[] HAZARD_RGB = {0x80FFE0, 0x8060FF, 0x40FF80, 0xFFC23D, 0xFF60FF,
+            0xC0FF40, 0x60FF60, 0x60A0FF, 0xFF6020, 0xFFFFFF};     // (1.2.0: chemical, radiological, magnetic, thermal, optical)
 
     /**
      * A multiblock losing containment: for four seconds every block of the structure flickers red, faster and faster,
@@ -822,7 +832,7 @@ public final class EffectRenderer {
     }
 
     /**
-     * 1.4.0, the Reflecting Telescope: starlight falling in through the dome's slit onto the primary mirror and
+     * 1.2.0, the Reflecting Telescope: starlight falling in through the dome's slit onto the primary mirror and
      * brought to a focus - a pale beam from the sky, the stars it comes from twinkling above, and the focus glowing.
      */
     private static void starlight(Vec3 c) {
@@ -843,7 +853,7 @@ public final class EffectRenderer {
     }
 
     /**
-     * 1.4.0, the Solar Furnace: sunlight from the concentrator behind the target converging on it - beams from a fan of
+     * 1.2.0, the Solar Furnace: sunlight from the concentrator behind the target converging on it - beams from a fan of
      * mirror facets, a white-hot spot where they meet, and the shimmer of the air around it.
      */
     private static void solar(Vec3 c, net.minecraft.core.Direction facing) {
@@ -865,7 +875,7 @@ public final class EffectRenderer {
     }
 
     /**
-     * 1.4.0, the Radio Telescope: wavefronts coming down onto the dish, then drawn in to the feed at its focus - each
+     * 1.2.0, the Radio Telescope: wavefronts coming down onto the dish, then drawn in to the feed at its focus - each
      * ring falls, spreads over the dish, and shrinks into the receiver, which pulses as it catches them.
      */
     private static void radioWaves(Vec3 c) {

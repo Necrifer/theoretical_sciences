@@ -1,0 +1,24 @@
+{
+  "name": "Framework Assembler",
+  "icon": "theoreticalsciences:framework_assembler",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 61,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Nodes and linkers crystallise into an open net; the pore across it is set by the linker's length. A pore that fits one target molecule holds it best. The solvent left in the pores must be driven off slowly - pulled out fast, its surface tension crushes them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Linker length, Drying rate.$(br2)$(thing)Disturbance$(): Crystal defects: the pore varies by \u00b10.02 \u00c5\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Faster drying, faster batches."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Pore size: d \u2248 0.8\u00b7L \u2212 0.5 \u00c5$(br)Fit to the target: e^(\u2212((d \u2212 d_target)/0.4 \u00c5)\u00b2)$(br)Pores intact: e^(\u22123\u00b7(rate \u2212 0.3))"
+    }
+  ]
+}

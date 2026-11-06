@@ -1,0 +1,24 @@
+{
+  "name": "NMR Spectrometer",
+  "icon": "theoreticalsciences:nmr_spectrometer",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 87,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In a field B a nucleus precesses at the Larmor frequency f = \u03b3B/2\u03c0 (protons 42.58 MHz per tesla, carbon-13 10.71). A radio pulse at exactly that frequency tips it; listening, the chemical surroundings shift it by parts per million. The magnet is superconducting: too warm, or too much field, and it quenches."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Magnetic field, Radio frequency.$(br2)$(thing)Disturbance$(): Field drift: B varies by \u00b10.0001%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The magnet is not superconducting (too warm); The field is over the magnet's rating: it quenches.$(br2)$(thing)Rate$(): A stronger field reads more clearly, and faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Larmor frequency: f = \u03b3B/2\u03c0$(br)Detuning: |f \u2212 f_L|/f_L"
+    }
+  ]
+}

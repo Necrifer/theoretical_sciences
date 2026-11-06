@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_ice_eel",
+  "description": "book.theoreticalsciences.codex.world.node_ice_eel.desc",
+  "icon": {
+    "item": "theoreticalsciences:ice_eel_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 59,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ice_eel_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_ice_eel.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/world__r94_titan_ocean",
+      "draw_arrow": false
+    }
+  ]
+}

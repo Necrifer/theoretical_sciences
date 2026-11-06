@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r54_quantum_geometry",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r54_quantum_geometry.desc",
+  "icon": {
+    "item": "theoreticalsciences:spin_network_loom"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_quantum_geometry.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r54_quantum_geometry"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_quantum_geometry.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r54_hawking"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/loop_quantum_gravity"
+  }
+}

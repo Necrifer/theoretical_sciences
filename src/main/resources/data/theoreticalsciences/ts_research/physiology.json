@@ -1,0 +1,59 @@
+{
+  "title": "Physiology",
+  "description": "An organ is cells in the thousands, and no cell is far from a vessel: the body is plumbing before anything else. Unlocks the Perfusion Rig.",
+  "icon": "theoreticalsciences:perfusion_rig",
+  "x": 4,
+  "y": 24,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:respiration",
+    "theoreticalsciences:fixed_points"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 4
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A parent vessel of radius r splits into n daughters; Murray's law keeps the cubes adding up, so each daughter has the same radius. Write that radius R, as r over the cube root of n.",
+    "name": "Branching radius",
+    "lhs": "R",
+    "form": "r / n ^ ( 1 / 3 )",
+    "expr": "r / n ^ ( 1 / 3 )",
+    "ask": "Find R for r = @{r} and n = @{n}.",
+    "vars": {
+      "R": "daughter radius",
+      "r": "parent radius",
+      "n": "daughters"
+    },
+    "given": {
+      "r": 4,
+      "n": 8
+    },
+    "unit": "um",
+    "method": "Least work makes the cube of the parent radius equal the sum of the daughters' cubes: r^3 = n.R^3.",
+    "distractors": [
+      "+",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "r": [
+        2.0,
+        6.0,
+        1.0
+      ],
+      "n": [
+        5.0,
+        11.0,
+        1.0
+      ]
+    }
+  }
+}

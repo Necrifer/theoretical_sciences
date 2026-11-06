@@ -19,7 +19,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 /**
- * Round 40 (1.3.0): what the Planetary Interior does to you. Checked once a second per player, only for players inside
+ * Round 40 (1.2.0): what the Planetary Interior does to you. Checked once a second per player, only for players inside
  * it; nothing here changes or moves a block.
  * <ul>
  *   <li><b>Lithostatic Pressure</b> everywhere below y 100, stronger with depth (P = ρgh).</li>

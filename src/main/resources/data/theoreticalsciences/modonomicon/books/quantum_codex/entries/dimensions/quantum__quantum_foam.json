@@ -5,8 +5,8 @@
     "item": "theoreticalsciences:planck_diver"
   },
   "category": "theoreticalsciences:dimensions",
-  "x": 56,
-  "y": 25,
+  "x": 1,
+  "y": 43,
   "hide_while_locked": false,
   "background_u_index": 0,
   "background_v_index": 0,
@@ -75,7 +75,11 @@
       "text": "book.theoreticalsciences.codex.quantum.quantum_foam.p11"
     }
   ],
-  "parents": [],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r78_elements"
+    }
+  ],
   "condition": {
     "type": "modonomicon:advancement",
     "advancement_id": "theoreticalsciences:research/quantum_foam"

@@ -1,0 +1,24 @@
+{
+  "name": "Infrared Spectrometer",
+  "icon": "theoreticalsciences:infrared_spectrometer",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 71,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each bond vibrates at its own frequency and absorbs infrared there: C-H near 2950 cm\u207b\u00b9, C=O near 1715, O-H near 3300, C\u2261N near 2250. A scan must cover the band - and the wider it is, the coarser it reads."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Scan from, Scan to.$(br2)$(thing)Disturbance$(): Thermal drift: the band shifts by \u00b12 cm\u207b\u00b9\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): A narrow scan is quick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Margin: distance of the band from the ends$(br)Scan width: width"
+    }
+  ]
+}

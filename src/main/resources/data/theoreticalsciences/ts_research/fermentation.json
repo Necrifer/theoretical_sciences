@@ -1,0 +1,73 @@
+{
+  "title": "Fermentation",
+  "description": "Without air, yeast splits sugar into alcohol and carbon dioxide for a little energy: bread, beer, and biogas. Unlocks Yeast Cultures, cheap Nutrient Broth and biogas.",
+  "icon": "theoreticalsciences:yeast_culture",
+  "x": 5,
+  "y": 19,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:metabolism",
+    "theoreticalsciences:sterile_technique"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:sugar",
+      "count": 8
+    },
+    {
+      "item": "minecraft:brown_mushroom",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "Yeast grows on sugar S as \u03bc\u00b7S/(K + S), but sugar Q or more holds it back by e^(\u2212S/Q). Write the growth rate G.",
+    "name": "Haldane growth",
+    "lhs": "G",
+    "form": "\u03bc * S / ( K + S ) * exp ( - S / Q )",
+    "expr": "\u03bc * S / ( K + S ) * exp ( - S / Q )",
+    "ask": "Find G for \u03bc = @{\u03bc}, S = @{S}, K = @{K} and Q = @{Q}.",
+    "vars": {
+      "G": "growth rate",
+      "\u03bc": "top rate",
+      "S": "sugar",
+      "K": "half-saturation",
+      "Q": "inhibition"
+    },
+    "given": {
+      "\u03bc": 0.5,
+      "S": 22,
+      "K": 5,
+      "Q": 100
+    },
+    "unit": "1/h",
+    "method": "Monod's saturation S/(K + S) times the inhibition e^(\u2212S/Q); the best sugar is \u221a(KQ).",
+    "distractors": [
+      "2",
+      "+",
+      "ln"
+    ],
+    "vary": {
+      "\u03bc": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "S": [
+        13.0,
+        31.0,
+        1.0
+      ],
+      "K": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "Q": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

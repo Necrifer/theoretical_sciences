@@ -1,0 +1,47 @@
+{
+  "title": "Permutations and Combinations",
+  "description": "How many ways to line things up, and how many ways to pick some: the counting behind every chance.",
+  "icon": "theoreticalsciences:dice_set",
+  "x": 7,
+  "y": 2,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:combinatorics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Each of n people greets every other person once. Write how many greetings H there are.",
+    "name": "Handshake count",
+    "lhs": "H",
+    "form": "n * ( n - 1 ) / 2",
+    "expr": "n * ( n - 1 ) / 2",
+    "ask": "Find H for n = @{n}.",
+    "vars": {
+      "H": "greetings",
+      "n": "people"
+    },
+    "given": {
+      "n": 10
+    },
+    "unit": "",
+    "method": "Each of n greets n \u2212 1 others, but that counts every greeting twice, once from each side.",
+    "distractors": [
+      "+",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

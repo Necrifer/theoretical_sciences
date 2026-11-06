@@ -1,0 +1,65 @@
+{
+  "title": "The Tree of Life",
+  "description": "Every living thing on one branching tree from a single root, four billion years deep. The five pieces of life, from the cell to the biosphere, make one endgame catalyst that never wears.",
+  "icon": "theoreticalsciences:tree_of_life",
+  "x": 11,
+  "y": 26,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:predator_prey",
+    "theoreticalsciences:gene_circuits",
+    "theoreticalsciences:immune_memory",
+    "theoreticalsciences:abiogenesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:grown_organ",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:stable_ecosystem",
+      "count": 1
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "A branching tree doubles its tips at each of g levels. Write how many tips T it ends with, from one root.",
+    "name": "Lineage count",
+    "lhs": "T",
+    "form": "a * 2 ^ g",
+    "expr": "a * 2 ^ g",
+    "ask": "Find T for a = @{a} and g = @{g}.",
+    "vars": {
+      "T": "tips",
+      "a": "roots",
+      "g": "levels"
+    },
+    "given": {
+      "a": 1,
+      "g": 10
+    },
+    "unit": "",
+    "method": "Each level doubles the count of lineages; from one root, g levels give 2^g: life's tree, from a single ancestor.",
+    "distractors": [
+      "+",
+      "e",
+      "3"
+    ],
+    "vary": {
+      "a": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "g": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

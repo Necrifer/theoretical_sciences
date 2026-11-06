@@ -1,0 +1,23 @@
+{
+  "name": "Stem Cell Culture",
+  "icon": "theoreticalsciences:stem_cell_culture",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stem_cell_culture",
+      "title": "Stem Cell Culture",
+      "text": "A flask of cells that have not yet decided what to become. Any of them could be a neuron, a muscle, a bone. The broth is warm and cloudy and seems to be thinking about its options. Under the microscope they look identical, and that sameness is exactly the point: every possibility is still open."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Notebook$()$(br)Synthetic biology lets me write life rather than read it. I took a genome sample, spliced in recombinant DNA to undo specialisation and used an engineered enzyme to hold the cells in their undecided state."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Bioreactor$().$(br2)$(thing)Unlocked by$(): Enzyme Inhibition.$(br2)$(thing)Used in$(): Anomalous Strain Culture, CAR-T Cell Culture, Grown Organ, Neural Organoid, Regeneration Tank, Telomerase Complex, Tumour Microenvironment Organoid, Xenobot Swarm."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/enzyme_kinetics"
+}

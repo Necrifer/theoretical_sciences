@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_mu_metal_shield",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_mu_metal_shield.desc",
+  "icon": {
+    "item": "theoreticalsciences:mu_metal_shield"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 70,
+  "y": 89,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mu_metal_shield"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_mu_metal_shield.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_mu_metal_shield.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__r52_maxwell",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

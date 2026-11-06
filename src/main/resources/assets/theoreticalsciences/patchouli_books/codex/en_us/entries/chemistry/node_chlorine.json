@@ -1,0 +1,19 @@
+{
+  "name": "Chlorine",
+  "icon": "theoreticalsciences:chlorine_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chlorine_cell",
+      "title": "Chlorine",
+      "text": "A yellow-green gas, heavier than air and fiercely reactive. It bleaches, disinfects and makes half of all plastics."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Galvanic Cells.$(br2)$(thing)Used in$(): Hydrophobic Coating."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galvanic_cells"
+}

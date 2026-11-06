@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.intro__foam_boundaries",
+  "description": "book.theoreticalsciences.codex.quantum.intro__foam_boundaries.desc",
+  "icon": {
+    "item": "theoreticalsciences:schrodinger_limit_cell"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.intro__foam_boundaries.p0",
+      "title": "book.theoreticalsciences.codex.quantum.intro__foam_boundaries"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.intro__foam_boundaries.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/hyperdimensions__intro__tesseract"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_foam"
+  }
+}

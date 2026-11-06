@@ -1,0 +1,30 @@
+{
+  "name": "Foundations",
+  "icon": "theoreticalsciences:zero",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:eratosthenes_sieve,theoreticalsciences:zero,theoreticalsciences:unity,theoreticalsciences:proof_certificate",
+      "text": "Mathematics starts from almost nothing: a few rules of logic, the empty set, and counting."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Primes$(): the $(item)Sieve of Eratosthenes$() crosses out the multiples of each prime and keeps what is left, about N / ln N numbers up to N. Set its limit high enough for the recipe, and a wheel to skip the small primes: less work is faster. It makes $(item)Prime Shards$() from Natural Number Lattices, or from Axiom Stone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Cardinality$(): zero is the empty set and one is the set holding it. The Formal Proof Assistant makes $(item)Zero$() and $(item)Unity$(), two of the five constants of Euler's identity. Physics uses them too: Zero presses a Casimir Plate with half the neutronium, Unity normalises a qubit with half the parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Proof by Induction$(): a $(item)Proof Certificate$() filed with a multiblock (use it on the controller; up to four) catches one containment failure each, and nothing is released."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Combinatorics$(): the Peano Engine counts $(item)Microstate Tallies$(), Boltzmann's W, and the Maxwell Demon Sorter builds its chip from them with far less."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/primes"
+}

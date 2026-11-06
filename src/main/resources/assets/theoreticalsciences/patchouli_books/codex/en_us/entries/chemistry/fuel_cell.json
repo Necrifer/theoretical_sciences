@@ -1,0 +1,32 @@
+{
+  "name": "Fuel Cell",
+  "icon": "theoreticalsciences:fuel_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 138,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fuel_cell",
+      "title": "Fuel Cell",
+      "text": "Hydrogen on one side of a membrane, air on the other: the reaction that would burn them runs as a current instead.$(br2)Generates power.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Burns hydrogen (or ammonia) with oxygen for power, giving water. Set the load current and the fuel pressure. The voltage falls as the current rises, so the power peaks part-way (about 1 A/cm\u00b2). Too little current and the cell floods; too much and it starves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (1 item and 2 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Nitrogen, Water."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fuel_cell",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galvanic_cells"
+}

@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "ms",
+      "unit": "g",
+      "min": 0.01,
+      "max": 5,
+      "step": 0.001,
+      "default": 1
+    },
+    {
+      "id": "po",
+      "unit": "atm",
+      "min": 1,
+      "max": 40,
+      "step": 0.1,
+      "default": 20
+    }
+  ],
+  "recipe_vars": {
+    "Hc": 30,
+    "Od": 10
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "q",
+      "unit": "kJ",
+      "expr": "ms*Hc*min(1, po/(Od*ms))",
+      "formula": "q = m\u00b7\u0394H_c"
+    },
+    {
+      "id": "dT",
+      "unit": "K",
+      "expr": "q/10*(1 + 0.005*d)",
+      "formula": "\u0394T = q/C"
+    },
+    {
+      "id": "burn",
+      "unit": "",
+      "expr": "min(1, po/(Od*ms))",
+      "formula": "p_O\u2082 / (demand \u00b7 m)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "bomb",
+      "kind": "stop",
+      "expr": "35 - po",
+      "formula": "p < 35 atm"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

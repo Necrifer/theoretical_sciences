@@ -1,0 +1,19 @@
+{
+  "name": "Caustic Soda",
+  "icon": "theoreticalsciences:caustic_soda",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:caustic_soda",
+      "title": "Caustic Soda",
+      "text": "Sodium hydroxide, from salt water and current: the base every acid in the industry is measured against."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electrolytic Cell$().$(br2)$(thing)Unlocked by$(): Galvanic Cells.$(br2)$(thing)Used in$(): Alumina, EDTA, Oxygen Rebreather."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galvanic_cells"
+}

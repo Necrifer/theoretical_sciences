@@ -1,0 +1,19 @@
+{
+  "name": "Proof Certificate",
+  "icon": "theoreticalsciences:proof_certificate",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 512,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:proof_certificate",
+      "title": "Proof Certificate",
+      "text": "A proof, checked line by line, that a machine stays inside its limits. Use it on a multiblock's controller to file it there (up to four). Each one catches one containment failure: the machine still shuts down, but nothing is released. Made in the Formal Proof Assistant."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Formal Proof Assistant$().$(br2)$(thing)Dropped by$(): Paradox Shade.$(br2)$(thing)Found in$(): Geometers Ruin, Liars Vault, Proof Stairs chests.$(br2)$(thing)Unlocked by$(): Proof by Induction."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/formal_logic"
+}

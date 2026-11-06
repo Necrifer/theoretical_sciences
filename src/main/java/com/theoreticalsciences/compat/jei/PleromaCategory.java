@@ -63,7 +63,7 @@ public class PleromaCategory implements IRecipeCategory<PleromaCategory.Recipe> 
     public int getHeight() {
         List<FluidStack> w = ConfluenceBlockEntity.wanted();
         int e = essences(w);
-        return Math.max(112, essenceTop(w.size() - e) + ((e + 7) / 8) * 18 + 2);
+        return Math.max(60, essenceTop(w.size() - e) + ((e + 7) / 8) * 18 + 2);
     }
 
     /** How many of the wanted fluids are mod Essences (they come last). */
@@ -101,8 +101,6 @@ public class PleromaCategory implements IRecipeCategory<PleromaCategory.Recipe> 
         var font = Minecraft.getInstance().font;
         int e = essences(r.inputs()), plain = r.inputs().size() - e;
         g.drawString(font, Component.translatable("jei.theoreticalsciences.pleroma_each", String.format("%,d", ConfluenceBlockEntity.TARGET)), 1, 0, 0xFF606060, false);
-        if (e > 0) g.drawString(font, Component.translatable("jei.theoreticalsciences.pleroma_essences", e, String.format("%,d", ConfluenceBlockEntity.ESSENCE_TARGET)),
-                1, essenceTop(plain) - 10, 0xFF606060, false);
         g.fill(148, 47, 154, 49, 0xFFC080FF);
     }
 }

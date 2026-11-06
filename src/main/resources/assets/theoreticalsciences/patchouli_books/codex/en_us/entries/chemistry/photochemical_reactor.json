@@ -1,0 +1,32 @@
+{
+  "name": "Photochemical Reactor",
+  "icon": "theoreticalsciences:photochemical_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 157,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photochemical_reactor",
+      "title": "Photochemical Reactor",
+      "text": "A quartz cell under an ultraviolet lamp: light, not heat, breaks the bonds.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the lamp's intensity and the cell's path length. The mixture must absorb between 90% and 99.9% of the light (absorbance A = \u03b5cl between 1 and 3): too thin and the light goes straight through; too thick and only a skin of the mixture by the window reacts. Brighter is faster, but above 400 W/m\u00b2 the lamp cooks the cell."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 3 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Hydrogen, Hydrogen Cyanide, Tholin."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photochemical_reactor",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/photochemistry"
+}

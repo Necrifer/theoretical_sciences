@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.selection_chamber",
+  "description": "book.theoreticalsciences.codex.biology.selection_chamber.desc",
+  "icon": {
+    "item": "theoreticalsciences:selection_chamber"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 175,
+  "y": 88,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:selection_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.biology.selection_chamber.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.selection_chamber.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.selection_chamber.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.selection_chamber.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:selection_chamber"
+      },
+      "text": "book.theoreticalsciences.codex.biology.selection_chamber.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__ecosphere"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/population_genetics"
+  }
+}

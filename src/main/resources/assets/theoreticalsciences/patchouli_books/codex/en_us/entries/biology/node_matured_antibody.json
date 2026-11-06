@@ -1,0 +1,19 @@
+{
+  "name": "Matured Antibody",
+  "icon": "theoreticalsciences:matured_antibody",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:matured_antibody",
+      "title": "Matured Antibody",
+      "text": "An antibody bred over many rounds of selection, each round keeping only the clones that bind best, until it fits its target a thousand times more tightly. Made in the Clonal Selector."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Clonal Selector$().$(br2)$(thing)Unlocked by$(): Affinity Maturation.$(br2)$(thing)Used in$(): Lasting Fracture Ward, Lasting Grey Goo Ward, Lasting Hollowing Ward, Lasting Metastasis Ward, Lasting Rewind Ward, Metastasis Ward."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/affinity_maturation"
+}

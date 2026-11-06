@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:heat_pack",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:halite",
+      "count": 2
+    },
+    {
+      "item": "minecraft:ice",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:eutectic_brine",
+      "amount": 1000
+    }
+  ],
+  "energy": 64,
+  "duration": 200,
+  "research": "theoreticalsciences:thermochemical_cycles",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": -1.0,
+      "hh": 10.0
+    },
+    "windows": [
+      {
+        "q": "To",
+        "min": 250.0,
+        "max": 256.0
+      }
+    ]
+  }
+}

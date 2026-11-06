@@ -1,0 +1,24 @@
+{
+  "name": "Dosing Pump",
+  "icon": "theoreticalsciences:dosing_pump",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 46,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A dose D into a volume V gives a level D/V that falls by first-order clearance, C = (D/V).e^(-kt), half gone every ln(2)/k. Dosed every interval, the level settles into a band; it must stay above what works and below what harms."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Dose, Interval.$(br2)$(thing)Disturbance$(): Sticky valve: the level varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too little between doses: it does nothing; Too much: a toxic peak.$(br2)$(thing)Rate$(): More frequent dosing is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Peak level: C_max = (D/V) / (1 - e^(-k.tau))$(br)Trough level: C_min = C_max.e^(-k.tau)"
+    }
+  ]
+}

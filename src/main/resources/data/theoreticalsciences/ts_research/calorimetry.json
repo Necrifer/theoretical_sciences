@@ -1,0 +1,65 @@
+{
+  "title": "Calorimetry",
+  "description": "Burn something in a sealed bomb under water and the water's rise in temperature is the heat it gave. Unlocks the Bomb Calorimeter and Thermochemical Data Cards.",
+  "icon": "theoreticalsciences:bomb_calorimeter",
+  "x": 19,
+  "y": 1,
+  "insight": 50,
+  "requires": [
+    "theoreticalsciences:reaction_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:coal",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:oxygen_cell",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Water of mass m and specific heat c warms by T kelvin. Write the heat q it took in.",
+    "name": "Sensible heat",
+    "lhs": "q",
+    "form": "m * c * T",
+    "expr": "m * c * T",
+    "ask": "Find q in kJ for m = @{m} kg, c = @{c} kJ/(kg\u00b7K) and T = @{T} K.",
+    "vars": {
+      "q": "heat (kJ)",
+      "m": "mass of water (kg)",
+      "c": "specific heat (kJ/(kg\u00b7K))",
+      "T": "temperature rise (K)"
+    },
+    "given": {
+      "m": 2.4,
+      "c": 4.18,
+      "T": 2
+    },
+    "unit": "kJ",
+    "method": "The heat warms the water by an amount set by its mass and how much heat each kilogram takes per kelvin.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "R"
+    ],
+    "vary": {
+      "m": [
+        1.44,
+        3.36,
+        0.01
+      ],
+      "c": [
+        2.5,
+        5.86,
+        0.01
+      ],
+      "T": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

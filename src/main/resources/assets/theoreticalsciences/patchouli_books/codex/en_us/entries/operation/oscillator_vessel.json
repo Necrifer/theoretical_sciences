@@ -1,0 +1,24 @@
+{
+  "name": "Oscillator Vessel",
+  "icon": "theoreticalsciences:oscillator_vessel",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 94,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Brusselator, the simplest model of the Belousov-Zhabotinsky reaction: X makes more X from Y, and is used up again. Its steady state turns unstable - and the mixture starts to oscillate - only when B > 1 + A\u00b2 (a Hopf bifurcation). Just past it, the beat has a period near 2\u03c0/A."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Bromate feed A, Malonic acid feed B.$(br2)$(thing)Disturbance$(): Stirring: the threshold varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): The further past the threshold, the more clocks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Past the threshold: B \u2212 (1 + A\u00b2)$(br)Period: T \u2248 2\u03c0/A"
+    }
+  ]
+}

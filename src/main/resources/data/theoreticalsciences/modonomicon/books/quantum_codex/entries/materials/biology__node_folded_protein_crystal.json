@@ -5,8 +5,8 @@
     "item": "theoreticalsciences:folded_protein_crystal"
   },
   "category": "theoreticalsciences:materials",
-  "x": 79,
-  "y": 68,
+  "x": 168,
+  "y": 80,
   "hide_while_locked": false,
   "background_u_index": 0,
   "background_v_index": 0,
@@ -29,12 +29,12 @@
   ],
   "parents": [
     {
-      "entry": "theoreticalsciences:materials/biology__gene_sequencer",
+      "entry": "theoreticalsciences:materials/biology__folding_chamber",
       "draw_arrow": false
     }
   ],
   "condition": {
     "type": "modonomicon:advancement",
-    "advancement_id": "theoreticalsciences:research/genomics"
+    "advancement_id": "theoreticalsciences:research/protein_folding"
   }
 }

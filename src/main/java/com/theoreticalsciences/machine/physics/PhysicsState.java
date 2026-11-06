@@ -150,7 +150,7 @@ public final class PhysicsState {
     /** 1.3.5: units built in a variable-height structure (set by the controller; 1 for fixed structures). */
     public int size = 1;
 
-    /** 1.4.0: the world around the machine - sky, night, sun, moon, rain, alt, rfi (see {@link PhysicsModel}); set by the controller. */
+    /** 1.2.0: the world around the machine - sky, night, sun, moon, rain, alt, rfi (see {@link PhysicsModel}); set by the controller. */
     public final double[] world = {1, 1, 1, 0.5, 0, 64, 0};
 
     private boolean evaluate0(int coil, int emitter, int oc, int par, boolean on, boolean autoCal) {

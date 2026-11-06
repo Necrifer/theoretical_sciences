@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.node_panacea",
+  "description": "book.theoreticalsciences.codex.endgame.node_panacea.desc",
+  "icon": {
+    "item": "theoreticalsciences:panacea_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 175,
+  "y": 199,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:panacea_cell"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.node_panacea.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.node_panacea.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/endgame__pleroma",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/pleroma"
+  }
+}

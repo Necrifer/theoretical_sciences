@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:coordination",
+  "item_inputs": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen_cyanide",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:prussian_blue_pigment",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:coordination_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "D0": 2.4,
+      "Pp": 2.1,
+      "sg": 1.0
+    },
+    "windows": [
+      {
+        "q": "sel",
+        "min": 0.2,
+        "max": 99.0
+      }
+    ]
+  }
+}

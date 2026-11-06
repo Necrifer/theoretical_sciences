@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:adaptive_immunity",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lymph_tissue",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:memory_cell",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Kd": 30.0
+    },
+    "windows": [
+      {
+        "q": "resp",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

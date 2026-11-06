@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.optimiser",
+  "description": "book.theoreticalsciences.codex.mathematics.optimiser.desc",
+  "icon": {
+    "item": "theoreticalsciences:optimiser"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 77,
+  "y": 16,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:optimiser"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.optimiser.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.optimiser.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.optimiser.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.optimiser.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:optimiser"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.optimiser.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__math_overview"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__r73_first_steps"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/optimisation"
+  }
+}

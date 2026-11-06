@@ -23,6 +23,9 @@ public class ResearchManager extends SimpleJsonResourceReloadListener {
 
     private Map<ResourceLocation, ResearchDefinition> entries = Map.of();
     private String syncJson = "{}";
+    /** 1.2.0: each entry's own JSON, and which are secret (grant only): a client is sent those only once it has them. */
+    private Map<ResourceLocation, JsonElement> jsons = Map.of();
+    private java.util.Set<ResourceLocation> secret = java.util.Set.of();
 
     private ResearchManager() {
         super(GSON, "ts_research");
@@ -32,13 +35,19 @@ public class ResearchManager extends SimpleJsonResourceReloadListener {
     protected void apply(Map<ResourceLocation, JsonElement> map, ResourceManager rm, ProfilerFiller profiler) {
         Map<ResourceLocation, ResearchDefinition> out = new LinkedHashMap<>();
         JsonObject sync = new JsonObject();
+        Map<ResourceLocation, JsonElement> js = new LinkedHashMap<>();
+        java.util.Set<ResourceLocation> sec = new java.util.HashSet<>();
         map.forEach((id, json) -> ResearchDefinition.CODEC.parse(JsonOps.INSTANCE, json)
                 .resultOrPartial(err -> TheoreticalSciences.LOGGER.error("Bad research entry {}: {}", id, err))
                 .ifPresent(def -> {
                     out.put(id, def);
-                    sync.add(id.toString(), json);
+                    js.put(id, json);
+                    if (def.grantOnly()) sec.add(id);
+                    else sync.add(id.toString(), json);
                 }));
         entries = Collections.unmodifiableMap(out);
+        jsons = Collections.unmodifiableMap(js);
+        secret = Collections.unmodifiableSet(sec);
         syncJson = GSON.toJson(sync);
         TheoreticalSciences.LOGGER.info("Loaded {} Theoretical Sciences research entries", out.size());
     }
@@ -51,7 +60,23 @@ public class ResearchManager extends SimpleJsonResourceReloadListener {
         return entries.get(id);
     }
 
+    /** Every entry but the secret ones (as sent to a client that has none of them). */
     public String syncJson() {
         return syncJson;
+    }
+
+    public java.util.Set<ResourceLocation> secret() {
+        return secret;
+    }
+
+    /** What one player's client is sent: every open entry, and the secret ones it has been granted. */
+    public String syncJsonFor(java.util.Set<ResourceLocation> unlocked) {
+        boolean any = false;
+        for (ResourceLocation id : secret) if (unlocked.contains(id)) { any = true; break; }
+        if (!any) return syncJson;
+        JsonObject o = new JsonObject();
+        for (Map.Entry<ResourceLocation, JsonElement> e : jsons.entrySet())
+            if (!secret.contains(e.getKey()) || unlocked.contains(e.getKey())) o.add(e.getKey().toString(), e.getValue());
+        return GSON.toJson(o);
     }
 }

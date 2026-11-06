@@ -1,0 +1,19 @@
+{
+  "name": "Antibiotic",
+  "icon": "theoreticalsciences:antibiotic",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antibiotic",
+      "title": "Antibiotic",
+      "text": "Penicillin, drawn from mould: it stops bacteria building their walls. Use it on a contaminated Biology machine to clean it, but each dose on the same machine selects for what survives it, so the n-th works only one time in n; a Sterile Pack always works. Made on the Mycelium Bed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mycelium Bed$().$(br2)$(thing)Found in$(): Bsl4 Field Station chests.$(br2)$(thing)Unlocked by$(): Mycology."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mycology"
+}

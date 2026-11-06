@@ -1,0 +1,26 @@
+{
+  "name": "The Body",
+  "icon": "theoreticalsciences:perfusion_rig",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:perfusion_rig,theoreticalsciences:regeneration_tank,theoreticalsciences:circadian_incubator,theoreticalsciences:dosing_pump",
+      "text": "Life at the scale of organs: how the body feeds itself, grows itself, and keeps time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Physiology$() and $(thing)Circulation$(): the $(item)Perfusion Rig$() pushes nutrient through vessels. The flow is Poiseuille's, the fourth power of the vessel's radius, so narrow vessels need far more pressure; too much and the vessel tears. It makes $(item)Perfused Tissue$() and a cheaper Stem Cell Culture."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Stem Cells$() and $(thing)Regeneration$(): the $(item)Regeneration Tank$() sets up a morphogen gradient, c = c0.e^(-x/lambda), and cells read it to know where they are (the axolotl's trick). The gradient must still carry to the organ's far end. It grows $(item)Grown Organs$() (the fourth piece of the Tree of Life) and mends worn gear."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Chronobiology$(): the $(item)Circadian Incubator$() keeps the world's day, and its cultures work hardest in their active hours. $(thing)Pharmacokinetics$(): the $(item)Dosing Pump$() meters a substance so its level stays between what works and what harms, C = (D/V).e^(-kt)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/physiology"
+}

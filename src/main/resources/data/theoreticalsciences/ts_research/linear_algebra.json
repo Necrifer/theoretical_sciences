@@ -1,0 +1,55 @@
+{
+  "title": "Vectors and Matrices",
+  "description": "Arrows that add, and the grids of numbers that stretch and turn them. Most of physics, and every computer picture, is linear algebra.",
+  "icon": "theoreticalsciences:symmetry_crystal",
+  "x": 0,
+  "y": 7,
+  "insight": 35,
+  "requires": [
+    "theoreticalsciences:number_systems",
+    "theoreticalsciences:euclidean_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A 2 x 2 matrix has trace T and determinant D. Write its larger eigenvalue \u03bb.",
+    "name": "Characteristic root",
+    "lhs": "\u03bb",
+    "form": "T / 2 + sqrt ( T ^ 2 / 4 - D )",
+    "expr": "T / 2 + sqrt ( T ^ 2 / 4 - D )",
+    "ask": "Find \u03bb for T = @{T} and D = @{D}.",
+    "vars": {
+      "\u03bb": "larger eigenvalue",
+      "T": "trace",
+      "D": "determinant"
+    },
+    "given": {
+      "T": 5,
+      "D": 6
+    },
+    "unit": "",
+    "method": "The eigenvalues solve \u03bb\u00b2 \u2212 T\u03bb + D = 0: they add to the trace and multiply to the determinant.",
+    "distractors": [
+      "-",
+      "n",
+      "\u03c0"
+    ],
+    "vary": {
+      "T": [
+        4.0,
+        6.0,
+        1.0
+      ],
+      "D": [
+        5.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

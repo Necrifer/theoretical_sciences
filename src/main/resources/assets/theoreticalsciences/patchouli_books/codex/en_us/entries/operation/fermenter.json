@@ -1,0 +1,24 @@
+{
+  "name": "Fermenter",
+  "icon": "theoreticalsciences:fermenter",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 58,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A culture grows as its sugar allows, S/(Ks + S) (Monod), but too much sugar inhibits it, e^(\u2212S/Si) (Haldane): the best level is \u221a(Ks\u00b7Si). Yeast given air grows; without air it ferments instead (the Pasteur effect)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Sugar, Air.$(br2)$(thing)Disturbance$(): Foaming: growth varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): A culture near its best is fastest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Growth, against its best: \u03bc/\u03bc_best = [S/(Ks + S)]\u00b7e^(\u2212S/Si) / its peak$(br)Air: air"
+    }
+  ]
+}

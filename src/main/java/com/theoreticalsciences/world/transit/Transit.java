@@ -96,6 +96,11 @@ public final class Transit {
             JUMPING.put(id, p);
             try {
                 p.jump().accept(sp);
+                // 1.2.0: a hop between layers of one dimension (the Platonic Compass in the Realm) never opens a loading
+                // page, which is what normally ends the scene: end it now, so it fades over the new place at once
+                // instead of holding and fading again a few seconds later
+                if (sp.level().dimension() == p.from())
+                    PacketDistributor.sendToPlayer(sp, new TransitPayload(p.style().location(), p.leaving(), TransitPayload.CANCEL));
             } catch (RuntimeException ex) {
                 TheoreticalSciences.LOGGER.error("Dimension transit for {} failed", sp.getGameProfile().getName(), ex);
                 PacketDistributor.sendToPlayer(sp, new TransitPayload(p.style().location(), p.leaving(), TransitPayload.CANCEL));

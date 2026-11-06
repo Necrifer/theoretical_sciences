@@ -1,0 +1,17 @@
+{
+  "name": "The Catalyst Slot",
+  "icon": "theoreticalsciences:zeolite_catalyst",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "text": "Every machine has a $(thing)catalyst slot$(), the gold slot under its progress arrow. It holds one catalyst at a time, and is filled by hand (shift-click puts a catalyst there first); pipes and ME networks do not reach it.$(br2)A catalyst that wears or decays only works from the catalyst slot - so it is always the one there that wears. A catalyst that never wears still works from an input slot too, as it always did."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When the catalyst in the slot wears out, it moves to the output slots (where pipes and the ME network can take it away to be restored), and the slot is free for the next one."
+    }
+  ]
+}

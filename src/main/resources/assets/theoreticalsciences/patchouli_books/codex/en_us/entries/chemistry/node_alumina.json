@@ -1,0 +1,19 @@
+{
+  "name": "Alumina",
+  "icon": "theoreticalsciences:alumina",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:alumina",
+      "title": "Alumina",
+      "text": "Aluminium oxide, won from clay with hot caustic soda (Bayer)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Quasicrystals.$(br2)$(thing)Used in$(): Alumina Ceramic Plate, Aluminium Ingot, Phase Diagram Kiln, Sintering Press."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/quasicrystals"
+}

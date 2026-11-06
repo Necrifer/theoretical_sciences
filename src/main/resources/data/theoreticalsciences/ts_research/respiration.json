@@ -1,0 +1,59 @@
+{
+  "title": "Respiration",
+  "description": "With air, a cell burns sugar all the way to carbon dioxide and gets fifteen times as much from it, pumping protons across a membrane to drive its turbine. Unlocks the Living Cell.",
+  "icon": "theoreticalsciences:living_cell",
+  "x": 4,
+  "y": 20,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:metabolism",
+    "theoreticalsciences:membrane_potential"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ion_channel_membrane",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:yeast_culture",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A proton gradient of p pH units and a voltage V (mV) drive the turbine together. Write the total push F, in mV, 59 mV for each pH unit.",
+    "name": "Proton-motive force",
+    "lhs": "F",
+    "form": "V + 59 * p",
+    "expr": "V + 59 * p",
+    "ask": "Find F for V = @{V} and p = @{p}.",
+    "vars": {
+      "F": "proton-motive force",
+      "V": "voltage",
+      "p": "pH difference"
+    },
+    "given": {
+      "V": 150,
+      "p": 1
+    },
+    "unit": "mV",
+    "method": "Each pH unit is a tenfold concentration difference, worth RT ln 10 / F = 59 mV at body heat.",
+    "distractors": [
+      "-",
+      "ln",
+      "e"
+    ],
+    "vary": {
+      "V": [
+        90.0,
+        210.0,
+        1.0
+      ],
+      "p": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

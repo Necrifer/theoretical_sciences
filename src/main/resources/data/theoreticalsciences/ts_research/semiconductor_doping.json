@@ -1,0 +1,60 @@
+{
+  "title": "Semiconductor Doping",
+  "description": "A few atoms in a million of boron or phosphorus make silicon conduct, one way or the other; where the two meet, a junction. Unlocks the Doping Furnace.",
+  "icon": "theoreticalsciences:doping_furnace",
+  "x": 27,
+  "y": -5,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:phase_diagrams",
+    "theoreticalsciences:ceramics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:cherenkov_wafer",
+      "count": 2
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 16
+    }
+  ],
+  "time": 480,
+  "puzzle": {
+    "goal": "A dopant diffuses into silicon with diffusion constant D for a time t. Write the depth x it reaches.",
+    "name": "Junction depth",
+    "lhs": "x",
+    "form": "2 * sqrt ( D * t )",
+    "expr": "2 * sqrt ( D * t )",
+    "ask": "Find x in centimetres for D = @{D} cm\u00b2/s and t = @{t} s.",
+    "vars": {
+      "x": "depth (cm)",
+      "D": "diffusion constant (cm\u00b2/s)",
+      "t": "time (s)"
+    },
+    "given": {
+      "D": 1e-13,
+      "t": 3600
+    },
+    "unit": "cm",
+    "method": "A random walk spreads as the square root of time.",
+    "distractors": [
+      "3",
+      "T",
+      "\u03c0",
+      "k"
+    ],
+    "vary": {
+      "D": [
+        5.9e-14,
+        1.4e-13,
+        1e-15
+      ],
+      "t": [
+        2160.0,
+        5040.0,
+        1.0
+      ]
+    }
+  }
+}

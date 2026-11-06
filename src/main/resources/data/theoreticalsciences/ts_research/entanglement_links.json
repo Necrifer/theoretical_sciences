@@ -1,0 +1,68 @@
+{
+  "title": "Entanglement Links",
+  "description": "Two photons from one source stay one system however far apart they go. A store of such pairs, split between two places, makes one channel. Unlocks the Entangled Link and an early Entanglement Tuner.",
+  "icon": "theoreticalsciences:entangled_link",
+  "x": 2,
+  "y": 1,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:quantum_entanglement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Two entangled particles are measured at two settings each, and four correlations A, B, C and D are found, one for each pair of settings. Write the sum S whose size tells a quantum channel from any classical one (it can reach 2\u221a2; nothing classical passes 2). The second correlation enters with a minus sign.",
+    "name": "CHSH sum",
+    "lhs": "S",
+    "form": "A - B + C + D",
+    "expr": "A - B + C + D",
+    "ask": "Find S for A = @{A}, B = @{B}, C = @{C} and D = @{D} (detectors at 0\u00b0, 45\u00b0, 22.5\u00b0 and 67.5\u00b0).",
+    "vars": {
+      "S": "the sum",
+      "A": "first correlation",
+      "B": "second correlation",
+      "C": "third correlation",
+      "D": "fourth correlation"
+    },
+    "given": {
+      "A": 0.707,
+      "B": -0.707,
+      "C": 0.707,
+      "D": 0.707
+    },
+    "unit": "",
+    "method": "Each correlation is \u2212cos of the angle between the two detectors; at these four angles three are +0.707 and one \u22120.707.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "E"
+    ],
+    "vary": {
+      "A": [
+        0.424,
+        0.99,
+        0.001
+      ],
+      "B": [
+        -0.99,
+        -0.424,
+        0.001
+      ],
+      "C": [
+        0.424,
+        0.99,
+        0.001
+      ],
+      "D": [
+        0.424,
+        0.99,
+        0.001
+      ]
+    }
+  }
+}

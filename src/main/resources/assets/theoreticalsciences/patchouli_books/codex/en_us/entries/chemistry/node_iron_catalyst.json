@@ -1,0 +1,19 @@
+{
+  "name": "Iron Catalyst",
+  "icon": "theoreticalsciences:iron_catalyst",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:iron_catalyst",
+      "title": "Iron Catalyst",
+      "text": "Magnetite reduced to a sponge of iron, with a little potash and alumina to keep its grains apart: the catalyst that feeds half the world, by fixing nitrogen into ammonia."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Catalyst Formulator$().$(br2)$(thing)Unlocked by$(): Chemical Equilibrium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_equilibrium"
+}

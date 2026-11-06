@@ -17,6 +17,8 @@ public final class MachineLayout {
     public final int energyX = 8, energyY = TOP;
     public final int[] fluidInX, fluidInY, itemInX, itemInY, itemOutX, itemOutY, fluidOutX, fluidOutY;
     public final int arrowX, arrowY;
+    /** 1.2.0: the catalyst slot, under the progress conduit. */
+    public final int catX, catY;
 
     public MachineLayout(MachineType t) {
         big = t.itemInputs > 9 || t.fluidInputs > 4 || t.itemOutputs > 9 || t.fluidOutputs > 4;
@@ -33,6 +35,8 @@ public final class MachineLayout {
         x = big ? cells(t.itemInputs, x, itemInX, itemInY, 1) : grid(t.itemInputs, x, itemInX, itemInY);
         arrowX = x + 4;
         arrowY = TOP + (areaH - 16) / 2;
+        catX = arrowX + 4;
+        catY = arrowY + 22;
         x = arrowX + 30;
         itemOutX = new int[t.itemOutputs];
         itemOutY = new int[t.itemOutputs];

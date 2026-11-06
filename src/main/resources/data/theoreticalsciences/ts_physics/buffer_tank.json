@@ -1,0 +1,48 @@
+{
+  "params": [
+    {
+      "id": "q",
+      "unit": "",
+      "min": 0.01,
+      "max": 100,
+      "step": 0.001,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "pKa": 7.21
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "pH",
+      "unit": "",
+      "expr": "pKa + ln(q*(1 + 0.01*d))/2.302585",
+      "formula": "pH = pKa + log\u2081\u2080([A\u207b]/[HA])"
+    },
+    {
+      "id": "beta",
+      "unit": "",
+      "expr": "4*q/(1 + q)^2",
+      "formula": "\u03b2 = 4r/(1 + r)\u00b2"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "capacity",
+      "kind": "stop",
+      "expr": "beta - 0.33",
+      "formula": "\u03b2 > 0.33"
+    }
+  ],
+  "rate": "clamp(2*beta, 0.5, 2)",
+  "rate_formula": "rate = 2\u03b2",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

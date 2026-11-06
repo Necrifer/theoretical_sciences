@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:affinity_maturation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ward_metastasis",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:matured_antibody",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:telomerase_complex",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lasting_ward_metastasis",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 400,
+  "research": "theoreticalsciences:immune_memory",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "windows": [
+      {
+        "q": "aff",
+        "min": 40.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

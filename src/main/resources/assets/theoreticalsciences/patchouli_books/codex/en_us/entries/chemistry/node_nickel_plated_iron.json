@@ -1,0 +1,19 @@
+{
+  "name": "Nickel-Plated Iron",
+  "icon": "theoreticalsciences:nickel_plated_iron",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "title": "Nickel-Plated Iron",
+      "text": "Iron under forty microns of nickel, laid down atom by atom from a bath: it will not rust, and acids barely touch it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Electroplating Bath$().$(br2)$(thing)Unlocked by$(): Electroplating.$(br2)$(thing)Used in$(): Corrosion-Proof Casing, Fuel Cell, Oscillator Vessel, Tincture of Balance."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/electroplating"
+}

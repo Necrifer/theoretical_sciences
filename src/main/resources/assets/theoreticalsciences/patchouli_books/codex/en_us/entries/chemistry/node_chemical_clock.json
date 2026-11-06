@@ -1,0 +1,19 @@
+{
+  "name": "Chemical Clock",
+  "icon": "theoreticalsciences:chemical_clock",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chemical_clock",
+      "title": "Chemical Clock",
+      "text": "A dish of the Belousov-Zhabotinsky reaction, turning red and blue and back on a steady beat, with no pendulum and no spring. Made in the Oscillator Vessel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Oscillator Vessel$().$(br2)$(thing)Unlocked by$(): Oscillating Reactions.$(br2)$(thing)Used in$(): Alkahest Still, Tincture of Chirality."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/oscillating_reactions"
+}

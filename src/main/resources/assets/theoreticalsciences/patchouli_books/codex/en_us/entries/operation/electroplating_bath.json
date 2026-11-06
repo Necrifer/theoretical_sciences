@@ -1,0 +1,24 @@
+{
+  "name": "Electroplating Bath",
+  "icon": "theoreticalsciences:electroplating_bath",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 50,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each ion of nickel takes two electrons to become metal: the mass plated is m = MIt/(nF) (Faraday). Spread over the part, that is a coat of thickness m/(\u03c1A). Push the current too hard and hydrogen bubbles and burns the coat rough."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Current density, Plating time.$(br2)$(thing)Disturbance$(): Bath ageing: the current efficiency varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The current is over the limit: the coat burns.$(br2)$(thing)Rate$(): A shorter run plates more parts an hour."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Metal plated: m = MIt/(nF)$(br)Coat thickness: d = m/(\u03c1A)"
+    }
+  ]
+}

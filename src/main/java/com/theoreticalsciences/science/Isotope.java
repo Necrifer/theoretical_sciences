@@ -20,6 +20,8 @@ public enum Isotope {
     PO210("Polonium-210",  1.196e7,  Kind.ALPHA,   "Lead-206 (stable)"),
     CS137("Caesium-137",   9.492e8,  Kind.GAMMA,   "Barium-137 (stable)"),
     CO60("Cobalt-60",      1.663e8,  Kind.GAMMA,   "Nickel-60 (stable)"),
+    /** 1.2.0: the Mössbauer and isomer-trigger gamma source. */
+    CO57("Cobalt-57",      2.348e7,  Kind.GAMMA,   "Iron-57 (stable)"),
     TC99M("Technetium-99m", 2.163e4, Kind.GAMMA,   "Technetium-99"),
     H3("Tritium",          3.888e8,  Kind.BETA,    "Helium-3 (stable)"),
     PU239("Plutonium-239", 7.609e11, Kind.ALPHA,   "Uranium-235"),

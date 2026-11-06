@@ -1,0 +1,49 @@
+{
+  "title": "Constructions",
+  "description": "With only a compass and a straightedge: bisect an angle, draw a perpendicular, divide a line in the golden ratio. Unlocks Golden Ratio Glass on the Geometer's Table.",
+  "icon": "theoreticalsciences:golden_ratio_glass",
+  "x": 3,
+  "y": 4,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:euclidean_geometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 1
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "A right triangle has legs a and b. Write the length D of its long side.",
+    "name": "Pythagoras",
+    "lhs": "D",
+    "form": "sqrt ( a ^ 2 + b ^ 2 )",
+    "expr": "sqrt ( a ^ 2 + b ^ 2 )",
+    "ask": "Find D for a = 3 and b = @{b}.",
+    "vars": {
+      "D": "long side",
+      "a": "one leg",
+      "b": "other leg"
+    },
+    "given": {
+      "a": 3,
+      "b": 4
+    },
+    "unit": "",
+    "method": "Euclid I.47: the square on the long side equals the squares on the other two together.",
+    "distractors": [
+      "-",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "b": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

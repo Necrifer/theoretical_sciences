@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_oxygen_rebreather",
+  "description": "book.theoreticalsciences.codex.chemistry.node_oxygen_rebreather.desc",
+  "icon": {
+    "item": "theoreticalsciences:oxygen_rebreather"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 258,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:oxygen_rebreather"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_oxygen_rebreather.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_oxygen_rebreather.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__polymeriser",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/polymer_chemistry"
+  }
+}

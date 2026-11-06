@@ -36,6 +36,13 @@ public class ExtremeTableMenu extends AbstractContainerMenu {
                 return false;
             }
 
+            /** 1.2.0: only while the grid still makes it (another player at the table may just have taken it). */
+            @Override
+            public boolean mayPickup(Player p) {
+                if (be.getLevel() == null || be.getLevel().isClientSide) return true;
+                return stillMakes(getItem());
+            }
+
             @Override
             public void onTake(Player p, ItemStack taken) {
                 consumeGrid();
@@ -101,6 +108,17 @@ public class ExtremeTableMenu extends AbstractContainerMenu {
         result.setItem(0, out);         // the server's per-tick menu sync sends it to the client
     }
 
+    /** True when the grid as it is now still makes exactly what the result slot shows. */
+    boolean stillMakes(ItemStack shown) {
+        if (shown.isEmpty() || be.getLevel() == null) return false;
+        ItemStack out = current().map(h -> h.value().assemble(input(), be.getLevel().registryAccess())).orElse(ItemStack.EMPTY);
+        if (out.isEmpty()) {
+            CraftingInput small = smallInput();
+            if (small != null) out = vanilla().map(h -> h.value().assemble(small, be.getLevel().registryAccess())).orElse(ItemStack.EMPTY);
+        }
+        return !out.isEmpty() && ItemStack.isSameItemSameComponents(out, shown) && out.getCount() == shown.getCount();
+    }
+
     private static boolean fits(Player p, ItemStack s) {
         int room = 0;
         for (ItemStack i : p.getInventory().items)
@@ -144,7 +162,10 @@ public class ExtremeTableMenu extends AbstractContainerMenu {
             if (slot < 81 && be.grid.getStackInSlot(slot).isEmpty()) be.grid.setStackInSlot(slot, rem);
             else if (!player.getInventory().add(rem)) player.drop(rem, false);
         }
-        gridChanged();
+        // 1.2.0: everyone at the table sees the grid change (the extraction above was quiet), not only this player,
+        // or another player's result slot kept the old output and gave a free copy
+        be.setChanged();
+        for (ExtremeTableMenu m : List.copyOf(be.viewers)) m.gridChanged();
     }
 
     @Override
@@ -155,7 +176,7 @@ public class ExtremeTableMenu extends AbstractContainerMenu {
             if (p.level().isClientSide) return ItemStack.EMPTY;   // the server does it and syncs back
             for (int n = 0; n < 64 && slot.hasItem(); n++) {
                 ItemStack made = slot.getItem().copy();
-                if (!fits(p, made)) break;
+                if (!fits(p, made) || !stillMakes(made)) break;
                 slot.onTake(p, made);
                 p.getInventory().add(made);
             }

@@ -1,0 +1,101 @@
+{
+  "params": [
+    {
+      "id": "Tr",
+      "unit": "K",
+      "min": 500,
+      "max": 900,
+      "step": 1,
+      "default": 600
+    },
+    {
+      "id": "Pr",
+      "unit": "atm",
+      "min": 10,
+      "max": 400,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "id": "rr",
+      "unit": "",
+      "min": 1,
+      "max": 6,
+      "step": 0.01,
+      "default": 3
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "G0",
+      "unit": "kJ/mol",
+      "expr": "(-92400 + 198*Tr)/1000",
+      "formula": "\u0394G\u00b0 = \u0394H \u2212 T\u0394S"
+    },
+    {
+      "id": "Kp",
+      "unit": "atm\u207b\u00b2",
+      "expr": "exp(-G0*1000/(8.314*Tr))",
+      "formula": "K = e^(\u2212\u0394G\u00b0/RT)"
+    },
+    {
+      "id": "xN",
+      "unit": "",
+      "expr": "1/(1 + rr)",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "xH",
+      "unit": "",
+      "expr": "rr/(1 + rr)",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "y0",
+      "unit": "",
+      "expr": "sqrt(Kp)*Pr*sqrt(xN)*xH^1.5",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "y",
+      "unit": "",
+      "expr": "y0/(1 + 1.6*y0)",
+      "formula": "y \u2248 \u221aK\u00b7P\u00b7x_N^\u00bd\u00b7x_H^1.5 (saturating)"
+    },
+    {
+      "id": "kr",
+      "unit": "",
+      "expr": "exp(-12030*(1/(Tr*(1 + 0.005*d)) - 1/723))",
+      "formula": "k/k\u2087\u2082\u2083 = e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/723 K))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sinter",
+      "kind": "wear",
+      "expr": "823 - Tr",
+      "formula": "T < 823 K"
+    },
+    {
+      "id": "vessel",
+      "kind": "stop",
+      "expr": "300 - Pr",
+      "formula": "P < 300 atm"
+    }
+  ],
+  "rate": "clamp(2.5*kr*y, 0, 4)",
+  "rate_formula": "rate = 2.5\u00b7(k/k\u2087\u2082\u2083)\u00b7y",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

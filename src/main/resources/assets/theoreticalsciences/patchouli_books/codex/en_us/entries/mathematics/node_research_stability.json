@@ -1,0 +1,19 @@
+{
+  "name": "Stability",
+  "icon": "theoreticalsciences:stability_margin",
+  "advancement": "theoreticalsciences:research/stability",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 509,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stability_margin",
+      "title": "Stability",
+      "text": "$(thing)Stability$()$(br2)A ball in a bowl comes back when pushed; a ball on a hill does not. Whether a fixed point is a bowl or a hill decides everything. Unlocks the Stability Margin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): Fixed Points, Eigenvalues.$(br2)$(thing)Samples$(): 2 Rate Table.$(br2)$(thing)Derivation$(): Near a fixed point a disturbance x grows or shrinks as dx/dt = \u03bbx. Write the disturbance X after a time t, starting from x."
+    }
+  ]
+}

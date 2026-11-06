@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r68_photochemistry",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r68_photochemistry.desc",
+  "icon": {
+    "item": "theoreticalsciences:photochemical_reactor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 94,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r68_photochemistry.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r68_photochemistry"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r68_photochemistry.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r67_titan_lakes"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r66_spectroscopy"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/photochemistry"
+  }
+}

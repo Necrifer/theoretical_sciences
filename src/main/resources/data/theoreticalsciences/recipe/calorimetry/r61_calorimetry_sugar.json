@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:calorimetry",
+  "item_inputs": [
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:thermochemical_data_card",
+      "count": 4
+    }
+  ],
+  "energy": 64,
+  "duration": 50,
+  "research": "theoreticalsciences:calorimetry",
+  "unscaled": true,
+  "insight_per_run": 3,
+  "physics": {
+    "vars": {
+      "Hc": 16.5,
+      "Od": 6.0
+    },
+    "windows": [
+      {
+        "q": "dT",
+        "min": 1.5,
+        "max": 3.0
+      },
+      {
+        "q": "burn",
+        "min": 0.99,
+        "max": 1.0
+      }
+    ]
+  }
+}

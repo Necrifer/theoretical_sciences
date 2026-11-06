@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.intro__r90_defence",
+  "description": "book.theoreticalsciences.codex.biology.intro__r90_defence.desc",
+  "icon": {
+    "item": "theoreticalsciences:antibody_bench"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 24,
+  "y": 68,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__r90_defence.p0",
+      "title": "book.theoreticalsciences.codex.biology.intro__r90_defence"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__r90_defence.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__r89_microbes"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__life"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/adaptive_immunity"
+  }
+}

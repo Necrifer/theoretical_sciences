@@ -1,0 +1,24 @@
+{
+  "name": "Chromatography Column",
+  "icon": "theoreticalsciences:chromatography_column",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 31,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each molecule spends its time between the moving gas and the packing; how long sets its retention, k = k\u2080\u00b7e^(h\u00b7(1/T \u2212 1/400 K)). The bands spread as they go: the plate height H = A + B/u + C\u00b7u (van Deemter) - eddies, diffusion along the column (worse when slow) and slow exchange with the packing (worse when fast). A column of length L has N = L/H plates, and two parts come out clean when Rs = (\u221aN/4)\u00b7((\u03b1 \u2212 1)/\u03b1)\u00b7(k/(1 + k)) reaches 1.5."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Carrier flow, Column temperature.$(br2)$(thing)Disturbance$(): Packing settles: the plate height varies by \u00b13%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): The faster the carrier, the faster each run."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Plate height: H = A + B/u + C\u00b7u$(br)Plates: N = L/H$(br)Retention factor: k = k\u2080\u00b7e^(h(1/T \u2212 1/T\u2080))$(br)Resolution: Rs = (\u221aN/4)\u00b7((\u03b1\u22121)/\u03b1)\u00b7(k/(1+k))"
+    }
+  ]
+}

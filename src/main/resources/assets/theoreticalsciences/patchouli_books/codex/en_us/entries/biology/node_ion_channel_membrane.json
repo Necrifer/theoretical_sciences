@@ -1,0 +1,19 @@
+{
+  "name": "Ion Channel Membrane",
+  "icon": "theoreticalsciences:ion_channel_membrane",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ion_channel_membrane",
+      "title": "Ion Channel Membrane",
+      "text": "A bilayer studded with channels that open for one kind of ion only, so a voltage builds across it: the cell's battery. Made on the Patch-Clamp Rig; the Ribosome Assembler builds Synthetic Cells with it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Patch-Clamp Rig$().$(br2)$(thing)Unlocked by$(): Membrane Potential.$(br2)$(thing)Used in$(): Minimal Synthetic Cell."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/membranes"
+}

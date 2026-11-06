@@ -1,0 +1,32 @@
+{
+  "name": "Symmetry Lathe",
+  "icon": "theoreticalsciences:symmetry_lathe",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 163,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:symmetry_lathe",
+      "title": "Symmetry Lathe",
+      "text": "A lathe with an indexing head that stops every 1/k of a turn, and mirrors set round the spindle.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the indexing head's order k and the spindle speed. The blank gets k-fold rotation and k mirrors, a group of order 2k, which must be the recipe's. Spin too fast for a fine head and it shakes apart (k\u00b7rpm under 3000)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Gauge Boson Cluster, Lie Group Lattice, Quaternion Crystal, Symmetry Crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:symmetry_lathe",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/group_theory"
+}

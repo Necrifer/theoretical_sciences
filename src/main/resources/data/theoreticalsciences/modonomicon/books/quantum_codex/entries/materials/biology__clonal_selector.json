@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.clonal_selector",
+  "description": "book.theoreticalsciences.codex.biology.clonal_selector.desc",
+  "icon": {
+    "item": "theoreticalsciences:clonal_selector"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 182,
+  "y": 96,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:clonal_selector"
+      },
+      "text": "book.theoreticalsciences.codex.biology.clonal_selector.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.clonal_selector.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.clonal_selector.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.clonal_selector.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:clonal_selector"
+      },
+      "text": "book.theoreticalsciences.codex.biology.clonal_selector.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__antibody_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/affinity_maturation"
+  }
+}

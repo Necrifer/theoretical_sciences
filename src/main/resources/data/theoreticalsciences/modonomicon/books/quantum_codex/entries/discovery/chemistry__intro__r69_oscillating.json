@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r69_oscillating",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r69_oscillating.desc",
+  "icon": {
+    "item": "theoreticalsciences:oscillator_vessel"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 71,
+  "y": 56,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r69_oscillating.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r69_oscillating"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r69_oscillating.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_kinetics"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r63_chromatography"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/oscillating_reactions"
+  }
+}

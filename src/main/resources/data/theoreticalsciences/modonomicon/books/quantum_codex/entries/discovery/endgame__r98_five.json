@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.endgame.r98_five",
+  "description": "book.theoreticalsciences.codex.endgame.r98_five.desc",
+  "icon": {
+    "item": "theoreticalsciences:pleroma_confluence"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 78,
+  "y": 105,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:pleroma_confluence"
+      },
+      "text": "book.theoreticalsciences.codex.endgame.r98_five.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r98_five.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r98_five.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r98_five.p3"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r98_five.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.endgame.r98_five.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/endgame__omnilex_goal"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/endgame__omnilex_memory"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/pleroma"
+  }
+}

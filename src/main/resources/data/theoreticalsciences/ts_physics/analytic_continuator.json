@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "rho",
+      "unit": "R",
+      "min": 0.01,
+      "max": 1.5,
+      "step": 0.01,
+      "default": 0.3
+    },
+    {
+      "id": "N",
+      "unit": "",
+      "min": 1,
+      "max": 80,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "L": 2,
+    "tol": 0.001
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "steps",
+      "unit": "",
+      "expr": "L/rho",
+      "formula": "L / \u03c1"
+    },
+    {
+      "id": "err",
+      "unit": "",
+      "expr": "L/rho*(rho/(1 + 0.02*d))^(N + 1)",
+      "formula": "(L/\u03c1)\u00b7(\u03c1/R)^(N+1)"
+    },
+    {
+      "id": "work",
+      "unit": "",
+      "expr": "L/rho*N",
+      "formula": "(L/\u03c1)\u00b7N"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "converge",
+      "kind": "stop",
+      "expr": "1 - rho*(1 + 0.02*d)",
+      "formula": "\u03c1 < R"
+    }
+  ],
+  "rate": "clamp(300/(L/rho*N), 0.1, 4)",
+  "rate_formula": "rate = 300 / ((L/\u03c1)\u00b7N)",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

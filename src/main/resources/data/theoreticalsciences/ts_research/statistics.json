@@ -1,0 +1,66 @@
+{
+  "title": "Statistics",
+  "description": "One measurement tells you little; a thousand tell you how much to trust the next. Unlocks the Statistics Engine and the Confidence Seal.",
+  "icon": "theoreticalsciences:confidence_seal",
+  "x": 6,
+  "y": 10,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:distributions",
+    "theoreticalsciences:probability_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 4
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "n measurements with spread \u03c3 are averaged. Write the margin E their mean is within, at a confidence of z standard errors.",
+    "name": "Square-root law",
+    "lhs": "E",
+    "form": "z * \u03c3 / sqrt ( n )",
+    "expr": "z * \u03c3 / sqrt ( n )",
+    "ask": "Find E for z = @{z}, \u03c3 = @{\u03c3} and n = @{n}.",
+    "vars": {
+      "E": "margin",
+      "z": "confidence",
+      "\u03c3": "spread of one",
+      "n": "measurements"
+    },
+    "given": {
+      "z": 2,
+      "\u03c3": 2,
+      "n": 100
+    },
+    "unit": "",
+    "method": "Errors add in quadrature: the sum of n has spread \u03c3\u221an, so the mean has \u03c3\u221an / n.",
+    "distractors": [
+      "+",
+      "\u03c0",
+      "2"
+    ],
+    "vary": {
+      "z": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "\u03c3": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "n": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

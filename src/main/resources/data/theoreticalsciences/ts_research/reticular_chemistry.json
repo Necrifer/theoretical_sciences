@@ -1,0 +1,66 @@
+{
+  "title": "Reticular Chemistry",
+  "description": "Crystals designed as nets: nodes and struts chosen to leave pores of exactly the size wanted. Unlocks the Framework Assembler and the MOF Gas Storage Cell.",
+  "icon": "theoreticalsciences:framework_assembler",
+  "x": 22,
+  "y": -4,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:heterogeneous_catalysis",
+    "theoreticalsciences:nebular_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:metal_organic_framework",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "A framework's nodes are joined by linkers of length L; the node itself takes up a width w. Write the pore p left between two struts, if it scales by s.",
+    "name": "Net geometry",
+    "lhs": "p",
+    "form": "s * L - w",
+    "expr": "s * L - w",
+    "ask": "Find p in \u00e5ngstr\u00f6ms for s = @{s}, L = @{L} \u00c5 and w = @{w} \u00c5.",
+    "vars": {
+      "p": "pore (\u00c5)",
+      "s": "scale",
+      "L": "linker length (\u00c5)",
+      "w": "node width (\u00c5)"
+    },
+    "given": {
+      "s": 0.8,
+      "L": 5.4,
+      "w": 0.5
+    },
+    "unit": "\u00c5",
+    "method": "The struts set the cell; what the nodes take up comes off it.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "s": [
+        0.48,
+        0.999,
+        0.001
+      ],
+      "L": [
+        3.24,
+        7.56,
+        0.01
+      ],
+      "w": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__r80_control",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__r80_control.desc",
+  "icon": {
+    "item": "theoreticalsciences:governor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 69,
+  "y": 79,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r80_control.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__r80_control"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r80_control.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/mathematics__intro__r79_optimisation"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/control_theory"
+  }
+}

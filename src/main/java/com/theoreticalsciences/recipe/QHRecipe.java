@@ -99,7 +99,34 @@ public class QHRecipe implements Recipe<QHRecipeInput> {
 
     @Override
     public boolean matches(QHRecipeInput input, Level level) {
-        return RecipeMatcher.matchItems(matchList, input.items(), false) && RecipeMatcher.matchFluids(fluidInputs, input.fluids(), false);
+        List<ItemStack> items = input.items();
+        if (!RecipeMatcher.matchFluids(fluidInputs, input.fluids(), false)) return false;
+        // 1.2.0: a dead culture is no use as an ingredient
+        for (ItemStack s : items) {
+            var lp = com.theoreticalsciences.science.Wear.profile(s);
+            if (lp != null && lp.living() && com.theoreticalsciences.science.Wear.exhausted(s, level)) {
+                items = new java.util.ArrayList<>(items);
+                for (int i = 0; i < items.size(); i++) {
+                    var q = com.theoreticalsciences.science.Wear.profile(items.get(i));
+                    if (q != null && q.living() && com.theoreticalsciences.science.Wear.exhausted(items.get(i), level)) items.set(i, ItemStack.EMPTY);
+                }
+                break;
+            }
+        }
+        if (catalysts.isEmpty()) return RecipeMatcher.matchItems(matchList, items, false);
+        // 1.2.0: a catalyst that wears (or decays) counts only from the catalyst slot, and only while it still works;
+        // one that never wears may also sit in an input slot (as before). The ingredients themselves come from the inputs.
+        List<ItemStack> usable = new java.util.ArrayList<>(items.size() + 1);
+        for (ItemStack s : items) {
+            boolean ingredient = false;
+            for (SizedIngredient in : itemInputs) if (in.ingredient().test(s)) { ingredient = true; break; }
+            usable.add(ingredient || com.theoreticalsciences.science.Wear.profile(s) == null ? s : ItemStack.EMPTY);
+        }
+        if (!itemInputs.isEmpty() && !RecipeMatcher.matchItems(itemInputs, usable, false)) return false;
+        ItemStack cat = input.catalyst();
+        if (!cat.isEmpty() && !com.theoreticalsciences.science.Wear.exhausted(cat, level)) usable.add(cat);
+        return RecipeMatcher.matchItems(matchList, usable, false);
+
     }
 
     @Override

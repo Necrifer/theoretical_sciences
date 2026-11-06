@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:statistical_inference",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 1
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:assayed_enzyme",
+      "count": 16
+    }
+  ],
+  "energy": 384,
+  "duration": 240,
+  "research": "theoreticalsciences:regression",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "sg": 1.0,
+      "tol": 0.05,
+      "zmin": 2.0
+    },
+    "windows": [
+      {
+        "q": "mg",
+        "min": -1.0,
+        "max": 0.05
+      },
+      {
+        "q": "conf",
+        "min": 2.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

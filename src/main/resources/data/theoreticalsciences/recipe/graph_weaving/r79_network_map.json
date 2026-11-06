@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:graph_weaving",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 4
+    },
+    {
+      "item": "minecraft:string",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:network_map",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:networks",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "q": 0.1,
+      "tol": 0.001,
+      "vmin": 8.0
+    },
+    "windows": [
+      {
+        "q": "fail",
+        "min": -1.0,
+        "max": 0.001
+      },
+      {
+        "q": "reach",
+        "min": 8.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

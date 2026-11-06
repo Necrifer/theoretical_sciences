@@ -1,0 +1,45 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:nickel_catalyst"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:organic_evaporite",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 250
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ethylene",
+      "amount": 500
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:titan_lakes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 30.4,
+      "Af": 10000000.0,
+      "Xt": 0.9,
+      "Ts": 700.0
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

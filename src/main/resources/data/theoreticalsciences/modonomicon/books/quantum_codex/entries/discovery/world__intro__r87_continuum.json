@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r87_continuum",
+  "description": "book.theoreticalsciences.codex.world.intro__r87_continuum.desc",
+  "icon": {
+    "item": "theoreticalsciences:dense_stone"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 17,
+  "y": 91,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r87_continuum.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r87_continuum"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r87_continuum.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/world__intro__r87_axioms"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/real_analysis"
+  }
+}

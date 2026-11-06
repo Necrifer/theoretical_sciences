@@ -1,0 +1,66 @@
+{
+ "title": "The Ostwald Process",
+ "description": "Ammonia burnt for a millisecond on platinum becomes nitric oxide instead of nitrogen; the selectivity is all in the timing. Unlocks the Platinum-Rhodium Gauze and the Ostwald Converter.",
+ "icon": "theoreticalsciences:ostwald_converter",
+ "x": 20,
+ "y": -2,
+ "insight": 110,
+ "requires": [
+  "theoreticalsciences:chemical_equilibrium",
+  "theoreticalsciences:contact_process"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:meteoric_iron",
+   "count": 4
+  },
+  {
+   "item": "minecraft:iron_bars",
+   "count": 8
+  }
+ ],
+ "time": 330,
+ "puzzle": {
+  "goal": "Gas flows at Q cubic metres a second through a gauze pack of area A and thickness L. Write the time t each bit of gas spends on the catalyst.",
+  "name": "Residence on the gauze",
+  "lhs": "t",
+  "form": "L * A / Q",
+  "expr": "L * A / Q",
+  "ask": "Find t in seconds for L = @{L} m, A = @{A} m² and Q = @{Q} m³/s.",
+  "vars": {
+   "t": "time on the gauze (s)",
+   "L": "gauze pack thickness (m)",
+   "A": "gauze area (m²)",
+   "Q": "gas flow (m³/s)"
+  },
+  "given": {
+   "L": 0.002,
+   "A": 10,
+   "Q": 20
+  },
+  "unit": "s",
+  "method": "The pack holds L·A of gas, and Q of it passes each second: a millisecond, which is why the nitric oxide survives.",
+  "distractors": [
+   "2",
+   "T",
+   "π"
+  ],
+  "vary": {
+   "L": [
+    0.00119,
+    0.0028,
+    1e-05
+   ],
+   "A": [
+    6.0,
+    14.0,
+    1.0
+   ],
+   "Q": [
+    12.0,
+    28.0,
+    1.0
+   ]
+  }
+ }
+}

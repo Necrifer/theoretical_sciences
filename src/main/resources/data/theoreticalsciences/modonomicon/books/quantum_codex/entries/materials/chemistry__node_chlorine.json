@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_chlorine",
+  "description": "book.theoreticalsciences.codex.chemistry.node_chlorine.desc",
+  "icon": {
+    "item": "theoreticalsciences:chlorine_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 213,
+  "y": 54,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:chlorine_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_chlorine.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_chlorine.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__fuel_cell",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galvanic_cells"
+  }
+}

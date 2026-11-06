@@ -1,0 +1,54 @@
+{
+  "params": [
+    {
+      "id": "pc",
+      "unit": "",
+      "min": 0.5,
+      "max": 0.9999,
+      "step": 0.0001,
+      "default": 0.95
+    },
+    {
+      "id": "Tp",
+      "unit": "K",
+      "min": 300,
+      "max": 450,
+      "step": 0.1,
+      "default": 350
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Xn",
+      "unit": "units",
+      "expr": "1/(1 - pc*(1 - 0.0001*d))",
+      "formula": "X_n = 1/(1 \u2212 p)"
+    },
+    {
+      "id": "kp",
+      "unit": "",
+      "expr": "exp(-8000*(1/Tp - 1/350))",
+      "formula": "k \u221d e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/350 K))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "stop",
+      "expr": "420 - Tp",
+      "formula": "T < 420 K"
+    }
+  ],
+  "rate": "clamp(kp*5/Xn^0.35, 0.1, 4)",
+  "rate_formula": "rate = k\u00b75/X_n^0.35",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

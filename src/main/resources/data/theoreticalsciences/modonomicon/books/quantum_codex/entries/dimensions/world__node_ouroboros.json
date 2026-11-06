@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_ouroboros",
+  "description": "book.theoreticalsciences.codex.world.node_ouroboros.desc",
+  "icon": {
+    "item": "theoreticalsciences:ouroboros_spawn_egg"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 134,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ouroboros_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_ouroboros.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r68_ouroboros",
+      "draw_arrow": false
+    }
+  ]
+}

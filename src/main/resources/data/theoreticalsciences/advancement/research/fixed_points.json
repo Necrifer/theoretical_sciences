@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:rate_table"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.fixed_points"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.fixed_points.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/chemical_equilibrium",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

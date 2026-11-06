@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:haber_bosch_reactor"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.chemical_equilibrium"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.chemical_equilibrium.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/reaction_kinetics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

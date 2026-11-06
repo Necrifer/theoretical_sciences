@@ -20,7 +20,8 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
  * <ul>
  *   <li>Crown: night vision and water breathing.</li>
  *   <li>Mantle: immune to fire, all other damage halved.</li>
- *   <li>Greaves: speed and step height (attribute modifiers on the item itself).</li>
+ *   <li>Greaves: speed and step height (attribute modifiers on the item itself), and 1.2.0 the Infinity Boots' drive
+ *       ({@link #onPlayerTickPre}).</li>
  *   <li>Treads: no fall damage, higher jumps (partly attribute modifiers on the item).</li>
  *   <li>Full set: invulnerable to everything that respects invulnerability, flight, no hunger, every dimension's laws held away.</li>
  * </ul>
@@ -72,6 +73,51 @@ public final class Raiment {
     public static boolean wearsFullSet(LivingEntity e) {
         return wears(e, ArmorItem.Type.HELMET) && wears(e, ArmorItem.Type.CHESTPLATE)
                 && wears(e, ArmorItem.Type.LEGGINGS) && wears(e, ArmorItem.Type.BOOTS);
+    }
+
+    /**
+     * 1.2.0: the Greaves drive their wearer on, as Avaritia's Infinity Boots do: each tick on the ground, flying or
+     * swimming, a push the way the wearer is walking (a quarter of it backwards, under half sideways, a tenth while
+     * sneaking, a little more flying or in water), and while sprinting a further push the way they face. Done where
+     * the player's movement is worked out (their own game); the plain speed bonus on the item still holds for mobs.
+     * The strength is the common config greavesSpeed (1 = the Infinity Boots).
+     */
+    public static void onPlayerTickPre(PlayerTickEvent.Pre event) {
+        Player p = event.getEntity();
+        if (!p.level().isClientSide || p.isSpectator() || p.isPassenger() || p.isFallFlying()) return;
+        if (!wears(p, ArmorItem.Type.LEGGINGS)) return;
+        double k;
+        try {
+            k = com.theoreticalsciences.QHConfig.GREAVES_SPEED.get();
+        } catch (IllegalStateException ex) {
+            k = 1;
+        }
+        if (k <= 0) return;
+        boolean flying = p.getAbilities().flying, water = p.isInWater(), sneak = p.isCrouching();
+        if (p.onGround() || flying || water) {
+            float base = (float) (0.1 * k * (flying ? 1.1 : 1) * (water ? 1.2 : 1) * (sneak ? 0.1 : 1));
+            if (p.zza > 0) p.moveRelative(base, new net.minecraft.world.phys.Vec3(0, 0, 1));
+            else if (p.zza < 0) p.moveRelative(base * 0.25F, new net.minecraft.world.phys.Vec3(0, 0, -1));
+            if (p.xxa != 0) p.moveRelative(base * 0.45F, new net.minecraft.world.phys.Vec3(Math.signum(p.xxa), 0, 0));
+            if (p.isSprinting() && p.zza > 0 && !sneak) {
+                float yaw = p.getYRot() * ((float) Math.PI / 180F);
+                double push = 0.2 * k;            // (on the ground, flying or swimming: not compounding through the air)
+                p.setDeltaMovement(p.getDeltaMovement().add(-net.minecraft.util.Mth.sin(yaw) * push, 0, net.minecraft.util.Mth.cos(yaw) * push));
+            }
+        }
+    }
+
+    /**
+     * 1.2.0: a mob wearing the Raiment (a pack can give mobs endgame gear) spends its charge as a player does, so a
+     * charged piece on a mob runs down in time instead of keeping it safe forever. (Blows it keeps away cost charge
+     * already.) Only mobs actually wearing a piece are looked at.
+     */
+    public static void onMobTick(net.neoforged.neoforge.event.tick.EntityTickEvent.Post event) {
+        if (!(event.getEntity() instanceof net.minecraft.world.entity.Mob m) || m.level().isClientSide || m.tickCount % EschatonCharge.ARMOUR_DRAIN_TICKS != 0) return;
+        for (ArmorItem.Type t : ALL) {
+            ItemStack s = m.getItemBySlot(t.getSlot());
+            if (s.getItem() instanceof TranscendenceArmorItem && EschatonCharge.get(s) > 0) EschatonCharge.drain(m, s, EschatonCharge.ARMOUR_DRAIN);
+        }
     }
 
     public static void onPlayerTick(PlayerTickEvent.Post event) {

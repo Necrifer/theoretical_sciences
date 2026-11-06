@@ -1,0 +1,62 @@
+{
+  "title": "Membrane Potential",
+  "description": "Let potassium leak out through its channels and the inside of the cell goes negative, until the voltage holds it back: Nernst. Unlocks Ion Channel Membranes.",
+  "icon": "theoreticalsciences:ion_channel_membrane",
+  "x": 3,
+  "y": 19,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:membranes",
+    "theoreticalsciences:galvanic_cells"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:lipid_bilayer",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Ions of charge z are at c outside and q inside. Write the voltage E (in mV, at body heat) that holds them in balance.",
+    "name": "Nernst equation",
+    "lhs": "E",
+    "form": "26.7 / z * ln ( c / q )",
+    "expr": "26.7 / z * ln ( c / q )",
+    "ask": "Find E for potassium: z = @{z}, c = @{c} and q = @{q}.",
+    "vars": {
+      "E": "voltage",
+      "z": "charge",
+      "c": "outside",
+      "q": "inside"
+    },
+    "given": {
+      "z": 1,
+      "c": 5,
+      "q": 140
+    },
+    "unit": "mV",
+    "method": "Diffusion pushes ions down their gradient, ln(c/q) times RT; the voltage pushes back zF E. They balance at RT/zF ln(c/q).",
+    "distractors": [
+      "exp",
+      "+",
+      "2"
+    ],
+    "vary": {
+      "z": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "c": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "q": [
+        84.0,
+        196.0,
+        1.0
+      ]
+    }
+  }
+}

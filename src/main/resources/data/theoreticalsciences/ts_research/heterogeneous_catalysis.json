@@ -1,0 +1,59 @@
+{
+  "title": "Heterogeneous Catalysis",
+  "description": "A catalyst holds a molecule on its surface just long enough to change it: neither too weakly nor too tightly (Sabatier). Unlocks the Catalyst Formulator and the Nickel Catalyst.",
+  "icon": "theoreticalsciences:catalyst_formulator",
+  "x": 22,
+  "y": -2,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:chemical_equilibrium",
+    "theoreticalsciences:electroplating"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:iron_catalyst",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 2
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Gas at pressure P sticks to a surface with an equilibrium constant K, one molecule to a site. Write the share \u03b8 of the sites taken.",
+    "name": "Langmuir isotherm",
+    "lhs": "\u03b8",
+    "form": "K * P / ( 1 + K * P )",
+    "expr": "K * P / ( 1 + K * P )",
+    "ask": "Find \u03b8 for K = @{K} per atm and P = @{P} atm.",
+    "vars": {
+      "\u03b8": "coverage",
+      "K": "adsorption constant (1/atm)",
+      "P": "pressure (atm)"
+    },
+    "given": {
+      "K": 0.5,
+      "P": 4
+    },
+    "unit": "",
+    "method": "Molecules land on empty sites (\u221d P\u00b7(1 \u2212 \u03b8)) and leave occupied ones (\u221d \u03b8); balance the two.",
+    "distractors": [
+      "2",
+      "T",
+      "R"
+    ],
+    "vary": {
+      "K": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "P": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

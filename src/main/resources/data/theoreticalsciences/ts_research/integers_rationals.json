@@ -1,0 +1,53 @@
+{
+  "title": "Integers and Rationals",
+  "description": "Take away more than you have and you need negative numbers; share out fairly and you need fractions. Unlocks Integer Rings and Rational Fields.",
+  "icon": "theoreticalsciences:rational_field",
+  "x": 14,
+  "y": -3,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:number_systems"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Put a/b and c/m together over the common denominator b\u00b7m. Write the top of the result, N.",
+    "name": "Adding fractions",
+    "lhs": "N",
+    "form": "a * m + c * b",
+    "expr": "a * m + c * b",
+    "ask": "Find N for a = 1, b = @{b}, c = 1 and m = 3.",
+    "vars": {
+      "N": "numerator",
+      "a": "first top",
+      "b": "first bottom",
+      "c": "second top",
+      "m": "second bottom"
+    },
+    "given": {
+      "a": 1,
+      "b": 2,
+      "c": 1,
+      "m": 3
+    },
+    "unit": "",
+    "method": "Scale each fraction to the denominator b\u00b7m: a/b = am/bm and c/m = cb/bm; then the tops add.",
+    "distractors": [
+      "-",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "b": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

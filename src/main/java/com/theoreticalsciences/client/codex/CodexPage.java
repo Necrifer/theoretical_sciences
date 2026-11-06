@@ -78,7 +78,10 @@ public final class CodexPage {
             }
             case "multiblock" -> {
                 if (!p.name.isEmpty()) add(heading(f, Component.literal(p.name)), 4);
-                if (!p.pattern.isEmpty()) add(new Structure(f, p.pattern, p.mapping), 6);
+                var live = p.multiblock.isEmpty() ? java.util.Optional.<com.theoreticalsciences.multiblock.MultiblockDefinition>empty()
+                        : com.theoreticalsciences.multiblock.Multiblocks.get(p.multiblock);
+                if (live.isPresent()) add(Structure.of(this, f, live.get()), 6);
+                else if (!p.pattern.isEmpty()) add(new Structure(f, p.pattern, p.mapping), 6);
                 text(f, p.text);
             }
             case "recipe", "auto_recipe" -> {
@@ -235,6 +238,32 @@ public final class CodexPage {
         final int listRows, listCols;
         final List<Character> listed = new ArrayList<>();
 
+        /** 1.2.0: a multiblock as it is now: its layers, top down, and what each of its letters takes (any of them). */
+        static Structure of(CodexPage page, Font f, com.theoreticalsciences.multiblock.MultiblockDefinition d) {
+            char ctrl = '\u0001';
+            List<List<String>> layers = new ArrayList<>();
+            for (int y = d.layers.size() - 1; y >= 0; y--) {
+                List<String> rows = new ArrayList<>();
+                for (String row : d.layers.get(y)) {
+                    StringBuilder b = new StringBuilder(row.length());
+                    for (int i = 0; i < row.length(); i++) {
+                        char c = row.charAt(i);
+                        b.append(c == ' ' ? '_' : c == '.' ? ' ' : c == d.controllerChar ? ctrl : c);
+                    }
+                    rows.add(b.toString());
+                }
+                layers.add(rows);
+            }
+            Map<String, String> mapping = new LinkedHashMap<>();
+            mapping.put(String.valueOf(ctrl), d.controllerBlock.toString());
+            for (Map.Entry<Character, List<ResourceLocation>> e : d.key.entrySet()) {
+                StringBuilder b = new StringBuilder();
+                for (ResourceLocation r : e.getValue()) b.append(b.length() == 0 ? "" : ",").append(r);
+                mapping.put(String.valueOf(e.getKey()), b.toString());
+            }
+            return page.new Structure(f, layers, mapping);
+        }
+
         Structure(Font f, List<List<String>> layers, Map<String, String> mapping) {
             this.layers = layers;
             int c = 1, r = 1;
@@ -247,7 +276,7 @@ public final class CodexPage {
             }
             cols = c;
             rows = r;
-            cell = Math.max(3, Math.min(16, width / cols));
+            cell = Math.max(1, Math.min(16, width / cols));      // 1.2.0: the giants are drawn small, a coloured square a block
             for (Map.Entry<String, String> m : mapping.entrySet()) {
                 if (m.getKey().isEmpty()) continue;
                 what.put(m.getKey().charAt(0), resolve(m.getValue()));
@@ -258,6 +287,11 @@ public final class CodexPage {
         }
 
         List<ItemStack> resolve(String v) {
+            if (v.indexOf(',') >= 0) {                          // 1.2.0: any of several blocks
+                List<ItemStack> all = new ArrayList<>();
+                for (String one : v.split(",")) for (ItemStack st : resolve(one)) if (all.stream().noneMatch(a -> a.is(st.getItem()))) all.add(st);
+                return all;
+            }
             String s = v.trim();
             int b = s.indexOf('[');
             if (b >= 0) s = s.substring(0, b);
@@ -287,6 +321,20 @@ public final class CodexPage {
             List<ItemStack> l = what.get(ch);
             if (l == null || l.isEmpty()) return ItemStack.EMPTY;
             return l.get((int) ((System.currentTimeMillis() / 1200) % l.size()));
+        }
+
+        final Map<Character, Integer> colours = new HashMap<>();
+
+        int colour(char ch, ItemStack st) {
+            return colours.computeIfAbsent(ch, k -> {
+                int c = 0x808080;
+                if (st.getItem() instanceof net.minecraft.world.item.BlockItem bi) {
+                    int m = bi.getBlock().defaultMapColor().col;
+                    if (m != 0) c = m;
+                }
+                if (ch == '\u0001') c = 0xFFD040;
+                return 0xFF000000 | c;
+            });
         }
 
         int gridH() {
@@ -319,6 +367,11 @@ public final class CodexPage {
                     ItemStack st = shown(ch);
                     if (st.isEmpty()) {
                         g.fill(sx + 1, sy + 1, sx + cell - 1, sy + cell - 1, HoloStyle.argb(0x90, accent));
+                        continue;
+                    }
+                    if (cell < 6) {                                 // too small for an icon: the block's own colour
+                        g.fill(sx, sy, sx + cell, sy + cell, colour(ch, st));
+                        if (mx >= sx && my >= sy && mx < sx + cell && my < sy + cell) h.stack = st;
                         continue;
                     }
                     g.pose().pushPose();

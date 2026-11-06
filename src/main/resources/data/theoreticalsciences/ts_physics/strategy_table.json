@@ -1,0 +1,57 @@
+{
+  "params": [
+    {
+      "id": "p",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "min": 10,
+      "max": 100000,
+      "step": 10,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {
+    "V": 2,
+    "Cc": 5,
+    "tol": 0.05
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "gap",
+      "unit": "",
+      "expr": "abs(V*(1 + 0.02*d) - p*Cc)/2",
+      "formula": "(V \u2212 pC)/2"
+    },
+    {
+      "id": "noise",
+      "unit": "",
+      "expr": "1/n^0.5",
+      "formula": "1/\u221an"
+    },
+    {
+      "id": "ess",
+      "unit": "",
+      "expr": "V/Cc",
+      "formula": "V/C"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(60/n^0.5, 0.1, 4)",
+  "rate_formula": "rate = 60 / \u221an",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

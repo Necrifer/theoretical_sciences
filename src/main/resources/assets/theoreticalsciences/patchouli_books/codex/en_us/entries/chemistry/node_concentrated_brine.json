@@ -1,0 +1,19 @@
+{
+  "name": "Concentrated Brine",
+  "icon": "theoreticalsciences:concentrated_brine_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:concentrated_brine_cell",
+      "title": "Concentrated Brine",
+      "text": "What is left of a brine when the membrane has taken half its water: twice as salty, and quicker to dry."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Reverse Osmosis Cell$().$(br2)$(thing)Unlocked by$(): Osmosis.$(br2)$(thing)Used in$(): Halite."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/osmosis"
+}

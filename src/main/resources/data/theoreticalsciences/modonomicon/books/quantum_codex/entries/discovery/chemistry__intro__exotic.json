@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__exotic",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__exotic.desc",
+  "icon": {
+    "item": "theoreticalsciences:positronium_hydride"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 43,
+  "y": 60,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__exotic.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__exotic"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__exotic.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__carbon"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/exotic_chemistry"
+  }
+}

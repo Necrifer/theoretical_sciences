@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:affinity_maturation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ward_rewind",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:matured_antibody",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:lasting_ward_rewind",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:immune_memory",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "windows": [
+      {
+        "q": "aff",
+        "min": 20.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

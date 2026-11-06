@@ -24,7 +24,7 @@ public record OmnipotencePayload(BlockPos core, String item, int count) implemen
             TheoreticalSciences.id("beyond_omnipotence"));
     public static final Type<OmnipotencePayload> TYPE = new Type<>(TheoreticalSciences.id("omnipotence"));
     public static final StreamCodec<FriendlyByteBuf, OmnipotencePayload> CODEC = StreamCodec.composite(
-            BlockPos.STREAM_CODEC, OmnipotencePayload::core, ByteBufCodecs.STRING_UTF8, OmnipotencePayload::item, ByteBufCodecs.VAR_INT, OmnipotencePayload::count,
+            BlockPos.STREAM_CODEC, OmnipotencePayload::core, ByteBufCodecs.stringUtf8(256), OmnipotencePayload::item, ByteBufCodecs.VAR_INT, OmnipotencePayload::count,
             OmnipotencePayload::new);
 
     @Override
@@ -57,6 +57,7 @@ public record OmnipotencePayload(BlockPos core, String item, int count) implemen
     public static void handle(ServerPlayer sp, OmnipotencePayload p) {
         if (tooFast(sp)) return;
         if (!sp.blockPosition().closerThan(p.core(), 12)) return;
+        if (!CorePayloads.inSession(sp, p.core())) return;       // 1.2.0: only from the screen this player opened
         boolean forged = ForgedCoreBlock.awake(sp.level(), p.core());     // round 27: an awake forged Core, anywhere
         if (!forged && (sp.level().dimension() != QHDimensions.TRANSCENDENTAL || !sp.level().getBlockState(p.core()).is(TranscendRegistry.CORE.get()))) return;
         ResourceLocation id = ResourceLocation.tryParse(p.item());

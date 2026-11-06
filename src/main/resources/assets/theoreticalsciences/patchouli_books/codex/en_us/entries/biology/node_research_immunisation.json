@@ -1,0 +1,19 @@
+{
+  "name": "Immunisation",
+  "icon": "theoreticalsciences:ward_fracture",
+  "advancement": "theoreticalsciences:research/immunisation",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ward_fracture",
+      "title": "Immunisation",
+      "text": "$(thing)Immunisation$()$(br2)Show the body a harmless trace of an invader and it is ready for the real one. Unlocks an Anomaly Ward for each of the Anomaly's infections."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 140$(br2)$(thing)Builds on$(): Antibodies.$(br2)$(thing)Samples$(): 4 Antibody, 2 Fractured Essence.$(br2)$(thing)Derivation$(): A disease spreads at R0. Write the share H that must be held safe so each case makes less than one more (herd immunity)."
+    }
+  ]
+}

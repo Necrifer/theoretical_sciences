@@ -1,0 +1,24 @@
+{
+  "name": "Topology Kiln",
+  "icon": "theoreticalsciences:topology_kiln",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 134,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Every closed surface is a sphere with handles or with cross-caps (where it passes through itself and turns one-sided). Its Euler characteristic, V \u2212 E + F for any net drawn on it, is \u03c7 = 2 \u2212 2g \u2212 c, and it does not change however the surface is stretched. The kiln must give the recipe's \u03c7 and the right number of sides."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Handles, Cross-caps, Kiln temperature.$(br2)$(thing)Disturbance$(): Uneven heat: the firing rate varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The clay slumps.$(br2)$(thing)Rate$(): Hotter is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Euler characteristic: \u03c7 = 2 \u2212 2g \u2212 c$(br)Matches the recipe: \u03c7 = X, one-sided = N$(br)Firing rate: r \u221d e^(\u2212T\u2080/T)"
+    }
+  ]
+}

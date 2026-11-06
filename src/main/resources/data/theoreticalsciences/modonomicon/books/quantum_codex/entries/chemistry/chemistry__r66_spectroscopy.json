@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r66_spectroscopy",
+  "description": "book.theoreticalsciences.codex.chemistry.r66_spectroscopy.desc",
+  "icon": {
+    "item": "theoreticalsciences:infrared_spectrometer"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 154,
+  "y": 22,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:infrared_spectrometer"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r66_spectroscopy.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r66_spectroscopy.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r65_synthesis"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__synthesis_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/infrared_spectroscopy"
+  }
+}

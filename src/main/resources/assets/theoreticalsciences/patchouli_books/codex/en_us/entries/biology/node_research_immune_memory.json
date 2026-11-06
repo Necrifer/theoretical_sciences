@@ -1,0 +1,19 @@
+{
+  "name": "Immune Memory",
+  "icon": "theoreticalsciences:lasting_ward_fracture",
+  "advancement": "theoreticalsciences:research/immune_memory",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lasting_ward_fracture",
+      "title": "Immune Memory",
+      "text": "$(thing)Immune Memory$()$(br2)Memory cells that outlive the fight and answer at once the next time, for years. Unlocks lasting Wards, held safe for good."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 180$(br2)$(thing)Builds on$(): Immunisation, Directed Evolution.$(br2)$(thing)Samples$(): 1 Fracture Ward, 1 Telomerase Complex.$(br2)$(thing)Derivation$(): Memory falls off slowly, by a half-life T. Write the share S still protected after a time t."
+    }
+  ]
+}

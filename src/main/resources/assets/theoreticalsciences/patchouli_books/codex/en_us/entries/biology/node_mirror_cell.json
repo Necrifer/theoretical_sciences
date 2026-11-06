@@ -1,0 +1,19 @@
+{
+  "name": "Mirror Cell",
+  "icon": "theoreticalsciences:mirror_cell",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:mirror_cell",
+      "title": "Mirror Cell",
+      "text": "A cell built left-handed where life is right, and right where life is left: its own mirror image. Nothing alive can eat it, and it can eat nothing alive. It dies if carried about too long. Made in the Mirror Culture Vat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Mirror Culture Vat$().$(br2)$(thing)Dropped by$(): Mirror Microbe.$(br2)$(thing)Unlocked by$(): Mirror Life.$(br2)$(thing)Used in$(): Mirror Antibody."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/mirror_life"
+}

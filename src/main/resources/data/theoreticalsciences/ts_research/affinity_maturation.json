@@ -1,0 +1,54 @@
+{
+  "title": "Affinity Maturation",
+  "description": "In a germinal centre, antibody genes are mutated on purpose and the cells that bind best are kept, round after round: evolution inside the body, in days. Unlocks the Clonal Selector, Matured Antibodies, and the Metastasis Ward that sees through immune evasion.",
+  "icon": "theoreticalsciences:matured_antibody",
+  "x": 10,
+  "y": 20,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:adaptive_immunity",
+    "theoreticalsciences:inner_space"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:memory_cell",
+      "count": 2
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "Each round of selection multiplies how tightly an antibody binds by (1 + s). Write the gain A after n rounds.",
+    "name": "Affinity growth",
+    "lhs": "A",
+    "form": "( 1 + s ) ^ n",
+    "expr": "( 1 + s ) ^ n",
+    "ask": "Find A for s = 0.3 and n = @{n}.",
+    "vars": {
+      "A": "gain in binding",
+      "s": "gain per round",
+      "n": "rounds"
+    },
+    "given": {
+      "s": 0.3,
+      "n": 10
+    },
+    "unit": "",
+    "method": "The gains multiply, round on round: (1 + s)\u00b7(1 + s)\u00b7... n times. Affinity grows exponentially while the clones last.",
+    "distractors": [
+      "2",
+      "e",
+      "-"
+    ],
+    "vary": {
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

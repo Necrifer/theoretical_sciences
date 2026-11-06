@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_ammonia_buffer",
+  "description": "book.theoreticalsciences.codex.chemistry.node_ammonia_buffer.desc",
+  "icon": {
+    "item": "theoreticalsciences:ammonia_buffer_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 201,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ammonia_buffer_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_ammonia_buffer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_ammonia_buffer.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__buffer_tank",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/buffer_chemistry"
+  }
+}

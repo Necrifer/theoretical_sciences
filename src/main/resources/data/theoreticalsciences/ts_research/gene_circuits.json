@@ -1,0 +1,66 @@
+{
+  "title": "Gene Circuits",
+  "description": "Wire genes so each controls the next and you have a switch, a clock, a memory: life made to compute. Unlocks the Gene Circuit Loom and the Living Catalyst.",
+  "icon": "theoreticalsciences:gene_circuit_loom",
+  "x": 12,
+  "y": 24,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:population_genetics",
+    "theoreticalsciences:synthetic_biology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:error_code",
+      "count": 1
+    }
+  ],
+  "time": 630,
+  "puzzle": {
+    "goal": "A gene is repressed by r units of repressor, with half-repression at K and steepness n. Write its output Y, falling as K^n over K^n plus r^n.",
+    "name": "Hill repression",
+    "lhs": "Y",
+    "form": "K ^ n / ( K ^ n + r ^ n )",
+    "expr": "K ^ n / ( K ^ n + r ^ n )",
+    "ask": "Find Y for K = @{K}, n = @{n} and r = @{r}.",
+    "vars": {
+      "Y": "output",
+      "K": "half-repression",
+      "n": "steepness",
+      "r": "repressor"
+    },
+    "given": {
+      "K": 1,
+      "n": 2,
+      "r": 2
+    },
+    "unit": "",
+    "method": "The mirror of the binding curve: output high when the repressor is low, and steep enough (n > 1) to latch.",
+    "distractors": [
+      "-",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "K": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "r": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

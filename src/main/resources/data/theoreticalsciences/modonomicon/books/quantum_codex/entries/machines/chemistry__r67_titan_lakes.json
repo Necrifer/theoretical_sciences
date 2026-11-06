@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r67_titan_lakes",
+  "description": "book.theoreticalsciences.codex.chemistry.r67_titan_lakes.desc",
+  "icon": {
+    "item": "theoreticalsciences:lake_pump"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 195,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lake_pump"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r67_titan_lakes.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r67_titan_lakes.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r67_titan_lakes.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r60_solubility"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__brine_evaporator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/titan_lakes"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Folding Chamber",
+  "icon": "theoreticalsciences:folding_chamber",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 178,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:folding_chamber",
+      "title": "Folding Chamber",
+      "text": "A thermostatted cuvette in a spectrometer, watching a protein chain fold into its shape, or fail to.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the temperature and the denaturant. The chain folds with \u0394G = \u0394H(1 \u2212 T/Tm) \u2212 m\u00b7U; the folded share 1/(1 + e^(\u2212\u0394G/RT)) must reach 95%. Warmer folds faster but nearer the melting point; below 278 K it aggregates."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Folded Protein Crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:folding_chamber",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/protein_folding"
+}

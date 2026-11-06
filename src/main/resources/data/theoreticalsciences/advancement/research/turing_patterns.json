@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:turing_morphogen"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.turing_patterns"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.turing_patterns.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/morphogenesis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

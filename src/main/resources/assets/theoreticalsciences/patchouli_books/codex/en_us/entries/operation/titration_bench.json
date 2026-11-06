@@ -1,0 +1,24 @@
+{
+  "name": "Titration Bench",
+  "icon": "theoreticalsciences:titration_bench",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 132,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A sample of 25 mL is titrated with a 0.1 mol/L standard. Before the endpoint the excess acid sets the pH; past it, the excess titrant does; at the endpoint the pH jumps by six units in a drop. The excess D = (C\u00b725 \u2212 0.1\u00b7V)/(25 + V) gives [H\u207a] = (D + \u221a(D\u00b2 + 4K_w))/2 exactly."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Titrant added.$(br2)$(thing)Disturbance$(): Burette drift: the volume read is off by \u00b10.02%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): One assay at a time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Hydrogen ions: [H\u207a] = (D + \u221a(D\u00b2 + 4K_w))/2$(br)pH: pH = \u2212log\u2081\u2080[H\u207a]$(br)Endpoint: V = C\u00b725 mL / 0.1"
+    }
+  ]
+}

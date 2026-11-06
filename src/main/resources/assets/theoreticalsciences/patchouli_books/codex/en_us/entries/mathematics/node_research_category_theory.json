@@ -3,7 +3,7 @@
   "icon": "theoreticalsciences:topos",
   "advancement": "theoreticalsciences:research/category_theory",
   "category": "theoreticalsciences:mathematics",
-  "sortnum": 500,
+  "sortnum": 501,
   "pages": [
     {
       "type": "patchouli:spotlight",
@@ -13,7 +13,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Set Theory, Geometric Topology, Abstract Algebra.$(br2)$(thing)Samples$(): 16 Function Graph.$(br2)$(thing)Derivation$(): Show how many morphisms A\u00d7B \u2192 C exist in the category of finite sets by counting maps A \u2192 C^B (currying, the exponential adjunction), with |A| = 2, |B| = 3, |C| = 2."
+      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Set Theory, Geometric Topology, Abstract Algebra, Lie Groups.$(br2)$(thing)Samples$(): 16 Function Graph.$(br2)$(thing)Derivation$(): In the category of finite sets, an arrow into C from a product A \u00d7 B (or a disjoint union with D) is the same as choosing an element of C independently for every point of the source. Count the arrows from (A \u00d7 B) + D into C as nested products over the points, using cardinalities |X|."
     }
   ]
 }

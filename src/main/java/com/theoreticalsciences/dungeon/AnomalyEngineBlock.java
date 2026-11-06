@@ -67,6 +67,14 @@ public class AnomalyEngineBlock extends BaseEntityBlock {
         return net.minecraft.world.InteractionResult.CONSUME;
     }
 
+    /** 1.2.0: the ruin's glitching (StructureZones) ends with its last breached engine. */
+    @Override
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState now, boolean moving) {
+        if (!state.is(now.getBlock()) && level instanceof net.minecraft.server.level.ServerLevel sl)
+            com.theoreticalsciences.world.zones.StructureZones.engineBroken(sl, pos);
+        super.onRemove(state, level, pos, now, moving);
+    }
+
     /** Broken by hand without a good enough pick: a built engine must still not vanish with what is in it. */
     @Override
     public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, net.minecraft.world.entity.player.Player player) {

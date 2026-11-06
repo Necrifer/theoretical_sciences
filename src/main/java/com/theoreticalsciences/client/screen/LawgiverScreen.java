@@ -146,14 +146,17 @@ public class LawgiverScreen extends Screen {
         CodexStatePayload s = EndgameClient.state;
         int grav = s == null ? 4 : s.gravity(), hp = s == null ? 2 : s.health(), dmg = s == null ? 2 : s.damage(), spd = s == null ? 2 : s.speed();
         boolean hostile = s == null || s.hostile(), passive = s == null || s.passive();
+        // 1.2.0: the laws over a whole dimension, only for those the server allows (operators, by default)
+        boolean laws = s == null || s.worldLaws();
         List<Line> out = new ArrayList<>();
+        if (!laws) out.add(new Heading(tr("world_laws_locked")));
 
         out.add(new Heading(tr("gravity")));
         List<Chip> g = new ArrayList<>();
         for (int i = 0; i < GRAVITY_LABELS.length; i++) {
             int idx = i;
             g.add(chip(Component.literal(GRAVITY_LABELS[i]), i == 0 ? "gravity.zero.tip" : i == 4 ? "gravity.natural.tip" : "gravity.tip",
-                    i == grav, true, 0xFF60C0FF, () -> send(CodexLaws.SET_GRAVITY, idx, "")));
+                    i == grav, laws, 0xFF60C0FF, () -> send(CodexLaws.SET_GRAVITY, idx, "")));
         }
         out.add(new Row(Component.empty(), g));
 
@@ -162,29 +165,29 @@ public class LawgiverScreen extends Screen {
         List<Chip> t = new ArrayList<>();
         for (int i = 0; i < times.length; i++) {
             int idx = i;
-            t.add(chip(tr("time." + times[i]), "time.tip", false, true, 0xFFFFD060, () -> send(CodexLaws.SET_TIME, idx, "")));
+            t.add(chip(tr("time." + times[i]), "time.tip", false, laws, 0xFFFFD060, () -> send(CodexLaws.SET_TIME, idx, "")));
         }
         out.add(new Row(tr("time"), t));
         String[] weathers = {"clear", "rain", "storm"};
         List<Chip> w = new ArrayList<>();
         for (int i = 0; i < weathers.length; i++) {
             int idx = i;
-            w.add(chip(tr("weather." + weathers[i]), "weather.tip", false, true, 0xFF80B0FF, () -> send(CodexLaws.SET_WEATHER, idx, "")));
+            w.add(chip(tr("weather." + weathers[i]), "weather.tip", false, laws, 0xFF80B0FF, () -> send(CodexLaws.SET_WEATHER, idx, "")));
         }
         out.add(new Row(tr("weather"), w));
 
         out.add(new Heading(tr("spawning")));
         out.add(new Row(tr("hostile"), List.of(
-                chip(tr("on"), "hostile.tip", hostile, true, 0xFF80FF80, () -> send(CodexLaws.SET_HOSTILE, 1, "")),
-                chip(tr("off"), "hostile.tip", !hostile, true, 0xFFFF8080, () -> send(CodexLaws.SET_HOSTILE, 0, "")))));
+                chip(tr("on"), "hostile.tip", hostile, laws, 0xFF80FF80, () -> send(CodexLaws.SET_HOSTILE, 1, "")),
+                chip(tr("off"), "hostile.tip", !hostile, laws, 0xFFFF8080, () -> send(CodexLaws.SET_HOSTILE, 0, "")))));
         out.add(new Row(tr("passive"), List.of(
-                chip(tr("on"), "passive.tip", passive, true, 0xFF80FF80, () -> send(CodexLaws.SET_PASSIVE, 1, "")),
-                chip(tr("off"), "passive.tip", !passive, true, 0xFFFF8080, () -> send(CodexLaws.SET_PASSIVE, 0, "")))));
+                chip(tr("on"), "passive.tip", passive, laws, 0xFF80FF80, () -> send(CodexLaws.SET_PASSIVE, 1, "")),
+                chip(tr("off"), "passive.tip", !passive, laws, 0xFFFF8080, () -> send(CodexLaws.SET_PASSIVE, 0, "")))));
 
         out.add(new Heading(tr("strength")));
-        out.add(strengthRow("health", hp, CodexLaws.SET_HEALTH));
-        out.add(strengthRow("damage", dmg, CodexLaws.SET_DAMAGE));
-        out.add(strengthRow("speed", spd, CodexLaws.SET_SPEED));
+        out.add(strengthRow("health", hp, CodexLaws.SET_HEALTH, laws));
+        out.add(strengthRow("damage", dmg, CodexLaws.SET_DAMAGE, laws));
+        out.add(strengthRow("speed", spd, CodexLaws.SET_SPEED, laws));
 
         out.add(new Heading(tr("create")));
         out.add(new BoxLine());
@@ -219,15 +222,15 @@ public class LawgiverScreen extends Screen {
 
         out.add(new Gap(6));
         out.add(new Row(Component.empty(), List.of(
-                chip(tr("restore"), "restore.tip", false, true, 0xFFFFB040, () -> send(CodexLaws.RESTORE, 0, "")))));
+                chip(tr("restore"), "restore.tip", false, laws, 0xFFFFB040, () -> send(CodexLaws.RESTORE, 0, "")))));
         return out;
     }
 
-    private Row strengthRow(String key, int sel, int action) {
+    private Row strengthRow(String key, int sel, int action, boolean laws) {
         List<Chip> c = new ArrayList<>();
         for (int i = 0; i < STRENGTH_LABELS.length; i++) {
             int idx = i;
-            c.add(chip(Component.literal(STRENGTH_LABELS[i]), key + ".tip", i == sel, true, 0xFFFF9060, () -> send(action, idx, "")));
+            c.add(chip(Component.literal(STRENGTH_LABELS[i]), key + ".tip", i == sel, laws, 0xFFFF9060, () -> send(action, idx, "")));
         }
         return new Row(tr(key), c);
     }

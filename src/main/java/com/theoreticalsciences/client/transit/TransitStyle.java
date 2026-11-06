@@ -22,7 +22,10 @@ public enum TransitStyle {
     LIVING_PROOF("living_proof", 0x010A04, 0x40FF70, 0xD0FFD8, 0xD0FFD8, 0x70B880, false),
     TRANSCENDENTAL("transcendental", 0x140C02, 0xFFE8A0, 0xFFFFFF, 0xFFF4D8, 0xC8B488, false),
     INTERIOR("planetary_interior", 0x120604, 0xFF7A20, 0xFFD27A, 0xFFE0C0, 0xB08060, false),
-    FRONTIER("accretion_frontier", 0x020208, 0x80B0FF, 0xFFB050, 0xE0E8FF, 0x8890B0, false);
+    FRONTIER("accretion_frontier", 0x020208, 0x80B0FF, 0xFFB050, 0xE0E8FF, 0x8890B0, false),
+    TITAN("titan", 0x1E1006, 0xE09040, 0xFFE0A0, 0xFFE8C8, 0xB09070, false),
+    INNER("inner_space", 0x1A0408, 0xE04060, 0xFFC0D0, 0xFFE0E8, 0xC08090, false),
+    TITAN_OCEAN("titan_ocean", 0x020C12, 0x40C0D0, 0xA0FFF0, 0xD0F8FF, 0x6090A0, false);
 
     public final String id;
     public final int bg, ink, accent, title, subtitle;

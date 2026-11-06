@@ -1,63 +1,63 @@
 {
-  "title": "Ferromagnetism",
-  "description": "In iron, the spins of neighbouring atoms line up of their own accord - until heat shakes them apart above a critical temperature. Unlocks the Ferrite Magnet.",
-  "icon": "theoreticalsciences:ferrite_magnet",
-  "x": 3,
-  "y": -5,
-  "insight": 20,
-  "requires": [
-    "theoreticalsciences:magnetostatics",
-    "theoreticalsciences:chemical_bonding"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:magnetite",
-      "count": 8
-    }
-  ],
-  "time": 0,
-  "puzzle": {
-    "goal": "Above a critical temperature the spins in iron no longer line up by themselves, but an applied field still lines them up a little, more easily the closer the iron is to that temperature. Write the susceptibility \u03c7, with C a constant of the material and T_c the critical temperature.",
-    "name": "Curie-Weiss law",
-    "lhs": "\u03c7",
-    "form": "C / ( T - T _ c )",
-    "expr": "C / ( T - X )",
-    "ask": "Find \u03c7 for iron at @{T} K, with C = @{C} K and a critical temperature X of @{X} K.",
-    "vars": {
-      "\u03c7": "magnetic susceptibility",
-      "C": "material constant (K)",
-      "T": "temperature (K)",
-      "c": "critical",
-      "X": "critical temperature (K)"
-    },
-    "given": {
-      "C": 1.5,
-      "T": 1100,
-      "X": 1043
-    },
-    "unit": "",
-    "method": "Mean-field theory: each spin feels the applied field plus a field proportional to the average magnetisation of its neighbours. Solve for the magnetisation per unit applied field.",
-    "distractors": [
-      "\u03bc",
-      "B",
-      "1"
-    ],
-    "vary": {
-      "C": [
-        1.38,
-        1.62,
-        0.01
-      ],
-      "T": [
-        1012.0,
-        1188.0,
-        1.0
-      ],
-      "X": [
-        960.0,
-        1126.0,
-        1.0
-      ]
-    }
+ "title": "Ferromagnetism",
+ "description": "In iron, the spins of neighbouring atoms line up of their own accord, until heat shakes them apart above a critical temperature. Unlocks the Ferrite Magnet.",
+ "icon": "theoreticalsciences:ferrite_magnet",
+ "x": 3,
+ "y": -5,
+ "insight": 20,
+ "requires": [
+  "theoreticalsciences:magnetostatics",
+  "theoreticalsciences:chemical_bonding"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:magnetite",
+   "count": 8
   }
+ ],
+ "time": 0,
+ "puzzle": {
+  "goal": "Above a critical temperature the spins in iron no longer line up by themselves, but an applied field still lines them up a little, more easily the closer the iron is to that temperature. Write the susceptibility χ, with C a constant of the material and T_c the critical temperature.",
+  "name": "Curie-Weiss law",
+  "lhs": "χ",
+  "form": "C / ( T - T _ c )",
+  "expr": "C / ( T - X )",
+  "ask": "Find χ for iron at @{T} K, with C = @{C} K and a critical temperature X of @{X} K.",
+  "vars": {
+   "χ": "magnetic susceptibility",
+   "C": "material constant (K)",
+   "T": "temperature (K)",
+   "c": "critical",
+   "X": "critical temperature (K)"
+  },
+  "given": {
+   "C": 1.5,
+   "T": 1100,
+   "X": 1043
+  },
+  "unit": "",
+  "method": "Mean-field theory: each spin feels the applied field plus a field proportional to the average magnetisation of its neighbours. Solve for the magnetisation per unit applied field.",
+  "distractors": [
+   "μ",
+   "B",
+   "1"
+  ],
+  "vary": {
+   "C": [
+    1.38,
+    1.62,
+    0.01
+   ],
+   "T": [
+    1012.0,
+    1188.0,
+    1.0
+   ],
+   "X": [
+    960.0,
+    1126.0,
+    1.0
+   ]
+  }
+ }
 }

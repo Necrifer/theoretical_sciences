@@ -1,0 +1,25 @@
+{
+  "name": "Wear and Decay",
+  "icon": "theoreticalsciences:zeolite_catalyst",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:zeolite_catalyst,theoreticalsciences:regeneration_kiln,theoreticalsciences:chronostatic_vault",
+      "text": "Nothing a machine holds on to lasts for ever. A $(thing)catalyst$() speeds a reaction and is not used up by it - but its pores clog and its surface is poisoned, a little each time. Lenses scratch, magnets lose their field, crystals crack and chips burn out.$(br2)Each time one of these serves as a recipe's catalyst it uses a run of its life: ten runs when the machine is pushed past a $(thing)wear$() limit of its physics. Its tooltip and the bar under it show what is left."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Living Catalyst: 128 runs, but each run that feeds it sugar or broth heals one$(li)Zeolite Catalyst, Platinum-Rhodium Gauze, Nickel Catalyst: 256 runs, then restored in the $(item)Regeneration Kiln$()$(li)Muonic Catalyst: 150 runs, then used up$(li)Photonic Lens, Cosmic String Lens, Tesseract Lens, Dark Matter Lens, Moissanite Lens, Einstein Ring Lens, Schmidt Corrector Plate, Echelle Grating, Apochromatic Objective: 256 runs, then restored in the $(item)Optical Workshop$()$(li)Neodymium Magnet, Ferrite Magnet, Samarium-Cobalt Magnet: 256 runs, then restored in the $(item)Magnetizer$()$(li)Perfect Crystal Interferometer: 512 runs, then restored in the $(item)Crystal Growth Furnace$()$(li)Iron Catalyst, Vanadium Bed: 512 runs, then restored in the $(item)Regeneration Kiln$()$(li)Quantum Random Number Chip, Boundary CFT Chip, Quantum Processor: 1024 runs, then used up"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A worn-out catalyst comes out of the machine marked $(thing)worn$(), and no longer works until restored. Chips cannot be mended.$(br2)Mathematical, abstract and endgame catalysts never wear: a proof does not get tired."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Radioactive sources $(thing)decay$(): their activity halves with each half-life of their isotope, on the same clock as the Decay Chamber, wherever they are - in a chest, a machine or an ME network (all but Technetium-99m: see Carrying Technetium-99m). Below a sixteenth of its first activity a source is $(thing)spent$() and no longer works. It also gives off less radiation as it goes.$(br2)A $(item)Chronostatic Vault$() holds time still: a source kept in it stops decaying, and goes on where it left off when taken out."
+    }
+  ]
+}

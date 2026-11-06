@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:sterilising",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    },
+    {
+      "item": "minecraft:string",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sterile_pack",
+      "count": 4
+    }
+  ],
+  "energy": 128,
+  "duration": 160,
+  "research": "theoreticalsciences:sterile_technique",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "D121": 1.5
+    },
+    "windows": [
+      {
+        "q": "logred",
+        "min": 12.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

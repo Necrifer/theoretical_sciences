@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_paradox_echo",
+  "description": "book.theoreticalsciences.codex.biology.node_paradox_echo.desc",
+  "icon": {
+    "item": "theoreticalsciences:paradox_echo_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 89,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:paradox_echo_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_paradox_echo.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/biology__r90_defence",
+      "draw_arrow": false
+    }
+  ]
+}

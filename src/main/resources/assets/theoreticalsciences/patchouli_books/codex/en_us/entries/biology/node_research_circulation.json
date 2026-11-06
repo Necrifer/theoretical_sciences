@@ -1,0 +1,19 @@
+{
+  "name": "Circulation",
+  "icon": "theoreticalsciences:perfused_tissue",
+  "advancement": "theoreticalsciences:research/circulation",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:perfused_tissue",
+      "title": "Circulation",
+      "text": "$(thing)Circulation$()$(br2)The heart pushes blood through vessels that branch finer and finer; the flow in each follows the fourth power of its radius. Unlocks Perfused Tissue."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 120$(br2)$(thing)Builds on$(): Physiology.$(br2)$(thing)Samples$(): 2 Living Cell, 4 Redstone.$(br2)$(thing)Derivation$(): Flow through a vessel goes as the fourth power of its radius (Poiseuille). A vessel of radius r carries a base flow; write the flow Q for radius r, from a constant c."
+    }
+  ]
+}

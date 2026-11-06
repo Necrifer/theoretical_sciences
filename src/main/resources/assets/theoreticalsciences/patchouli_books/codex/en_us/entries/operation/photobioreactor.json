@@ -1,0 +1,24 @@
+{
+  "name": "Photobioreactor",
+  "icon": "theoreticalsciences:photobioreactor",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 102,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Photosynthesis rises with light as P = I/(K + I) and falls again in light too bright, e^(\u2212I/Ii) (photoinhibition): its best is at \u221a(K\u00b7Ii). Carbon dioxide feeds it too; air has only 0.04%."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Light, Carbon dioxide.$(br2)$(thing)Disturbance$(): Clouded tubes: output varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The algae burn.$(br2)$(thing)Rate$(): Algae near their best are fastest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Photosynthesis, against its best: P/P_best = [I/(K + I)]\u00b7e^(\u2212I/Ii)\u00b7[CO\u2082/(0.5 + CO\u2082)] / its peak"
+    }
+  ]
+}

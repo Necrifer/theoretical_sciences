@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:pi_crystal"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.pi_constant"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.pi_constant.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/euclidean_geometry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

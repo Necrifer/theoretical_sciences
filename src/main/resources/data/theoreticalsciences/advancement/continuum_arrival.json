@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:epsilon_dust"
+    },
+    "title": "The Continuum",
+    "description": {
+      "translate": "advancements.theoreticalsciences.continuum_arrival.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/real_analysis",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "dimension": "theoreticalsciences:platonic_realm",
+                "position": {
+                  "y": {
+                    "min": 860,
+                    "max": 1279
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Selection Chamber",
+  "icon": "theoreticalsciences:selection_chamber",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 187,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:selection_chamber",
+      "title": "Selection Chamber",
+      "text": "A bank of cultures under a pressure that only the fittest survive, generation after generation.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the selection strength s and the population size N. A good trait fixes with chance (1 - e^(-2s)) / (1 - e^(-4Ns)), which must reach the recipe's level; weak selection (4Ns under 1) is lost to drift, and too strong a pressure (s over 0.5) kills the culture."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Evolved Strain, Omnicellular Genome."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:selection_chamber",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/population_genetics"
+}

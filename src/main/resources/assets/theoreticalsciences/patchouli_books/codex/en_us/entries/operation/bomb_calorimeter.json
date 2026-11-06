@@ -1,0 +1,24 @@
+{
+  "name": "Bomb Calorimeter",
+  "icon": "theoreticalsciences:bomb_calorimeter",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 22,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The sample burns completely in oxygen: q = m\u00b7\u0394H_c. The bomb sits in water of heat capacity C = 10 kJ/K, which warms by \u0394T = q/C. Too small a rise cannot be read well; too big and the water loses heat while it is read. The oxygen must be enough to burn all of it - each gram needs its own share."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Sample mass, Oxygen pressure.$(br2)$(thing)Disturbance$(): Stirrer heat: the reading drifts by \u00b10.5%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The bomb is over its rated pressure.$(br2)$(thing)Rate$(): One burn at a time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Heat released: q = m\u00b7\u0394H_c$(br)Temperature rise: \u0394T = q/C$(br)Burnt: p_O\u2082 / (demand \u00b7 m)"
+    }
+  ]
+}

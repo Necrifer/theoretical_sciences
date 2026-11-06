@@ -1,0 +1,62 @@
+{
+  "title": "Evolutionary Games",
+  "description": "Let the winners have more offspring and the game plays itself: the mix a population settles into is the one nothing can invade. Unlocks the Evolutionarily Stable Strategy.",
+  "icon": "theoreticalsciences:stable_strategy",
+  "x": 14,
+  "y": 7,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:nash_equilibrium",
+    "theoreticalsciences:genomics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 4
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Fighters win a prize V; when two aggressive ones meet, both risk an injury costing C. When a share P of the population is aggressive, write how much more G an aggressive fighter earns than a timid one.",
+    "name": "Stable mix",
+    "lhs": "G",
+    "form": "( V - P * C ) / 2",
+    "expr": "( V - P * C ) / 2",
+    "ask": "Find G for V = @{V}, P = @{P} and C = @{C}.",
+    "vars": {
+      "G": "advantage",
+      "V": "prize",
+      "P": "aggressive share",
+      "C": "injury"
+    },
+    "given": {
+      "V": 2,
+      "P": 0.2,
+      "C": 5
+    },
+    "unit": "",
+    "method": "Aggressive: P(V \u2212 C)/2 + (1 \u2212 P)V. Timid: (1 \u2212 P)V/2. Their difference is (V \u2212 PC)/2, zero at P = V/C: there the population stops changing.",
+    "distractors": [
+      "+",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "V": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "P": [
+        0.12,
+        0.28,
+        0.001
+      ],
+      "C": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

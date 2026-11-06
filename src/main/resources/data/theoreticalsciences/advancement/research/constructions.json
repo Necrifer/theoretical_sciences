@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:golden_ratio_glass"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.constructions"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.constructions.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/euclidean_geometry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Photochemistry",
+  "icon": "theoreticalsciences:photochemical_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 28,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:photochemical_reactor,theoreticalsciences:tholin",
+      "text": "A photon absorbed breaks one bond; what follows can make several molecules of product - the quantum yield \u03a6. How much of the light is absorbed is the $(thing)Beer-Lambert law$(): the absorbance is A = \u03b5cl, and the cell takes a fraction 1 \u2212 10^(\u2212A)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Photochemical Reactor$() (a console) makes Titan's own haze chemistry: $(item)Tholin$() and $(fluid)Hydrogen Cyanide$() from methane and nitrogen, and $(fluid)Hydrogen$() from water. Set the path length so the mixture absorbs 90% to 99.9% of the light (A between 1 and 3): thinner and the light goes through, thicker and only a skin by the window reacts. Brighter is faster, up to 400 W/m\u00b2."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/photochemistry"
+}

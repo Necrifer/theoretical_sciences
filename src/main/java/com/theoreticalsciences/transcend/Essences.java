@@ -28,8 +28,10 @@ import java.util.TreeMap;
  * Mod Essences (round 26): every fluid of every other mod, distilled per mod into one fluid that stands for it - like
  * singularities for ingots and specimen bundles for drops. The Essence Distillery takes up to {@link #PART} of one
  * mod's fluids at a time ({@link #PER} mB each) and makes {@link #OUT} mB of that mod's Essence; a mod with more
- * fluids than that is distilled in parts first, and the parts (four thousand mB of each) into the whole. The Pleroma
- * Confluence then wants every mod's Essence too. All of it is worked out from the fluid registry (the same on server
+ * fluids than that is distilled in parts first, and the parts (four thousand mB of each) into the whole.
+ * <p>
+ * 1.2.0: the Essences then go on, with water, lava, Basaltic Magma and Deep Brine, into {@link #WORLD Anima Mundi},
+ * the soul of the world and one of Pleroma's five fluids, the same way: twelve at a time, in parts if there are more. All of it is worked out from the fluid registry (the same on server
  * and client), so any mod's fluids join in by themselves.
  * <p>
  * Only fluids that can be carried in a bucket count (a fluid without one is usually an internal, unobtainable one);
@@ -38,6 +40,10 @@ import java.util.TreeMap;
 public final class Essences {
     public static final int PART = 12, PER = 16_000, OUT = 1_000, PART_IN = 4_000;
     public static final String TYPE = "essence_distillation";
+    /** 1.2.0: the "mod" the world's own distillation is filed under (its parts are Essences with this name). */
+    public static final String WORLD = "anima_mundi";
+    /** What goes into Anima Mundi besides every mod's whole Essence (the mod's own world fluids at {@link #PER} mB each). */
+    static final String[] WORLD_FLUIDS = {"minecraft:water", "minecraft:lava", "theoreticalsciences:basaltic_magma", "theoreticalsciences:deep_brine"};
 
     /** One distillation: level 1 takes fluids, higher levels take the parts below. */
     public record Step(String mod, int level, int index, int levels, List<FluidStack> inputs, FluidStack output) {
@@ -89,6 +95,10 @@ public final class Essences {
     public static Component name(FluidStack s) {
         String m = mod(s);
         if (m == null) return Component.translatable("fluid_type.theoreticalsciences.mod_essence");
+        if (WORLD.equals(m)) {
+            var wd = s.get(DataComponents.CUSTOM_DATA);
+            return Component.translatable("fluid.theoreticalsciences.anima_mundi.part", lettered(wd == null ? "" : wd.getUnsafe().getString("Part")));
+        }
         String n = net.neoforged.fml.ModList.get().getModContainerById(m).map(c -> c.getModInfo().getDisplayName()).orElse(m);
         var cd = s.get(DataComponents.CUSTOM_DATA);
         String part = cd == null ? "" : cd.getUnsafe().getString("Part");
@@ -165,15 +175,51 @@ public final class Essences {
                 below = made;
             }
         }
+        out.addAll(worldSteps(out));
         List<Step> l = List.copyOf(out);
         if (byMod != null) steps = l;
         return l;
     }
 
-    /** The whole essence of every mod: what the Pleroma Confluence wants on top of everything else. */
+    /**
+     * 1.2.0: Anima Mundi, from the world's own fluids and every mod's whole Essence: twelve inputs at a time, the parts
+     * (Essences filed under {@link #WORLD}) into the whole, which is the Anima Mundi fluid itself.
+     */
+    private static List<Step> worldSteps(List<Step> mods) {
+        List<Step> out = new ArrayList<>();
+        Fluid anima = animaFluid();
+        if (anima == null) return out;
+        List<FluidStack> below = new ArrayList<>();
+        for (String id : WORLD_FLUIDS) {
+            Fluid f = BuiltInRegistries.FLUID.get(ResourceLocation.parse(id));
+            if (f != null && f != Fluids.EMPTY) below.add(new FluidStack(f, PER));
+        }
+        for (Step s : mods) if (s.last()) below.add(s.output().copyWithAmount(PART_IN));
+        int levels = 1;
+        for (int n = (below.size() + PART - 1) / PART; n > 1; n = (n + PART - 1) / PART) levels++;
+        for (int lv = 1; lv <= levels; lv++) {
+            List<FluidStack> made = new ArrayList<>();
+            for (int g = 0; g * PART < below.size(); g++) {
+                List<FluidStack> in = below.subList(g * PART, Math.min(below.size(), g * PART + PART));
+                FluidStack o = lv == levels ? new FluidStack(anima, OUT) : essence(WORLD, lv, g, levels, OUT);
+                out.add(new Step(WORLD, lv, g, levels, List.copyOf(in), o));
+                made.add(o.copyWithAmount(PART_IN));
+            }
+            below = made;
+        }
+        return out;
+    }
+
+    @Nullable
+    static Fluid animaFluid() {
+        var e = QHFluids.ALL.get("anima_mundi");
+        return e == null ? null : e.source.get();
+    }
+
+    /** The whole essence of every mod (what goes, with the world's own fluids, into Anima Mundi). */
     public static List<FluidStack> finals() {
         List<FluidStack> out = new ArrayList<>();
-        for (Step s : steps()) if (s.last()) out.add(s.output().copyWithAmount(1));
+        for (Step s : steps()) if (s.last() && !WORLD.equals(s.mod())) out.add(s.output().copyWithAmount(1));
         return out;
     }
 

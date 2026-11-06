@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "tag": "c:dusts/vanadium",
+      "count": 1
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:vanadium_bed",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:contact_process",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 72.3,
+      "Af": 10000000.0,
+      "Xt": 0.95
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

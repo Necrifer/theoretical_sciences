@@ -1,0 +1,50 @@
+{
+  "has_precipitation": true,
+  "temperature": 0.8,
+  "downfall": 0.5,
+  "effects": {
+    "sky_color": 11565112,
+    "fog_color": 11038776,
+    "water_color": 6965792,
+    "water_fog_color": 3811344,
+    "music": {
+      "sound": "theoreticalsciences:music.titan",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:methane_skater",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "theoreticalsciences:tholin_drifter",
+        "weight": 50,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ore_titan_evaporite_deep"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

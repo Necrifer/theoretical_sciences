@@ -1,0 +1,24 @@
+{
+  "name": "Ostwald Converter",
+  "icon": "theoreticalsciences:ostwald_converter",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 95,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "4NH\u2083 + 5O\u2082 \u2192 4NO + 6H\u2082O on hot platinum - or, too cool or too slow, 4NH\u2083 + 3O\u2082 \u2192 2N\u2082 + 6H\u2082O, which wastes it. The gauze must be white-hot and the contact a millisecond: long enough for the ammonia to react, short enough that the nitric oxide does not decompose. The NO is then oxidised to NO\u2082 and absorbed in water: 3NO\u2082 + H\u2082O \u2192 2HNO\u2083 + NO."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Gauze temperature, Contact time.$(br2)$(thing)Disturbance$(): Flow pulsing: the contact time varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The gauze is losing platinum (too hot); The gauze is below light-off: the ammonia does not burn.$(br2)$(thing)Rate$(): Nitric oxide made: what burns, what burns the right way, and how fast the gas goes through."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Selectivity to NO: S(T, t)$(br)Ammonia burnt: X = 1 \u2212 e^(\u2212t/0.2 ms)"
+    }
+  ]
+}

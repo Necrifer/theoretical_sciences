@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r59_ostwald",
+  "description": "book.theoreticalsciences.codex.chemistry.r59_ostwald.desc",
+  "icon": {
+    "item": "theoreticalsciences:ostwald_converter"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 168,
+  "y": 51,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ostwald_converter"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r59_ostwald.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r59_ostwald.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r59_haber"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__haber_bosch_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ostwald_process"
+  }
+}

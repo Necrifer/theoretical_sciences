@@ -1,0 +1,32 @@
+{
+  "name": "Clonal Selector",
+  "icon": "theoreticalsciences:clonal_selector",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 190,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:clonal_selector",
+      "title": "Clonal Selector",
+      "text": "A rack of culture wells and a binding assay: each round, only the clones that hold on tightest are kept and grown.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the rounds and the stringency. Each round multiplies the affinity by (1 + s); it must reach the recipe's level. But each round also culls the clones: diversity falls as 100.e^(-n.s/3), and below 10% the line collapses to one clone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Lasting Fracture Ward, Lasting Grey Goo Ward, Lasting Hollowing Ward, Lasting Metastasis Ward, Lasting Rewind Ward, Matured Antibody, Metastasis Ward."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:clonal_selector",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/affinity_maturation"
+}

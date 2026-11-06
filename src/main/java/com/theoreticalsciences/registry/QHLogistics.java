@@ -45,8 +45,21 @@ public final class QHLogistics {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.storage.InfinityCacheBlockEntity>> INFINITY_CACHE = BES.register("transcendent_cache",
             () -> BlockEntityType.Builder.of(com.theoreticalsciences.storage.InfinityCacheBlockEntity::new, ofKind("infinity_cache")).build(null));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.science.ChronostaticVaultBlockEntity>> CHRONOSTATIC_VAULT = BES.register("chronostatic_vault",
+            () -> BlockEntityType.Builder.of(com.theoreticalsciences.science.ChronostaticVaultBlockEntity::new, ofKind("chrono_vault")).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.science.GasCellBlockEntity>> GAS_CELL = BES.register("gas_storage_cell",
+            () -> BlockEntityType.Builder.of(com.theoreticalsciences.science.GasCellBlockEntity::new, ofKind("gas_cell")).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.logistics.ZenoAnchorBlockEntity>> ZENO_ANCHOR = BES.register("zeno_anchor",
+            () -> BlockEntityType.Builder.of(com.theoreticalsciences.logistics.ZenoAnchorBlockEntity::new, ofKind("zeno_anchor")).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.machine.tuning.GovernorBlockEntity>> GOVERNOR = BES.register("governor",
+            () -> BlockEntityType.Builder.of(com.theoreticalsciences.machine.tuning.GovernorBlockEntity::new, ofKind("governor")).build(null));
+
     public static void register(IEventBus bus) {
         BES.register(bus);
+        bus.addListener(com.theoreticalsciences.logistics.ZenoAnchorBlockEntity::registerTickets);
         bus.addListener((RegisterCapabilitiesEvent e) -> {
             e.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, FIELD_PROJECTOR.get(), (be, side) -> be.energy);
             e.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ENERGY_CELL.get(), EnergyCellBlockEntity::side);
@@ -59,6 +72,10 @@ public final class QHLogistics {
             e.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CONV_PEDESTAL.get(), (be, side) -> be.automation);
             e.registerBlockEntity(Capabilities.FluidHandler.BLOCK, CHRONAL_ACCELERATOR.get(), (be, side) -> be.chronons);
             e.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CACHE.get(), (be, side) -> new net.neoforged.neoforge.items.wrapper.InvWrapper(be));
+            e.registerBlockEntity(Capabilities.ItemHandler.BLOCK, CHRONOSTATIC_VAULT.get(), (be, side) -> be.automation);
+            e.registerBlockEntity(Capabilities.FluidHandler.BLOCK, GAS_CELL.get(), (be, side) -> be.tank);
+            e.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, ZENO_ANCHOR.get(), (be, side) -> be.energy);
+            e.registerBlockEntity(Capabilities.EnergyStorage.BLOCK, GOVERNOR.get(), (be, side) -> be.energy);
         });
     }
 

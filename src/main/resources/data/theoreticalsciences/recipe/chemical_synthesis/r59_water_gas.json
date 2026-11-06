@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:coal",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hydrogen",
+      "amount": 4319
+    }
+  ],
+  "energy": 512,
+  "duration": 50,
+  "research": "theoreticalsciences:reaction_kinetics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 64.6,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

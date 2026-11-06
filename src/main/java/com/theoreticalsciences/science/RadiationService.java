@@ -55,7 +55,8 @@ public final class RadiationService {
     /** Machines giving off radiation right now, per dimension: position → source, and the game time it lapses. */
     private record Emission(RadiationData.Source source, long until) {}
 
-    private static final Map<ResourceKey<Level>, Map<BlockPos, Emission>> EMITTERS = new HashMap<>();
+    // 1.2.0: cleared when the server stops (a younger world opened next in the same game had phantom dose)
+    private static final Map<ResourceKey<Level>, Map<BlockPos, Emission>> EMITTERS = com.theoreticalsciences.world.SessionMaps.perServer(new HashMap<>());
 
     /** 1.2.2: how many machines give off radiation in this dimension right now. */
     public static int emitters(ServerLevel level) {
@@ -73,7 +74,7 @@ public final class RadiationService {
 
     // ------------------------------------------------------------------ background
     /**
-     * 1.3.0: the background where you stand - in the Planetary Interior it depends on the biome: the Natural Reactor's
+     * 1.2.0: the background where you stand - in the Planetary Interior it depends on the biome: the Natural Reactor's
      * rock still holds its fission products (scaled up like every dose here); the others carry the crust's uranium.
      */
     public static double backgroundMicroSvPerHour(Level level, BlockPos pos) {
@@ -112,7 +113,11 @@ public final class RadiationService {
     public static double carried(Player p) {
         double n = 0;
         var inv = p.getInventory();
-        for (int i = 0; i < inv.getContainerSize(); i++) n += carried(inv.getItem(i));
+        long now = p.level().getGameTime();
+        for (int i = 0; i < inv.getContainerSize(); i++) {
+            ItemStack s = inv.getItem(i);
+            if (!s.isEmpty()) n += carried(s) * Wear.activity(s, now);       // 1.2.0: a source grows weaker as it decays
+        }
         return n;
     }
 

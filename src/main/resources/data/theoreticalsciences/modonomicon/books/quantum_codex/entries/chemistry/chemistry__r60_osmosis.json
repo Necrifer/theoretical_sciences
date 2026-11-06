@@ -1,0 +1,34 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r60_osmosis",
+  "description": "book.theoreticalsciences.codex.chemistry.r60_osmosis.desc",
+  "icon": {
+    "item": "theoreticalsciences:reverse_osmosis_cell"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 133,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:reverse_osmosis_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r60_osmosis.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r60_solubility"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__brine_evaporator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/osmosis"
+  }
+}

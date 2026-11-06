@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:cryolava",
+      "amount": 996
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ammonia",
+      "amount": 2402
+    },
+    {
+      "id": "minecraft:water",
+      "amount": 700
+    }
+  ],
+  "energy": 509,
+  "duration": 21,
+  "research": "theoreticalsciences:titan_lakes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 3.5,
+      "xF": 0.3,
+      "Tb": 239.8,
+      "dH": 23.3
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.99,
+        "max": 1.0
+      }
+    ]
+  }
+}

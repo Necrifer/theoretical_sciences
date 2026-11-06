@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_lymph_tissue",
+  "description": "book.theoreticalsciences.codex.biology.node_lymph_tissue.desc",
+  "icon": {
+    "item": "theoreticalsciences:lymph_tissue"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 127,
+  "y": 96,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:lymph_tissue"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_lymph_tissue.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_lymph_tissue.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__perfusion_rig",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/physiology"
+  }
+}

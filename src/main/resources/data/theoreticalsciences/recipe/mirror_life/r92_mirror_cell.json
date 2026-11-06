@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:mirror_life",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:chiral_crystal",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mirror_cell",
+      "count": 2
+    }
+  ],
+  "energy": 4096,
+  "duration": 400,
+  "research": "theoreticalsciences:mirror_life",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "windows": [
+      {
+        "q": "grow",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

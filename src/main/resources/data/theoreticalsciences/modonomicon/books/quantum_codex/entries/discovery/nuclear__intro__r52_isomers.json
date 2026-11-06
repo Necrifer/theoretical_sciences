@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.nuclear.intro__r52_isomers",
+  "description": "book.theoreticalsciences.codex.nuclear.intro__r52_isomers.desc",
+  "icon": {
+    "item": "theoreticalsciences:isomer_trigger"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 56,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.intro__r52_isomers.p0",
+      "title": "book.theoreticalsciences.codex.nuclear.intro__r52_isomers"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.nuclear.intro__r52_isomers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/nuclear__intro__r42_msr"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/nuclear__intro__r42_enrichment"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/nuclear_isomers"
+  }
+}

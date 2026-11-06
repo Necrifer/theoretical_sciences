@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.hyperdimensions.intro__tesseract",
+  "description": "book.theoreticalsciences.codex.hyperdimensions.intro__tesseract.desc",
+  "icon": {
+    "item": "theoreticalsciences:tesseract_core"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 43,
+  "y": 25,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.intro__tesseract.p0",
+      "title": "book.theoreticalsciences.codex.hyperdimensions.intro__tesseract"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.hyperdimensions.intro__tesseract.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/hyperdimensional_geometry"
+  }
+}

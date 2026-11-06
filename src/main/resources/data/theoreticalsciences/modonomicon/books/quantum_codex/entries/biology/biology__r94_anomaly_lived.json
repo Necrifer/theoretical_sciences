@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.r94_anomaly_lived",
+  "description": "book.theoreticalsciences.codex.biology.r94_anomaly_lived.desc",
+  "icon": {
+    "item": "theoreticalsciences:tumour_specimen"
+  },
+  "category": "theoreticalsciences:biology",
+  "x": 111,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tumour_specimen"
+      },
+      "text": "book.theoreticalsciences.codex.biology.r94_anomaly_lived.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r94_anomaly_lived.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r94_anomaly_lived.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.r94_anomaly_lived.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:biology/biology__evolution"
+    },
+    {
+      "entry": "theoreticalsciences:biology/biology__evolution_engine"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/oncogenesis"
+  }
+}

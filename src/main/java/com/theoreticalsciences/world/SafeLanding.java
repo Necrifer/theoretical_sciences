@@ -24,6 +24,12 @@ public final class SafeLanding {
 
     /** The feet position to arrive at. {@code platform}/{@code core} build the fallback platform (null: obsidian). */
     public static BlockPos find(ServerLevel l, int x, int z, int preferredY, @Nullable Block platform, @Nullable Block core) {
+        return find(l, x, z, preferredY, platform, core, l.getMinBuildHeight() + 1, l.getMaxBuildHeight() - 3);
+    }
+
+    /** 1.2.0: only between lo and hi (feet height): one layer of a layered dimension (the Platonic Realm and its upper strata). */
+    public static BlockPos find(ServerLevel l, int x, int z, int preferredY, @Nullable Block platform, @Nullable Block core, int lo, int hi) {
+        preferredY = Math.max(lo + 4, Math.min(hi - 8, preferredY));
         BlockPos best = null;
         long bestScore = Long.MAX_VALUE;
         // open sky anywhere in the radius beats a roofed spot (a cave, under an overhang) even right underfoot; the
@@ -35,7 +41,7 @@ public final class SafeLanding {
                     int cx = x + dx, cz = z + dz;
                     l.getChunk(cx >> 4, cz >> 4);                                  // generated, so it is real ground
                     long[] sc = new long[1];
-                    BlockPos p = column(l, cx, cz, preferredY, sc);
+                    BlockPos p = column(l, cx, cz, preferredY, sc, lo, hi);
                     if (p == null) continue;
                     long score = sc[0] + r;
                     if (score < bestScore) {
@@ -49,8 +55,8 @@ public final class SafeLanding {
 
     /** The best standing place in one column, or null. */
     @Nullable
-    private static BlockPos column(ServerLevel l, int x, int z, int preferredY, long[] scoreOut) {
-        int min = l.getMinBuildHeight() + 1, max = l.getMaxBuildHeight() - 3;
+    private static BlockPos column(ServerLevel l, int x, int z, int preferredY, long[] scoreOut, int lo, int hi) {
+        int min = Math.max(l.getMinBuildHeight() + 1, lo), max = Math.min(l.getMaxBuildHeight() - 3, hi);
         // nothing above the highest solid-or-fluid block can be stood on: start just above it
         max = Math.min(max, l.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, x, z) + 1);
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
@@ -60,7 +66,7 @@ public final class SafeLanding {
             p.set(x, y, z);
             if (!standable(l, p)) continue;
             BlockPos at = p.immutable();
-            if (open(l, at)) {                        // the highest open-sky spot: the surface
+            if (open(l, at) || hi < l.getMaxBuildHeight() - 3 && openTo(l, at, hi)) {   // the highest open-sky spot: the surface
                 scoreOut[0] = 0;
                 return at;
             }
@@ -104,6 +110,16 @@ public final class SafeLanding {
             BlockState s = l.getBlockState(p);
             if (!s.getFluidState().isEmpty()) return false;               // a fluid ceiling is a roof too
             if (!s.getCollisionShape(l, p).isEmpty() && !s.is(BlockTags.LEAVES)) return false;
+        }
+        return true;
+    }
+
+    /** Open sky as far as the top of the layer (a layer's ceiling is the next layer's ground). */
+    private static boolean openTo(ServerLevel l, BlockPos feet, int hi) {
+        for (int y = feet.getY() + 2; y < Math.min(hi, feet.getY() + 40); y++) {
+            BlockPos p = new BlockPos(feet.getX(), y, feet.getZ());
+            BlockState s = l.getBlockState(p);
+            if (!s.getFluidState().isEmpty() || !s.getCollisionShape(l, p).isEmpty() && !s.is(BlockTags.LEAVES)) return false;
         }
         return true;
     }

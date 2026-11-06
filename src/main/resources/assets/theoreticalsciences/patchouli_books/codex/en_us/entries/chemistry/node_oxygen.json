@@ -1,0 +1,19 @@
+{
+  "name": "Oxygen",
+  "icon": "theoreticalsciences:oxygen_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:oxygen_cell",
+      "title": "Oxygen",
+      "text": "A fifth of the air, boiled off below nitrogen in an air separation column at minus 183 degrees."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Air Separation Unit$().$(br2)$(thing)Unlocked by$(): Reaction Kinetics.$(br2)$(thing)Used in$(): Nitric Acid, Nitrogen, Oxygen, Sulfur Dioxide, Sulfuric Acid, Thermochemical Data Card, Water."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_kinetics"
+}

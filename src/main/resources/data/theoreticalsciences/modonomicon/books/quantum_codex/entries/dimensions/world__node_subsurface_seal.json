@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_subsurface_seal",
+  "description": "book.theoreticalsciences.codex.world.node_subsurface_seal.desc",
+  "icon": {
+    "item": "theoreticalsciences:subsurface_seal"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 7,
+  "y": 13,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:subsurface_seal"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_subsurface_seal.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__decor",
+      "draw_arrow": false
+    }
+  ]
+}

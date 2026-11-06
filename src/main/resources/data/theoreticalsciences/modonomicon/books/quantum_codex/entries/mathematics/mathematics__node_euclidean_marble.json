@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_euclidean_marble",
+  "description": "book.theoreticalsciences.codex.mathematics.node_euclidean_marble.desc",
+  "icon": {
+    "item": "theoreticalsciences:euclidean_marble"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 19,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:euclidean_marble"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_euclidean_marble.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_euclidean_marble.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__geometers_table",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/euclidean_geometry"
+  }
+}

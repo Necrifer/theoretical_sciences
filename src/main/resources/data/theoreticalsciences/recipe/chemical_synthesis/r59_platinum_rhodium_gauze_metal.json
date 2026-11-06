@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "tag": "c:ingots/platinum",
+      "count": 2
+    },
+    {
+      "tag": "c:nuggets/rhodium",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:platinum_rhodium_gauze",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:ostwald_process",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 70.8,
+      "Af": 10000000.0,
+      "Xt": 0.95
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

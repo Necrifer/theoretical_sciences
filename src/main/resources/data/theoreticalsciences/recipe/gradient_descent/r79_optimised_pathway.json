@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:gradient_descent",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:derivative_operator",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:optimised_pathway",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:optimisation",
+  "unscaled": true,
+  "insight_per_run": 8,
+  "physics": {
+    "vars": {
+      "lam": 5.0,
+      "tol": 0.0001
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.0001
+      }
+    ]
+  }
+}

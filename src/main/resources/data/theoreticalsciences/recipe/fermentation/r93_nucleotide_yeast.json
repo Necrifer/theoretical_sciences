@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:fermentation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:yeast_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:nucleotide",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ks": 5.0,
+      "Si": 100.0
+    },
+    "windows": [
+      {
+        "q": "gr",
+        "min": 0.8,
+        "max": 2.0
+      },
+      {
+        "q": "air",
+        "min": 0.2,
+        "max": 1.0
+      }
+    ]
+  }
+}

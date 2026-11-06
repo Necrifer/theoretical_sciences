@@ -1,0 +1,32 @@
+{
+  "name": "Phage Lab",
+  "icon": "theoreticalsciences:phage_lab",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 179,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phage_lab",
+      "title": "Phage Lab",
+      "text": "Plates of bacteria in a sealed cabinet, and a pipette of viruses: count the clear spots where the phages burst through.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the multiplicity of infection (phages per cell) and the time. The share of cells hit is 1 \u2212 e^(\u2212MOI) and each bursts after its latent period; both must reach the recipe's share. Over 15 phages a cell they burst the cells from outside, for nothing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Bacteriophage, Recombinant DNA."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phage_lab",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/viruses"
+}

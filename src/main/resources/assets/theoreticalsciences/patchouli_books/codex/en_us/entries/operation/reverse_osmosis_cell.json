@@ -1,0 +1,24 @@
+{
+  "name": "Reverse Osmosis Cell",
+  "icon": "theoreticalsciences:reverse_osmosis_cell",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 116,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Water flows into salty water through a membrane, pulled by the osmotic pressure \u03c0 = iMRT (van 't Hoff): two ions for each NaCl, M moles a litre, at 298 K. Push the salty side harder than \u03c0 and the flow reverses: fresh water comes through. The flux grows with how far past \u03c0 it is pushed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Feed pressure.$(br2)$(thing)Disturbance$(): Fouling: the membrane passes \u00b11%\u00b7d of its rated flow."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Over the membrane's rated pressure.$(br2)$(thing)Rate$(): Fresh water follows the flux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Osmotic pressure: \u03c0 = iMRT$(br)Water flux: J = A\u00b7(P \u2212 \u03c0)"
+    }
+  ]
+}

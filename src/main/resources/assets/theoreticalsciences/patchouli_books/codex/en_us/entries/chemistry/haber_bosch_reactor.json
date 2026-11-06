@@ -1,0 +1,99 @@
+{
+  "name": "Haber-Bosch Reactor",
+  "icon": "theoreticalsciences:haber_bosch_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 128,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:haber_bosch_reactor",
+      "title": "Haber-Bosch Reactor",
+      "text": "Hydrogen and nitrogen pressed together over hot iron: the reaction that fixes the air's nitrogen into ammonia, and feeds half the world.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the temperature, the pressure and the hydrogen-to-nitrogen ratio. The equilibrium (van 't Hoff, from \u0394G\u00b0 = \u0394H \u2212 T\u0394S) favours ammonia when cold and pressed; the iron only works fast when hot. A pass needs at least 15% ammonia. The iron sinters above 823 K (it then wears ten times as fast); the vessel is rated to 300 atm. Needs an Iron Catalyst in its catalyst slot."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Haber-Bosch Reactor",
+      "multiblock": {
+        "pattern": [
+          [
+            "AAAAA__",
+            "AAAAA__",
+            "AAAAA__",
+            "AAAAA__",
+            "AAAAA__"
+          ],
+          [
+            "AAAAA__",
+            "A   A__",
+            "A   A__",
+            "A   A__",
+            "AAAAA__"
+          ],
+          [
+            "AAAAA__",
+            "ABBBA__",
+            "ABBBA__",
+            "ABBBA__",
+            "AAAAA__"
+          ],
+          [
+            "AAAAA__",
+            "A   A__",
+            "D   D_E",
+            "A   A__",
+            "AADAA__"
+          ],
+          [
+            "AAAAA__",
+            "ABBBA__",
+            "ABBBAAE",
+            "ABBBA__",
+            "AAAAA__"
+          ],
+          [
+            "AA0AA__",
+            "A   A__",
+            "A   A_E",
+            "A   A__",
+            "AAAAA__"
+          ],
+          [
+            "AAFAAAA",
+            "AAAAAAA",
+            "FAAAAAF",
+            "AAAAAAA",
+            "AAFAAAA"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:haber_bosch_reactor",
+          "A": "theoreticalsciences:pressure_vessel_wall",
+          "B": "theoreticalsciences:ammonia_converter_bed",
+          "D": "theoreticalsciences:containment_field_glass",
+          "E": "theoreticalsciences:synthesis_compressor",
+          "F": "#theoreticalsciences:multiblock/pressure_vessel_wall_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Ammonia."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:haber_bosch_reactor",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_equilibrium"
+}

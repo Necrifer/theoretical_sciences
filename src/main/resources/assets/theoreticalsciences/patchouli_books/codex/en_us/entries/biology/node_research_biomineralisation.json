@@ -1,0 +1,19 @@
+{
+  "name": "Biomineralisation",
+  "icon": "theoreticalsciences:magnetite",
+  "advancement": "theoreticalsciences:research/biomineralisation",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:magnetite",
+      "title": "Biomineralisation",
+      "text": "$(thing)Biomineralisation$()$(br2)Some bacteria grow chains of magnetite crystals and steer by the Earth's field. Kept short of air, they mine iron for you. Unlocks bacterial Magnetite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Microbiology, Ferromagnetism.$(br2)$(thing)Samples$(): 2 Bacterial Culture, 8 Iron Nugget.$(br2)$(thing)Derivation$(): A chain of n magnetite crystals, each of moment m, lines up in a field B against the jostling of heat, kT. Write the share A it lines up by, for a weak field, m\u00b7n\u00b7B over three kT."
+    }
+  ]
+}

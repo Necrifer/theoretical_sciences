@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:doping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cherenkov_wafer",
+      "count": 1
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:doped_wafer",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:semiconductor_doping",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lc",
+        "min": 16.0,
+        "max": 18.0
+      }
+    ]
+  }
+}

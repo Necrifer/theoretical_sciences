@@ -11,6 +11,10 @@ The simplest addon is a mod (or datapack) that only ships data. Everything in [D
 inside your own jar, under your own namespace: machine recipes, research entries, coil and emitter tiers for your
 blocks, machine numbers, Forge recipes, singularities and tags. No code against Theoretical Sciences is needed.
 
+1.2.0: a resource pack (or your jar's assets) can also give this mod's multiblocks moving parts and star, shell,
+orbiter and beam effects. See [ANIMATIONS.md](ANIMATIONS.md). (Other mods' machines are not animated.) These are
+internal for now (data only): the Java classes behind them are not part of the API and may change.
+
 ## Code addons
 
 Depend on the Theoretical Sciences jar at compile time and declare the dependency in your `neoforge.mods.toml`:

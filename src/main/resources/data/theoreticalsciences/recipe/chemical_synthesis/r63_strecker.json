@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:sugar",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen_cyanide",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:amino_acid_mixture",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 67.7,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

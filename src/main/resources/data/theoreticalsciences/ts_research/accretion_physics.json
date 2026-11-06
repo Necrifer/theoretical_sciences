@@ -1,74 +1,74 @@
 {
-  "title": "Accretion Physics",
-  "description": "Matter falling onto a compact object turns its gravity into light - up to a third of its rest energy for a spinning black hole, fifty times better than fusion. The brightest things in the universe are lit this way. Unlocks the Accretion Disk Reactor.",
-  "icon": "theoreticalsciences:accretion_disk_fragment",
-  "x": 11,
-  "y": 2,
-  "insight": 150,
-  "requires": [
-    "theoreticalsciences:compact_stars",
-    "theoreticalsciences:galactic_dynamics"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:accretion_disk_fragment",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:pulsar_timing_record",
-      "count": 2
-    }
-  ],
-  "time": 510,
-  "puzzle": {
-    "goal": "Light from gas falling onto a mass M pushes on its electrons (cross-section \u03c3) while gravity pulls on its protons (mass m). Write the luminosity L at which the two balance, using G and c.",
-    "name": "Eddington luminosity",
-    "lhs": "L",
-    "form": "4 * \u03c0 * G * M * m * c / \u03c3",
-    "expr": "12.5664 * G * M * m * c / s / u",
-    "ask": "Find L in units of @{u} W (u = @{u}) for ten solar masses: M = @{M} kg, m = 1.6726e-27 kg, c = 2.998e8 m/s, s = @{s} m\u00b2, G = 6.674e-11.",
-    "vars": {
-      "L": "luminosity (10\u00b3\u00b9 W)",
-      "\u03c0": "pi",
-      "G": "gravitational constant",
-      "M": "mass (kg)",
-      "m": "proton mass (kg)",
-      "c": "speed of light",
-      "\u03c3": "Thomson cross-section",
-      "s": "Thomson cross-section (m\u00b2)",
-      "u": "10\u00b3\u00b9 W"
-    },
-    "given": {
-      "G": 6.674e-11,
-      "M": 1.989e+31,
-      "m": 1.6726e-27,
-      "c": 299800000.0,
-      "s": 6.652e-29,
-      "u": 1e+31
-    },
-    "unit": "\u00d710\u00b3\u00b9 W",
-    "method": "The radiation force on an electron at distance r is \u03c3L/(4\u03c0r\u00b2c); gravity on its proton is GMm/r\u00b2. The r\u00b2 cancels.",
-    "distractors": [
-      "h",
-      "k",
-      "2"
-    ],
-    "vary": {
-      "M": [
-        1.19e+31,
-        2.79e+31,
-        1e+29
-      ],
-      "s": [
-        3.99e-29,
-        9.32e-29,
-        1e-31
-      ],
-      "u": [
-        6e+30,
-        1.4e+31,
-        1e+29
-      ]
-    }
+ "title": "Accretion Physics",
+ "description": "Matter falling onto a compact object turns its gravity into light; up to a third of its rest energy for a spinning black hole, fifty times better than fusion. The brightest things in the universe are lit this way. Unlocks the Accretion Disk Reactor.",
+ "icon": "theoreticalsciences:accretion_disk_fragment",
+ "x": 11,
+ "y": 2,
+ "insight": 150,
+ "requires": [
+  "theoreticalsciences:compact_stars",
+  "theoreticalsciences:galactic_dynamics"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:accretion_disk_fragment",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:pulsar_timing_record",
+   "count": 2
   }
+ ],
+ "time": 510,
+ "puzzle": {
+  "goal": "Light from gas falling onto a mass M pushes on its electrons (cross-section σ) while gravity pulls on its protons (mass m). Write the luminosity L at which the two balance, using G and c.",
+  "name": "Eddington luminosity",
+  "lhs": "L",
+  "form": "4 * π * G * M * m * c / σ",
+  "expr": "12.5664 * G * M * m * c / s / u",
+  "ask": "Find L in units of @{u} W (u = @{u}) for ten solar masses: M = @{M} kg, m = 1.6726e-27 kg, c = 2.998e8 m/s, s = @{s} m², G = 6.674e-11.",
+  "vars": {
+   "L": "luminosity (10³¹ W)",
+   "π": "pi",
+   "G": "gravitational constant",
+   "M": "mass (kg)",
+   "m": "proton mass (kg)",
+   "c": "speed of light",
+   "σ": "Thomson cross-section",
+   "s": "Thomson cross-section (m²)",
+   "u": "10³¹ W"
+  },
+  "given": {
+   "G": 6.674e-11,
+   "M": 1.989e+31,
+   "m": 1.6726e-27,
+   "c": 299800000.0,
+   "s": 6.652e-29,
+   "u": 1e+31
+  },
+  "unit": "×10³¹ W",
+  "method": "The radiation force on an electron at distance r is σL/(4πr²c); gravity on its proton is GMm/r². The r² cancels.",
+  "distractors": [
+   "h",
+   "k",
+   "2"
+  ],
+  "vary": {
+   "M": [
+    1.19e+31,
+    2.79e+31,
+    1e+29
+   ],
+   "s": [
+    3.99e-29,
+    9.32e-29,
+    1e-31
+   ],
+   "u": [
+    6e+30,
+    1.4e+31,
+    1e+29
+   ]
+  }
+ }
 }

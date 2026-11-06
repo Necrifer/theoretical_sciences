@@ -34,7 +34,8 @@ import java.util.regex.Pattern;
 
 /**
  * The Dodecaract Excavator's big jobs: a cube of up to 33x33x33 blocks is worked through a slice at a time, so a
- * whole mountain does not stall the server. Each player has at most one job; it stops if they log out, change
+ * whole mountain does not stall the server. 1.2.0: the drops are gathered as it goes and handed over at the end as
+ * {@link FoldedMatter} (a few items straight into the inventory), never as thousands of items on the ground. Each player has at most one job; it stops if they log out, change
  * dimension, put the Excavator away or run out of charge.
  * <p>
  * Every block is checked like a block broken by hand: spawn protection, adventure mode, claim mods (they cancel the
@@ -61,6 +62,9 @@ public final class ExcavatorJobs {
         final boolean extract;
         final BlockPos skip;               // Area mode: the block the player broke themselves
         int cursor, taken, xp;
+        /** 1.2.0: the drops, gathered as the job goes and handed over folded at the end (not item by item). */
+        final FoldedMatter.Gatherer fold = new FoldedMatter.Gatherer();
+        net.minecraft.world.phys.Vec3 lastAt;
         Job(ResourceKey<Level> dim, BlockPos centre, int r, boolean extract, BlockPos skip) {
             this.dim = dim;
             this.min = centre.offset(-r, -r, -r);
@@ -90,6 +94,14 @@ public final class ExcavatorJobs {
         ORE_CACHE.clear();
     }
 
+    public static void onServerStopping(net.minecraft.server.MinecraftServer server) {
+        for (var en : JOBS.entrySet()) {
+            ServerPlayer sp = server.getPlayerList().getPlayer(en.getKey());
+            if (sp != null) en.getValue().fold.deliver(sp);
+        }
+        JOBS.clear();
+    }
+
     public static void onServerStopped() {
         JOBS.clear();
         ORE_CACHE.clear();
@@ -116,6 +128,12 @@ public final class ExcavatorJobs {
             ItemStack tool = sp == null ? ItemStack.EMPTY : sp.getMainHandItem();
             if (sp == null || !sp.isAlive() || sp.level().dimension() != job.dim || !(tool.getItem() instanceof DodecaractExcavatorItem)) {
                 it.remove();
+                // what it had gathered is never lost: to the player if they are still here, else left where the work was
+                if (sp != null && sp.isAlive()) job.fold.deliver(sp);
+                else {
+                    ServerLevel lv = e.getServer().getLevel(job.dim);
+                    if (lv != null) job.fold.dropAt(lv, job.lastAt != null ? job.lastAt : net.minecraft.world.phys.Vec3.atCenterOf(job.min.offset(job.side / 2, job.side / 2, job.side / 2)));
+                }
                 continue;
             }
             boolean done;
@@ -173,7 +191,8 @@ public final class ExcavatorJobs {
     private static void take(ServerPlayer sp, ServerLevel level, ItemStack tool, BlockPos pos, BlockState st, Job job) {
         // the drops, rolled with the tool itself (Fortune, Silk Touch), and only if it may harvest the block
         if (!sp.getAbilities().instabuild && st.canHarvestBlock(level, pos, sp)) {
-            for (ItemStack d : Block.getDrops(st, level, pos, null, sp, tool)) give(sp, d);
+            for (ItemStack d : Block.getDrops(st, level, pos, null, sp, tool)) job.fold.add(d);
+            job.lastAt = net.minecraft.world.phys.Vec3.atCenterOf(pos);
             job.xp += EnchantmentHelper.processBlockExperience(level, tool, st.getExpDrop(level, pos, null, sp, tool));
         }
         BlockState after = job.extract ? hostFor(level, pos, st) : Blocks.AIR.defaultBlockState();
@@ -226,6 +245,7 @@ public final class ExcavatorJobs {
 
     private static void finish(ServerPlayer sp, Job job, ItemStack tool) {
         if (job.xp > 0) sp.giveExperiencePoints(job.xp);
+        job.fold.deliver(sp);
         if (job.extract) {
             sp.displayClientMessage(Component.translatable("message.theoreticalsciences.excavator.extracted", job.taken, job.total()).withStyle(ChatFormatting.LIGHT_PURPLE), true);
             sp.level().playSound(null, sp.blockPosition(), com.theoreticalsciences.registry.QHSounds.PHASE_SHIFT.get(), SoundSource.PLAYERS, 0.8F, job.taken > 0 ? 1.2F : 0.6F);

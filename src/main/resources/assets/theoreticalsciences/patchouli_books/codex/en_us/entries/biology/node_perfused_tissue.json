@@ -1,0 +1,19 @@
+{
+  "name": "Perfused Tissue",
+  "icon": "theoreticalsciences:perfused_tissue",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:perfused_tissue",
+      "title": "Perfused Tissue",
+      "text": "A sheet of living cells kept alive by a network of fine channels carrying nutrient and oxygen to every one, as blood does. It dies if carried about too long. Made on the Perfusion Rig."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Perfusion Rig$().$(br2)$(thing)Unlocked by$(): Circulation.$(br2)$(thing)Used in$(): Grown Organ, Matrix Fibre, Miniaturiser, Stem Cell Culture, Symbiont Lining."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/physiology"
+}

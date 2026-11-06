@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r56_block_frontier_regolith",
+  "description": "book.theoreticalsciences.codex.world.intro__r56_block_frontier_regolith.desc",
+  "icon": {
+    "item": "theoreticalsciences:frontier_regolith"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 28,
+  "y": 97,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r56_block_frontier_regolith.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r56_block_frontier_regolith"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r56_block_frontier_regolith.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

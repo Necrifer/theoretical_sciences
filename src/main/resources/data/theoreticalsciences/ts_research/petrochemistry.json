@@ -1,0 +1,61 @@
+{
+  "title": "Petrochemistry",
+  "description": "Hydrocarbon chains, broken in a furnace into the short ones industry is built on. Unlocks Synthetic Crude and the Cracking Tower.",
+  "icon": "theoreticalsciences:cracking_tower",
+  "x": 24,
+  "y": -2,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:heterogeneous_catalysis"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:coal",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:hydrogen_cell",
+      "count": 2
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A straight chain of n carbons carries 2n + 2 hydrogens. With a carbon weighing c and a hydrogen h, write the molar mass M of the chain.",
+    "name": "Alkane mass",
+    "lhs": "M",
+    "form": "n * c + ( 2 * n + 2 ) * h",
+    "expr": "n * c + ( 2 * n + 2 ) * h",
+    "ask": "Find M in g/mol for n = @{n}, c = @{c} and h = 1.008.",
+    "vars": {
+      "M": "molar mass (g/mol)",
+      "n": "carbons",
+      "c": "carbon (g/mol)",
+      "h": "hydrogen (g/mol)"
+    },
+    "given": {
+      "n": 20,
+      "c": 12.011,
+      "h": 1.008
+    },
+    "unit": "g/mol",
+    "method": "Each carbon in the middle holds two hydrogens; the two at the ends one more each.",
+    "distractors": [
+      "2",
+      "T",
+      "k",
+      "\u03c0"
+    ],
+    "vary": {
+      "n": [
+        12.0,
+        28.0,
+        1.0
+      ],
+      "c": [
+        7.2,
+        16.9,
+        0.1
+      ]
+    }
+  }
+}

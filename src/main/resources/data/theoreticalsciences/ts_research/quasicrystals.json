@@ -1,0 +1,67 @@
+{
+  "title": "Quasicrystals",
+  "description": "Order without repetition: an alloy with the five-fold symmetry crystallography said was impossible. Unlocks aluminium and the Quasicrystal Furnace.",
+  "icon": "theoreticalsciences:quasicrystal_furnace",
+  "x": 23,
+  "y": -5,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:reticular_chemistry",
+    "theoreticalsciences:electroplating"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 16
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 16
+    }
+  ],
+  "time": 420,
+  "puzzle": {
+    "goal": "A Penrose tiling is laid from N rhombs of side s, each with a corner angle A. Write the area a it covers.",
+    "name": "Rhomb area",
+    "lhs": "a",
+    "form": "N * s ^ 2 * sin ( A )",
+    "expr": "N * s ^ 2 * sin ( A )",
+    "ask": "Find a for N = @{N} fat rhombs, s = @{s} and A = @{A} (72\u00b0).",
+    "vars": {
+      "a": "area",
+      "N": "rhombs",
+      "s": "side",
+      "A": "corner angle (rad)"
+    },
+    "given": {
+      "N": 100,
+      "s": 1,
+      "A": 1.2566
+    },
+    "unit": "",
+    "method": "A rhomb is two triangles: its area is s\u00b2\u00b7sin A. The fat and thin ones (72\u00b0 and 36\u00b0) tile the plane, never repeating.",
+    "distractors": [
+      "2",
+      "3",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "N": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "s": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "A": [
+        0.75,
+        1.76,
+        0.01
+      ]
+    }
+  }
+}

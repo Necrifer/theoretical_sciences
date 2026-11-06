@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_tholin",
+  "description": "book.theoreticalsciences.codex.chemistry.node_tholin.desc",
+  "icon": {
+    "item": "theoreticalsciences:tholin"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 265,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tholin"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_tholin.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_tholin.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__photochemical_reactor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/photochemistry"
+  }
+}

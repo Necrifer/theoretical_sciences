@@ -1,62 +1,62 @@
 {
-  "title": "Plate Tectonics",
-  "description": "The crust is broken into plates that ride on the hot mantle beneath. Where they part, rock wells up; where they meet, one dives under the other. Unlocks the Core Drill - the first tool that cuts bedrock - and the way into the Planetary Interior.",
-  "icon": "theoreticalsciences:core_drill",
-  "x": 5,
-  "y": 15,
-  "insight": 60,
-  "requires": [
-    "theoreticalsciences:seismology",
-    "theoreticalsciences:geomorphology"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:seismic_recorder_drum",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:sediment_core",
-      "count": 4
-    }
-  ],
-  "time": 0,
-  "puzzle": {
-    "goal": "Rock of density \u03c1 lies above you to a depth h, pulled down by gravity g. Write the pressure P it presses on you with.",
-    "name": "Lithostatic pressure",
-    "lhs": "P",
-    "form": "\u03c1 * g * h",
-    "expr": "R * g * h / 1000000000",
-    "ask": "Find P in gigapascals 100 km down, with rock of density R = @{R} kg/m\u00b3 and g = @{g} m/s\u00b2.",
-    "vars": {
-      "P": "pressure (GPa)",
-      "\u03c1": "density",
-      "g": "gravity (m/s\u00b2)",
-      "h": "depth (m)",
-      "R": "rock density (kg/m\u00b3)"
-    },
-    "given": {
-      "R": 3300,
-      "g": 9.81,
-      "h": 100000
-    },
-    "unit": "GPa",
-    "method": "Each layer carries the weight of everything above it: a column of area A and height h weighs \u03c1\u00b7A\u00b7h\u00b7g.",
-    "distractors": [
-      "m",
-      "v",
-      "2"
-    ],
-    "vary": {
-      "R": [
-        1980.0,
-        4620.0,
-        1.0
-      ],
-      "g": [
-        5.88,
-        13.74,
-        0.01
-      ]
-    }
+ "title": "Plate Tectonics",
+ "description": "The crust is broken into plates that ride on the hot mantle beneath. Where they part, rock wells up; where they meet, one dives under the other. Unlocks the Core Drill, the first tool that cuts bedrock, and the way into the Planetary Interior.",
+ "icon": "theoreticalsciences:core_drill",
+ "x": 5,
+ "y": 15,
+ "insight": 60,
+ "requires": [
+  "theoreticalsciences:seismology",
+  "theoreticalsciences:geomorphology"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:seismic_recorder_drum",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:sediment_core",
+   "count": 4
   }
+ ],
+ "time": 0,
+ "puzzle": {
+  "goal": "Rock of density ρ lies above you to a depth h, pulled down by gravity g. Write the pressure P it presses on you with.",
+  "name": "Lithostatic pressure",
+  "lhs": "P",
+  "form": "ρ * g * h",
+  "expr": "R * g * h / 1000000000",
+  "ask": "Find P in gigapascals 100 km down, with rock of density R = @{R} kg/m³ and g = @{g} m/s².",
+  "vars": {
+   "P": "pressure (GPa)",
+   "ρ": "density",
+   "g": "gravity (m/s²)",
+   "h": "depth (m)",
+   "R": "rock density (kg/m³)"
+  },
+  "given": {
+   "R": 3300,
+   "g": 9.81,
+   "h": 100000
+  },
+  "unit": "GPa",
+  "method": "Each layer carries the weight of everything above it: a column of area A and height h weighs ρ·A·h·g.",
+  "distractors": [
+   "m",
+   "v",
+   "2"
+  ],
+  "vary": {
+   "R": [
+    1980.0,
+    4620.0,
+    1.0
+   ],
+   "g": [
+    5.88,
+    13.74,
+    0.01
+   ]
+  }
+ }
 }

@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.intro__r37_telescopes",
+  "description": "book.theoreticalsciences.codex.astrophysics.intro__r37_telescopes.desc",
+  "icon": {
+    "item": "theoreticalsciences:telescope_mirror_blank"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 9,
+  "y": 48,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r37_telescopes.p0",
+      "title": "book.theoreticalsciences.codex.astrophysics.intro__r37_telescopes"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r37_telescopes.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/observational_astronomy"
+  }
+}

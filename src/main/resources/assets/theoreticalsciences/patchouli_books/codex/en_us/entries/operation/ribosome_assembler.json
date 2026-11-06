@@ -1,0 +1,24 @@
+{
+  "name": "Ribosome Assembler",
+  "icon": "theoreticalsciences:ribosome_assembler",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 117,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A ribosome reads about 10 codons a second and gets about one in ten thousand wrong. Read faster and it errs more, \u03b5 = 10\u207b\u2074\u00b7e^((v \u2212 10)/8); magnesium away from 10 mM loosens it. A chain of L codons is right only if every codon is: (1 \u2212 \u03b5)^L."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Reading speed, Magnesium.$(br2)$(thing)Disturbance$(): Wobbling tRNA: the error varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Faster reading is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Errors per codon: \u03b5 = 10\u207b\u2074\u00b7e^((v \u2212 10)/8)\u00b7(1 + ((Mg \u2212 10)/8)\u00b2)$(br)Chains right: Y = (1 \u2212 \u03b5)^L"
+    }
+  ]
+}

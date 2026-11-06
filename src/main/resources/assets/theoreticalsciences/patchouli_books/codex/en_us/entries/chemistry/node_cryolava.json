@@ -1,0 +1,19 @@
+{
+  "name": "Cryolava",
+  "icon": "theoreticalsciences:cryolava_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:cryolava_cell",
+      "title": "Cryolava",
+      "text": "Ammonia and water, melted together far below Titan's surface and pushed up through cryovolcanoes. It flows like a cold glacier, and freezes whatever it touches. Found in the lakes of the Sotra cryovolcanic field."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Lake Pump$().$(br2)$(thing)Unlocked by$(): Lakes of Titan.$(br2)$(thing)Used in$(): Ammonia, Water."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/titan_lakes"
+}

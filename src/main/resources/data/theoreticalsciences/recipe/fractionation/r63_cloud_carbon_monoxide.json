@@ -1,0 +1,34 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molecular_cloud",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:carbon_monoxide",
+      "amount": 200
+    }
+  ],
+  "energy": 2048,
+  "duration": 200,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 2.5,
+      "xF": 0.2,
+      "Tb": 81.6,
+      "dH": 6.0
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.99,
+        "max": 1.0
+      }
+    ]
+  }
+}

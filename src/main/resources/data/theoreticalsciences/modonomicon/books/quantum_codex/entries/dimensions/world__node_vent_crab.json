@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_vent_crab",
+  "description": "book.theoreticalsciences.codex.world.node_vent_crab.desc",
+  "icon": {
+    "item": "theoreticalsciences:vent_crab_spawn_egg"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 114,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:vent_crab_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_vent_crab.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r94_titan_ocean",
+      "draw_arrow": false
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Topology Kiln",
+  "icon": "theoreticalsciences:topology_kiln",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 164,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:topology_kiln",
+      "title": "Topology Kiln",
+      "text": "A kiln for surfaces: clay is drawn into handles and cross-caps and fired until its shape holds.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the number of handles g, the number of twists (cross-caps) and the kiln's temperature. The surface has Euler characteristic \u03c7 = 2 \u2212 2g \u2212 c, and it is one-sided if it has a cross-cap; both must be the recipe's. Hotter fires faster; above 1500 K the clay slumps."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Calabi-Yau Manifold, Differential Manifold, Hyperbolic Stone, Klein Bottle, M\u00f6bius Strip."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:topology_kiln",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/euler_characteristic"
+}

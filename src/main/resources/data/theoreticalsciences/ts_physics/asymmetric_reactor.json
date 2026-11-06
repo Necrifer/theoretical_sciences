@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "Tr",
+      "unit": "K",
+      "min": 150,
+      "max": 350,
+      "step": 0.1,
+      "default": 298
+    },
+    {
+      "id": "ph",
+      "unit": "bar",
+      "min": 1,
+      "max": 50,
+      "step": 0.1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "dG": 6000,
+    "Ea": 30000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "sel",
+      "unit": "",
+      "expr": "exp(dG*(1 + 0.02*d)/(8.314*Tr))",
+      "formula": "s = e^(\u0394\u0394G\u2021/RT)"
+    },
+    {
+      "id": "ee",
+      "unit": "",
+      "expr": "(sel - 1)/(sel + 1)",
+      "formula": "ee = (s \u2212 1)/(s + 1)"
+    },
+    {
+      "id": "kr",
+      "unit": "",
+      "expr": "exp(-Ea/8.314*(1/Tr - 1/298))*ph/10",
+      "formula": "k \u221d e^(\u2212Ea/RT)\u00b7p"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "stop",
+      "expr": "45 - ph",
+      "formula": "p < 45 bar"
+    }
+  ],
+  "rate": "clamp(kr, 0.1, 4)",
+  "rate_formula": "rate = k",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

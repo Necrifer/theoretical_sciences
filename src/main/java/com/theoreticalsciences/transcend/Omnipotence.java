@@ -73,11 +73,15 @@ public final class Omnipotence extends SavedData {
 
     private static Omnipotence load(CompoundTag t, HolderLookup.Provider r) {
         Omnipotence o = new Omnipotence();
-        try {
-            o.phase = Phase.valueOf(t.getString("Phase"));
-        } catch (IllegalArgumentException e) {
-            o.phase = Phase.INTACT;
-        }
+        // 1.2.0: the phase's name, and (for safety) its number too. A phase that cannot be read is never taken back to
+        // INTACT when the world had moved on (that would allow a second Shutdown): the furthest phase saved stands.
+        // Keep these names: renaming one would make old worlds fall back to their saved number.
+        String name = t.getString("Phase");
+        Phase read = null;
+        for (Phase ph : Phase.values()) if (ph.name().equals(name)) read = ph;
+        if (read == null && t.contains("PhaseIndex")) read = Phase.values()[Math.max(0, Math.min(Phase.values().length - 1, t.getInt("PhaseIndex")))];
+        if (read == null) read = name.isEmpty() ? Phase.INTACT : Phase.REBORN;      // unknown but present: past the Shutdown
+        o.phase = read;
         o.started = t.getLong("Started");
         if (t.hasUUID("Initiator")) o.initiator = t.getUUID("Initiator");
         o.giftPending = t.getBoolean("GiftPending");
@@ -87,6 +91,7 @@ public final class Omnipotence extends SavedData {
     @Override
     public CompoundTag save(CompoundTag t, HolderLookup.Provider r) {
         t.putString("Phase", phase.name());
+        t.putInt("PhaseIndex", phase.ordinal());
         t.putLong("Started", started);
         if (initiator != null) t.putUUID("Initiator", initiator);
         t.putBoolean("GiftPending", giftPending);

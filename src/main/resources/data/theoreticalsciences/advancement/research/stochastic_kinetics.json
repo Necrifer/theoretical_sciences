@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:microstate_tally"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.stochastic_kinetics"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.stochastic_kinetics.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/statistics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

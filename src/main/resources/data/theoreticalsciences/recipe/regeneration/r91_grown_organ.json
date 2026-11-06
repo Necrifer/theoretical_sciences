@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:regeneration",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stem_cell_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:perfused_tissue",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:grown_organ",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:regeneration",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "Lorg": 5.0
+    },
+    "windows": [
+      {
+        "q": "read",
+        "min": 1.0,
+        "max": 1.0
+      }
+    ]
+  }
+}

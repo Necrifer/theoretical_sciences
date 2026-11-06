@@ -1,0 +1,48 @@
+{
+  "title": "Computability",
+  "description": "Turing imagined the simplest machine that can compute anything, and proved it cannot always tell whether it will ever stop.",
+  "icon": "theoreticalsciences:random_number_chip",
+  "x": 8,
+  "y": 9,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:algorithms",
+    "theoreticalsciences:formal_logic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:proof_certificate",
+      "count": 2
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "Count the Turing machines with n states that read and write two symbols: each state and symbol needs a symbol to write, a way to move and a next state (or halt). Write how many machines N there are.",
+    "name": "Counting machines",
+    "lhs": "N",
+    "form": "( 4 * n + 4 ) ^ ( 2 * n )",
+    "expr": "( 4 * n + 4 ) ^ ( 2 * n )",
+    "ask": "Find N for n = @{n}.",
+    "vars": {
+      "N": "machines",
+      "n": "states"
+    },
+    "given": {
+      "n": 2
+    },
+    "unit": "",
+    "method": "Each of the 2n cases picks one of 2 symbols, 2 moves and n + 1 next states: 4(n + 1) choices, 2n times.",
+    "distractors": [
+      "-",
+      "+",
+      "k"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.anomaly.intro__anomaly_escape",
+  "description": "book.theoreticalsciences.codex.anomaly.intro__anomaly_escape.desc",
+  "icon": {
+    "item": "theoreticalsciences:metastatic_spore"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 65,
+  "y": 68,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_escape.p0",
+      "title": "book.theoreticalsciences.codex.anomaly.intro__anomaly_escape"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.anomaly.intro__anomaly_escape.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__r94_anomaly_lived"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/anomaly__intro__anomaly_origin_oncogenesis"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/immune_evasion"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Hydrogen",
+  "icon": "theoreticalsciences:hydrogen_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:hydrogen_cell",
+      "title": "Hydrogen",
+      "text": "The lightest gas and the most common thing in the Universe. Here it comes from coal and steam: C + H\u2082O \u2192 CO + H\u2082."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Cloud Siphon$().$(br2)$(thing)Unlocked by$(): Reaction Kinetics.$(br2)$(thing)Used in$(): Ammonia, Enantiopure Reagent, Ethylene, Hydrogen, Methanol, Synthetic Crude, Thermochemical Data Card, Water."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_kinetics"
+}

@@ -1,0 +1,67 @@
+{
+  "title": "Organic Synthesis",
+  "description": "A molecule built step by step, working back from the target to what is on the shelf: every step costs yield. Unlocks the Synthesis Bench.",
+  "icon": "theoreticalsciences:synthesis_bench",
+  "x": 24,
+  "y": -4,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:petrochemistry",
+    "theoreticalsciences:acids_and_bases"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:methanol_cell",
+      "count": 1
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A route of n steps keeps a fraction y of the material at each. Starting from a moles, write the moles P of product.",
+    "name": "Linear route",
+    "lhs": "P",
+    "form": "a * y ^ n",
+    "expr": "a * y ^ n",
+    "ask": "Find P for a = @{a} mol, y = @{y} and n = @{n}.",
+    "vars": {
+      "P": "product (mol)",
+      "a": "starting material (mol)",
+      "y": "yield per step",
+      "n": "steps"
+    },
+    "given": {
+      "a": 10,
+      "y": 0.92,
+      "n": 5
+    },
+    "unit": "mol",
+    "method": "Each step keeps y of what reached it: multiply n times.",
+    "distractors": [
+      "2",
+      "T",
+      "k",
+      "\u03c0"
+    ],
+    "vary": {
+      "a": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "y": [
+        0.552,
+        0.999,
+        0.001
+      ],
+      "n": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

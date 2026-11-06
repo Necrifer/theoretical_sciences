@@ -1,0 +1,48 @@
+{
+  "title": "Primes",
+  "description": "Numbers that nothing divides but one and themselves. There are infinitely many, and they thin out as 1 / ln N. Unlocks the Sieve of Eratosthenes.",
+  "icon": "theoreticalsciences:prime_shard",
+  "x": 1,
+  "y": 9,
+  "insight": 30,
+  "requires": [
+    "theoreticalsciences:number_systems",
+    "theoreticalsciences:combinatorics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 8
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Write roughly how many primes there are up to x.",
+    "name": "Gauss estimate",
+    "lhs": "\u03c0",
+    "form": "x / ln ( x )",
+    "expr": "x / ln ( x )",
+    "ask": "Find \u03c0 for x = @{x} (there are really 168).",
+    "vars": {
+      "\u03c0": "primes up to x",
+      "x": "the limit"
+    },
+    "given": {
+      "x": 1000
+    },
+    "unit": "",
+    "method": "Near x, about one number in ln x is prime; up to x that makes about x / ln x of them.",
+    "distractors": [
+      "exp",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "x": [
+        600.0,
+        1400.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:adaptive_immunity",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:paradox_residue",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:sterile_pack",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ward_rewind",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:immunisation",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "Kd": 30.0
+    },
+    "windows": [
+      {
+        "q": "resp",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

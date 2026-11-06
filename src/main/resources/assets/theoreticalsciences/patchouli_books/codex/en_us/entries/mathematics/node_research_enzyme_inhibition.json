@@ -1,0 +1,19 @@
+{
+  "name": "Enzyme Inhibition",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "advancement": "theoreticalsciences:research/enzyme_inhibition",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:assayed_enzyme",
+      "title": "Enzyme Inhibition",
+      "text": "$(thing)Enzyme Inhibition$()$(br2)A molecule that sits in the enzyme's pocket without reacting slows it down; more substrate can push it out. How most drugs work. Unlocks a cheaper Stem Cell Culture."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Enzyme Kinetics, The Steady-State Approximation.$(br2)$(thing)Samples$(): 2 Assayed Enzyme.$(br2)$(thing)Derivation$(): An inhibitor at level I, with constant Q, sits in the enzyme's pocket and makes it seem to need more substrate. Write the apparent constant A, from the enzyme's own K."
+    }
+  ]
+}

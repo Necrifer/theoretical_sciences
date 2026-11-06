@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "n",
+      "unit": "bits",
+      "min": 3,
+      "max": 255,
+      "step": 1,
+      "default": 7
+    },
+    {
+      "id": "r",
+      "unit": "",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "recipe_vars": {
+    "eps": 0.001,
+    "tol": 0.001
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "fit",
+      "unit": "bits",
+      "expr": "2^r - 1 - n",
+      "formula": "2^r \u2212 1 \u2212 n"
+    },
+    {
+      "id": "fail",
+      "unit": "",
+      "expr": "(n*eps*(1 + 0.02*d))^2/2",
+      "formula": "P \u2248 (n\u03b5)\u00b2/2"
+    },
+    {
+      "id": "cr",
+      "unit": "",
+      "expr": "(n - r)/n",
+      "formula": "k/n = (n \u2212 r)/n"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "cover",
+      "kind": "stop",
+      "expr": "2^r - 1 - n",
+      "formula": "n \u2264 2^r \u2212 1"
+    }
+  ],
+  "rate": "clamp(cr*3, 0.1, 4)",
+  "rate_formula": "rate = 3\u00b7(n \u2212 r)/n",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

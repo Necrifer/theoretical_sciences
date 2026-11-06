@@ -1,0 +1,54 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.antibody_bench",
+  "description": "book.theoreticalsciences.codex.biology.antibody_bench.desc",
+  "icon": {
+    "item": "theoreticalsciences:antibody_bench"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 134,
+  "y": 59,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antibody_bench"
+      },
+      "text": "book.theoreticalsciences.codex.biology.antibody_bench.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.antibody_bench.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.antibody_bench.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.antibody_bench.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:antibody_bench"
+      },
+      "text": "book.theoreticalsciences.codex.biology.antibody_bench.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.antibody_bench.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/biology__gene_sequencer"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/adaptive_immunity"
+  }
+}

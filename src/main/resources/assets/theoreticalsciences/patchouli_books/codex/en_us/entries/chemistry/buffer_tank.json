@@ -1,0 +1,32 @@
+{
+  "name": "Buffer Tank",
+  "icon": "theoreticalsciences:buffer_tank",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 133,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:buffer_tank",
+      "title": "Buffer Tank",
+      "text": "A weak acid and its salt, mixed to a ratio: the pH it holds is set by that ratio, and it will not budge.$(br2)$(thing)Tier 1$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the salt-to-acid ratio. pH = pKa + log(ratio): each buffer must sit within 0.05 of its pH. Too far from 1 and there is no buffering left."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 3 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Ammonia Buffer, Phosphate Buffer."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:buffer_tank",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/buffer_chemistry"
+}

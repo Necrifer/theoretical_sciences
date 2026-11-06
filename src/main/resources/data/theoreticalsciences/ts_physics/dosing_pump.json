@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "Dd",
+      "unit": "mg",
+      "min": 1,
+      "max": 500,
+      "step": 0.1,
+      "default": 100
+    },
+    {
+      "id": "tau",
+      "unit": "h",
+      "min": 1,
+      "max": 24,
+      "step": 0.1,
+      "default": 8
+    }
+  ],
+  "recipe_vars": {
+    "Vd": 5,
+    "ke": 0.15
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "peak",
+      "unit": "mg/L",
+      "expr": "Dd/Vd/(1 - exp(-ke*tau))*(1 - 0.02*d)",
+      "formula": "C_max = (D/V) / (1 - e^(-k.tau))"
+    },
+    {
+      "id": "trough",
+      "unit": "mg/L",
+      "expr": "Dd/Vd*exp(-ke*tau)/(1 - exp(-ke*tau))*(1 - 0.02*d)",
+      "formula": "C_min = C_max.e^(-k.tau)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "subtherapeutic",
+      "kind": "stop",
+      "expr": "trough - 2",
+      "formula": "trough > 2 mg/L"
+    },
+    {
+      "id": "toxic",
+      "kind": "stop",
+      "expr": "40 - peak",
+      "formula": "peak < 40 mg/L"
+    }
+  ],
+  "rate": "clamp(24/tau, 0.1, 4)",
+  "rate_formula": "rate = 24 / interval",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

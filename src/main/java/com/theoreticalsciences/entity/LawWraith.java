@@ -66,7 +66,10 @@ public class LawWraith extends Monster {
         goalSelector.addGoal(6, new WaterAvoidingRandomFlyingGoal(this, 1.0));
         goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 12F));
         targetSelector.addGoal(1, new HurtByTargetGoal(this));
-        targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        // 1.2.0: Law Wraiths are reality's own antibodies; a player who has studied Tolerance is recognised as self
+        targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, false,
+                p -> !(p instanceof net.minecraft.server.level.ServerPlayer sp && com.theoreticalsciences.research.ResearchService.has(sp,
+                        com.theoreticalsciences.TheoreticalSciences.id("tolerance")))));
     }
 
     @Override

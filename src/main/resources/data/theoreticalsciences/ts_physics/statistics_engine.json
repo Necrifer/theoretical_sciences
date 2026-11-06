@@ -1,0 +1,57 @@
+{
+  "params": [
+    {
+      "id": "n",
+      "unit": "",
+      "min": 10,
+      "max": 100000,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "id": "z",
+      "unit": "\u03c3",
+      "min": 1,
+      "max": 4,
+      "step": 0.01,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {
+    "sg": 1,
+    "tol": 0.02,
+    "zmin": 2.58
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "se",
+      "unit": "",
+      "expr": "sg/n^0.5*(1 + 0.02*d)",
+      "formula": "SE = \u03c3 / \u221an"
+    },
+    {
+      "id": "mg",
+      "unit": "",
+      "expr": "z*se",
+      "formula": "z\u00b7\u03c3/\u221an"
+    },
+    {
+      "id": "conf",
+      "unit": "\u03c3",
+      "expr": "z",
+      "formula": "z"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(30/n^0.5, 0.1, 4)",
+  "rate_formula": "rate = 30 / \u221an",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

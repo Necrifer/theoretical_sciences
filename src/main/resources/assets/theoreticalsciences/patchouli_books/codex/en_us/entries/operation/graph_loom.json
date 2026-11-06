@@ -1,0 +1,24 @@
+{
+  "name": "Graph Loom",
+  "icon": "theoreticalsciences:graph_loom",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 66,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A network of V junctions needs at least V \u2212 1 links to join them all (a tree). Each link beyond that closes a loop: a spare route. With L \u2212 V + 1 spares there are L \u2212 V + 2 independent routes, and the network is cut only if every one of them fails. Each link fails with a chance q, so it fails about q^(L \u2212 V + 2) of the time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Junctions, Links.$(br2)$(thing)Disturbance$(): Fraying thread: the failure rate varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too few links to join every junction.$(br2)$(thing)Rate$(): Fewer links per junction are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Spare routes: L \u2212 V + 1$(br)Network failure: q^(L \u2212 V + 2)$(br)Junctions served: V"
+    }
+  ]
+}

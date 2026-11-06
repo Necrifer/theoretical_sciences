@@ -45,6 +45,16 @@ public final class ItemTips {
         ItemStack s = e.getItemStack();
         if (s.isEmpty()) return;
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(s.getItem());
+        // 1.2.0: a tiered part (a coil, an emitter, the mod's or a datapack's) says its tier, under its name
+        if (s.getItem() instanceof BlockItem tb) {
+            int[] t = tierOf(tb.getBlock());
+            if (t != null && !e.getToolTip().isEmpty()) {
+                String fam = t[2] == 0 ? "coil" : t[2] == 1 ? "emitter" : "other";
+                e.getToolTip().add(1, Component.translatable("tooltip.theoreticalsciences.part_tier." + fam, t[0], t[1]).withStyle(ChatFormatting.GOLD));
+                if (Screen.hasShiftDown())
+                    e.getToolTip().add(2, Component.translatable("tooltip.theoreticalsciences.part_tier.lowest").withStyle(ChatFormatting.DARK_GRAY));
+            }
+        }
         if (!TheoreticalSciences.MODID.equals(id.getNamespace())) return;
         List<Component> tip = e.getToolTip();
         // advanced tooltips (F3+H) end with the item id: our lines go above it
@@ -56,7 +66,8 @@ public final class ItemTips {
             }
         List<Component> add = new ArrayList<>();
         String lore = s.getDescriptionId() + ".lore";
-        if (I18n.exists(lore) && !mentions(tip, lore))
+        // (1.2.0: a suit's pieces carry the suit's own description at the top - one description, not two)
+        if (I18n.exists(lore) && !mentions(tip, lore) && !(s.getItem() instanceof com.theoreticalsciences.interior.InteriorGear.SuitItem))
             add.add(Component.translatable(lore).withStyle(ChatFormatting.DARK_AQUA, ChatFormatting.ITALIC));
 
         List<Component> details = details(s.getItem(), id);
@@ -66,6 +77,35 @@ public final class ItemTips {
                     Component.literal("Shift").withStyle(ChatFormatting.YELLOW)).withStyle(ChatFormatting.DARK_GRAY));
         }
         tip.addAll(at, add);
+    }
+
+    // ------------------------------------------------------------------ 1.2.0: tiers of tiered parts
+    private static Map<Block, int[]> tiers;
+    private static long tiersAt;
+
+    /** {tier, highest tier of its family, family (0 coil, 1 emitter, 2 other)} for a tiered part, or null. */
+    @javax.annotation.Nullable
+    static int[] tierOf(Block b) {
+        long now = System.currentTimeMillis();
+        if (tiers == null || now - tiersAt > 10_000) {
+            Map<Block, int[]> m = new HashMap<>();
+            Map<String, Integer> top = new HashMap<>();
+            Block port = com.theoreticalsciences.machine.ControllerBlockEntity.portBlock();
+            Map<Block, Object[]> found = new HashMap<>();
+            for (MultiblockDefinition d : Multiblocks.all().values())
+                for (Map.Entry<Character, MultiblockDefinition.TierSpec> t : d.tiers.entrySet())
+                    for (MultiblockDefinition.TierOption o : d.tierOptions(t.getKey(), port)) {
+                        found.merge(o.block(), new Object[]{o.tier(), t.getValue().family()}, (a, c) -> (int) a[0] <= (int) c[0] ? a : c);
+                        top.merge(t.getValue().family(), o.tier(), Math::max);
+                    }
+            for (Map.Entry<Block, Object[]> f : found.entrySet()) {
+                String fam = (String) f.getValue()[1];
+                m.put(f.getKey(), new int[]{(int) f.getValue()[0], top.get(fam), fam.equals("coil") ? 0 : fam.equals("emitter") ? 1 : 2});
+            }
+            tiers = m;
+            tiersAt = now;
+        }
+        return tiers.get(b);
     }
 
     private static List<Component> details(Item item, ResourceLocation id) {

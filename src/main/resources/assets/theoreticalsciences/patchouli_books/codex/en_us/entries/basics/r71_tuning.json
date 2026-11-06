@@ -1,0 +1,33 @@
+{
+  "name": "Calibration",
+  "icon": "theoreticalsciences:tuning_fork",
+  "category": "theoreticalsciences:basics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:tuning_fork,theoreticalsciences:resonant_tuning_fork,theoreticalsciences:calibration_card",
+      "text": "A machine with a console can be tuned without its sliders, and set once for many copies."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Strike a $(item)Tuning Fork$() against the machine (on a multiblock, against its controller). It opens a short calibration game that fits the machine's science: most machines match a waveform; telescopes, spectrometers and the optical machines line up a spectrum; reactors, plasma machines, colliders and pumps route a flow through pipe tiles; the chemistry machines balance an equation, write one from the species on hand, give oxidation states or write an equilibrium constant; the logic machines chain a proof. Solve it and the machine is set at a working point for the recipe it is running: it runs, but not at its best. Later machines play harder games. The fork only moves the settings: it gives no coolant. If no setting works with the coolant the machine holds, it says which coolant would."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The console is for the fine work. Its $(thing)precision$() shows how close the settings are to the recipe's ideal point, and it falls off fast. At full precision every cycle makes half as much again of each product. Under $(thing)For 100% precision$(), the console's $(thing)Readout$() lists what the recipe's windows and the speed read at its best point: work out which settings bring the readout there (past a one-sided target is fine), and each line turns green. On older multiblocks, precision is how close the tuning dial sits on its drifting target."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)Calibration Card$() copies settings. Sneak-use it on a tuned machine, then use it on another of the same kind. It is never used up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Scroll over a value to change it (with shift, five at a time), or click the arrows at its ends. A wrong answer only says \"not yet\"; nothing is lost. Older multiblocks without a console have their tuning dial set the same way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Resonant Tuning Fork$() never wears out, and says how far a wrong answer is off."
+    }
+  ]
+}

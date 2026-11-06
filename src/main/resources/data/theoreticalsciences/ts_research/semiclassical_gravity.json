@@ -1,52 +1,52 @@
 {
-  "title": "Semiclassical Gravity",
-  "description": "Quantum fields on curved spacetime: what can be said with gravity still classical and everything else quantum. Its two tested predictions - gravity on a quantum wave, and a horizon's glow - point past themselves, to spacetime that is quantum too. Unlocks causal dynamical triangulations in the Monte Carlo Engine.",
-  "icon": "theoreticalsciences:cow_record",
-  "x": 11,
-  "y": 9,
-  "insight": 260,
-  "requires": [
-    "theoreticalsciences:neutron_interferometry",
-    "theoreticalsciences:analog_gravity",
-    "theoreticalsciences:general_relativity",
-    "theoreticalsciences:monte_carlo_methods"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:cow_record",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:hawking_record",
-      "count": 4
-    }
-  ],
-  "time": 1080,
-  "puzzle": {
-    "goal": "Quantum effects of gravity become as strong as gravity itself at a length built only from the quantum of action \u0127, gravity's constant G and the speed of light c. Write that length l.",
-    "name": "Planck length",
-    "lhs": "l",
-    "form": "sqrt ( \u0127 * G / c ^ 3 )",
-    "expr": "( h * G / c ^ 3 ) ^ 0.5 * 1000000000000000000000000000000000000",
-    "ask": "Find l in units of 10\u207b\u00b3\u2076 m (h = 1.0546e-34 for \u0127, G = 6.674e-11, c = 2.998e8).",
-    "vars": {
-      "l": "Planck length (\u00d710\u207b\u00b3\u2076 m)",
-      "\u0127": "reduced Planck constant",
-      "G": "gravitational constant",
-      "c": "speed of light",
-      "h": "\u0127 (J\u00b7s)"
-    },
-    "given": {
-      "h": 1.0546e-34,
-      "G": 6.674e-11,
-      "c": 299800000.0
-    },
-    "unit": "\u00d710\u207b\u00b3\u2076 m",
-    "method": "Only one combination of \u0127, G and c has the dimensions of a length. At that size a particle's quantum wavelength equals the radius of the black hole its energy would make.",
-    "distractors": [
-      "\u03c0",
-      "2",
-      "k"
-    ]
+ "title": "Semiclassical Gravity",
+ "description": "Quantum fields on curved spacetime: what can be said with gravity still classical and everything else quantum. Its two tested predictions, gravity on a quantum wave, and a horizon's glow, point past themselves, to spacetime that is quantum too. Unlocks causal dynamical triangulations in the Monte Carlo Engine.",
+ "icon": "theoreticalsciences:cow_record",
+ "x": 11,
+ "y": 9,
+ "insight": 260,
+ "requires": [
+  "theoreticalsciences:neutron_interferometry",
+  "theoreticalsciences:analog_gravity",
+  "theoreticalsciences:general_relativity",
+  "theoreticalsciences:monte_carlo_methods"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:cow_record",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:hawking_record",
+   "count": 4
   }
+ ],
+ "time": 1080,
+ "puzzle": {
+  "goal": "Quantum effects of gravity become as strong as gravity itself at a length built only from the quantum of action ħ, gravity's constant G and the speed of light c. Write that length l.",
+  "name": "Planck length",
+  "lhs": "l",
+  "form": "sqrt ( ħ * G / c ^ 3 )",
+  "expr": "( h * G / c ^ 3 ) ^ 0.5 * 1000000000000000000000000000000000000",
+  "ask": "Find l in units of 10⁻³⁶ m (h = 1.0546e-34 for ħ, G = 6.674e-11, c = 2.998e8).",
+  "vars": {
+   "l": "Planck length (×10⁻³⁶ m)",
+   "ħ": "reduced Planck constant",
+   "G": "gravitational constant",
+   "c": "speed of light",
+   "h": "ħ (J·s)"
+  },
+  "given": {
+   "h": 1.0546e-34,
+   "G": 6.674e-11,
+   "c": 299800000.0
+  },
+  "unit": "×10⁻³⁶ m",
+  "method": "Only one combination of ħ, G and c has the dimensions of a length. At that size a particle's quantum wavelength equals the radius of the black hole its energy would make.",
+  "distractors": [
+   "π",
+   "2",
+   "k"
+  ]
+ }
 }

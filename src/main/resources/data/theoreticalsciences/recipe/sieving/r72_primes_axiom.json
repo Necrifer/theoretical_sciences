@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:sieving",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:axiom_stone",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:prime_shard",
+      "count": 3
+    }
+  ],
+  "energy": 384,
+  "duration": 240,
+  "research": "theoreticalsciences:primes",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "need": 3000.0
+    },
+    "windows": [
+      {
+        "q": "found",
+        "min": 3000.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:polymerisation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:pah_soot",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:aramid_fibre",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:polymer_chemistry",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Xn",
+        "min": 200.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

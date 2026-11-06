@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.r77_one_realm",
+  "description": "book.theoreticalsciences.codex.mathematics.r77_one_realm.desc",
+  "icon": {
+    "item": "theoreticalsciences:cantor_key"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 96,
+  "y": 8,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:cantor_key"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.r77_one_realm.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r77_one_realm.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r77_one_realm.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.r77_one_realm.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__logic_sets"
+    },
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__proof_assistant"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/transfinite_hierarchy"
+  }
+}

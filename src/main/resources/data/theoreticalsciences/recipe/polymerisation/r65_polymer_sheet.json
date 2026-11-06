@@ -1,0 +1,28 @@
+{
+  "type": "theoreticalsciences:polymerisation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ethylene",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:polymer_chemistry",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Xn",
+        "min": 1000.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

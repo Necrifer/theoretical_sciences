@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:ion_channel_membrane"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.membrane_potential"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.membrane_potential.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/galvanic_cells",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

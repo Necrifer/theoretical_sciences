@@ -1,0 +1,19 @@
+{
+  "name": "Grey Goo Ward",
+  "icon": "theoreticalsciences:ward_grey_goo",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ward_grey_goo",
+      "title": "Grey Goo Ward",
+      "text": "A trace of what the Nanite Swarm carries, prepared so the body is ready for it. Use it on yourself: held safe from Grey Goo for three in-game days. Renew it while more than half of that is left and the imprint overloads instead. Made on the Antibody Bench."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Antibody Bench$().$(br2)$(thing)Found in$(): Germinal Centre chests.$(br2)$(thing)Unlocked by$(): Immunisation.$(br2)$(thing)Used in$(): Lasting Grey Goo Ward."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/adaptive_immunity"
+}

@@ -159,7 +159,7 @@ public class QHEmiPlugin implements EmiPlugin {
         for (int[] c : Singularities.shownClusters(true)) reg.addEmiStack(EmiStack.of(Singularities.clusterStack(c[0], c[1], true).copy()));
         for (var h : reg.getRecipeManager().getAllRecipesFor(ExtremeRegistry.EXTREME_TYPE.get()))
             if (h.value() instanceof ExtremeBundleRecipe b) for (ItemStack s : b.stacks()) reg.addEmiStack(EmiStack.of(s));
-        for (var st : Essences.steps()) reg.addEmiStack(QHEmi.fluid(st.output().copyWithAmount(1000)));
+        for (var st : Essences.steps()) if (Essences.isEssence(st.output())) reg.addEmiStack(QHEmi.fluid(st.output().copyWithAmount(1000)));
     }
 
     // ------------------------------------------------------------------ workstations

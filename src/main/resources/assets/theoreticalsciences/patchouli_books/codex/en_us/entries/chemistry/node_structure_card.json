@@ -1,0 +1,19 @@
+{
+  "name": "Structure Card",
+  "icon": "theoreticalsciences:structure_card",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:structure_card",
+      "title": "Structure Card",
+      "text": "A molecule's spectrum, read and written down: which bonds it has and where. A synthesis that knows its target takes fewer steps."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)NMR Spectrometer$().$(br2)$(thing)Found in$(): Cryolab chests.$(br2)$(thing)Unlocked by$(): Infrared Spectroscopy.$(br2)$(thing)Used in$(): Tincture of Form."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/infrared_spectroscopy"
+}

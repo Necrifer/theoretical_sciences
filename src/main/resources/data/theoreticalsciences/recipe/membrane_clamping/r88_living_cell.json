@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:membrane_clamping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lipid_bilayer",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:living_cell",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:respiration",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "zi": 1.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": -80.0,
+        "max": -60.0
+      }
+    ]
+  }
+}

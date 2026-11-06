@@ -1,0 +1,34 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r63_mass_spec",
+  "description": "book.theoreticalsciences.codex.chemistry.r63_mass_spec.desc",
+  "icon": {
+    "item": "theoreticalsciences:mass_spectrometer"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 74,
+  "y": 27,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:mass_spectrometer"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r63_mass_spec.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r63_chromatography"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__chromatography_column"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/mass_spectrometry"
+  }
+}

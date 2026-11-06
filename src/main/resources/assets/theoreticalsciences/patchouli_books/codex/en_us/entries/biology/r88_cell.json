@@ -1,0 +1,34 @@
+{
+  "name": "The Cell",
+  "icon": "theoreticalsciences:patch_clamp_rig",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:autoclave,theoreticalsciences:patch_clamp_rig,theoreticalsciences:fermenter,theoreticalsciences:photobioreactor,theoreticalsciences:ribosome_assembler,theoreticalsciences:folding_chamber",
+      "text": "Biology from the bottom up: the cell, its skin, its chemistry and its protein factory. Everything alive is made of these."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Contamination$(): Biology machines do not explode, they catch things. Each run handles the culture and costs 4% sterility; below half, a run may bring something in, and the machine stops until it is cleaned. A $(item)Sterile Pack$() (from the $(item)Autoclave$()) always cleans it. An $(item)Antibiotic$() is cheaper, but each dose on the same machine selects for what survives it, so the n-th works only one time in n."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Living cultures$(): yeast, algae and cells are alive. Carried loose or dropped they die off (half in a few days of carrying); machines and chests keep them. A dead culture is no use to any recipe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Membranes$(): the $(item)Patch-Clamp Rig$() sets the ions on each side of a membrane; the voltage, Nernst's E = (RT/zF) ln(c_out/c_in), must land in the recipe's window. Lipid Bilayers sit at potassium's \u221290 mV, Ion Channel Membranes at sodium's +60, and a $(item)Living Cell$() ($(thing)Respiration$()) at a resting \u221270."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Fermentation$(): the $(item)Fermenter$() grows yeast with air and ferments without it; too much sugar holds it back. Yeast makes Nutrient Broth cheaply, and rotten flesh rots to biogas (methane). $(thing)Photosynthesis$(): the $(item)Photobioreactor$() grows algae that make oxygen and a far cheaper Quantum Chlorophyll; too bright and they bleach."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Transcription$() and $(thing)Translation$(): the $(item)Ribosome Assembler$() reads messages. Faster is sloppier, and a chain is right only if every codon is. Messenger RNA makes Engineered Enzymes cheaply, and with a Living Cell, a Synthetic Cell. $(thing)Protein Folding$(): the $(item)Folding Chamber$() holds a chain below its melting point until 95% of it folds."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/membranes"
+}

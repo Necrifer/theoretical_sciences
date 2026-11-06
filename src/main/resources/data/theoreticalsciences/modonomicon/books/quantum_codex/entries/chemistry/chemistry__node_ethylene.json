@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_ethylene",
+  "description": "book.theoreticalsciences.codex.chemistry.node_ethylene.desc",
+  "icon": {
+    "item": "theoreticalsciences:ethylene_cell"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 138,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ethylene_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_ethylene.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_ethylene.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__cracking_tower",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/petrochemistry"
+  }
+}

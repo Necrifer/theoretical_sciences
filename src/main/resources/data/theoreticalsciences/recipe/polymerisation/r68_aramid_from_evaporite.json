@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:polymerisation",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:kekule_ring"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:organic_evaporite",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:aramid_fibre",
+      "count": 3
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:photochemistry",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Xn",
+        "min": 200.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

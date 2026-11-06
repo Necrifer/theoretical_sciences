@@ -1,0 +1,24 @@
+{
+  "name": "Cipher Loom",
+  "icon": "theoreticalsciences:cipher_loom",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 32,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A Hamming code with r parity bits checks a block of up to 2^r \u2212 1 bits and corrects any one that flips. Two flips in one block get through: with a chance \u03b5 per bit, about (n\u03b5)\u00b2/2 of the blocks. Of every n bits, n \u2212 r carry data."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Block length, Parity bits.$(br2)$(thing)Disturbance$(): Static on the line: the error rate varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The code is too short for the block.$(br2)$(thing)Rate$(): More data per bit is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Room in the code: 2^r \u2212 1 \u2212 n$(br)Block failure: P \u2248 (n\u03b5)\u00b2/2$(br)Code rate: k/n = (n \u2212 r)/n"
+    }
+  ]
+}

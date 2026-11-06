@@ -1,0 +1,62 @@
+{
+  "title": "Inner Space",
+  "description": "A body, seen from the inside at the scale of its cells. Unlocks the Miniaturiser that takes you there, and the materials of its five regions: plasma, matrix fibre, memory cells, nucleotides and tumour specimens. In its Tumour, a Metastatic Spore calls the Tumour Hydra.",
+  "icon": "theoreticalsciences:miniaturiser",
+  "x": 8,
+  "y": 20,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:circulation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:perfused_tissue",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 2
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "A body of size l moves at speed u through a fluid of density p and viscosity m. Write the ratio R of its inertia to the fluid's stickiness, which says whether inertia or stickiness wins.",
+    "name": "Reynolds number",
+    "lhs": "R",
+    "form": "p * u * l / m",
+    "expr": "p * u * l / m",
+    "ask": "Find R for a swimming bacterium: p = @{p} kg/m\u00b3, u = 0.00003 m/s, l = 0.000002 m, m = @{m} Pa\u00b7s.",
+    "vars": {
+      "R": "Reynolds number",
+      "p": "density (kg/m\u00b3)",
+      "u": "speed (m/s)",
+      "l": "size (m)",
+      "m": "viscosity (Pa\u00b7s)"
+    },
+    "given": {
+      "p": 1000,
+      "u": 3e-05,
+      "l": 2e-06,
+      "m": 0.001
+    },
+    "unit": "",
+    "method": "Inertia goes as p\u00b7u\u00b2, stickiness as m\u00b7u/l; their ratio is p\u00b7u\u00b7l/m. Small enough, and nothing coasts: stop pushing and you stop dead (Purcell's \"Life at Low Reynolds Number\").",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "g"
+    ],
+    "vary": {
+      "p": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "m": [
+        0.00059,
+        0.0014,
+        1e-05
+      ]
+    }
+  }
+}

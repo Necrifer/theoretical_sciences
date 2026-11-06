@@ -1,0 +1,52 @@
+{
+  "title": "Enzyme Inhibition",
+  "description": "A molecule that sits in the enzyme's pocket without reacting slows it down; more substrate can push it out. How most drugs work. Unlocks a cheaper Stem Cell Culture.",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "x": 21,
+  "y": 3,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:enzyme_kinetics",
+    "theoreticalsciences:steady_state"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 2
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "An inhibitor at level I, with constant Q, sits in the enzyme's pocket and makes it seem to need more substrate. Write the apparent constant A, from the enzyme's own K.",
+    "name": "Raised constant",
+    "lhs": "A",
+    "form": "K * ( 1 + I / Q )",
+    "expr": "K * ( 1 + I / Q )",
+    "ask": "Find A for K = @{K}, I = 3 and J = 1.",
+    "vars": {
+      "A": "apparent constant",
+      "K": "Michaelis constant",
+      "I": "inhibitor",
+      "Q": "inhibition constant"
+    },
+    "given": {
+      "K": 2,
+      "I": 3,
+      "Q": 1
+    },
+    "unit": "",
+    "method": "The inhibitor ties up the free enzyme in proportion to I/J, so substrate must be 1 + I/J times higher for the same speed.",
+    "distractors": [
+      "-",
+      "S",
+      "V"
+    ],
+    "vary": {
+      "K": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

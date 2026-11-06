@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:gene_circuits",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:gene_circuit",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:living_catalyst",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:gene_circuits",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "b1": 3.0
+    },
+    "windows": [
+      {
+        "q": "bist",
+        "min": 0.9,
+        "max": 2.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "title": "The Steady-State Approximation",
+  "description": "An enzyme's middle step is made as fast as it is used up: set its rate of change to zero, and the algebra falls out.",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "x": 22,
+  "y": 5,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:enzyme_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:engineered_enzyme",
+      "count": 1
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "An enzyme catches its substrate at a rate a, lets it go at b and turns it over at c. Write the substrate level K at which it runs at half speed.",
+    "name": "Michaelis constant",
+    "lhs": "K",
+    "form": "( b + c ) / a",
+    "expr": "( b + c ) / a",
+    "ask": "Find K for a = @{a}, b = 3 and c = 1.",
+    "vars": {
+      "K": "half-speed level",
+      "a": "catching",
+      "b": "letting go",
+      "c": "turnover"
+    },
+    "given": {
+      "a": 2,
+      "b": 3,
+      "c": 1
+    },
+    "unit": "",
+    "method": "The bound enzyme is made at a\u00b7E\u00b7S and lost at (b + c)\u00b7ES; holding it steady gives K = (b + c)/a.",
+    "distractors": [
+      "exp",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "a": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

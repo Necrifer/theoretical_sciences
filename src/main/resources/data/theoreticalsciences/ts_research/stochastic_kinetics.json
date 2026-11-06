@@ -1,0 +1,56 @@
+{
+  "title": "Stochastic Kinetics",
+  "description": "In a cell there may be ten molecules of something: reactions happen one at a time, at random moments. Gillespie simulated them exactly.",
+  "icon": "theoreticalsciences:microstate_tally",
+  "x": 6,
+  "y": 9,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:statistics",
+    "theoreticalsciences:monte_carlo_methods",
+    "theoreticalsciences:markov_chains"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:microstate_tally",
+      "count": 8
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "Reactions fire at a total rate a. With a random number u between 0 and 1, write how long W to wait until the next one.",
+    "name": "Gillespie wait",
+    "lhs": "W",
+    "form": "- ln ( u ) / a",
+    "expr": "- ln ( u ) / a",
+    "ask": "Find W for u = @{u} and a = @{a}.",
+    "vars": {
+      "W": "waiting time",
+      "u": "random number",
+      "a": "total rate"
+    },
+    "given": {
+      "u": 0.5,
+      "a": 2
+    },
+    "unit": "s",
+    "method": "Waiting times at a steady rate are exponential: P(wait > t) = e^(\u2212at). Set that equal to u and solve for t.",
+    "distractors": [
+      "exp",
+      "+",
+      "n"
+    ],
+    "vary": {
+      "u": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "a": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

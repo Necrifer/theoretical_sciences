@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.geography.intro__r53_orbit",
+  "description": "book.theoreticalsciences.codex.geography.intro__r53_orbit.desc",
+  "icon": {
+    "item": "theoreticalsciences:satellite_image_plate"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 43,
+  "y": 95,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.intro__r53_orbit.p0",
+      "title": "book.theoreticalsciences.codex.geography.intro__r53_orbit"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.geography.intro__r53_orbit.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/geography__intro__r38_seismology"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/remote_sensing"
+  }
+}

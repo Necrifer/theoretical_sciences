@@ -1,0 +1,63 @@
+{
+  "title": "Mass Spectrometry",
+  "description": "Ions in a magnetic field bend by their mass: weigh them one at a time, and pick out the isotopes. Unlocks the Mass Spectrometer.",
+  "icon": "theoreticalsciences:mass_spectrometer",
+  "x": 17,
+  "y": -3,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:chromatography",
+    "theoreticalsciences:electrodynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:column_detector",
+      "count": 1
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "An ion of mass m and charge q is accelerated through V volts and enters a field B. Write the radius r it bends on.",
+    "name": "Magnetic rigidity",
+    "lhs": "r",
+    "form": "sqrt ( 2 * m * V / q ) / B",
+    "expr": "sqrt ( 2 * m * V / q ) / B",
+    "ask": "Find r in metres for a D\u2082 ion: m = 6.64e-27 kg, V = @{V} V, q = 1.602e-19 C, B = @{B} T.",
+    "vars": {
+      "r": "radius (m)",
+      "m": "ion mass (kg)",
+      "V": "voltage (V)",
+      "q": "charge (C)",
+      "B": "field (T)"
+    },
+    "given": {
+      "m": 6.64e-27,
+      "V": 5000,
+      "q": 1.602e-19,
+      "B": 0.0407
+    },
+    "unit": "m",
+    "method": "qV = \u00bdmv\u00b2 gives v; the field bends it on r = mv/(qB).",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "T"
+    ],
+    "vary": {
+      "V": [
+        3000.0,
+        7000.0,
+        1.0
+      ],
+      "B": [
+        0.0244,
+        0.057,
+        0.0001
+      ]
+    }
+  }
+}

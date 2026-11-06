@@ -1,0 +1,49 @@
+{
+  "params": [
+    {
+      "id": "v",
+      "unit": "codons/s",
+      "min": 1,
+      "max": 40,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "Mg",
+      "unit": "mM",
+      "min": 1,
+      "max": 30,
+      "step": 0.1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "Lc": 300
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "eps",
+      "unit": "",
+      "expr": "0.0001*exp((v - 10)/8)*(1 + ((Mg - 10)/8)^2)*(1 + 0.02*d)",
+      "formula": "\u03b5 = 10\u207b\u2074\u00b7e^((v \u2212 10)/8)\u00b7(1 + ((Mg \u2212 10)/8)\u00b2)"
+    },
+    {
+      "id": "yld",
+      "unit": "",
+      "expr": "(1 - eps)^Lc",
+      "formula": "Y = (1 \u2212 \u03b5)^L"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(v/10, 0.1, 4)",
+  "rate_formula": "rate = v / 10",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

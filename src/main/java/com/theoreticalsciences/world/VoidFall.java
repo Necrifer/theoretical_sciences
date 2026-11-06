@@ -28,17 +28,20 @@ import java.util.UUID;
  * into Hyperdimensional Reality, and so on. In the Living Proof you land back where you last stood.
  */
 public final class VoidFall {
-    private static final Map<ResourceKey<Level>, ResourceKey<Level>> BELOW = Map.of(
-            QHDimensions.BULK, Level.OVERWORLD,
-            QHDimensions.PLATONIC, QHDimensions.TRANSFINITE,
-            QHDimensions.TRANSFINITE, QHDimensions.FOAM,
-            QHDimensions.FOAM, QHDimensions.BULK,
-            QHDimensions.BLACK_HOLE, QHDimensions.WHITE_HOLE,
-            QHDimensions.WHITE_HOLE, Level.OVERWORLD,
-            QHDimensions.HYPERREAL, QHDimensions.BULK,
-            QHDimensions.TRANSCENDENTAL, QHDimensions.HYPERREAL,
-            QHDimensions.ANTIVERSE, Level.OVERWORLD,
-            QHDimensions.FRONTIER, Level.OVERWORLD);
+    private static final Map<ResourceKey<Level>, ResourceKey<Level>> BELOW = Map.ofEntries(
+            Map.entry(QHDimensions.BULK, Level.OVERWORLD),
+            Map.entry(QHDimensions.PLATONIC, QHDimensions.FOAM),     // 1.2.0: the Hierarchy sits above it now
+            Map.entry(QHDimensions.TRANSFINITE, QHDimensions.FOAM),
+            Map.entry(QHDimensions.FOAM, QHDimensions.BULK),
+            Map.entry(QHDimensions.BLACK_HOLE, QHDimensions.WHITE_HOLE),
+            Map.entry(QHDimensions.WHITE_HOLE, Level.OVERWORLD),
+            Map.entry(QHDimensions.HYPERREAL, QHDimensions.BULK),
+            Map.entry(QHDimensions.TRANSCENDENTAL, QHDimensions.HYPERREAL),
+            Map.entry(QHDimensions.ANTIVERSE, Level.OVERWORLD),
+            Map.entry(QHDimensions.FRONTIER, Level.OVERWORLD),
+            Map.entry(QHDimensions.TITAN, Level.OVERWORLD),
+            Map.entry(QHDimensions.INNER, Level.OVERWORLD),
+            Map.entry(QHDimensions.TITAN_OCEAN, QHDimensions.TITAN));
     private static final Map<UUID, Vec3> LAST_GROUND = com.theoreticalsciences.world.SessionMaps.perPlayer(new HashMap<>());
 
     /** Round 29: a player logged out - drop their remembered ground spot (TheoreticalSciences's logout listener calls this). */
@@ -74,6 +77,23 @@ public final class VoidFall {
                 sp.fallDistance = 0;
                 sp.hurtMarked = true;
                 sp.displayClientMessage(Component.translatable("message.theoreticalsciences.void_proof").withStyle(ChatFormatting.LIGHT_PURPLE), true);
+            }
+            return;
+        }
+        // 1.2.0: the Transfinite Hierarchy is the Platonic Realm's upper strata now; anyone still in the old dimension
+        // (an old save) is carried across to the same place in the strata, once a second
+        if (dim == QHDimensions.TRANSFINITE && sp.tickCount % 20 == 0) {
+            ServerLevel realm = sp.server.getLevel(QHDimensions.PLATONIC);
+            if (realm != null) {
+                int x = sp.getBlockX(), z = sp.getBlockZ();
+                realm.getChunk(x >> 4, z >> 4);
+                BlockPos dest = com.theoreticalsciences.world.SafeLanding.find(realm, x, z, Strata.Y + (int) Math.max(4, sp.getY()),
+                        com.theoreticalsciences.registry.QHBlocks.get("ordinal_stone"), com.theoreticalsciences.registry.QHBlocks.get("aleph_glass"),
+                        Strata.Y + 2, realm.getMaxBuildHeight() - 4);
+                sp.stopRiding();
+                sp.teleportTo(realm, dest.getX() + 0.5, dest.getY(), dest.getZ() + 0.5, java.util.Set.of(), sp.getYRot(), sp.getXRot());
+                sp.fallDistance = 0;
+                sp.displayClientMessage(Component.translatable("message.theoreticalsciences.transfinite_merged").withStyle(ChatFormatting.LIGHT_PURPLE), false);
             }
             return;
         }

@@ -1,0 +1,32 @@
+{
+  "name": "Synthesis Bench",
+  "icon": "theoreticalsciences:synthesis_bench",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 146,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:synthesis_bench",
+      "title": "Synthesis Bench",
+      "text": "Flasks, condensers and a notebook: a molecule built step by step, working back from the target.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set how many steps the route takes. Each step keeps 92% of the material: fewer steps, more product - but a target cannot be made in fewer steps than it needs (the page gives them). The yield must reach the recipe's figure."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 3 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Chiral Ligand, EDTA, Fine Reagent."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:synthesis_bench",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/organic_synthesis"
+}

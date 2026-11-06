@@ -1,0 +1,68 @@
+{
+  "params": [
+    {
+      "id": "Il",
+      "unit": "A/cm\u00b2",
+      "min": 0.01,
+      "max": 1.6,
+      "step": 0.001,
+      "default": 0.3
+    },
+    {
+      "id": "pf",
+      "unit": "atm",
+      "min": 1,
+      "max": 5,
+      "step": 0.01,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "E0": 1.229
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Er",
+      "unit": "V",
+      "expr": "E0 + 0.0152*ln(pf*0.458)",
+      "formula": "E = E\u00b0 + (RT/2F)\u00b7ln(p\u00b7\u221ap_O\u2082)"
+    },
+    {
+      "id": "V",
+      "unit": "V",
+      "expr": "Er - 0.06*ln(Il/0.001) - 0.2*(1 + 0.05*d)*Il + 0.05*ln(pos(1 - Il/1.5) + 1e-9)",
+      "formula": "V = E \u2212 0.06\u00b7ln(i/i\u2080) \u2212 R\u00b7i + 0.05\u00b7ln(1 \u2212 i/i_L)"
+    },
+    {
+      "id": "Pw",
+      "unit": "W/cm\u00b2",
+      "expr": "V*Il",
+      "formula": "P = V\u00b7i"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "flood",
+      "kind": "stop",
+      "expr": "Il - 0.02",
+      "formula": "i > 0.02 A/cm\u00b2"
+    },
+    {
+      "id": "starve",
+      "kind": "stop",
+      "expr": "1.45 - Il",
+      "formula": "i < 1.45 A/cm\u00b2"
+    }
+  ],
+  "rate": "clamp(Pw/0.4, 0, 2.5)",
+  "rate_formula": "rate = P / 0.4 W/cm\u00b2",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

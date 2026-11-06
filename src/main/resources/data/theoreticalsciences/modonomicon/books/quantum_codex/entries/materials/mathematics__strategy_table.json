@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.strategy_table",
+  "description": "book.theoreticalsciences.codex.mathematics.strategy_table.desc",
+  "icon": {
+    "item": "theoreticalsciences:strategy_table"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 200,
+  "y": 123,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:strategy_table"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.strategy_table.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.strategy_table.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.strategy_table.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.strategy_table.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:strategy_table"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.strategy_table.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__optimiser"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/game_theory"
+  }
+}

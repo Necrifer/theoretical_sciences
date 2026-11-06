@@ -1,0 +1,26 @@
+{
+  "name": "Inner Space",
+  "icon": "theoreticalsciences:miniaturiser",
+  "category": "theoreticalsciences:world",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:miniaturiser,theoreticalsciences:blood_plasma_cell,theoreticalsciences:matrix_fibre,theoreticalsciences:memory_cell,theoreticalsciences:nucleotide,theoreticalsciences:tumour_specimen",
+      "text": "A body, seen from the inside at the scale of its cells. Reach it with the $(item)Miniaturiser$() (research $(thing)Inner Space$(), after Circulation): use it in the Overworld and you shrink until a cell is the size of a house. Used again inside, it brings you back out. Falling out of the bottom brings you home too."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It has five regions. The $(thing)Bloodstream$(): seas and channels of $(fluid)Blood Plasma$(), whose current carries you along, and $(thing)Red Cells$() drifting in it that you can ride. $(thing)Tissue$(): walls of cells, the commonest region, where a fight sets off $(thing)inflammation$() (you slow, and the heat hurts). The $(thing)Lymph Node$(): if you carry an infection here you glow, and the $(thing)T Cells$() hunt you down."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)Nucleus$(): chromatin, the double helix in spires, and $(thing)mutation$(): now and then one of your effects swaps for its opposite. The $(thing)Tumour$(): overgrown tissue where an anomaly has taken hold. Its oncogenic field weakens you more the longer you stay, and it is where the $(thing)Tumour Hydra$() is called."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each region has its material, each useful and each renewable: $(fluid)Blood Plasma$() (the Lake Pump draws it from the Bloodstream; it makes broth and antibodies), $(item)Matrix Fibre$() (collagen seams in Tissue; a cheaper Grown Organ), $(item)Memory Cells$() (T Cells and Germinal Centres; antibodies from plasma), $(item)Nucleotides$() (the Nucleus; cheap Messenger RNA) and $(item)Tumour Specimens$() (the Tumour; a cheaper CAR-T Cell Culture)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/inner_space"
+}

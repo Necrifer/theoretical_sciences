@@ -1,0 +1,19 @@
+{
+  "name": "Chiral Ligand",
+  "icon": "theoreticalsciences:chiral_ligand",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chiral_ligand",
+      "title": "Chiral Ligand",
+      "text": "Two aromatic rings joined so that they cannot turn past each other: the molecule is left- or right-handed, and so is every metal it holds. Made from a Kekule Ring at the Synthesis Bench; held in the Asymmetric Reactor's catalyst slot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Synthesis Bench$().$(br2)$(thing)Unlocked by$(): Asymmetric Synthesis."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/asymmetric_synthesis"
+}

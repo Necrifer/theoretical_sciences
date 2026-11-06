@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:infrared_spectroscopy",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:structure_card",
+      "count": 2
+    },
+    {
+      "id": "theoreticalsciences:amino_acid_mixture",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:infrared_spectroscopy",
+  "unscaled": true,
+  "insight_per_run": 1,
+  "physics": {
+    "vars": {
+      "nu": 3350.0
+    },
+    "windows": [
+      {
+        "q": "mg",
+        "min": 50.0,
+        "max": 9999.0
+      },
+      {
+        "q": "wid",
+        "min": 0.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r66_coordination",
+  "description": "book.theoreticalsciences.codex.chemistry.r66_coordination.desc",
+  "icon": {
+    "item": "theoreticalsciences:coordination_reactor"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 126,
+  "y": 20,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:coordination_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r66_coordination.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r66_coordination.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r63_nebula"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r64_catalysis"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/coordination_chemistry"
+  }
+}

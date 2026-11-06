@@ -1,0 +1,24 @@
+{
+  "name": "Statistics Engine",
+  "icon": "theoreticalsciences:statistics_engine",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 122,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A sample of n measurements has a mean that wanders by \u03c3/\u221an, its standard error. To be sure at confidence z (2 for about 95%, 2.58 for 99%), the margin z\u00b7\u03c3/\u221an must be small. Four times the sample halves the margin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Sample size, Confidence.$(br2)$(thing)Disturbance$(): A jarred board: the spread varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Smaller samples are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Standard error: SE = \u03c3 / \u221an$(br)Margin: z\u00b7\u03c3/\u221an$(br)Confidence: z"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "The Haber-Bosch Process",
+  "icon": "theoreticalsciences:haber_bosch_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:haber_bosch_reactor,theoreticalsciences:iron_catalyst,theoreticalsciences:pressure_vessel_wall",
+      "text": "N\u2082 + 3H\u2082 \u21cc 2NH\u2083 gives out heat, and turns four volumes of gas into two. So $(thing)\u0394G\u00b0 = \u0394H \u2212 T\u0394S$() climbs as it gets hotter and the equilibrium constant $(thing)K = e^(\u2212\u0394G\u00b0/RT)$() falls: cold and pressed makes the most ammonia. But the iron catalyst is sluggish when cold."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Haber-Bosch Reactor$() sets the bed temperature, the pressure and the H\u2082 : N\u2082 ratio. A pass needs 15% ammonia; how much comes out follows the yield times the rate. The classic answer is about 720 K and 200 atm, 3 : 1. Above 823 K the $(item)Iron Catalyst$() sinters and wears ten times as fast; the vessel is rated to 300 atm."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chemical_equilibrium"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Evolved Strain",
+  "icon": "theoreticalsciences:evolved_strain",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:evolved_strain",
+      "title": "Evolved Strain",
+      "text": "A line of cells bred under pressure until a useful trait took hold and spread through the whole population. Made in the Selection Chamber; the Evolution Engine runs far faster on it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Selection Chamber$().$(br2)$(thing)Unlocked by$(): Population Genetics.$(br2)$(thing)Used in$(): Omnicellular Genome."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/population_genetics"
+}

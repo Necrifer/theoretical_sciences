@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:chromatography",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molecular_cloud",
+      "amount": 78
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hydrogen_cyanide",
+      "amount": 3202
+    }
+  ],
+  "energy": 38,
+  "duration": 20,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 1.25,
+      "k0": 2.0
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 1.5,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

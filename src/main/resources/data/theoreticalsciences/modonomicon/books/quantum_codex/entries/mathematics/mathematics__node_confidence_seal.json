@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_confidence_seal",
+  "description": "book.theoreticalsciences.codex.mathematics.node_confidence_seal.desc",
+  "icon": {
+    "item": "theoreticalsciences:confidence_seal"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 66,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:confidence_seal"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_confidence_seal.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_confidence_seal.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__statistics_engine",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/statistics"
+  }
+}

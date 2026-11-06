@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.perfusion_rig",
+  "description": "book.theoreticalsciences.codex.biology.perfusion_rig.desc",
+  "icon": {
+    "item": "theoreticalsciences:perfusion_rig"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 131,
+  "y": 94,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:perfusion_rig"
+      },
+      "text": "book.theoreticalsciences.codex.biology.perfusion_rig.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.perfusion_rig.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.perfusion_rig.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.perfusion_rig.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:perfusion_rig"
+      },
+      "text": "book.theoreticalsciences.codex.biology.perfusion_rig.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__patch_clamp_rig"
+    },
+    {
+      "entry": "theoreticalsciences:materials/biology__patch_clamp_rig"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/physiology"
+  }
+}

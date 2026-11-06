@@ -1,0 +1,61 @@
+{
+  "title": "Lysogeny",
+  "description": "Some phages do not burst their host at once: they write themselves into its genome and wait. A way to deliver genes. Unlocks cheap Recombinant DNA.",
+  "icon": "theoreticalsciences:recombinant_dna",
+  "x": 6,
+  "y": 22,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:viruses"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:bacteriophage",
+      "count": 4
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "c cells are infected; a share f of them burst at once, each releasing B phages. Write how many new phages, P, come out.",
+    "name": "Phage count",
+    "lhs": "P",
+    "form": "c * f * B",
+    "expr": "c * f * B",
+    "ask": "Find P for c = @{c}, f = @{f} and B = @{B}.",
+    "vars": {
+      "P": "new phages",
+      "c": "cells",
+      "f": "share that burst",
+      "B": "burst size"
+    },
+    "given": {
+      "c": 1000,
+      "f": 0.7,
+      "B": 100
+    },
+    "unit": "",
+    "method": "The rest wait in their hosts as prophages; only the share that goes lytic adds to the count.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "c": [
+        600.0,
+        1400.0,
+        1.0
+      ],
+      "f": [
+        0.42,
+        0.98,
+        0.001
+      ],
+      "B": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "params": [
+    {
+      "id": "Np",
+      "unit": "",
+      "min": 100,
+      "max": 150000,
+      "step": 1,
+      "default": 1000
+    },
+    {
+      "id": "wh",
+      "unit": "primes",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "need": 1000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "found",
+      "unit": "",
+      "expr": "Np/ln(Np)*(1 + 0.01*d)",
+      "formula": "\u03c0(N) \u2248 N / ln N"
+    },
+    {
+      "id": "rem",
+      "unit": "",
+      "expr": "(1 - 0.5*step(wh - 1))*(1 - 0.3333*step(wh - 2))*(1 - 0.2*step(wh - 3))*(1 - 0.142857*step(wh - 4))",
+      "formula": "\u03a0(1 \u2212 1/p)"
+    },
+    {
+      "id": "work",
+      "unit": "",
+      "expr": "Np*ln(ln(Np))*rem/2000",
+      "formula": "W \u221d N ln ln N"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(4/(1 + work), 0.1, 4)",
+  "rate_formula": "rate = 4 / (1 + W)",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

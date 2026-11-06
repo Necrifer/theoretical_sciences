@@ -1,0 +1,18 @@
+{
+  "name": "Heat Packs and Chemical Coolants",
+  "icon": "theoreticalsciences:heat_pack_reactor",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 19,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:heat_pack_reactor,theoreticalsciences:ammonium_nitrate",
+      "text": "Heat is a state function, so the heat of any reaction can be added up from steps already measured (Hess). The $(item)Heat-Pack Reactor$() runs reactions for their heat: ammonia and nitric acid neutralise to $(item)Ammonium Nitrate$(), giving heat out - mixed too fast it runs away. Dissolving it again takes heat in: $(fluid)Cold Pack Solution$() at 268 K. Salt and ice make $(fluid)Eutectic Brine$() at 252 K."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Both cold packs are $(thing)coolants$(): pour them into a physics machine's coolant loop to hold it below room temperature - colder than water, though they carry less heat."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/thermochemical_cycles"
+}

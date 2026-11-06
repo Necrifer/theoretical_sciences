@@ -35,16 +35,21 @@ public class TransceiverBlockEntity extends BlockEntity {
         return BuiltInRegistries.BLOCK.getKey(getBlockState().getBlock()).getPath().equals("entangled_transceiver");
     }
 
+    /** 1.2.0: the Entangled Link, the first tier (right after Quantum Entanglement): it crosses dimensions as the others do. */
+    boolean tier0() {
+        return BuiltInRegistries.BLOCK.getKey(getBlockState().getBlock()).getPath().equals("entangled_link");
+    }
+
     public int itemRate() {
-        return tier2() ? 8192 : 256;
+        return tier2() ? 8192 : tier0() ? 16 : 256;
     }
 
     public int fluidRate() {
-        return tier2() ? 4_096_000 : 64_000;
+        return tier2() ? 4_096_000 : tier0() ? 4_000 : 64_000;
     }
 
     public int energyRate() {
-        return tier2() ? Integer.MAX_VALUE : 64_000_000;
+        return tier2() ? Integer.MAX_VALUE : tier0() ? 262_144 : 64_000_000;
     }
 
     public boolean sending() {
@@ -134,8 +139,10 @@ public class TransceiverBlockEntity extends BlockEntity {
                     int took = d.receiveEnergy(can, true);
                     if (took > 0) {
                         int real = energy.extractEnergy(took, false);
-                        d.receiveEnergy(real, false);
-                        energyBudget -= real;
+                        int got = d.receiveEnergy(real, false);
+                        // 1.2.0: energy the target did not take after all goes back (if the source will hold it)
+                        if (got < real && energy.canReceive()) energy.receiveEnergy(real - got, false);
+                        energyBudget -= got;
                     }
                 }
             }

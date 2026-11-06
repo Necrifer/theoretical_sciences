@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:carbon_monoxide",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 2000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:methanol",
+      "amount": 1000
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 66.9,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

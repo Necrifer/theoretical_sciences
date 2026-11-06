@@ -1,0 +1,24 @@
+{
+  "name": "Symmetry Lathe",
+  "icon": "theoreticalsciences:symmetry_lathe",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 125,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A blank turned with k-fold rotation and k mirror planes has the dihedral symmetry group D_k, of order 2k: that many ways to move it and have it look the same. The group must match the recipe's. A fine indexing head on a fast spindle shakes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Indexing order k, Spindle speed.$(br2)$(thing)Disturbance$(): Chatter: the wobble varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The blank shakes apart.$(br2)$(thing)Rate$(): A faster spindle is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Group order: |D_k| = 2k$(br)Matches the recipe: |D_k| = G$(br)Wobble: k\u00b7\u03c9 / 3000"
+    }
+  ]
+}

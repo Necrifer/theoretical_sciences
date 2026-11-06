@@ -1,0 +1,78 @@
+{
+  "name": "Chromatography Column",
+  "icon": "theoreticalsciences:chromatography_column",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 140,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chromatography_column",
+      "title": "Chromatography Column",
+      "text": "A mixture carried down a long packed tube: each part sticks to the packing for its own time, so they come out one after another.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the carrier flow and the column temperature. Too slow and the bands spread, too fast and they do not separate; the resolution Rs must reach 1.5. Hotter shortens how long each part sticks. A harder split needs more column: build it taller. Gases that come off it pure are assayed (the purity tag)."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Chromatography Column",
+      "multiblock": {
+        "pattern": [
+          [
+            "_____",
+            "_____",
+            "__A__",
+            "_____",
+            "_____"
+          ],
+          [
+            "_____",
+            "_BBB_",
+            "_BBB_",
+            "_BBB_",
+            "_____"
+          ],
+          [
+            "_____",
+            "_BDB_",
+            "_DED_",
+            "_BDB_",
+            "_____"
+          ],
+          [
+            "BB0BB",
+            "BBBBB",
+            "FBBBF",
+            "BBBBB",
+            "BBFBB"
+          ]
+        ],
+        "mapping": {
+          "0": "theoreticalsciences:chromatography_column",
+          "A": "theoreticalsciences:column_detector",
+          "B": "theoreticalsciences:chromatography_casing",
+          "D": "theoreticalsciences:containment_field_glass",
+          "E": "theoreticalsciences:packed_column",
+          "F": "#theoreticalsciences:multiblock/chromatography_casing_or_port"
+        }
+      },
+      "enable_visualize": true,
+      "text": "Cycling blocks: any of them fits (Interface Ports, higher coil/emitter tiers). Rotate, zoom and view layers in $(thing)JEI$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a multiblock (16 item and 16 fluid inputs, 4 and 4 outputs).$(br2)$(thing)Makes$(): Ammonia, Carbon Monoxide, Enantiopure Reagent, Hydrogen, Hydrogen Cyanide, Methane, Nitrogen, Oxygen, PAH Soot, Water."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chromatography_column",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chromatography"
+}

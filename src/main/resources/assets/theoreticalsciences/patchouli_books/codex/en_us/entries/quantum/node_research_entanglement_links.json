@@ -1,0 +1,19 @@
+{
+  "name": "Entanglement Links",
+  "icon": "theoreticalsciences:entangled_link",
+  "advancement": "theoreticalsciences:research/entanglement_links",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:entangled_link",
+      "title": "Entanglement Links",
+      "text": "$(thing)Entanglement Links$()$(br2)Two photons from one source stay one system however far apart they go. A store of such pairs, split between two places, makes one channel. Unlocks the Entangled Link and an early Entanglement Tuner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 40$(br2)$(thing)Builds on$(): Quantum Entanglement.$(br2)$(thing)Samples$(): 2 Entangled Photon Pair.$(br2)$(thing)Derivation$(): Two entangled particles are measured at two settings each, and four correlations A, B, C and D are found, one for each pair of settings. Write the sum S whose size tells a quantum channel from any classical one (it can reach 2\u221a2; nothing classical passes 2). The second correlation enters with a minus sign."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Life in Inner Space",
+  "icon": "theoreticalsciences:memory_cell",
+  "category": "theoreticalsciences:world",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:red_cell_spawn_egg,theoreticalsciences:macrophage_spawn_egg,theoreticalsciences:t_cell_spawn_egg,theoreticalsciences:polymerase_spawn_egg,theoreticalsciences:tumour_hydra_spawn_egg",
+      "text": "The $(thing)Macrophage$() is slow, but it engulfs whatever it catches. Caught, you are held inside it and digested: strike it to break free. It eats items and red cells too, and gives the items back when it dies."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)T Cell$() leaves you alone unless you are infected, or strike it. It hunts the anomalies that infect as well. The $(thing)Polymerase$() climbs the Nucleus's double helices rung by rung, copying the strand, and harms no one. Macrophages and T Cells both go for the Tumour Hydra, and it bites them back: fight it beside them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(thing)Tumour Hydra$(), called with a $(item)Metastatic Spore$() on open ground in the Tumour, starts with three heads. Strike a head or its neck: every 30 damage cuts that head off, and its stump, left in the same place, is open for five seconds. Seal it with fire, or strike it with a $(item)CAR-T Cell Culture$() or an $(item)Apoptosis Trigger$(), and the head is gone for good; leave it, and it grows back with another beside it. With no heads left, its body takes blows in full and it can be killed. Its bite carries $(thing)Metastasis$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Landmarks with caches: $(thing)Germinal Centres$() in the Lymph Node, $(thing)Nuclear Pores$() in the Nucleus and $(thing)Ribosome Workshops$() in Tissue. In the Overworld, abandoned $(thing)BSL-4 Field Stations$() hold the branch's first samples: sterile packs and cultures."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/inner_space"
+}

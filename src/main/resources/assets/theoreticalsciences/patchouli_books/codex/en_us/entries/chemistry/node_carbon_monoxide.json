@@ -1,0 +1,19 @@
+{
+  "name": "Carbon Monoxide",
+  "icon": "theoreticalsciences:carbon_monoxide_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:carbon_monoxide_cell",
+      "title": "Carbon Monoxide",
+      "text": "Colourless, odourless and deadly; with hydrogen, the start of every synthetic fuel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Fractionation Spire$().$(br2)$(thing)Unlocked by$(): Chromatography.$(br2)$(thing)Used in$(): Carbon Monoxide, Methanol."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chromatography"
+}

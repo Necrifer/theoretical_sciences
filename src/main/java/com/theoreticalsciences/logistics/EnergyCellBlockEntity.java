@@ -20,6 +20,7 @@ public class EnergyCellBlockEntity extends BlockEntity {
     /** Capacity and transfer rate (FE per tick) of each tier. */
     public static long capacityOf(String id) {
         return switch (id) {
+            case "vanadium_flow_battery" -> 50_000_000L;          // 1.2.0: the first chemical store
             case "casimir_energy_cell" -> 4_000_000_000L;
             case "vacuum_energy_cell" -> 256_000_000_000L;
             case "singularity_energy_cell" -> 16_000_000_000_000L;
@@ -29,6 +30,7 @@ public class EnergyCellBlockEntity extends BlockEntity {
 
     public static long rateOf(String id) {
         return switch (id) {
+            case "vanadium_flow_battery" -> 20_000L;
             case "casimir_energy_cell" -> 16_000_000L;
             case "vacuum_energy_cell" -> 512_000_000L;
             default -> Integer.MAX_VALUE;
@@ -44,6 +46,19 @@ public class EnergyCellBlockEntity extends BlockEntity {
         energy = new QHEnergyStorage(capacityOf(id), rateOf(id), rateOf(id), this::setChanged);
         in = new Side(true);
         out = new Side(false);
+    }
+
+    /** 1.2.0: a Vanadium Flow Battery (its voltage follows its state of charge). */
+    public static final double FULL = 0.95;
+
+    public boolean flow() {
+        return "vanadium_flow_battery".equals(BuiltInRegistries.BLOCK.getKey(getBlockState().getBlock()).getPath());
+    }
+
+    /** Nernst: E = E° + (RT/F)·ln(SoC/(1 − SoC)) for the vanadium couples (E° = 1.26 V), per cell. */
+    public double voltage() {
+        double soc = Math.max(1e-4, Math.min(1 - 1e-4, (double) energy.stored() / Math.max(1, energy.capacity())));
+        return 1.26 + 2 * 0.0257 * Math.log(soc / (1 - soc));
     }
 
     public long rate() {
@@ -67,6 +82,11 @@ public class EnergyCellBlockEntity extends BlockEntity {
         }
 
         public int receiveEnergy(int a, boolean sim) {
+            if (input && flow()) {
+                // 1.2.0: a flow battery stops taking charge at 95% - charged further, the water in its electrolyte splits
+                long room = (long) (energy.capacity() * FULL) - energy.stored();
+                a = (int) Math.max(0, Math.min(a, room));
+            }
             return input ? energy.receiveEnergy(a, sim) : 0;
         }
 

@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__relativity",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__relativity.desc",
+  "icon": {
+    "item": "theoreticalsciences:einstein_field_core"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 22,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__relativity.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__relativity"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__relativity.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/special_relativity"
+  }
+}

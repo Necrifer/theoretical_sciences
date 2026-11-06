@@ -1,0 +1,19 @@
+{
+  "name": "Cooperativity",
+  "icon": "theoreticalsciences:porphyrin_oxygen_carrier",
+  "advancement": "theoreticalsciences:research/cooperativity",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:porphyrin_oxygen_carrier",
+      "title": "Cooperativity",
+      "text": "$(thing)Cooperativity$()$(br2)Haemoglobin's four sites help each other: once one holds oxygen, the rest grab it faster. Its curve is an S, not a bend (Hill)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 100$(br2)$(thing)Builds on$(): Enzyme Inhibition.$(br2)$(thing)Samples$(): 2 Assayed Enzyme.$(br2)$(thing)Derivation$(): Sites that help each other bind as an S-curve with steepness n. Write the share Y of sites filled at level S, for half-filling at K."
+    }
+  ]
+}

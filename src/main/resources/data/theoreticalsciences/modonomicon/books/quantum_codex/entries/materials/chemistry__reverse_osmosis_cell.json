@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell",
+  "description": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell.desc",
+  "icon": {
+    "item": "theoreticalsciences:reverse_osmosis_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 239,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:reverse_osmosis_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:reverse_osmosis_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.reverse_osmosis_cell.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__brine_evaporator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/osmosis"
+  }
+}

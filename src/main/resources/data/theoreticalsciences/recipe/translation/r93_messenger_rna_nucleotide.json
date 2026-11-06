@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:translation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:nucleotide",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:messenger_rna",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Lc": 1000.0
+    },
+    "windows": [
+      {
+        "q": "yld",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:construction",
+  "item_inputs": [
+    {
+      "item": "minecraft:cobblestone",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:euclidean_marble",
+      "count": 8
+    }
+  ],
+  "energy": 128,
+  "duration": 100,
+  "research": "theoreticalsciences:constructions",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "tol": 0.01
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.01
+      }
+    ]
+  }
+}

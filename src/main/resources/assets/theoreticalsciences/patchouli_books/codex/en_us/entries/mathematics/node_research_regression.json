@@ -1,0 +1,19 @@
+{
+  "name": "Regression",
+  "icon": "theoreticalsciences:assayed_enzyme",
+  "advancement": "theoreticalsciences:research/regression",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:assayed_enzyme",
+      "title": "Regression",
+      "text": "$(thing)Regression$()$(br2)Draw the straight line that misses a cloud of points by the least. Turn an enzyme's curve upside down and it becomes one (Lineweaver and Burk)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Statistics, Enzyme Kinetics.$(br2)$(thing)Samples$(): 1 Confidence Seal.$(br2)$(thing)Derivation$(): Turn an enzyme's speed upside down: write 1/v, R, as a straight line in 1/S, from its top speed V and constant K."
+    }
+  ]
+}

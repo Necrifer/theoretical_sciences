@@ -1,0 +1,65 @@
+{
+  "title": "Sterile Technique",
+  "description": "Every surface carries something alive. Steam under pressure, at 121 \u00b0C, kills it a decade at a time. Unlocks the Autoclave and Sterile Packs: Biology machines catch things, and a pack cleans them.",
+  "icon": "theoreticalsciences:sterile_pack",
+  "x": 3,
+  "y": 17,
+  "insight": 40,
+  "requires": [
+    "theoreticalsciences:molecular_biology"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Steam kills nine in ten of what is left every D minutes. Starting from N living spores, write how many are left, L, after a hold of t minutes.",
+    "name": "Decimal reduction",
+    "lhs": "L",
+    "form": "N * 10 ^ ( - t / D )",
+    "expr": "N * 10 ^ ( - t / D )",
+    "ask": "Find L for N = @{N}, t = @{t} and D = @{D}.",
+    "vars": {
+      "L": "spores left",
+      "N": "spores at first",
+      "t": "hold time",
+      "D": "decimal reduction time"
+    },
+    "given": {
+      "N": 1000000,
+      "t": 6,
+      "D": 1.5
+    },
+    "unit": "",
+    "method": "Each D minutes divides the count by ten, so t minutes divide it by 10^(t/D).",
+    "distractors": [
+      "e",
+      "+",
+      "k"
+    ],
+    "vary": {
+      "N": [
+        600000.0,
+        1400000.0,
+        10000.0
+      ],
+      "t": [
+        4.0,
+        8.0,
+        1.0
+      ],
+      "D": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

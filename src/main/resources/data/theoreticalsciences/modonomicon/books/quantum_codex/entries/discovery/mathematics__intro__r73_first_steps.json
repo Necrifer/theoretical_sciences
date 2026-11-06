@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__r73_first_steps",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__r73_first_steps.desc",
+  "icon": {
+    "item": "theoreticalsciences:peano_engine"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 9,
+  "y": 78,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r73_first_steps.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__r73_first_steps"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__r73_first_steps.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/number_systems"
+  }
+}

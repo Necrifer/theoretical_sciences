@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_red_cell",
+  "description": "book.theoreticalsciences.codex.world.node_red_cell.desc",
+  "icon": {
+    "item": "theoreticalsciences:red_cell_spawn_egg"
+  },
+  "category": "theoreticalsciences:mobs",
+  "x": 44,
+  "y": 15,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:red_cell_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_red_cell.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mobs/world__r93_inner_life",
+      "draw_arrow": false
+    }
+  ]
+}

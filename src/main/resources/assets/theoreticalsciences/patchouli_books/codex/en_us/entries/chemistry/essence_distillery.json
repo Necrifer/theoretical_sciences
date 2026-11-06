@@ -16,7 +16,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Distils every fluid of one mod into that mod's $(fluid)Essence$(), which the $(item)Pleroma Confluence$() wants. JEI lists, mod by mod, which fluids go in."
+      "text": "Distils every fluid of one mod into that mod's $(fluid)Essence$(), and the Essences, with water and lava, into $(fluid)Anima Mundi$(), one of Pleroma's five fluids. JEI lists, mod by mod, which fluids go in."
     },
     {
       "type": "patchouli:multiblock",
@@ -334,6 +334,11 @@
       "type": "patchouli:spotlight",
       "item": "theoreticalsciences:femtoscale_assembly_line",
       "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:anima_mundi_cell",
+      "text": "$(fluid)Anima Mundi$(). Found, not made."
     }
   ],
   "advancement": "theoreticalsciences:research/fractional_distillation"

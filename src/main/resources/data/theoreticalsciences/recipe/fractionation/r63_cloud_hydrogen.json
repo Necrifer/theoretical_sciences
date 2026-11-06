@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:molecular_cloud",
+      "amount": 614
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hydrogen",
+      "amount": 8081
+    },
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 50
+    }
+  ],
+  "energy": 1256,
+  "duration": 20,
+  "research": "theoreticalsciences:nebular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 4.0,
+      "xF": 0.6,
+      "Tb": 20.3,
+      "dH": 0.9
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.99,
+        "max": 1.0
+      }
+    ]
+  }
+}

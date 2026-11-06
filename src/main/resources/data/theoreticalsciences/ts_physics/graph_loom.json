@@ -1,0 +1,64 @@
+{
+  "params": [
+    {
+      "id": "V",
+      "unit": "",
+      "min": 2,
+      "max": 64,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "id": "L",
+      "unit": "",
+      "min": 1,
+      "max": 200,
+      "step": 1,
+      "default": 7
+    }
+  ],
+  "recipe_vars": {
+    "q": 0.1,
+    "tol": 0.001,
+    "vmin": 8
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "spare",
+      "unit": "",
+      "expr": "L - V + 1",
+      "formula": "L \u2212 V + 1"
+    },
+    {
+      "id": "fail",
+      "unit": "",
+      "expr": "(q*(1 + 0.02*d))^(L - V + 2)",
+      "formula": "q^(L \u2212 V + 2)"
+    },
+    {
+      "id": "reach",
+      "unit": "",
+      "expr": "V",
+      "formula": "V"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "tree",
+      "kind": "stop",
+      "expr": "L - V + 1",
+      "formula": "L \u2265 V \u2212 1"
+    }
+  ],
+  "rate": "clamp(3*V/L, 0.1, 4)",
+  "rate_formula": "rate = 3V / L",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

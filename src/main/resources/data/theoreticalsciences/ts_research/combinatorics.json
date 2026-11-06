@@ -1,46 +1,46 @@
 {
-  "title": "Combinatorics",
-  "description": "Counting without listing: how many orders, how many choices, how fast the numbers grow - so fast that their logarithm is the only way to hold them. Unlocks the Quantum Random Number Chip.",
-  "icon": "theoreticalsciences:random_number_chip",
-  "x": 3,
-  "y": 10,
-  "insight": 18,
-  "requires": [
-    "theoreticalsciences:probability_theory"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:dice_set",
-      "count": 1
-    }
-  ],
-  "time": 0,
-  "puzzle": {
-    "goal": "The number of ways to put n objects in order grows faster than any power of n. For large n its logarithm is very nearly a simple expression. Write it.",
-    "name": "Large-n approximation of the factorial",
-    "lhs": "ln ( n ! )",
-    "form": "n * ln ( n ) - n",
-    "expr": "n * ln ( n ) - n",
-    "ask": "Find ln(@{n}!) approximately.",
-    "vars": {
-      "n": "number of objects"
-    },
-    "given": {
-      "n": 100
-    },
-    "unit": "",
-    "method": "ln n! = ln 1 + ln 2 + \u2026 + ln n. For large n the sum is close to the integral of ln x from 1 to n.",
-    "distractors": [
-      "exp",
-      "\u03c0",
-      "2"
-    ],
-    "vary": {
-      "n": [
-        60.0,
-        140.0,
-        1.0
-      ]
-    }
+ "title": "Combinatorics",
+ "description": "Counting without listing: how many orders, how many choices, how fast the numbers grow, so fast that their logarithm is the only way to hold them. Unlocks the Quantum Random Number Chip.",
+ "icon": "theoreticalsciences:random_number_chip",
+ "x": 3,
+ "y": 10,
+ "insight": 18,
+ "requires": [
+  "theoreticalsciences:probability_theory"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:dice_set",
+   "count": 1
   }
+ ],
+ "time": 0,
+ "puzzle": {
+  "goal": "The number of ways to put n objects in order grows faster than any power of n. For large n its logarithm is very nearly a simple expression. Write it.",
+  "name": "Large-n approximation of the factorial",
+  "lhs": "ln ( n ! )",
+  "form": "n * ln ( n ) - n",
+  "expr": "n * ln ( n ) - n",
+  "ask": "Find ln(@{n}!) approximately.",
+  "vars": {
+   "n": "number of objects"
+  },
+  "given": {
+   "n": 100
+  },
+  "unit": "",
+  "method": "ln n! = ln 1 + ln 2 + … + ln n. For large n the sum is close to the integral of ln x from 1 to n.",
+  "distractors": [
+   "exp",
+   "π",
+   "2"
+  ],
+  "vary": {
+   "n": [
+    60.0,
+    140.0,
+    1.0
+   ]
+  }
+ }
 }

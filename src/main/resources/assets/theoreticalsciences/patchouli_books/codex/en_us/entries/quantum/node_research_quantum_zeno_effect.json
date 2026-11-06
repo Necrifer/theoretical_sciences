@@ -1,0 +1,19 @@
+{
+  "name": "The Quantum Zeno Effect",
+  "icon": "theoreticalsciences:zeno_anchor",
+  "advancement": "theoreticalsciences:research/quantum_zeno_effect",
+  "category": "theoreticalsciences:quantum",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:zeno_anchor",
+      "title": "The Quantum Zeno Effect",
+      "text": "$(thing)The Quantum Zeno Effect$()$(br2)Measure a system often enough and it never gets the chance to change: each measurement starts it over. Unlocks the Zeno Anchor, which keeps chunks loaded."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 60$(br2)$(thing)Builds on$(): Entanglement Links.$(br2)$(thing)Samples$(): 2 Entangled Photon Pair, 1 Clock.$(br2)$(thing)Derivation$(): A system that would leave its state on a timescale T is measured N times, evenly, over a time t. Write the chance P that it is still found where it started."
+    }
+  ]
+}

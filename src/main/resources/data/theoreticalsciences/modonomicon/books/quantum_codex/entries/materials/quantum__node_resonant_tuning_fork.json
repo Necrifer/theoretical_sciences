@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.quantum.node_resonant_tuning_fork",
+  "description": "book.theoreticalsciences.codex.quantum.node_resonant_tuning_fork.desc",
+  "icon": {
+    "item": "theoreticalsciences:resonant_tuning_fork"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 7,
+  "y": 40,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:resonant_tuning_fork"
+      },
+      "text": "book.theoreticalsciences.codex.quantum.node_resonant_tuning_fork.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.quantum.node_resonant_tuning_fork.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/quantum__quantum_entangler",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/quantum_entanglement"
+  }
+}

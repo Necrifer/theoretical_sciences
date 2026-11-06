@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:gene_circuit_loom"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.gene_circuits"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.gene_circuits.short"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/population_genetics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

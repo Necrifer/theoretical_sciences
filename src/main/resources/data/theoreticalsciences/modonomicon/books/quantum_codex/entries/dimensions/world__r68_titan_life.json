@@ -1,0 +1,39 @@
+{
+  "name": "book.theoreticalsciences.codex.world.r68_titan_life",
+  "description": "book.theoreticalsciences.codex.world.r68_titan_life.desc",
+  "icon": {
+    "item": "theoreticalsciences:methane_skater_spawn_egg"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 127,
+  "y": 18,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:tholin_drifter_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.r68_titan_life.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r68_titan_life.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r68_titan_life.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r68_titan_life.p3"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/titan"
+  }
+}

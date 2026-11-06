@@ -1,0 +1,66 @@
+{
+  "title": "Control Theory",
+  "description": "Feed back too hard and a machine overshoots and rings; too gently and it drifts. Maxwell worked out where the line is. Unlocks the Governor.",
+  "icon": "theoreticalsciences:governor",
+  "x": 18,
+  "y": 5,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:feedback",
+    "theoreticalsciences:optimisation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stability_margin",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:euclidean_shard",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "A controller corrects an error e by a gain k each second. Write how much error E is left after t seconds of smooth correction.",
+    "name": "Exponential settling",
+    "lhs": "E",
+    "form": "e * exp ( - k * t )",
+    "expr": "e * exp ( - k * t )",
+    "ask": "Find E for e = @{e}, k = @{k} and t = @{t}.",
+    "vars": {
+      "E": "error left",
+      "e": "first error",
+      "k": "gain",
+      "t": "time (s)"
+    },
+    "given": {
+      "e": 8,
+      "k": 0.5,
+      "t": 4
+    },
+    "unit": "",
+    "method": "dE/dt = \u2212kE: the error shrinks in proportion to itself, so it falls away exponentially.",
+    "distractors": [
+      "+",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "e": [
+        5.0,
+        11.0,
+        1.0
+      ],
+      "k": [
+        0.3,
+        0.7,
+        0.001
+      ],
+      "t": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

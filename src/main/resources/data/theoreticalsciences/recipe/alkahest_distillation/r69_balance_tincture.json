@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:alkahest_distillation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ammonium_nitrate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 500
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:balance_tincture",
+      "amount": 500
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:alkahest",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Tb": 380.0
+    },
+    "windows": [
+      {
+        "q": "pur",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

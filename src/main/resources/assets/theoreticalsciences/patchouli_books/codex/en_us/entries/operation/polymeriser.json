@@ -1,0 +1,24 @@
+{
+  "name": "Polymeriser",
+  "icon": "theoreticalsciences:polymeriser",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 105,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each bond formed links two pieces; when a fraction p of the ends have reacted, the chains average 1/(1 \u2212 p) units (Carothers). So long chains need almost every bond: 0.99 for a hundred units, 0.999 for a thousand. Hotter is faster; the reaction gives out heat, and above its limit it runs away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Conversion, Temperature.$(br2)$(thing)Disturbance$(): Impurities: the conversion reached varies by \u00b10.01%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The polymerisation is running away.$(br2)$(thing)Rate$(): Longer chains take longer; hotter goes faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Chain length: X_n = 1/(1 \u2212 p)$(br)Rate: k \u221d e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/350 K))"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:mobius_strip"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.euler_characteristic"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.euler_characteristic.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/euclidean_geometry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

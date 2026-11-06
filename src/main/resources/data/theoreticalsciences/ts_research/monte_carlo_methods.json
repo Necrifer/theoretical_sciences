@@ -1,68 +1,68 @@
 {
-  "title": "Monte Carlo Methods",
-  "description": "When a sum is too hard to do, guess it at random - many times. The scatter of the guesses falls as one over the square root of how many; steer them well and it falls faster. Unlocks the Monte Carlo Engine.",
-  "icon": "theoreticalsciences:monte_carlo_engine",
-  "x": 3,
-  "y": 11,
-  "insight": 70,
-  "requires": [
-    "theoreticalsciences:bayesian_inference",
-    "theoreticalsciences:combinatorics"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:random_number_chip",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:posterior_tablet",
-      "count": 2
-    }
-  ],
-  "time": 180,
-  "puzzle": {
-    "goal": "A Markov chain gives N samples of a quantity with spread \u03c3, but each sample remembers the last: they stay correlated for about \u03c4 steps. Averaged, they are worth fewer independent samples. Write how far their average typically is from the truth, \u03b5.",
-    "name": "Standard error of a correlated chain",
-    "lhs": "\u03b5",
-    "form": "\u03c3 * sqrt ( ( 1 + 2 * \u03c4 ) / N )",
-    "expr": "s * ( ( 1 + 2 * t ) / N ) ^ 0.5",
-    "ask": "Find \u03b5 for a chain of spread s = @{s}, correlation time t = @{t} steps, and N = @{N} samples.",
-    "vars": {
-      "\u03b5": "error of the average",
-      "\u03c3": "spread of one sample",
-      "\u03c4": "correlation time (steps)",
-      "N": "number of samples",
-      "s": "spread of one sample",
-      "t": "correlation time (steps)"
-    },
-    "given": {
-      "s": 2,
-      "t": 4.5,
-      "N": 1000000
-    },
-    "unit": "",
-    "method": "Independent samples average to \u03c3/\u221aN. Correlated ones are worth only N/(1 + 2\u03c4) independent ones - the effective sample size.",
-    "distractors": [
-      "2",
-      "\u03c0",
-      "ln"
-    ],
-    "vary": {
-      "s": [
-        1.0,
-        4.0,
-        1.0
-      ],
-      "t": [
-        2.69,
-        6.3,
-        0.01
-      ],
-      "N": [
-        600000.0,
-        1400000.0,
-        10000.0
-      ]
-    }
+ "title": "Monte Carlo Methods",
+ "description": "When a sum is too hard to do, guess it at random, many times. The scatter of the guesses falls as one over the square root of how many; steer them well and it falls faster. Unlocks the Monte Carlo Engine.",
+ "icon": "theoreticalsciences:monte_carlo_engine",
+ "x": 3,
+ "y": 11,
+ "insight": 70,
+ "requires": [
+  "theoreticalsciences:bayesian_inference",
+  "theoreticalsciences:combinatorics"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:random_number_chip",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:posterior_tablet",
+   "count": 2
   }
+ ],
+ "time": 180,
+ "puzzle": {
+  "goal": "A Markov chain gives N samples of a quantity with spread σ, but each sample remembers the last: they stay correlated for about τ steps. Averaged, they are worth fewer independent samples. Write how far their average typically is from the truth, ε.",
+  "name": "Standard error of a correlated chain",
+  "lhs": "ε",
+  "form": "σ * sqrt ( ( 1 + 2 * τ ) / N )",
+  "expr": "s * ( ( 1 + 2 * t ) / N ) ^ 0.5",
+  "ask": "Find ε for a chain of spread s = @{s}, correlation time t = @{t} steps, and N = @{N} samples.",
+  "vars": {
+   "ε": "error of the average",
+   "σ": "spread of one sample",
+   "τ": "correlation time (steps)",
+   "N": "number of samples",
+   "s": "spread of one sample",
+   "t": "correlation time (steps)"
+  },
+  "given": {
+   "s": 2,
+   "t": 4.5,
+   "N": 1000000
+  },
+  "unit": "",
+  "method": "Independent samples average to σ/√N. Correlated ones are worth only N/(1 + 2τ) independent ones; the effective sample size.",
+  "distractors": [
+   "2",
+   "π",
+   "ln"
+  ],
+  "vary": {
+   "s": [
+    1.0,
+    4.0,
+    1.0
+   ],
+   "t": [
+    2.69,
+    6.3,
+    0.01
+   ],
+   "N": [
+    600000.0,
+    1400000.0,
+    10000.0
+   ]
+  }
+ }
 }

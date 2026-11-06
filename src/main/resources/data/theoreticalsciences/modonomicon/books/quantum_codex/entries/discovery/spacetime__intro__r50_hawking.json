@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r50_hawking",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r50_hawking.desc",
+  "icon": {
+    "item": "theoreticalsciences:analog_black_hole"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 51,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r50_hawking.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r50_hawking"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r50_hawking.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r47_waves"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r47_frame_drag"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/analog_gravity"
+  }
+}

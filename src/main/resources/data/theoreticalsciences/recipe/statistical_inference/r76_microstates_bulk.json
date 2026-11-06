@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:statistical_inference",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:microstate_tally",
+      "count": 6
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:stochastic_kinetics",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "sg": 1.0,
+      "tol": 0.1,
+      "zmin": 2.0
+    },
+    "windows": [
+      {
+        "q": "mg",
+        "min": -1.0,
+        "max": 0.1
+      },
+      {
+        "q": "conf",
+        "min": 2.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

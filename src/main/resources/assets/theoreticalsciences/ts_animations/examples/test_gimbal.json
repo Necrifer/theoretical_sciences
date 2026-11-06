@@ -1,0 +1,35 @@
+{
+  "_comment": "Test machine for the animation system: a parent arm of real blocks turning about the vertical axis, carrying a child ring that rocks to and fro about the arm (so the child moves with its parent), and a grandchild block at the ring's rim that slides in and out on keyframes. Try it with /tsanim preview theoreticalsciences:examples/test_gimbal.",
+  "parts": [
+    {
+      "id": "arm",
+      "source": {
+        "type": "blocks",
+        "key": {"N": "theoreticalsciences:neutronium_block", "D": "theoreticalsciences:dilithium_block", "Q": "theoreticalsciences:cherenkov_quartz_block"},
+        "origin": [-4, 2, 4],
+        "layers": [["NNNNDNNNN"], ["    Q    "]]
+      },
+      "pivot": [0, 2, 4],
+      "motion": [{"type": "spin", "axis": "up", "deg_per_sec": 30}],
+      "ramp_seconds": 3
+    },
+    {
+      "id": "ring",
+      "parent": "arm",
+      "source": {"type": "mesh", "shape": "hoop", "centre": [5, 2, 4], "axis": "right", "inner_radius": 1.5, "outer_radius": 2.5, "height": 0.5,
+                 "texture": "theoreticalsciences:block/chronosteel_block"},
+      "pivot": [5, 2, 4],
+      "motion": [{"type": "spin", "axis": "right", "deg_per_sec": 90}, {"type": "oscillate", "mode": "rotate", "axis": "up", "amplitude": 25, "period_seconds": 3}],
+      "ramp_seconds": 2
+    },
+    {
+      "id": "slider",
+      "parent": "ring",
+      "source": {"type": "model", "block": "theoreticalsciences:spacetime_alloy_block", "position": [5, 4, 4], "scale": 0.6},
+      "pivot": [5, 4, 4],
+      "motion": [{"type": "keyframes", "mode": "move", "axis": "up", "loop_seconds": 4, "keys": [[0, 0], [1, 0.8], [2, 0.8], [3, 0], [4, 0]]}],
+      "ramp_seconds": 1,
+      "light": "full"
+    }
+  ]
+}

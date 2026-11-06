@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:gene_circuits",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:living_catalyst"
+    }
+  ],
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:gene_circuit",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:gene_circuits",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "b1": 3.0
+    },
+    "windows": [
+      {
+        "q": "bist",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

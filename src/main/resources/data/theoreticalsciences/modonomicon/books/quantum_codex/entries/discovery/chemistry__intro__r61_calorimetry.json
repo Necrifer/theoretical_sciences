@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r61_calorimetry",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r61_calorimetry.desc",
+  "icon": {
+    "item": "theoreticalsciences:bomb_calorimeter"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 71,
+  "y": 58,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r61_calorimetry.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r61_calorimetry"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r61_calorimetry.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r59_kinetics"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/calorimetry"
+  }
+}

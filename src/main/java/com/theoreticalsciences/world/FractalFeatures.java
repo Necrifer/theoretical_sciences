@@ -188,6 +188,7 @@ public final class FractalFeatures {
             BlockPos o = ctx.origin();
             BlockPos base = l.getHeightmapPos(net.minecraft.world.level.levelgen.Heightmap.Types.WORLD_SURFACE_WG, new BlockPos((o.getX() & ~15) + 8, 0, (o.getZ() & ~15) + 8));
             if (base.getY() <= l.getMinBuildHeight() + 2) return false;
+            if (base.getY() >= com.theoreticalsciences.world.Strata.ELEMENTS || base.getY() < 0) return false;     // 1.2.0: the Elements and the strata above are not the islands
             branch(l, Vec3.atBottomCenterOf(base), new Vec3(0, 1, 0), 9, 0, ctx.random().nextDouble() * Math.PI, base);
             com.theoreticalsciences.world.zones.StructureZones.mark(l, base.above(12), 16, com.theoreticalsciences.world.zones.StructureZones.Mode.FRACTAL);
             return true;

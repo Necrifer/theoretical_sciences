@@ -6,10 +6,6 @@
       "count": 32
     },
     {
-      "item": "theoreticalsciences:zeolite_catalyst",
-      "count": 4
-    },
-    {
       "item": "theoreticalsciences:nanite_swarm",
       "count": 4
     },
@@ -34,5 +30,25 @@
   "duration": 300,
   "research": "theoreticalsciences:nanochemistry",
   "scaled": 4,
-  "expanded": true
+  "physics": {
+    "vars": {
+      "Ea": 55.8,
+      "Af": 10000000.0,
+      "Xt": 0.95,
+      "Ts": 700.0
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  },
+  "expanded": true,
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst"
+    }
+  ]
 }

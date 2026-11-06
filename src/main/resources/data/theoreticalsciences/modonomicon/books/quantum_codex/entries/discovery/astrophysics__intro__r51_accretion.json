@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.astrophysics.intro__r51_accretion",
+  "description": "book.theoreticalsciences.codex.astrophysics.intro__r51_accretion.desc",
+  "icon": {
+    "item": "theoreticalsciences:accretion_disk_reactor"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r51_accretion.p0",
+      "title": "book.theoreticalsciences.codex.astrophysics.intro__r51_accretion"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.astrophysics.intro__r51_accretion.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r45_galaxy"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r45_radio"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/accretion_physics"
+  }
+}

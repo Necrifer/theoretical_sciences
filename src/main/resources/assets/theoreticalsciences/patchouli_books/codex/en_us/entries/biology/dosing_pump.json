@@ -1,0 +1,32 @@
+{
+  "name": "Dosing Pump",
+  "icon": "theoreticalsciences:dosing_pump",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 185,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dosing_pump",
+      "title": "Dosing Pump",
+      "text": "A syringe driver that meters a substance in steadily, holding its level between too little and too much.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the dose and the interval. The level rises and falls as C = (D/V).e^(-kt); between doses it must stay above the effective level and below the toxic one. Too large a dose (over the toxic level) and it is wasted as a warning."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Stable Dose."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:dosing_pump",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/pharmacokinetics"
+}

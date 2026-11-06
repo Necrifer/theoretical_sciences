@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:pattern_forming",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "minecraft:slime_ball",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:turing_morphogen",
+      "count": 2
+    }
+  ],
+  "energy": 768,
+  "duration": 300,
+  "research": "theoreticalsciences:turing_patterns",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "windows": [
+      {
+        "q": "spacing",
+        "min": 3.0,
+        "max": 4.0
+      },
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 999.0
+      }
+    ]
+  }
+}

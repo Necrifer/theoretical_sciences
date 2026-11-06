@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:gradient_descent",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cherenkov_quartz",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:metamaterial_sheet",
+      "count": 2
+    }
+  ],
+  "energy": 768,
+  "duration": 300,
+  "research": "theoreticalsciences:topology_optimisation",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "lam": 8.0,
+      "tol": 0.001
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.001
+      }
+    ]
+  }
+}

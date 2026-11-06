@@ -1,0 +1,24 @@
+{
+  "name": "Circadian Incubator",
+  "icon": "theoreticalsciences:circadian_incubator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 33,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A clock made of genes that switch themselves off builds a rhythm with its own period. Drive it with light near that period and it locks on (entrainment); the culture works hardest in its active phase."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Period, Phase.$(br2)$(thing)Disturbance$(): Jet lag: the rhythm varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): A locked clock in daylight is fastest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Entrainment: locks when |period - 24| is small$(br)Active, against noon: peaks when the active phase meets daylight"
+    }
+  ]
+}

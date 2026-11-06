@@ -524,7 +524,7 @@ public final class HoloStyle {
     /** Animation clock for screens (game ticks plus the partial tick; wall clock when no world is loaded). */
     public static float time(float partial) {
         var mc = net.minecraft.client.Minecraft.getInstance();
-        return mc.level != null ? mc.level.getGameTime() + partial : (net.minecraft.Util.getMillis() % 1_000_000L) / 50F;
+        return mc.level != null ? (mc.level.getGameTime() % 72000L) + partial : (net.minecraft.Util.getMillis() % 1_000_000L) / 50F;
     }
 
     /**

@@ -49,6 +49,36 @@ public final class PowerAnimator {
     }
 
     private static final Map<ControllerBlockEntity, State> STATES = new WeakHashMap<>();
+    private static final Map<Object, State> TRACKED = new WeakHashMap<>();
+
+    /**
+     * 1.2.0: the same start-up / shut-down state for anything else that runs (another mod's machine, a preview): the
+     * key is whatever identifies it (held weakly), active is whether it is running now. Returns its state, with the
+     * same {@link #HYSTERESIS} so a short gap between two runs does not switch it off.
+     */
+    public static State track(Object key, boolean active, double t) {
+        State s = TRACKED.get(key);
+        if (s == null) {
+            s = new State();
+            s.on = active;
+            s.from = active ? 1F : 0F;
+            if (active) s.lastActive = (long) t;
+            TRACKED.put(key, s);
+        }
+        step(s, active, t);
+        return s;
+    }
+
+    /** Moves s on to time t; true when it has just switched on or off. */
+    static boolean step(State s, boolean active, double t) {
+        if (active) s.lastActive = (long) t;
+        boolean on = t - s.lastActive <= HYSTERESIS;
+        if (on == s.on) return false;
+        s.from = s.power(t);
+        s.on = on;
+        s.changeTick = (long) t;
+        return true;
+    }
 
     public static State update(ControllerBlockEntity c, double t) {
         boolean active = c.isFormed() && c.isActive();
@@ -60,13 +90,10 @@ public final class PowerAnimator {
             if (active) s.lastActive = (long) t;
             STATES.put(c, s);
         }
-        if (active) s.lastActive = (long) t;
-        boolean on = t - s.lastActive <= HYSTERESIS;
-        if (on != s.on) {
-            float now = s.power(t);
-            s.on = on;
-            s.from = now;
-            s.changeTick = (long) t;
+        float before = s.power(t);
+        if (step(s, active, t)) {
+            boolean on = s.on;
+            float now = before;
             Vec3 ctr = c.effectCenter();
             Minecraft mc = Minecraft.getInstance();
             if (mc.level != null && (on ? now < 0.5F : now > 0.5F))

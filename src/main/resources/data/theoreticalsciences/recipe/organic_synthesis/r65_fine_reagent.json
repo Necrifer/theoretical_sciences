@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:organic_synthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methanol",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fine_reagent",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:organic_synthesis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "nmin": 5.0
+    },
+    "windows": [
+      {
+        "q": "Yt",
+        "min": 0.6,
+        "max": 1.0
+      }
+    ]
+  }
+}

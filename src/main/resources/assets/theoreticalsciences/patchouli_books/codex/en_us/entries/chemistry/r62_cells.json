@@ -1,0 +1,22 @@
+{
+  "name": "Galvanic Cells",
+  "icon": "theoreticalsciences:fuel_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:fuel_cell,theoreticalsciences:vanadium_flow_battery",
+      "text": "Split a reaction in two and make its electrons go round by a wire, and its free energy comes out as a voltage: $(thing)\u0394G = \u2212nFE$(). The Nernst equation says how the voltage moves with the reactants: $(thing)E = E\u00b0 \u2212 (RT/nF)\u00b7ln Q$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Fuel Cell$() burns Hydrogen (or Ammonia) with Oxygen as a current. Drawing more current costs voltage - so the power, V\u00b7i, peaks part-way, near 1 A/cm\u00b2. Too little current and it floods; too much and it starves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Vanadium Flow Battery$() stores 50 million FE in two tanks of vanadium electrolyte. Its voltage follows its charge, and right-clicking it reads both; it stops taking charge at 95%. Salt water through the Electrolytic Cell gives $(fluid)Chlorine$() and $(item)Caustic Soda$(); lithium carbonate gives back lithium."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/galvanic_cells"
+}

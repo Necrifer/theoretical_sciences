@@ -1,0 +1,52 @@
+{
+  "title": "Bifurcations",
+  "description": "Turn a setting slowly and, at one value, a steady state turns unstable and the system starts to oscillate: the Belousov reaction's threshold, and a heartbeat's.",
+  "icon": "theoreticalsciences:chemical_clock",
+  "x": 18,
+  "y": 3,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:stability",
+    "theoreticalsciences:oscillating_reactions"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stability_margin",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:chemical_clock",
+      "count": 1
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "In the Brusselator with feeds A and B the steady state turns unstable, and the mixture oscillates, past one value of B. Write that value H.",
+    "name": "Hopf threshold",
+    "lhs": "H",
+    "form": "1 + A ^ 2",
+    "expr": "1 + A ^ 2",
+    "ask": "Find H for A = @{A}.",
+    "vars": {
+      "H": "threshold of B",
+      "A": "first feed"
+    },
+    "given": {
+      "A": 2
+    },
+    "unit": "",
+    "method": "Linearise round the steady state (A, B/A): its trace B \u2212 1 \u2212 A\u00b2 changes sign there, and a pair of eigenvalues crosses the imaginary axis.",
+    "distractors": [
+      "-",
+      "\u03c0",
+      "B"
+    ],
+    "vary": {
+      "A": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

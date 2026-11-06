@@ -1,0 +1,24 @@
+{
+  "name": "Geometer's Table",
+  "icon": "theoreticalsciences:geometers_table",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 65,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Archimedes' method: a regular polygon of n sides inside a circle has perimeter n\u00b7sin(\u03c0/n) times the diameter, short of \u03c0 by about \u03c0\u00b3/(6n\u00b2). Doubling the sides quarters the error. A straightedge drawn without care adds its own error."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Polygon sides, Straightedge care.$(br2)$(thing)Disturbance$(): A wobbling table: the error varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Fewer sides and less care are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Estimate of \u03c0: \u03c0 \u2248 n\u00b7sin(\u03c0/n)$(br)Error: \u03b5 = \u03c0 \u2212 n\u00b7sin(\u03c0/n) + \u03b5_ruler"
+    }
+  ]
+}

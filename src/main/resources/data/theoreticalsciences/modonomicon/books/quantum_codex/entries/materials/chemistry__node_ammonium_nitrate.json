@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_ammonium_nitrate",
+  "description": "book.theoreticalsciences.codex.chemistry.node_ammonium_nitrate.desc",
+  "icon": {
+    "item": "theoreticalsciences:ammonium_nitrate"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 225,
+  "y": 55,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ammonium_nitrate"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_ammonium_nitrate.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_ammonium_nitrate.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__heat_pack_reactor",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/thermochemical_cycles"
+  }
+}

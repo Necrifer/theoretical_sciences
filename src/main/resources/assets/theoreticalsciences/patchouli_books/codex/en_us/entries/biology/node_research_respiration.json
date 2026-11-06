@@ -1,0 +1,19 @@
+{
+  "name": "Respiration",
+  "icon": "theoreticalsciences:living_cell",
+  "advancement": "theoreticalsciences:research/respiration",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:living_cell",
+      "title": "Respiration",
+      "text": "$(thing)Respiration$()$(br2)With air, a cell burns sugar all the way to carbon dioxide and gets fifteen times as much from it, pumping protons across a membrane to drive its turbine. Unlocks the Living Cell."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Metabolism, Membrane Potential.$(br2)$(thing)Samples$(): 2 Ion Channel Membrane, 2 Yeast Culture.$(br2)$(thing)Derivation$(): A proton gradient of p pH units and a voltage V (mV) drive the turbine together. Write the total push F, in mV, 59 mV for each pH unit."
+    }
+  ]
+}

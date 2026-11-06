@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:eutectic_alloying",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:radiogenic_lead",
+      "count": 1
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:superconducting_solder",
+      "amount": 4608
+    }
+  ],
+  "energy": 1,
+  "duration": 50,
+  "research": "theoreticalsciences:phase_diagrams",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "xe": 0.62,
+      "Te": 456.0
+    },
+    "windows": [
+      {
+        "q": "ex",
+        "min": 0.0,
+        "max": 0.01
+      },
+      {
+        "q": "sup",
+        "min": 5.0,
+        "max": 60.0
+      }
+    ]
+  }
+}

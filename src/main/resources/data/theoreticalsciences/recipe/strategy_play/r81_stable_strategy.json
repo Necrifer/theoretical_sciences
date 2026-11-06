@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:strategy_play",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stable_strategy",
+      "count": 1
+    }
+  ],
+  "energy": 768,
+  "duration": 300,
+  "research": "theoreticalsciences:evolutionary_games",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "V": 2.0,
+      "Cc": 5.0,
+      "tol": 0.05
+    },
+    "windows": [
+      {
+        "q": "gap",
+        "min": -1.0,
+        "max": 0.05
+      },
+      {
+        "q": "noise",
+        "min": -1.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

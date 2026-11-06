@@ -150,7 +150,7 @@ public class ChronalAcceleratorBlockEntity extends BlockEntity {
             if (st.isAir() || st.is(BLACKLIST) || st.getBlock() instanceof ChronalAcceleratorBlock) continue;
             // Round 29: never a multiblock controller - each of its ticks can re-scan and re-sync the whole structure,
             // and doing that up to 256 times a tick stalls the server
-            if (st.hasBlockEntity() && sl.getBlockEntity(p) instanceof com.theoreticalsciences.machine.ControllerBlockEntity) continue;
+            if (st.hasBlockEntity() && sl.getBlockEntity(p) instanceof com.theoreticalsciences.machine.ControllerBlockEntity c && c.definition() != null) continue;
             if (st.hasBlockEntity() || st.isRandomlyTicking()) field.add(p.immutable());
         }
     }

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.intro__evolution",
+  "description": "book.theoreticalsciences.codex.biology.intro__evolution.desc",
+  "icon": {
+    "item": "theoreticalsciences:evolution_engine"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 58,
+  "y": 67,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__evolution.p0",
+      "title": "book.theoreticalsciences.codex.biology.intro__evolution"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__evolution.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__synthetic"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__synthetic"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/directed_evolution"
+  }
+}

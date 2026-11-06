@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:regeneration",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:perfused_tissue",
+      "count": 1
+    },
+    {
+      "item": "minecraft:bone_meal",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:matrix_fibre",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Lorg": 5.0
+    },
+    "windows": [
+      {
+        "q": "read",
+        "min": 1.0,
+        "max": 1.0
+      }
+    ]
+  }
+}

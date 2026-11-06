@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:sterile_pack"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.sterile_technique"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.sterile_technique.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/molecular_biology",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

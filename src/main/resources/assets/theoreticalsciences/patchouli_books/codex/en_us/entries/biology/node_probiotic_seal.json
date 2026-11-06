@@ -1,0 +1,19 @@
+{
+  "name": "Probiotic Seal",
+  "icon": "theoreticalsciences:probiotic_seal",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:probiotic_seal",
+      "title": "Probiotic Seal",
+      "text": "A lining of harmless bacteria that hold every surface, so nothing harmful finds room to grow. Fitted to a Biology console, it is never contaminated again. One upgrade per machine. Made in the Fermenter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Fermenter$().$(br2)$(thing)Unlocked by$(): Probiotics."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/sterile_technique"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.intro__synthetic",
+  "description": "book.theoreticalsciences.codex.biology.intro__synthetic.desc",
+  "icon": {
+    "item": "theoreticalsciences:synthetic_cell"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 67,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__synthetic.p0",
+      "title": "book.theoreticalsciences.codex.biology.intro__synthetic"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.intro__synthetic.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/biology__intro__life"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/synthetic_biology"
+  }
+}

@@ -1,7 +1,7 @@
 # libs/
 
-Put these three jars here before running `gradlew build`. They are compiled against only (never bundled), because
-the mod's EMI, AE2 and Jade integrations use their APIs:
+Put these jars here before running `gradlew build`. They are compiled against only (never bundled), because
+the mod's EMI, AE2 and Jade integrations use their APIs (none of them is needed to play):
 
 | Mod | Version used | Get it from |
 |---|---|---|

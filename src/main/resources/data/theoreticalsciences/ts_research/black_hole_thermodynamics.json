@@ -1,65 +1,65 @@
 {
-  "title": "Black Hole Thermodynamics",
-  "description": "A black hole has a temperature, so it has an entropy - and that entropy is its horizon's area in Planck units, divided by four. The most information any region can hold is set by its surface, not its volume.",
-  "icon": "theoreticalsciences:bekenstein_crystal",
-  "x": 9,
-  "y": 4,
-  "insight": 260,
-  "requires": [
-    "theoreticalsciences:hawking_radiation"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:hawking_quanta",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:bekenstein_crystal",
-      "count": 1
-    }
-  ],
-  "time": 1080,
-  "puzzle": {
-    "goal": "A horizon of area A carries an entropy S, counted in units of Boltzmann's constant, set only by c, G and \u0127. Write S.",
-    "name": "Bekenstein-Hawking entropy",
-    "lhs": "S",
-    "form": "A * c ^ 3 / ( 4 * G * \u0127 )",
-    "expr": "A * c ^ 3 / ( 4 * G * h ) / u",
-    "ask": "Find S in units of 10\u2077\u2070 k (u = @{u}) for a solar-mass hole, A = @{A} m\u00b2 (c = 2.998e8, G = 6.674e-11, h = 1.0546e-34 for \u0127).",
-    "vars": {
-      "S": "entropy (10\u2077\u2070 k)",
-      "A": "horizon area (m\u00b2)",
-      "c": "speed of light",
-      "G": "gravitational constant",
-      "\u0127": "reduced Planck constant",
-      "h": "\u0127 (J\u00b7s)",
-      "u": "10\u2077\u2070"
-    },
-    "given": {
-      "A": 109600000.0,
-      "c": 299800000.0,
-      "G": 6.674e-11,
-      "h": 1.0546e-34,
-      "u": 1e+70
-    },
-    "unit": "\u00d710\u2077\u2070 k",
-    "method": "Integrate dS = dE/T with E = Mc\u00b2 and the Hawking temperature: S grows as M\u00b2, which is the area.",
-    "distractors": [
-      "\u03c0",
-      "2",
-      "k"
-    ],
-    "vary": {
-      "A": [
-        65000000.0,
-        154000000.0,
-        1000000.0
-      ],
-      "u": [
-        6e+69,
-        1.4e+70,
-        1e+68
-      ]
-    }
+ "title": "Black Hole Thermodynamics",
+ "description": "A black hole has a temperature, so it has an entropy, and that entropy is its horizon's area in Planck units, divided by four. The most information any region can hold is set by its surface, not its volume.",
+ "icon": "theoreticalsciences:bekenstein_crystal",
+ "x": 9,
+ "y": 4,
+ "insight": 260,
+ "requires": [
+  "theoreticalsciences:hawking_radiation"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:hawking_quanta",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:bekenstein_crystal",
+   "count": 1
   }
+ ],
+ "time": 1080,
+ "puzzle": {
+  "goal": "A horizon of area A carries an entropy S, counted in units of Boltzmann's constant, set only by c, G and ħ. Write S.",
+  "name": "Bekenstein-Hawking entropy",
+  "lhs": "S",
+  "form": "A * c ^ 3 / ( 4 * G * ħ )",
+  "expr": "A * c ^ 3 / ( 4 * G * h ) / u",
+  "ask": "Find S in units of 10⁷⁰ k (u = @{u}) for a solar-mass hole, A = @{A} m² (c = 2.998e8, G = 6.674e-11, h = 1.0546e-34 for ħ).",
+  "vars": {
+   "S": "entropy (10⁷⁰ k)",
+   "A": "horizon area (m²)",
+   "c": "speed of light",
+   "G": "gravitational constant",
+   "ħ": "reduced Planck constant",
+   "h": "ħ (J·s)",
+   "u": "10⁷⁰"
+  },
+  "given": {
+   "A": 109600000.0,
+   "c": 299800000.0,
+   "G": 6.674e-11,
+   "h": 1.0546e-34,
+   "u": 1e+70
+  },
+  "unit": "×10⁷⁰ k",
+  "method": "Integrate dS = dE/T with E = Mc² and the Hawking temperature: S grows as M², which is the area.",
+  "distractors": [
+   "π",
+   "2",
+   "k"
+  ],
+  "vary": {
+   "A": [
+    65000000.0,
+    154000000.0,
+    1000000.0
+   ],
+   "u": [
+    6e+69,
+    1.4e+70,
+    1e+68
+   ]
+  }
+ }
 }

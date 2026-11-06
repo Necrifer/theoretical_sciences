@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:cracking_tower"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.petrochemistry"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.petrochemistry.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/heterogeneous_catalysis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

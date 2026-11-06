@@ -1,0 +1,24 @@
+{
+  "name": "Strategy Table",
+  "icon": "theoreticalsciences:strategy_table",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 124,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Hawk-Dove game: two meet over a prize V. A hawk fights; a dove shares with another dove and backs down from a hawk. Two hawks fight, one wins V and the loser pays an injury C. When a share p of the population are hawks, a hawk earns p(V \u2212 C)/2 + (1 \u2212 p)V and a dove (1 \u2212 p)V/2. Their difference, (V \u2212 pC)/2, is zero only at p = V/C: the stable mix."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Hawk share, Rounds.$(br2)$(thing)Disturbance$(): Uneven prizes: V varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): none beyond the recipe windows.$(br2)$(thing)Rate$(): Fewer rounds are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Hawk over dove: (V \u2212 pC)/2$(br)Noise of chance: 1/\u221an$(br)Stable share: V/C"
+    }
+  ]
+}

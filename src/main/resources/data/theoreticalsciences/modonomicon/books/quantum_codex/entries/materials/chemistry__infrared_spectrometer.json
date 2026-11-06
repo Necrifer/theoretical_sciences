@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer",
+  "description": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.desc",
+  "icon": {
+    "item": "theoreticalsciences:infrared_spectrometer"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 260,
+  "y": 54,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:infrared_spectrometer"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:infrared_spectrometer"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.p4"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.infrared_spectrometer.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__titration_bench"
+    },
+    {
+      "entry": "theoreticalsciences:materials/chemistry__cracking_tower"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/infrared_spectroscopy"
+  }
+}

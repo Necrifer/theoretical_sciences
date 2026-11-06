@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:pattern_forming",
+  "item_inputs": [
+    {
+      "item": "minecraft:slime_ball",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pattern_template",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:reaction_diffusion",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "windows": [
+      {
+        "q": "spacing",
+        "min": 1.5,
+        "max": 2.0
+      },
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 999.0
+      }
+    ]
+  }
+}

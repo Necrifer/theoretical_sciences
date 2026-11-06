@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__finality_eras",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__finality_eras.desc",
+  "icon": {
+    "item": "theoreticalsciences:evaporation_flash"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 45,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__finality_eras.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__finality_eras"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__finality_eras.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__finality_branch"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/proton_decay"
+  }
+}

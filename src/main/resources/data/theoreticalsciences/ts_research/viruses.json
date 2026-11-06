@@ -1,0 +1,59 @@
+{
+  "title": "Viruses",
+  "description": "Genes in a protein coat, with no life of their own: they borrow a cell's. Unlocks the Phage Lab and Bacteriophages.",
+  "icon": "theoreticalsciences:bacteriophage",
+  "x": 5,
+  "y": 21,
+  "insight": 100,
+  "requires": [
+    "theoreticalsciences:microbiology",
+    "theoreticalsciences:transcription"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:messenger_rna",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "p phages are mixed with c cells and land at random. Write the share F of cells hit at least once.",
+    "name": "Poisson infection",
+    "lhs": "F",
+    "form": "1 - exp ( - p / c )",
+    "expr": "1 - exp ( - p / c )",
+    "ask": "Find F for p = @{p} and c = @{c}.",
+    "vars": {
+      "F": "share infected",
+      "p": "phages",
+      "c": "cells"
+    },
+    "given": {
+      "p": 200,
+      "c": 100
+    },
+    "unit": "",
+    "method": "Each cell gets a Poisson number of hits with mean p/c; the chance of none is e^(\u2212p/c).",
+    "distractors": [
+      "+",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "p": [
+        120.0,
+        280.0,
+        1.0
+      ],
+      "c": [
+        60.0,
+        140.0,
+        1.0
+      ]
+    }
+  }
+}

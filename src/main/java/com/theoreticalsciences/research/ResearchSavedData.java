@@ -30,6 +30,19 @@ public class ResearchSavedData extends SavedData {
 
     private final Map<UUID, Entry> players = new HashMap<>();
 
+    /** 1.2.0: the world's own random number for puzzle values (it used to come from the seed, which a client could undo). */
+    private long puzzleSalt;
+
+    public long puzzleSalt() {
+        if (puzzleSalt == 0) {
+            long z = 0;
+            while (z == 0) z = new java.security.SecureRandom().nextLong();
+            puzzleSalt = z;
+            setDirty();
+        }
+        return puzzleSalt;
+    }
+
     public static ResearchSavedData get(MinecraftServer server) {
         return server.overworld().getDataStorage().computeIfAbsent(
                 new SavedData.Factory<>(ResearchSavedData::new, ResearchSavedData::load, null), NAME);
@@ -45,6 +58,7 @@ public class ResearchSavedData extends SavedData {
 
     private static ResearchSavedData load(CompoundTag tag, HolderLookup.Provider regs) {
         ResearchSavedData d = new ResearchSavedData();
+        d.puzzleSalt = tag.getLong("PuzzleSalt");
         CompoundTag ps = tag.getCompound("Players");
         for (String key : ps.getAllKeys()) {
             UUID id;
@@ -102,6 +116,7 @@ public class ResearchSavedData extends SavedData {
             ps.put(id.toString(), p);
         });
         tag.put("Players", ps);
+        if (puzzleSalt != 0) tag.putLong("PuzzleSalt", puzzleSalt);
         return tag;
     }
 }

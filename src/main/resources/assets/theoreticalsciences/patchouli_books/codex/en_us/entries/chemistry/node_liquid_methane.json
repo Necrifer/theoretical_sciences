@@ -1,0 +1,19 @@
+{
+  "name": "Liquid Methane",
+  "icon": "theoreticalsciences:liquid_methane_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:liquid_methane_cell",
+      "title": "Liquid Methane",
+      "text": "CH\u2084 at 94 K, with a little ethane and nitrogen dissolved in it: the stuff of Titan's seas, rivers and rain. Less than half as dense as water, and too thin to swim in. Found in Titan's seas and lakes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Lake Pump$().$(br2)$(thing)Unlocked by$(): Lakes of Titan.$(br2)$(thing)Used in$(): Methane, Nitrogen, Organic Evaporite."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/titan_lakes"
+}

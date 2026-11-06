@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r65_polymers",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r65_polymers.desc",
+  "icon": {
+    "item": "theoreticalsciences:polymeriser"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 92,
+  "y": 60,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r65_polymers.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r65_polymers"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r65_polymers.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r65_petrochem"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/polymer_chemistry"
+  }
+}

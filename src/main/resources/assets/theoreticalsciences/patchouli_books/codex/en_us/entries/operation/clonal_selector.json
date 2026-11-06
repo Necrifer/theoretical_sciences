@@ -1,0 +1,24 @@
+{
+  "name": "Clonal Selector",
+  "icon": "theoreticalsciences:clonal_selector",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 35,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Affinity maturation, as in a germinal centre: each round of selection keeps the clones that bind best, so the affinity grows as (1 + s)^n. But the same culling narrows the line: diversity falls as e^(-n.s/3). Bind tightly enough, and keep enough variety."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Rounds, Stringency.$(br2)$(thing)Disturbance$(): Assay scatter: the affinity varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The line collapses to one clone.$(br2)$(thing)Rate$(): A varied line grows faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Affinity: A = (1 + s)^n$(br)Diversity: D = 100.e^(-n.s/3)"
+    }
+  ]
+}

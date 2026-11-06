@@ -1,0 +1,65 @@
+{
+  "title": "Infrared Spectroscopy",
+  "description": "Each bond swallows its own colour of infrared: the gaps in the light are a list of the bonds. Unlocks the Infrared Spectrometer and Structure Cards.",
+  "icon": "theoreticalsciences:infrared_spectrometer",
+  "x": 26,
+  "y": -4,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:organic_synthesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:photonic_lens",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 1
+    }
+  ],
+  "time": 390,
+  "puzzle": {
+    "goal": "A bond of stiffness k joins two atoms of masses a and b. Write its vibration frequency v in hertz.",
+    "name": "Harmonic bond",
+    "lhs": "v",
+    "form": "sqrt ( k * ( a + b ) / ( a * b ) ) / ( 2 * \u03c0 )",
+    "expr": "sqrt ( k * ( a + b ) / ( a * b ) ) / ( 2 * 3.14159265 )",
+    "ask": "Find v for a C=O bond: k = @{k} N/m, a = @{a} kg, b = @{b} kg.",
+    "vars": {
+      "v": "frequency (Hz)",
+      "k": "bond stiffness (N/m)",
+      "a": "first atom (kg)",
+      "b": "second atom (kg)"
+    },
+    "given": {
+      "k": 1200,
+      "a": 1.994e-26,
+      "b": 2.657e-26
+    },
+    "unit": "Hz",
+    "method": "A spring between two masses vibrates as one of the reduced mass ab/(a + b).",
+    "distractors": [
+      "2",
+      "T",
+      "R"
+    ],
+    "vary": {
+      "k": [
+        720.0,
+        1680.0,
+        1.0
+      ],
+      "a": [
+        1.19e-26,
+        2.8e-26,
+        1e-28
+      ],
+      "b": [
+        1.59e-26,
+        3.72e-26,
+        1e-28
+      ]
+    }
+  }
+}

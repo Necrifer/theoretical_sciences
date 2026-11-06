@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:adaptive_immunity",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:memory_cell",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:blood_plasma",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antibody",
+      "count": 17
+    }
+  ],
+  "energy": 1024,
+  "duration": 75,
+  "research": "theoreticalsciences:inner_space",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Kd": 30.0
+    },
+    "windows": [
+      {
+        "q": "resp",
+        "min": 0.7,
+        "max": 2.0
+      }
+    ]
+  }
+}

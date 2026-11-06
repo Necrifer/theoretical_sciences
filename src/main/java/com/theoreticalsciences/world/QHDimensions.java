@@ -42,5 +42,14 @@ public final class QHDimensions {
     /** 1.10: the Accretion Frontier - islands of rock and ice in the space round an accreting black hole (reached with a Light Sail). */
     public static final ResourceKey<Level> FRONTIER = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("accretion_frontier"));
 
+    /** 1.2.0: Titan, Saturn's largest moon - methane seas under an orange sky (reached with a Cryogenic Lander). */
+    public static final ResourceKey<Level> TITAN = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("titan"));
+
+    /** 1.2.0: Inner Space, a living body seen at the scale of its cells (reached with the Miniaturiser). */
+    public static final ResourceKey<Level> INNER = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("inner_space"));
+
+    /** 1.2.0: Titan's hidden ocean, under the Subsurface Seal (reached by melting through it with a Cryobot). */
+    public static final ResourceKey<Level> TITAN_OCEAN = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("titan_ocean"));
+
     private QHDimensions() {}
 }

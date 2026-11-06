@@ -1,0 +1,38 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r65_frameworks",
+  "description": "book.theoreticalsciences.codex.chemistry.r65_frameworks.desc",
+  "icon": {
+    "item": "theoreticalsciences:framework_assembler"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 126,
+  "y": 17,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:framework_assembler"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r65_frameworks.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r65_frameworks.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r63_nebula"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r64_catalysis"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/reticular_chemistry"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Galvanic Cells",
+  "description": "A reaction split in two, the electrons made to go round by a wire: its free energy comes out as a voltage, \u0394G = \u2212nFE. Unlocks the Fuel Cell, the Vanadium Flow Battery and the chlor-alkali cell.",
+  "icon": "theoreticalsciences:fuel_cell",
+  "x": 20,
+  "y": 0,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:electrochemistry",
+    "theoreticalsciences:chemical_equilibrium"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hydrogen_cell",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 8
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A cell of standard voltage E passes n electrons per reaction, at temperature T, with reaction quotient Q. Write its voltage v, with the gas constant R and the Faraday constant F.",
+    "name": "Nernst",
+    "lhs": "v",
+    "form": "E - R * T / ( n * F ) * ln ( Q )",
+    "expr": "E - R * T / ( n * F ) * ln ( Q )",
+    "ask": "Find v for E = @{E} V, R = 8.314, T = @{T} K, n = @{n}, F = 96485 and Q = @{Q}.",
+    "vars": {
+      "v": "cell voltage (V)",
+      "E": "standard voltage (V)",
+      "R": "gas constant",
+      "T": "temperature (K)",
+      "n": "electrons",
+      "F": "Faraday constant (C/mol)",
+      "Q": "reaction quotient"
+    },
+    "given": {
+      "E": 1.229,
+      "R": 8.314,
+      "T": 353,
+      "n": 2,
+      "F": 96485,
+      "Q": 0.1
+    },
+    "unit": "V",
+    "method": "\u0394G = \u0394G\u00b0 + RT ln Q, and \u0394G = \u2212nFE: divide through by \u2212nF.",
+    "distractors": [
+      "2",
+      "\u03c0",
+      "P"
+    ],
+    "vary": {
+      "E": [
+        0.73,
+        1.73,
+        0.01
+      ],
+      "T": [
+        212.0,
+        494.0,
+        1.0
+      ],
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "Q": [
+        0.06,
+        0.14,
+        0.001
+      ]
+    }
+  }
+}

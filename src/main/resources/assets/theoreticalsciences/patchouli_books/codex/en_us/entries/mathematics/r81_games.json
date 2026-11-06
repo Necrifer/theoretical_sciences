@@ -1,0 +1,22 @@
+{
+  "name": "Games",
+  "icon": "theoreticalsciences:strategy_table",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:strategy_table,theoreticalsciences:stable_strategy",
+      "text": "When the best choice depends on what others choose."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Games and Strategy$(): the $(item)Strategy Table$() plays the Hawk-Dove game. Hawks fight for a prize V and risk an injury C; doves share, or back down from a hawk. With a share p of hawks, a hawk out-earns a dove by (V \u2212 pC)/2, so the population settles at p = V/C. Set the hawk share close enough, over enough rounds that luck cannot hide the gap (its noise falls as 1/\u221an), and the table records an $(item)Evolutionarily Stable Strategy$() ($(thing)Evolutionary Games$()). Its calibration: find the equilibrium in a table of payoffs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Bioreactor grows Tardigrade Cultures from half the genomes and moss with one, and without enzymes or sterile neutrinos. Biology (1.4) takes the game further, into selection and genetics."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/game_theory"
+}

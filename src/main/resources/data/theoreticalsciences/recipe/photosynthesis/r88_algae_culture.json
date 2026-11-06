@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:photosynthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:kelp",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bone_meal",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:algae_culture",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:photosynthesis",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Kl": 150.0,
+      "Ii": 1000.0
+    },
+    "windows": [
+      {
+        "q": "ph",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

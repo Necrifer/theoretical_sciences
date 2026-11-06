@@ -1,0 +1,48 @@
+{
+  "title": "Algorithms",
+  "description": "A recipe precise enough for a machine. Some take steps in proportion to the input, some its square: sorting a million things can take twenty million steps, or a trillion.",
+  "icon": "theoreticalsciences:random_number_chip",
+  "x": 8,
+  "y": 10,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:linear_algebra",
+    "theoreticalsciences:combinatorics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 16
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A good sort of n things compares them about n\u00b7log\u2082 n times. Write that count M.",
+    "name": "Comparison sort",
+    "lhs": "M",
+    "form": "n * ln ( n ) / ln ( 2 )",
+    "expr": "n * ln ( n ) / ln ( 2 )",
+    "ask": "Find M for n = @{n}.",
+    "vars": {
+      "M": "comparisons",
+      "n": "things to sort"
+    },
+    "given": {
+      "n": 1024
+    },
+    "unit": "",
+    "method": "There are n! orders, and each comparison halves the choices: log\u2082(n!) \u2248 n log\u2082 n of them.",
+    "distractors": [
+      "-",
+      "+",
+      "e"
+    ],
+    "vary": {
+      "n": [
+        614.0,
+        1434.0,
+        1.0
+      ]
+    }
+  }
+}

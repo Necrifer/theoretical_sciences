@@ -1,0 +1,19 @@
+{
+  "name": "Enantiopure Reagent",
+  "icon": "theoreticalsciences:enantiopure_reagent",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "title": "Enantiopure Reagent",
+      "text": "A reagent of one hand only. Its mirror image would smell different, taste different, or be poison. Made in the Asymmetric Reactor or on the Chromatography Column."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Asymmetric Reactor$().$(br2)$(thing)Unlocked by$(): Asymmetric Synthesis.$(br2)$(thing)Used in$(): Tincture of Chirality."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/asymmetric_synthesis"
+}

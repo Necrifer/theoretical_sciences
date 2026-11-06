@@ -1,0 +1,22 @@
+{
+  "name": "Chromatography",
+  "icon": "theoreticalsciences:chromatography_column",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 22,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:chromatography_column",
+      "text": "A mixture carried down a packed column comes apart: each part sticks to the packing for its own time. The bands spread as they go - the $(thing)plate height H = A + B/u + C\u00b7u$() (van Deemter) is smallest at a middling flow - and two parts come out clean when the resolution $(thing)Rs$() reaches 1.5."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Chromatography Column$() is a tower: every storey adds a metre of column and more plates, for harder splits. Set the carrier flow and the oven temperature. It splits $(fluid)Molecular Cloud$() gas into water and ammonia, methane and hydrogen cyanide, and the dust clouds' medium into $(item)PAH Soot$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gases that come off it pure are $(thing)assayed$(): Hydrogen, Nitrogen, Oxygen, Methane and Carbon Monoxide. From now on these, like the acids, poison a chemical catalyst when fed in unassayed (five runs each)."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chromatography"
+}

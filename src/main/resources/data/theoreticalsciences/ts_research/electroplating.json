@@ -1,0 +1,75 @@
+{
+  "title": "Electroplating",
+  "description": "Run a current through a metal salt and the metal comes out on the cathode, a mass set exactly by the charge passed. Unlocks the Electroplating Bath and corrosion-proof casings.",
+  "icon": "theoreticalsciences:electroplating_bath",
+  "x": 20,
+  "y": -4,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:electrochemistry",
+    "theoreticalsciences:acids_and_bases"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 8
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "A current I runs for t seconds through a bath of a metal of molar mass M whose ions take n electrons each. Write the mass m of metal laid down, F being the charge carried by a mole of electrons.",
+    "name": "Faraday",
+    "lhs": "m",
+    "form": "M * I * t / ( n * F )",
+    "expr": "M * I * t / ( n * F )",
+    "ask": "Find m in grams for nickel: M = @{M} g/mol, I = @{I} A, t = @{t} s, n = @{n}, F = 96485 C/mol.",
+    "vars": {
+      "m": "mass plated (g)",
+      "M": "molar mass (g/mol)",
+      "I": "current (A)",
+      "t": "time (s)",
+      "n": "electrons per ion",
+      "F": "Faraday constant (C/mol)"
+    },
+    "given": {
+      "M": 58.7,
+      "I": 5,
+      "t": 3600,
+      "n": 2,
+      "F": 96485
+    },
+    "unit": "g",
+    "method": "The charge It, divided by F, is the moles of electrons; n of them make one atom of metal.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "M": [
+        35.2,
+        82.2,
+        0.1
+      ],
+      "I": [
+        3.0,
+        7.0,
+        1.0
+      ],
+      "t": [
+        2160.0,
+        5040.0,
+        1.0
+      ],
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

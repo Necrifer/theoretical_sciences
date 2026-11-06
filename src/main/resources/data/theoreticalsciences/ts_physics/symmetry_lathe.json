@@ -1,0 +1,62 @@
+{
+  "params": [
+    {
+      "id": "k",
+      "unit": "",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "id": "w",
+      "unit": "rpm",
+      "min": 10,
+      "max": 1200,
+      "step": 1,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {
+    "G": 12
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "grp",
+      "unit": "",
+      "expr": "2*k",
+      "formula": "|D_k| = 2k"
+    },
+    {
+      "id": "match",
+      "unit": "",
+      "expr": "1 - min(1, abs(2*k - G))",
+      "formula": "|D_k| = G"
+    },
+    {
+      "id": "wob",
+      "unit": "",
+      "expr": "w*k/3000*(1 + 0.02*d)",
+      "formula": "k\u00b7\u03c9 / 3000"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "shake",
+      "kind": "stop",
+      "expr": "1 - wob",
+      "formula": "k\u00b7\u03c9 < 3000"
+    }
+  ],
+  "rate": "clamp(w/300, 0.1, 4)",
+  "rate_formula": "rate = \u03c9 / 300",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

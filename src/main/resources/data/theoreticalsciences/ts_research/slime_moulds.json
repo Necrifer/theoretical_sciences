@@ -1,0 +1,61 @@
+{
+  "title": "Slime Moulds",
+  "description": "Physarum is one cell that spreads toward food and keeps only the tubes that carry most: a network that solves shortest paths. Unlocks Physarum Cultures and cheap Network Maps.",
+  "icon": "theoreticalsciences:physarum_culture",
+  "x": 8,
+  "y": 22,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:mycology",
+    "theoreticalsciences:networks"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:mould_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:network_map",
+      "count": 1
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A tube of conductance D carries flow along a pressure drop p over a length L. Write the flow Q.",
+    "name": "Poiseuille-like flow",
+    "lhs": "Q",
+    "form": "D * p / L",
+    "expr": "D * p / L",
+    "ask": "Find Q for D = 3, p = @{p} and L = @{L}.",
+    "vars": {
+      "Q": "flow",
+      "D": "conductance",
+      "p": "pressure drop",
+      "L": "length"
+    },
+    "given": {
+      "D": 3,
+      "p": 8,
+      "L": 4
+    },
+    "unit": "",
+    "method": "Flow follows the pressure gradient. Physarum thickens tubes that carry much and lets the rest wither: shortest paths win.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "p": [
+        5.0,
+        11.0,
+        1.0
+      ],
+      "L": [
+        2.0,
+        6.0,
+        1.0
+      ]
+    }
+  }
+}

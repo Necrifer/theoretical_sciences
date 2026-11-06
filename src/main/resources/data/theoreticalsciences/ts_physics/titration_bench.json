@@ -1,0 +1,55 @@
+{
+  "params": [
+    {
+      "id": "Vt",
+      "unit": "mL",
+      "min": 0,
+      "max": 100,
+      "step": 0.001,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "Ca": 0.1,
+    "sg": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "D",
+      "unit": "mol/L",
+      "expr": "sg*(Ca*25 - 0.1*Vt*(1 + 0.0002*d))/(25 + Vt)",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "H",
+      "unit": "mol/L",
+      "expr": "(D + sqrt(D^2 + 4e-14))/2",
+      "formula": "[H\u207a] = (D + \u221a(D\u00b2 + 4K_w))/2"
+    },
+    {
+      "id": "pH",
+      "unit": "",
+      "expr": "-ln(H)/2.302585",
+      "formula": "pH = \u2212log\u2081\u2080[H\u207a]"
+    },
+    {
+      "id": "Veq",
+      "unit": "mL",
+      "expr": "Ca*250",
+      "formula": "V = C\u00b725 mL / 0.1"
+    }
+  ],
+  "constraints": [],
+  "rate": "1",
+  "rate_formula": "rate = 1",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

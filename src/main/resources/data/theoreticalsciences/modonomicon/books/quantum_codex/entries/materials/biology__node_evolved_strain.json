@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.biology.node_evolved_strain",
+  "description": "book.theoreticalsciences.codex.biology.node_evolved_strain.desc",
+  "icon": {
+    "item": "theoreticalsciences:evolved_strain"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 175,
+  "y": 86,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:evolved_strain"
+      },
+      "text": "book.theoreticalsciences.codex.biology.node_evolved_strain.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.biology.node_evolved_strain.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/biology__selection_chamber",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/population_genetics"
+  }
+}

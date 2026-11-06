@@ -1,0 +1,47 @@
+{
+  "title": "Networks",
+  "description": "Join every place to every other with as few links as possible and you have a tree; add one more and it has a loop, a second way round. Unlocks the Network Map.",
+  "icon": "theoreticalsciences:network_map",
+  "x": 7,
+  "y": 4,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:graph_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "How many different trees N join n labelled junctions, each link joining two of them, with no loop? Write it.",
+    "name": "Cayley's count",
+    "lhs": "N",
+    "form": "n ^ ( n - 2 )",
+    "expr": "n ^ ( n - 2 )",
+    "ask": "Find N for n = @{n}.",
+    "vars": {
+      "N": "trees",
+      "n": "junctions"
+    },
+    "given": {
+      "n": 5
+    },
+    "unit": "",
+    "method": "Pr\u00fcfer: every such tree is spelled by exactly one list of n \u2212 2 junction names, and there are n\u207f\u207b\u00b2 lists.",
+    "distractors": [
+      "+",
+      "ln",
+      "e"
+    ],
+    "vary": {
+      "n": [
+        3.0,
+        7.0,
+        1.0
+      ]
+    }
+  }
+}

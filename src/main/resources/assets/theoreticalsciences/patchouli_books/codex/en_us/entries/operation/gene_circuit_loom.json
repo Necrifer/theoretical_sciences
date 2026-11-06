@@ -1,0 +1,24 @@
+{
+  "name": "Gene Circuit Loom",
+  "icon": "theoreticalsciences:gene_circuit_loom",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 64,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two genes that each switch the other off make a toggle: it rests in one state or the other. It can latch, and hold its state, only when each represses the other steeply enough, cooperativity n > 1; at n = 1 there is one state and no memory."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Promoter A, Cooperativity.$(br2)$(thing)Disturbance$(): Leaky promoter: the stability varies by +/- 2%.d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): At n = 1 it cannot latch.$(br2)$(thing)Rate$(): A firm switch is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Bistability: latches when n > 1 and A ~ B"
+    }
+  ]
+}

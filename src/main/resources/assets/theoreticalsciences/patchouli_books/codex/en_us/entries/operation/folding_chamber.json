@@ -1,0 +1,24 @@
+{
+  "name": "Folding Chamber",
+  "icon": "theoreticalsciences:folding_chamber",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 59,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A small protein folds all at once or not at all. Its stability is \u0394G = \u0394H(1 \u2212 T/Tm) \u2212 m\u00b7U (U the denaturant), and the folded share is 1/(1 + e^(\u2212\u0394G/RT)). Near its melting point Tm half the chains are unfolded."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Temperature, Denaturant.$(br2)$(thing)Disturbance$(): Stray salt: stability varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The chains clump together.$(br2)$(thing)Rate$(): Warmer folds faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Folding stability: \u0394G = \u0394H(1 \u2212 T/Tm) \u2212 m\u00b7U$(br)Folded share: f = 1/(1 + e^(\u2212\u0394G/RT))"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:coal",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:crude_oil",
+      "amount": 1000
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:petrochemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 73.8,
+      "Af": 10000000.0,
+      "Xt": 0.95
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

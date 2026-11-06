@@ -1,0 +1,19 @@
+{
+  "name": "Bacteriophage",
+  "icon": "theoreticalsciences:bacteriophage",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:bacteriophage",
+      "title": "Bacteriophage",
+      "text": "A virus that eats bacteria: a head of DNA on a stalk of legs. It lands on a cell, injects its genes, and the cell builds a hundred more before it bursts. Made in the Phage Lab."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Phage Lab$().$(br2)$(thing)Unlocked by$(): Viruses.$(br2)$(thing)Used in$(): Recombinant DNA."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/viruses"
+}

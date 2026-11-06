@@ -1,0 +1,57 @@
+{
+  "type": "theoreticalsciences:ecology",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:living_cell",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:grown_organ",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:antibody",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:stable_ecosystem",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tree_of_life",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 600,
+  "research": "theoreticalsciences:tree_of_life",
+  "unscaled": true,
+  "insight_per_run": 10,
+  "physics": {
+    "vars": {
+      "ar": 1.0,
+      "br": 0.04,
+      "gr": 1.0,
+      "dr": 0.04
+    },
+    "windows": [
+      {
+        "q": "swing",
+        "min": 0.95,
+        "max": 2.0
+      }
+    ]
+  }
+}

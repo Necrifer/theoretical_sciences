@@ -1,0 +1,32 @@
+{
+  "name": "Integrator",
+  "icon": "theoreticalsciences:integrator",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 165,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:integrator",
+      "title": "Integrator",
+      "text": "A mechanical differential analyser: wheels and discs that add up a rate, step by step, into what it amounts to.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the step size h and the method's order m (1 Euler, 2 midpoint, 4 Runge-Kutta). The error, about (hk)^(m+1)/(m+1), must be under the recipe's tolerance; past hk = 2 (2.785 for order 4) the steps blow up. Bigger steps are faster; higher orders cost more per step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 1 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Imaginary Unit, Rate Table, Stability Margin, e Crystal."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:integrator",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/rates_as_equations"
+}

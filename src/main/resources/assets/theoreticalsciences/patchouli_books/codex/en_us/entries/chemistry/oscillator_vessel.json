@@ -1,0 +1,32 @@
+{
+  "name": "Oscillator Vessel",
+  "icon": "theoreticalsciences:oscillator_vessel",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 159,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:oscillator_vessel",
+      "title": "Oscillator Vessel",
+      "text": "A stirred dish fed with bromate and malonic acid, whose colour swings back and forth on its own beat.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the bromate and malonic acid feeds A and B. It oscillates only past B = 1 + A\u00b2, and its beat is about 2\u03c0/A seconds: the clock must beat every 3 to 8 seconds, at least 0.2 past the threshold."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Chemical Clock."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:oscillator_vessel",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/oscillating_reactions"
+}

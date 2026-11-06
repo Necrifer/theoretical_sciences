@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:integration",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:pi_crystal",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:euler_crystal",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:imaginary_unit",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:euler_formula",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "k": 3.0,
+      "tol": 0.001
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.001
+      }
+    ]
+  }
+}

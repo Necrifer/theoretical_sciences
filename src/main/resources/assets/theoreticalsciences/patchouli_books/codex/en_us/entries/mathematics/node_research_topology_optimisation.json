@@ -1,0 +1,19 @@
+{
+  "name": "Topology Optimisation",
+  "icon": "theoreticalsciences:metamaterial_sheet",
+  "advancement": "theoreticalsciences:research/topology_optimisation",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "title": "Topology Optimisation",
+      "text": "$(thing)Topology Optimisation$()$(br2)Let the mathematics decide where material goes: fill a cell only if it carries load. Structures come out like bone. Unlocks a cheaper Metamaterial Sheet."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 100$(br2)$(thing)Builds on$(): Optimisation, Metamaterials.$(br2)$(thing)Samples$(): 1 Optimised Pathway.$(br2)$(thing)Derivation$(): Each cell of a design holds a share r of material. Write its stiffness Y, from the solid's E and the empty cell's m, with the share raised to a power p, so half-filled cells are not worth keeping."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "title": "Microbiology",
+  "description": "Most life is too small to see, and doubles every twenty minutes while the food lasts. Unlocks Bacterial Cultures.",
+  "icon": "theoreticalsciences:bacterial_culture",
+  "x": 3,
+  "y": 21,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:fermentation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:yeast_culture",
+      "count": 2
+    },
+    {
+      "item": "minecraft:bone_meal",
+      "count": 4
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "Bacteria double every g minutes. Starting from N cells, write how many there are, M, after t minutes.",
+    "name": "Doubling",
+    "lhs": "M",
+    "form": "N * 2 ^ ( t / g )",
+    "expr": "N * 2 ^ ( t / g )",
+    "ask": "Find M for N = @{N}, t = @{t} and g = @{g}.",
+    "vars": {
+      "M": "cells later",
+      "N": "cells at first",
+      "t": "time",
+      "g": "doubling time"
+    },
+    "given": {
+      "N": 100,
+      "t": 120,
+      "g": 20
+    },
+    "unit": "",
+    "method": "Each g minutes multiplies the count by two, so t minutes multiply it by 2^(t/g).",
+    "distractors": [
+      "e",
+      "+",
+      "3"
+    ],
+    "vary": {
+      "N": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "t": [
+        72.0,
+        168.0,
+        1.0
+      ],
+      "g": [
+        12.0,
+        28.0,
+        1.0
+      ]
+    }
+  }
+}

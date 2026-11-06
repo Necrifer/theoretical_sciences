@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:assayed_enzyme"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.enzyme_kinetics"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.enzyme_kinetics.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/fixed_points",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Alkahest Still",
+  "icon": "theoreticalsciences:alkahest_still",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 160,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:alkahest_still",
+      "title": "Alkahest Still",
+      "text": "A tall glass still with a reflux column, for the one distillation the alchemists never finished.$(br2)$(thing)Tier 3$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the still's temperature and the reflux ratio. Each stage boils off near its own temperature; more reflux makes it purer but slower. Purity must reach 95%. More than 150 K over the boiling point and it boils over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 3 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Alkahest, Copper Ingot, Gold Ingot, Iron Ingot, Tincture of Balance, Tincture of Chirality, Tincture of Form."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:alkahest_still",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/alkahest"
+}

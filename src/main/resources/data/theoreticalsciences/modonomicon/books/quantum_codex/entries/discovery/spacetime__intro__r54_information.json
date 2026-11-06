@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r54_information",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r54_information.desc",
+  "icon": {
+    "item": "theoreticalsciences:page_curve_analyzer"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 47,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_information.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r54_information"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r54_information.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/spacetime__intro__r54_hawking"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/information_paradox"
+  }
+}

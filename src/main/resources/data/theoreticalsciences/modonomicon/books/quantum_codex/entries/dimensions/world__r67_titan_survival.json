@@ -1,0 +1,46 @@
+{
+  "name": "book.theoreticalsciences.codex.world.r67_titan_survival",
+  "description": "book.theoreticalsciences.codex.world.r67_titan_survival.desc",
+  "icon": {
+    "item": "theoreticalsciences:heated_pressure_suit_chestplate"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 127,
+  "y": 23,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:heated_pressure_suit_chestplate"
+      },
+      "text": "book.theoreticalsciences.codex.world.r67_titan_survival.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r67_titan_survival.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r67_titan_survival.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.r67_titan_survival.p3"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r67_titan"
+    },
+    {
+      "entry": "theoreticalsciences:dimensions/world__r68_titan_life"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/cryogenic_survival"
+  }
+}

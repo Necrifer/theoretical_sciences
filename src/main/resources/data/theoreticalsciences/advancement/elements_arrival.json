@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:euclidean_shard"
+    },
+    "title": "The Elements",
+    "description": {
+      "translate": "advancements.theoreticalsciences.elements_arrival.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/euclidean_geometry",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "dimension": "theoreticalsciences:platonic_realm",
+                "position": {
+                  "y": {
+                    "min": 300,
+                    "max": 519
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

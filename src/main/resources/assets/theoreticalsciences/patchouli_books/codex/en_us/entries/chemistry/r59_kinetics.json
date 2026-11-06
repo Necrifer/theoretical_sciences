@@ -1,0 +1,18 @@
+{
+  "name": "Reaction Kinetics",
+  "icon": "theoreticalsciences:air_separation_unit",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:air_separation_unit",
+      "text": "A reaction goes at the rate constant $(thing)k = A\u00b7e^(\u2212E\u2090/RT)$() (Arrhenius): ten degrees warmer and many go twice as fast. The Chemical Reactor's console runs on it.$(br2)The feeds for heavy chemistry: the $(item)Air Separation Unit$() boils liquid air apart into $(fluid)Nitrogen$() and $(fluid)Oxygen$(); coal and steam in the Chemical Reactor give $(fluid)Hydrogen$() (C + H\u2082O \u2192 CO + H\u2082), as does water in the Electrolytic Cell."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every one of these is shared with the pack's other mods: a recipe that asks for the mod's Hydrogen takes Mekanism's or NuclearCraft's as readily (anything in the c:hydrogen tag) - and the same for nitrogen, oxygen, ammonia, the acids and sulfur dioxide."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/reaction_kinetics"
+}

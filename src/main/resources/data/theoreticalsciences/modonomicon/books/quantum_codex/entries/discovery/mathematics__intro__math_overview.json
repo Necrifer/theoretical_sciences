@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.intro__math_overview",
+  "description": "book.theoreticalsciences.codex.mathematics.intro__math_overview.desc",
+  "icon": {
+    "item": "theoreticalsciences:natural_number_lattice"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 9,
+  "y": 76,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__math_overview.p0",
+      "title": "book.theoreticalsciences.codex.mathematics.intro__math_overview"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.intro__math_overview.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/number_systems"
+  }
+}

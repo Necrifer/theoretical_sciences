@@ -1,0 +1,70 @@
+{
+  "title": "Alkahest",
+  "description": "The alchemists' universal solvent, which would dissolve anything. Distilled at last from all of Chemistry at once. Unlocks the Alkahest Still.",
+  "icon": "theoreticalsciences:alkahest_still",
+  "x": 25,
+  "y": -3,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:asymmetric_synthesis",
+    "theoreticalsciences:oscillating_reactions",
+    "theoreticalsciences:coordination_chemistry",
+    "theoreticalsciences:phase_diagrams"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:chemical_clock",
+      "count": 2
+    }
+  ],
+  "time": 1320,
+  "puzzle": {
+    "goal": "A substance of standard potential U is present at activity a, at temperature T. Write how much free energy \u03bc each mole of it carries, with the gas constant R.",
+    "name": "Chemical potential",
+    "lhs": "\u03bc",
+    "form": "U + R * T * ln ( a )",
+    "expr": "U + R * T * ln ( a )",
+    "ask": "Find \u03bc in J/mol for U = @{U} J/mol, R = 8.314, T = @{T} K and a = @{a}.",
+    "vars": {
+      "\u03bc": "potential (J/mol)",
+      "U": "standard potential (J/mol)",
+      "R": "gas constant",
+      "T": "temperature (K)",
+      "a": "activity"
+    },
+    "given": {
+      "U": -237000,
+      "R": 8.314,
+      "T": 298,
+      "a": 0.5
+    },
+    "unit": "J/mol",
+    "method": "The free energy of mixing per mole is RT ln a; at a = 1 only the standard part is left.",
+    "distractors": [
+      "2",
+      "E",
+      "exp"
+    ],
+    "vary": {
+      "U": [
+        -331800.0,
+        -142200.0,
+        1.0
+      ],
+      "T": [
+        179.0,
+        417.0,
+        1.0
+      ],
+      "a": [
+        0.3,
+        0.7,
+        0.001
+      ]
+    }
+  }
+}

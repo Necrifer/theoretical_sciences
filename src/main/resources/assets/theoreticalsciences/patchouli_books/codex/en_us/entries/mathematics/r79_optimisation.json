@@ -1,0 +1,26 @@
+{
+  "name": "Optimisation and Graphs",
+  "icon": "theoreticalsciences:optimiser",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:optimiser,theoreticalsciences:graph_loom,theoreticalsciences:optimised_pathway,theoreticalsciences:network_map",
+      "text": "The best choice, and the shape of a network."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Optimisation$(): the $(item)Optimiser$() walks downhill on a bowl. Set the step and the number of steps: each step multiplies the distance from the bottom by |1 \u2212 h\u03bb|, and what is left after n steps must be under the recipe's tolerance. Too short a step crawls; too long overshoots, and past h\u03bb = 2 it runs away. A step of exactly 1/\u03bb lands at once, and the fewer steps, the faster. It makes the $(item)Optimised Pathway$() upgrade (a quarter less power per run) and, with $(thing)Topology Optimisation$(), Metamaterial Sheets from quartz, Quantum Dots and Rational Fields. Its calibration: find the shortest route."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Graph Theory$(): the $(item)Graph Loom$() weaves networks. Set the junctions and the links: V \u2212 1 links make a tree, and each one more is a spare route. The network fails only if all of its routes fail at once, and that must be rarer than the recipe allows. It makes $(item)Network Maps$() ($(thing)Networks$()) and, with $(thing)Shortest Paths$(), routes Photonic Processors with fewer dies and no qubits. Its calibration: lay the lightest network that joins every junction."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Both machines are built with Euclidean Shards, from the Elements."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/optimisation"
+}

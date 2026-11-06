@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:statistical_inference",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:dice_set",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:confidence_seal",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:statistics",
+  "unscaled": true,
+  "insight_per_run": 6,
+  "physics": {
+    "vars": {
+      "sg": 1.0,
+      "tol": 0.03,
+      "zmin": 2.58
+    },
+    "windows": [
+      {
+        "q": "mg",
+        "min": -1.0,
+        "max": 0.03
+      },
+      {
+        "q": "conf",
+        "min": 2.58,
+        "max": 99.0
+      }
+    ]
+  }
+}

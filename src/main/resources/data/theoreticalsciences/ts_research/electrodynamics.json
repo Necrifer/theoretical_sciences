@@ -1,56 +1,56 @@
 {
-  "title": "Electrodynamics",
-  "description": "Maxwell's four equations: charges make electric fields, there are no magnetic charges, changing fields make each other - and so a wave of field can carry itself across empty space, at exactly the speed of light. Unlocks waveguides, Faraday cage mesh, mu-metal and the Hypervelocity Impact Forge.",
-  "icon": "theoreticalsciences:waveguide",
-  "x": 13,
-  "y": -2,
-  "insight": 60,
-  "requires": [
-    "theoreticalsciences:electromagnetic_induction",
-    "theoreticalsciences:calculus"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:electrical_steel_lamination",
-      "count": 4
-    },
-    {
-      "item": "theoreticalsciences:ferrite_magnet",
-      "count": 2
-    }
-  ],
-  "time": 0,
-  "puzzle": {
-    "goal": "Maxwell found that waves of electric and magnetic field cross empty space at a rate set only by its permeability \u03bc0 and its permittivity \u03b50. Write that rate c.",
-    "name": "Speed of light from the vacuum",
-    "lhs": "c",
-    "form": "1 / sqrt ( \u03bc0 * \u03b50 )",
-    "expr": "1 / ( m * e ) ^ 0.5 / 1000000",
-    "ask": "Find c in units of 10\u2076 m/s, with m = @{m} H/m for \u03bc0 and e = 8.854e-12 F/m for \u03b50.",
-    "vars": {
-      "c": "wave speed (10\u2076 m/s)",
-      "\u03bc0": "permeability of the vacuum",
-      "\u03b50": "permittivity of the vacuum",
-      "m": "\u03bc0 (H/m)",
-      "e": "\u03b50 (F/m)"
-    },
-    "given": {
-      "m": 1.2566e-06,
-      "e": 8.854e-12
-    },
-    "unit": "\u00d710\u2076 m/s",
-    "method": "From the curl equations in empty space, each field obeys the wave equation with speed\u00b2 = 1/(\u03bc0 \u03b50).",
-    "distractors": [
-      "2",
-      "\u03c0",
-      "h"
-    ],
-    "vary": {
-      "m": [
-        7.5e-07,
-        1.76e-06,
-        1e-08
-      ]
-    }
+ "title": "Electrodynamics",
+ "description": "Maxwell's four equations: charges make electric fields, there are no magnetic charges, changing fields make each other, and so a wave of field can carry itself across empty space, at exactly the speed of light. Unlocks waveguides, Faraday cage mesh, mu-metal and the Hypervelocity Impact Forge.",
+ "icon": "theoreticalsciences:waveguide",
+ "x": 13,
+ "y": -2,
+ "insight": 60,
+ "requires": [
+  "theoreticalsciences:electromagnetic_induction",
+  "theoreticalsciences:calculus"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:electrical_steel_lamination",
+   "count": 4
+  },
+  {
+   "item": "theoreticalsciences:ferrite_magnet",
+   "count": 2
   }
+ ],
+ "time": 0,
+ "puzzle": {
+  "goal": "Maxwell found that waves of electric and magnetic field cross empty space at a rate set only by its permeability μ0 and its permittivity ε0. Write that rate c.",
+  "name": "Speed of light from the vacuum",
+  "lhs": "c",
+  "form": "1 / sqrt ( μ0 * ε0 )",
+  "expr": "1 / ( m * e ) ^ 0.5 / 1000000",
+  "ask": "Find c in units of 10⁶ m/s, with m = @{m} H/m for μ0 and e = 8.854e-12 F/m for ε0.",
+  "vars": {
+   "c": "wave speed (10⁶ m/s)",
+   "μ0": "permeability of the vacuum",
+   "ε0": "permittivity of the vacuum",
+   "m": "μ0 (H/m)",
+   "e": "ε0 (F/m)"
+  },
+  "given": {
+   "m": 1.2566e-06,
+   "e": 8.854e-12
+  },
+  "unit": "×10⁶ m/s",
+  "method": "From the curl equations in empty space, each field obeys the wave equation with speed² = 1/(μ0 ε0).",
+  "distractors": [
+   "2",
+   "π",
+   "h"
+  ],
+  "vary": {
+   "m": [
+    7.5e-07,
+    1.76e-06,
+    1e-08
+   ]
+  }
+ }
 }

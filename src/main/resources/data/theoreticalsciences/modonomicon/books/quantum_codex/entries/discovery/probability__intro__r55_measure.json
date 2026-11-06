@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.probability.intro__r55_measure",
+  "description": "book.theoreticalsciences.codex.probability.intro__r55_measure.desc",
+  "icon": {
+    "item": "theoreticalsciences:boltzmann_brain"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 45,
+  "y": 81,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r55_measure.p0",
+      "title": "book.theoreticalsciences.codex.probability.intro__r55_measure"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.probability.intro__r55_measure.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/probability__intro__r55_refinery"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/simulation__intro__omega"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/measure_problem"
+  }
+}

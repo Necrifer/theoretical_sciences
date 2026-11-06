@@ -1,0 +1,40 @@
+{
+  "title": "Fourier Series",
+  "description": "Any repeating signal is a sum of pure tones. Fourier said so in 1807, and nobody believed him. Unlocks the Fourier Series.",
+  "icon": "theoreticalsciences:fourier_series",
+  "x": 19,
+  "y": 4,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:euler_formula"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:imaginary_unit",
+      "count": 1
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A signal jumps between +1 and \u22121 every half period. Write the size A of its n-th odd harmonic.",
+    "name": "Square wave",
+    "lhs": "A",
+    "form": "4 / ( \u03c0 * n )",
+    "expr": "4 / ( \u03c0 * n )",
+    "ask": "Find A for n = 3.",
+    "vars": {
+      "A": "harmonic size",
+      "n": "harmonic number"
+    },
+    "given": {
+      "n": 3
+    },
+    "unit": "",
+    "method": "Multiply the signal by sin(nx) and average: only odd n survive, each 4/(\u03c0n) as big.",
+    "distractors": [
+      "+",
+      "-",
+      "e"
+    ]
+  }
+}

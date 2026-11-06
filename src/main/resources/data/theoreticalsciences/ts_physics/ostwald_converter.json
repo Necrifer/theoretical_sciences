@@ -1,0 +1,60 @@
+{
+  "params": [
+    {
+      "id": "Tg",
+      "unit": "K",
+      "min": 700,
+      "max": 1400,
+      "step": 1,
+      "default": 900
+    },
+    {
+      "id": "tc",
+      "unit": "ms",
+      "min": 0.1,
+      "max": 20,
+      "step": 0.01,
+      "default": 5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "S",
+      "unit": "",
+      "expr": "clamp(0.98*(1 - exp(-(Tg - 900)/80))*exp(-pos(tc - 2)/3), 0, 1)",
+      "formula": "S(T, t)"
+    },
+    {
+      "id": "X",
+      "unit": "",
+      "expr": "1 - exp(-tc/(0.2*(1 + 0.02*d)))",
+      "formula": "X = 1 \u2212 e^(\u2212t/0.2 ms)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "platinum",
+      "kind": "wear",
+      "expr": "1250 - Tg",
+      "formula": "T < 1250 K"
+    },
+    {
+      "id": "ignite",
+      "kind": "stop",
+      "expr": "Tg - 800",
+      "formula": "T > 800 K"
+    }
+  ],
+  "rate": "clamp(2*S*X/sqrt(tc), 0, 4)",
+  "rate_formula": "rate = 2\u00b7S\u00b7X/\u221at",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 4
+}

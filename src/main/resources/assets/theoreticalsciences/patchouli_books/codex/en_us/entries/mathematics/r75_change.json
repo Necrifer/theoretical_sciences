@@ -1,0 +1,30 @@
+{
+  "name": "Change",
+  "icon": "theoreticalsciences:integrator",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:integrator,theoreticalsciences:enzyme_assay_bench,theoreticalsciences:rate_table,theoreticalsciences:euler_crystal",
+      "text": "The mathematics of things that change: rate equations, where they settle, and whether they stay there."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Rates as Equations$(): the $(item)Integrator$() steps a rate equation forward. Set the step size and the method's order; the error must be under the recipe's tolerance, and too big a step blows up. It makes $(item)e Crystals$() (one of Euler's five constants) and the first machine $(thing)upgrades$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Upgrades: use one on a multiblock's controller or a console machine to fit it (one per machine; fitting another hands the old one back). The $(item)Rate Table$() adds 20% products each cycle on top of precision: a perfectly tuned machine goes past perfect. The $(item)Stability Margin$() ($(thing)Stability$()) makes precision fall off half as fast."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Enzyme Kinetics$(): the $(item)Enzyme Assay Bench$() measures an enzyme. Saturate it to 90% without choking it. $(item)Assayed Enzymes$() make Nutrient Broth and Stem Cell Cultures with far less; $(thing)Inhibition$() and $(thing)Cooperativity$() add a cheaper Stem Cell Culture and a steep S-curve (Porphyrin Oxygen Carriers, like haemoglobin)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Euler's Formula$(): the Integrator turns \u03c0, e and rationals into the $(item)Imaginary Unit$(), i."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/rates_as_equations"
+}

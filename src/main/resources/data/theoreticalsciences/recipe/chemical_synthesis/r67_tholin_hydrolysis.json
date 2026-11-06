@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tholin",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:amino_acid_mixture",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 100,
+  "research": "theoreticalsciences:titan",
+  "unscaled": true,
+  "insight_per_run": 1,
+  "physics": {
+    "vars": {
+      "Ea": 57.7,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

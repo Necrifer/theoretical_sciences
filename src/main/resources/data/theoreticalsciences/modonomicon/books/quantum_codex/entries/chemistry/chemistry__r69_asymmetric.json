@@ -1,0 +1,42 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.r69_asymmetric",
+  "description": "book.theoreticalsciences.codex.chemistry.r69_asymmetric.desc",
+  "icon": {
+    "item": "theoreticalsciences:asymmetric_reactor"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 168,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:asymmetric_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.r69_asymmetric.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r69_asymmetric.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.r69_asymmetric.p2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r65_synthesis"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__synthesis_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/asymmetric_synthesis"
+  }
+}

@@ -47,6 +47,10 @@ public final class QHClient {
             ItemBlockRenderTypes.setRenderLayer(e.flowing.get(), RenderType.translucent());
         }));
         NeoForge.EVENT_BUS.addListener(EffectRenderer::onRenderLevel);
+        // 1.2.0: animated multiblocks (moving parts, stars, shells, beams), for this mod's machines and others'
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.client.render.effects.FxRenderer::onRenderLevel);
+        NeoForge.EVENT_BUS.addListener((RegisterClientCommandsEvent e) -> com.theoreticalsciences.client.render.effects.FxCommands.register(e.getDispatcher()));
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent.LoggingOut e) -> com.theoreticalsciences.client.render.effects.FxRenderer.clear());
         // round 23: the mod's music is played (and faded in and out) by QHMusic; vanilla stays silent where it is in charge
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.SelectMusicEvent e) -> {
             if (com.theoreticalsciences.client.QHMusic.ours()) e.setMusic(null);
@@ -119,6 +123,10 @@ public final class QHClient {
     public static void reloadListeners(net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent event) {
         event.registerReloadListener((net.minecraft.server.packs.resources.ResourceManagerReloadListener) rm -> com.theoreticalsciences.client.SingularityColours.clear());
         event.registerReloadListener((net.minecraft.server.packs.resources.ResourceManagerReloadListener) rm -> com.theoreticalsciences.client.codex.CodexData.clear());   // round 30: re-read the Codex
+        event.registerReloadListener((net.minecraft.server.packs.resources.ResourceManagerReloadListener) rm -> {   // 1.2.0: structure animations
+            com.theoreticalsciences.client.render.animation.Animations.reload(rm);
+            com.theoreticalsciences.client.render.effects.FxRenderer.onReload();
+        });
     }
 
     @SubscribeEvent
@@ -127,6 +135,10 @@ public final class QHClient {
         event.registerBlockEntityRenderer(com.theoreticalsciences.registry.QHBlockEntities.FRACTURED_REALITY.get(),
                 com.theoreticalsciences.client.render.FracturedRealityRenderer::new);
         event.registerBlockEntityRenderer(com.theoreticalsciences.transcend.TranscendRegistry.FORGED_CORE_BE.get(), com.theoreticalsciences.client.render.ForgedCoreRenderer::new);
+        // 1.2.0: every multiblock controller draws its structure's moving parts
+        for (com.theoreticalsciences.machine.MachineType t : com.theoreticalsciences.machine.MachineType.values())
+            if (t.isMultiblock()) event.registerBlockEntityRenderer(com.theoreticalsciences.registry.QHBlockEntities.machine(t),
+                    com.theoreticalsciences.client.render.animation.MovingPartsRenderer::new);
         event.registerBlockEntityRenderer(com.theoreticalsciences.registry.QHLogistics.CONV_PEDESTAL.get(), com.theoreticalsciences.client.render.ConvergenceRenderers.Pedestal::new);
         event.registerBlockEntityRenderer(com.theoreticalsciences.registry.QHLogistics.CONV_ALTAR.get(), com.theoreticalsciences.client.render.ConvergenceRenderers.Altar::new);
     }
@@ -181,8 +193,11 @@ public final class QHClient {
     public static void dimensionEffects(RegisterDimensionSpecialEffectsEvent event) {
         event.register(TheoreticalSciences.id("the_bulk"), new BulkSkyEffects());
         event.register(TheoreticalSciences.id("accretion_frontier"), new com.theoreticalsciences.client.render.FrontierSkyEffects());
+        event.register(TheoreticalSciences.id("titan"), new com.theoreticalsciences.client.render.TitanSkyEffects());
+        event.register(TheoreticalSciences.id("inner_space"), new com.theoreticalsciences.client.render.InnerSkyEffects());   // 1.2.0
+        event.register(TheoreticalSciences.id("titan_ocean"), new com.theoreticalsciences.client.render.InnerSkyEffects(false));
         event.register(TheoreticalSciences.id("hyperdimensional_reality"), new com.theoreticalsciences.client.render.HyperrealSkyEffects());
-        event.register(TheoreticalSciences.id("platonic_realm"), new com.theoreticalsciences.client.render.FractalSkyEffects(false));
+        event.register(TheoreticalSciences.id("platonic_realm"), new com.theoreticalsciences.client.render.LayeredSkyEffects());   // 1.2.0: with the Hierarchy above
         event.register(TheoreticalSciences.id("transcendental"), new com.theoreticalsciences.client.render.FractalSkyEffects(true));
         event.register(TheoreticalSciences.id("black_hole_interior"), new com.theoreticalsciences.client.render.FractalSkyEffects(2));
         event.register(TheoreticalSciences.id("white_hole_interior"), new com.theoreticalsciences.client.render.FractalSkyEffects(3));
@@ -197,6 +212,7 @@ public final class QHClient {
             int fog = e.def.color();
             ResourceLocation still = TheoreticalSciences.id("block/fluid/" + id + "_still");
             ResourceLocation flow = TheoreticalSciences.id("block/fluid/" + id + "_flow");
+            ResourceLocation assayed = TheoreticalSciences.id("block/fluid/" + id + "_still_assayed");
             event.registerFluidType(new IClientFluidTypeExtensions() {
                 @Override
                 public ResourceLocation getStillTexture() {
@@ -212,6 +228,9 @@ public final class QHClient {
                 @Override
                 public ResourceLocation getStillTexture(net.neoforged.neoforge.fluids.FluidStack stack) {
                     ResourceLocation t = id.equals("mod_essence") ? EssenceLook.texture(stack) : null;
+                    // 1.2.0: an assayed fluid has its own look (a bright hatched border) so it stands out in an ME terminal
+                    if (t == null && com.theoreticalsciences.science.AssayedFluids.IDS.contains(id) && stack.has(com.theoreticalsciences.science.Wear.ASSAYED.get()))
+                        return assayed;
                     return t != null ? t : still;
                 }
 

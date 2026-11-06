@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:silica_aerogel",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chlorine",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hydrophobic_coating",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:cryogenic_survival",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 56.2,
+      "Af": 10000000.0,
+      "Xt": 0.9
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

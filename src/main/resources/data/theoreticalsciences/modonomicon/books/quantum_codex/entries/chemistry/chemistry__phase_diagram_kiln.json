@@ -1,0 +1,50 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln",
+  "description": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln.desc",
+  "icon": {
+    "item": "theoreticalsciences:phase_diagram_kiln"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 147,
+  "y": 34,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:phase_diagram_kiln"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:phase_diagram_kiln"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.phase_diagram_kiln.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__quasicrystal_furnace"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/phase_diagrams"
+  }
+}

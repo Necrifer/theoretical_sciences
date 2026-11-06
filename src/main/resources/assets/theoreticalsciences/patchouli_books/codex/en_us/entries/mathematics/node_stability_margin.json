@@ -1,0 +1,19 @@
+{
+  "name": "Stability Margin",
+  "icon": "theoreticalsciences:stability_margin",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 513,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stability_margin",
+      "title": "Stability Margin",
+      "text": "A proof of how far each setting can stray before the machine's working point stops being stable. Fitted to a machine, its precision falls off half as fast, so fine tuning is much easier. One upgrade per machine. Made in the Integrator."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Integrator$().$(br2)$(thing)Unlocked by$(): Stability.$(br2)$(thing)Used in$(): Governor."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/rates_as_equations"
+}

@@ -1,0 +1,66 @@
+{
+  "title": "Photochemistry",
+  "description": "High in Titan's air, ultraviolet sunlight splits methane and nitrogen, and the fragments build the haze. Unlocks the Photochemical Reactor and Kekule's Dream.",
+  "icon": "theoreticalsciences:photochemical_reactor",
+  "x": 27,
+  "y": -3,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:titan_lakes",
+    "theoreticalsciences:infrared_spectroscopy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:tholin",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 4
+    }
+  ],
+  "time": 570,
+  "puzzle": {
+    "goal": "Light crosses a path l through a solution of concentration c of a molecule that absorbs with molar absorptivity \u03b5. Write the absorbance A, the logarithm of how much the light is dimmed.",
+    "name": "Beer-Lambert law",
+    "lhs": "A",
+    "form": "\u03b5 * c * l",
+    "expr": "\u03b5 * c * l",
+    "ask": "Find A for methane photolysis: \u03b5 = @{\u03b5} L/mol\u00b7cm, c = @{c} mol/L, l = @{l} cm.",
+    "vars": {
+      "A": "absorbance",
+      "\u03b5": "molar absorptivity (L/mol\u00b7cm)",
+      "c": "concentration (mol/L)",
+      "l": "path length (cm)"
+    },
+    "given": {
+      "\u03b5": 150,
+      "c": 0.01,
+      "l": 1
+    },
+    "unit": "",
+    "method": "Each thin slice of the cell takes the same fraction of what reaches it: dI/I = \u2212\u03b5c\u00b7dx, so the light falls exponentially.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03bb"
+    ],
+    "vary": {
+      "\u03b5": [
+        90.0,
+        210.0,
+        1.0
+      ],
+      "c": [
+        0.006,
+        0.014,
+        0.0001
+      ],
+      "l": [
+        1.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

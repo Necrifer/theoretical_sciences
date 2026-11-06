@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.node_crude_oil",
+  "description": "book.theoreticalsciences.codex.chemistry.node_crude_oil.desc",
+  "icon": {
+    "item": "theoreticalsciences:crude_oil_cell"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 246,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:crude_oil_cell"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.node_crude_oil.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.node_crude_oil.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/chemistry__cracking_tower",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/petrochemistry"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Antibodies",
+  "icon": "theoreticalsciences:antibody",
+  "advancement": "theoreticalsciences:research/antibodies",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antibody",
+      "title": "Antibodies",
+      "text": "$(thing)Antibodies$()$(br2)A tip that fits one shape alone, out of billions the body can make. Bound to an invader, it marks it for clearing, or blocks the key it uses to get in."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 130$(br2)$(thing)Builds on$(): Adaptive Immunity.$(br2)$(thing)Samples$(): 4 Antibody.$(br2)$(thing)Derivation$(): Antibody at level L binds a target with dissociation constant K. Write the share B of targets bound."
+    }
+  ]
+}

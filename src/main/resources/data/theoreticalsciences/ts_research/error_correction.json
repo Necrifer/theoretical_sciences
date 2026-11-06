@@ -1,0 +1,41 @@
+{
+  "title": "Error Correction",
+  "description": "Add a few check bits, cleverly placed, and a flipped bit can be found and flipped back. Unlocks the Error-Correcting Code.",
+  "icon": "theoreticalsciences:error_code",
+  "x": 0,
+  "y": 10,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:information_theory",
+    "theoreticalsciences:modular_arithmetic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:prime_shard",
+      "count": 4
+    }
+  ],
+  "time": 270,
+  "puzzle": {
+    "goal": "A Hamming code uses r check bits on a block of 2^r \u2212 1 bits. Write the share C of the bits that carry data.",
+    "name": "Useful fraction",
+    "lhs": "C",
+    "form": "( 2 ^ r - 1 - r ) / ( 2 ^ r - 1 )",
+    "expr": "( 2 ^ r - 1 - r ) / ( 2 ^ r - 1 )",
+    "ask": "Find C for r = 3 (the 7-bit code, 4 of data).",
+    "vars": {
+      "C": "share of data",
+      "r": "check bits"
+    },
+    "given": {
+      "r": 3
+    },
+    "unit": "",
+    "method": "r check bits can name 2^r \u2212 1 places for a single error; the rest of the block is data.",
+    "distractors": [
+      "+",
+      "n",
+      "e"
+    ]
+  }
+}

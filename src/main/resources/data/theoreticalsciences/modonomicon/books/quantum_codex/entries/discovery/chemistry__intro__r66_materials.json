@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r66_materials",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r66_materials.desc",
+  "icon": {
+    "item": "theoreticalsciences:sintering_press"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 88,
+  "y": 58,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r66_materials.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r66_materials"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r66_materials.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r62_plating"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r65_frameworks"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ceramics"
+  }
+}

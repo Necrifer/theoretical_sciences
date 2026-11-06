@@ -1,0 +1,65 @@
+{
+  "title": "Ceramics",
+  "description": "Powder pressed and fired until its grains grow together: dense, hard, and fine-grained if done well. Unlocks the Sintering Press.",
+  "icon": "theoreticalsciences:sintering_press",
+  "x": 24,
+  "y": -6,
+  "insight": 110,
+  "requires": [
+    "theoreticalsciences:quasicrystals"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:alumina",
+      "count": 8
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 16
+    }
+  ],
+  "time": 330,
+  "puzzle": {
+    "goal": "A pressed part of mass m fills a volume V; the solid itself has density r. Write the share p of full density reached.",
+    "name": "Relative density",
+    "lhs": "p",
+    "form": "m / ( V * r )",
+    "expr": "m / ( V * r )",
+    "ask": "Find p for m = @{m} g, V = @{V} cm\u00b3 and r = @{r} g/cm\u00b3 (alumina).",
+    "vars": {
+      "p": "share of full density",
+      "m": "mass (g)",
+      "V": "volume (cm\u00b3)",
+      "r": "solid density (g/cm\u00b3)"
+    },
+    "given": {
+      "m": 38.8,
+      "V": 10,
+      "r": 3.95
+    },
+    "unit": "",
+    "method": "Fully dense, the part would weigh V\u00b7r; what it weighs over that is how dense it is.",
+    "distractors": [
+      "2",
+      "T",
+      "\u03c0"
+    ],
+    "vary": {
+      "m": [
+        23.2,
+        54.4,
+        0.1
+      ],
+      "V": [
+        6.0,
+        14.0,
+        1.0
+      ],
+      "r": [
+        2.37,
+        5.53,
+        0.01
+      ]
+    }
+  }
+}

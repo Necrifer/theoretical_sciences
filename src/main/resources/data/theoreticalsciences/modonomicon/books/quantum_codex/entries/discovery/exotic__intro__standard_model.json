@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.exotic.intro__standard_model",
+  "description": "book.theoreticalsciences.codex.exotic.intro__standard_model.desc",
+  "icon": {
+    "item": "theoreticalsciences:standard_model_matrix"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 28,
+  "y": 24,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.intro__standard_model.p0",
+      "title": "book.theoreticalsciences.codex.exotic.intro__standard_model"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.exotic.intro__standard_model.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/standard_model"
+  }
+}

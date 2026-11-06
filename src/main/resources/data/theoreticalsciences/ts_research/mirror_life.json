@@ -1,0 +1,66 @@
+{
+  "title": "Mirror Life",
+  "description": "Build a cell the wrong way round and nothing alive can touch it, for good or ill. A 2024 warning, and the Antiverse's hazard. Unlocks the Mirror Culture Vat.",
+  "icon": "theoreticalsciences:mirror_culture_vat",
+  "x": 12,
+  "y": 25,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:gene_circuits",
+    "theoreticalsciences:mirror_metallurgy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chiral_crystal",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:mirror_alloy_ingot",
+      "count": 1
+    }
+  ],
+  "time": 780,
+  "puzzle": {
+    "goal": "A batch is a share p mirror-handed, in a volume V, and the rest natural. Write the amount M of mirror cells, as p times V.",
+    "name": "Pure yield",
+    "lhs": "M",
+    "form": "p * V - w",
+    "expr": "p * V - w",
+    "ask": "Find M for p = @{p}, V = @{V} and w = @{w}.",
+    "vars": {
+      "M": "cells grown",
+      "p": "pure share",
+      "V": "volume",
+      "w": "waste"
+    },
+    "given": {
+      "p": 0.99,
+      "V": 200,
+      "w": 2
+    },
+    "unit": "",
+    "method": "The pure share times the volume, less what is wasted; the vat needs p near one, since natural cells poison the rest.",
+    "distractors": [
+      "+",
+      "2",
+      "e"
+    ],
+    "vary": {
+      "p": [
+        0.594,
+        0.999,
+        0.001
+      ],
+      "V": [
+        120.0,
+        280.0,
+        1.0
+      ],
+      "w": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  }
+}

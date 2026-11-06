@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_evolutionary_games",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_evolutionary_games.desc",
+  "icon": {
+    "item": "theoreticalsciences:stable_strategy"
+  },
+  "category": "theoreticalsciences:mathematics",
+  "x": 84,
+  "y": 10,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:stable_strategy"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_evolutionary_games.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_evolutionary_games.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:mathematics/mathematics__strategy_table",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/evolutionary_games"
+  }
+}

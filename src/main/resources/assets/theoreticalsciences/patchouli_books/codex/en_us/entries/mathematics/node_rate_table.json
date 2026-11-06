@@ -1,0 +1,19 @@
+{
+  "name": "Rate Table",
+  "icon": "theoreticalsciences:rate_table",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 512,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:rate_table",
+      "title": "Rate Table",
+      "text": "A machine's rate equations, solved ahead of time and printed as a table, so it never waits to work out its next step. Use it on a multiblock's controller (or a console machine) to fit it: +20% products each cycle, on top of what its precision gives, so a perfectly tuned machine goes past perfect. One upgrade per machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Integrator$().$(br2)$(thing)Unlocked by$(): Rates as Equations.$(br2)$(thing)Used in$(): Stability Margin."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/rates_as_equations"
+}

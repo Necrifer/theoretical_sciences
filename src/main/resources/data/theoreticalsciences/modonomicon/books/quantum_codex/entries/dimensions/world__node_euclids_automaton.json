@@ -1,0 +1,28 @@
+{
+  "name": "book.theoreticalsciences.codex.world.node_euclids_automaton",
+  "description": "book.theoreticalsciences.codex.world.node_euclids_automaton.desc",
+  "icon": {
+    "item": "theoreticalsciences:euclids_automaton_spawn_egg"
+  },
+  "category": "theoreticalsciences:dimensions",
+  "x": 18,
+  "y": 19,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:euclids_automaton_spawn_egg"
+      },
+      "text": "book.theoreticalsciences.codex.world.node_euclids_automaton.p0"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:dimensions/world__r78_elements",
+      "draw_arrow": false
+    }
+  ]
+}

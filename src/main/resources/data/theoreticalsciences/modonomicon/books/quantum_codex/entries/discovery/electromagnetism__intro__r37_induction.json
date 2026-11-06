@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.intro__r37_induction",
+  "description": "book.theoreticalsciences.codex.electromagnetism.intro__r37_induction.desc",
+  "icon": {
+    "item": "theoreticalsciences:ferrite_magnet"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 15,
+  "y": 37,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r37_induction.p0",
+      "title": "book.theoreticalsciences.codex.electromagnetism.intro__r37_induction"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r37_induction.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r37_fields"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electromagnetic_induction"
+  }
+}

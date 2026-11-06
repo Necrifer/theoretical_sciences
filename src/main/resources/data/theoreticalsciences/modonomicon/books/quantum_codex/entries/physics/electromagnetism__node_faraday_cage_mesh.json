@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.node_faraday_cage_mesh",
+  "description": "book.theoreticalsciences.codex.electromagnetism.node_faraday_cage_mesh.desc",
+  "icon": {
+    "item": "theoreticalsciences:faraday_cage_mesh"
+  },
+  "category": "theoreticalsciences:physics",
+  "x": 72,
+  "y": 87,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:faraday_cage_mesh"
+      },
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_faraday_cage_mesh.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.node_faraday_cage_mesh.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:physics/electromagnetism__r52_maxwell",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/electrodynamics"
+  }
+}

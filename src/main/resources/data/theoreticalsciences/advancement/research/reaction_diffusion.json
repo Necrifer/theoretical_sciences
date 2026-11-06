@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:pattern_template"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.reaction_diffusion"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.reaction_diffusion.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/stability",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

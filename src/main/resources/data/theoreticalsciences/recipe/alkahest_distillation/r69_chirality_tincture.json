@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:alkahest_distillation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:chemical_clock",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:tholin",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:form_tincture",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:ammonia_buffer",
+      "amount": 250
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:chirality_tincture",
+      "amount": 500
+    }
+  ],
+  "energy": 8192,
+  "duration": 600,
+  "research": "theoreticalsciences:alkahest",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Tb": 450.0
+    },
+    "windows": [
+      {
+        "q": "pur",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

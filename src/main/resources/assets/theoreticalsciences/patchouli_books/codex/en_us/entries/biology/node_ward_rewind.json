@@ -1,0 +1,19 @@
+{
+  "name": "Rewind Ward",
+  "icon": "theoreticalsciences:ward_rewind",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 507,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ward_rewind",
+      "title": "Rewind Ward",
+      "text": "A trace of what the Paradox Echo carries, prepared so the body is ready for it. Use it on yourself: held safe from Rewind for three in-game days. Renew it while more than half of that is left and the imprint overloads instead. Made on the Antibody Bench."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Antibody Bench$().$(br2)$(thing)Found in$(): Germinal Centre chests.$(br2)$(thing)Unlocked by$(): Immunisation.$(br2)$(thing)Used in$(): Lasting Rewind Ward."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/adaptive_immunity"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.node_research_error_correction",
+  "description": "book.theoreticalsciences.codex.mathematics.node_research_error_correction.desc",
+  "icon": {
+    "item": "theoreticalsciences:error_code"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 117,
+  "y": 127,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:error_code"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_error_correction.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.node_research_error_correction.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__cipher_loom",
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/error_correction"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.spacetime.intro__r53_lensing",
+  "description": "book.theoreticalsciences.codex.spacetime.intro__r53_lensing.desc",
+  "icon": {
+    "item": "theoreticalsciences:lensing_concentrator"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 47,
+  "y": 49,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r53_lensing.p0",
+      "title": "book.theoreticalsciences.codex.spacetime.intro__r53_lensing"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.spacetime.intro__r53_lensing.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/astrophysics__intro__r37_telescopes"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/gravitational_lensing"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:prime_shard"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.modular_arithmetic"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.modular_arithmetic.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/primes",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

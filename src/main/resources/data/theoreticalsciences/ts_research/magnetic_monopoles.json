@@ -1,58 +1,58 @@
 {
-  "title": "Magnetic Monopoles",
-  "description": "Grand unified theories say magnetic charges must exist, made in the first instant - and Dirac showed that one would explain why every electric charge is a whole number of e. The Pulsed Magnet Lab can search for them in magnetar crust.",
-  "icon": "theoreticalsciences:magnetic_monopole",
-  "x": 17,
-  "y": 1,
-  "insight": 260,
-  "requires": [
-    "theoreticalsciences:magnetars",
-    "theoreticalsciences:grand_unification"
-  ],
-  "cost": [
-    {
-      "item": "theoreticalsciences:magnetar_crust_fragment",
-      "count": 8
-    },
-    {
-      "item": "theoreticalsciences:cosmic_ray_shard",
-      "count": 8
-    }
-  ],
-  "time": 1080,
-  "puzzle": {
-    "goal": "If a single magnetic charge g exists anywhere, the reduced quantum of action \u0127 and the elementary charge q fix its smallest value. Write g.",
-    "name": "Dirac quantisation",
-    "lhs": "g",
-    "form": "2 * \u03c0 * \u0127 / q",
-    "expr": "h / q * u",
-    "ask": "Find g in units of 10\u207b\u00b9\u2075 Wb (u = @{u}) with h = 6.626e-34 J\u00b7s and q = 1.602e-19 C.",
-    "vars": {
-      "g": "magnetic charge (10\u207b\u00b9\u2075 Wb)",
-      "\u03c0": "pi",
-      "\u0127": "reduced Planck constant",
-      "h": "Planck constant (2\u03c0\u0127)",
-      "q": "elementary charge (C)",
-      "u": "10\u00b9\u2075"
-    },
-    "given": {
-      "h": 6.626e-34,
-      "q": 1.602e-19,
-      "u": 1000000000000000.0
-    },
-    "unit": "\u00d710\u207b\u00b9\u2075 Wb",
-    "method": "An electron carried round the monopole must come back with the same phase: q\u00b7g/\u0127 must be a whole multiple of 2\u03c0.",
-    "distractors": [
-      "2",
-      "\u03c0",
-      "c"
-    ],
-    "vary": {
-      "u": [
-        600000000000000.0,
-        1400000000000000.0,
-        10000000000000.0
-      ]
-    }
+ "title": "Magnetic Monopoles",
+ "description": "Grand unified theories say magnetic charges must exist, made in the first instant, and Dirac showed that one would explain why every electric charge is a whole number of e. The Pulsed Magnet Lab can search for them in magnetar crust.",
+ "icon": "theoreticalsciences:magnetic_monopole",
+ "x": 17,
+ "y": 1,
+ "insight": 260,
+ "requires": [
+  "theoreticalsciences:magnetars",
+  "theoreticalsciences:grand_unification"
+ ],
+ "cost": [
+  {
+   "item": "theoreticalsciences:magnetar_crust_fragment",
+   "count": 8
+  },
+  {
+   "item": "theoreticalsciences:cosmic_ray_shard",
+   "count": 8
   }
+ ],
+ "time": 1080,
+ "puzzle": {
+  "goal": "If a single magnetic charge g exists anywhere, the reduced quantum of action ħ and the elementary charge q fix its smallest value. Write g.",
+  "name": "Dirac quantisation",
+  "lhs": "g",
+  "form": "2 * π * ħ / q",
+  "expr": "h / q * u",
+  "ask": "Find g in units of 10⁻¹⁵ Wb (u = @{u}) with h = 6.626e-34 J·s and q = 1.602e-19 C.",
+  "vars": {
+   "g": "magnetic charge (10⁻¹⁵ Wb)",
+   "π": "pi",
+   "ħ": "reduced Planck constant",
+   "h": "Planck constant (2πħ)",
+   "q": "elementary charge (C)",
+   "u": "10¹⁵"
+  },
+  "given": {
+   "h": 6.626e-34,
+   "q": 1.602e-19,
+   "u": 1000000000000000.0
+  },
+  "unit": "×10⁻¹⁵ Wb",
+  "method": "An electron carried round the monopole must come back with the same phase: q·g/ħ must be a whole multiple of 2π.",
+  "distractors": [
+   "2",
+   "π",
+   "c"
+  ],
+  "vary": {
+   "u": [
+    600000000000000.0,
+    1400000000000000.0,
+    10000000000000.0
+   ]
+  }
+ }
 }

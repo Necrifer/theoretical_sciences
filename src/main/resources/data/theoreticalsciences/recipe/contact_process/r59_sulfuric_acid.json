@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:contact_process",
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:vanadium_bed"
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:sulfur_dioxide",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 500
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sulfuric_acid",
+      "amount": 1000
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:contact_process",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Xp",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

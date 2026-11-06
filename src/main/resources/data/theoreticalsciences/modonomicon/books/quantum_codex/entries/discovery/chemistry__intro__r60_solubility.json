@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.intro__r60_solubility",
+  "description": "book.theoreticalsciences.codex.chemistry.intro__r60_solubility.desc",
+  "icon": {
+    "item": "theoreticalsciences:brine_evaporator"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 78,
+  "y": 61,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r60_solubility.p0",
+      "title": "book.theoreticalsciences.codex.chemistry.intro__r60_solubility"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.intro__r60_solubility.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/chemistry__intro__r60_acids"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/solubility"
+  }
+}

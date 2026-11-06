@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:brine_evaporation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:deep_brine",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:gypsum_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:solubility",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "CF",
+        "min": 3.3,
+        "max": 4.5
+      },
+      {
+        "q": "Pu",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

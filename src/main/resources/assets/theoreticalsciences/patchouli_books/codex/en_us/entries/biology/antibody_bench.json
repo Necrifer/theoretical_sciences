@@ -1,0 +1,36 @@
+{
+  "name": "Antibody Bench",
+  "icon": "theoreticalsciences:antibody_bench",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 181,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antibody_bench",
+      "title": "Antibody Bench",
+      "text": "A sterile hood over a rack of vials and a cold store: a trace of an invader is grown, made harmless and measured into doses.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the dose and the adjuvant. The body's response grows with the dose as a Hill curve, D\u00b2/(K\u00b2 + D\u00b2), and the adjuvant raises it; it must reach the recipe's level. Past dose x (1 + adjuvant) of 150, the imprint resonates."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (5 item and 2 fluid inputs, 1 and 0 outputs).$(br2)$(thing)Makes$(): Antibody, CAR-T Cell Culture, Fracture Ward, Grey Goo Ward, Hollowing Ward, Lasting Fracture Ward, Lasting Grey Goo Ward, Lasting Hollowing Ward, Lasting Rewind Ward, Memory Cell, Rewind Ward."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:antibody_bench",
+      "text": "Made in a crafting grid."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Where these go$():$(li)$(item)Antibody Bench$(): Clonal Selector, Selection Chamber"
+    }
+  ],
+  "advancement": "theoreticalsciences:research/adaptive_immunity"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench",
+  "description": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench.desc",
+  "icon": {
+    "item": "theoreticalsciences:enzyme_assay_bench"
+  },
+  "category": "theoreticalsciences:materials",
+  "x": 235,
+  "y": 117,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:enzyme_assay_bench"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:enzyme_assay_bench"
+      },
+      "text": "book.theoreticalsciences.codex.mathematics.enzyme_assay_bench.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:materials/mathematics__integrator"
+    },
+    {
+      "entry": "theoreticalsciences:materials/mathematics__logic_sets"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/enzyme_kinetics"
+  }
+}

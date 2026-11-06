@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:lasting_ward_fracture"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.immune_memory"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.immune_memory.short"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/directed_evolution",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

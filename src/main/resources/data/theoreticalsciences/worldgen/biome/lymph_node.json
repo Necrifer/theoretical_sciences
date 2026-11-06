@@ -1,0 +1,58 @@
+{
+  "has_precipitation": false,
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 6312064,
+    "fog_color": 10520768,
+    "water_color": 12615744,
+    "water_fog_color": 8400928,
+    "particle": {
+      "options": {
+        "type": "minecraft:spore_blossom_air"
+      },
+      "probability": 0.002
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.inner_space",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:t_cell",
+        "weight": 12,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "theoreticalsciences:macrophage",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:germinal_centre"
+    ],
+    [],
+    [
+      "theoreticalsciences:ore_collagen_seam"
+    ],
+    [],
+    [],
+    [],
+    []
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "book.theoreticalsciences.codex.electromagnetism.intro__r42_mhd",
+  "description": "book.theoreticalsciences.codex.electromagnetism.intro__r42_mhd.desc",
+  "icon": {
+    "item": "theoreticalsciences:mhd_generator"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 24,
+  "y": 38,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r42_mhd.p0",
+      "title": "book.theoreticalsciences.codex.electromagnetism.intro__r42_mhd"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.electromagnetism.intro__r42_mhd.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r37_induction"
+    },
+    {
+      "entry": "theoreticalsciences:discovery/electromagnetism__intro__r38_generator"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/magnetohydrodynamics"
+  }
+}

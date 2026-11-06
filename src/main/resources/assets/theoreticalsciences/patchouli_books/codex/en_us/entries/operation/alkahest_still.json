@@ -1,0 +1,24 @@
+{
+  "name": "Alkahest Still",
+  "icon": "theoreticalsciences:alkahest_still",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A still with a reflux column: vapour rises, condenses, and runs back down over what is rising, again and again. Each pass enriches it; the purity grows as 1 \u2212 e^(\u22120.6R) with the reflux ratio R. The still must run above the stage's boiling point, and the more of the condensate is sent back, the slower the product comes off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Still temperature, Reflux ratio.$(br2)$(thing)Disturbance$(): Draughts: the column's efficiency varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): It boils over.$(br2)$(thing)Rate$(): Hotter is faster; more reflux is slower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Purity: x = 1 \u2212 e^(\u22120.6R)$(br)Boil-up: v \u221d (T \u2212 T_b)"
+    }
+  ]
+}

@@ -2,10 +2,6 @@
   "type": "theoreticalsciences:chemical_synthesis",
   "item_inputs": [
     {
-      "item": "theoreticalsciences:zeolite_catalyst",
-      "count": 4
-    },
-    {
       "item": "theoreticalsciences:anomaly_specimen",
       "count": 4
     }
@@ -29,5 +25,25 @@
   "energy": 65536,
   "duration": 400,
   "research": "theoreticalsciences:autocatalysis",
-  "unscaled": true
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ea": 59.6,
+      "Af": 10000000.0,
+      "Xt": 0.95,
+      "Ts": 700.0
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst"
+    }
+  ]
 }

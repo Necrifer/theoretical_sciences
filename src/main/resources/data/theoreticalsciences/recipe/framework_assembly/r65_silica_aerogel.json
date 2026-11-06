@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:framework_assembly",
+  "item_inputs": [
+    {
+      "item": "minecraft:sand",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methanol",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:silica_aerogel",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:reticular_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dt": 20.0
+    },
+    "windows": [
+      {
+        "q": "fit",
+        "min": 0.8,
+        "max": 1.0
+      },
+      {
+        "q": "intact",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

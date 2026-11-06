@@ -107,7 +107,7 @@ public class MachineBlock extends Block implements EntityBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (!level.isClientSide && level.getBlockEntity(pos) instanceof MachineBlockEntity be && player instanceof ServerPlayer sp) {
             if (be.getOwner() == null) be.setOwner(player);
-            if (be instanceof ControllerBlockEntity c && player.isShiftKeyDown()) {
+            if (be instanceof ControllerBlockEntity c && player.isShiftKeyDown() && c.definition() != null) {
                 c.reportStructure(sp);
                 return InteractionResult.CONSUME;
             }

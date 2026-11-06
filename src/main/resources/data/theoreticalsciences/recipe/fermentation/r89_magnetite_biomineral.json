@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:fermentation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "count": 3
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 758
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetite",
+      "count": 16
+    }
+  ],
+  "energy": 194,
+  "duration": 75,
+  "research": "theoreticalsciences:biomineralisation",
+  "unscaled": true,
+  "insight_per_run": 2,
+  "physics": {
+    "vars": {
+      "Ks": 2.0,
+      "Si": 150.0
+    },
+    "windows": [
+      {
+        "q": "gr",
+        "min": 0.8,
+        "max": 2.0
+      },
+      {
+        "q": "air",
+        "min": 0.01,
+        "max": 0.1
+      }
+    ]
+  }
+}

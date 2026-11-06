@@ -1,0 +1,57 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.ostwald_converter",
+  "description": "book.theoreticalsciences.codex.chemistry.ostwald_converter.desc",
+  "icon": {
+    "item": "theoreticalsciences:ostwald_converter"
+  },
+  "category": "theoreticalsciences:chemistry",
+  "x": 109,
+  "y": 31,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ostwald_converter"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.ostwald_converter.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.ostwald_converter.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.ostwald_converter.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.ostwald_converter.p3.mb"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.ostwald_converter.p4"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:ostwald_converter"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.ostwald_converter.p5"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__r59_haber"
+    },
+    {
+      "entry": "theoreticalsciences:chemistry/chemistry__haber_bosch_reactor"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/ostwald_process"
+  }
+}

@@ -16,7 +16,7 @@ import net.minecraft.world.level.portal.DimensionTransition;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * Round 40 (1.3.0): the way down and back. A Mantle Breach in the Overworld's floor leads into the Planetary Interior at
+ * Round 40 (1.2.0): the way down and back. A Mantle Breach in the Overworld's floor leads into the Planetary Interior at
  * the same x and z, into the crust near its roof; one in the Interior leads back up to the bottom of the Overworld, into
  * a small chamber cut beside the breach. A breach always opens next to where you arrive, so the way back is never lost.
  */

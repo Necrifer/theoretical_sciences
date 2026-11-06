@@ -1,0 +1,69 @@
+{
+  "title": "Coordinates",
+  "description": "Descartes put numbers on the plane: every point a pair, every line an equation, and geometry became algebra.",
+  "icon": "theoreticalsciences:function_graph",
+  "x": 2,
+  "y": 7,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:euclidean_geometry",
+    "theoreticalsciences:linear_algebra"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    }
+  ],
+  "time": 0,
+  "puzzle": {
+    "goal": "Write how far apart, D, the points (p, q) and (u, v) are on the plane.",
+    "name": "Distance formula",
+    "lhs": "D",
+    "form": "sqrt ( ( u - p ) ^ 2 + ( v - q ) ^ 2 )",
+    "expr": "sqrt ( ( u - p ) ^ 2 + ( v - q ) ^ 2 )",
+    "ask": "Find D for p = @{p}, q = @{q}, u = @{u} and v = @{v}.",
+    "vars": {
+      "D": "separation",
+      "p": "first x",
+      "q": "first y",
+      "u": "second x",
+      "v": "second y"
+    },
+    "given": {
+      "p": 1,
+      "q": 2,
+      "u": 4,
+      "v": 6
+    },
+    "unit": "",
+    "method": "The two differences are the legs of a right triangle; Pythagoras gives the rest.",
+    "distractors": [
+      "+",
+      "\u03c0",
+      "e"
+    ],
+    "vary": {
+      "p": [
+        1.0,
+        3.0,
+        1.0
+      ],
+      "q": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "u": [
+        2.0,
+        6.0,
+        1.0
+      ],
+      "v": [
+        4.0,
+        8.0,
+        1.0
+      ]
+    }
+  }
+}

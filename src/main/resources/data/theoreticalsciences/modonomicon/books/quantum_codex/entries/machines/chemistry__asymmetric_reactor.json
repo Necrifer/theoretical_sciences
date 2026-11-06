@@ -1,0 +1,53 @@
+{
+  "name": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor",
+  "description": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor.desc",
+  "icon": {
+    "item": "theoreticalsciences:asymmetric_reactor"
+  },
+  "category": "theoreticalsciences:machines",
+  "x": 207,
+  "y": 50,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:asymmetric_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor.p0"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor.p1"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor.p2"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor.p3"
+    },
+    {
+      "type": "modonomicon:spotlight",
+      "item": {
+        "item": "theoreticalsciences:asymmetric_reactor"
+      },
+      "text": "book.theoreticalsciences.codex.chemistry.asymmetric_reactor.p4"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:machines/chemistry__r65_synthesis"
+    },
+    {
+      "entry": "theoreticalsciences:machines/chemistry__synthesis_bench"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/asymmetric_synthesis"
+  }
+}

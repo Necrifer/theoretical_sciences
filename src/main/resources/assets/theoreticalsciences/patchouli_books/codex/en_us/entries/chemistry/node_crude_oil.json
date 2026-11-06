@@ -1,0 +1,19 @@
+{
+  "name": "Synthetic Crude",
+  "icon": "theoreticalsciences:crude_oil_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 503,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:crude_oil_cell",
+      "title": "Synthetic Crude",
+      "text": "Coal hydrogenated under pressure into an oil (the Bergius process): a crude made in a factory instead of a reservoir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Chemical Reactor$().$(br2)$(thing)Unlocked by$(): Petrochemistry.$(br2)$(thing)Used in$(): Ethylene, Propylene."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/petrochemistry"
+}

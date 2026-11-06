@@ -1,0 +1,19 @@
+{
+  "name": "Circadian Culture",
+  "icon": "theoreticalsciences:circadian_culture",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:circadian_culture",
+      "title": "Circadian Culture",
+      "text": "Cells that keep their own clock, a loop of genes that switches itself on and off every day. Set to the world's day, they work hardest in their active hours. It dies if carried about too long. Made in the Circadian Incubator."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Circadian Incubator$().$(br2)$(thing)Unlocked by$(): Chronobiology.$(br2)$(thing)Used in$(): Stable Ecosystem."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/chronobiology"
+}

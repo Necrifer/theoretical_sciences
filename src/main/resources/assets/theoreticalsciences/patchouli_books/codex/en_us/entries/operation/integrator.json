@@ -1,0 +1,24 @@
+{
+  "name": "Integrator",
+  "icon": "theoreticalsciences:integrator",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 72,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A rate equation dy/dt = \u2212ky is stepped forward by h at a time. A method of order m is off by about (hk)^(m+1)/(m+1) a step. Euler's method (order 1) and the midpoint method blow up once hk passes 2; the fourth-order Runge-Kutta method holds to 2.785. Bigger steps get there faster; a higher order is more accurate but takes more work a step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Step size, Order of the method.$(br2)$(thing)Disturbance$(): Slipping wheels: the error varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The steps blow up.$(br2)$(thing)Rate$(): Bigger steps are faster; higher orders cost more."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Step against the rate: z = hk$(br)Error per step: \u03b5 \u2248 (hk)^(m+1)/(m+1)"
+    }
+  ]
+}

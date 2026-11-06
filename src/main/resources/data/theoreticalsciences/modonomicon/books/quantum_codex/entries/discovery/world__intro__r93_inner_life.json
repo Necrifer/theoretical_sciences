@@ -1,0 +1,33 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r93_inner_life",
+  "description": "book.theoreticalsciences.codex.world.intro__r93_inner_life.desc",
+  "icon": {
+    "item": "theoreticalsciences:memory_cell"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 41,
+  "y": 92,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r93_inner_life.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r93_inner_life"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r93_inner_life.p1"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "theoreticalsciences:discovery/world__intro__r87_axioms"
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/inner_space"
+  }
+}

@@ -296,6 +296,17 @@ public final class PhysicsPanel {
             TextFit.wrapped(g, font, why, x + 5, by + 3, W - 10, 0xFFB0A0, 2, false);
             if (in(mx, my, x, by, W, bh)) tooltip = List.of(why);
         }
+        else {
+            // 1.2.0: precision, along the bottom while it runs - the fine tuning the Tuning Fork leaves to the console
+            double pr = be.precision.value;
+            int by = y + H - 15, bw2 = W - 10;
+            g.fill(x + 5, by + 9, x + 5 + bw2, by + 12, 0xFF05070C);
+            g.fill(x + 5, by + 9, x + 5 + (int) (pr * bw2), by + 12, pr > 0.98 ? 0xFF70FF9A : 0xFF000000 | HoloStyle.bright(accent));
+            Component pc = Component.translatable("gui.theoreticalsciences.phys.precision", Math.round(pr * 100),
+                    Math.round(be.productBonus() * 100));
+            TextFit.draw(g, font, pc, x + 5, by, W - 10, pr > 0.98 ? 0x70FF9A : 0xC0D0E0);
+            if (in(mx, my, x, by, W, 14)) tooltip = List.of(Component.translatable("gui.theoreticalsciences.phys.precision.tip"));
+        }
         if (s.faulted) {
             g.fill(x + 1, y + 34, x + W - 1, y + 64, 0xE0300808);
             if (holo) g.drawManaged(() -> {
@@ -530,6 +541,39 @@ public final class PhysicsPanel {
                 tooltip = tip;
             }
             ry += 10;
+        }
+        {
+            // 1.2.0: what to tune for. Each recipe window's quantity, and the speed, at the recipe's best point: bring the
+            // readout to these values (or past them on the safe side) for 100% precision. Each ticks green when it is there.
+            ry += 3;
+            g.drawString(font, Component.translatable("gui.theoreticalsciences.phys.ideal_head").withStyle(ChatFormatting.UNDERLINE), x + 5, ry, accent, false);
+            ry += 11;
+            var pr = be.precision;
+            boolean idle = ps.recipe == null || ps.recipe == RecipePhysics.NONE;
+            var ws = idle ? java.util.List.<RecipePhysics.Window>of() : ps.recipe.windows();
+            if (idle || pr.target == null || pr.targetDir == null || pr.targetScale == null || pr.target.length != ws.size() + 1) {
+                TextFit.draw(g, font, Component.translatable(idle ? "gui.theoreticalsciences.phys.ideal_idle" : "gui.theoreticalsciences.phys.ideal_finding"),
+                        x + 6, ry, W - 12, 0x8090A0);
+                ry += 10;
+            } else {
+                for (int i = 0; i <= ws.size(); i++) {
+                    boolean speed = i == ws.size();
+                    double now = speed ? ps.rate : m.value(ps.env, ws.get(i).q());
+                    int dir = pr.targetDir[i];
+                    boolean met = com.theoreticalsciences.machine.tuning.Precision.met(now, pr.target[i], dir, 0.5 * pr.targetScale[i]);
+                    Component label = speed ? Component.translatable("gui.theoreticalsciences.phys.ideal_speed") : name(m, ws.get(i).q());
+                    String unit = speed ? "" : unit(m, ws.get(i).q());
+                    String val = (dir < 0 ? "≤ " : dir > 0 ? "≥ " : "= ") + fmt(pr.target[i]) + (unit.isEmpty() ? "" : " " + unit);
+                    int vw = font.width(val);
+                    TextFit.draw(g, font, Component.literal(met ? "✔ " : "→ ").append(label), x + 6, ry, W - 14 - vw, met ? 0x60FF90 : 0xFFE070);
+                    g.drawString(font, val, x + W - 6 - vw, ry, met ? 0x60FF90 : 0xFFFFFF, false);
+                    if (in(mx, my, x, ry - 1, W, 10) && my >= top && my < bottom)
+                        tooltip = List.of(label.copy().withStyle(ChatFormatting.AQUA),
+                                Component.translatable("gui.theoreticalsciences.phys.ideal_tip." + (dir < 0 ? "max" : dir > 0 ? "min" : "eq"),
+                                        fmt(pr.target[i]) + (unit.isEmpty() ? "" : " " + unit), fmt(now) + (unit.isEmpty() ? "" : " " + unit)).withStyle(ChatFormatting.GRAY));
+                    ry += 10;
+                }
+            }
         }
         if (!ps.recipe.windows().isEmpty()) {
             ry += 3;

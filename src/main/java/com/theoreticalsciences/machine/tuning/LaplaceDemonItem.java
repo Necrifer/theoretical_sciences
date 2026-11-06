@@ -63,7 +63,7 @@ public class LaplaceDemonItem extends LoreItem {
         return InteractionResult.CONSUME;
     }
 
-    private static QHRecipe pick(ServerLevel level, ControllerBlockEntity c, ItemStack want) {
+    static QHRecipe pick(ServerLevel level, ControllerBlockEntity c, ItemStack want) {
         List<RecipeHolder<QHRecipe>> all = level.getRecipeManager().getAllRecipesFor(QHRecipes.type(c.type.recipeType));
         if (!want.isEmpty())
             for (RecipeHolder<QHRecipe> h : all)

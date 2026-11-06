@@ -1,0 +1,19 @@
+{
+  "name": "Feedback",
+  "icon": "theoreticalsciences:governor",
+  "advancement": "theoreticalsciences:research/feedback",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 505,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:governor",
+      "title": "Feedback",
+      "text": "$(thing)Feedback$()$(br2)Measure what a machine does, compare it with what it should do, and push it back by the difference. Every thermostat works this way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 80$(br2)$(thing)Builds on$(): Stability.$(br2)$(thing)Samples$(): 1 Rate Table.$(br2)$(thing)Derivation$(): A machine multiplies what goes in by G; what comes out is scaled by H and taken away from what goes in. Write the overall gain T, out over in."
+    }
+  ]
+}

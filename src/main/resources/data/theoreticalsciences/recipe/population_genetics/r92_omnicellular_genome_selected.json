@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:population_genetics",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:evolved_strain",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:xenogenome_sample",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:recombinant_dna",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:omnicellular_genome",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 400,
+  "research": "theoreticalsciences:directed_evolution",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "fix",
+        "min": 0.6,
+        "max": 2.0
+      }
+    ]
+  }
+}

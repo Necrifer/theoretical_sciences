@@ -1,0 +1,24 @@
+{
+  "name": "Enzyme Assay Bench",
+  "icon": "theoreticalsciences:enzyme_assay_bench",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 52,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "An enzyme turns substrate over fastest when it is saturated. Its saturation is v/Vmax = S\u207f/(K_app\u207f + S\u207f): n = 1 for an ordinary enzyme (Michaelis-Menten), more for a cooperative one (Hill), and an inhibitor raises K_app = K_m(1 + I/K_i). Too much substrate chokes the enzyme; too much enzyme clumps."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Substrate, Enzyme dose.$(br2)$(thing)Disturbance$(): Temperature: the saturation varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): Too much substrate: it chokes the enzyme; Too much enzyme: it clumps.$(br2)$(thing)Rate$(): More enzyme, well saturated, is faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Apparent K: K_app = K_m(1 + I/K_i)$(br)Saturation: v/Vmax = S\u207f/(K_app\u207f + S\u207f)"
+    }
+  ]
+}

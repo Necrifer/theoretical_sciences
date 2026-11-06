@@ -1,0 +1,19 @@
+{
+  "name": "Stable Dose",
+  "icon": "theoreticalsciences:stable_dose",
+  "category": "theoreticalsciences:biology",
+  "sortnum": 501,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:stable_dose",
+      "title": "Stable Dose",
+      "text": "A substance metered out so its level in the body stays steady, between too little to work and enough to harm: the pharmacist's art. Made on the Dosing Pump."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Dosing Pump$().$(br2)$(thing)Unlocked by$(): Pharmacokinetics.$(br2)$(thing)Used in$(): Miniaturiser."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/pharmacokinetics"
+}

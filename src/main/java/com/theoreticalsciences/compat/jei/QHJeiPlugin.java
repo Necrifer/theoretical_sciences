@@ -130,13 +130,15 @@ public class QHJeiPlugin implements IModPlugin {
         reg.addExtraItemStacks(extra);
         // every mod's Essence and its parts in the ingredient list, so each can be looked up by itself
         List<net.neoforged.neoforge.fluids.FluidStack> ess = new ArrayList<>();
-        for (var st : com.theoreticalsciences.transcend.Essences.steps()) ess.add(st.output().copyWithAmount(1000));
+        for (var st : com.theoreticalsciences.transcend.Essences.steps())
+            if (com.theoreticalsciences.transcend.Essences.isEssence(st.output())) ess.add(st.output().copyWithAmount(1000));   // (Anima Mundi is listed already)
         reg.addExtraIngredients(NeoForgeTypes.FLUID_STACK, ess);
     }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration reg) {
         var gui = reg.getJeiHelpers().getGuiHelper();
+        com.theoreticalsciences.compat.page.RecipePage.clear();      // 1.2.0: pages are laid out again after a reload
         for (MachineType t : MachineType.values()) reg.addRecipeCategories(new MachineRecipeCategory(gui, t, TYPES.get(t)));
         reg.addRecipeCategories(new MultiblockCategory(gui));
         reg.addRecipeCategories(new ExtremeCraftingCategory(gui), new CompactionCategory(gui), new PleromaCategory(gui));

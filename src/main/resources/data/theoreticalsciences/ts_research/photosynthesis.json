@@ -1,0 +1,61 @@
+{
+  "title": "Photosynthesis",
+  "description": "Chlorophyll catches light and splits water: oxygen out, sugar made from air. Unlocks the Photobioreactor and Algae Cultures.",
+  "icon": "theoreticalsciences:algae_culture",
+  "x": 6,
+  "y": 19,
+  "insight": 80,
+  "requires": [
+    "theoreticalsciences:metabolism"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:kelp",
+      "count": 8
+    }
+  ],
+  "time": 210,
+  "puzzle": {
+    "goal": "Leaves saturate with light: rate P for light I and half-saturation K, from a top rate M. Write P.",
+    "name": "Saturating photosynthesis",
+    "lhs": "P",
+    "form": "M * I / ( K + I )",
+    "expr": "M * I / ( K + I )",
+    "ask": "Find P for M = @{M}, I = @{I} and K = @{K}.",
+    "vars": {
+      "P": "rate",
+      "M": "top rate",
+      "I": "light",
+      "K": "half-saturation light"
+    },
+    "given": {
+      "M": 20,
+      "I": 300,
+      "K": 150
+    },
+    "unit": "",
+    "method": "The light-catching machinery is busy a share I/(K + I) of the time, like an enzyme with its substrate.",
+    "distractors": [
+      "-",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "M": [
+        12.0,
+        28.0,
+        1.0
+      ],
+      "I": [
+        180.0,
+        420.0,
+        1.0
+      ],
+      "K": [
+        90.0,
+        210.0,
+        1.0
+      ]
+    }
+  }
+}

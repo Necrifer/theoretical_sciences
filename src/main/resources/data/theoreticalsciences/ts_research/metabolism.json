@@ -1,0 +1,62 @@
+{
+  "title": "Metabolism",
+  "description": "A cell is a chemical network: hundreds of enzymes in chains and cycles, each feeding the next. Unlocks the Fermenter.",
+  "icon": "theoreticalsciences:fermenter",
+  "x": 5,
+  "y": 18,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:membranes",
+    "theoreticalsciences:enzyme_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:assayed_enzyme",
+      "count": 2
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A chain of n enzymes each passes on a share f of what it is given. A amount of sugar goes in; write the amount Y that reaches the end.",
+    "name": "Pathway yield",
+    "lhs": "Y",
+    "form": "A * f ^ n",
+    "expr": "A * f ^ n",
+    "ask": "Find Y for A = @{A}, f = @{f} and n = @{n}.",
+    "vars": {
+      "Y": "amount through",
+      "A": "amount in",
+      "f": "share each step",
+      "n": "steps"
+    },
+    "given": {
+      "A": 100,
+      "f": 0.9,
+      "n": 10
+    },
+    "unit": "",
+    "method": "Each step multiplies by f, so n steps multiply by f\u207f: long pathways need very good enzymes.",
+    "distractors": [
+      "+",
+      "e",
+      "2"
+    ],
+    "vary": {
+      "A": [
+        60.0,
+        140.0,
+        1.0
+      ],
+      "f": [
+        0.54,
+        0.999,
+        0.001
+      ],
+      "n": [
+        6.0,
+        14.0,
+        1.0
+      ]
+    }
+  }
+}

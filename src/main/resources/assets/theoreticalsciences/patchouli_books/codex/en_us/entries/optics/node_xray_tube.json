@@ -1,0 +1,19 @@
+{
+  "name": "X-ray Tube",
+  "icon": "theoreticalsciences:xray_tube",
+  "category": "theoreticalsciences:optics",
+  "sortnum": 512,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:xray_tube",
+      "title": "X-ray Tube",
+      "text": "$(item)X-ray Tube$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in a crafting grid.$(br2)$(thing)Used in$(): X-ray Diffractometer."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/crystallography"
+}

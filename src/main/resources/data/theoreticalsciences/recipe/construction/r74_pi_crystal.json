@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:construction",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 2
+    },
+    {
+      "item": "minecraft:compass",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pi_crystal",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:pi_constant",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "tol": 0.002
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.002
+      }
+    ]
+  }
+}

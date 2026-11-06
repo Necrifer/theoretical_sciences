@@ -1,0 +1,19 @@
+{
+  "name": "Ammonia Buffer",
+  "icon": "theoreticalsciences:ammonia_buffer_cell",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:ammonia_buffer_cell",
+      "title": "Ammonia Buffer",
+      "text": "Ammonia and ammonium sulfate, holding steady at pH 9: alkaline, and stubborn about it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Buffer Tank$().$(br2)$(thing)Unlocked by$(): Buffers.$(br2)$(thing)Used in$(): Tincture of Chirality."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/buffer_chemistry"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Networks",
+  "icon": "theoreticalsciences:network_map",
+  "advancement": "theoreticalsciences:research/networks",
+  "category": "theoreticalsciences:mathematics",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:network_map",
+      "title": "Networks",
+      "text": "$(thing)Networks$()$(br2)Join every place to every other with as few links as possible and you have a tree; add one more and it has a loop, a second way round. Unlocks the Network Map."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Insight$(): 90$(br2)$(thing)Builds on$(): Graph Theory.$(br2)$(thing)Samples$(): 4 Integer Ring.$(br2)$(thing)Derivation$(): How many different trees N join n labelled junctions, each link joining two of them, with no loop? Write it."
+    }
+  ]
+}

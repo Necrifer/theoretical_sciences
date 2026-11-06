@@ -1,0 +1,18 @@
+{
+  "name": "Materials",
+  "icon": "theoreticalsciences:sintering_press",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 32,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:sintering_press,theoreticalsciences:alumina_ceramic_plate,theoreticalsciences:ceramic_armour_plate",
+      "text": "At its $(thing)eutectic$() an alloy melts all at once: the $(item)Phase Diagram Kiln$() makes Superconducting Solder from lead and copper more cheaply. The $(item)Doping Furnace$() diffuses a dopant into a wafer for a working junction (10\u00b9\u2076 to 10\u00b9\u2078 carriers); a $(item)Doped Wafer$() goes through the Lithographer at twice the yield."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Sintering Press$() fires alumina dense without growing its grains: $(item)Alumina Ceramic Plates$(), and with aramid behind them, $(item)Ceramic Armour Plates$()."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/ceramics"
+}

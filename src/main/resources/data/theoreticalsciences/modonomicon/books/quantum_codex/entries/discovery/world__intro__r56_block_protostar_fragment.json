@@ -1,0 +1,29 @@
+{
+  "name": "book.theoreticalsciences.codex.world.intro__r56_block_protostar_fragment",
+  "description": "book.theoreticalsciences.codex.world.intro__r56_block_protostar_fragment.desc",
+  "icon": {
+    "item": "theoreticalsciences:protostar_fragment"
+  },
+  "category": "theoreticalsciences:discovery",
+  "x": 30,
+  "y": 97,
+  "hide_while_locked": false,
+  "background_u_index": 0,
+  "background_v_index": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r56_block_protostar_fragment.p0",
+      "title": "book.theoreticalsciences.codex.world.intro__r56_block_protostar_fragment"
+    },
+    {
+      "type": "modonomicon:text",
+      "text": "book.theoreticalsciences.codex.world.intro__r56_block_protostar_fragment.p1"
+    }
+  ],
+  "parents": [],
+  "condition": {
+    "type": "modonomicon:advancement",
+    "advancement_id": "theoreticalsciences:research/galactic_dynamics"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Autoclave",
+  "icon": "theoreticalsciences:autoclave",
+  "category": "theoreticalsciences:operation",
+  "sortnum": 20,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Moist heat kills by the decade: every D minutes at a temperature, nine in ten of what is alive die, and D itself falls tenfold for every 10 K hotter (z = 10 K). Sterile means a millionth of a millionth left: twelve decades."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Set$(): Hold time, Steam temperature.$(br2)$(thing)Disturbance$(): Air pockets: the kill varies by \u00b12%\u00b7d."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Limits$(): The packs scorch.$(br2)$(thing)Rate$(): Shorter holds are faster."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Equations$()$(br)Decimal reduction time: D(T) = D\u2081\u2082\u2081\u00b710^((394 \u2212 T)/10)$(br)Tenfold reductions: log N\u2080/N = t / D"
+    }
+  ]
+}

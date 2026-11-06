@@ -61,6 +61,21 @@ public final class QHItems {
                 case "probe" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.foam.ResonanceProbeItem::new, p);
                 case "axiomkey" -> ITEMS.registerItem(def.id(), AxiomKeyItem::new, p);
                 case "assembler" -> ITEMS.registerItem(def.id(), StructureAssemblerItem::new, p);
+                case "leadpig" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.LeadPigItem::new, p);       // 1.2.0
+                case "resonant_fork" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.TuningForkItem::resonant, p);   // 1.2.0
+                case "rate_table" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::rateTable, p);   // 1.2.0
+                case "confidence_seal" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::confidenceSeal, p);
+                case "error_code" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::errorCode, p);
+                case "optimised_pathway" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::optimisedPathway, p);
+                case "stability_margin" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::stabilityMargin, p);
+                case "proof_certificate" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.ProofCertificateItem::new, p);   // 1.2.0
+                case "sterile_pack" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.CleaningItem::sterilePack, p);   // 1.2.0
+                case "antibiotic" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.CleaningItem::antibiotic, p);
+                case "anomaly_ward" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.VaccineItem::new, p);   // 1.2.0
+                case "symbiont_lining" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::symbiontLining, p);
+                case "probiotic_seal" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::probioticSeal, p);
+                case "tuning_fork" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.TuningForkItem::new, p);   // 1.2.0
+                case "calibration_card" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.CalibrationCardItem::new, p);   // 1.2.0
                 case "calibrator" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.FieldCalibratorItem::new, p);
                 case "autocalibrator" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.FieldCalibratorItem::autonomous, p);
                 case "singularity", "whitehole", "tesseract", "universe", "star" -> ITEMS.registerItem(def.id(), pp -> new SingularItem(pp, def.special()), p.fireResistant());
@@ -71,6 +86,7 @@ public final class QHItems {
                 case "lawcodex" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.LawgiversCodexItem::new, p);
                 // round 32: the Dodecaract Excavator and the Eschaton Cell (what every endgame item now runs on)
                 case "excavator" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.DodecaractExcavatorItem::new, p.rarity(Rarity.EPIC));
+                case "fold" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.FoldedMatter::new, p.rarity(Rarity.EPIC).fireResistant());   // 1.2.0
                 case "eschatoncell" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.EschatonCellItem::new, p.rarity(Rarity.EPIC));
                 // round 35: holds space flat around its bearer (no distortion near impossible structures)
                 case "euclideananchor" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.EuclideanAnchorItem::new, p.rarity(Rarity.EPIC));
@@ -84,6 +100,12 @@ public final class QHItems {
                 case "coredrill" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.interior.CoreDrillItem::new, p);
                 case "moissanitedrill" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.interior.MoissaniteDrillItem::new, p);
                 case "dice" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.Dice::new, p);
+                // 1.2.0: Titan
+                case "miniaturiser" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.inner.InnerTravel.MiniaturiserItem::new, p);   // 1.2.0
+                case "cryobot" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.ocean.Cryobot::new, p);   // 1.2.0
+                case "lander" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanTravel.CryogenicLanderItem::new, p);
+                case "rebreather" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.RebreatherItem::new, p);
+                case "coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.CoatingItem::new, p);
                 case "prussianblue" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.PrussianBlue::new, p);
                 default -> ITEMS.registerItem(def.id(), LoreItem::new, p);
             };

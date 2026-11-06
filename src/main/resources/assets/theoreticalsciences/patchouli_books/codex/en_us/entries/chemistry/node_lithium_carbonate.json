@@ -1,0 +1,19 @@
+{
+  "name": "Lithium Carbonate",
+  "icon": "theoreticalsciences:lithium_carbonate",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 502,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:lithium_carbonate",
+      "title": "Lithium Carbonate",
+      "text": "A white powder from the last of an evaporated brine, where the lithium waits after everything else has crystallised."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made in $(item)Brine Evaporator$().$(br2)$(thing)Unlocked by$(): Solubility.$(br2)$(thing)Used in$(): Lithium Ingot."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/solubility"
+}

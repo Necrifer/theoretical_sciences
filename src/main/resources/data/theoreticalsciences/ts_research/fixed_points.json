@@ -1,0 +1,55 @@
+{
+  "title": "Fixed Points",
+  "description": "Where a system stops changing: an equilibrium. Newton found them by guessing, then sliding down the tangent, again and again.",
+  "icon": "theoreticalsciences:rate_table",
+  "x": 19,
+  "y": 0,
+  "insight": 70,
+  "requires": [
+    "theoreticalsciences:rates_as_equations",
+    "theoreticalsciences:chemical_equilibrium"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rate_table",
+      "count": 1
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "To find the square root of a, guess x, then average x with a/x. Write the better guess X.",
+    "name": "Babylonian method",
+    "lhs": "X",
+    "form": "( x + a / x ) / 2",
+    "expr": "( x + a / x ) / 2",
+    "ask": "Find X for a = @{a} and x = @{x}.",
+    "vars": {
+      "X": "better guess",
+      "x": "guess",
+      "a": "the number"
+    },
+    "given": {
+      "a": 2,
+      "x": 1.5
+    },
+    "unit": "",
+    "method": "It is Newton's method for x\u00b2 \u2212 a = 0: x \u2212 (x\u00b2 \u2212 a)/(2x). Its fixed point is \u221aa, and it doubles the digits each time.",
+    "distractors": [
+      "-",
+      "3",
+      "n"
+    ],
+    "vary": {
+      "a": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "x": [
+        0.89,
+        2.1,
+        0.01
+      ]
+    }
+  }
+}

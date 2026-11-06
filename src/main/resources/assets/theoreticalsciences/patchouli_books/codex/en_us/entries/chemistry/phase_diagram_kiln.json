@@ -1,0 +1,32 @@
+{
+  "name": "Phase Diagram Kiln",
+  "icon": "theoreticalsciences:phase_diagram_kiln",
+  "category": "theoreticalsciences:chemistry",
+  "sortnum": 153,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phase_diagram_kiln",
+      "title": "Phase Diagram Kiln",
+      "text": "A kiln for alloys, run at the one mixture that melts all at once and sets the same all through.$(br2)$(thing)Tier 2$() machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry - and JEI - show the pattern."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Set the alloy ratio and the temperature. At the eutectic the alloy melts sharply and sets evenly; off it, it freezes in mush. The ratio must be within 0.01 of the eutectic, and the kiln just above its melting point."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)Machine data$(): a single-block machine (4 item and 1 fluid inputs, 1 and 1 outputs).$(br2)$(thing)Makes$(): Superconducting Solder."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "theoreticalsciences:phase_diagram_kiln",
+      "text": "Made in a crafting grid."
+    }
+  ],
+  "advancement": "theoreticalsciences:research/phase_diagrams"
+}

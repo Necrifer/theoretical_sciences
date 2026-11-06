@@ -1,5 +1,1213 @@
 # Changelog
 
+## 1.2.0 — Chemistry, Mathematics and Biology
+
+The first release since 1.1.0, in three parts, newest first: Biology, Mathematics, Chemistry. (They were built
+internally as three development versions, never released on their own.)
+
+### Part three: Biology
+
+The branch about life as it runs. Crafting counts are for a 3x3 layout; on the Extreme Assembly Table each recipe is
+laid out on the 9x9 grid, so each ingredient is needed about nine times over.
+
+**New item art (the Chemistry, Mathematics and Biology items)**
+- Every item added since 1.1 has its own drawing now, in place of a recoloured copy of an older icon. Each one shows the
+  thing itself: the Lead Pig is a lead pot with a trefoil band, Halite is a pile of salt cubes, the Vanadium Bed is a
+  heap of catalyst rings, Kekulé's Dream is the snake biting its tail in a hexagon, the e Crystal is a nautilus spiral,
+  Half Turn is a Möbius band, Stability Margin is a ball resting in a bowl, Geodesic Thread is a globe with a great
+  circle, and the biology items are cells, dishes, vials and organs.
+- No recipes changed.
+
+**Three new mechanics**
+* **Contamination, the Biology failure.** Biology machines do not explode; they get contaminated. Each run handles the
+  culture and costs 4% sterility; below half, a run may catch something and the machine stops until it is cleaned. A
+  **Sterile Pack** (from the Autoclave) always cleans it. An **Antibiotic** is cheaper, but each dose on the same machine
+  selects for what survives, so the n-th works only one time in n. A **Probiotic Seal** upgrade keeps a console clean for
+  good.
+* **Living cultures.** Yeast, algae, cells and microbes are alive: carried loose or dropped they die off (half in a few
+  in-game days of carrying), while machines and chests keep them. A dead culture is no use to any recipe. This reuses the
+  1.2 decay system.
+* **Infection and immunity.** The creatures a failed machine releases now leave a lasting infection when they hit you
+  (ten minutes, it runs its course): Fracture (Destabilised Husk, you slip through space), Grey Goo (Nanite Swarm, your
+  food burns), Rewind (Paradox Echo, back ten seconds), Hollowing (Void Wraith, six less health). An **Anomaly Ward**,
+  used on yourself, holds its infection off for three in-game days; renew it too soon and the imprint overloads. After
+  Immune Memory, a lasting Ward holds for good. Immunity is kept per player and survives respawn.
+
+**After testing (Inner Space and Titan's hidden ocean)**
+* Creatures now spawn in both worlds: by the world's own spawning (each biome lists its creatures, and Inner Space's do
+  not wait for darkness, since it is always lit), and by a top-up near every player, creative or not.
+* Inner Space has no caves now: caves below the plasma's level had filled with plasma, so it turned up inside the ground.
+* Every Inner Space block squelches like a slime block.
+* The Tumour Hydra is far larger (as wide as a house), its heads growing out of every side on long necks; each head bites
+  whoever comes near it. How to call it is told on the Metastatic Spore, in the Inner Space research, and when you first
+  reach the Tumour.
+* New models for every new creature in the game's own style (chunky shaded blocks on the sixteen-pixel grid, as vanilla's
+  mobs are), facing the way they move, and a voice of its own for each (the Polymerase ratchets like a zip;
+  the grazers snap like snapping shrimp; the hydra growls with several throats).
+* The Polymerase is redrawn: a hand-shaped enzyme closing on the double helix, writing a new strand out of its back.
+* Titan's hidden ocean: real vents (mounds of rock, tapering chimneys, and Black Smokers on top that pour out roaring,
+  bubbling black plumes which lift and scald whoever swims in), Giant Tube Worms round them (spreading near a smoker),
+  Brinicles hanging from the ice (growing longer), boulders on the floor, and two new creatures: the Brine Jelly
+  (drifts and stings) and the Vent Crab (a yeti crab that farms bacteria on its claws). New drops: Luminous Mesoglea and
+  Crab Chitin. The Brine Jelly swims bell-first in strokes: the bell snaps shut and drives it along, its tentacles
+  streaming behind, then opens wide as it coasts.
+* Every new block has a use and a way to make more: Bioluminescent Membrane grows algae in the Photobioreactor, Biosafety
+  Panels make Sterile Packs in the Autoclave, the three Inner Space ores can be laid again, tube worms give Bacterial
+  Cultures, brinicles melt to Concentrated Brine, black smokers give Sulfuric Acid, chitin makes Polymer Sheet.
+* Livelier creatures: the Tumour Hydra's body throbs, its necks writhe along their length and its heads rear back and
+  strike now and then, jaws snapping; the Vent Crab shuffles, waves and snips its claws and swivels its eyes, and its
+  legs step properly when it walks (it is also faster, and its body no longer pokes into walls); the T Cell wobbles as it goes.
+* The Brine Jelly turns to face the way it swims, so it always goes bell-first.
+* T Cells, Macrophages, Polymerases and the Hydra only spawn standing on solid ground (they had been appearing in mid-air
+  and dying from the fall), and Inner Space's cells take no fall damage.
+* The Helix Spires are built whole: backbones three blocks thick and a base pair on every level.
+* The Polymerase now works the DNA: it finds the nearest helix, walks to it and climbs it rung by rung, copying as it goes
+  (its clamp shuts and the strand races through), turns at the top and works back down. Knocked off, it climbs back on.
+* The Tumour Hydra fights with its heads: its body only walks to keep them in reach (about five blocks off), and the
+  head nearest whatever is in reach draws back and strikes. Each head has a hit box of its own: strike the heads to cut
+  them (a blow to the body is mostly soaked up, and cuts nothing). It cannot be called into a cramped spot (it needs
+  open ground to rise on) and it never suffocates. Macrophages and T Cells go for it, and it bites them back.
+* The Vent Crab's walk is calmer: slower, steadier steps instead of a jitter.
+* Fixed: three crafting recipes failed to load (the Lead Pig and both Entanglement Tuner recipes made more than a stack of
+  an item that does not stack); each now makes one.
+* Tumour Hydra: each head now has its own fixed place round the body, so cutting one no longer shuffles the rest. The stump
+  is left right where the head was struck off: the cut neck stays standing, bleeding at its end, and that is where the
+  therapy strike lands.
+* Tumour Hydra: a blow anywhere along a neck counts as a blow to that head (each neck has two hit boxes besides the head).
+  Once every head is gone, blows to the body land in full, so the Hydra can be finished off.
+* Untreated stumps regrow their own head plus one in the nearest empty place beside it.
+* Vent Crab: turns gradually instead of snapping to each new direction, walks the way it faces, pauses to pick at the rock,
+  steps up ledges instead of hopping, and no longer bobs on the floor. Its legs only step while it is really walking, and
+  stand still otherwise.
+
+**Animated multiblocks (the mod's own)**
+* A structure animation system: a multiblock's own parts can move (rings turning, arms swinging, parts sliding), each
+  drawn from the real models of the blocks it is made of, carried by its parent part's movement, and set up from a data
+  file alone (`assets/<ns>/ts_animations/`). Parts are shown whenever the machine is formed, move only while a recipe
+  runs, ease in and out over their own ramp, and hold where they stopped. A multiblock's JSON names one with `animation`.
+* Large effects for the mod's multiblocks to use (`fx` entries `star`, `shell`, `orbiters`, `beam`): a star (three
+  turning layers of granulated plasma, drawn by a new shader), a sphere of starry open space, small bodies orbiting, and
+  beams. They show while a recipe runs, with the same start-up and shut-down timing as the mod's own machines.
+* `/tsanim`, a client command to preview animations and effects where you stand, and to see what they cost per frame.
+* Client config: `animatedMultiblocks` (on), `animationDistance` (256 blocks), `animationFreezeDistance` (160 blocks),
+  `movingPartsCompatibility` (off; on, or with Sable installed, moving parts are drawn through the game's block buffers).
+* **The mod's machines move where a real machine would**: the Gas Centrifuge's rotors spin; the Tectonic Press's ram
+  strikes; the Deep Drilling Rig's drill string turns and bobs; the Radio Telescope's dish slews and tilts; the
+  Reflecting Telescope's dome turns while its tube tilts; heliostats track, control rods ride, pumps and compressors
+  spin, valves swing, trays and coils lift and settle, and the warp core's and accretion disc's rings turn. Coils, lens
+  arrays, field emitters and stabilisers hold still (an earlier build of this release set them all turning, which made every
+  machine look alike). The list is in tools/out/moving_parts.txt.
+* Nothing has to be rebuilt and no structure changed: the moving blocks are the structure's own, still there (they
+  collide, drop and count for the structure). While it is formed they are drawn by the renderer, moving, instead of
+  in place; when it breaks they show as ordinary blocks again. Machines already built pick it up on their next
+  structure check. A slot that takes several tiers shows the tier that was built.
+* Moving parts are still while the machine is idle, speed up as it starts and slow down as it stops, and hold where
+  they came to rest.
+* Config: `movingMultiblockParts` (common, on) and `animatedMultiblocks` (client, on).
+* Fixed: every casing turned invisible as soon as its structure formed. A second run of the tool that writes the
+  casings' "moving" look had overwritten their formed look with the hidden one; it now keeps them apart, and checks.
+* Fixed: moving blocks could be left invisible. They are now drawn the way the game draws a moving piston's block,
+  from the controller's own block renderer, and a hidden block that no formed machine is drawing (a structure from an
+  older version whose shape has changed, or one taken apart) shows itself again within a minute or two.
+* Fixed: moving parts were hidden in the world but never drawn (the Radio Telescope's dish and the Tokamak's field
+  coils simply vanished): the first look at the machine's blocks never came, because of an overflow in its timer.
+
+**Every multiblock rebuilt larger (all 76, 1.0's included)**
+* Each machine keeps its silhouette but is scaled up: three times for the small ones, twice for the rest (the largest
+  are now up to about 100 blocks across). Walls, floors and domes stay one block thick as they grow, so the material
+  grows with the area (rings, columns and working parts stay whole).
+* **The late and endgame machines are rebuilt from scratch, each to a design of its own**, in the manner of GregTech: New
+  Horizons' and MeatballCraft's endgame: shaped by what the machine does, 60 to 130 blocks across, open frameworks
+  rather than solid lumps, and each with a working animation no other machine has (in place of the shared effect it
+  had before):
+  * **Annihilation Reactor**: two injector towers, matter and antimatter, either side of a magnetic bottle, joined to it
+    by ribbed beam pipes. Blue and red streams run down the pipes and meet in the bottle in flashes of gamma light.
+  * **Causality Loop Engine**: a figure-eight track raised on pylons. A pulse runs the loop, its own echoes following
+    round behind it, and flashes where the track crosses itself as the pulse meets its past.
+  * **Dyson Array**: a star caged at the middle of a field of sixteen collector masts. A swarm of collectors orbits the
+    star and each mast's dish catches a beam in turn.
+  * **Matrioshka Brain**: three nested lattice shells round a star (stellar frame, computronium, error correction).
+    Thoughts spark across the shells and signals pass out through them and back.
+  * **Vacuum Harvester**: a funnel open to the sky. Pairs of particles flicker out of nothing; most meet again and
+    vanish, and the ones caught are drawn spiralling down the throat.
+  * **Axiomatic Breach Engine**: a pointed gate taller than a tower, wound with coil, anchored at its feet. A crack in
+    the world opens down its middle, light spills from it and glyph shards flake off and turn away into the air.
+  * **Concept Compressor**: nine arms reaching in from nine fields of knowledge to one compressor. Streams of nine colours
+    spiral in along them and are crushed into one bright point, which beats.
+  * **Eye of the Horizon**: a black hole the size of a hall inside a geodesic cage. A hot disc turns round it (brighter on
+    the side coming toward you), matter spirals in from the cage, and two jets leave through the cage's poles.
+  * **Transcendent Plasma Forge**: a star chamber fed by three great arching plasma conduits from three injector
+    stations of unequal height. Plasma pours down each conduit into the star.
+  * **Universe Forge**: a glass sphere cradled in three curved arms. Over and over: a point, a flash, a fireball cooling as
+    it spreads, and out of it a few galaxies.
+  * **Inflation Chamber**: a cube of space, a frame within a frame. A lattice of points swells outward faster and faster,
+    then begins again.
+  * **Mirror Foundry**: two vaulted halls either side of a wall of glass. A left-handed helix turns in one and its mirror
+    image, right-handed, in the other, while ripples cross the glass.
+  * **Entropy Horizon**: a great disc of radial fins round a deep well. Stars across it go out from the rim inward,
+    reddening and drifting down the well, until all is an even dull glow.
+  * **Essence Distillery**: a giant alembic, boiler, coiled neck and swan-neck arm to a receiver. Vapour climbs the neck,
+    beads along the arm and falls drop by drop into the receiver.
+  * **Abiogenesis Crucible**: a primordial sea in a wide basin under a storm cage of ribs. Lightning strikes the sea from
+    the crown; where it lands, little cells form, drift and divide.
+  * **Anomaly Containment Ward**: a six-sided arena with a pylon at each corner leaning in. The anomaly writhes at the
+    middle in a flickering shield the six pylons pour themselves into.
+  * **Anomaly Resolution Engine**: a spire on three fins. Strands are drawn out of the anomaly at its foot and up the
+    spire, unwinding, to settle calm at the top.
+  * **Reality Compiler**: a stepped ziggurat with an open frame on top. Code falls into the frame and compiles, edge by
+    edge, into a shape (a cube, an octahedron, a tetrahedron), which holds, then dissolves.
+* The other machines keep their own shapes, scaled up; the rings, crowned spires and buttresses an earlier build of this release
+  added round every machine are gone.
+* Nothing is lost: every block type is still used at least as many times as before (most many times more). Each old
+  layout is kept, so the Structure Assembler can still take an old build apart. Built machines must be rebuilt in the
+  new shape.
+* Working animations grow with their machines.
+* Large structures are checked less often (up to every ten seconds for the very largest), since a check reads every
+  block.
+* **Omnilex Engine**: rebuilt as a world tree. Roots spread through a basin (the sea of laws), a trunk climbs, six great
+  boughs fork into a crown ringed with lattice under a glass dome. The
+  hologram tree still grows above it; now bubble universes swell on the crown's boughs, break free and drift up, starry
+  inside, while drops of Primordial Law gather on the lower boughs and fall into the sea below.
+* **Pleroma Reconstitutor**: while it runs, the Transcendental's rekindling is traced again and again above it, at the
+  machine's scale: the pillars of light, the spire and its crown, the great halo and the five rings.
+* **Tokamak**: the toroidal field coils no longer spin. They heat up while it runs, glowing from dull red to white over
+  about ten seconds and cooling slowly after, while waves of energy close in on the plasma from the coils and sparks run
+  in along the spokes.
+* **Eschaton Foundry**: the tops of its four pillars pour beams into the sphere; the sphere holds a mini universe (starry
+  space, three turning spiral galaxies and a young star at its heart), and the ingredients of the recipe it is running
+  swirl round it, drawn slowly inward.
+* **Einstein-Rosen Bridge Projector**: eight beams from its frame pour energy into the bridge, pulses running along them,
+  as if holding it open.
+
+**Pleroma, reworked: five fluids instead of every fluid**
+* **Recipe change (Pleroma Confluence):** 1,000,000 mB of water, lava and each of the mod's 67 older fluids, plus
+  64,000 mB of every other mod's Essence → 1,000 mB of Pleroma ⟶ 1,000 mB each of **Quintessence**, **Alkahest**,
+  **Mathesis**, **Panacea** and **Anima Mundi** → 1,000 mB of Pleroma. The Confluence's screen, JEI and EMI now show
+  five tanks instead of a wall of them. Each tank holds up to 16,000 mB.
+* **Quintessence** (Physics), in the Universe Forge, with the Theory of Everything as catalyst:
+  * **Distillate of Forces:** 16,000 mB each of Quark-Gluon Plasma, Bose-Einstein Condensate, Superfluid Helium, Warm
+    Helium, Strange Matter, Exotic Matter, Dark Matter, Neutrino Flux, Antihydrogen, Liquid Antihelium, Antiwater,
+    Liquid Metallic Hydrogen, Magnetized Plasma, Heavy Water, Tritium and Uranium Hexafluoride → 1,000 mB.
+  * **Distillate of Spacetime:** 16,000 mB each of Liquid Spacetime, Chronon Gas, Tachyon Flux, Hawking Radiation,
+    Inflaton Field, False Vacuum, Dark Energy, Reheating Plasma, Dark Era Haze, Residual Starlight, Stellar Plasma,
+    Hypernova Plasma, Raw Star Matter, Nebular Gas, Accretion Disk Plasma and Molecular Cloud → 1,000 mB.
+  * **Quintessence:** 1,000 mB of each Distillate and 16,000 mB each of Primordial Law, Relativity Breakdown,
+    Schrödinger's Limit and Transcendent Plasma → 4,000 mB.
+* **Mathesis** (Mathematics), in the Conceptual Singularity Compressor, with Euler's Identity as catalyst: a Riemann
+  Zeta Crystal, a Topos, a Surreal Number and 16,000 mB each of Maxwell-Boltzmann Gas, Brownian Suspension, Strained
+  Spacetime, Quantum Spacetime Condensate, Renormalised Essence and Dimensional Residue → 4,000 mB.
+* **Panacea** (Biology), in the Abiogenesis Crucible, with the Tree of Life as catalyst: a Resolved Anomaly, an Immortal
+  Cell Line and 16,000 mB each of Nutrient Broth, Xenoplasm, Primordial Soup, Autocatalytic Broth, Synaptic Fluid,
+  Nanite Slurry, Blood Plasma and Psionic Ether → 4,000 mB.
+* **Alkahest** (Chemistry) is made as before, in the Alkahest Still.
+* **Anima Mundi** (the world), in the Essence Distillery: 16,000 mB each of water, lava, Basaltic Magma and Deep Brine,
+  and 4,000 mB of every other mod's whole Essence → 1,000 mB, twelve inputs at a time (with many mods, in lettered
+  parts first, as a mod's own Essence is). Like the Essences, it is worked out from the installed mods, so new mods'
+  fluids join in by themselves.
+* Per 1,000 mB of Pleroma this is about 4,000 mB of each older fluid instead of a million, so it is far cheaper, but it
+  now runs through the five branches' keystones.
+* **Research:** Pleroma now also needs Alkahest, the Theory of Everything, Euler's Identity and the Tree of Life. Its
+  puzzle mixes five fluids, not a thousand.
+* **Old saves:** a Confluence part filled under the old list is credited, once, with the share of a batch it had
+  gathered, as Pleroma in its output tank. The older fluids keep all their other uses.
+* Codex: a new page, The Five Fluids of Pleroma; the Pleroma, Essences, Alkahest and Essence Distillery pages say how
+  it works now.
+
+**Endgame gear**
+* **The Dodecaract Excavator no longer floods the inventory or the ground.** A big job (up to 33x33x33) used to put
+  every drop into the inventory and spill the rest as items at your feet, thousands of them in ore-rich ground, enough to
+  stall a server. Now what a job gathers is handed over at the end as **Folded Matter** (a new item: up to 16,384 items
+  of 64 kinds in one), the way Avaritia's World Breaker gathers into Matter Clusters; a job's few drops (four kinds,
+  four stacks at most) still go straight into the inventory. Use Folded Matter to unfold it into your inventory: what
+  does not fit stays folded, so nothing is ever dropped. A job cut short (you log out, change dimension, put it away,
+  the server stops) still hands over, or leaves, what it gathered.
+* **The Omnipotent Edge's Erasure reaches all round you**: no longer a 16-block cone before you, but every hostile
+  creature within 64 blocks (common config `edgeErasureRadius`, 8 to 256), seen or not. The common config
+  `edgeErasureAllCreatures` makes it take every creature that is not a player, a villager or someone else's pet
+  (never in land you may not use). What it kills comes to you as Folded Matter (a single kill's drops still go
+  straight into the inventory); the experience comes to you as before.
+* **The Greaves of the Absolute drive you on as Avaritia's Infinity Boots do**: on the ground, flying or swimming, a
+  push the way you walk (a quarter of it backwards, under half sideways, a tenth while sneaking) and a further push
+  while sprinting, on top of the speed bonus they had. Common config `greavesSpeed` (1 = the Infinity Boots, 0 = the
+  plain bonus only).
+* **Endgame gear on mobs** (for packs that give mobs custom gear): a mob's charged Raiment now spends its charge over
+  time as a player's does, and a mob's charged Edge spends charge with each blow, so neither lasts forever. Mobs never
+  get the Edge's unmaking. What each piece does on a mob, and how to give one charged gear: docs/ENDGAME_GEAR_ON_MOBS.md.
+
+**Security, server and performance fixes**
+* **The Lawgiver's Codex respects claimed land.** Creating creatures, and unmaking, pacifying, transmuting, growing or
+  shrinking one, are refused inside land the player may not use (FTB Chunks' claims, with its allies and settings, and
+  the game's spawn protection); healing is still allowed anywhere. A refused action costs no Eschaton Charge.
+* **The Codex's laws over a whole dimension** (gravity, time, weather, spawning, mob health, damage and speed, and
+  restoring them) need permission: the common config `codexWorldLawsPermissionLevel`, default 2 (operators), 0 for
+  anyone. The owner of a single-player world always may; LAN guests follow the setting. The server checks it, so a
+  modified client cannot get round it, and the Codex shows those controls locked for those who may not. Laws already
+  written stay: an operator can clear them with Restore.
+* The Omnipotence Core (and a forged Core) only takes orders from the screen its player opened by using it: no longer
+  from a modified client near someone else's Core, through a wall, in a claim, or as a spectator.
+* **Fixed a duplication at the Extreme Assembly Table**: with two players at one table, the second could take a copy of
+  an output the first had just made. Every player at the table now sees the grid change, and the output is only taken
+  while the grid still makes it.
+* **The world seed can no longer be worked out by a client.** Puzzle values come from a random number kept with the
+  world's research, not from the seed (which a modified client could recover from what it was sent). In an existing
+  world the numbers of unsolved puzzles change once; solved ones stay solved.
+* Secret research (granted only, never researched) is sent to a client only once that player has it.
+* Tighter limits on the sizes of what clients send for puzzles and the Core; an unknown puzzle action changes nothing.
+* The Resonant Tuning Fork's answer only counts with the fork still in hand; its pending games are forgotten on logout.
+* **Fewer network updates from idle machines**: a physics machine's live readout went to everyone nearby twice a second
+  even when idle; now twice a second while someone has its screen open, once a second while it runs, every ten
+  seconds otherwise.
+* The physics solver runs on a low-priority thread of its own instead of the game's shared background pool (which world
+  generation uses), and a recipe with no solution at the machine's tiers is tried again less and less often (up to every
+  twenty minutes) instead of forever every ten seconds.
+* In single player and LAN, a Field Projector whose chunk the client unloaded (while the server kept it loaded, as with
+  chunk loaders) no longer switches off the server's field.
+* Radiation sources are forgotten when a world closes (opening another world in the same game could give phantom
+  dose).
+* Machines save their stored energy (after a reload, a consumer lost its charge and a generator could send energy
+  twice). A containment failure under way is saved too.
+* After a respawn, a Raiment's or Omnilex's grant of flight still ends when it should; leaving the End alive keeps the
+  radiation dose and what it has started.
+* An anomaly zone is no longer forgotten because part of its ruin was unloaded.
+* Items or fluid a neighbour refuses after offering to take them (a port's export or import, a transceiver's energy) are
+  put back or dropped, never lost.
+* Animation timing stays smooth on worlds days old (it had gone into visible steps).
+* The mod's multiblocks' moving parts are drawn from buffers kept on the graphics card (baked once), each part culled
+  by distance and by view, instead of every block of them sent through the game's buffers every frame; one machine's
+  parts are baked a frame, so a base full of them loads without a hitch. With Sable, or the new client config
+  `movingPartsCompatibility`, the old way is used. Machines with no moving parts are no longer drawn while their
+  controller is out of view, their structure checks after a world loads are spread out instead of all on one tick, a
+  machine's neighbours' handlers are looked up once and kept, and moving parts are only looked for again when the
+  structure forms or breaks.
+* The power-down sparks follow the particle density setting; a mistyped animation name is logged; the Core's Forge no
+  longer crashes if a pack removes every Forge recipe.
+* The GregTech animation connector made for this release is gone: the animations are for this mod's own multiblocks
+  only. Their star, shell, orbiter and beam effects are `fx` entries any of the mod's multiblocks can use
+  (docs/ANIMATIONS.md).
+* A saved Omnipotence phase that cannot be read never falls back to before the Shutdown (a second Shutdown stays
+  impossible).
+* The mod's description lists 191 machines (76 multiblocks) and fifteen dimensions.
+
+**Coil tiers**
+* The Structure Assembler builds every coil of a structure in one tier: the highest you carry enough of for the whole
+  structure (your inventory and a bound ME network together), or failing that the highest you have any of. Before, it
+  took the best coil you had for each place in turn, so running short part way through left a structure of mixed
+  coils, which counts as its lowest. In creative it now uses the highest tier (or the one in your off-hand).
+* A third Structure Assembler mode, **coils** (sneak-use in the air cycles build, disassemble, coils). Use it on a
+  controller to change every coil of the built structure to the best tier you have enough of; the old coils come back
+  to you (or to a bound ME network) and the machine runs at the new tier at once. Sneak-use on the controller first to
+  pick a tier yourself: it cycles through the tiers, showing how many coils you need and how many you have.
+* Every coil's tooltip names its tier ("Coil, tier 3 of 5"), and every field emitter's too; parts a datapack adds to
+  a tier family are included.
+* A new Codex entry under Machines, **Coil Tiers**: every tier, where it is made, the recipes it is first needed for,
+  and how the assembler builds with and changes coils.
+* The Codex's multiblock pages are now drawn from the multiblocks as they are (they still showed the layouts from before
+  the rebuild, with the old block counts); the giants are drawn a coloured square a block.
+
+**Fixed (the endgame rebuild)**
+* The Eye of the Horizon's cage was drawn wrong (its upright rings had been laid flat, so its frame was a few flat
+  rings), and the blocks it was short of were piled onto its floor as loose lumps. Its cage is now a true sphere of
+  upright and level rings, and its collectors, stabilisers and emitters sit on the cage and its feet.
+* The same flattened rings are fixed in the Annihilation Reactor's magnetic bottle, the Dyson Array's star cage and
+  the Matrioshka Brain's shells.
+* Interface Ports no longer stick out beside a controller (the Universe Forge's stood out from its leg): the blocks of
+  the structure nearest the controller are its port positions now.
+* Every endgame machine has enough of each of its blocks by design, in places that belong to it (the Breach Engine's
+  spines wound with coil, the Plasma Forge's nozzles round each conduit's mouth, emitters on the Universe Forge's
+  poles), instead of extra blocks stuck onto its surfaces. Where any machine is still short of a block, the extra goes
+  where the structure closes round it (filling a hollow, thickening a wall), not onto a flat face.
+* Emitters that floated a block above the structure (Vacuum Harvester, Mirror Foundry, Entropy Horizon, Inflation
+  Chamber, Anomaly Resolution Engine, Reality Compiler) now sit on it.
+
+**Release checks**
+* Three newer routes cost more than an older one for the same thing, and are now cheaper: Hydrogen Cyanide by
+  photolysis (3 Methane and 3 Nitrogen a run, in 30 ticks, in place of 13 each in 50 ticks), the Calabi-Yau Manifold
+  in the Topology Kiln (24 a firing, in place of 8), and Cosmic Record Fragments from cosmic web (one filament and two
+  paper make 8, in place of 27 filaments and 54 paper making 32).
+* The Codex is brought up to date with this version: the Tumour Hydra (heads in fixed places, necks that count as the
+  head, the stump left where the head was, how it can be killed, open ground to call it), the Polymerase working the
+  helices, Macrophages and T Cells fighting the Hydra, new pages for the Brine Jelly and the Mirror Microbe, flavour
+  for the Vent Crab's page, and the Living Catalyst's wear (it heals while fed, it is not used up).
+
+**Phase 1: The Cell**
+* New machines (all on consoles, each with a real-equation window and a calibration game): **Autoclave** (steam
+  sterilising, N = N0.10^(-t/D)), **Patch-Clamp Rig** (Nernst membrane potential), **Fermenter** (Haldane growth, air),
+  **Photobioreactor** (light response, placement by daylight), **Ribosome Assembler** (speed against accuracy), **Folding
+  Chamber** (two-state folding).
+* New items: Sterile Pack, Lipid Bilayer, Ion Channel Membrane, **Living Cell** (the first piece of the Tree of Life),
+  Yeast Culture, Algae Culture, Messenger RNA.
+* New routes: cheap **Nutrient Broth** (yeast), **biogas** (methane from rotten flesh), **oxygen** and a far cheaper
+  **Quantum Chlorophyll** (algae), cheap **Engineered Enzymes** and **Folded Protein Crystals**, a new **Synthetic Cell**
+  route. Molecular Biology now builds on Chemical Bonding and Quantum Chemistry, not Artificial Intelligence (which moves
+  to a later computing patch).
+* 8 research nodes with derivation puzzles, from Sterile Technique to Translation.
+
+**Phase 2: Microbes**
+* New machines: **Phage Lab** (Poisson infection 1 - e^(-MOI)) and **Mycelium Bed** (fungal growth).
+* New items: Bacterial Culture, Bacteriophage, Mould Culture, Antibiotic, Probiotic Seal, Physarum Culture.
+* New routes: bacterial **Magnetite** (a renewable route to the ore, from magnetotactic bacteria), cheap **Recombinant
+  DNA** (phage gene transfer), **Antibiotics** (penicillin from mould), and cheap **Network Maps** (Physarum laying out
+  shortest paths). Extremophiles now builds on Microbiology.
+* 7 research nodes, from Microbiology to Slime Moulds.
+
+**Phase 4 (part 1): Defence**
+* New machine: **Antibody Bench** (Hill-curve immune response).
+* New items: Antibody, and an Anomaly Ward (and a lasting Ward) for each of the four infections.
+* The Anomaly storyline begins to be playable: its creatures infect, and the body answers. **Tolerance** research (the
+  story's twist) makes the Law Wraiths that pour from a dimensional breach, reality's own antibodies, read you as self
+  and leave you be.
+* 6 research nodes, from Innate Immunity to Immune Memory.
+
+**Phase 3: The Body**
+* New machines: **Perfusion Rig** (Poiseuille flow), **Regeneration Tank** (morphogen gradient, c = c0.e^(-x/lambda)),
+  **Circadian Incubator** (keeps the world's day) and **Dosing Pump** (one-compartment kinetics).
+* New items: Perfused Tissue, **Grown Organ** (the fourth piece of the Tree of Life), Circadian Culture, Stable Dose.
+* New route: another cheap Stem Cell Culture (perfused). Morphogenesis now builds on Reaction-Diffusion (the Pattern
+  Basin's Turing patterns). Neuroscience (the Optogenetic Array and Neural Organoid) is held for a later computing patch.
+* 6 research nodes, from Physiology to Pharmacokinetics.
+
+**Phase 5: Life at Scale**
+* New machines: **Ecosphere** (Lotka-Volterra predator and prey), **Selection Chamber** (fixation probability),
+  **Gene Circuit Loom** (bistable toggle switches) and **Mirror Culture Vat** (chirality purity).
+* New items: **Stable Ecosystem** (the fifth piece of the Tree of Life), Symbiont Lining (upgrade: catalysts wear 40%
+  slower), Evolved Strain, Gene Circuit, **Living Catalyst** (never quite runs down while fed), Mirror Cell, Mirror
+  Antibody (the only answer to the Antiverse's Mirror Microbes), and the **Tree of Life** keystone.
+* **The Tree of Life**, the branch's keystone (as Euler's Identity was for Mathematics): a Living Cell, a Pure Culture, a Grown
+  Organ, an Antibody and a Stable Ecosystem, one from each phase, together make an endgame catalyst that never wears.
+* New routes: a cheaper Omnicellular Genome feed for the Evolution Engine, and mirror antibodies. Mirror Life is in Biology
+  as decided.
+* 6 research nodes, from Ecology to the Tree of Life.
+
+**Phase 4 (part 2): The Anomaly, lived**
+* New machine: **Clonal Selector** (affinity maturation: each round multiplies the binding by (1 + s), while the line's
+  diversity falls as 100.e^(-n.s/3) and collapses below 10%).
+* New items: Matured Antibody, Metastasis Ward and Lasting Metastasis Ward.
+* **Immune evasion**: the Tumour Hydra's bite carries **Metastasis** (every ten seconds weakness, hunger or slowness), which
+  no plain Anomaly Ward holds; only the Metastasis Ward, made from Matured Antibodies, does.
+* **Epidemic Dynamics**: infections pass between players. Each second an infected player passes theirs on, one time in fifty,
+  to anyone within four blocks who is not warded (the SIR model).
+* Each chapter of the Anomaly storyline now has something to meet (a Codex page, The Anomaly, Lived, lists them).
+* New routes: the four lasting Wards far more cheaply from Matured Antibodies (a Ward and two Matured Antibodies, in place of
+  a Ward, four Antibodies and a Telomerase Complex).
+* 1 research node: Affinity Maturation.
+* The Antiverse's **Mirror Microbes** now exist: a few drift round any player there, and their touch gives the **Mirror
+  Plague** (less health, and your food burns), which no Anomaly Ward holds. A **Mirror Antibody**, used on yourself, wards it
+  for three days.
+
+**The world: Inner Space**
+* A new dimension: a living body seen at the scale of its cells, reached with the **Miniaturiser** (research Inner Space,
+  after Circulation). Five biomes: the **Bloodstream** (seas and channels of Blood Plasma whose current carries you), **Tissue**
+  (walls of cells), the **Lymph Node**, the **Nucleus** (chromatin and the double helix) and the **Tumour**. Falling out of the
+  bottom brings you home.
+* Hazards, effects only: the current; **inflammation** in Tissue where a fight breaks out (slower, and the heat hurts);
+  **tagged** in the Lymph Node (carry an infection and you glow, and T Cells hunt you); **mutation** in the Nucleus (now and
+  then one of your effects swaps for its opposite); the **oncogenic field** in the Tumour (weakness that grows the longer you stay).
+* Creatures, each with its own mind: the **Red Cell** (drifts with the current; you can ride it), the **Macrophage** (engulfs and
+  digests whatever it catches; strike your way out), the **T Cell** (hunts anything infected) and the **Polymerase** (harmless).
+* Mini-boss: the **Tumour Hydra**, called with a Metastatic Spore in the Tumour. Every 30 damage cuts off a head; seal the stump
+  with fire, a CAR-T Cell Culture or an Apoptosis Trigger within five seconds, or two grow back. With no heads left it can die.
+* Landmarks with caches: Germinal Centres, Nuclear Pores, Ribosome Workshops, Cell Clusters, Helix Spires and Tumour Growths;
+  and in the Overworld, abandoned **BSL-4 Field Stations** with the branch's first samples.
+* New materials, each useful and renewable: **Blood Plasma** (the Lake Pump draws it in the Bloodstream), **Matrix Fibre**,
+  **Nucleotide**, **Memory Cell** and **Tumour Specimen**; and blocks: Extracellular Matrix, Cell Membrane, Bone Matrix, Lymph
+  Tissue, Chromatin, Tumour Mass, Bioluminescent Membrane, Biosafety Panel, and three ores.
+* New routes: nutrient broth from plasma; Antibodies from plasma and a Memory Cell; a cheaper **Grown Organ** (one Stem Cell
+  Culture and four Matrix Fibre in plasma, in place of two cultures, two Perfused Tissues and an Assayed Enzyme); cheap
+  **Messenger RNA** from nucleotides; Genome Samples read from chromatin; a cheaper **CAR-T Cell Culture** from tumour specimens;
+  Lipid Bilayers from membrane; bone meal from bone. Every block can be laid again from matrix and what it holds.
+* Its own music, sky and travel animation. 1 research node: Inner Space.
+
+**The world: Titan's hidden ocean**
+* Under Titan's Subsurface Seal: dark water between an ice ceiling and a rock floor, with glowing hydrothermal chimneys.
+  Reached with the **Cryobot**, a probe that melts down through the ice (research Titan's Hidden Ocean): stand on the Seal and
+  use it. Titan's cold and the Oxygen Rebreather carry over. (It is its own dimension under Titan, so Titan's existing
+  terrain is left exactly as it was.)
+* Its ecosystem is the first for the Ecosphere: **Vent Grazers** feed round the chimneys and multiply; **Ice Eels** hunt them,
+  multiply after three meals and starve after a day without one. The two populations rise and fall round each other on their own.
+* New items and blocks: Cryobot, Vent Biofilm, Eel Photophore, Abyssal Silicate, Hydrothermal Chimney.
+* New routes: a **Stable Ecosystem** at half the old cost (biofilm, a photophore and algae make two), cheap Bacterial Cultures
+  from biofilm, hydrogen from Abyssal Silicate (serpentinisation), sulfur dioxide from chimney rock.
+* 1 research node: Titan's Hidden Ocean.
+
+**Wear: the living catalysts**
+* The **Symbiont Lining** now works as an upgrade: a console fitted with one wears its catalysts 40% slower.
+* The **Living Catalyst** now wears (128 runs), but each run that feeds it sugar or broth heals a run of wear instead. It is
+  used in two new routes: **nitrogen fixation** (bacteria and sugar turn Nitrogen into Ammonia in the Fermenter, with no
+  hydrogen and no iron catalyst: a cheap rival to Haber-Bosch) and cheaper **Gene Circuits** (one Messenger RNA, no Error-Correcting Code).
+
+### Part two: Mathematics
+
+Crafting counts below are for a 3×3 layout; on the Extreme Assembly Table each recipe is laid out on the 9×9 grid,
+so each ingredient is needed about nine times over (the Governor's 2 Stability Margins are 18). JEI and EMI show the
+exact grid.
+
+**Tuning beyond consoles, part 1: calibration**
+* **Tuning Fork** (crafted from iron and an amethyst shard; 256 uses): strike it against a machine with a console, or
+  an older multiblock's controller, to calibrate it with a short game that fits its science. Solved, the machine is set
+  exactly at its working point for the recipe it runs (older multiblocks: their tuning dial is set on target and their
+  containment restored). Six games, harder at later stages:
+  * **Match the resonance** (most machines): build a target waveform from sine waves of your own.
+  * **Calibrate the spectrometer** (telescopes, spectrometers, interferometers, the optical machines): set a scale's
+    offset and stretch until the machine's lines sit on the reference lines. Both strips have a ruler (a tick every
+    5 nm, numbered every 50), each reference line is labelled and notched on the lower ruler, your lines show where
+    they read, hovering reads off the wavelength, and the average miss in nm is shown.
+  * **Route the flow** (reactors, plasma machines, colliders, centrifuges, pumps): turn pipe tiles until the flow runs
+    from inlet to outlet. From stage 2: rock that holds no pipe, bolted tiles that cannot be turned, and gold valves
+    the flow must pass through; from stage 4 the flow must be sealed, with no open pipe end leaking.
+  * **The chemistry machines** play one of four games, by what the machine does:
+    * **Balance the reaction**: give an equation coefficients so every element balances; from stage 3 also ionic and
+      redox equations (permanganate, dichromate, metal displacement), where the charge must balance too.
+    * **Write the equation** (titration, brine, filtration, synthesis and coordination machines): pick the reactants
+      and products from species on hand (some do not belong), then balance it; precipitations ask for the net ionic
+      equation of two mixed salt solutions, leaving the spectator ions out.
+    * **Oxidation states** (the fuel cell, plating bath, kilns and the Alkahest Still): the oxidation state of the
+      marked element in compounds and ions, from water to dichromate.
+    * **Write the equilibrium constant** (the Haber-Bosch, Ostwald and contact process machines, buffers, the
+      Oscillator Vessel): each species' power in K, with pure solids and liquids left out.
+  * **Prove it** (the Markov Refinery, Monte Carlo Engine and other logic machines): chain implications from premise to goal.
+  * **Sieve the primes**: ready for the Mathematics part's number-theory machines.
+  The game is drawn as the machine's own console, in its colour. Values change by scrolling over them (shift: five at
+  a time) or with the arrows at their ends. A wrong answer only says "not yet"; nothing is lost.
+* **The console is now for fine tuning, the fork for getting a machine working.** A Tuning Fork calibration leaves
+  the machine at a working point (every limit and window met) a little off its best. Every multiblock and console
+  machine now shows its **precision** along the bottom of its console: how close its settings sit to the recipe's
+  ideal point (found once per recipe, the same search as Laplace's Demon). It falls off fast, about a third lost at 1%
+  of a setting's range. At full precision each cycle makes half as much again of every product (items and fluids,
+  as room allows). Older multiblocks: precision is how close the tuning dial sits on its drifting target.
+* **Resonant Tuning Fork** (a Tuning Fork, two Entangled Photon Pairs and two amethyst blocks): never wears out, and
+  says how far a wrong answer is off.
+* **Calibration Card** (crafted from paper, redstone and a comparator): sneak-use on a tuned machine to copy its
+  settings, use on another of the same kind to set it the same. Never used up; sneak-use in the air to wipe it.
+* Codex: Calibration (Getting Started).
+
+**Mathematics Phase 1, part 1: Foundations**
+* **Primes** (new research, after Number Systems and Combinatorics): the **Sieve of Eratosthenes**, a console. Set its
+  limit N and how many small primes its wheel skips: about N / ln N primes come out, a recipe needs a number of them,
+  and the work grows as N ln ln N. It makes Prime Shards from 8 Natural Number Lattices and 2 redstone, or from 8
+  Axiom Stone (new routes; the Peano Engine's 1.1 route is unchanged). Its calibration game is the prime sieve.
+  Number Theory now also needs Primes.
+* **Modular Arithmetic** (new research, after Primes): clock arithmetic and Euler's totient.
+* **Proof by Induction** (new research, after Formal Logic): the **Proof Certificate** (Formal Proof Assistant: an
+  Axiom Schema, 4 paper and 2 Natural Number Lattices). Use it on a multiblock's controller to file it there, up to four;
+  each one catches one containment failure, and nothing is released.
+* **Cardinality** (new research, after Formal Logic and Combinatorics): **Zero** (from an Empty Set) and **Unity**
+  (Zero and an Empty Set), von Neumann's numbers, in the Formal Proof Assistant: two of the five constants of Euler's
+  identity. As Physics material (new routes, the old ones unchanged): a Casimir Plate from Zero, 4 Neutronium Plates
+  and 2 Cherenkov Quartz; a Qubit from Unity, 2 Entangled Photon Pairs and 2 Quantum Dots.
+* **Combinatorics** (1.1): the Peano Engine now counts **Microstate Tallies** (2 Natural Number Lattices and paper),
+  and the Maxwell Demon Sorter builds its chip from 4 of them, 2 qubits, 2 Cherenkov Quartz and 4,000 mB of
+  superfluid helium (a new route).
+* Codex: Foundations.
+
+**Mathematics Phase 1, part 2: Foundations, reworked** (mathematics now starts early)
+* The **Peano Arithmetic Engine** (quartz, a comparator, iron, a block of redstone and Quantum Dots) and the **Formal
+  Proof Assistant** (books, a Natural Number Lattice, quartz, an Entangled Photon Pair, iron and a comparator) are made
+  from early parts. Their old neutronium recipes are gone (they came later and gave less).
+* Early routes (the old ones are unchanged): Natural Number Lattices from Cherenkov Quartz and redstone; Integer Rings
+  from lattices and a redstone torch (negation); Rational Fields from rings and a comparator; Axiom Schemas from
+  lattices, paper and a book; Empty Sets from empty glass bottles and a lattice. So Zero, Unity and Proof
+  Certificates are early-game too.
+* New textures for the Tuning Fork and the Resonant Tuning Fork.
+* Codex: First Steps in Mathematics.
+
+**Mathematics Phase 2: Structure and Space**
+* **Euclid's Elements** and **π** (new research, after Number Systems and Geodesy): the **Geometer's Table**, a
+  console. Archimedes' method: a polygon of n sides inside a circle gives n·sin(π/n). Set the sides and the care of
+  the straightedge until the error is under the recipe's tolerance; more is closer but slower. It makes **π Crystals**
+  (one of Euler's five constants) from Rational Fields and a compass. Calibration game: **Fill the vertex** (choose
+  regular polygons whose corners add to exactly 360°; later stages ask for rare polygons and an exact count).
+* **Curved Geometry** (new research): spherical triangles and their angle excess.
+* **Groups and Symmetry** and **Lie Groups** (new research): the **Symmetry Lathe**, a console (its indexing head is
+  a crafted **Symmetry Seed**). Set the indexing order k and the spindle speed: the blank's symmetry group has order
+  2k, which must be the recipe's; too fast for a fine head and it shakes apart. **Symmetry Crystals** and **Lie Group
+  Lattices**, and new, far cheaper routes to Quaternion Crystals and Gauge Boson Clusters. Calibration game:
+  **Complete the symmetry** (a mirror, two mirrors, a quarter turn, or all eight symmetries of a square, with cells
+  locked on or off).
+* **Vectors and Matrices** (new research): eigenvalues from the trace and determinant.
+* **Topology of Surfaces** and **Manifolds and Curvature** (new research): the **Topology Kiln**, a console. Set the
+  handles, the cross-caps and the temperature: the surface's Euler characteristic χ = 2 − 2g − c and whether it is
+  one-sided must be the recipe's. New, far cheaper routes to Möbius strips, Klein bottles, Differential Manifolds and
+  Calabi-Yau Manifolds (the old ones are unchanged). Calibration game: route the flow.
+* **Compactification** now also needs Manifolds and Curvature, and **Grand Unification** needs Lie Groups: the
+  mathematics of the extra dimensions comes first.
+* Codex: Structure and Space.
+
+**Mathematics Phase 3: Change**
+* **Machine upgrades.** Applied mathematics now fits to machines: use an upgrade on a multiblock's controller or a
+  console machine (one per machine; fitting another hands the old one back; it drops when the machine is broken).
+  * **Rate Table**: +20% products each cycle, on top of precision (a perfectly tuned machine goes past perfect).
+  * **Stability Margin**: precision falls off half as fast, so fine tuning is easier.
+* **Rates as Equations** (new research, after Reaction Kinetics): the **Integrator**, a console. Set the step size and
+  the method's order (Euler, midpoint, Runge-Kutta): the error must be under the recipe's tolerance, and too big a step
+  blows up. It makes Rate Tables, **e Crystals** (one of Euler's five constants, research **e**) and Stability
+  Margins (research **Stability**). Calibration game: match the resonance.
+* **Fixed Points**, **Stability**, **Bifurcations** (new research): Newton's method, stable and unstable points, the
+  Hopf threshold of oscillating reactions.
+* **Euler's Formula** (new research): Imaginary Units from Rational Fields, a π Crystal and an e Crystal (a new route).
+* **Enzyme Kinetics**, **Enzyme Inhibition**, **Cooperativity** (new research, after Genomics): the **Enzyme Assay
+  Bench**, a console. Saturate the enzyme to 90% without choking it (too much substrate) or clumping it (too much
+  enzyme). **Assayed Enzymes**, and Porphyrin Oxygen Carriers from a steep cooperative curve. New Bioculture routes
+  with Assayed Enzymes: Nutrient Broth from half the sugar, bone meal and water, and (research Enzyme Inhibition) Stem
+  Cell Cultures from half the parts. Calibration game: write the equilibrium constant.
+* Codex: Change.
+
+**Mathematics Phase 4: Chance and Computation**
+* Two more upgrades: the **Confidence Seal** (every chance product comes out halfway closer to certain) and the
+  **Error-Correcting Code** (catalysts wear on only every other run).
+* **Statistics** (new research, after Distributions and Probability Theory): the **Statistics Engine**, a console. Set
+  the sample size and the confidence: the margin z·σ/√n must be under the recipe's tolerance. It makes Confidence
+  Seals; **Regression** gives Assayed Enzymes from statistics alone; **Stochastic Kinetics** counts six Microstate
+  Tallies from four lattices. Calibration game: prove it.
+* **Information Theory**, **Error Correction**, **Cryptography** (new research): the **Cipher Loom**, a console. Set
+  the block length and the parity bits of a Hamming code: it must cover the block, and failed blocks ((nε)²/2) must be
+  rarer than the recipe allows. It makes Error-Correcting Codes and **One-Time Pads**, which tune two Entanglement
+  Tuners at a time (a new recipe). Calibration game: **Break the cipher** (a shift cipher; later a key of two or three
+  letters).
+* **Algorithms** and **Computability** (new research).
+* Codex: Chance and Computation.
+
+**Clean-up after testing**
+* **Recipes with a reason.** A new check makes sure every alternative route to a material is worth using: cheaper in
+  materials, faster, or on an earlier machine. Fixed by it:
+  * the Peano Engine's and Formal Proof Assistant's old neutronium recipes removed (later, and worse than the new ones);
+  * the second π Crystal recipe and the second Assayed Enzyme recipe removed (nearly the same ingredients, slower);
+  * the ceramic Whipple Shield recipes removed; Ceramic Armour Plates mend Whipple Shield armour instead.
+* **One catalyst where one makes sense:** Axiom Stone needs only the Platonic Compass (not Axiom Stone too), Ordinal
+  Stone only the Cantor Key, the black and white hole rocks only the Horizon Diver, and Arbor Heartwood only its sample.
+  (One late recipe, the Anomaly Resolution Engine, now pulls in Phantom Energy Cells in place of the Infall Rock
+  crusher, as a side effect.)
+* **Short advancements:** every research advancement says one short thing (what it unlocks, or a few words), instead of
+  the research's whole description.
+* **Codex, Discovery by field:** the Discovery map is grouped by field (Foundations; Physics in three lanes; Chemistry;
+  Biology; Mathematics; Worlds; Transcendence). Each node there is a study's introduction (its opening page) and says
+  which tab has the rest; machines, materials and recipes live in the field's own tab (and Machines / Materials).
+  Machines' own chapters are no longer on the Discovery map.
+* **Codex brought up to date:** containment failures (ten kinds now, not five), the Transfinite Hierarchy as the
+  Platonic Realm's upper strata (Fields, the Hierarchy's chapter, Falling Through, the Cantor Key), and the maths
+  machines' recipes.
+
+**One Realm: the Transfinite Hierarchy joins the Platonic Realm**
+* The Transfinite Hierarchy is no longer a dimension of its own: it is the **Platonic Realm's upper strata**. The Realm
+  is twice as tall (Y 0 to 512). Its own islands are where they were, in axiom stone; above Y 256 the Hierarchy's four
+  strata rise as before, in ordinal stone, with Hilbert's Hotel, the tesseract frames, the Hopf rings, the ordinal
+  spires and its ores (now between Y 256 and 512).
+* Each layer keeps its own: the Ordinal Hound, Hilbert Bellhop and Hypercube Drifter spawn only in the strata, the
+  Fractal Wyrm and Axiom Sentinel only below; the Hierarchy's law (Infinite Regress, shielded by the Well-Ordering
+  Charm), its dark sky and its seven spatial dimensions (for field machines) hold above Y 256, the Realm's below.
+* The **Cantor Key** takes you to the strata from anywhere (used there, it takes you home); the **Platonic Compass**
+  to the Realm's own islands (used in the strata, it takes you down). Falling out of the bottom of the Realm lands you
+  in the Quantum Foam. The "arrival" advancement is now climbing into the strata.
+* **Old worlds:** the old dimension is kept so saves load, but anyone in it is carried to the same place in the
+  strata. Anything built there stays there, out of reach: bring it out before updating. Areas of the Realm already
+  explored keep their old terrain (nothing above Y 256); the strata appear in newly explored areas.
+* Codex: One Realm.
+
+**The Elements: a layer between the Realm's islands and the strata** (Y 196 to 256)
+* Two bands of **Euclidean Marble** islands fill the gap: Y 202 to 232, and smaller ones Y 238 to 252. **Euclidean
+  Ore** in them gives **Euclidean Shards**.
+* Landmarks, built only from the mod's blocks: **Compass Towers** (a circle with the hexagon stepped round it on top,
+  and a straightedge reaching out), **Geometer's Ruins** (Euclid's proof of Pythagoras inlaid in the floor, with a
+  cache), and the floating Platonic solids, here in marble.
+* **Euclid's Automaton**, a walking pair of compasses: it walks only in straight lines, turns only through angles it can
+  construct, draws a circle wherever it stops, and fights only whoever hurts it. It drops Euclidean Shards (and now and
+  then Golden Ratio Glass).
+* It is the safe layer: the Fractal Wyrm and Axiom Sentinel now spawn only below Y 196.
+* **Getting there:** sneak and use the Platonic Compass anywhere in the Realm below the strata to climb to the Elements
+  (from the Elements it takes you back down). Without sneaking it works as before. From outside, it now lands you on
+  the Realm's own islands (below Y 192).
+* Euclidean Shards **mend the Platonic Compass** at an anvil, and build the new Phase 5 machines below.
+* Fractal Trees grow only where nothing floats above them (they no longer grow on the Elements).
+* New recipe: **Golden Ratio Glass** ×15 on the Geometer's Table from 8 glass and 1 Euclidean Shard (Euclid's Elements;
+  now Constructions).
+  The old crafting recipe is unchanged.
+* Advancement: The Elements. Codex: The Elements.
+
+**Mathematics Phase 5, part 1: Optimisation and Graphs**
+* **Optimiser** (a console; Optimisation): gradient descent on a bowl. Set the step h and the number of steps n: each
+  step leaves |1 − hλ| of the distance, the error after n steps must be under the recipe's tolerance, and past hλ = 2
+  it runs away. A step of exactly 1/λ lands at once. Calibration game: **find the shortest route** through a network
+  (later tiers: through a gold junction, round closed links).
+* **Graph Loom** (a console; Graph Theory): networks of V junctions and L links. Each link beyond V − 1 is a spare
+  route, and the network fails about q^(L − V + 2) of the time, which must be under the tolerance. Calibration game:
+  **lay the lightest network** that joins every junction (later tiers: keep a link already laid, round closed links).
+* New: **Optimised Pathway** upgrade (Optimiser: 1 Euclidean Shard, 2 Derivative Operators, 2 Rational Fields): each run
+  takes a quarter less power. **Network Map** ×2 (Graph Loom, Networks: 4 Natural Number Lattices, 8 string, 2 Integer
+  Rings), the key to Biology.
+* New routes: **Metamaterial Sheet** ×2 on the Optimiser from 4 Cherenkov Quartz, 4 Quantum Dots and 2 Rational Fields
+  (Topology Optimisation); **Photonic Processor** ×5 on the Graph Loom from 4 boards, 6 dies, 6 Quantum Dots and a
+  Network Map (Shortest Paths). The old routes are unchanged.
+* Machines: Optimiser (smooth stone, Euclidean Shard, Derivative Operators, comparator, iron, redstone block); Graph
+  Loom (string, Euclidean Shard, looms, Natural Number Lattice, iron, redstone block).
+* Research with derivation puzzles: Optimisation, Topology Optimisation, Graph Theory, Networks, Shortest Paths.
+
+**Mathematics Phase 5, part 2: Control**
+* The **Governor** (Control Theory), set against any machine with a console (a multiblock's controller or a console
+  machine): once a second it closes a third of the gap between each setting and the machine's ideal for what it runs,
+  holding it working at about 75% precision whatever the recipe. The last quarter is still the console's fine work. On
+  older multiblocks it keeps the tuning dial on its target. Needs 32 FE a tick; right-click to see what it holds.
+  Crafted from gold, a Euclidean Shard, 2 Stability Margins, a comparator, iron and a block of redstone.
+* Research with derivation puzzles: Feedback, Control Theory.
+
+**Mathematics Phase 5, part 3: Games**
+* **Strategy Table** (a console; Games and Strategy): the Hawk-Dove game. Set the hawk share p and the rounds n: the
+  gap (V − pC)/2 must be under the tolerance (the stable mix is p = V/C) and so must the noise of chance, 1/√n.
+  Calibration game: **find the equilibrium** in a table of payoffs (2 × 2, then 3 × 3).
+* New: **Evolutionarily Stable Strategy** (Strategy Table, Evolutionary Games: a dice set, 2 Rational Fields, 4 paper).
+* New route: **Tardigrade Culture** ×2 in the Bioreactor from 12 Genome Samples, 6 moss and an Evolutionarily Stable
+  Strategy (no enzymes, no sterile neutrinos). The old route is unchanged.
+* Machine: Strategy Table (dice sets, paper, Euclidean Shard, comparator, iron, redstone block).
+* Research with derivation puzzles: Games and Strategy, Nash Equilibrium, Evolutionary Games.
+
+**Mathematics Phase 5, part 4: Patterns**
+* **Pattern Basin** (a console; Reaction and Diffusion): Turing's activator and inhibitor. Set the spreading ratio r and
+  the reaction rate k: below r of about 5.8 nothing forms; above it a pattern forms about 2π·r^¼/√k apart, and that
+  spacing must be inside the recipe's window. Faster reactions are quicker but need a larger ratio. Calibration game:
+  complete a symmetric pattern.
+* New: **Pattern Template** ×2 (2 slime balls, 2 Rational Fields, an Assayed Enzyme).
+* New routes (Turing Patterns): **Turing Morphogen** ×2 on the Pattern Basin from an Assayed Enzyme, 2 Rational Fields
+  and 4 slime balls; **Morphogenic Serum** ×4 in the Bioreactor from a Turing Morphogen, a Pattern Template and 4
+  Engineered Enzymes. The old routes are unchanged.
+* Machine: Pattern Basin (glass, Euclidean Shard, slime balls, cauldron, iron, redstone block).
+* Research with derivation puzzles: Reaction and Diffusion, Turing Patterns.
+
+**Mathematics Phase 5, part 5: Euler's Identity**
+* The branch's keystone, e^(iπ) + 1 = 0, from its five constants: on the Formal Proof Assistant the e Crystal, Imaginary
+  Unit and π Crystal prove the **Half Turn** (e^(iπ) = −1); the Half Turn, Unity and Zero prove **Euler's Identity**.
+* Euler's Identity is an abstract catalyst (it never wears). New routes with it: **Mathematics Singularity** in the
+  Concept Compressor from half of every item and half of three of the fluids (none of the other three); **Riemann Zeta
+  Crystal** on the Proof Assistant from 16 Prime Shards, 2 Complex Planes and a π Crystal. The old routes are unchanged.
+* Research with a derivation puzzle: Euler's Identity. Codex: Euler's Identity, and **e Everywhere** (where e turns up
+  across the mod: reaction rates, decay, Boltzmann, waiting times, control, statistics, the circle).
+
+**Mathematics: the old nodes rebuilt into the new tree**
+* The 1.0 and 1.1 mathematics research no longer hangs off physics. New prerequisites: Formal Logic (Number Systems);
+  Set Theory (Formal Logic, Cardinality); Real Analysis (Number Systems, Cardinality; was the Platonic Realm and
+  Metamaterials); Complex Analysis (Calculus; was Real Analysis and Tachyonics); Abstract Algebra (Groups and Symmetry,
+  Modular Arithmetic; was Complex Analysis and Particle Physics); Topology (Euclid's Elements; was Metamaterials);
+  Number Theory (Primes, Modular Arithmetic, Complex Analysis). Category Theory now also needs Lie Groups, and
+  Conceptual Singularities Euler's Identity. What each unlocks is unchanged.
+
+**Mathematics: the remaining fields**
+* Ten new research entries, each with a derivation puzzle: Integers and Rationals, Permutations and Combinations,
+  Constructions, Coordinates, Projective Geometry, Eigenvalues, Fourier Series, the Steady-State Approximation, Markov
+  Chains and Numerical Methods.
+* Recipes that move to a more specific study: the Integer Ring and Rational Field recipes (Integers and Rationals, was
+  Number Systems); Golden Ratio Glass on the Geometer's Table (Constructions, was Euclid's Elements); the Fourier Series
+  (Fourier Series, was Complex Analysis).
+* Studies that now build on them: Stability on Eigenvalues, Enzyme Inhibition on the Steady-State Approximation,
+  Stochastic Kinetics on Markov Chains, Optimisation on Numerical Methods.
+
+**The Analytic Continuator, revamped**
+* It is a **console** now: analytic continuation, a disc at a time. Set the disc radius ρ and the terms N: each disc
+  leaves about (ρ/R)^(N+1) of error, L/ρ discs cover the distance, and the total error must be under the recipe's
+  tolerance; fewer terms in all is faster, and past the radius of convergence the series diverges. Each of its 22
+  recipes has a distance and a tolerance (harder recipes: further and finer). Calibration game: match a waveform.
+* **New machine recipe** from early parts (2 Rational Fields, glass, 2 clocks, a block of redstone, 3 iron; it
+  briefly took a third Rational Field in place of one iron by mistake); the old recipe
+  (Quantum Processors, Metamaterial Sheets, superconducting coils) is removed.
+
+**Fixes after testing (Phase 5)**
+* **The Tuning Fork no longer gives free coolant.** It used the same search as Laplace's Demon (creative), which also
+  filled the coolant tank, emptied the spent coolant, cooled the machine and restored its containment integrity. Now it only moves the settings, and only
+  looks for settings that work with the coolant the machine actually holds. If none do, it says which coolant would.
+  Laplace's Demon is unchanged.
+* **Layer hops in the Platonic Realm** (sneaking with the Platonic Compass) no longer play the travel animation twice:
+  with no loading screen in between, the scene used to hold and then fade a few seconds after the jump.
+* **The console shows what to tune for**, and precision is now measured on it. The Readout tab has a section **For 100%
+  precision**: what each of the recipe's windows reads at the recipe's best point (the fastest point inside every
+  window, with the coolant the machine holds), and the speed there. Bring the readout to those values (past a
+  one-sided target is fine: lower than an "at most", faster than the speed) and each line turns green; precision is
+  how close the whole readout is to them. Working out which settings get there is the tuning.
+* The **Governor** now brings a machine up to about 75% precision (a fifth of the way toward the best point each
+  second) and then holds; it never lowers a machine tuned higher on its console.
+* **Euclid's Automaton rebuilt** as a marble and brass golem: broad legs on brass knees and iron feet, a deep chest in a
+  brass frame with a turning gear behind a window and the first figure of the Elements inlaid in gold, brass pauldrons,
+  a square head with a lit eye slit, and a straightedge in its right hand. Every part is shaded from a lit top to a
+  darker foot, with veins in the marble, seams, and rivets on the brass.
+* **It walks like a machine:** each leg swings from the hip, the knee lifting the foot clear as it comes forward and the
+  planted foot staying flat; the body dips between steps. It turns on the spot, slowly and all the way, before setting
+  off (no more snapping and correcting), a little quicker when it is fighting.
+* **How it draws:** it drives a pin into the ground, walks once round it with a gold cord taut from the pin to its
+  hand (a circle, drawn where it walks), then walks the six sides of the hexagon inside it, each as long as the cord,
+  its straightedge on the ground. It only starts where the whole circle fits on the island. The lines stay about half a
+  minute, then fade.
+* **Roused:** struck, the Automaton hisses; its eyes widen and burn red and stare at whoever struck it (its head follows
+  them), the core behind its chest window glows red and the gear there races, and the vents on its shoulders glow and
+  pour steam. It calms down again after the fight.
+* **Its fall:** a golem's death, over about two seconds: it shudders with a burst of steam as its eyes flicker; its knees
+  buckle and it sinks to kneel; it topples forward onto the ground, arms falling ahead of it; its head breaks from its
+  neck and rolls aside, and the light in it goes out.
+* **Network minigames:** links are drawn as clean, solid lines (they were dotted at some angles), brighter, and the
+  lengths sit beside their links instead of on them. Links no longer pass close by a junction they do not join.
+* **Music by layer in the Platonic Realm:** a new piece for the Elements: one plain tune in D Dorian in the middle
+  register, on a lyre and then a flute-like voice, over the lyre's broken chords, a soft held chord and a quiet root. Above Y 256
+  the Transfinite Hierarchy's own piece plays again (since the merge, the Realm's piece had played there too); below
+  Y 196, the Realm's.
+
+**The Realm in Layers: the Platonic Realm, finished** (Y −768 to 1536)
+* The Realm is much taller, Y −768 to 1536, and laid out as the Mathematics design drew it: one layer for each part of
+  mathematics, bottom to top, with **wide gaps of empty air between them**. Climbing or falling from one layer to the
+  next is a long way: the Platonic Compass is the way between them. This replaces the heights given above under One
+  Realm and The Elements.
+  * **The Axioms** (logic): a floor of dark **Postulate Slate** far below everything else, Y −720 to −650.
+  * **The Number Line**: the Realm's own islands, Y 10 to 194, exactly as in 1.1 (so released worlds line up).
+  * **The Elements**: Euclid's marble islands, now Y 320 to 400.
+  * **Curved Space** (topology): islands of **Hyperbolic Stone**, Y 560 to 720.
+  * **The Continuum** (analysis): **Dense Stone** in islands at three scales, each like the last, Y 880 to 1040.
+  * **The Infinite** (set theory, Y 1280 to 1536): the Transfinite Hierarchy's strata, above the widest gap of all
+    (240 blocks of nothing). (Mathematics was never released on its own; in a world from one of its test builds, areas already explored keep the old heights.)
+* **The landmarks are bigger to match:** Compass Towers twice as tall with a wider platform; the Geometer's Ruin drawn
+  at twice the size (legs 16 and 12, hypotenuse 20); a bigger Liar's Vault; Proof Stairs of 32 to 48 steps; Möbius
+  Arches nearly twice as wide; Hyperbolic Floors 39 blocks across; Fourier Harps of 33 rods, twice as tall.
+* **Getting about:** sneak and use the Platonic Compass to climb one layer, or sneak and look down to go down one. It
+  stops below the Infinite, which opens only to the Cantor Key (flying up to it turns you back, see below).
+* **New ores, new materials** (each renewable from the layer's creature):
+  * **Tautology Ore** in the Axioms gives **Tautology Shards**.
+  * **Geodesic Ore** in Curved Space gives **Geodesic Thread**.
+  * **Epsilon Ore** in the Continuum gives **Epsilon Dust**.
+* **New recipes**, cheaper routes for things the layers' fields make:
+  * Formal Proof Assistant: **Proof Certificate** ×2 from 2 Tautology Shards and 2 paper (Proof by Induction); **Axiom
+    Schema** ×2 from 2 Tautology Shards, 2 Natural Number Lattices and a book (Formal Logic).
+  * Topology Kiln: **Differential Manifold** from a Derivative Operator and 2 Geodesic Thread (Manifolds and Curvature).
+  * Analytic Continuator: **Real Continuum** ×2 from 8 Rational Fields and 4 Epsilon Dust; **Infinitesimal** ×4 from a
+    Real Continuum and 2 Epsilon Dust (Real Analysis).
+* **Landmarks**, built only from the mod's blocks, three with caches:
+  * In the Axioms: **Liar's Vaults** (a sealed hall floored in true and false, with two doors, only one of them real) and
+    **Proof Stairs** (a spiral where every step stands on the one before, with a cache at the top).
+  * In Curved Space: **Möbius Arches** (a band with a half twist; walk through one and you come out mirrored) and
+    **Hyperbolic Floors** (a Poincaré disc laid in stone).
+  * In the Continuum: **Fourier Harps** (rods whose heights add up the first few harmonics of a square wave).
+* **Creatures**, each with its own AI:
+  * **Paradox Shade** (Axioms): it flips between true and false every few seconds. While false it can neither be hurt
+    nor hurt anyone; while true its touch brings Contradiction. Drops Tautology Shards, rarely a Proof Certificate.
+  * **Tessellate** (Curved Space): a tile of seven-sided pieces that splits in two when killed, twice. The smallest drop
+    Geodesic Thread, sometimes a Symmetry Crystal.
+  * **Fourier Wisp** (Continuum): a flying set of circles turning on circles, which keeps away from players. Drops
+    Epsilon Dust, rarely a Fourier Series.
+* **Hazards** (effects only, never blocks):
+  * Axioms: now and then **Contradiction** gives you two opposite effects at once. Carrying a Proof Certificate keeps
+    it away.
+  * Curved Space: inside a Möbius Arch you are **Mirrored**: left and right swap.
+  * Continuum: near a Fourier Harp you feel the **Limit**. The closer you get, the slower you go.
+* **Music:** each layer has its own piece (the Axioms, Curved Space, the Continuum).
+* Advancements: The Axioms, Curved Space, The Continuum. Codex: The Realm in Layers, and a page for each new layer.
+
+**Fixes after testing (the Realm in Layers)**
+* **No more lava at the bottom of the Realm.** With no aquifers, the game fills every gap below Y −54 with lava unless
+  the sea level is lower; the Realm's sea level is now at its floor (Y −768), so the Axioms stay dry.
+* **The Tessellate is far cheaper to draw:** each tile is one seven-sided prism instead of fourteen boxes, and the
+  third ring of tiny tiles is gone (eight tiles where there were twenty-two), so a crowd of them no longer lags.
+* **Euclidean Marble, Hyperbolic Stone and Dense Stone** lose the moving glint: still, matte textures.
+* **The Fourier Wisp** is about twice the size, with a hitbox to match, so it is easier to see and to hit.
+* **The Infinite can no longer be reached by flying up.** Cross Y 1280 from below (flying, climbing or by ender pearl)
+  and you are turned back just below it; only the Cantor Key carries you in. Coming down is free. Nothing is built
+  there: it is a rule of the place, not a wall.
+
+**Fixes after testing (the taller Realm)**
+* **No snow on the high layers.** The game cools every biome a little for each block above Y 80 and lets snow settle
+  wherever it gets cold enough while it rains in the Overworld (every dimension shares its weather), even in a biome
+  with no rain of its own. The Realm is now warm enough (temperature 2.0) that snow never settles, up to its very top.
+* **The layer stones are useful and renewable.** Each is its field's raw feedstock, as axiom stone is the Number Line's,
+  and each is made again from 8 cobblestone and one of its layer's materials (8 stone):
+  * **Postulate Slate** (Formal Proof Assistant, Formal Logic): 2 Proof Fragments from 32 slate and 2 Tautology Shards;
+    8 slate from 8 cobblestone and a Tautology Shard.
+  * **Euclidean Marble** (Geometer's Table, Constructions): 37 Golden Ratio Glass from 8 marble and 8 glass; 8 marble
+    from 8 cobblestone and a Euclidean Shard.
+  * **Hyperbolic Stone** (Topology Kiln): a Möbius Strip from 16 stone and a Function Graph (Euler Characteristic); 8
+    stone from 8 cobblestone and a Geodesic Thread, fired as a surface with two handles, χ = −2 (Manifolds and
+    Curvature).
+  * **Dense Stone** (Analytic Continuator, Real Analysis): a Transcendental Crystal from 32 stone and 4 Rational Fields;
+    8 stone from 8 cobblestone and an Epsilon Dust.
+* **The Compass works in the Infinite:** sneak, look down and use it to go down to the Continuum (the gap below is too
+  far to fall). Climbing into the Infinite still needs the Cantor Key.
+* **Codex:** The Realm in Layers, The Axioms, Curved Space, The Continuum, The Elements and One Realm are rewritten for
+  the taller Realm: the heights, the gaps and how to cross them, the bigger landmarks, and what each stone is for.
+
+**Recipes, texts and tooltips: the Mathematics audit**
+* **Recipe changes** (only to recipes added after 1.1):
+  * **Analytic Continuator**: its bottom row is now 3 iron. A key mix-up made it take a third Rational Field (27 on the
+    9×9 grid) in place of one iron.
+  * **Ceramic Armour Plate** (it mends Whipple Shield armour): now 3 Alumina Ceramic Plates and 3 Aramid Fibre on an
+    ordinary crafting grid, instead of 45 plates and 36 fibres.
+  * **Entanglement Tuner** from One-Time Pads: now 2 pads, 2 quartz and an iron ingot for 4 tuners, on an ordinary
+    crafting grid (it cost more than the early route).
+  * **Regression Assay**: 1 Engineered Enzyme and 1 paper now give 16 Assayed Enzymes (it gave 2 for 2 paper, worse than
+    the Enzyme Assay Bench's route).
+  * New: **Prussian Blue Tablet** ×4 from a Prussian Blue Pigment and sugar (the pigment had no use). The old recipe is
+    unchanged.
+* **Puzzles:** the vector symbols (vector, dot and cross) are known from the start, since Abstract Algebra can now be
+    studied before a Field Calibrator is made.
+* **Codex brought up to date:**
+  * Research pages list the prerequisites they actually have now (Complex Analysis, Abstract Algebra, Set Theory, Number
+    Theory, Category Theory, Grand Unification, Stability, Enzyme Inhibition, Stochastic Kinetics) and the derivation
+    the research table sets now.
+  * "Unlocked by" names the right study for Fourier Series, Golden Ratio Glass, Integer Rings and Rational Fields, and is
+    no longer printed for crafted things on the strength of a vanilla ingredient (it said the Alkahest for some forty
+    of them, because the Alkahest can make gold).
+  * Tuning: the console, precision, the Tuning Fork and the Governor are mentioned, and a machine at zero containment
+    fails (releasing what it held) rather than just faulting.
+  * Containment Failure now describes all ten kinds (chemical, radiological, magnetic, thermal and optical were
+    missing), and mentions Proof Certificates.
+  * The calibration games list includes the mathematics games (here and in the Tuning Fork's tooltip).
+  * Consoles on single machines: they take the mathematics upgrades.
+  * The chemistry index lists only chemistry, with whole branch names.
+  * No more empty "Limits: ." lines on machine pages; 169 "Made in a crafting grid" lines now say the Extreme Assembly
+    Table.
+  * Euler's identity: what the Mathematics Singularity leaves out (Axiom of Choice, Gold Singularity, Topos).
+  * Fourier Series is its own study, not part of Complex Analysis.
+  * Research pages no longer carry their icon item's "Found" line.
+* **Tooltips:** the Heated Pressure Suit has a real description; "Calls a The Ouroboros" fixed; the Imaginary Unit names
+  its Integrator route; about 320 items and blocks whose description never said where they come from now end with
+  where they are made.
+* Checked: everything is still reachable (also after the Shutdown), no research is cut off, and no newer route costs
+  more than the one it replaces.
+
+### Part one: Chemistry
+
+**In numbers** (1.1.0 → Chemistry): 34 new machines and consoles, 37 research entries with derivation puzzles, 41 items,
+30 blocks, 27 fluids, 5 creatures (one a mini-boss), a new dimension (Titan, with 3 kinds of ruin) and about 170 new
+recipes. Of the 1.1 recipes, only the 9 listed under "Recipe changes" differ (catalysts held instead of used up).
+
+**Phase 1, part 1: wear and decay**
+* **Catalysts and instruments wear.** Each time one serves as a recipe's catalyst it uses a run of its life (ten runs
+  when the machine is pushed past one of its physics "wear" limits). Its tooltip and a bar on the slot show what is left.
+  Worn out, it comes out of the machine marked worn and no longer works until restored:
+  * Zeolite Catalyst: 256 runs, restored in the new **Regeneration Kiln**.
+  * Muonic Catalyst: 150 runs, then used up (a real muon catalyses about 150 fusions before it sticks to a helium
+    nucleus).
+  * Lenses, the Schmidt Corrector, Echelle Grating and Apochromatic Objective: 256 runs, restored in the Optical Workshop.
+  * Neodymium, Ferrite and Samarium-Cobalt Magnets: 256 runs, restored in the Magnetizer.
+  * The Perfect Crystal Interferometer: 512 runs, restored in the Crystal Growth Furnace.
+  * Random Number Chips, Boundary CFT Chips and Quantum Processors: 1,024 runs, then used up.
+  * Mathematical, abstract and endgame catalysts never wear.
+* **Every machine has a catalyst slot** (the gold slot under the progress arrow). It holds one catalyst; shift-click
+  puts a catalyst there first. A catalyst that wears or decays only works from this slot, so it is always that one that
+  wears (one in an input slot, or in an ME network behind an Interface Port, no longer counts). Catalysts that never wear
+  still work from an input slot too. A worn-out catalyst moves to the output slots. Machines from older worlds move a
+  wearing catalyst from their input slots into the new slot by themselves.
+* **Radioactive sources decay** by their isotope's half-life on the Decay Chamber's clock, wherever they are (a chest,
+  a machine, an ME network): Radium Salt, Cobalt-57, Californium-252, Polonium-210 and Hafnium-178m2.
+  A source below 1/16 of its first activity is spent and no longer works as a catalyst; it also gives off less
+  radiation as it decays. Cobalt-57 now gives off gamma rays (it had no radiation before).
+* **Technetium-99m** (15 seconds of half-life on the scaled clock) decays only while out in the open: carried loose or
+  lying on the ground. Stored anywhere (a machine, an ME network, a chest, a Chronostatic Vault) it waits. Carry it in
+  the new **Lead Pig** (holds 64 vials).
+* **The Chemical Reactor has an Operation console** like the physics multiblocks. Set the heater temperature and the
+  residence time; the rate constant k = A·e^(−Eₐ/RT) (Arrhenius) gives the conversion X = 1 − e^(−kτ), which must reach
+  each recipe's target. A shorter residence time runs faster (up to four times the old pace). A catalyst lowers the
+  activation energy, but above its sintering temperature (700 K) it wears ten times as fast. The vessel is rated to
+  850 K. Its default settings (400 K, 60 s) still run every easy reaction at the old pace.
+* **Recipe pages (JEI and EMI) are drawn from one shared page:** the catalyst in its gold catalyst slot with what wears
+  it, every operating-window line, restoring and Technetium notes, and pages that grow to fit (nothing cut off).
+* **Chronostatic Vault:** a 27-slot cache that stops the sources in it from decaying (hoppers and pipes work with it).
+
+**Phase 1, part 2: Kinetics & Equilibrium**
+* **Haber-Bosch Reactor** (multiblock): hydrogen and nitrogen over an **Iron Catalyst** into ammonia. Its console sets the
+  bed temperature, the pressure and the H₂ : N₂ ratio; the equilibrium (from ΔG° = ΔH − TΔS) favours cold and pressure,
+  the iron's rate favours heat. A pass needs 15% ammonia. The iron sinters above 823 K; the vessel is rated to 300 atm.
+* **Contact Process Tower** (multiblock): sulfur dioxide, oxygen and water over a **Vanadium Bed** into sulfuric acid.
+  The bed must light off (above 670 K) without the equilibrium falling back; a pass must convert 95%.
+* **Ostwald Converter** (multiblock): ammonia and oxygen through a **Platinum-Rhodium Gauze** into nitric acid. Hot gauze
+  and a millisecond's contact for 90% selectivity; above 1250 K the gauze loses platinum.
+* **Air Separation Unit** (single block): nitrogen and oxygen from the air, for power alone.
+* New fluids: Hydrogen, Nitrogen, Oxygen, Ammonia, Sulfur Dioxide, Nitric Acid and Sulfuric Acid.
+* **Shared chemicals:** a recipe that asks for the mod's Hydrogen, Oxygen, Nitrogen, Ammonia, Nitric Acid, Sulfuric
+  Acid, Sulfur Dioxide, Heavy Water, Deuterium or Tritium takes any fluid in the matching common tag (c:hydrogen...) -
+  Mekanism's, NuclearCraft's or GregTech's as readily as the mod's own. The mod's fluids are in those tags too.
+* The three new catalysts wear (Iron Catalyst and Vanadium Bed 512 runs, the gauze 256) and are restored in the
+  Regeneration Kiln.
+* Research: Reaction Kinetics, Chemical Equilibrium, The Contact Process, The Ostwald Process, each with its derivation.
+
+**Phase 1, part 3: Acids, Bases & Solutions** (four single blocks, each on a console)
+* **Titration Bench:** add titrant until the pH sits in the endpoint window (4 to 10) and the reagent comes out
+  **assayed** - the purity tag. Sulfuric and nitric acid, ammonia and sulfur dioxide can be assayed.
+* **Catalyst poisoning:** a run on an acid, base or sulfur dioxide feed that has not been assayed costs the chemical
+  catalysts (Zeolite, Iron, Vanadium, the Platinum-Rhodium Gauze) five runs of life. Pipes and ME networks keep the tag;
+  a containment cell does not. (No 1.0 or 1.1 recipe takes one of these feeds, so none is affected.)
+* **Buffer Tank:** pH = pKa + log(ratio) at a set pH - Phosphate Buffer (pH 7.4) and Ammonia Buffer (pH 9).
+* **Brine Evaporator:** salts come out of Deep Brine in order of solubility - Gypsum, Halite, then Lithium Carbonate -
+  in their own bands of concentration; too hot and the crystals are impure.
+* **Reverse Osmosis Cell:** water passes the membrane only above the osmotic pressure π = iMRT; makes Concentrated
+  Brine (which dries to halite sooner) and fresh water. Rated to 80 bar.
+* Research: Acids and Bases, Buffers, Solubility, Osmosis.
+* The Pleroma Confluence keeps the list of fluids it asked for in 1.1: the new 1.2 chemicals are not added to it (so a
+  confluence already filling is not set back) until its planned rework.
+
+**Phase 1, part 4: Thermochemistry** (two single blocks on consoles)
+* **Bomb Calorimeter:** burn a weighed sample in oxygen; size it so the water's rise is readable (1.5 to 3 K) and give it
+  enough oxygen to burn completely. Each burn makes a Thermochemical Data Card and Insight.
+* **Heat-Pack Reactor:** reactions as heat sources and sinks, the outlet held in each recipe's band. Ammonia and nitric
+  acid neutralise to Ammonium Nitrate (mixed too fast, it runs away); dissolving it makes **Cold Pack Solution** (268 K)
+  and salt with ice **Eutectic Brine** (252 K) - both new coolants for the physics machines' coolant loops.
+* Research: Calorimetry, Thermochemical Cycles.
+
+**Phase 1, part 5: Electrochemistry**
+* **Fuel Cell** (a generator on a console): hydrogen or ammonia with oxygen into power (and water). The Nernst voltage
+  less its losses: the power peaks near 1 A/cm²; too little current floods the cell, too much starves it.
+* **Vanadium Flow Battery** (storage block, 50 million FE): its voltage follows its state of charge; right-click to read
+  both. It stops taking charge at 95%.
+* **Electroplating Bath** (on a console): Faraday's law sets the coat; 20 to 50 µm of nickel on iron makes
+  Nickel-Plated Iron and Corrosion-Proof Casings. Above 8 A/dm² the coat burns.
+* The Electrolytic Cell gains the chlor-alkali process (salt and water into Chlorine and Caustic Soda) and lithium from
+  lithium carbonate. Chlorine is shared with the pack by its c:chlorine tag.
+* Research: Galvanic Cells, Electroplating. This completes Phase 1 (Foundations).
+
+**Phase 2, part 1: Analytical Chemistry, the nebula gases, Catalysis**
+* **Chromatography Column** (a tower, one storey of column per layer, up to nine): van Deemter's plate height and the
+  resolution Rs (≥ 1.5) on its console; harder splits need a taller column. It splits Molecular Cloud gas into ammonia and
+  water, methane and hydrogen cyanide, the interstellar medium into PAH Soot - and **assays gases**: Hydrogen, Nitrogen,
+  Oxygen, Methane and Carbon Monoxide now poison a chemical catalyst too when fed in unassayed.
+* **Mass Spectrometer** (on a console): set the field so the target mass lands on the detector; deuterium from the cloud
+  (cheaper than heavy water) and lithium-6 from lithium.
+* **Cloud Siphon:** touching a Hydrogen, Oxygen or Dust Cloud in the Frontier's nebula, it draws that cloud's gas for
+  ever. The Fractionation Spire (run cold) parts hydrogen and carbon monoxide out of the cloud's gas.
+* New fluids Methane, Carbon Monoxide, Hydrogen Cyanide, Methanol; Methanol from CO and hydrogen; the Strecker route to
+  an Amino Acid Mixture; graphene from PAH soot (a cheaper route; the 1.0 route is unchanged); methane runs the Fuel Cell.
+* **Catalyst Formulator** (on a console): the Sabatier volcano - set the metal loading and calcination so the binding
+  sits at the peak, without sintering. Makes the Iron, Vanadium and Zeolite catalysts more cheaply, and the new **Nickel
+  Catalyst** (256 runs, restored in the kiln).
+* The **Regeneration Kiln** gains a console: burn the coke off (hot enough, air enough) below the metal's sintering
+  temperature; 90% must come back.
+* Research: Chromatography, Mass Spectrometry, Nebular Chemistry, Heterogeneous Catalysis.
+
+**Phase 2, part 2: Organic Synthesis & Polymers, Frameworks & Porous Materials**
+* **Synthetic Crude** from coal and hydrogen (Bergius) - the pack's crude oil (c:crude_oil) is taken as readily.
+* **Cracking Tower** (multiblock, Zeolite Catalyst): Ethylene near 1100 K, Propylene near 1000 K; too hot and coke fouls
+  the catalyst, steam keeps it down.
+* **Polymeriser** (console): chain length 1/(1 − p); Polymer Sheet, Nylon Fibre and Aramid Fibre. Above 420 K it runs away.
+* **Synthesis Bench** (console): a route of n steps keeps 0.92ⁿ - as short as the target allows; makes Fine Reagents.
+* **Framework Assembler** (console): the pore must fit the target molecule, dried slowly; MOF Gas Sorbent, Silica Aerogel,
+  and a second route to the Metal-Organic Framework.
+* **MOF Gas Storage Cell** (block): holds 256,000 mB of one gas (sixteen tanks' worth); keeps it when broken.
+* **Aluminium** (Bayer and Hall-Héroult: clay and caustic soda, then electrolysis), tagged c:ingots/aluminum.
+* **Quasicrystal Furnace** (console): a narrow cooling window and the right ratio for five-fold order; Quasicrystal Plate.
+* Research: Petrochemistry, Polymer Chemistry, Organic Synthesis, Reticular Chemistry, Quasicrystals.
+
+**Phase 2, part 3: Inorganic & Coordination, Spectroscopy, Materials & Solid-State**
+* **Coordination Reactor** (console): the ligand field's splitting against the pairing energy picks high or low spin;
+  Prussian Blue Pigment, the Porphyrin Oxygen Carrier (haem) and the Copper Ammine Complex.
+* **Chelation Column** (console, EDTA in its catalyst slot): rare earths from deep brine; spent fuel salt cleaned back
+  into fuel salt. Too much flow saturates it.
+* **Infrared Spectrometer** (console): scan across the bond's band, narrowly - Structure Cards. With one in its catalyst
+  slot, the Synthesis Bench takes a shorter route (two Fine Reagents for the same inputs).
+* **NMR Spectrometer** (multiblock): resonance within 5 ppm of f = γB/2π; a superconducting magnet kept below 10 K and
+  under 22 T or it quenches. Structure Cards and Insight.
+* **Phase Diagram Kiln** (console): Superconducting Solder from lead and copper at the eutectic (a cheaper route; the
+  1.0 route is unchanged).
+* **Doping Furnace** (console): Doped Wafers (10¹⁶ to 10¹⁸ carriers), which the Lithographer turns into two Photonic
+  Logic Wafers.
+* **Sintering Press** (console): dense, fine-grained Alumina Ceramic Plates; with Aramid Fibre, Ceramic Armour Plates.
+* Research: Coordination Chemistry, Chelation, Infrared Spectroscopy, Nuclear Magnetic Resonance, Phase Diagrams,
+  Semiconductor Doping, Ceramics.
+
+**Phase 3, part 1: Titan** (a new dimension)
+* **Titan**, Saturn's largest moon: an orange sky, a seventh of Earth's gravity, and seas, lakes and rain of methane at
+  94 K. Six regions: Kraken Mare (a methane sea), the Shangri-La Dunes (tholin sand), the Xanadu Uplands (water-ice
+  bedrock), the Ontario Lacus Basin (lakes and dried-up evaporite crust), the Sotra Cryovolcanic Field (cryolava) and the
+  plains round Selk Crater. Its floor is the Subsurface Seal, a layer of high-pressure ice nothing can break yet. It has
+  its own travel animation and its own music.
+* **Cryogenic Lander** (research *Titan*): used under open sky in the Overworld it lands you on Titan; used on Titan it
+  takes you home under a parachute. Falling out of the bottom of Titan also sends you home.
+* **Hazards** (none of them changes a block):
+  * Cold: you freeze as in powder snow, then take frost damage. The **Heated Pressure Suit** (a Pressure Suit crafted with
+    two Silica Aerogel and redstone) keeps out a quarter of it per piece, all of it as a full suit. It still counts as a
+    Pressure Suit in the Planetary Interior.
+  * Methane rain: under open sky in a storm it soaks a suit's lining and chills you as much again. The **Hydrophobic
+    Coating** (used while wearing armour; one can a piece) sheds a quarter of the soaking per coated piece. A coated piece
+    says so in its tooltip.
+  * No oxygen: your air runs out as if under water. The **Oxygen Rebreather** (anywhere in your inventory) holds twenty
+    minutes of oxygen and spends a second of it every second; crafting a spent one with an Oxygen Gas Cell refills it.
+  * No fire: flint and steel and fire charges fail, and burning stops.
+  * Low gravity: you fall more slowly, take less fall damage and jump higher. Liquid methane cannot be swum in - you sink.
+* **Lake Pump** (single block): placed on Titan touching Liquid Methane or Cryolava, it pumps that liquid without ever
+  emptying the lake.
+* New materials: Water-Ice Bedrock, Tholin Sand, Tholin, Cryolava Rock, Evaporite Crust, Evaporite Deposits (Organic
+  Evaporite), Liquid Methane and Cryolava. Research: Titan, Cryogenic Survival, Lakes of Titan.
+* Codex: Titan, Surviving Titan and Lakes of Titan pages. The material pages of the 1.2 blocks and fluids (49 of them,
+  from casings to gases) now show their descriptions instead of only their names.
+
+**Phase 3, part 2: Life on Titan, and Photochemistry**
+* **Titan's creatures**, each with its own mind:
+  * Tholin Drifter (the dunes, the sea, the uplands): a flake of haze drifting on Titan's wind, which turns with the
+    day. Whoever it settles on gets Darkness and Slowness. Drops Tholin.
+  * Catalyst Sprite (Ontario Lacus): keeps five blocks off and circles; every three seconds it spends half a minute of
+    the oxygen in your rebreather and heals Titan's other creatures. Hurt, it backs off. Drops Organic Evaporite and,
+    rarely, a Nickel Catalyst.
+  * Methane Skater (Kraken Mare): stands on liquid methane, skates straight at whoever is on the shore and knocks them
+    in. Can drop a Hydrophobic Coating.
+  * Cryolava Slug (Sotra): slow and armoured; it freezes what it touches and spits cryolava from twelve blocks.
+* **The Ouroboros** (mini-boss): summoned with **Kekule's Dream** in Selk Crater. A ring of six segments that, while
+  closed, takes a quarter of each blow ("aromatic"); every twenty seconds it opens for five, taking double damage
+  while its head lunges. Closed, it spits tholin at everyone in sight. At half health two Catalyst Sprites join it.
+  Drops the Kekule Ring.
+* **Structures** (the mod's own blocks only): the Abandoned Refinery (basin and sea), the Lander Wreck (dunes, uplands,
+  Selk Crater) and the Cryolab (cryovolcanic field, uplands), each with a cache. A Cryolab's cache can hold Kekule's
+  Dream.
+* **Photochemical Reactor** (console, research *Photochemistry*): light absorbed by the Beer-Lambert law. Set the
+  path length so the mixture absorbs 90% to 99.9% of the light. Above 400 W/m² the lamp cooks the cell.
+* Codex: Life on Titan, The Ouroboros, Photochemistry.
+
+**Phase 3, part 3: Titan, reworked after testing**
+* **Methane Skater** rebuilt. It now has a head with a beak, eyes and twitching antennae, a long thorax with silvery
+  water-repellent hairs, and a tapering abdomen. The short front legs are held forward, the long middle legs row and
+  the hind legs steer. Every leg rises to a knee and comes down to the surface, where its foot dimples the methane. The
+  middle legs row in strokes, and the body surges with each one. It is never still: at rest the legs flex and the body
+  bobs. It has its own voice, made of foot ticks, surface "plips" and ripples, with a splash when hurt and sinking
+  bubbles when it dies.
+* **Cryolava Slug** now moves like a slug. A wave of contraction runs along its foot all the time (slow at rest,
+  quick when it crawls), so the body bunches and stretches. Its eye stalks and feelers sway, and it leaves a slime
+  film. Its new voice is a wet squelch with sticky pops and ice cracking in its skin.
+* **Catalyst Sprite** is about twice the size, with a second ring and a glow, so it is easier to see and hit.
+* **Selk** is now a crater field: impact craters 16 to 26 blocks across, each a bowl with a raised rim. The bigger
+  ones have a central peak, as Selk itself has. The biome is renamed Selk Crater Field.
+* **The Ouroboros** has its own sounds for summoning (a rumble from the crater and six notes climbing as the ring
+  closes), for the ring opening, for its strikes and spits, for its voice, and for its death (a falling groan as its
+  six bonds break one after another). Summoned, it rises out of the crater over four seconds. Its segments join one by
+  one until the ring closes, and it cannot be hurt until then. Dying, the ring breaks and its segments fly apart,
+  tumbling and fading, over two and a half seconds.
+* **Every Titan material is renewable and has a use:**
+  * Organic Evaporite: liquid methane boiled down in the Brine Evaporator (20 to 50 times concentrated), or Evaporite
+    Crust dissolved in methanol.
+  * Evaporite Crust: crafted from Organic Evaporite and Tholin Sand.
+  * Cryolava Rock: remelts into cryolava (Chemical Reactor).
+  * Water-Ice Bedrock: crafted from two Packed Ice.
+  * The Kekule Ring is a permanent catalyst: in the Polymeriser's catalyst slot it makes Aramid Fibre from Organic
+    Evaporite and ammonia. Kekule's Dream can always be crafted again, so the Ouroboros can always be summoned again.
+* **More life on Titan:** much higher spawn weights and bigger groups. The floating creatures and the Skater can now
+  appear over lakes and the sea, in any light. Every ten seconds, if fewer than eight of Titan's creatures are within
+  48 blocks of a player, one of the region's own creatures comes in 20 to 40 blocks away.
+
+**Phase 3, part 4: Titan fixes**
+* Cryolava Slug: the see-through shell and the slime film behind it are gone (they showed as a blue plane and
+  flickered). The body now sits on its foot instead of sharing its base, and its segments meet without overlapping,
+  so it no longer flickers when struck, climbing or dying.
+* Methane Skater: the flat "dimple" planes at its feet are gone, and the hair is drawn solid. It now really walks.
+  On ground all six legs move in an alternating tripod, each foot lifting, swinging forward and planting, with stride
+  and speed set by how fast it actually moves. On the methane both middle legs row together while the others steer.
+* Titan's creatures no longer spawn inside liquid methane (or with liquid just above them). Being native to 94 K and
+  its liquids, they no longer freeze or drown in it.
+
+**Phase 4: Asymmetric Synthesis, Oscillating Reactions, Alkahest** (the end of the Chemistry branch)
+* **Asymmetric Reactor** (console, research *Asymmetric Synthesis*): a handed catalyst favours one mirror image by
+  ΔΔG‡ (s = e^(ΔΔG‡/RT)). Run it cold enough for at least 90% of one hand; colder is purer and slower. Its catalyst,
+  the **Chiral Ligand**, is made at the Synthesis Bench with the Ouroboros's Kekule Ring in the catalyst slot.
+* **The first pair of routes to one product**, by choice: Enantiopure Reagent from the Asymmetric Reactor is fast but
+  random (60% of runs give it), or from the Chromatography Column it is slow but sure (two Fine Reagents give one,
+  every time, because resolving throws the other hand away).
+* **Oscillator Vessel** (console, research *Oscillating Reactions*): the Belousov-Zhabotinsky reaction as the
+  Brusselator. It beats only past B = 1 + A², with a period near 2π/A. It makes **Chemical Clocks**.
+* **Alkahest Still** (console, research *Alkahest*): **Alkahest**, Chemistry's unifying fluid, distilled in four
+  stages that pass through every branch:
+  * Tincture of Balance: kinetics, equilibrium, acids, heat and current.
+  * Tincture of Form: spectroscopy, synthesis, frameworks and chains.
+  * Tincture of Chirality: handedness, time and Titan (with Ammonia Buffer).
+  * Alkahest: coordination and materials (with a Copper Ammine Complex), with the Kekule Ring as catalyst.
+* Alkahest dissolves ore: four raw iron, gold or copper and 10 mB give twelve ingots. It is kept for Pleroma's
+  rework (where it will be one of the five fluids); Pleroma's 1.1 recipe is unchanged.
+* Codex: Asymmetric Synthesis, Oscillating Reactions, Alkahest.
+
+**Fixes after testing**
+* Suit tooltips (Whipple Shield, Pressure, Refractory, Frontier and Heated Pressure Suits) show one description, at the
+  top, instead of a second one split off below the armour values.
+* The older fluids' cells and fluid blocks (69 of them, from Quark-Gluon Plasma to Maxwell-Boltzmann Gas) now say what
+  the fluid is and where it comes from (the machines that make it, and where it lies in the world), as the new ones
+  do, instead of a generic "1,000 mB of ..." line.
+* The Codex's "Start here" label sits above the first Getting Started node, so it no longer covers the next ones.
+* The Codex no longer counts days ("Day 96. ..." at the start of fifteen notebook pages).
+* **Containment failures for every multiblock since 1.0.** 45 multiblocks wore down and sounded the meltdown alarm
+  but released nothing. Each now has a failure, and five new kinds fit the newer sciences:
+  * Chemical (the chemical plants, the Chromatography Column, the Markov Refinery): a burst and a corrosive cloud that
+    poisons, weakens and eats at armour.
+  * Radiological (reactors, centrifuges, cyclotrons, X-ray and gamma sources, the Micro Black Hole Evaporator): a dose
+    falling off as 1/r², a contaminated cloud, and Fission Husks rising from what it caught.
+  * Magnetic (Tokamak, Pulsed Magnet Lab, NMR, MHD Generator, Tesla Coil, Radio Telescope): the field collapses,
+    flinging and magnetising everything near, with arcs, and leaves Geodynamo Wraiths.
+  * Thermal (presses, drilling rig, furnaces, Impact Forge, Climate Engine, Unruh Accelerator, Analog Black Hole): a
+    blast of heat that sets everything near alight, and Plume Elementals.
+  * Optical (telescopes, Optical Workshop, Laser Interferometer, Brownian Microscope, Lensing Concentrator): a blinding
+    flash, flying glass, and Lens Phantoms.
+  * The exotic ones use the existing kinds (spatial, temporal, dimensional, infectious). Block damage still follows
+    the config and the mobGriefing rule.
+  * These machines also gain the tuning panel's overclock and parallel settings, like the older multiblocks.
+  * The Containment Failure page in the Codex lists the new kinds.
+
+**Keeping Things Running** (cross-dimensional transport and chunk loading)
+* **Entangled Link** (new research *Entanglement Links*, right after Quantum Entanglement): the first, early tier of
+  entangled transport. Placed on a block's face, links on one channel move items, fluids and energy between them at any
+  distance and across dimensions: 16 items, 4,000 mB and 262,144 FE a tick. Sneak-use switches sending and receiving.
+  The later Relay and Transceiver use the same channels and move far more. Crafted (two at a time) from copper,
+  Entangled Photon Pairs, ender pearls and a block of redstone.
+* **An early Entanglement Tuner** recipe (an Entangled Photon Pair, quartz and iron), so channels can be set from the
+  start; the 1.1 recipe is unchanged.
+* **Zeno Anchor** (new research *The Quantum Zeno Effect*): a chunk loader. Powered (64 FE a tick, 1,000,000 FE
+  stored), it keeps the 3 x 3 chunks round it loaded and ticking whether or not anyone is near, and across restarts.
+  It lets go when its power runs out or it is broken; right-click shows its state. Crafted from obsidian, Entangled
+  Photon Pairs, a clock and a block of redstone.
+* **The ruins' glitching screen is tied to their Breached Anomaly Engine.** It used to cover the whole ruin for good;
+  now it lasts only while the ruin's engine stands, and stops for good once the engine is broken.
+* Codex: Keeping Things Running (Getting Started), Entanglement Links, The Quantum Zeno Effect.
+* Last uses for Chemistry's materials that had none: Gypsum Crystal roasts to sulfur dioxide (Chemical Reactor); Ceramic
+  Armour Plates make Whipple Shield pieces (crafted, a second route; the 1.1 recipes are unchanged); Ammonia Buffer
+  goes into the Tincture of Chirality and the Copper Ammine Complex into Alkahest. (Later, in Mathematics: the ceramic Whipple
+  Shield routes are gone, as they cost far more than the plain ones; Ceramic Armour Plates now mend Whipple Shield
+  armour at an anvil instead.)
+
+**Look and text**
+* Every containment cell, filled or empty, now has the same look (the one the newer fluids had); 54 older fluids'
+  cells and the empty cell were redrawn.
+* No more dashes used as punctuation in anything you read (tooltips, the Codex, research, derivations, physics notes,
+  messages, the Living Proof's questions): each became a comma, a pair of commas round an aside, or a semicolon.
+  Minus signs in formulas are untouched.
+* **Codex maps reorganised.** Discovery is now a grid: a lane (row) for each area (Foundations, Worlds, Quanta &
+  Matter, Fields & Nuclei, Stars & Spacetime, Chemistry, Life & Minds, Mathematics, Transcendence), labelled at its
+  left, and a band for each stage of the game, labelled across the top. Getting Started runs along the top. Links
+  run along their lane; links that would have crossed more than two lanes are left off (hovering still shows what a
+  chapter builds on). The branch tabs give each branch a lane of its own, packed in a few columns, with every chapter
+  among its things.
+
+**Recipe changes**
+* New: Regeneration Kiln (crafted), Chronostatic Vault (crafted), Lead Pig (crafted from 7 Lead Shielding Plates), and the restoring recipes in the Regeneration Kiln,
+  Optical Workshop, Magnetizer and Crystal Growth Furnace.
+* New recipes: Haber-Bosch Reactor, Contact Process Tower, Ostwald Converter, Air Separation Unit and their casings
+  (crafted); hydrogen from coal or charcoal and steam (Chemical Reactor) or water (Electrolytic Cell); sulfur dioxide
+  from gunpowder or sulfur dust; the Iron Catalyst, Vanadium Bed (from raw iron, or vanadium dust) and Platinum-Rhodium
+  Gauze (from meteoric iron and sulfuric acid, or platinum and rhodium) in the Chemical Reactor.
+* The Electrolytic Cell's heavy water, deuterium and tritium recipes (and every other recipe that takes them) now accept
+  the pack's heavy water, deuterium and tritium by tag.
+* New recipes: the four machines above (crafted), the assays, both buffers, gypsum, halite (from brine or concentrated
+  brine), lithium carbonate, and desalination.
+* New recipes: the Bomb Calorimeter and Heat-Pack Reactor (crafted), calorimetry of coal, sugar, blaze powder and
+  hydrogen, ammonium nitrate and both cold packs.
+* New recipes: the Fuel Cell, Electroplating Bath, Vanadium Flow Battery and Corrosion-Proof Casing (crafted), nickel
+  sulfate from meteoric iron and nitric acid, nickel plating, chlor-alkali, and lithium from lithium carbonate (a second
+  route to the Lithium Ingot; the 1.1 route is unchanged).
+* Every Chemical Reactor recipe now has an operating window (a conversion of 90% or 95%, with its own activation
+  energy from 25 to 90 kJ/mol); the easier half still runs at the reactor's default settings.
+* New recipes: the Cryogenic Lander, Oxygen Rebreather (and its refill), the four Heated Pressure Suit pieces and the Lake
+  Pump (crafted); tholin from tholin sand and methanol, amino acids from tholin and water (Chemical Reactor); oxygen from
+  water-ice bedrock (Electrolytic Cell); the Hydrophobic Coating (Chemical Reactor); liquid methane and cryolava (Lake
+  Pump); methane and nitrogen from liquid methane, ammonia and water from cryolava (Fractionation Spire); ethylene from
+  organic evaporite and hydrogen over a Nickel Catalyst (Chemical Reactor).
+* New recipes: Kekule's Dream (crafted); tholin and hydrogen cyanide from methane and nitrogen, and hydrogen from water
+  (Photochemical Reactor); the Photochemical Reactor (crafted).
+* New recipes: organic evaporite from liquid methane (Brine Evaporator) and from evaporite crust and methanol, cryolava
+  from cryolava rock (Chemical Reactor), Evaporite Crust and Water-Ice Bedrock (crafted), and Aramid Fibre from organic
+  evaporite and ammonia with the Kekule Ring as catalyst (Polymeriser; a second route, the 1.2 route is unchanged).
+* New recipes: the Asymmetric Reactor, Oscillator Vessel and Alkahest Still (crafted); the Chiral Ligand (Synthesis
+  Bench); Enantiopure Reagent (Asymmetric Reactor, or Chromatography Column); Chemical Clocks (Oscillator Vessel); the
+  three tinctures and Alkahest, and iron, gold and copper from their raw ores with Alkahest (Alkahest Still; new
+  routes, the vanilla ones are unchanged).
+* Zeolite and Muonic Catalysts are now held as a catalyst (one is needed, and it wears) instead of being used up in:
+  * Engineered Enzyme (bioculture): Zeolite Catalyst ×6 used up before
+  * Nutrient Broth (bioculture): Zeolite Catalyst ×6 used up before
+  * Graphene Sheet (chemical synthesis): Zeolite Catalyst ×4 used up before
+  * Molecular Orbital Lattice (chemical synthesis): Zeolite Catalyst ×4 used up before
+  * Autocatalytic Broth (chemical synthesis): Zeolite Catalyst ×4 used up before
+  * Quark Gluon Plasma (collider): Zeolite Catalyst ×12 used up before
+  * Strange Matter (collider): Zeolite Catalyst ×24 used up before
+  * Antiiron Ingot (mirror synthesis): Muonic Catalyst ×12 used up before
+  * Flerovium Ingot (nuclide synthesis): Muonic Catalyst ×12 used up before
+
 ## 1.1.0 — The Expansion (3 November 2026)
 
 Seven new branches of science, two new dimensions and nearly fifty new machines. Everything 1.0 had is still there.
