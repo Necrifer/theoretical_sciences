@@ -1,7 +1,7 @@
 # Customising Theoretical Sciences with KubeJS
 
-Theoretical Sciences is built to be reshaped by modpacks. Almost everything a pack would want to change — machine recipes,
-the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, singularities — is data, and all of
+Theoretical Sciences is built to be reshaped by modpacks. Almost everything — machine recipes,
+the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, singularities — all of
 it can be changed from KubeJS without touching the mod.
 
 Requires **KubeJS for NeoForge 1.21.1** (`2101.7` or newer). Everything below is optional: with no scripts, the mod
@@ -14,7 +14,7 @@ behaves exactly as shipped.
 1. [How data reaches the mod](#1-how-data-reaches-the-mod)
 2. [Machine recipes](#2-machine-recipes)
 3. [Extreme Assembly Table, Singularity Compactor and Convergence Altar recipes](#3-extreme-assembly-table-singularity-compactor-and-convergence-altar-recipes)
-4. [Machine numbers (`ts_machines`)](#4-machine-numbers-ts_machines)
+4. [Machine parameters (`ts_machines`)](#4-machine-parameters-ts_machines)
 5. [Coil and emitter tiers (`ts_component_tiers`)](#5-coil-and-emitter-tiers-ts_component_tiers)
 6. [Machine physics (`ts_physics`)](#6-machine-physics-ts_physics)
 7. [Omnipotence Core Forge recipes (`ts_forge`)](#7-omnipotence-core-forge-recipes-ts_forge)
@@ -97,11 +97,11 @@ Optional parts, chained after the call:
 | Method | JSON field | Meaning |
 |---|---|---|
 | `.energy(n)` / `.fe(n)` | `energy` | FE per tick. For generators: FE per tick **produced**. |
-| `.duration(n)` / `.time(n)` | `duration` | Ticks. |
+| `.duration(n)` / `.time(n)` | `duration` | Recipe duration in ticks. |
 | `.research('ns:id')` | `research` | Research the machine's owner must have. |
-| `.catalysts([...])` | `catalysts` | Must be present, never used up. |
-| `.chances([1, 0.5])` | `chances` | Chance for each item output (1 = always). |
-| `.minTier(6)` | `min_tier` | Lowest coil tier the multiblock must have (see section 5). |
+| `.catalysts([...])` | `catalysts` | Persistent Ingredient. |
+| `.chances([1, 0.5])` | `chances` | Chance for each item output (1 = guaranteed). |
+| `.minTier(6)` | `min_tier` | Lowest coil tier accepted by multiblock (see section 5). |
 | `.optionalInputs([{item: 'mekanism:alloy_atomic', count: 4}])` | `optional_inputs` | Only used if that mod is installed. |
 | `.optionalFluidInputs([{fluid: 'mekanism:hydrogen', amount: 1000}])` | `optional_fluid_inputs` | The same for fluids. |
 | `.physics({vars: {A: 1}, windows: [{q: 'sNN', min: 3600, max: 4200}]})` | `physics` | A window a physics quantity must be held in (section 6). |
@@ -169,7 +169,7 @@ ServerEvents.recipes(event => {
 })
 ```
 
-The Extreme Assembly Table also crafts every ordinary crafting-table recipe.
+The Extreme Assembly Table also accepts every ordinary crafting-table recipe.
 
 **Changing and removing** these works like any other recipe. Every recipe's id is its path in the mod jar:
 `theoreticalsciences:extreme/<name>`, `theoreticalsciences:compaction/<name>`, `theoreticalsciences:convergence/<name>`. JEI and EMI
@@ -197,12 +197,12 @@ ServerEvents.recipes(event => {
 })
 ```
 
-Singularities made in the Compactor from section 9 are not recipe files. Switch those off there, not with
+Singularities made in the Compactor from section 9 are not recipe files. Use methods listed there to disable them, not with
 `event.remove`.
 
 ---
 
-## 4. Machine numbers (`ts_machines`)
+## 4. Machine parameters (`ts_machines`)
 
 One file per machine: `ts_machines/<machine id>.json`. The machine id is its block id without `theoreticalsciences:`
 (`quark_gluon_collider`, `quantum_entangler`, `stellar_plasma_crucible`, ...). Every field is optional; leave out what
@@ -222,7 +222,7 @@ ServerEvents.generateData('after_mods', event => {
 
 | Field | Machines | Meaning (the mod's own value in brackets) |
 |---|---|---|
-| `energy_capacity` | all | FE the buffer holds. It still grows by itself if a recipe needs more per tick. |
+| `energy_capacity` | all | The amount of FE the buffer holds. It still grows by itself if a recipe needs more per tick. |
 | `max_energy_input` | consumers | FE/t accepted from cables (no limit). |
 | `max_energy_output` | generators | FE/t pushed into cables (the machine's own rate). |
 | `speed_multiplier` | all | Recipes take `duration / this` ticks (1). |
@@ -236,7 +236,7 @@ ServerEvents.generateData('after_mods', event => {
 
 **Where a machine works.** `dimensions` applies to every recipe of the machine; a recipe's own `environment`
 (section 2) can narrow it further. Built anywhere else, the machine stands idle and says *Only works in …*; its
-tooltip and JEI/EMI page say so too.
+tooltip and JEI/EMI page mentions this.
 
 ```js
 ServerEvents.generateData('after_mods', event => {
@@ -249,11 +249,11 @@ ServerEvents.generateData('after_mods', event => {
 })
 ```
 
-The Transcendental and the Living Proof can only be entered the intended way (the Omnilex Engine's collapse and Alpha
-Omega's challenge), whatever a pack does with machines. This is also checked by dimension id.
+The Transcendental and the Living Proof can only be entered through the intended way (the Omnilex Engine's collapse and Alpha
+Omega's challenge), iregardless of what is changed. This is also checked by dimension id.
 
-Machines already in the world pick up new numbers within a tick of `/reload`. Lowering `energy_capacity` never
-deletes stored energy: the buffer shrinks as the energy is used. JEI/EMI keep showing each recipe's own energy and
+Machines already in the world pick up new parameters within a tick of `/reload`. Lowering `energy_capacity` never
+deletes stored energy, the buffer adjusts as the energy is used. JEI/EMI keep showing each recipe's own energy and
 duration (before these multipliers). Lowering `max_parallel` or `max_overclock` also lowers machines already set
 higher.
 
@@ -307,8 +307,8 @@ ServerEvents.generateData('after_mods', event => {
 | `family` | yes | `"coil"` or `"emitter"`. |
 | `tier` | yes | The tier the block counts as. A new tier (6, 7, ...) or an existing one (adds a block to it). |
 | `block` / `blocks` / `tag` | one of them | One block id, a list of ids, or a block tag (no `#`). |
-| `critical_temperature` | no (coils) | Kelvin: the superconductor's critical temperature at this tier. |
-| `critical_field` | no (coils) | Tesla: its upper critical field. |
+| `critical_temperature` | no (required for coils) | Kelvin: the superconductor's critical temperature at this tier. |
+| `critical_field` | no (required for coils) | Tesla: its upper critical field. |
 | `speed_bonus` | no | Speed at this tier = 1 + this (`1.5` = 2.5×). Default: +25% per tier above 1. |
 
 What follows:
@@ -532,12 +532,12 @@ ServerEvents.tags('entity_type', event => {
 | `theoreticalsciences:hidden_from_viewers` | item | Left out of JEI's and EMI's item lists. |
 | `theoreticalsciences:beyond_omnipotence` | item | The Omnipotence Core cannot materialize it. |
 | `theoreticalsciences:forge_only` | item | Only the Omnipotence Core's Forge makes it: it gets its own generated Forge recipe, and the Core's "make anything" screen refuses it. For creative-only items the automatic detection misses, or late-endgame items you want behind the Forge. Its other recipes are not removed. |
-| `theoreticalsciences:forge_exempt` | item | Taken off the Forge-only list: for items the automatic detection picks up by mistake (an id containing "creative" that is a normal item). |
+| `theoreticalsciences:forge_exempt` | item | Taken off the Forge-only list: for items the automatic detection picks up by mistake (an id containing "creative" will be picked up automatically). |
 | `theoreticalsciences:excavator_ores` | block | Extra blocks the Dodecaract Excavator's Ore Extraction takes. |
-| `theoreticalsciences:excavator_ignored` | block | Blocks the Excavator never breaks. |
-| `theoreticalsciences:not_accelerated` | block | Blocks the Chronal Accelerator never speeds up. |
+| `theoreticalsciences:excavator_ignored` | block | Excavator ignores the listed block. |
+| `theoreticalsciences:not_accelerated` | block | Immune to Chronal Accelerator effects. |
 | `theoreticalsciences:observable` | block, entity_type | What the Spectral Analyzer can study. |
-| `theoreticalsciences:not_spawnable` | entity_type | Never summoned by the Lawgiver's Codex (bosses are excluded already). |
+| `theoreticalsciences:not_spawnable` | entity_type | Never summoned by the Lawgiver's Codex (bosses are excluded by default). |
 
 ---
 
