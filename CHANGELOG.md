@@ -1,5 +1,39 @@
 # Changelog
 
+## 1.3.0 — Fluids and Flight
+
+The first slice of the planned Fluids and Flight branch: ordinary fluid flow and aerodynamics, which the mod had
+skipped on the way to magnetohydrodynamics. Rocketry, orbital mechanics and the Orbital Station come later.
+
+**Research** (beside Hydrology and Climatology)
+* **Fluid Dynamics**: the Reynolds number, and when a flow turns turbulent. Puzzle: R = ρvL/μ.
+* **Aerodynamics**: Bernoulli and the lift equation. Puzzle: F = ½ρv²AC.
+* **Compressible Flow**: past the speed of sound, and the De Laval nozzle. Puzzle: v = M√(γRT/m).
+
+**The Wind Tunnel** (multiblock, 7 × 7 × 21)
+* An intake with a honeycomb Flow Straightener, a glass-walled test section, a diffuser and a fan that spins while it
+  runs. Interface Ports go in the floor at either end.
+* The console sets airspeed, angle of attack and tunnel pressure, and shows the Reynolds number, Mach number, lift
+  coefficient (thin-aerofoil theory with the Prandtl–Glauert correction, Ackeret's rule above Mach 1, and stall past
+  about 14°), dynamic pressure and the load on the model.
+* Near Mach 1 the tunnel buffets (wear); a lift load above 90 kPa tears the model from its mount (damage).
+* Makes **Aerofoil Composite** (polymer sheet and nylon fibre) and the **De Laval Nozzle** (alumina ceramic and
+  aerofoil composite, proven between Mach 1.6 and 3).
+
+**Laminar Flow Conduit**
+* The mod's first fluid pipe. Point a line of them the way the fluid should go: the first segment draws from the block
+  behind it, the last fills the block in front of it. 2,000 mB a tick up to 16 segments, less in proportion beyond
+  (Poiseuille), up to 64 segments. Right-click a segment to read its line.
+* Only a line's first segment does any work, every half second; the segments hold no fluid and send nothing to
+  clients.
+
+**MHD Generator**
+* A De Laval Nozzle in the catalyst slot runs Stellar Plasma supersonic: 20% more power from the same plasma. The nozzle
+  wears (128 runs).
+
+**Building**
+* JEI is compiled against 19.70.0.458, the version modpacks ship (19.21's widget interface no longer matches).
+
 ## 1.2.0 — 3 Forgotten Memories
 
 The first release since 1.1.0, in three parts, newest first: Biology, Mathematics, Chemistry. (They were built

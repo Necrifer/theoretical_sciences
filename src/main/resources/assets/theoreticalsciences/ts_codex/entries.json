@@ -54641,5 +54641,120 @@
     "text": "Tier 5 of 5. Made in the Femtoscale Assembly Line. First needed for: Omnium Ingot, Pocket Universe, Transcendent Metal Ingot, White Hole Fragment."
    }
   ]
+ },
+ "fluids/fluid_dynamics": {
+  "title": "Fluid Dynamics",
+  "icon": "theoreticalsciences:laminar_flow_conduit",
+  "category": "fluids",
+  "research": "fluid_dynamics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:laminar_flow_conduit"
+    ],
+    "text": "Every fluid flow has a Reynolds number, Re = ρvL/μ: inertia against viscosity. Below about 2300 a pipe flows in smooth layers; above it, eddies form and the pressure drop climbs."
+   },
+   {
+    "type": "text",
+    "text": "The $(item)Laminar Flow Conduit$() puts that to work. Point a line of them the way the fluid should go: the first segment draws from the block behind it, the last fills the block in front of it, and nothing in between holds any fluid."
+   },
+   {
+    "type": "text",
+    "text": "A smooth line of up to 16 segments passes 2,000 mB a tick. Longer lines pass less, in proportion to their length, as Poiseuille's law says: the flow through a pipe falls as 1/L."
+   }
+  ]
+ },
+ "fluids/aerodynamics": {
+  "title": "Aerodynamics",
+  "icon": "theoreticalsciences:wind_tunnel",
+  "category": "fluids",
+  "research": "aerodynamics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:aerofoil_composite"
+    ],
+    "text": "Lift is L = ½ρv²SCₗ: the dynamic pressure of the air, times the wing's area, times its lift coefficient. A thin wing makes Cₗ = 2πα, until about 14°, where the flow tears off its top and it stalls."
+   },
+   {
+    "type": "text",
+    "text": "The $(thing)Wind Tunnel$() lays up $(item)Aerofoil Composite$() and proves it: hold the lift coefficient between 0.9 and 1.3, the Reynolds number between two and eight million, and stay below Mach 0.6."
+   }
+  ]
+ },
+ "fluids/compressible_flow": {
+  "title": "Compressible Flow",
+  "icon": "theoreticalsciences:de_laval_nozzle",
+  "category": "fluids",
+  "research": "compressible_flow",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:de_laval_nozzle"
+    ],
+    "text": "Above the speed of sound a duct must widen to speed a gas up. A $(item)De Laval Nozzle$() narrows to a throat, where the flow reaches Mach 1, and then flares."
+   },
+   {
+    "type": "text",
+    "text": "Test one in the Wind Tunnel between Mach 1.6 and 3 with a small lift coefficient. Crossing Mach 1 on the way shakes the tunnel (transonic buffet): go through it quickly.$(br2)In the $(thing)MHD Generator$(), a nozzle as catalyst gives 20% more power from $(fluid)Stellar Plasma$()."
+   }
+  ]
+ },
+ "fluids/wind_tunnel": {
+  "title": "Wind Tunnel",
+  "icon": "theoreticalsciences:wind_tunnel",
+  "category": "fluids",
+  "research": "aerodynamics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:wind_tunnel"
+    ],
+    "text": "Blows air past a model at a set speed, angle and pressure, and measures what it does.$(br2)$(thing)Tier 2$() machine.",
+    "title": "Wind Tunnel"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry, and JEI, show the pattern."
+   },
+   {
+    "type": "multiblock",
+    "name": "Wind Tunnel",
+    "text": "Cycling blocks: any of them fits (Interface Ports in the floor at either end). Rotate, zoom and view layers in $(thing)JEI$().",
+    "multiblock": "wind_tunnel"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Makes$(): Aerofoil Composite, De Laval Nozzle."
+   }
+  ]
+ },
+ "operation/wind_tunnel": {
+  "title": "Wind Tunnel",
+  "icon": "theoreticalsciences:wind_tunnel",
+  "category": "operation",
+  "research": "aerodynamics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Air at density ρ and speed v flows past a model of chord c. The Reynolds number ρvc/μ decides how the boundary layer behaves, the Mach number v/a how the air compresses, and the angle of attack how much lift the model makes."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Airspeed v, Angle of attack α, Tunnel pressure p.$(br2)$(thing)Disturbance$(): Fan gusting: the airspeed varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): Transonic buffet within 0.12 of Mach 1 wears the tunnel; a lift load above 90 kPa tears the model from its mount.$(br2)$(thing)Rate$(): one test per run."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Effective airspeed: v·(1 + 0.02·d)$(br)Density: ρ = p/(RₛT)$(br)Reynolds number: Re = ρvc/μ$(br)Mach number: M = v/a$(br)Lift coefficient: 2πα/√(1 − M²), above Mach 1 4α/√(M² − 1)$(br)Dynamic pressure: q = ½ρv²"
+   }
+  ]
  }
 }

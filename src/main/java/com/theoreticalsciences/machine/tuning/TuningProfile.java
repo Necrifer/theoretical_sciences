@@ -148,6 +148,7 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.CHROMATOGRAPHY_COLUMN, "reflux_ratio", Drift.WALK, 0.5F, 2, 4, Hazard.CHEMICAL, 3);
         p(MachineType.CRACKING_TOWER, "reaction_temperature", Drift.WALK, 0.8F, 2, 4, Hazard.CHEMICAL, 6);
         p(MachineType.NMR_SPECTROMETER, "field_strength", Drift.WALK, 0.6F, 2, 2, Hazard.MAGNETIC, 5);
+        p(MachineType.WIND_TUNNEL, "flow_speed", Drift.OSCILLATE, 0.6F, 2, 4, Hazard.THERMAL, 2);   // 1.3.0
     }
 
     /** The profiles with a datapack's changes applied (data/<ns>/ts_machines), rebuilt when that data changes. */

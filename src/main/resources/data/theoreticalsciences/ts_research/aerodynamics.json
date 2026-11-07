@@ -1,0 +1,68 @@
+{
+  "title": "Aerodynamics",
+  "description": "Air pressed faster over the top of a wing pushes less on it than the slower air below: Bernoulli's trade of speed for pressure, written as the lift equation. Tilt the wing too far and the flow tears off it, and it stalls. Unlocks the Wind Tunnel and the Aerofoil Composite.",
+  "icon": "theoreticalsciences:wind_tunnel",
+  "x": 14,
+  "y": 5,
+  "insight": 130,
+  "requires": [
+    "theoreticalsciences:fluid_dynamics",
+    "theoreticalsciences:polymer_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    },
+    {
+      "item": "minecraft:feather",
+      "count": 8
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A wing of area A with lift coefficient C flies through air of density \u03c1 at speed v. Lift is the dynamic pressure, \u00bd\u03c1v\u00b2, times the area, times how good the wing is at turning it into lift. Write F, the lift.",
+    "name": "The lift equation",
+    "lhs": "F",
+    "form": "1 / 2 * \u03c1 * v ^ 2 * A * C",
+    "expr": "1 / 2 * \u03c1 * v ^ 2 * A * C",
+    "ask": "Find F in N for a light aircraft: \u03c1 = @{\u03c1} kg/m\u00b3, v = @{v} m/s, A = @{A} m\u00b2, C = @{C}.",
+    "vars": {
+      "F": "lift (N)",
+      "\u03c1": "air density (kg/m\u00b3)",
+      "v": "airspeed (m/s)",
+      "A": "wing area (m\u00b2)",
+      "C": "lift coefficient"
+    },
+    "given": {
+      "\u03c1": 1.225,
+      "v": 60,
+      "A": 16,
+      "C": 1.2
+    },
+    "unit": "N",
+    "method": "Bernoulli: p + \u00bd\u03c1v\u00b2 is constant along a streamline, so the pressure difference across the wing scales with \u00bd\u03c1v\u00b2.",
+    "distractors": [
+      "g",
+      "3",
+      "\u03bc"
+    ],
+    "vary": {
+      "v": [
+        40.0,
+        90.0,
+        1.0
+      ],
+      "A": [
+        10.0,
+        30.0,
+        1.0
+      ],
+      "C": [
+        0.8,
+        1.5,
+        0.01
+      ]
+    }
+  }
+}

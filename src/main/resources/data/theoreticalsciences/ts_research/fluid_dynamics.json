@@ -1,0 +1,73 @@
+{
+  "title": "Fluid Dynamics",
+  "description": "Water, air and magma all obey one equation, and one number tells which way it goes: below a Reynolds number of about 2300 a pipe flows in smooth layers, above it the flow breaks into eddies. Unlocks the Laminar Flow Conduit.",
+  "icon": "theoreticalsciences:laminar_flow_conduit",
+  "x": 13,
+  "y": 4,
+  "insight": 60,
+  "requires": [
+    "theoreticalsciences:hydrology",
+    "theoreticalsciences:climatology"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:sediment_core",
+      "count": 2
+    }
+  ],
+  "time": 120,
+  "puzzle": {
+    "goal": "A fluid of density \u03c1 and viscosity \u03bc moves at speed v past a body of length L. Inertia carries it on, viscosity damps it out; their ratio decides whether it flows smooth or turbulent. Write R, the Reynolds number (Re in the books).",
+    "name": "Reynolds number",
+    "lhs": "R",
+    "form": "\u03c1 * v * L / \u03bc",
+    "expr": "\u03c1 * v * L / \u03bc",
+    "ask": "Find R for water in a pipe: \u03c1 = @{\u03c1} kg/m\u00b3, v = @{v} m/s, L = @{L} m, \u03bc = @{\u03bc} Pa\u00b7s. Below about 2300 it stays laminar.",
+    "vars": {
+      "R": "Reynolds number",
+      "\u03c1": "density (kg/m\u00b3)",
+      "v": "flow speed (m/s)",
+      "L": "pipe diameter (m)",
+      "\u03bc": "dynamic viscosity (Pa\u00b7s)"
+    },
+    "given": {
+      "\u03c1": 1000,
+      "v": 0.05,
+      "L": 0.04,
+      "\u03bc": 0.001
+    },
+    "unit": "",
+    "method": "Inertial force per volume goes as \u03c1v\u00b2/L and viscous force as \u03bcv/L\u00b2; divide one by the other.",
+    "distractors": [
+      "2",
+      "g",
+      "\u03bd"
+    ],
+    "vary": {
+      "\u03c1": [
+        990.0,
+        1010.0,
+        1.0
+      ],
+      "v": [
+        0.02,
+        0.2,
+        0.001
+      ],
+      "L": [
+        0.01,
+        0.1,
+        0.001
+      ],
+      "\u03bc": [
+        0.0008,
+        0.0012,
+        1e-05
+      ]
+    }
+  }
+}

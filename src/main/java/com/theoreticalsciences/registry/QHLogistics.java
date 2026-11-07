@@ -57,6 +57,10 @@ public final class QHLogistics {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.machine.tuning.GovernorBlockEntity>> GOVERNOR = BES.register("governor",
             () -> BlockEntityType.Builder.of(com.theoreticalsciences.machine.tuning.GovernorBlockEntity::new, ofKind("governor")).build(null));
 
+    /** 1.3.0: the Laminar Flow Conduit (only a line's first segment does any work). */
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.logistics.FlowConduitBlockEntity>> FLOW_CONDUIT = BES.register("laminar_flow_conduit",
+            () -> BlockEntityType.Builder.of(com.theoreticalsciences.logistics.FlowConduitBlockEntity::new, ofKind("flow_conduit")).build(null));
+
     public static void register(IEventBus bus) {
         BES.register(bus);
         bus.addListener(com.theoreticalsciences.logistics.ZenoAnchorBlockEntity::registerTickets);

@@ -1,0 +1,75 @@
+{
+  "title": "Compressible Flow",
+  "description": "Faster than sound, air stops getting out of the way and starts piling up into shocks, and a nozzle works backwards: it must widen to speed the gas up. That is the De Laval nozzle of every rocket. Unlocks the De Laval Nozzle, which also lets the MHD Generator run its plasma supersonic.",
+  "icon": "theoreticalsciences:de_laval_nozzle",
+  "x": 15,
+  "y": 6,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:aerodynamics",
+    "theoreticalsciences:ceramics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:aerofoil_composite",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:alumina_ceramic_plate",
+      "count": 2
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "A nozzle exhausts an ideal gas at Mach number M. The speed of sound in a gas of heat-capacity ratio \u03b3, temperature T and molar mass m is \u221a(\u03b3RT/m). Write v, the exhaust speed.",
+    "name": "Supersonic exhaust",
+    "lhs": "v",
+    "form": "M * sqrt ( \u03b3 * R * T / m )",
+    "expr": "M * sqrt(\u03b3 * R * T / m)",
+    "ask": "Find v in m/s: M = @{M}, \u03b3 = @{\u03b3}, R = @{R} J/(mol\u00b7K), T = @{T} K, m = @{m} kg/mol.",
+    "vars": {
+      "v": "exhaust speed (m/s)",
+      "M": "Mach number",
+      "\u03b3": "heat-capacity ratio",
+      "R": "gas constant (J/(mol\u00b7K))",
+      "T": "exhaust temperature (K)",
+      "m": "molar mass (kg/mol)"
+    },
+    "given": {
+      "M": 2.5,
+      "\u03b3": 1.4,
+      "R": 8.314,
+      "T": 300,
+      "m": 0.029
+    },
+    "unit": "m/s",
+    "method": "Sound is a pressure wave; it travels at \u221a(\u2202p/\u2202\u03c1) at constant entropy, which for an ideal gas is \u221a(\u03b3RT/m). Mach number is speed over that.",
+    "distractors": [
+      "2",
+      "\u03c1",
+      "p"
+    ],
+    "vary": {
+      "M": [
+        1.5,
+        4.0,
+        0.01
+      ],
+      "\u03b3": [
+        1.2,
+        1.67,
+        0.01
+      ],
+      "T": [
+        250.0,
+        3000.0,
+        1.0
+      ],
+      "m": [
+        0.018,
+        0.044,
+        0.001
+      ]
+    }
+  }
+}

@@ -12955,6 +12955,28 @@
         "anomaly/anomaly_resolution_engine"
       ],
       "node": true
+    },
+    {
+      "entry": "fluids/fluid_dynamics",
+      "x": 31,
+      "y": 129,
+      "parents": []
+    },
+    {
+      "entry": "fluids/wind_tunnel",
+      "x": 33,
+      "y": 129,
+      "parents": [
+        "fluids/fluid_dynamics"
+      ]
+    },
+    {
+      "entry": "fluids/compressible_flow",
+      "x": 35,
+      "y": 129,
+      "parents": [
+        "fluids/wind_tunnel"
+      ]
     }
   ],
   "regions": [

@@ -1,0 +1,114 @@
+{
+  "params": [
+    {
+      "id": "v",
+      "unit": "m/s",
+      "min": 0,
+      "max": 1200,
+      "step": 0.5,
+      "default": 30
+    },
+    {
+      "id": "a",
+      "unit": "\u00b0",
+      "min": -5,
+      "max": 25,
+      "step": 0.1,
+      "default": 4
+    },
+    {
+      "id": "Pt",
+      "unit": "kPa",
+      "min": 10,
+      "max": 400,
+      "step": 0.1,
+      "default": 101.3
+    }
+  ],
+  "recipe_vars": {
+    "c": 0.5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ve",
+      "unit": "m/s",
+      "expr": "v*(1 + 0.02*d)",
+      "formula": "v\u00b7(1 + 0.02\u00b7d)"
+    },
+    {
+      "id": "rho",
+      "unit": "kg/m\u00b3",
+      "expr": "Pt*1000/(287*288)",
+      "formula": "\u03c1 = p/(R\u209bT)"
+    },
+    {
+      "id": "Rm",
+      "unit": "\u00d710\u2076",
+      "expr": "rho*ve*c/1.8e-5/1e6",
+      "formula": "Re = \u03c1vc/\u03bc"
+    },
+    {
+      "id": "M",
+      "unit": "",
+      "expr": "ve/340",
+      "formula": "M = v/a"
+    },
+    {
+      "id": "ar",
+      "unit": "rad",
+      "expr": "a*0.017453",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "st",
+      "unit": "",
+      "expr": "clamp(1 - pos(a - 14)/8, 0.25, 1)",
+      "formula": "",
+      "show": false
+    },
+    {
+      "id": "CL",
+      "unit": "",
+      "expr": "step(0.999 - M)*6.283*ar*st/sqrt(max(0.1, 1 - M^2)) + (1 - step(0.999 - M))*4*ar*st/sqrt(max(0.1, M^2 - 1))",
+      "formula": "C\u2097 = 2\u03c0\u03b1/\u221a(1 \u2212 M\u00b2); above M 1: 4\u03b1/\u221a(M\u00b2 \u2212 1)"
+    },
+    {
+      "id": "q",
+      "unit": "kPa",
+      "expr": "0.5*rho*ve^2/1000",
+      "formula": "q = \u00bd\u03c1v\u00b2"
+    },
+    {
+      "id": "Lp",
+      "unit": "kPa",
+      "expr": "q*CL",
+      "formula": "L/S = q\u00b7C\u2097"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "buffet",
+      "kind": "wear",
+      "expr": "abs(M - 1) - 0.12",
+      "formula": "|M \u2212 1| > 0.12"
+    },
+    {
+      "id": "load",
+      "kind": "damage",
+      "expr": "90 - abs(Lp)",
+      "formula": "L/S < 90 kPa"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "one test per run",
+  "heat": "0.5 + min(300, q*ve/250)",
+  "idle_heat": "0.2",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}
