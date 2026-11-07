@@ -83,6 +83,10 @@ public final class QHEntityRenderers {
         e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.BOLTZMANN_BRAIN.get(), FrontierMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.BLACK_SWAN.get(), FrontierMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.BINARY_SERPENT.get(), FrontierMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.frontier.FrontierRegistry.KARMAN_WRAITH.get(), FrontierMobRenderers.Mob::new);   // 1.4.0
+        e.registerEntityRenderer(com.theoreticalsciences.ocean.OceanRegistry.HADAL_ANGLERFISH.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.ocean.OceanRegistry.SIPHONOPHORE.get(), InnerMobRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.weather.WeatherRegistry.STORM_ELEMENTAL.get(), FrontierMobRenderers.Mob::new);
         // 1.2.0: Titan
         e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.THOLIN_DRIFTER.get(), TitanMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.CATALYST_SPRITE.get(), TitanMobRenderers.Mob::new);

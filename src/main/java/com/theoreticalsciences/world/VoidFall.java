@@ -41,7 +41,9 @@ public final class VoidFall {
             Map.entry(QHDimensions.FRONTIER, Level.OVERWORLD),
             Map.entry(QHDimensions.TITAN, Level.OVERWORLD),
             Map.entry(QHDimensions.INNER, Level.OVERWORLD),
-            Map.entry(QHDimensions.TITAN_OCEAN, QHDimensions.TITAN));
+            Map.entry(QHDimensions.TITAN_OCEAN, QHDimensions.TITAN),
+            Map.entry(QHDimensions.ORBITAL_STATION, Level.OVERWORLD),     // 1.4.0: drift off the station and re-enter
+            Map.entry(QHDimensions.HADAL_TRENCH, Level.OVERWORLD));
     private static final Map<UUID, Vec3> LAST_GROUND = com.theoreticalsciences.world.SessionMaps.perPlayer(new HashMap<>());
 
     /** Round 29: a player logged out - drop their remembered ground spot (TheoreticalSciences's logout listener calls this). */

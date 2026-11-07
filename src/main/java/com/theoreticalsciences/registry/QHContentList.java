@@ -776,7 +776,24 @@ public final class QHContentList {
         new ItemDef("folded_matter", "fold", 1),
         // 1.3.0: Fluids and Flight
         new ItemDef("aerofoil_composite", "", 64),
-        new ItemDef("de_laval_nozzle", "", 64));
+        new ItemDef("de_laval_nozzle", "", 64),
+        // 1.4.0: Rocketry
+        new ItemDef("rocket_stage", "", 16),
+        new ItemDef("microgravity_lab", "", 16),
+        new ItemDef("microgravity_crystal", "", 64),
+        // 1.4.0: the Orbital Station
+        new ItemDef("station_module", "", 16),
+        new ItemDef("crew_capsule", "", 16),
+        new ItemDef("fuelled_crew_capsule", "crew_capsule", 1),
+        // 1.4.0: the Jet Stream and the Bussard Ramscoop
+        new ItemDef("vortex_filament", "", 64),
+        // 1.4.0: the Living Planet - oceans
+        new ItemDef("pressure_hull_plate", "", 64),
+        new ItemDef("bathyscaphe", "bathyscaphe", 1),
+        new ItemDef("anglerfish_lure", "", 64),
+        new ItemDef("nematocyst_cluster", "", 64),
+        // 1.4.0: the Living Planet - air, fire and ice
+        new ItemDef("fulgurite", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1184,7 +1201,23 @@ public final class QHContentList {
         new BlockDef("wind_tunnel_casing", "casing", 2, 6.0F, "iron", ""),
         new BlockDef("flow_straightener", "casing", 2, 6.0F, "iron", ""),
         new BlockDef("wind_tunnel_fan", "casing", 2, 6.0F, "iron", ""),
-        new BlockDef("laminar_flow_conduit", "flow_conduit", 0, 3.0F, "iron", ""));
+        new BlockDef("laminar_flow_conduit", "flow_conduit", 0, 3.0F, "iron", ""),
+        // 1.4.0: the closed-circuit Wind Tunnel and the Rocket Assembly
+        new BlockDef("turning_vane", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("launch_pad", "casing", 0, 8.0F, "iron", ""),
+        new BlockDef("service_tower", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("rocket_hull", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("rocket_engine", "casing", 4, 6.0F, "iron", ""),
+        new BlockDef("orbital_transfer_console", "transfer_console", 8, 5.0F, "iron", ""),
+        new BlockDef("solar_array", "simple", 0, 3.0F, "iron", ""),
+        new BlockDef("ramscoop_frame", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("funnel_coil", "casing", 6, 6.0F, "iron", ""),
+        new BlockDef("ion_collector", "casing", 8, 6.0F, "iron", ""),
+        new BlockDef("ice_drill_casing", "casing", 0, 5.0F, "iron", ""),
+        new BlockDef("convection_wall", "casing", 2, 5.0F, "iron", ""),
+        new BlockDef("heater_plate", "casing", 6, 5.0F, "iron", ""),
+        new BlockDef("cold_plate", "casing", 2, 5.0F, "iron", ""),
+        new BlockDef("storm_electrode", "casing", 8, 5.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
@@ -1288,6 +1321,9 @@ public final class QHContentList {
         new FluidDef("quintessence", false, 13, 300, 100, 500, 0x200838),
         new FluidDef("mathesis", false, 13, 300, 1000, 500, 0x081830),
         new FluidDef("panacea", false, 13, 310, 1000, 700, 0x082810),
-        new FluidDef("anima_mundi", false, 13, 300, 1000, 600, 0x102030));
+        new FluidDef("anima_mundi", false, 13, 300, 1000, 600, 0x102030),
+        // 1.4.0: rocket propellants (appended, so older fluids keep their order)
+        new FluidDef("liquid_oxygen", false, 0, 90, 1141, 200, 0x8FC8FF),
+        new FluidDef("liquid_hydrogen", false, 0, 20, 71, 100, 0xD8ECFF));
     private QHContentList() {}
 }

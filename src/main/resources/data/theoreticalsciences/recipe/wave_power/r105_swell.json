@@ -1,0 +1,25 @@
+{
+  "type": "theoreticalsciences:wave_power",
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 100
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:ocean_waves",
+  "unscaled": true,
+  "environment": {
+    "biomes": [
+      "#minecraft:is_ocean"
+    ]
+  },
+  "physics": {
+    "vars": {
+      "Hs": 2.0,
+      "Ts": 8.0,
+      "Pref": 40.0
+    }
+  }
+}

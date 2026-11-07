@@ -1,0 +1,68 @@
+{
+  "title": "Ramscoops",
+  "description": "Space is not empty: a molecular cloud holds a thousand molecules in every cubic centimetre. Ionise them and a magnetic funnel kilometres across can sweep them in as it flies, as Bussard proposed for a starship that gathers its own fuel. Unlocks the Bussard Ramscoop.",
+  "icon": "theoreticalsciences:bussard_ramscoop",
+  "x": 18,
+  "y": 8,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:orbital_mechanics",
+    "theoreticalsciences:interstellar_medium"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:vortex_filament",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 2
+    }
+  ],
+  "time": 360,
+  "puzzle": {
+    "goal": "A scoop flies at speed v through gas of density \u03c1. A fraction \u03c7 of it is ionised, and every ion that passes within its capture area A is funnelled in. Write m, the mass it gathers each second.",
+    "name": "Ram scoop",
+    "lhs": "m",
+    "form": "\u03c7 * \u03c1 * v * A",
+    "expr": "\u03c7 * \u03c1 * v * A",
+    "ask": "Find m in kg/s: \u03c7 = @{\u03c7}, \u03c1 = @{\u03c1} kg/m\u00b3, v = @{v} m/s, A = @{A} m\u00b2.",
+    "vars": {
+      "m": "mass gathered per second (kg/s)",
+      "\u03c7": "ionised fraction",
+      "\u03c1": "gas density (kg/m\u00b3)",
+      "v": "speed through the gas (m/s)",
+      "A": "capture area (m\u00b2)"
+    },
+    "given": {
+      "\u03c7": 0.5,
+      "\u03c1": 3.3e-18,
+      "v": 100000,
+      "A": 120000000000.0
+    },
+    "unit": "kg/s",
+    "method": "In one second the scoop sweeps a cylinder of gas of volume v\u00b7A; a fraction \u03c7 of its mass is caught.",
+    "distractors": [
+      "2",
+      "B",
+      "n"
+    ],
+    "vary": {
+      "\u03c7": [
+        0.2,
+        0.9,
+        0.01
+      ],
+      "v": [
+        30000.0,
+        300000.0,
+        1000.0
+      ],
+      "A": [
+        10000000000.0,
+        500000000000.0,
+        1000000000.0
+      ]
+    }
+  }
+}

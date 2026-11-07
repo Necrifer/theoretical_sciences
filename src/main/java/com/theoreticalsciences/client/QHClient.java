@@ -196,6 +196,8 @@ public final class QHClient {
         event.register(TheoreticalSciences.id("titan"), new com.theoreticalsciences.client.render.TitanSkyEffects());
         event.register(TheoreticalSciences.id("inner_space"), new com.theoreticalsciences.client.render.InnerSkyEffects());   // 1.2.0
         event.register(TheoreticalSciences.id("titan_ocean"), new com.theoreticalsciences.client.render.InnerSkyEffects(false));
+        event.register(TheoreticalSciences.id("orbital_station"), new com.theoreticalsciences.client.render.OrbitSkyEffects());   // 1.4.0
+        event.register(TheoreticalSciences.id("hadal_trench"), new com.theoreticalsciences.client.render.InnerSkyEffects(false));
         event.register(TheoreticalSciences.id("hyperdimensional_reality"), new com.theoreticalsciences.client.render.HyperrealSkyEffects());
         event.register(TheoreticalSciences.id("platonic_realm"), new com.theoreticalsciences.client.render.LayeredSkyEffects());   // 1.2.0: with the Hierarchy above
         event.register(TheoreticalSciences.id("transcendental"), new com.theoreticalsciences.client.render.FractalSkyEffects(true));

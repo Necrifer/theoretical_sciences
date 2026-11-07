@@ -1,0 +1,49 @@
+{
+  "type": "theoreticalsciences:orbital_launch",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:crew_capsule",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_oxygen",
+      "amount": 20000
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_hydrogen",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fuelled_crew_capsule",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:orbital_mechanics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ipk": 450.0,
+      "rpk": 5.0,
+      "rs": 8.0,
+      "mp": 8.0,
+      "drq": 9900.0
+    },
+    "windows": [
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

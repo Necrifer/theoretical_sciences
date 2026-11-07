@@ -123,6 +123,10 @@ public final class QHBlocks {
                             .lightLevel(s -> s.getValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.LIT) ? 10 : 2);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.machine.tuning.GovernorBlock::new, p));
                 }
+                case "transfer_console" -> {   // 1.4.0: the Orbital Station
+                    p.mapColor(MapColor.COLOR_LIGHT_BLUE).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 8);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.OrbitTravel.ConsoleBlock::new, p));
+                }
                 case "flow_conduit" -> {       // 1.3.0: Fluids and Flight
                     p.mapColor(MapColor.COLOR_ORANGE).sound(net.minecraft.world.level.block.SoundType.COPPER).noOcclusion();
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.logistics.FlowConduitBlock::new, p));

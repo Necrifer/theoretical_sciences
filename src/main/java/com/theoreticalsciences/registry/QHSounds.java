@@ -78,7 +78,8 @@ public final class QHSounds {
             "magma_crawler", "plume_elemental", "fission_husk", "geodynamo_wraith", "random_walker",
             "nebuloid", "pulsar_wisp", "tidal_stretcher", "lens_phantom", "hawking_imp", "boltzmann_brain", "black_swan", "binary_serpent",
             "tholin_drifter", "catalyst_sprite", "methane_skater", "cryolava_slug", "ouroboros", "euclids_automaton", "paradox_shade", "tessellate", "fourier_wisp",
-            "red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra", "vent_grazer", "ice_eel", "mirror_microbe", "brine_jelly", "vent_crab"};
+            "red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra", "vent_grazer", "ice_eel", "mirror_microbe", "brine_jelly", "vent_crab",
+            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental"};
     private static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MOB = new java.util.HashMap<>();
 
     static {
@@ -88,7 +89,7 @@ public final class QHSounds {
     /** The soundtrack: one piece per dimension, the Living Proof, and Alpha Omega. */
     public static final String[] TRACKS = {"the_bulk", "hyperdimensional_reality", "platonic_realm", "quantum_foam", "transfinite_hierarchy",
             "black_hole_interior", "white_hole_interior", "transcendental", "living_proof", "alpha_omega", "antiverse",
-            "planetary_interior", "accretion_frontier", "titan", "the_elements", "the_axioms", "curved_space", "the_continuum", "inner_space"};
+            "planetary_interior", "accretion_frontier", "titan", "the_elements", "the_axioms", "curved_space", "the_continuum", "inner_space", "orbital_station", "hadal_trench"};
     public static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MUSIC = new java.util.HashMap<>();
 
     static {

@@ -1,0 +1,97 @@
+{
+  "params": [
+    {
+      "id": "D",
+      "unit": "m",
+      "min": 1,
+      "max": 30,
+      "step": 0.1,
+      "default": 5
+    },
+    {
+      "id": "c",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.3
+    },
+    {
+      "id": "Tn",
+      "unit": "s",
+      "min": 3,
+      "max": 15,
+      "step": 0.1,
+      "default": 6
+    }
+  ],
+  "recipe_vars": {
+    "Hs": 2.0,
+    "Ts": 8.0,
+    "Pref": 40.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "He",
+      "unit": "m",
+      "expr": "Hs*(1 + 0.05*d)",
+      "formula": "H\u00b7(1 + 0.05\u00b7d)"
+    },
+    {
+      "id": "Pw",
+      "unit": "kW/m",
+      "expr": "0.49*He^2*Ts",
+      "formula": "P = \u03c1g\u00b2H\u00b2T/(64\u03c0)"
+    },
+    {
+      "id": "res",
+      "unit": "",
+      "expr": "exp(-((Tn - Ts)/1.5)^2)",
+      "formula": "resonance with the swell",
+      "show": false
+    },
+    {
+      "id": "cwr",
+      "unit": "",
+      "expr": "4*c*(1 - c)*res",
+      "formula": "capture width ratio"
+    },
+    {
+      "id": "Pe",
+      "unit": "kW",
+      "expr": "Pw*D*cwr*0.5",
+      "formula": "P\u2091 = P\u00b7D\u00b7CWR\u00b7\u03b7"
+    },
+    {
+      "id": "xs",
+      "unit": "m",
+      "expr": "He/(2*max(c, 0.05))",
+      "formula": "stroke: excursion of the float"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "slam",
+      "kind": "damage",
+      "expr": "24 - D*He",
+      "formula": "D\u00b7H < 24 m\u00b2"
+    },
+    {
+      "id": "stroke",
+      "kind": "wear",
+      "expr": "4 - xs",
+      "formula": "stroke < 4 m"
+    }
+  ],
+  "rate": "clamp(Pe/Pref, 0, 2)",
+  "rate_formula": "output = P\u2091 / P_rated",
+  "heat": "0.3 + Pe/100",
+  "idle_heat": "0.2",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 2
+}

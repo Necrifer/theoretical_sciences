@@ -3582,6 +3582,50 @@
       "parents": [
         "electromagnetism/mhd_generator"
       ]
+    },
+    {
+      "entry": "operation/rocket_assembly",
+      "x": 22,
+      "y": 8,
+      "parents": []
+    },
+    {
+      "entry": "fluids/rocket_assembly",
+      "x": 11,
+      "y": 97,
+      "parents": [
+        "fluids/wind_tunnel"
+      ]
+    },
+    {
+      "entry": "operation/bussard_ramscoop",
+      "x": 20,
+      "y": 8,
+      "parents": []
+    },
+    {
+      "entry": "fluids/bussard_ramscoop",
+      "x": 9,
+      "y": 97,
+      "parents": [
+        "fluids/rocket_assembly"
+      ]
+    },
+    {
+      "entry": "world/meteorology",
+      "x": 13,
+      "y": 99,
+      "parents": [
+        "fluids/wind_tunnel"
+      ]
+    },
+    {
+      "entry": "world/glaciology",
+      "x": 15,
+      "y": 97,
+      "parents": [
+        "fluids/wind_tunnel"
+      ]
     }
   ],
   "regions": [

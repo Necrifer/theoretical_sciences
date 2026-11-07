@@ -54756,5 +54756,381 @@
     "text": "$(thing)Equations$()$(br)Effective airspeed: v·(1 + 0.02·d)$(br)Density: ρ = p/(RₛT)$(br)Reynolds number: Re = ρvc/μ$(br)Mach number: M = v/a$(br)Lift coefficient: 2πα/√(1 − M²), above Mach 1 4α/√(M² − 1)$(br)Dynamic pressure: q = ½ρv²"
    }
   ]
+ },
+ "fluids/rocketry": {
+  "title": "Rocketry",
+  "icon": "theoreticalsciences:rocket_assembly",
+  "category": "fluids",
+  "research": "rocketry",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:rocket_stage"
+    ],
+    "text": "A rocket gains Δv = u·ln(m₀/m_f): its exhaust speed times the logarithm of its mass ratio. Low orbit needs about 9,400 m/s, more than any single stage can give, so a rocket drops its empty tanks on the way up."
+   },
+   {
+    "type": "text",
+    "text": "Propellant is $(fluid)Liquid Oxygen$() with a fuel: Titan's $(fluid)Liquid Methane$() (methalox) or $(fluid)Liquid Hydrogen$() (hydrolox). Both liquids are made in the $(thing)Bose-Einstein Condenser$(). Hydrogen gives more exhaust speed and lifts a heavier payload, but costs twice the superfluid helium."
+   }
+  ]
+ },
+ "fluids/rocket_assembly": {
+  "title": "Rocket Assembly",
+  "icon": "theoreticalsciences:rocket_assembly",
+  "category": "fluids",
+  "research": "rocketry",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:rocket_assembly"
+    ],
+    "text": "Fuels a two-stage rocket, counts down and flies a payload to orbit.$(br2)$(thing)Tier 3$() machine.",
+    "title": "Rocket Assembly"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry, and JEI, show the pattern."
+   },
+   {
+    "type": "multiblock",
+    "name": "Rocket Assembly",
+    "text": "Cycling blocks: any of them fits (Interface Ports along the pad's edges). Leave the air round the rocket clear. Rotate, zoom and view layers in $(thing)JEI$().",
+    "multiblock": "rocket_assembly"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Makes$(): Microgravity Crystal (from a Microgravity Lab, flown to orbit and back)."
+   }
+  ]
+ },
+ "operation/rocket_assembly": {
+  "title": "Rocket Assembly",
+  "icon": "theoreticalsciences:rocket_assembly",
+  "category": "operation",
+  "research": "rocketry",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Two stages, each a hundred tonnes of propellant in twenty of tank and engine, with the payload on top. Exhaust speed comes from the specific impulse; Δv from Tsiolkovsky's equation; losses from gravity and drag on the climb."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Mixture ratio r, Chamber pressure P_c, Pitch-over speed.$(br2)$(thing)Disturbance$(): Valve drift: the mixture ratio varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): Chamber temperature above 3,550 K wears the engines; combustion instability above 250 bar wears them; max-Q above 45 kPa breaks the airframe up.$(br2)$(thing)Recipe window$(): a margin to orbit of zero or more."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Exhaust speed: vₑ = Iₛₚ·g₀$(br)Ideal Δv: 2·vₑ·ln((120 + m_p)/(20 + m_p))$(br)Losses: 1300 + 0.08·(v_pitch − 60)²$(br)Chamber temperature: 3700 − 180·(r − r_s)²$(br)Max-Q: 12 + 1400/v_pitch"
+   }
+  ]
+ },
+ "fluids/orbital_mechanics": {
+  "title": "Orbital Mechanics",
+  "icon": "theoreticalsciences:station_module",
+  "category": "fluids",
+  "research": "orbital_mechanics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:station_module",
+     "theoreticalsciences:crew_capsule"
+    ],
+    "text": "Speed on an orbit follows vis-viva, v² = GM(2/r − 1/a). Low orbit takes about 7.7 km/s; climbing to the station's higher orbit takes a little more, and its heavy modules need hydrogen fuel to get there."
+   },
+   {
+    "type": "text",
+    "text": "Fly four $(item)Station Modules$() on the $(thing)Rocket Assembly$() (each launch docks one, whoever flies it). Then fly a $(item)Crew Capsule$(): it comes back fuelled, and used beside the pad it takes you up."
+   }
+  ]
+ },
+ "world/orbital_station": {
+  "title": "The Orbital Station",
+  "icon": "theoreticalsciences:orbital_transfer_console",
+  "category": "world",
+  "research": "orbital_mechanics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:orbital_transfer_console"
+    ],
+    "text": "A pressurised hub four hundred kilometres up, with the Earth turning below its windows. Inside, the air holds; outside is vacuum, and only a full pressure suit (Pressure, Heated or Frontier) keeps you breathing. Everything weighs a tenth of what it does at home, and nothing falls hard."
+   },
+   {
+    "type": "text",
+    "text": "Its $(thing)Transfer Consoles$() send you on: home, to Titan, to the Accretion Frontier, and, with Ad Astra installed, to its planets. Sneak and use a console to choose; use it to go. Drift off the station and you fall home through re-entry.$(br2)Background radiation here is about 20 µSv/h."
+   }
+  ]
+ },
+ "world/jet_stream": {
+  "title": "The Jet Stream",
+  "icon": "theoreticalsciences:vortex_filament",
+  "category": "world",
+  "research": "galactic_dynamics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:vortex_filament"
+    ],
+    "text": "Above Y 200 the Accretion Frontier's gas streams past the islands: a steady wind from the west pushes whoever is off the ground towards the east, harder the higher they go. Glide with it and it carries you; against it, it holds you back."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Kármán Wraiths$() ride it: ribbons of wake that ripple from side to side and throw gusts at whoever comes near (mind the edges).$(br2)The $(thing)Bussard Ramscoop$() only works up here.$(br2)$(thing)Drops$(): Vortex Filament."
+   }
+  ]
+ },
+ "world/node_karman_wraith": {
+  "title": "Kármán Wraith",
+  "icon": "theoreticalsciences:karman_wraith_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:karman_wraith_spawn_egg"
+    ],
+    "text": "$(thing)Kármán Wraith$(): a ribbon of wake in the Jet Stream. Flow past any body sheds eddies on alternate sides at a steady beat (St = fd/v ≈ 0.2): this one is nothing but the street of eddies. It sings the Aeolian tone of a wire in the wind and throws gusts at its prey.$(br2)$(thing)Drops$(): Vortex Filament."
+   }
+  ]
+ },
+ "fluids/ramscoops": {
+  "title": "Ramscoops",
+  "icon": "theoreticalsciences:bussard_ramscoop",
+  "category": "fluids",
+  "research": "ramscoops",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bussard_ramscoop"
+    ],
+    "text": "A ramscoop gathers ṁ = χρvA: the ionised share of the gas it sweeps through. The capture area grows with the square of the field, so the coils matter most; speed helps too, but the caught gas brings its energy in as heat."
+   },
+   {
+    "type": "text",
+    "text": "The $(thing)Bussard Ramscoop$() only runs high in the Accretion Frontier (Y 200 or more). It makes $(fluid)Molecular Cloud$() by the bucketful, far cheaper than the Interstellar Scoop, and with a strong enough flow a trickle of $(fluid)Deuterium$()."
+   }
+  ]
+ },
+ "fluids/bussard_ramscoop": {
+  "title": "Bussard Ramscoop",
+  "icon": "theoreticalsciences:bussard_ramscoop",
+  "category": "fluids",
+  "research": "ramscoops",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bussard_ramscoop"
+    ],
+    "text": "Nine shrinking rings of Funnel Coil, a lattice frame and an ion collector at the throat.$(br2)$(thing)Tier 3$() machine.",
+    "title": "Bussard Ramscoop"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Made on the Extreme Assembly Table$() (it is also a crafting table). The recipe pages at the end of this entry, and JEI, show the pattern."
+   },
+   {
+    "type": "multiblock",
+    "name": "Bussard Ramscoop",
+    "text": "Cycling blocks: any of them fits (Interface Ports under the collector). Rotate, zoom and view layers in $(thing)JEI$().",
+    "multiblock": "bussard_ramscoop"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Makes$(): Molecular Cloud, Deuterium. Only in the Accretion Frontier, at Y 200 or more."
+   }
+  ]
+ },
+ "operation/bussard_ramscoop": {
+  "title": "Bussard Ramscoop",
+  "icon": "theoreticalsciences:bussard_ramscoop",
+  "category": "operation",
+  "research": "ramscoops",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Ionised gas follows the field lines; the funnel coils bend them into a cone and the ions with them. The capture radius grows with the field, the caught mass with the ionised fraction, the gas density, the speed and the area."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Coil field B, Ioniser power P, Ram speed v.$(br2)$(thing)Disturbance$(): Coil ripple: the field varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): above 12 T the coils quench; above 80 MW the ionisers arc (wear); more than 400 W of caught kinetic energy overheats the throat (wear).$(br2)$(thing)Rate$(): output follows the mass flow, up to four times a full run."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Capture radius: R_c = 40·B m$(br)Ionised fraction: χ = P/(P + 20 MW)$(br)Mass flow: ṁ = χρvπR_c²$(br)Funnel heating: ½ṁv²"
+   }
+  ]
+ },
+ "world/hadal_trench": {
+  "title": "The Hadal Trench",
+  "icon": "theoreticalsciences:bathyscaphe",
+  "category": "world",
+  "research": "oceanography",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bathyscaphe"
+    ],
+    "text": "The deepest sea floor there is, eleven kilometres down: basins and trenches of abyssal silicate in the dark, and fields of hot vents where life gathers. Dive from under water in a deep ocean, below Y 40, in a $(item)Bathyscaphe$(); use it again to surface."
+   },
+   {
+    "type": "text",
+    "text": "A thousand atmospheres: without a full pressure suit (Pressure, Heated Pressure or Frontier) the water crushes you. You need air too: the sphere's lasts half a minute; an $(item)Oxygen Rebreather$() keeps you breathing.$(br2)Background radiation is almost nothing: eleven kilometres of water stop the cosmic rays."
+   }
+  ]
+ },
+ "world/node_hadal_anglerfish": {
+  "title": "Hadal Anglerfish",
+  "icon": "theoreticalsciences:hadal_anglerfish_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:hadal_anglerfish_spawn_egg"
+    ],
+    "text": "$(thing)Hadal Anglerfish$(): hangs still over the trench floor with its lure lit, and lunges at whatever comes close to the light.$(br2)$(thing)Drops$(): Anglerfish Lure."
+   }
+  ]
+ },
+ "world/node_siphonophore": {
+  "title": "Siphonophore Colony",
+  "icon": "theoreticalsciences:siphonophore_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:siphonophore_spawn_egg"
+    ],
+    "text": "$(thing)Siphonophore Colony$(): a float, swimming bells and a long stinging stem, drifting slowly through the trench. Whatever brushes the stem is poisoned and slowed.$(br2)$(thing)Drops$(): Nematocyst Cluster."
+   }
+  ]
+ },
+ "world/oceanography": {
+  "title": "Oceanography",
+  "icon": "theoreticalsciences:pressure_hull_plate",
+  "category": "geography",
+  "research": "oceanography",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:pressure_hull_plate",
+     "theoreticalsciences:bathyscaphe"
+    ],
+    "text": "Pressure under water grows by ρgh: about one atmosphere every ten metres. At the bottom of the Challenger Deep, 10,935 m down, that is more than a thousand."
+   }
+  ]
+ },
+ "world/ocean_waves": {
+  "title": "Ocean Waves",
+  "icon": "theoreticalsciences:wave_energy_converter",
+  "category": "geography",
+  "research": "ocean_waves",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:wave_energy_converter"
+    ],
+    "text": "A deep-water swell carries ρg²H²T/64π watts per metre of front. The $(thing)Wave Energy Converter$() rides it in any ocean biome: set the float's diameter, the take-off's damping (half is best) and its natural period (match the swell's)."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): too wide a float slams on every crest (damage); too little damping lets it swing into its end stops (wear).$(br2)$(thing)Equations$()$(br)Wave power: 0.49·H²·T kW/m$(br)Capture width ratio: 4c(1 − c)·resonance$(br)Power: P·D·CWR·η$(br)Stroke: H/2c"
+   }
+  ]
+ },
+ "world/meteorology": {
+  "title": "Meteorology",
+  "icon": "theoreticalsciences:storm_chamber",
+  "category": "geography",
+  "research": "meteorology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:storm_chamber"
+    ],
+    "text": "A thunderstorm runs on CAPE, the energy warm, moist air gains as it rises: its updraft reaches √(2·CAPE), and the flash rate climbs as the cube of the updraft. The $(thing)Storm Chamber$() makes one in a tower and fixes nitrogen with its lightning: $(fluid)Nitric Acid$() from nitrogen, oxygen and water alone."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Surface temperature, Humidity, Wind shear.$(br2)$(thing)Limits$(): an updraft above 40 m/s grows giant hail (damage); shear times CAPE above 12,000 spins up a tornado (damage).$(br2)Out at sea in a thunderstorm, over warm water, a $(thing)Storm Elemental$() may form."
+   }
+  ]
+ },
+ "world/volcanology": {
+  "title": "Volcanology",
+  "icon": "theoreticalsciences:geothermal_plant",
+  "category": "geography",
+  "research": "volcanology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:geothermal_plant"
+    ],
+    "text": "Magma's viscosity falls as e^(E/RT) with temperature: hot basalt flows, cool silica-rich magma jams and explodes. The $(thing)Geothermal Plant$() boils water on $(fluid)Basaltic Magma$() from the Planetary Interior and makes power, basalt and $(fluid)Sulfur Dioxide$()."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Water flow, Turbine pressure, Condenser temperature.$(br2)$(thing)Limits$(): too little water burns out the boiler (damage); too much wets the steam (wear); above 80 bar, over pressure (damage)."
+   }
+  ]
+ },
+ "world/glaciology": {
+  "title": "Glaciology",
+  "icon": "theoreticalsciences:ice_core_drill",
+  "category": "geography",
+  "research": "glaciology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ice_core_drill",
+     "theoreticalsciences:ice_core"
+    ],
+    "text": "Ice flows by Glen's law, ε̇ = Aτⁿ, and keeps every year's snow as a layer. The $(thing)Ice Core Drill$() cuts $(item)Ice Cores$() in icy or snowy biomes, far cheaper than the Climate Engine's."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Rotation speed, Weight on bit, Drill fluid temperature.$(br2)$(thing)Recipe window$(): the bit at −8 °C or colder.$(br2)$(thing)Limits$(): above −5 °C the core melts (wear); more than 40 kN fractures it (damage); fluid below −40 °C jams the string (wear)."
+   }
+  ]
+ },
+ "world/node_storm_elemental": {
+  "title": "Storm Elemental",
+  "icon": "theoreticalsciences:storm_elemental_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:storm_elemental_spawn_egg"
+    ],
+    "text": "$(thing)Storm Elemental$(): a thunderstorm cell come to life, only over warm sea in a thunderstorm (at most one near you). It hangs high over its prey and strikes it with lightning; it never starts fires. It dissipates when the storm passes.$(br2)$(thing)Drops$(): Fulgurite."
+   }
+  ]
  }
 }

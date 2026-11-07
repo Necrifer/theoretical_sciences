@@ -1,0 +1,49 @@
+{
+  "type": "theoreticalsciences:orbital_launch",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:microgravity_lab",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_oxygen",
+      "amount": 24000
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_methane",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:microgravity_crystal",
+      "count": 8
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:rocketry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ipk": 360.0,
+      "rpk": 3.2,
+      "rs": 4.0,
+      "mp": 8.0,
+      "drq": 9400.0
+    },
+    "windows": [
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

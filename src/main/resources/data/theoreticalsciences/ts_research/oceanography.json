@@ -1,0 +1,61 @@
+{
+  "title": "Oceanography",
+  "description": "Every ten metres of sea weighs as much as the whole sky above it: at the bottom of the Challenger Deep the water presses a thousand times harder than the air. Only a hull built like a cannonball goes there and comes back. Unlocks the Pressure Hull Plate and the Bathyscaphe, and the way down to the Hadal Trench.",
+  "icon": "theoreticalsciences:bathyscaphe",
+  "x": 12,
+  "y": 5,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:hydrology",
+    "theoreticalsciences:subsurface_ocean"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:prismarine_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:ceramic_armour_plate",
+      "count": 2
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "Under h metres of water of density \u03c1, the water above every square metre weighs \u03c1gh newtons: that is the pressure it adds. Write p, the water pressure at depth h (leaving out the air above).",
+    "name": "Hydrostatic pressure",
+    "lhs": "p",
+    "form": "\u03c1 * g * h",
+    "expr": "\u03c1 * g * h",
+    "ask": "Find p in Pa at the bottom of a trench: \u03c1 = @{\u03c1} kg/m\u00b3, g = @{g} m/s\u00b2, h = @{h} m.",
+    "vars": {
+      "p": "pressure (Pa)",
+      "\u03c1": "seawater density (kg/m\u00b3)",
+      "g": "gravity (m/s\u00b2)",
+      "h": "depth (m)"
+    },
+    "given": {
+      "\u03c1": 1050,
+      "g": 9.81,
+      "h": 10935
+    },
+    "unit": "Pa",
+    "method": "A column of water of area A and height h has mass \u03c1Ah and weight \u03c1Ahg; divide by A.",
+    "distractors": [
+      "2",
+      "v",
+      "T"
+    ],
+    "vary": {
+      "\u03c1": [
+        1025.0,
+        1060.0,
+        1.0
+      ],
+      "h": [
+        6000.0,
+        11000.0,
+        1.0
+      ]
+    }
+  }
+}

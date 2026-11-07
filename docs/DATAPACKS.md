@@ -23,9 +23,10 @@ With no datapack, the mod behaves exactly as shipped. (Using KubeJS instead? The
 10. [Omnipotence Core Forge recipes (`ts_forge`)](#10-omnipotence-core-forge-recipes-ts_forge)
 11. [Research (`ts_research`)](#11-research-ts_research)
 12. [Singularities (`ts_singularities`)](#12-singularities-ts_singularities)
-13. [Tags](#13-tags)
-14. [Names, tooltips and the Codex (resource packs)](#14-names-tooltips-and-the-codex-resource-packs)
-15. [Troubleshooting](#15-troubleshooting)
+13. [Orbital destinations (`ts_destinations`)](#13-orbital-destinations-ts_destinations)
+14. [Tags](#14-tags)
+15. [Names, tooltips and the Codex (resource packs)](#15-names-tooltips-and-the-codex-resource-packs)
+16. [Troubleshooting](#16-troubleshooting)
 
 ---
 
@@ -558,7 +559,39 @@ Catalyst then needs one of each.
 
 ---
 
-## 13. Tags
+## 13. Orbital destinations (`ts_destinations`)
+
+`data/<namespace>/ts_destinations/<name>.json` adds a place the Orbital Station's Transfer Consoles can send players
+to. The mod ships the Overworld, Titan and the Accretion Frontier, plus Ad Astra's Moon, Mars, Venus, Mercury and
+Glacio, offered only when Ad Astra is installed.
+
+```json
+{
+  "dimension": "theoreticalsciences:titan",
+  "name": "destination.theoreticalsciences.titan",
+  "research": "theoreticalsciences:titan",
+  "mod": "ad_astra",
+  "landing_y": 80,
+  "platform": "theoreticalsciences:titan_ice",
+  "slow_fall": false,
+  "order": 10
+}
+```
+
+* `dimension` is required. A destination whose dimension does not exist on the server is never offered.
+* `name` is a lang key (or plain text) shown on the console.
+* `research` (optional): only players who have it are offered the destination.
+* `mod` (optional): only offered when that mod is loaded.
+* `landing_y` and `platform`: the player is set down on safe ground near the world's centre, searched from
+  `landing_y`; if there is none, a 5 × 5 platform of `platform` is made.
+* `slow_fall: true` drops the player from above the ground under a parachute instead (the Overworld uses this).
+* `order` sorts the list; `{"remove": true}` takes a destination away (use the same file name to remove one of the
+  mod's).
+* The station itself can be looked at and changed with `/theoreticalsciences station status|modules <n>|build`.
+
+---
+
+## 14. Tags
 
 Add to a tag with a file at `data/theoreticalsciences/tags/<type>/<tag name>.json`. Keep `"replace": false`, so you add to
 the mod's list instead of wiping it:
@@ -584,7 +617,7 @@ the mod's list instead of wiping it:
 
 ---
 
-## 14. Names, tooltips and the Codex (resource packs)
+## 15. Names, tooltips and the Codex (resource packs)
 
 Text and the Codex are client assets, so they belong in a **resource pack**, not a datapack.
 
@@ -595,7 +628,7 @@ Text and the Codex are client assets, so they belong in a **resource pack**, not
 
 ---
 
-## 15. Troubleshooting
+## 16. Troubleshooting
 
 * **Nothing changed:** check the path. Folder names must be exactly as written, directly under `data/<namespace>/`,
   and `recipe` is singular. Check `/datapack list` to see whether the pack is enabled, and `logs/latest.log` for a

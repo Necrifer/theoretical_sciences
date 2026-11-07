@@ -25,7 +25,9 @@ public enum TransitStyle {
     FRONTIER("accretion_frontier", 0x020208, 0x80B0FF, 0xFFB050, 0xE0E8FF, 0x8890B0, false),
     TITAN("titan", 0x1E1006, 0xE09040, 0xFFE0A0, 0xFFE8C8, 0xB09070, false),
     INNER("inner_space", 0x1A0408, 0xE04060, 0xFFC0D0, 0xFFE0E8, 0xC08090, false),
-    TITAN_OCEAN("titan_ocean", 0x020C12, 0x40C0D0, 0xA0FFF0, 0xD0F8FF, 0x6090A0, false);
+    TITAN_OCEAN("titan_ocean", 0x020C12, 0x40C0D0, 0xA0FFF0, 0xD0F8FF, 0x6090A0, false),
+    ORBITAL_STATION("orbital_station", 0x01030A, 0x60A8FF, 0xFFE0A0, 0xE0ECFF, 0x8098B8, false),   // 1.4.0
+    HADAL_TRENCH("hadal_trench", 0x00050A, 0x2080A0, 0x80FFE0, 0xC8F0F8, 0x5888A0, false);
 
     public final String id;
     public final int bg, ink, accent, title, subtitle;

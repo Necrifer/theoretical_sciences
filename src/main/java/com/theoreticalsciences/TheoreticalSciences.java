@@ -74,6 +74,7 @@ public class TheoreticalSciences {
         com.theoreticalsciences.titan.TitanRegistry.register(modBus);
         com.theoreticalsciences.inner.InnerRegistry.register(modBus);          // 1.2.0
         com.theoreticalsciences.ocean.OceanRegistry.register(modBus);          // 1.2.0
+        com.theoreticalsciences.weather.WeatherRegistry.register(modBus);      // 1.4.0
         com.theoreticalsciences.math.MathRegistry.register(modBus);            // 1.2.0
         com.theoreticalsciences.science.Wear.register(modBus);          // 1.2.0: catalysts and instruments that wear
 

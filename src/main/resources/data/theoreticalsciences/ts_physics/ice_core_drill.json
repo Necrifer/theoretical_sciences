@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "id": "w",
+      "unit": "rpm",
+      "min": 10,
+      "max": 200,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "id": "F",
+      "unit": "kN",
+      "min": 1,
+      "max": 60,
+      "step": 0.5,
+      "default": 10
+    },
+    {
+      "id": "Tf",
+      "unit": "\u00b0C",
+      "min": -50,
+      "max": 0,
+      "step": 0.5,
+      "default": -20
+    }
+  ],
+  "recipe_vars": {
+    "rref": 2.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "we",
+      "unit": "rpm",
+      "expr": "w*(1 + 0.02*d)",
+      "formula": "w\u00b7(1 + 0.02\u00b7d)"
+    },
+    {
+      "id": "rop",
+      "unit": "m/h",
+      "expr": "0.02*F*we^0.6",
+      "formula": "penetration rate \u221d F\u00b7w\u2070\u00b7\u2076"
+    },
+    {
+      "id": "Qb",
+      "unit": "kW",
+      "expr": "F*we/250",
+      "formula": "friction heat at the bit"
+    },
+    {
+      "id": "Tb",
+      "unit": "\u00b0C",
+      "expr": "Tf + 3*Qb",
+      "formula": "T_bit = T_fluid + Q/k"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "melt",
+      "kind": "wear",
+      "expr": "-5 - Tb",
+      "formula": "T_bit < \u22125 \u00b0C"
+    },
+    {
+      "id": "fracture",
+      "kind": "damage",
+      "expr": "40 - F",
+      "formula": "F < 40 kN"
+    },
+    {
+      "id": "jam",
+      "kind": "wear",
+      "expr": "Tf + 40",
+      "formula": "T_fluid > \u221240 \u00b0C"
+    }
+  ],
+  "rate": "clamp(rop/rref, 0, 3)",
+  "rate_formula": "output = penetration / rated",
+  "heat": "0.2 + Qb/10",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 3
+}

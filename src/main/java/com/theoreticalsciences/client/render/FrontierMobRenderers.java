@@ -57,6 +57,8 @@ public final class FrontierMobRenderers {
                 case "boltzmann_brain" -> brain(ps, solid, glow, t, light, ov);
                 case "black_swan" -> swan(ps, solid, t, limb, amt, e.hurtTime, light, ov);
                 case "binary_serpent" -> serpent(ps, solid, glow, t, e instanceof BinaryBoss.Serpent s ? s.separation() : 12F, light, ov);
+                case "karman_wraith" -> wraith(ps, trans, glow, e, partial, light, ov);   // 1.4.0
+                case "storm_elemental" -> storm(ps, trans, glow, t, e.getId(), light, ov);
                 default -> {}
             }
             ps.popPose();
@@ -92,6 +94,64 @@ public final class FrontierMobRenderers {
             float a = i * 2.1F + t * 0.02F;
             cube(ps, glow, Mth.cos(a) * 0.2F, 0.6F + 0.1F * i, Mth.sin(a) * 0.2F, 0.03F, 0xFFFFFFFF, FULL, NO);
         }
+    }
+
+    /**
+     * 1.4.0: the Kármán Wraith - a ribbon of pale air, its head a blunt bluff body with two cold eyes, its body a wake
+     * that ripples from side to side down its length (a travelling wave, growing towards the tail), and at the tail the
+     * eddies it sheds, curling off on alternate sides.
+     */
+    static void wraith(PoseStack ps, VertexConsumer trans, VertexConsumer glow, LivingEntity e, float partial, int light, int ov) {
+        ps.translate(0, 0.45F, 0);
+        long gt = e.level().getGameTime();
+        float t = gt + partial;
+        float ph = (float) ((t + e.getId() * 7) / com.theoreticalsciences.frontier.KarmanWraith.PERIOD * Math.PI * 2);
+        // the head: a rounded bluff body
+        cube(ps, trans, 0, 0, 0.35F, 0.26F, 0xC8E8F0FF, light, ov);
+        cube(ps, trans, 0, 0, 0.12F, 0.30F, 0xB0E0E8F8, light, ov);
+        cube(ps, glow, -0.12F, 0.08F, 0.58F, 0.045F, 0xFF90D0FF, FULL, NO);
+        cube(ps, glow, 0.12F, 0.08F, 0.58F, 0.045F, 0xFF90D0FF, FULL, NO);
+        // the wake: segments behind it, swinging with a travelling wave
+        for (int k = 1; k <= 12; k++) {
+            float z = -0.22F * k, f = k / 12F;
+            float x = (float) Math.sin(ph - k * 0.55F) * (0.08F + 0.42F * f);
+            float s = 0.26F * (1 - 0.55F * f);
+            int a = (int) (0xB0 * (1 - 0.6F * f));
+            cube(ps, trans, x, (float) Math.sin(ph * 0.5F - k * 0.3F) * 0.05F, z, s, (a << 24) | 0xD8ECF4, light, ov);
+        }
+        // shed eddies: rings at the tail, alternating sides, drifting back as they fade
+        for (int i = 0; i < 4; i++) {
+            float q = ((t / (com.theoreticalsciences.frontier.KarmanWraith.PERIOD / 2F)) + i) % 4 / 4F;
+            int side = (((int) (t / (com.theoreticalsciences.frontier.KarmanWraith.PERIOD / 2F)) - i) & 1) == 0 ? 1 : -1;
+            float z = -2.8F - q * 1.8F, x = side * (0.35F + 0.4F * q);
+            for (int j = 0; j < 8; j++) {
+                double a = j / 8.0 * Math.PI * 2 + t * 0.3 * side;
+                cube(ps, trans, x + (float) Math.cos(a) * 0.22F * (1 + q), (float) Math.sin(a) * 0.22F * (1 + q), z, 0.04F,
+                        ((int) (0x90 * (1 - q)) << 24) | 0xE8F4FF, light, ov);
+            }
+        }
+    }
+
+    /**
+     * 1.4.0: the Storm Elemental - a thunderstorm cell: a dark, billowing base, an anvil spreading at its top, and inside
+     * a core that flickers as charge separates in the updraft, now and then lit right through by a flash.
+     */
+    static void storm(PoseStack ps, VertexConsumer trans, VertexConsumer glow, float t, int seed, int light, int ov) {
+        ps.translate(0, 0.9F, 0);
+        java.util.Random r = new java.util.Random(seed * 31L);
+        for (int i = 0; i < 14; i++) {                              // the billowing mass, darker below
+            float x = (r.nextFloat() - 0.5F) * 1.6F, y = (r.nextFloat() - 0.5F) * 0.8F, z = (r.nextFloat() - 0.5F) * 1.6F;
+            float s = 0.35F + 0.15F * (float) Math.sin(t * 0.05F + i);
+            int grey = y < 0 ? 0x50585E : 0x8A9298;
+            cube(ps, trans, x, y, z, s, 0xD0000000 | grey, light, ov);
+        }
+        for (int i = 0; i < 6; i++) {                               // the anvil: spreading flat at the top
+            double a = i / 6.0 * Math.PI * 2 + t * 0.01;
+            cube(ps, trans, (float) Math.cos(a) * 1.1F, 0.75F, (float) Math.sin(a) * 1.1F, 0.32F, 0xB8A8B0B8, light, ov);
+        }
+        boolean flash = ((int) (t / 3) * 7 + seed) % 23 == 0;        // now and then lit right through
+        float core = 0.18F + 0.06F * (float) Math.sin(t * 0.7F);
+        cube(ps, glow, 0, 0, 0, flash ? 0.7F : core, flash ? 0xFFF8F8FF : dim(0xF0F080, 0.6F), FULL, NO);
     }
 
     /** A neutron star in miniature: a small bright core, a magnetic axis, and the twin beam sweeping round on the beat. */

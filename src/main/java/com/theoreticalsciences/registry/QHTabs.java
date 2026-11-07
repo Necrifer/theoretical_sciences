@@ -34,6 +34,7 @@ public final class QHTabs {
                 com.theoreticalsciences.titan.TitanRegistry.TAB.forEach(i -> out.accept(i.get()));
                 com.theoreticalsciences.inner.InnerRegistry.TAB.forEach(i -> out.accept(i.get()));
                 com.theoreticalsciences.ocean.OceanRegistry.TAB.forEach(i -> out.accept(i.get()));
+                com.theoreticalsciences.weather.WeatherRegistry.TAB.forEach(i -> out.accept(i.get()));
                 com.theoreticalsciences.math.MathRegistry.TAB.forEach(i -> out.accept(i.get()));
                 QHFluids.ALL.values().forEach(f -> out.accept(f.bucket.get()));
                 QHEntities.SPAWN_EGGS.forEach(e -> out.accept(e.get()));

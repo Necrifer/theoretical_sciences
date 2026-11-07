@@ -1,0 +1,57 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.3,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 133648,
+    "water_color": 667712,
+    "water_fog_color": 66824,
+    "particle": {
+      "options": {
+        "type": "minecraft:underwater"
+      },
+      "probability": 0.02
+    }
+  },
+  "spawners": {
+    "water_creature": [
+      {
+        "type": "theoreticalsciences:vent_grazer",
+        "weight": 8,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "theoreticalsciences:vent_crab",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "theoreticalsciences:hadal_anglerfish",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:hydrothermal_chimney",
+      "theoreticalsciences:ocean_boulders"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

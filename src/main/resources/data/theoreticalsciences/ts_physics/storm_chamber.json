@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "id": "Tw",
+      "unit": "\u00b0C",
+      "min": 10,
+      "max": 40,
+      "step": 0.1,
+      "default": 20
+    },
+    {
+      "id": "q",
+      "unit": "g/kg",
+      "min": 2,
+      "max": 25,
+      "step": 0.1,
+      "default": 8
+    },
+    {
+      "id": "S",
+      "unit": "m/s",
+      "min": 0,
+      "max": 40,
+      "step": 0.5,
+      "default": 5
+    }
+  ],
+  "recipe_vars": {
+    "fref": 2.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "cape",
+      "unit": "J/kg",
+      "expr": "max(0, 280*(Tw - 18) + 220*(q - 8))",
+      "formula": "CAPE: warm, moist air rising through cooler air"
+    },
+    {
+      "id": "wu",
+      "unit": "m/s",
+      "expr": "sqrt(2*cape)*(1 + 0.02*d)",
+      "formula": "updraft w = \u221a(2\u00b7CAPE)"
+    },
+    {
+      "id": "org",
+      "unit": "",
+      "expr": "clamp(S/15, 0.3, 1.5)",
+      "formula": "shear organises the storm"
+    },
+    {
+      "id": "fl",
+      "unit": "/min",
+      "expr": "0.0001*wu^3*org",
+      "formula": "flash rate \u221d w\u00b3"
+    },
+    {
+      "id": "sci",
+      "unit": "",
+      "expr": "S*cape/1000",
+      "formula": "supercell index: shear \u00d7 CAPE"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "hail",
+      "kind": "damage",
+      "expr": "40 - wu",
+      "formula": "w < 40 m/s"
+    },
+    {
+      "id": "tornado",
+      "kind": "damage",
+      "expr": "12 - sci",
+      "formula": "S\u00b7CAPE < 12,000"
+    }
+  ],
+  "rate": "clamp(fl/fref, 0, 3)",
+  "rate_formula": "output = flash rate / rated",
+  "heat": "0.5 + cape/2000",
+  "idle_heat": "0.2",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 3
+}

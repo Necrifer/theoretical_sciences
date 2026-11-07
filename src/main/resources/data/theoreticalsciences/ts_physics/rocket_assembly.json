@@ -1,0 +1,122 @@
+{
+  "params": [
+    {
+      "id": "r",
+      "unit": "",
+      "min": 1.5,
+      "max": 9,
+      "step": 0.01,
+      "default": 3
+    },
+    {
+      "id": "Pc",
+      "unit": "bar",
+      "min": 20,
+      "max": 300,
+      "step": 1,
+      "default": 70
+    },
+    {
+      "id": "tp",
+      "unit": "m/s",
+      "min": 10,
+      "max": 200,
+      "step": 1,
+      "default": 50
+    }
+  ],
+  "recipe_vars": {
+    "Ipk": 360,
+    "rpk": 3.2,
+    "rs": 4.0,
+    "mp": 8,
+    "drq": 9400
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "re",
+      "unit": "",
+      "expr": "r*(1 + 0.01*d)",
+      "formula": "r\u00b7(1 + 0.01\u00b7d)"
+    },
+    {
+      "id": "Isp",
+      "unit": "s",
+      "expr": "Ipk*clamp(1 - 0.02*(re - rpk)^2, 0.3, 1)*(1 + 0.05*ln(Pc/70))",
+      "formula": "I\u209b\u209a peaks a little fuel-rich, and rises with chamber pressure"
+    },
+    {
+      "id": "ve",
+      "unit": "m/s",
+      "expr": "Isp*9.80665",
+      "formula": "v\u2091 = I\u209b\u209a\u00b7g\u2080"
+    },
+    {
+      "id": "dv",
+      "unit": "m/s",
+      "expr": "2*ve*ln((120 + mp)/(20 + mp))",
+      "formula": "\u0394v = v\u2091 ln(m\u2080/m_f), two stages"
+    },
+    {
+      "id": "loss",
+      "unit": "m/s",
+      "expr": "1300 + 0.08*(tp - 60)^2",
+      "formula": "gravity and drag losses"
+    },
+    {
+      "id": "dvn",
+      "unit": "m/s",
+      "expr": "dv - loss",
+      "formula": "\u0394v left for orbit"
+    },
+    {
+      "id": "margin",
+      "unit": "m/s",
+      "expr": "dvn - drq",
+      "formula": "\u0394v \u2212 \u0394v to orbit"
+    },
+    {
+      "id": "Tc",
+      "unit": "K",
+      "expr": "3700 - 180*(re - rs)^2",
+      "formula": "hottest at the stoichiometric ratio"
+    },
+    {
+      "id": "qmax",
+      "unit": "kPa",
+      "expr": "12 + 1400/tp",
+      "formula": "max-Q: \u00bd\u03c1v\u00b2 at its peak"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "hot",
+      "kind": "wear",
+      "expr": "3550 - Tc",
+      "formula": "T_c < 3550 K"
+    },
+    {
+      "id": "maxq",
+      "kind": "damage",
+      "expr": "45 - qmax",
+      "formula": "max-Q < 45 kPa"
+    },
+    {
+      "id": "instability",
+      "kind": "wear",
+      "expr": "250 - Pc",
+      "formula": "P_c < 250 bar"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "one launch per run",
+  "heat": "1 + Pc/20",
+  "idle_heat": "0.3",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 80,
+  "timescale": 1,
+  "rate_max": 4
+}

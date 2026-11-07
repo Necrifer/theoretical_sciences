@@ -1,0 +1,56 @@
+{
+  "title": "Glaciology",
+  "description": "Ice flows. Under its own weight a glacier creeps downhill like very slow toffee, faster the harder it is pushed (Glen's law), and every year of snow it buries stays in it as a layer, with bubbles of that year's air. Unlocks the Ice Core Drill.",
+  "icon": "theoreticalsciences:ice_core_drill",
+  "x": 14,
+  "y": 6,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:climatology",
+    "theoreticalsciences:geomorphology"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:packed_ice",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:ice_core",
+      "count": 1
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "Glacier ice deforms at a strain rate that grows as a power of the shear stress \u03c4 on it, with a rate factor A that depends on temperature (Glen's flow law). Write \u03b5, the strain rate.",
+    "name": "Glen's flow law",
+    "lhs": "\u03b5",
+    "form": "A * \u03c4 ^ n",
+    "expr": "A * \u03c4 ^ n",
+    "ask": "Find \u03b5 in 1/s: A = @{A} Pa\u207b\u207f/s, \u03c4 = @{\u03c4} Pa, n = @{n}.",
+    "vars": {
+      "\u03b5": "strain rate (1/s)",
+      "A": "rate factor",
+      "\u03c4": "shear stress (Pa)",
+      "n": "flow-law exponent"
+    },
+    "given": {
+      "A": 2.4e-24,
+      "\u03c4": 100000,
+      "n": 3
+    },
+    "unit": "1/s",
+    "method": "Measured on glaciers and in the laboratory: doubling the stress makes ice flow about eight times faster (n \u2248 3).",
+    "distractors": [
+      "2",
+      "g",
+      "T"
+    ],
+    "vary": {
+      "\u03c4": [
+        50000.0,
+        200000.0,
+        1000.0
+      ]
+    }
+  }
+}

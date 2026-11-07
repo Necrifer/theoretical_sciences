@@ -60,6 +60,8 @@ public final class InnerMobRenderers {
                 case OceanMobs.IceEel el -> eel(ps, solid, glow, t, pitch, light, ov);
                 case OceanMobs.BrineJelly j -> jelly(ps, trans, glow, t, OceanMobs.BrineJelly.stroke(e.level(), e.getId(), partial), e, partial, light, ov);
                 case OceanMobs.VentCrab c -> crab(ps, solid, t, limb, amt, light, ov);
+                case com.theoreticalsciences.ocean.HadalMobs.Anglerfish a -> angler(ps, solid, glow, t, light, ov);   // 1.4.0
+                case com.theoreticalsciences.ocean.HadalMobs.Siphonophore s -> siphonophore(ps, trans, glow, t, light, ov);
                 default -> {}
             }
             ps.popPose();
@@ -347,6 +349,58 @@ public final class InnerMobRenderers {
     static final int[] CRAB = c(0xFFF6F0E6, 0xFFB4A494), CRAB_D = c(0xFFE0D6C8, 0xFF988878), HAIR = c(0xFFD0C8B8, 0xFF8C8474);
 
     /** The Vent Crab: a pale yeti crab scuttling on jointed legs, waving and pinching hairy claws (it farms bacteria on them). */
+    static final int[] ANGLER = c(0xFF2A2E34, 0xFF101216), ANGLER_JAW = c(0xFF34383E, 0xFF14161A), ANGLER_TOOTH = c(0xFFF0F0E8, 0xFFB0B0A8);
+
+    /**
+     * 1.4.0: the Hadal Anglerfish - a black, round body that is mostly mouth, a jaw slung open under rows of needle teeth,
+     * small fins, and over its head the rod (illicium) carrying the glowing lure (esca), which pulses slowly.
+     */
+    static void angler(PoseStack ps, VertexConsumer solid, VertexConsumer glow, float t, int light, int ov) {
+        float gape = 0.5F + 0.5F * (float) Math.sin(t * 0.08F);
+        px(ps, solid, 0, 6, -1, 12, 10, 12, ANGLER, light, ov);                      // the body
+        px(ps, solid, 0, 3 - gape, 4, 11, 3, 6, ANGLER_JAW, light, ov);              // the lower jaw, hanging
+        for (int i = -2; i <= 2; i++) {
+            px(ps, solid, i * 2.2F, 4.2F - gape * 0.5F, 6.5F, 0.8F, 2.2F, 0.8F, ANGLER_TOOTH, light, ov);   // teeth, upper and lower
+            px(ps, solid, i * 2.2F + 1.1F, 2.6F - gape, 6.3F, 0.8F, 2F, 0.8F, ANGLER_TOOTH, light, ov);
+        }
+        px(ps, solid, 0, 7, -9, 2, 6, 5, ANGLER, light, ov);                         // the tail fin
+        px(ps, solid, 6.5F, 5, 0, 1, 4, 3, ANGLER, light, ov);                       // pectoral fins
+        px(ps, solid, -6.5F, 5, 0, 1, 4, 3, ANGLER, light, ov);
+        for (int k = 0; k < 5; k++)                                                  // the rod, arching forward
+            px(ps, solid, 0, 11 + k * 1.3F, 2 + k * 1.4F - k * k * 0.12F, 0.8F, 1.6F, 0.8F, ANGLER, light, ov);
+        float pulse = 0.6F + 0.4F * (float) Math.sin(t * 0.15F);
+        int a = (int) (0xFF * pulse);
+        px(ps, glow, 0, 17.5F, 7.2F, 2.2F * (0.9F + 0.2F * pulse), 2.2F, 2.2F, new int[]{(a << 24) | 0x80FFE0, (a << 24) | 0x40C0A0}, FULL, ov);
+        px(ps, glow, 3, 8, 4.8F, 1F, 1F, 1F, new int[]{0xFFA0E0FF, 0xFF60A0C0}, FULL, ov);   // small eyes
+        px(ps, glow, -3, 8, 4.8F, 1F, 1F, 1F, new int[]{0xFFA0E0FF, 0xFF60A0C0}, FULL, ov);
+    }
+
+    static final int[] SIPH_FLOAT = c(0xC0F0E8FF, 0x80B0A0D0), SIPH_BELL = c(0xA0E0D8F8, 0x70A898C8), SIPH_ZOOID = c(0xB0F0B0E0, 0x80C080B0);
+
+    /**
+     * 1.4.0: the Siphonophore Colony - a gas float at the front, a cluster of swimming bells pulsing behind it, then a
+     * long stem trailing back with zooids along it, each with a glowing tip and a curtain of tentacle threads below.
+     * The stem undulates in a slow travelling wave.
+     */
+    static void siphonophore(PoseStack ps, VertexConsumer trans, VertexConsumer glow, float t, int light, int ov) {
+        px(ps, trans, 0, 8, 6, 5, 5, 6, SIPH_FLOAT, light, ov);                           // the float
+        for (int b = 0; b < 4; b++) {
+            float squeeze = 1 + 0.15F * (float) Math.sin(t * 0.3F + b);
+            px(ps, trans, (b % 2 == 0 ? 2.5F : -2.5F), 6, 2 - b * 2.2F, 4 * squeeze, 4 * squeeze, 3, SIPH_BELL, light, ov);
+        }
+        for (int k = 0; k < 16; k++) {                                               // the stem and its zooids
+            float z = -8 - k * 5.5F;
+            float x = (float) Math.sin(t * 0.06F - k * 0.4F) * (1 + k * 0.25F);
+            float y = 6 + (float) Math.sin(t * 0.04F - k * 0.3F) * 1.2F;
+            px(ps, trans, x, y, z, 1.2F, 1.2F, 5.5F, SIPH_ZOOID, light, ov);
+            if (k % 2 == 0) {
+                px(ps, glow, x, y - 1.5F, z, 1.2F, 1.2F, 1.2F, new int[]{0xFFFF70C8, 0xFFC04090}, FULL, ov);
+                for (int j = 1; j <= 3; j++)                                         // the tentacle curtain
+                    px(ps, trans, x + (float) Math.sin(t * 0.05F + j + k) * 0.6F, y - 2 - j * 2.2F, z, 0.4F, 2.2F, 0.4F, SIPH_ZOOID, light, ov);
+            }
+        }
+    }
+
     static void crab(PoseStack ps, VertexConsumer solid, float t, float limb, float amt, int light, int ov) {
         // steps show only while it is really walking, eased in and out (a drift in the current does not set the legs twitching)
         float g = Mth.clamp((amt - 0.04F) / 0.25F, 0F, 1F), step = g * g * (3 - 2 * g);

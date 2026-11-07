@@ -1,0 +1,63 @@
+{
+  "title": "Orbital Mechanics",
+  "description": "An orbit is falling round the world and always missing it. Speed and height are tied together by one equation, vis-viva, and moving between orbits takes two burns: one to stretch the orbit out, one to round it off at the top. Unlocks Station Modules, the Crew Capsule and the Orbital Station.",
+  "icon": "theoreticalsciences:station_module",
+  "x": 17,
+  "y": 7,
+  "insight": 240,
+  "requires": [
+    "theoreticalsciences:rocketry",
+    "theoreticalsciences:gravitational_redshift"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:microgravity_crystal",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 1
+    }
+  ],
+  "time": 360,
+  "puzzle": {
+    "goal": "A body moves round a planet of mass M on an orbit whose semi-major axis is a. At distance r from the planet's centre, its kinetic and potential energy add up to a constant that depends only on a: the vis-viva equation. Write v, its speed there.",
+    "name": "Vis-viva",
+    "lhs": "v",
+    "form": "sqrt ( G * M * ( 2 / r - 1 / a ) )",
+    "expr": "sqrt(G * M * (2 / r - 1 / a))",
+    "ask": "Find v in m/s for a craft r = @{r} m from the Earth's centre on an orbit with a = @{a} m (G = @{G}, M = @{M} kg).",
+    "vars": {
+      "v": "orbital speed (m/s)",
+      "G": "gravitational constant",
+      "M": "planet mass (kg)",
+      "r": "distance from the centre (m)",
+      "a": "semi-major axis (m)"
+    },
+    "given": {
+      "G": 6.674e-11,
+      "M": 5.972e+24,
+      "r": 6771000,
+      "a": 6771000
+    },
+    "unit": "m/s",
+    "method": "Energy per mass: \u00bdv\u00b2 \u2212 GM/r = \u2212GM/(2a), the same anywhere on the orbit.",
+    "distractors": [
+      "2",
+      "m",
+      "c"
+    ],
+    "vary": {
+      "r": [
+        6600000.0,
+        7200000.0,
+        1000.0
+      ],
+      "a": [
+        7300000.0,
+        20000000.0,
+        1000.0
+      ]
+    }
+  }
+}
