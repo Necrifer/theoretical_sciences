@@ -1,0 +1,49 @@
+# Summary: The user's own Minecraft mod project (formerly Quantum Horizon); read for any work on the mod or its modpack.
+
+**Details**
+- developing an endgame physics tech mod for NeoForge 1.21.1, renamed from "Quantum Horizon" to "Theoretical Sciences" before publishing on CurseForge
+- handwrites the CurseForge summary and description themselves
+- decided to release the mod under the MIT License (replacing the earlier custom licence)
+- the mod's GitHub repository: https://github.com/Necrifer/theoretical_sciences (issues at /issues)
+- the mod's CurseForge page: https://www.curseforge.com/minecraft/mc-mods/theoretical-sciences (under CurseForge review as of 2026-10-30)
+- next update plan: expand the mod with more science branches (astrophysics, physical/technical geography, nuclear physics/chemistry, electromagnetism, general relativity, QM–GR unification, statistical probability) plus linked materials, fluids, dimensions, machines, structures, debuffs and mobs
+- design rule: the mod's mobs must use their own AI, never inherited vanilla behaviour (e.g. zombie villager conversion, golem targeting)
+- design rule for later machines: radiation follows real decay and shielding physics, with background radiation in some dimensions and multiblocks that create, remove or require radiation
+- design rule: new multiblocks should vary in shape, taking reference from GT New Horizons and MeatballCraft; since large-structure rendering is now culled, late/endgame multiblocks may scale up in size
+- reworked older late/endgame multiblocks must keep at least their original block amounts and expand on them, so players only rebuild without losses
+- older recipes may be changed in later updates if required, as long as every such change is noted in the changelog
+- declared the expansion patch ready for release (2026-11-02), to be published on GitHub and CurseForge as version 1.1 to stay consistent with CurseForge numbering
+- planned branch: Optics (Physics joined with Chemistry) - cutting, purifying and studying crystals (including the Planetary Interior's) to make lenses for the telescopes and other uses
+- in their modpack, Mekanism radiation is redirected through Nuclear Radiation, so the mod should ignore Mekanism for radiation detection and work with Nuclear Radiation instead
+- design rule: the mod's structures should follow the 1.0 ruins' pattern of mod-only blocks and loot (decorative blocks may be made for this); a decorative telescope/satellite is enough since working astronomy machines come in later patches
+- design rule: blocks, tools, gear and armour should keep colours similar to their ingredients (machines may be exceptions)
+- recipe balancing method: treat vanilla materials as cost 1 each (except tedious ones: Nether Star, Netherite Scrap/Ingot, Dragon Head, Dragon Egg, Elytra), add machine time, energy and the machine's (and multiblock's) build cost; newer or bulk/multiblock recipes must be substantially cheaper than older routes or should not exist — applies to all recipes, 1.0 included
+- design rule: the Black Swan Feather is very rare and may serve as a shortcut ingredient in expensive recipes, but must never be duplicable
+- design rule: falling out of any of the mod's dimensions should send the player to another dimension for safety
+- next expansion focus: the mod is heavily weighted to physics, so expand Mathematics, Chemistry and Biology with new concepts fitting the mod's theme
+- plans gas gathering in the Accretion Frontier's nebula, centrifuged for other elements and uses, for the next expansion
+- long-term vision: the mod should eventually cover all concepts of the scientific world, with Mathematics intertwined between fields and more science-fiction ideas and theories in the endgame, so branch counts need not be limited
+- update plan after 1.1: one field per update — 1.2 Chemistry first, then Mathematics (tying into chemical equilibria and enzymatic activity), then Biology (linking the Anomaly storyline to Immunology)
+- design rule: a concept is used only if it has at least a real-equation console window, a derivation puzzle and a material chain; all items must feed the endgame directly or indirectly
+- design rule: give each dimension more biome variety, to reduce how many new dimensions expansions need
+- decided all catalysts should wear/be poisonable except the endgame variants
+- doing a major rewrite of the mod's Codex and tooltip text themselves (Nov 2026)
+- design rule: endgame items that compact themselves in levels (Singularity clusters, Mod Essence parts, Harvest/specimen samples, any others) are lettered with the Greek and Hebrew alphabets, not numbered
+- prefers the materials' original animated textures (full frame counts); reducing frames made them look janky
+- design rule: tooltips (or the Codex) must say where each material is found/obtained
+- design decision: no config-based or system-based blocking of other mods' creative duplicators; the creative-duplicator config options were meant to be vestigial and the system removed (Nov 2026)
+- text rule: Codex/tooltip recipe lines only say where an item is made (e.g. "Made in Femtoscale Assembly Line."), never its ingredients; show the recipe in the Codex or defer to JEI/EMI
+- text rule: ore descriptions follow the template "Found in <dimension>, between Y <a> and <b>. Gives <drop> when mined with <tier> pickaxe or better."
+- text rule: mobs, items and blocks need real flavour text like the 1.0 version, not bare one-line/name-only descriptions
+- declared v1.3 (Mathematics branch) complete, all design-document concepts done (2026-11-05); 1.4 (Biology) design next
+- planned: Titan exploration will later unlock a new dimension reached via the Overworld's oceans, paralleling the Challenger Deep/Mariana Trench, later linking to geothermal, volcanic and plate tectonics studies
+- design rule: mobs need their own distinct sound effects (no reused shared "humming" sounds) and properly shaded models, not simple-shape/stick models
+- design rule: mob models must fit Minecraft's art style; overly realistic models look awkward
+- v1.4 being prepared for publish (2026-11-06); the mod will be bundled with their modpack, and some of the modpack's changes are to be built into the mod itself
+- the current patch (1.4) aims to be a massive revamp of all current progression and research branches into a new format that later updates build on; all multiblocks (1.0's included) are scaled up with no size limits, varied designs and working animations
+- plans for their modpack to later include mobs with custom gearing (including the mod's endgame gear)
+- decided: the GregTech animation connector is dropped; animations are for the mod's own multiblocks only (Nov 2026)
+- the Chemistry/Mathematics/Biology patch (developed as 1.2–1.4) was released as v1.2, following CurseForge's v1.1 (2026-11-06)
+- after v1.2, researching uncovered fields of study for further content expansion
+- decided Pleroma's rework (in the v1.2 patch, because the old all-fluids recipe cluttered the machine GUI and JEI/EMI): five fluids, one each for Physics, Chemistry (Alkahest), Mathematics and Biology plus one for the world (water, lava, other mods' Essences), made by recipes in existing machines rather than new consoles
+- eventual plan: to support their modpack, the mod should accept inputs from and produce outputs for magic mods' mechanics: Thaumaturge (aspects, taint, flux), Botania (mana), Nature's Aura (Aura) and Astral Sorcery (Lumen, constellation attunement, starlight)
