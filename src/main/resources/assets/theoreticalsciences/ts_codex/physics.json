@@ -6886,6 +6886,37 @@
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
       ]
+    },
+    {
+      "entry": "fluids/fluid_dynamics",
+      "x": 37,
+      "y": 83,
+      "parents": []
+    },
+    {
+      "entry": "fluids/aerodynamics",
+      "x": 39,
+      "y": 83,
+      "parents": [
+        "fluids/fluid_dynamics"
+      ]
+    },
+    {
+      "entry": "fluids/wind_tunnel",
+      "x": 39,
+      "y": 85,
+      "parents": [
+        "fluids/aerodynamics"
+      ]
+    },
+    {
+      "entry": "fluids/compressible_flow",
+      "x": 41,
+      "y": 83,
+      "parents": [
+        "fluids/aerodynamics",
+        "electromagnetism/r42_mhd"
+      ]
     }
   ],
   "regions": [

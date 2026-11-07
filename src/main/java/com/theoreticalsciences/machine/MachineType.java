@@ -234,7 +234,9 @@ public enum MachineType {
     GENE_CIRCUIT_LOOM       ("gene_circuits",        3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0x6090D0),
     MIRROR_CULTURE_VAT      ("mirror_life",          3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0xD0D0F0),
     // 1.2.0: Biology, Phase 4 part 2 (the Anomaly, lived)
-    CLONAL_SELECTOR         ("affinity_maturation",  3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0xA0B0FF);
+    CLONAL_SELECTOR         ("affinity_maturation",  3, 1, 1, 0, false, null,                       4_000_000,   80_000, Effect.NONE,        0xA0B0FF),
+    // 1.3.0: Fluids and Flight (appended last, so every older machine keeps its ordinal)
+    WIND_TUNNEL             ("aerodynamic_testing",  2, 0, 1, 0, false, "wind_tunnel",              8_000_000,  200_000, Effect.NONE,        0xB0E0FF);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,

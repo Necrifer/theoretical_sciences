@@ -773,7 +773,10 @@ public final class QHContentList {
         new ItemDef("eel_photophore", "", 64),
         new ItemDef("luminous_mesoglea", "", 64),
         new ItemDef("crab_chitin", "", 64),
-        new ItemDef("folded_matter", "fold", 1));
+        new ItemDef("folded_matter", "fold", 1),
+        // 1.3.0: Fluids and Flight
+        new ItemDef("aerofoil_composite", "", 64),
+        new ItemDef("de_laval_nozzle", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1176,7 +1179,12 @@ public final class QHContentList {
         new BlockDef("hydrothermal_chimney", "simple", 12, 1.5F, "stone", ""),
         new BlockDef("black_smoker", "vent", 14, 2.5F, "stone", ""),
         new BlockDef("tube_worms", "ocean_plant", 3, 0.0F, "none", ""),
-        new BlockDef("brinicle", "ocean_plant_hanging", 2, 0.0F, "none", ""));
+        new BlockDef("brinicle", "ocean_plant_hanging", 2, 0.0F, "none", ""),
+        // 1.3.0: Fluids and Flight
+        new BlockDef("wind_tunnel_casing", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("flow_straightener", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("wind_tunnel_fan", "casing", 2, 6.0F, "iron", ""),
+        new BlockDef("laminar_flow_conduit", "flow_conduit", 0, 3.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
