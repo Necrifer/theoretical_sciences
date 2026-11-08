@@ -27,12 +27,13 @@ import java.util.WeakHashMap;
  *   <li><b>SPIN_DOWN</b> - wobbles like a dying top, its tilt growing, until it lies down (pulsars);</li>
  *   <li><b>FLICKER</b> - its image jitters and winks out (phantoms, antimatter);</li>
  *   <li><b>SCATTER</b> - jumps about at random, ever further, then is gone (random walks);</li>
- *   <li><b>FLUCTUATE</b> - its shape shivers at random, larger and larger, until it fluctuates out of existence.</li>
+ *   <li><b>FLUCTUATE</b> - its shape shivers at random, larger and larger, until it fluctuates out of existence;</li>
+ *   <li><b>BELLY_UP</b> - a dead fish: a last shudder, then it rolls slowly onto its back and drifts down (1.3.0).</li>
  * </ul>
  * Each also gives off its own particles while it dies.
  */
 public final class DeathAnim {
-    public enum Style { TOPPLE, FLIP, CRUMPLE, STRETCH, DISPERSE, FLASH, FOLD, SINK, COLLAPSE, SPIN_SINK, SPIN_DOWN, FLICKER, SCATTER, FLUCTUATE }
+    public enum Style { TOPPLE, FLIP, CRUMPLE, STRETCH, DISPERSE, FLASH, FOLD, SINK, COLLAPSE, SPIN_SINK, SPIN_DOWN, FLICKER, SCATTER, FLUCTUATE, BELLY_UP }
 
     private static final Map<LivingEntity, Integer> LAST = new WeakHashMap<>();
 
@@ -49,7 +50,7 @@ public final class DeathAnim {
             case "plume_elemental" -> Style.COLLAPSE;
             case "geodynamo_wraith", "binary_serpent" -> Style.SPIN_SINK;
             case "karman_wraith" -> Style.DISPERSE;                          // 1.3.0: an eddy, spreading out
-            case "hadal_anglerfish" -> Style.SINK;                          // 1.3.0
+            case "hadal_anglerfish" -> Style.BELLY_UP;                      // 1.3.0: rolls over, as dead fish do
             case "siphonophore" -> Style.DISPERSE;
             case "storm_elemental" -> Style.DISPERSE;
             case "pulsar_wisp" -> Style.SPIN_DOWN;
@@ -116,6 +117,16 @@ public final class DeathAnim {
                 ps.mulPose(Axis.YP.rotationDegrees(f * f * 540F));
                 ps.mulPose(Axis.ZP.rotationDegrees(f * 30F));
                 ps.scale(Math.max(0.02F, 1 - f), 1 - 0.3F * f, 1 + 0.4F * f);
+                ps.translate(0, -h / 2, 0);
+            }
+            case BELLY_UP -> {
+                float shudder = f < 0.25F ? Mth.sin((e.tickCount + partial) * 2.6F) * 6F * (1 - f * 4) : 0;   // a last twitch
+                float roll = smooth(Math.min(1F, Math.max(0F, (f - 0.1F) / 0.8F)));
+                ps.translate(0, -0.25F * h * f, 0);                                // drifting down
+                ps.translate(0, h / 2, 0);
+                ps.mulPose(Axis.YP.rotationDegrees(shudder));
+                ps.mulPose(Axis.ZP.rotationDegrees(180F * roll));                  // onto its back
+                ps.mulPose(Axis.XP.rotationDegrees(-12F * roll));                  // nose dipping
                 ps.translate(0, -h / 2, 0);
             }
             case SINK -> {

@@ -5,6 +5,45 @@
 Three parts, newest first: the Green Kingdom and Deep Time, Into Orbit and the Living Planet, and Fluids and Flight.
 Before them: an art, sound and text pass over all three, and a faster structure viewer.
 
+### The Hadal Trench, reworked
+
+**Darkness**
+* The trench is the Challenger Deep, and is now as dark as it: no ambient light at all. With bare eyes you see nothing but
+  the glow of the creatures. A torch or lantern lights only the few blocks right round it.
+* Night Vision lifts the dark, but the water is thick with marine snow: you see about a dozen blocks.
+* The glowing parts of the trench's creatures are full bright, so they are the one light you see from far off.
+* Head gear tagged `theoreticalsciences:hadal_vision` sees the trench clearly. The tag is empty for now, ready for the
+  bioluminescence and night vision technology to come (datapacks may add to it).
+
+**Falling and surfacing**
+* Falling through the floor of the trench now drops you into the Planetary Interior, down with the subducting plate.
+* Swimming up through the surface of the trench is now what carries you home to the Overworld's sea.
+
+**New ground**
+* New block: **Oceanic Basalt**, the rock of the whole trench (it had been built of Titan's Abyssal Silicate, which now
+  stays on Titan as its tooltip says). Mined with a stone pickaxe or better.
+* New block: **Hadal Ooze**, the sediment of plankton shells that blankets the abyssal plain and drifts round the vents.
+  Mined with a shovel.
+* The round boulders on the floor are replaced by **pillow basalt**: winding heaps of rounded lava lobes.
+
+**Vent fields**
+* The Hadal Vent Field had been using Titan's vent feature, which looked for the floor in the wrong place and so rarely
+  built anything; what players found were the boulders. The trench now has vent fields of its own: a broad basalt mound
+  crusted with sulfide, three to six crooked chimneys ten to thirty blocks tall with flanges and black smokers (some
+  smoking from the side as well), and thickets of tube worms round the foot.
+* Vent fields cover more of the trench, and lone chimneys stand out on the abyssal plain as well.
+* Hydrothermal Chimney, Black Smoker and Giant Tube Worms tooltips now name the Hadal Trench too.
+
+**Hadal Anglerfish**
+* It no longer spins on the spot. It used to pick a new direction every tick and turn its whole body to face it at once;
+  it now holds a heading for several seconds, turns smoothly towards it, turns away from walls, and sometimes hangs
+  still over the floor, as a real anglerfish waits.
+* Its death is no longer a squash: it shudders, its jaw goes slack, its lure goes out, and it rolls belly up and sinks.
+
+**Recipe changes**
+* New: Chemical Reactor, 2 Oceanic Basalt and water into 12500 mB hydrogen (Titan's silicate gives 9441 mB).
+* New: Tesla Coil, 16 Hadal Ooze into 9 Fused Silica (sand gives 6, for more energy).
+
 ### Art, sound and text pass
 
 **Item and block art**

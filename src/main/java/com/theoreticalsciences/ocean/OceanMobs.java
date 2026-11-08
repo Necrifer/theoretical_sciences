@@ -59,14 +59,32 @@ public final class OceanMobs {
             }
         }
 
+        /** Most degrees a swimmer turns in a tick: fish bank round, they do not snap to face a new way. */
+        protected float turnRate() {
+            return 9F;
+        }
+
         void steer(Vec3 dir, double speed) {
             if (dir.lengthSqr() < 1e-6) return;
             Vec3 v = getDeltaMovement().scale(0.88).add(dir.normalize().scale(speed));
             setDeltaMovement(v);
-            float yaw = (float) (Math.atan2(-v.x, v.z) * 180 / Math.PI);
-            setYRot(yaw);
-            yBodyRot = yaw;
-            setXRot((float) (-Math.atan2(v.y, Math.sqrt(v.x * v.x + v.z * v.z)) * 180 / Math.PI));
+            face(v);
+        }
+
+        /**
+         * Turns towards the way it is moving, at most {@link #turnRate()} degrees a tick, and only when it is really
+         * moving: a swimmer hanging almost still keeps its heading (turning to face every tiny drift is what spun it).
+         */
+        void face(Vec3 v) {
+            double h = Math.sqrt(v.x * v.x + v.z * v.z);
+            if (h > 0.01) {
+                float yaw = net.minecraft.util.Mth.approachDegrees(getYRot(), (float) (Math.atan2(-v.x, v.z) * 180 / Math.PI), turnRate());
+                setYRot(yaw);
+                yBodyRot = yaw;
+                yHeadRot = yaw;
+            }
+            if (v.lengthSqr() > 1e-4)
+                setXRot(net.minecraft.util.Mth.approach(getXRot(), (float) (-Math.atan2(v.y, Math.max(h, 1e-4)) * 180 / Math.PI), turnRate()));
         }
 
         /** A slow random drift, turning now and then; kept off the ice ceiling and the sea floor. */

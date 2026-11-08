@@ -28,7 +28,7 @@ public final class InteriorTravel {
      * prefers open sky, which here is only above the roof). Two blocks of air over solid, dry rock, as near y 100 as can
      * be found within 24 blocks; failing that, a small chamber is cut at y 100.
      */
-    static BlockPos landing(ServerLevel l, int x, int z) {
+    public static BlockPos landing(ServerLevel l, int x, int z) {
         BlockPos best = null;
         int bestScore = Integer.MAX_VALUE;
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();

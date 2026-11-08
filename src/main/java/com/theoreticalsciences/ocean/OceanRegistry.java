@@ -72,6 +72,13 @@ public final class OceanRegistry {
             () -> new OceanFeatures.Brinicles(NoneFeatureConfiguration.CODEC));
     public static final DeferredHolder<Feature<?>, OceanFeatures.Boulders> BOULDERS = FEATURES.register("ocean_boulders",
             () -> new OceanFeatures.Boulders(NoneFeatureConfiguration.CODEC));
+    // 1.3.0: the Hadal Trench's own vent fields, lone chimneys and pillow basalt
+    public static final DeferredHolder<Feature<?>, HadalFeatures.VentField> HADAL_VENT_FIELD = FEATURES.register("hadal_vent_field",
+            () -> new HadalFeatures.VentField(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, HadalFeatures.LoneChimney> HADAL_LONE_CHIMNEY = FEATURES.register("hadal_lone_chimney",
+            () -> new HadalFeatures.LoneChimney(NoneFeatureConfiguration.CODEC));
+    public static final DeferredHolder<Feature<?>, HadalFeatures.PillowBasalt> PILLOW_BASALT = FEATURES.register("pillow_basalt",
+            () -> new HadalFeatures.PillowBasalt(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus bus) {
         ENTITIES.register(bus);
