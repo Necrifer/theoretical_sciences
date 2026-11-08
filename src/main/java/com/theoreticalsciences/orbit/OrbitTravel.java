@@ -88,14 +88,14 @@ public final class OrbitTravel {
         return InteractionResultHolder.fail(st);
     }
 
-    /** A formed Rocket Assembly within 32 blocks (loaded chunks only; nothing is loaded to look). */
+    /** A formed Rocket Assembly (or, 1.4.0, Space Elevator) within 32 blocks (loaded chunks only; nothing is loaded to look). */
     static boolean nearPad(ServerLevel level, BlockPos at) {
         int cx = at.getX() >> 4, cz = at.getZ() >> 4;
         for (int dx = -2; dx <= 2; dx++)
             for (int dz = -2; dz <= 2; dz++) {
                 if (!level.hasChunk(cx + dx, cz + dz)) continue;
                 for (BlockEntity be : level.getChunk(cx + dx, cz + dz).getBlockEntities().values())
-                    if (be instanceof ControllerBlockEntity c && c.type == MachineType.ROCKET_ASSEMBLY && c.isFormed()
+                    if (be instanceof ControllerBlockEntity c && (c.type == MachineType.ROCKET_ASSEMBLY || c.type == MachineType.SPACE_ELEVATOR) && c.isFormed()
                             && c.getBlockPos().distSqr(at) <= 32 * 32) return true;
             }
         return false;

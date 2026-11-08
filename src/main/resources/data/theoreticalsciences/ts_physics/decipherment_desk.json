@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "Nc",
+      "unit": "log",
+      "min": 1,
+      "max": 6,
+      "step": 0.1,
+      "default": 3
+    },
+    {
+      "id": "k",
+      "unit": "symbols",
+      "min": 2,
+      "max": 64,
+      "step": 1,
+      "default": 26
+    },
+    {
+      "id": "g",
+      "unit": "",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Kt": 24
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "q",
+      "unit": "",
+      "expr": "exp(-((k - Kt)/(0.15*Kt))^2)",
+      "formula": "how well the alphabet guess fits the script"
+    },
+    {
+      "id": "cov",
+      "unit": "",
+      "expr": "1 - exp(-10^Nc/(20*k^g))",
+      "formula": "enough text to see every context of g symbols"
+    },
+    {
+      "id": "dec",
+      "unit": "",
+      "expr": "q*cov*g/(g + 0.5)*(1 - 0.01*d)",
+      "formula": "deciphered: fit × coverage × context"
+    },
+    {
+      "id": "Hb",
+      "unit": "bits",
+      "expr": "ln(k)/ln(2)",
+      "formula": "H = log₂N bits per symbol"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "corpus",
+      "kind": "stop",
+      "expr": "Nc - 1.5",
+      "formula": "at least 30 tokens of text"
+    }
+  ],
+  "rate": "clamp(6/(Nc + 2), 0.3, 1.2)",
+  "rate_formula": "more text, slower runs",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

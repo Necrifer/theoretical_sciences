@@ -1,0 +1,83 @@
+{
+  "params": [
+    {
+      "id": "W",
+      "unit": "N",
+      "min": 10,
+      "max": 1000,
+      "step": 5,
+      "default": 100
+    },
+    {
+      "id": "vs",
+      "unit": "m/s",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "id": "hc",
+      "unit": "µm",
+      "min": 0.1,
+      "max": 10,
+      "step": 0.1,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Hg": 20,
+    "kw": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Pf",
+      "unit": "W",
+      "expr": "W*vs",
+      "formula": "test duty: load × speed"
+    },
+    {
+      "id": "tau",
+      "unit": "h",
+      "expr": "5556*hc*Hg/(20*kw*W*vs)*(1 - 0.02*d)",
+      "formula": "life: thickness over Archard wear rate kW·v/H"
+    },
+    {
+      "id": "q",
+      "unit": "W",
+      "expr": "0.1*W*vs",
+      "formula": "friction heat μWv"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "duty",
+      "kind": "stop",
+      "expr": "W*vs - 200",
+      "formula": "test at the rated duty: W·v > 200 W"
+    },
+    {
+      "id": "flash",
+      "kind": "wear",
+      "expr": "400 - 0.1*W*vs",
+      "formula": "friction under 400 W"
+    },
+    {
+      "id": "spall",
+      "kind": "wear",
+      "expr": "8 - hc",
+      "formula": "coatings over 8 µm spall off"
+    }
+  ],
+  "rate": "clamp(W*vs/400, 0.2, 1.5)",
+  "rate_formula": "harder tests run faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

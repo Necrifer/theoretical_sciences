@@ -1,0 +1,80 @@
+{
+  "params": [
+    {
+      "id": "pH",
+      "unit": "",
+      "min": 0,
+      "max": 14,
+      "step": 0.1,
+      "default": 7
+    },
+    {
+      "id": "Ev",
+      "unit": "V",
+      "min": -1.5,
+      "max": 1,
+      "step": 0.01,
+      "default": -0.3
+    },
+    {
+      "id": "Cl",
+      "unit": "log",
+      "min": -4,
+      "max": 0,
+      "step": 0.1,
+      "default": -2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "imm",
+      "unit": "V",
+      "expr": "Ev + 0.62",
+      "formula": "over the immunity line (Fe/Fe²⁺ at 10⁻⁶)"
+    },
+    {
+      "id": "pas",
+      "unit": "",
+      "expr": "step(pH - 9)*step(13 - pH)",
+      "formula": "inside the passive window"
+    },
+    {
+      "id": "Ep",
+      "unit": "V",
+      "expr": "0.3 - 0.15*(Cl + 4)",
+      "formula": "pitting potential: chloride lowers it"
+    },
+    {
+      "id": "cr",
+      "unit": "mm/y",
+      "expr": "step(imm)*exp(min(imm, 0.6)/0.06)*(1 - pas*step(Ep - Ev))*0.001*(1 + 0.02*d)",
+      "formula": "corrosion rate (Tafel)"
+    },
+    {
+      "id": "clv",
+      "unit": "log",
+      "expr": "Cl",
+      "formula": "chloride in the test water"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "h2",
+      "kind": "wear",
+      "expr": "Ev + 1.2",
+      "formula": "above −1.2 V: hydrogen embrittles the steel"
+    }
+  ],
+  "rate": "clamp(1 + Cl/8, 0.3, 1.2)",
+  "rate_formula": "salty water tests slower",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

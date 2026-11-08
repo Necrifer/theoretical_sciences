@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:composite_layup",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:nanotube_composite",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:aramid_fibre",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tether_spool",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:space_elevator",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ef": 1000,
+      "rf": 1.4,
+      "Em": 3.5,
+      "rm": 1.2
+    },
+    "windows": [
+      {
+        "q": "S",
+        "min": 380,
+        "max": 2000
+      },
+      {
+        "q": "q",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

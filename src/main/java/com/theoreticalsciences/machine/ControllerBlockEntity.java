@@ -162,7 +162,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     /** 1.2.0: a Symbiont Lining repairs the catalysts as they work: they wear 40% slower. */
     @Override
     protected double wearScale() {
-        return "symbiont_lining".equals(upgradeKind()) ? 0.6 : 1.0;
+        String k = upgradeKind();
+        return "wear_coating".equals(k) ? 0.5 : "symbiont_lining".equals(k) ? 0.6 : 1.0;
     }
 
     public String upgradeKind() {
@@ -304,11 +305,11 @@ public class ControllerBlockEntity extends MachineBlockEntity {
                 }
                 if (precision.knows(rp) && !physics.stopped() && physics.windowIdx < 0)
                     v = precision.of(com.theoreticalsciences.machine.tuning.Precision.quantities(m, physics),
-                            "stability_margin".equals(upgradeKind()) ? 2.0 : 1.0);
+                            "stability_margin".equals(upgradeKind()) ? 2.0 : "synaptic_lattice".equals(upgradeKind()) ? 1.5 : 1.0);
             }
         } else if (tuningProfile() != null && !tuning.faulted)
             v = com.theoreticalsciences.machine.tuning.Precision.ofDial(tuning.setting, tuning.target,
-                    "stability_margin".equals(upgradeKind()) ? 2.0 : 1.0);
+                    "stability_margin".equals(upgradeKind()) ? 2.0 : "synaptic_lattice".equals(upgradeKind()) ? 1.5 : 1.0);
         if (Math.abs(v - precision.value) > 0.005) {
             precision.value = v;
             markSync();
@@ -418,7 +419,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     /** Extra products per cycle: precision, plus a Rate Table (which goes past perfect). */
     public double productBonus() {
-        return precision.bonus() + ("rate_table".equals(upgradeKind()) ? 0.2 : 0);
+        return precision.bonus() + ("rate_table".equals(upgradeKind()) ? 0.2 : "synaptic_lattice".equals(upgradeKind()) ? 0.1 : 0);
     }
 
     @Override

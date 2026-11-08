@@ -55544,5 +55544,635 @@
     "text": "$(thing)Dig Sites$(): abandoned excavations in the Overworld's deserts, badlands, savannas, plains and stony shores, with fossil and amber in their walls and a cache of finds.$(br2)$(thing)Greenhouse Ruins$(): broken research greenhouses in plains, meadows and forests, with a cache of the seed lines they were breeding. Both are rare."
    }
   ]
+ },
+ "biology/action_potential": {
+  "title": "The Action Potential",
+  "icon": "theoreticalsciences:myelinated_axon",
+  "category": "biology",
+  "research": "action_potential",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:neural_culture_array"
+    ],
+    "text": "The spike runs on: λ = √(r_m/r_i). The $(thing)Neural Culture Array$() grows neurons in a dish and coaxes glial cells to wrap their axons in myelin, making $(item)Myelinated Axons$(). A culture catches what any culture catches: keep it clean.",
+    "title": "Neural Culture Array"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:myelinated_axon",
+     "theoreticalsciences:dream_polyp"
+    ],
+    "text": "The lobes a $(item)Dream Polyp$() drops from a Dreaming Colony grow back into a Neural Organoid in the same array. JEI shows the recipes."
+   }
+  ]
+ },
+ "biology/synaptic_plasticity": {
+  "title": "Synaptic Plasticity",
+  "icon": "theoreticalsciences:synaptic_lattice",
+  "category": "biology",
+  "research": "synaptic_plasticity",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:synapse_trainer",
+     "theoreticalsciences:synaptic_lattice"
+    ],
+    "text": "Δw = η·x·y. The $(thing)Synapse Trainer$() shows a lattice of synapses a pattern until it has learnt it. The $(item)Synaptic Lattice$() is an upgrade: fitted to a machine, +10% products, and precision falls off a third slower. JEI shows the recipe.",
+    "title": "Synapse Trainer"
+   }
+  ]
+ },
+ "biology/psychophysics": {
+  "title": "Psychophysics",
+  "icon": "theoreticalsciences:low_light_visor",
+  "category": "biology",
+  "research": "psychophysics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:psychophysics_booth",
+     "theoreticalsciences:rhodopsin_retina"
+    ],
+    "text": "S = k·ln(I/I₀). The $(thing)Psychophysics Booth$() trains a cultured retina to see faint flashes without seeing things that are not there: a $(item)Rhodopsin Retina$().",
+    "title": "Psychophysics Booth"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:low_light_visor"
+    ],
+    "text": "The $(item)Low-Light Visor$() (made by crafting) gives night vision while worn on the head; in the $(thing)Hadal Trench$() it sees the deep clearly, far into the water."
+   }
+  ]
+ },
+ "biology/linguistics": {
+  "title": "Linguistics",
+  "icon": "theoreticalsciences:glyph_tablet",
+  "category": "biology",
+  "research": "linguistics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:decipherment_desk",
+     "theoreticalsciences:glyph_tablet"
+    ],
+    "text": "H = log₂N bits a symbol. $(item)Glyph Tablets$() are found in the caches of $(thing)Library Ruins$(), in the Overworld's forests, taigas and jungles. The $(thing)Decipherment Desk$() counts their symbols until they can be read.",
+    "title": "Decipherment Desk"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:lexicon_fragment",
+     "theoreticalsciences:universal_grammar"
+    ],
+    "text": "A tablet read gives $(item)Lexicon Fragments$(); enough of them give the $(item)Universal Grammar$(), made at the Decipherment Desk. Guess the alphabet right and count enough text for the context you read in."
+   }
+  ]
+ },
+ "biology/integrated_information": {
+  "title": "Integrated Information",
+  "icon": "theoreticalsciences:engram",
+  "category": "biology",
+  "research": "integrated_information",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:connectome_array",
+     "theoreticalsciences:engram"
+    ],
+    "text": "Φ: integrated and differentiated. The $(thing)Connectome Array$() is a dome of 469 blocks: glial scaffold threaded with axon tracts, relays where they cross, and a ring of relays turning inside. It maps a network into $(item)Engrams$().",
+    "title": "Connectome Array"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:superintelligence_core"
+    ],
+    "text": "Sixteen Engrams carry enough of a mind for the $(thing)Matrioshka Brain$() to run as a $(item)Superintelligence Core$(), far more cheaply than growing one. JEI shows the recipe."
+   },
+   {
+    "type": "multiblock",
+    "name": "Connectome Array",
+    "text": "Rotate, zoom and view layers in $(thing)JEI$(). Interface Ports go in the front of the floor.",
+    "multiblock": "connectome_array"
+   }
+  ]
+ },
+ "engineering/structural_mechanics": {
+  "title": "Structural Mechanics",
+  "icon": "theoreticalsciences:rated_i_beam",
+  "category": "physics",
+  "research": "structural_mechanics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:load_test_rig",
+     "theoreticalsciences:rated_i_beam"
+    ],
+    "text": "P = π²EI/L². The $(thing)Load Test Rig$() loads a beam until it bows and rates it: a $(item)Rated I-Beam$() has a safety factor of two to four, no more, no less.",
+    "title": "Load Test Rig"
+   }
+  ]
+ },
+ "engineering/composite_materials": {
+  "title": "Composite Materials",
+  "icon": "theoreticalsciences:carbon_fibre_composite",
+  "category": "physics",
+  "research": "composite_materials",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:composite_layup_press",
+     "theoreticalsciences:carbon_fibre_composite",
+     "theoreticalsciences:nanotube_composite"
+    ],
+    "text": "E = V_f·E_f + V_m·E_m. The $(thing)Composite Layup Press$() makes $(item)Carbon-Fibre$() and $(item)Nanotube Composites$(), and later the $(item)Tether Spool$() and $(item)Shkadov Mirror Film$(). Lay the plies along the load and do not pack the fibre past 62%.",
+    "title": "Composite Layup Press"
+   }
+  ]
+ },
+ "engineering/tribology": {
+  "title": "Tribology",
+  "icon": "theoreticalsciences:wear_coating",
+  "category": "physics",
+  "research": "tribology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:tribometer",
+     "theoreticalsciences:wear_coating"
+    ],
+    "text": "V = k·W·L/H. The $(thing)Tribometer$() qualifies a diamond-like carbon $(item)Wear Coating$(): an upgrade that makes a machine's catalysts wear half as fast.",
+    "title": "Tribometer"
+   }
+  ]
+ },
+ "engineering/corrosion_science": {
+  "title": "Corrosion Science",
+  "icon": "theoreticalsciences:sacrificial_anode",
+  "category": "physics",
+  "research": "corrosion_science",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:corrosion_cell",
+     "theoreticalsciences:passivated_plate",
+     "theoreticalsciences:sacrificial_anode"
+    ],
+    "text": "E = E⁰ + 0.0296·log c. The $(thing)Corrosion Cell$() holds a sample on Pourbaix's map: in the passive window it makes $(item)Passivated Plate$(); below the immunity line, in salt water, it qualifies $(item)Sacrificial Anodes$().",
+    "title": "Corrosion Cell"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:rust_flakes",
+     "theoreticalsciences:rust_mite_spawn_egg"
+    ],
+    "text": "$(thing)Rust Mites$() eat the charge of machines. A live anode within twelve blocks draws them off: they eat it instead, four bites, and leave $(item)Rust Flakes$(). Flakes make passivated plate more cheaply."
+   }
+  ]
+ },
+ "engineering/space_elevator": {
+  "title": "The Space Elevator",
+  "icon": "theoreticalsciences:tether_ribbon",
+  "category": "physics",
+  "research": "space_elevator",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:space_elevator",
+     "theoreticalsciences:tether_ribbon",
+     "theoreticalsciences:climber_car"
+    ],
+    "text": "T = e^(ρgR²/σr). The $(thing)Space Elevator$() is 770 blocks: an anchor platform with four buttresses, a tether forty-eight blocks tall under a counterweight, and a climber that rides it. It takes Crew Capsules, Microgravity Labs and Station Modules to orbit on power alone.",
+    "title": "Space Elevator"
+   },
+   {
+    "type": "multiblock",
+    "name": "Space Elevator",
+    "text": "Interface Ports in the middle of each side of the platform. A fuelled Crew Capsule can be flown from beside it, as from a Rocket Assembly.",
+    "multiblock": "space_elevator"
+   }
+  ]
+ },
+ "engineering/rotating_habitats": {
+  "title": "Rotating Habitats",
+  "icon": "theoreticalsciences:habitat_window",
+  "category": "physics",
+  "research": "rotating_habitats",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:oneill_cylinder",
+     "theoreticalsciences:habitat_hull",
+     "theoreticalsciences:habitat_window",
+     "theoreticalsciences:spin_bearing"
+    ],
+    "text": "a = ω²r. The $(thing)O'Neill Cylinder$() is 1001 blocks: a hull with three window strips, turning on its bearings over two cradles. Seed it with a Stable Ecosystem and it grows six; it also feeds its colonists, in bulk.",
+    "title": "O'Neill Cylinder"
+   },
+   {
+    "type": "multiblock",
+    "name": "O'Neill Cylinder",
+    "text": "Interface Ports in the cradles and keel.",
+    "multiblock": "oneill_cylinder"
+   }
+  ]
+ },
+ "engineering/stellar_engines": {
+  "title": "Stellar Engines",
+  "icon": "theoreticalsciences:shkadov_mirror",
+  "category": "physics",
+  "research": "stellar_engines",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:stellar_engine",
+     "theoreticalsciences:shkadov_mirror",
+     "theoreticalsciences:caplan_jet"
+    ],
+    "text": "F = f·L/c. The $(thing)Stellar Engine$() is 951 blocks: a mirror held up by a captive star's light on one side of it, Caplan jets on the other. It runs on Stellar Cores and gives four times a Dyson Array's power for each, with stellar plasma skimmed off by the jets.",
+    "title": "Stellar Engine"
+   },
+   {
+    "type": "multiblock",
+    "name": "Stellar Engine",
+    "text": "Interface Ports along the front of the platform under the ring.",
+    "multiblock": "stellar_engine"
+   }
+  ]
+ },
+ "world/node_dreaming_colony": {
+  "title": "Dreaming Colony",
+  "icon": "theoreticalsciences:dreaming_colony_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:dreaming_colony_spawn_egg"
+    ],
+    "text": "$(thing)Dreaming Colony$(): A knot of a few hundred neurons grown into one floating mind, dreaming aloud. It learns how it is fought: the more often one kind of blow hurts it, the less that kind does (down to half), and it keeps further from fighters who close in and nearer to those who shoot. Every few seconds it pulses, dazing whoever is within seven blocks. Found in Inner Space's Neural Cortex.$(br2)$(thing)Drops$(): Dream Polyp."
+   }
+  ]
+ },
+ "world/node_rust_mite": {
+  "title": "Rust Mite",
+  "icon": "theoreticalsciences:rust_mite_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:rust_mite_spawn_egg"
+    ],
+    "text": "$(thing)Rust Mite$(): An iron-eating pest with a shell of flaking rust. It feeds on the charge of machines within sixteen blocks, a bite a second; a live Sacrificial Anode nearby draws it off, and it eats that instead. It shies from players and bites only when struck. Found in Titan, the Antiverse and the derelict orbital rings.$(br2)$(thing)Drops$(): Rust Flakes."
+   }
+  ]
+ },
+ "world/library_ruin": {
+  "title": "Library Ruins and Derelict Rings",
+  "icon": "theoreticalsciences:inscribed_glyph_stone",
+  "category": "world",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:inscribed_glyph_stone",
+     "theoreticalsciences:archive_shelf",
+     "theoreticalsciences:glyph_tablet"
+    ],
+    "text": "$(thing)Library Ruins$(): sunken halls of glyph stone in the Overworld's forests, taigas and jungles, their shelves still full of tablets in the old glyph alphabet, with a cache of what the readers left. Rare."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:habitat_hull",
+     "theoreticalsciences:rust_flakes"
+    ],
+    "text": "$(thing)Derelict Rings$(): arcs of old spinning habitats drifting in low Earth orbit, far from the station, overrun by Rust Mites. Their crews' caches are still aboard."
+   }
+  ]
+ },
+ "world/neural_cortex": {
+  "title": "The Neural Cortex",
+  "icon": "theoreticalsciences:neuron_soma",
+  "category": "world",
+  "research": "inner_space",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:grey_matter",
+     "theoreticalsciences:white_matter",
+     "theoreticalsciences:neuron_soma"
+    ],
+    "text": "A sixth region of $(thing)Inner Space$(): a floor of $(item)Grey Matter$() over $(item)White Matter$(), where neurons grow as tall as trees, their cell bodies and synapses glowing. $(thing)Dreaming Colonies$() drift there."
+   }
+  ]
+ },
+ "operation/neural_culture_array": {
+  "title": "Neural Culture Array",
+  "icon": "theoreticalsciences:neural_culture_array",
+  "category": "operation",
+  "research": "action_potential",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A spike runs down an axon faster the thicker it is, and a hundred times faster once myelin wraps it. Too few sodium channels and the cells never fire; too many and they die of it."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Sodium channels, Axon diameter, Myelin wraps.$(br2)$(thing)Disturbance$(): the culture drifts: speed varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 40 mS/cm² the cells cannot fire (stops); over 160 they die (wear); more myelin than the axon can hold wears it.$(br2)$(thing)Rate$(): more channels, faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Myelination: m = min(1, wraps/40)$(br)Speed: v = (6D·m + √D·(1 − m))·√(g/120)$(br)Length: λ = 0.5·√(D·(1 + wraps))"
+   }
+  ]
+ },
+ "operation/synapse_trainer": {
+  "title": "Synapse Trainer",
+  "icon": "theoreticalsciences:synapse_trainer",
+  "category": "operation",
+  "research": "synaptic_plasticity",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Each showing of the pattern strengthens the synapses it uses. Learn too fast and the weights run away; train too long and the lattice wears."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Learning rate, Epochs, Activity.$(br2)$(thing)Disturbance$(): noise: what is learnt varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): η·x² over 0.25 runs away (stops); over 400 epochs wears.$(br2)$(thing)Rate$(): more epochs, slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Step: Δw = η·x²$(br)Learnt: w = 1 − e^(−η·x²·N)"
+   }
+  ]
+ },
+ "operation/psychophysics_booth": {
+  "title": "Psychophysics Booth",
+  "icon": "theoreticalsciences:psychophysics_booth",
+  "category": "operation",
+  "research": "psychophysics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Brighter flashes stand further out of the noise. Set the criterion high to keep false alarms down, but high enough and you miss the flashes too."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Flash intensity, Criterion, Trials.$(br2)$(thing)Disturbance$(): adaptation: sensitivity varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): too bright a flash bleaches the retina (wear).$(br2)$(thing)Rate$(): more trials, slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Sensitivity: d′ = 0.5·ln(I/I₀)$(br)Hits: H = Φ(d′ − c)$(br)False alarms: F = Φ(−c)"
+   }
+  ]
+ },
+ "operation/decipherment_desk": {
+  "title": "Decipherment Desk",
+  "icon": "theoreticalsciences:decipherment_desk",
+  "category": "operation",
+  "research": "linguistics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Guess the alphabet's size from the symbol counts, then read in context. Longer contexts read more but need far more text."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Corpus, Alphabet guess, Context.$(br2)$(thing)Disturbance$(): scribal errors: the reading varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 30 symbols of text there is nothing to count (stops).$(br2)$(thing)Rate$(): more text, slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Fit: e^(−((k − K)/0.15K)²)$(br)Coverage: 1 − e^(−N/(20·k^g))$(br)Deciphered: fit × coverage × g/(g + 0.5)"
+   }
+  ]
+ },
+ "operation/connectome_array": {
+  "title": "Connectome Array",
+  "icon": "theoreticalsciences:connectome_array",
+  "category": "operation",
+  "research": "integrated_information",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A mind is integrated and differentiated at once: connected enough that every part affects every other, split enough into modules that they do different things."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Neurons (log), Connectivity, Modularity.$(br2)$(thing)Disturbance$(): noise: Φ varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 20 MW wears; a dense unmodular net seizes (damage).$(br2)$(thing)Rate$(): more Φ, faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Integration: f = (1 − e^(−50p))·e^(−4p)$(br)Φ = log n · 4Q(1 − Q) · f"
+   }
+  ]
+ },
+ "operation/load_test_rig": {
+  "title": "Load Test Rig",
+  "icon": "theoreticalsciences:load_test_rig",
+  "category": "operation",
+  "research": "structural_mechanics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Deeper sections are stiffer by the cube of their depth; longer columns buckle at the inverse square of their length. Rate a beam between two and four: strong enough, and no heavier."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Section depth, Flange thickness, Length.$(br2)$(thing)Disturbance$(): imperfection: the load varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 250 MPa the steel yields (stops); over 400 kg wears the rig.$(br2)$(thing)Rate$(): lighter beams faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)I = (b·h³ − (b − t/2)(h − 2t)³)/12$(br)P = π²EI/L²$(br)Safety factor = P/load"
+   }
+  ]
+ },
+ "operation/composite_layup_press": {
+  "title": "Composite Layup Press",
+  "icon": "theoreticalsciences:composite_layup_press",
+  "category": "operation",
+  "research": "composite_materials",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Along the fibres a composite is stiff; across them it is only resin. Fibres packed past 62% leave voids."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Fibre fraction, Ply angle, Cure temperature.$(br2)$(thing)Disturbance$(): ply wrinkles: consolidation varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 110 °C the resin does not cure (stops); over 190 °C it chars (damage).$(br2)$(thing)Rate$(): hotter cures faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)E = V_f·E_f + (1 − V_f)·E_m$(br)E(θ) = E·cos⁴θ + E_m·(1 − cos⁴θ)$(br)Specific stiffness = E·q/ρ"
+   }
+  ]
+ },
+ "operation/tribometer": {
+  "title": "Tribometer",
+  "icon": "theoreticalsciences:tribometer",
+  "category": "operation",
+  "research": "tribology",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A coating lasts as long as its thickness over its wear rate. Test it at the duty it must stand, but not so hard the contact overheats."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Load, Sliding speed, Coating thickness.$(br2)$(thing)Disturbance$(): debris: life varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 200 W the test is too gentle (stops); over 400 W of friction wears; past 8 µm the coating spalls.$(br2)$(thing)Rate$(): harder tests faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Life: τ = 5556·h·H/(20·k·W·v) hours"
+   }
+  ]
+ },
+ "operation/corrosion_cell": {
+  "title": "Corrosion Cell",
+  "icon": "theoreticalsciences:corrosion_cell",
+  "category": "operation",
+  "research": "corrosion_science",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Below −0.62 V iron cannot dissolve; between pH 9 and 13 it covers itself in oxide and stops; chloride breaks that film above the pitting potential."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): pH, Potential, Chloride.$(br2)$(thing)Disturbance$(): oxygen: the rate varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): below −1.2 V hydrogen embrittles the steel (wear).$(br2)$(thing)Rate$(): salty water slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Immunity: E < −0.62 V$(br)Pitting: E_p = 0.3 − 0.15·(log Cl + 4)$(br)Rate: e^((E + 0.62)/0.06) where not immune or passive"
+   }
+  ]
+ },
+ "operation/space_elevator": {
+  "title": "Space Elevator",
+  "icon": "theoreticalsciences:space_elevator",
+  "category": "operation",
+  "research": "space_elevator",
+  "pages": [
+   {
+    "type": "text",
+    "text": "The tether must taper by at least e^(48.4/specific strength), or it snaps; much more is wasted mass. Climbers ride on beamed power."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Taper ratio, Climber speed, Payload.$(br2)$(thing)Disturbance$(): wind and tides: the load varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a taper below what is needed snaps the tether (stops); over 50 MW of beam overheats the climber (damage).$(br2)$(thing)Rate$(): faster climbers, faster lifts."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Taper needed: e^(48.4/S)$(br)Margin: taper/needed$(br)Power: P = m·g·v"
+   }
+  ]
+ },
+ "operation/oneill_cylinder": {
+  "title": "O'Neill Cylinder",
+  "icon": "theoreticalsciences:oneill_cylinder",
+  "category": "operation",
+  "research": "rotating_habitats",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Spin it for one gee on its floor, slowly enough not to sicken its colonists, without tearing its hull."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Spin, Radius, Hull thickness.$(br2)$(thing)Disturbance$(): wobble: gravity varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 2 rpm the colonists are sick (wear); hoop stress over the hull's strength tears it (stops).$(br2)$(thing)Rate$(): bigger habitats grow more."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)a = ω²r$(br)Hoop stress = ρω²r²·(1 + 200/t)"
+   }
+  ]
+ },
+ "operation/stellar_engine": {
+  "title": "Stellar Engine",
+  "icon": "theoreticalsciences:stellar_engine",
+  "category": "operation",
+  "research": "stellar_engines",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Cover more of the star's sky with mirror for more thrust, and fire the jets for more again; but a mirror too heavy falls in, and too close it melts."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Mirror coverage, Mirror areal density, Jet fraction.$(br2)$(thing)Disturbance$(): flares: thrust varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): heavier than 0.78 g/m² the mirror falls (stops); over 1500 K it melts (damage); jets over 90% strip the star (wear).$(br2)$(thing)Rate$(): more thrust, more power."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)F = f·(1 + j)·L/c$(br)T = 394/√(1 − f) K"
+   }
+  ]
  }
 }

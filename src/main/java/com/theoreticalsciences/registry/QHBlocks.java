@@ -36,7 +36,8 @@ public final class QHBlocks {
                     .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 9).noOcclusion());
 
     static final java.util.Set<String> SQUISH = java.util.Set.of("extracellular_matrix", "cell_membrane", "bone_matrix", "lymph_tissue", "chromatin",
-            "tumour_mass", "bioluminescent_membrane", "collagen_seam", "nucleotide_cluster", "tumour_nodule");
+            "tumour_mass", "bioluminescent_membrane", "collagen_seam", "nucleotide_cluster", "tumour_nodule",
+            "grey_matter", "white_matter", "neuron_soma");                    // 1.4.0: the Neural Cortex
 
     static {
         for (QHContentList.BlockDef def : QHContentList.BLOCKS) {
@@ -220,6 +221,10 @@ public final class QHBlocks {
                 case "deco_wall" -> {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).forceSolidOn();
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), net.minecraft.world.level.block.WallBlock::new, p));
+                }
+                case "anode" -> {               // 1.4.0: corrosion: eaten in place of the machines
+                    p.mapColor(MapColor.METAL).sound(SoundType.METAL);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.engineering.SacrificialAnodeBlock::new, p));
                 }
                 case "casing" -> {
                     p.mapColor(MapColor.COLOR_BLACK).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);

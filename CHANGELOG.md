@@ -1,5 +1,90 @@
 # Changelog
 
+## 1.4.0 — Mind and Language, and Engineering of the Large
+
+Two new branches, the fifth and sixth of the expansion plan: the sciences between a neuron and a god-machine, and the
+science of how big things stand up, wear out and rust. Twelve new research entries, twelve new machines (eight consoles
+and four multiblocks), two new creatures, a new region of Inner Space and two new kinds of ruin.
+
+### Part one: Mind and Language
+
+**Research** (after Neurobiology and Membrane Potential)
+* **The Action Potential**: the cable equation, λ = √(r_m/r_i). Unlocks the **Neural Culture Array** (a Biology
+  console: it can be contaminated like the others), which grows **Myelinated Axons** from Neural Organoids and Lipid
+  Bilayers in blood plasma. Its dials: sodium channels, axon diameter and myelin wraps; the recipe wants a fast fibre.
+* **Synaptic Plasticity**: Hebb's rule, Δw = η·x·y. Unlocks the **Synapse Trainer**, which trains a **Synaptic
+  Lattice**: a new machine upgrade (+10% products, and precision falls off a third slower).
+* **Psychophysics**: the Weber–Fechner law, S = k·ln(I/I₀), and signal detection. Unlocks the **Psychophysics Booth**,
+  which trains a **Rhodopsin Retina** to see faint flashes without imagining them.
+* **Linguistics**: Zipf and Shannon, H = log₂N. Unlocks the **Decipherment Desk**, which reads the **Glyph Tablets** of
+  the new Library Ruins into **Lexicon Fragments**, and those into the **Universal Grammar**.
+* **Integrated Information**: a toy Φ, high only for a network both integrated and differentiated. Unlocks the
+  **Connectome Array**, a 469-block dome of Glial Scaffold threaded with Axon Bundle tracts and Synapse Relays, with a
+  ring of relays turning inside while it runs. It maps networks into **Engrams**.
+
+**New gear**
+* **Low-Light Visor** (made by crafting from a Rhodopsin Retina, an Anglerfish Lure, Pressure Hull Plate and a Photonic
+  Lens): worn on the head it gives night vision, and in the Hadal Trench it is the first gear that sees the deep
+  clearly (it carries the `theoreticalsciences:hadal_vision` tag).
+
+**The world**
+* **The Neural Cortex**, a sixth region of Inner Space (it takes the warm half of what was Tissue): a floor of Grey
+  Matter over White Matter, with neurons the size of trees whose cell bodies and synapses glow (Neuron Soma).
+* **Dreaming Colony** (new creature, its own AI, model and sounds): a floating knot of neurons that dreams aloud. It
+  learns how it is fought: each kind of blow (melee, projectiles, magic, fire, blasts) does less the more often it has
+  landed, down to half, and the counts fade over time; it keeps further from players who close in and nearer to
+  those who shoot. Every few seconds it pulses, dazing players within seven blocks. Drops Dream Polyps, which the
+  Neural Culture Array grows back into Neural Organoids.
+* **Library Ruins** (Overworld forests, taigas and jungles; rare): sunken halls of the new Glyph Stone Bricks and
+  Inscribed Glyph Stone, with Archive Shelves of tablets and a cache of Glyph Tablets.
+
+### Part two: Engineering of the Large
+
+**Research** (after Constructions and Ceramics)
+* **Structural Mechanics**: Euler buckling, P = π²EI/L². Unlocks the **Load Test Rig**, which rates **I-Beams** to a
+  safety factor between two and four.
+* **Composite Materials**: the rule of mixtures. Unlocks the **Composite Layup Press**: **Carbon-Fibre** and
+  **Nanotube Composites**, and later the **Tether Spool** and **Shkadov Mirror Film**.
+* **Tribology**: Archard wear, V = k·W·L/H. Unlocks the **Tribometer**, which qualifies the **Wear Coating**: a new
+  machine upgrade (catalysts wear half as fast).
+* **Corrosion Science**: Nernst and Pourbaix. Unlocks the **Corrosion Cell**: **Passivated Plate**, and **Sacrificial
+  Anodes** (a block).
+* **The Space Elevator**: the tether taper, e^(ρgR²/σr). Unlocks the **Space Elevator**, a 770-block multiblock: an
+  anchor platform, a tether 48 blocks tall under a counterweight, and a climber that rides it while it runs. It is a
+  second route to orbit on power alone.
+* **Rotating Habitats**: spin gravity, a = ω²r. Unlocks the **O'Neill Cylinder**, a 1,001-block habitat that turns on
+  its bearings.
+* **Stellar Engines**: Shkadov thrust, F = fL/c. Unlocks the **Stellar Engine**, a 951-block generator: a mirror held
+  up by a captive star's light, and Caplan jets.
+
+**The world**
+* **Rust Mite** (new creature, its own AI, model and sounds): an iron-eating pest of Titan, the Antiverse and the
+  derelict rings. It never breaks blocks: it clings to a machine with charge in it within 16 blocks and drains it, a
+  bite a second. A live **Sacrificial Anode** within 12 blocks draws it off, and it eats the anode instead (four bites,
+  after which the anode is spent and drops Rust Flakes). It bites players only when struck.
+* **Derelict Rings** (Orbital Station, far from the station): torn arcs of old habitat rings with Rust Mites aboard and
+  a cache of engineering salvage.
+
+**Recipes** (all new; each newer route is cheaper than the one it parallels)
+* Matrioshka Brain: 16 Engrams, 32 Computronium Ingots, 16 Neural Organoids and synaptic fluid make 2 Superintelligence
+  Cores, far cheaper than the old route (which is unchanged).
+* Space Elevator: a Crew Capsule becomes a Fuelled Crew Capsule on power alone (no Rocket Stages or propellant); a
+  Microgravity Lab gives 12 Microgravity Crystals (the Rocket Assembly gives 8 to 10); a Station Module docks as from the
+  Rocket Assembly. A fuelled capsule can now be flown from beside a Space Elevator too.
+* O'Neill Cylinder: a Stable Ecosystem with Living Soil and water grows six; wheat and Living Soil give Field Rations in
+  bulk.
+* Stellar Engine: a Stellar Core and residual starlight give four times a Dyson Array's energy for one core, with
+  stellar plasma skimmed off by the jets.
+* Corrosion Cell: Rust Flakes make Passivated Plate more cheaply than nickel-plated iron does.
+* Neural Culture Array: two Dream Polyps grow a Neural Organoid.
+
+### Fixes
+* Eleven research derivations from 1.3.0 (Compressible Flow, De-extinction, Food Science, Meteorology, Orbital
+  Mechanics, Plant Hormones, Plant Physiology, Radiometric Dating, Rocketry, Soil Science, Volcanology) could never
+  accept the right number in their second step: their answers were written without spaces between symbols, which the
+  game reads as one unknown name. They are spaced out now. (`tools/check_puzzles.py` checks every derivation the way
+  the game computes it.)
+
 ## 1.3.0 — Fluids and Flight, the Living Planet, the Green Kingdom and Deep Time
 
 Three parts, newest first: the Green Kingdom and Deep Time, Into Orbit and the Living Planet, and Fluids and Flight.

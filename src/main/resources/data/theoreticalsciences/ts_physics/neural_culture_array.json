@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "id": "gNa",
+      "unit": "mS/cm²",
+      "min": 10,
+      "max": 200,
+      "step": 1,
+      "default": 60
+    },
+    {
+      "id": "Dax",
+      "unit": "µm",
+      "min": 0.5,
+      "max": 20,
+      "step": 0.1,
+      "default": 2
+    },
+    {
+      "id": "my",
+      "unit": "wraps",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "vmin": 60
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "mf",
+      "unit": "",
+      "expr": "clamp(my/40, 0, 1)",
+      "formula": "myelination: full at 40 wraps"
+    },
+    {
+      "id": "lam",
+      "unit": "mm",
+      "expr": "0.5*sqrt(Dax*(1 + my))",
+      "formula": "λ = √(r_m/r_i): wraps raise r_m, girth lowers r_i"
+    },
+    {
+      "id": "v",
+      "unit": "m/s",
+      "expr": "(6*Dax*mf + sqrt(Dax)*(1 - mf))*sqrt(gNa/120)*(1 + 0.02*d)",
+      "formula": "v ≈ 6·D myelinated, √D bare"
+    },
+    {
+      "id": "fire",
+      "unit": "",
+      "expr": "gNa/40",
+      "formula": "channel drive over threshold"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "threshold",
+      "kind": "stop",
+      "expr": "gNa - 40",
+      "formula": "g_Na > 40 mS/cm² to fire at all"
+    },
+    {
+      "id": "excite",
+      "kind": "wear",
+      "expr": "160 - gNa",
+      "formula": "g_Na < 160: beyond, the cells die of overexcitation"
+    },
+    {
+      "id": "gratio",
+      "kind": "wear",
+      "expr": "2.5*Dax - my*0.05",
+      "formula": "myelin no thicker than the axon allows"
+    }
+  ],
+  "rate": "clamp(gNa/120, 0.25, 1.5)",
+  "rate_formula": "more sodium channels, faster cultures",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

@@ -1,0 +1,56 @@
+{
+  "title": "Stellar Engines",
+  "x": 25,
+  "y": 11,
+  "insight": 640,
+  "requires": [
+    "theoreticalsciences:rotating_habitats",
+    "theoreticalsciences:dyson_sphere"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:shkadov_mirror_film",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 1
+    }
+  ],
+  "time": 900,
+  "description": "Move a star. A Shkadov thruster is a vast curved mirror hung on one side of a star, held up by the star's own light, reflecting it back: the light pushes one way only, so the star drifts the other, with thrust F = fL/c. A Caplan thruster lifts matter from the star and fires it as a jet. Unlocks the Stellar Engine.",
+  "icon": "theoreticalsciences:stellar_engine",
+  "puzzle": {
+    "goal": "A mirror covering a fraction f of the sky round a star of luminosity L sends that light back. Write the net thrust F on the star, with c the speed of light.",
+    "name": "The Shkadov thrust",
+    "lhs": "F",
+    "form": "f * L / c",
+    "expr": "f * L / c",
+    "ask": "Find F in newtons for f = @{f}, L = @{L} W and c = @{c} m/s.",
+    "vars": {
+      "F": "thrust",
+      "f": "fraction of the sky covered",
+      "L": "luminosity",
+      "c": "speed of light"
+    },
+    "given": {
+      "f": 0.5,
+      "L": 3.828e+26,
+      "c": 299792458.0
+    },
+    "unit": "N",
+    "method": "Light carries momentum E/c. Unbalanced: the reflected fraction f pushes back on the star with f·L/c.",
+    "distractors": [
+      "2",
+      "*",
+      "G"
+    ],
+    "vary": {
+      "f": [
+        0.1,
+        0.5,
+        0.05
+      ]
+    }
+  }
+}

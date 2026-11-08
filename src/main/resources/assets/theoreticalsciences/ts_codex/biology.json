@@ -1611,6 +1611,45 @@
    "parents": [
     "biology/ancient_dna"
    ]
+  },
+  {
+   "entry": "biology/action_potential",
+   "x": 3,
+   "y": 48,
+   "parents": []
+  },
+  {
+   "entry": "biology/synaptic_plasticity",
+   "x": 5,
+   "y": 48,
+   "parents": [
+    "biology/action_potential"
+   ]
+  },
+  {
+   "entry": "biology/psychophysics",
+   "x": 5,
+   "y": 50,
+   "parents": [
+    "biology/action_potential"
+   ]
+  },
+  {
+   "entry": "biology/linguistics",
+   "x": 7,
+   "y": 50,
+   "parents": [
+    "biology/psychophysics"
+   ]
+  },
+  {
+   "entry": "biology/integrated_information",
+   "x": 9,
+   "y": 49,
+   "parents": [
+    "biology/synaptic_plasticity",
+    "biology/linguistics"
+   ]
   }
  ],
  "regions": [
@@ -1637,6 +1676,14 @@
    "x1": 125.5,
    "y0": 34,
    "y1": 45.5
+  },
+  {
+   "tier": 3,
+   "label": "Mind & Language",
+   "x0": -1.5,
+   "x1": 125.5,
+   "y0": 46.5,
+   "y1": 52.5
   }
  ]
 }

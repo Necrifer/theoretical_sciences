@@ -76,6 +76,8 @@ public class TheoreticalSciences {
         com.theoreticalsciences.ocean.OceanRegistry.register(modBus);          // 1.2.0
         com.theoreticalsciences.weather.WeatherRegistry.register(modBus);      // 1.3.0
         com.theoreticalsciences.deeptime.DeepTimeRegistry.register(modBus);    // 1.3.0
+        com.theoreticalsciences.mind.MindRegistry.register(modBus);            // 1.4.0: Mind and Language
+        com.theoreticalsciences.engineering.EngineeringRegistry.register(modBus);   // 1.4.0: Engineering of the Large
         com.theoreticalsciences.math.MathRegistry.register(modBus);            // 1.2.0
         com.theoreticalsciences.science.Wear.register(modBus);          // 1.2.0: catalysts and instruments that wear
         com.theoreticalsciences.green.PlantTraits.register(modBus);     // 1.3.0: bred seeds carry their traits

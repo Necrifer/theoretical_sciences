@@ -25,7 +25,7 @@
     "name": "The Arrhenius rate",
     "lhs": "k",
     "form": "A * exp ( - E / ( R * T ) )",
-    "expr": "A * exp(-E / (R * T))",
+    "expr": "A * exp ( - E / ( R * T ) )",
     "ask": "Find k in 1/s for a crust: A = @{A} 1/s, E = @{E} J/mol, R = @{R} J/(mol\u00b7K), T = @{T} K.",
     "vars": {
       "k": "rate constant (1/s)",

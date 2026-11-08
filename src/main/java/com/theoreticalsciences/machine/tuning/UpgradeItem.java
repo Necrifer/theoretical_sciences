@@ -65,6 +65,16 @@ public class UpgradeItem extends LoreItem {
         return new UpgradeItem(p, "symbiont_lining");
     }
 
+    /** 1.4.0: a lattice of trained synapses: the machine learns from its runs. +10% products, and precision falls off a third slower. */
+    public static UpgradeItem synapticLattice(Properties p) {
+        return new UpgradeItem(p, "synaptic_lattice");
+    }
+
+    /** 1.4.0: a diamond-like carbon coating on every sliding part: catalysts wear half as fast. */
+    public static UpgradeItem wearCoating(Properties p) {
+        return new UpgradeItem(p, "wear_coating");
+    }
+
     @Override
     public InteractionResult useOn(UseOnContext ctx) {
         if (!(ctx.getLevel() instanceof ServerLevel level) || !(ctx.getPlayer() instanceof ServerPlayer sp)) return InteractionResult.SUCCESS;

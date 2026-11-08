@@ -1,0 +1,91 @@
+{
+  "params": [
+    {
+      "id": "Vf",
+      "unit": "",
+      "min": 0.1,
+      "max": 0.8,
+      "step": 0.01,
+      "default": 0.4
+    },
+    {
+      "id": "th",
+      "unit": "°",
+      "min": 0,
+      "max": 90,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "id": "Tc",
+      "unit": "°C",
+      "min": 80,
+      "max": 220,
+      "step": 1,
+      "default": 120
+    }
+  ],
+  "recipe_vars": {
+    "Ef": 230,
+    "rf": 1.8,
+    "Em": 3.5,
+    "rm": 1.2
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "E1",
+      "unit": "GPa",
+      "expr": "Vf*Ef + (1 - Vf)*Em",
+      "formula": "rule of mixtures"
+    },
+    {
+      "id": "Eth",
+      "unit": "GPa",
+      "expr": "E1*cos(th/57.3)^4 + Em*(1 - cos(th/57.3)^4)",
+      "formula": "stiffness off the fibre direction"
+    },
+    {
+      "id": "q",
+      "unit": "",
+      "expr": "exp(-(pos(Vf - 0.62)/0.05)^2)*(1 - 0.01*d)",
+      "formula": "fibres packed past 62% leave voids"
+    },
+    {
+      "id": "rho",
+      "unit": "g/cm³",
+      "expr": "Vf*rf + (1 - Vf)*rm",
+      "formula": "density"
+    },
+    {
+      "id": "S",
+      "unit": "GPa·cm³/g",
+      "expr": "Eth*q/rho",
+      "formula": "specific stiffness"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "cure",
+      "kind": "stop",
+      "expr": "Tc - 110",
+      "formula": "cure above 110 °C"
+    },
+    {
+      "id": "burn",
+      "kind": "damage",
+      "expr": "190 - Tc",
+      "formula": "under 190 °C: the resin chars"
+    }
+  ],
+  "rate": "clamp((Tc - 100)/60, 0.2, 1.5)",
+  "rate_formula": "hotter cures faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

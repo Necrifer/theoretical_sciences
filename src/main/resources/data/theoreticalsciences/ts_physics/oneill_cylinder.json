@@ -1,0 +1,83 @@
+{
+  "params": [
+    {
+      "id": "rpm",
+      "unit": "rpm",
+      "min": 0.1,
+      "max": 4,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "Rm",
+      "unit": "m",
+      "min": 100,
+      "max": 8000,
+      "step": 10,
+      "default": 500
+    },
+    {
+      "id": "tw",
+      "unit": "m",
+      "min": 0.5,
+      "max": 10,
+      "step": 0.1,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {
+    "rhoh": 1600,
+    "sy": 1500
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "w",
+      "unit": "rad/s",
+      "expr": "rpm*0.10472",
+      "formula": "ω"
+    },
+    {
+      "id": "a",
+      "unit": "m/s²",
+      "expr": "w^2*Rm*(1 + 0.01*d)",
+      "formula": "spin gravity a = ω²r"
+    },
+    {
+      "id": "vr",
+      "unit": "m/s",
+      "expr": "w*Rm",
+      "formula": "rim speed"
+    },
+    {
+      "id": "hs",
+      "unit": "MPa",
+      "expr": "rhoh*(w*Rm)^2/1000000*(1 + 200/tw)",
+      "formula": "hoop stress ρω²r², plus the air and soil on the hull"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sick",
+      "kind": "wear",
+      "expr": "2 - rpm",
+      "formula": "under 2 rpm, or the colonists are spin-sick"
+    },
+    {
+      "id": "hoop",
+      "kind": "stop",
+      "expr": "sy - rhoh*(w*Rm)^2/1000000*(1 + 200/tw)",
+      "formula": "hoop stress under the hull's strength"
+    }
+  ],
+  "rate": "clamp(Rm/2000, 0.2, 1.5)",
+  "rate_formula": "bigger habitats grow more",
+  "heat": "0.3",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

@@ -73,6 +73,9 @@ public final class QHItems {
                 case "antibiotic" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.CleaningItem::antibiotic, p);
                 case "anomaly_ward" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.VaccineItem::new, p);   // 1.2.0
                 case "symbiont_lining" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::symbiontLining, p);
+                case "synaptic_lattice" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::synapticLattice, p);   // 1.4.0
+                case "wear_coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::wearCoating, p);
+                case "visor" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.mind.LowLightVisorItem::new, p);
                 case "probiotic_seal" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::probioticSeal, p);
                 case "tuning_fork" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.TuningForkItem::new, p);   // 1.2.0
                 case "calibration_card" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.CalibrationCardItem::new, p);   // 1.2.0

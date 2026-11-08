@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:composite_layup",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:aluminium_ingot",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:shkadov_mirror_film",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:stellar_engines",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ef": 70,
+      "rf": 2.7,
+      "Em": 3.5,
+      "rm": 1.2
+    },
+    "windows": [
+      {
+        "q": "S",
+        "min": 15,
+        "max": 1000
+      },
+      {
+        "q": "q",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

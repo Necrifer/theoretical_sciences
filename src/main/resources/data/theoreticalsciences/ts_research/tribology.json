@@ -1,0 +1,57 @@
+{
+  "title": "Tribology",
+  "x": 19,
+  "y": 12,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:structural_mechanics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rated_i_beam",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 1
+    }
+  ],
+  "time": 200,
+  "description": "Every machine wears where its parts slide. Archard: the volume worn away is V = k·W·L/H, the load times the distance slid over the hardness, with a wear coefficient k for the pair. A hard, slippery coating (diamond-like carbon) cuts both the friction and k by orders of magnitude. Unlocks the Tribometer and the Wear Coating upgrade.",
+  "icon": "theoreticalsciences:tribometer",
+  "puzzle": {
+    "goal": "A part slides a distance L under a load W against a surface of hardness H; the pair has wear coefficient k. Write the volume V worn away.",
+    "name": "Archard's wear law",
+    "lhs": "V",
+    "form": "k * W * L / H",
+    "expr": "k * W * L / H",
+    "ask": "Find V in m³ for k = @{k}, W = @{W} N, L = @{L} m and H = @{H} Pa.",
+    "vars": {
+      "V": "volume worn",
+      "k": "wear coefficient",
+      "W": "load",
+      "L": "distance slid",
+      "H": "hardness"
+    },
+    "given": {
+      "k": 0.0001,
+      "W": 100.0,
+      "L": 1000.0,
+      "H": 2000000000.0
+    },
+    "unit": "m³",
+    "method": "Asperities touch over an area W/H; a fixed fraction k of the contacts tears off a lump as it slides.",
+    "distractors": [
+      "*",
+      "μ",
+      "2"
+    ],
+    "vary": {
+      "W": [
+        50.0,
+        500.0,
+        50.0
+      ]
+    }
+  }
+}

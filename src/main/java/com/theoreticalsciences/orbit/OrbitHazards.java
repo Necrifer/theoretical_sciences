@@ -33,6 +33,8 @@ public final class OrbitHazards {
     static final double GRAVITY_FACTOR = 0.10, JUMP_FACTOR = 1.0, FALL_FACTOR = 0.0;
     /** The recipe that docks a module (data/theoreticalsciences/recipe/orbital_launch/r103_station_module.json). */
     static final ResourceLocation MODULE_RECIPE = TheoreticalSciences.id("orbital_launch/r103_station_module");
+    /** 1.4.0: the same module carried up the Space Elevator's tether. */
+    static final ResourceLocation MODULE_LIFT = TheoreticalSciences.id("elevator_lift/r140_station_module");
 
     @SubscribeEvent
     public static void onTick(PlayerTickEvent.Post e) {
@@ -68,7 +70,7 @@ public final class OrbitHazards {
 
     @SubscribeEvent
     public static void onLaunch(MachineRecipeEvent.Finish e) {
-        if (!MODULE_RECIPE.equals(e.getRecipeId()) || e.getMachine().getLevel() == null || e.getMachine().getLevel().getServer() == null) return;
+        if (!(MODULE_RECIPE.equals(e.getRecipeId()) || MODULE_LIFT.equals(e.getRecipeId())) || e.getMachine().getLevel() == null || e.getMachine().getLevel().getServer() == null) return;
         var server = e.getMachine().getLevel().getServer();
         int n = OrbitData.get(server).addModule();
         if (e.getMachine().getOwner() != null && server.getPlayerList().getPlayer(e.getMachine().getOwner()) instanceof ServerPlayer owner)

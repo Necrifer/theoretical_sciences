@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:psychophysics",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:myelinated_axon",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:eel_photophore",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fused_silica_lens",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rhodopsin_retina",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:psychophysics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "H",
+        "min": 0.9,
+        "max": 1.0
+      },
+      {
+        "q": "F",
+        "min": 0.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:corrosion_testing",
+  "item_inputs": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:phosphate_buffer",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:passivated_plate",
+      "count": 4
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:corrosion_science",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "cr",
+        "min": 0,
+        "max": 0.01
+      },
+      {
+        "q": "imm",
+        "min": 0.62,
+        "max": 2
+      }
+    ]
+  }
+}

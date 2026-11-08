@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:composite_layup",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:carbon_nanotube_bundle",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:nanotube_composite",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:composite_materials",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ef": 1000,
+      "rf": 1.4,
+      "Em": 3.5,
+      "rm": 1.2
+    },
+    "windows": [
+      {
+        "q": "S",
+        "min": 300,
+        "max": 2000
+      },
+      {
+        "q": "q",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -7005,6 +7005,60 @@
       "parents": [
         "nuclear/decay_chamber"
       ]
+    },
+    {
+      "entry": "engineering/structural_mechanics",
+      "x": 3,
+      "y": 133,
+      "parents": []
+    },
+    {
+      "entry": "engineering/composite_materials",
+      "x": 5,
+      "y": 133,
+      "parents": [
+        "engineering/structural_mechanics"
+      ]
+    },
+    {
+      "entry": "engineering/tribology",
+      "x": 5,
+      "y": 135,
+      "parents": [
+        "engineering/structural_mechanics"
+      ]
+    },
+    {
+      "entry": "engineering/corrosion_science",
+      "x": 7,
+      "y": 135,
+      "parents": [
+        "engineering/tribology"
+      ]
+    },
+    {
+      "entry": "engineering/space_elevator",
+      "x": 7,
+      "y": 133,
+      "parents": [
+        "engineering/composite_materials"
+      ]
+    },
+    {
+      "entry": "engineering/rotating_habitats",
+      "x": 9,
+      "y": 133,
+      "parents": [
+        "engineering/space_elevator"
+      ]
+    },
+    {
+      "entry": "engineering/stellar_engines",
+      "x": 11,
+      "y": 133,
+      "parents": [
+        "engineering/rotating_habitats"
+      ]
     }
   ],
   "regions": [
@@ -7135,6 +7189,14 @@
       "x1": 224.5,
       "y0": 120,
       "y1": 131.5
+    },
+    {
+      "tier": 16,
+      "label": "Engineering of the Large",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 131.5,
+      "y1": 137.5
     }
   ]
 }

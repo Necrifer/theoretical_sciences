@@ -89,6 +89,8 @@ public final class QHEntityRenderers {
         e.registerEntityRenderer(com.theoreticalsciences.weather.WeatherRegistry.STORM_ELEMENTAL.get(), FrontierMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.deeptime.DeepTimeRegistry.MAMMOTH.get(), DeepTimeRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.deeptime.DeepTimeRegistry.MEGANEURA.get(), DeepTimeRenderers.Mob::new);
+        e.registerEntityRenderer(com.theoreticalsciences.mind.MindRegistry.DREAMING_COLONY.get(), MindEngRenderers.Mob::new);      // 1.4.0
+        e.registerEntityRenderer(com.theoreticalsciences.engineering.EngineeringRegistry.RUST_MITE.get(), MindEngRenderers.Mob::new);
         // 1.2.0: Titan
         e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.THOLIN_DRIFTER.get(), TitanMobRenderers.Mob::new);
         e.registerEntityRenderer(com.theoreticalsciences.titan.TitanRegistry.CATALYST_SPRITE.get(), TitanMobRenderers.Mob::new);

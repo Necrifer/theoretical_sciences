@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:decipherment",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lexicon_fragment",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:one_time_pad",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:universal_grammar",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 600,
+  "research": "theoreticalsciences:linguistics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Kt": 40
+    },
+    "windows": [
+      {
+        "q": "dec",
+        "min": 0.75,
+        "max": 1.0
+      }
+    ]
+  }
+}

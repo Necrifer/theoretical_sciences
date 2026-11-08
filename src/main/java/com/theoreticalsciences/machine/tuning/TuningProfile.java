@@ -154,6 +154,10 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.ICE_CORE_DRILL, "rotation_speed", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 2);
         p(MachineType.STORM_CHAMBER, "charge_separation", Drift.JUMP, 0.8F, 2, 4, Hazard.MAGNETIC, 4);
         p(MachineType.HYDROPONIC_TOWER, "light_intensity", Drift.OSCILLATE, 0.4F, 2, 4, Hazard.CHEMICAL, 1);
+        p(MachineType.CONNECTOME_ARRAY, "synaptic_gain", Drift.WALK, 0.5F, 2, 4, Hazard.MAGNETIC, 2);      // 1.4.0
+        p(MachineType.SPACE_ELEVATOR, "tether_tension", Drift.OSCILLATE, 0.6F, 2, 4, Hazard.THERMAL, 3);
+        p(MachineType.ONEILL_CYLINDER, "spin_rate", Drift.WALK, 0.4F, 2, 4, Hazard.THERMAL, 2);
+        p(MachineType.STELLAR_ENGINE, "mirror_attitude", Drift.JUMP, 0.8F, 2, 4, Hazard.THERMAL, 6);
     }
 
     /** The profiles with a datapack's changes applied (data/<ns>/ts_machines), rebuilt when that data changes. */

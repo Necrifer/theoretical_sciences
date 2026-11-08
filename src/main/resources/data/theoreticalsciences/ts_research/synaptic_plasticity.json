@@ -1,0 +1,61 @@
+{
+  "title": "Synaptic Plasticity",
+  "x": 16,
+  "y": 19,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:action_potential",
+    "theoreticalsciences:artificial_intelligence"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:myelinated_axon",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:photonic_neuron",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "description": "Cells that fire together wire together: a synapse grows stronger each time the cell before it and the cell after it are active at once, Δw = η·x·y. Left alone that runs away; real synapses also scale themselves back (Oja's rule), so a trained network keeps what it learnt without saturating. Unlocks the Synapse Trainer and the Synaptic Lattice upgrade.",
+  "icon": "theoreticalsciences:synapse_trainer",
+  "puzzle": {
+    "goal": "A synapse of weight w joins a cell with activity x to a cell with activity y. Hebb: it strengthens in proportion to both. Write the change Δw in one step, with learning rate η.",
+    "name": "Hebb's rule",
+    "lhs": "Δw",
+    "form": "η * x * y",
+    "expr": "eta * x * y",
+    "ask": "Find Δw for η = @{eta}, x = @{x} and y = @{y}.",
+    "vars": {
+      "Δw": "change in synaptic weight",
+      "η": "learning rate",
+      "x": "presynaptic activity",
+      "y": "postsynaptic activity"
+    },
+    "given": {
+      "eta": 0.05,
+      "x": 0.8,
+      "y": 0.6
+    },
+    "unit": "",
+    "method": "The change needs both cells active: the product of the two activities, scaled by how fast the synapse learns.",
+    "distractors": [
+      "+",
+      "w",
+      "2"
+    ],
+    "vary": {
+      "x": [
+        0.2,
+        1.0,
+        0.1
+      ],
+      "y": [
+        0.2,
+        1.0,
+        0.1
+      ]
+    }
+  }
+}

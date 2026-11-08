@@ -1,0 +1,54 @@
+{
+  "title": "Rotating Habitats",
+  "x": 25,
+  "y": 9,
+  "insight": 420,
+  "requires": [
+    "theoreticalsciences:space_elevator",
+    "theoreticalsciences:ecology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stable_ecosystem",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:passivated_plate",
+      "count": 16
+    }
+  ],
+  "time": 600,
+  "description": "Spin a cylinder and its floor presses on your feet as gravity does: a = ω²r. Make it big and it can spin slowly enough that turning your head does not make you sick (under 2 turns a minute); but the hoop stress in its hull, ρω²r², grows with the square of its size, and that sets the largest you can build. O'Neill's cylinders were eight kilometres across. Unlocks the O'Neill Cylinder.",
+  "icon": "theoreticalsciences:oneill_cylinder",
+  "puzzle": {
+    "goal": "A habitat of radius r spins at angular speed ω. Write the apparent gravity a on its floor.",
+    "name": "Spin gravity",
+    "lhs": "a",
+    "form": "ω ^ 2 * r",
+    "expr": "w ^ 2 * r",
+    "ask": "Find a in m/s² for r = @{r} m spinning at ω = @{w} rad/s.",
+    "vars": {
+      "a": "apparent gravity",
+      "ω": "angular speed",
+      "r": "radius"
+    },
+    "given": {
+      "w": 0.1,
+      "r": 1000.0
+    },
+    "unit": "m/s²",
+    "method": "The floor must push you round the circle: the centripetal acceleration v²/r = ω²r.",
+    "distractors": [
+      "/",
+      "g",
+      "2"
+    ],
+    "vary": {
+      "r": [
+        500.0,
+        4000.0,
+        250.0
+      ]
+    }
+  }
+}

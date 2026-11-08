@@ -1,0 +1,56 @@
+{
+  "title": "Structural Mechanics",
+  "x": 19,
+  "y": 10,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:constructions",
+    "theoreticalsciences:ceramics"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:alumina_ceramic_plate",
+      "count": 2
+    }
+  ],
+  "time": 200,
+  "description": "Steel stretches in proportion to the stress on it (Hooke, σ = Eε) until it yields; but a slender column fails long before that, by bowing sideways. Euler found the load at which it buckles: P = π²EI/(KL)². Stiffness against buckling comes from the shape of the section, its second moment I, which is why beams are I-shaped. Unlocks the Load Test Rig and Rated I-Beams.",
+  "icon": "theoreticalsciences:load_test_rig",
+  "puzzle": {
+    "goal": "A slender column of length L, pinned at both ends, of a material of modulus E and a section of second moment I. Write the load P at which it buckles.",
+    "name": "Euler's buckling load",
+    "lhs": "P",
+    "form": "π ^ 2 * E * I / L ^ 2",
+    "expr": "π ^ 2 * E * I / L ^ 2",
+    "ask": "Find P in newtons for a steel column: E = @{E} Pa, I = @{I} m⁴, L = @{L} m.",
+    "vars": {
+      "P": "critical load",
+      "E": "Young's modulus",
+      "I": "second moment of area",
+      "L": "length"
+    },
+    "given": {
+      "E": 200000000000.0,
+      "I": 2e-05,
+      "L": 6.0
+    },
+    "unit": "N",
+    "method": "EI·y″ + P·y = 0 with y = 0 at both ends: the first mode, y = sin(πx/L), needs P = π²EI/L².",
+    "distractors": [
+      "2",
+      "*",
+      "σ"
+    ],
+    "vary": {
+      "L": [
+        3.0,
+        10.0,
+        1.0
+      ]
+    }
+  }
+}

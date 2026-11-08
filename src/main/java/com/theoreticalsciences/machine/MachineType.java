@@ -252,7 +252,21 @@ public enum MachineType {
     BREEDING_BENCH          ("plant_breeding",       2, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0x80C050),
     DATING_SPECTROMETER     ("radiometric_dating",   1, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0xD0A040),
     ANCIENT_DNA_LAB         ("ancient_dna",          1, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC0D8A0),
-    REVIVAL_VAT             ("revival",              3, 1, 1, 0, false, "revival_vat",             16_000_000,   400_000, Effect.NONE,        0x80D0C0);
+    REVIVAL_VAT             ("revival",              3, 1, 1, 0, false, "revival_vat",             16_000_000,   400_000, Effect.NONE,        0x80D0C0),
+    // 1.4.0: Mind and Language
+    NEURAL_CULTURE_ARRAY    ("neural_culture",       2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xE8A0C8),
+    SYNAPSE_TRAINER         ("synaptic_training",    3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC090FF),
+    PSYCHOPHYSICS_BOOTH     ("psychophysics",        3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF0D070),
+    DECIPHERMENT_DESK       ("decipherment",         3, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0xD8B880),
+    CONNECTOME_ARRAY        ("connectome_mapping",   3, 1, 1, 0, false, "connectome_array",        64_000_000, 1_000_000, Effect.NONE,        0xB070FF),
+    // 1.4.0: Engineering of the Large
+    LOAD_TEST_RIG           ("load_testing",         2, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xA0A8B0),
+    COMPOSITE_LAYUP_PRESS   ("composite_layup",      3, 1, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0x404850),
+    TRIBOMETER              ("tribology",            2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x8090A0),
+    CORROSION_CELL          ("corrosion_testing",    2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC07040),
+    SPACE_ELEVATOR          ("elevator_lift",        2, 0, 1, 0, false, "space_elevator",          64_000_000, 2_000_000, Effect.NONE,        0xD0E0F0),
+    ONEILL_CYLINDER         ("habitat_spin",         3, 1, 2, 0, false, "oneill_cylinder",        256_000_000, 4_000_000, Effect.NONE,        0x80C0A0),
+    STELLAR_ENGINE          ("stellar_thrust",       1, 1, 1, 1, true,  "stellar_engine",       2_000_000_000, 200_000_000, Effect.NONE,    0xFFD060);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
@@ -354,6 +368,8 @@ public enum MachineType {
                 || this == OPTIMISER || this == GRAPH_LOOM || this == STRATEGY_TABLE || this == PATTERN_BASIN
                 || this == ANALYTIC_CONTINUATOR          // 1.2.0: revamped as a console
                 || this == WAVE_ENERGY_CONVERTER || this == GEOTHERMAL_PLANT || this == PHYTOTRON || this == BREEDING_BENCH || this == DATING_SPECTROMETER || this == ANCIENT_DNA_LAB   // 1.3.0
+                || this == SYNAPSE_TRAINER || this == PSYCHOPHYSICS_BOOTH || this == DECIPHERMENT_DESK                         // 1.4.0
+                || this == LOAD_TEST_RIG || this == COMPOSITE_LAYUP_PRESS || this == TRIBOMETER || this == CORROSION_CELL
                 || biology();
     }
 
@@ -366,7 +382,8 @@ public enum MachineType {
         return this == AUTOCLAVE || this == PATCH_CLAMP_RIG || this == FERMENTER || this == PHOTOBIOREACTOR || this == RIBOSOME_ASSEMBLER
                 || this == FOLDING_CHAMBER || this == PHAGE_LAB || this == MYCELIUM_BED || this == ANTIBODY_BENCH
                 || this == PERFUSION_RIG || this == REGENERATION_TANK || this == CIRCADIAN_INCUBATOR || this == DOSING_PUMP
-                || this == ECOSPHERE || this == SELECTION_CHAMBER || this == GENE_CIRCUIT_LOOM || this == MIRROR_CULTURE_VAT || this == CLONAL_SELECTOR;
+                || this == ECOSPHERE || this == SELECTION_CHAMBER || this == GENE_CIRCUIT_LOOM || this == MIRROR_CULTURE_VAT || this == CLONAL_SELECTOR
+                || this == NEURAL_CULTURE_ARRAY;       // 1.4.0: a dish of living neurons catches what any culture catches
     }
 
     public boolean isMultiblock() {

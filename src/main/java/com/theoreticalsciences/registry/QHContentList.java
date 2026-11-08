@@ -812,7 +812,26 @@ public final class QHContentList {
         new ItemDef("meganeura_genome", "", 64),
         new ItemDef("mammoth_wool", "", 64),
         new ItemDef("mammoth_ivory", "", 64),
-        new ItemDef("meganeura_wing", "", 64));
+        new ItemDef("meganeura_wing", "", 64),
+        // 1.4.0: Mind and Language
+        new ItemDef("myelinated_axon", "", 64),
+        new ItemDef("synaptic_lattice", "synaptic_lattice", 16),
+        new ItemDef("rhodopsin_retina", "", 64),
+        new ItemDef("low_light_visor", "visor", 1),
+        new ItemDef("glyph_tablet", "", 64),
+        new ItemDef("lexicon_fragment", "", 64),
+        new ItemDef("universal_grammar", "", 16),
+        new ItemDef("engram", "", 64),
+        new ItemDef("dream_polyp", "", 64),
+        // 1.4.0: Engineering of the Large
+        new ItemDef("rated_i_beam", "", 64),
+        new ItemDef("carbon_fibre_composite", "", 64),
+        new ItemDef("nanotube_composite", "", 64),
+        new ItemDef("wear_coating", "wear_coating", 16),
+        new ItemDef("passivated_plate", "", 64),
+        new ItemDef("rust_flakes", "", 64),
+        new ItemDef("tether_spool", "", 16),
+        new ItemDef("shkadov_mirror_film", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1250,6 +1269,26 @@ public final class QHContentList {
         new BlockDef("excavation_grid", "deco", 0, 1.0F, "none", ""),
         new BlockDef("vat_frame", "casing", 0, 5.0F, "iron", ""),
         new BlockDef("amniotic_tank", "casing", 9, 3.0F, "iron", ""),
+        // 1.4.0: Mind and Language
+        new BlockDef("glial_scaffold", "casing", 0, 4.0F, "iron", ""),
+        new BlockDef("axon_bundle", "casing", 6, 4.0F, "iron", ""),
+        new BlockDef("synapse_relay", "casing", 10, 4.0F, "iron", ""),
+        new BlockDef("grey_matter", "simple", 0, 0.8F, "none", ""),
+        new BlockDef("white_matter", "simple", 0, 1.0F, "none", ""),
+        new BlockDef("neuron_soma", "simple", 12, 0.6F, "none", ""),
+        new BlockDef("inscribed_glyph_stone", "deco", 3, 2.5F, "stone", ""),
+        new BlockDef("glyph_stone_bricks", "deco", 0, 2.5F, "stone", ""),
+        new BlockDef("archive_shelf", "deco", 0, 1.5F, "none", ""),
+        // 1.4.0: Engineering of the Large
+        new BlockDef("sacrificial_anode", "anode", 0, 2.0F, "stone", ""),
+        new BlockDef("elevator_anchor", "casing", 0, 8.0F, "iron", ""),
+        new BlockDef("tether_ribbon", "casing", 4, 5.0F, "iron", ""),
+        new BlockDef("climber_car", "casing", 8, 5.0F, "iron", ""),
+        new BlockDef("habitat_hull", "casing", 0, 6.0F, "iron", ""),
+        new BlockDef("habitat_window", "casing", 9, 3.0F, "iron", ""),
+        new BlockDef("spin_bearing", "casing", 4, 8.0F, "diamond", ""),
+        new BlockDef("shkadov_mirror", "casing", 12, 4.0F, "diamond", ""),
+        new BlockDef("caplan_jet", "casing", 15, 10.0F, "diamond", ""),
         new BlockDef("life_support_pump", "casing", 2, 5.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),

@@ -20,6 +20,8 @@ public final class QHBlockSounds {
                  "radium_lamp", "stellar_lamp", "void_glass" -> SoundType.GLASS;
             case "antisoil", "frontier_regolith" -> SoundType.GRAVEL;
             case "hadal_ooze" -> SoundType.MUD;                  // 1.3.0
+            case "inscribed_glyph_stone", "glyph_stone_bricks" -> SoundType.DEEPSLATE_BRICKS;   // 1.4.0
+            case "archive_shelf" -> SoundType.CHISELED_BOOKSHELF;
             case "cosmic_ray_ore", "magnetar_crust_ore", "pulsar_crust", "pulsar_timing_ore" -> SoundType.METAL;
             case "dilithium_ore" -> SoundType.NETHER_ORE;
             case "abyssal_silicate", "anticarbon_ore", "antigold_ore", "antihydrogen_ice", "antiiron_ore", "antisilicon_ore",
