@@ -229,3 +229,8 @@ Each moving part is baked once into buffers on the graphics card and drawn from 
 says (so it moves with anything that moves the controller's pose), culled on its own by distance (`animationDistance`)
 and by view. One machine's parts are baked a frame, so a base full of them loads without a hitch. With Sable installed,
 or the client config `movingPartsCompatibility` on, they are drawn through the game's own block buffers instead.
+
+The JEI / EMI structure viewer does not use these buffers. A structure with 1,500 or more fixed blocks is drawn by
+`client/preview/PreviewRenderer`: it is split into 16 × 16 × 16 sections, meshed on background threads and uploaded a
+few sections a frame (at most 3 ms and 8 MB each frame), and sections outside the view are skipped. It always draws
+from the graphics card, whatever `movingPartsCompatibility` is set to.

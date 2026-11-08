@@ -2,8 +2,8 @@
 
 ## 1.3.0 — Fluids and Flight, the Living Planet, the Green Kingdom and Deep Time
 
-Three parts, newest first: the Green Kingdom and Deep Time, Into Orbit and the Living Planet, and Fluids and Flight. Then
-an art, sound and text pass over all three.
+Three parts, newest first: the Green Kingdom and Deep Time, Into Orbit and the Living Planet, and Fluids and Flight.
+Before them: an art, sound and text pass over all three, and a faster structure viewer.
 
 ### Art, sound and text pass
 
@@ -55,6 +55,18 @@ an art, sound and text pass over all three.
   Ecosystems (a mammoth steppe; needs De-extinction). The same yield as the Titan route, and cheaper than the 1.2 one.
   Stable Ecosystems are one of the Tree of Life's five pieces.
 * No existing recipe changed.
+
+### Structure viewer (JEI / EMI)
+
+- Large structures (1,500 or more fixed blocks) are now drawn the way the game draws terrain: split into 16 × 16 × 16
+  sections, built on background threads (nearest the middle first) and sent to the graphics card a few sections a
+  frame, so opening even the largest structure's page never freezes the game. A thin bar along the bottom of the view
+  shows the build's progress. Sections outside the view are skipped, so zooming in on a huge structure stays smooth.
+- Fixed: the fixed blocks of large structures were missing from the viewer (only the tiered parts showed) unless
+  `movingPartsCompatibility` was on or Sable was installed.
+- Each frame now loops over only the positions that hold a block, not the whole bounding box (over a million cells
+  for the largest structures), and the block under the mouse is found by walking the mouse ray cell by cell.
+- Small structures are drawn exactly as before.
 
 ### Part three: the Green Kingdom and Deep Time
 
