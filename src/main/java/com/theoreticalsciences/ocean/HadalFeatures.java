@@ -28,7 +28,7 @@ public final class HadalFeatures {
         int y = l.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z);
         BlockPos p = new BlockPos(x, y, z);
         if (!l.getFluidState(p).isEmpty() && l.getFluidState(p.below()).isEmpty() && !l.getBlockState(p.below()).isAir()) return p;
-        BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos(x, Math.min(l.getMaxBuildHeight() - 1, l.getSeaLevel() - 1), z);
+        BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos(x, l.getMaxBuildHeight() - 1, z);
         while (m.getY() > l.getMinBuildHeight() + 2 && l.getFluidState(m).isEmpty()) m.move(Direction.DOWN);
         while (m.getY() > l.getMinBuildHeight() + 2 && !l.getFluidState(m.below()).isEmpty()) m.move(Direction.DOWN);
         return m.getY() <= l.getMinBuildHeight() + 2 || l.getFluidState(m).isEmpty() ? null : m.immutable();

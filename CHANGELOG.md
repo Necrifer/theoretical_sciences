@@ -18,6 +18,7 @@ Before them: an art, sound and text pass over all three, and a faster structure 
 **Falling and surfacing**
 * Falling through the floor of the trench now drops you into the Planetary Interior, down with the subducting plate.
 * Swimming up through the surface of the trench is now what carries you home to the Overworld's sea.
+  It checks the trench's own sea level (Y 240), so arriving on the floor no longer sends you straight back.
 
 **New ground**
 * New block: **Oceanic Basalt**, the rock of the whole trench (it had been built of Titan's Abyssal Silicate, which now

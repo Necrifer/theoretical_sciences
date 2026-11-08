@@ -105,7 +105,8 @@ public final class VoidFall {
         // above y=200 a white hole lets go of you (DimensionLaws); rise past this and you are out
         boolean expelled = dim == QHDimensions.WHITE_HOLE && sp.getY() > level.getMaxBuildHeight() - 40;
         // 1.3.0: rise out of the top of the Hadal Trench's water and the current carries you up to the Overworld's sea
-        boolean surfaced = dim == QHDimensions.HADAL_TRENCH && sp.getY() > level.getSeaLevel() + 2;
+        boolean surfaced = dim == QHDimensions.HADAL_TRENCH && sp.getY() > level.getChunkSource().getGenerator().getSeaLevel() + 2;
+        // (Level.getSeaLevel() is always 63 in 1.21.1, whatever the dimension: the real sea level is the generator's, 240 here)
         if (!fall && !expelled && !surfaced) return;
         ResourceKey<Level> to = expelled || surfaced ? Level.OVERWORLD : BELOW.get(dim);
         ServerLevel target = to == null ? null : sp.server.getLevel(to);
