@@ -58,7 +58,7 @@ public final class FrontierRegistry {
     public static final DeferredHolder<EntityType<?>, EntityType<BinaryBoss.Serpent>> BINARY_SERPENT =
             mob("binary_serpent", BinaryBoss.Serpent::new, MobCategory.MONSTER, 1.2F, 1.2F, true, 0x102040, 0xFFD060);
 
-    /** 1.4.0: the Jet Stream's wake-ribbon (spawned by JetStream's top-up only, never by the biomes). */
+    /** 1.3.0: the Jet Stream's wake-ribbon (spawned by JetStream's top-up only, never by the biomes). */
     public static final DeferredHolder<EntityType<?>, EntityType<KarmanWraith>> KARMAN_WRAITH =
             mob("karman_wraith", KarmanWraith::new, MobCategory.MONSTER, 1.0F, 0.8F, true, 0xD8E4F0, 0x6090C0);
 

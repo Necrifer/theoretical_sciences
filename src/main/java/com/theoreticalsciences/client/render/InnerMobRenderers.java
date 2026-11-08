@@ -60,7 +60,7 @@ public final class InnerMobRenderers {
                 case OceanMobs.IceEel el -> eel(ps, solid, glow, t, pitch, light, ov);
                 case OceanMobs.BrineJelly j -> jelly(ps, trans, glow, t, OceanMobs.BrineJelly.stroke(e.level(), e.getId(), partial), e, partial, light, ov);
                 case OceanMobs.VentCrab c -> crab(ps, solid, t, limb, amt, light, ov);
-                case com.theoreticalsciences.ocean.HadalMobs.Anglerfish a -> angler(ps, solid, glow, t, light, ov);   // 1.4.0
+                case com.theoreticalsciences.ocean.HadalMobs.Anglerfish a -> angler(ps, solid, glow, t, light, ov);   // 1.3.0
                 case com.theoreticalsciences.ocean.HadalMobs.Siphonophore s -> siphonophore(ps, trans, glow, t, light, ov);
                 default -> {}
             }
@@ -349,54 +349,134 @@ public final class InnerMobRenderers {
     static final int[] CRAB = c(0xFFF6F0E6, 0xFFB4A494), CRAB_D = c(0xFFE0D6C8, 0xFF988878), HAIR = c(0xFFD0C8B8, 0xFF8C8474);
 
     /** The Vent Crab: a pale yeti crab scuttling on jointed legs, waving and pinching hairy claws (it farms bacteria on them). */
-    static final int[] ANGLER = c(0xFF2A2E34, 0xFF101216), ANGLER_JAW = c(0xFF34383E, 0xFF14161A), ANGLER_TOOTH = c(0xFFF0F0E8, 0xFFB0B0A8);
+    static final int[] ANGLER = c(0xFF3B342E, 0xFF15110E), ANGLER_BELLY = c(0xFF4A3E36, 0xFF201914), ANGLER_JAW = c(0xFF2E2824, 0xFF100C0A),
+            ANGLER_MOUTH = c(0xFF5A1A20, 0xFF2A0A0E), ANGLER_TOOTH = c(0xFFF4F0E6, 0xFFB8B0A0), ANGLER_FIN = c(0xFF4A423C, 0xFF221C18),
+            ANGLER_ROD = c(0xFF5A4E44, 0xFF2A221C);
 
     /**
-     * 1.4.0: the Hadal Anglerfish - a black, round body that is mostly mouth, a jaw slung open under rows of needle teeth,
-     * small fins, and over its head the rod (illicium) carrying the glowing lure (esca), which pulses slowly.
+     * The Hadal Anglerfish: a globe of a body, lumpy and soft-skinned, that is mostly mouth. The lower jaw juts out past the
+     * upper in an underbite, both lined with long glassy fangs that slope inward (what goes in does not come out). A rod
+     * (the illicium) springs from its brow and arches forward over the mouth, carrying the glowing lure (the esca) with its
+     * filaments. Small pale eyes, ragged little fins that scull it along, and a short tail that sweeps it into a lunge.
+     * The jaw works slowly; the lure pulses.
      */
     static void angler(PoseStack ps, VertexConsumer solid, VertexConsumer glow, float t, int light, int ov) {
-        float gape = 0.5F + 0.5F * (float) Math.sin(t * 0.08F);
-        px(ps, solid, 0, 6, -1, 12, 10, 12, ANGLER, light, ov);                      // the body
-        px(ps, solid, 0, 3 - gape, 4, 11, 3, 6, ANGLER_JAW, light, ov);              // the lower jaw, hanging
-        for (int i = -2; i <= 2; i++) {
-            px(ps, solid, i * 2.2F, 4.2F - gape * 0.5F, 6.5F, 0.8F, 2.2F, 0.8F, ANGLER_TOOTH, light, ov);   // teeth, upper and lower
-            px(ps, solid, i * 2.2F + 1.1F, 2.6F - gape, 6.3F, 0.8F, 2F, 0.8F, ANGLER_TOOTH, light, ov);
+        float gape = 0.5F + 0.5F * (float) Math.sin(t * 0.06F);
+        float swish = (float) Math.sin(t * 0.12F);
+        // the body: a rough globe built up in layers, darker below
+        px(ps, solid, 0, 7, -0.5F, 12, 9, 12, ANGLER, light, ov);
+        px(ps, solid, 0, 7, -0.5F, 14, 6, 10, ANGLER, light, ov);
+        px(ps, solid, 0, 7, -0.5F, 10, 11, 10, ANGLER, light, ov);
+        px(ps, solid, 0, 12.6F, -1, 8, 1.5F, 8, ANGLER, light, ov);                   // the domed back
+        px(ps, solid, 0, 2.2F, -1, 9, 1.5F, 9, ANGLER_BELLY, light, ov);              // the slack belly
+        for (int k = 0; k < 5; k++)                                                  // warty lumps of the skin
+            px(ps, solid, (k % 2 == 0 ? 1 : -1) * (3 + k * 0.6F), 9 + (k % 3), -4 + k * 1.8F, 1.2F, 1.2F, 1.2F, ANGLER_BELLY, light, ov);
+        // the upper jaw: a broad brow over the mouth
+        px(ps, solid, 0, 9.5F, 5.8F, 11, 3, 2.5F, ANGLER, light, ov);
+        for (int i = -2; i <= 2; i++) {                                              // upper fangs, hanging and sloping in
+            float x = i * 2.1F;
+            px(ps, solid, x, 7.1F, 6.4F, 0.7F, 2.4F, 0.7F, ANGLER_TOOTH, light, ov);
+            px(ps, solid, x, 5.6F, 6.0F, 0.5F, 1.2F, 0.5F, ANGLER_TOOTH, light, ov);
         }
-        px(ps, solid, 0, 7, -9, 2, 6, 5, ANGLER, light, ov);                         // the tail fin
-        px(ps, solid, 6.5F, 5, 0, 1, 4, 3, ANGLER, light, ov);                       // pectoral fins
-        px(ps, solid, -6.5F, 5, 0, 1, 4, 3, ANGLER, light, ov);
-        for (int k = 0; k < 5; k++)                                                  // the rod, arching forward
-            px(ps, solid, 0, 11 + k * 1.3F, 2 + k * 1.4F - k * k * 0.12F, 0.8F, 1.6F, 0.8F, ANGLER, light, ov);
-        float pulse = 0.6F + 0.4F * (float) Math.sin(t * 0.15F);
-        int a = (int) (0xFF * pulse);
-        px(ps, glow, 0, 17.5F, 7.2F, 2.2F * (0.9F + 0.2F * pulse), 2.2F, 2.2F, new int[]{(a << 24) | 0x80FFE0, (a << 24) | 0x40C0A0}, FULL, ov);
-        px(ps, glow, 3, 8, 4.8F, 1F, 1F, 1F, new int[]{0xFFA0E0FF, 0xFF60A0C0}, FULL, ov);   // small eyes
-        px(ps, glow, -3, 8, 4.8F, 1F, 1F, 1F, new int[]{0xFFA0E0FF, 0xFF60A0C0}, FULL, ov);
+        // the lower jaw: hinged at the back of the mouth, jutting forward, opening as it breathes
+        ps.pushPose();
+        ps.translate(0, 4.5F / 16F, 1.5F / 16F);
+        ps.mulPose(Axis.XP.rotation(0.15F + gape * 0.45F));
+        px(ps, solid, 0, -1.2F, 4.2F, 12, 2, 9.5F, ANGLER_JAW, light, ov);            // the floor of the mouth
+        px(ps, solid, 5.4F, 0.6F, 4.2F, 1.2F, 3, 9.5F, ANGLER_JAW, light, ov);       // its sides
+        px(ps, solid, -5.4F, 0.6F, 4.2F, 1.2F, 3, 9.5F, ANGLER_JAW, light, ov);
+        px(ps, solid, 0, 0.9F, 9.4F, 12, 3.6F, 1.4F, ANGLER_JAW, light, ov);          // the jutting lip
+        px(ps, solid, 0, 0.1F, 4.2F, 9.6F, 0.4F, 8.6F, ANGLER_MOUTH, light, ov);      // the red maw
+        for (int i = -2; i <= 2; i++) {                                              // lower fangs, longer, rising and sloping in
+            float x = i * 2.1F + 1.05F;
+            px(ps, solid, x, 3.8F, 9.0F, 0.7F, 3.2F, 0.7F, ANGLER_TOOTH, light, ov);
+            px(ps, solid, x, 5.9F, 8.5F, 0.5F, 1.4F, 0.5F, ANGLER_TOOTH, light, ov);
+        }
+        ps.popPose();
+        // eyes: small, pale and far apart
+        px(ps, glow, 3.9F, 10.6F, 5.2F, 1.3F, 1.3F, 1.0F, new int[]{0xFFC8E8F0, 0xFF7090A0}, FULL, ov);
+        px(ps, glow, -3.9F, 10.6F, 5.2F, 1.3F, 1.3F, 1.0F, new int[]{0xFFC8E8F0, 0xFF7090A0}, FULL, ov);
+        // the rod: springing from the brow, arching up and forward over the mouth
+        ps.pushPose();
+        ps.translate(0, 13.2F / 16F, 3F / 16F);
+        ps.mulPose(Axis.XP.rotation(-0.55F + 0.06F * (float) Math.sin(t * 0.05F)));
+        for (int k = 0; k < 7; k++) {
+            px(ps, solid, 0, 1.1F, 0, 0.8F, 2.2F, 0.8F, ANGLER_ROD, light, ov);
+            ps.translate(0, 2F / 16F, 0);
+            ps.mulPose(Axis.XP.rotation(0.32F));
+        }
+        float pulse = 0.55F + 0.45F * (float) Math.sin(t * 0.13F);
+        int a = (int) (0x60 + 0x9F * pulse);
+        px(ps, glow, 0, 1.6F, 0, 2.4F, 2.6F, 2.4F, new int[]{(a << 24) | 0xA0FFE8, (a << 24) | 0x40C0A0}, FULL, ov);   // the esca
+        px(ps, glow, 0, 1.6F, 0, 1.2F, 1.4F, 1.2F, new int[]{0xFFF0FFF8, 0xFFB0FFE0}, FULL, ov);
+        for (int f = 0; f < 3; f++)                                                  // its filaments, trailing
+            px(ps, glow, (f - 1) * 0.8F, 3.4F + f * 0.3F, -0.6F, 0.3F, 1.6F, 0.3F, new int[]{(a << 24) | 0x80F0D0, (a << 24) | 0x307060}, FULL, ov);
+        ps.popPose();
+        // fins: ragged pectorals that scull, a little dorsal and anal fin
+        for (int side = -1; side <= 1; side += 2) {
+            ps.pushPose();
+            ps.translate(side * 6.6F / 16F, 6F / 16F, 0.5F / 16F);
+            ps.mulPose(Axis.YP.rotation(side * (0.3F + 0.35F * (float) Math.sin(t * 0.2F + side))));
+            px(ps, solid, side * 1.6F, 0, 0, 3.2F, 3.4F, 0.6F, ANGLER_FIN, light, ov);
+            px(ps, solid, side * 3.4F, -0.6F, 0, 0.6F, 2.2F, 0.6F, ANGLER_FIN, light, ov);
+            ps.popPose();
+        }
+        px(ps, solid, 0, 13.3F, -4.5F, 0.8F, 2.4F, 3, ANGLER_FIN, light, ov);
+        px(ps, solid, 0, 1.6F, -5, 0.8F, 1.8F, 3, ANGLER_FIN, light, ov);
+        // the tail: a short stalk and a rounded fan, sweeping
+        ps.pushPose();
+        ps.translate(0, 7F / 16F, -6.5F / 16F);
+        ps.mulPose(Axis.YP.rotation(swish * 0.45F));
+        px(ps, solid, 0, 0, -1.6F, 4, 5, 3.2F, ANGLER, light, ov);
+        ps.translate(0, 0, -3.2F / 16F);
+        ps.mulPose(Axis.YP.rotation(swish * 0.3F));
+        px(ps, solid, 0, 0, -1.6F, 0.8F, 8, 3.2F, ANGLER_FIN, light, ov);
+        px(ps, solid, 0, 0, -3.4F, 0.8F, 5, 1, ANGLER_FIN, light, ov);
+        ps.popPose();
     }
 
-    static final int[] SIPH_FLOAT = c(0xC0F0E8FF, 0x80B0A0D0), SIPH_BELL = c(0xA0E0D8F8, 0x70A898C8), SIPH_ZOOID = c(0xB0F0B0E0, 0x80C080B0);
+    static final int[] SIPH_FLOAT = c(0xB0F4ECFF, 0x70B8A8D8), SIPH_BELL = c(0x90E8E0FF, 0x60A898D0), SIPH_BELL_IN = c(0x70C0B0F0, 0x506050A0),
+            SIPH_STEM = c(0xC0F0C0E8, 0x90C080B8), SIPH_GUT = c(0xE0FF9060, 0xC0C05030), SIPH_BRACT = c(0x60E8F0FF, 0x40A0B0D0),
+            SIPH_TENT = c(0xA0F8C8E8, 0x70C090B8);
 
     /**
-     * 1.4.0: the Siphonophore Colony - a gas float at the front, a cluster of swimming bells pulsing behind it, then a
-     * long stem trailing back with zooids along it, each with a glowing tip and a curtain of tentacle threads below.
-     * The stem undulates in a slow travelling wave.
+     * The Siphonophore Colony: many animals that live as one. At the front, the gas float (pneumatophore) with a rosy cap;
+     * behind it two rows of swimming bells (nectophores), each a clear cup with its opening facing back, squeezing in
+     * turn and driving the colony forward. Then the stem, trailing far back in a slow travelling wave, set with feeding
+     * groups (cormidia): an orange stomach, a clear shield-shaped bract over it, and a fishing tentacle hanging below with
+     * glowing knots of stinging cells (tentilla) along it.
      */
     static void siphonophore(PoseStack ps, VertexConsumer trans, VertexConsumer glow, float t, int light, int ov) {
-        px(ps, trans, 0, 8, 6, 5, 5, 6, SIPH_FLOAT, light, ov);                           // the float
-        for (int b = 0; b < 4; b++) {
-            float squeeze = 1 + 0.15F * (float) Math.sin(t * 0.3F + b);
-            px(ps, trans, (b % 2 == 0 ? 2.5F : -2.5F), 6, 2 - b * 2.2F, 4 * squeeze, 4 * squeeze, 3, SIPH_BELL, light, ov);
+        // the float
+        px(ps, trans, 0, 9, 10, 4.2F, 4.2F, 6.2F, SIPH_FLOAT, light, ov);
+        px(ps, trans, 0, 9, 10, 3.2F, 5, 5, SIPH_FLOAT, light, ov);
+        px(ps, glow, 0, 10.6F, 12.6F, 1.6F, 1.4F, 1.6F, new int[]{0xFFFF9878, 0xFFC05040}, FULL, ov);
+        // the swimming bells: two alternating rows, contracting in a wave from front to back
+        for (int b = 0; b < 6; b++) {
+            float ph = (float) Math.sin(t * 0.32F - b * 0.9F), sq = 1 - 0.18F * Math.max(0, ph);
+            float x = (b % 2 == 0 ? 2.4F : -2.4F), z = 5.5F - b * 2.6F, y = 8 + (b % 2 == 0 ? 0.6F : -0.4F);
+            px(ps, trans, x, y, z, 4.4F * sq, 4.2F * sq, 3.6F, SIPH_BELL, light, ov);
+            px(ps, trans, x, y, z - 1.6F, 2.4F * sq, 2.2F * sq, 0.6F, SIPH_BELL_IN, light, ov);   // the opening at its back
+            px(ps, glow, x, y + 1.8F * sq, z + 0.8F, 0.5F, 0.5F, 0.5F, new int[]{0x90FFD0F0, 0x60C080C0}, FULL, ov);   // the radial canal's spark
         }
-        for (int k = 0; k < 16; k++) {                                               // the stem and its zooids
-            float z = -8 - k * 5.5F;
-            float x = (float) Math.sin(t * 0.06F - k * 0.4F) * (1 + k * 0.25F);
-            float y = 6 + (float) Math.sin(t * 0.04F - k * 0.3F) * 1.2F;
-            px(ps, trans, x, y, z, 1.2F, 1.2F, 5.5F, SIPH_ZOOID, light, ov);
-            if (k % 2 == 0) {
-                px(ps, glow, x, y - 1.5F, z, 1.2F, 1.2F, 1.2F, new int[]{0xFFFF70C8, 0xFFC04090}, FULL, ov);
-                for (int j = 1; j <= 3; j++)                                         // the tentacle curtain
-                    px(ps, trans, x + (float) Math.sin(t * 0.05F + j + k) * 0.6F, y - 2 - j * 2.2F, z, 0.4F, 2.2F, 0.4F, SIPH_ZOOID, light, ov);
+        // the stem and its feeding groups
+        float px0 = 0, py0 = 8, pz0 = -10;
+        for (int k = 0; k < 18; k++) {
+            float z = -10 - k * 4.8F;
+            float x = (float) Math.sin(t * 0.06F - k * 0.42F) * (0.6F + k * 0.22F);
+            float y = 8 + (float) Math.sin(t * 0.045F - k * 0.33F) * (0.4F + k * 0.06F);
+            px(ps, trans, (x + px0) / 2, (y + py0) / 2, (z + pz0) / 2, 1.0F, 1.0F, 5.0F, SIPH_STEM, light, ov);
+            px0 = x; py0 = y; pz0 = z;
+            if (k % 2 == 1) {
+                px(ps, trans, x, y - 1.6F, z, 1.4F, 2.4F, 1.4F, SIPH_GUT, light, ov);             // the stomach (gastrozooid)
+                px(ps, trans, x, y + 1.4F, z + 0.6F, 3.4F, 0.6F, 3, SIPH_BRACT, light, ov);       // the bract shielding it
+                float sw = (float) Math.sin(t * 0.05F + k);
+                for (int j = 1; j <= 5; j++) {                                             // the fishing tentacle
+                    float tx = x + sw * 0.35F * j, ty = y - 2.6F - j * 1.9F;
+                    px(ps, trans, tx, ty, z, 0.35F, 1.9F, 0.35F, SIPH_TENT, light, ov);
+                    if (j % 2 == 0)
+                        px(ps, glow, tx, ty - 0.6F, z, 0.8F, 0.8F, 0.8F, new int[]{0xFFFF70C8, 0xFFB03888}, FULL, ov);   // a knot of stingers
+                }
             }
         }
     }

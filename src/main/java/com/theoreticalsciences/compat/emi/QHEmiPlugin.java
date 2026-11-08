@@ -141,7 +141,7 @@ public class QHEmiPlugin implements EmiPlugin {
         reg.setDefaultComparison(QHItems.get("dynamic_singularity"), sing);
         reg.setDefaultComparison(QHItems.get("singularity_cluster"), sing);
         reg.setDefaultComparison(QHItems.get("specimen_bundle"), Comparison.compareData(s -> Collections.idOf(s.getItemStack())));
-        reg.setDefaultComparison(QHItems.get("engineered_seed"), Comparison.compareData(s -> com.theoreticalsciences.green.PlantTraits.idOf(s.getItemStack())));   // 1.4.0
+        reg.setDefaultComparison(QHItems.get("engineered_seed"), Comparison.compareData(s -> com.theoreticalsciences.green.PlantTraits.idOf(s.getItemStack())));   // 1.3.0
         reg.setDefaultComparison(Essences.essenceFluid(), Comparison.compareData(QHEmiPlugin::essenceKey));
     }
 

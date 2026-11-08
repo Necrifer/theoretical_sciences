@@ -238,7 +238,7 @@ public final class QHEffects {
     public static final DeferredHolder<MobEffect, MobEffect> MIRRORED = EFFECTS.register("mirrored",
             () -> new MobEffect(MobEffectCategory.NEUTRAL, 0xA0C0FF) {});
     /** 1.2.0, the Axioms: two contradictory effects at once (it is shown while the pair lasts). */
-    /** 1.4.0 (Green Kingdom): Well Fed, from a Field Ration - four more hearts' worth of health while it lasts. */
+    /** 1.3.0 (Green Kingdom): Well Fed, from a Field Ration - four more hearts' worth of health while it lasts. */
     public static final DeferredHolder<MobEffect, MobEffect> WELL_FED = EFFECTS.register("well_fed",
             () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0xE0B060) {}
                     .addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, TheoreticalSciences.id("well_fed_health"), 4.0,

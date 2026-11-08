@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 1.4.0: the Living Planet's weather creature, and where it comes from. The Storm Elemental never spawns by the world's
+ * 1.3.0: the Living Planet's weather creature, and where it comes from. The Storm Elemental never spawns by the world's
  * own spawning: only here, during a thunderstorm, near a player at sea over a warm ocean, at most one within 64 blocks,
  * checked once every 20 seconds per player.
  */

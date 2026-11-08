@@ -19,7 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * 1.4.0: the Storm Elemental - a thunderstorm cell come to life. It only forms over warm sea during a thunderstorm (warm
+ * 1.3.0: the Storm Elemental - a thunderstorm cell come to life. It only forms over warm sea during a thunderstorm (warm
  * water is what feeds a storm's updraft) and dissipates when the storm passes.
  * <ul>
  *   <li>It hangs high over its prey, billowing, its core flickering as charge separates in its updraft.</li>
@@ -30,6 +30,20 @@ import net.minecraft.world.phys.Vec3;
  */
 public class StormElemental extends InteriorMobs.Base {
     int discharge = 60, fading = -1;
+    /** Client side: ticks left of the flash that lights the cloud through when it strikes (sent as an entity event). */
+    private int flash;
+    static final byte FLASH_EVENT = 61;
+
+    /** For the renderer: how long the current flash still lasts (0 when it is not striking). */
+    public int flashTicks() {
+        return flash;
+    }
+
+    @Override
+    public void handleEntityEvent(byte id) {
+        if (id == FLASH_EVENT) flash = 6;
+        else super.handleEntityEvent(id);
+    }
 
     public StormElemental(EntityType<? extends Monster> type, Level level) {
         super(type, level);
@@ -52,6 +66,7 @@ public class StormElemental extends InteriorMobs.Base {
     public void aiStep() {
         super.aiStep();
         if (level().isClientSide) {
+            if (flash > 0) flash--;
             if (random.nextInt(2) == 0)
                 level().addParticle(ParticleTypes.CLOUD, getRandomX(1.4), getRandomY(), getRandomZ(1.4), 0, -0.01, 0);
             if (random.nextInt(30) == 0)
@@ -94,7 +109,8 @@ public class StormElemental extends InteriorMobs.Base {
             sl.addFreshEntity(bolt);
         }
         t.hurt(damageSources().lightningBolt(), 5.0F);
-        sl.playSound(null, blockPosition(), QHSounds.mob("storm_elemental", "hurt"), SoundSource.HOSTILE, 1.2F, 0.7F);
+        sl.broadcastEntityEvent(this, FLASH_EVENT);
+        sl.playSound(null, blockPosition(), QHSounds.mob("storm_elemental", "strike"), SoundSource.HOSTILE, 1.4F, 1.0F);
         if (t instanceof ServerPlayer sp)
             sp.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.storm_strike")
                     .withStyle(net.minecraft.ChatFormatting.YELLOW), true);

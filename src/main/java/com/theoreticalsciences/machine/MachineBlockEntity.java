@@ -688,7 +688,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
      * not be run in parallel - extra copies would eat their inputs and do nothing more.
      */
     protected boolean singleRunOnly(QHRecipe r) {
-        // 1.4.0: a launch with nothing to bring back (a Station Module) changes the world, so it runs once and is counted once
+        // 1.3.0: a launch with nothing to bring back (a Station Module) changes the world, so it runs once and is counted once
         if (type == MachineType.ROCKET_ASSEMBLY && r.itemOutputs.isEmpty() && r.fluidOutputs.isEmpty()) return true;
         return r.secret;
     }

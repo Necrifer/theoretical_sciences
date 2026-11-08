@@ -68,7 +68,7 @@ public final class QHCommands {
                             return 1;
                         })))))
                 .then(radiation())
-                .then(com.theoreticalsciences.orbit.OrbitCommands.station()));   // 1.4.0
+                .then(com.theoreticalsciences.orbit.OrbitCommands.station()));   // 1.3.0
     }
 
     /**

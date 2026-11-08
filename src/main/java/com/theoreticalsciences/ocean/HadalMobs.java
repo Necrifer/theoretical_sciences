@@ -17,7 +17,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * 1.4.0: the creatures of the Hadal Trench, ten kilometres down, in the dark. Both are the mod's own (no vanilla fish
+ * 1.3.0: the creatures of the Hadal Trench, ten kilometres down, in the dark. Both are the mod's own (no vanilla fish
  * mind), steered here; both glow, because down here nothing else does.
  */
 public final class HadalMobs {
@@ -69,7 +69,7 @@ public final class HadalMobs {
                 if (lunge > 0 || d.lengthSqr() < 36) {                  // close to the light: the lunge
                     if (lunge <= 0) {
                         lunge = 12;
-                        level().playSound(null, blockPosition(), QHSounds.mob("hadal_anglerfish", "hurt"), SoundSource.HOSTILE, 0.6F, 0.6F);
+                        level().playSound(null, blockPosition(), QHSounds.mob("hadal_anglerfish", "lunge"), SoundSource.HOSTILE, 0.9F, 1.0F);
                     }
                     steer(d, 0.09);
                 } else steer(d, 0.012);                                  // drift a little nearer, lure lit
@@ -133,6 +133,7 @@ public final class HadalMobs {
                 p.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0));
                 p.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 1));
                 sting = 40;
+                level().playSound(null, p.blockPosition(), QHSounds.mob("siphonophore", "sting"), SoundSource.HOSTILE, 0.8F, 0.9F + random.nextFloat() * 0.2F);
                 if (p instanceof ServerPlayer sp)
                     sp.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.siphonophore_sting")
                             .withStyle(net.minecraft.ChatFormatting.LIGHT_PURPLE), true);

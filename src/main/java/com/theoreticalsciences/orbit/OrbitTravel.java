@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * 1.4.0: getting to the Orbital Station and on from it.
+ * 1.3.0: getting to the Orbital Station and on from it.
  * <ul>
  *   <li>Up: a <b>Fuelled Crew Capsule</b> (flown on the Rocket Assembly) is boarded under open sky in the Overworld, within
  *   32 blocks of a formed Rocket Assembly, once the station's four modules are in orbit. Research: Orbital Mechanics.</li>

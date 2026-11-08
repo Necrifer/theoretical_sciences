@@ -15,7 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * 1.4.0: the Kármán Wraith, a creature of the Jet Stream. It is the wake of something that is no longer there: a long
+ * 1.3.0: the Kármán Wraith, a creature of the Jet Stream. It is the wake of something that is no longer there: a long
  * ribbon of air that rides the wind, rippling from side to side at a steady beat, as flow past any body does at the
  * Strouhal number (St = fd/v, about 0.2), and shedding a trail of eddies on alternate sides - a von Kármán vortex street.
  * <ul>
@@ -74,7 +74,7 @@ public class KarmanWraith extends FrontierMobs.Floater {
                 target.setDeltaMovement(target.getDeltaMovement().add(push));
                 target.hurtMarked = true;
                 target.hurt(damageSources().mobAttack(this), 3.0F);
-                level().playSound(null, blockPosition(), QHSounds.mob("karman_wraith", "hurt"), SoundSource.HOSTILE, 0.7F, 1.6F);
+                level().playSound(null, blockPosition(), QHSounds.mob("karman_wraith", "gust"), SoundSource.HOSTILE, 0.9F, 1.0F);
                 ((ServerLevel) level()).sendParticles(ParticleTypes.CLOUD, target.getX(), target.getY() + 1, target.getZ(), 14, 0.4, 0.4, 0.4, 0.15);
                 if (target instanceof ServerPlayer sp)
                     sp.displayClientMessage(net.minecraft.network.chat.Component.translatable("message.theoreticalsciences.karman_gust")

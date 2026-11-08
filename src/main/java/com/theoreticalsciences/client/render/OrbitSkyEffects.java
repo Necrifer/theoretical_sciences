@@ -15,7 +15,7 @@ import org.joml.Matrix4fStack;
 import java.util.Random;
 
 /**
- * 1.4.0: the sky over the Orbital Station, four hundred kilometres up.
+ * 1.3.0: the sky over the Orbital Station, four hundred kilometres up.
  * <ul>
  *   <li>Black space, and stars that do not twinkle (there is no air to make them).</li>
  *   <li>The Earth filling the lower sky: deep blue ocean, the browns and greens of land and white weather, turning slowly

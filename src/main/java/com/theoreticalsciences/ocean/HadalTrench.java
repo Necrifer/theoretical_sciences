@@ -34,7 +34,7 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import java.util.List;
 
 /**
- * 1.4.0: the Hadal Trench - the deepest sea floor, eleven kilometres down (the Challenger Deep), reached from the
+ * 1.3.0: the Hadal Trench - the deepest sea floor, eleven kilometres down (the Challenger Deep), reached from the
  * Overworld's deep oceans in a <b>Bathyscaphe</b>.
  * <ul>
  *   <li>Down: use the Bathyscaphe under water, in a deep-ocean biome, below Y 40. Research: Oceanography.</li>

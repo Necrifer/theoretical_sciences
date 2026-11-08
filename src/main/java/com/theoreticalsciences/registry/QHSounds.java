@@ -84,7 +84,10 @@ public final class QHSounds {
 
     static {
         for (String m : NEW_MOBS) for (String k : new String[]{"ambient", "hurt", "death"}) MOB.put(m + "." + k, s(m + "." + k));
-        MOB.put("mammoth.step", s("mammoth.step"));     // 1.4.0: the ground shakes
+        MOB.put("mammoth.step", s("mammoth.step"));     // 1.3.0: the ground shakes
+        // 1.3.0: each attack has its own sound, not the creature's hurt cry
+        for (String k : new String[]{"karman_wraith.gust", "storm_elemental.strike", "hadal_anglerfish.lunge", "siphonophore.sting", "mammoth.trumpet"})
+            MOB.put(k, s(k));
     }
 
     /** The soundtrack: one piece per dimension, the Living Proof, and Alpha Omega. */

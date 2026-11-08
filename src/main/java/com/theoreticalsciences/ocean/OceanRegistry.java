@@ -50,7 +50,7 @@ public final class OceanRegistry {
     public static final DeferredHolder<EntityType<?>, EntityType<OceanMobs.VentCrab>> VENT_CRAB = ENTITIES.register("vent_crab",
             () -> EntityType.Builder.of(OceanMobs.VentCrab::new, MobCategory.WATER_CREATURE).sized(1.2F, 0.6F).clientTrackingRange(10).build("vent_crab"));
 
-    // 1.4.0: the Hadal Trench's creatures
+    // 1.3.0: the Hadal Trench's creatures
     public static final DeferredHolder<EntityType<?>, EntityType<HadalMobs.Anglerfish>> HADAL_ANGLERFISH = ENTITIES.register("hadal_anglerfish",
             () -> EntityType.Builder.of(HadalMobs.Anglerfish::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.8F).clientTrackingRange(10).build("hadal_anglerfish"));
     public static final DeferredHolder<EntityType<?>, EntityType<HadalMobs.Siphonophore>> SIPHONOPHORE = ENTITIES.register("siphonophore",

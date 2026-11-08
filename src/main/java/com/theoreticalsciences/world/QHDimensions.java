@@ -51,10 +51,10 @@ public final class QHDimensions {
     /** 1.2.0: Titan's hidden ocean, under the Subsurface Seal (reached by melting through it with a Cryobot). */
     public static final ResourceKey<Level> TITAN_OCEAN = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("titan_ocean"));
 
-    /** 1.4.0: the Orbital Station, in low orbit over the Overworld (reached in a Crew Capsule from the Rocket Assembly). */
+    /** 1.3.0: the Orbital Station, in low orbit over the Overworld (reached in a Crew Capsule from the Rocket Assembly). */
     public static final ResourceKey<Level> ORBITAL_STATION = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("orbital_station"));
 
-    /** 1.4.0: the Hadal Trench, the deepest sea floor (reached from the Overworld's deep oceans in a Bathyscaphe). */
+    /** 1.3.0: the Hadal Trench, the deepest sea floor (reached from the Overworld's deep oceans in a Bathyscaphe). */
     public static final ResourceKey<Level> HADAL_TRENCH = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("hadal_trench"));
 
     private QHDimensions() {}

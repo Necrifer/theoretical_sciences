@@ -1,0 +1,34 @@
+{
+  "type": "theoreticalsciences:ancient_dna",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:mammoth_ivory",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mammoth_genome",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 600,
+  "research": "theoreticalsciences:ancient_dna",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "lam": 0.02,
+      "Gs": 3300000000.0,
+      "mol0": 3000000000.0,
+      "c0": 0.15
+    },
+    "windows": [
+      {
+        "q": "Cv",
+        "min": 10.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

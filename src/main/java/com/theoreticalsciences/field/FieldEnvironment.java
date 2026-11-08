@@ -52,7 +52,7 @@ public final class FieldEnvironment {
         if (d == QHDimensions.WHITE_HOLE) return new State(0.01, 3, 100, 0);
         if (d == QHDimensions.TRANSCENDENTAL) return new State(1, 11, 1, 3);
         if (d == QHDimensions.TITAN) return new State(0.14, 3, 1, 0);      // 1.2.0: a seventh of Earth's gravity
-        if (d == QHDimensions.ORBITAL_STATION) return new State(0.1, 3, 1, 0);   // 1.4.0: free fall, with a slow spin
+        if (d == QHDimensions.ORBITAL_STATION) return new State(0.1, 3, 1, 0);   // 1.3.0: free fall, with a slow spin
         return State.NORMAL;
     }
 

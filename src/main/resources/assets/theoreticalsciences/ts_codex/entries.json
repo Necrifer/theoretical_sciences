@@ -55071,7 +55071,7 @@
     "items": [
      "theoreticalsciences:storm_chamber"
     ],
-    "text": "A thunderstorm runs on CAPE, the energy warm, moist air gains as it rises: its updraft reaches √(2·CAPE), and the flash rate climbs as the cube of the updraft. The $(thing)Storm Chamber$() makes one in a tower and fixes nitrogen with its lightning: $(fluid)Nitric Acid$() from nitrogen, oxygen and water alone."
+    "text": "A thunderstorm runs on CAPE, the energy warm, moist air gains as it rises: its updraft reaches √(2·CAPE), and the flash rate climbs as the cube of the updraft. The $(thing)Storm Chamber$() makes one in a tower and fixes the air's nitrogen with its lightning into $(fluid)Nitric Acid$(), with no ammonia and no catalyst (the Birkeland-Eyde route)."
    },
    {
     "type": "text",
@@ -55180,7 +55180,7 @@
      "theoreticalsciences:breeding_bench",
      "theoreticalsciences:engineered_seed"
     ],
-    "text": "Each generation moves R = h²S. The $(thing)Breeding Bench$() starts three lines from wheat: Yield, Hardiness (with Tardigrade Culture) and Glow (with an Anglerfish Lure), and takes each one generation further per run. Every generation asks for a bigger response."
+    "text": "Each generation moves R = h²S: the response is the heritability times how far the kept parents stand from the field's average. The $(thing)Breeding Bench$() starts three $(item)Engineered Seed$() lines from wheat (Yield, Hardiness and Glow) and takes each one generation further per run. Every generation asks for a bigger response. JEI shows the recipes."
    },
    {
     "type": "text",
@@ -55202,7 +55202,7 @@
      "theoreticalsciences:mycorrhizal_inoculant",
      "theoreticalsciences:living_soil"
     ],
-    "text": "Uptake follows v = Vc/(K + c). $(item)Biochar$() from logs in the Sintering Press, $(item)Humus$() from leaves and $(item)Mycorrhizal Inoculant$() from mould and xylem in the Mycelium Bed make $(item)Living Soil$()."
+    "text": "Uptake follows v = Vc/(K + c): a root takes up a nutrient faster the more of it there is, until its carriers are all busy. A good soil keeps the concentration up where the roots are. $(item)Biochar$() (made in the Sintering Press) holds water and nutrients for centuries, $(item)Humus$() and $(item)Mycorrhizal Inoculant$() (made in the Mycelium Bed) feed and extend the roots, and the three together make $(item)Living Soil$(), which the high-yield seed lines need. JEI shows the recipes."
    }
   ]
  },
@@ -55217,7 +55217,7 @@
     "items": [
      "theoreticalsciences:field_ration"
     ],
-    "text": "Browning runs at k = A·e^(−E/RT). The $(thing)Fermenter$() bakes $(item)Field Rations$() from wheat, sugar and yeast: a meal that leaves you $(thing)Well Fed$() (two more hearts for ten minutes)."
+    "text": "Browning runs at k = A·e^(−E/RT): a little hotter and the crust forms much faster. The $(thing)Fermenter$() bakes $(item)Field Rations$(), a dense loaf that keeps for months and leaves you $(thing)Well Fed$() (two more hearts for ten minutes). JEI shows the recipe."
    }
   ]
  },
@@ -55338,7 +55338,7 @@
      "theoreticalsciences:dated_amber",
      "theoreticalsciences:dated_stromatolite"
     ],
-    "text": "$(item)Fossil Fragments$() by carbon-14 (30 thousand years, to within 250); $(item)Raw Amber$() by potassium-40 (310 million, to within 4 million); $(item)Stromatolite Fragments$() by rubidium-87 (3.5 billion, to within 60 million). Four of each make one dated sample."
+    "text": "$(item)Fossil Fragments$() are dated by carbon-14 (30 thousand years, to within 250), $(item)Raw Amber$() by potassium-40 (310 million, to within 4 million) and $(item)Stromatolite Fragments$() by rubidium-87 (3.5 billion, to within 60 million). Each becomes a dated sample: $(item)Dated Bone$(), $(item)Dated Amber$() and $(item)Dated Stromatolite$(), made in the Dating Spectrometer."
    }
   ]
  },
@@ -55462,7 +55462,7 @@
      "theoreticalsciences:ancient_dna_lab"
     ],
     "title": "Ancient DNA Lab",
-    "text": "Coverage: C = NL/G. The $(thing)Ancient DNA Lab$() reads a $(item)Dated Bone$() into a $(item)Mammoth Genome$() and $(item)Dated Amber$() into a $(item)Meganeura Genome$(), four samples to a genome."
+    "text": "Coverage: C = NL/G. Ancient DNA comes in fragments fifty letters long, mixed with modern contamination; read enough of them and every part of the genome is covered several times over. The $(thing)Ancient DNA Lab$() makes the $(item)Mammoth Genome$() and the $(item)Meganeura Genome$() from dated samples, and a Mammoth Genome from Mammoth Ivory far more cheaply: tusk dentine keeps DNA better than bone. JEI shows the recipes."
    }
   ]
  },
@@ -55478,7 +55478,7 @@
      "theoreticalsciences:revival_vat"
     ],
     "title": "Revival Vat",
-    "text": "Upkeep: B = B₀M^(3/4). The $(thing)Revival Vat$() is a multiblock of 563 blocks: a great amniotic tank, four nursery tanks and the lines that feed them. A genome, a $(item)Dated Stromatolite$() (its cyanobacteria oxygenate the broth), Field Rations and Nutrient Broth grow a creature into a capsule."
+    "text": "Upkeep: B = B₀M^(3/4). The $(thing)Revival Vat$() is a multiblock of 563 blocks: a great amniotic tank, four nursery tanks and the lines that feed them. It grows a revived creature from its genome until it can be carried away in a capsule ($(item)Mammoth Capsule$(), $(item)Meganeura Capsule$()). A Dated Stromatolite's cyanobacteria oxygenate its broth. JEI shows the recipes."
    },
    {
     "type": "spotlight",
@@ -55507,7 +55507,7 @@
     "items": [
      "theoreticalsciences:mammoth_spawn_egg"
     ],
-    "text": "$(thing)Woolly Mammoth$(): Six tonnes of Ice Age grazer, brought back from a thirty-thousand-year-old bone. It wanders, grazes and keeps with its herd. It never starts a fight, but hurt one and every mammoth nearby charges, tusks first.$(br2)$(thing)Drops$(): Mammoth Wool; Mammoth Ivory when you bring it down."
+    "text": "$(thing)Woolly Mammoth$(): Six tonnes of Ice Age grazer, brought back from a thirty-thousand-year-old bone. It wanders, grazes and keeps with its herd. It never starts a fight, but hurt one and every mammoth nearby charges, tusks first.$(br2)$(thing)Drops$(): Mammoth Wool; Mammoth Ivory when you bring it down. Never found in the wild: released from a Mammoth Capsule."
    }
   ]
  },
@@ -55522,7 +55522,7 @@
     "items": [
      "theoreticalsciences:meganeura_spawn_egg"
     ],
-    "text": "$(thing)Meganeura$(): A griffinfly of the Carboniferous, seventy centimetres across, from an age when the air held a third more oxygen. It patrols the place it was let go, darting and hovering, and flees fast and high if struck.$(br2)$(thing)Drops$(): Meganeura Wing."
+    "text": "$(thing)Meganeura$(): A griffinfly of the Carboniferous, seventy centimetres across, from an age when the air held a third more oxygen. It patrols the place it was let go, darting and hovering, and flees fast and high if struck.$(br2)$(thing)Drops$(): Meganeura Wing. Never found in the wild: released from a Meganeura Capsule."
    }
   ]
  },

@@ -18,7 +18,7 @@ import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 /**
- * 1.4.0: the laws aboard the Orbital Station, and the station's bookkeeping.
+ * 1.3.0: the laws aboard the Orbital Station, and the station's bookkeeping.
  * <ul>
  *   <li><b>Free fall</b>: a tenth of the Overworld's gravity (the station spins slowly), higher jumps, no fall damage.</li>
  *   <li><b>Vacuum</b> outside the hub: your air runs out in seconds unless you wear a full pressure-type suit (Pressure,

@@ -104,7 +104,7 @@ public final class QHItems {
                 case "miniaturiser" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.inner.InnerTravel.MiniaturiserItem::new, p);   // 1.2.0
                 case "cryobot" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.ocean.Cryobot::new, p);   // 1.2.0
                 case "lander" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanTravel.CryogenicLanderItem::new, p);
-                case "crew_capsule" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.orbit.OrbitTravel.CrewCapsuleItem::new, p);   // 1.4.0
+                case "crew_capsule" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.orbit.OrbitTravel.CrewCapsuleItem::new, p);   // 1.3.0
                 case "bathyscaphe" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.ocean.HadalTrench.BathyscapheItem::new, p);
                 case "engineered_seed" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.green.PlantTraits.EngineeredSeedItem::new, p);
                 case "ration" -> ITEMS.registerItem(def.id(), LoreItem::new, p.food(new net.minecraft.world.food.FoodProperties.Builder()

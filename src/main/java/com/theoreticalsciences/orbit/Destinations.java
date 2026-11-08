@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 1.4.0: where the Orbital Station's Transfer Console can send you, read from {@code data/<ns>/ts_destinations/*.json},
+ * 1.3.0: where the Orbital Station's Transfer Console can send you, read from {@code data/<ns>/ts_destinations/*.json},
  * so a pack or an addon can add planets:
  * <pre>
  * { "dimension": "theoreticalsciences:titan", "name": "destination.theoreticalsciences.titan",

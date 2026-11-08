@@ -89,7 +89,7 @@ public class QHJeiPlugin implements IModPlugin {
         };
         reg.registerSubtypeInterpreter(QHItems.get("dynamic_singularity"), by);
         reg.registerSubtypeInterpreter(QHItems.get("singularity_cluster"), by);
-        // 1.4.0: each line and generation of bred seed is its own entry
+        // 1.3.0: each line and generation of bred seed is its own entry
         reg.registerSubtypeInterpreter(QHItems.get("engineered_seed"), new mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<ItemStack>() {
             @Override
             public Object getSubtypeData(ItemStack s, mezz.jei.api.ingredients.subtypes.UidContext ctx) {
