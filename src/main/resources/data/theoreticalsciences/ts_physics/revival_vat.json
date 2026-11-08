@@ -1,0 +1,102 @@
+{
+  "params": [
+    {
+      "id": "lf",
+      "unit": "log\u2081\u2080 W",
+      "min": -1,
+      "max": 5,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "Tv",
+      "unit": "\u00b0C",
+      "min": 20,
+      "max": 45,
+      "step": 0.5,
+      "default": 30
+    },
+    {
+      "id": "O2",
+      "unit": "%",
+      "min": 10,
+      "max": 40,
+      "step": 0.5,
+      "default": 21
+    }
+  ],
+  "recipe_vars": {
+    "M": 6000,
+    "Topt": 37,
+    "O2min": 18
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Fd",
+      "unit": "W",
+      "expr": "10^lf",
+      "formula": "feed power"
+    },
+    {
+      "id": "Bm",
+      "unit": "W",
+      "expr": "3.4*M^0.75*(1 + 0.02*d)",
+      "formula": "Kleiber: B = B\u2080M^(3/4)"
+    },
+    {
+      "id": "fr",
+      "unit": "",
+      "expr": "Fd/Bm",
+      "formula": "feed / metabolism"
+    },
+    {
+      "id": "tq",
+      "unit": "",
+      "expr": "exp(-((Tv - Topt)/4)^2)",
+      "formula": "body-temperature match"
+    },
+    {
+      "id": "gr",
+      "unit": "",
+      "expr": "tq*exp(-((fr - 1.1)/0.3)^2)",
+      "formula": "growth: best a tenth above upkeep"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "overfeed",
+      "kind": "wear",
+      "expr": "1.5 - fr",
+      "formula": "feed < 1.5 B"
+    },
+    {
+      "id": "fever",
+      "kind": "damage",
+      "expr": "44 - Tv",
+      "formula": "T < 44 \u00b0C"
+    },
+    {
+      "id": "hypoxia",
+      "kind": "stop",
+      "expr": "O2 - O2min",
+      "formula": "O\u2082 \u2265 what it breathes"
+    },
+    {
+      "id": "oxtox",
+      "kind": "wear",
+      "expr": "38 - O2",
+      "formula": "O\u2082 < 38%"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "one creature per run",
+  "heat": "0.2",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 80,
+  "timescale": 1,
+  "rate_max": 1
+}

@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:plant_breeding",
+  "item_inputs": [
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:engineered_seed",
+      "components": {
+        "theoreticalsciences:plant_traits": {
+          "line": "hardiness",
+          "level": 1
+        }
+      },
+      "count": 4
+    },
+    {
+      "item": "minecraft:bone_meal",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:engineered_seed",
+      "count": 2,
+      "components": {
+        "theoreticalsciences:plant_traits": {
+          "line": "hardiness",
+          "level": 2
+        }
+      }
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:plant_breeding",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Rmin": 0.75
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 0.75,
+        "max": 100.0
+      }
+    ]
+  }
+}

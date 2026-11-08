@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:geothermal_power",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:basaltic_magma",
+      "amount": 1000
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:basalt",
+      "count": 4
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sulfur_dioxide",
+      "amount": 100
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:volcanology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Q": 20.0,
+      "Pref": 3.0
+    }
+  }
+}

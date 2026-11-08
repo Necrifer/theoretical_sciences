@@ -45,8 +45,71 @@ public final class TransitScenes {
             case TITAN -> titan(g, s, w, h, t, p, rev);
             case INNER -> inner(g, s, w, h, t, p, rev);
             case TITAN_OCEAN -> titanOcean(g, s, w, h, t, p, rev);
+            case ORBITAL_STATION -> orbit(g, s, w, h, t, p, rev);
+            case HADAL_TRENCH -> hadal(g, s, w, h, t, p, rev);
         }
         g.flush();
+    }
+
+    // ================================================================== 1.4.0: the Hadal Trench
+    /**
+     * Down in the bathyscaphe: the blue above fades to black, marine snow streams upward past the window, a depth gauge
+     * ticks round to eleven thousand metres, and far below a few cold lights wait. Coming up, all of it runs the other way.
+     */
+    private static void hadal(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, cy = h / 2F, u = Math.min(w, h), ep = smooth(p);
+        float deep = rev ? 1 - ep : ep;
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        d.rectV(0, 0, w, h, Fx2D.lerpRgb(0x1060A0, 0x000306, deep), p, Fx2D.lerpRgb(0x063050, 0x00040A, deep), p);
+        d.end();
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        int n = (int) (160 * p);                              // marine snow, streaming up past the sphere's window
+        for (int i = 0; i < n; i++) {
+            float x = rnd(i, 1) * w, y = h * frac(rnd(i, 2) - t * (rev ? -0.3F : 0.3F));
+            f.rect(x, y, x + 1.3F, y + 1.3F, 0xD0E8F0, (0.15F + 0.35F * rnd(i, 3)) * p);
+        }
+        for (int i = 0; i < 6; i++) {                          // lights of the deep, below
+            float x = cx + (rnd(i, 7) - 0.5F) * w * 0.8F, y = h * (0.7F + 0.25F * rnd(i, 8));
+            f.disc(x, y, 2 + 3 * deep, 12, s.accent, 0.8F * deep * p * (0.6F + 0.4F * (float) Math.sin(t * 2 + i)), s.accent, 0);
+        }
+        // the depth gauge: a ring with a needle sweeping round to eleven kilometres
+        float r = u * 0.12F;
+        f.ring(cx, cy, r, 2, 64, s.ink, 0.7F * p);
+        float a = (float) (-Math.PI / 2 + deep * Math.PI * 1.8);
+        f.line(cx, cy, cx + (float) Math.cos(a) * r * 0.9F, cy + (float) Math.sin(a) * r * 0.9F, 2, s.accent, p);
+        f.end();
+    }
+
+    // ================================================================== 1.4.0: the Orbital Station
+    /**
+     * Up on a column of fire: the sky darkens from blue to black, the Earth's curved limb sinks into view below, its thin
+     * blue air glowing along the edge, and stars come out; the station's lights grow ahead. Leaving, the Earth swells up
+     * to fill the view and the re-entry glow streams past.
+     */
+    private static void orbit(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, u = Math.min(w, h), ep = smooth(p);
+        float up = rev ? 1 - ep : ep;                         // 0 = on the ground, 1 = in orbit
+        Fx2D d = Fx2D.begin(g, Blend.NORMAL);
+        d.rectV(0, 0, w, h, Fx2D.lerpRgb(0x3070C0, s.bg, up), p, Fx2D.lerpRgb(0x80B0E0, 0x02040C, up), p);
+        // the Earth below: a huge disc whose top edge rises as the rocket climbs
+        float R = u * 2.2F, ey = h + R - h * 0.35F * up;
+        d.disc(cx, ey, R, 96, 0x103A80, p, 0x2060B0, p);
+        d.end();
+        Fx2D f = Fx2D.begin(g, Blend.ADD);
+        f.ring(cx, ey, R * 1.004F, 6 + 10 * up, 160, 0x80C8FF, 0.8F * p * up);
+        int n = (int) (180 * up * p);
+        for (int i = 0; i < n; i++) {
+            float x = rnd(i, 1) * w, y = rnd(i, 2) * (ey - R);
+            f.rect(x, y, x + 1.2F, y + 1.2F, 0xFFFFFF, (0.3F + 0.7F * rnd(i, 3)) * p);
+        }
+        // the exhaust (going up) or the re-entry plasma (coming down), streaming past the centre
+        int col = rev ? 0xFF8040 : 0xFFE0A0;
+        for (int i = 0; i < 40; i++) {
+            float x = cx + (rnd(i, 5) - 0.5F) * u * 0.12F, q = frac(rnd(i, 6) + t * 1.4F);
+            float y0 = h * (rev ? 1 - q : q), len = u * 0.15F;
+            f.line(x, y0, x, y0 + (rev ? -len : len), 2, col, 0.6F * p * (1 - up * (rev ? 0 : 0.7F)), col, 0);
+        }
+        f.end();
     }
 
     // ================================================================== Titan's hidden ocean
@@ -705,6 +768,18 @@ public final class TransitScenes {
                 for (int i = 0; i < 5; i++) f.rect(cx - half + i * 28, cy - 4, cx - half + i * 28 + 26, cy + 4, i <= done * 5 ? accent : ink, 0.3F + 0.1F * i);
                 float x = cx - half + 2 * half * done;
                 f.tri(x, cy + 7, accent, 1, x - 4, cy - 5, ink, 0.8F, x + 4, cy - 5, ink, 0.8F);
+            }
+            case HADAL_TRENCH -> {
+                // a sphere sinking down a line (1.4.0)
+                f.rect(cx - half, cy - 1, cx + half, cy + 1, ink, 0.3F);
+                float x = cx - half + 2 * half * done;
+                f.disc(x, cy, 4, 12, accent, 0.9F, ink, 0.6F);
+            }
+            case ORBITAL_STATION -> {
+                // a capsule climbing to a station's ring (1.4.0)
+                f.ring(cx + half, cy, 6, 1.4F, 24, accent, 0.8F);
+                float x = cx - half + 2 * half * done;
+                f.tri(x + 6, cy, 0xFFFFFF, 0.9F, x - 4, cy - 4, ink, 0.8F, x - 4, cy + 4, ink, 0.8F);
             }
             case TITAN_OCEAN -> {
                 // a probe melting down through a band of ice

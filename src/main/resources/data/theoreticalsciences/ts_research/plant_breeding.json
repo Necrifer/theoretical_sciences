@@ -1,0 +1,59 @@
+{
+  "title": "Plant Breeding",
+  "description": "Keep the best plants of each harvest, sow only their seed, and the crop shifts a little each generation: by the heritability of the trait times how far from the average the chosen parents were. Keep too few, though, and the line inbreeds and weakens. Unlocks the Breeding Bench and Engineered Seeds.",
+  "icon": "theoreticalsciences:breeding_bench",
+  "x": 8,
+  "y": 16,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:plant_hormones",
+    "theoreticalsciences:population_genetics"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:wheat_seeds",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 2
+    }
+  ],
+  "time": 200,
+  "puzzle": {
+    "goal": "Choose parents that are, on average, S above the population's mean. Only the heritable share of that difference is passed on: the breeder's equation. Write R, how far the next generation's mean moves.",
+    "name": "The breeder's equation",
+    "lhs": "R",
+    "form": "h ^ 2 * S",
+    "expr": "h ^ 2 * S",
+    "ask": "Find R in kg/plot for a wheat line: h = @{h}, S = @{S} kg/plot.",
+    "vars": {
+      "R": "response to selection",
+      "h": "square root of the heritability",
+      "S": "selection differential"
+    },
+    "given": {
+      "h": 0.7,
+      "S": 1.2
+    },
+    "unit": "kg/plot",
+    "method": "Offspring resemble their parents only as far as the genes explain the parents' difference: the regression slope h\u00b2.",
+    "distractors": [
+      "2",
+      "n",
+      "g"
+    ],
+    "vary": {
+      "h": [
+        0.3,
+        0.9,
+        0.01
+      ],
+      "S": [
+        0.5,
+        3.0,
+        0.1
+      ]
+    }
+  }
+}

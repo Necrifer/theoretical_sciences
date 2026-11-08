@@ -1,0 +1,89 @@
+{
+  "params": [
+    {
+      "id": "mw",
+      "unit": "kg/s",
+      "min": 1,
+      "max": 50,
+      "step": 0.5,
+      "default": 5
+    },
+    {
+      "id": "p",
+      "unit": "bar",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "Tk",
+      "unit": "\u00b0C",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "default": 40
+    }
+  ],
+  "recipe_vars": {
+    "Q": 20.0,
+    "Pref": 3.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Tsat",
+      "unit": "\u00b0C",
+      "expr": "100*p^0.25",
+      "formula": "boiling point at the turbine pressure"
+    },
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "(1 - (Tk + 273)/(Tsat + 273))*0.6",
+      "formula": "\u03b7 = 0.6\u00b7(1 \u2212 T_cold/T_hot), of Carnot"
+    },
+    {
+      "id": "rr",
+      "unit": "",
+      "expr": "mw*2.6/Q*(1 + 0.02*d)",
+      "formula": "water to heat: 1 boils it all, just"
+    },
+    {
+      "id": "Pe",
+      "unit": "MW",
+      "expr": "Q*eta*min(1, rr)",
+      "formula": "P = Q\u00b7\u03b7"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "burnout",
+      "kind": "damage",
+      "expr": "rr - 0.7",
+      "formula": "enough water to cool the tubes"
+    },
+    {
+      "id": "erosion",
+      "kind": "wear",
+      "expr": "1.3 - rr",
+      "formula": "not so much that the steam is wet"
+    },
+    {
+      "id": "overpressure",
+      "kind": "damage",
+      "expr": "80 - p",
+      "formula": "p < 80 bar"
+    }
+  ],
+  "rate": "clamp(Pe/Pref, 0, 2)",
+  "rate_formula": "output = P / P_rated",
+  "heat": "0.5 + Q*(1 - eta)/20",
+  "idle_heat": "0.2",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 2
+}

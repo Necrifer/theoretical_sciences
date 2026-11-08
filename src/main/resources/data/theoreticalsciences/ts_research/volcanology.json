@@ -1,0 +1,58 @@
+{
+  "title": "Volcanology",
+  "description": "Whether a volcano oozes or explodes is chemistry: hot, dry basalt flows like syrup and pours out quietly; cooler, silica-rich magma full of dissolved water is a million times stiffer, and its gas cannot get out until it blows the magma apart. Unlocks the Geothermal Plant.",
+  "icon": "theoreticalsciences:geothermal_plant",
+  "x": 6,
+  "y": 17,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:mantle_geodynamics",
+    "theoreticalsciences:plate_tectonics"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:magma_block",
+      "count": 8
+    },
+    {
+      "item": "minecraft:basalt",
+      "count": 16
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "A melt's viscosity falls steeply with temperature: each molecule must climb an energy barrier E to move, and the chance that it can goes as e^(\u2212E/RT). Write \u03b7, the viscosity, with A the viscosity at infinite temperature.",
+    "name": "Arrhenius viscosity",
+    "lhs": "\u03b7",
+    "form": "A * exp ( E / ( R * T ) )",
+    "expr": "A * exp(E / (R * T))",
+    "ask": "Find \u03b7 in Pa\u00b7s for a basaltic melt: A = @{A} Pa\u00b7s, E = @{E} J/mol, R = @{R} J/(mol\u00b7K), T = @{T} K.",
+    "vars": {
+      "\u03b7": "viscosity (Pa\u00b7s)",
+      "A": "viscosity at infinite temperature (Pa\u00b7s)",
+      "E": "activation energy (J/mol)",
+      "R": "gas constant (J/(mol\u00b7K))",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "A": 1e-05,
+      "E": 300000,
+      "R": 8.314,
+      "T": 1473
+    },
+    "unit": "Pa\u00b7s",
+    "method": "Flow needs molecules to hop past their neighbours; the rate of hops goes as e^(\u2212E/RT), and viscosity as its inverse.",
+    "distractors": [
+      "2",
+      "ln",
+      "p"
+    ],
+    "vary": {
+      "T": [
+        1273.0,
+        1573.0,
+        1.0
+      ]
+    }
+  }
+}

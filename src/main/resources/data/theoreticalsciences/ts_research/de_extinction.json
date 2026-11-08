@@ -1,0 +1,54 @@
+{
+  "title": "De-extinction",
+  "description": "Bring a genome back into a living body and it must be fed for its size: an animal's upkeep grows not with its mass but with its mass to the three-quarters, so a mammoth burns less per kilo than a mouse. Grow it at its own body temperature, in the air it once breathed. Unlocks the Revival Vat.",
+  "icon": "theoreticalsciences:revival_vat",
+  "x": 8,
+  "y": 13,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:ancient_dna",
+    "theoreticalsciences:metabolism"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:mammoth_genome",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:field_ration",
+      "count": 4
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "Across animals from shrews to whales, the resting metabolic rate grows with body mass M not in proportion but as M to the three-quarters (Kleiber's law). Write P, the resting power, with B\u2080 the constant of proportion.",
+    "name": "Kleiber's law",
+    "lhs": "P",
+    "form": "B _ 0 * M ^ ( 3 / 4 )",
+    "expr": "A * M ^ (3 / 4)",
+    "ask": "Find P in watts for a mammoth: B\u2080 = @{A} W/kg^(3/4), M = @{M} kg.",
+    "vars": {
+      "P": "resting metabolic rate (W)",
+      "A": "B\u2080, the normalisation (W/kg^(3/4))",
+      "M": "body mass (kg)"
+    },
+    "given": {
+      "A": 3.4,
+      "M": 6000
+    },
+    "unit": "W",
+    "method": "Fit log P against log M across mammals: the slope is three-quarters, the networks that feed the body branching as fractals.",
+    "distractors": [
+      "2",
+      "exp",
+      "g"
+    ],
+    "vary": {
+      "M": [
+        2000.0,
+        9000.0,
+        100.0
+      ]
+    }
+  }
+}

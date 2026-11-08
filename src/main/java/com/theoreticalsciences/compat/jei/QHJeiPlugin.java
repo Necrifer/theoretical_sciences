@@ -89,6 +89,18 @@ public class QHJeiPlugin implements IModPlugin {
         };
         reg.registerSubtypeInterpreter(QHItems.get("dynamic_singularity"), by);
         reg.registerSubtypeInterpreter(QHItems.get("singularity_cluster"), by);
+        // 1.4.0: each line and generation of bred seed is its own entry
+        reg.registerSubtypeInterpreter(QHItems.get("engineered_seed"), new mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<ItemStack>() {
+            @Override
+            public Object getSubtypeData(ItemStack s, mezz.jei.api.ingredients.subtypes.UidContext ctx) {
+                return com.theoreticalsciences.green.PlantTraits.idOf(s);
+            }
+
+            @Override
+            public String getLegacyStringSubtypeInfo(ItemStack s, mezz.jei.api.ingredients.subtypes.UidContext ctx) {
+                return com.theoreticalsciences.green.PlantTraits.idOf(s);
+            }
+        });
         // every mod's Essence (and each part of one) is its own fluid to JEI: looking one up shows only how that one is made
         reg.registerSubtypeInterpreter(NeoForgeTypes.FLUID_STACK, com.theoreticalsciences.transcend.Essences.essenceFluid(), new mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<>() {
             @Override

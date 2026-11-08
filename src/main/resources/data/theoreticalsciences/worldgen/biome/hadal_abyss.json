@@ -1,0 +1,50 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.3,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 133648,
+    "water_color": 667712,
+    "water_fog_color": 66824,
+    "particle": {
+      "options": {
+        "type": "minecraft:underwater"
+      },
+      "probability": 0.02
+    }
+  },
+  "spawners": {
+    "water_creature": [
+      {
+        "type": "theoreticalsciences:hadal_anglerfish",
+        "weight": 6,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "theoreticalsciences:siphonophore",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:ocean_boulders"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

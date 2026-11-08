@@ -67,7 +67,8 @@ public final class QHCommands {
                             ctx.getSource().sendSuccess(() -> Component.literal("Added " + amount + " insight"), true);
                             return 1;
                         })))))
-                .then(radiation()));
+                .then(radiation())
+                .then(com.theoreticalsciences.orbit.OrbitCommands.station()));   // 1.4.0
     }
 
     /**

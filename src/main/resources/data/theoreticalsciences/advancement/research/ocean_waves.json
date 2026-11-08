@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:wave_energy_converter"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.ocean_waves"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.ocean_waves.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/oceanography",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

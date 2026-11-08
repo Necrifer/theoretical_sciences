@@ -1,0 +1,63 @@
+{
+  "title": "Ocean Waves",
+  "description": "A swell carries energy across whole oceans with almost none lost: in deep water each metre of wave front carries \u03c1g\u00b2H\u00b2T/64\u03c0 watts, tens of kilowatts in an ordinary sea. A float tuned to the swell's period rides it hardest. Unlocks the Wave Energy Converter.",
+  "icon": "theoreticalsciences:wave_energy_converter",
+  "x": 13,
+  "y": 6,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:oceanography",
+    "theoreticalsciences:fluid_dynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:nematocyst_cluster",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:anglerfish_lure",
+      "count": 2
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "A deep-water swell of height H and period T carries its energy at the group speed. Per metre of wave front, the power is \u03c1g\u00b2H\u00b2T over 64\u03c0. Write P.",
+    "name": "Wave power",
+    "lhs": "P",
+    "form": "\u03c1 * g ^ 2 * H ^ 2 * T / ( 64 * \u03c0 )",
+    "expr": "\u03c1 * g ^ 2 * H ^ 2 * T / ( 64 * 3.14159 )",
+    "ask": "Find P in W per metre of crest: \u03c1 = @{\u03c1} kg/m\u00b3, g = @{g} m/s\u00b2, H = @{H} m, T = @{T} s.",
+    "vars": {
+      "P": "power per metre of crest (W/m)",
+      "\u03c1": "seawater density (kg/m\u00b3)",
+      "g": "gravity (m/s\u00b2)",
+      "H": "wave height (m)",
+      "T": "wave period (s)"
+    },
+    "given": {
+      "\u03c1": 1025,
+      "g": 9.81,
+      "H": 2.5,
+      "T": 9
+    },
+    "unit": "W/m",
+    "method": "Energy per area \u03c1gH\u00b2/8, carried at the deep-water group speed gT/4\u03c0.",
+    "distractors": [
+      "2",
+      "h",
+      "v"
+    ],
+    "vary": {
+      "H": [
+        1.0,
+        6.0,
+        0.1
+      ],
+      "T": [
+        5.0,
+        14.0,
+        0.1
+      ]
+    }
+  }
+}

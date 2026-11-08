@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:radiometric_dating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:raw_amber",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:dated_amber",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:radiometric_dating",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "tau": 1800000000.0,
+      "age": 310000000.0
+    },
+    "windows": [
+      {
+        "q": "sig",
+        "min": 0.0,
+        "max": 4000000.0
+      }
+    ]
+  }
+}

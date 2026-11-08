@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:revival",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:mammoth_genome",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:dated_stromatolite",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:field_ration",
+      "count": 16
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mammoth_capsule",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 1200,
+  "research": "theoreticalsciences:de_extinction",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 6000,
+      "Topt": 37,
+      "O2min": 18
+    },
+    "windows": [
+      {
+        "q": "gr",
+        "min": 0.5,
+        "max": 1.0
+      }
+    ]
+  }
+}

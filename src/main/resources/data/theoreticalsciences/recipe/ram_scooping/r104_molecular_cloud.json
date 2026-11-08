@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:ram_scooping",
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:molecular_cloud",
+      "amount": 2000
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:ramscoops",
+  "unscaled": true,
+  "environment": {
+    "min_y": 200,
+    "dimensions": [
+      "theoreticalsciences:accretion_frontier"
+    ]
+  },
+  "physics": {
+    "vars": {
+      "n0": 1000.0,
+      "mref": 20.0
+    },
+    "windows": [
+      {
+        "q": "mdot",
+        "min": 20.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

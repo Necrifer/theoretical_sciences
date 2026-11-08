@@ -1,0 +1,58 @@
+{
+  "title": "Food Science",
+  "description": "Cooking is chemistry against the clock: the Maillard reactions that brown a crust speed up steeply with temperature, as every reaction does by Arrhenius's law, and yeast leavens dough by fermenting its sugar. A ration baked right keeps for months. Unlocks Field Rations.",
+  "icon": "theoreticalsciences:field_ration",
+  "x": 9,
+  "y": 16,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:fermentation",
+    "theoreticalsciences:plant_hormones"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:bread",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:yeast_culture",
+      "count": 1
+    }
+  ],
+  "time": 200,
+  "puzzle": {
+    "goal": "A browning reaction runs at a rate k that rises with temperature T: a fraction e^(\u2212E/RT) of collisions has the activation energy E it needs. Write k, with A the rate at infinite temperature.",
+    "name": "The Arrhenius rate",
+    "lhs": "k",
+    "form": "A * exp ( - E / ( R * T ) )",
+    "expr": "A * exp(-E / (R * T))",
+    "ask": "Find k in 1/s for a crust: A = @{A} 1/s, E = @{E} J/mol, R = @{R} J/(mol\u00b7K), T = @{T} K.",
+    "vars": {
+      "k": "rate constant (1/s)",
+      "A": "pre-exponential factor (1/s)",
+      "E": "activation energy (J/mol)",
+      "R": "gas constant",
+      "T": "temperature (K)"
+    },
+    "given": {
+      "A": 1000000000.0,
+      "E": 100000,
+      "R": 8.314,
+      "T": 453
+    },
+    "unit": "1/s",
+    "method": "The Boltzmann factor: the share of molecules with energy above E goes as e^(\u2212E/RT).",
+    "distractors": [
+      "2",
+      "ln",
+      "g"
+    ],
+    "vary": {
+      "T": [
+        400.0,
+        500.0,
+        1.0
+      ]
+    }
+  }
+}

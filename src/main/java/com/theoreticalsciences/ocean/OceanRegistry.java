@@ -50,7 +50,15 @@ public final class OceanRegistry {
     public static final DeferredHolder<EntityType<?>, EntityType<OceanMobs.VentCrab>> VENT_CRAB = ENTITIES.register("vent_crab",
             () -> EntityType.Builder.of(OceanMobs.VentCrab::new, MobCategory.WATER_CREATURE).sized(1.2F, 0.6F).clientTrackingRange(10).build("vent_crab"));
 
+    // 1.4.0: the Hadal Trench's creatures
+    public static final DeferredHolder<EntityType<?>, EntityType<HadalMobs.Anglerfish>> HADAL_ANGLERFISH = ENTITIES.register("hadal_anglerfish",
+            () -> EntityType.Builder.of(HadalMobs.Anglerfish::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.8F).clientTrackingRange(10).build("hadal_anglerfish"));
+    public static final DeferredHolder<EntityType<?>, EntityType<HadalMobs.Siphonophore>> SIPHONOPHORE = ENTITIES.register("siphonophore",
+            () -> EntityType.Builder.of(HadalMobs.Siphonophore::new, MobCategory.WATER_CREATURE).sized(0.8F, 0.8F).clientTrackingRange(10).build("siphonophore"));
+
     static {
+        TAB.add(ITEMS.register("hadal_anglerfish_spawn_egg", () -> new DeferredSpawnEggItem(HADAL_ANGLERFISH, 0x101418, 0x80FFE0, new Item.Properties())));
+        TAB.add(ITEMS.register("siphonophore_spawn_egg", () -> new DeferredSpawnEggItem(SIPHONOPHORE, 0xD8C8F0, 0xFF60C0, new Item.Properties())));
         TAB.add(ITEMS.register("brine_jelly_spawn_egg", () -> new DeferredSpawnEggItem(BRINE_JELLY, 0xA0E0F0, 0xFF80D0, new Item.Properties())));
         TAB.add(ITEMS.register("vent_crab_spawn_egg", () -> new DeferredSpawnEggItem(VENT_CRAB, 0xF4EEE4, 0xB0A090, new Item.Properties())));
         TAB.add(ITEMS.register("vent_grazer_spawn_egg", () -> new DeferredSpawnEggItem(VENT_GRAZER, 0xE8D8C8, 0xFF9070, new Item.Properties())));
@@ -74,6 +82,8 @@ public final class OceanRegistry {
             e.put(ICE_EEL.get(), OceanMobs.IceEel.createAttributes().build());
             e.put(BRINE_JELLY.get(), OceanMobs.BrineJelly.createAttributes().build());
             e.put(VENT_CRAB.get(), OceanMobs.VentCrab.createAttributes().build());
+            e.put(HADAL_ANGLERFISH.get(), HadalMobs.Anglerfish.createAttributes().build());
+            e.put(SIPHONOPHORE.get(), HadalMobs.Siphonophore.createAttributes().build());
         });
         bus.addListener((RegisterSpawnPlacementsEvent e) -> {
             // the world spawns them in the water, as it does fish (and the top-up below keeps every kind about)
@@ -81,6 +91,8 @@ public final class OceanRegistry {
             water(e, ICE_EEL.get());
             water(e, BRINE_JELLY.get());
             water(e, VENT_CRAB.get());
+            water(e, HADAL_ANGLERFISH.get());
+            water(e, SIPHONOPHORE.get());
         });
     }
 

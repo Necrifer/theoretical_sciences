@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:hydroponics",
+  "item_inputs": [
+    {
+      "tag": "minecraft:saplings",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:xylem_fibre",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 600,
+  "research": "theoreticalsciences:plant_physiology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Pmax": 30.0,
+      "gref": 10.0
+    },
+    "windows": [
+      {
+        "q": "g",
+        "min": 12.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

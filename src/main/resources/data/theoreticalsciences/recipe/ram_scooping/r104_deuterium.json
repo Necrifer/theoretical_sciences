@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:ram_scooping",
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:deuterium",
+      "amount": 100
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:ramscoops",
+  "unscaled": true,
+  "environment": {
+    "min_y": 200,
+    "dimensions": [
+      "theoreticalsciences:accretion_frontier"
+    ]
+  },
+  "physics": {
+    "vars": {
+      "n0": 1000.0,
+      "mref": 60.0
+    },
+    "windows": [
+      {
+        "q": "mdot",
+        "min": 60.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

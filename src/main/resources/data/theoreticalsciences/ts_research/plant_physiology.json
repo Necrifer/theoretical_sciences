@@ -1,0 +1,65 @@
+{
+  "title": "Plant Physiology",
+  "description": "A tree lifts water a hundred metres with no pump. Capillarity alone raises it a few centimetres; the rest is pulled up from above, as leaves evaporate it and the water column, held together by its own cohesion, is drawn up the xylem under tension. Unlocks the Hydroponic Tower and Xylem Fibre.",
+  "icon": "theoreticalsciences:hydroponic_tower",
+  "x": 6,
+  "y": 18,
+  "insight": 90,
+  "requires": [
+    "theoreticalsciences:photosynthesis",
+    "theoreticalsciences:metabolism"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:oak_sapling",
+      "count": 8
+    },
+    {
+      "item": "minecraft:moss_block",
+      "count": 4
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "Water climbs a narrow tube of radius r because it wets the wall: surface tension \u03b3 pulls it up at a contact angle \u03b8 until the column's weight balances it (Jurin's law). Write h, the height it rises.",
+    "name": "Jurin's law",
+    "lhs": "h",
+    "form": "2 * \u03b3 * cos ( \u03b8 ) / ( \u03c1 * g * r )",
+    "expr": "2 * \u03b3 * cos(\u03b8) / (\u03c1 * g * r)",
+    "ask": "Find h in m for a xylem vessel: \u03b3 = @{\u03b3} N/m, \u03b8 = @{\u03b8} rad, \u03c1 = @{\u03c1} kg/m\u00b3, g = @{g} m/s\u00b2, r = @{r} m. (A tall tree needs a hundred times more.)",
+    "vars": {
+      "h": "rise (m)",
+      "\u03b3": "surface tension (N/m)",
+      "\u03b8": "contact angle (rad)",
+      "\u03c1": "density (kg/m\u00b3)",
+      "g": "gravity (m/s\u00b2)",
+      "r": "tube radius (m)"
+    },
+    "given": {
+      "\u03b3": 0.0728,
+      "\u03b8": 0.0,
+      "\u03c1": 1000,
+      "g": 9.81,
+      "r": 2e-05
+    },
+    "unit": "m",
+    "method": "Upward force 2\u03c0r\u03b3cos\u03b8 round the meniscus; weight \u03c1g\u03c0r\u00b2h of the column.",
+    "distractors": [
+      "4",
+      "sin",
+      "v"
+    ],
+    "vary": {
+      "r": [
+        1e-05,
+        0.0001,
+        1e-06
+      ],
+      "\u03b8": [
+        0.0,
+        0.5,
+        0.01
+      ]
+    }
+  }
+}

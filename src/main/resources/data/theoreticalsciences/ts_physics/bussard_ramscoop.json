@@ -1,0 +1,102 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "T",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "default": 2
+    },
+    {
+      "id": "P",
+      "unit": "MW",
+      "min": 0,
+      "max": 100,
+      "step": 0.5,
+      "default": 10
+    },
+    {
+      "id": "v",
+      "unit": "km/s",
+      "min": 10,
+      "max": 300,
+      "step": 1,
+      "default": 50
+    }
+  ],
+  "recipe_vars": {
+    "n0": 1000,
+    "mref": 20
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Be",
+      "unit": "T",
+      "expr": "B*(1 + 0.01*d)",
+      "formula": "B\u00b7(1 + 0.01\u00b7d)"
+    },
+    {
+      "id": "rho",
+      "unit": "kg/m\u00b3",
+      "expr": "n0*3.34e-21",
+      "formula": "\u03c1 = n\u00b7m_H\u2082",
+      "show": false
+    },
+    {
+      "id": "Rc",
+      "unit": "m",
+      "expr": "40*Be",
+      "formula": "capture radius grows with the field"
+    },
+    {
+      "id": "chi",
+      "unit": "",
+      "expr": "P/(P + 20)",
+      "formula": "\u03c7: the ionised fraction (only ions follow the field)"
+    },
+    {
+      "id": "mdot",
+      "unit": "\u00b5g/s",
+      "expr": "chi*rho*v*1000*3.1416*Rc^2*1e9",
+      "formula": "\u1e41 = \u03c7\u03c1v\u03c0R_c\u00b2"
+    },
+    {
+      "id": "Pk",
+      "unit": "W",
+      "expr": "0.5*mdot*1e-9*(v*1000)^2",
+      "formula": "P = \u00bd\u1e41v\u00b2, dumped in the funnel"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "quench",
+      "kind": "quench",
+      "expr": "12 - Be",
+      "formula": "B < 12 T"
+    },
+    {
+      "id": "arc",
+      "kind": "wear",
+      "expr": "80 - P",
+      "formula": "P < 80 MW"
+    },
+    {
+      "id": "heating",
+      "kind": "wear",
+      "expr": "400 - Pk",
+      "formula": "\u00bd\u1e41v\u00b2 < 400 W"
+    }
+  ],
+  "rate": "clamp(mdot/mref, 0, 4)",
+  "rate_formula": "output = \u1e41 / \u1e41_ref",
+  "heat": "0.5 + P*0.2 + Pk/100",
+  "idle_heat": "0.3",
+  "quench_energy": "400",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 4
+}

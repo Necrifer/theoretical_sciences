@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:fuelled_crew_capsule"
+    },
+    "title": {
+      "translate": "advancements.theoreticalsciences.orbit_arrival.title"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.orbit_arrival.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/orbital_mechanics",
+  "criteria": {
+    "arrived": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "theoreticalsciences:orbital_station"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "arrived"
+    ]
+  ]
+}

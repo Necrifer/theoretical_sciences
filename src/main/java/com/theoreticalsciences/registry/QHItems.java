@@ -104,6 +104,12 @@ public final class QHItems {
                 case "miniaturiser" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.inner.InnerTravel.MiniaturiserItem::new, p);   // 1.2.0
                 case "cryobot" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.ocean.Cryobot::new, p);   // 1.2.0
                 case "lander" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanTravel.CryogenicLanderItem::new, p);
+                case "crew_capsule" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.orbit.OrbitTravel.CrewCapsuleItem::new, p);   // 1.4.0
+                case "bathyscaphe" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.ocean.HadalTrench.BathyscapheItem::new, p);
+                case "engineered_seed" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.green.PlantTraits.EngineeredSeedItem::new, p);
+                case "ration" -> ITEMS.registerItem(def.id(), LoreItem::new, p.food(new net.minecraft.world.food.FoodProperties.Builder()
+                        .nutrition(10).saturationModifier(1.2F).alwaysEdible()
+                        .effect(() -> new net.minecraft.world.effect.MobEffectInstance(QHEffects.WELL_FED, 12000, 0), 1.0F).build()));
                 case "rebreather" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.RebreatherItem::new, p);
                 case "coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.CoatingItem::new, p);
                 case "prussianblue" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.PrussianBlue::new, p);

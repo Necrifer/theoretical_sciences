@@ -1,5 +1,230 @@
 # Changelog
 
+## Unreleased — The Green Kingdom and Deep Time
+
+Work in progress: botany and agronomy (the Green Kingdom) and zoology and palaeontology (Deep Time). Each part below is
+finished and tested on a dedicated server; the whole is tested together before release.
+
+### Botany
+
+**Research: Plant Physiology** (Photosynthesis, Metabolism; puzzle: Jurin's law, h = 2γ cos θ / ρgr) and
+**Plant Hormones** (Plant Physiology, Population Genetics; puzzle: logistic growth).
+
+**The Hydroponic Tower** (multiblock, 13 × 24 × 13): a glass cylinder ribbed with Hydroponic Frame, rings of Grow Lights
+(quantum-dot emitters in chlorophyll's red and blue) and a spiral of Grow Trays round a Nutrient Mast; the whole
+carousel turns while it runs. The console sets light, nutrient EC and root-zone temperature; photosynthesis saturates
+with light, uptake with EC. Salt burn and photoinhibition wear it; root rot damages it. Grows wheat, carrots, potatoes,
+beetroot, melons, pumpkins and sugar cane in bulk, and **Xylem Fibre** from saplings. Fed Auxin and Gibberellin, every
+crop yields twice as much.
+
+**The Phytotron** (a single-block console): a climate-controlled growth chamber with day length, temperature and CO₂.
+Under long days, saplings make **Auxin**; seeds kept through long nights make **Gibberellin** (two new fluids).
+
+### Breeding, soil and food
+
+**Research: Plant Breeding** (Plant Hormones, Population Genetics; puzzle: the breeder's equation, R = h²S),
+**Soil Science** (Plant Physiology, Mycology; puzzle: Michaelis–Menten uptake) and **Food Science** (Fermentation,
+Plant Hormones; puzzle: the Arrhenius rate).
+
+**The Breeding Bench** (a single-block console): set the fraction of plants kept, the field's uniformity and the
+population; the response to selection must reach each generation's target, and keeping fewer than ten parents
+inbreeds the line (wear). It starts three **Engineered Seed** lines from wheat seeds: Yield (with bone meal),
+Hardiness (with Tardigrade Culture) and Glow (with an Anglerfish Lure), then takes each line one generation further
+per run (Yield to V, Hardiness to III, Glow to II). Every generation needs a harder selection than the last.
+
+In the **Hydroponic Tower**: Yield seeds grow 36–84 wheat a run (from III, they need Living Soil); Hardiness II
+grows wheat on the Orbital Station and on Titan; Glow II bears glow berries. Seeds come back with the harvest.
+
+**Soil**: **Biochar** (logs, Sintering Press), **Humus** (leaves and water, Mycelium Bed), **Mycorrhizal
+Inoculant** (Mould Culture and Xylem Fibre, Mycelium Bed), and **Living Soil** made from all three by crafting.
+
+**Food**: the Fermenter bakes **Field Rations** from wheat, sugar, Yeast Culture and water. Eating one makes you
+**Well Fed** (a new effect: two extra hearts for ten minutes).
+
+### Deep Time: fossils and radiometric dating
+
+**Three rare Overworld ores** (newly generated chunks only, in small veins):
+- **Fossil Ore**: Y 0 to 80; gives Fossil Fragments; stone pickaxe or better.
+- **Amber Ore**: Y 24 to 96; gives Raw Amber; stone pickaxe or better.
+- **Stromatolite Ore**: in deepslate, Y −64 to 0; gives Stromatolite Fragments; iron pickaxe or better.
+
+**Research: Radiometric Dating** (Decay Chains, Mass Spectrometry; puzzle: the age equation, t = τ ln(1 + D/P)).
+
+**The Dating Spectrometer** (a single-block console, an accelerator mass spectrometer): set the beam current,
+counting time and sample mass; the age's counting uncertainty must fall within each sample's limit. Too much beam
+for too long wears the ion source; too much beam on a heavy sample overheats the target. Each recipe takes four of a
+sample and makes one dated sample:
+- Fossil Fragments, carbon-14 dated to 30 thousand years, give a **Dated Bone**.
+- Raw Amber, potassium-40 dated to 310 million years, gives **Dated Amber**.
+- Stromatolite Fragments, rubidium-87 dated to 3.5 billion years, give a **Dated Stromatolite**.
+
+The Codex now has operation pages for the Hydroponic Tower, Phytotron, Breeding Bench and Dating Spectrometer.
+
+### Deep Time: ancient DNA and de-extinction
+
+**Research: Ancient DNA** (Radiometric Dating, Genomics; puzzle: sequencing coverage, C = NL/G) and
+**De-extinction** (Ancient DNA, Metabolism; puzzle: Kleiber's law, P = B₀M^(3/4)).
+
+**The Ancient DNA Lab** (a single-block console): set the reads, the PCR cycles and the bleach wash. The coverage of
+the genome must reach each sample's target. Too many reads for the amplified library stops it; too much modern DNA in
+the reads wears it. Four Dated Bones give a **Mammoth Genome**; four Dated Amber give a **Meganeura Genome**.
+
+**The Revival Vat** (multiblock, 15 × 14 × 15, 563 blocks): a great amniotic tank ribbed with **Vat Frame**, four
+nursery tanks, and the **Life Support Pump** lines that feed them, pulsing while it runs; its **Amniotic Tanks** glow.
+Set the feed rate (on a log scale), the vat temperature and the oxygen. Feed must match the creature's upkeep,
+B = 3.4·M^(3/4) W, a tenth over; temperature must match its body temperature; and oxygen must reach what it needs
+(the Meganeura needs Carboniferous air, 30% or more). Overfeeding and oxygen over 38% wear it; over 44 °C damages
+it. A genome, a Dated Stromatolite, Field Rations and Nutrient Broth make a **Mammoth Capsule** or two
+**Meganeura Capsules**.
+
+**Revived creatures** are wild: they cannot be tamed, bred or ridden, and they never spawn by themselves. Use a
+capsule on the ground to release one; released creatures never despawn.
+- **Woolly Mammoth**: grazes, keeps with its herd, and never starts a fight. Hurt one and the herd nearby charges.
+  Drops Mammoth Wool, and Mammoth Ivory when a player kills it.
+- **Meganeura**: a giant griffinfly that patrols where it was released, darting and hovering, and flees when hit.
+  Drops Meganeura Wing, which the Chemical Reactor makes into Polymer Sheet.
+
+Both have their own models and sounds.
+
+**Two rare Overworld ruins** (newly generated chunks only), each with a Containment Cache:
+- **Dig Sites**: stepped pits with fossil and amber in their walls, an Excavation Grid round the rim and Plaster
+  Jackets in the pit. Found in deserts, badlands, savannas, plains and stony shores.
+- **Greenhouse Ruins**: cracked glass halls on Hydroponic Frame, with benches of Grow Trays and a cache of
+  Engineered Seeds and soil. Found in plains, meadows and forests.
+
+New decorative blocks: **Plaster Jacket** and **Excavation Grid**.
+
+## Unreleased — Into Orbit and the Living Planet
+
+Work in progress: the rest of Fluids and Flight (rocketry, orbit, the nebula) and the Living Planet (oceans, weather,
+volcanoes, ice). Each part below is finished and tested on a dedicated server; the whole is tested together before release.
+
+### Rocketry
+
+**Research: Rocketry** (needs Compressible Flow and Cryogenics). Puzzle: Tsiolkovsky's rocket equation, v = u·ln(M/m).
+
+**Propellants**
+* **Liquid Oxygen** and **Liquid Hydrogen**, made in the Bose-Einstein Condenser from the gases and superfluid helium.
+* Two propellant routes: methalox (liquid oxygen with Titan's liquid methane) and hydrolox (liquid oxygen with liquid
+  hydrogen, which lifts a heavier payload but costs twice the helium).
+
+**The Rocket Assembly** (multiblock, 17 × 42 × 17)
+* A launch pad with a flame trench, a lattice service tower with access arms, and a two-stage rocket five blocks across
+  that lifts off and climbs out of sight while the machine runs; the engines glow.
+* The console sets the mixture ratio, chamber pressure and pitch-over speed, and shows specific impulse, exhaust speed,
+  Δv over both stages (Tsiolkovsky), gravity and drag losses, the margin to low orbit (9,400 m/s), chamber temperature
+  and max-Q. A launch only counts with a margin of zero or more.
+* Too near the stoichiometric ratio the chamber melts (wear); above 250 bar combustion turns unstable (wear); pitching
+  over too early flies flat through thick air and breaks the airframe up at max-Q (damage).
+* **Rocket Stages** are used up by each launch. The first payload is the **Microgravity Lab**: flown to orbit and back,
+  it brings **Microgravity Crystals**, grown flawless in free fall.
+
+### The Orbital Station
+
+**Research: Orbital Mechanics** (needs Rocketry and Gravitational Redshift). Puzzle: the vis-viva equation,
+v = √(GM(2/r − 1/a)).
+
+**Getting there**
+* Fly four **Station Modules** on the Rocket Assembly; each launch docks one, whoever flies it, and its owner is told how
+  many are up. Station Modules are heavy: only hydrolox gets them to the station's orbit.
+* Then fly a **Crew Capsule** (methalox or hydrolox): it comes back as a **Fuelled Crew Capsule**. Use it under open sky
+  in the Overworld, within 32 blocks of a formed Rocket Assembly, and the rocket takes you up.
+
+**The Orbital Station** (a new dimension)
+* A pressurised hub of Station Hull with leaded-glass windows and a glass cupola, four trusses out to wide **Solar
+  Array** wings and a docking port, built the first time a crew arrives. The Earth turns below, edged with the thin blue
+  glow of its atmosphere, under unblinking stars. It has its own music, "Low Earth Orbit".
+* A tenth of the Overworld's gravity and no fall damage. Inside the hub the air holds; outside is vacuum, and only a full
+  pressure-type suit (Pressure, Heated Pressure or Frontier, four pieces between them) keeps you breathing. Background
+  radiation is about 20 µSv/h, as on the ISS.
+* Four **Transfer Consoles**: sneak and use one to choose a destination, use it to go. It offers home (the Overworld,
+  under a parachute), Titan and the Accretion Frontier (once researched), and, when Ad Astra is installed, its Moon,
+  Mars, Venus, Mercury and Glacio. Destinations are data (`ts_destinations`, see docs/DATAPACKS.md), so packs and
+  addons can add more.
+* Drift off the station and you fall home through re-entry.
+* Operators: `/theoreticalsciences station status|modules <n>|build`.
+
+### The Jet Stream and the Bussard Ramscoop
+
+**The Jet Stream** (the Accretion Frontier, above Y 200)
+* The air above the islands now streams: a steady wind from the west pushes whoever is off the ground towards the east,
+  harder the higher they go. It is a layer, not a biome: the Frontier's terrain is generated exactly as before.
+* **Kármán Wraiths** ride it: ribbons of wake that ripple from side to side at a steady beat and shed eddies on alternate
+  sides (a von Kármán vortex street), singing the Aeolian tone of a wire in the wind. They throw gusts at players, which
+  near an island's edge can mean a long fall. Own steering, model, sounds and death. They drop **Vortex Filament**.
+
+**Research: Ramscoops** (needs Orbital Mechanics and the Interstellar Medium). Puzzle: ṁ = χρvA.
+
+**The Bussard Ramscoop** (multiblock, 21 × 21 × 24)
+* Nine shrinking rings of **Funnel Coil** (turning, alternately, while it runs) held in a **Ramscoop Frame** lattice,
+  with an **Ion Collector** at the throat. Its controller's recipe uses the Interstellar Scoop.
+* Only runs in the Accretion Frontier at Y 200 or more. The console sets the coil field, ioniser power and ram speed,
+  and shows the capture radius, ionised fraction, mass flow and the heat the caught gas dumps in the throat. Output
+  follows the mass flow, up to four times a full run.
+* Makes **Molecular Cloud** in bulk, at 40% of the Interstellar Scoop's cost per bucket, and, with a strong flow, a
+  trickle of **Deuterium** (44% of the mass spectrometry route).
+
+### The Living Planet: the oceans
+
+**Research: Oceanography** (needs Hydrology and the Subsurface Ocean). Puzzle: hydrostatic pressure, p = ρgh.
+**Research: Ocean Waves** (needs Oceanography and Fluid Dynamics). Puzzle: deep-water wave power, P = ρg²H²T/64π.
+
+**The Hadal Trench** (a new dimension, as planned after Titan's ocean)
+* The deepest sea floor there is, eleven kilometres down: basins and trenches of abyssal silicate in the dark (the
+  **Hadal Abyss**), and fields of hot vents where life gathers (the **Hadal Vent Field**). Its own transit scene (the
+  descent, marine snow streaming up past the window, a depth gauge) and its own music, "Challenger Deep".
+* Reached in a **Bathyscaphe** (Pressure Hull Plates, leaded glass and an Oxygen Rebreather): use it under water in a
+  deep ocean, below Y 40. Use it again in the trench to surface on the same spot of the Overworld's sea.
+* A thousand atmospheres: without a full pressure suit (Pressure, Heated Pressure or Frontier) the water crushes you.
+  You need air too; an Oxygen Rebreather keeps you breathing. Fall out of the trench and the current carries you home.
+* **Hadal Anglerfish**: hangs still over the floor with its lure lit and lunges at whatever comes near the light. Drops
+  **Anglerfish Lure**, whose glowing bacteria make Bioluminescent Membrane (a new, cheaper route).
+* **Siphonophore Colony**: a float, pulsing swimming bells and a long stinging stem; whatever brushes the stem is
+  poisoned and slowed. Drops **Nematocyst Cluster**.
+* The Vent Field is also home to vent grazers and vent crabs. Both new creatures have their own steering, models,
+  sounds and deaths.
+
+**The Wave Energy Converter** (a single-block generator with a console)
+* Works in any ocean biome. Set the float's diameter, the power take-off's damping and its natural period; it shows the
+  swell's power, the capture width ratio and the stroke. Too wide a float slams on every crest (damage); too little
+  damping swings it into its end stops (wear).
+
+### The Living Planet: air, fire and ice
+
+**Research: Meteorology** (Climatology, Fluid Dynamics; puzzle: the Coriolis parameter, f = 2Ω sin φ),
+**Volcanology** (Mantle Geodynamics, Plate Tectonics; puzzle: Arrhenius viscosity, η = A·e^(E/RT)) and
+**Glaciology** (Climatology, Geomorphology; puzzle: Glen's flow law, ε̇ = Aτⁿ).
+
+**The Storm Chamber** (multiblock, 13 × 26 × 13): a tower of air warmed and wetted at a **Heater Plate** floor and chilled
+under a **Cold Plate** lid, inside **Convection Walls** with glass bands, with a ring of **Storm Electrodes** halfway
+up; rain falls inside while it runs. The console sets surface temperature, humidity and wind shear, and shows CAPE, the
+updraft (√(2·CAPE)), organisation, the flash rate and a supercell index; an updraft above 40 m/s grows giant hail and
+too much shear with too much energy spins up a tornado (both damage). Its lightning fixes **Nitric Acid** from nitrogen,
+oxygen and water alone (the Birkeland-Eyde route): no ammonia, no catalyst.
+
+**The Storm Elemental**: a thunderstorm cell come to life. It forms only in the Overworld, over warm sea, during a
+thunderstorm (at most one near each player, checked every 20 seconds), hangs over its prey and strikes it with lightning
+(visual only: it never starts fires or changes blocks), and dissipates when the storm passes. It drops **Fulgurite**,
+which the Storm Electrodes are made with.
+
+**The Ice Core Drill** (multiblock, 11 × 26 × 11): an aerogel-lined drill shed (**Ice Drill Casing**) under a derrick of
+the Deep Drilling Rig's own Derrick Frame, its Drill String spinning down into the ice. Only in icy or snowy biomes. The
+console sets rotation speed, weight on bit and drill fluid temperature; the core must stay at −8 °C or colder. Makes
+**Ice Cores** at about an eighth of the Climate Engine's cost.
+
+**The Geothermal Plant** (a single-block generator with a console): boils water on **Basaltic Magma** and drives a turbine,
+leaving basalt and venting **Sulfur Dioxide** (for the contact process). The console sets the water flow, turbine
+pressure and condenser temperature; efficiency follows the Carnot limit between them.
+
+### The Wind Tunnel, rebuilt
+
+* The Wind Tunnel is now a closed-circuit (Göttingen-type) tunnel, 21 × 7 × 33: two legs joined at both ends, with
+  **Turning Vanes** (new block) in all four corners, the honeycomb straightener, the glass test section and the fan in
+  the return leg. It uses 2,071 blocks (it was 588).
+* **A tunnel built to the 1.3.0 design no longer forms.** Its old layout is kept, so the Structure Assembler still takes
+  it apart and gives every block back; rebuild it to the new pattern (JEI and the Codex show it).
+* No recipe changed.
+
 ## 1.3.0 — Fluids and Flight
 
 The first slice of the planned Fluids and Flight branch: ordinary fluid flow and aerodynamics, which the mod had

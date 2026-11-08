@@ -1,0 +1,54 @@
+{
+  "title": "Meteorology",
+  "description": "Weather is heat engine and spinning world together: warm, moist air rises, cools and rains out its water, and the Earth's turning bends every wind sideways. A storm's updraft tears charge apart until the air breaks down in lightning, which fixes nitrogen as it goes. Unlocks the Storm Chamber.",
+  "icon": "theoreticalsciences:storm_chamber",
+  "x": 15,
+  "y": 4,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:climatology",
+    "theoreticalsciences:fluid_dynamics"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:lightning_rod",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "On a world turning at angular speed \u03a9, a wind at latitude \u03c6 is bent sideways by the Coriolis effect; how strongly is set by the Coriolis parameter, twice the spin's component along the local vertical. Write f.",
+    "name": "The Coriolis parameter",
+    "lhs": "f",
+    "form": "2 * \u03a9 * sin ( \u03c6 )",
+    "expr": "2 * \u03a9 * sin(\u03c6)",
+    "ask": "Find f in 1/s: \u03a9 = @{\u03a9} rad/s, \u03c6 = @{\u03c6} rad.",
+    "vars": {
+      "f": "Coriolis parameter (1/s)",
+      "\u03a9": "the Earth's angular speed (rad/s)",
+      "\u03c6": "latitude (rad)"
+    },
+    "given": {
+      "\u03a9": 7.292e-05,
+      "\u03c6": 0.785
+    },
+    "unit": "1/s",
+    "method": "The local vertical makes angle (90\u00b0 \u2212 \u03c6) with the spin axis; the Coriolis acceleration is 2\u03a9 sin\u03c6 times the wind speed.",
+    "distractors": [
+      "g",
+      "cos",
+      "r"
+    ],
+    "vary": {
+      "\u03c6": [
+        0.2,
+        1.4,
+        0.01
+      ]
+    }
+  }
+}

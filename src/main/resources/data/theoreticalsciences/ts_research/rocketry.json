@@ -1,0 +1,66 @@
+{
+  "title": "Rocketry",
+  "description": "A rocket pushes against nothing but its own exhaust: every kilogram thrown back at speed u buys the rest a little speed forwards, so the speed it gains grows only with the logarithm of how much heavier it was full than empty. That is why rockets come in stages. Unlocks liquid oxygen and hydrogen, Rocket Stages and the Rocket Assembly.",
+  "icon": "theoreticalsciences:rocket_assembly",
+  "x": 16,
+  "y": 7,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:compressible_flow",
+    "theoreticalsciences:cryogenics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:de_laval_nozzle",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:aluminium_ingot",
+      "count": 8
+    }
+  ],
+  "time": 300,
+  "puzzle": {
+    "goal": "A rocket of full mass M burns down to an empty mass m, throwing its exhaust back at speed u. Each bit of exhaust thrown back speeds up all that is left; add it all up and the gain grows with the logarithm of the mass ratio. Write v, the change in speed (\u0394v).",
+    "name": "Tsiolkovsky's rocket equation",
+    "lhs": "v",
+    "form": "u * ln ( M / m )",
+    "expr": "u * ln(M / m)",
+    "ask": "Find v in m/s for one stage: u = @{u} m/s, M = @{M} t, m = @{m} t.",
+    "vars": {
+      "v": "change in speed, \u0394v (m/s)",
+      "u": "exhaust speed (m/s)",
+      "M": "full mass (t)",
+      "m": "empty mass (t)"
+    },
+    "given": {
+      "u": 3300,
+      "M": 500,
+      "m": 100
+    },
+    "unit": "m/s",
+    "method": "Momentum: m dv = \u2212u dm. Integrate from M down to m.",
+    "distractors": [
+      "g",
+      "2",
+      "t"
+    ],
+    "vary": {
+      "u": [
+        2500.0,
+        4500.0,
+        1.0
+      ],
+      "M": [
+        200.0,
+        800.0,
+        1.0
+      ],
+      "m": [
+        50.0,
+        150.0,
+        1.0
+      ]
+    }
+  }
+}

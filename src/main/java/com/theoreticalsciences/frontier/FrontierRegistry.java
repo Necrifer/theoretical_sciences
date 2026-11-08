@@ -58,6 +58,10 @@ public final class FrontierRegistry {
     public static final DeferredHolder<EntityType<?>, EntityType<BinaryBoss.Serpent>> BINARY_SERPENT =
             mob("binary_serpent", BinaryBoss.Serpent::new, MobCategory.MONSTER, 1.2F, 1.2F, true, 0x102040, 0xFFD060);
 
+    /** 1.4.0: the Jet Stream's wake-ribbon (spawned by JetStream's top-up only, never by the biomes). */
+    public static final DeferredHolder<EntityType<?>, EntityType<KarmanWraith>> KARMAN_WRAITH =
+            mob("karman_wraith", KarmanWraith::new, MobCategory.MONSTER, 1.0F, 0.8F, true, 0xD8E4F0, 0x6090C0);
+
     public static void register(IEventBus bus) {
         ENTITIES.register(bus);
         ITEMS.register(bus);
@@ -70,12 +74,13 @@ public final class FrontierRegistry {
             e.put(BOLTZMANN_BRAIN.get(), FrontierMobs.BoltzmannBrain.createAttributes().build());
             e.put(BLACK_SWAN.get(), FrontierMobs.BlackSwan.createAttributes().build());
             e.put(BINARY_SERPENT.get(), BinaryBoss.Serpent.createAttributes().build());
+            e.put(KARMAN_WRAITH.get(), KarmanWraith.createAttributes().build());
         });
         bus.addListener((RegisterSpawnPlacementsEvent e) -> {
             var op = RegisterSpawnPlacementsEvent.Operation.REPLACE;
             var hm = Heightmap.Types.MOTION_BLOCKING_NO_LEAVES;
             for (Supplier<? extends EntityType<? extends Monster>> t : List.<Supplier<? extends EntityType<? extends Monster>>>of(
-                    NEBULOID, PULSAR_WISP, LENS_PHANTOM, HAWKING_IMP, BOLTZMANN_BRAIN))
+                    NEBULOID, PULSAR_WISP, LENS_PHANTOM, HAWKING_IMP, BOLTZMANN_BRAIN, KARMAN_WRAITH))
                 e.register(t.get(), SpawnPlacementTypes.NO_RESTRICTIONS, hm, Monster::checkAnyLightMonsterSpawnRules, op);
             e.register(TIDAL_STRETCHER.get(), SpawnPlacementTypes.ON_GROUND, hm, Monster::checkAnyLightMonsterSpawnRules, op);
             // the Black Swan never spawns naturally: FrontierHazards brings it, when nothing improbable has happened for long enough
