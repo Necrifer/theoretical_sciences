@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import com.theoreticalsciences.client.preview.PreviewRenderer;
 import com.theoreticalsciences.machine.ControllerBlockEntity;
 import com.theoreticalsciences.machine.MachineBlock;
 import com.theoreticalsciences.multiblock.MultiblockDefinition;
@@ -112,48 +113,35 @@ public class MultiblockView {
         PoseStack pose = g.pose();
         pose.pushPose();
         pose.mulPose(m);
+        Block port = ControllerBlockEntity.portBlock();
+        Cells cells = cells(port);
+        // 1.3.0: a big structure's still blocks are meshed in sections on background threads and drawn from the
+        // graphics card (see PreviewRenderer); only the tiered parts, which cycle, are drawn one by one
+        if (cells.renderer != null) {
+            cells.renderer.upload();
+            cells.renderer.render(pose.last().pose(), m, x0, y0, x0 + w, y0 + h);
+        }
         Lighting.setupFor3DItems();
         MultiBufferSource.BufferSource buffers = mc.renderBuffers().bufferSource();
-        Block port = ControllerBlockEntity.portBlock();
-        // 1.2.0: a big structure's still blocks are baked once into GPU buffers (thousands of blocks drawn one by one
-        // each frame would slow the page); only the tiered parts, which cycle, are drawn one by one
-        com.theoreticalsciences.client.render.animation.Animations.Baked big = bigBake(port);
-        if (big != null) drawBaked(big, pose, buffers);
-        for (int y = 0; y < def.sizeY; y++) {
-            if (!visibleLayer(y)) continue;
-            List<String> rows = def.layers.get(y);
-            for (int z = 0; z < rows.size(); z++) {
-                String row = rows.get(z);
-                for (int x = 0; x < row.length(); x++) {
-                    char c = row.charAt(x);
-                    if (c == ' ' || c == '.') continue;
-                    if (big != null && !def.tiers.containsKey(c)) continue;
-                    BlockState st = stateFor(c, t, port);
-                    if (st == null) continue;
-                    pose.pushPose();
-                    pose.translate(x, y, z);
-                    mc.getBlockRenderer().renderSingleBlock(st, pose, buffers, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
-                    pose.popPose();
-                }
-            }
+        java.util.Map<Character, BlockState> frame = new java.util.HashMap<>();
+        for (int i = 0; i < cells.drawn.length; i++) {
+            long p = cells.drawn[i];
+            char c = cells.drawnChars[i];
+            BlockState st = frame.computeIfAbsent(c, k -> stateFor(k, t, port));
+            if (st == null) continue;
+            pose.pushPose();
+            pose.translate(net.minecraft.core.BlockPos.getX(p), net.minecraft.core.BlockPos.getY(p), net.minecraft.core.BlockPos.getZ(p));
+            mc.getBlockRenderer().renderSingleBlock(st, pose, buffers, LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
+            pose.popPose();
         }
         buffers.endBatch();
         // GregTech-style: the model is shown clean. Tiered parts (coils, emitters) simply cycle through their accepted
         // tiers; the only frame is the block under the mouse. Interface Port positions are outlined only when toggled on.
         VertexConsumer lines = buffers.getBuffer(RenderType.lines());
         float pulse = 0.35F + 0.25F * Mth.sin(t * 0.25F);
-        if (showPorts) for (int y = 0; y < def.sizeY; y++) {
-            if (!visibleLayer(y)) continue;
-            List<String> rows = def.layers.get(y);
-            for (int z = 0; z < rows.size(); z++) {
-                String row = rows.get(z);
-                for (int x = 0; x < row.length(); x++) {
-                    char c = row.charAt(x);
-                    if (c == ' ' || c == '.') continue;
-                    if (def.allowsPort(c, portId))
-                        LevelRenderer.renderLineBox(pose, lines, x - 0.02, y - 0.02, z - 0.02, x + 1.02, y + 1.02, z + 1.02, 0.25F, 0.9F, 1F, pulse);
-                }
-            }
+        if (showPorts) for (long p : cells.ports) {
+            int x = net.minecraft.core.BlockPos.getX(p), y = net.minecraft.core.BlockPos.getY(p), z = net.minecraft.core.BlockPos.getZ(p);
+            LevelRenderer.renderLineBox(pose, lines, x - 0.02, y - 0.02, z - 0.02, x + 1.02, y + 1.02, z + 1.02, 0.25F, 0.9F, 1F, pulse);
         }
         if (hx >= 0)
             LevelRenderer.renderLineBox(pose, lines, hx - 0.02, hy - 0.02, hz - 0.02, hx + 1.02, hy + 1.02, hz + 1.02, 1F, 1F, 1F, 0.85F);
@@ -162,6 +150,12 @@ public class MultiblockView {
         Lighting.setupForFlatItems();
         g.disableScissor();
         com.mojang.blaze3d.systems.RenderSystem.clear(org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT, Minecraft.ON_OSX);
+        // still being built: a thin bar along the bottom of the view
+        if (cells.renderer != null && !cells.renderer.isReady()) {
+            int bx0 = x0 + 4, bx1 = x0 + w - 4, by = y0 + h - 5;
+            g.fill(bx0, by, bx1, by + 2, 0x40000000);
+            g.fill(bx0, by, bx0 + Math.round((bx1 - bx0) * cells.renderer.progress()), by + 2, 0xFF40A0E0);
+        }
 
         // controls: [<] Layer [>]    [R]
         var font = mc.font;
@@ -188,69 +182,98 @@ public class MultiblockView {
         g.drawString(font, label, bx + 6 - font.width(label) / 2, by + 2, 0xFFFFFF, false);
     }
 
-    private static final java.util.LinkedHashMap<String, com.theoreticalsciences.client.render.animation.Animations.Baked> BIG = new java.util.LinkedHashMap<>();
+    /** Structures with at least this many still blocks are drawn by a {@link PreviewRenderer}; smaller ones block by block. */
+    private static final int GPU_MIN_BLOCKS = 1500;
+    /** Most structure views kept built at once (each holds its meshes on the graphics card). */
+    private static final int KEPT = 6;
 
-    /** The structure's untiered blocks baked (for the layer shown), or null for a small structure (drawn as before). */
-    private com.theoreticalsciences.client.render.animation.Animations.Baked bigBake(Block port) {
-        int n = 0;
-        for (List<String> rows : def.layers) for (String r : rows) for (int i = 0; i < r.length(); i++) if (r.charAt(i) != ' ' && r.charAt(i) != '.') n++;
-        if (n < 1500) return null;
-        String k = def.id + "#" + def.sizeY + "#" + layer;
-        var b = BIG.get(k);
-        if (b != null) return b;
-        List<com.theoreticalsciences.client.render.animation.Animations.Cell> cells = new java.util.ArrayList<>();
+    /**
+     * One structure (one layer of it, or all) read once into lists of the positions that hold something, so a frame
+     * never has to scan the whole bounding box (over a million cells for the largest structures).
+     */
+    private static final class Cells {
+        /** Positions ({@link net.minecraft.core.BlockPos#asLong}) drawn one by one each frame, and their characters. */
+        final long[] drawn;
+        final char[] drawnChars;
+        /** Positions that take an Interface Port. */
+        final long[] ports;
+        /** The still blocks of a large structure, or null when everything is drawn one by one. */
+
+        final PreviewRenderer renderer;
+
+        Cells(long[] drawn, char[] drawnChars, long[] ports, PreviewRenderer renderer) {
+            this.drawn = drawn;
+            this.drawnChars = drawnChars;
+            this.ports = ports;
+            this.renderer = renderer;
+        }
+
+        void close() {
+            if (renderer != null) renderer.close();
+        }
+    }
+
+    private record CellsKey(MultiblockDefinition def, int layer) {}
+
+    private static final java.util.LinkedHashMap<CellsKey, Cells> CELLS = new java.util.LinkedHashMap<>(16, 0.75F, true);
+
+    /** The positions of the layer shown (read once, kept for the last few views; the least recently shown is dropped). */
+    private Cells cells(Block port) {
+        CellsKey key = new CellsKey(def, layer);
+        Cells c = CELLS.get(key);
+        if (c != null) return c;
+        it.unimi.dsi.fastutil.longs.LongArrayList tiered = new it.unimi.dsi.fastutil.longs.LongArrayList(), ports = new it.unimi.dsi.fastutil.longs.LongArrayList(),
+                still = new it.unimi.dsi.fastutil.longs.LongArrayList();
+        StringBuilder tieredChars = new StringBuilder(), stillChars = new StringBuilder();
         for (int y = 0; y < def.sizeY; y++) {
             if (!visibleLayer(y)) continue;
             List<String> rows = def.layers.get(y);
             for (int z = 0; z < rows.size(); z++) {
                 String row = rows.get(z);
                 for (int x = 0; x < row.length(); x++) {
-                    char c = row.charAt(x);
-                    if (c == ' ' || c == '.' || def.tiers.containsKey(c)) continue;
-                    BlockState st = stateFor(c, 0, port);
-                    if (st != null) cells.add(new com.theoreticalsciences.client.render.animation.Animations.Cell(x, y, z, st));
+                    char ch = row.charAt(x);
+                    if (ch == ' ' || ch == '.') continue;
+                    long p = net.minecraft.core.BlockPos.asLong(x, y, z);
+                    if (def.allowsPort(ch, portId)) ports.add(p);
+                    if (def.tiers.containsKey(ch)) {
+                        tiered.add(p);
+                        tieredChars.append(ch);
+                    } else {
+                        still.add(p);
+                        stillChars.append(ch);
+                    }
                 }
             }
         }
-        com.google.gson.JsonObject j = new com.google.gson.JsonObject();
-        com.google.gson.JsonArray parts = new com.google.gson.JsonArray();
-        com.google.gson.JsonObject part = new com.google.gson.JsonObject();
-        part.addProperty("id", "all");
-        com.google.gson.JsonObject src = new com.google.gson.JsonObject();
-        src.addProperty("type", "cells");
-        part.add("source", src);
-        parts.add(part);
-        j.add("parts", parts);
-        var anim = com.theoreticalsciences.client.render.animation.StructureAnimation.parse(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("theoreticalsciences", "view"), j);
-        anim.parts.get(0).cells = cells;
-        b = com.theoreticalsciences.client.render.animation.Animations.bakeLive(anim);
-        BIG.put(k, b);
-        while (BIG.size() > 6) {
-            String first = BIG.keySet().iterator().next();
-            com.theoreticalsciences.client.render.animation.Animations.close(BIG.remove(first));
+        if (still.size() >= GPU_MIN_BLOCKS) {
+            it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap<BlockState> map = new it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap<>(still.size());
+            java.util.Map<Character, BlockState> states = new java.util.HashMap<>();
+            for (int i = 0; i < still.size(); i++) {
+                BlockState st = states.computeIfAbsent(stillChars.charAt(i), k -> stateFor(k, 0, port));
+                if (st != null) map.put(still.getLong(i), st);
+            }
+            PreviewRenderer r = new PreviewRenderer(map, def.sizeX / 2F, def.sizeY / 2F, def.sizeZ / 2F);
+            c = new Cells(tiered.toLongArray(), tieredChars.toString().toCharArray(), ports.toLongArray(), r);
+        } else {
+            // a small structure: every block drawn one by one, as before
+            still.addAll(tiered);
+            stillChars.append(tieredChars);
+            c = new Cells(still.toLongArray(), stillChars.toString().toCharArray(), ports.toLongArray(), null);
         }
-        return b;
+        CELLS.put(key, c);
+        while (CELLS.size() > KEPT) {
+            var eldest = CELLS.entrySet().iterator().next();
+            CELLS.remove(eldest.getKey());
+            eldest.getValue().close();
+        }
+        return c;
     }
 
-    /** Draws the baked blocks with the page's transform (cells are centred on whole numbers; the page draws from corners). */
-    private static void drawBaked(com.theoreticalsciences.client.render.animation.Animations.Baked b, PoseStack pose, MultiBufferSource buffers) {
-        pose.pushPose();
-        pose.translate(0.5F, 0.5F, 0.5F);
-        var bp = b.parts[0];
-        RenderType[] gui = {net.minecraft.client.renderer.Sheets.solidBlockSheet(), net.minecraft.client.renderer.Sheets.cutoutBlockSheet(),
-                net.minecraft.client.renderer.Sheets.cutoutBlockSheet(), net.minecraft.client.renderer.Sheets.translucentCullBlockSheet()};
-        for (int L = 0; L < bp.cpu.length; L++) {
-            var r = bp.cpu[L];
-            if (r == null || r.n == 0) continue;
-            r.emit(buffers.getBuffer(gui[L]), pose.last(), LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY);
-        }
-        pose.popPose();
-    }
-
-    /** Frees the baked pages (resources reloaded). */
+    /** Frees every built view (resources reloaded: block models may have changed). */
     public static void releaseBaked() {
-        for (var b : BIG.values()) com.theoreticalsciences.client.render.animation.Animations.close(b);
-        BIG.clear();
+        List<Cells> old = new java.util.ArrayList<>(CELLS.values());
+        CELLS.clear();
+        if (!old.isEmpty()) com.mojang.blaze3d.systems.RenderSystem.recordRenderCall(() -> old.forEach(Cells::close));
     }
 
     private BlockState stateFor(char c, float t, Block port) {
@@ -272,48 +295,51 @@ public class MultiblockView {
         Matrix4f inv = new Matrix4f(m).invert();
         Vector4f a = inv.transform(new Vector4f((float) mx, (float) my, 3000, 1));
         Vector4f b = inv.transform(new Vector4f((float) mx, (float) my, -3000, 1));
-        float ox = a.x, oy = a.y, oz = a.z, dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z;
-        float best = Float.MAX_VALUE;
-        for (int y = 0; y < def.sizeY; y++) {
-            if (!visibleLayer(y)) continue;
-            List<String> rows = def.layers.get(y);
-            for (int z = 0; z < rows.size(); z++) {
-                String row = rows.get(z);
-                for (int x = 0; x < row.length(); x++) {
-                    char c = row.charAt(x);
-                    if (c == ' ' || c == '.') continue;
-                    float hit = rayBox(ox, oy, oz, dx, dy, dz, x, y, z);
-                    if (hit >= 0 && hit < best) {
-                        best = hit;
-                        hx = x;
-                        hy = y;
-                        hz = z;
-                    }
-                }
-            }
-        }
-    }
-
-    private static float rayBox(float ox, float oy, float oz, float dx, float dy, float dz, int bx, int by, int bz) {
-        float tmin = 0, tmax = 1;
-        float[] o = {ox, oy, oz}, d = {dx, dy, dz};
-        int[] lo = {bx, by, bz};
+        // 1.3.0: walk the ray cell by cell from the viewer's side (a 3D DDA) and stop at the first block, instead of
+        // testing every cell of the bounding box
+        float[] o = {a.x, a.y, a.z}, d = {b.x - a.x, b.y - a.y, b.z - a.z};
+        int[] size = {def.sizeX, def.sizeY, def.sizeZ};
+        float t0 = 0, t1 = 1;
         for (int i = 0; i < 3; i++) {
             if (Math.abs(d[i]) < 1e-7F) {
-                if (o[i] < lo[i] || o[i] > lo[i] + 1) return -1;
+                if (o[i] < 0 || o[i] > size[i]) return;
                 continue;
             }
-            float t1 = (lo[i] - o[i]) / d[i], t2 = (lo[i] + 1 - o[i]) / d[i];
-            if (t1 > t2) {
-                float tt = t1;
-                t1 = t2;
-                t2 = tt;
-            }
-            tmin = Math.max(tmin, t1);
-            tmax = Math.min(tmax, t2);
-            if (tmin > tmax) return -1;
+            float ta = -o[i] / d[i], tb = (size[i] - o[i]) / d[i];
+            t0 = Math.max(t0, Math.min(ta, tb));
+            t1 = Math.min(t1, Math.max(ta, tb));
+            if (t0 > t1) return;
         }
-        return tmin;
+        int[] cell = new int[3], step = new int[3];
+        float[] tMax = new float[3], tDelta = new float[3];
+        for (int i = 0; i < 3; i++) {
+            float p = o[i] + d[i] * t0;
+            cell[i] = Mth.clamp(Mth.floor(p), 0, size[i] - 1);
+            if (Math.abs(d[i]) < 1e-7F) {
+                step[i] = 0;
+                tMax[i] = tDelta[i] = Float.MAX_VALUE;
+            } else {
+                step[i] = d[i] > 0 ? 1 : -1;
+                tDelta[i] = Math.abs(1F / d[i]);
+                tMax[i] = t0 + ((cell[i] + (step[i] > 0 ? 1 : 0)) - p) / d[i];
+            }
+        }
+        while (true) {
+            if (visibleLayer(cell[1])) {
+                char c = def.at(cell[0], cell[1], cell[2]);
+                if (c != ' ' && c != '.') {
+                    hx = cell[0];
+                    hy = cell[1];
+                    hz = cell[2];
+                    return;
+                }
+            }
+            int k = tMax[0] < tMax[1] ? (tMax[0] < tMax[2] ? 0 : 2) : (tMax[1] < tMax[2] ? 1 : 2);
+            if (tMax[k] > t1) return;
+            cell[k] += step[k];
+            if (cell[k] < 0 || cell[k] >= size[k]) return;
+            tMax[k] += tDelta[k];
+        }
     }
 
     public void tooltip(List<Component> tip, double mx, double my) {
