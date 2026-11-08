@@ -1,0 +1,56 @@
+{
+  "title": "Ancient DNA",
+  "description": "DNA breaks down after death, strand by strand, and what survives tens of thousands of years is in fragments a few dozen letters long, swamped by the DNA of whoever has handled the bone since. Bleach away the surface, read hundreds of millions of fragments, and lay them over the genome until every letter is read many times over. Unlocks the Ancient DNA Lab.",
+  "icon": "theoreticalsciences:ancient_dna_lab",
+  "x": 7,
+  "y": 14,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:radiometric_dating",
+    "theoreticalsciences:genomics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dated_bone",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 2
+    }
+  ],
+  "time": 240,
+  "puzzle": {
+    "goal": "Read N fragments, each L letters long, from a genome G letters long. On average, how many times is each letter read? Write C, the coverage.",
+    "name": "Sequencing coverage",
+    "lhs": "C",
+    "form": "N * L / G",
+    "expr": "N * L / G",
+    "ask": "Find C for a mammoth: N = @{N} reads, L = @{L} letters, G = @{G} letters.",
+    "vars": {
+      "C": "coverage (\u00d7)",
+      "N": "number of reads",
+      "L": "read length",
+      "G": "genome length"
+    },
+    "given": {
+      "N": 400000000.0,
+      "L": 50,
+      "G": 3300000000.0
+    },
+    "unit": "\u00d7",
+    "method": "The reads hold N\u00b7L letters in all, spread over G places: the Lander\u2013Waterman coverage.",
+    "distractors": [
+      "2",
+      "ln",
+      "g"
+    ],
+    "vary": {
+      "N": [
+        100000000.0,
+        900000000.0,
+        10000000.0
+      ]
+    }
+  }
+}

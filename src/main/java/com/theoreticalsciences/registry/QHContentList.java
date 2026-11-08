@@ -793,7 +793,26 @@ public final class QHContentList {
         new ItemDef("anglerfish_lure", "", 64),
         new ItemDef("nematocyst_cluster", "", 64),
         // 1.4.0: the Living Planet - air, fire and ice
-        new ItemDef("fulgurite", "", 64));
+        new ItemDef("fulgurite", "", 64),
+        // 1.4.0 (Green Kingdom): botany
+        new ItemDef("xylem_fibre", "", 64),
+        new ItemDef("engineered_seed", "engineered_seed", 64),
+        new ItemDef("biochar", "", 64),
+        new ItemDef("humus", "", 64),
+        new ItemDef("mycorrhizal_inoculant", "", 64),
+        new ItemDef("living_soil", "", 64),
+        new ItemDef("field_ration", "ration", 16),
+        new ItemDef("fossil_fragment", "", 64),
+        new ItemDef("raw_amber", "", 64),
+        new ItemDef("stromatolite_fragment", "", 64),
+        new ItemDef("dated_bone", "", 64),
+        new ItemDef("dated_amber", "", 64),
+        new ItemDef("dated_stromatolite", "", 64),
+        new ItemDef("mammoth_genome", "", 64),
+        new ItemDef("meganeura_genome", "", 64),
+        new ItemDef("mammoth_wool", "", 64),
+        new ItemDef("mammoth_ivory", "", 64),
+        new ItemDef("meganeura_wing", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1217,7 +1236,19 @@ public final class QHContentList {
         new BlockDef("convection_wall", "casing", 2, 5.0F, "iron", ""),
         new BlockDef("heater_plate", "casing", 6, 5.0F, "iron", ""),
         new BlockDef("cold_plate", "casing", 2, 5.0F, "iron", ""),
-        new BlockDef("storm_electrode", "casing", 8, 5.0F, "iron", ""));
+        new BlockDef("storm_electrode", "casing", 8, 5.0F, "iron", ""),
+        new BlockDef("hydroponic_frame", "casing", 2, 5.0F, "iron", ""),
+        new BlockDef("grow_tray", "casing", 0, 3.0F, "iron", ""),
+        new BlockDef("grow_light", "casing", 12, 4.0F, "iron", ""),
+        new BlockDef("nutrient_mast", "casing", 2, 5.0F, "iron", ""),
+        new BlockDef("fossil_ore", "ore", 0, 3.0F, "stone", "stone"),
+        new BlockDef("amber_ore", "ore", 3, 3.0F, "stone", "stone"),
+        new BlockDef("stromatolite_ore", "ore", 0, 4.5F, "iron", "deepslate"),
+        new BlockDef("plaster_jacket", "deco", 0, 1.5F, "none", ""),
+        new BlockDef("excavation_grid", "deco", 0, 1.0F, "none", ""),
+        new BlockDef("vat_frame", "casing", 0, 5.0F, "iron", ""),
+        new BlockDef("amniotic_tank", "casing", 9, 3.0F, "iron", ""),
+        new BlockDef("life_support_pump", "casing", 2, 5.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
@@ -1324,6 +1355,8 @@ public final class QHContentList {
         new FluidDef("anima_mundi", false, 13, 300, 1000, 600, 0x102030),
         // 1.4.0: rocket propellants (appended, so older fluids keep their order)
         new FluidDef("liquid_oxygen", false, 0, 90, 1141, 200, 0x8FC8FF),
-        new FluidDef("liquid_hydrogen", false, 0, 20, 71, 100, 0xD8ECFF));
+        new FluidDef("liquid_hydrogen", false, 0, 20, 71, 100, 0xD8ECFF),
+        new FluidDef("auxin", false, 0, 295, 1000, 1000, 0xE8D890),
+        new FluidDef("gibberellin", false, 0, 295, 1000, 1000, 0xB8E090));
     private QHContentList() {}
 }

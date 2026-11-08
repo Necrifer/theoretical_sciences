@@ -1,0 +1,77 @@
+{
+  "params": [
+    {
+      "id": "I",
+      "unit": "\u00b5A",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "tc",
+      "unit": "min",
+      "min": 1,
+      "max": 120,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "m",
+      "unit": "mg",
+      "min": 0.1,
+      "max": 2,
+      "step": 0.1,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "tau": 8267,
+    "age": 30000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ff",
+      "unit": "",
+      "expr": "exp(-age/tau)",
+      "formula": "P/P\u2080 = e^(\u2212t/\u03c4): the parent left"
+    },
+    {
+      "id": "Nz",
+      "unit": "ions",
+      "expr": "33*I*tc*m*(1 + 0.02*d)",
+      "formula": "ions counted: beam \u00d7 time \u00d7 sample"
+    },
+    {
+      "id": "sig",
+      "unit": "years",
+      "expr": "tau*(1 - ff)*sqrt(1/(Nz*(1 - ff)) + 1/(Nz*ff))",
+      "formula": "\u03c3\u209c = \u03c4\u00b7D/(D + P)\u00b7\u221a(1/D + 1/P)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "source",
+      "kind": "wear",
+      "expr": "3000 - I*tc",
+      "formula": "I\u00b7t < 3000 \u00b5A\u00b7min"
+    },
+    {
+      "id": "target",
+      "kind": "stop",
+      "expr": "100 - I*m",
+      "formula": "I\u00b7m < 100"
+    }
+  ],
+  "rate": "clamp(20/tc, 0.1, 1)",
+  "rate_formula": "counting longer than 20 minutes slows the run",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 1
+}

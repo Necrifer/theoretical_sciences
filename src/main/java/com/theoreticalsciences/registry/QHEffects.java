@@ -238,6 +238,11 @@ public final class QHEffects {
     public static final DeferredHolder<MobEffect, MobEffect> MIRRORED = EFFECTS.register("mirrored",
             () -> new MobEffect(MobEffectCategory.NEUTRAL, 0xA0C0FF) {});
     /** 1.2.0, the Axioms: two contradictory effects at once (it is shown while the pair lasts). */
+    /** 1.4.0 (Green Kingdom): Well Fed, from a Field Ration - four more hearts' worth of health while it lasts. */
+    public static final DeferredHolder<MobEffect, MobEffect> WELL_FED = EFFECTS.register("well_fed",
+            () -> new MobEffect(MobEffectCategory.BENEFICIAL, 0xE0B060) {}
+                    .addAttributeModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, TheoreticalSciences.id("well_fed_health"), 4.0,
+                            net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.ADD_VALUE));
     public static final DeferredHolder<MobEffect, MobEffect> CONTRADICTION = EFFECTS.register("contradiction",
             () -> new MobEffect(MobEffectCategory.NEUTRAL, 0xFFFFFF) {});
     /** 1.2.0, the Continuum: near a Fourier harp, the closer you get the slower you go (Zeno). */

@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:hydroponics",
+  "item_inputs": [
+    {
+      "item": "minecraft:wheat_seeds",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 4000
+    },
+    {
+      "fluid": "theoreticalsciences:auxin",
+      "amount": 100
+    },
+    {
+      "fluid": "theoreticalsciences:gibberellin",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:wheat",
+      "count": 48
+    },
+    {
+      "id": "minecraft:wheat_seeds",
+      "count": 16
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:plant_hormones",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Pmax": 30.0,
+      "gref": 10.0
+    },
+    "windows": [
+      {
+        "q": "g",
+        "min": 10.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

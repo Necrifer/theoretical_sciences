@@ -245,7 +245,14 @@ public enum MachineType {
     WAVE_ENERGY_CONVERTER   ("wave_power",           0, 1, 0, 0, true,  null,                       4_000_000,    80_000, Effect.NONE,        0x4080C0),
     GEOTHERMAL_PLANT        ("geothermal_power",     0, 2, 1, 1, true,  null,                       8_000_000,   160_000, Effect.NONE,        0xE06030),
     ICE_CORE_DRILL          ("ice_core_drilling",    0, 1, 1, 0, false, "ice_core_drill",           4_000_000,    80_000, Effect.NONE,        0xC0E8FF),
-    STORM_CHAMBER           ("storm_synthesis",      0, 3, 0, 1, false, "storm_chamber",            8_000_000,   200_000, Effect.NONE,        0xA0A0E0);
+    STORM_CHAMBER           ("storm_synthesis",      0, 3, 0, 1, false, "storm_chamber",            8_000_000,   200_000, Effect.NONE,        0xA0A0E0),
+    // 1.4.0 (Green Kingdom)
+    HYDROPONIC_TOWER        ("hydroponics",          1, 3, 2, 0, false, "hydroponic_tower",         4_000_000,    80_000, Effect.NONE,        0x70C060),
+    PHYTOTRON               ("phytotron",            1, 1, 0, 1, false, null,                       2_000_000,    40_000, Effect.NONE,        0x90D070),
+    BREEDING_BENCH          ("plant_breeding",       2, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0x80C050),
+    DATING_SPECTROMETER     ("radiometric_dating",   1, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0xD0A040),
+    ANCIENT_DNA_LAB         ("ancient_dna",          1, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC0D8A0),
+    REVIVAL_VAT             ("revival",              3, 1, 1, 0, false, "revival_vat",             16_000_000,   400_000, Effect.NONE,        0x80D0C0);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
@@ -346,7 +353,7 @@ public enum MachineType {
                 || this == INTEGRATOR || this == ENZYME_ASSAY_BENCH || this == STATISTICS_ENGINE || this == CIPHER_LOOM
                 || this == OPTIMISER || this == GRAPH_LOOM || this == STRATEGY_TABLE || this == PATTERN_BASIN
                 || this == ANALYTIC_CONTINUATOR          // 1.2.0: revamped as a console
-                || this == WAVE_ENERGY_CONVERTER || this == GEOTHERMAL_PLANT   // 1.4.0
+                || this == WAVE_ENERGY_CONVERTER || this == GEOTHERMAL_PLANT || this == PHYTOTRON || this == BREEDING_BENCH || this == DATING_SPECTROMETER || this == ANCIENT_DNA_LAB   // 1.4.0
                 || biology();
     }
 

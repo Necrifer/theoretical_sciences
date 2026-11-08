@@ -1,0 +1,97 @@
+{
+  "params": [
+    {
+      "id": "Nr",
+      "unit": "M reads",
+      "min": 50,
+      "max": 5000,
+      "step": 50,
+      "default": 500
+    },
+    {
+      "id": "cyc",
+      "unit": "cycles",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "bl",
+      "unit": "min",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "lam": 0.02,
+    "Gs": 3300000000.0,
+    "mol0": 3000000000.0,
+    "c0": 0.3
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ke",
+      "unit": "",
+      "expr": "exp(-bl/40)",
+      "formula": "the old DNA the bleach spares"
+    },
+    {
+      "id": "Um",
+      "unit": "molecules",
+      "expr": "mol0*ke",
+      "formula": "unique molecules in the library"
+    },
+    {
+      "id": "Ne",
+      "unit": "molecules",
+      "expr": "Um*(1 - exp(-Nr*1e6/Um))",
+      "formula": "distinct molecules read (the rest are duplicates)"
+    },
+    {
+      "id": "Cv",
+      "unit": "\u00d7",
+      "expr": "Ne*(1/lam)*exp(-30*lam)/Gs*(1 + 0.02*d)",
+      "formula": "C = NL/G, counting reads over 30 bases"
+    },
+    {
+      "id": "con",
+      "unit": "",
+      "expr": "c0*exp(-bl/10)*(1 + cyc/20)",
+      "formula": "modern DNA in the reads"
+    },
+    {
+      "id": "lib",
+      "unit": "",
+      "expr": "Um*2^cyc/(Nr*1e6)",
+      "formula": "library copies per read wanted"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "library",
+      "kind": "stop",
+      "expr": "lib - 1",
+      "formula": "Um\u00b72^n \u2265 reads"
+    },
+    {
+      "id": "contamination",
+      "kind": "wear",
+      "expr": "0.08 - con",
+      "formula": "contamination < 8%"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "one genome per run",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 40,
+  "timescale": 1,
+  "rate_max": 1
+}

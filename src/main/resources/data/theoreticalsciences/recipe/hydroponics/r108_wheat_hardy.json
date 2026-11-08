@@ -1,0 +1,65 @@
+{
+  "type": "theoreticalsciences:hydroponics",
+  "item_inputs": [
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:engineered_seed",
+      "components": {
+        "theoreticalsciences:plant_traits": {
+          "line": "hardiness",
+          "level": 2
+        }
+      },
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:living_soil",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:wheat",
+      "count": 32
+    },
+    {
+      "id": "theoreticalsciences:engineered_seed",
+      "count": 4,
+      "components": {
+        "theoreticalsciences:plant_traits": {
+          "line": "hardiness",
+          "level": 2
+        }
+      }
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:plant_breeding",
+  "unscaled": true,
+  "environment": {
+    "dimensions": [
+      "theoreticalsciences:orbital_station",
+      "theoreticalsciences:titan"
+    ]
+  },
+  "physics": {
+    "vars": {
+      "Pmax": 30.0,
+      "gref": 10.0
+    },
+    "windows": [
+      {
+        "q": "g",
+        "min": 8.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

@@ -11,8 +11,10 @@ public final class QHBlockSounds {
                  "titan_ice", "void_lattice_block" -> SoundType.AMETHYST;
             case "accretion_fragment_ore", "basalt_column", "rich_gold_ore", "rim_slag" -> SoundType.BASALT;
             case "arbor_planks", "arbor_planks_slab", "arbor_planks_stairs" -> SoundType.CHERRY_WOOD;
-            case "deepslate_cherenkov_quartz_ore", "deepslate_pitchblende_ore" -> SoundType.DEEPSLATE;
+            case "deepslate_cherenkov_quartz_ore", "deepslate_pitchblende_ore", "stromatolite_ore" -> SoundType.DEEPSLATE;
             case "void_tiles" -> SoundType.DEEPSLATE_TILES;
+            case "plaster_jacket" -> SoundType.CALCITE;          // 1.4.0
+            case "excavation_grid" -> SoundType.BAMBOO_WOOD;
             case "cherenkov_lamp", "cloaking_glass", "computronium_lamp", "dilithium_lamp", "dust_ice_ore", "einstein_ring_ore",
                  "golden_ratio_glass", "hex_glass", "leaded_glass", "lithography_glass", "nebular_ice", "protostar_fragment",
                  "radium_lamp", "stellar_lamp", "void_glass" -> SoundType.GLASS;
@@ -24,7 +26,7 @@ public final class QHBlockSounds {
                  "brown_dwarf_ore", "bulk_stone", "cardinal_ore", "cell_membrane", "cherenkov_bricks", "cherenkov_bricks_slab",
                  "cherenkov_bricks_stairs", "cherenkov_bricks_wall", "cherenkov_pillar", "chromatin", "collagen_seam", "core_iron",
                  "core_magnetite_ore", "crustal_rock", "cryolava_rock", "degenerate_matter_ore", "dense_stone", "dilaton_ore",
-                 "ejecta_ore", "ejecta_rock", "epsilon_ore", "euclidean_marble", "euclidean_ore", "evaporite_crust",
+                 "ejecta_ore", "ejecta_rock", "fossil_ore", "amber_ore", "epsilon_ore", "euclidean_marble", "euclidean_ore", "evaporite_crust",
                  "evaporite_ore", "extracellular_matrix", "fission_fragment_ore", "fractal_ore", "frozen_light_ore", "geode_shell",
                  "geodesic_ore", "hilbert_brick", "hyperspherical_ore", "infall_rock", "kaluza_klein_ore", "lymph_tissue",
                  "magnetite_block", "magnetite_bricks", "moduli_ore", "nucleotide_cluster", "oklo_rock", "oklo_uraninite_ore",

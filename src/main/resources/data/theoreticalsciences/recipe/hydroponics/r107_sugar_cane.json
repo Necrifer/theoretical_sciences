@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:hydroponics",
+  "item_inputs": [
+    {
+      "item": "minecraft:sugar_cane",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:sugar_cane",
+      "count": 32
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:plant_physiology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Pmax": 30.0,
+      "gref": 10.0
+    },
+    "windows": [
+      {
+        "q": "g",
+        "min": 10.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

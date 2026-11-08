@@ -1,0 +1,61 @@
+{
+  "title": "Soil Science",
+  "description": "Soil is alive: humus and charcoal hold nutrients on their charged surfaces, and fungi thread through the roots to trade minerals for sugar. A root takes nutrients up fast while they are scarce and no faster once its carriers are all busy. Unlocks Biochar, Humus, Mycorrhizal Inoculant and Living Soil.",
+  "icon": "theoreticalsciences:living_soil",
+  "x": 8,
+  "y": 17,
+  "insight": 140,
+  "requires": [
+    "theoreticalsciences:plant_physiology",
+    "theoreticalsciences:mycology"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:dirt",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:mould_culture",
+      "count": 1
+    }
+  ],
+  "time": 200,
+  "puzzle": {
+    "goal": "A root's carriers take a nutrient up at a rate that rises with its concentration c and levels off at a maximum V, reaching half of it at c = K (Michaelis-Menten uptake). Write v, the uptake rate.",
+    "name": "Nutrient uptake",
+    "lhs": "v",
+    "form": "V * c / ( K + c )",
+    "expr": "V * c / (K + c)",
+    "ask": "Find v in \u00b5mol/g\u00b7h: V = @{V}, K = @{K} \u00b5M, c = @{c} \u00b5M.",
+    "vars": {
+      "v": "uptake rate",
+      "V": "maximum rate",
+      "K": "half-saturation concentration",
+      "c": "concentration at the root"
+    },
+    "given": {
+      "V": 12,
+      "K": 30,
+      "c": 50
+    },
+    "unit": "\u00b5mol/g\u00b7h",
+    "method": "Carriers bind and release: at steady state the busy fraction is c/(K + c).",
+    "distractors": [
+      "2",
+      "g",
+      "T"
+    ],
+    "vary": {
+      "c": [
+        5.0,
+        200.0,
+        1.0
+      ],
+      "K": [
+        10.0,
+        60.0,
+        1.0
+      ]
+    }
+  }
+}

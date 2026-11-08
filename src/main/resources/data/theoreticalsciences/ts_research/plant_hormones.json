@@ -1,0 +1,63 @@
+{
+  "title": "Plant Hormones",
+  "description": "Plants steer their growth with a handful of small molecules: auxin from the shoot tips sends shoots towards light and roots down, gibberellin wakes seeds and stretches stems. Growth itself rises fast, then slows as it nears what the space allows. Unlocks the Phytotron, Auxin and Gibberellin.",
+  "icon": "theoreticalsciences:phytotron",
+  "x": 7,
+  "y": 17,
+  "insight": 120,
+  "requires": [
+    "theoreticalsciences:plant_physiology",
+    "theoreticalsciences:population_genetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:xylem_fibre",
+      "count": 4
+    },
+    {
+      "item": "minecraft:bone_meal",
+      "count": 16
+    }
+  ],
+  "time": 180,
+  "puzzle": {
+    "goal": "A crop grows fast while it is small and slows as it fills its space: logistic growth, from a start n towards a carrying capacity K at rate r. Write N after time t.",
+    "name": "Logistic growth",
+    "lhs": "N",
+    "form": "K / ( 1 + ( K / n - 1 ) * exp ( - r * t ) )",
+    "expr": "K / (1 + (K / n - 1) * exp(-r * t))",
+    "ask": "Find N: K = @{K}, n = @{n}, r = @{r} per day, t = @{t} days.",
+    "vars": {
+      "N": "size at time t",
+      "K": "carrying capacity",
+      "n": "starting size",
+      "r": "growth rate (1/day)",
+      "t": "time (days)"
+    },
+    "given": {
+      "K": 100,
+      "n": 5,
+      "r": 0.3,
+      "t": 10
+    },
+    "unit": "",
+    "method": "dN/dt = rN(1 \u2212 N/K); separate and integrate.",
+    "distractors": [
+      "2",
+      "ln",
+      "g"
+    ],
+    "vary": {
+      "r": [
+        0.1,
+        0.6,
+        0.01
+      ],
+      "t": [
+        2.0,
+        20.0,
+        0.5
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:radiometric_dating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fossil_fragment",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:dated_bone",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:radiometric_dating",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "tau": 8267,
+      "age": 30000
+    },
+    "windows": [
+      {
+        "q": "sig",
+        "min": 0.0,
+        "max": 250.0
+      }
+    ]
+  }
+}

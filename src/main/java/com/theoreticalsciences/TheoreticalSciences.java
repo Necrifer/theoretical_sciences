@@ -75,8 +75,10 @@ public class TheoreticalSciences {
         com.theoreticalsciences.inner.InnerRegistry.register(modBus);          // 1.2.0
         com.theoreticalsciences.ocean.OceanRegistry.register(modBus);          // 1.2.0
         com.theoreticalsciences.weather.WeatherRegistry.register(modBus);      // 1.4.0
+        com.theoreticalsciences.deeptime.DeepTimeRegistry.register(modBus);    // 1.4.0
         com.theoreticalsciences.math.MathRegistry.register(modBus);            // 1.2.0
         com.theoreticalsciences.science.Wear.register(modBus);          // 1.2.0: catalysts and instruments that wear
+        com.theoreticalsciences.green.PlantTraits.register(modBus);     // 1.4.0: bred seeds carry their traits
 
         modBus.addListener(QHNetwork::register);
         modBus.addListener(QHCapabilities::register);

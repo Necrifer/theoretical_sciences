@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:phytotron",
+  "item_inputs": [
+    {
+      "tag": "minecraft:saplings",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:auxin",
+      "amount": 250
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:plant_hormones",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "gref": 0.5
+    },
+    "windows": [
+      {
+        "q": "Le",
+        "min": 14.0,
+        "max": 24.0
+      },
+      {
+        "q": "gr",
+        "min": 0.5,
+        "max": 100.0
+      }
+    ]
+  }
+}

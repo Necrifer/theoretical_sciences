@@ -1,5 +1,99 @@
 # Changelog
 
+## Unreleased — The Green Kingdom and Deep Time
+
+Work in progress: botany and agronomy (the Green Kingdom) and zoology and palaeontology (Deep Time). Each part below is
+finished and tested on a dedicated server; the whole is tested together before release.
+
+### Botany
+
+**Research: Plant Physiology** (Photosynthesis, Metabolism; puzzle: Jurin's law, h = 2γ cos θ / ρgr) and
+**Plant Hormones** (Plant Physiology, Population Genetics; puzzle: logistic growth).
+
+**The Hydroponic Tower** (multiblock, 13 × 24 × 13): a glass cylinder ribbed with Hydroponic Frame, rings of Grow Lights
+(quantum-dot emitters in chlorophyll's red and blue) and a spiral of Grow Trays round a Nutrient Mast; the whole
+carousel turns while it runs. The console sets light, nutrient EC and root-zone temperature; photosynthesis saturates
+with light, uptake with EC. Salt burn and photoinhibition wear it; root rot damages it. Grows wheat, carrots, potatoes,
+beetroot, melons, pumpkins and sugar cane in bulk, and **Xylem Fibre** from saplings. Fed Auxin and Gibberellin, every
+crop yields twice as much.
+
+**The Phytotron** (a single-block console): a climate-controlled growth chamber with day length, temperature and CO₂.
+Under long days, saplings make **Auxin**; seeds kept through long nights make **Gibberellin** (two new fluids).
+
+### Breeding, soil and food
+
+**Research: Plant Breeding** (Plant Hormones, Population Genetics; puzzle: the breeder's equation, R = h²S),
+**Soil Science** (Plant Physiology, Mycology; puzzle: Michaelis–Menten uptake) and **Food Science** (Fermentation,
+Plant Hormones; puzzle: the Arrhenius rate).
+
+**The Breeding Bench** (a single-block console): set the fraction of plants kept, the field's uniformity and the
+population; the response to selection must reach each generation's target, and keeping fewer than ten parents
+inbreeds the line (wear). It starts three **Engineered Seed** lines from wheat seeds: Yield (with bone meal),
+Hardiness (with Tardigrade Culture) and Glow (with an Anglerfish Lure), then takes each line one generation further
+per run (Yield to V, Hardiness to III, Glow to II). Every generation needs a harder selection than the last.
+
+In the **Hydroponic Tower**: Yield seeds grow 36–84 wheat a run (from III, they need Living Soil); Hardiness II
+grows wheat on the Orbital Station and on Titan; Glow II bears glow berries. Seeds come back with the harvest.
+
+**Soil**: **Biochar** (logs, Sintering Press), **Humus** (leaves and water, Mycelium Bed), **Mycorrhizal
+Inoculant** (Mould Culture and Xylem Fibre, Mycelium Bed), and **Living Soil** made from all three by crafting.
+
+**Food**: the Fermenter bakes **Field Rations** from wheat, sugar, Yeast Culture and water. Eating one makes you
+**Well Fed** (a new effect: two extra hearts for ten minutes).
+
+### Deep Time: fossils and radiometric dating
+
+**Three rare Overworld ores** (newly generated chunks only, in small veins):
+- **Fossil Ore**: Y 0 to 80; gives Fossil Fragments; stone pickaxe or better.
+- **Amber Ore**: Y 24 to 96; gives Raw Amber; stone pickaxe or better.
+- **Stromatolite Ore**: in deepslate, Y −64 to 0; gives Stromatolite Fragments; iron pickaxe or better.
+
+**Research: Radiometric Dating** (Decay Chains, Mass Spectrometry; puzzle: the age equation, t = τ ln(1 + D/P)).
+
+**The Dating Spectrometer** (a single-block console, an accelerator mass spectrometer): set the beam current,
+counting time and sample mass; the age's counting uncertainty must fall within each sample's limit. Too much beam
+for too long wears the ion source; too much beam on a heavy sample overheats the target. Each recipe takes four of a
+sample and makes one dated sample:
+- Fossil Fragments, carbon-14 dated to 30 thousand years, give a **Dated Bone**.
+- Raw Amber, potassium-40 dated to 310 million years, gives **Dated Amber**.
+- Stromatolite Fragments, rubidium-87 dated to 3.5 billion years, give a **Dated Stromatolite**.
+
+The Codex now has operation pages for the Hydroponic Tower, Phytotron, Breeding Bench and Dating Spectrometer.
+
+### Deep Time: ancient DNA and de-extinction
+
+**Research: Ancient DNA** (Radiometric Dating, Genomics; puzzle: sequencing coverage, C = NL/G) and
+**De-extinction** (Ancient DNA, Metabolism; puzzle: Kleiber's law, P = B₀M^(3/4)).
+
+**The Ancient DNA Lab** (a single-block console): set the reads, the PCR cycles and the bleach wash. The coverage of
+the genome must reach each sample's target. Too many reads for the amplified library stops it; too much modern DNA in
+the reads wears it. Four Dated Bones give a **Mammoth Genome**; four Dated Amber give a **Meganeura Genome**.
+
+**The Revival Vat** (multiblock, 15 × 14 × 15, 563 blocks): a great amniotic tank ribbed with **Vat Frame**, four
+nursery tanks, and the **Life Support Pump** lines that feed them, pulsing while it runs; its **Amniotic Tanks** glow.
+Set the feed rate (on a log scale), the vat temperature and the oxygen. Feed must match the creature's upkeep,
+B = 3.4·M^(3/4) W, a tenth over; temperature must match its body temperature; and oxygen must reach what it needs
+(the Meganeura needs Carboniferous air, 30% or more). Overfeeding and oxygen over 38% wear it; over 44 °C damages
+it. A genome, a Dated Stromatolite, Field Rations and Nutrient Broth make a **Mammoth Capsule** or two
+**Meganeura Capsules**.
+
+**Revived creatures** are wild: they cannot be tamed, bred or ridden, and they never spawn by themselves. Use a
+capsule on the ground to release one; released creatures never despawn.
+- **Woolly Mammoth**: grazes, keeps with its herd, and never starts a fight. Hurt one and the herd nearby charges.
+  Drops Mammoth Wool, and Mammoth Ivory when a player kills it.
+- **Meganeura**: a giant griffinfly that patrols where it was released, darting and hovering, and flees when hit.
+  Drops Meganeura Wing, which the Chemical Reactor makes into Polymer Sheet.
+
+Both have their own models and sounds.
+
+**Two rare Overworld ruins** (newly generated chunks only), each with a Containment Cache:
+- **Dig Sites**: stepped pits with fossil and amber in their walls, an Excavation Grid round the rim and Plaster
+  Jackets in the pit. Found in deserts, badlands, savannas, plains and stony shores.
+- **Greenhouse Ruins**: cracked glass halls on Hydroponic Frame, with benches of Grow Trays and a cache of
+  Engineered Seeds and soil. Found in plains, meadows and forests.
+
+New decorative blocks: **Plaster Jacket** and **Excavation Grid**.
+
 ## Unreleased — Into Orbit and the Living Planet
 
 Work in progress: the rest of Fluids and Flight (rocketry, orbit, the nebula) and the Living Planet (oceans, weather,

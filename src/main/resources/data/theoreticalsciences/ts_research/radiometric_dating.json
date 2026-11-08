@@ -1,0 +1,56 @@
+{
+  "title": "Radiometric Dating",
+  "description": "A radioactive parent decays at a fixed rate into its daughter, so the ratio of daughter to parent in a rock or a bone is a clock that started when it formed. Carbon-14 dates bones tens of thousands of years old; potassium-40 dates the ash beds around fossils hundreds of millions of years old; rubidium-87 dates the oldest rocks of all. Unlocks the Dating Spectrometer.",
+  "icon": "theoreticalsciences:dating_spectrometer",
+  "x": 5,
+  "y": 14,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:decay_chains",
+    "theoreticalsciences:mass_spectrometry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fossil_fragment",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:raw_amber",
+      "count": 2
+    }
+  ],
+  "time": 200,
+  "puzzle": {
+    "goal": "A sample formed with parent atoms only; each decay turns one parent into a daughter, with mean life \u03c4. Count the daughters D and the parents P left, and write t, the time since it formed.",
+    "name": "The age equation",
+    "lhs": "t",
+    "form": "\u03c4 * ln ( 1 + D / P )",
+    "expr": "tau * ln(1 + D / P)",
+    "ask": "Find t in years for a basalt: \u03c4 = @{tau} years, D/P from D = @{D} and P = @{P} atoms.",
+    "vars": {
+      "t": "age",
+      "\u03c4": "mean life of the parent",
+      "D": "daughter atoms",
+      "P": "parent atoms left"
+    },
+    "given": {
+      "tau": 1800000000.0,
+      "D": 3,
+      "P": 97
+    },
+    "unit": "years",
+    "method": "P = P\u2080e^(\u2212t/\u03c4) and D = P\u2080 \u2212 P, so P\u2080/P = 1 + D/P: take the logarithm.",
+    "distractors": [
+      "2",
+      "exp",
+      "g"
+    ],
+    "vary": {
+      "D": [
+        1.0,
+        40.0,
+        1.0
+      ]
+    }
+  }
+}

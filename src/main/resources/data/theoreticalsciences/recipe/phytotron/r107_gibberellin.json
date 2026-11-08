@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:phytotron",
+  "item_inputs": [
+    {
+      "tag": "c:seeds",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:gibberellin",
+      "amount": 250
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:plant_hormones",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "gref": 0.3
+    },
+    "windows": [
+      {
+        "q": "nl",
+        "min": 10.0,
+        "max": 24.0
+      },
+      {
+        "q": "gr",
+        "min": 0.3,
+        "max": 100.0
+      }
+    ]
+  }
+}

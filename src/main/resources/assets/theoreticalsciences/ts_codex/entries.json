@@ -55132,5 +55132,413 @@
     "text": "$(thing)Storm Elemental$(): a thunderstorm cell come to life, only over warm sea in a thunderstorm (at most one near you). It hangs high over its prey and strikes it with lightning; it never starts fires. It dissipates when the storm passes.$(br2)$(thing)Drops$(): Fulgurite."
    }
   ]
+ },
+ "biology/plant_physiology": {
+  "title": "Plant Physiology",
+  "icon": "theoreticalsciences:hydroponic_tower",
+  "category": "biology",
+  "research": "plant_physiology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:hydroponic_tower",
+     "theoreticalsciences:xylem_fibre"
+    ],
+    "text": "Capillarity lifts water h = 2γcosθ/ρgr: well under a metre in a xylem vessel. The rest of the way up a tree it is pulled, by evaporation from the leaves, under tension. The $(thing)Hydroponic Tower$() grows crops on a turning carousel of trays without soil, and $(item)Xylem Fibre$() from saplings."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Light, Nutrient EC, Root-zone temperature.$(br2)$(thing)Limits$(): EC above 3.5 burns the leaf tips (wear); root zone above 28 °C rots the roots (damage); light above 1500 shuts photosynthesis down (wear).$(br2)Fed $(fluid)Auxin$() and $(fluid)Gibberellin$(), every crop yields twice as much."
+   }
+  ]
+ },
+ "biology/plant_hormones": {
+  "title": "Plant Hormones",
+  "icon": "theoreticalsciences:phytotron",
+  "category": "biology",
+  "research": "plant_hormones",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:phytotron"
+    ],
+    "text": "The $(thing)Phytotron$() sets day length, temperature and CO₂ to the hour. Under long days (14 h or more) shoots make $(fluid)Auxin$(); seeds kept through long nights (10 h or more) make $(fluid)Gibberellin$()."
+   }
+  ]
+ },
+ "biology/plant_breeding": {
+  "title": "Plant Breeding",
+  "icon": "theoreticalsciences:breeding_bench",
+  "category": "biology",
+  "research": "plant_breeding",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:breeding_bench",
+     "theoreticalsciences:engineered_seed"
+    ],
+    "text": "Each generation moves R = h²S. The $(thing)Breeding Bench$() starts three lines from wheat: Yield, Hardiness (with Tardigrade Culture) and Glow (with an Anglerfish Lure), and takes each one generation further per run. Every generation asks for a bigger response."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Fraction kept, Field uniformity, Population.$(br2)$(thing)Limits$(): fewer than 10 parents and the line inbreeds (wear).$(br2)In the $(thing)Hydroponic Tower$(): Yield seeds grow more wheat (from III with Living Soil); Hardiness II grows in orbit and on Titan; Glow II bears glowing berries."
+   }
+  ]
+ },
+ "biology/soil_science": {
+  "title": "Soil Science",
+  "icon": "theoreticalsciences:living_soil",
+  "category": "biology",
+  "research": "soil_science",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:biochar",
+     "theoreticalsciences:humus",
+     "theoreticalsciences:mycorrhizal_inoculant",
+     "theoreticalsciences:living_soil"
+    ],
+    "text": "Uptake follows v = Vc/(K + c). $(item)Biochar$() from logs in the Sintering Press, $(item)Humus$() from leaves and $(item)Mycorrhizal Inoculant$() from mould and xylem in the Mycelium Bed make $(item)Living Soil$()."
+   }
+  ]
+ },
+ "biology/food_science": {
+  "title": "Food Science",
+  "icon": "theoreticalsciences:field_ration",
+  "category": "biology",
+  "research": "food_science",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:field_ration"
+    ],
+    "text": "Browning runs at k = A·e^(−E/RT). The $(thing)Fermenter$() bakes $(item)Field Rations$() from wheat, sugar and yeast: a meal that leaves you $(thing)Well Fed$() (two more hearts for ten minutes)."
+   }
+  ]
+ },
+ "operation/hydroponic_tower": {
+  "title": "Hydroponic Tower",
+  "icon": "theoreticalsciences:hydroponic_tower",
+  "category": "operation",
+  "research": "plant_physiology",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Leaves fix carbon in proportion to the light until their enzymes are all busy; roots take up nutrients the same way, saturating with the solution's strength; and both work best in a warm, not hot, root zone."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Light, Nutrient EC, Root-zone temperature.$(br2)$(thing)Disturbance$(): Lamp flicker: the light varies by ±3%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): above 3.5 mS/cm the leaf tips burn (wear); above 1500 µmol/m²s photosynthesis shuts down (wear); above 28 °C the roots rot (damage).$(br2)$(thing)Rate$(): output follows growth against the rated amount."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Photosynthesis: P = P_max·I/(I + 300)$(br)Uptake: EC/(EC + 0.8)$(br)Temperature: e^(−((T − 22)/6)²)$(br)Growth = P·uptake·f(T)"
+   }
+  ]
+ },
+ "operation/phytotron": {
+  "title": "Phytotron",
+  "icon": "theoreticalsciences:phytotron",
+  "category": "operation",
+  "research": "plant_hormones",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Plants time their hormones by the length of the night, not the day. The chamber sets the day length, the temperature and the CO₂; growth rises with CO₂ and saturates, and falls off either side of 24 °C."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Day length, Temperature, CO₂.$(br2)$(thing)Disturbance$(): Timer drift: the day length varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): above 35 °C the plants suffer heat stress (damage); above 1500 ppm CO₂ the scrubbers wear.$(br2)$(thing)Rate$(): output follows growth against the rated amount."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Night length: 24 − L$(br)CO₂ effect: C/(C + 400)$(br)Growth = CO₂ effect·e^(−((T − 24)/7)²)·min(1, L/14)"
+   }
+  ]
+ },
+ "operation/breeding_bench": {
+  "title": "Breeding Bench",
+  "icon": "theoreticalsciences:breeding_bench",
+  "category": "operation",
+  "research": "plant_breeding",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Keep the top fraction p of the plants: they sit i standard deviations above the mean, i growing as p shrinks. Of that difference, only the heritable share h² is passed on, and a uniform field lets more of it show."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Fraction kept, Field uniformity, Population.$(br2)$(thing)Disturbance$(): Weather: heritability varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): fewer than 10 parents kept and the line inbreeds (wear).$(br2)$(thing)Rate$(): one generation per run."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Intensity: i = 0.8 + 0.4·ln(0.5/p)$(br)Heritability: h² = 0.2 + 0.6u$(br)Response: R = h²i$(br)Parents: N·p"
+   }
+  ]
+ },
+ "operation/dating_spectrometer": {
+  "title": "Dating Spectrometer",
+  "icon": "theoreticalsciences:dating_spectrometer",
+  "category": "operation",
+  "research": "radiometric_dating",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Every atom counted, parent or daughter, sharpens the age by counting statistics: the error on a count of N is √N. A young sample has few daughters, an old one few parents left; either way the scarcer one sets the precision."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Beam current, Counting time, Sample mass.$(br2)$(thing)Disturbance$(): Beam drift: the count varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): more than 3000 µA·min a run wears the ion source; more than 100 µA·mg overheats the target (stops).$(br2)$(thing)Rate$(): counting past 20 minutes slows the run."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Parent left: f = e^(−t/τ)$(br)Counts: N = 33·I·t·m$(br)Uncertainty: σ = τ(1 − f)√(1/(N(1 − f)) + 1/(Nf))"
+   }
+  ]
+ },
+ "nuclear/dating_spectrometer": {
+  "title": "Radiometric Dating",
+  "icon": "theoreticalsciences:dating_spectrometer",
+  "category": "nuclear",
+  "research": "radiometric_dating",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:dating_spectrometer"
+    ],
+    "title": "Dating Spectrometer",
+    "text": "Age from atoms: t = τ·ln(1 + D/P). The $(thing)Dating Spectrometer$() counts parent and daughter atoms one by one; count enough of them and the age comes out precise enough to use."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:dated_bone",
+     "theoreticalsciences:dated_amber",
+     "theoreticalsciences:dated_stromatolite"
+    ],
+    "text": "$(item)Fossil Fragments$() by carbon-14 (30 thousand years, to within 250); $(item)Raw Amber$() by potassium-40 (310 million, to within 4 million); $(item)Stromatolite Fragments$() by rubidium-87 (3.5 billion, to within 60 million). Four of each make one dated sample."
+   }
+  ]
+ },
+ "world/node_fossil_ore": {
+  "title": "Fossil Ore",
+  "icon": "theoreticalsciences:fossil_ore",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fossil_ore"
+    ],
+    "title": "Fossil Ore",
+    "text": "Found in the Overworld, between Y 0 and 80. Gives Fossil Fragment when mined with stone pickaxe or better."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Found$(): in rare, small veins through the Overworld (mine it for its drop)."
+   }
+  ]
+ },
+ "world/node_amber_ore": {
+  "title": "Amber Ore",
+  "icon": "theoreticalsciences:amber_ore",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:amber_ore"
+    ],
+    "title": "Amber Ore",
+    "text": "Found in the Overworld, between Y 24 and 96. Gives Raw Amber when mined with stone pickaxe or better."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Found$(): in rare, small veins through the Overworld (mine it for its drop)."
+   }
+  ]
+ },
+ "world/node_stromatolite_ore": {
+  "title": "Stromatolite Ore",
+  "icon": "theoreticalsciences:stromatolite_ore",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:stromatolite_ore"
+    ],
+    "title": "Stromatolite Ore",
+    "text": "Found in the Overworld, between Y -64 and 0. Gives Stromatolite Fragment when mined with iron pickaxe or better."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Found$(): in rare, small veins through the Overworld (mine it for its drop)."
+   }
+  ]
+ },
+ "operation/ancient_dna_lab": {
+  "title": "Ancient DNA Lab",
+  "icon": "theoreticalsciences:ancient_dna_lab",
+  "category": "operation",
+  "research": "ancient_dna",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Old DNA comes in short fragments, and few of them; the bone's surface is coated in modern DNA. Bleach strips the surface but costs some of the old DNA; PCR copies the library enough to read, but copies the contamination too; and reading more than the library holds only reads the same molecules again."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Reads, PCR cycles, Bleach wash.$(br2)$(thing)Disturbance$(): Run quality: the coverage varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): more reads than the amplified library holds stops it; more than 8% modern DNA in the reads wears the lab.$(br2)$(thing)Rate$(): one genome per run."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Kept: k = e^(−b/40)$(br)Distinct reads: N = U(1 − e^(−R/U))$(br)Coverage: C = N·L·e^(−30/L)/G$(br)Contamination: c₀e^(−b/10)(1 + n/20)"
+   }
+  ]
+ },
+ "operation/revival_vat": {
+  "title": "Revival Vat",
+  "icon": "theoreticalsciences:revival_vat",
+  "category": "operation",
+  "research": "de_extinction",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A growing body must be fed its upkeep and a little more: upkeep grows as mass to the three-quarters. Grow it at its body temperature, and give it the oxygen it breathes; an insect from the Carboniferous needs far more than today's air."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Feed rate (log scale), Vat temperature, Oxygen.$(br2)$(thing)Disturbance$(): its upkeep varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): feed over 1.5× upkeep fouls the tank (wear); over 44 °C cooks the tissue (damage); less oxygen than it needs stops it; over 38% oxygen poisons the tissue (wear).$(br2)$(thing)Rate$(): one creature per run."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Upkeep: B = 3.4·M^(3/4) W$(br)Feed ratio: f = F/B$(br)Growth: e^(−((T − T₀)/4)²)·e^(−((f − 1.1)/0.3)²)"
+   }
+  ]
+ },
+ "biology/ancient_dna": {
+  "title": "Ancient DNA",
+  "icon": "theoreticalsciences:ancient_dna_lab",
+  "category": "biology",
+  "research": "ancient_dna",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ancient_dna_lab"
+    ],
+    "title": "Ancient DNA Lab",
+    "text": "Coverage: C = NL/G. The $(thing)Ancient DNA Lab$() reads a $(item)Dated Bone$() into a $(item)Mammoth Genome$() and $(item)Dated Amber$() into a $(item)Meganeura Genome$(), four samples to a genome."
+   }
+  ]
+ },
+ "biology/de_extinction": {
+  "title": "De-extinction",
+  "icon": "theoreticalsciences:revival_vat",
+  "category": "biology",
+  "research": "de_extinction",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:revival_vat"
+    ],
+    "title": "Revival Vat",
+    "text": "Upkeep: B = B₀M^(3/4). The $(thing)Revival Vat$() is a multiblock of 563 blocks: a great amniotic tank, four nursery tanks and the lines that feed them. A genome, a $(item)Dated Stromatolite$() (its cyanobacteria oxygenate the broth), Field Rations and Nutrient Broth grow a creature into a capsule."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:mammoth_capsule",
+     "theoreticalsciences:meganeura_capsule"
+    ],
+    "text": "Use a capsule on the ground to let the creature go. Revived creatures are $(thing)wild$(): they cannot be tamed, bred or ridden, and they never spawn by themselves."
+   },
+   {
+    "type": "multiblock",
+    "name": "Revival Vat",
+    "text": "Cycling blocks: any of them fits (Interface Ports in the base rim). Rotate, zoom and view layers in $(thing)JEI$().",
+    "multiblock": "revival_vat"
+   }
+  ]
+ },
+ "world/node_mammoth": {
+  "title": "Woolly Mammoth",
+  "icon": "theoreticalsciences:mammoth_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:mammoth_spawn_egg"
+    ],
+    "text": "$(thing)Woolly Mammoth$(): Six tonnes of Ice Age grazer, brought back from a thirty-thousand-year-old bone. It wanders, grazes and keeps with its herd. It never starts a fight, but hurt one and every mammoth nearby charges, tusks first.$(br2)$(thing)Drops$(): Mammoth Wool; Mammoth Ivory when you bring it down."
+   }
+  ]
+ },
+ "world/node_meganeura": {
+  "title": "Meganeura",
+  "icon": "theoreticalsciences:meganeura_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:meganeura_spawn_egg"
+    ],
+    "text": "$(thing)Meganeura$(): A griffinfly of the Carboniferous, seventy centimetres across, from an age when the air held a third more oxygen. It patrols the place it was let go, darting and hovering, and flees fast and high if struck.$(br2)$(thing)Drops$(): Meganeura Wing."
+   }
+  ]
+ },
+ "world/dig_site": {
+  "title": "Dig Sites and Greenhouse Ruins",
+  "icon": "theoreticalsciences:plaster_jacket",
+  "category": "world",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:plaster_jacket",
+     "theoreticalsciences:excavation_grid"
+    ],
+    "text": "$(thing)Dig Sites$(): abandoned excavations in the Overworld's deserts, badlands, savannas, plains and stony shores, with fossil and amber in their walls and a cache of finds.$(br2)$(thing)Greenhouse Ruins$(): broken research greenhouses in plains, meadows and forests, with a cache of the seed lines they were breeding. Both are rare."
+   }
+  ]
  }
 }

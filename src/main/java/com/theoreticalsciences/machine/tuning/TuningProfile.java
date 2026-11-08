@@ -153,6 +153,7 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.BUSSARD_RAMSCOOP, "field_strength", Drift.OSCILLATE, 0.7F, 2, 4, Hazard.MAGNETIC, 4);   // 1.4.0
         p(MachineType.ICE_CORE_DRILL, "rotation_speed", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 2);
         p(MachineType.STORM_CHAMBER, "charge_separation", Drift.JUMP, 0.8F, 2, 4, Hazard.MAGNETIC, 4);
+        p(MachineType.HYDROPONIC_TOWER, "light_intensity", Drift.OSCILLATE, 0.4F, 2, 4, Hazard.CHEMICAL, 1);
     }
 
     /** The profiles with a datapack's changes applied (data/<ns>/ts_machines), rebuilt when that data changes. */

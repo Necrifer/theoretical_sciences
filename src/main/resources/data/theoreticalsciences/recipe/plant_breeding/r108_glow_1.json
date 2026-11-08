@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:plant_breeding",
+  "item_inputs": [
+    {
+      "item": "minecraft:wheat_seeds",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:anglerfish_lure",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:engineered_seed",
+      "count": 4,
+      "components": {
+        "theoreticalsciences:plant_traits": {
+          "line": "glow",
+          "level": 1
+        }
+      }
+    }
+  ],
+  "energy": 64,
+  "duration": 400,
+  "research": "theoreticalsciences:plant_breeding",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Rmin": 0.5
+    },
+    "windows": [
+      {
+        "q": "Rs",
+        "min": 0.5,
+        "max": 100.0
+      }
+    ]
+  }
+}

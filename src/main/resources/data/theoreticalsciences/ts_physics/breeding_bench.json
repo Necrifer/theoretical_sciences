@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "p",
+      "unit": "",
+      "min": 0.01,
+      "max": 0.5,
+      "step": 0.01,
+      "default": 0.2
+    },
+    {
+      "id": "u",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5
+    },
+    {
+      "id": "Np",
+      "unit": "plants",
+      "min": 10,
+      "max": 1000,
+      "step": 10,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {
+    "Rmin": 0.5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ii",
+      "unit": "\u03c3",
+      "expr": "0.8 + 0.4*ln(0.5/p)",
+      "formula": "selection intensity: the fewer kept, the further from the mean"
+    },
+    {
+      "id": "h2",
+      "unit": "",
+      "expr": "(0.2 + 0.6*u)*(1 + 0.02*d)",
+      "formula": "heritability: a uniform field shows the genes, not the soil"
+    },
+    {
+      "id": "Rs",
+      "unit": "\u03c3",
+      "expr": "h2*ii",
+      "formula": "R = h\u00b2S"
+    },
+    {
+      "id": "Ne",
+      "unit": "plants",
+      "expr": "Np*p",
+      "formula": "parents kept"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "inbreeding",
+      "kind": "wear",
+      "expr": "Ne - 10",
+      "formula": "at least 10 parents"
+    }
+  ],
+  "rate": "1",
+  "rate_formula": "one generation per run",
+  "heat": "0.2",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1
+}

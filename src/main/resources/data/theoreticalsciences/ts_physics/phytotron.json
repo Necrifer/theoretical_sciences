@@ -1,0 +1,82 @@
+{
+  "params": [
+    {
+      "id": "Ld",
+      "unit": "h",
+      "min": 0,
+      "max": 24,
+      "step": 0.25,
+      "default": 12
+    },
+    {
+      "id": "Tp",
+      "unit": "\u00b0C",
+      "min": 5,
+      "max": 40,
+      "step": 0.5,
+      "default": 20
+    },
+    {
+      "id": "CO2",
+      "unit": "ppm",
+      "min": 200,
+      "max": 2000,
+      "step": 10,
+      "default": 420
+    }
+  ],
+  "recipe_vars": {
+    "gref": 0.5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Le",
+      "unit": "h",
+      "expr": "Ld*(1 + 0.02*d)",
+      "formula": "day length, with the timer's drift"
+    },
+    {
+      "id": "nl",
+      "unit": "h",
+      "expr": "24 - Le",
+      "formula": "night length: what plants really measure"
+    },
+    {
+      "id": "cf",
+      "unit": "",
+      "expr": "CO2/(CO2 + 400)",
+      "formula": "CO\u2082 fertilisation"
+    },
+    {
+      "id": "gr",
+      "unit": "",
+      "expr": "cf*exp(-((Tp - 24)/7)^2)*min(1, Le/14)",
+      "formula": "growth"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "heat",
+      "kind": "damage",
+      "expr": "35 - Tp",
+      "formula": "T < 35 \u00b0C"
+    },
+    {
+      "id": "co2",
+      "kind": "wear",
+      "expr": "1500 - CO2",
+      "formula": "CO\u2082 < 1500 ppm"
+    }
+  ],
+  "rate": "clamp(gr/gref, 0, 2)",
+  "rate_formula": "output = growth / rated",
+  "heat": "0.3 + Le/24",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 2
+}

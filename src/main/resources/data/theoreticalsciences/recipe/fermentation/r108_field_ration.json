@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:fermentation",
+  "item_inputs": [
+    {
+      "item": "minecraft:wheat",
+      "count": 8
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:yeast_culture",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:field_ration",
+      "count": 4
+    }
+  ],
+  "energy": 64,
+  "duration": 300,
+  "research": "theoreticalsciences:food_science",
+  "unscaled": true
+}

@@ -79,11 +79,12 @@ public final class QHSounds {
             "nebuloid", "pulsar_wisp", "tidal_stretcher", "lens_phantom", "hawking_imp", "boltzmann_brain", "black_swan", "binary_serpent",
             "tholin_drifter", "catalyst_sprite", "methane_skater", "cryolava_slug", "ouroboros", "euclids_automaton", "paradox_shade", "tessellate", "fourier_wisp",
             "red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra", "vent_grazer", "ice_eel", "mirror_microbe", "brine_jelly", "vent_crab",
-            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental"};
+            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental", "mammoth", "meganeura"};
     private static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MOB = new java.util.HashMap<>();
 
     static {
         for (String m : NEW_MOBS) for (String k : new String[]{"ambient", "hurt", "death"}) MOB.put(m + "." + k, s(m + "." + k));
+        MOB.put("mammoth.step", s("mammoth.step"));     // 1.4.0: the ground shakes
     }
 
     /** The soundtrack: one piece per dimension, the Living Proof, and Alpha Omega. */
