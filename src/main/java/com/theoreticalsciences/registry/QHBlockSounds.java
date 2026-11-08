@@ -9,7 +9,7 @@ public final class QHBlockSounds {
             case "aleph_glass", "bulk_crystal", "cherenkov_quartz_block", "corundum_crystal", "dilithium_block", "fractal_lattice_block",
                  "garnet_crystal", "hyperbolic_stone", "koch_crystal", "moissanite_crystal", "peridot_crystal", "polished_dilithium",
                  "titan_ice", "void_lattice_block" -> SoundType.AMETHYST;
-            case "accretion_fragment_ore", "basalt_column", "rich_gold_ore", "rim_slag" -> SoundType.BASALT;
+            case "accretion_fragment_ore", "basalt_column", "oceanic_basalt", "rich_gold_ore", "rim_slag" -> SoundType.BASALT;
             case "arbor_planks", "arbor_planks_slab", "arbor_planks_stairs" -> SoundType.CHERRY_WOOD;
             case "deepslate_cherenkov_quartz_ore", "deepslate_pitchblende_ore", "stromatolite_ore" -> SoundType.DEEPSLATE;
             case "void_tiles" -> SoundType.DEEPSLATE_TILES;
@@ -19,6 +19,7 @@ public final class QHBlockSounds {
                  "golden_ratio_glass", "hex_glass", "leaded_glass", "lithography_glass", "nebular_ice", "protostar_fragment",
                  "radium_lamp", "stellar_lamp", "void_glass" -> SoundType.GLASS;
             case "antisoil", "frontier_regolith" -> SoundType.GRAVEL;
+            case "hadal_ooze" -> SoundType.MUD;                  // 1.3.0
             case "cosmic_ray_ore", "magnetar_crust_ore", "pulsar_crust", "pulsar_timing_ore" -> SoundType.METAL;
             case "dilithium_ore" -> SoundType.NETHER_ORE;
             case "abyssal_silicate", "anticarbon_ore", "antigold_ore", "antihydrogen_ice", "antiiron_ore", "antisilicon_ore",

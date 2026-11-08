@@ -60,7 +60,7 @@ public final class InnerMobRenderers {
                 case OceanMobs.IceEel el -> eel(ps, solid, glow, t, pitch, light, ov);
                 case OceanMobs.BrineJelly j -> jelly(ps, trans, glow, t, OceanMobs.BrineJelly.stroke(e.level(), e.getId(), partial), e, partial, light, ov);
                 case OceanMobs.VentCrab c -> crab(ps, solid, t, limb, amt, light, ov);
-                case com.theoreticalsciences.ocean.HadalMobs.Anglerfish a -> angler(ps, solid, glow, t, light, ov);   // 1.3.0
+                case com.theoreticalsciences.ocean.HadalMobs.Anglerfish a -> angler(ps, solid, glow, t, e.deathTime > 0 ? Math.min(1F, (e.deathTime + partial) / 20F) : 0, light, ov);   // 1.3.0
                 case com.theoreticalsciences.ocean.HadalMobs.Siphonophore s -> siphonophore(ps, trans, glow, t, light, ov);
                 default -> {}
             }
@@ -360,9 +360,10 @@ public final class InnerMobRenderers {
      * filaments. Small pale eyes, ragged little fins that scull it along, and a short tail that sweeps it into a lunge.
      * The jaw works slowly; the lure pulses.
      */
-    static void angler(PoseStack ps, VertexConsumer solid, VertexConsumer glow, float t, int light, int ov) {
-        float gape = 0.5F + 0.5F * (float) Math.sin(t * 0.06F);
-        float swish = (float) Math.sin(t * 0.12F);
+    static void angler(PoseStack ps, VertexConsumer solid, VertexConsumer glow, float t, float dead, int light, int ov) {
+        float live = 1 - dead;
+        float gape = dead > 0 ? 0.7F + 0.3F * dead : 0.5F + 0.5F * (float) Math.sin(t * 0.06F);   // dying, the jaw falls slack
+        float swish = (float) Math.sin(t * 0.12F) * live;
         // the body: a rough globe built up in layers, darker below
         px(ps, solid, 0, 7, -0.5F, 12, 9, 12, ANGLER, light, ov);
         px(ps, solid, 0, 7, -0.5F, 14, 6, 10, ANGLER, light, ov);
@@ -405,10 +406,10 @@ public final class InnerMobRenderers {
             ps.translate(0, 2F / 16F, 0);
             ps.mulPose(Axis.XP.rotation(0.32F));
         }
-        float pulse = 0.55F + 0.45F * (float) Math.sin(t * 0.13F);
-        int a = (int) (0x60 + 0x9F * pulse);
+        float pulse = (0.55F + 0.45F * (float) Math.sin(t * 0.13F)) * live;                // the lure goes out as it dies
+        int a = (int) ((0x60 + 0x9F * pulse) * Math.max(0.05F, live));
         px(ps, glow, 0, 1.6F, 0, 2.4F, 2.6F, 2.4F, new int[]{(a << 24) | 0xA0FFE8, (a << 24) | 0x40C0A0}, FULL, ov);   // the esca
-        px(ps, glow, 0, 1.6F, 0, 1.2F, 1.4F, 1.2F, new int[]{0xFFF0FFF8, 0xFFB0FFE0}, FULL, ov);
+        if (live > 0.3F) px(ps, glow, 0, 1.6F, 0, 1.2F, 1.4F, 1.2F, new int[]{0xFFF0FFF8, 0xFFB0FFE0}, FULL, ov);
         for (int f = 0; f < 3; f++)                                                  // its filaments, trailing
             px(ps, glow, (f - 1) * 0.8F, 3.4F + f * 0.3F, -0.6F, 0.3F, 1.6F, 0.3F, new int[]{(a << 24) | 0x80F0D0, (a << 24) | 0x307060}, FULL, ov);
         ps.popPose();
@@ -416,7 +417,7 @@ public final class InnerMobRenderers {
         for (int side = -1; side <= 1; side += 2) {
             ps.pushPose();
             ps.translate(side * 6.6F / 16F, 6F / 16F, 0.5F / 16F);
-            ps.mulPose(Axis.YP.rotation(side * (0.3F + 0.35F * (float) Math.sin(t * 0.2F + side))));
+            ps.mulPose(Axis.YP.rotation(side * (0.3F + 0.35F * (float) Math.sin(t * 0.2F + side) * live)));
             px(ps, solid, side * 1.6F, 0, 0, 3.2F, 3.4F, 0.6F, ANGLER_FIN, light, ov);
             px(ps, solid, side * 3.4F, -0.6F, 0, 0.6F, 2.2F, 0.6F, ANGLER_FIN, light, ov);
             ps.popPose();

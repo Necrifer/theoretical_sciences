@@ -40,6 +40,9 @@ public final class HadalMobs {
      */
     public static class Anglerfish extends OceanMobs.Swimmer {
         int bite, lunge;
+        /** Waiting, it keeps one heading for a while and glides along it slowly, then picks another. */
+        Vec3 heading = Vec3.ZERO;
+        int headingFor;
 
         public Anglerfish(EntityType<? extends WaterAnimal> type, Level level) {
             super(type, level);
@@ -78,13 +81,19 @@ public final class HadalMobs {
                     doHurtTarget(prey);
                 }
             } else {
-                // hang over the floor, turning slowly; never stray far up
+                // waiting: glide slowly along one heading for several seconds, then bank round to another (sometimes
+                // just hang still, lure lit); keep low over the floor, never stray far up
+                if (--headingFor <= 0 || horizontalCollision) {
+                    double a = horizontalCollision ? Math.toRadians(getYRot()) + Math.PI * (0.6 + random.nextDouble() * 0.8)
+                            : Math.toRadians(getYRot()) + (random.nextDouble() - 0.5) * Math.PI * 1.2;
+                    heading = random.nextInt(4) == 0 ? Vec3.ZERO : new Vec3(-Math.sin(a), 0, Math.cos(a));
+                    headingFor = 100 + random.nextInt(140);
+                }
                 BlockPos f = floor(this);
-                Vec3 w = new Vec3(random.nextGaussian() * 0.2, 0, random.nextGaussian() * 0.2);
-                if (f == null) w = w.add(0, -0.6, 0);
-                else if (getY() - f.getY() > 5) w = w.add(0, -0.2, 0);
-                else if (getY() - f.getY() < 2) w = w.add(0, 0.2, 0);
-                if (random.nextInt(4) == 0) steer(w, 0.004);
+                double up = f == null ? -0.5 : getY() - f.getY() > 5 ? -0.25 : getY() - f.getY() < 2 ? 0.25 : 0;
+                Vec3 w = heading.add(0, up, 0);
+                if (w.lengthSqr() > 1e-4) steer(w, 0.006);
+                else setDeltaMovement(getDeltaMovement().scale(0.9));    // hanging still: only slowing, never turning
             }
             lunge--;
         }

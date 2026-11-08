@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:arc_discharge",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:hadal_ooze",
+      "count": 16
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fused_silica",
+      "count": 9
+    }
+  ],
+  "energy": 3072,
+  "duration": 200,
+  "research": "theoreticalsciences:resonant_circuits",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "amin": 2.5
+    },
+    "windows": [
+      {
+        "q": "arc",
+        "min": 2.5,
+        "max": 99.0
+      }
+    ]
+  }
+}

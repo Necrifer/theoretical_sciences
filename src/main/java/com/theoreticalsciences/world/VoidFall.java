@@ -43,7 +43,7 @@ public final class VoidFall {
             Map.entry(QHDimensions.INNER, Level.OVERWORLD),
             Map.entry(QHDimensions.TITAN_OCEAN, QHDimensions.TITAN),
             Map.entry(QHDimensions.ORBITAL_STATION, Level.OVERWORLD),     // 1.3.0: drift off the station and re-enter
-            Map.entry(QHDimensions.HADAL_TRENCH, Level.OVERWORLD));
+            Map.entry(QHDimensions.HADAL_TRENCH, QHDimensions.INTERIOR));    // 1.3.0: through the floor of the deepest sea, into the planet
     private static final Map<UUID, Vec3> LAST_GROUND = com.theoreticalsciences.world.SessionMaps.perPlayer(new HashMap<>());
 
     /** Round 29: a player logged out - drop their remembered ground spot (TheoreticalSciences's logout listener calls this). */
@@ -104,11 +104,32 @@ public final class VoidFall {
                 || (dim == QHDimensions.BLACK_HOLE && sp.getY() < min + 4);
         // above y=200 a white hole lets go of you (DimensionLaws); rise past this and you are out
         boolean expelled = dim == QHDimensions.WHITE_HOLE && sp.getY() > level.getMaxBuildHeight() - 40;
-        if (!fall && !expelled) return;
-        ResourceKey<Level> to = expelled ? Level.OVERWORLD : BELOW.get(dim);
+        // 1.3.0: rise out of the top of the Hadal Trench's water and the current carries you up to the Overworld's sea
+        boolean surfaced = dim == QHDimensions.HADAL_TRENCH && sp.getY() > level.getChunkSource().getGenerator().getSeaLevel() + 2;
+        // (Level.getSeaLevel() is always 63 in 1.21.1, whatever the dimension: the real sea level is the generator's, 240 here)
+        if (!fall && !expelled && !surfaced) return;
+        ResourceKey<Level> to = expelled || surfaced ? Level.OVERWORLD : BELOW.get(dim);
         ServerLevel target = to == null ? null : sp.server.getLevel(to);
         if (target == null) return;
-        send(sp, target, "message.theoreticalsciences.void_" + dim.location().getPath());
+        if (to == QHDimensions.INTERIOR) {                         // inside the planet: under its roof, never on it
+            interior(sp, target, "message.theoreticalsciences.void_" + dim.location().getPath());
+            return;
+        }
+        send(sp, target, "message.theoreticalsciences.void_" + dim.location().getPath() + (surfaced ? "_up" : ""));
+    }
+
+    /** 1.3.0: a fall into the Planetary Interior lands in one of its caverns (the same place its own travel uses). */
+    static void interior(ServerPlayer sp, ServerLevel target, String msg) {
+        BlockPos dest = com.theoreticalsciences.interior.InteriorTravel.landing(target, sp.getBlockX(), sp.getBlockZ());
+        ((ServerLevel) sp.level()).sendParticles(com.theoreticalsciences.registry.QHParticles.PHASE_MOTE.get(), sp.getX(), sp.getY() + 1, sp.getZ(), 80, 0.5, 1.0, 0.5, 0.2);
+        sp.stopRiding();
+        sp.fallDistance = 0;
+        if (sp.changeDimension(new DimensionTransition(target, Vec3.atBottomCenterOf(dest), Vec3.ZERO, sp.getYRot(), sp.getXRot(),
+                DimensionTransition.DO_NOTHING)) == null) return;
+        sp.fallDistance = 0;
+        sp.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 120, 0));
+        target.playSound(null, dest, net.minecraft.sounds.SoundEvents.BASALT_BREAK, SoundSource.PLAYERS, 1F, 0.5F);
+        sp.displayClientMessage(Component.translatable(msg).withStyle(ChatFormatting.GOLD), false);
     }
 
     static void send(ServerPlayer sp, ServerLevel target, String msg) {

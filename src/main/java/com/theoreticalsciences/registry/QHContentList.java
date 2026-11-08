@@ -1212,6 +1212,8 @@ public final class QHContentList {
         new BlockDef("nucleotide_cluster", "ore", 6, 1.8F, "stone", "extracellular_matrix"),
         new BlockDef("tumour_nodule", "ore", 4, 1.6F, "stone", "tumour_mass"),
         new BlockDef("abyssal_silicate", "simple", 0, 2.0F, "stone", ""),
+        new BlockDef("oceanic_basalt", "simple", 0, 2.5F, "stone", ""),       // 1.3.0: the Hadal Trench's own rock
+        new BlockDef("hadal_ooze", "simple", 0, 0.6F, "none", ""),           // 1.3.0: the sediment on its floor
         new BlockDef("hydrothermal_chimney", "simple", 12, 1.5F, "stone", ""),
         new BlockDef("black_smoker", "vent", 14, 2.5F, "stone", ""),
         new BlockDef("tube_worms", "ocean_plant", 3, 0.0F, "none", ""),
