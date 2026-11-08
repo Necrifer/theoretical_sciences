@@ -15,7 +15,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 
 /**
- * 1.4.0: the revived creatures, modelled in blocks like the game's own animals: shaded boxes, a lighter top and a darker
+ * 1.3.0: the revived creatures, modelled in blocks like the game's own animals: shaded boxes, a lighter top and a darker
  * underside, and jointed parts that move (legs, trunk, wings).
  */
 public final class DeepTimeRenderers {

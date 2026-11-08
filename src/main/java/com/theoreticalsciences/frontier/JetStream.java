@@ -16,7 +16,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 /**
- * 1.4.0: the Jet Stream - the air above the Accretion Frontier's islands, from Y {@value #FLOOR} up. It is not a biome
+ * 1.3.0: the Jet Stream - the air above the Accretion Frontier's islands, from Y {@value #FLOOR} up. It is not a biome
  * (the terrain below is generated exactly as before): it is a layer with laws of its own.
  * <ul>
  *   <li>A steady wind from the west pushes whoever is off the ground there towards the east, harder the higher you go.

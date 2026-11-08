@@ -1,0 +1,49 @@
+{
+ "type": "theoreticalsciences:ecology",
+ "item_inputs": [
+  {
+   "item": "theoreticalsciences:mammoth_wool",
+   "count": 2
+  },
+  {
+   "item": "theoreticalsciences:living_soil",
+   "count": 1
+  },
+  {
+   "item": "theoreticalsciences:bacterial_culture",
+   "count": 1
+  }
+ ],
+ "fluid_inputs": [
+  {
+   "fluid": "theoreticalsciences:nutrient_broth",
+   "amount": 2000
+  }
+ ],
+ "item_outputs": [
+  {
+   "id": "theoreticalsciences:stable_ecosystem",
+   "count": 2
+  }
+ ],
+ "energy": 2048,
+ "duration": 300,
+ "research": "theoreticalsciences:de_extinction",
+ "unscaled": true,
+ "insight_per_run": 6,
+ "physics": {
+  "vars": {
+   "ar": 1.0,
+   "br": 0.04,
+   "gr": 1.0,
+   "dr": 0.04
+  },
+  "windows": [
+   {
+    "q": "swing",
+    "min": 0.8,
+    "max": 2.0
+   }
+  ]
+ }
+}

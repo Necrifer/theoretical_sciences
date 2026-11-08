@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 /**
- * 1.4.0 (Green Kingdom): the traits a bred seed carries, kept on the item ({@code theoreticalsciences:plant_traits}):
+ * 1.3.0 (Green Kingdom): the traits a bred seed carries, kept on the item ({@code theoreticalsciences:plant_traits}):
  * which line it was selected for ({@code yield}, {@code hardiness} or {@code glow}) and how many rounds of selection it
  * has been through. Recipes match a generation with NeoForge's component ingredient, and make the next one with a fixed
  * component on the output, so breeding is ordinary data (see the Breeding Bench recipes); seeds of different traits do

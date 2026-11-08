@@ -30,7 +30,7 @@ import java.util.EnumSet;
 import java.util.List;
 
 /**
- * 1.4.0: the creatures brought back from deep time in the Revival Vat. They are wild animals: they cannot be tamed,
+ * 1.3.0: the creatures brought back from deep time in the Revival Vat. They are wild animals: they cannot be tamed,
  * bred, ridden or led, and they never spawn by themselves (they are extinct). A released one lives where it was let go,
  * and stays (it never despawns). Their minds are their own, not a vanilla animal's.
  */
@@ -78,6 +78,16 @@ public final class RevivedMobs {
         public void aiStep() {
             super.aiStep();
             if (grazeAnim > 0) grazeAnim--;
+        }
+
+        /** Roused: it raises its trunk and trumpets before the charge. */
+        @Override
+        public void setTarget(@javax.annotation.Nullable LivingEntity target) {
+            if (target != null && getTarget() == null && !level().isClientSide) {
+                SoundEvent s = QHSounds.mob("mammoth", "trumpet");
+                if (s != null) playSound(s, 2.0F, 0.9F + random.nextFloat() * 0.15F);
+            }
+            super.setTarget(target);
         }
 
         @Override

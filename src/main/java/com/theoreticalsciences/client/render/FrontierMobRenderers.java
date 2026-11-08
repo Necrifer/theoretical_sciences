@@ -57,8 +57,8 @@ public final class FrontierMobRenderers {
                 case "boltzmann_brain" -> brain(ps, solid, glow, t, light, ov);
                 case "black_swan" -> swan(ps, solid, t, limb, amt, e.hurtTime, light, ov);
                 case "binary_serpent" -> serpent(ps, solid, glow, t, e instanceof BinaryBoss.Serpent s ? s.separation() : 12F, light, ov);
-                case "karman_wraith" -> wraith(ps, trans, glow, e, partial, light, ov);   // 1.4.0
-                case "storm_elemental" -> storm(ps, trans, glow, t, e.getId(), light, ov);
+                case "karman_wraith" -> wraith(ps, trans, glow, e, partial, light, ov);   // 1.3.0
+                case "storm_elemental" -> storm(ps, solid, trans, glow, e, t, light, ov);
                 default -> {}
             }
             ps.popPose();
@@ -96,62 +96,145 @@ public final class FrontierMobRenderers {
         }
     }
 
-    /**
-     * 1.4.0: the Kármán Wraith - a ribbon of pale air, its head a blunt bluff body with two cold eyes, its body a wake
-     * that ripples from side to side down its length (a travelling wave, growing towards the tail), and at the tail the
-     * eddies it sheds, curling off on alternate sides.
-     */
+    static final int[] WR_HEAD = {0xD8F0F8FF, 0x98B8D0E8}, WR_RIB = {0xB0E4F0FA, 0x6090B0D0}, WR_EDGE = {0xD0F8FCFF, 0x90C8E0F0},
+            WR_EDDY = {0x90E8F4FF, 0x5098B8D8};
+
     static void wraith(PoseStack ps, VertexConsumer trans, VertexConsumer glow, LivingEntity e, float partial, int light, int ov) {
-        ps.translate(0, 0.45F, 0);
-        long gt = e.level().getGameTime();
-        float t = gt + partial;
-        float ph = (float) ((t + e.getId() * 7) / com.theoreticalsciences.frontier.KarmanWraith.PERIOD * Math.PI * 2);
-        // the head: a rounded bluff body
-        cube(ps, trans, 0, 0, 0.35F, 0.26F, 0xC8E8F0FF, light, ov);
-        cube(ps, trans, 0, 0, 0.12F, 0.30F, 0xB0E0E8F8, light, ov);
-        cube(ps, glow, -0.12F, 0.08F, 0.58F, 0.045F, 0xFF90D0FF, FULL, NO);
-        cube(ps, glow, 0.12F, 0.08F, 0.58F, 0.045F, 0xFF90D0FF, FULL, NO);
-        // the wake: segments behind it, swinging with a travelling wave
-        for (int k = 1; k <= 12; k++) {
-            float z = -0.22F * k, f = k / 12F;
-            float x = (float) Math.sin(ph - k * 0.55F) * (0.08F + 0.42F * f);
-            float s = 0.26F * (1 - 0.55F * f);
-            int a = (int) (0xB0 * (1 - 0.6F * f));
-            cube(ps, trans, x, (float) Math.sin(ph * 0.5F - k * 0.3F) * 0.05F, z, s, (a << 24) | 0xD8ECF4, light, ov);
+        float t = e.level().getGameTime() + partial;
+        wraithAt(ps, trans, glow, t, (float) ((t + e.getId() * 7) / com.theoreticalsciences.frontier.KarmanWraith.PERIOD * Math.PI * 2), light, ov);
+    }
+
+    /**
+     * The Kármán Wraith: the wake of something no longer there. Its head is the bluff body the wind breaks on, a rounded
+     * drum of packed air with two cold eyes and a brow of streaming wisps. Behind it the wake is a tall, thin ribbon
+     * (thinning and fading towards the tail) that swings from side to side in a travelling wave, wider as it goes back,
+     * its upper and lower edges brighter where the shear is. At the tail it sheds eddies on alternate sides: rolled-up
+     * spirals of air that turn, grow and fade as they drift away (a von Kármán vortex street).
+     */
+    static void wraithAt(PoseStack ps, VertexConsumer trans, VertexConsumer glow, float t, float ph, int light, int ov) {
+        ps.translate(0, 0.42F, 0);
+        // the head: a drum lying across the flow, rounded by layers
+        InnerMobRenderers.px(ps, trans, 0, 0, 5, 10, 8, 7, WR_HEAD, light, ov);
+        InnerMobRenderers.px(ps, trans, 0, 0, 5, 8, 11, 7, WR_HEAD, light, ov);
+        InnerMobRenderers.px(ps, trans, 0, 0, 8.6F, 8, 8, 1.6F, WR_HEAD, light, ov);
+        InnerMobRenderers.px(ps, glow, -2.3F, 1.3F, 9.5F, 1.4F, 0.9F, 0.4F, new int[]{0xFFB8E8FF, 0xFF70B0E0}, FULL, NO);   // eyes
+        InnerMobRenderers.px(ps, glow, 2.3F, 1.3F, 9.5F, 1.4F, 0.9F, 0.4F, new int[]{0xFFB8E8FF, 0xFF70B0E0}, FULL, NO);
+        for (int k = 0; k < 3; k++) {                                                // wisps streaming back off the brow
+            float w = (float) Math.sin(ph * 2 + k) * 0.6F;
+            InnerMobRenderers.px(ps, trans, (k - 1) * 2.6F + w, 5.6F, 3 - k * 0.5F, 1.0F, 1.0F, 5 + k, WR_EDGE, light, ov);
         }
-        // shed eddies: rings at the tail, alternating sides, drifting back as they fade
+        // the wake: a vertical ribbon of segments, swinging in a travelling wave that grows towards the tail
+        float lx = 0, ly = 0;
+        for (int k = 1; k <= 14; k++) {
+            float f = k / 14F, z = 2 - k * 2.4F;
+            float x = (float) Math.sin(ph - k * 0.5F) * (0.6F + 6.5F * f);
+            float y = (float) Math.sin(ph * 0.5F - k * 0.3F) * 0.6F;
+            float h = 11F * (1 - 0.6F * f), th = 2.0F * (1 - 0.4F * f);
+            int al = (int) (0xB8 * (1 - 0.55F * f));
+            int[] rib = {(al << 24) | (WR_RIB[0] & 0xFFFFFF), ((al * 6 / 10) << 24) | (WR_RIB[1] & 0xFFFFFF)};
+            int[] edge = {((al + 0x18) << 24) | (WR_EDGE[0] & 0xFFFFFF), ((al * 7 / 10) << 24) | (WR_EDGE[1] & 0xFFFFFF)};
+            float mx = (x + lx) / 2, my = (y + ly) / 2;
+            ps.pushPose();
+            ps.translate(mx / 16F, my / 16F, (z + 1.2F) / 16F);
+            ps.mulPose(Axis.YP.rotation((float) Math.atan2(x - lx, 2.4F)));
+            InnerMobRenderers.px(ps, trans, 0, 0, 0, th, h, 3.2F, rib, light, ov);
+            InnerMobRenderers.px(ps, trans, 0, h / 2, 0, th + 0.3F, 0.6F, 3.2F, edge, light, ov);   // the sheared edges, brighter
+            InnerMobRenderers.px(ps, trans, 0, -h / 2, 0, th + 0.3F, 0.6F, 3.2F, edge, light, ov);
+            ps.popPose();
+            lx = x; ly = y;
+        }
+        // shed eddies: rolled spirals, alternate sides, turning, growing and fading as they drift back
+        float half = com.theoreticalsciences.frontier.KarmanWraith.PERIOD / 2F;
+        float tq = (float) (ph / (Math.PI * 2) * 2);                                 // half-periods elapsed
         for (int i = 0; i < 4; i++) {
-            float q = ((t / (com.theoreticalsciences.frontier.KarmanWraith.PERIOD / 2F)) + i) % 4 / 4F;
-            int side = (((int) (t / (com.theoreticalsciences.frontier.KarmanWraith.PERIOD / 2F)) - i) & 1) == 0 ? 1 : -1;
-            float z = -2.8F - q * 1.8F, x = side * (0.35F + 0.4F * q);
-            for (int j = 0; j < 8; j++) {
-                double a = j / 8.0 * Math.PI * 2 + t * 0.3 * side;
-                cube(ps, trans, x + (float) Math.cos(a) * 0.22F * (1 + q), (float) Math.sin(a) * 0.22F * (1 + q), z, 0.04F,
-                        ((int) (0x90 * (1 - q)) << 24) | 0xE8F4FF, light, ov);
+            float q = ((tq % 1) + i) / 4F;
+            int side = ((((int) Math.floor(tq)) - i) & 1) == 0 ? 1 : -1;
+            float cz = -33 - q * 24, cx = side * (5 + 5 * q), sc = 1 + q * 1.2F;
+            int al = (int) (0xA0 * (1 - q));
+            int[] col = {(al << 24) | (WR_EDDY[0] & 0xFFFFFF), ((al * 6 / 10) << 24) | (WR_EDDY[1] & 0xFFFFFF)};
+            for (int j = 0; j < 14; j++) {                                           // an Archimedean spiral of puffs
+                double ang = j * 0.75 + t * 0.25 * side;
+                float r = (0.6F + j * 0.32F) * sc;
+                InnerMobRenderers.px(ps, trans, cx + (float) Math.cos(ang) * r, (float) Math.sin(j * 0.9 + t * 0.1) * 0.6F, cz + (float) Math.sin(ang) * r,
+                        1.8F * sc * (1 - j / 20F), 3.6F * (1 - j / 20F), 1.8F * sc * (1 - j / 20F), col, light, ov);
             }
         }
     }
 
+    static final int[] ST_BASE = {0xFF4E545C, 0xFF262A30}, ST_TOWER = {0xFFD8DDE3, 0xFF7C848E}, ST_TOWER_DARK = {0xFF9AA2AC, 0xFF545B64},
+            ST_ANVIL = {0xFFE6EAEE, 0xFFA6AEB8}, ST_MAMMA = {0xFF8C949E, 0xFF5C636C};
+
+    static void storm(PoseStack ps, VertexConsumer solid, VertexConsumer trans, VertexConsumer glow, LivingEntity e, float t, int light, int ov) {
+        int flash = e instanceof com.theoreticalsciences.weather.StormElemental s ? s.flashTicks() : 0;
+        stormAt(ps, solid, trans, glow, t, e.getId(), flash, light, ov);
+    }
+
     /**
-     * 1.4.0: the Storm Elemental - a thunderstorm cell: a dark, billowing base, an anvil spreading at its top, and inside
-     * a core that flickers as charge separates in the updraft, now and then lit right through by a flash.
+     * The Storm Elemental: a cumulonimbus come to life. A flat, dark, rain-free base with two slits of light for eyes;
+     * rising from it, cauliflower towers of cloud, bright where the sun is on them and grey in their folds, swelling and
+     * settling as the updraft breathes; at the top the anvil, flattened against the tropopause and spread downwind, with
+     * mammatus pouches sagging under it. Rain hangs in a shaft below. Charge flickers deep inside, and when it strikes a
+     * forked channel runs from its base to the ground and lights the whole cloud from within.
      */
-    static void storm(PoseStack ps, VertexConsumer trans, VertexConsumer glow, float t, int seed, int light, int ov) {
-        ps.translate(0, 0.9F, 0);
+    static void stormAt(PoseStack ps, VertexConsumer solid, VertexConsumer trans, VertexConsumer glow, float t, int seed, int flash, int light, int ov) {
+        ps.translate(0, 0.35F, 0);
+        boolean lit = flash > 0;
+        int bl = lit ? FULL : light;
+        // the base: flat and dark, ragged at the edges
+        InnerMobRenderers.px(ps, solid, 0, 1.5F, 0, 30, 3, 26, ST_BASE, bl, ov);
+        InnerMobRenderers.px(ps, solid, 0, 1, 0, 24, 2, 32, ST_BASE, bl, ov);
         java.util.Random r = new java.util.Random(seed * 31L);
-        for (int i = 0; i < 14; i++) {                              // the billowing mass, darker below
-            float x = (r.nextFloat() - 0.5F) * 1.6F, y = (r.nextFloat() - 0.5F) * 0.8F, z = (r.nextFloat() - 0.5F) * 1.6F;
-            float s = 0.35F + 0.15F * (float) Math.sin(t * 0.05F + i);
-            int grey = y < 0 ? 0x50585E : 0x8A9298;
-            cube(ps, trans, x, y, z, s, 0xD0000000 | grey, light, ov);
+        for (int i = 0; i < 6; i++)                                                  // lumps hanging from the base
+            InnerMobRenderers.px(ps, solid, (r.nextFloat() - 0.5F) * 24, -0.6F, (r.nextFloat() - 0.5F) * 24, 4 + r.nextFloat() * 3, 1.6F, 4 + r.nextFloat() * 3, ST_BASE, bl, ov);
+        // eyes: two slits of light in the front of the base
+        int eye = lit ? 0xFFFFFFFF : 0xFFF0E890;
+        InnerMobRenderers.px(ps, glow, -5, 2, 13.2F, 5, 1.1F, 0.6F, new int[]{eye, 0xFFC0B050}, FULL, NO);
+        InnerMobRenderers.px(ps, glow, 5, 2, 13.2F, 5, 1.1F, 0.6F, new int[]{eye, 0xFFC0B050}, FULL, NO);
+        // the towers: stacked billows, each smaller and offset, breathing with the updraft
+        float[][] towers = {{0, 0, 13}, {-9, -4, 10}, {8, 5, 10.5F}, {-6, 9, 8}, {10, -7, 8}, {-11, 6, 7}, {3, -10, 9}, {-2, 11, 7.5F}};
+        for (int i = 0; i < towers.length; i++) {
+            float tx = towers[i][0], tz = towers[i][1], w = towers[i][2], y = 3;
+            int levels = i == 0 ? 4 : 2 + (i % 3);
+            for (int k = 0; k < levels; k++) {
+                float br = 1 + 0.06F * (float) Math.sin(t * 0.07F + i * 1.3F + k);
+                float ww = w * (1 - k * 0.1F) * br, hh = w * 0.7F * br;
+                InnerMobRenderers.px(ps, solid, tx + (k % 2 == 0 ? 0.6F : -0.6F), y + hh / 2, tz + (k % 2 == 0 ? -0.4F : 0.4F), ww, hh, ww, k == levels - 1 ? ST_TOWER : ST_TOWER_DARK, bl, ov);
+                InnerMobRenderers.px(ps, solid, tx + ww * 0.35F, y + hh * 0.7F, tz, ww * 0.55F, hh * 0.55F, ww * 0.55F, ST_TOWER, bl, ov);   // a billow on its flank
+                y += hh * 0.72F;
+            }
         }
-        for (int i = 0; i < 6; i++) {                               // the anvil: spreading flat at the top
-            double a = i / 6.0 * Math.PI * 2 + t * 0.01;
-            cube(ps, trans, (float) Math.cos(a) * 1.1F, 0.75F, (float) Math.sin(a) * 1.1F, 0.32F, 0xB8A8B0B8, light, ov);
+        // the anvil, spread flat at the top and drawn out downwind (backwards), with mammatus beneath
+        float ay = 27;
+        InnerMobRenderers.px(ps, solid, 0, ay - 1.5F, -2, 22, 5, 20, ST_TOWER, bl, ov);          // where the tower flattens out
+        InnerMobRenderers.px(ps, solid, 0, ay + 1, -5, 34, 3, 28, ST_ANVIL, bl, ov);
+        InnerMobRenderers.px(ps, solid, 0, ay + 3, -6, 24, 2, 22, ST_ANVIL, bl, ov);
+        InnerMobRenderers.px(ps, solid, 0, ay + 0.5F, -19, 42, 2, 9, ST_ANVIL, bl, ov);          // drawn out downwind
+        InnerMobRenderers.px(ps, solid, 0, ay, -25, 34, 1.4F, 5, ST_ANVIL, bl, ov);
+        for (int i = 0; i < 9; i++) {
+            float mx = ((i % 3) - 1) * 10, mz = -14 + (i / 3) * 8;
+            float sag = 1.2F + 0.4F * (float) Math.sin(t * 0.05F + i);
+            InnerMobRenderers.px(ps, solid, mx, ay - 2 - sag, mz, 4, 2 + sag, 4, ST_MAMMA, bl, ov);
         }
-        boolean flash = ((int) (t / 3) * 7 + seed) % 23 == 0;        // now and then lit right through
-        float core = 0.18F + 0.06F * (float) Math.sin(t * 0.7F);
-        cube(ps, glow, 0, 0, 0, flash ? 0.7F : core, flash ? 0xFFF8F8FF : dim(0xF0F080, 0.6F), FULL, NO);
+        // rain: streaks falling in a shaft under the base
+        for (int i = 0; i < 16; i++) {
+            float rx = ((i * 37) % 17 - 8) * 1.4F, rz = ((i * 23) % 13 - 6) * 1.6F;
+            float fall = ((t * 0.9F + i * 7) % 16);
+            InnerMobRenderers.px(ps, trans, rx, -1 - fall, rz, 0.4F, 2.4F, 0.4F, new int[]{0x70B8D0E8, 0x4080A0C0}, light, ov);
+        }
+        // charge flickering inside, seen through the gaps
+        float core = 0.5F + 0.5F * (float) Math.sin(t * 0.9F + seed);
+        InnerMobRenderers.px(ps, glow, 0, 10, 0, 6 + core * 2, 6, 6 + core * 2, new int[]{dim(0xF8F0A0, 0.35F + 0.3F * core) | 0xFF000000, dim(0xC0B060, 0.3F) | 0xFF000000}, FULL, NO);
+        if (lit) {                                                                   // the stroke: a forked channel to the ground
+            java.util.Random b = new java.util.Random(seed * 7L + flash / 3);
+            float x = 0, z = 0, y = 0;
+            for (int k = 0; k < 9; k++) {
+                float nx = x + (b.nextFloat() - 0.5F) * 5, nz = z + (b.nextFloat() - 0.5F) * 5, ny = y - 3.2F;
+                InnerMobRenderers.px(ps, glow, (x + nx) / 2, (y + ny) / 2, (z + nz) / 2, 0.8F + Math.abs(nx - x) * 0.5F, 3.4F, 0.8F + Math.abs(nz - z) * 0.5F,
+                        new int[]{0xFFFFFFFF, 0xFFC8D8FF}, FULL, NO);
+                if (k == 3) InnerMobRenderers.px(ps, glow, nx + 2.5F, ny - 1.5F, nz, 3.5F, 0.8F, 0.8F, new int[]{0xFFE0E8FF, 0xFFA0B0FF}, FULL, NO);
+                x = nx; z = nz; y = ny;
+            }
+        }
     }
 
     /** A neutron star in miniature: a small bright core, a magnetic axis, and the twin beam sweeping round on the beat. */

@@ -777,24 +777,24 @@ public final class QHContentList {
         // 1.3.0: Fluids and Flight
         new ItemDef("aerofoil_composite", "", 64),
         new ItemDef("de_laval_nozzle", "", 64),
-        // 1.4.0: Rocketry
+        // 1.3.0: Rocketry
         new ItemDef("rocket_stage", "", 16),
         new ItemDef("microgravity_lab", "", 16),
         new ItemDef("microgravity_crystal", "", 64),
-        // 1.4.0: the Orbital Station
+        // 1.3.0: the Orbital Station
         new ItemDef("station_module", "", 16),
         new ItemDef("crew_capsule", "", 16),
         new ItemDef("fuelled_crew_capsule", "crew_capsule", 1),
-        // 1.4.0: the Jet Stream and the Bussard Ramscoop
+        // 1.3.0: the Jet Stream and the Bussard Ramscoop
         new ItemDef("vortex_filament", "", 64),
-        // 1.4.0: the Living Planet - oceans
+        // 1.3.0: the Living Planet - oceans
         new ItemDef("pressure_hull_plate", "", 64),
         new ItemDef("bathyscaphe", "bathyscaphe", 1),
         new ItemDef("anglerfish_lure", "", 64),
         new ItemDef("nematocyst_cluster", "", 64),
-        // 1.4.0: the Living Planet - air, fire and ice
+        // 1.3.0: the Living Planet - air, fire and ice
         new ItemDef("fulgurite", "", 64),
-        // 1.4.0 (Green Kingdom): botany
+        // 1.3.0 (Green Kingdom): botany
         new ItemDef("xylem_fibre", "", 64),
         new ItemDef("engineered_seed", "engineered_seed", 64),
         new ItemDef("biochar", "", 64),
@@ -1221,7 +1221,7 @@ public final class QHContentList {
         new BlockDef("flow_straightener", "casing", 2, 6.0F, "iron", ""),
         new BlockDef("wind_tunnel_fan", "casing", 2, 6.0F, "iron", ""),
         new BlockDef("laminar_flow_conduit", "flow_conduit", 0, 3.0F, "iron", ""),
-        // 1.4.0: the closed-circuit Wind Tunnel and the Rocket Assembly
+        // 1.3.0: the closed-circuit Wind Tunnel and the Rocket Assembly
         new BlockDef("turning_vane", "casing", 2, 6.0F, "iron", ""),
         new BlockDef("launch_pad", "casing", 0, 8.0F, "iron", ""),
         new BlockDef("service_tower", "casing", 2, 6.0F, "iron", ""),
@@ -1353,7 +1353,7 @@ public final class QHContentList {
         new FluidDef("mathesis", false, 13, 300, 1000, 500, 0x081830),
         new FluidDef("panacea", false, 13, 310, 1000, 700, 0x082810),
         new FluidDef("anima_mundi", false, 13, 300, 1000, 600, 0x102030),
-        // 1.4.0: rocket propellants (appended, so older fluids keep their order)
+        // 1.3.0: rocket propellants (appended, so older fluids keep their order)
         new FluidDef("liquid_oxygen", false, 0, 90, 1141, 200, 0x8FC8FF),
         new FluidDef("liquid_hydrogen", false, 0, 20, 71, 100, 0xD8ECFF),
         new FluidDef("auxin", false, 0, 295, 1000, 1000, 0xE8D890),

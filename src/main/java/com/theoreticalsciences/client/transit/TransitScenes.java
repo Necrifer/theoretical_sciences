@@ -51,7 +51,7 @@ public final class TransitScenes {
         g.flush();
     }
 
-    // ================================================================== 1.4.0: the Hadal Trench
+    // ================================================================== 1.3.0: the Hadal Trench
     /**
      * Down in the bathyscaphe: the blue above fades to black, marine snow streams upward past the window, a depth gauge
      * ticks round to eleven thousand metres, and far below a few cold lights wait. Coming up, all of it runs the other way.
@@ -80,7 +80,7 @@ public final class TransitScenes {
         f.end();
     }
 
-    // ================================================================== 1.4.0: the Orbital Station
+    // ================================================================== 1.3.0: the Orbital Station
     /**
      * Up on a column of fire: the sky darkens from blue to black, the Earth's curved limb sinks into view below, its thin
      * blue air glowing along the edge, and stars come out; the station's lights grow ahead. Leaving, the Earth swells up
@@ -770,13 +770,13 @@ public final class TransitScenes {
                 f.tri(x, cy + 7, accent, 1, x - 4, cy - 5, ink, 0.8F, x + 4, cy - 5, ink, 0.8F);
             }
             case HADAL_TRENCH -> {
-                // a sphere sinking down a line (1.4.0)
+                // a sphere sinking down a line (1.3.0)
                 f.rect(cx - half, cy - 1, cx + half, cy + 1, ink, 0.3F);
                 float x = cx - half + 2 * half * done;
                 f.disc(x, cy, 4, 12, accent, 0.9F, ink, 0.6F);
             }
             case ORBITAL_STATION -> {
-                // a capsule climbing to a station's ring (1.4.0)
+                // a capsule climbing to a station's ring (1.3.0)
                 f.ring(cx + half, cy, 6, 1.4F, 24, accent, 0.8F);
                 float x = cx - half + 2 * half * done;
                 f.tri(x + 6, cy, 0xFFFFFF, 0.9F, x - 4, cy - 4, ink, 0.8F, x - 4, cy + 4, ink, 0.8F);

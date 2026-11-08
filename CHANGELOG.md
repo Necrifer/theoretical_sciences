@@ -1,11 +1,66 @@
 # Changelog
 
-## Unreleased — The Green Kingdom and Deep Time
+## 1.3.0 — Fluids and Flight, the Living Planet, the Green Kingdom and Deep Time
 
-Work in progress: botany and agronomy (the Green Kingdom) and zoology and palaeontology (Deep Time). Each part below is
-finished and tested on a dedicated server; the whole is tested together before release.
+Three parts, newest first: the Green Kingdom and Deep Time, Into Orbit and the Living Planet, and Fluids and Flight. Then
+an art, sound and text pass over all three.
 
-### Botany
+### Art, sound and text pass
+
+**Item and block art**
+* The 1.3.0 items had been drawn as flat, still pictures, where every other item of the mod is a small 3D model that is
+  lit and moves. Thirty-four of them are now modelled and animated the same way: the Bathyscaphe bobs with its window lit,
+  the De Laval Nozzle glows in its throat, the genomes turn, the capsules show the creature asleep inside (curled up, or
+  wings folded), the Vortex Filament and the Microgravity Crystal spin, the Fuelled Crew Capsule vents frost and blinks
+  its ready light, the Living Soil's seedling sways over glowing hyphae, and so on.
+* The 1.3.0 casings, parts and consoles move like the rest of the mod's blocks: a sheen passes over the casings, lit parts
+  (grow lights, heater plates, electrodes, the ion collector, funnel coils, amniotic tanks, pumps, rocket engines, the
+  transfer console, the conduits' ends) pulse, formed casings carry the energy conduits that join a whole structure into
+  one surface, and running consoles flicker with their readouts.
+* Amber Ore is redrawn like every other ore of the mod: amber set into dark rock, each cluster catching the light in turn,
+  in place of the plus-shaped marks it had.
+
+**Creatures**
+* The Hadal Anglerfish, the Storm Elemental and the Kármán Wraith had been built out of plain cubes. They are modelled
+  now: the anglerfish is a lumpy globe of a body with an underbite of long, inward-sloping fangs, a jaw that works, small
+  pale eyes, sculling fins, a sweeping tail and its lure arching over the mouth on a jointed rod; the Storm Elemental is a
+  cumulonimbus, a dark flat base with two slits of light for eyes, billowing towers breathing with the updraft, an anvil
+  drawn out downwind with mammatus pouches beneath and a shaft of rain; the Kármán Wraith is a drum of packed air with
+  cold eyes, trailing a tall ribbon of wake that swings in a travelling wave and sheds rolled-up spiral eddies on
+  alternate sides.
+* The Siphonophore Colony is fuller: a float with a rosy cap, six swimming bells contracting in a wave, and a stem as long
+  as the stinging reach it really has (six blocks), set with stomachs, shield-shaped bracts and fishing tentacles hung
+  with glowing knots of stingers.
+* When the Storm Elemental strikes, the whole cloud lights up from within and a forked channel runs from its base.
+* Every sound of the six new creatures is redesigned (they had been shapeless noise): the mammoth's trunk trumpets with a
+  rough, rising and breaking voice, rumbles, snorts and shakes the ground as it walks; the Meganeura's four wings beat
+  out of step with a papery crackle; the Kármán Wraith sings the Aeolian tone of a wire in the wind; the Storm Elemental
+  rumbles with rolling thunder and rain; the anglerfish drums and creaks, heard through water; the siphonophore pumps
+  softly with a glassy shimmer.
+* Attacks have sounds of their own instead of the creature's hurt cry: the mammoth trumpets when roused, the Kármán
+  Wraith's gust whooshes, the Storm Elemental's strike cracks and sizzles, the anglerfish's lunge rushes and snaps, the
+  siphonophore's sting crackles with thousands of tiny harpoons firing.
+
+**Text**
+* Every 1.3.0 drop now says where it comes from (Anglerfish Lure, Nematocyst Cluster, Fulgurite, Vortex Filament, Fossil
+  Fragment, Raw Amber, Stromatolite Fragment, Mammoth Wool, Mammoth Ivory, Meganeura Wing), and the creatures' spawn eggs
+  say where each one is found (the Woolly Mammoth and the Meganeura: never in the wild, only from their capsules).
+* Six Codex pages no longer list a recipe's ingredients (Soil Science, Food Science, Plant Breeding, Ancient DNA,
+  De-extinction and the Dating Spectrometer): they say where each item is made, and JEI shows the recipes.
+
+**New recipes** (so nothing the mammoths give is a dead end)
+* **Ancient DNA Lab:** 1 Mammoth Ivory → 1 Mammoth Genome. Tusk dentine keeps DNA far better than bone, so it is a
+  quarter of the Dated Bone route and the read is cleaner. Mammoths can now be revived from mammoths.
+* **Ecosphere:** 2 Mammoth Wool, 1 Living Soil, 1 Bacterial Culture and 2,000 mB of Nutrient Broth → 2 Stable
+  Ecosystems (a mammoth steppe; needs De-extinction). The same yield as the Titan route, and cheaper than the 1.2 one.
+  Stable Ecosystems are one of the Tree of Life's five pieces.
+* No existing recipe changed.
+
+### Part three: the Green Kingdom and Deep Time
+
+Botany and agronomy (the Green Kingdom) and zoology and palaeontology (Deep Time).
+
+#### Botany
 
 **Research: Plant Physiology** (Photosynthesis, Metabolism; puzzle: Jurin's law, h = 2γ cos θ / ρgr) and
 **Plant Hormones** (Plant Physiology, Population Genetics; puzzle: logistic growth).
@@ -20,7 +75,7 @@ crop yields twice as much.
 **The Phytotron** (a single-block console): a climate-controlled growth chamber with day length, temperature and CO₂.
 Under long days, saplings make **Auxin**; seeds kept through long nights make **Gibberellin** (two new fluids).
 
-### Breeding, soil and food
+#### Breeding, soil and food
 
 **Research: Plant Breeding** (Plant Hormones, Population Genetics; puzzle: the breeder's equation, R = h²S),
 **Soil Science** (Plant Physiology, Mycology; puzzle: Michaelis–Menten uptake) and **Food Science** (Fermentation,
@@ -41,7 +96,7 @@ Inoculant** (Mould Culture and Xylem Fibre, Mycelium Bed), and **Living Soil** m
 **Food**: the Fermenter bakes **Field Rations** from wheat, sugar, Yeast Culture and water. Eating one makes you
 **Well Fed** (a new effect: two extra hearts for ten minutes).
 
-### Deep Time: fossils and radiometric dating
+#### Deep Time: fossils and radiometric dating
 
 **Three rare Overworld ores** (newly generated chunks only, in small veins):
 - **Fossil Ore**: Y 0 to 80; gives Fossil Fragments; stone pickaxe or better.
@@ -60,7 +115,7 @@ sample and makes one dated sample:
 
 The Codex now has operation pages for the Hydroponic Tower, Phytotron, Breeding Bench and Dating Spectrometer.
 
-### Deep Time: ancient DNA and de-extinction
+#### Deep Time: ancient DNA and de-extinction
 
 **Research: Ancient DNA** (Radiometric Dating, Genomics; puzzle: sequencing coverage, C = NL/G) and
 **De-extinction** (Ancient DNA, Metabolism; puzzle: Kleiber's law, P = B₀M^(3/4)).
@@ -94,12 +149,11 @@ Both have their own models and sounds.
 
 New decorative blocks: **Plaster Jacket** and **Excavation Grid**.
 
-## Unreleased — Into Orbit and the Living Planet
+### Part two: Into Orbit and the Living Planet
 
-Work in progress: the rest of Fluids and Flight (rocketry, orbit, the nebula) and the Living Planet (oceans, weather,
-volcanoes, ice). Each part below is finished and tested on a dedicated server; the whole is tested together before release.
+The rest of Fluids and Flight (rocketry, orbit, the nebula) and the Living Planet (oceans, weather, volcanoes, ice).
 
-### Rocketry
+#### Rocketry
 
 **Research: Rocketry** (needs Compressible Flow and Cryogenics). Puzzle: Tsiolkovsky's rocket equation, v = u·ln(M/m).
 
@@ -119,7 +173,7 @@ volcanoes, ice). Each part below is finished and tested on a dedicated server; t
 * **Rocket Stages** are used up by each launch. The first payload is the **Microgravity Lab**: flown to orbit and back,
   it brings **Microgravity Crystals**, grown flawless in free fall.
 
-### The Orbital Station
+#### The Orbital Station
 
 **Research: Orbital Mechanics** (needs Rocketry and Gravitational Redshift). Puzzle: the vis-viva equation,
 v = √(GM(2/r − 1/a)).
@@ -144,7 +198,7 @@ v = √(GM(2/r − 1/a)).
 * Drift off the station and you fall home through re-entry.
 * Operators: `/theoreticalsciences station status|modules <n>|build`.
 
-### The Jet Stream and the Bussard Ramscoop
+#### The Jet Stream and the Bussard Ramscoop
 
 **The Jet Stream** (the Accretion Frontier, above Y 200)
 * The air above the islands now streams: a steady wind from the west pushes whoever is off the ground towards the east,
@@ -164,7 +218,7 @@ v = √(GM(2/r − 1/a)).
 * Makes **Molecular Cloud** in bulk, at 40% of the Interstellar Scoop's cost per bucket, and, with a strong flow, a
   trickle of **Deuterium** (44% of the mass spectrometry route).
 
-### The Living Planet: the oceans
+#### The Living Planet: the oceans
 
 **Research: Oceanography** (needs Hydrology and the Subsurface Ocean). Puzzle: hydrostatic pressure, p = ρgh.
 **Research: Ocean Waves** (needs Oceanography and Fluid Dynamics). Puzzle: deep-water wave power, P = ρg²H²T/64π.
@@ -189,7 +243,7 @@ v = √(GM(2/r − 1/a)).
   swell's power, the capture width ratio and the stroke. Too wide a float slams on every crest (damage); too little
   damping swings it into its end stops (wear).
 
-### The Living Planet: air, fire and ice
+#### The Living Planet: air, fire and ice
 
 **Research: Meteorology** (Climatology, Fluid Dynamics; puzzle: the Coriolis parameter, f = 2Ω sin φ),
 **Volcanology** (Mantle Geodynamics, Plate Tectonics; puzzle: Arrhenius viscosity, η = A·e^(E/RT)) and
@@ -216,7 +270,7 @@ console sets rotation speed, weight on bit and drill fluid temperature; the core
 leaving basalt and venting **Sulfur Dioxide** (for the contact process). The console sets the water flow, turbine
 pressure and condenser temperature; efficiency follows the Carnot limit between them.
 
-### The Wind Tunnel, rebuilt
+#### The Wind Tunnel, rebuilt
 
 * The Wind Tunnel is now a closed-circuit (Göttingen-type) tunnel, 21 × 7 × 33: two legs joined at both ends, with
   **Turning Vanes** (new block) in all four corners, the honeycomb straightener, the glass test section and the fan in
@@ -225,10 +279,10 @@ pressure and condenser temperature; efficiency follows the Carnot limit between 
   it apart and gives every block back; rebuild it to the new pattern (JEI and the Codex show it).
 * No recipe changed.
 
-## 1.3.0 — Fluids and Flight
+### Part one: Fluids and Flight
 
-The first slice of the planned Fluids and Flight branch: ordinary fluid flow and aerodynamics, which the mod had
-skipped on the way to magnetohydrodynamics. Rocketry, orbital mechanics and the Orbital Station come later.
+The first slice of the Fluids and Flight branch: ordinary fluid flow and aerodynamics, which the mod had skipped on the
+way to magnetohydrodynamics. Rocketry, orbital mechanics and the Orbital Station follow in part two.
 
 **Research** (beside Hydrology and Climatology)
 * **Fluid Dynamics**: the Reynolds number, and when a flow turns turbulent. Puzzle: R = ρvL/μ.

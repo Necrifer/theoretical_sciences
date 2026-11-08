@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 /**
- * 1.4.0: the Overworld's two new ruins, both rare and only in newly generated chunks. Like the 1.0 ruins they are built
+ * 1.3.0: the Overworld's two new ruins, both rare and only in newly generated chunks. Like the 1.0 ruins they are built
  * from the mod's own blocks and keep a Containment Cache of the mod's own loot.
  */
 public final class DeepTimeFeatures {

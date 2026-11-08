@@ -48,8 +48,8 @@ public final class DeathAnim {
             case "vacuum_drifter" -> Style.SINK;
             case "plume_elemental" -> Style.COLLAPSE;
             case "geodynamo_wraith", "binary_serpent" -> Style.SPIN_SINK;
-            case "karman_wraith" -> Style.DISPERSE;                          // 1.4.0: an eddy, spreading out
-            case "hadal_anglerfish" -> Style.SINK;                          // 1.4.0
+            case "karman_wraith" -> Style.DISPERSE;                          // 1.3.0: an eddy, spreading out
+            case "hadal_anglerfish" -> Style.SINK;                          // 1.3.0
             case "siphonophore" -> Style.DISPERSE;
             case "storm_elemental" -> Style.DISPERSE;
             case "pulsar_wisp" -> Style.SPIN_DOWN;

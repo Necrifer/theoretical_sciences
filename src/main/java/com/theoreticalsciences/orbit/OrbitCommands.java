@@ -8,7 +8,7 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 
 /**
- * 1.4.0: {@code /theoreticalsciences station status|modules <n>|build} (operators): look at the Orbital Station, set
+ * 1.3.0: {@code /theoreticalsciences station status|modules <n>|build} (operators): look at the Orbital Station, set
  * how many modules are in orbit (a pack can start a world with the station done, or hold it back), or put it together now.
  */
 public final class OrbitCommands {

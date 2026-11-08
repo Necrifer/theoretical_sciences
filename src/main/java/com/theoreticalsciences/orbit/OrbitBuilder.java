@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
 /**
- * 1.4.0: puts the Orbital Station together the first time a crew arrives (it is one object, not terrain).
+ * 1.3.0: puts the Orbital Station together the first time a crew arrives (it is one object, not terrain).
  * <ul>
  *   <li>A pressurised hub, 15 blocks square and 9 high, of Station Hull with leaded-glass windows and a glass cupola
  *   looking up at the stars; Cherenkov lamps in the ceiling.</li>

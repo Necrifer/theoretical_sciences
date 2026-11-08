@@ -6,7 +6,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.saveddata.SavedData;
 
 /**
- * 1.4.0: the world's one Orbital Station, kept with the Overworld's data: how many Station Modules have been flown up
+ * 1.3.0: the world's one Orbital Station, kept with the Overworld's data: how many Station Modules have been flown up
  * (by any player's Rocket Assembly) and whether the station has been put together in orbit yet.
  */
 public final class OrbitData extends SavedData {

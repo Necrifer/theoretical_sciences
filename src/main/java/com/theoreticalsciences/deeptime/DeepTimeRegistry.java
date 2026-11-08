@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 1.4.0 Deep Time: the revived creatures (wild only: they never spawn by themselves, only from a Revival Vat's
+ * 1.3.0 Deep Time: the revived creatures (wild only: they never spawn by themselves, only from a Revival Vat's
  * capsule), their capsules, and the Overworld's dig sites and greenhouse ruins.
  */
 public final class DeepTimeRegistry {

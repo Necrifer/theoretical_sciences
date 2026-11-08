@@ -149,8 +149,8 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.CRACKING_TOWER, "reaction_temperature", Drift.WALK, 0.8F, 2, 4, Hazard.CHEMICAL, 6);
         p(MachineType.NMR_SPECTROMETER, "field_strength", Drift.WALK, 0.6F, 2, 2, Hazard.MAGNETIC, 5);
         p(MachineType.WIND_TUNNEL, "flow_speed", Drift.OSCILLATE, 0.6F, 2, 4, Hazard.THERMAL, 2);   // 1.3.0
-        p(MachineType.ROCKET_ASSEMBLY, "mixture_ratio", Drift.WALK, 0.8F, 1, 2, Hazard.THERMAL, 6);   // 1.4.0
-        p(MachineType.BUSSARD_RAMSCOOP, "field_strength", Drift.OSCILLATE, 0.7F, 2, 4, Hazard.MAGNETIC, 4);   // 1.4.0
+        p(MachineType.ROCKET_ASSEMBLY, "mixture_ratio", Drift.WALK, 0.8F, 1, 2, Hazard.THERMAL, 6);   // 1.3.0
+        p(MachineType.BUSSARD_RAMSCOOP, "field_strength", Drift.OSCILLATE, 0.7F, 2, 4, Hazard.MAGNETIC, 4);   // 1.3.0
         p(MachineType.ICE_CORE_DRILL, "rotation_speed", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 2);
         p(MachineType.STORM_CHAMBER, "charge_separation", Drift.JUMP, 0.8F, 2, 4, Hazard.MAGNETIC, 4);
         p(MachineType.HYDROPONIC_TOWER, "light_intensity", Drift.OSCILLATE, 0.4F, 2, 4, Hazard.CHEMICAL, 1);

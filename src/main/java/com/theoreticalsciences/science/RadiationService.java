@@ -103,8 +103,8 @@ public final class RadiationService {
         return switch (d.getPath()) {
             case "quantum_foam", "platonic_realm" -> 0;                    // nothing there decays
             case "black_hole_interior" -> 40;
-            case "orbital_station" -> 20;                                // 1.4.0: about what the ISS crew receive, above the atmosphere
-            case "hadal_trench" -> 0.02;                                 // 1.4.0: eleven kilometres of water stop the cosmic rays
+            case "orbital_station" -> 20;                                // 1.3.0: about what the ISS crew receive, above the atmosphere
+            case "hadal_trench" -> 0.02;                                 // 1.3.0: eleven kilometres of water stop the cosmic rays
             case "dyson_sphere", "stellar_core" -> 25;
             default -> 0.5;
         };

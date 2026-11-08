@@ -42,7 +42,7 @@ public final class VoidFall {
             Map.entry(QHDimensions.TITAN, Level.OVERWORLD),
             Map.entry(QHDimensions.INNER, Level.OVERWORLD),
             Map.entry(QHDimensions.TITAN_OCEAN, QHDimensions.TITAN),
-            Map.entry(QHDimensions.ORBITAL_STATION, Level.OVERWORLD),     // 1.4.0: drift off the station and re-enter
+            Map.entry(QHDimensions.ORBITAL_STATION, Level.OVERWORLD),     // 1.3.0: drift off the station and re-enter
             Map.entry(QHDimensions.HADAL_TRENCH, Level.OVERWORLD));
     private static final Map<UUID, Vec3> LAST_GROUND = com.theoreticalsciences.world.SessionMaps.perPlayer(new HashMap<>());
 
