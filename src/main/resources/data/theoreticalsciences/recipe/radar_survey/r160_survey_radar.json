@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:radar_survey",
+  "item_inputs": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:ferrite_magnet",
+      "count": 1
+    },
+    {
+      "item": "minecraft:compass",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:survey_radar",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:ground_penetrating_radar",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "er": 9
+    },
+    "windows": [
+      {
+        "q": "res",
+        "min": 0,
+        "max": 0.1
+      },
+      {
+        "q": "reach",
+        "min": 8,
+        "max": 100
+      }
+    ]
+  }
+}

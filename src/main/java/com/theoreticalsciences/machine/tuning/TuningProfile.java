@@ -160,6 +160,8 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.STELLAR_ENGINE, "mirror_attitude", Drift.JUMP, 0.8F, 2, 4, Hazard.THERMAL, 6);
         p(MachineType.QUANTUM_COMPUTER, "coherence", Drift.JUMP, 0.6F, 2, 4, Hazard.MAGNETIC, 3);       // 1.5.0
         p(MachineType.CT_SCANNER, "gantry_alignment", Drift.OSCILLATE, 0.4F, 1, 3, Hazard.THERMAL, 1);
+        p(MachineType.BLOOMERY_SHAFT, "blast_draught", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);           // 1.6.0
+        p(MachineType.PHOTOGRAMMETRY_GANTRY, "camera_baseline", Drift.OSCILLATE, 0.3F, 1, 3, Hazard.THERMAL, 1);
     }
 
     /** The profiles with a datapack's changes applied (data/<ns>/ts_machines), rebuilt when that data changes. */

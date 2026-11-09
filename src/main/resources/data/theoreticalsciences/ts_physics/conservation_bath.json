@@ -1,0 +1,71 @@
+{
+  "params": [
+    {
+      "id": "cN",
+      "unit": "%",
+      "min": 0,
+      "max": 2,
+      "step": 0.05,
+      "default": 0.5
+    },
+    {
+      "id": "Tb",
+      "unit": "°C",
+      "min": 10,
+      "max": 70,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "ts",
+      "unit": "days",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "C0": 3000,
+    "Lt": 8
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Df",
+      "unit": "mm²/day",
+      "expr": "0.3*(1 + cN)*exp((Tb - 20)/30)",
+      "formula": "chloride diffusivity: alkali and warmth open the rust"
+    },
+    {
+      "id": "C",
+      "unit": "ppm",
+      "expr": "C0*exp(-9.8696*0.3*(1 + cN)*exp((Tb - 20)/30)*ts/Lt^2)*(1 + 0.02*d)",
+      "formula": "C = C₀·e^(−π²Dt/L²)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "etch",
+      "kind": "wear",
+      "expr": "1.6 - cN",
+      "formula": "under 1.6% alkali, or it etches the metal"
+    },
+    {
+      "id": "boil",
+      "kind": "wear",
+      "expr": "60 - Tb",
+      "formula": "under 60 °C, or the bath boils off the coatings"
+    }
+  ],
+  "rate": "clamp(10/ts, 0.2, 1.5)",
+  "rate_formula": "shorter soaks are quicker",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

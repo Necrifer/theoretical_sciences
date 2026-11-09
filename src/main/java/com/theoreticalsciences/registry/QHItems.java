@@ -76,6 +76,7 @@ public final class QHItems {
                 case "synaptic_lattice" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::synapticLattice, p);   // 1.4.0
                 case "wear_coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::wearCoating, p);
                 case "visor" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.mind.LowLightVisorItem::new, p);
+                case "survey_radar" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.archaeology.SurveyRadarItem::new, p.durability(256));   // 1.6.0
                 case "faraday_mesh" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::faradayMesh, p);   // 1.5.0
                 case "vestibular" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.medicine.MedicineItem::vestibular, p);
                 case "anti_inflammatory" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.medicine.MedicineItem::antiInflammatory, p);

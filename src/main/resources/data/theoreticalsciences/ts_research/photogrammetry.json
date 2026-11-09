@@ -1,0 +1,58 @@
+{
+  "title": "Photogrammetry",
+  "x": 24,
+  "y": 30,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:cartography",
+    "theoreticalsciences:luminescence_dating",
+    "theoreticalsciences:dendrochronology",
+    "theoreticalsciences:isotope_provenance"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dated_potsherd",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:tree_ring_chronology",
+      "count": 1
+    }
+  ],
+  "time": 360,
+  "description": "Two photographs of a trench taken a baseline apart see each point at slightly different places: the disparity. From it, the focal length and the baseline, every point's depth follows, and hundreds of overlapping photographs rebuild the whole excavation in three dimensions, layer by layer, find by find. Unlocks the Photogrammetry Gantry, a multiblock: Excavation Records.",
+  "icon": "theoreticalsciences:photogrammetry_gantry",
+  "puzzle": {
+    "goal": "A stereo pair with focal length f and baseline B sees a point with disparity d. Write its distance Z from the cameras.",
+    "name": "Depth from disparity",
+    "lhs": "Z",
+    "form": "f * B / d",
+    "expr": "f * B / d",
+    "ask": "Find Z in metres for f = 0.05 m, B = @{B} m and d = 0.005 m.",
+    "vars": {
+      "Z": "distance",
+      "f": "focal length",
+      "B": "baseline",
+      "d": "disparity on the sensor"
+    },
+    "given": {
+      "f": 0.05,
+      "B": 1.0,
+      "d": 0.005
+    },
+    "unit": "m",
+    "method": "Similar triangles: the baseline over the distance equals the disparity over the focal length.",
+    "distractors": [
+      "+",
+      "*",
+      "sqrt"
+    ],
+    "vary": {
+      "B": [
+        0.2,
+        2.0,
+        0.1
+      ]
+    }
+  }
+}

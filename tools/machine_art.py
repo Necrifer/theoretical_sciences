@@ -99,14 +99,14 @@ FAMILY_WORDS = [
              'time_dilation micro_black_hole'),
     ('instrument', 'spectrograph seismograph atomic_clock galton reflecting_telescope radio_telescope x_ray optical_workshop '
                    'laser_interferometer pound_rebka brownian burst_observatory heliograph dating_spectrometer tribometer '
-                   'neutron_interferometer particle_spectrometer mass_spectrometer infrared nmr lensing'),
+                   'neutron_interferometer particle_spectrometer mass_spectrometer infrared nmr lensing radar_survey luminescence isotope_provenancer photogrammetry'),
     ('space', 'rocket bussard space_elevator oneill stellar_engine interstellar_scoop dyson_array wind_tunnel load_test '
               'composite_layup warp_field'),
-    ('earth', 'tectonic deep_drilling aquifer climate wave_energy geothermal ice_core storm_chamber lake_pump cloud_siphon '
+    ('earth', 'bloomery tectonic deep_drilling aquifer climate wave_energy geothermal ice_core storm_chamber lake_pump cloud_siphon '
               'solar_furnace'),
     ('math', 'peano analytic_continuator proof_assistant tensor ordinal monte_carlo markov eratosthenes geometers symmetry '
              'topology_kiln integrator statistics cipher optimiser graph_loom strategy pattern_basin bayesian knot_loom '
-             'automaton certificate chaos_controller page_curve spin_network cantor axiom_distiller'),
+             'automaton certificate chaos_controller page_curve spin_network cantor axiom_distiller tree_ring'),
     ('bio', 'bioreactor gene_sequencer evolution abiogenesis enzyme patch_clamp fermenter photobioreactor ribosome folding '
             'phage mycelium antibody perfusion regeneration_tank circadian dosing ecosphere selection gene_circuit '
             'mirror_culture clonal hydroponic phytotron breeding ancient_dna revival neural_culture synapse psychophysics '
@@ -114,7 +114,7 @@ FAMILY_WORDS = [
     ('chem', 'chemical_reactor electrolytic haber ostwald contact_process air_separation titration buffer brine reverse_osmosis '
              'bomb_calorimeter heat_pack fuel_cell electroplating chromatography cracking polymeriser synthesis_bench '
              'framework coordination chelation phase_diagram doping sintering photochemical asymmetric oscillator alkahest '
-             'catalyst quasicrystal autoclave regeneration_kiln crystal_growth lattice_growth corrosion gas_centrifuge '
+             'conservation catalyst quasicrystal autoclave regeneration_kiln crystal_growth lattice_growth corrosion gas_centrifuge '
              'molten_salt'),
     ('heavy', 'collider synchrotron cyclotron tokamak forge press rig drill accelerator magnet impact laser_cutter '
               'decelerator reactor mhd tesla_coil nuclide analog_black_hole resonance_chamber pulsed'),
@@ -473,7 +473,10 @@ READOUTS = {f.__name__[2:]: f for f in (r_osc, r_spectrum, r_radar, r_orbit, r_l
                                         r_starfield)}
 
 READOUT_WORDS = [
-    ('spectrum', 'spectro spectrograph infrared nmr mass_spectro dating x_ray chromatography'),
+    ('spectrum', 'spectro spectrograph infrared nmr mass_spectro dating x_ray chromatography isotope'),
+    ('contour', 'tree_ring photogrammetry'),
+    ('radar', 'radar_survey'),
+    ('core', 'luminescence'),
     ('helix', 'gene dna ribosome sequencer clonal antibody gene_circuit selection evolution'),
     ('cells', 'culture bioreactor fermenter phage mycelium regeneration perfusion clonal mirror_culture abiogenesis breeding revival'),
     ('spikes', 'neural synapse connectome patch_clamp psychophysics'),
@@ -489,12 +492,12 @@ READOUT_WORDS = [
     ('chalk', 'peano proof analytic integrator geometers eratosthenes ordinal cantor axiom tensor symmetry optimiser certificate'),
     ('graph', 'graph strategy automaton knot network spin_network page_curve concept'),
     ('glyphs', 'cipher decipherment omnilex research compiler'),
-    ('heat', 'furnace kiln calorimeter heat geothermal solar climate storm thermoelectric bomb'),
+    ('heat', 'bloomery furnace kiln calorimeter heat geothermal solar climate storm thermoelectric bomb'),
     ('radar', 'seismograph radio burst scoop siphon aquifer ice_core drilling'),
     ('field', 'magnet induction mhd tesla wind_tunnel field'),
     ('plasma', 'plasma fusion stellar transcendent forge'),
     ('starfield', 'wormhole multiverse warp horizon dark_energy entropy vacuum rift'),
-    ('gauge', 'press rig tribometer corrosion load_test pump tank'),
+    ('gauge', 'press rig tribometer corrosion load_test pump tank conservation'),
 ]
 
 

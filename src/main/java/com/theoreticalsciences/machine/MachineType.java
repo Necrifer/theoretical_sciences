@@ -276,7 +276,15 @@ public enum MachineType {
     CERTIFICATE_VERIFIER    ("certificate_check",    3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x8080F0),
     DOSE_RESPONSE_ASSAY     ("dose_response",        3, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF0A0A0),
     QUANTUM_COMPUTER        ("quantum_search",       3, 1, 1, 0, false, "quantum_computer",        32_000_000,   800_000, Effect.NONE,        0x80E0FF),
-    CT_SCANNER              ("tomography",           2, 0, 1, 0, false, "ct_scanner",               8_000_000,   200_000, Effect.NONE,        0xE0E0F0);
+    CT_SCANNER              ("tomography",           2, 0, 1, 0, false, "ct_scanner",               8_000_000,   200_000, Effect.NONE,        0xE0E0F0),
+    // 1.6.0: Archaeology
+    RADAR_SURVEY_BENCH      ("radar_survey",         3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x70C0A0),
+    LUMINESCENCE_READER     ("luminescence_dating",  2, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x60A0FF),
+    TREE_RING_CORRELATOR    ("cross_dating",         2, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC09060),
+    CONSERVATION_BATH       ("conservation",         2, 0, 2, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x60C0C0),
+    ISOTOPE_PROVENANCER     ("provenancing",         2, 0, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0xD080F0),
+    BLOOMERY_SHAFT          ("bloomery_smelting",    3, 0, 1, 0, false, "bloomery_shaft",           8_000_000,   200_000, Effect.NONE,        0xFF7030),
+    PHOTOGRAMMETRY_GANTRY   ("photogrammetry",       4, 0, 1, 0, false, "photogrammetry_gantry",   16_000_000,   400_000, Effect.NONE,        0xE0D0A0);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
@@ -382,6 +390,8 @@ public enum MachineType {
                 || this == LOAD_TEST_RIG || this == COMPOSITE_LAYUP_PRESS || this == TRIBOMETER || this == CORROSION_CELL
                 || this == RESONANCE_CHAMBER || this == HELIOGRAPH || this == CHAOS_CONTROLLER || this == KNOT_LOOM            // 1.5.0
                 || this == AUTOMATON_LATTICE || this == CERTIFICATE_VERIFIER || this == DOSE_RESPONSE_ASSAY
+                || this == RADAR_SURVEY_BENCH || this == LUMINESCENCE_READER || this == TREE_RING_CORRELATOR           // 1.6.0
+                || this == CONSERVATION_BATH || this == ISOTOPE_PROVENANCER
                 || biology();
     }
 

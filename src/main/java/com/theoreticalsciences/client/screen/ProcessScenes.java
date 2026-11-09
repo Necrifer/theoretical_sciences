@@ -154,6 +154,14 @@ final class ProcessScenes {
         e("graph_loom", "graph", V.LOOM, C.GRAPH, C.NONE, 3);
         e("strategy_table", "game tree", V.BENCH, C.GRAPH, C.NONE, 4);
         e("pattern_basin", "turing pattern", V.PLATE, C.TILES, C.NONE, 2);
+        // 1.6.0: archaeology
+        e("radar_survey_bench", "radar echoes", V.SCOPE, C.WAVES, C.PEAKS, 11);
+        e("luminescence_reader", "glow curve", V.CHAMBER, C.GLOW, C.CURVE, 2);
+        e("tree_ring_correlator", "cross-dating", V.BENCH, C.ORBITS, C.CURVE, 3);
+        e("conservation_bath", "desalination", V.TANK, C.FLOW, C.CURVE, 1);
+        e("isotope_provenancer", "isotope ratios", V.PIPE, C.BEAM, C.BARS, 1);
+        e("bloomery_shaft", "bloomery", V.KILN, C.FLAME, C.GLOW, 4);
+        e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // biology
         e("bioreactor", "bioreactor", V.TANK, C.CELLS, C.BUBBLES, 0);
         e("gene_sequencer", "sequencing", V.SCOPE, C.HELIX, C.PEAKS, 0);

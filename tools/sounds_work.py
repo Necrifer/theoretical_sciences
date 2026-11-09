@@ -215,6 +215,8 @@ PLASMA_WORDS = ('tokamak', 'synchrotron', 'cyclotron', 'collider', 'plasma', 'fo
 
 
 def voice_for(m):
+    if 'bloomery' in m['id']:
+        return 'heavy'                                            # bellows thumping under the roar
     if m['gen']:
         return 'turbine'
     if any(w in m['id'] for w in PLASMA_WORDS):

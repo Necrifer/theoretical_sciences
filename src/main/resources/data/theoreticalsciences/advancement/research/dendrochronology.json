@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:tree_ring_correlator"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.dendrochronology"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.dendrochronology.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/statistics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:load_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bloomery_steel_ingot",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rated_i_beam",
+      "count": 4
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:archaeometallurgy",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Pk": 500,
+      "Eg": 210
+    },
+    "windows": [
+      {
+        "q": "SF",
+        "min": 2.0,
+        "max": 4.0
+      }
+    ]
+  }
+}

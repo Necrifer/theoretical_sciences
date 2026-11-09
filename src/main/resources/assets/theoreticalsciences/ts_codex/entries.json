@@ -56562,5 +56562,326 @@
     "text": "$(thing)Equations$()$(br)Sampling = N_views/(π/2·N_pixels)$(br)Quality = sampling × (1 − e^(−dose/10))$(br)Resolution = 500/N_pixels mm"
    }
   ]
+ },
+ "chemistry/buried_tells": {
+  "title": "Buried Tells",
+  "icon": "theoreticalsciences:suspicious_tell_soil",
+  "category": "chemistry",
+  "research": "ground_penetrating_radar",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A $(thing)Buried Tell$() is a low mound of soil in the plains, savannas, deserts and badlands of the Overworld: a town rebuilt on its own ruins for thousands of years. Grey $(thing)ash layers$() mark the nights its towns burnt, and the stubs of $(thing)mud-brick walls$() stand in every layer. A trial trench cuts into one flank."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:suspicious_tell_soil",
+     "theoreticalsciences:suspicious_ash_layer",
+     "theoreticalsciences:survey_radar"
+    ],
+    "text": "Brush $(item)Suspicious Tell Soil$() for potsherds, corroded artefacts and flints, and $(item)Suspicious Ash$() for charred beams and slag. Dig them instead and the find is lost. Most lie hidden in the mound: the $(item)Survey Radar$() shows where.",
+    "title": "The finds"
+   }
+  ]
+ },
+ "chemistry/ground_penetrating_radar": {
+  "title": "Ground-Penetrating Radar",
+  "icon": "theoreticalsciences:survey_radar",
+  "category": "chemistry",
+  "research": "ground_penetrating_radar",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:radar_survey_bench",
+     "theoreticalsciences:survey_radar"
+    ],
+    "text": "d = c·t/(2√εr). The $(thing)Radar Survey Bench$() tunes a $(item)Survey Radar$(): use it and every buried find within 16 blocks glows where its echo came from, the nearest reported by distance, direction and depth.",
+    "title": "Radar Survey Bench"
+   }
+  ]
+ },
+ "chemistry/luminescence_dating": {
+  "title": "Luminescence Dating",
+  "icon": "theoreticalsciences:dated_potsherd",
+  "category": "chemistry",
+  "research": "luminescence_dating",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:luminescence_reader",
+     "theoreticalsciences:dated_potsherd"
+    ],
+    "text": "A = De/Ḋ. The $(thing)Luminescence Reader$() dates $(item)Ancient Potsherds$() and $(item)Burnt Flint$() into $(item)Dated Potsherds$().",
+    "title": "Luminescence Reader"
+   }
+  ]
+ },
+ "chemistry/dendrochronology": {
+  "title": "Dendrochronology",
+  "icon": "theoreticalsciences:tree_ring_chronology",
+  "category": "chemistry",
+  "research": "dendrochronology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:tree_ring_correlator",
+     "theoreticalsciences:tree_ring_chronology"
+    ],
+    "text": "t = r·√((n − 2)/(1 − r²)). The $(thing)Tree-Ring Correlator$() cross-dates $(item)Charred Beams$() into a $(item)Tree-Ring Chronology$().",
+    "title": "Tree-Ring Correlator"
+   }
+  ]
+ },
+ "chemistry/conservation_science": {
+  "title": "Conservation Science",
+  "icon": "theoreticalsciences:stabilised_artefact",
+  "category": "chemistry",
+  "research": "conservation_science",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:conservation_bath",
+     "theoreticalsciences:stabilised_artefact"
+    ],
+    "text": "C = C₀·e^(−π²Dt/L²). The $(thing)Conservation Bath$() draws the chloride out of a $(item)Corroded Artefact$(): a $(item)Stabilised Artefact$() and some rust flakes.",
+    "title": "Conservation Bath"
+   }
+  ]
+ },
+ "chemistry/isotope_provenance": {
+  "title": "Isotope Provenance",
+  "icon": "theoreticalsciences:provenanced_artefact",
+  "category": "chemistry",
+  "research": "isotope_provenance",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:isotope_provenancer",
+     "theoreticalsciences:provenanced_artefact"
+    ],
+    "text": "f = (R − Rb)/(Ra − Rb). The $(thing)Isotope Provenancer$() reads where a $(item)Stabilised Artefact$()'s metal was mined: a $(item)Provenanced Artefact$().",
+    "title": "Isotope Provenancer"
+   }
+  ]
+ },
+ "chemistry/archaeometallurgy": {
+  "title": "Archaeometallurgy",
+  "icon": "theoreticalsciences:bloomery_steel_ingot",
+  "category": "chemistry",
+  "research": "archaeometallurgy",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bloomery_shaft",
+     "theoreticalsciences:bloomery_steel_ingot"
+    ],
+    "text": "x = 2√(Dt). The $(thing)Bloomery Shaft$() is 452 blocks: a tapering clay shaft, its bellows pumping air through six tuyeres. From $(item)Slag Cakes$(), raw iron and charcoal it makes $(item)Bloomery Steel$(), which the Load Test Rig rolls into I-beams more cheaply than iron.",
+    "title": "Bloomery Shaft"
+   },
+   {
+    "type": "multiblock",
+    "name": "Bloomery Shaft",
+    "text": "Interface Ports either side of the tapping arch.",
+    "multiblock": "bloomery_shaft"
+   }
+  ]
+ },
+ "chemistry/photogrammetry": {
+  "title": "Photogrammetry",
+  "icon": "theoreticalsciences:excavation_record",
+  "category": "chemistry",
+  "research": "photogrammetry",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:photogrammetry_gantry",
+     "theoreticalsciences:excavation_record"
+    ],
+    "text": "Z = f·B/d. The $(thing)Photogrammetry Gantry$() is 670 blocks: a camera bridge on rails over a stepped trench. It brings the dated, provenanced finds together into an $(item)Excavation Record$(). In the Chrono Loom, two records make Arrow of Time Shards without negentropy cells or imaginary units.",
+    "title": "Photogrammetry Gantry"
+   },
+   {
+    "type": "multiblock",
+    "name": "Photogrammetry Gantry",
+    "text": "Interface Ports in the front face of the platform, under the controller and at the other corner.",
+    "multiblock": "photogrammetry_gantry"
+   }
+  ]
+ },
+ "operation/radar_survey_bench": {
+  "title": "Radar Survey Bench",
+  "icon": "theoreticalsciences:radar_survey_bench",
+  "category": "operation",
+  "research": "ground_penetrating_radar",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A Survey Radar needs to see a pot (a tenth of a metre) at least eight metres down. Higher frequencies see finer, lower ones deeper; more power reaches further."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Antenna frequency, Pulse power.$(br2)$(thing)Disturbance$(): damp: resolution varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 80 W the transmitter overheats (wear).$(br2)$(thing)Rate$(): higher frequencies faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)v = 0.3/√εr m/ns$(br)Resolution = λ/4 = 75/(f√εr) m$(br)Reach = 30·√(P/10)/(1 + f/400) m"
+   }
+  ]
+ },
+ "operation/luminescence_reader": {
+  "title": "Luminescence Reader",
+  "icon": "theoreticalsciences:luminescence_reader",
+  "category": "operation",
+  "research": "luminescence_dating",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Preheat to clear the unstable traps but not the ones that keep time, and light the grains bright enough to read the dose precisely."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Preheat, Stimulation.$(br2)$(thing)Disturbance$(): background: recovery varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 70 mW/cm² bleaches the reference (wear).$(br2)$(thing)Rate$(): brighter faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Recovery = (1 − e^(−(T − 160)/40))·e^(−(T − 260)⁺/30)$(br)Uncertainty = 0.03 + 2/S$(br)Age = De/Ḋ"
+   }
+  ]
+ },
+ "operation/tree_ring_correlator": {
+  "title": "Tree-Ring Correlator",
+  "icon": "theoreticalsciences:tree_ring_correlator",
+  "category": "operation",
+  "research": "dendrochronology",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Slide the beam to the offset where the patterns match, detrend gently, and compare enough rings for t to pass 6."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Overlap, Offset, Detrending.$(br2)$(thing)Disturbance$(): charring: correlation varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): none.$(br2)$(thing)Rate$(): shorter overlaps faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Match = e^(−((lag − L₀)/2)²)$(br)r = ρ·match·(1 − e^(−s/30))·e^(−s/600)$(br)t = r·√((n − 2)/(1 − r²))"
+   }
+  ]
+ },
+ "operation/conservation_bath": {
+  "title": "Conservation Bath",
+  "icon": "theoreticalsciences:conservation_bath",
+  "category": "operation",
+  "research": "conservation_science",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Soak long enough, warm and alkaline enough, to bring the chloride under 100 ppm; but not so hot or strong that the bath attacks the find."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Alkali, Temperature, Soak.$(br2)$(thing)Disturbance$(): old salts: chloride varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 1.6% alkali or 60 °C wears the bath.$(br2)$(thing)Rate$(): shorter soaks faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)D = 0.3·(1 + c)·e^((T − 20)/30) mm²/day$(br)C = C₀·e^(−π²Dt/L²)"
+   }
+  ]
+ },
+ "operation/isotope_provenancer": {
+  "title": "Isotope Provenancer",
+  "icon": "theoreticalsciences:isotope_provenancer",
+  "category": "operation",
+  "research": "isotope_provenance",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Run the plasma near 1.25 kW and count long enough that the two sources lie more than 25 σ apart."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Plasma power, Acquisition.$(br2)$(thing)Disturbance$(): drift: precision varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 1.55 kW erodes the cones (wear).$(br2)$(thing)Rate$(): shorter acquisitions faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)σ = 0.0002·√(60/t)·(1 + 3|P − 1.25|)$(br)f = (R − Rb)/(Ra − Rb)$(br)Separation = (Ra − Rb)/σ"
+   }
+  ]
+ },
+ "operation/bloomery_shaft": {
+  "title": "Bloomery Shaft",
+  "icon": "theoreticalsciences:bloomery_shaft",
+  "category": "operation",
+  "research": "archaeometallurgy",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Hot enough for the carbon to soak in two millimetres or more, never so hot the bloom melts, with charcoal enough for steel."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Furnace heat, Charcoal, Smelt.$(br2)$(thing)Disturbance$(): draught: depth varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 1450 °C the bloom melts (stops); over 2.8 charcoal per ore chokes (wear).$(br2)$(thing)Rate$(): shorter smelts faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)D = 2.3×10⁻⁵·e^(−148 kJ/RT) m²/s$(br)x = 2√(Dt)$(br)Carbon = 0.9·(1 − e^(−x/2))·min(1.2, c/1.5) %"
+   }
+  ]
+ },
+ "operation/photogrammetry_gantry": {
+  "title": "Photogrammetry Gantry",
+  "icon": "theoreticalsciences:photogrammetry_gantry",
+  "category": "operation",
+  "research": "photogrammetry",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Four metres above the trench, choose a lens long enough for 0.3 mm pixels and a baseline wide enough for 2 mm depth, but not so wide the views stop matching."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Baseline, Focal length, Overlap.$(br2)$(thing)Disturbance$(): vibration: precision varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): base to height over 0.8 wears the matcher.$(br2)$(thing)Rate$(): less overlap faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Pixel = 4·Z/f mm$(br)σZ = Z²·σd/(f·B)$(br)B/Z between 0.1 and 0.8"
+   }
+  ]
  }
 }

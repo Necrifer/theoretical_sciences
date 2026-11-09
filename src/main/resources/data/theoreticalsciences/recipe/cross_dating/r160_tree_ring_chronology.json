@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:cross_dating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:charred_beam",
+      "count": 3
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tree_ring_chronology",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:dendrochronology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "L0": 17,
+      "rho": 0.7
+    },
+    "windows": [
+      {
+        "q": "m",
+        "min": 0.9,
+        "max": 1
+      },
+      {
+        "q": "t",
+        "min": 6,
+        "max": 1000
+      }
+    ]
+  }
+}

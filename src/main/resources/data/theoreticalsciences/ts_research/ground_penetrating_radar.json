@@ -1,0 +1,61 @@
+{
+  "title": "Ground-Penetrating Radar",
+  "x": 12,
+  "y": 30,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:remote_sensing",
+    "theoreticalsciences:electrodynamics"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 16
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 16
+    }
+  ],
+  "time": 200,
+  "description": "A radio pulse sent into the ground slows by the square root of the soil's permittivity and echoes back from anything that is not soil: a wall, a hearth, a buried pot. Time the echo and you know how deep it lies. Lower frequencies see deeper; higher ones see finer. Unlocks the Radar Survey Bench and the Survey Radar, which finds buried finds.",
+  "icon": "theoreticalsciences:radar_survey_bench",
+  "puzzle": {
+    "goal": "A radar pulse travels down through soil of relative permittivity εr and back up, taking a two-way time t. Write the depth d of the reflector, if c is the speed of light.",
+    "name": "Echo depth",
+    "lhs": "d",
+    "form": "c * t / ( 2 * sqrt ( εr ) )",
+    "expr": "c * t / ( 2 * sqrt ( er ) )",
+    "ask": "Find d in metres for c = 0.3 m/ns, t = @{t} ns and εr = @{er}.",
+    "vars": {
+      "d": "depth",
+      "c": "speed of light",
+      "t": "two-way travel time",
+      "εr": "relative permittivity of the soil"
+    },
+    "given": {
+      "c": 0.3,
+      "t": 40.0,
+      "er": 9.0
+    },
+    "unit": "m",
+    "method": "In the soil the pulse moves at v = c/√εr; it goes down and back, so the depth is half of v·t.",
+    "distractors": [
+      "*",
+      "4",
+      "+"
+    ],
+    "vary": {
+      "t": [
+        10.0,
+        100.0,
+        5.0
+      ],
+      "er": [
+        4.0,
+        25.0,
+        1.0
+      ]
+    }
+  }
+}

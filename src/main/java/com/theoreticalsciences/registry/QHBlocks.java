@@ -226,6 +226,11 @@ public final class QHBlocks {
                     p.mapColor(MapColor.METAL).sound(SoundType.METAL);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.engineering.SacrificialAnodeBlock::new, p));
                 }
+                case "brushable" -> {           // 1.6.0: brushed like suspicious sand, turning into its base block
+                    p.mapColor(MapColor.DIRT).sound(SoundType.SUSPICIOUS_GRAVEL).pushReaction(net.minecraft.world.level.material.PushReaction.DESTROY);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), pp -> new net.minecraft.world.level.block.BrushableBlock(SIMPLE.get(def.base()).get(),
+                            net.minecraft.sounds.SoundEvents.BRUSH_GRAVEL, net.minecraft.sounds.SoundEvents.BRUSH_GRAVEL_COMPLETED, pp), p));
+                }
                 case "casing" -> {
                     p.mapColor(MapColor.COLOR_BLACK).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), CasingBlock::new, p));

@@ -843,7 +843,20 @@ public final class QHContentList {
         new ItemDef("grover_oracle", "", 16),
         new ItemDef("vestibular_suppressant", "vestibular", 16),
         new ItemDef("anti_inflammatory", "anti_inflammatory", 16),
-        new ItemDef("tomogram", "", 64));
+        new ItemDef("tomogram", "", 64),
+        // 1.6.0: Archaeology
+        new ItemDef("ancient_potsherd", "", 64),
+        new ItemDef("burnt_flint", "", 64),
+        new ItemDef("corroded_artefact", "", 16),
+        new ItemDef("charred_beam", "", 64),
+        new ItemDef("slag_cake", "", 64),
+        new ItemDef("dated_potsherd", "", 64),
+        new ItemDef("tree_ring_chronology", "", 16),
+        new ItemDef("stabilised_artefact", "", 16),
+        new ItemDef("provenanced_artefact", "", 16),
+        new ItemDef("bloomery_steel_ingot", "", 64),
+        new ItemDef("excavation_record", "", 16),
+        new ItemDef("survey_radar", "survey_radar", 1));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1308,6 +1321,18 @@ public final class QHContentList {
         new BlockDef("gantry_ring", "casing", 8, 6.0F, "iron", ""),
         new BlockDef("detector_array", "casing", 10, 5.0F, "iron", ""),
         new BlockDef("scanner_couch", "casing", 0, 4.0F, "iron", ""),
+        // 1.6.0: Archaeology. The Buried Tell's soils (the suspicious ones are brushed like suspicious sand) and the casings
+        new BlockDef("tell_soil", "deco", 0, 0.6F, "none", ""),
+        new BlockDef("ash_layer", "deco", 0, 0.5F, "none", ""),
+        new BlockDef("suspicious_tell_soil", "brushable", 0, 0.25F, "none", "tell_soil"),
+        new BlockDef("suspicious_ash_layer", "brushable", 0, 0.25F, "none", "ash_layer"),
+        new BlockDef("ancient_mud_brick", "deco", 0, 1.5F, "none", ""),
+        new BlockDef("fired_clay_shaft", "casing", 0, 4.0F, "iron", ""),
+        new BlockDef("tuyere_block", "casing", 8, 5.0F, "iron", ""),
+        new BlockDef("bellows_block", "casing", 0, 3.0F, "iron", ""),
+        new BlockDef("survey_gantry_frame", "casing", 0, 5.0F, "iron", ""),
+        new BlockDef("camera_rig", "casing", 6, 4.0F, "iron", ""),
+        new BlockDef("datum_plinth", "casing", 0, 4.0F, "iron", ""),
         new BlockDef("life_support_pump", "casing", 2, 5.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),

@@ -1,0 +1,55 @@
+{
+  "title": "Archaeometallurgy",
+  "x": 22,
+  "y": 30,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:ceramics",
+    "theoreticalsciences:corrosion_science",
+    "theoreticalsciences:conservation_science"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:slag_cake",
+      "count": 2
+    },
+    {
+      "item": "minecraft:charcoal",
+      "count": 16
+    }
+  ],
+  "time": 300,
+  "description": "Before blast furnaces, iron was won in a bloomery: ore and charcoal in a clay shaft, air blown in through a nozzle, the iron reduced to a spongy bloom that never melts, carbon soaking into it from the hot charcoal around it. How deep the carbon goes, and so how hard the steel, is set by diffusion. The slag the smiths left behind says how they did it. Unlocks the Bloomery Shaft, a multiblock: Bloomery Steel.",
+  "icon": "theoreticalsciences:bloomery_shaft",
+  "puzzle": {
+    "goal": "Carbon diffuses into hot iron with diffusivity D. Write the depth x it reaches in a time t.",
+    "name": "Carburising depth",
+    "lhs": "x",
+    "form": "2 * sqrt ( D * t )",
+    "expr": "2 * sqrt ( D * t )",
+    "ask": "Find x in mm for D = 0.0001 mm²/s and t = @{t} s.",
+    "vars": {
+      "x": "depth",
+      "D": "diffusivity of carbon in iron",
+      "t": "time"
+    },
+    "given": {
+      "D": 0.0001,
+      "t": 3600.0
+    },
+    "unit": "mm",
+    "method": "Diffusion spreads as the square root of time: the error function falls to half near x = 2√(Dt).",
+    "distractors": [
+      "*",
+      "/",
+      "exp"
+    ],
+    "vary": {
+      "t": [
+        600.0,
+        36000.0,
+        600.0
+      ]
+    }
+  }
+}

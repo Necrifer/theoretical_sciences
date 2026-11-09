@@ -102,6 +102,8 @@ public final class MachineVoices {
         V.put("stellar_engine", new Voice("turbine", 0.86F));
         V.put("quantum_computer", new Voice("data", 0.97F));
         V.put("ct_scanner", new Voice("cryo", 0.98F));
+        V.put("bloomery_shaft", new Voice("heavy", 1.10F));
+        V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
     }
 
     public static Voice of(String machineId) {

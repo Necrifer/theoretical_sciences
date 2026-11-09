@@ -1,0 +1,70 @@
+{
+  "params": [
+    {
+      "id": "B",
+      "unit": "m",
+      "min": 0.2,
+      "max": 3,
+      "step": 0.05,
+      "default": 0.5
+    },
+    {
+      "id": "fl",
+      "unit": "mm",
+      "min": 20,
+      "max": 200,
+      "step": 1,
+      "default": 35
+    },
+    {
+      "id": "ov",
+      "unit": "",
+      "min": 0.3,
+      "max": 0.9,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "Z0": 4
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "gsd",
+      "unit": "mm",
+      "expr": "Z0*4/fl",
+      "formula": "ground sample distance: what one pixel covers"
+    },
+    {
+      "id": "sz",
+      "unit": "mm",
+      "expr": "(Z0*1000)^2/(fl*B*1000)*0.002*(1 + 0.02*d)",
+      "formula": "depth precision σZ = Z²·σd/(f·B)"
+    },
+    {
+      "id": "bh",
+      "unit": "",
+      "expr": "B/Z0",
+      "formula": "base to height ratio"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "match",
+      "kind": "wear",
+      "expr": "0.8 - B/Z0",
+      "formula": "base to height under 0.8, or the views are too different to match"
+    }
+  ],
+  "rate": "clamp(1.2 - ov, 0.2, 1.5)",
+  "rate_formula": "less overlap, fewer photographs",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

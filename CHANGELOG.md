@@ -1,5 +1,49 @@
 # Changelog
 
+## 1.6.0: Archaeology
+
+Digging up the past with physics, chemistry and mathematics. Seven research entries, a new Overworld site with finds
+you brush out of the ground, a handheld radar, five consoles and two multiblocks. Every concept has its console, its
+real equation and its derivation, and the chain ends in the endgame. (Economics and the social sciences are left out,
+as they do not fit Minecraft.)
+
+### The Buried Tell (new Overworld site)
+* A low mound in plains, savannas, deserts, badlands and meadows: a town rebuilt on its own ruins for thousands of
+  years. Layers of **Tell Soil**, grey **Ash Layers** where its towns burnt, stubs of **Ancient Mud Brick** walls in every
+  layer, a trial trench cut into one flank with survey stakes round it, and the excavators' cache at its foot.
+* **Suspicious Tell Soil** and **Suspicious Ash** are brushed with the game's Brush, like suspicious sand. Tell Soil
+  gives Ancient Potsherds, Corroded Artefacts, Burnt Flint and Charred Beams; Ash gives Charred Beams, Burnt Flint and
+  Slag Cakes. Dig them instead and the find is lost.
+* Tell Soil can also be crafted (eight dirt round a brick), for the Photogrammetry Gantry's platform.
+
+### Research, consoles and multiblocks
+* **Ground-Penetrating Radar**: d = c·t/(2√εr). The **Radar Survey Bench** builds the **Survey Radar**: use it and
+  every buried find within 16 blocks (in tells and in the old dig sites) glows where its echo came from, and the nearest
+  is reported by distance, direction and depth.
+* **Luminescence Dating**: A = De/Ḋ. The **Luminescence Reader** dates potsherds and burnt flint into Dated Potsherds.
+* **Dendrochronology**: t = r·√((n − 2)/(1 − r²)). The **Tree-Ring Correlator** cross-dates Charred Beams into a
+  Tree-Ring Chronology.
+* **Conservation Science**: C = C₀·e^(−π²Dt/L²). The **Conservation Bath** draws the chloride out of Corroded
+  Artefacts: Stabilised Artefacts and rust flakes.
+* **Isotope Provenance**: f = (R − Rb)/(Ra − Rb). The **Isotope Provenancer** reads where a find's metal was mined.
+* **Archaeometallurgy**: x = 2√(Dt). The **Bloomery Shaft** (452 blocks): a tapering clay shaft whose six bellows pump
+  air through glowing tuyeres. Slag Cakes, raw iron and charcoal make **Bloomery Steel**.
+* **Photogrammetry**: Z = f·B/d. The **Photogrammetry Gantry** (670 blocks): a camera bridge running on rails up and
+  down a stepped trench. It brings the dated, conserved and provenanced finds together into an **Excavation Record**.
+
+### New recipes (cheaper routes into later content)
+* Chrono Loom: 2 Excavation Records, 8 Chronon Capacitors, 16 Zeolite Catalysts and 8000 mB Chronon Gas make 2
+  **Arrow of Time Shards** (the old route needs 8 Negentropy Cells and 8 Imaginary Units as well, and twice the zeolite
+  and gas). Stratigraphy is the arrow of time written in the ground.
+* Load Test Rig: 2 Bloomery Steel make 4 **Rated I-Beams** (the iron route takes 6 iron ingots for 4).
+
+### Fixes
+* The **Woolly Mammoth** and **Meganeura** walked backwards: their models were turned the wrong way round. Fixed.
+* Both models are rebuilt with many tones instead of one: the mammoth has a shaggy skirt of hair strands in several
+  shades, a lighter back and hump, a forelock, furred ears, nailed feet, a ringed trunk and ringed tusks; the Meganeura
+  has a yellow face and jaws, gold-striped thorax, spotted abdominal rings, jointed spiny legs, and veined wings tinted
+  amber at the root.
+
 ## 1.5.1: Seen and Heard
 
 An art and sound pass over every machine. No recipes changed.

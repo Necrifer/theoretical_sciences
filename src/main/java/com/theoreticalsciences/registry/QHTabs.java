@@ -39,6 +39,7 @@ public final class QHTabs {
                 com.theoreticalsciences.mind.MindRegistry.TAB.forEach(i -> out.accept(i.get()));
                 com.theoreticalsciences.engineering.EngineeringRegistry.TAB.forEach(i -> out.accept(i.get()));
                 com.theoreticalsciences.math.MathRegistry.TAB.forEach(i -> out.accept(i.get()));
+                com.theoreticalsciences.archaeology.ArchaeologyRegistry.TAB.forEach(i -> out.accept(i.get()));
                 QHFluids.ALL.values().forEach(f -> out.accept(f.bucket.get()));
                 QHEntities.SPAWN_EGGS.forEach(e -> out.accept(e.get()));
             })

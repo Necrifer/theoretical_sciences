@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "id": "Tp",
+      "unit": "°C",
+      "min": 100,
+      "max": 320,
+      "step": 5,
+      "default": 200
+    },
+    {
+      "id": "St",
+      "unit": "mW/cm²",
+      "min": 5,
+      "max": 80,
+      "step": 1,
+      "default": 20
+    }
+  ],
+  "recipe_vars": {
+    "De": 12,
+    "Dr": 3
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Rec",
+      "unit": "",
+      "expr": "(1 - exp(-pos(Tp - 160)/40))*exp(-pos(Tp - 260)/30)*(1 - 0.01*d)",
+      "formula": "signal recovered: preheat empties the shallow traps, too hot empties the deep ones"
+    },
+    {
+      "id": "Unc",
+      "unit": "",
+      "expr": "0.03 + 2/St",
+      "formula": "relative uncertainty of the dose"
+    },
+    {
+      "id": "A",
+      "unit": "ka",
+      "expr": "De/Dr",
+      "formula": "age = De/Ḋ"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "bleach",
+      "kind": "wear",
+      "expr": "70 - St",
+      "formula": "stimulation under 70 mW/cm², or the reader bleaches its own reference"
+    }
+  ],
+  "rate": "clamp(St/40, 0.2, 1.5)",
+  "rate_formula": "brighter stimulation reads faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}
