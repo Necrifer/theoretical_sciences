@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:acoustic_resonance",
+  "item_inputs": [
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:resonant_shard",
+      "count": 1
+    }
+  ],
+  "energy": 64,
+  "duration": 200,
+  "research": "theoreticalsciences:acoustic_resonance",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "vs": 5.4
+    },
+    "windows": [
+      {
+        "q": "R",
+        "min": 0.98,
+        "max": 1.0
+      },
+      {
+        "q": "sh",
+        "min": 20,
+        "max": 100
+      }
+    ]
+  }
+}

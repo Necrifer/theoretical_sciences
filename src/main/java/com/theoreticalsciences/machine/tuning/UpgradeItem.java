@@ -70,6 +70,11 @@ public class UpgradeItem extends LoreItem {
         return new UpgradeItem(p, "synaptic_lattice");
     }
 
+    /** 1.5.0: a Faraday cage of copper mesh round a machine's controls: geomagnetic storms no longer slow it. */
+    public static UpgradeItem faradayMesh(Properties p) {
+        return new UpgradeItem(p, "faraday_mesh");
+    }
+
     /** 1.4.0: a diamond-like carbon coating on every sliding part: catalysts wear half as fast. */
     public static UpgradeItem wearCoating(Properties p) {
         return new UpgradeItem(p, "wear_coating");

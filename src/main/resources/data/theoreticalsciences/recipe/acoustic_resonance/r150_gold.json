@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:acoustic_resonance",
+  "item_inputs": [
+    {
+      "item": "minecraft:raw_gold",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:gold_nugget",
+      "count": 14
+    }
+  ],
+  "energy": 64,
+  "duration": 120,
+  "research": "theoreticalsciences:acoustic_resonance",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "vs": 3.2
+    },
+    "windows": [
+      {
+        "q": "R",
+        "min": 0.9,
+        "max": 1.0
+      },
+      {
+        "q": "sh",
+        "min": 100,
+        "max": 800
+      }
+    ]
+  }
+}

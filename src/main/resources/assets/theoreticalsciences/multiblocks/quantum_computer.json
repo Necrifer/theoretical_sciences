@@ -1,0 +1,244 @@
+{
+  "controller_block": "theoreticalsciences:quantum_computer",
+  "controller": "C",
+  "layers": [
+    [
+      "           ",
+      "   SPPPS   ",
+      "  SSSSSSS  ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      "  SSSSSSS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SSCSS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S       S ",
+      " S       S ",
+      " S       S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S   Q   S ",
+      " S  QQQ  S ",
+      " S   Q   S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S  QQQ  S ",
+      " S  QQQ  S ",
+      " S  QQQ  S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S  QQQ  S ",
+      " S  QQQ  S ",
+      " S  QQQ  S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S   M   S ",
+      " S  MMM  S ",
+      " S   M   S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S       S ",
+      " S   M   S ",
+      " S       S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S  MMM  S ",
+      " S  MMM  S ",
+      " S  MMM  S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S       S ",
+      " S   M   S ",
+      " S       S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS MMM SS ",
+      " S MMMMM S ",
+      " S MMMMM S ",
+      " S MMMMM S ",
+      " SS MMM SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S       S ",
+      " S   M   S ",
+      " S       S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SGGGS   ",
+      "  SS M SS  ",
+      " SSMMMMMSS ",
+      " S MMMMM S ",
+      " SMMMMMMMS ",
+      " S MMMMM S ",
+      " SSMMMMMSS ",
+      "  SS M SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SSSSS   ",
+      "  SS   SS  ",
+      " SS     SS ",
+      " S       S ",
+      " S   M   S ",
+      " S       S ",
+      " SS     SS ",
+      "  SS   SS  ",
+      "   SSSSS   ",
+      "           "
+    ],
+    [
+      "           ",
+      "   SSSSS   ",
+      "  SSSSSSS  ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      " SSSSSSSSS ",
+      "  SSSSSSS  ",
+      "   SSSSS   ",
+      "           "
+    ]
+  ],
+  "key": {
+    "S": [
+      "theoreticalsciences:cryostat_shell"
+    ],
+    "P": [
+      "theoreticalsciences:cryostat_shell",
+      "theoreticalsciences:interface_port"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ],
+    "M": [
+      "theoreticalsciences:dilution_stage"
+    ],
+    "Q": [
+      "theoreticalsciences:qubit_chandelier"
+    ]
+  },
+  "tiers": {},
+  "effect_center": [
+    5,
+    3,
+    5
+  ],
+  "effect_scale": 2.0,
+  "moving": [
+    {
+      "id": "qubits",
+      "chars": "Q",
+      "split": "none",
+      "pivot": "centre",
+      "ramp_seconds": 3,
+      "motion": [
+        {
+          "type": "spin",
+          "axis": "up",
+          "deg_per_sec": 12
+        }
+      ]
+    }
+  ],
+  "fx": [
+    {
+      "type": "glow",
+      "chars": "QM",
+      "color": "#80E0FF",
+      "hot": "#FFFFFF"
+    },
+    {
+      "type": "inflow",
+      "radius": 2.5,
+      "color": "#A0F0FF",
+      "waves": 2,
+      "period": 3.0
+    }
+  ]
+}

@@ -1,5 +1,48 @@
 # Changelog
 
+## 1.5.0 — Small Wonders
+
+The smaller candidates of the expansion plan, each a full concept (a console with its real equation, a derivation and
+a material chain that feeds the endgame): nine research entries, seven consoles and two multiblocks, a new world
+event, a new machine upgrade and two medicines.
+
+### Sound and space weather (physics)
+* **Acoustic Resonance**: standing waves, f = n·v/2L. Unlocks the **Resonance Chamber**: raw iron and raw gold shaken
+  apart at their own notes give 14 nuggets each (more than smelting's 9), and amethyst is tuned into **Resonant
+  Shards**.
+* **Space Weather**: the magnetopause stand-off, r = (B₀²/2μ₀ρv²)^(1/6). **New world event: geomagnetic storms.** Every
+  three to seven days a storm strikes the Overworld for five minutes. It changes no block and harms no one: consoles
+  and multiblocks in the Overworld run at 70% while it lasts, aurorae hang in the night sky, and players are told when
+  it starts and ends. Unlocks the **Heliograph**, which makes the **Faraday Mesh**, a new machine upgrade (full speed
+  through storms).
+
+### Patterns and computation (mathematics)
+* **Chaos Theory**: the Lyapunov exponent. Unlocks the **Chaos Controller**, which tames the Lorenz flow into a
+  **Strange Attractor**.
+* **Knot Theory**: the writhe. Unlocks the **Knot Loom**: **Molecular Knots** (trefoils) and **Knotted Polymer**
+  (pentafoils).
+* **Cellular Automata**: neighbours in Life. Unlocks the **Automaton Lattice**: **Von Neumann Constructors**.
+* **Complexity Theory**: the soundness of an interactive proof. Unlocks the **Certificate Verifier**:
+  **Zero-Knowledge Proofs** and **Grover Oracles**.
+* **Quantum Computing**: Grover's speed-up. Unlocks the **Quantum Computer**, a 613-block dilution refrigerator (a
+  cryostat with a chandelier of dilution stages, its qubits turning slowly at the tip). Each Grover Oracle it runs
+  shortens its owner's current study by fifteen minutes; it runs only while you are studying something.
+
+### Medicine (biology)
+* **Pharmacology**: the Hill equation. Unlocks the **Dose-Response Assay**, which makes two medicines with a dosing
+  window: the **Vestibular Suppressant** (cures nausea and Seismic Vertigo) and the **Anti-Inflammatory** (cures
+  Inflammation and weakness). A dose cures, then guards against what it treats for three minutes; a second dose
+  within two minutes is an overdose (slowness and poison).
+* **Medical Imaging**: Beer–Lambert attenuation. Unlocks the **CT Scanner**, a 257-block multiblock whose gantry ring
+  spins round the couch while it scans. It turns fossil fragments and raw amber into **Tomograms**.
+
+### Recipes (all new; each newer route is cheaper than the one it parallels)
+* Automaton Lattice: a Von Neumann Constructor and 3 Nanite Swarms make 4 Quine Replicators (the Nanofabricator needs 6
+  Undecidable Kernels, 6 Nanite Swarms and 8,000 mB of autocatalytic broth). The old recipe is unchanged.
+* Ancient DNA Lab: 2 Dated Bones and a Tomogram make a Mammoth Genome (was 4 Dated Bones); 2 Dated Amber and a
+  Tomogram make a Meganeura Genome (was 4 Dated Amber).
+* Composite Layup Press: a Tether Spool from Knotted Polymer in place of 2 Aramid Fibre.
+
 ## 1.4.0 — Mind and Language, and Engineering of the Large
 
 Two new branches, the fifth and sixth of the expansion plan: the sciences between a neuron and a god-machine, and the

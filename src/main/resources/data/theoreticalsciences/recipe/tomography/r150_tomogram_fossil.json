@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:tomography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fossil_fragment",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:tomogram",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:medical_imaging",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Qi",
+        "min": 0.85,
+        "max": 1
+      },
+      {
+        "q": "res",
+        "min": 0,
+        "max": 0.5
+      }
+    ]
+  }
+}

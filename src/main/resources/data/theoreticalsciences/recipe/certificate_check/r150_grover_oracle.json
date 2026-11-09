@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:certificate_check",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:zero_knowledge_proof",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:qubit_die",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:strange_attractor",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:grover_oracle",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 600,
+  "research": "theoreticalsciences:quantum_computing",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lg",
+        "min": 12,
+        "max": 40
+      }
+    ]
+  }
+}

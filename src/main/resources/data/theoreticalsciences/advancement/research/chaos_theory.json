@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:chaos_controller"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.chaos_theory"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.chaos_theory.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/bifurcations",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

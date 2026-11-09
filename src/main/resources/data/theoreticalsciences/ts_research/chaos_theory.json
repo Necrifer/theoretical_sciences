@@ -1,0 +1,55 @@
+{
+  "title": "Chaos Theory",
+  "x": 14,
+  "y": 26,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:bifurcations"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:clock",
+      "count": 1
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 16
+    }
+  ],
+  "time": 240,
+  "description": "Three simple equations of a convecting fluid (Lorenz) never settle and never repeat: two starts a hair apart diverge as e^(λt), so the weather cannot be foretold past a week. Yet chaos can be tamed: the strange attractor is threaded with unstable periodic orbits, and small, well-timed nudges hold the system on any one of them (Ott, Grebogi and Yorke). Unlocks the Chaos Controller and Strange Attractors.",
+  "icon": "theoreticalsciences:chaos_controller",
+  "puzzle": {
+    "goal": "Two trajectories start a distance d₀ apart and after a time t are d₁ apart. Write the Lyapunov exponent λ, the rate at which they diverge.",
+    "name": "The Lyapunov exponent",
+    "lhs": "λ",
+    "form": "ln ( d1 / d0 ) / t",
+    "expr": "ln ( d1 / d0 ) / t",
+    "ask": "Find λ for d₀ = @{d0}, d₁ = @{d1} after t = @{t} s.",
+    "vars": {
+      "λ": "Lyapunov exponent",
+      "d0": "initial separation",
+      "d1": "later separation",
+      "t": "time"
+    },
+    "given": {
+      "d0": 1e-06,
+      "d1": 0.01,
+      "t": 10.0
+    },
+    "unit": "1/s",
+    "method": "d₁ = d₀·e^(λt): take the logarithm of both sides.",
+    "distractors": [
+      "exp",
+      "*",
+      "d0"
+    ],
+    "vary": {
+      "t": [
+        5.0,
+        20.0,
+        1.0
+      ]
+    }
+  }
+}

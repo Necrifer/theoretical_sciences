@@ -1,0 +1,58 @@
+{
+  "title": "Space Weather",
+  "x": 18,
+  "y": 24,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:magnetohydrodynamics",
+    "theoreticalsciences:acoustic_resonance"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 16
+    },
+    {
+      "item": "minecraft:compass",
+      "count": 1
+    }
+  ],
+  "time": 240,
+  "description": "The Sun blows a wind of plasma at four hundred kilometres a second, and now and then hurls a cloud of it. The Earth's field stands it off where the wind's pressure balances the field's, ten Earth radii out; in a storm the boundary is pushed in, currents surge through the ground and every long conductor, and aurorae light the night. Geomagnetic storms now come every few days: consoles and multiblocks in the Overworld run at 70% while one lasts. Unlocks the Heliograph and the Faraday Mesh, which shields a machine from them.",
+  "icon": "theoreticalsciences:heliograph",
+  "puzzle": {
+    "goal": "The solar wind (density ρ, speed v) presses on the Earth's dipole field, whose pressure falls as B₀²/(2μ₀)·(R/r)⁶. Write the stand-off distance r of the magnetopause, in Earth radii R, where the two pressures balance.",
+    "name": "The Chapman–Ferraro stand-off",
+    "lhs": "r",
+    "form": "( B0 ^ 2 / ( 2 * μ0 * ρ * v ^ 2 ) ) ^ ( 1 / 6 )",
+    "expr": "( B0 ^ 2 / ( 2 * mu0 * rho * v ^ 2 ) ) ^ ( 1 / 6 )",
+    "ask": "Find r in Earth radii for B₀ = 3.1e-5 T, μ₀ = 1.2566e-6, ρ = @{rho} kg/m³ and v = @{v} m/s.",
+    "vars": {
+      "r": "stand-off distance (Earth radii)",
+      "B0": "equatorial surface field",
+      "μ0": "permeability of free space",
+      "ρ": "solar wind density",
+      "v": "solar wind speed"
+    },
+    "given": {
+      "B0": 3.1e-05,
+      "mu0": 1.2566e-06,
+      "rho": 1e-20,
+      "v": 400000.0
+    },
+    "unit": "R",
+    "method": "Pressure balance: ρv² = B²/(2μ₀) with B = B₀(R/r)³; solve for r/R.",
+    "distractors": [
+      "3",
+      "*",
+      "sqrt"
+    ],
+    "vary": {
+      "v": [
+        300000.0,
+        900000.0,
+        50000.0
+      ]
+    }
+  }
+}

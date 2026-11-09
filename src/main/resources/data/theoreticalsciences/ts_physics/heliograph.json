@@ -1,0 +1,68 @@
+{
+  "params": [
+    {
+      "id": "vw",
+      "unit": "km/s",
+      "min": 250,
+      "max": 1200,
+      "step": 5,
+      "default": 400
+    },
+    {
+      "id": "nw",
+      "unit": "cm⁻³",
+      "min": 1,
+      "max": 60,
+      "step": 0.5,
+      "default": 5
+    },
+    {
+      "id": "Bz",
+      "unit": "nT",
+      "min": -40,
+      "max": 15,
+      "step": 0.5,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Pd",
+      "unit": "nPa",
+      "expr": "0.00000167*nw*vw^2*(1 + 0.02*d)",
+      "formula": "dynamic pressure ρv²"
+    },
+    {
+      "id": "r0",
+      "unit": "R",
+      "expr": "(10.22 + 1.29*tanh(0.184*(Bz + 8.14)))*(0.00000167*nw*vw^2)^(-1/6.6)",
+      "formula": "magnetopause stand-off (Shue)"
+    },
+    {
+      "id": "Kp",
+      "unit": "",
+      "expr": "clamp(vw*pos(-Bz)/1800, 0, 9)",
+      "formula": "storm index from v·Bs"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "extreme",
+      "kind": "wear",
+      "expr": "60 - 0.00000167*nw*vw^2",
+      "formula": "pressure under 60 nPa (beyond the record storms)"
+    }
+  ],
+  "rate": "clamp(vw/600, 0.3, 1.5)",
+  "rate_formula": "faster winds, faster runs",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

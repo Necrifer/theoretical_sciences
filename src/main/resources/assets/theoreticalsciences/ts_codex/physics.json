@@ -7059,6 +7059,20 @@
       "parents": [
         "engineering/rotating_habitats"
       ]
+    },
+    {
+      "entry": "physics/acoustic_resonance",
+      "x": 3,
+      "y": 140,
+      "parents": []
+    },
+    {
+      "entry": "physics/space_weather",
+      "x": 5,
+      "y": 140,
+      "parents": [
+        "physics/acoustic_resonance"
+      ]
     }
   ],
   "regions": [
@@ -7197,6 +7211,14 @@
       "x1": 125.5,
       "y0": 131.5,
       "y1": 137.5
+    },
+    {
+      "tier": 17,
+      "label": "Sound & Space Weather",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 138.5,
+      "y1": 141.5
     }
   ]
 }

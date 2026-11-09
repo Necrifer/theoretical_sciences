@@ -56174,5 +56174,393 @@
     "text": "$(thing)Equations$()$(br)F = f·(1 + j)·L/c$(br)T = 394/√(1 − f) K"
    }
   ]
+ },
+ "physics/acoustic_resonance": {
+  "title": "Acoustic Resonance",
+  "icon": "theoreticalsciences:resonant_shard",
+  "category": "physics",
+  "research": "acoustic_resonance",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:resonance_chamber",
+     "theoreticalsciences:resonant_shard"
+    ],
+    "text": "f = n·v/2L. The $(thing)Resonance Chamber$() shakes raw iron and gold apart at their own notes: fourteen nuggets from each raw ore. It also tunes amethyst into $(item)Resonant Shards$().",
+    "title": "Resonance Chamber"
+   }
+  ]
+ },
+ "physics/space_weather": {
+  "title": "Space Weather",
+  "icon": "theoreticalsciences:faraday_mesh",
+  "category": "physics",
+  "research": "space_weather",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Every three to seven days a $(thing)geomagnetic storm$() strikes the Overworld for five minutes. It changes no block and harms no one, but every console and multiblock there runs at $(thing)70%$() while it lasts, and aurorae hang in the night sky."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:heliograph",
+     "theoreticalsciences:faraday_mesh"
+    ],
+    "text": "r = (B₀²/2μ₀ρv²)^(1/6). The $(thing)Heliograph$() proves a $(item)Faraday Mesh$() against a design storm; fitted as an upgrade, the machine runs at full speed through storms.",
+    "title": "Heliograph"
+   }
+  ]
+ },
+ "mathematics/chaos_theory": {
+  "title": "Chaos Theory",
+  "icon": "theoreticalsciences:strange_attractor",
+  "category": "mathematics",
+  "research": "chaos_theory",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:chaos_controller",
+     "theoreticalsciences:strange_attractor"
+    ],
+    "text": "λ = ln(d₁/d₀)/t. The $(thing)Chaos Controller$() drives the Lorenz flow into chaos and holds one orbit with small nudges: a $(item)Strange Attractor$().",
+    "title": "Chaos Controller"
+   }
+  ]
+ },
+ "mathematics/knot_theory": {
+  "title": "Knot Theory",
+  "icon": "theoreticalsciences:molecular_knot",
+  "category": "mathematics",
+  "research": "knot_theory",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:knot_loom",
+     "theoreticalsciences:molecular_knot",
+     "theoreticalsciences:knotted_polymer"
+    ],
+    "text": "w = p − m. The $(thing)Knot Loom$() ties $(item)Molecular Knots$() (trefoils) and $(item)Knotted Polymer$() (pentafoils). A Tether Spool of knotted polymer costs less than one of aramid.",
+    "title": "Knot Loom"
+   }
+  ]
+ },
+ "mathematics/cellular_automata": {
+  "title": "Cellular Automata",
+  "icon": "theoreticalsciences:von_neumann_constructor",
+  "category": "mathematics",
+  "research": "cellular_automata",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:automaton_lattice",
+     "theoreticalsciences:von_neumann_constructor"
+    ],
+    "text": "P = 56ρ³(1 − ρ)⁵. The $(thing)Automaton Lattice$() grows $(item)Von Neumann Constructors$() at the edge of chaos, and with them $(item)Quine Replicators$() far more cheaply than the Nanofabricator.",
+    "title": "Automaton Lattice"
+   }
+  ]
+ },
+ "mathematics/complexity_theory": {
+  "title": "Complexity Theory",
+  "icon": "theoreticalsciences:zero_knowledge_proof",
+  "category": "mathematics",
+  "research": "complexity_theory",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:certificate_verifier",
+     "theoreticalsciences:zero_knowledge_proof",
+     "theoreticalsciences:grover_oracle"
+    ],
+    "text": "ε = 2^(−k). The $(thing)Certificate Verifier$() makes $(item)Zero-Knowledge Proofs$(), and compiles them into $(item)Grover Oracles$() for the Quantum Computer.",
+    "title": "Certificate Verifier"
+   }
+  ]
+ },
+ "mathematics/quantum_computing": {
+  "title": "Quantum Computing",
+  "icon": "theoreticalsciences:qubit_chandelier",
+  "category": "mathematics",
+  "research": "quantum_computing",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:quantum_computer",
+     "theoreticalsciences:grover_oracle"
+    ],
+    "text": "S = (N/2)/((π/4)√N). The $(thing)Quantum Computer$() is 613 blocks: a cryostat with a chandelier of dilution stages and its qubits at the tip. Each Grover Oracle it runs shortens its owner's current study by $(thing)fifteen minutes$(). It runs only while you are studying something.",
+    "title": "Quantum Computer"
+   },
+   {
+    "type": "multiblock",
+    "name": "Quantum Computer",
+    "text": "Interface Ports in the front of the floor ring.",
+    "multiblock": "quantum_computer"
+   }
+  ]
+ },
+ "biology/pharmacology": {
+  "title": "Pharmacology",
+  "icon": "theoreticalsciences:vestibular_suppressant",
+  "category": "biology",
+  "research": "pharmacology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:dose_response_assay",
+     "theoreticalsciences:vestibular_suppressant",
+     "theoreticalsciences:anti_inflammatory"
+    ],
+    "text": "E = D^n/(EC₅₀^n + D^n). The $(thing)Dose-Response Assay$() finds a dose that works without harm and lasts until the next. Its medicines cure, then guard for three minutes; a second dose within two minutes is an overdose.",
+    "title": "Dose-Response Assay"
+   }
+  ]
+ },
+ "biology/medical_imaging": {
+  "title": "Medical Imaging",
+  "icon": "theoreticalsciences:tomogram",
+  "category": "biology",
+  "research": "medical_imaging",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ct_scanner",
+     "theoreticalsciences:tomogram"
+    ],
+    "text": "I = I₀·e^(−μx). The $(thing)CT Scanner$() is 257 blocks: a gantry ring that turns round a couch. It scans fossils and amber into $(item)Tomograms$(); with one, the Ancient DNA Lab needs half the dated samples for a genome.",
+    "title": "CT Scanner"
+   },
+   {
+    "type": "multiblock",
+    "name": "CT Scanner",
+    "text": "Interface Ports at the front foot of the gantry.",
+    "multiblock": "ct_scanner"
+   }
+  ]
+ },
+ "operation/resonance_chamber": {
+  "title": "Resonance Chamber",
+  "icon": "theoreticalsciences:resonance_chamber",
+  "category": "operation",
+  "research": "acoustic_resonance",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Every bar rings at its own notes. Cut the sample to a length, then play its note exactly: off by more than a hair and it barely answers."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Drive frequency, Sample length, Drive amplitude.$(br2)$(thing)Disturbance$(): temperature: the tuning drifts by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 18 µm the transducer cracks (wear); strain over 800 µm turns the ore to dust (stops).$(br2)$(thing)Rate$(): higher notes faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)f₁ = 50·v/L kHz$(br)Response = 1/√(1 + (2Q·detuning)²), Q = 50$(br)Strain = amplitude × Q × response"
+   }
+  ]
+ },
+ "operation/heliograph": {
+  "title": "Heliograph",
+  "icon": "theoreticalsciences:heliograph",
+  "category": "operation",
+  "research": "space_weather",
+  "pages": [
+   {
+    "type": "text",
+    "text": "A Faraday Mesh is proved against a severe storm: a fast wind with its field turned south, pushing the magnetopause in."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Wind speed, Wind density, Field southward.$(br2)$(thing)Disturbance$(): gusts: pressure varies by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 60 nPa is beyond any storm on record (wear).$(br2)$(thing)Rate$(): faster winds faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)P = ρv²$(br)r = (10.22 + 1.29·tanh(0.184(B_z + 8.14)))·P^(−1/6.6)$(br)Kp ≈ v·B_s/1800"
+   }
+  ]
+ },
+ "operation/chaos_controller": {
+  "title": "Chaos Controller",
+  "icon": "theoreticalsciences:chaos_controller",
+  "category": "operation",
+  "research": "chaos_theory",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Heat the cell past ρ = 24.74 for chaos, then nudge it often enough, and hard enough, to hold one orbit."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Rayleigh number, Nudge size, Nudge interval.$(br2)$(thing)Disturbance$(): noise: chaos grows by ±2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): nudges over 0.8 knock it off the attractor (wear).$(br2)$(thing)Rate$(): frequent nudges are slow."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)λ = 0.3·√(ρ − 24.74)$(br)Control = e^(−λτ/20)·min(1, ε/(0.1λ + 0.02))"
+   }
+  ]
+ },
+ "operation/knot_loom": {
+  "title": "Knot Loom",
+  "icon": "theoreticalsciences:knot_loom",
+  "category": "operation",
+  "research": "knot_theory",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Set the templates to the knot wanted, enough of them to catch the strands but not so many they tangle, warm but not hot."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Crossings, Template concentration, Temperature.$(br2)$(thing)Disturbance$(): impurities: yield varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 10 °C nothing moves (stops); over 8 mM tangles (wear).$(br2)$(thing)Rate$(): warmer faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Yield = match · c/(c + 0.5) · e^(−(T − 60)⁺/20) · e^(−0.15(n − 3))"
+   }
+  ]
+ },
+ "operation/automaton_lattice": {
+  "title": "Automaton Lattice",
+  "icon": "theoreticalsciences:automaton_lattice",
+  "category": "operation",
+  "research": "cellular_automata",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Set the rule at the edge of chaos, make the lattice big enough to hold a constructor, and seed it near a third full."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Langton's λ, Lattice size, Seed density.$(br2)$(thing)Disturbance$(): bit flips: complexity varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 10^7.5 cells overheats (wear).$(br2)$(thing)Rate$(): bigger lattices slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Complexity = e^(−((λ − 0.27)/0.06)²)$(br)Replication = complexity × min(1, log cells − 4) × (1 − |ρ − 0.3|)"
+   }
+  ]
+ },
+ "operation/certificate_verifier": {
+  "title": "Certificate Verifier",
+  "icon": "theoreticalsciences:certificate_verifier",
+  "category": "operation",
+  "research": "complexity_theory",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Each round halves a cheat's chance; nine nines of certainty take thirty rounds. Keep the problem small enough to check quickly."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Problem size, Rounds.$(br2)$(thing)Disturbance$(): noise: soundness varies by ±0.5%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): checks over 30 s wear the verifier.$(br2)$(thing)Rate$(): quicker checks faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Soundness = k·log₁₀2$(br)Verify time = n²k/10⁶ s"
+   }
+  ]
+ },
+ "operation/dose_response_assay": {
+  "title": "Dose-Response Assay",
+  "icon": "theoreticalsciences:dose_response_assay",
+  "category": "operation",
+  "research": "pharmacology",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Find a dose high enough to work, low enough not to harm, and an interval short enough that it still works before the next."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Dose, Hill coefficient, Interval.$(br2)$(thing)Disturbance$(): patient variation: effect varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): toxicity over 30% wears the assay.$(br2)$(thing)Rate$(): longer intervals faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)E = D^n/(EC₅₀^n + D^n)$(br)Toxicity = D^n/(TD₅₀^n + D^n)$(br)Trough: D·e^(−0.693τ/t½)"
+   }
+  ]
+ },
+ "operation/quantum_computer": {
+  "title": "Quantum Computer",
+  "icon": "theoreticalsciences:quantum_computer",
+  "category": "operation",
+  "research": "quantum_computing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "More qubits search more, but the circuit grows as √N and every gate must be faultless enough for it all to stay coherent."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Qubits, Temperature, Gate error.$(br2)$(thing)Disturbance$(): cosmic rays: fidelity varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 80 mK the qubits decohere (stops); under 7 mK strains the fridge (wear).$(br2)$(thing)Rate$(): bigger speed-ups faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Depth = (π/4)·2^(n/2)$(br)Fidelity = e^(−depth·ε·(1 + T/20))"
+   }
+  ]
+ },
+ "operation/ct_scanner": {
+  "title": "CT Scanner",
+  "icon": "theoreticalsciences:ct_scanner",
+  "category": "operation",
+  "research": "medical_imaging",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Take enough views for the detector's pixels (π/2 per pixel), and enough dose for a quiet image, but not so much it damages the specimen."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Views, Detector pixels, Dose.$(br2)$(thing)Disturbance$(): scatter: quality varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 80 mGy damages the specimen (wear).$(br2)$(thing)Rate$(): fewer views faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Sampling = N_views/(π/2·N_pixels)$(br)Quality = sampling × (1 − e^(−dose/10))$(br)Resolution = 500/N_pixels mm"
+   }
+  ]
  }
 }

@@ -697,8 +697,10 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     protected double speedFactor() {
         double coil = coilSpeed();
         int oc = overclockNow();
-        if (hasPhysics()) return (1 << oc) * physics.rate * coil;   // the physics says how well it is running
-        return tuningProfile() == null ? coil : (1 << oc) * tuning.efficiency() * coil;
+        // 1.5.0: a geomagnetic storm upsets the controls of every console and multiblock in the Overworld (but not under a Faraday Mesh)
+        double storm = level == null ? 1.0 : com.theoreticalsciences.helio.SpaceWeather.factor(level, upgradeKind());
+        if (hasPhysics()) return (1 << oc) * physics.rate * coil * storm;   // the physics says how well it is running
+        return tuningProfile() == null ? coil * storm : (1 << oc) * tuning.efficiency() * coil * storm;
     }
 
     @Override
@@ -1247,6 +1249,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             if (ps != null) return ps;
         }
         if (type == MachineType.RESEARCH_NEXUS) return com.theoreticalsciences.research.ResearchNexus.gate(level, owner, r);
+        if (type == MachineType.QUANTUM_COMPUTER) return com.theoreticalsciences.research.ResearchNexus.gateAny(level, owner);   // 1.5.0
         // 1.3.6: the Eschaton Foundry repeats only what its owner has forged by hand in the Core's Forge
         if (type == MachineType.ESCHATON_FOUNDRY) {
             for (var o : r.itemOutputs)
@@ -1374,6 +1377,11 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         // the Research Nexus: every dossier fed in counts, so parallel runs speed the research up that many times
         if (type == MachineType.RESEARCH_NEXUS) {
             com.theoreticalsciences.research.ResearchNexus.apply(level, owner, recipe, runs);
+            return;
+        }
+        // 1.5.0: the Quantum Computer searches the space of proofs for its owner: Grover's speed-up, fifteen minutes a run
+        if (type == MachineType.QUANTUM_COMPUTER) {
+            com.theoreticalsciences.research.ResearchNexus.quantum(level, owner, runs);
             return;
         }
         onRecipeFinished(level, recipe);

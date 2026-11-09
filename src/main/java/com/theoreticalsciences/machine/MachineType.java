@@ -266,7 +266,17 @@ public enum MachineType {
     CORROSION_CELL          ("corrosion_testing",    2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC07040),
     SPACE_ELEVATOR          ("elevator_lift",        2, 0, 1, 0, false, "space_elevator",          64_000_000, 2_000_000, Effect.NONE,        0xD0E0F0),
     ONEILL_CYLINDER         ("habitat_spin",         3, 1, 2, 0, false, "oneill_cylinder",        256_000_000, 4_000_000, Effect.NONE,        0x80C0A0),
-    STELLAR_ENGINE          ("stellar_thrust",       1, 1, 1, 1, true,  "stellar_engine",       2_000_000_000, 200_000_000, Effect.NONE,    0xFFD060);
+    STELLAR_ENGINE          ("stellar_thrust",       1, 1, 1, 1, true,  "stellar_engine",       2_000_000_000, 200_000_000, Effect.NONE,    0xFFD060),
+    // 1.5.0: Small Wonders
+    RESONANCE_CHAMBER       ("acoustic_resonance",   1, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x90C8E0),
+    HELIOGRAPH              ("heliography",          3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x70F0A0),
+    CHAOS_CONTROLLER        ("chaos_control",        3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF07070),
+    KNOT_LOOM               ("knot_tying",           3, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xD0A060),
+    AUTOMATON_LATTICE       ("automaton_growth",     3, 0, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0x70E070),
+    CERTIFICATE_VERIFIER    ("certificate_check",    3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x8080F0),
+    DOSE_RESPONSE_ASSAY     ("dose_response",        3, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF0A0A0),
+    QUANTUM_COMPUTER        ("quantum_search",       3, 1, 1, 0, false, "quantum_computer",        32_000_000,   800_000, Effect.NONE,        0x80E0FF),
+    CT_SCANNER              ("tomography",           2, 0, 1, 0, false, "ct_scanner",               8_000_000,   200_000, Effect.NONE,        0xE0E0F0);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
@@ -370,6 +380,8 @@ public enum MachineType {
                 || this == WAVE_ENERGY_CONVERTER || this == GEOTHERMAL_PLANT || this == PHYTOTRON || this == BREEDING_BENCH || this == DATING_SPECTROMETER || this == ANCIENT_DNA_LAB   // 1.3.0
                 || this == SYNAPSE_TRAINER || this == PSYCHOPHYSICS_BOOTH || this == DECIPHERMENT_DESK                         // 1.4.0
                 || this == LOAD_TEST_RIG || this == COMPOSITE_LAYUP_PRESS || this == TRIBOMETER || this == CORROSION_CELL
+                || this == RESONANCE_CHAMBER || this == HELIOGRAPH || this == CHAOS_CONTROLLER || this == KNOT_LOOM            // 1.5.0
+                || this == AUTOMATON_LATTICE || this == CERTIFICATE_VERIFIER || this == DOSE_RESPONSE_ASSAY
                 || biology();
     }
 

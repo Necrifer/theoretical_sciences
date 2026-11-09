@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:heliography",
+  "item_inputs": [
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:resonant_shard",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:ferrite_magnet",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:faraday_mesh",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:space_weather",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Kp",
+        "min": 6,
+        "max": 9
+      },
+      {
+        "q": "r0",
+        "min": 3,
+        "max": 7.5
+      }
+    ]
+  }
+}

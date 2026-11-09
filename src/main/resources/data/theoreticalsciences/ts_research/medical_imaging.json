@@ -1,0 +1,56 @@
+{
+  "title": "Medical Imaging",
+  "x": 16,
+  "y": 28,
+  "insight": 240,
+  "requires": [
+    "theoreticalsciences:nmr_spectroscopy",
+    "theoreticalsciences:pharmacology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fossil_fragment",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fused_silica_lens",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "description": "Shine X-rays through a body from every angle and each beam's loss is the sum of what it passed through (the Radon transform). Turn the gantry and collect enough of those sums and the inside can be rebuilt slice by slice, by filtered back-projection: a tomogram. Unlocks the CT Scanner, which scans fossils and amber so the Ancient DNA Lab knows where to sample.",
+  "icon": "theoreticalsciences:ct_scanner",
+  "puzzle": {
+    "goal": "An X-ray beam crosses a slab of thickness x with attenuation coefficient μ. Write the intensity I that comes out, if I₀ went in.",
+    "name": "Beer–Lambert attenuation",
+    "lhs": "I",
+    "form": "I0 * exp ( - μ * x )",
+    "expr": "I0 * exp ( - mu * x )",
+    "ask": "Find I for I₀ = @{I0}, μ = @{mu} per cm and x = @{x} cm.",
+    "vars": {
+      "I": "transmitted intensity",
+      "I0": "incident intensity",
+      "μ": "attenuation coefficient",
+      "x": "thickness"
+    },
+    "given": {
+      "I0": 1000.0,
+      "mu": 0.2,
+      "x": 5.0
+    },
+    "unit": "",
+    "method": "Each thin layer dx removes the same fraction μ·dx of what reaches it: dI = −μI·dx.",
+    "distractors": [
+      "ln",
+      "/",
+      "+"
+    ],
+    "vary": {
+      "x": [
+        1.0,
+        20.0,
+        1.0
+      ]
+    }
+  }
+}

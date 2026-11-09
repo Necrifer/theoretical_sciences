@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:knot_tying",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 1
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:phosphate_buffer",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:molecular_knot",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:knot_theory",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "kt": 3
+    },
+    "windows": [
+      {
+        "q": "match",
+        "min": 0.95,
+        "max": 1
+      },
+      {
+        "q": "Y",
+        "min": 0.6,
+        "max": 1
+      }
+    ]
+  }
+}

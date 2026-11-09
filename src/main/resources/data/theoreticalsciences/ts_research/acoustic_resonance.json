@@ -1,0 +1,61 @@
+{
+  "title": "Acoustic Resonance",
+  "x": 16,
+  "y": 24,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:fourier_series",
+    "theoreticalsciences:ocean_waves"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:amethyst_shard",
+      "count": 8
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    }
+  ],
+  "time": 200,
+  "description": "A bar rings at the frequencies whose half-waves fit its length exactly, f = n·v/2L. Drive it at one of them and the vibration builds on itself until the bar shakes apart along its weakest planes: in an ore, the grain boundaries between the metal and the rock. Unlocks the Resonance Chamber: more metal from raw ore, and tuned crystal shards.",
+  "icon": "theoreticalsciences:resonance_chamber",
+  "puzzle": {
+    "goal": "A bar of length L in which sound travels at speed v rings in standing waves with nodes at both ends. Write the frequency f of its n-th mode.",
+    "name": "Standing waves in a bar",
+    "lhs": "f",
+    "form": "n * v / ( 2 * L )",
+    "expr": "n * v / ( 2 * L )",
+    "ask": "Find f in hertz for mode n = @{n} of a bar L = @{L} m long, v = @{v} m/s.",
+    "vars": {
+      "f": "frequency",
+      "n": "mode number",
+      "v": "speed of sound in the bar",
+      "L": "length"
+    },
+    "given": {
+      "n": 1.0,
+      "v": 6000.0,
+      "L": 0.05
+    },
+    "unit": "Hz",
+    "method": "A whole number of half-wavelengths must fit: L = n·λ/2, and f = v/λ.",
+    "distractors": [
+      "*",
+      "4",
+      "π"
+    ],
+    "vary": {
+      "n": [
+        1.0,
+        4.0,
+        1.0
+      ],
+      "L": [
+        0.02,
+        0.2,
+        0.01
+      ]
+    }
+  }
+}

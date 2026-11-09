@@ -1,0 +1,74 @@
+{
+  "params": [
+    {
+      "id": "nq",
+      "unit": "qubits",
+      "min": 4,
+      "max": 100,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "Tm",
+      "unit": "mK",
+      "min": 5,
+      "max": 100,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "id": "le",
+      "unit": "log",
+      "min": -9,
+      "max": -1,
+      "step": 0.05,
+      "default": -3
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "depth",
+      "unit": "gates",
+      "expr": "0.785*2^(nq/2)",
+      "formula": "Grover depth: (π/4)·√N"
+    },
+    {
+      "id": "F",
+      "unit": "",
+      "expr": "exp(-0.785*2^(nq/2)*10^le*(1 + Tm/20))*(1 - 0.01*d)",
+      "formula": "circuit fidelity"
+    },
+    {
+      "id": "Sx",
+      "unit": "log",
+      "expr": "nq*0.1505",
+      "formula": "speed-up, log₁₀ √N"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "decohere",
+      "kind": "stop",
+      "expr": "80 - Tm",
+      "formula": "under 80 mK, or the qubits decohere"
+    },
+    {
+      "id": "fridge",
+      "kind": "wear",
+      "expr": "Tm - 7",
+      "formula": "over 7 mK: colder strains the dilution stages"
+    }
+  ],
+  "rate": "clamp(Sx/5, 0.2, 1.5)",
+  "rate_formula": "bigger speed-ups, faster",
+  "heat": "0.3 + nq/100",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

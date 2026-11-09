@@ -1,0 +1,53 @@
+{
+  "title": "Cellular Automata",
+  "x": 18,
+  "y": 26,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:computability",
+    "theoreticalsciences:turing_patterns",
+    "theoreticalsciences:chaos_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:strange_attractor",
+      "count": 2
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 32
+    }
+  ],
+  "time": 300,
+  "description": "A grid of cells, each on or off, each following one rule from its neighbours. Most rules die out or freeze or boil into noise; a few, at the edge between order and chaos (Langton's λ near 0.27), make gliders, guns and machines. Von Neumann showed such a grid can hold a constructor that builds a copy of anything, itself included. Unlocks the Automaton Lattice: Von Neumann Constructors, and Quine Replicators far more cheaply.",
+  "icon": "theoreticalsciences:automaton_lattice",
+  "puzzle": {
+    "goal": "In Conway's Life a cell lives on if it has two or three live neighbours. In a random grid with a fraction ρ of cells alive, the chance a cell has exactly k live neighbours of its eight is binomial. Write the chance P it has exactly three.",
+    "name": "Neighbours in Life",
+    "lhs": "P",
+    "form": "56 * ρ ^ 3 * ( 1 - ρ ) ^ 5",
+    "expr": "56 * rho ^ 3 * ( 1 - rho ) ^ 5",
+    "ask": "Find P for a grid with ρ = @{rho} of its cells alive.",
+    "vars": {
+      "P": "chance of exactly three live neighbours",
+      "ρ": "fraction alive"
+    },
+    "given": {
+      "rho": 0.3
+    },
+    "unit": "",
+    "method": "C(8,3) = 56 ways to choose which three of the eight are alive, each with ρ³(1 − ρ)⁵.",
+    "distractors": [
+      "8",
+      "+",
+      "3"
+    ],
+    "vary": {
+      "rho": [
+        0.1,
+        0.5,
+        0.05
+      ]
+    }
+  }
+}

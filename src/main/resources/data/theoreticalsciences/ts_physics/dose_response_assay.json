@@ -1,0 +1,72 @@
+{
+  "params": [
+    {
+      "id": "Ld",
+      "unit": "log mg",
+      "min": -1,
+      "max": 3,
+      "step": 0.02,
+      "default": 0
+    },
+    {
+      "id": "nh",
+      "unit": "",
+      "min": 0.5,
+      "max": 4,
+      "step": 0.05,
+      "default": 1
+    },
+    {
+      "id": "tau",
+      "unit": "h",
+      "min": 1,
+      "max": 48,
+      "step": 0.5,
+      "default": 24
+    }
+  ],
+  "recipe_vars": {
+    "EC": 10,
+    "TD": 1000,
+    "th": 8
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "E",
+      "unit": "",
+      "expr": "(10^Ld)^nh/(EC^nh + (10^Ld)^nh)*(1 - 0.01*d)",
+      "formula": "Hill: effect at the peak"
+    },
+    {
+      "id": "Tx",
+      "unit": "",
+      "expr": "(10^Ld)^nh/(TD^nh + (10^Ld)^nh)",
+      "formula": "toxicity at the peak"
+    },
+    {
+      "id": "Et",
+      "unit": "",
+      "expr": "(10^Ld*exp(-0.693*tau/th))^nh/(EC^nh + (10^Ld*exp(-0.693*tau/th))^nh)",
+      "formula": "effect at the trough, before the next dose"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "poison",
+      "kind": "wear",
+      "expr": "0.3 - (10^Ld)^nh/(TD^nh + (10^Ld)^nh)",
+      "formula": "toxicity under 30%"
+    }
+  ],
+  "rate": "clamp(tau/12, 0.2, 1.5)",
+  "rate_formula": "longer intervals, fewer doses to test",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:automaton_growth",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:von_neumann_constructor",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:nanite_swarm",
+      "count": 3
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quine_replicator",
+      "count": 4
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:cellular_automata",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "rep",
+        "min": 0.9,
+        "max": 1
+      }
+    ]
+  }
+}

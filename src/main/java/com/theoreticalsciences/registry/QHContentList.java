@@ -831,7 +831,19 @@ public final class QHContentList {
         new ItemDef("passivated_plate", "", 64),
         new ItemDef("rust_flakes", "", 64),
         new ItemDef("tether_spool", "", 16),
-        new ItemDef("shkadov_mirror_film", "", 64));
+        new ItemDef("shkadov_mirror_film", "", 64),
+        // 1.5.0: Small Wonders
+        new ItemDef("resonant_shard", "", 64),
+        new ItemDef("faraday_mesh", "faraday_mesh", 16),
+        new ItemDef("strange_attractor", "", 64),
+        new ItemDef("molecular_knot", "", 64),
+        new ItemDef("knotted_polymer", "", 64),
+        new ItemDef("von_neumann_constructor", "", 16),
+        new ItemDef("zero_knowledge_proof", "", 64),
+        new ItemDef("grover_oracle", "", 16),
+        new ItemDef("vestibular_suppressant", "vestibular", 16),
+        new ItemDef("anti_inflammatory", "anti_inflammatory", 16),
+        new ItemDef("tomogram", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1289,6 +1301,13 @@ public final class QHContentList {
         new BlockDef("spin_bearing", "casing", 4, 8.0F, "diamond", ""),
         new BlockDef("shkadov_mirror", "casing", 12, 4.0F, "diamond", ""),
         new BlockDef("caplan_jet", "casing", 15, 10.0F, "diamond", ""),
+        // 1.5.0: Small Wonders
+        new BlockDef("dilution_stage", "casing", 6, 6.0F, "iron", ""),
+        new BlockDef("qubit_chandelier", "casing", 10, 6.0F, "iron", ""),
+        new BlockDef("cryostat_shell", "casing", 0, 6.0F, "iron", ""),
+        new BlockDef("gantry_ring", "casing", 8, 6.0F, "iron", ""),
+        new BlockDef("detector_array", "casing", 10, 5.0F, "iron", ""),
+        new BlockDef("scanner_couch", "casing", 0, 4.0F, "iron", ""),
         new BlockDef("life_support_pump", "casing", 2, 5.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),

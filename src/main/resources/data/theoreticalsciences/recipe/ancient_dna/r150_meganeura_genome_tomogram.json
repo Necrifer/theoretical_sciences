@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:ancient_dna",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:dated_amber",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:tomogram",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:meganeura_genome",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 600,
+  "research": "theoreticalsciences:medical_imaging",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "lam": 0.05,
+      "Gs": 1000000000.0,
+      "mol0": 1500000000.0,
+      "c0": 0.15
+    },
+    "windows": [
+      {
+        "q": "Cv",
+        "min": 4.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}
