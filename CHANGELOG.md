@@ -5,8 +5,9 @@
 An art and sound pass over every machine. No recipes changed.
 
 ### Every console has its own simulation
-* Until now 120 older consoles had no simulation of their own and all showed the same stirred
-  beaker, titled "reaction vessel" (the 34 newest got theirs in 1.5.0's fix pass); eight endgame structures also shared their picture with another structure.
+* Until now 154 consoles (every machine without a special effect, from 1.0 up to 1.5.0) had no simulation of their
+  own and all showed the same stirred beaker, titled "reaction vessel". Eight endgame structures also shared their
+  picture with another structure.
 * Every machine now draws what it actually does, under its own title: a titration curve dripping into a flask, bands
   separating down a chromatography column, spins precessing in the NMR's Dewar, primes being struck off a sieve, cells
   dividing in a petri dish, a beam crossing the magnetic sector of the mass spectrometer, and so on.
