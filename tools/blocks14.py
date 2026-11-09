@@ -512,13 +512,7 @@ def all_textures():
     save(archive_shelf(), 'archive_shelf')
     for st in ('', '_pitted', '_spent'):
         save(anode(st), 'sacrificial_anode' + st)
-    for i, (mid, (acc, draw)) in enumerate(MACHINES.items()):
-        off, on = front(mid, acc, draw)
-        save(off, 'machine/%s_front_off' % mid)
-        animated('machine/%s_front_on' % mid, on, BA.readout)
-        animated('machine/%s_side' % mid, side(acc, 40 + i), lambda b, t: BA.sheen(b, t, 0.15))
-        animated('machine/%s_top' % mid, top(acc, 60 + i), lambda b, t: BA.sheen(b, t, 0.15))
-        out[mid] = on
+    # machine faces, sides and tops now come from tools/machine_art.py (the 1.5.1 art revamp)
     return out
 
 

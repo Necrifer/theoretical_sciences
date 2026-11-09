@@ -123,9 +123,6 @@ if __name__ == '__main__':
     for k in ('laminar_flow_conduit_in', 'laminar_flow_conduit_out'):
         animate(k, lambda b, t, k=k: pulse(b, t, GLOW[k], 0.5))
     animate('laminar_flow_conduit_side', lambda b, t: sheen(b, t, 0.18))
-    for m in MACHINES:
-        animate('machine/' + m + '_front_on', readout)
-        animate('machine/' + m + '_side', lambda b, t: sheen(b, t, 0.15))
-        animate('machine/' + m + '_top', lambda b, t: sheen(b, t, 0.15))
+    # machine faces, sides and tops are drawn and animated by tools/machine_art.py
     amber_ore()
     print('animated', len(CASINGS) * 2 + len(SINGLES) + 3 + len(MACHINES) * 3, 'block textures; amber ore redrawn')

@@ -101,6 +101,16 @@ public final class QHSounds {
             MUSIC.put(t, SOUNDS.register("music." + t, () -> SoundEvent.createVariableRangeEvent(TheoreticalSciences.id("music." + t))));
     }
 
+    /** 1.5.1: the looping work sounds of running multiblocks (see client/MachineVoices and tools/sounds_work.py). */
+    public static final String[] WORK_VOICES = {"quantum", "cosmic", "instrument", "heavy", "chem", "math", "bio", "earth", "space",
+            "cryo", "turbine", "plasma", "void", "data"};
+    public static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> WORK = new java.util.HashMap<>();
+
+    static {
+        for (String v : WORK_VOICES)
+            WORK.put(v, SOUNDS.register("machine.work." + v, () -> SoundEvent.createVariableRangeEvent(TheoreticalSciences.id("machine.work." + v))));
+    }
+
     public static SoundEvent mob(String mob, String kind) {
         DeferredHolder<SoundEvent, SoundEvent> h = MOB.get(mob + "." + kind);
         return h == null ? null : h.get();

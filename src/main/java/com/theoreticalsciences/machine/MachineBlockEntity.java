@@ -320,7 +320,10 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     protected void tickClient() {
-        if (isActive()) com.theoreticalsciences.client.ClientHooks.machineParticles(this);
+        if (isActive()) {
+            com.theoreticalsciences.client.ClientHooks.machineParticles(this);
+            com.theoreticalsciences.client.ClientHooks.machineWork(this);       // 1.5.1: running multiblocks are heard
+        }
     }
 
     protected void tickServer(ServerLevel level) {

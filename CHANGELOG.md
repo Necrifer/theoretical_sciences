@@ -1,5 +1,41 @@
 # Changelog
 
+## 1.5.1: Seen and Heard
+
+An art and sound pass over every machine. No recipes changed.
+
+### Every console has its own simulation
+* Until now 120 older consoles had no simulation of their own and all showed the same stirred
+  beaker, titled "reaction vessel" (the 34 newest got theirs in 1.5.0's fix pass); eight endgame structures also shared their picture with another structure.
+* Every machine now draws what it actually does, under its own title: a titration curve dripping into a flask, bands
+  separating down a chromatography column, spins precessing in the NMR's Dewar, primes being struck off a sieve, cells
+  dividing in a petri dish, a beam crossing the magnetic sector of the mass spectrometer, and so on.
+* A new check (tools/check_scenes.py) fails the build if any machine falls back to a shared picture again.
+
+### New machine art
+* All 225 machines and multiblock controllers have new faces, sides and tops. Each one is built from a body material
+  that matches its science (brass and walnut instruments, white enamel chemistry, slate and oak mathematics, green
+  ceramic biology, riveted gunmetal for heavy physics, basalt for earth science, aerospace panels, frosted cryogenics,
+  indigo quantum hardware, obsidian and gold for the endgame), a face layout (screen, porthole, dial, twin displays,
+  glass tank, grille, arched window, turbine) and its own animated readout.
+* Sides show what the machine takes in: pipes and a sight glass for fluids, cooling fins for generators, a lit conduit
+  band on multiblock controllers, and hatches, vents, cables or plates for items. Controllers also carry a trim
+  chevron in their top corner.
+
+### Multiblocks can be heard
+* A formed multiblock plays a working sound from the middle of the structure while it runs, fading in as it starts and
+  out as it stops. Larger structures carry further (16 blocks for the smallest, up to 64 for the largest).
+* Fourteen synthesised voices, matched to what the structure looks like: plasma crackle for tokamaks and colliders, a
+  howling void for horizons and wormholes, data chirps for simulators and compilers, relays for mathematics, bubbling
+  for chemistry, a pump for biology, a drill for earth science, engines for space, a compressor for cryogenics, a
+  turbine for generators, and more. Each structure plays its voice at its own pitch.
+* This is the same interference the Radio Telescope has always counted from machines running nearby; now the player
+  can hear it too. Each voice has a subtitle.
+
+### For pack makers
+* docs/MULTIBLOCK_REFERENCE.md: notes on the shapes and sizes of multiblocks in GregTech Odyssey, GT New Horizons and
+  MeatballCraft, for the coming endgame rework.
+
 ## 1.5.0 — Small Wonders
 
 The smaller candidates of the expansion plan, each a full concept (a console with its real equation, a derivation and

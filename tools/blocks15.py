@@ -174,13 +174,7 @@ def all_textures():
         out[cid] = base
         animated(cid, base, (lambda b, t, g=glow: BA.pulse(BA.sheen(b, t), t, g)) if glow else (lambda b, t: BA.sheen(b, t)))
         animated(cid + '_formed', base, lambda b, t, g=glow: BA.conduits(BA.pulse(b, t, g) if g else b, t))
-    for i, (mid, (acc, draw)) in enumerate(MACHINES.items()):
-        off, on = front(mid, acc, draw)
-        save(off, 'machine/%s_front_off' % mid)
-        animated('machine/%s_front_on' % mid, on, BA.readout)
-        animated('machine/%s_side' % mid, side(acc, 80 + i), lambda b, t: BA.sheen(b, t, 0.15))
-        animated('machine/%s_top' % mid, top(acc, 90 + i), lambda b, t: BA.sheen(b, t, 0.15))
-        out[mid] = on
+    # machine faces, sides and tops now come from tools/machine_art.py (the 1.5.1 art revamp)
     return out
 
 

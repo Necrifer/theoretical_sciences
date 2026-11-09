@@ -126,6 +126,11 @@ public final class ClientHooks {
         ClientResearch.setActive(active, total, remaining);
     }
 
+    /** 1.5.1: a formed, running multiblock plays its working loop (MachineWorkSound). */
+    public static void machineWork(MachineBlockEntity be) {
+        if (be instanceof ControllerBlockEntity c && c.isFormed() && c.definition() != null) MachineWorkSound.keepAlive(c);
+    }
+
     /** Ambient particles for running machines. */
     public static void machineParticles(MachineBlockEntity be) {
         int density = QHConfig.PARTICLE_DENSITY.get();
