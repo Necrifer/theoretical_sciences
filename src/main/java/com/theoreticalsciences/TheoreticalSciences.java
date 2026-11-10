@@ -42,7 +42,6 @@ public class TheoreticalSciences {
         // Inventory Tweaks (Refoxed) puts its "sort" button on any slot group it finds: not on machine slots (round 23)
         modBus.addListener((net.neoforged.fml.event.lifecycle.InterModEnqueueEvent e) -> {
             for (String c : new String[]{"com.theoreticalsciences.machine.MachineMenu", "com.theoreticalsciences.client.screen.MachineScreen",
-                    "com.theoreticalsciences.transcend.ConfluenceMenu", "com.theoreticalsciences.client.screen.ConfluenceScreen",
                     "com.theoreticalsciences.storage.InfinityCacheMenu", "com.theoreticalsciences.client.screen.InfinityCacheScreen",
                     "com.theoreticalsciences.extreme.ExtremeTableMenu", "com.theoreticalsciences.extreme.ExtremeTableScreen",
                     "com.theoreticalsciences.extreme.CompactorMenu", "com.theoreticalsciences.extreme.CompactorScreen",

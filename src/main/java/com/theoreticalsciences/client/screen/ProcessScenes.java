@@ -162,6 +162,8 @@ final class ProcessScenes {
         e("isotope_provenancer", "isotope ratios", V.PIPE, C.BEAM, C.BARS, 1);
         e("bloomery_shaft", "bloomery", V.KILN, C.FLAME, C.GLOW, 4);
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
+        // 1.7.1
+        e("pleroma_confluence", "confluence", V.UTUBE, C.FLOW, C.GLOW, 6);
         // biology
         e("bioreactor", "bioreactor", V.TANK, C.CELLS, C.BUBBLES, 0);
         e("gene_sequencer", "sequencing", V.SCOPE, C.HELIX, C.PEAKS, 0);

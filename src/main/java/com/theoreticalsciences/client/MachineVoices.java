@@ -13,6 +13,8 @@ public final class MachineVoices {
     private static final Map<String, Voice> V = new HashMap<>();
 
     static {
+        V.put("cantor_diagonalizer", new Voice("math", 0.94F));
+        V.put("axiom_distiller", new Voice("math", 0.89F));
         V.put("femtoscale_assembly_line", new Voice("cosmic", 1.14F));
         V.put("stellar_plasma_crucible", new Voice("plasma", 0.87F));
         V.put("fractionation_spire", new Voice("cosmic", 1.10F));
@@ -45,6 +47,7 @@ public final class MachineVoices {
         V.put("abiogenesis_crucible", new Voice("bio", 1.03F));
         V.put("mirror_foundry", new Voice("cosmic", 1.13F));
         V.put("pleroma_reconstitutor", new Voice("cosmic", 0.87F));
+        V.put("convergence_engine", new Voice("cosmic", 1.13F));
         V.put("essence_distillery", new Voice("cosmic", 1.00F));
         V.put("inflation_chamber", new Voice("void", 0.99F));
         V.put("entropy_horizon", new Voice("void", 1.10F));
@@ -104,6 +107,7 @@ public final class MachineVoices {
         V.put("ct_scanner", new Voice("cryo", 0.98F));
         V.put("bloomery_shaft", new Voice("heavy", 1.10F));
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
+        V.put("pleroma_confluence", new Voice("cosmic", 0.89F));
     }
 
     public static Voice of(String machineId) {

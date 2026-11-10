@@ -16,7 +16,6 @@ import com.theoreticalsciences.recipe.QHRecipe;
 import com.theoreticalsciences.registry.QHFluids;
 import com.theoreticalsciences.registry.QHItems;
 import com.theoreticalsciences.registry.QHRecipes;
-import com.theoreticalsciences.transcend.ConfluenceBlockEntity;
 import com.theoreticalsciences.transcend.CoreForge;
 import com.theoreticalsciences.transcend.Essences;
 import com.theoreticalsciences.transcend.TranscendRegistry;
@@ -62,7 +61,7 @@ public class QHEmiPlugin implements EmiPlugin {
     private static final java.util.concurrent.atomic.AtomicBoolean HOVER_ADDED = new java.util.concurrent.atomic.AtomicBoolean();
     /** One tab per machine, with the same ids as the JEI tabs. */
     static final Map<MachineType, EmiRecipeCategory> MACHINES = new EnumMap<>(MachineType.class);
-    static EmiRecipeCategory MULTIBLOCKS, EXTREME, COMPACTION, PLEROMA, CONVERGENCE, FORGE;
+    static EmiRecipeCategory MULTIBLOCKS, EXTREME, COMPACTION, CONVERGENCE, FORGE;
 
     @Override
     public void register(EmiRegistry reg) {
@@ -120,13 +119,11 @@ public class QHEmiPlugin implements EmiPlugin {
                 Component.translatable("block.theoreticalsciences.extreme_assembly_table"));
         COMPACTION = new QHEmiCategory(TheoreticalSciences.id("compaction"), ExtremeRegistry.COMPACTOR_ITEM.get(),
                 Component.translatable("block.theoreticalsciences.singularity_compactor"));
-        PLEROMA = new QHEmiCategory(TheoreticalSciences.id("pleroma"), TranscendRegistry.CONFLUENCE_ITEM.get(),
-                Component.translatable("block.theoreticalsciences.pleroma_confluence"));
         CONVERGENCE = new QHEmiCategory(TheoreticalSciences.id("convergence"), QHItems.get("convergence_altar"),
                 Component.translatable("block.theoreticalsciences.convergence_altar"));
         FORGE = new QHEmiCategory(TheoreticalSciences.id("omnipotence_forge"), QHItems.get("eschaton_core"),
                 Component.translatable("jei.theoreticalsciences.forge"));
-        for (EmiRecipeCategory c : new EmiRecipeCategory[]{MULTIBLOCKS, EXTREME, COMPACTION, PLEROMA, CONVERGENCE, FORGE}) reg.addCategory(c);
+        for (EmiRecipeCategory c : new EmiRecipeCategory[]{MULTIBLOCKS, EXTREME, COMPACTION, CONVERGENCE, FORGE}) reg.addCategory(c);
     }
 
     // ------------------------------------------------------------------ telling stacks apart
@@ -177,7 +174,6 @@ public class QHEmiPlugin implements EmiPlugin {
         // the table crafts ordinary recipes too (with JEI present, JEMI already copies this from the JEI plugin)
         if (!jemi) reg.addWorkstation(VanillaEmiRecipeCategories.CRAFTING, table);
         reg.addWorkstation(COMPACTION, EmiStack.of(ExtremeRegistry.COMPACTOR_ITEM.get()));
-        reg.addWorkstation(PLEROMA, EmiStack.of(TranscendRegistry.CONFLUENCE_ITEM.get()));
         for (String id : new String[]{"convergence_altar", "resonance_pedestal", "harmonic_pedestal", "absolute_pedestal"})
             reg.addWorkstation(CONVERGENCE, EmiStack.of(QHItems.get(id)));
     }
@@ -224,7 +220,6 @@ public class QHEmiPlugin implements EmiPlugin {
             safely("singularity " + d.id(), () -> reg.addRecipe(new CompactionEmiRecipe(COMPACTION, QHEmi.synthetic("compaction/" + d.id()),
                     d.ingredient(), d.count(), Singularities.stack(d))));
 
-        safely("pleroma", () -> reg.addRecipe(new PleromaEmiRecipe(PLEROMA, ConfluenceBlockEntity.wanted())));
 
         for (var h : rm.getAllRecipesFor(ConvergenceRegistry.TYPE.get()))
             safely("convergence " + h.id(), () -> reg.addRecipe(new ConvergenceEmiRecipe(CONVERGENCE, h.id(), h.value())));

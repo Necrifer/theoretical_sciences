@@ -150,7 +150,6 @@ public final class QHClient {
         event.register(QHMenus.ANOMALY_ENGINE.get(), com.theoreticalsciences.client.screen.AnomalyEngineScreen::new);
         event.register(com.theoreticalsciences.extreme.ExtremeRegistry.EXTREME_MENU.get(), com.theoreticalsciences.extreme.ExtremeTableScreen::new);
         event.register(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTOR_MENU.get(), com.theoreticalsciences.extreme.CompactorScreen::new);
-        event.register(com.theoreticalsciences.transcend.TranscendRegistry.CONFLUENCE_MENU.get(), com.theoreticalsciences.client.screen.ConfluenceScreen::new);
     }
 
     @SubscribeEvent

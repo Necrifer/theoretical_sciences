@@ -1,0 +1,49 @@
+{
+  "type": "theoreticalsciences:pleroma_confluence",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quintessence",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:alkahest",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:mathesis",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:panacea",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:anima_mundi",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:pleroma",
+      "amount": 1000
+    }
+  ],
+  "energy": 65536,
+  "duration": 200,
+  "research": "theoreticalsciences:pleroma",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Re",
+        "min": 10000,
+        "max": 1000000000.0
+      },
+      {
+        "q": "mix",
+        "min": 3,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

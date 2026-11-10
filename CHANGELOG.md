@@ -1,5 +1,107 @@
 # Changelog
 
+## 1.7.1: Signature materials and the endgame structures (endgame rework, step two)
+
+The second step of the endgame rework. Every endgame structure now makes one material that nothing else can make,
+each tier needs the materials of the tier below, eight structures have new shapes, and four machines that were single
+blocks are structures now. The changes apply at once.
+
+**Before updating:** empty the Cantor Diagonalizer, Axiom Distiller, Convergence Engine and Pleroma Confluence. They
+are controllers of structures now, and what an old one held (items, fluids, energy) is not carried over. The eight
+reshaped structures stop working until they are rebuilt: the Structure Assembler takes an old build apart, and every
+new shape uses at least as many of each block as the old one, so nothing you built is wasted.
+
+### Signature materials
+| Tier | Material | Made only in |
+| --- | --- | --- |
+| Cosmic engineering | Dyson Lattice Panel | Dyson Array |
+| Cosmic engineering | Stellar Wind Condensate | Stellar Engine |
+| Cosmic engineering | Recursive Thought Shell | Matrioshka Brain |
+| Cosmic engineering | Embryonic Vacuum | Universe Forge |
+| Beyond physics | Compiled Law | Reality Compiler |
+| Beyond physics | Lex Prima | Omnilex Engine |
+| Beyond physics | Breach Shard | Axiomatic Breach Engine |
+| Beyond physics | Pure Concept Ingot | Concept Compressor |
+| Beyond physics | Diagonal Ingot | Cantor Diagonalizer |
+| Beyond physics | Distilled Axiom | Axiom Distiller |
+| Final tier | Transcendent Alloy | Transcendent Plasma Forge |
+| Final tier | Event Horizon Lens | Eye of the Horizon |
+| Final tier | Pleromatic Weave | Pleroma Reconstitutor |
+| Final tier | Confluent Essence | Pleroma Confluence |
+| Final tier | Eschaton Steel | Eschaton Foundry |
+| Final tier | Convergent Matter | Convergence Engine |
+
+* The four of cosmic engineering are made from plain Field Syntheses (two each of the structure's pair) and that
+  structure's own materials. The Dyson Array and the Stellar Engine make theirs as a fuel burns, so the Dyson Array has
+  an item output now.
+* Each of the six beyond physics takes two each of three of the four below, and one Alpha Field Synthesis.
+* Each of the six of the final tier takes three each of all six beyond physics, and three Beta Field Syntheses.
+* The final tier's materials go into the last recipes in 1.7.2.
+
+### Changed recipes
+* **51 recipes now take one signature material of the tier below**, in turn: Concept Compression 16, Transfinite
+  Computation 9, Pleroma Reconstitution 7, Omnilex Simulation 4, Eschaton Founding 4, Transcendent Forging 4, Reality
+  Compilation 3, Axiom Distillation 2, Reality Breach 2. Recipes of the six structures beyond physics take a cosmic
+  engineering material; those of the Pleroma Reconstitutor, Eschaton Foundry and Transcendent Plasma Forge take one
+  from beyond physics.
+* **22 recipes of those structures are unchanged**, because the tiers below are built from what they make (a new
+  check, below, found each one): Hypernova Alloy, Hypernova Plasma, Cosmic Neutronium, Residual Starlight and
+  Transcendent Metal (Transcendent Plasma Forge); Aleph-Null Shard and Absolute Infinity (Cantor Diagonalizer);
+  Crystallised Law, Primordial Law and Axiom Fragments from law (Axiom Distiller); Eternity Catalyst, Omega Point and
+  Source Code Fragment (Reality Compiler); Rewrite Laws and Simulate Everything (Omnilex Engine); the three
+  simulations of the Eye of the Horizon; and the runs that only give insight.
+* The Convergence Engine's part recipes are unchanged, as in 1.7.0.
+* **Pleroma** is a machine recipe now: 1,000 mB each of Quintessence, Alkahest, Mathesis, Panacea and Anima Mundi make
+  1,000 mB of Pleroma in the Pleroma Confluence, 65,536 FE/t for 10 seconds, tuned on its console. The amounts are the
+  same as before; the energy, the time and the tuning are new.
+* **Turning Vane:** nine Polymer Sheets in place of nine Aerofoil Composites (see Fixes).
+
+### Reshaped structures
+Every one keeps at least the blocks of its old build, block by block, and adds to them.
+
+| Structure | Was | Now | Shape |
+| --- | --- | --- | --- |
+| Stellar Engine | 951 blocks, 27 x 27 x 27 | 3,750 blocks, 51 x 54 x 53 | A Shkadov thruster: a mirror dish behind the star on a spine, a turning ring of Caplan jets ahead of it |
+| Dyson Array | 2,587 blocks, 129 x 34 x 129 | 6,626 blocks, 89 x 58 x 89 | A sphere of collector panels open between its ribs, an equatorial belt, eight arms out to swinging dishes |
+| Matrioshka Brain | 12,975 blocks, 81 x 78 x 81 | 17,740 blocks, 79 x 91 x 59 | Four nested rings, each tilted on its own axis like an armillary sphere; the innermost turns |
+| Universe Forge | 8,904 blocks, 91 x 70 x 91 | 13,024 blocks, 73 x 56 x 74 | A disc under a stepped glass dome with a coil round every step, and a spire with a turning crown |
+| Concept Compressor | 6,187 blocks, 111 x 52 x 111 | 10,416 blocks, 109 x 18 x 22 | A press line of nine bays, each with a lens array over a ram that beats down on the bed |
+| Omnilex Engine | 9,983 blocks, 75 x 71 x 75 | 14,138 blocks, 57 x 69 x 58 | Nineteen glass spires on a solid base of heartwood sheathed in casing |
+| Reality Compiler | 11,415 blocks, 95 x 66 x 95 | 15,180 blocks, 35 x 73 x 36 | A tower whose plan changes at every stage (square, octagon, circle, diamond), then an open lantern with a turning hoop |
+| Axiomatic Breach Engine | 6,678 blocks, 81 x 88 x 41 | 9,315 blocks, 59 x 90 x 16 | Twin towers on one plinth with the breach between them, a coil strip down each inner face |
+
+(Sizes are width x height x depth.)
+
+### New structures
+| Structure | Blocks | Size | Shape | Built from |
+| --- | --- | --- | --- | --- |
+| Cantor Diagonalizer | 2,954 | 35 x 16 x 36 | A hall over a grid of 64 digit columns under a glass lattice; the diagonal columns stand taller and their heads flip | 1,678 Hyperframe Casing, 843 Containment Field Glass, 336 Cryogenic Cooling Jacket, 80 Quantum Error Correction Core, 16 Field Emitter |
+| Axiom Distiller | 3,134 | 21 x 52 x 22 | A still of seven stages on a coil-wound boiler, with trembling trays, cooling collars and a condenser dome | 1,485 Precision Assembly Casing, 776 Hyperframe Casing, 416 Cryogenic Cooling Jacket, 280 Containment Field Glass, 176 coil blocks |
+| Pleroma Confluence | 4,930 | 79 x 22 x 76 | Five channels coming down in terraces from five fonts into a round basin ringed with pylons | 2,836 Reality Lattice Casing, 1,109 Containment Field Glass, 765 Transfinite Casing, 210 Spacetime Anchor Pylon, 8 Field Emitter, 1 Dimensional Stabiliser |
+| Convergence Engine | 2,658 | 45 x 27 x 46 | Thirteen altars with pedestals in a ring round a column, a glass arch from each, thirteen cores circling above | 1,313 Precision Assembly Casing, 1,064 Hyperframe Casing, 189 Containment Field Glass, 64 coil blocks, 13 pedestals (Resonance, Harmonic or Absolute), 13 Quantum Error Correction Core, 1 Field Emitter |
+
+* The first, second and fourth are built only from casings that need none of their products, so nothing needs itself.
+* **The Pleroma Confluence** was a block with a screen of its own. It is a machine like the others now, with a console
+  (stirrer speed, stirrer width, flow; Reynolds number, blend time θ = 5.3/N·(T/D)², stirring power), a working sound,
+  a face and a JEI and EMI page like any machine. Its own screen and its own JEI and EMI pages are gone.
+* All four have working sounds; the Codex shows each structure, its shape and its signature material.
+
+### Fixes
+* **The Wind Tunnel could not be built.** Its structure needs Turning Vanes, which were crafted from Aerofoil
+  Composite, which only the Wind Tunnel makes. That blocked nozzles, rockets, the Space Elevator, the Planetary Survey
+  and the Stellar Engine. Turning Vanes are made of Polymer Sheets now.
+* **The Dyson Array could not burn anything since 1.7.0.** It only looked at its first slot for fuel, and its fuels
+  have needed Field Syntheses beside the Stellar Core since 1.7.0. It reads the first slot and every slot after the
+  third now (the second and third are still the swarm's).
+
+### Tools
+* `tools/check_progression.py`: walks every recipe outward from what the world gives, and counts a machine's recipes
+  only once its controller and every block of its structure can be made. It prints anything that can never be reached.
+  It found the Wind Tunnel's loop, and it decides which recipes may take a signature material.
+* `tools/check_costs.py`: no longer takes an endgame material as a world find while something else blocks it.
+* `tools/r171_shapes.py`: the twelve structures; it refuses to write a reshaped structure with fewer of any block than
+  its old build.
+
 ## 1.7.0: Field Syntheses (endgame rework, step one)
 
 The first step of the endgame rework (see the design document of 10 November). The endgame now needs every field:

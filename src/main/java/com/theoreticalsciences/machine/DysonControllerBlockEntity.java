@@ -41,7 +41,11 @@ public class DysonControllerBlockEntity extends ControllerBlockEntity {
 
     @Override
     public List<ItemStack> inputStacks() {
-        return List.of(items.getStackInSlot(0));
+        // 1.7.1: slots 1 and 2 are the swarm's (satellites or a probe, shell segments); the fuel and what goes with it
+        // (Field Syntheses since 1.7.0) are the first slot and every slot after the third
+        List<ItemStack> l = new java.util.ArrayList<>();
+        for (int i = 0; i < type.itemInputs; i++) if (i != 1 && i != 2) l.add(items.getStackInSlot(i));
+        return l;
     }
 
     @Override

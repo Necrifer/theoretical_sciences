@@ -30,8 +30,8 @@ public enum MachineType {
     PLANCK_CUTTER           ("planck_cutting",       1, 1, 2, 1, false, null,                         200_000,    4_000, Effect.NONE,        0xFFE060),
     QUANTUM_LITHOGRAPHER    ("lithography",          2, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xA0FF80),
     FEMTO_FABRICATOR        ("femtofabrication",     4, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0x60FFD0),
-    CANTOR_DIAGONALIZER     ("transfinite_computation", 4, 1, 2, 0, false, null,                  2_000_000_000, 200_000_000, Effect.NONE,   0xD0C0FF),
-    AXIOM_DISTILLER         ("axiom_distillation",   3, 2, 2, 1, false, null,                   2_000_000_000, 200_000_000, Effect.NONE,      0xA060FF),
+    CANTOR_DIAGONALIZER     ("transfinite_computation", 4, 1, 2, 0, false, "cantor_diagonalizer",                2_000_000_000, 200_000_000, Effect.NONE,   0xD0C0FF),
+    AXIOM_DISTILLER         ("axiom_distillation",   3, 2, 2, 1, false, "axiom_distiller",                 2_000_000_000, 200_000_000, Effect.NONE,      0xA060FF),
     SPECTROGRAPH            ("spectroscopy",         2, 0, 2, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xB080FF),
     // round 38 (1.2): the Tier II instruments of the new sciences (ScienceMachineBlockEntity gives each its physics)
     SEISMOGRAPH             ("seismography",         2, 0, 1, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xC09060),
@@ -54,7 +54,7 @@ public enum MachineType {
     MULTIVERSE_RIFT         ("rift_harvesting",      2, 1, 4, 1, false, "multiverse_rift",        128_000_000, 4_000_000, Effect.RIFT,        0xC040FF),
     UNIVERSE_FORGE          ("universe_forging",     4, 2, 4, 1, false, "universe_forge",         256_000_000, 8_000_000, Effect.POCKET_UNIVERSE, 0xFFD080),
     MATRIOSHKA_BRAIN        ("matrioshka",           3, 1, 2, 0, false, "matrioshka_brain",       512_000_000, 16_000_000, Effect.MATRIOSHKA, 0x60FF9A),
-    DYSON_ARRAY             ("dyson",                3, 0, 0, 0, true,  "dyson_array",          1_000_000_000, 50_000_000, Effect.DYSON,      0xFFB040),
+    DYSON_ARRAY             ("dyson",                3, 0, 1, 0, true,  "dyson_array",          1_000_000_000, 50_000_000, Effect.DYSON,      0xFFB040),
     ANNIHILATION_REACTOR    ("annihilation",         2, 1, 0, 1, true,  "annihilation_reactor",   256_000_000, 16_000_000, Effect.ANNIHILATION, 0xFF40C0),
     NEUTRON_STAR_FORGE      ("stellar_compression",  3, 1, 2, 1, false, "neutron_star_forge",     128_000_000, 4_000_000, Effect.PULSAR,      0x80FFFF),
     WORMHOLE_PROJECTOR      ("wormhole_transit",     2, 1, 4, 1, false, "wormhole_projector",     128_000_000, 4_000_000, Effect.WORMHOLE,    0x80C0FF),
@@ -89,7 +89,7 @@ public enum MachineType {
     MIRROR_FOUNDRY          ("mirror_synthesis", 4, 2, 2, 1, false, "mirror_foundry", 256_000_000, 8_000_000, Effect.ANNIHILATION, 0xFFB070),
     OMEGA_SIMULATOR         ("omega_simulation", 4, 1, 1, 0, false, null, 256_000_000, 16_000_000, Effect.CONCEPT, 0xFFE080),
     PLEROMA_RECONSTITUTOR   ("pleroma_reconstitution", 6, 2, 1, 0, false, "pleroma_reconstitutor", 2_000_000_000, 500_000_000, Effect.POCKET_UNIVERSE, 0xFFE8A0),
-    CONVERGENCE_ENGINE      ("convergence_automation", 13, 1, 1, 0, false, null, 2_000_000_000, 100_000_000, Effect.NONE, 0xB080FF),
+    CONVERGENCE_ENGINE      ("convergence_automation", 13, 1, 1, 0, false, "convergence_engine", 2_000_000_000, 100_000_000, Effect.NONE, 0xB080FF),
     ESSENCE_DISTILLERY      ("essence_distillation", 1, 12, 1, 1, false, "essence_distillery", 256_000_000, 8_000_000, Effect.FRACTIONATION, 0x80FFE0),
     // round 29: the first power there is - burns ordinary furnace fuel, so the mod can start without another mod's generators
     THERMOELECTRIC_GENERATOR("thermoelectric",       1, 0, 0, 0, true,  null,                         200_000,    4_000, Effect.NONE,        0xFF8040),
@@ -284,7 +284,9 @@ public enum MachineType {
     CONSERVATION_BATH       ("conservation",         2, 0, 2, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x60C0C0),
     ISOTOPE_PROVENANCER     ("provenancing",         2, 0, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0xD080F0),
     BLOOMERY_SHAFT          ("bloomery_smelting",    3, 0, 1, 0, false, "bloomery_shaft",           8_000_000,   200_000, Effect.NONE,        0xFF7030),
-    PHOTOGRAMMETRY_GANTRY   ("photogrammetry",       4, 0, 1, 0, false, "photogrammetry_gantry",   16_000_000,   400_000, Effect.NONE,        0xE0D0A0);
+    PHOTOGRAMMETRY_GANTRY   ("photogrammetry",       4, 0, 1, 0, false, "photogrammetry_gantry",   16_000_000,   400_000, Effect.NONE,        0xE0D0A0),
+    // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
+    PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,

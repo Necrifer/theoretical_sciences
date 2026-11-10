@@ -153,7 +153,7 @@ public class QHJeiPlugin implements IModPlugin {
         com.theoreticalsciences.compat.page.RecipePage.clear();      // 1.2.0: pages are laid out again after a reload
         for (MachineType t : MachineType.values()) reg.addRecipeCategories(new MachineRecipeCategory(gui, t, TYPES.get(t)));
         reg.addRecipeCategories(new MultiblockCategory(gui));
-        reg.addRecipeCategories(new ExtremeCraftingCategory(gui), new CompactionCategory(gui), new PleromaCategory(gui));
+        reg.addRecipeCategories(new ExtremeCraftingCategory(gui), new CompactionCategory(gui));
         reg.addRecipeCategories(new ConvergenceCategory(gui), new ForgeCategory(gui));
     }
 
@@ -175,7 +175,6 @@ public class QHJeiPlugin implements IModPlugin {
             else ext.add(h.value());
         }
         reg.addRecipes(ExtremeCraftingCategory.TYPE, ext);
-        reg.addRecipes(PleromaCategory.TYPE, List.of(PleromaCategory.Recipe.build()));
         reg.addRecipes(ConvergenceCategory.TYPE, level.getRecipeManager().getAllRecipesFor(com.theoreticalsciences.converge.ConvergenceRegistry.TYPE.get()).stream().map(RecipeHolder::value).toList());
         reg.addRecipes(ForgeCategory.TYPE, com.theoreticalsciences.transcend.CoreForge.all());
         // where the fluids that no machine makes come from
@@ -211,7 +210,6 @@ public class QHJeiPlugin implements IModPlugin {
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.EXTREME_TABLE_ITEM.get()), mezz.jei.api.constants.RecipeTypes.CRAFTING);   // it crafts ordinary recipes too
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTOR_ITEM.get()), CompactionCategory.TYPE);
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.AUTO_ASSEMBLER_ITEM.get()), ExtremeCraftingCategory.TYPE);
-        reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.transcend.TranscendRegistry.CONFLUENCE_ITEM.get()), PleromaCategory.TYPE);
         for (String id : new String[]{"convergence_altar", "resonance_pedestal", "harmonic_pedestal", "absolute_pedestal"})
             reg.addRecipeCatalyst(new ItemStack(QHItems.get(id)), ConvergenceCategory.TYPE);
     }

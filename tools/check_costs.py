@@ -182,7 +182,9 @@ def compute(recipes=None):
                         blockers['fluid:' + k] += 1
         if not blockers:
             break
-        k = blockers.most_common(1)[0][0]
+        sig = {NS + i for ids in ENDGAME.values() for i in ids}
+        # (never one of the endgame's own materials while anything else blocks: their costs are what is being measured)
+        k = next((b for b, _ in blockers.most_common() if b not in sig), blockers.most_common(1)[0][0])
         seeds[k] = cost[k] = RARE
         ASSUMED.append(k)
     return cost, route, recipes

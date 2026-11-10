@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "N",
+      "unit": "rev/s",
+      "min": 0.5,
+      "max": 6,
+      "step": 0.1,
+      "default": 1.0
+    },
+    {
+      "id": "Di",
+      "unit": "m",
+      "min": 0.3,
+      "max": 1.5,
+      "step": 0.05,
+      "default": 0.5
+    },
+    {
+      "id": "Q",
+      "unit": "L/s",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "V": 2000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Re",
+      "unit": "",
+      "expr": "1000000*N*Di^2",
+      "formula": "Reynolds number Re = ρND²/μ: over 10,000 the basin is turbulent"
+    },
+    {
+      "id": "tm",
+      "unit": "s",
+      "expr": "5.3/N*(1.5/Di)^2*(1 + 0.02*d)",
+      "formula": "blend time θ = 5.3/N·(T/D)²"
+    },
+    {
+      "id": "mix",
+      "unit": "",
+      "expr": "V/Q/(5.3/N*(1.5/Di)^2*(1 + 0.02*d))",
+      "formula": "residence time V/Q over blend time: 3 or more and the five are one fluid before they leave"
+    },
+    {
+      "id": "P",
+      "unit": "kW",
+      "expr": "5*N^3*Di^5",
+      "formula": "stirring power P = Np·ρ·N³·D⁵"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "shear",
+      "kind": "wear",
+      "expr": "40 - 5*N^3*Di^5",
+      "formula": "under 40 kW, or the stirrer shears the Pleroma apart"
+    }
+  ],
+  "rate": "clamp(Q/20, 0.2, 1.5)",
+  "rate_formula": "more flow, more Pleroma",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

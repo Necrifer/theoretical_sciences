@@ -1,0 +1,94 @@
+{
+  "type": "theoreticalsciences:horizon_simulation",
+  "min_tier": 5,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:universe_seed",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:horizon_shard",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:primordial_ash",
+      "count": 4
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:deep_record",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:planetary_survey",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:unified_field_lattice",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:compiled_law",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:lex_prima",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:breach_shard",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:pure_concept_ingot",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:diagonal_ingot",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:distilled_axiom",
+      "count": 3
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:transcendent_plasma",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_spacetime",
+      "amount": 2000
+    }
+  ],
+  "energy": 268435456,
+  "duration": 2400,
+  "research": "theoreticalsciences:horizon_simulation",
+  "physics": {
+    "windows": [
+      {
+        "q": "ks",
+        "min": 0.0,
+        "max": 0.05
+      }
+    ]
+  },
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:event_horizon_lens",
+      "count": 1
+    }
+  ]
+}
