@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:cyclotron_irradiation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:resonant_shard",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:qubit_die",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:charged_lattice_seed",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 800,
+  "research": "theoreticalsciences:cyclotron_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Eth": 5.0
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": 5.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

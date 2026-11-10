@@ -1,5 +1,49 @@
 # Changelog
 
+## 1.7.0: Field Syntheses (endgame rework, step one)
+
+The first step of the endgame rework (see the design document of 10 November). The endgame now needs every field:
+seven Field Syntheses, each made by a chain of one field's machines, go into every endgame recipe. The changes apply
+at once.
+
+### The Field Syntheses
+| Field Synthesis | Chain |
+| --- | --- |
+| Unified Field Lattice | Cyclotron (Charged Lattice Seed) → Synchrotron (Coherent Field Beam) → Femtoscale Assembly Line |
+| Perennial Catalyst Matrix | Catalyst Formulator (Doped Catalyst Bed) → Framework Assembler (Framework Catalyst) → Chelation Column (Chelated Catalyst) → Regeneration Kiln |
+| Proof Lattice | Proof Assistant (Verified Lemma) → Certificate Verifier (Certified Theorem) → Automaton Lattice |
+| Living Archive | Gene Sequencer (Genome Library) → Ancient DNA Lab (Reconstructed Genome) → Revival Vat |
+| Engineered Mind | Neural Culture Array (Cultured Cortex) → Synapse Trainer (Trained Cortex) → Connectome Array (Mapped Mind) → Load Test Rig |
+| Planetary Survey | Rocket Assembly, with ice cores (Survey Probe) → Space Elevator (Orbital Survey) → Heliograph |
+| Deep Record | Chrono Loom, with Excavation Records (Stratigraphic Timeline) → Causality Loop Engine |
+
+* Every step is tuned on its console like any other recipe of that machine.
+* **Lettered levels:** nine Field Syntheses of one kind and level make one of the next level in a crafting grid:
+  Alpha to Omega, then Aleph to Tav (46 levels).
+* The Perennial Catalyst Matrix is an endgame catalyst: it never wears.
+
+### Changed recipes (all endgame recipes now take Field Syntheses)
+* **Cosmic engineering** (the plain item, two of each): every recipe of the Dyson Array (Planetary Survey and Unified
+  Field Lattice), Stellar Engine (Planetary Survey and Perennial Catalyst Matrix), Matrioshka Brain (Engineered Mind
+  and Proof Lattice) and Universe Forge (Living Archive and Unified Field Lattice) takes two of each of its pair.
+* **Beyond physics** (one Alpha): every recipe of the Reality Compiler, Omnilex Engine, Axiomatic Breach Engine,
+  Concept Compressor, Cantor Diagonalizer and Axiom Distiller takes one Alpha Field Synthesis; each machine's recipes
+  take its three syntheses in turn.
+* **The final tier** (one Beta of each of three): every recipe of the Transcendent Plasma Forge, Eye of the Horizon,
+  Pleroma Reconstitutor and Eschaton Foundry. Between them they need all seven.
+* In all, 88 endgame recipes changed: Transfinite Computation 12, Concept Compression 16, Transcendent Forging 9,
+  Universe Forging 9, Axiom Distillation 7, Omnilex Simulation 7, Pleroma Reconstitution 7, Reality Compilation 6,
+  Matrioshka 4, Eschaton Founding 4, Horizon Simulation 3, Reality Breach 2, Dyson 1, Stellar Thrust 1.
+* New: two more Dyson Array fuels and two more Stellar Engine fuels, burning Field Syntheses (each machine had one).
+* The Stellar Engine now has three item inputs (it had one).
+* The Convergence Engine's recipes are unchanged: it automates mid-game parts that the chains themselves use.
+
+### Balance
+* tools/check_costs.py works out every item's cost (vanilla materials at 1, tedious ones more, plus time and energy)
+  and fails if a newer route costs more than an older one, or a tier is not steep enough over the one below.
+* It found the 1.6.0 Bloomery route to Rated I-Beams dearer than iron. Changed: the Bloomery Shaft now makes 6
+  Bloomery Steel per smelt (was 3), and the Load Test Rig rolls 1 Bloomery Steel into 6 Rated I-Beams (was 2 into 4).
+
 ## 1.6.0: Archaeology
 
 Digging up the past with physics, chemistry and mathematics. Seven research entries, a new Overworld site with finds
@@ -35,7 +79,7 @@ as they do not fit Minecraft.)
 * Chrono Loom: 2 Excavation Records, 8 Chronon Capacitors, 16 Zeolite Catalysts and 8000 mB Chronon Gas make 2
   **Arrow of Time Shards** (the old route needs 8 Negentropy Cells and 8 Imaginary Units as well, and twice the zeolite
   and gas). Stratigraphy is the arrow of time written in the ground.
-* Load Test Rig: 2 Bloomery Steel make 4 **Rated I-Beams** (the iron route takes 6 iron ingots for 4).
+* Load Test Rig: 1 Bloomery Steel makes 6 **Rated I-Beams** (changed in 1.7.0; was 2 for 4).
 
 ### Fixes
 * The **Woolly Mammoth** and **Meganeura** walked backwards: their models were turned the wrong way round. Fixed.

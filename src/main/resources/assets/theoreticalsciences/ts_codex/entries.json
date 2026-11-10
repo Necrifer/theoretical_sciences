@@ -56883,5 +56883,42 @@
     "text": "$(thing)Equations$()$(br)Pixel = 4·Z/f mm$(br)σZ = Z²·σd/(f·B)$(br)B/Z between 0.1 and 0.8"
    }
   ]
+ },
+ "materials/field_syntheses": {
+  "title": "Field Syntheses",
+  "icon": "theoreticalsciences:unified_field_lattice",
+  "category": "materials",
+  "research": "femtoengineering",
+  "pages": [
+   {
+    "type": "text",
+    "text": "The endgame has four tiers, and the $(thing)Field Syntheses$() are the first: one per field, each made by a chain of that field's machines. Cosmic engineering (the Dyson Array, Stellar Engine, Matrioshka Brain, Universe Forge) needs two plain syntheses per recipe; beyond physics needs an $(thing)Alpha$() one; the final tier a $(thing)Beta$() one, and all seven between its machines."
+   },
+   {
+    "type": "text",
+    "text": "Nine Field Syntheses of one level make one of the next in a crafting grid: Alpha, Beta, Gamma and on through the Greek letters, then Aleph, Bet and on through the Hebrew. The Perennial Catalyst Matrix is an endgame catalyst: it never wears."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:unified_field_lattice",
+     "theoreticalsciences:perennial_catalyst_matrix",
+     "theoreticalsciences:proof_lattice",
+     "theoreticalsciences:living_archive"
+    ],
+    "text": "Physics: Cyclotron, Synchrotron, Femtoscale Assembly Line. Chemistry: Catalyst Formulator, Framework Assembler, Chelation Column, Regeneration Kiln. Mathematics: Proof Assistant, Certificate Verifier, Automaton Lattice. Biology: Gene Sequencer, Ancient DNA Lab, Revival Vat.",
+    "title": "The chains (1)"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:engineered_mind",
+     "theoreticalsciences:planetary_survey",
+     "theoreticalsciences:deep_record"
+    ],
+    "text": "Mind and engineering: Neural Culture Array, Synapse Trainer, Connectome Array, Load Test Rig. Earth and space: Rocket Assembly (with ice cores), Space Elevator, Heliograph. Archaeology: Chrono Loom (with Excavation Records), Causality Loop Engine.",
+    "title": "The chains (2)"
+   }
+  ]
  }
 }

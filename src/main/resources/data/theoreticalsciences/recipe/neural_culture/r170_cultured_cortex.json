@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:neural_culture",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:lipid_bilayer",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:blood_plasma",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cultured_cortex",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:neurobiology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "vmin": 60
+    },
+    "windows": [
+      {
+        "q": "v",
+        "min": 60,
+        "max": 150
+      }
+    ]
+  }
+}

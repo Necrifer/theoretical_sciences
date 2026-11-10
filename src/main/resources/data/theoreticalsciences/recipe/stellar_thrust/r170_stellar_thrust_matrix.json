@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:stellar_thrust",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stellar_core",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:perennial_catalyst_matrix",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:residual_starlight",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_plasma",
+      "amount": 12000
+    }
+  ],
+  "energy": 16384,
+  "duration": 144000,
+  "research": "theoreticalsciences:stellar_engines",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "F",
+        "min": 0.2,
+        "max": 2.0
+      }
+    ]
+  }
+}

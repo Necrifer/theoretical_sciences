@@ -1,0 +1,45 @@
+{
+  "type": "theoreticalsciences:heliography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:orbital_survey",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:faraday_mesh",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:resonant_shard",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:atto_capacitor",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:planetary_survey",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 900,
+  "research": "theoreticalsciences:space_weather",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Kp",
+        "min": 6,
+        "max": 9
+      },
+      {
+        "q": "r0",
+        "min": 3,
+        "max": 7.5
+      }
+    ]
+  }
+}

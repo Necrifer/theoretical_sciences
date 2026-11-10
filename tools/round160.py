@@ -349,12 +349,12 @@ mrec('conservation', 'r160_stabilised_artefact', [('corroded_artefact', 1), ('mi
      256, 400, 'conservation_science', {'C0': 3000, 'Lt': 8}, [('C', 0, 100)], 'conservation_bath')
 mrec('provenancing', 'r160_provenanced_artefact', [('stabilised_artefact', 1), ('minecraft:quartz', 1)], [], [('provenanced_artefact', 1)], [],
      512, 400, 'isotope_provenance', {'R': 0.7095, 'Ra': 0.712, 'Rb': 0.708}, [('sep', 25, 100000)], 'isotope_provenancer')
-mrec('bloomery_smelting', 'r160_bloomery_steel', [('slag_cake', 1), ('minecraft:raw_iron', 2), ('minecraft:charcoal', 4)], [], [('bloomery_steel_ingot', 3)], [],
+mrec('bloomery_smelting', 'r160_bloomery_steel', [('slag_cake', 1), ('minecraft:raw_iron', 2), ('minecraft:charcoal', 4)], [], [('bloomery_steel_ingot', 6)], [],
      1024, 600, 'archaeometallurgy', None, [('x', 2, 8), ('Cw', 0.5, 1.2)], 'bloomery_shaft')
 mrec('photogrammetry', 'r160_excavation_record', [('dated_potsherd', 2), ('tree_ring_chronology', 1), ('provenanced_artefact', 1), ('minecraft:paper', 8)], [],
      [('excavation_record', 1)], [], 4096, 800, 'photogrammetry', {'Z0': 4}, [('sz', 0, 2), ('gsd', 0, 0.3)], 'photogrammetry_gantry')
 # newer, cheaper routes elsewhere: I-beams of bloomery steel; Arrow of Time Shards from the stratigraphic record
-mrec('load_testing', 'r160_rated_i_beam_bloomery', [('bloomery_steel_ingot', 2)], [], [('rated_i_beam', 4)], [], 128, 200, 'archaeometallurgy',
+mrec('load_testing', 'r160_rated_i_beam_bloomery', [('bloomery_steel_ingot', 1)], [], [('rated_i_beam', 6)], [], 128, 200, 'archaeometallurgy',
      {'Pk': 500, 'Eg': 210}, [('SF', 2.0, 4.0)], 'load_test_rig')
 verify_recipes()
 dump(os.path.join(D, 'recipe/chronoweaving', 'r160_arrow_of_time_shard_record.json'),

@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:certificate_check",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:verified_lemma",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:grover_oracle",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:one_time_pad",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:certified_theorem",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 600,
+  "research": "theoreticalsciences:complexity_theory",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lg",
+        "min": 12,
+        "max": 40
+      }
+    ]
+  }
+}
