@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.7.3: Mana and aura themselves
+
+Two of the four magic mods can now give their own mechanic to a recipe, beside the item routes of 1.7.2. Botania and
+Nature's Aura come first; Thaumaturge and Astral Sorcery are more involved and follow once these two have been played.
+Without the mod, none of this exists and nothing changes.
+
+### New
+* **A recipe can ask for mana or aura** (`"magic": {"mana": n}` or `{"aura": n}`), and a pack can use this in its
+  own recipes for any machine.
+  * **Mana (Botania)** is taken from a Mana Pool standing against the machine; for a structure, against its
+    controller. Anything else that holds mana works too. Several pools are added together.
+  * **Aura (Nature's Aura)** is taken from the air within 20 blocks of the machine, richest spot first. The machine
+    stops when the land is down to half of what it holds by nature, so it cannot ruin the land by itself.
+* **Three new optional recipes**, each the same as its 1.7.2 item route without the mod's items:
+
+| Field Synthesis | Machine | Draws | In place of |
+| --- | --- | --- | --- |
+| Living Archive | Revival Vat | 50,000 mana | 4 Mana Pearls, 2 Mana Diamonds |
+| Planetary Survey | Heliograph | 60,000 aura | 2 Ingots of the Skies, 4 Bottled Aura |
+| Deep Record | Causality Loop Engine | 80,000 aura | 1 Hand of Time, 2 Ingots of the Depths |
+
+* The item routes stay. With the items in the machine it takes the item route; without them, the mana or aura one.
+* JEI and EMI show the amount on the recipe; a machine that lacks it says "Needs mana: stand a Mana Pool against it"
+  or "Too little aura in the air here".
+* No new block: I had proposed port blocks, but a Mana Pool against the machine does the same with nothing new to
+  craft, and aura needs no block at all.
+
+### Technical
+* The code that names Botania or Nature's Aura sits in two classes that are only touched when that mod is installed,
+  and a failure in the other mod's interface stops the recipe, never the game.
+* Built against Botania Revived 2.0.1 and Nature's Aura 41.10, read from the modpack.
+
 ## 1.7.2: The Consilience Core (endgame rework, last step)
 
 The last step of the endgame rework: one last material that needs every field, a balance pass from the cost check's

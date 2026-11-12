@@ -53,6 +53,8 @@ public class QHRecipe implements Recipe<QHRecipeInput> {
     public com.theoreticalsciences.field.Environment environment = com.theoreticalsciences.field.Environment.ANY;
     /** QMD-style operating window: the particle / feed this recipe works with and where the machine must be run. */
     public com.theoreticalsciences.machine.physics.RecipePhysics physics = com.theoreticalsciences.machine.physics.RecipePhysics.NONE;
+    /** 1.7.3: Botania mana taken per run from a Mana Pool against the machine, and Nature's Aura aura taken from the air round it. */
+    public int mana, aura;
     private final List<SizedIngredient> matchList;
 
     public QHRecipe(String typeId, List<SizedIngredient> itemInputs, List<SizedFluidIngredient> fluidInputs,

@@ -191,6 +191,9 @@ public final class RecipePage {
         }
         if (r.minTier > 0) line(0xFFFFB040, Component.translatable("jei.theoreticalsciences.min_tier", r.minTier));
         if (r.insight > 0) line(0xFF60D0FF, Component.translatable("jei.theoreticalsciences.insight", r.insight));
+        // 1.7.3: another mod's mechanic, drawn on in place of its items
+        if (r.mana > 0) line(0xFF40C8FF, Component.translatable("jei.theoreticalsciences.mana", String.format(java.util.Locale.ROOT, "%,d", r.mana)));
+        if (r.aura > 0) line(0xFF70E080, Component.translatable("jei.theoreticalsciences.aura", String.format(java.util.Locale.ROOT, "%,d", r.aura)));
         // the catalyst, and what happens to it
         for (Slot s : slots) {
             if (s.kind() != Kind.CATALYST || !s.catalystSlot()) continue;

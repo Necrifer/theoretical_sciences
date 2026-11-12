@@ -140,7 +140,13 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
 
     public QHRecipeSerializer(String typeId) {
         this.typeId = typeId;
-        this.codec = RecordCodecBuilder.mapCodec(i -> i.group(
+        // 1.7.3: "magic": {"mana": n, "aura": n} (a seventeenth field; a record codec holds sixteen, so it rides beside)
+        MapCodec<int[]> magic = RecordCodecBuilder.mapCodec(i -> i.group(
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("mana", 0).forGetter((int[] m) -> m[0]),
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("aura", 0).forGetter((int[] m) -> m[1])
+        ).apply(i, (m, au) -> new int[]{m, au}));
+        MapCodec<int[]> magicField = magic.codec().optionalFieldOf("magic", new int[]{0, 0});
+        MapCodec<QHRecipe> main = RecordCodecBuilder.mapCodec(i -> i.group(
                 SizedIngredient.FLAT_CODEC.listOf().optionalFieldOf("item_inputs", List.of()).forGetter(r -> r.itemInputs),
                 SizedFluidIngredient.FLAT_CODEC.listOf().optionalFieldOf("fluid_inputs", List.of()).forGetter(r -> r.fluidInputs),
                 ItemStack.CODEC.listOf().optionalFieldOf("item_outputs", List.of()).forGetter(r -> r.itemOutputs),
@@ -166,6 +172,11 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             r.physics = ph;
             return r;
         }));
+        this.codec = Codec.mapPair(main, magicField).xmap(p -> {
+            p.getFirst().mana = p.getSecond()[0];
+            p.getFirst().aura = p.getSecond()[1];
+            return p.getFirst();
+        }, r -> com.mojang.datafixers.util.Pair.of(r, new int[]{r.mana, r.aura}));
 
         StreamCodec<RegistryFriendlyByteBuf, List<SizedIngredient>> items = SizedIngredient.STREAM_CODEC.apply(ByteBufCodecs.list());
         StreamCodec<RegistryFriendlyByteBuf, List<SizedFluidIngredient>> fluids = SizedFluidIngredient.STREAM_CODEC.apply(ByteBufCodecs.list());
@@ -189,6 +200,8 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             buf.writeVarInt(r.insight);
             r.environment.write(buf);
             r.physics.write(buf);
+            buf.writeVarInt(r.mana);
+            buf.writeVarInt(r.aura);
         }, buf -> {
             List<SizedIngredient> a = items.decode(buf);
             List<SizedFluidIngredient> b = fluids.decode(buf);
@@ -206,6 +219,8 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             r.insight = buf.readVarInt();
             r.environment = com.theoreticalsciences.field.Environment.read(buf);
             r.physics = com.theoreticalsciences.machine.physics.RecipePhysics.read(buf);
+            r.mana = buf.readVarInt();
+            r.aura = buf.readVarInt();
             return r;
         });
     }

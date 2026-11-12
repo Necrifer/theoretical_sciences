@@ -542,6 +542,13 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             setStatus(MachineStatus.OUTPUT_FULL);
             return;
         }
+        if (r.mana > 0 || r.aura > 0) {                 // 1.7.3: another mod's mana or aura, in place of its items
+            MachineStatus lacking = com.theoreticalsciences.compat.magic.Magic.lacking(level, worldPosition, r, 1);
+            if (lacking != null) {
+                setStatus(lacking);
+                return;
+            }
+        }
         long cost = Math.max(1L, (long) Math.min(Long.MAX_VALUE / 4, (double) scaledEnergyL(r) * energyFactor()));
         ensureBuffer(cost);
         if (energy.stored() < cost) {
@@ -575,6 +582,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             int runsDone = 0;
             for (int k = 0; k < runs; k++) {
                 if (k > 0 && !(r.matches(new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0)), level) && canOutput(r, true))) break;
+                if (!com.theoreticalsciences.compat.magic.Magic.take(level, worldPosition, r)) break;       // 1.7.3: its mana or aura first
                 if (!consumeInputs(r)) break;          // (what it needed from the ME network was gone)
                 wearCatalysts(level, r);               // 1.2.0: catalysts and instruments wear
                 runsDone++;
