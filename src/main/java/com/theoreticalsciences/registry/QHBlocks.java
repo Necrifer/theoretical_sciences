@@ -31,6 +31,10 @@ public final class QHBlocks {
     public static final DeferredBlock<PortBlock> INTERFACE_PORT = BLOCKS.registerBlock("interface_port", PortBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(5.0F, 12.0F).requiresCorrectToolForDrops()
                     .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 5));
+    /** 1.7.4: holds Botania mana for a structure; fits wherever an Interface Port does. */
+    public static final DeferredBlock<com.theoreticalsciences.machine.ManaPortBlock> MANA_PORT = BLOCKS.registerBlock("mana_port", com.theoreticalsciences.machine.ManaPortBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0F, 12.0F).requiresCorrectToolForDrops()
+                    .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 7));
     public static final DeferredBlock<ResearchTerminalBlock> RESEARCH_TERMINAL = BLOCKS.registerBlock("research_terminal", ResearchTerminalBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(3.5F, 10.0F).requiresCorrectToolForDrops()
                     .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 9).noOcclusion());

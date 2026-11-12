@@ -86,6 +86,7 @@ public class TheoreticalSciences {
         modBus.addListener(QHNetwork::register);
         modBus.addListener(QHCapabilities::register);
         modBus.addListener(com.theoreticalsciences.compat.MEBridge::registerCaps);
+        modBus.addListener(com.theoreticalsciences.compat.magic.Magic::registerCaps);          // 1.7.4: the Mana Port, for Botania
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> com.theoreticalsciences.transcend.CoreForge.invalidate());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> com.theoreticalsciences.extreme.Collections.invalidate());
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.endgame.EntropyCenserItem::cloudApplies);

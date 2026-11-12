@@ -57313,8 +57313,17 @@
    },
    {
     "type": "text",
-    "text": "$(thing)Mana and aura themselves$()$(br)Two of those arts can give the thing itself in place of what is made with it.$(br2)Living Archive: 50,000 mana in place of the pearls and diamonds. Stand a $(item)Mana Pool$() against the Revival Vat's controller.$(br2)Planetary Survey: 60,000 aura in place of the ingots and bottles. Deep Record: 80,000 aura in place of the Hand of Time and the ingots. The machine takes it from the air within twenty blocks, and stops when the land is down to half of what it holds by nature.",
+    "text": "$(thing)Mana and aura themselves$()$(br)Two of those arts can give the thing itself in place of what is made with it.$(br2)Living Archive: 50,000 mana in place of the pearls and diamonds. Fill a $(item)Mana Port$() in the Revival Vat, or stand a $(item)Mana Pool$() against its controller.$(br2)Planetary Survey: 60,000 aura in place of the ingots and bottles. Deep Record: 80,000 aura in place of the Hand of Time and the ingots. The machine takes it from the air within twenty blocks, and stops when the land is down to half of what it holds by nature.",
     "r173": true
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:mana_port"
+    ],
+    "text": "A $(item)Mana Port$() takes the place of a structure's block wherever an Interface Port may, and holds as much as a Mana Pool. Aim a $(item)Mana Spreader$() at it, and the structure's recipes that ask for mana draw on it. A Mana Pool against the controller still works.$(br2)Made by crafting.",
+    "title": "The Mana Port",
+    "r174": true
    }
   ]
  }

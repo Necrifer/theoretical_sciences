@@ -131,6 +131,7 @@ public final class QHItems {
                 ITEMS.registerItem(type.id(), p -> new MachineBlockItem(block.get(), p, type),
                         new Item.Properties().rarity(type.isMultiblock() ? Rarity.EPIC : Rarity.RARE))));
         BLOCK_ITEMS.put("interface_port", ITEMS.registerSimpleBlockItem(QHBlocks.INTERFACE_PORT));
+        BLOCK_ITEMS.put("mana_port", ITEMS.registerSimpleBlockItem(QHBlocks.MANA_PORT));
         BLOCK_ITEMS.put("research_terminal", ITEMS.registerSimpleBlockItem(QHBlocks.RESEARCH_TERMINAL, new Item.Properties().rarity(Rarity.RARE)));
     }
 

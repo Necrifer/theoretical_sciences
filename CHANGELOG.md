@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.7.4: The Mana Port
+
+### New
+* **Mana Port.** A block that takes the place of a structure's block wherever an Interface Port may, in every
+  structure of the mod. It holds 1,000,000 mana, as much as a Mana Pool, and takes it from Mana Spreaders' bursts:
+  aim a spreader at it. The structure's recipes that ask for mana draw on its Mana Ports first, then on any Mana Pool
+  against the controller. Several ports add together.
+* Set against a single-block machine, a Mana Port serves that machine the same way.
+* Use it with an empty hand to read what it holds; a comparator reads it too.
+* **Recipe:** an Interface Port in the middle, four Manasteel Ingots at the corners and four Mana Pearls at the
+  sides, on a crafting table. The recipe only exists with Botania installed; without Botania the block is inert.
+* A machine short of mana now says "Needs mana: fill a Mana Port in the structure, or stand a Mana Pool against it".
+
+### Unchanged
+* The 1.7.3 mana and aura recipes and their amounts. A Mana Pool against the machine still works.
+
 ## 1.7.3: Mana and aura themselves
 
 Two of the four magic mods can now give their own mechanic to a recipe, beside the item routes of 1.7.2. Botania and
