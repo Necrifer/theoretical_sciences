@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.8.3
+* The Empyrean Assembly Table's ceiling on kinds of item is 256, up from 128, so a pack recipe that uses a different
+  item in every one of the 225 slots can still be filled. At that ceiling a table saves under 20 KB.
+
 ## 1.8.2: Chunk safety for the Empyrean Assembly Table
 
 Checked against "chunk banning" (a chunk whose saved data grows too large to load). The table was already safe by
