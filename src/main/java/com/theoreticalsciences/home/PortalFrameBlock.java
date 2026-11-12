@@ -101,15 +101,21 @@ public class PortalFrameBlock extends Block {
         for (int k = -1; k <= 1; k++) {
             BlockPos centre = pos.relative(facing, 2).relative(side, k);
             if (!ringComplete(level, centre)) continue;
-            for (int dx = -1; dx <= 1; dx++)
-                for (int dz = -1; dz <= 1; dz++) level.setBlock(centre.offset(dx, 0, dz), HomeRegistry.PORTAL.get().defaultBlockState(), 2);
-            level.globalLevelEvent(1038, centre, 0);                       // the End Portal's opening sound, heard everywhere
-            level.sendParticles(ParticleTypes.END_ROD, centre.getX() + 0.5, centre.getY() + 1.5, centre.getZ() + 0.5, 240, 1.4, 1.0, 1.4, 0.08);
+            if (level.getBlockState(centre).is(HomeRegistry.PORTAL.get())) return;      // already open
+            PortalOpening.begin(level, centre);            // 1.8.1: the light comes first; the opening fills when it lands
             return;
         }
     }
 
-    private static boolean ringComplete(Level level, BlockPos centre) {
+    /** Using a keyed frame with an empty hand tries the ring again (if the game stopped while the light was coming). */
+    @Override
+    protected net.minecraft.world.InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        if (!state.getValue(KEYSTONE)) return net.minecraft.world.InteractionResult.PASS;
+        if (!level.isClientSide) tryOpen((ServerLevel) level, pos, state.getValue(FACING));
+        return net.minecraft.world.InteractionResult.sidedSuccess(level.isClientSide);
+    }
+
+    static boolean ringComplete(Level level, BlockPos centre) {
         for (Direction d : Direction.Plane.HORIZONTAL)
             for (int o = -1; o <= 1; o++) {
                 BlockState s = level.getBlockState(centre.relative(d, 2).relative(d.getClockWise(), o));

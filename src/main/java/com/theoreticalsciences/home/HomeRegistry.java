@@ -38,11 +38,11 @@ public final class HomeRegistry {
             EmpyreanRecipe.Serializer::new);
 
     public static final DeferredHolder<Block, EmpyreanTableBlock> TABLE = BLOCKS.registerBlock("empyrean_assembly_table", EmpyreanTableBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(4.0F, 3600000F).sound(SoundType.AMETHYST).lightLevel(s -> 12).noLootTable());
+            BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(4.0F, 3600000F).sound(SoundType.STONE).lightLevel(s -> 12).noLootTable());
     public static final DeferredHolder<Block, OfferingAltarBlock> ALTAR = BLOCKS.registerBlock("offering_altar", OfferingAltarBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).strength(4.0F, 3600000F).sound(SoundType.AMETHYST).lightLevel(s -> 10));
+            BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).strength(4.0F, 3600000F).sound(SoundType.STONE).lightLevel(s -> 10));
     public static final DeferredHolder<Block, PortalFrameBlock> FRAME = BLOCKS.registerBlock("homeward_portal_frame", PortalFrameBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).strength(6.0F, 3600000F).sound(SoundType.AMETHYST)
+            BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).strength(6.0F, 3600000F).sound(SoundType.STONE)
                     .lightLevel(s -> s.getValue(PortalFrameBlock.KEYSTONE) ? 14 : 4));
     public static final DeferredHolder<Block, HomePortalBlock> PORTAL = BLOCKS.registerBlock("homeward_portal", HomePortalBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(-1.0F, 3600000F).noCollission().noLootTable().lightLevel(s -> 15)

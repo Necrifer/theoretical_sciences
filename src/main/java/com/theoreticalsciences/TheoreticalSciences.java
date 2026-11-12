@@ -130,6 +130,7 @@ public class TheoreticalSciences {
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.DimensionLaws::onPlayerTick);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.VoidFall::onPlayerTick);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.HomeTravel::onPlayerTick);
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.PortalOpening::onLevelTick);                // 1.8.1
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.SpawnRules::onFinalizeSpawn);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.SpawnRules::onJoin);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.machine.tuning.Materialisation::tick);

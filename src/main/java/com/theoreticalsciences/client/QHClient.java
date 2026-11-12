@@ -47,6 +47,7 @@ public final class QHClient {
             ItemBlockRenderTypes.setRenderLayer(e.flowing.get(), RenderType.translucent());
         }));
         NeoForge.EVENT_BUS.addListener(EffectRenderer::onRenderLevel);
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.PortalOpeningRenderer::onRenderLevel);     // 1.8.1
         // 1.2.0: animated multiblocks (moving parts, stars, shells, beams), for this mod's machines and others'
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.client.render.effects.FxRenderer::onRenderLevel);
         NeoForge.EVENT_BUS.addListener((RegisterClientCommandsEvent e) -> com.theoreticalsciences.client.render.effects.FxCommands.register(e.getDispatcher()));

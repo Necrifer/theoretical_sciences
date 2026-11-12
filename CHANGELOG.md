@@ -1,5 +1,41 @@
 # Changelog
 
+## 1.8.1: The long cycle
+
+### Recipe changes (all forty-three Empyrean Assembly Table recipes)
+* **Every slot of every recipe now asks for 650,000** of its ingredient. Before: 1 to 4 of a machine material, 64 of
+  an element or a work, 256 of a pillar, and 65,536 in the Homeward Portal Frame.
+* **Every recipe now gives 1** a craft. Before: 4,096 (the frame already gave 1).
+* The pictures, and which materials go where, are unchanged. The Consilience Core's slots are no longer an exception.
+* The table holds 64 crafts' worth of each ingredient, so its buffer grew with the recipes.
+* These numbers are deliberate and are not balanced against anything. For scale: one craft now takes between about 40
+  and 125 million items, and the checklist asks for 33,550,337 of it; each tier above multiplies
+  that again. The "what the whole checklist takes" table under 1.8.0 no longer applies.
+
+### New: the portal opens with a ceremony
+* Setting the twelfth Keystone of Return no longer fills the opening at once. Each keystone sends a beam of light
+  into the sky, one after another round the ring; the twelve lean together and meet high above; halos turn round
+  what gathers there; it comes down as one great beam onto the opening, swells until the whole ring is inside it,
+  and sinks away into the portal it leaves. About eight seconds, with its own sound.
+* The opening fills when the beam lands. Breaking a frame while the light is coming stops it.
+* Using a keyed frame with an empty hand tries the ring again, in case the game was closed mid-ceremony.
+
+### Changed: Omnipotency's blocks
+* **Silver Bark** is redrawn: pale plates with dark seams, birch-like marks, a crack with gold in it, and proper
+  rings on the cut ends, every third one gold.
+* **Aureate Leaves** are redrawn as separate leaves over a darker layer, with gaps you can see through (they no
+  longer block light or sight).
+* **Sounds now match the material** for walking, breaking and placing: marble, its bricks and gilded marble sound
+  like stone; Heaven Soil like dirt; Halo Grass like grass; Cloudstone and Radiant Cloud like wool; Seraph Gold like
+  metal; Glory Lantern like a lantern; Silver Bark like wood; Aureate Leaves like leaves. The Empyrean Assembly
+  Table, Offering Altar and Homeward Portal Frame sound like stone.
+* **Choir Crystal Spire has its own sounds.** Clear, high, ringing notes with no noise in them: a step is a single
+  soft note, a hit a bright one, and breaking it lets a chord go instead of crunching.
+
+### Fixed
+* **The Hyperobject could not be seen against Primordial Law.** It was drawn before the see-through blocks, so the
+  dark Law sea behind it was laid over it. It is now drawn after them.
+
 ## 1.8.0: Recreating Home
 
 An expansion beyond the end. Nothing here can be started before every recipe of the Core Forge has been forged at

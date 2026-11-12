@@ -209,6 +209,12 @@ public final class QHBlocks {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), Block::new, p));
                 }
+                case "foliage" -> {
+                    // 1.8.1: leaves with gaps in them. They let light and sight through and nothing suffocates in them.
+                    p.mapColor(MapColor.GOLD).sound(SoundType.CHERRY_LEAVES).noOcclusion()
+                            .isViewBlocking((s, l, pos) -> false).isSuffocating((s, l, pos) -> false).isRedstoneConductor((s, l, pos) -> false);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), Block::new, p));
+                }
                 case "deco_pillar" -> {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), net.minecraft.world.level.block.RotatedPillarBlock::new, p));
@@ -250,6 +256,20 @@ public final class QHBlocks {
             // 1.10.1: rock sounds like stone, crystal like amethyst, glass and lamps like glass, gas like wool
             net.minecraft.world.level.block.SoundType look = QHBlockSounds.of(def.id());
             if (look != null) p.sound(look);
+            // 1.8.1: Omnipotency's blocks sound like what they are
+            net.minecraft.world.level.block.SoundType heaven = switch (def.id()) {
+                case "empyrean_marble", "empyrean_marble_bricks", "gilded_marble" -> SoundType.STONE;
+                case "heaven_soil" -> SoundType.GRAVEL;                 // (what dirt itself uses)
+                case "halo_grass" -> SoundType.GRASS;
+                case "cloudstone", "radiant_cloud" -> SoundType.WOOL;
+                case "choir_crystal_block" -> com.theoreticalsciences.registry.QHSounds.CHOIR_CRYSTAL;
+                case "seraph_gold_block" -> SoundType.METAL;
+                case "glory_lantern" -> SoundType.LANTERN;
+                case "silver_bark" -> SoundType.WOOD;
+                case "aureate_leaves" -> SoundType.CHERRY_LEAVES;
+                default -> null;
+            };
+            if (heaven != null) p.sound(heaven);
             // 1.2.0: Inner Space is living tissue: every block of it squelches like a slime block
             if (SQUISH.contains(def.id())) p.sound(SoundType.SLIME_BLOCK);
         }

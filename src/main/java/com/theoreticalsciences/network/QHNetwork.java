@@ -47,6 +47,8 @@ public final class QHNetwork {
         r.playToClient(com.theoreticalsciences.transcend.CorePayloads.Open.TYPE, com.theoreticalsciences.transcend.CorePayloads.Open.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.openOmnipotence(p.core(), p.phase(), p.seconds()));
         // 1.8.0: Recreating Home
+        r.playToClient(com.theoreticalsciences.home.PortalOpening.Start.TYPE, com.theoreticalsciences.home.PortalOpening.Start.CODEC,
+                (p, ctx) -> com.theoreticalsciences.client.ClientHooks.portalOpening(p));
         r.playToClient(com.theoreticalsciences.home.HomePayloads.State.TYPE, com.theoreticalsciences.home.HomePayloads.State.CODEC,
                 (p, ctx) -> com.theoreticalsciences.home.HomeClient.state(p));
         r.playToClient(com.theoreticalsciences.home.HomePayloads.TableSync.TYPE, com.theoreticalsciences.home.HomePayloads.TableSync.CODEC,

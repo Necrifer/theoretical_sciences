@@ -17,7 +17,8 @@ from PIL import Image
 L = T.LANG
 TEX = os.path.join(A, 'textures/block')
 TARGET = 33550337
-YIELD = 4096
+YIELD = 1                # 1.8.1: one a craft, on purpose
+SLOT = 650000            # 1.8.1: and every slot of every one of these recipes takes this many
 
 # ====================================================================== the forty-two
 BASE = ['unified_field_lattice', 'perennial_catalyst_matrix', 'proof_lattice', 'living_archive', 'engineered_mind', 'planetary_survey', 'deep_record',
@@ -104,7 +105,7 @@ def assign(name, items, counts):
     if 'consilience_core' in items:
         items.remove('consilience_core')
         items.append('consilience_core')
-    return {ch: (it, 1 if it == 'consilience_core' else counts[min(i, len(counts) - 1)]) for i, (ch, it) in enumerate(zip(order, items))}
+    return {ch: (it, counts[min(i, len(counts) - 1)]) for i, (ch, it) in enumerate(zip(order, items))}
 
 
 def uniq(xs):
@@ -120,21 +121,20 @@ for i, iid in enumerate(E_IDS):          # the elements: of what the last machin
     its = uniq([B23[i % 23], B23[(i + 7) % 23], B23[(i + 13) % 23], B23[(i + 17) % 23], B23[(i + 5) % 23], B23[(i + 11) % 23]] + B23)
     if i == 23:                          # the last element is the one the Consilience Core goes into (its rarest slots)
         its = its[:len(letters(iid)) - 1] + ['consilience_core']
-    RECS[iid] = (PX.PIC[iid], assign(iid, its, [1, 1, 2, 2, 4, 4]), YIELD, False)
+    RECS[iid] = (PX.PIC[iid], assign(iid, its, [SLOT]), YIELD, False)
 for j, iid in enumerate(W_IDS):          # the works: of the elements, 64 to a slot
     its = uniq([E_IDS[2 * j], E_IDS[2 * j + 1], E_IDS[(2 * j + 9) % 24], E_IDS[(2 * j + 14) % 24], E_IDS[(2 * j + 19) % 24], E_IDS[(2 * j + 4) % 24]] + E_IDS)
-    RECS[iid] = (PX.PIC[iid], assign(iid, its, [64]), YIELD, False)
+    RECS[iid] = (PX.PIC[iid], assign(iid, its, [SLOT]), YIELD, False)
 for k, iid in enumerate(P_IDS):          # the pillars: of the works (all twelve between them) and two elements, 64 to a slot
     its = uniq([W_IDS[2 * k], W_IDS[2 * k + 1], W_IDS[10 + k % 2], E_IDS[(k * 5) % 24], W_IDS[(2 * k + 5) % 12], E_IDS[(k * 5 + 12) % 24]] + W_IDS)
-    RECS[iid] = (PX.PIC[iid], assign(iid, its, [64]), YIELD, False)
-m = assign(KEY[0], P_IDS + ['consilience_core'], [256])
-m = {ch: (it, 1 if it == 'consilience_core' else n) for ch, (it, n) in m.items()}
+    RECS[iid] = (PX.PIC[iid], assign(iid, its, [SLOT]), YIELD, False)
+m = assign(KEY[0], P_IDS + ['consilience_core'], [SLOT])
 RECS[KEY[0]] = (PX.PIC[KEY[0]], m, YIELD, False)
 
 # the frame: a gate drawn with all forty-two. The elements are its outer wall, the works the wall inside that, the
-# pillars the ring round the opening, and the keystone the light in the middle. 65,536 to a slot.
+# pillars the ring round the opening, and the keystone the light in the middle.
 CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-kf = {CH[i]: (iid, 65536) for i, iid in enumerate(IDS)}
+kf = {CH[i]: (iid, SLOT) for i, iid in enumerate(IDS)}
 g = [[' '] * 15 for _ in range(15)]
 
 
@@ -304,22 +304,98 @@ def lantern(x, y, t):
     return lerp((255, 255, 240), (255, 222, 130), min(1, d * (1.0 + 0.15 * math.sin(t * math.tau))))
 
 
+# 1.8.1: the trees, drawn properly. Bark: pale silver in vertical plates with dark seams between them, short dark
+# lenticels as a birch has, and here and there a crack with gold in it. End: rings, every third one gold, a gold pith,
+# a dark rim of bark. Leaves: separate small leaves over a darker layer of leaves, with gaps to see through.
+def _bark():
+    r = random.Random(1811)
+    px = [[None] * 16 for _ in range(16)]
+    edges = [0, 3, 7, 10, 14]                           # the seams between the plates (it tiles: 16 wraps to 0)
+    for x in range(16):
+        k = max(i for i, e in enumerate(edges) if e <= x)
+        w = (edges[k + 1] if k + 1 < len(edges) else 16) - edges[k]
+        u = (x - edges[k]) / float(w)
+        tone = 0.86 + 0.16 * math.sin(u * math.pi)      # each plate is rounded: bright in its middle
+        for y in range(16):
+            c = lerp((176, 182, 196), (236, 240, 246), tone - 0.86 + 0.5 + 0.04 * (r.random() - 0.5) + 0.05 * math.sin(y * 0.8 + k * 2.1))
+            if x in edges:
+                c = (120, 126, 142) if (y + k * 5) % 11 else (150, 156, 170)
+            elif x - 1 in edges:
+                c = shade(c, 0.9)
+            px[y][x] = c
+    for _ in range(5):                                   # lenticels
+        y, x, n = r.randrange(16), r.randrange(16), r.choice([2, 2, 3])
+        for d in range(n):
+            xx = (x + d) % 16
+            if xx not in edges:
+                px[y][xx] = (104, 110, 128)
+                px[(y + 1) % 16][xx] = (250, 252, 255)
+    for x0, y0, n in ((5, 3, 4),):                       # one crack with gold in it
+        x = x0
+        for d in range(n):
+            y = (y0 + d) % 16
+            px[y][x] = (255, 216, 110) if d not in (0, n - 1) else (214, 160, 70)
+            px[y][(x + 1) % 16] = shade(px[y][(x + 1) % 16], 0.82)
+            if d == n // 2:
+                x = (x + 1) % 16
+    return px
+
+
+def _bark_top():
+    px = [[None] * 16 for _ in range(16)]
+    for y in range(16):
+        for x in range(16):
+            d = max(abs(x - 7.5), abs(y - 7.5))
+            rr = math.hypot(x - 7.5, y - 7.5)
+            if d > 6.6:
+                c = (128, 134, 150) if d > 7.4 else (206, 212, 224)
+            elif rr < 1.2:
+                c = (255, 226, 130)
+            else:
+                ring = int(rr * 1.25 + 0.3 * math.sin(math.atan2(y - 7.5, x - 7.5) * 3))
+                c = (238, 196, 96) if ring % 3 == 0 else ((248, 242, 226) if ring % 3 == 1 else (226, 216, 196))
+            px[y][x] = c
+    for d in range(1, 6):                                # one drying crack from the pith
+        px[7 - d // 2][8 + d] = (176, 150, 100)
+    return px
+
+
+def _leaves():
+    r = random.Random(1812)
+    px = [[(0, 0, 0, 0)] * 16 for _ in range(16)]
+    LEAF = [(0, 1), (1, 0), (1, 1), (1, 2), (2, 0), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3), (4, 2)]      # a small leaf lying on the diagonal
+
+    def leaf(x0, y0, flip, tones):
+        mirror = r.random() < 0.5                            # leaves point both ways
+        for i, (a, b) in enumerate(LEAF):
+            x, y = ((x0 + ((4 - (b if flip else a)) if mirror else (b if flip else a))) % 16, (y0 + (a if flip else b)) % 16)
+            vein = a == b + 0 and a in (1, 2, 3)
+            edge = (a, b) in ((0, 1), (4, 2), (2, 3), (3, 3), (1, 2))
+            px[y][x] = tones[2] if vein else (tones[0] if edge else tones[1])
+
+    back = [(150, 104, 34, 255), (186, 134, 44, 255), (206, 156, 60, 255)]
+    front = [(206, 150, 48, 255), (250, 204, 92, 255), (255, 240, 170, 255)]
+    pale = [(224, 176, 70, 255), (255, 226, 130, 255), (255, 250, 210, 255)]
+    for _ in range(17):
+        leaf(r.randrange(16), r.randrange(16), r.random() < 0.5, back)
+    for i in range(11):
+        leaf(r.randrange(16), r.randrange(16), r.random() < 0.5, pale if i % 4 == 0 else front)
+    return px
+
+
+_BS, _BT, _LV = _bark(), _bark_top(), _leaves()
+
+
 def bark_side(x, y, t):
-    v = 0.5 + 0.5 * math.sin(x * 1.6 + N1(0, y) * 1.5)
-    c = lerp((196, 200, 210), (232, 234, 240), v)
-    return shade(c, 0.8) if N3(x, y) > 0.92 else c
+    return _BS[y][x]
 
 
 def bark_top(x, y, t):
-    d = math.hypot(x - 7.5, y - 7.5)
-    if d > 7:
-        return (196, 200, 210)
-    return lerp((250, 244, 224), (226, 212, 180), 0.5 + 0.5 * math.sin(d * 2.2))
+    return _BT[y][x]
 
 
 def leaves(x, y, t):
-    c = lerp((236, 190, 80), (255, 232, 140), N1(x, y))
-    return shade(c, 0.72) if N3(x, y) > 0.8 else c
+    return _LV[y][x]
 
 
 for name, fn, fr in [('empyrean_marble', marble, 1), ('empyrean_marble_bricks', bricks, 1), ('gilded_marble', gilded, 1), ('heaven_soil', soil, 1),
@@ -427,6 +503,7 @@ for bid, name, lore, tool in BLOCKS:
         tag_add(os.path.join(os.path.dirname(D), 'minecraft/tags/block/mineable/%s.json' % {'pick': 'pickaxe'}.get(tool, tool)), [ts(bid)])
 dump(os.path.join(A, 'models/block/halo_grass.json'), {'parent': 'minecraft:block/cube_bottom_top', 'textures': {
     'top': ts('block/halo_grass_top'), 'side': ts('block/halo_grass_side'), 'bottom': ts('block/heaven_soil')}})
+dump(os.path.join(A, 'models/block/aureate_leaves.json'), {'parent': 'minecraft:block/leaves', 'textures': {'all': ts('block/aureate_leaves')}, 'render_type': 'minecraft:cutout_mipped'})
 for bid in ('radiant_cloud', 'choir_crystal_block'):
     dump(os.path.join(A, 'models/block/%s.json' % bid), {'parent': 'minecraft:block/cube_all', 'textures': {'all': ts('block/' + bid)}, 'render_type': 'minecraft:translucent'})
 dump(os.path.join(A, 'blockstates/silver_bark.json'), {'variants': {'axis=y': {'model': ts('block/silver_bark')}, 'axis=z': {'model': ts('block/silver_bark_horizontal'), 'x': 90},
@@ -636,6 +713,9 @@ for bid, (name, sky, particle, ores, veg) in BIO.items():
     L['biome.%s.%s' % (NS, bid)] = name
 
 # ====================================================================== text
+for k, v in (('break', 'Crystal rings apart'), ('place', 'Crystal set down'), ('hit', 'Crystal rings'), ('step', 'Footsteps on crystal'), ('fall', 'Something lands on crystal')):
+    L['subtitles.%s.entity.choir_crystal.%s' % (NS, k)] = v
+L['subtitles.%s.entity.homeward_portal.open' % NS] = 'The way home opens'
 L['dimname.%s.omnipotency' % NS] = 'Omnipotency'
 L['transit.%s.omnipotency.name' % NS] = 'Omnipotency'
 L['transit.%s.omnipotency.flavour' % NS] = 'Going home. It has been noon there for a very long time.'
@@ -693,8 +773,8 @@ E['endgame/recreating_home'] = {'title': 'Recreating Home', 'icon': ts('keystone
     text("The page is a checklist of $(thing)forty-two$() materials, and it asks for $(thing)%s$() of each. That is one more than a perfect number: the count runs "
          "the whole of the cycle and then once more, and the once more is the one that ends it. The checklist is yours alone; on a server, each player has their own." % N),
     spot(['empyrean_assembly_table'], "The $(item)Empyrean Assembly Table$() makes all forty-two. Its grid is fifteen by fifteen and a slot holds far more than a stack. "
-         "Choose a recipe from the list; what you put in goes to the slots that ask for it, and slots light as they fill. Every recipe gives %s. Pipes can fill it "
-         "and empty it, and it can craft by itself.$(br2)Made in the Extreme Assembly Table." % format(YIELD, ','), 'The Table'),
+         "Choose a recipe from the list; what you put in goes to the slots that ask for it, and slots light as they fill. Every slot of every recipe asks for "
+         "%s, and every craft gives one. Pipes can fill it and empty it, and it can craft by itself.$(br2)Made in the Extreme Assembly Table." % format(SLOT, ','), 'The Table'),
     spot(['offering_altar'], "No one carries thirty-three million of anything. The $(item)Offering Altar$() gives the Core whatever is piped into it, on the checklist "
          "of whoever placed it, and takes only what is still needed. The Core's page also takes what you carry.$(br2)Made in the Extreme Assembly Table.", 'The Altar'),
     spot(E_IDS[:12], "The twenty-four $(thing)elements$(): what a world is made of. Each is drawn in the table with what the last machines make.$(br2)Made in the Empyrean Assembly Table.", 'The Elements'),

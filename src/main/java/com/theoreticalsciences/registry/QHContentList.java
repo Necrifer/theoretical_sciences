@@ -1431,7 +1431,7 @@ public final class QHContentList {
         new BlockDef("seraph_gold_block", "deco", 4, 3.0F, "none", ""),
         new BlockDef("glory_lantern", "deco", 15, 1.0F, "none", ""),
         new BlockDef("silver_bark", "deco_pillar", 0, 2.0F, "none", ""),
-        new BlockDef("aureate_leaves", "deco", 3, 0.3F, "none", ""));
+        new BlockDef("aureate_leaves", "foliage", 3, 0.3F, "none", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),

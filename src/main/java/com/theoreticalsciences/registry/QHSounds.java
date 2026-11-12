@@ -68,6 +68,14 @@ public final class QHSounds {
     /** Machines, casings and structure parts: servos and magnetic latches instead of netherite. */
     public static final net.minecraft.world.level.block.SoundType MACHINE = new net.neoforged.neoforge.common.util.DeferredSoundType(1.0F, 1.0F,
             MB_BREAK, MB_STEP, MB_PLACE, MB_HIT, MB_FALL);
+    private static final DeferredHolder<SoundEvent, SoundEvent>
+            CC_BREAK = s("choir_crystal.break"), CC_STEP = s("choir_crystal.step"), CC_PLACE = s("choir_crystal.place"),
+            CC_HIT = s("choir_crystal.hit"), CC_FALL = s("choir_crystal.fall");
+    /** 1.8.1: the Homeward Portal opening (the whole seven seconds of it). */
+    public static final DeferredHolder<SoundEvent, SoundEvent> HOME_PORTAL_OPEN = s("homeward_portal.open");
+    /** 1.8.1: the Choir Crystal Spire. Clear, high and ringing; nothing in it crunches. */
+    public static final net.minecraft.world.level.block.SoundType CHOIR_CRYSTAL = new net.neoforged.neoforge.common.util.DeferredSoundType(1.0F, 1.0F,
+            CC_BREAK, CC_STEP, CC_PLACE, CC_HIT, CC_FALL);
     /** Crystals and glass of the mod. */
     public static final net.minecraft.world.level.block.SoundType CRYSTAL = new net.neoforged.neoforge.common.util.DeferredSoundType(1.0F, 1.0F,
             CB_BREAK, CB_STEP, CB_PLACE, CB_HIT, CB_FALL);

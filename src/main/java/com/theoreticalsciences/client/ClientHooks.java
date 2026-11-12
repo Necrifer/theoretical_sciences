@@ -186,4 +186,9 @@ public final class ClientHooks {
     }
 
     private ClientHooks() {}
+
+    /** 1.8.1: the Homeward Portal is opening somewhere near. */
+    public static void portalOpening(com.theoreticalsciences.home.PortalOpening.Start p) {
+        com.theoreticalsciences.home.PortalOpeningRenderer.start(p);
+    }
 }
