@@ -1,5 +1,109 @@
 # Changelog
 
+## 1.7.2: The Consilience Core (endgame rework, last step)
+
+The last step of the endgame rework: one last material that needs every field, a balance pass from the cost check's
+report, narrower console windows towards the end, and optional routes for four magic mods. The changes apply at once.
+
+### The Consilience Core
+* **Made in the Convergence Engine**, on its thirteen altars: one **Gamma** of each of the seven Field Syntheses (a
+  Gamma is 729 of the plain item) and one of each of the six final-tier signature materials. 2,000,000,000 FE/t for
+  ten minutes.
+* **The Core Forge needs one present to forge an Eschaton Core**, and keeps it (like the Rekindled Spark). Everything
+  the last things are made of comes through the Eschaton Core, so one Consilience Core opens all of them.
+* **The Forged Omnipotence Core takes four** into itself.
+
+### Balance pass
+The cost check's report showed costs inside one tier thousands to billions of times apart.
+
+**Field Syntheses** (cheapest to dearest was 320 times; now 6 times):
+* Unified Field Lattice: 2 Coherent Field Beams, 8 Photonic Boards, 1 Atto Capacitor, 4 Qubit Dies (was 2 beams,
+  8 Entangled Bus Bars, 8 Atto Capacitors, 4 Qubit Dies).
+* Framework Catalyst (Perennial Catalyst Matrix chain): 1 Atto Capacitor (was 2).
+* Proof Lattice: 4 Certified Theorems (was 2).
+* Living Archive: 6 Chronon Capacitors (was 1).
+* Engineered Mind: 2 Mapped Minds (was 1).
+
+**Signature materials.** Each had been built on one recipe of its structure and had kept that recipe's dearest
+inputs. Each now takes modest things of its own structure; its Field Syntheses and the tier below's materials are
+unchanged.
+| Material | Now takes, of its own structure | Was |
+| --- | --- | --- |
+| Dyson Lattice Panel | 1 Stellar Core, 16 Stellar Frame Casings | 1 Stellar Core, 4 Stellar Containment Plates |
+| Stellar Wind Condensate | 1 Stellar Core, 64 Shkadov Mirrors, 16 Stellar Frame Casings | 1 Stellar Core, 1 Caplan Jet |
+| Recursive Thought Shell | 16 Engrams, 32 Computronium Ingots, 1 Computronium Block, 1 Superintelligence Core | 16 Engrams, 32 Computronium Ingots, 16 Neural Organoids, 1 Superintelligence Core |
+| Embryonic Vacuum | 1 True Vacuum Seed, 16 Baryon Asymmetry Crystals; 1,000 mB of each fluid | 16 Universe Seeds, 16 True Vacuum Seeds, 16 crystals, 4 Cosmogenic Casings; 256,000 mB |
+| Compiled Law | 2 Source Code Fragments; 4,000 mB Psionic Ether | 32 each of Resolved Anomaly, Quarantine Field Matrix, Source Code Fragment; 256,000 mB |
+| Lex Prima | 1 Eternity Catalyst, 4 Bubble Universe Samples | a No-Boundary Seed, a Universe Seed, a Baryogenesis Seed and more |
+| Breach Shard | 16 Paradox Residue, 16 Ordinal Shards; a sixteenth of the fluids | 128 Ordinal Shards, 256 Temporal Knots and more; 256,000 mB Hypernova Plasma |
+| Pure Concept Ingot | 1 Surreal Number | 1 Topos, 1 Surreal Number and more |
+| Diagonal Ingot | 1 Gödel Sentence, 16 Power Sets, 16 Formal Proof Trees | 64 Power Sets, 64 Formal Proof Trees and more |
+| Distilled Axiom | 64 Axiom Fragments, 2 Source Code Fragments | 128 Mathematics Singularities, 256 Fourier Series and more |
+| Transcendent Alloy | 64 Hypernova Alloy Ingots, 1 Transcendent Metal Ingot | 32 Russell Paradox Sets, 256 Hypernova Alloy Ingots and more |
+| Event Horizon Lens | 16 Micro Singularities, 16 Graviton Crystals | three of the Eye's own inputs |
+| Pleromatic Weave | 1 Transcendent Metal Ingot, 4 Reality Anchors; 16,000 mB Pleroma; no Rekindled Spark | 512 Apeiron Ingots, 128 Pleroma Crystals, 512 Omnipotence Dust; 2,048,000 mB; the Spark as catalyst |
+| Confluent Essence | 1,000 mB of each of the five fluids | 4,000 mB of each |
+| Eschaton Steel | 64 Cosmic Neutronium Ingots, 64 Hypernova Alloy Ingots, 1 Transcendent Metal Ingot; 16,000 mB Pleroma | 16 Eschaton Cores, 96 Transcendence Crystals, 384 Omnipotent Ingots; 2,048,000 mB |
+| Convergent Matter | 16 Coherent Wiring Harnesses, 4 Entangled Bus Bars, 4 Chronoplastic Gaskets | 2 Transfinite Lattice Bolts, a Transfinite Processor and more |
+
+* Cheapest to dearest inside a tier is now 17 times in cosmic engineering (was about 100,000), 11 times beyond
+  physics (was about ten billion) and about 2,800 times in the final tier, where the Confluent Essence carries the
+  cost of the five fluids. Each tier still costs many times the tier below.
+* The Eschaton Steel can no longer ask for Eschaton Cores, which would have needed the Consilience Core it goes into.
+
+### Narrower console windows
+A Field Synthesis step allows about a third of what its console can reach, cosmic engineering a quarter, beyond
+physics a sixth, the final tier a tenth. A threshold ("at least", "at most") keeps its bound, which is the physics,
+and gets a limit on its open side; a band shrinks round its middle. Every new window lies inside the old one, and for
+each a setting was found that holds while an auto-calibrated disturbance swings.
+* **24 recipes narrowed.** Concept Compressor (10: the compression ratio now has a ceiling just above its Shannon
+  limit, for example 1.6 to 1.76 where it was 1.6 or more); Eschaton Foundry (4: the entropy band is 0.3 to 0.6
+  decades wide, was 4); Omnilex Engine (2); Universe Forge (2: 60 to 96 e-folds, was 60 or more; spectral index 0.963
+  to 0.975, was 0.955 to 0.975); Matrioshka Brain (1); Eye of the Horizon (1); and four Field Synthesis steps
+  (Certificate Verifier, Femtoscale Assembly Line, Heliograph, Neural Culture Array).
+* **The Pleroma Confluence** needs 3 to 5 blend times in the basin (was 3 or more): over 5 and the five part again.
+* **29 were already that narrow.**
+* **25 are unchanged because my tool could not check them outside the game:** the Transcendent Plasma Forge (6: its
+  window is on the plasma temperature, which changes as it runs), the Pleroma Reconstitutor (7), the Reality Compiler
+  (4), three of the Matrioshka Brain's, two of the Omnilex Engine's and one each of the Axiomatic Breach Engine,
+  Eschaton Foundry and Cyclotron (they depend on the built structure). So two of the four final-tier structures are
+  not narrowed yet.
+* The Dyson Array and the Stellar Engine are left out on purpose: a ceiling there would only cap their output.
+
+### Other arts (optional)
+With one of these mods installed, each Field Synthesis has a second recipe on the last machine of its chain that
+skips one machine. They are tuned on the same console to the same windows. None is ever needed, and without the mod
+the recipe does not exist.
+| Mod | Field Synthesis | Takes | Skips |
+| --- | --- | --- | --- |
+| Astral Sorcery | Unified Field Lattice | 4 Charged Lattice Seeds, 4 Starmetal Ingots, 4,000 mB Liquid Starlight (with the boards, capacitor and dies) | Synchrotron |
+| Astral Sorcery | Proof Lattice | 8 Verified Lemmas, 2 Resonating Gems, 1 Glass Lens (with the attractors and polymer) | Certificate Verifier |
+| Thaumaturge | Perennial Catalyst Matrix | 2 Framework Catalysts, 8 Vis Crystals of any aspect, 2 Salis Mundus (with the polymer) | Chelation Column |
+| Thaumaturge | Engineered Mind | 4 Trained Cortices, 1 Brain in a Jar, 4 Vis Crystals (with the I-beams) | Connectome Array |
+| Botania | Living Archive | 2 Genome Libraries, 4 Mana Pearls, 2 Mana Diamonds (with the rest) | Ancient DNA Lab |
+| Nature's Aura | Planetary Survey | 2 Survey Probes, 2 Ingots of the Skies, 4 Bottled Aura (with the mesh and capacitor) | Space Elevator |
+| Nature's Aura | Deep Record | 4 Excavation Records, 1 Hand of Time, 2 Ingots of the Depths (with the tachyon crystals) | Chrono Loom |
+
+* These take the mods' items and one fluid. Mana, aura, essentia and starlight are not drawn from a pool, the air, a
+  jar or the sky directly: that needs each mod's own interface and is not in this patch.
+* Item names were read from the modpack's own copies: Thaumaturge 1.1.0, Botania Revived 2.0.1, Nature's Aura 41.10,
+  Astral Sorcery 2.0.3.
+
+### Fixes
+* **The Dyson Array and the Stellar Engine did not have enough slots.** As generators they kept their old slot counts
+  (the Dyson Array one usable fuel slot, the Stellar Engine three), so the Dyson Array still could not burn its 1.7.0
+  fuels after the 1.7.1 fix, and neither could make its signature material. The Stellar Engine has six item slots
+  now and the Dyson Array eight (its second and third are still the swarm's).
+* The Dyson Lattice Panel no longer takes Dyson Swarm Satellites or Shell Segments, which the array would have
+  absorbed into its swarm.
+
+### Tools
+* `tools/check_progression.py` also counts catalysts and the Core Forge's recipes, never excuses a new loop, and
+  fails on any recipe with more inputs than its machine has slots.
+* `tools/check_costs.py` counts lettered Field Syntheses (nine of the level below each) and checks the Consilience
+  Core against the final tier.
+* `tools/r172_windows.py`: the window narrowing, with its report.
+
 ## 1.7.1: Signature materials and the endgame structures (endgame rework, step two)
 
 The second step of the endgame rework. Every endgame structure now makes one material that nothing else can make,

@@ -69,7 +69,8 @@ public final class CoreForge {
             new Recipe("absolute_singularity", i("absolute_singularity", 1), List.of(i("omnipotent_ingot", 32), i("micro_singularity", 32), i("absolute_infinity", 8),
                     i("transcendence_crystal", 8))),
             new Recipe("eschaton_core", i("eschaton_core", 1), List.of(i("absolute_singularity", 16), i("transcendence_crystal", 16), i("omnipotent_ingot", 64),
-                    i("grand_unified_core", 8), i("resolved_anomaly", 4), i("rekindled_spark", 0))),
+                    i("grand_unified_core", 8), i("resolved_anomaly", 4), i("rekindled_spark", 0),
+                    i("consilience_core", 0))),          // 1.7.2: every field has to have been brought together first (kept, like the Spark)
             // beyond Omnipotence
             new Recipe("omnipotent_edge", i("omnipotent_edge", 1), List.of(i("eschaton_core", 6), i("omnipotent_ingot", 144), i("cosmic_string_segment", 512),
                     i("banach_tarski_sphere", 64), i("logos_thread", 48))),
@@ -116,7 +117,8 @@ public final class CoreForge {
                     i("rekindled_spark", 0))),
             // the last thing in the mod: the Omnipotence Core itself, forged anew
             new Recipe("forged_omnipotence_core", i("forged_omnipotence_core", 1), List.of(i("omnipotence_seed", 4), i("eschaton_core", 16), i("ex_nihilo_engine", 1),
-                    i("equilibrium_lattice", 1), i("lawgivers_codex", 1), i("omnipotent_ingot", 256), i("rekindled_spark", 8), i("resolved_anomaly", 32))),
+                    i("equilibrium_lattice", 1), i("lawgivers_codex", 1), i("omnipotent_ingot", 256), i("rekindled_spark", 8), i("resolved_anomaly", 32),
+                    i("consilience_core", 4))),          // 1.7.2: and the last thing of all takes four of them into itself
             // round 35: holds space flat around its bearer - made from what the Anomaly branch resolved
             new Recipe("euclidean_anchor", i("euclidean_anchor", 1), List.of(i("eschaton_core", 2), i("resolved_anomaly", 24), i("geodesic_anchor", 16),
                     i("reality_anchor", 32), i("stress_energy_tensor", 32), i("quarantine_field_matrix", 16), i("omnipotent_ingot", 48))));

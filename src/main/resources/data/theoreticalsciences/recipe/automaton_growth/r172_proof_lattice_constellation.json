@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "astralsorcery"
+    }
+  ],
+  "type": "theoreticalsciences:automaton_growth",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:verified_lemma",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:strange_attractor",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:knotted_polymer",
+      "count": 2
+    },
+    {
+      "item": "astralsorcery:resonating_gem",
+      "count": 2
+    },
+    {
+      "item": "astralsorcery:glass_lens",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:proof_lattice",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 900,
+  "research": "theoreticalsciences:cellular_automata",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "rep",
+        "min": 0.85,
+        "max": 1
+      }
+    ]
+  }
+}

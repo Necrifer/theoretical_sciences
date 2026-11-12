@@ -1,0 +1,55 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "naturesaura"
+    }
+  ],
+  "type": "theoreticalsciences:heliography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:survey_probe",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:faraday_mesh",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:atto_capacitor",
+      "count": 1
+    },
+    {
+      "item": "naturesaura:sky_ingot",
+      "count": 2
+    },
+    {
+      "item": "naturesaura:aura_bottle",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:planetary_survey",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 900,
+  "research": "theoreticalsciences:space_weather",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Kp",
+        "min": 6,
+        "max": 9
+      },
+      {
+        "q": "r0",
+        "min": 5.66,
+        "max": 7.5
+      }
+    ]
+  }
+}

@@ -1,22 +1,13 @@
 {
   "type": "theoreticalsciences:pleroma_reconstitution",
-  "catalysts": [
-    {
-      "item": "theoreticalsciences:rekindled_spark"
-    }
-  ],
   "item_inputs": [
     {
-      "item": "theoreticalsciences:apeiron_ingot",
-      "count": 512
+      "item": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 1
     },
     {
-      "item": "theoreticalsciences:omnipotence_dust",
-      "count": 512
-    },
-    {
-      "item": "theoreticalsciences:pleroma_crystal",
-      "count": 128
+      "item": "theoreticalsciences:reality_anchor",
+      "count": 4
     },
     {
       "type": "neoforge:components",
@@ -70,13 +61,12 @@
   "fluid_inputs": [
     {
       "fluid": "theoreticalsciences:pleroma",
-      "amount": 2048000
+      "amount": 16000
     }
   ],
   "energy": 2000000000,
   "duration": 1800,
   "research": "theoreticalsciences:the_rekindling",
-  "scaled": 16,
   "physics": {
     "vars": {
       "F0": 1.6
@@ -94,11 +84,11 @@
       }
     ]
   },
-  "expanded": true,
   "item_outputs": [
     {
       "id": "theoreticalsciences:pleromatic_weave",
       "count": 1
     }
-  ]
+  ],
+  "unscaled": true
 }

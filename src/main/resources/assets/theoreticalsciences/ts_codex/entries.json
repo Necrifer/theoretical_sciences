@@ -57149,7 +57149,7 @@
   "pages": [
    {
     "type": "text",
-    "text": "The endgame has four tiers, and the $(thing)Field Syntheses$() are the first: one per field, each made by a chain of that field's machines. Cosmic engineering (the Dyson Array, Stellar Engine, Matrioshka Brain, Universe Forge) needs two plain syntheses per recipe; beyond physics needs an $(thing)Alpha$() one; the final tier a $(thing)Beta$() one, and all seven between its machines."
+    "text": "The endgame has four tiers, and the $(thing)Field Syntheses$() are the first: one per field, each made by a chain of that field's machines. Cosmic engineering (the Dyson Array, Stellar Engine, Matrioshka Brain, Universe Forge) needs two plain syntheses per recipe; beyond physics needs an $(thing)Alpha$() one; the final tier a $(thing)Beta$() one, and all seven between its machines. The $(l)Consilience Core$() takes a $(thing)Gamma$() of every one."
    },
    {
     "type": "text",
@@ -57186,7 +57186,7 @@
   "pages": [
    {
     "type": "text",
-    "text": "Every structure of the endgame makes one material that nothing else can make: its $(thing)signature$(). The four of cosmic engineering are made from plain Field Syntheses. Each of the six beyond physics takes two each of three of those four. Each of the six of the final tier takes three each of all six beyond physics."
+    "text": "Every structure of the endgame makes one material that nothing else can make: its $(thing)signature$(). The four of cosmic engineering are made from plain Field Syntheses. Each of the six beyond physics takes two each of three of those four. Each of the six of the final tier takes three each of all six beyond physics. One of each of those six, with the seven syntheses, makes the $(l)Consilience Core$(). One of each of those six, with the seven syntheses, makes the $(l)Consilience Core$(). One of each of those six, with the seven syntheses, makes the $(l)Consilience Core$(). One of each of those six, with the seven syntheses, makes the $(l)Consilience Core$()."
    },
    {
     "type": "text",
@@ -57266,6 +57266,50 @@
    {
     "type": "text",
     "text": "$(thing)Equations$()$(br)Re = ρND²/μ$(br)θ = 5.3/N·(T/D)²$(br)P = Np·ρ·N³·D⁵$(br)Margin = (V/Q)/θ"
+   }
+  ]
+ },
+ "materials/consilience_core": {
+  "title": "The Consilience Core",
+  "icon": "theoreticalsciences:consilience_core",
+  "category": "materials",
+  "research": "femtoengineering",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:consilience_core"
+    ],
+    "text": "The last material. On the $(item)Convergence Engine$()'s thirteen altars: one $(thing)Gamma$() of each of the seven $(l)Field Syntheses$(), and one of each of the six final-tier $(l)Signature Materials$(). Seven and six: thirteen.$(br2)Made in $(item)Convergence Engine$().",
+    "title": "Consilience"
+   },
+   {
+    "type": "text",
+    "text": "A Gamma is nine Betas, eighty-one Alphas, 729 of the plain item. Whewell's word, consilience, is for when findings from fields that share nothing turn out to agree. I had seven fields that had never needed each other. Now nothing at the end can be made without all of them."
+   },
+   {
+    "type": "text",
+    "text": "The $(item)Core Forge$() needs a Consilience Core present to forge an $(item)Eschaton Core$(), and keeps it, as it keeps the Rekindled Spark. Everything the last things are made of comes through the Eschaton Core, so one Consilience Core opens all of them. The $(item)Forged Omnipotence Core$() is the exception: it takes four into itself."
+   }
+  ]
+ },
+ "materials/magic_routes": {
+  "title": "Other Arts",
+  "icon": "theoreticalsciences:planetary_survey",
+  "category": "materials",
+  "research": "femtoengineering",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Four other arts can each stand in for one machine of a Field Synthesis's chain. These are second recipes on the chain's last machine, tuned on the same console, and they only exist in a world that has that mod. None is ever needed."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Astral Sorcery$()$(br)Unified Field Lattice: Charged Lattice Seeds, Starmetal and Liquid Starlight, skipping the Synchrotron.$(br)Proof Lattice: Verified Lemmas, Resonating Gems and a Glass Lens, skipping the Certificate Verifier.$(br2)$(thing)Thaumaturge$()$(br)Perennial Catalyst Matrix: Framework Catalysts, Vis Crystals and Salis Mundus, skipping the Chelation Column.$(br)Engineered Mind: Trained Cortices, a Brain in a Jar and Vis Crystals, skipping the Connectome Array."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Botania$()$(br)Living Archive: Genome Libraries, Mana Pearls and Mana Diamonds, skipping the Ancient DNA Lab.$(br2)$(thing)Nature's Aura$()$(br)Planetary Survey: Survey Probes, Ingots of the Skies and Bottled Aura, skipping the Space Elevator.$(br)Deep Record: Excavation Records, the Hand of Time and Ingots of the Depths, skipping the Chrono Loom."
    }
   ]
  }

@@ -4,19 +4,11 @@
   "item_inputs": [
     {
       "item": "theoreticalsciences:hypernova_alloy_ingot",
-      "count": 256
-    },
-    {
-      "item": "theoreticalsciences:aleph_null_shard",
       "count": 64
     },
     {
-      "item": "theoreticalsciences:russell_paradox_set",
-      "count": 32
-    },
-    {
-      "item": "theoreticalsciences:cosmic_processor",
-      "count": 32
+      "item": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 1
     },
     {
       "type": "neoforge:components",
@@ -70,29 +62,28 @@
   "fluid_inputs": [
     {
       "fluid": "theoreticalsciences:hypernova_plasma",
-      "amount": 512000
+      "amount": 16000
     },
     {
       "fluid": "theoreticalsciences:causal_solder",
-      "amount": 294912
+      "amount": 9216
     },
     {
       "fluid": "theoreticalsciences:liquid_spacetime",
-      "amount": 128000
+      "amount": 4000
     },
     {
       "fluid": "theoreticalsciences:neutrino_flux",
-      "amount": 128000
+      "amount": 4000
     },
     {
       "fluid": "theoreticalsciences:antihydrogen",
-      "amount": 128000
+      "amount": 4000
     }
   ],
   "energy": 16777216,
   "duration": 4000,
   "research": "theoreticalsciences:stellar_transcendence",
-  "scaled": 32,
   "environment": {
     "gravity_min": 1000,
     "time_min": 10
@@ -113,11 +104,11 @@
       }
     ]
   },
-  "expanded": true,
   "item_outputs": [
     {
       "id": "theoreticalsciences:transcendent_alloy",
       "count": 1
     }
-  ]
+  ],
+  "unscaled": true
 }

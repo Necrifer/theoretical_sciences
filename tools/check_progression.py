@@ -139,6 +139,39 @@ def used(first, targets):
     return seen
 
 
+def slots():
+    """recipe type -> the most item and fluid inputs any machine of that type has (MachineType's own arithmetic)."""
+    out = {}
+    for m in re.finditer(r'^\s+([A-Z0-9_]+)\s*\("([a-z0-9_]+)",\s*(\d+),\s*(\d+),\s*\d+,\s*\d+,\s*(true|false),\s*(null|"[a-z0-9_]+")', open(JAVA).read(), re.M):
+        rt, n, f, gen, mb = m.group(2), int(m.group(3)), int(m.group(4)), m.group(5) == 'true', m.group(6) != 'null'
+        if mb and not gen:
+            it, fl = 16, 16
+        elif gen:
+            it = max(n, 6 if rt == 'stellar_thrust' else 8 if rt == 'dyson' else 0) - (2 if rt == 'dyson' else 0)     # the Dyson Array's second and third slots are its swarm's
+            fl = f
+        else:
+            it = n if n >= 6 else min(6, max(n + 2, 4))
+            fl = f if f >= 3 else f + 1
+        a, b = out.get(rt, (0, 0))
+        out[rt] = (max(a, it), max(b, fl))
+    return out
+
+
+def too_big():
+    """Recipes with more inputs than their machine has slots."""
+    sl = slots()
+    bad = []
+    for f in glob.glob(os.path.join(cc.D, 'recipe', '*', '*.json')):
+        rt = os.path.basename(os.path.dirname(f))
+        if rt not in sl:
+            continue
+        r = json.load(open(f, encoding='utf-8'))
+        ni, nf = len(r.get('item_inputs', [])), len(r.get('fluid_inputs', []))
+        if ni > sl[rt][0] or nf > sl[rt][1]:
+            bad.append('%s/%s: %d items, %d fluids; the machine has %d and %d' % (rt, os.path.basename(f)[:-5], ni, nf, sl[rt][0], sl[rt][1]))
+    return bad
+
+
 def main():
     recs = recipes()
     can, first, made, have, mach = closure(recs)
@@ -179,7 +212,11 @@ def main():
     new = [k for k in lost if k not in known]
     if new:
         print('NEW since the baseline:', len(new))
-    sys.exit(1 if new else 0)
+    big = too_big()
+    for b in big:
+        print('  TOO MANY INPUTS', b)
+    print('recipes with more inputs than their machine has slots:', len(big))
+    sys.exit(1 if new or big else 0)
 
 
 if __name__ == '__main__':

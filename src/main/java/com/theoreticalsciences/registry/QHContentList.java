@@ -882,6 +882,8 @@ public final class QHContentList {
         new ItemDef("confluent_essence", "", 64),
         new ItemDef("eschaton_steel", "", 64),
         new ItemDef("convergent_matter", "", 64),
+        // 1.7.2: the last material: all seven Field Syntheses and all six final-tier materials, brought together
+        new ItemDef("consilience_core", "", 64),
         new ItemDef("charged_lattice_seed", "", 64),
         new ItemDef("coherent_field_beam", "", 64),
         new ItemDef("doped_catalyst_bed", "", 64),

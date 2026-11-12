@@ -30,8 +30,9 @@ ENDGAME = {
     'E2': ['dyson_lattice_panel', 'stellar_wind_condensate', 'recursive_thought_shell', 'embryonic_vacuum'],
     'E3': ['compiled_law', 'lex_prima', 'breach_shard', 'pure_concept_ingot', 'diagonal_ingot', 'distilled_axiom'],
     'E4': ['transcendent_alloy', 'event_horizon_lens', 'pleromatic_weave', 'confluent_essence', 'eschaton_steel', 'convergent_matter'],
+    'E5': ['consilience_core'],            # 1.7.2: the last material, all of E1 and all of E4 together
 }
-STEP = {'E2': 4.0, 'E3': 6.0, 'E4': 25.0}
+STEP = {'E2': 4.0, 'E3': 6.0, 'E4': 25.0, 'E5': 6.0}
 
 
 def norm(x):
@@ -54,6 +55,10 @@ def load():
                 k = i.get('item') or ('#' + i['tag'] if 'tag' in i else None)
                 if k:
                     ins.append((norm(k) if not k.startswith('#') else k, i.get('count', 1)))
+                elif 'items' in i and isinstance(i['items'], str):
+                    # 1.7.2: a Field Synthesis of a lettered level is worth nine of the level below
+                    lvl = i.get('components', {}).get(NS + 'synthesis_level', 0)
+                    ins.append((norm(i['items']), i.get('count', 1) * 9 ** lvl))
             for i in r.get('fluid_inputs', []):
                 if 'fluid' in i:
                     fins.append((norm(i['fluid']), i.get('amount', 1000)))
@@ -218,7 +223,7 @@ def main():
         if report:
             print('%s  %s' % (t, ', '.join('%s %s' % (i, ('%.3g' % c) if c is not None else 'unmade') for i, c in zip(ids, cs))))
     prev = None
-    for t in ('E1', 'E2', 'E3', 'E4'):
+    for t in ('E1', 'E2', 'E3', 'E4', 'E5'):
         g = tiers[t]
         if g is None:
             print('%s: no items made yet' % t)

@@ -313,7 +313,9 @@ public enum MachineType {
         this.legacyItemInputs = in;
         this.legacyFluidInputs = fin;
         boolean mb = multiblock != null && !gen;          // generators burn fuel: their slots stay as they were
-        this.itemInputs = mb ? 16 : gen ? Math.max(in, "stellar_thrust".equals(recipeType) ? 3 : 0)        // 1.7.0: the Stellar Engine's fuels take Field Syntheses
+        // 1.7.2: the two megastructure generators take Field Syntheses and make a signature material, so they need room:
+        // the Stellar Engine 6 slots, the Dyson Array 8 (its second and third are the swarm's, which leaves it six)
+        this.itemInputs = mb ? 16 : gen ? Math.max(in, "stellar_thrust".equals(recipeType) ? 6 : "dyson".equals(recipeType) ? 8 : 0)
                 : in >= 6 ? in : Math.min(6, Math.max(in + 2, 4));
         this.fluidInputs = mb ? 16 : gen ? fin : fin >= 3 ? fin : fin + 1;
         this.itemOutputs = mb ? Math.max(out, 4) : out;
