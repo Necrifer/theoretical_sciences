@@ -42,7 +42,7 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
     /**
      * The most different items a table will hold at once (1.8.2; raised from 128 in 1.8.3 so that a recipe using a
      * different item in every one of its 225 slots can still be filled). It gives the table's saved size a ceiling
-     * whatever data packs add: at the ceiling a table saves under 20 KB, and none of it is sent with the chunk.
+     * whatever data packs add: at the ceiling a table saves about 20 KB, and none of it is sent with the chunk.
      */
     public static final int MAX_KINDS = 256;
 
