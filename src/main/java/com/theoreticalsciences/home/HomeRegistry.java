@@ -48,7 +48,8 @@ public final class HomeRegistry {
             BlockBehaviour.Properties.of().mapColor(MapColor.GOLD).strength(-1.0F, 3600000F).noCollission().noLootTable().lightLevel(s -> 15)
                     .pushReaction(PushReaction.BLOCK).sound(SoundType.GLASS));
 
-    public static final DeferredHolder<Item, BlockItem> TABLE_ITEM = ITEMS.registerSimpleBlockItem(TABLE, new Item.Properties().rarity(Rarity.EPIC));
+    public static final DeferredHolder<Item, BlockItem> TABLE_ITEM = ITEMS.register("empyrean_assembly_table",
+            () -> new EmpyreanTableItem(TABLE.get(), new Item.Properties().rarity(Rarity.EPIC).fireResistant()));
     public static final DeferredHolder<Item, BlockItem> ALTAR_ITEM = ITEMS.registerSimpleBlockItem(ALTAR, new Item.Properties().rarity(Rarity.EPIC));
     public static final DeferredHolder<Item, BlockItem> FRAME_ITEM = ITEMS.registerSimpleBlockItem(FRAME, new Item.Properties().rarity(Rarity.EPIC));
     public static final List<DeferredHolder<Item, BlockItem>> TAB = List.of(TABLE_ITEM, ALTAR_ITEM, FRAME_ITEM);

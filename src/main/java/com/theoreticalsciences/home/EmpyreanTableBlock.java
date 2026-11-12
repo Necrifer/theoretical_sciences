@@ -64,9 +64,18 @@ public class EmpyreanTableBlock extends BaseEntityBlock {
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState next, boolean moved) {
         if (!state.is(next.getBlock()) && !level.isClientSide && level.getBlockEntity(pos) instanceof EmpyreanTableBlockEntity be) {
+            // 1.8.2: one item comes out, whatever the table held. The contents are a few counts written on that item
+            // (never stacks, never item entities), so breaking a full table cannot flood a chunk.
             ItemStack drop = new ItemStack(this);
-            if (be.holdsAnything()) be.saveToItem(drop, level.registryAccess());       // the item carries the contents
-            Block.popResource(level, pos, drop);
+            boolean full = be.holdsAnything();
+            if (full) be.saveToItem(drop, level.registryAccess());
+            net.minecraft.world.entity.item.ItemEntity ie = new net.minecraft.world.entity.item.ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop);
+            ie.setDefaultPickUpDelay();
+            if (full) {                      // and that one item cannot be lost: it never despawns and nothing destroys it
+                ie.setUnlimitedLifetime();
+                ie.setInvulnerable(true);
+            }
+            level.addFreshEntity(ie);
         }
         super.onRemove(state, level, pos, next, moved);
     }

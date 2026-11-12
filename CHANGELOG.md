@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.8.2: Chunk safety for the Empyrean Assembly Table
+
+Checked against "chunk banning" (a chunk whose saved data grows too large to load). The table was already safe by
+design; this patch adds hard limits so it stays safe whatever is done to it.
+
+* **What the table saves is tiny and has a ceiling.** It does not store item stacks. It stores one line per kind of
+  item: the item's name and a single number. Holding 9 billion of something costs the same few bytes as holding 9.
+  With every ingredient of every recipe in it at once (66 kinds) a table saves about 4 KB; a chunk only fails at
+  several megabytes. New: a table refuses a new kind of item past 128 kinds, so no data pack can push it higher.
+* **Breaking a table drops exactly one item**, the table itself, with its contents written on it as those same few
+  lines. It never spills its contents into the world. New: that item never despawns, cannot be destroyed by fire,
+  lava, cactus or explosions while it holds anything, and its tooltip lists what is inside.
+* **Nothing the table does makes item entities.** Taking things out by hand only fills your inventory and stops
+  when it is full; pipes take one stack at a time; crafted items stay inside until taken.
+* Only plain items go in (nothing with its own data, such as a filled table or a shulker box), so tables cannot be
+  nested inside tables.
+* The Offering Altar stores nothing at all; what it is given becomes a number on the player's checklist.
+
 ## 1.8.1: The long cycle
 
 ### Recipe changes (all forty-three Empyrean Assembly Table recipes)

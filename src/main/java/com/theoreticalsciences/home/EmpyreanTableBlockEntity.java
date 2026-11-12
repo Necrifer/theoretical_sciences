@@ -39,6 +39,12 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
     /** Room for this many crafts' worth of each ingredient, so pipes can run ahead of the crafting. */
     private static final int BUFFER_CRAFTS = 64;
     private static final long OUT_CAP = 1_000_000_000_000L;
+    /**
+     * 1.8.2: the most different items a table will hold at once. Only recipe ingredients can be put in, and there are
+     * 66 of those, so this is never reached; it is here so that the table's saved size has a ceiling whatever data
+     * packs add. At the ceiling a table saves about 8 KB, against the megabytes at which a chunk stops loading.
+     */
+    public static final int MAX_KINDS = 128;
 
     @Nullable private ResourceLocation recipeId;
     private final Map<Item, Long> held = new LinkedHashMap<>();
@@ -120,6 +126,7 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
     /** Puts in as many as fit; returns how many went in. */
     public long put(Item item, long count) {
         long n = Math.min(count, room(item));
+        if (!held.containsKey(item) && held.size() >= MAX_KINDS) return 0;      // (1.8.2: a hard ceiling on what the table can ever have to save)
         if (n > 0) {
             held.merge(item, n, Long::sum);
             changed();
