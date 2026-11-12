@@ -64,6 +64,7 @@ public class TheoreticalSciences {
         QHEntities.register(modBus);
         com.theoreticalsciences.registry.QHSounds.register(modBus);
         com.theoreticalsciences.extreme.ExtremeRegistry.register(modBus);
+        com.theoreticalsciences.home.HomeRegistry.register(modBus);          // 1.8.0: Recreating Home
         com.theoreticalsciences.converge.ConvergenceRegistry.register(modBus);
         com.theoreticalsciences.transcend.TranscendRegistry.register(modBus);
         com.theoreticalsciences.registry.QHLogistics.register(modBus);
@@ -128,6 +129,7 @@ public class TheoreticalSciences {
         com.theoreticalsciences.network.DestabilisedPayload.registerServerEvents();
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.DimensionLaws::onPlayerTick);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.VoidFall::onPlayerTick);
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.HomeTravel::onPlayerTick);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.SpawnRules::onFinalizeSpawn);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.SpawnRules::onJoin);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.machine.tuning.Materialisation::tick);

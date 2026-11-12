@@ -37,6 +37,7 @@ public final class VoidFall {
             Map.entry(QHDimensions.WHITE_HOLE, Level.OVERWORLD),
             Map.entry(QHDimensions.HYPERREAL, QHDimensions.BULK),
             Map.entry(QHDimensions.TRANSCENDENTAL, QHDimensions.HYPERREAL),
+            Map.entry(QHDimensions.OMNIPOTENCY, QHDimensions.HYPERREAL),      // 1.8.0: through the cloud under Heaven (the Transcendental only opens its own way)
             Map.entry(QHDimensions.ANTIVERSE, Level.OVERWORLD),
             Map.entry(QHDimensions.FRONTIER, Level.OVERWORLD),
             Map.entry(QHDimensions.TITAN, Level.OVERWORLD),

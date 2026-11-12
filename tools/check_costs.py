@@ -79,10 +79,12 @@ def load():
                     continue
                 key = k.get('item') or ('#' + k['tag'] if 'tag' in k else None)
                 if key:
-                    ins.append((norm(key) if not key.startswith('#') else key, n))
+                    ins.append((norm(key) if not key.startswith('#') else key, n * k.get('count', 1)))      # (1.8.0: an Empyrean slot holds many)
             res = r.get('result', {})
             if 'id' in res:
                 outs.append((norm(res['id']), res.get('count', 1)))
+            elif 'item' in res:                                # 1.8.0: the Empyrean Assembly Table's recipes
+                outs.append((norm(res['item']), res.get('count', 1)))
             extra = 0.1
         elif 'ingredient' in r and 'result' in r:              # smelting, blasting, stonecutting
             k = r['ingredient']

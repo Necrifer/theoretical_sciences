@@ -150,6 +150,7 @@ public final class QHClient {
         event.register(QHMenus.ANOMALY_ENGINE.get(), com.theoreticalsciences.client.screen.AnomalyEngineScreen::new);
         event.register(com.theoreticalsciences.extreme.ExtremeRegistry.EXTREME_MENU.get(), com.theoreticalsciences.extreme.ExtremeTableScreen::new);
         event.register(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTOR_MENU.get(), com.theoreticalsciences.extreme.CompactorScreen::new);
+        event.register(com.theoreticalsciences.home.HomeRegistry.TABLE_MENU.get(), com.theoreticalsciences.home.EmpyreanTableScreen::new);
     }
 
     @SubscribeEvent
@@ -204,6 +205,7 @@ public final class QHClient {
         event.register(TheoreticalSciences.id("white_hole_interior"), new com.theoreticalsciences.client.render.FractalSkyEffects(3));
         event.register(TheoreticalSciences.id("transfinite_hierarchy"), new com.theoreticalsciences.client.render.FractalSkyEffects(4));
         event.register(TheoreticalSciences.id("living_proof"), new com.theoreticalsciences.client.render.FractalSkyEffects(5));
+        event.register(TheoreticalSciences.id("omnipotency"), new com.theoreticalsciences.client.render.EmpyreanSkyEffects());   // 1.8.0
     }
 
     @SubscribeEvent

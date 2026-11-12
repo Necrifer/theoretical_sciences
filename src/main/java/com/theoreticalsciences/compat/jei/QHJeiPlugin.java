@@ -153,7 +153,7 @@ public class QHJeiPlugin implements IModPlugin {
         com.theoreticalsciences.compat.page.RecipePage.clear();      // 1.2.0: pages are laid out again after a reload
         for (MachineType t : MachineType.values()) reg.addRecipeCategories(new MachineRecipeCategory(gui, t, TYPES.get(t)));
         reg.addRecipeCategories(new MultiblockCategory(gui));
-        reg.addRecipeCategories(new ExtremeCraftingCategory(gui), new CompactionCategory(gui));
+        reg.addRecipeCategories(new ExtremeCraftingCategory(gui), new CompactionCategory(gui), new EmpyreanCategory(gui));
         reg.addRecipeCategories(new ConvergenceCategory(gui), new ForgeCategory(gui));
     }
 
@@ -197,6 +197,8 @@ public class QHJeiPlugin implements IModPlugin {
         for (var d : com.theoreticalsciences.extreme.Singularities.all(true))          // the pack-added and automatic singularities
             comp.add(new com.theoreticalsciences.extreme.CompactionRecipe(d.ingredient(), d.count(), com.theoreticalsciences.extreme.Singularities.stack(d)));
         reg.addRecipes(CompactionCategory.TYPE, comp);
+        // 1.8.0: the Empyrean Assembly Table
+        reg.addRecipes(EmpyreanCategory.TYPE, level.getRecipeManager().getAllRecipesFor(com.theoreticalsciences.home.HomeRegistry.EMPYREAN_TYPE.get()).stream().map(RecipeHolder::value).toList());
     }
 
     @Override
@@ -209,6 +211,7 @@ public class QHJeiPlugin implements IModPlugin {
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.EXTREME_TABLE_ITEM.get()), ExtremeCraftingCategory.TYPE);
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.EXTREME_TABLE_ITEM.get()), mezz.jei.api.constants.RecipeTypes.CRAFTING);   // it crafts ordinary recipes too
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTOR_ITEM.get()), CompactionCategory.TYPE);
+        reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.home.HomeRegistry.TABLE_ITEM.get()), EmpyreanCategory.TYPE);
         reg.addRecipeCatalyst(new ItemStack(com.theoreticalsciences.extreme.ExtremeRegistry.AUTO_ASSEMBLER_ITEM.get()), ExtremeCraftingCategory.TYPE);
         for (String id : new String[]{"convergence_altar", "resonance_pedestal", "harmonic_pedestal", "absolute_pedestal"})
             reg.addRecipeCatalyst(new ItemStack(QHItems.get(id)), ConvergenceCategory.TYPE);

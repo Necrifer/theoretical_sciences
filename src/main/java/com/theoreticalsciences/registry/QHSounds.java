@@ -93,7 +93,7 @@ public final class QHSounds {
     /** The soundtrack: one piece per dimension, the Living Proof, and Alpha Omega. */
     public static final String[] TRACKS = {"the_bulk", "hyperdimensional_reality", "platonic_realm", "quantum_foam", "transfinite_hierarchy",
             "black_hole_interior", "white_hole_interior", "transcendental", "living_proof", "alpha_omega", "antiverse",
-            "planetary_interior", "accretion_frontier", "titan", "the_elements", "the_axioms", "curved_space", "the_continuum", "inner_space", "orbital_station", "hadal_trench"};
+            "planetary_interior", "accretion_frontier", "titan", "the_elements", "the_axioms", "curved_space", "the_continuum", "inner_space", "orbital_station", "hadal_trench", "omnipotency"};
     public static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MUSIC = new java.util.HashMap<>();
 
     static {

@@ -31,6 +31,8 @@ public final class QHDimensions {
     public static final ResourceKey<Level> TRANSFINITE = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("transfinite_hierarchy"));
 
     /** The Living Proof: Alpha Omega's own mind, where every law must be understood before it lets you go. */
+    /** 1.8.0: the home of God, rebuilt: reached only through the Empyrean portal, by a player who finished Recreating Home. */
+    public static final ResourceKey<Level> OMNIPOTENCY = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("omnipotency"));
     public static final ResourceKey<Level> LIVING_PROOF = ResourceKey.create(Registries.DIMENSION, TheoreticalSciences.id("living_proof"));
 
     /** The Antiverse: a universe exactly like ours, made of antimatter (reached through the CPT Mirror). */

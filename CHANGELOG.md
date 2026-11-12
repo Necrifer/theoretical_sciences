@@ -1,5 +1,125 @@
 # Changelog
 
+## 1.8.0: Recreating Home
+
+An expansion beyond the end. Nothing here can be started before every recipe of the Core Forge has been forged at
+least once, and nothing earlier is changed.
+
+### The story
+The Omnipotence Core is not the maker of all this. It is the remnant of the one who was, still running. That one had
+a home, and it was lost. The player had to understand everything to come this far; what the Core asks now is to
+rebuild what was lost, and then to come home.
+
+### New: the Core's fourth tab
+* **Recreating Home** appears on the Omnipotence Core's screen, in gold, beside Materialize and Forge, for a player
+  who has forged every Core Forge recipe at least once. The Core speaks the first time it appears.
+* It is a checklist of **forty-two** new materials and asks for **33,550,337 of each**.
+* The checklist is **per player**. On a server everyone has their own.
+* "Offer what I carry" gives the Core everything in your inventory that the checklist still needs.
+
+### New: the Empyrean Assembly Table
+* A crafting table of **15 by 15**, and **a slot holds far more than a stack** (the table counts what it holds per
+  item, with no limit a recipe will reach).
+* Choose a recipe from its list. Whatever you put in goes to the slots that ask for it, and slots light as they fill.
+  Click the grid with items to put them in (Shift-click from the inventory works too), click a slot to take a stack
+  back, click the product to take it, Shift-click to take all that fits.
+* Craft once, craft as many as it can, or set it to craft by itself. Pipes and hoppers can fill it and empty it; it
+  buffers 64 crafts of each ingredient.
+* Broken, it keeps its contents inside the item.
+* It was built so that a table this size does not slow the game: the screen has no slots for the grid at all. The
+  server sends the chosen recipe and a few numbers, and the picture is drawn from those. JEI and EMI pages draw the
+  picture at twelve pixels a slot, so the page is no larger than the 9 by 9 one, and only the slots a picture uses
+  exist on it. EMI is given the real totals, so its recipe tree counts correctly.
+* **Recipe:** on the Extreme Assembly Table, a picture of the table itself: Eschaton Steel and Transcendent Alloy
+  round the rim, then Pleromatic Weave, Confluent Essence, Convergent Matter, an Eschaton Core at the centre, and
+  Event Horizon Lenses for legs.
+
+### New: the forty-two materials
+* **Twenty-four elements** (Remembered Soil, Living Water, First Breath, First Light, Hearthfire, Seraphic Alloy,
+  Choir Crystal, Woven Memory, Still Stone, Morning Dew, Evening Ember, Quiet Snow, Deep Root, Bright Seed, Kind
+  Shadow, Warm Rain, Salt of Tears, Honey of Days, Thread of Fate, Dust of Stars, Ash of Worlds, Word Unspoken, Name
+  Forgotten, Song Unsung), each made of the materials the last machines make.
+* **Twelve works** (Firmament Plate, Foundation Stone, Garden Bed, Wellspring, Lantern of Days, Bell of Hours, Loom
+  of Years, Gate Lintel, Threshold Step, Roof of Heaven, Table of Welcome, Bed of Rest), made of the elements, 64 to
+  a slot.
+* **Five pillars** (Knowing, Making, Keeping, Mercy, Return), made of the works, 64 to a slot.
+* **The Keystone of Return**, made of all five pillars, 256 to a slot.
+* **Every recipe is a picture of what it makes**: a droplet for Living Water, a sunburst for First Light, a bell for
+  the Bell of Hours, and so on. No two share a layout.
+* Every recipe gives 4,096. 8,191 crafts reach 33,550,336, which is a perfect number; the 8,192nd is the one that
+  ends the cycle.
+* Each has its own animated 3D art, flavour text, and a line saying where it is made.
+
+### New: the Offering Altar
+* Gives the Core whatever of the forty-two is piped into it, on the checklist of the player who placed it. It takes
+  only what that checklist still needs and gives nothing back. Use it to offer what you carry and to read how many
+  lines are full.
+* **Recipe:** on the Extreme Assembly Table.
+
+### New: the Homeward Portal Frame
+* When every line of a player's checklist is full, the Core speaks again, and the Empyrean Assembly Table will make
+  the frame **for that player only** (a table placed by someone else will not).
+* The frame's recipe is a gate drawn with all forty-two materials, **65,536 to a slot**.
+* It works as an End Portal frame does: twelve in a ring round a three by three opening, each facing in. Set a
+  Keystone of Return in each, as an Eye of Ender is set, and the opening fills with light. Breaking a frame closes
+  it and gives the keystone back.
+* **Entry is checked per player too.** Only a player whose own checklist is complete passes through, whoever built
+  the ring. Omnipotency cannot be entered by command or by another mod's teleporter.
+
+### New: Omnipotency
+* Floating islands of white marble resting on cloud, under an endless noon, with its own sky (a still light at the
+  zenith, slow rays, three halos turning round it) and its own music.
+* Four biomes: Cloud Meadows, Gilded Gardens (groves of silver-barked, gold-leaved trees and Glory Lanterns), Choir
+  Spires (tall crystal on gilded marble), and the Sea of Clouds.
+* Twelve new blocks: Empyrean Marble and its Bricks, Gilded Marble, Heaven Soil, Halo Grass, Cloudstone, Radiant
+  Cloud (you sink through it slowly, unharmed), Choir Crystal Spire, Seraph Gold, Glory Lantern, Silver Bark and
+  Aureate Leaves.
+* Nothing hungers there and wounds close by themselves. Beds work.
+* You arrive on a marble terrace, built once; the light in its ring is the way back to where you came from.
+* Falling out of the bottom lands you safely in Hyperdimensional Reality Space.
+* This patch is the place itself. It has no inhabitants or structures yet.
+
+### For testing and for packs
+* `/theoreticalsciences home unlock <players>` shows the tab without the forging, `complete` fills every line,
+  `reset` starts over. Operators only.
+* Empyrean recipes are data: `"type": "theoreticalsciences:empyrean"`, a `pattern` of up to 15 rows of 15, a `key`
+  whose entries are `{"item": ..., "count": n}`, a `result` of `{"item": ..., "count": n}`, and optionally
+  `"needs_home": true`.
+
+### What the whole checklist takes
+Balance was set aside for this on purpose: it is meant to be long. Counting what the later recipes use up, the
+whole of it comes to about 1.2 million crafts in the table, and of the materials the last machines make:
+
+| Material | In all |
+| --- | --- |
+| Unified Field Lattice | 9,031,455 |
+| Perennial Catalyst Matrix | 4,351,682 |
+| Proof Lattice | 3,516,865 |
+| Living Archive | 3,270,242 |
+| Engineered Mind | 5,146,540 |
+| Planetary Survey | 5,644,566 |
+| Deep Record | 3,468,894 |
+| Dyson Lattice Panel | 6,576,188 |
+| Stellar Wind Condensate | 3,852,648 |
+| Recursive Thought Shell | 5,295,241 |
+| Embryonic Vacuum | 3,848,312 |
+| Compiled Law | 3,603,658 |
+| Lex Prima | 4,638,518 |
+| Breach Shard | 4,846,248 |
+| Pure Concept Ingot | 3,338,592 |
+| Diagonal Ingot | 6,683,491 |
+| Distilled Axiom | 5,031,016 |
+| Transcendent Alloy | 7,302,030 |
+| Event Horizon Lens | 3,749,892 |
+| Pleromatic Weave | 3,095,629 |
+| Confluent Essence | 8,793,516 |
+| Eschaton Steel | 5,989,322 |
+| Convergent Matter | 5,540,805 |
+| Consilience Core | 111,832 |
+
+### Unchanged
+* Every earlier recipe, machine, structure and dimension.
+
 ## 1.7.4: The Mana Port
 
 ### New

@@ -68,7 +68,26 @@ public final class QHCommands {
                             return 1;
                         })))))
                 .then(radiation())
+                .then(home())                                                    // 1.8.0
                 .then(com.theoreticalsciences.orbit.OrbitCommands.station()));   // 1.3.0
+    }
+
+    /**
+     * 1.8.0: /theoreticalsciences home unlock|complete|reset <players>. For testing Recreating Home without forging everything or
+     * giving forty-two times 33,550,337 items: unlock shows the Core's tab, complete fills every line, reset starts over.
+     */
+    private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack> home() {
+        var root = Commands.literal("home");
+        for (String what : new String[]{"unlock", "complete", "reset"})
+            root.then(Commands.literal(what).then(Commands.argument("players", EntityArgument.players()).executes(ctx -> {
+                for (ServerPlayer p : EntityArgument.getPlayers(ctx, "players")) {
+                    com.theoreticalsciences.home.HomeProgress.command(p.server, p.getUUID(), what);
+                    if (what.equals("complete")) com.theoreticalsciences.home.HomePayloads.announceIfComplete(p);
+                }
+                ctx.getSource().sendSuccess(() -> Component.literal("Recreating Home: " + what), true);
+                return 1;
+            })));
+        return root;
     }
 
     /**

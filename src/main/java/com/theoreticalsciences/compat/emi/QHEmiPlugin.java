@@ -61,7 +61,7 @@ public class QHEmiPlugin implements EmiPlugin {
     private static final java.util.concurrent.atomic.AtomicBoolean HOVER_ADDED = new java.util.concurrent.atomic.AtomicBoolean();
     /** One tab per machine, with the same ids as the JEI tabs. */
     static final Map<MachineType, EmiRecipeCategory> MACHINES = new EnumMap<>(MachineType.class);
-    static EmiRecipeCategory MULTIBLOCKS, EXTREME, COMPACTION, CONVERGENCE, FORGE;
+    static EmiRecipeCategory MULTIBLOCKS, EXTREME, COMPACTION, CONVERGENCE, FORGE, EMPYREAN;
 
     @Override
     public void register(EmiRegistry reg) {
@@ -117,13 +117,15 @@ public class QHEmiPlugin implements EmiPlugin {
                 Component.translatable("jei.theoreticalsciences.multiblocks"));
         EXTREME = new QHEmiCategory(TheoreticalSciences.id("extreme_crafting"), ExtremeRegistry.EXTREME_TABLE_ITEM.get(),
                 Component.translatable("block.theoreticalsciences.extreme_assembly_table"));
+        EMPYREAN = new QHEmiCategory(TheoreticalSciences.id("empyrean"), com.theoreticalsciences.home.HomeRegistry.TABLE_ITEM.get(),
+                Component.translatable("block.theoreticalsciences.empyrean_assembly_table"));
         COMPACTION = new QHEmiCategory(TheoreticalSciences.id("compaction"), ExtremeRegistry.COMPACTOR_ITEM.get(),
                 Component.translatable("block.theoreticalsciences.singularity_compactor"));
         CONVERGENCE = new QHEmiCategory(TheoreticalSciences.id("convergence"), QHItems.get("convergence_altar"),
                 Component.translatable("block.theoreticalsciences.convergence_altar"));
         FORGE = new QHEmiCategory(TheoreticalSciences.id("omnipotence_forge"), QHItems.get("eschaton_core"),
                 Component.translatable("jei.theoreticalsciences.forge"));
-        for (EmiRecipeCategory c : new EmiRecipeCategory[]{MULTIBLOCKS, EXTREME, COMPACTION, CONVERGENCE, FORGE}) reg.addCategory(c);
+        for (EmiRecipeCategory c : new EmiRecipeCategory[]{MULTIBLOCKS, EXTREME, COMPACTION, CONVERGENCE, FORGE, EMPYREAN}) reg.addCategory(c);
     }
 
     // ------------------------------------------------------------------ telling stacks apart
@@ -174,6 +176,7 @@ public class QHEmiPlugin implements EmiPlugin {
         // the table crafts ordinary recipes too (with JEI present, JEMI already copies this from the JEI plugin)
         if (!jemi) reg.addWorkstation(VanillaEmiRecipeCategories.CRAFTING, table);
         reg.addWorkstation(COMPACTION, EmiStack.of(ExtremeRegistry.COMPACTOR_ITEM.get()));
+        reg.addWorkstation(EMPYREAN, EmiStack.of(com.theoreticalsciences.home.HomeRegistry.TABLE_ITEM.get()));
         for (String id : new String[]{"convergence_altar", "resonance_pedestal", "harmonic_pedestal", "absolute_pedestal"})
             reg.addWorkstation(CONVERGENCE, EmiStack.of(QHItems.get(id)));
     }
@@ -211,6 +214,8 @@ public class QHEmiPlugin implements EmiPlugin {
             }
         }
 
+        for (var h : rm.getAllRecipesFor(com.theoreticalsciences.home.HomeRegistry.EMPYREAN_TYPE.get()))
+            safely("empyrean " + h.id(), () -> reg.addRecipe(new EmpyreanEmiRecipe(EMPYREAN, h.id(), h.value())));
         for (var h : rm.getAllRecipesFor(ExtremeRegistry.COMPACTION_TYPE.get())) {
             CompactionRecipe r = h.value();
             safely("compaction " + h.id(), () -> reg.addRecipe(new CompactionEmiRecipe(COMPACTION, h.id(), r.ingredient(), r.count(),

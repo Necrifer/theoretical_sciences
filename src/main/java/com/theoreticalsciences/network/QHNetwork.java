@@ -46,6 +46,17 @@ public final class QHNetwork {
         });
         r.playToClient(com.theoreticalsciences.transcend.CorePayloads.Open.TYPE, com.theoreticalsciences.transcend.CorePayloads.Open.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.openOmnipotence(p.core(), p.phase(), p.seconds()));
+        // 1.8.0: Recreating Home
+        r.playToClient(com.theoreticalsciences.home.HomePayloads.State.TYPE, com.theoreticalsciences.home.HomePayloads.State.CODEC,
+                (p, ctx) -> com.theoreticalsciences.home.HomeClient.state(p));
+        r.playToClient(com.theoreticalsciences.home.HomePayloads.TableSync.TYPE, com.theoreticalsciences.home.HomePayloads.TableSync.CODEC,
+                (p, ctx) -> com.theoreticalsciences.home.HomeClient.table(p.pos(), p.tag(), p.blocked()));
+        r.playToServer(com.theoreticalsciences.home.HomePayloads.Submit.TYPE, com.theoreticalsciences.home.HomePayloads.Submit.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.home.HomePayloads.Submit.handle(sp, p);
+        });
+        r.playToServer(com.theoreticalsciences.home.HomePayloads.TableAction.TYPE, com.theoreticalsciences.home.HomePayloads.TableAction.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.home.HomePayloads.TableAction.handle(sp, p);
+        });
         r.playToClient(com.theoreticalsciences.transcend.ForgeDrift.Sync.TYPE, com.theoreticalsciences.transcend.ForgeDrift.Sync.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.screen.ForgeDriftClient.accept(p.data()));
         r.playToServer(com.theoreticalsciences.transcend.CorePayloads.Action.TYPE, com.theoreticalsciences.transcend.CorePayloads.Action.CODEC, (p, ctx) -> {

@@ -106,12 +106,14 @@ public final class CorePayloads {
     public static void openForged(ServerPlayer sp, BlockPos core) {
         if (!begin(sp, core)) return;
         ForgeDrift.sync(sp);
+        com.theoreticalsciences.home.HomePayloads.sendState(sp);         // 1.8.0: before the screen opens, so its tab is there at once
         net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(sp, new Open(core, Omnipotence.Phase.REBORN.ordinal(), 0));
     }
 
     public static void open(ServerPlayer sp, BlockPos core) {
         if (!begin(sp, core)) return;
         ForgeDrift.sync(sp);
+        com.theoreticalsciences.home.HomePayloads.sendState(sp);
         net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(sp,
                 new Open(core, Omnipotence.phase(sp.server).ordinal(), Omnipotence.secondsLeft(sp.server)));
     }

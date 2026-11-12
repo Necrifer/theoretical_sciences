@@ -47,6 +47,7 @@ public final class TransitScenes {
             case TITAN_OCEAN -> titanOcean(g, s, w, h, t, p, rev);
             case ORBITAL_STATION -> orbit(g, s, w, h, t, p, rev);
             case HADAL_TRENCH -> hadal(g, s, w, h, t, p, rev);
+            case OMNIPOTENCY -> omnipotency(g, s, w, h, t, p, rev);
         }
         g.flush();
     }
@@ -698,6 +699,36 @@ public final class TransitScenes {
         f.end();
     }
 
+    /** 1.8.0, Omnipotency: a light at the top of the page, slow gold rays coming down from it, three halos, and motes rising. */
+    private static void omnipotency(GuiGraphics g, TransitStyle s, int w, int h, float t, float p, boolean rev) {
+        float cx = w / 2F, cy = h * 0.3F, u = Math.min(w, h), R = (float) Math.hypot(w, h), ep = smooth(p), dir = rev ? -1 : 1;
+        Fx2D f = Fx2D.begin(g, Blend.NORMAL);
+        int n = 28;
+        for (int i = 0; i < n; i++) {
+            float ang = i * TAU / n + t * 0.03F * dir, half = 0.03F + 0.025F * rnd(i, 2);
+            float len = R * (0.5F + 0.5F * rnd(i, 1)) * (0.25F + 0.75F * ep);
+            float a = p * (0.22F + 0.12F * (float) Math.sin(t * 1.3F + i * 1.7F));
+            f.tri(cx, cy, s.ink, a, cx + cos(ang - half) * len, cy + sin(ang - half) * len, s.ink, 0, cx + cos(ang + half) * len, cy + sin(ang + half) * len, s.ink, 0);
+        }
+        for (int i = 0; i < 3; i++) {
+            float r = u * (0.12F + 0.1F * i) * (0.6F + 0.4F * ep);
+            f.ring(cx, cy, r, 1.6F, 96, i == 1 ? 0xFFFFFF : s.ink, p * (0.75F - 0.15F * i));
+            int marks = 12 * (i + 1);
+            for (int k = 0; k < marks; k++) {
+                float a0 = k * TAU / marks + t * (i % 2 == 0 ? 0.05F : -0.07F) * dir;
+                f.disc(cx + cos(a0) * r, cy + sin(a0) * r, 1.3F, 6, s.ink, p * 0.8F, s.ink, 0);
+            }
+        }
+        f.disc(cx, cy, u * (0.05F + 0.1F * ep), 48, 0xFFFFFF, p, s.bg, 0);
+        for (int i = 0; i < 70; i++) {
+            float x = rnd(i, 3) * w + (float) Math.sin(t * 0.6F + i) * 5;
+            float yq = frac(rnd(i, 4) + t * (0.03F + 0.05F * rnd(i, 5)));
+            float y = rev ? yq * h * 1.1F - h * 0.05F : h * 1.05F - yq * h * 1.1F;
+            f.disc(x, y, 1.2F + 1.6F * rnd(i, 6), 6, s.ink, p * 0.7F, s.ink, 0);
+        }
+        f.end();
+    }
+
     // ================================================================== the loading page's progress element
 
     /**
@@ -768,6 +799,14 @@ public final class TransitScenes {
                 for (int i = 0; i < 5; i++) f.rect(cx - half + i * 28, cy - 4, cx - half + i * 28 + 26, cy + 4, i <= done * 5 ? accent : ink, 0.3F + 0.1F * i);
                 float x = cx - half + 2 * half * done;
                 f.tri(x, cy + 7, accent, 1, x - 4, cy - 5, ink, 0.8F, x + 4, cy - 5, ink, 0.8F);
+            }
+            case OMNIPOTENCY -> {
+                // twelve keystones in a ring, set one by one (1.8.0)
+                for (int i = 0; i < 12; i++) {
+                    float a0 = i * TAU / 12 - TAU / 4;
+                    boolean set = (i + 0.5F) / 12F <= done;
+                    f.disc(cx + cos(a0) * 10, cy + sin(a0) * 10, set ? 2.2F : 1.4F, 8, set ? accent : ink, set ? 0.95F : 0.4F, set ? accent : ink, set ? 0.5F : 0.2F);
+                }
             }
             case HADAL_TRENCH -> {
                 // a sphere sinking down a line (1.3.0)

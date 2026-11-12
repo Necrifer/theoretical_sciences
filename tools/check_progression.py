@@ -97,6 +97,8 @@ def closure(recs, ignore=lambda r, k: False):
 
     def needs(rtype):
         """What has to exist for a recipe of this type to run: the first machine of that type that can be built."""
+        if rtype.split(':')[-1] == 'empyrean':           # 1.8.0: the Empyrean Assembly Table has to exist first
+            return [NS + 'empyrean_assembly_table'] if have(NS + 'empyrean_assembly_table') else None
         ms = mach.get(rtype.split(':')[-1])
         if not ms:
             return []                                      # crafting, the Extreme table, the altar: no machine of ours to build first
