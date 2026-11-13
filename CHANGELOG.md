@@ -1,5 +1,58 @@
 # Changelog
 
+## 1.9.0: Those Who Live There
+
+Omnipotency is no longer empty. Nothing here changes progression: there is no new gear, no new recipe, and no boss.
+
+### New creatures
+All six have their own minds (none is built on a vanilla creature), their own voices, box-built shaded models with
+moving parts, and their own way of dying.
+
+* **Halo Lamb** (Cloud Meadows, Gilded Gardens). A lamb with a gold-white fleece and a ring of light over its head.
+  Wanders, grazes the Halo Grass without harming it, runs if struck.
+* **Cherub** (Gilded Gardens, Cloud Meadows). A small winged keeper. Flies to Glory Lanterns and Aureate Leaves and
+  tends them, and comes to circle a visitor once or twice out of curiosity.
+* **Choir Seraph** (Choir Spires, Choir Halls). Six wings, a golden mask, an upright halo. Keeps to the crystal and
+  the bells. Now and then, when a player is near, it sings: everyone within nine blocks gets a few seconds of
+  Regeneration.
+* **Cloud Ray** (Sea of Clouds). A broad ray that swims the air in wide circles, calling.
+* **Dweller** (Hamlets, the Temple). A robed resident that keeps near its door, tends things, and bows to a visitor.
+  **Use one and it speaks**: eighteen lines between them, each Dweller starting somewhere of its own.
+* **Threshold Warden** (Hamlets, Choir Halls, the Temple). Marble in armour, kneeling with its sword point down, and
+  completely still. It wakes only if, within its sight, a player breaks part of a building, breaks a Sealed Urn, or
+  strikes one of the other five (or the Warden itself). It then fights that player only (600 health, 28 damage),
+  stops after thirty seconds without a new offence or once they are gone, walks back to its post, kneels, and is
+  whole again. It never wakes in Peaceful, or for players in Creative.
+* None of them drops anything. Each has a spawn egg and a Codex page.
+
+### New structures
+All are built of Omnipotency's own blocks, carry their footings down to the ground, and vary each time.
+
+* **Wayside Shrine** (everywhere there is land): four pillars, a roof, a light, and an urn or a bell.
+* **Hamlet** (Cloud Meadows, Gilded Gardens): three or four houses, each with a different roof, facing a well with a
+  bell over it. Dwellers live there and a Warden kneels by the well.
+* **Choir Hall** (Choir Spires): twelve pillars under a ring of stone, open to the sky, round a tall crystal, with
+  four bells. Two Seraphs and a Warden.
+* **Temple of Remembrance** (rare, any land): a stepped platform, a colonnade all round, a roof with a golden ridge,
+  and an inner room with three Remembrance Stones. Two Wardens flank the door.
+* **Beacon of Return** (Sea of Clouds): a round tower with a winding stair and a lamp room at the top.
+
+### New blocks
+* **Empyrean Pillar**, **Empyrean Marble Tiles**, **Seraph Gold Trim**, **Halo Glass**: building blocks.
+* **Choir Bell**: use it to ring it. Each bell's note depends on where it hangs, so a row of them is a scale.
+* **Remembrance Stone**: use it and one of the twelve Remembrances is read to you.
+* **Sealed Urn**: break it for what is inside.
+
+### New items
+* **Remembrance Tablets I to XII**: the history of the house, from its beginning to the player's return, one passage
+  each. One comes out of every Sealed Urn.
+* **Music Disc (Homecoming)**: Omnipotency's music for a jukebox. A 1 in 20 chance from a Sealed Urn.
+* Sealed Urns also give building blocks: Gilded Marble, tiles, pillars, trim, Halo Glass, Seraph Gold, Choir
+  Crystal, Glory Lanterns, and sometimes a Choir Bell.
+
+### Changed
+* Omnipotency's biomes now spawn the creatures above (it had no spawns at all).
+
 ## 1.8.3
 * The Empyrean Assembly Table's ceiling on kinds of item is 256, up from 128, so a pack recipe that uses a different
   item in every one of the 225 slots can still be filled. At that ceiling a table saves about 20 KB.

@@ -20,7 +20,22 @@
       "replace_current_music": true
     }
   },
-  "spawners": {},
+  "spawners": {
+    "ambient": [
+      {
+        "type": "theoreticalsciences:choir_seraph",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "theoreticalsciences:cherub",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
   "spawn_costs": {},
   "carvers": {},
   "features": [
@@ -28,7 +43,11 @@
     [],
     [],
     [],
-    [],
+    [
+      "theoreticalsciences:wayside_shrine",
+      "theoreticalsciences:choir_hall",
+      "theoreticalsciences:temple_of_remembrance"
+    ],
     [],
     [
       "theoreticalsciences:gilded_marble_seam",

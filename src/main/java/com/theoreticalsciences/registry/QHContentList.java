@@ -884,6 +884,19 @@ public final class QHContentList {
         new ItemDef("convergent_matter", "", 64),
         // 1.7.2: the last material: all seven Field Syntheses and all six final-tier materials, brought together
         new ItemDef("consilience_core", "", 64),
+        // 1.9.0: the twelve remembrances, found in sealed urns
+        new ItemDef("remembrance_tablet_1", "", 16),
+        new ItemDef("remembrance_tablet_2", "", 16),
+        new ItemDef("remembrance_tablet_3", "", 16),
+        new ItemDef("remembrance_tablet_4", "", 16),
+        new ItemDef("remembrance_tablet_5", "", 16),
+        new ItemDef("remembrance_tablet_6", "", 16),
+        new ItemDef("remembrance_tablet_7", "", 16),
+        new ItemDef("remembrance_tablet_8", "", 16),
+        new ItemDef("remembrance_tablet_9", "", 16),
+        new ItemDef("remembrance_tablet_10", "", 16),
+        new ItemDef("remembrance_tablet_11", "", 16),
+        new ItemDef("remembrance_tablet_12", "", 16),
         // 1.8.0, Recreating Home: the forty-two materials (home/HomeMaterials)
         new ItemDef("remembered_soil", "", 64),
         new ItemDef("living_water", "", 64),
@@ -1431,7 +1444,12 @@ public final class QHContentList {
         new BlockDef("seraph_gold_block", "deco", 4, 3.0F, "none", ""),
         new BlockDef("glory_lantern", "deco", 15, 1.0F, "none", ""),
         new BlockDef("silver_bark", "deco_pillar", 0, 2.0F, "none", ""),
-        new BlockDef("aureate_leaves", "foliage", 3, 0.3F, "none", ""));
+        new BlockDef("aureate_leaves", "foliage", 3, 0.3F, "none", ""),
+        // 1.9.0: what Omnipotency's buildings are made of
+        new BlockDef("empyrean_pillar", "deco_pillar", 0, 2.0F, "none", ""),
+        new BlockDef("empyrean_marble_tiles", "deco", 0, 2.0F, "none", ""),
+        new BlockDef("seraph_gold_trim", "deco", 2, 2.5F, "none", ""),
+        new BlockDef("halo_glass", "glass", 6, 0.6F, "none", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),

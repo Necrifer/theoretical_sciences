@@ -57446,6 +57446,132 @@
     ],
     "text": "$(thing)Omnipotency$(): islands of white marble resting on cloud, under an endless noon. Cloud Meadows, Gilded Gardens, Choir Spires, and the Sea of Clouds below. Nothing here hungers, and wounds close by themselves. The light in the terrace's ring is the way back; falling through the cloud lands you in Hyperdimensional Reality Space. Only one whose own checklist is complete may enter, whoever built the ring.",
     "title": "Omnipotency"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:halo_lamb_spawn_egg",
+     "theoreticalsciences:cherub_spawn_egg",
+     "theoreticalsciences:choir_seraph_spawn_egg",
+     "theoreticalsciences:cloud_ray_spawn_egg",
+     "theoreticalsciences:dweller_spawn_egg",
+     "theoreticalsciences:threshold_warden_spawn_egg"
+    ],
+    "text": "Omnipotency is lived in. $(thing)Halo Lambs$() graze the meadows, $(thing)Cherubs$() keep the gardens, $(thing)Choir Seraphs$() sing among the spires, $(thing)Cloud Rays$() circle in the cloud sea, and the $(thing)Dwellers$() will tell you what they remember if you use them. None of them will ever attack. The $(thing)Threshold Wardens$() kneel like statues until you break part of a building, open a Sealed Urn, or strike one of the others.",
+    "title": "Who Lives There"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:empyrean_pillar",
+     "theoreticalsciences:empyrean_marble_tiles",
+     "theoreticalsciences:seraph_gold_trim",
+     "theoreticalsciences:halo_glass",
+     "theoreticalsciences:choir_bell",
+     "theoreticalsciences:remembrance_stone"
+    ],
+    "text": "$(thing)Wayside Shrines$() stand everywhere. $(thing)Hamlets$() of three or four houses face a well. A $(thing)Choir Hall$() is a ring of twelve pillars round a great crystal. The $(thing)Temple of Remembrance$() is rare and holds three stones that can be read. The $(thing)Beacon of Return$() is a tower in the Sea of Clouds. Bells ring when used.",
+    "title": "What Stands There"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:sealed_urn",
+     "theoreticalsciences:remembrance_tablet_1",
+     "theoreticalsciences:music_disc_homecoming"
+    ],
+    "text": "$(item)Sealed Urns$() hold one of the twelve $(thing)Remembrances$() (the history of the house, from its beginning to your return), blocks to build with, and now and then the record of the dimension's music. Nothing in them changes what you can make. Breaking one wakes any Warden near.",
+    "title": "The Urns"
+   }
+  ]
+ },
+ "world/node_halo_lamb": {
+  "title": "Halo Lamb",
+  "icon": "theoreticalsciences:halo_lamb_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:halo_lamb_spawn_egg"
+    ],
+    "text": "$(thing)Halo Lamb$(): A small lamb with a fleece the colour of first light and a ring of it over its head. It grazes the Halo Grass and comes to no harm by it, nor does the grass. It belongs to no one.$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in the Cloud Meadows and the Gilded Gardens."
+   }
+  ]
+ },
+ "world/node_cherub": {
+  "title": "Cherub",
+  "icon": "theoreticalsciences:cherub_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:cherub_spawn_egg"
+    ],
+    "text": "$(thing)Cherub$(): A small winged keeper of the gardens. It tends the Glory Lanterns and the golden trees because it likes to, and will come and circle a visitor once or twice to see what they are.$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in the Gilded Gardens and the Cloud Meadows."
+   }
+  ]
+ },
+ "world/node_choir_seraph": {
+  "title": "Choir Seraph",
+  "icon": "theoreticalsciences:choir_seraph_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:choir_seraph_spawn_egg"
+    ],
+    "text": "$(thing)Choir Seraph$(): Six wings, a golden mask and no face behind it. It keeps to the crystal spires and the bells. Now and then, if someone is near to hear, it sings, and those who hear are mended a little.$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in the Choir Spires and Choir Halls."
+   }
+  ]
+ },
+ "world/node_cloud_ray": {
+  "title": "Cloud Ray",
+  "icon": "theoreticalsciences:cloud_ray_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:cloud_ray_spawn_egg"
+    ],
+    "text": "$(thing)Cloud Ray$(): A broad pale ray that swims the Sea of Clouds in wide slow circles, calling as it goes. It has never needed to be afraid of anything.$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in the Sea of Clouds."
+   }
+  ]
+ },
+ "world/node_dweller": {
+  "title": "Dweller",
+  "icon": "theoreticalsciences:dweller_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:dweller_spawn_egg"
+    ],
+    "text": "$(thing)Dweller$(): One of those who live in the house again. It keeps near its own door, tends what needs tending, greets a visitor with a bow, and, spoken to, remembers something aloud. Use it to listen.$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in the Hamlets and the Temple of Remembrance."
+   }
+  ]
+ },
+ "world/node_threshold_warden": {
+  "title": "Threshold Warden",
+  "icon": "theoreticalsciences:threshold_warden_spawn_egg",
+  "category": "world",
+  "node": true,
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:threshold_warden_spawn_egg"
+    ],
+    "text": "$(thing)Threshold Warden$(): Marble in armour, kneeling with its sword point down, as still as the stone it is. It does nothing at all until something of the house is broken in its sight, a Sealed Urn is opened, or one of those who live here is struck. Then it stands. It fights only whoever did it, only while they keep at it, and afterwards goes back and kneels. It never wakes in Peaceful.$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in the Hamlets, Choir Halls and the Temple of Remembrance."
    }
   ]
  }

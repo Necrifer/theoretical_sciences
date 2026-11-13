@@ -258,7 +258,9 @@ public final class QHBlocks {
             if (look != null) p.sound(look);
             // 1.8.1: Omnipotency's blocks sound like what they are
             net.minecraft.world.level.block.SoundType heaven = switch (def.id()) {
-                case "empyrean_marble", "empyrean_marble_bricks", "gilded_marble" -> SoundType.STONE;
+                case "empyrean_marble", "empyrean_marble_bricks", "gilded_marble", "empyrean_pillar", "empyrean_marble_tiles" -> SoundType.STONE;
+                case "seraph_gold_trim" -> SoundType.METAL;
+                case "halo_glass" -> SoundType.GLASS;
                 case "heaven_soil" -> SoundType.GRAVEL;                 // (what dirt itself uses)
                 case "halo_grass" -> SoundType.GRASS;
                 case "cloudstone", "radiant_cloud" -> SoundType.WOOL;

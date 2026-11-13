@@ -20,7 +20,16 @@
       "replace_current_music": true
     }
   },
-  "spawners": {},
+  "spawners": {
+    "ambient": [
+      {
+        "type": "theoreticalsciences:cloud_ray",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 2
+      }
+    ]
+  },
   "spawn_costs": {},
   "carvers": {},
   "features": [
@@ -28,7 +37,9 @@
     [],
     [],
     [],
-    [],
+    [
+      "theoreticalsciences:beacon_of_return"
+    ],
     [],
     [
       "theoreticalsciences:seraph_gold_seam"

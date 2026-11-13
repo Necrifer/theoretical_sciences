@@ -87,14 +87,16 @@ public final class QHSounds {
             "nebuloid", "pulsar_wisp", "tidal_stretcher", "lens_phantom", "hawking_imp", "boltzmann_brain", "black_swan", "binary_serpent",
             "tholin_drifter", "catalyst_sprite", "methane_skater", "cryolava_slug", "ouroboros", "euclids_automaton", "paradox_shade", "tessellate", "fourier_wisp",
             "red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra", "vent_grazer", "ice_eel", "mirror_microbe", "brine_jelly", "vent_crab",
-            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental", "mammoth", "meganeura", "dreaming_colony", "rust_mite"};
+            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental", "mammoth", "meganeura", "dreaming_colony", "rust_mite",
+            "halo_lamb", "cherub", "choir_seraph", "cloud_ray", "dweller", "threshold_warden"};       // 1.9.0
     private static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MOB = new java.util.HashMap<>();
 
     static {
         for (String m : NEW_MOBS) for (String k : new String[]{"ambient", "hurt", "death"}) MOB.put(m + "." + k, s(m + "." + k));
         MOB.put("mammoth.step", s("mammoth.step"));     // 1.3.0: the ground shakes
         // 1.3.0: each attack has its own sound, not the creature's hurt cry
-        for (String k : new String[]{"karman_wraith.gust", "storm_elemental.strike", "hadal_anglerfish.lunge", "siphonophore.sting", "mammoth.trumpet", "dreaming_colony.pulse", "rust_mite.chew"})
+        for (String k : new String[]{"karman_wraith.gust", "storm_elemental.strike", "hadal_anglerfish.lunge", "siphonophore.sting", "mammoth.trumpet", "dreaming_colony.pulse", "rust_mite.chew",
+                "choir_seraph.sing", "threshold_warden.wake", "threshold_warden.strike"})
             MOB.put(k, s(k));
     }
 

@@ -20,7 +20,24 @@
       "replace_current_music": true
     }
   },
-  "spawners": {},
+  "spawners": {
+    "creature": [
+      {
+        "type": "theoreticalsciences:halo_lamb",
+        "weight": 6,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "ambient": [
+      {
+        "type": "theoreticalsciences:cherub",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ]
+  },
   "spawn_costs": {},
   "carvers": {},
   "features": [
@@ -28,7 +45,11 @@
     [],
     [],
     [],
-    [],
+    [
+      "theoreticalsciences:wayside_shrine",
+      "theoreticalsciences:hamlet",
+      "theoreticalsciences:temple_of_remembrance"
+    ],
     [],
     [
       "theoreticalsciences:gilded_marble_seam",

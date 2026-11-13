@@ -51,6 +51,9 @@ public final class DeathAnim {
             case "geodynamo_wraith", "binary_serpent" -> Style.SPIN_SINK;
             case "karman_wraith" -> Style.DISPERSE;                          // 1.3.0: an eddy, spreading out
             case "dreaming_colony" -> Style.FLICKER;                        // 1.4.0: the dream goes out
+            case "cherub", "choir_seraph", "dweller" -> Style.DISPERSE;        // 1.9.0: they go back into the light
+            case "cloud_ray" -> Style.SINK;
+            case "threshold_warden" -> Style.COLLAPSE;                         // stone, falling in
             case "rust_mite" -> Style.FLIP;                                  // 1.4.0: on its back, legs in the air
             case "hadal_anglerfish" -> Style.BELLY_UP;                      // 1.3.0: rolls over, as dead fish do
             case "siphonophore" -> Style.DISPERSE;
