@@ -43,7 +43,8 @@ public final class HomeMobRenderers {
             float limb = e.walkAnimation.position(partial), amt = Math.min(1F, e.walkAnimation.speed(partial));
             float pitch = Mth.lerp(partial, e.xRotO, e.getXRot()), head = Mth.wrapDegrees(Mth.rotLerp(partial, e.yHeadRotO, e.yHeadRot) - Mth.rotLerp(partial, e.yBodyRotO, e.yBodyRot));
             ps.pushPose();
-            ps.mulPose(Axis.YP.rotationDegrees(-Mth.rotLerp(partial, e.yBodyRotO, e.yBodyRot)));
+            // (the wheels "went in any of their four directions without turning as they went": the Ophan is never turned to face its way)
+            if (!id.equals("threshold_warden")) ps.mulPose(Axis.YP.rotationDegrees(-Mth.rotLerp(partial, e.yBodyRotO, e.yBodyRot)));
             if (!DeathAnim.apply(ps, e, partial, id)) {
                 ps.popPose();
                 super.render(e, yaw, partial, ps, buf, light);
@@ -61,7 +62,10 @@ public final class HomeMobRenderers {
                     float k = WAKE.getOrDefault(e, awake ? 1F : 0F);
                     k = Mth.clamp(k + (awake ? 0.04F : -0.03F), 0F, 1F);          // it rises quickly and kneels slowly
                     WAKE.put(e, k);
-                    warden(ps, vc, tr, t, limb, amt, k, e instanceof HomeMobs.ThresholdWarden w2 ? w2.strikeAnim : 0, partial, head, light, ov);
+                    float[] sp = SPIN.computeIfAbsent(e, x -> new float[]{t, 0});       // turning that speeds up and slows down without jumping
+                    sp[1] += Math.max(0, Math.min(2F, t - sp[0])) * k;
+                    sp[0] = t;
+                    warden(ps, vc, tr, sp[1] / Math.max(0.001F, k * k * (3 - 2 * k)), limb, amt, k, e instanceof HomeMobs.ThresholdWarden w2 ? w2.strikeAnim : 0, partial, head, light, ov);
                 }
                 default -> {}
             }
@@ -163,102 +167,183 @@ public final class HomeMobRenderers {
         ps.popPose();
     }
 
-    // ------------------------------------------------------------------ Cherub
-    static final int SKIN = 0xFFFFE6CC, SKIN_SH = 0xFFEFC8A4, ROBE = 0xFFFDFBF4, ROBE_SH = 0xFFE4DECC, HAIR = 0xFFF2C660, HAIR_SH = 0xFFD8A63C,
-            FEATHER = 0xFFFFFFFF, FEATHER_MID = 0xFFF0F0F8, FEATHER_IN = 0xFFDCDCEC, BLUSH = 0xFFF8B8A8, EYE_BLUE = 0xFF3A5A9A;
+    // ------------------------------------------------------------------ the eyes
+    static final int EYE_WHITE = 0xFFFFFFF4, IRIS = 0xFF3C8CC8, IRIS_GOLD = 0xFFE8A020, PUPIL = 0xFF10121C, LID = 0xFF8A6A30;
 
-    /** A small round keeper: a big head of golden curls, a short robe with a sash, bare feet, and two wings that never stop. */
-    static void cherub(PoseStack ps, VertexConsumer vc, VertexConsumer tr, float t, int seed, float headYaw, float pitch, int light, int ov) {
-        ps.translate(0, 0.08F + Mth.sin(t * 0.18F + seed) * 0.05F, 0);
-        two(ps, vc, -0.15F, 0.12F, -0.11F, 0.15F, 0.42F, 0.11F, ROBE, ROBE_SH, light, ov);
-        box(ps, vc, -0.17F, 0.08F, -0.13F, 0.17F, 0.16F, 0.13F, ROBE_SH, light, ov);                        // the hem
-        box(ps, vc, -0.16F, 0.26F, -0.12F, 0.16F, 0.31F, 0.12F, GOLD, light, ov);                           // sash
-        for (int s = -1; s <= 1; s += 2) {
-            ps.pushPose();
-            ps.translate(s * 0.08F, 0.1F, 0);
-            ps.mulPose(Axis.XP.rotation(0.25F + Mth.sin(t * 0.18F + s) * 0.15F));
-            two(ps, vc, -0.045F, -0.14F, -0.045F, 0.045F, 0.0F, 0.045F, SKIN, SKIN_SH, light, ov);
-            ps.popPose();
-            ps.pushPose();
-            ps.translate(s * 0.17F, 0.38F, 0);
-            ps.mulPose(Axis.ZP.rotation(s * (0.35F + Mth.sin(t * 0.12F + s * 2) * 0.12F)));
-            box(ps, vc, -0.04F, -0.12F, -0.045F, 0.04F, 0.02F, 0.045F, ROBE, light, ov);                    // sleeve
-            box(ps, vc, -0.035F, -0.2F, -0.035F, 0.035F, -0.12F, 0.035F, SKIN, light, ov);
-            ps.popPose();
-            ps.pushPose();
-            ps.translate(s * 0.08F, 0.36F, -0.11F);
-            ps.mulPose(Axis.YP.rotation(s * 0.5F));
-            wing(ps, vc, s, 0.5F, 0.26F, Mth.sin(t * 1.3F) * 0.55F + 0.15F, -0.25F, FEATHER_IN, FEATHER_MID, FEATHER, light, ov);
-            ps.popPose();
+    /** An eye on a surface facing +z at (x, y, z): a white, an iris and a pupil, lit; or, shut, a single dark line. */
+    static void eye(PoseStack ps, VertexConsumer vc, float x, float y, float z, float r, int iris, boolean open, int light, int ov) {
+        if (!open) {
+            box(ps, vc, x - r, y - r * 0.15F, z, x + r, y + r * 0.15F, z + 0.006F, LID, light, ov);
+            return;
         }
+        box(ps, vc, x - r, y - r * 0.6F, z, x + r, y + r * 0.6F, z + 0.006F, EYE_WHITE, FULL, ov);
+        box(ps, vc, x - r * 0.5F, y - r * 0.6F, z + 0.006F, x + r * 0.5F, y + r * 0.6F, z + 0.012F, iris, FULL, ov);
+        box(ps, vc, x - r * 0.2F, y - r * 0.35F, z + 0.012F, x + r * 0.2F, y + r * 0.35F, z + 0.018F, PUPIL, light, ov);
+    }
+
+    /** A wing as {@link #wing}, with eyes opened along it ("full of eyes all round, even their wings"). */
+    static void eyedWing(PoseStack ps, VertexConsumer vc, float side, float span, float depth, float angle, float fold, int inner, int mid, int tip, int iris, int eyes,
+                         int light, int ov) {
+        wing(ps, vc, side, span, depth, angle, fold, inner, mid, tip, light, ov);
         ps.pushPose();
-        ps.translate(0, 0.42F, 0);
-        ps.mulPose(Axis.YP.rotationDegrees(-Mth.clamp(headYaw, -50F, 50F)));
-        ps.mulPose(Axis.XP.rotationDegrees(Mth.clamp(pitch, -30F, 30F)));
-        two(ps, vc, -0.16F, 0, -0.15F, 0.16F, 0.3F, 0.15F, SKIN, SKIN_SH, light, ov);
-        box(ps, vc, -0.175F, 0.2F, -0.165F, 0.175F, 0.34F, 0.12F, HAIR, light, ov);                         // curls
-        box(ps, vc, -0.175F, 0.08F, -0.165F, 0.175F, 0.2F, -0.06F, HAIR_SH, light, ov);
-        for (int i = 0; i < 4; i++) box(ps, vc, -0.15F + i * 0.085F, 0.25F, 0.12F, -0.09F + i * 0.085F, 0.33F - (i % 2) * 0.03F, 0.165F, i % 2 == 0 ? HAIR : HAIR_SH, light, ov);
-        for (int s = -1; s <= 1; s += 2) {
-            box(ps, vc, s * 0.05F, 0.12F, 0.15F, s * 0.1F, 0.18F, 0.155F, EYE_BLUE, light, ov);
-            box(ps, vc, s * 0.09F, 0.05F, 0.15F, s * 0.14F, 0.09F, 0.153F, BLUSH, light, ov);
+        ps.mulPose(Axis.ZP.rotation(side * angle));
+        for (int i = 0; i < eyes; i++) {
+            float x = side * span * (0.08F + 0.3F * i / Math.max(1, eyes - 1));
+            eye(ps, vc, x, -depth * 0.25F, 0.021F, span * 0.035F, iris, true, light, ov);
+            ps.pushPose();
+            ps.mulPose(Axis.YP.rotation(Mth.PI));                                                           // and on the other face of the wing
+            eye(ps, vc, -x, -depth * 0.25F, 0.021F, span * 0.035F, iris, true, light, ov);
+            ps.popPose();
         }
-        box(ps, vc, -0.025F, 0.04F, 0.15F, 0.025F, 0.055F, 0.154F, 0xFFC88070, light, ov);
-        halo(ps, vc, 0.4F, 0.13F, 0.03F, GOLD_HI, ov);
+        ps.popPose();
+    }
+
+    // ------------------------------------------------------------------ Cherub
+    static final int BRONZE = 0xFFD89A50, BRONZE_SH = 0xFFB07030, BRONZE_DEEP = 0xFF8A5220, BRONZE_HI = 0xFFFFD08A, MAN = 0xFFF0D0A8, MAN_SH = 0xFFD8B088,
+            LION = 0xFFE0A848, LION_MANE = 0xFFB87828, OX = 0xFF8A5A3A, OX_SH = 0xFF6A4028, HORN = 0xFFF4ECD8, EAGLE = 0xFFF8F4EC, EAGLE_SH = 0xFF7A5A3A, BEAK = 0xFFF0B020,
+            FEATHER = 0xFFFFFFFF, FEATHER_MID = 0xFFF4E8D0, FEATHER_IN = 0xFFE0C898;
+
+    /**
+     * A cherub as Ezekiel saw them (chapters 1 and 10): four faces on one head (a man's in front, a lion's on its
+     * right, an ox's on its left, an eagle's behind); four wings, two spread upward and two folded over the body;
+     * a man's hands under the wings; straight legs ending in a calf's hooves; all of it gleaming like burnished
+     * bronze, and eyes opened over its body, its hands and its wings. Faces +z.
+     */
+    static void cherub(PoseStack ps, VertexConsumer vc, VertexConsumer tr, float t, int seed, float headYaw, float pitch, int light, int ov) {
+        ps.translate(0, 0.1F + Mth.sin(t * 0.09F + seed) * 0.06F, 0);
+        for (int s = -1; s <= 1; s += 2) {                                                                  // the legs: straight, and a calf's hoof
+            two(ps, vc, s * 0.13F - 0.07F, 0.1F, -0.07F, s * 0.13F + 0.07F, 0.62F, 0.07F, BRONZE, BRONZE_SH, light, ov);
+            box(ps, vc, s * 0.13F - 0.085F, 0.0F, -0.085F, s * 0.13F + 0.085F, 0.1F, 0.1F, BRONZE_DEEP, light, ov);
+            box(ps, vc, s * 0.13F - 0.01F, 0.0F, 0.1F, s * 0.13F + 0.01F, 0.08F, 0.104F, 0xFF3A2410, light, ov);     // the cleft of the hoof
+            eye(ps, vc, s * 0.13F, 0.42F, 0.07F, 0.035F, IRIS, true, light, ov);
+        }
+        two(ps, vc, -0.24F, 0.6F, -0.14F, 0.24F, 1.2F, 0.14F, BRONZE, BRONZE_SH, light, ov);               // the body
+        box(ps, vc, -0.25F, 0.6F, -0.15F, 0.25F, 0.68F, 0.15F, BRONZE_DEEP, light, ov);
+        box(ps, vc, -0.2F, 1.12F, 0.14F, 0.2F, 1.18F, 0.15F, BRONZE_HI, light, ov);
+        eye(ps, vc, 0, 0.98F, 0.14F, 0.07F, IRIS_GOLD, true, light, ov);                                    // eyes over the body, before
+        eye(ps, vc, -0.13F, 0.8F, 0.14F, 0.045F, IRIS, true, light, ov);
+        eye(ps, vc, 0.13F, 0.8F, 0.14F, 0.045F, IRIS, true, light, ov);
+        ps.pushPose();                                                                                      // and behind
+        ps.mulPose(Axis.YP.rotation(Mth.PI));
+        eye(ps, vc, 0, 0.95F, 0.14F, 0.06F, IRIS, true, light, ov);
+        eye(ps, vc, -0.12F, 0.78F, 0.14F, 0.04F, IRIS_GOLD, true, light, ov);
+        eye(ps, vc, 0.12F, 0.78F, 0.14F, 0.04F, IRIS_GOLD, true, light, ov);
+        ps.popPose();
+        for (int s = -1; s <= 1; s += 2) {
+            ps.pushPose();                                                                                  // a man's hand under the wing, an eye in its back
+            ps.translate(s * 0.27F, 1.08F, 0.02F);
+            ps.mulPose(Axis.ZP.rotation(s * 0.2F));
+            ps.mulPose(Axis.XP.rotation(-0.35F + Mth.sin(t * 0.07F + s) * 0.08F));
+            two(ps, vc, -0.05F, -0.42F, -0.05F, 0.05F, 0.0F, 0.05F, BRONZE, BRONZE_SH, light, ov);
+            box(ps, vc, -0.055F, -0.52F, -0.045F, 0.055F, -0.42F, 0.045F, MAN, light, ov);
+            eye(ps, vc, 0, -0.47F, 0.045F, 0.03F, IRIS, true, light, ov);
+            ps.popPose();
+            ps.pushPose();                                                                                  // the upper wings: spread upward
+            ps.translate(s * 0.16F, 1.14F, -0.14F);
+            eyedWing(ps, vc, s, 1.15F, 0.5F, 0.85F + Mth.sin(t * 0.25F) * 0.22F, -0.3F, FEATHER_IN, FEATHER_MID, FEATHER, IRIS, 3, light, ov);
+            ps.popPose();
+            ps.pushPose();                                                                                  // the lower wings: folded forward over the body
+            ps.translate(s * 0.22F, 1.02F, -0.02F);
+            ps.mulPose(Axis.YP.rotation(-s * 1.05F));
+            eyedWing(ps, vc, s, 0.8F, 0.5F, -1.2F + Mth.sin(t * 0.09F) * 0.04F, 0.15F, FEATHER_IN, FEATHER_MID, FEATHER, IRIS_GOLD, 2, light, ov);
+            ps.popPose();
+        }
+        // the head: one head, four faces
+        ps.pushPose();
+        ps.translate(0, 1.2F, 0);
+        box(ps, vc, -0.08F, 0.0F, -0.08F, 0.08F, 0.06F, 0.08F, BRONZE_DEEP, light, ov);
+        ps.translate(0, 0.05F, 0);
+        float h = 0.19F;
+        box(ps, vc, -h, 0, -h, h, 2 * h, h, BRONZE_SH, light, ov);
+        // a man, in front
+        two(ps, vc, -h + 0.02F, 0.02F, h, h - 0.02F, 2 * h - 0.02F, h + 0.03F, MAN, MAN_SH, light, ov);
+        for (int s = -1; s <= 1; s += 2) eye(ps, vc, s * 0.075F, 0.23F, h + 0.03F, 0.035F, IRIS, true, light, ov);
+        box(ps, vc, -0.02F, 0.13F, h + 0.03F, 0.02F, 0.2F, h + 0.05F, MAN_SH, light, ov);
+        box(ps, vc, -0.05F, 0.07F, h + 0.03F, 0.05F, 0.085F, h + 0.036F, 0xFFA06850, light, ov);
+        box(ps, vc, -h + 0.02F, 0.3F, h, h - 0.02F, 2 * h, h + 0.04F, BRONZE_DEEP, light, ov);              // hair
+        // a lion, on its right (-x is the creature's right when it faces +z)
+        ps.pushPose();
+        ps.mulPose(Axis.YP.rotation(-Mth.HALF_PI));
+        box(ps, vc, -h, 0.0F, h, h, 2 * h, h + 0.03F, LION_MANE, light, ov);                                 // the mane, all round
+        two(ps, vc, -0.12F, 0.05F, h + 0.03F, 0.12F, 0.31F, h + 0.06F, LION, LION_MANE, light, ov);
+        box(ps, vc, -0.07F, 0.06F, h + 0.06F, 0.07F, 0.17F, h + 0.12F, 0xFFF0D090, light, ov);               // muzzle
+        box(ps, vc, -0.03F, 0.14F, h + 0.12F, 0.03F, 0.17F, h + 0.13F, 0xFF4A2A18, light, ov);
+        for (int s = -1; s <= 1; s += 2) {
+            eye(ps, vc, s * 0.075F, 0.24F, h + 0.06F, 0.03F, IRIS_GOLD, true, light, ov);
+            box(ps, vc, s * 0.13F - 0.035F, 0.34F, h, s * 0.13F + 0.035F, 0.41F, h + 0.05F, LION, light, ov);        // ear
+        }
+        ps.popPose();
+        // an ox, on its left
+        ps.pushPose();
+        ps.mulPose(Axis.YP.rotation(Mth.HALF_PI));
+        two(ps, vc, -0.15F, 0.02F, h, 0.15F, 0.36F, h + 0.04F, OX, OX_SH, light, ov);
+        box(ps, vc, -0.09F, 0.03F, h + 0.04F, 0.09F, 0.15F, h + 0.11F, 0xFFC8A088, light, ov);               // muzzle
+        for (int s = -1; s <= 1; s += 2) {
+            box(ps, vc, s * 0.04F - 0.012F, 0.07F, h + 0.11F, s * 0.04F + 0.012F, 0.1F, h + 0.115F, 0xFF3A2018, light, ov);
+            eye(ps, vc, s * 0.09F, 0.24F, h + 0.04F, 0.03F, 0xFF4A3020, true, light, ov);
+            box(ps, vc, s * 0.15F, 0.3F, h - 0.02F, s * 0.27F, 0.36F, h + 0.04F, HORN, light, ov);          // horns, out and then up
+            box(ps, vc, s * 0.23F, 0.36F, h - 0.01F, s * 0.28F, 0.48F, h + 0.03F, HORN, light, ov);
+        }
+        ps.popPose();
+        // an eagle, behind
+        ps.pushPose();
+        ps.mulPose(Axis.YP.rotation(Mth.PI));
+        two(ps, vc, -0.14F, 0.04F, h, 0.14F, 0.36F, h + 0.04F, EAGLE, 0xFFE0D8C8, light, ov);
+        box(ps, vc, -0.15F, 0.0F, h, 0.15F, 0.08F, h + 0.03F, EAGLE_SH, light, ov);                          // the dark feathers of the neck
+        box(ps, vc, -0.035F, 0.13F, h + 0.04F, 0.035F, 0.22F, h + 0.14F, BEAK, light, ov);                   // the beak, hooked
+        box(ps, vc, -0.025F, 0.08F, h + 0.1F, 0.025F, 0.14F, h + 0.15F, 0xFFD89010, light, ov);
+        for (int s = -1; s <= 1; s += 2) {
+            eye(ps, vc, s * 0.085F, 0.25F, h + 0.04F, 0.03F, IRIS_GOLD, true, light, ov);
+            box(ps, vc, s * 0.085F - 0.045F, 0.285F, h + 0.04F, s * 0.085F + 0.045F, 0.31F, h + 0.06F, EAGLE_SH, light, ov);      // the brow
+        }
+        ps.popPose();
+        halo(ps, vc, 2 * h + 0.1F, 0.2F, 0.03F, GOLD_HI, ov);
         ps.popPose();
     }
 
     // ------------------------------------------------------------------ Choir Seraph
-    static final int VEIL = 0xFFF8F8FF, VEIL_SH = 0xFFD8DCF0, VEIL_DEEP = 0xFFB8C0E0, MASK = 0xFFFFE9A8, MASK_SH = 0xFFE0B860, GEM = 0xFF9CD8FF;
+    static final int FIRE_CORE = 0xFFFFFFF0, FIRE_HI = 0xFFFFF0B0, FIRE = 0xFFFFC850, FIRE_MID = 0xFFFF9A30, FIRE_DEEP = 0xFFE86018, GEM = 0xFF9CD8FF;
 
     /**
-     * Six wings and no face: a tall robe that narrows to nothing, a golden mask, a great upright halo, and a light in
-     * the breast. The upper wings are held high, the middle pair beats slowly, the lower pair hangs folded where feet
-     * would be. Singing, all six open and the head goes back.
+     * A seraph as Isaiah saw them (6:2): six wings, and little else to be seen. With two it covers its face, with two
+     * it covers its feet, and with two it flies. The name means the burning ones, so its feathers run from white at
+     * the root to flame at the tip and what is behind them is too bright to look at; and, as in Revelation 4:8, the
+     * wings are full of eyes. When it sings, the wings over its face part a little, and the light comes out.
      */
     static void seraph(PoseStack ps, VertexConsumer vc, VertexConsumer tr, float t, int sing, float partial, float headYaw, int light, int ov) {
         float s01 = sing > 0 ? Mth.sin(Mth.clamp((90 - (sing - partial)) / 90F, 0F, 1F) * Mth.PI) : 0;
-        ps.translate(0, 0.25F + Mth.sin(t * 0.07F) * 0.08F, 0);
-        // the robe, in tiers
-        box(ps, vc, -0.07F, 0.0F, -0.06F, 0.07F, 0.3F, 0.06F, VEIL_DEEP, light, ov);
-        box(ps, vc, -0.14F, 0.25F, -0.1F, 0.14F, 0.6F, 0.1F, VEIL_DEEP, light, ov);
-        box(ps, vc, -0.2F, 0.55F, -0.13F, 0.2F, 0.95F, 0.13F, VEIL_SH, light, ov);
-        two(ps, vc, -0.24F, 0.9F, -0.15F, 0.24F, 1.4F, 0.15F, VEIL, VEIL_SH, light, ov);
-        box(ps, vc, -0.27F, 1.32F, -0.16F, 0.27F, 1.42F, 0.16F, MASK_SH, light, ov);                        // collar
-        box(ps, vc, -0.03F, 0.5F, 0.13F, 0.03F, 1.3F, 0.15F, MASK, light, ov);                              // a stole down the front
-        box(ps, vc, -0.07F, 1.1F, 0.15F, 0.07F, 1.24F, 0.18F, GEM, FULL, ov);                               // the light in the breast
+        ps.translate(0, 0.3F + Mth.sin(t * 0.07F) * 0.08F, 0);
+        // what is behind the wings: a column of light, narrowing to nothing
+        box(ps, vc, -0.05F, 0.0F, -0.05F, 0.05F, 0.35F, 0.05F, FIRE_MID, FULL, ov);
+        box(ps, vc, -0.1F, 0.3F, -0.08F, 0.1F, 0.7F, 0.08F, FIRE, FULL, ov);
+        box(ps, vc, -0.15F, 0.65F, -0.1F, 0.15F, 1.25F, 0.1F, FIRE_HI, FULL, ov);
+        box(ps, vc, -0.12F, 1.25F, -0.11F, 0.12F, 1.55F, 0.11F, FIRE_CORE, FULL, ov);                       // where a face would be
         for (int sd = -1; sd <= 1; sd += 2) {
-            ps.pushPose();                                                                                  // upper pair: held high
-            ps.translate(sd * 0.12F, 1.3F, -0.14F);
-            wing(ps, vc, sd, 1.1F, 0.5F, 0.95F + s01 * 0.25F + Mth.sin(t * 0.09F) * 0.05F, -0.35F, FEATHER_IN, FEATHER_MID, FEATHER, light, ov);
+            ps.pushPose();                                                                                  // two to fly with
+            ps.translate(sd * 0.13F, 1.05F, -0.1F);
+            eyedWing(ps, vc, sd, 1.6F, 0.65F, Mth.sin(t * 0.22F) * 0.38F + 0.12F + s01 * 0.2F, -0.15F, FIRE_HI, FIRE, FIRE_MID, IRIS_GOLD, 4, light, ov);
             ps.popPose();
-            ps.pushPose();                                                                                  // middle pair: the ones that beat
-            ps.translate(sd * 0.14F, 1.1F, -0.15F);
-            wing(ps, vc, sd, 1.4F, 0.6F, Mth.sin(t * 0.22F) * 0.35F + 0.1F + s01 * 0.2F, -0.15F, FEATHER_IN, FEATHER_MID, FEATHER, light, ov);
+            ps.pushPose();                                                                                  // two to cover its face: raised, and crossed before it
+            ps.translate(sd * 0.2F, 1.62F, 0.14F + sd * 0.012F);
+            ps.mulPose(Axis.YP.rotation(-sd * (2.45F - s01 * 1.0F)));
+            eyedWing(ps, vc, sd, 0.7F, 0.5F, 0.1F + s01 * 0.3F, -0.1F, FIRE_HI, FIRE, FIRE_MID, IRIS, 2, light, ov);
             ps.popPose();
-            ps.pushPose();                                                                                  // lower pair: folded down, opening when it sings
-            ps.translate(sd * 0.12F, 0.85F, -0.12F);
-            wing(ps, vc, sd, 0.95F, 0.45F, -1.25F + s01 * 0.9F, 0.2F, VEIL_DEEP, FEATHER_IN, FEATHER_MID, light, ov);
+            ps.pushPose();                                                                                  // two to cover its feet: lowered, and crossed before them
+            ps.translate(sd * 0.2F, 0.62F, 0.12F + sd * 0.012F);
+            ps.mulPose(Axis.YP.rotation(-sd * (2.4F - s01 * 0.5F)));
+            eyedWing(ps, vc, sd, 0.75F, 0.62F, -0.15F, -0.1F, FIRE, FIRE_MID, FIRE_DEEP, IRIS, 2, light, ov);
             ps.popPose();
         }
+        // a wheel of flame behind it, turning
         ps.pushPose();
-        ps.translate(0, 1.42F, 0);
-        ps.mulPose(Axis.YP.rotationDegrees(-Mth.clamp(headYaw, -40F, 40F)));
-        ps.mulPose(Axis.XP.rotation(-s01 * 0.5F));
-        two(ps, vc, -0.15F, 0, -0.15F, 0.15F, 0.34F, 0.15F, VEIL, VEIL_SH, light, ov);                     // the hood
-        two(ps, vc, -0.11F, 0.04F, 0.15F, 0.11F, 0.3F, 0.18F, MASK, MASK_SH, light, ov);                   // the mask: smooth, with one line for a mouth
-        box(ps, vc, -0.05F, 0.09F + s01 * 0.01F, 0.18F, 0.05F, 0.105F + s01 * 0.05F, 0.184F, 0xFF6A4A18, light, ov);
-        ps.translate(0, 0.2F, -0.2F);                                                                       // the halo, upright behind the head
-        ps.mulPose(Axis.ZP.rotation(t * 0.01F));
-        float r = 0.34F + s01 * 0.06F;
-        box(ps, vc, -r, r - 0.04F, -0.015F, r, r, 0.015F, GOLD_HI, FULL, ov);
-        box(ps, vc, -r, -r, -0.015F, r, -r + 0.04F, 0.015F, GOLD_HI, FULL, ov);
-        box(ps, vc, -r, -r + 0.04F, -0.015F, -r + 0.04F, r - 0.04F, 0.015F, GOLD_HI, FULL, ov);
-        box(ps, vc, r - 0.04F, -r + 0.04F, -0.015F, r, r - 0.04F, 0.015F, GOLD_HI, FULL, ov);
-        for (int i = 0; i < 4; i++) {                                                                       // four points on it
+        ps.translate(0, 1.4F, -0.22F);
+        ps.mulPose(Axis.ZP.rotation(t * 0.015F));
+        float r = 0.42F + s01 * 0.1F;
+        for (int i = 0; i < 12; i++) {
             ps.pushPose();
-            ps.mulPose(Axis.ZP.rotation(i * Mth.HALF_PI + Mth.PI / 4));
-            box(ps, vc, -0.02F, r * 1.3F, -0.012F, 0.02F, r * 1.3F + 0.12F, 0.012F, GOLD, FULL, ov);
+            ps.mulPose(Axis.ZP.rotation(i * Mth.TWO_PI / 12));
+            box(ps, vc, -r * 0.27F, r - 0.035F, -0.012F, r * 0.27F, r, 0.012F, i % 2 == 0 ? FIRE_HI : FIRE, FULL, ov);
+            if (i % 3 == 0) box(ps, vc, -0.02F, r, -0.01F, 0.02F, r + 0.1F + s01 * 0.08F, 0.01F, FIRE_MID, FULL, ov);
             ps.popPose();
         }
         ps.popPose();
@@ -362,106 +447,103 @@ public final class HomeMobRenderers {
         ps.popPose();
     }
 
-    // ------------------------------------------------------------------ Threshold Warden
-    static final int ST = 0xFFE4E0D8, ST_SH = 0xFFC4C0B8, ST_DEEP = 0xFFA09C96, ST_DARK = 0xFF7A7672, SEAM = 0xFFFFD870, SEAM_OFF = 0xFFB89C5C, BLADE = 0xFFF4F4FF, BLADE_SH = 0xFFC8CCE0;
+    // ------------------------------------------------------------------ Threshold Ophan
+    static final int TOPAZ = 0xFFF0C050, TOPAZ_SH = 0xFFC89028, TOPAZ_DEEP = 0xFF9A6A18, TOPAZ_HI = 0xFFFFE9A0, DULL = 0xFFB0A070, DULL_SH = 0xFF8A7C54, DULL_DEEP = 0xFF6A5E40;
+    private static final Map<LivingEntity, float[]> SPIN = new WeakHashMap<>();
 
-    /**
-     * Marble in armour, three blocks tall: greaves, a broad cuirass with a golden seam, heavy shoulders, a helm with
-     * one slit, two stone wings folded on its back and a sword as long as a man. {@code k} is 0 kneeling (one knee
-     * down, both hands on the sword stood point down before it, head bowed) and 1 standing awake, when the seams and
-     * the slit light and the wings come off its back.
-     */
-    static void warden(PoseStack ps, VertexConsumer vc, VertexConsumer tr, float t, float limb, float amt, float k, int strike, float partial, float headYaw, int light, int ov) {
-        float e = k * k * (3 - 2 * k);
-        int seam = e > 0.5F ? SEAM : SEAM_OFF, seamLight = e > 0.5F ? FULL : light;
-        float drop = (1 - e) * 0.75F;
-        // legs
-        for (int s = -1; s <= 1; s += 2) {
+    /** A wheel in the XY plane about the origin: sixteen blocks of rim, an eye in every other one on the outer face and on both sides. */
+    static void wheel(PoseStack ps, VertexConsumer vc, float r, float w, float th, int a, int b, int iris, boolean open, int light, int ov) {
+        int n = 16;
+        float half = r * Mth.sin(Mth.PI / n) * 1.04F;
+        for (int i = 0; i < n; i++) {
             ps.pushPose();
-            ps.translate(s * 0.26F, 1.45F - drop, 0);
-            float walk = Mth.cos(limb * 0.5F + (s > 0 ? 0 : Mth.PI)) * 0.6F * amt * e;
-            float thigh = s < 0 ? Mth.lerp(e, -1.45F, 0) : Mth.lerp(e, 0.35F, 0);                           // left knee forward and up, right knee to the ground
-            ps.mulPose(Axis.XP.rotation(thigh + walk));
-            two(ps, vc, -0.16F, -0.72F, -0.17F, 0.16F, 0.0F, 0.17F, ST, ST_SH, light, ov);
-            box(ps, vc, -0.18F, -0.74F, -0.19F, 0.18F, -0.6F, 0.19F, ST_DEEP, light, ov);                   // the knee
-            ps.translate(0, -0.72F, 0);
-            ps.mulPose(Axis.XP.rotation(s < 0 ? Mth.lerp(e, 1.45F, 0) : Mth.lerp(e, 1.2F, 0)));
-            two(ps, vc, -0.15F, -0.66F, -0.16F, 0.15F, 0.0F, 0.16F, ST_SH, ST_DEEP, light, ov);             // greave
-            box(ps, vc, -0.02F, -0.6F, 0.16F, 0.02F, -0.05F, 0.175F, seam, seamLight, ov);
-            box(ps, vc, -0.17F, -0.73F, -0.18F, 0.17F, -0.62F, 0.3F, ST_DARK, light, ov);                   // foot
-            ps.popPose();
-        }
-        ps.pushPose();
-        ps.translate(0, 1.45F - drop, 0);
-        ps.mulPose(Axis.XP.rotation((1 - e) * 0.22F));
-        box(ps, vc, -0.42F, -0.1F, -0.24F, 0.42F, 0.2F, 0.24F, ST_DEEP, light, ov);                         // the belt and tassets
-        for (int i = -2; i <= 2; i++) box(ps, vc, i * 0.17F - 0.07F, -0.42F, 0.2F, i * 0.17F + 0.07F, -0.08F, 0.27F, i % 2 == 0 ? ST_SH : ST, light, ov);
-        two(ps, vc, -0.5F, 0.2F, -0.28F, 0.5F, 1.1F, 0.28F, ST, ST_SH, light, ov);                          // cuirass
-        box(ps, vc, -0.03F, 0.25F, 0.28F, 0.03F, 1.05F, 0.3F, seam, seamLight, ov);                         // the seam down it
-        box(ps, vc, -0.3F, 0.82F, 0.28F, 0.3F, 0.88F, 0.3F, seam, seamLight, ov);
-        box(ps, vc, -0.12F, 0.78F, 0.29F, 0.12F, 0.92F, 0.32F, e > 0.5F ? GOLD_HI : ST_DEEP, seamLight, ov);
-        // the wings: slabs of stone feather, flat to the back until it wakes
-        for (int s = -1; s <= 1; s += 2) {
-            ps.pushPose();
-            ps.translate(s * 0.2F, 0.95F, -0.28F);
-            ps.mulPose(Axis.YP.rotation(s * (-1.2F + e * 0.9F + Mth.sin(t * 0.05F) * 0.04F * e)));
-            ps.mulPose(Axis.ZP.rotation(s * (-0.5F + e * 0.35F)));
-            for (int i = 0; i < 4; i++)
-                box(ps, vc, s * i * 0.28F, -1.3F + i * 0.2F, -0.05F, s * (i * 0.28F + 0.27F), 0.15F - i * 0.05F, 0.03F, i % 2 == 0 ? ST_SH : ST_DEEP, light, ov);
-            ps.popPose();
-        }
-        // arms and the sword
-        float swing = strike > 0 ? Mth.sin(Mth.clamp((12 - (strike - partial)) / 12F, 0F, 1F) * Mth.PI) : 0;
-        for (int s = -1; s <= 1; s += 2) {
-            ps.pushPose();
-            ps.translate(s * 0.62F, 0.98F, 0);
-            box(ps, vc, -0.24F, -0.08F, -0.26F, 0.24F, 0.26F, 0.26F, ST_SH, light, ov);                     // pauldron
-            box(ps, vc, -0.26F, 0.1F, -0.28F, 0.26F, 0.16F, 0.28F, seam, seamLight, ov);
-            float rest = Mth.lerp(e, -0.95F, s > 0 ? -0.25F : 0.1F);                                        // kneeling: both reach forward to the hilt
-            float walkA = Mth.cos(limb * 0.5F + (s > 0 ? Mth.PI : 0)) * 0.35F * amt * e;
-            ps.mulPose(Axis.XP.rotation(rest + walkA - (s > 0 ? swing * 2.0F : 0)));
-            ps.mulPose(Axis.ZP.rotation(-s * (1 - e) * 0.5F));
-            two(ps, vc, -0.14F, -0.6F, -0.15F, 0.14F, 0.0F, 0.15F, ST, ST_SH, light, ov);
-            ps.translate(0, -0.6F, 0);
-            ps.mulPose(Axis.XP.rotation(Mth.lerp(e, -0.5F, -0.3F)));
-            two(ps, vc, -0.13F, -0.55F, -0.14F, 0.13F, 0.0F, 0.14F, ST_SH, ST_DEEP, light, ov);             // gauntlet
-            if (s > 0 && e > 0.5F) {                                                                        // awake: the sword is in the right hand
-                ps.translate(0, -0.5F, 0.05F);
-                ps.mulPose(Axis.XP.rotation(1.9F));                 // held low, point forward and a little up
-                sword(ps, vc, seam, seamLight, light, ov);
+            ps.mulPose(Axis.ZP.rotation(i * Mth.TWO_PI / n));
+            box(ps, vc, -half, r - th, -w, half, r, w, i % 2 == 0 ? a : b, light, ov);
+            if (i % 2 == 0) {
+                eye(ps, vc, 0, r - th * 0.5F, w, th * 0.42F, iris, open, light, ov);                        // on this side of the rim
+                ps.pushPose();
+                ps.mulPose(Axis.YP.rotation(Mth.PI));
+                eye(ps, vc, 0, r - th * 0.5F, w, th * 0.42F, iris, open, light, ov);                        // and the other
+                ps.popPose();
+            } else {
+                ps.pushPose();                                                                              // and looking outward from the rim itself
+                ps.translate(0, r, 0);
+                ps.mulPose(Axis.XP.rotation(-Mth.HALF_PI));
+                eye(ps, vc, 0, 0, 0, w * 0.6F, iris, open, light, ov);
+                ps.popPose();
             }
-            ps.popPose();
-        }
-        // head
-        ps.pushPose();
-        ps.translate(0, 1.12F, 0);
-        ps.mulPose(Axis.YP.rotationDegrees(-Mth.clamp(headYaw, -50F, 50F) * e));
-        ps.mulPose(Axis.XP.rotation((1 - e) * 0.55F));
-        box(ps, vc, -0.14F, 0.0F, -0.14F, 0.14F, 0.1F, 0.14F, ST_DEEP, light, ov);                          // neck
-        two(ps, vc, -0.24F, 0.08F, -0.25F, 0.24F, 0.56F, 0.25F, ST, ST_SH, light, ov);                     // helm
-        box(ps, vc, -0.03F, 0.5F, -0.27F, 0.03F, 0.72F, 0.2F, ST_SH, light, ov);                            // crest
-        box(ps, vc, -0.18F, 0.3F, 0.25F, 0.18F, 0.36F, 0.265F, e > 0.5F ? GOLD_HI : ST_DARK, seamLight, ov);   // the slit
-        box(ps, vc, -0.025F, 0.1F, 0.25F, 0.025F, 0.3F, 0.265F, ST_DARK, light, ov);
-        ps.popPose();
-        ps.popPose();
-        if (e <= 0.5F) {                                                                                    // kneeling: the sword stands before it, point down
-            ps.pushPose();
-            ps.translate(0, 2.0F - drop * 0.4F, 0.62F);
-            ps.mulPose(Axis.XP.rotation(Mth.PI));
-            sword(ps, vc, seam, seamLight, light, ov);
             ps.popPose();
         }
     }
 
-    /** The Warden's sword, pommel at the origin, blade along +y. */
-    static void sword(PoseStack ps, VertexConsumer vc, int seam, int seamLight, int light, int ov) {
-        box(ps, vc, -0.05F, -0.1F, -0.05F, 0.05F, 0.0F, 0.05F, seam, seamLight, ov);                        // pommel
-        box(ps, vc, -0.035F, 0.0F, -0.035F, 0.035F, 0.35F, 0.035F, ST_DARK, light, ov);                     // grip
-        box(ps, vc, -0.3F, 0.35F, -0.05F, 0.3F, 0.43F, 0.05F, seam, seamLight, ov);                         // guard
-        box(ps, vc, -0.09F, 0.43F, -0.025F, 0.09F, 1.75F, 0.025F, BLADE, light, ov);
-        box(ps, vc, -0.02F, 0.43F, -0.03F, 0.02F, 1.6F, 0.03F, BLADE_SH, light, ov);                        // fuller
-        box(ps, vc, -0.055F, 1.75F, -0.02F, 0.055F, 1.9F, 0.02F, BLADE, light, ov);                         // tip
-        box(ps, vc, -0.02F, 1.9F, -0.015F, 0.02F, 1.98F, 0.015F, BLADE, light, ov);
+    /**
+     * An ophan, one of the wheels of Ezekiel 1 and 10: a wheel within a wheel, the colour of topaz, the rims full of
+     * eyes all round, going any way without turning. Three rims here, one inside another, about one great eye, with a
+     * ring of wings between (the wings are how these are drawn now; Ezekiel gives the wheels none). {@code k} is 0
+     * at rest (the rims lie one inside the other and still, every eye shut, the wings folded, the gold dull) and 1
+     * awake (every eye open, the rims turning each about its own axis, the wings out).
+     */
+    static void warden(PoseStack ps, VertexConsumer vc, VertexConsumer tr, float t, float limb, float amt, float k, int strike, float partial, float headYaw, int light, int ov) {
+        float e = k * k * (3 - 2 * k);
+        boolean open = e > 0.35F;
+        float flare = strike > 0 ? Mth.sin(Mth.clamp((12 - (strike - partial)) / 12F, 0F, 1F) * Mth.PI) : 0;
+        int a = open ? TOPAZ : DULL, b = open ? TOPAZ_SH : DULL_SH, c = open ? TOPAZ_DEEP : DULL_DEEP, lit = open ? FULL : light;
+        ps.translate(0, 1.25F + (1 - e) * -0.1F + Mth.sin(t * 0.06F) * 0.05F * e, 0);
+        float sc = 1F + flare * 0.12F;
+        ps.scale(sc, sc, sc);
+        float ph = t * 0.045F * e;                                                                          // (the caller keeps the turning continuous: see SPIN)
+        // the great eye at the middle
+        box(ps, vc, -0.26F, -0.26F, -0.2F, 0.26F, 0.26F, 0.2F, c, light, ov);
+        box(ps, vc, -0.2F, -0.3F, -0.16F, 0.2F, 0.3F, 0.16F, b, light, ov);
+        box(ps, vc, -0.3F, -0.2F, -0.16F, 0.3F, 0.2F, 0.16F, b, light, ov);
+        for (int side = 0; side < 2; side++) {
+            ps.pushPose();
+            ps.mulPose(Axis.YP.rotation(side * Mth.PI));
+            if (open) {
+                box(ps, vc, -0.2F, -0.13F, 0.2F, 0.2F, 0.13F, 0.215F, EYE_WHITE, FULL, ov);
+                box(ps, vc, -0.13F, -0.18F, 0.2F, 0.13F, 0.18F, 0.213F, EYE_WHITE, FULL, ov);
+                box(ps, vc, -0.1F, -0.1F, 0.215F, 0.1F, 0.1F, 0.23F, IRIS_GOLD, FULL, ov);
+                box(ps, vc, -0.04F, -0.07F, 0.23F, 0.04F, 0.07F, 0.24F, PUPIL, light, ov);
+            } else {
+                box(ps, vc, -0.2F, -0.025F, 0.2F, 0.2F, 0.025F, 0.212F, LID, light, ov);
+            }
+            ps.popPose();
+        }
+        // the ring of wings: six, about the eye
+        for (int i = 0; i < 6; i++) {
+            ps.pushPose();
+            ps.mulPose(Axis.ZP.rotation(i * Mth.TWO_PI / 6 + Mth.PI / 6 + ph * 0.3F));
+            ps.translate(0.28F, 0, -0.05F);
+            float out = Mth.lerp(e, -1.1F, 0.0F) + Mth.sin(t * 0.2F + i) * 0.12F * e;
+            ps.mulPose(Axis.YP.rotation(-out));                                                             // folded back flat against the rims, or out
+            if (open) eyedWing(ps, vc, 1, 1.25F, 0.5F, 0, -0.12F, FEATHER_MID, FEATHER, FEATHER, IRIS, 3, light, ov);
+            else wing(ps, vc, 1, 1.25F, 0.5F, 0, -0.12F, DULL_DEEP, DULL_SH, DULL, light, ov);
+            ps.popPose();
+        }
+        // the wheels within the wheels: each turns about an axis of its own
+        ps.pushPose();
+        ps.mulPose(Axis.ZP.rotation(ph));
+        wheel(ps, vc, 1.15F, 0.07F, 0.16F, a, b, IRIS, open, light, ov);
+        ps.popPose();
+        ps.pushPose();
+        ps.mulPose(Axis.YP.rotation(Mth.HALF_PI * e + ph * 1.3F));
+        ps.mulPose(Axis.ZP.rotation(-ph * 0.7F));
+        wheel(ps, vc, 0.92F, 0.065F, 0.14F, a, b, IRIS_GOLD, open, light, ov);
+        ps.popPose();
+        ps.pushPose();
+        ps.mulPose(Axis.XP.rotation(Mth.HALF_PI * e * 0.8F + ph * 1.7F));
+        ps.mulPose(Axis.ZP.rotation(ph * 0.9F));
+        wheel(ps, vc, 0.7F, 0.06F, 0.12F, b, c, IRIS, open, light, ov);
+        ps.popPose();
+        if (open) {                                                                                         // fire going between them, as between the creatures
+            for (int i = 0; i < 4; i++) {
+                ps.pushPose();
+                ps.mulPose(Axis.YP.rotation(ph * 2.3F + i * Mth.HALF_PI));
+                ps.mulPose(Axis.ZP.rotation(Mth.sin(t * 0.13F + i * 2) * 0.8F));
+                box(ps, vc, 0.4F, -0.03F, -0.03F, 0.52F + flare * 0.4F, 0.03F, 0.03F, FIRE_HI, lit, ov);
+                ps.popPose();
+            }
+        }
     }
 
     private HomeMobRenderers() {}

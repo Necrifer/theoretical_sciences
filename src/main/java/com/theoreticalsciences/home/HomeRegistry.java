@@ -72,7 +72,7 @@ public final class HomeRegistry {
     public static final DeferredHolder<EntityType<?>, EntityType<HomeMobs.HaloLamb>> LAMB = ENTITIES.register("halo_lamb",
             () -> EntityType.Builder.of(HomeMobs.HaloLamb::new, MobCategory.CREATURE).sized(0.8F, 0.95F).eyeHeight(0.8F).clientTrackingRange(10).build("halo_lamb"));
     public static final DeferredHolder<EntityType<?>, EntityType<HomeMobs.Cherub>> CHERUB = ENTITIES.register("cherub",
-            () -> EntityType.Builder.of(HomeMobs.Cherub::new, MobCategory.AMBIENT).sized(0.6F, 0.8F).eyeHeight(0.55F).clientTrackingRange(8).build("cherub"));
+            () -> EntityType.Builder.of(HomeMobs.Cherub::new, MobCategory.AMBIENT).sized(0.9F, 1.8F).eyeHeight(1.45F).clientTrackingRange(10).build("cherub"));
     public static final DeferredHolder<EntityType<?>, EntityType<HomeMobs.ChoirSeraph>> SERAPH = ENTITIES.register("choir_seraph",
             () -> EntityType.Builder.of(HomeMobs.ChoirSeraph::new, MobCategory.AMBIENT).sized(0.9F, 2.0F).eyeHeight(1.6F).clientTrackingRange(10).build("choir_seraph"));
     public static final DeferredHolder<EntityType<?>, EntityType<HomeMobs.CloudRay>> RAY = ENTITIES.register("cloud_ray",
@@ -80,7 +80,7 @@ public final class HomeRegistry {
     public static final DeferredHolder<EntityType<?>, EntityType<HomeMobs.Dweller>> DWELLER = ENTITIES.register("dweller",
             () -> EntityType.Builder.of(HomeMobs.Dweller::new, MobCategory.MISC).sized(0.6F, 1.9F).eyeHeight(1.65F).clientTrackingRange(10).build("dweller"));
     public static final DeferredHolder<EntityType<?>, EntityType<HomeMobs.ThresholdWarden>> WARDEN = ENTITIES.register("threshold_warden",
-            () -> EntityType.Builder.of(HomeMobs.ThresholdWarden::new, MobCategory.MISC).sized(1.2F, 3.2F).eyeHeight(2.8F).clientTrackingRange(12).fireImmune()
+            () -> EntityType.Builder.of(HomeMobs.ThresholdWarden::new, MobCategory.MISC).sized(2.2F, 2.5F).eyeHeight(1.25F).clientTrackingRange(12).fireImmune()
                     .build("threshold_warden"));
 
     public static final DeferredHolder<Feature<?>, HomeStructures.Shrine> SHRINE = FEATURES.register("wayside_shrine", () -> new HomeStructures.Shrine(NoneFeatureConfiguration.CODEC));
@@ -95,8 +95,8 @@ public final class HomeRegistry {
     public static final List<DeferredHolder<Item, ? extends Item>> TAB_190 = new java.util.ArrayList<>(List.of(URN_ITEM, BELL_ITEM, STONE_ITEM, DISC));
 
     static {
-        Object[][] eggs = {{"halo_lamb", LAMB, 0xFFF4D0, 0xFFD870}, {"cherub", CHERUB, 0xFFE8D8, 0xFFFFFF}, {"choir_seraph", SERAPH, 0xFFFFFF, 0x9CD0FF},
-                {"cloud_ray", RAY, 0xE8F0FF, 0xB8C8E8}, {"dweller", DWELLER, 0xF4ECD8, 0xD8A040}, {"threshold_warden", WARDEN, 0xD8D4CC, 0xFFD870}};
+        Object[][] eggs = {{"halo_lamb", LAMB, 0xFFF4D0, 0xFFD870}, {"cherub", CHERUB, 0xD89A50, 0xFFFFFF}, {"choir_seraph", SERAPH, 0xFFC850, 0xE86018},
+                {"cloud_ray", RAY, 0xE8F0FF, 0xB8C8E8}, {"dweller", DWELLER, 0xF4ECD8, 0xD8A040}, {"threshold_warden", WARDEN, 0xF0C050, 0x3C8CC8}};
         for (Object[] e : eggs) {
             @SuppressWarnings("unchecked")
             DeferredHolder<EntityType<?>, ? extends EntityType<? extends net.minecraft.world.entity.Mob>> type = (DeferredHolder<EntityType<?>, ? extends EntityType<? extends net.minecraft.world.entity.Mob>>) e[1];

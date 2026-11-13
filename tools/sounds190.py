@@ -57,24 +57,32 @@ def lamb():
 
 # ------------------------------------------------------------------ Cherub
 def cherub():
+    """Four faces, four voices at once (a man's hum, a lion's low growl, an ox's low, an eagle's cry), over wings that sound like many waters."""
     m = 'cherub'
 
-    def flutter(d, rate=17):
-        beat = np.clip(np.sin(2 * np.pi * rate * t_(d)), 0, 1) ** 3
-        return bp(noise(d), 500, 2400) * beat * 0.25
+    def waters(d):
+        beat = 0.6 + 0.4 * np.sin(2 * np.pi * 2.6 * t_(d))
+        return (bp(noise(d, 'pink'), 150, 1800) * beat + lp(noise(d), 220) * 0.6) * adsr(d, 0.3, 0.2, 0.9, 0.5)
 
-    def laugh(notes, gap=0.085, d=None):
-        d = d or (len(notes) * gap + 0.5)
-        x = np.zeros(n_(d))
-        for i, n in enumerate(notes):
-            place(x, bell(440 * 2 ** ((n - 69) / 12), 0.45, 9) * 0.6, i * gap + rng.random() * 0.01)
-        return x + flutter(d)
+    def four(d, f, cry=True, bend=1.0):
+        fall = curve([(0, 1), (0.6, 1), (1, bend)], d)
+        man = vowel(f * fall, d, OO, vib=0.008) * 0.8
+        lion = lp(osc(f * 0.5 * fall, d, 'saw', jitter=0.01) * (1 + 0.5 * np.sin(2 * np.pi * 27 * t_(d))), 500) * 0.7
+        ox = vowel(f * 0.75 * fall, d, MM, vib=0.004) * 0.9
+        x = (man + lion + ox) * adsr(d, 0.15, 0.2, 0.9, 0.4)
+        if cry:
+            c = 0.5
+            place(x, vowel(curve([(0, f * 6), (0.3, f * 7), (1, f * 4.5)], c), c, [(2600, 6, 1.0), (3800, 8, 0.6)], breath=0.1, vib=0) * adsr(c, 0.02, 0.1, 0.7, 0.25) * 0.5, d * 0.35)
+        return x
 
-    write(m, 'ambient1', laugh([84, 88, 91, 96]))
-    write(m, 'ambient2', laugh([86, 91, 89, 93, 98], 0.075))
-    write(m, 'hurt1', laugh([98, 93], 0.06, 0.4))
-    write(m, 'hurt2', laugh([96, 90], 0.06, 0.4))
-    write(m, 'death1', reverb(laugh([96, 93, 89, 86, 81, 77], 0.12, 1.4) * curve([(0, 1), (0.7, 0.7), (1, 0)], 1.4), 0.4, 1.0, 0.3))
+    def call(d, f, cry=True, bend=1.0, wet=0.3):
+        return reverb(four(d, f, cry, bend) + waters(d) * 0.35, 0.5, 1.6, wet, 5000)
+
+    write(m, 'ambient1', call(1.8, 147))
+    write(m, 'ambient2', call(2.1, 165, cry=False))
+    write(m, 'hurt1', call(0.7, 220, wet=0.2))
+    write(m, 'hurt2', call(0.8, 196, wet=0.2))
+    write(m, 'death1', call(2.8, 165, cry=False, bend=0.5, wet=0.45) * curve([(0, 1), (0.6, 0.8), (1, 0)], n_(2.8) / SR + 1.0)[:n_(2.8) + n_(1.6 * 0.6)])
 
 
 # ------------------------------------------------------------------ Choir Seraph
@@ -141,45 +149,48 @@ def dweller():
     write(m, 'death1', reverb(sigh, 0.4, 1.2, 0.3))
 
 
-# ------------------------------------------------------------------ Threshold Warden
+# ------------------------------------------------------------------ Threshold Ophan
 def warden():
+    """The whirling wheels: great rims turning (a slow beating hum, metal on air), a chord of bells when every eye opens, a rush and a ring when it strikes."""
     m = 'threshold_warden'
 
-    def grind(d, f=140):
-        grit = lp(noise(d), 900) * (0.5 + 0.5 * lp(np.abs(noise(d)), 14, 1) * 6)
-        return (reso(grit, f, 4) + reso(grit, f * 2.3, 5) * 0.5 + lp(grit, 200) * 0.6) * adsr(d, 0.1, 0.2, 0.9, 0.3)
+    def wheels(d, f=82, rate=1.6):
+        beat = 0.55 + 0.45 * np.sin(2 * np.pi * rate * t_(d))
+        hum = (osc(f, d, 'saw') * 0.5 + osc(f * 1.498, d, 'sine') * 0.5 + osc(f * 2.01, d, 'sine') * 0.3) * beat
+        rush = sweep_bp(noise(d), 500 + 400 * np.sin(2 * np.pi * rate * t_(d)), 0.8) * 0.35
+        return (lp(hum, 900) + rush) * adsr(d, 0.25, 0.2, 0.9, 0.4)
 
-    def crack(d=0.25):
-        return hp(noise(d), 1200) * np.exp(-t_(d) * 30) + lp(noise(d), 400) * np.exp(-t_(d) * 14) * 1.5
+    def ting(d=0.3, f=1400):
+        return bell(f, d, 9) + bell(f * 1.5, d, 12) * 0.5
 
-    write(m, 'ambient1', grind(1.2))
-    write(m, 'ambient2', grind(1.5, 110))
+    write(m, 'ambient1', reverb(wheels(2.0), 0.5, 1.5, 0.3, 4000))
+    write(m, 'ambient2', reverb(wheels(2.4, 73, 1.3), 0.5, 1.5, 0.3, 4000))
     for i in range(2):
-        x = np.zeros(n_(0.45))
-        place(x, crack(0.2), 0)
-        place(x, crack(0.15) * 0.6, 0.07 + i * 0.03)
-        write(m, f'hurt{i + 1}', x + reso(noise(0.45), 300 + i * 60, 8) * np.exp(-t_(0.45) * 12) * 0.4)
-    d = 3.2                                                           # wake: the bell, the crack, the stone rising
+        x = np.zeros(n_(0.5))
+        place(x, ting(0.3, 1250 + i * 240), 0)
+        place(x, ting(0.25, 1870 + i * 180) * 0.6, 0.05)
+        write(m, f'hurt{i + 1}', x + lp(noise(0.5), 300) * np.exp(-t_(0.5) * 14) * 0.6)
+    d = 3.4                                                           # wake: the eyes open one after another, and the wheels begin
     x = np.zeros(n_(d))
-    place(x, bell(98, 3.0, 1.1) * 1.2 + bell(147, 3.0, 1.4) * 0.6, 0.0)
-    place(x, crack(0.3) * 1.2, 0.05)
-    place(x, grind(1.6, 90) * curve([(0, 0.2), (0.6, 1), (1, 0)], 1.6), 0.4)
-    place(x, osc(curve([(0, 55), (1, 110)], 1.8), 1.8, 'saw') * lp(np.ones(n_(1.8)), 5) * adsr(1.8, 0.8, 0.2, 0.8, 0.5) * 0.35, 0.6)
-    write(m, 'wake1', reverb(softclip(x, 1.4), 0.6, 2.0, 0.35, 3000))
-    for i in range(2):                                                # strike: the rush of the blade, then it rings
+    for k_, n in enumerate([50, 57, 62, 66, 69, 74, 78, 81, 86, 90]):
+        place(x, bell(440 * 2 ** ((n - 69) / 12), 2.4, 1.6) * 0.5, 0.07 * k_)
+    place(x, wheels(2.6, 60, 1.0) * curve([(0, 0), (0.7, 1), (1, 0.6)], 2.6) * 1.2, 0.6)
+    place(x, sweep_bp(noise(1.6), curve([(0, 200), (1, 3000)], 1.6), 0.7) * adsr(1.6, 1.0, 0.1, 0.8, 0.3) * 0.5, 0.8)
+    write(m, 'wake1', reverb(softclip(x, 1.4), 0.6, 2.0, 0.35, 5000))
+    for i in range(2):                                                # strike: fire going out from between the wheels
         d = 1.1
         x = np.zeros(n_(d))
-        place(x, sweep_bp(noise(0.3), curve([(0, 400), (0.6, 2400), (1, 700)], 0.3), 0.9) * adsr(0.3, 0.08, 0.05, 0.8, 0.1) * 2.0, 0)
-        place(x, bell(620 + i * 90, 0.8, 6) * 0.8, 0.24)
-        place(x, crack(0.2), 0.24)
-        place(x, lp(noise(0.3), 160) * np.exp(-t_(0.3) * 10) * 2.5, 0.24)
+        place(x, sweep_bp(noise(0.3), curve([(0, 300), (0.6, 2600), (1, 800)], 0.3), 0.9) * adsr(0.3, 0.08, 0.05, 0.8, 0.1) * 2.0, 0)
+        place(x, bell(520 + i * 80, 0.8, 5) * 0.8, 0.22)
+        place(x, hp(noise(0.25), 2000) * np.exp(-t_(0.25) * 20) * 1.2, 0.22)
+        place(x, lp(noise(0.3), 160) * np.exp(-t_(0.3) * 10) * 2.5, 0.22)
         write(m, f'strike{i + 1}', softclip(x, 1.5))
-    d = 2.6                                                           # death: it comes apart and falls
-    x = grind(d, 80) * curve([(0, 1), (0.5, 0.8), (1, 0)], d)
-    for k in range(14):
-        place(x, crack(0.2) * (0.4 + rng.random() * 0.8), 0.1 + rng.random() * 1.8)
-    place(x, lp(noise(0.8), 120) * np.exp(-t_(0.8) * 5) * 3, 1.2)
-    write(m, 'death1', reverb(softclip(x, 1.3), 0.5, 1.5, 0.3, 2500))
+    d = 3.0                                                           # death: the wheels run down and ring as they fall
+    f = curve([(0, 82), (1, 30)], d)
+    x = lp(osc(f, d, 'saw') * (0.55 + 0.45 * np.sin(2 * np.pi * np.cumsum(curve([(0, 1.6), (1, 0.3)], d)) / SR)), 700) * curve([(0, 1), (0.7, 0.7), (1, 0)], d)
+    for k_ in range(6):
+        place(x, ting(0.5, 900 - k_ * 110) * (0.9 - k_ * 0.1), 0.8 + k_ * 0.3)
+    write(m, 'death1', reverb(softclip(x, 1.3), 0.6, 1.8, 0.35, 4000))
 
 
 EVENTS = {
@@ -192,13 +203,13 @@ EVENTS = {
 }
 SUBTITLES = {
     'halo_lamb.ambient': 'Halo Lamb bleats', 'halo_lamb.hurt': 'Halo Lamb cries', 'halo_lamb.death': 'Halo Lamb falls quiet',
-    'cherub.ambient': 'Cherub laughs', 'cherub.hurt': 'Cherub yelps', 'cherub.death': 'Cherub fades',
+    'cherub.ambient': 'Cherub calls with four voices', 'cherub.hurt': 'Cherub cries out', 'cherub.death': 'Cherub falls silent',
     'choir_seraph.ambient': 'Choir Seraph hums', 'choir_seraph.hurt': 'Choir Seraph cries out', 'choir_seraph.death': 'Choir Seraph falls silent',
     'choir_seraph.sing': 'Choir Seraph sings',
     'cloud_ray.ambient': 'Cloud Ray calls', 'cloud_ray.hurt': 'Cloud Ray groans', 'cloud_ray.death': 'Cloud Ray sinks',
     'dweller.ambient': 'Dweller hums', 'dweller.hurt': 'Dweller gasps', 'dweller.death': 'Dweller sighs',
-    'threshold_warden.ambient': 'Stone grinds', 'threshold_warden.hurt': 'Stone chips', 'threshold_warden.death': 'Threshold Warden falls',
-    'threshold_warden.wake': 'Threshold Warden wakes', 'threshold_warden.strike': 'Threshold Warden strikes',
+    'threshold_warden.ambient': 'Wheels turn', 'threshold_warden.hurt': 'A wheel rings', 'threshold_warden.death': 'Threshold Ophan runs down',
+    'threshold_warden.wake': 'Every eye opens', 'threshold_warden.strike': 'Threshold Ophan strikes',
 }
 
 if __name__ == '__main__':

@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.9.1: The angels as they were described
+
+The three angels of Omnipotency are remodelled after the accounts in Ezekiel 1 and 10, Isaiah 6 and Revelation 4.
+Their behaviour is as in 1.9.0; their forms, voices, sizes and text are new.
+
+* **Cherub** (was a small winged child). Now as Ezekiel describes the cherubim: one head with four faces (a man's
+  in front, a lion's on its right, an ox's on its left, an eagle's behind), four wings (two spread upward, two folded
+  over the body), a man's hands under the wings, straight legs ending in a calf's hooves, the whole of it the colour
+  of burnished bronze, and eyes over its body, its hands and its wings. It is now nearly two blocks tall. Its voice
+  is four voices at once over a sound of wings like rushing water.
+* **Choir Seraph** (was a robed figure with a golden mask). Now as Isaiah describes the seraphim: six wings and
+  little else to see. Two cover its face, two cover its feet, two fly. The feathers run from white to flame (the name
+  means "the burning ones"), the wings are full of eyes, and a wheel of fire turns behind it. When it sings, the
+  wings over its face part and light comes out.
+* **Threshold Warden is now the Threshold Ophan** (was a kneeling marble knight). Now one of Ezekiel's wheels: three
+  rims the colour of topaz, one inside another, their rims full of eyes, about one great eye, with a ring of six
+  wings. At rest the rims lie still, the gold is dull, the wings are folded and every eye is shut. Provoked, every
+  eye opens, each rim turns about its own axis, the wings spread, and fire and sparks go between the wheels. As in
+  the text, it goes any way **without turning to face it**. Its sounds are the turning of great wheels and bells.
+  Its hitbox is now 2.2 wide and 2.5 tall. What wakes it, and how it fights and stands down, is unchanged.
+* One liberty, on request: Ezekiel gives the wheels no wings. The ring of wings follows how they are usually drawn
+  now.
+* The Codex, tooltips, subtitles, three of the Dwellers' lines and the Ninth Remembrance are reworded to match.
+* The Halo Lamb, Cloud Ray and Dweller are unchanged.
+
 ## 1.9.0: Those Who Live There
 
 Omnipotency is no longer empty. Nothing here changes progression: there is no new gear, no new recipe, and no boss.

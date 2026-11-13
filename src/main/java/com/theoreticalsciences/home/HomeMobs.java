@@ -314,7 +314,7 @@ public final class HomeMobs {
                 @Override
                 public void tick() {
                     double a = left * 0.08 + getId();
-                    getNavigation().moveTo(who.getX() + Math.cos(a) * 2.2, who.getEyeY() + 0.3, who.getZ() + Math.sin(a) * 2.2, 1.1);
+                    getNavigation().moveTo(who.getX() + Math.cos(a) * 3.2, who.getEyeY() - 0.6, who.getZ() + Math.sin(a) * 3.2, 1.1);
                     getLookControl().setLookAt(who);
                 }
 
@@ -740,6 +740,11 @@ public final class HomeMobs {
         public void aiStep() {
             super.aiStep();
             if (level().isClientSide && strikeAnim > 0) strikeAnim--;
+            if (level().isClientSide && awake() && random.nextInt(3) == 0) {          // "like burning coals of fire... and out of the fire went forth lightning"
+                double a = random.nextDouble() * Math.PI * 2, r = 0.5 + random.nextDouble() * 0.7;
+                level().addParticle(random.nextInt(4) == 0 ? ParticleTypes.ELECTRIC_SPARK : ParticleTypes.FLAME, getX() + Math.cos(a) * r, getY() + 1.25 + (random.nextDouble() - 0.5) * 1.6,
+                        getZ() + Math.sin(a) * r, 0, 0.02, 0);
+            }
         }
 
         @Override

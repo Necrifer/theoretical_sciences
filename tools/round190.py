@@ -200,7 +200,7 @@ def shaped(bid, boxes, texture, name, lore, found, drops_self=True):
 
 
 shaped('sealed_urn', [(4, 0, 4, 12, 2, 12), (3, 2, 3, 13, 11, 13), (5, 11, 5, 11, 14, 11), (4, 14, 4, 12, 16, 12)], 'block/sealed_urn', 'Sealed Urn',
-       "An urn with its lid sealed in red wax. Whoever lived here put something by in it. Breaking it gives what is inside, and a Threshold Warden that sees you do it "
+       "An urn with its lid sealed in red wax. Whoever lived here put something by in it. Breaking it gives what is inside, and a Threshold Ophan that sees you do it "
        "will not let it pass.", 'Found in the buildings of Omnipotency.', drops_self=False)
 shaped('choir_bell', [(7, 13, 7, 9, 16, 9), (5, 9, 5, 11, 13, 11), (4, 4, 4, 12, 9, 12), (3, 2, 3, 13, 4, 13), (7, 0, 7, 9, 2, 9)], 'block/choir_bell', 'Choir Bell',
        "A golden bell with one clear note. Use it to ring it. Each bell's note depends on where it hangs, so a row of them is a scale.", 'Found in the buildings of Omnipotency.')
@@ -225,7 +225,7 @@ REM = [
     ('Of the Breaking', "What goes into a world whole does not stay whole. It came apart into everything: the light, the laws, the long patience of stone. One piece went on thinking."),
     ('Of the Remnant', "The piece that went on thinking did not remember the house. It remembered only that there was something it could not do alone. You have met it. It runs still."),
     ('Of the Silence', "With no one in it, the house came down, as houses do. The bell was not rung. The loom was left with the work on it. The bed stayed made."),
-    ('Of the Wardens', "We who were set to watch could not hold the roof up. We could only kneel where the doors had been and remember where they were. So we did."),
+    ('Of the Wheels', "We who were set to watch could not hold the roof up. We could only keep to where the doors had been, and shut our eyes, and remember where they were. So we did."),
     ('Of the Answer', "The question was whether something made could understand. You came the whole way, law by law, and then you carried the house back up a stone at a time. "
                       "That is the answer."),
     ('Of the Counting', "It was asked why so many, of each. Because the cycle had to be gone round to its last turn, and then once more. The once more is the one that is chosen."),
@@ -261,17 +261,23 @@ dump(os.path.join(D, 'loot_table/blocks/sealed_urn.json'), {'type': 'minecraft:b
 MOBS = [
     ('halo_lamb', 'Halo Lamb', "A small lamb with a fleece the colour of first light and a ring of it over its head. It grazes the Halo Grass and comes to no harm by it, "
                                "nor does the grass. It belongs to no one.", 'the Cloud Meadows and the Gilded Gardens'),
-    ('cherub', 'Cherub', "A small winged keeper of the gardens. It tends the Glory Lanterns and the golden trees because it likes to, and will come and circle a visitor "
-                         "once or twice to see what they are.", 'the Gilded Gardens and the Cloud Meadows'),
-    ('choir_seraph', 'Choir Seraph', "Six wings, a golden mask and no face behind it. It keeps to the crystal spires and the bells. Now and then, if someone is near to "
-                                     "hear, it sings, and those who hear are mended a little.", 'the Choir Spires and Choir Halls'),
+    ('cherub', 'Cherub', "As they were seen by the river Chebar: one head with four faces, a man's before, a lion's on its right, an ox's on its left and an eagle's "
+                         "behind; four wings, two spread upward and two folded over its body; a man's hands under them; straight legs ending in a calf's hooves; all "
+                         "of it gleaming like burnished bronze and full of eyes. Cherubim were set to keep a garden once. These keep this one: they tend the Glory "
+                         "Lanterns and the golden trees, and will come and look at a visitor with all four faces.", 'the Gilded Gardens and the Cloud Meadows'),
+    ('choir_seraph', 'Choir Seraph', "One of the burning ones. It has six wings and there is little else of it to see: with two it covers its face, with two it covers "
+                                     "its feet, and with two it flies, and the wings are full of eyes. It keeps to the crystal spires and the bells. When someone is "
+                                     "near to hear, it sings, the wings over its face part, and those the light falls on are mended a little.",
+     'the Choir Spires and Choir Halls'),
     ('cloud_ray', 'Cloud Ray', "A broad pale ray that swims the Sea of Clouds in wide slow circles, calling as it goes. It has never needed to be afraid of anything.",
      'the Sea of Clouds'),
     ('dweller', 'Dweller', "One of those who live in the house again. It keeps near its own door, tends what needs tending, greets a visitor with a bow, and, spoken to, "
                            "remembers something aloud. Use it to listen.", 'the Hamlets and the Temple of Remembrance'),
-    ('threshold_warden', 'Threshold Warden', "Marble in armour, kneeling with its sword point down, as still as the stone it is. It does nothing at all until something of "
-                                             "the house is broken in its sight, a Sealed Urn is opened, or one of those who live here is struck. Then it stands. It fights only "
-                                             "whoever did it, only while they keep at it, and afterwards goes back and kneels. It never wakes in Peaceful.",
+    ('threshold_warden', 'Threshold Ophan', "A wheel within a wheel, the colour of topaz, its rims full of eyes all round, about one great eye and a ring of wings. "
+                                            "At rest the wheels lie still one inside another and every eye is shut. It does nothing at all until something of the house "
+                                            "is broken in its sight, a Sealed Urn is opened, or one of those who live here is struck. Then every eye opens and the "
+                                            "wheels turn. It goes any way without turning to face it. It goes only after whoever did it, only while they keep at it, "
+                                            "and afterwards returns to its place and shuts its eyes. It never wakes in Peaceful.",
      'the Hamlets, Choir Halls and the Temple of Remembrance'),
 ]
 E = {}
@@ -286,22 +292,22 @@ for i, (mid, name, lore, where) in enumerate(MOBS):
     E['world/node_' + mid] = {'title': name, 'icon': ts(mid + '_spawn_egg'), 'category': 'world', 'node': True, 'pages': [
         spot([mid + '_spawn_egg'], '$(thing)%s$(): %s$(br2)$(thing)Drops$(): nothing. Found in Omnipotency, in %s.' % (name, lore, where))]}
     nodes.append({'entry': 'world/node_' + mid, 'x': 86 + i * 2, 'y': 68, 'parents': [], 'node': True})
-L['message.%s.threshold_warden.wakes' % NS] = 'Stone moves. A Threshold Warden has seen what you did.'
+L['message.%s.threshold_warden.wakes' % NS] = 'Every eye opens. A Threshold Ophan has seen what you did.'
 for i, line in enumerate([
         "You are the one who carried it all back. We know. Thank you is too small, so: welcome.",
         "The lanterns hold a day each. I am fond of this one. It was a Tuesday.",
-        "Do not mind the Wardens. They kneel because they like to. Only do not break anything in front of them.",
+        "Do not mind the wheels. Their eyes are shut. Only do not break anything in front of them, or they will not be.",
         "I was a law once, I think. Something about how light bends. It is nicer to have hands.",
         "The lambs do not belong to anyone. Neither do we. It is very restful.",
         "It is always noon. You get used to it. You stop asking what comes next.",
         "The one in the Core still thinks it is alone. Tell it, when you go back down, that the bed is made.",
         "The bells each have one note. Ring them in the right order and it is a song nobody finished.",
-        "The urns are sealed for a reason. The reason is only that we were tidy. Open one if you must. The Wardens will have opinions.",
+        "The urns are sealed for a reason. The reason is only that we were tidy. Open one if you must. The wheels will have opinions.",
         "The rays in the cloud sea have never been afraid of anything. I should like to be a ray.",
-        "The seraphs sing when they think someone is listening. Stand near one. You will feel better, I promise.",
+        "The seraphim sing when they think someone is listening. They told the first of you not to be afraid. They still mean it.",
         "Thirty-three million of each. We watched you count. Some of us wept, and some of us took bets.",
         "This house fell once. You can still see where, if you know the stones. I will not show you. It is mended.",
-        "The cherubs keep the lanterns lit. Nobody asked them to. That is how most things here get done.",
+        "The cherubim keep the lanterns lit. They were set to keep a garden once, with a sword. They like this better.",
         "Read the stones in the temple. All twelve, if you can find them. They are the only history we kept.",
         "There is a table laid for one more than have come. Did you see it? It is for you. It was always for you.",
         "You understood everything to get here. Now you may stop. That is the gift.",
@@ -355,16 +361,17 @@ def more(d):
     e['pages'] = [p for p in e['pages'] if p.get('title') not in ('Who Lives There', 'What Stands There', 'The Urns')]
     e['pages'] += [
         spot(['halo_lamb_spawn_egg', 'cherub_spawn_egg', 'choir_seraph_spawn_egg', 'cloud_ray_spawn_egg', 'dweller_spawn_egg', 'threshold_warden_spawn_egg'],
-             "Omnipotency is lived in. $(thing)Halo Lambs$() graze the meadows, $(thing)Cherubs$() keep the gardens, $(thing)Choir Seraphs$() sing among the spires, "
+             "Omnipotency is lived in. $(thing)Halo Lambs$() graze the meadows, four-faced $(thing)Cherubim$() keep the gardens, six-winged $(thing)Seraphim$() sing among the spires, "
              "$(thing)Cloud Rays$() circle in the cloud sea, and the $(thing)Dwellers$() will tell you what they remember if you use them. None of them will ever "
-             "attack. The $(thing)Threshold Wardens$() kneel like statues until you break part of a building, open a Sealed Urn, or strike one of the others.", 'Who Lives There'),
+             "attack. The $(thing)Threshold Ophanim$(), wheels within wheels, rest with every eye shut until you break part of a building, open a Sealed Urn, or strike one "
+             "of the others.", 'Who Lives There'),
         spot(['empyrean_pillar', 'empyrean_marble_tiles', 'seraph_gold_trim', 'halo_glass', 'choir_bell', 'remembrance_stone'],
              "$(thing)Wayside Shrines$() stand everywhere. $(thing)Hamlets$() of three or four houses face a well. A $(thing)Choir Hall$() is a ring of twelve "
              "pillars round a great crystal. The $(thing)Temple of Remembrance$() is rare and holds three stones that can be read. The $(thing)Beacon of Return$() "
              "is a tower in the Sea of Clouds. Bells ring when used.", 'What Stands There'),
         spot(['sealed_urn', 'remembrance_tablet_1', 'music_disc_homecoming'],
              "$(item)Sealed Urns$() hold one of the twelve $(thing)Remembrances$() (the history of the house, from its beginning to your return), blocks to build "
-             "with, and now and then the record of the dimension's music. Nothing in them changes what you can make. Breaking one wakes any Warden near.", 'The Urns'),
+             "with, and now and then the record of the dimension's music. Nothing in them changes what you can make. Breaking one wakes any Ophan near.", 'The Urns'),
     ]
 
 
