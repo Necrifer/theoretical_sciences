@@ -56,9 +56,21 @@ public final class OrbitHazards {
             p.displayClientMessage(Component.translatable("message.theoreticalsciences.orbit_vacuum").withStyle(ChatFormatting.RED), true);
     }
 
+    /** 1.10.0: armour of other mods that seals against vacuum (Ad Astra's space suits by default; packs may add their own). */
+    public static final net.minecraft.tags.TagKey<net.minecraft.world.item.Item> VACUUM_SUITS =
+            net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM, TheoreticalSciences.id("vacuum_suits"));
+
     static boolean suited(Player p) {
-        return InteriorGear.pieces(p, InteriorGear.Suit.PRESSURE) + InteriorGear.pieces(p, InteriorGear.Suit.HEATED)
-                + InteriorGear.pieces(p, InteriorGear.Suit.FRONTIER) >= 4;
+        int n = 0;
+        for (net.minecraft.world.entity.EquipmentSlot slot : new net.minecraft.world.entity.EquipmentSlot[]{
+                net.minecraft.world.entity.EquipmentSlot.HEAD, net.minecraft.world.entity.EquipmentSlot.CHEST,
+                net.minecraft.world.entity.EquipmentSlot.LEGS, net.minecraft.world.entity.EquipmentSlot.FEET}) {
+            var st = p.getItemBySlot(slot);
+            if (st.is(VACUUM_SUITS) || (st.getItem() instanceof InteriorGear.SuitItem si
+                    && (si.suit == InteriorGear.Suit.PRESSURE || si.suit == InteriorGear.Suit.HEATED || si.suit == InteriorGear.Suit.FRONTIER)))
+                n++;
+        }
+        return n >= 4;                                         // any mix of sealed pieces, one per slot
     }
 
     static void mod(AttributeInstance a, boolean on, double amount) {

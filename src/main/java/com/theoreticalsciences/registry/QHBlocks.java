@@ -296,7 +296,11 @@ public final class QHBlocks {
     }
 
     public static Block get(String id) {
-        return SIMPLE.get(id).get();
+        DeferredBlock<Block> b = SIMPLE.get(id);
+        if (b != null) return b.get();
+        // 1.10.0: blocks registered elsewhere (Recreating Home's urn and bell, for one) are found by their id; an unknown id
+        // gives air rather than a crash (a Dweller looking for a bell crashed the server in 1.9.x)
+        return net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(com.theoreticalsciences.TheoreticalSciences.id(id));
     }
 
     public static void register(IEventBus bus) {

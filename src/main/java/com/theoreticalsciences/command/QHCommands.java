@@ -69,7 +69,77 @@ public final class QHCommands {
                         })))))
                 .then(radiation())
                 .then(home())                                                    // 1.8.0
+                .then(testkit())                                                 // 1.10.0
                 .then(com.theoreticalsciences.orbit.OrbitCommands.station()));   // 1.3.0
+    }
+
+    /**
+     * 1.10.0: /theoreticalsciences testkit &lt;players&gt; &lt;kit&gt;. Gives the items of a test kit (data/&lt;ns&gt;/ts_testkits/&lt;kit&gt;.json:
+     * {"description", "items": [{"id", "count"}], "research": "*" or a list of ids}) and grants its research, for checking
+     * a part of the mod without crafting up to it. Packs can add their own kits in a datapack. What does not fit in the
+     * inventory waits in the player's Ender Chest rather than being thrown on the ground (no piles of items in one chunk).
+     */
+    private static final SuggestionProvider<CommandSourceStack> KITS = (ctx, b) ->
+            SharedSuggestionProvider.suggestResource(kits(ctx.getSource().getServer()).keySet(), b);
+
+    private static java.util.Map<ResourceLocation, com.google.gson.JsonObject> kits(net.minecraft.server.MinecraftServer server) {
+        var out = new java.util.TreeMap<ResourceLocation, com.google.gson.JsonObject>();
+        server.getResourceManager().listResources("ts_testkits", id -> id.getPath().endsWith(".json")).forEach((id, res) -> {
+            try (var r = res.openAsReader()) {
+                String path = id.getPath().substring("ts_testkits/".length(), id.getPath().length() - 5);
+                out.put(ResourceLocation.fromNamespaceAndPath(id.getNamespace(), path), com.google.gson.JsonParser.parseReader(r).getAsJsonObject());
+            } catch (Exception ignored) {
+            }
+        });
+        return out;
+    }
+
+    private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack> testkit() {
+        return Commands.literal("testkit")
+                .then(Commands.literal("list").executes(ctx -> {
+                    var all = kits(ctx.getSource().getServer());
+                    all.forEach((id, o) -> ctx.getSource().sendSuccess(() -> Component.literal(id + ": "
+                            + (o.has("description") ? o.get("description").getAsString() : "")), false));
+                    return all.size();
+                }))
+                .then(Commands.argument("players", EntityArgument.players())
+                .then(Commands.argument("kit", ResourceLocationArgument.id()).suggests(KITS).executes(ctx -> {
+                    ResourceLocation kitId = ResourceLocationArgument.getId(ctx, "kit");
+                    var kit = kits(ctx.getSource().getServer()).get(kitId);
+                    if (kit == null) {
+                        ctx.getSource().sendFailure(Component.literal("No test kit " + kitId));
+                        return 0;
+                    }
+                    int given = 0, missing = 0;
+                    for (ServerPlayer p : EntityArgument.getPlayers(ctx, "players")) {
+                        for (var el : kit.getAsJsonArray("items")) {
+                            var o = el.getAsJsonObject();
+                            var item = net.minecraft.core.registries.BuiltInRegistries.ITEM.getOptional(ResourceLocation.parse(o.get("id").getAsString()));
+                            if (item.isEmpty()) { missing++; continue; }
+                            int left = o.has("count") ? o.get("count").getAsInt() : 1;
+                            while (left > 0) {
+                                int n = Math.min(left, item.get().getDefaultMaxStackSize());
+                                var st = new net.minecraft.world.item.ItemStack(item.get(), n);
+                                if (!p.getInventory().add(st) && !st.isEmpty()) {
+                                    var rest = p.getEnderChestInventory().addItem(st);
+                                    if (!rest.isEmpty()) p.drop(rest, false);   // only when both are full
+                                }
+                                left -= n;
+                            }
+                            given++;
+                        }
+                        var res = kit.get("research");
+                        if (res != null && res.isJsonPrimitive() && "*".equals(res.getAsString()))
+                            ResearchManager.INSTANCE.entries().keySet().forEach(id -> ResearchService.grant(p, id));
+                        else if (res != null && res.isJsonArray())
+                            for (var r : res.getAsJsonArray()) ResearchService.grant(p, ResourceLocation.parse(r.getAsString()));
+                    }
+                    final int g = given, m = missing;
+                    String desc = kit.has("description") ? kit.get("description").getAsString() : "";
+                    ctx.getSource().sendSuccess(() -> Component.literal("Test kit " + kitId + ": " + g + " stacks given"
+                            + (m > 0 ? ", " + m + " items unknown in this game" : "") + (desc.isEmpty() ? "" : ". " + desc)), true);
+                    return g;
+                })));
     }
 
     /**

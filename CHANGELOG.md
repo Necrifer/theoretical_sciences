@@ -1,5 +1,354 @@
 # Changelog
 
+## 1.10.0: Patch A, the check-up
+
+A pass over 1.6.0 to 1.9.1 before more is built on them: the mod was run on a real NeoForge server and every
+dimension, block, item, creature, structure and feature was placed and left to run, which found the two bugs below.
+The middle of the progression is made far cheaper, and two things for testing and for packs are added.
+
+### Checked
+
+* A real NeoForge 21.1.265 server (the same libraries as your CurseForge install) loaded the mod alone and with 28
+  of the modpack's mods it links to (Ad Astra, Botania, Nature's Aura, Mekanism, GregTech, AE2, KubeJS, JEI, Jade,
+  Astral Sorcery, Thaumaturge, FTB Chunks, Nuclear Radiation, Curios, Patchouli, Modonomicon and their libraries).
+  Both load every recipe, tag, loot table and advancement with no error. Then all 18 dimensions were generated,
+  all 818 blocks placed and left to tick, all 1,129 items made, all 71 creatures spawned in the Overworld and in
+  Omnipotency and left to run, all 13 structures, 15 templates and 151 features placed, and the world saved.
+
+### Fixed
+
+* **A crash in Omnipotency.** A Dweller (or any creature there that goes to visit something) looking for a Choir
+  Bell or a Sealed Urn crashed the game, because those two blocks were looked up in the wrong list. Fixed, and the
+  lookup no longer crashes on any block it does not know.
+* **Gem pockets reaching too far.** The Garnet, Peridot, Corundum and Moissanite pockets of the Planetary Interior
+  could be generated larger than the area the game lets a feature build in, so the game refused part of the blocks
+  and logged an error for each one (and in large packs this can stall world generation). They are now vanilla
+  geode sized: walls 4 to 6 out (was 5 to 7), 3 to 4 centres (was 4 to 5), layers 1.7, 2.2, 3.2 and 4.2 blocks
+  (were up to 2.4, 3.1, 4.5 and 5.9; the Peridot pocket up to 7.1).
+
+### Costs: the middle of the progression
+
+The 1.0 chains asked for 24 to 48 of an ingredient that was itself 24 to 48 of the one before, so cost grew 20 to 50
+times a step: a Source Code Fragment came to about 600,000,000,000,000,000 vanilla items, and the E1 materials to
+about 34 million. Large numbers of that kind are now kept for the late game and endgame only.
+
+* **The rule.** A machine recipe may cost at most **4 times its single dearest ingredient**. Where one asked for
+  more, the counts of its dear ingredients (those costing at least a hundredth of the dearest) are lowered together,
+  never below 1, and their fluids never below 100 mB, until it holds. Cheap ingredients keep their counts, so a
+  recipe still asks for the same bulk materials.
+* **What is left alone.** Recipes behind research 16 or more steps deep (Omnilex Simulation, the Eschaton, Pleroma
+  Reconstitution, Transcendent and Universe Forging and the like: the late game and endgame), the E1 to E5 materials and their 1.7+ routes,
+  the Empyrean table, every crafting grid, and early recipes (anything costing under 2,000 vanilla items).
+* **What it does.** Measured in vanilla items: General AI Core 770 million to 370 thousand; Standard Model Matrix
+  670 billion to 21 million; Grand Unified Core 23 trillion to 83 million; G2 Manifold 225 trillion to 315 million;
+  Source Code Fragment 6×10^17 to 1.5×10^10. E1 materials typically 34 million to 260 thousand; E2 2 billion to
+  2.9 million. E3 and above stay large (E3 about 10^11, E5 about 3×10^15).
+* **Archaeology route kept cheaper.** The 1.6.0 Chronoweaving route to the Arrow of Time Shard from an Excavation
+  Record is meant to undercut the older route; after the rework it no longer did. It now takes 2 Chronon Capacitors
+  (was 8) and makes 3 shards (was 2).
+* The tool is tools/rescale_1100.py; tools/check_costs.py passes.
+* 279 recipes changed. Every change, as "ingredient old count to new count":
+
+<details><summary>All 279 recipe changes</summary>
+
+| Recipe | Changes |
+|---|---|
+| analog_horizon/r50_hawking | bose_einstein_condensate 250 to 100 mB |
+| analysis/complex_plane | sterile_neutrino 6 to 1, planck_shard 6 to 1, bose_einstein_condensate 8000 to 400 mB |
+| analysis/derivative_operator | function_graph 6 to 1, topological_insulator 6 to 1, fractured_essence 12 to 1, dark_matter 8000 to 300 mB |
+| analysis/differential_manifold | derivative_operator 12 to 3, integral_operator 6 to 1, error_correction_lattice 6 to 1 |
+| analysis/eigenstate_lattice | hamiltonian_operator 6 to 5, spinor_lattice 6 to 5, entangled_bus_bar 6 to 5, metallic_hydrogen 8000 to 7000 mB |
+| analysis/fourier_series | function_graph 12 to 11, complex_plane 6 to 5, integral_operator 6 to 5, exotic_matter_crystal 6 to 5, synaptic_fluid 8000 to 7300 mB |
+| analysis/fractal_core_recursion | fractal_dust 48 to 3, transcendental_crystal 6 to 1 |
+| analysis/fractal_set | complex_plane 12 to 3, function_graph 12 to 3, fractal_dust 48 to 28, tachyon_klystron 6 to 2 |
+| analysis/golden_ratio_continuum | photonic_processor 12 to 1, cherenkov_wafer 24 to 3, bose_einstein_condensate 8000 to 1100 mB, supercritical_solvent 8000 to 4000 mB |
+| analysis/hamiltonian_operator | wavefunction 12 to 2, derivative_operator 6 to 2, entangled_bus_bar 6 to 1, dilaton_crystal 6 to 1, strange_matter 8000 to 6700 mB |
+| analysis/integral_operator | function_graph 6 to 3, error_correction_lattice 6 to 3 |
+| analysis/koch_fractal_set | complex_plane 12 to 2, function_graph 6 to 1, fractal_dust 6 to 4, dark_matter 8000 to 1900 mB |
+| analysis/modular_form | complex_plane 6 to 3, fourier_series 6 to 3, dark_matter_lens 6 to 3 |
+| analysis/path_integral | hamiltonian_operator 12 to 2, integral_operator 12 to 5, entangled_bus_bar 6 to 3, chronon_gas 8000 to 3900 mB |
+| analysis/quantum_field_lattice | wave_packet 24 to 2, spinor_lattice 12 to 1, differential_manifold 6 to 1, entangled_bus_bar 6 to 1 |
+| analysis/real_continuum | transcendental_crystal 6 to 5, qubit_die 6 to 2, bose_einstein_condensate 8000 to 3100 mB |
+| analysis/riemann_zeta_crystal | modular_form 12 to 7 |
+| analysis/wavefunction | complex_plane 6 to 5, foam_substrate 24 to 22, entangled_bus_bar 6 to 5 |
+| antimatter_trapping/annihilation_core | antimatter_pellet 24 to 1, dilithium_crystal 6 to 3, photonic_logic_wafer 12 to 6, bose_einstein_condensate 8000 to 600 mB |
+| antimatter_trapping/antimatter_pellet | superconducting_coil 6 to 1, photonic_lens 12 to 1, bose_einstein_condensate 8000 to 200 mB |
+| antiproton_deceleration/antinuclei_freezing | antiproton_bundle 16 to 7 |
+| arithmetic/imaginary_unit | tachyon_flux 4000 to 3700 mB |
+| arithmetic/octonion_crystal | quaternion_crystal 8 to 1, calabi_yau_manifold 4 to 1, exotic_matter 8000 to 100 mB |
+| arithmetic/quaternion_crystal | complex_plane 8 to 1, coherent_wiring_harness 4 to 2, bose_einstein_condensate 8000 to 1700 mB |
+| bioculture/morphogenic_serum | recombinant_dna 6 to 1, engineered_enzyme 12 to 1, metal_organic_framework 6 to 1, folded_protein_crystal 6 to 1, tachyon_flux 8000 to 100 mB |
+| bioculture/neural_organoid | thought_matrix 6 to 3, room_temperature_superconductor 6 to 3 |
+| bioculture/quantum_chlorophyll | entangled_bus_bar 6 to 5, dark_matter 8000 to 7300 mB |
+| bioculture/stem_cell_culture | temporal_knot 6 to 5, nebular_gas 8000 to 7100 mB |
+| bioculture/tardigrade_culture | sterile_neutrino 6 to 1, chronon_gas 8000 to 300 mB |
+| bioculture/xenobot_swarm | general_ai_core 6 to 2, entangled_bus_bar 6 to 2, quark_gluon_plasma 8000 to 6700 mB |
+| casimir_pressing/casimir_plate | neutronium_plate 8 to 3, theodolite_lens 4 to 2 |
+| casimir_pressing/degenerate_armour_plate | spacetime_alloy_ingot 4 to 3 |
+| casimir_pressing/hawking_absorber_plate | neutronium_plate 8 to 3, metamaterial_sheet 4 to 2 |
+| casimir_pressing/quadrupole_pole_tip | neutronium_plate 8 to 4, topological_insulator 4 to 1, xenogenome_sample 16 to 3 |
+| causality_loop/bootstrap_artifact | paradox_residue 8 to 7 |
+| causality_loop/chronal_accelerator | temporal_singularity 32 to 1, inaccessible_cardinal 16 to 8 |
+| causality_loop/closed_timelike_curve | novikov_crystal 16 to 1, wormhole_throat 16 to 4, moduli_crystal 16 to 1, graviton_wisp_core 16 to 1, hyperdimensional_logic_wafer 16 to 1, chronon_gas 1024000 to 214200 mB, dimensional_residue 64000 to 2900 mB |
+| chemical_synthesis/carbon_nanotube_bundle | molecular_orbital_lattice 4 to 1, coherent_wiring_harness 4 to 1, ionic_liquid 4000 to 1200 mB |
+| chemical_synthesis/metal_organic_framework | carbon_nanotube_bundle 4 to 1, chiral_crystal 4 to 1, coherent_wiring_harness 4 to 1, ionic_liquid 8000 to 1800 mB |
+| chemical_synthesis/noble_gas_clathrate | buckyball_cage 8 to 6, coherent_wiring_harness 4 to 3 |
+| chemical_synthesis/positronium_hydride | antimatter_pellet 4 to 1, buckyball_cage 4 to 1, coherent_wiring_harness 4 to 1, carborane_superacid 4000 to 100 mB |
+| chemical_synthesis/room_temperature_superconductor | metallic_hydrogen_ingot 4 to 1, electride_crystal 8 to 3, coherent_wiring_harness 4 to 2, bose_einstein_condensate 8000 to 3500 mB |
+| chemical_synthesis/turing_morphogen | complex_plane 8 to 7 |
+| chrono_inversion/causal_shield_lattice | chronon_capacitor 12 to 2, chronosteel_ingot 12 to 2, chronon_gas 16000 to 3800 mB, nanite_slurry 8000 to 6500 mB |
+| chrono_inversion/chronon_capacitor | tachyon_crystal 6 to 2, tachyon_flux 8000 to 2800 mB |
+| chrono_inversion/chronosteel_bootstrap | chronon_capacitor 12 to 1, tachyon_klystron 6 to 3, chronon_gas 32000 to 1400 mB, bose_einstein_condensate 8000 to 4000 mB |
+| chrono_inversion/controlled_fracture | spacetime_casing 6 to 3 |
+| chrono_inversion/hawking_emitter | topological_insulator 6 to 1, hawking_absorber_plate 6 to 1, femto_inductor 12 to 1, chronon_gas 8000 to 100 mB |
+| chronoweaving/arrow_of_time_shard | chronon_capacitor 8 to 2, chronon_gas 16000 to 5000 mB |
+| chronoweaving/christoffel_symbol | geodesic_thread 16 to 3, derivative_operator 16 to 3, chronoplastic_gasket 8 to 2 |
+| chronoweaving/geodesic_thread | chronoplastic_gasket 8 to 5, evaporation_flash 8 to 5 |
+| chronoweaving/stress_energy_tensor | christoffel_symbol 16 to 2, frozen_photon 16 to 2 |
+| chronoweaving/temporal_knot | arrow_of_time_shard 16 to 2, tachyon_crystal 16 to 2, mobius_strip 8 to 5, chronon_gas 32000 to 4700 mB |
+| collider/magnetic_monopole | coherent_wiring_harness 12 to 6, quadrupole_pole_tip 6 to 3, hawking_absorber_plate 6 to 3, rf_resonator_cell 12 to 5, quark_gluon_plasma 1808 to 800 mB, nebular_gas 8000 to 3700 mB |
+| collider/r32_leptogenesis | antimatter_pellet 12 to 3, sterile_neutrino 6 to 1 |
+| collider/strange_matter | void_lattice_shard 6 to 1, degenerate_matter_chunk 6 to 1, coherent_wiring_harness 12 to 1, femto_capacitor 6 to 1, quark_gluon_plasma 16000 to 1100 mB |
+| compactification/compactified_circle | flerovium_ingot 12 to 3 |
+| compactification/d_brane_sheet | quantum_string 48 to 39, brane_tension_fiber 24 to 12, pulsar_timing_crystal 12 to 5 |
+| compactification/g2_manifold | grand_unified_core 12 to 4 |
+| compactification/m_theory_core | m_brane 24 to 2, g2_manifold 12 to 2, compactified_circle 48 to 5 |
+| compactification/string_coupling_crystal | dilaton_crystal 48 to 3, quantum_string 12 to 1, exotic_matter 32000 to 2300 mB |
+| composite_layup/r140_tether_spool | nanotube_composite 4 to 3 |
+| composite_layup/r150_tether_spool_knotted | nanotube_composite 4 to 3 |
+| concept_compression/r83_mathematics_singularity_euler | epsilon_naught 128 to 3 |
+| condensing/metallic_hydrogen_ingot | casimir_plate 4 to 1, coherent_wiring_harness 4 to 1, metallic_hydrogen 16000 to 100 mB |
+| crystal_growth/hyperdimensional_boule | lattice_seed 4 to 1, calabi_yau_manifold 4 to 1, coherent_wiring_harness 4 to 1, exotic_matter 16000 to 100 mB |
+| crystal_growth/topological_boule | lattice_seed 4 to 1, topological_insulator 8 to 1, bose_einstein_condensate 16000 to 1200 mB |
+| dark_energy_extraction/cosmological_constant | cosmic_lens 16 to 6, spacetime_alloy_singularity 32 to 30 |
+| dark_energy_extraction/r32_phantom_energy | negative_mass_ingot 16 to 1, exotic_matter_crystal 16 to 1, dark_energy 25600 to 100 mB |
+| directed_evolution/telomerase_complex | spacetime_bearing 24 to 2, standard_model_singularity 24 to 2, unified_dossier 12 to 2 |
+| electrolysis/electride_crystal | coherent_wiring_harness 4 to 3 |
+| electrolysis/split_antiwater | antiwater 1000 to 100 mB |
+| entangling/foam_superposition | foam_substrate 16 to 11, coherent_wiring_harness 4 to 3 |
+| entropy_sorting/bulk_moduli_sorting | bulk_stone 128 to 7 |
+| entropy_sorting/bulk_stone_sorting | bulk_stone 64 to 15 |
+| entropy_sorting/fallout_sorting | fractured_essence 32 to 12, photonic_lens 8 to 3 |
+| entropy_sorting/negentropy_cell | bose_einstein_condensate 250 to 200 mB |
+| entropy_sorting/reverse_heat_death | heat_death_remnant 4 to 1, dark_energy 16000 to 1800 mB |
+| eschatology/r32_boltzmann_fluctuation | de_sitter_horizon_shard 16 to 1, dark_era_haze 64000 to 35400 mB |
+| eschatology/r32_de_sitter_horizon | heat_death_ember 16 to 1, dark_matter_lens 16 to 1, dark_energy 25600 to 100 mB |
+| eschatology/r32_heat_death_remnant | heat_death_ember 64 to 43, de_sitter_horizon_shard 16 to 3, dark_era_haze 25600 to 17100 mB |
+| femto_assembly/abiogenesis_crucible | evolution_engine 16 to 3, theory_of_everything 16 to 3 |
+| femto_assembly/anomaly_containment_ward | causal_shield_lattice 32 to 18, chronoplastic_casing 32 to 18, stabiliser_matrix 16 to 1, hyperdimensional_processor 48 to 1, hyperdimensional_pearl 8 to 1, causal_solder 147456 to 2100 mB |
+| femto_assembly/anomaly_resolution_engine | reality_lattice_casing 64 to 1, hyperdimensional_processor 48 to 1, feynman_diagram 8 to 1, phantom_energy_cell 16 to 1, causal_solder 147456 to 1800 mB |
+| femto_assembly/assembly_matrix | photonic_processor 16 to 15, chronosteel_ingot 16 to 11, quantum_processor 8 to 7, topological_die 8 to 7, pixel_tracker_module 8 to 7, dark_matter 16000 to 12400 mB, bose_einstein_condensate 16000 to 12700 mB |
+| femto_assembly/autonomous_calibrator | m_brane 8 to 1, causal_solder 73728 to 43300 mB |
+| femto_assembly/axiomatic_breach_engine | reality_anchor 32 to 7, transfinite_casing 16 to 3, hopf_fibration 16 to 3 |
+| femto_assembly/burst_observatory | topological_processor 112 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, category_lattice 8 to 1, raw_antiiron 8 to 4, exotic_solder 73728 to 400 mB, strange_matter 16000 to 7200 mB |
+| femto_assembly/causality_loop_engine | hyperdimensional_processor 96 to 1, pulsar_timing_crystal 32 to 1, chronoplastic_casing 16 to 9, higgs_boson_crystal 16 to 1, causal_solder 147456 to 1600 mB |
+| femto_assembly/concept_compressor | topos 16 to 3 |
+| femto_assembly/cosmic_neutronium_coil_block | spacetime_alloy_coil_block 8 to 1, hyperdimensional_processor 8 to 1, exotic_solder 73728 to 55300 mB |
+| femto_assembly/cosmic_processor | cosmic_board 8 to 1, hyperdimensional_processor 16 to 1, brane_tension_fiber 8 to 1, causal_solder 36864 to 6500 mB |
+| femto_assembly/dark_energy_siphon | hyperdimensional_processor 64 to 1, d_brane_sheet 8 to 1, standard_model_matrix 16 to 1, causal_solder 147456 to 7600 mB, liquid_antihelium 16000 to 2700 mB |
+| femto_assembly/dyson_array | hyperdimensional_processor 96 to 1, causal_solder 147456 to 2600 mB |
+| femto_assembly/empirical_dossier | empirical_notes_1 16 to 3 |
+| femto_assembly/empirical_notes_1 | graviton_field_emitter 32 to 3 |
+| femto_assembly/empirical_notes_2 | psionic_crystal 32 to 1, atto_capacitor 32 to 4, quaternion_crystal 32 to 4, complex_plane 32 to 4, topological_boule 32 to 4, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, self_healing_polymer 8 to 1, pentaquark_shard 8 to 1 |
+| femto_assembly/empirical_notes_3 | bottom_top_quarks 32 to 1, minkowski_lattice 32 to 1, fractal_set 32 to 6, chronoplastic_gasket 16 to 4, entangled_bus_bar 16 to 1, lorentz_transform_crystal 8 to 1, carborane_superacid 16000 to 3400 mB |
+| femto_assembly/entropy_horizon | hyperdimensional_processor 48 to 1, causal_solder 147456 to 2600 mB, liquid_antihelium 16000 to 300 mB |
+| femto_assembly/er_epr_weaver | topological_processor 64 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, differential_manifold 8 to 1, antiproton_bundle 8 to 1, exotic_solder 73728 to 600 mB, nanite_slurry 16000 to 6900 mB |
+| femto_assembly/eschaton_foundry | transcendental_echo 16 to 3 |
+| femto_assembly/essence_distillery | hyperdimensional_processor 96 to 1, chronosteel_coil_block 32 to 1, fractionation_spire 16 to 1, standard_model_matrix 16 to 1, hyperdimensional_pearl 8 to 1, causal_solder 147456 to 800 mB |
+| femto_assembly/evolution_engine | theory_of_everything 16 to 3 |
+| femto_assembly/eye_of_the_horizon | ontological_processor 96 to 2, hypernova_alloy_ingot 16 to 8, einstein_rosen_core 16 to 8 |
+| femto_assembly/graviton_field_emitter | hyperdimensional_processor 8 to 6, g2_manifold 8 to 2 |
+| femto_assembly/hyperdimensional_processor | hyperdimensional_die 32 to 4, topological_processor 16 to 4, tesseract_lens 8 to 1, riemann_curvature_tensor 8 to 1, exotic_solder 36864 to 10300 mB |
+| femto_assembly/inflation_chamber | cosmogenic_casing 64 to 29, hyperdimensional_processor 48 to 6, dark_energy_siphon 16 to 1, feynman_diagram 8 to 4, cosmological_constant 8 to 2, causal_solder 147456 to 24200 mB |
+| femto_assembly/markov_chain_refinery | topological_processor 64 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, glueball_core 8 to 1, riemann_zeta_crystal 8 to 3, exotic_solder 73728 to 500 mB, dark_matter 16000 to 5200 mB |
+| femto_assembly/matrioshka_brain | hyperdimensional_processor 96 to 1, computronium_block 64 to 1, hyperdimensional_pearl 8 to 1, cosmic_board 8 to 1, causal_solder 147456 to 2200 mB |
+| femto_assembly/micro_black_hole_evaporator | horizon_cage 64 to 3 |
+| femto_assembly/mirror_foundry | topological_processor 64 to 1, antiproton_bundle 32 to 1, magnetic_confinement_casing 32 to 8, annihilation_reactor 16 to 1, event_horizon_casing 16 to 4, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, computronium_ingot 8 to 1, topological_wafer 16 to 2, antisilicon_shard 8 to 2, strange_matter_pellet 16 to 4, exotic_solder 73728 to 200 mB, synaptic_fluid 16000 to 2200 mB, tachyon_flux 16000 to 4000 mB |
+| femto_assembly/multiverse_rift | hyperdimensional_processor 96 to 1, rift_anchor 32 to 1, rift_frame_casing 16 to 9, causal_solder 147456 to 2500 mB, exotic_solder 16000 to 4200 mB |
+| femto_assembly/neutron_star_forge | neutronium_block 64 to 27, topological_processor 64 to 1, magnetic_confinement_casing 16 to 7, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, topological_logic_wafer 16 to 5, positronium_hydride 8 to 2, exotic_solder 73728 to 500 mB |
+| femto_assembly/nuclide_forge | topological_processor 64 to 1, calorimeter_detector_array 32 to 1, magnetic_confinement_casing 32 to 1, rf_accelerating_cavity 16 to 1, chemical_reactor 16 to 1, r_process_cluster 16 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, antiiron_ingot 8 to 1, dyson_shell_segment 8 to 1, exotic_solder 73728 to 100 mB |
+| femto_assembly/omnilex_engine | omnilex_casing 16 to 3, stellar_singularity 16 to 3 |
+| femto_assembly/ontological_processor | source_code_fragment 8 to 7 |
+| femto_assembly/pleroma_reconstitutor | pleroma_crystal 32 to 5, apeiron_ingot 32 to 5, omnipotence_casing 16 to 2 |
+| femto_assembly/predictive_lattice_governor | hyperdimensional_processor 64 to 49, autonomous_calibrator 8 to 2, gravitational_wave_crystal 8 to 5, grand_unified_core 16 to 11 |
+| femto_assembly/reality_compiler | reality_lattice_casing 16 to 1, einstein_rosen_core 8 to 1, flerovium_ingot 16 to 1, causal_solder 221184 to 22800 mB, liquid_antihelium 16000 to 6700 mB |
+| femto_assembly/spacetime_alloy_coil_block | chronosteel_coil_block 8 to 1, spacetime_alloy_ingot 64 to 2, topological_processor 8 to 1, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, exotic_solder 36864 to 1400 mB |
+| femto_assembly/standard_model_matrix | bottom_top_quarks 32 to 1, gauge_boson_cluster 32 to 3, higgs_boson_crystal 8 to 1, topological_processor 8 to 1, chronoplastic_gasket 16 to 4, entangled_bus_bar 16 to 4, exotic_solder 36864 to 2800 mB |
+| femto_assembly/tesseract_assembler | white_hole_fragment 32 to 1, topological_processor 64 to 1, hyperframe_casing 16 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, anticarbon_crystal 8 to 1, hawking_emitter 8 to 1, category_lattice 8 to 1, topological_boule 16 to 1, exotic_solder 73728 to 100 mB, nebular_gas 16000 to 1400 mB, nanite_slurry 16000 to 2700 mB |
+| femto_assembly/theoretical_dossier | theoretical_notes_1 16 to 3 |
+| femto_assembly/theoretical_notes_1 | topos 32 to 3 |
+| femto_assembly/theoretical_notes_2 | m_brane 32 to 1, compactified_circle 32 to 1, degenerate_armour_plate 32 to 22, spacetime_catalyst 32 to 8, hyperdimensional_die 8 to 5, riemann_curvature_tensor 16 to 11, d_brane_sheet 8 to 3 |
+| femto_assembly/theoretical_notes_3 | string_coupling_crystal 32 to 3, gravitational_wave_crystal 32 to 3, empirical_notes_3 16 to 15, cosmic_board 8 to 7 |
+| femto_assembly/transcendent_plasma_forge | cosmic_neutronium_coil_block 32 to 1, stellar_plasma_crucible 16 to 1, hyperdimensional_processor 8 to 1, cosmological_constant 8 to 1, causal_solder 221184 to 8100 mB |
+| femto_assembly/universe_forge | hyperdimensional_processor 96 to 1, cosmogenic_casing 16 to 1, universe_seed 16 to 1, frozen_photon 8 to 1, phantom_energy_cell 16 to 1, causal_solder 147456 to 2100 mB |
+| femto_assembly/vacuum_harvester | hyperdimensional_processor 64 to 1, causal_solder 147456 to 2600 mB |
+| femto_assembly/warp_field_forge | topological_processor 80 to 2, bubble_pedestal 32 to 1, atto_capacitor 128 to 3, atto_inductor 128 to 3, entangled_bus_bar 16 to 1, category_lattice 8 to 1, exotic_solder 73728 to 1700 mB |
+| femto_assembly/wormhole_projector | exotic_matter_crystal 64 to 1, wormhole_throat 32 to 1, topological_processor 64 to 1, wormhole_frame_casing 16 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 102, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, klein_bottle 8 to 1, exotic_solder 73728 to 100 mB, metallic_hydrogen 16000 to 100 mB |
+| femtofabrication/adaptive_feedback_core | phase_locked_stabiliser 12 to 9, general_ai_core 24 to 8, topological_processor 48 to 17, error_correction_lattice 48 to 37, stabiliser_matrix 24 to 1 |
+| femtofabrication/atto_capacitor | femto_capacitor 24 to 1, higgs_field_capacitor 6 to 1, noble_gas_clathrate 6 to 1, coherent_wiring_harness 6 to 1, exotic_solder 4608 to 100 mB, nebular_gas 8000 to 100 mB |
+| femtofabrication/atto_inductor | femto_inductor 24 to 1, electride_crystal 6 to 1, pixel_tracker_module 12 to 1, exotic_solder 4608 to 100 mB, ionic_liquid 8000 to 100 mB |
+| femtofabrication/atto_transistor | femto_transistor 24 to 1, superposition_crystal 6 to 1, topological_insulator 6 to 1, cherenkov_wafer 24 to 1, exotic_solder 4608 to 100 mB |
+| femtofabrication/pixel_tracker_module | cherenkov_wafer 6 to 2, qubit 12 to 3, lattice_seed 24 to 6 |
+| femtofabrication/plasma_nozzle_tip | tachyon_crystal 6 to 2, topological_insulator 6 to 2 |
+| femtofabrication/quantum_processor | photonic_board 6 to 1, qubit_die 12 to 2, photonic_processor 12 to 2, femto_transistor 24 to 3, photonic_logic_wafer 12 to 2, bose_einstein_condensate 8000 to 1100 mB |
+| femtofabrication/topological_processor | topological_board 6 to 1, topological_die 12 to 1, quantum_processor 12 to 3, arrow_of_time_shard 6 to 1, exotic_solder 4608 to 400 mB, tachyon_flux 8000 to 800 mB |
+| formal_proof/axiom_of_choice | continuum_shard 6 to 3 |
+| formal_proof/axiom_schema | qubit 6 to 4, spacetime_slag 12 to 7, telescope_mirror_blank 24 to 15 |
+| formal_proof/category_lattice | function_graph 24 to 9, power_set 6 to 2, lepton_triplet 6 to 2 |
+| formal_proof/empty_set | void_essence 6 to 2, crystalline_matrix_ingot 24 to 10, bose_einstein_condensate 8000 to 3300 mB |
+| formal_proof/formal_proof_tree | quantum_processor 6 to 1, function_graph 6 to 1, fractal_dust 6 to 1, crystalline_matrix_ingot 24 to 3, synaptic_fluid 8000 to 1100 mB, bose_einstein_condensate 8000 to 1100 mB |
+| formal_proof/functor_bridge | category_lattice 12 to 1, differential_manifold 6 to 1, octonion_crystal 6 to 1, entangled_bus_bar 6 to 1, topological_board 6 to 1, exotic_solder 8000 to 200 mB |
+| formal_proof/power_set | formal_proof_tree 6 to 1, topological_logic_wafer 6 to 1, dark_matter 8000 to 2000 mB |
+| formal_proof/topos | continuum_shard 6 to 3 |
+| fractionation/dimensional_residue | chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, dimensional_residue 64000 to 900 mB, exotic_solder 16000 to 200 mB |
+| gene_sequencing/cryptochrome_magnetoreceptor | entangled_bus_bar 6 to 3 |
+| gene_sequencing/folded_protein_crystal | molecular_orbital_lattice 12 to 11, quantum_processor 6 to 5, carbon_nanotube_bundle 6 to 5, ionic_liquid 8000 to 7300 mB |
+| gene_sequencing/recombinant_dna | error_correction_lattice 6 to 4, crystalline_matrix_ingot 24 to 18, tachyon_flux 8000 to 6000 mB |
+| gene_sequencing/silicon_life_spore | xenogenome_sample 24 to 18, bulk_crystal 24 to 4, entangled_bus_bar 6 to 2, tachyon_flux 8000 to 6000 mB |
+| gene_sequencing/synthetic_cell | buckyball_cage 12 to 10, self_healing_polymer 6 to 2, entangled_bus_bar 6 to 2, strange_matter 8000 to 5000 mB |
+| gene_sequencing/xenogenome_recoding | fractured_essence 6 to 3, void_lattice_shard 6 to 3 |
+| graviton_condensing/anchor_core | negative_mass_ingot 12 to 1, spacetime_alloy_ingot 24 to 3, exotic_matter 64000 to 8000 mB |
+| graviton_condensing/graviton_wisp_condensation | graviton_crystal 48 to 3, bulk_crystal 24 to 1 |
+| graviton_condensing/rift_anchor | graviton_crystal 24 to 1, hyperdimensional_boule 12 to 1, exotic_matter 128000 to 600 mB |
+| graviton_condensing/spin_foam_lattice | higgs_catalyst 12 to 7 |
+| graviton_condensing/universe_seed | m_brane 12 to 3 |
+| graviton_condensing/virtual_graviton_condensation | bounce_core 12 to 7 |
+| halo_collection/exotic_matter_crystal | void_lattice_shard 8 to 5, coherent_wiring_harness 16 to 6, dilithium_crystal 32 to 20, photonic_lens 32 to 20, superposition_crystal 32 to 20, topological_insulator 8 to 3 |
+| halo_collection/void_condensation | void_lattice_shard 32 to 13, casimir_plate 16 to 6 |
+| holographic_encoding/bekenstein_crystal | holographic_matrix 8 to 1, hawking_emitter 8 to 1, positronium_hydride 8 to 1 |
+| holographic_encoding/holographic_matrix | quantum_processor 8 to 1, femto_inductor 8 to 1, bose_einstein_condensate 32000 to 3000 mB |
+| hyperdimensional/alcubierre_coil | metric_tensor 24 to 1, lorentz_transform_crystal 24 to 4, hyperdimensional_boule 12 to 2, inertia_damper 12 to 1, anchor_core 12 to 1, primordial_harvest 24 to 14, exotic_matter 256000 to 150200 mB |
+| hyperdimensional/cosmic_board | cosmic_string_segment 12 to 2, atto_inductor 96 to 28, chronoplastic_gasket 24 to 2, quantum_field_lattice 12 to 2, gauge_boson_cluster 12 to 2, exotic_solder 73728 to 8500 mB, synaptic_fluid 32000 to 24200 mB |
+| hyperdimensional/einstein_rosen_core | frozen_photon 48 to 40, cosmic_lens 12 to 2, hyperdimensional_pearl 12 to 10 |
+| hyperdimensional/grand_unified_core | standard_model_matrix 24 to 1, superpartner_shard 48 to 1, quantum_string 48 to 14, empirical_notes_3 12 to 1, cosmic_neutronium_ingot 12 to 6, von_neumann_probe 12 to 6, functor_bridge 24 to 1, exotic_matter 256000 to 127900 mB |
+| hyperdimensional/klein_bottle | differential_manifold 12 to 11, tesseract_core 12 to 11, chronoplastic_gasket 24 to 8, thought_matrix 12 to 1, spin_foam_lattice 12 to 1, stellar_iron_singularity 12 to 11, primordial_harvest 24 to 8, exotic_matter 64000 to 22200 mB |
+| hyperdimensional/planck_shard | white_hole_fragment 12 to 1, micro_singularity 12 to 1, cosmic_string_segment 12 to 1, chronoplastic_gasket 24 to 2, red_giant_envelope 12 to 1, exotic_crystal_singularity 12 to 2, exotic_matter 128000 to 12000 mB, bose_einstein_condensate 32000 to 4900 mB, carborane_superacid 32000 to 4200 mB |
+| hyperdimensional/spacetime_catalyst | higgs_catalyst 12 to 1, spacetime_alloy_ingot 96 to 5, spin_foam_lattice 12 to 1, empirical_notes_2 12 to 1, exotic_matter 512000 to 165100 mB |
+| hyperdimensional/tesseract_core | topological_processor 24 to 1, exotic_matter_crystal 48 to 5, white_hole_fragment 12 to 1, chronoplastic_gasket 24 to 1, up_down_quarks 12 to 2, gravitic_lens_element 24 to 1, cryptochrome_magnetoreceptor 24 to 1, exotic_matter 128000 to 900 mB, chronon_gas 64000 to 6100 mB, strange_matter 32000 to 5100 mB, nebular_gas 32000 to 3000 mB |
+| hyperdimensional/tesseract_lens | tesseract_core 12 to 4, chronoplastic_gasket 24 to 6, hyperon_crystal 12 to 3, power_set 24 to 7, metric_tensor 12 to 1, exotic_matter 128000 to 38100 mB |
+| hyperdimensional/wormhole_throat | einstein_field_core 12 to 1, r_process_cluster 12 to 5, higgs_catalyst 24 to 2, hyperlattice_frame 24 to 5, exotic_solder 32000 to 15600 mB |
+| inflation/r32_aeon_boundary | heat_death_ember 32 to 13, de_sitter_horizon_shard 16 to 2, dark_era_haze 25600 to 10900 mB |
+| inflation/r32_inflaton_condensation | graviton_crystal 16 to 1, dark_matter_lens 16 to 1, inflaton_field 64000 to 200 mB |
+| inflation/r32_no_boundary_tunnelling | spin_foam_lattice 16 to 2, inflaton_condensate 32 to 3 |
+| kugelblitz/kugelblitz_seed | antimatter_pellet 32 to 1, strange_matter_pellet 16 to 1, photonic_processor 16 to 1, photonic_logic_wafer 16 to 2, circuit_substrate 32 to 4, void_lattice_shard 8 to 1, dark_matter 64000 to 100 mB, bose_einstein_condensate 16000 to 100 mB |
+| kugelblitz/micro_singularity | tachyon_klystron 8 to 3, topological_wafer 8 to 1, quadrupole_pole_tip 8 to 1, topological_boule 8 to 1, narrow_ai_core 8 to 1, quark_gluon_plasma 64000 to 26300 mB, bose_einstein_condensate 16000 to 5700 mB |
+| kugelblitz/micro_singularity_from_seed | kugelblitz_seed 8 to 2, lepton_triplet 8 to 2, noble_gas_clathrate 8 to 2, void_essence 16 to 6, fractal_set 8 to 2, quark_gluon_plasma 32000 to 11800 mB, ionic_liquid 16000 to 5900 mB, chronon_gas 16000 to 5900 mB |
+| lithography/cosmic_logic_wafer | hyperdimensional_wafer 4 to 3, coherent_wiring_harness 4 to 3 |
+| lithography/hyperdimensional_logic_wafer | hyperdimensional_wafer 4 to 3, coherent_wiring_harness 4 to 3 |
+| lithography/photonic_logic_wafer | cherenkov_wafer 4 to 3, genome_sample 8 to 7, photoresist 1600 to 1400 mB |
+| lithography/qubit_array_wafer | cherenkov_wafer 4 to 3, cryocooler_unit 4 to 3 |
+| lithography/topological_logic_wafer | topological_wafer 4 to 3 |
+| mass_modulation/higgs_catalyst | higgs_boson_crystal 8 to 3 |
+| mass_modulation/inertia_damper | negative_mass_ingot 8 to 1, antiproton_bundle 8 to 1, nanite_slurry 16000 to 8000 mB |
+| mass_modulation/massless_alloy | neutronium_ingot 16 to 1, sterile_neutrino 8 to 1, bose_einstein_condensate 32000 to 1400 mB |
+| mass_modulation/negative_mass_ingot | massless_alloy 8 to 1, exotic_matter_crystal 8 to 1, claytronic_catom 8 to 1, exotic_matter 32000 to 100 mB |
+| mass_modulation/r32_metastable_vacuum_mapping | higgs_field_capacitor 16 to 3 |
+| mass_modulation/r32_true_vacuum_nucleation | metastable_vacuum_lattice 8 to 1, exotic_matter_crystal 8 to 3 |
+| matrioshka/r140_uploaded_minds | engram 16 to 3, computronium_ingot 32 to 5, engineered_mind 2 to 1, proof_lattice 2 to 1, synaptic_fluid 256000 to 62200 mB |
+| matrioshka/superintelligence | general_ai_core 64 to 6, kaluza_klein_singularity 16 to 1, quantum_field_lattice 64 to 6, rift_anchor 16 to 1, novikov_crystal 64 to 6, hyperdimensional_die 16 to 1, engineered_mind 2 to 1, proof_lattice 2 to 1 |
+| mirror_synthesis/antigold_ingot | raw_antigold 24 to 1, entangled_bus_bar 24 to 1, photonic_neuron 24 to 1, raw_antiiron 12 to 1, topological_wafer 24 to 1, pentaquark_shard 12 to 1, void_essence 48 to 1, liquid_antihelium 12800 to 100 mB, exotic_solder 32000 to 100 mB, synaptic_fluid 32000 to 100 mB |
+| mirror_synthesis/antiiron_ingot | raw_antiiron 24 to 1, antisilicon_shard 12 to 1, femto_inductor 24 to 1, antiproton_bundle 12 to 1, penrose_spindle 12 to 1, tachyon_crystal 24 to 1, liquid_antihelium 12800 to 100 mB |
+| mirror_synthesis/baryogenesis_seed | antigold_ingot 48 to 1, mirror_alloy_ingot 48 to 1, arrow_of_time_shard 24 to 1, mirror_processor 12 to 1, chronoplastic_gasket 24 to 1, chronosteel_singularity 12 to 1, octonion_crystal 12 to 1, penrose_spindle 24 to 1, liquid_antihelium 128000 to 200 mB, chronon_gas 32000 to 400 mB |
+| mirror_synthesis/cpt_reflect_quarks | up_down_quarks 48 to 12, antimatter_pellet 24 to 7 |
+| mirror_synthesis/mirror_alloy_ingot | antiiron_ingot 12 to 1, chronoplastic_gasket 24 to 1, annihilation_core 24 to 1, cryptochrome_magnetoreceptor 24 to 1, liquid_antihelium 32000 to 100 mB |
+| mirror_synthesis/mirror_processor | antisilicon_shard 48 to 1, anticarbon_crystal 12 to 1, antiquark_shard 12 to 1, quantum_processor 12 to 1, raw_antigold 12 to 1, atto_transistor 12 to 1, noble_gas_clathrate 12 to 1, protostar_core 12 to 1, liquid_antihelium 32000 to 100 mB, neutrino_flux 32000 to 100 mB, chronon_gas 32000 to 100 mB |
+| mirror_synthesis/r32_baryogenesis_from_asymmetry | baryon_asymmetry_crystal 24 to 7, antihelium_nucleus 12 to 3 |
+| nanofabrication/claytronic_catom | programmable_matter 6 to 3, nanite_slurry 8000 to 4100 mB, tachyon_flux 8000 to 4100 mB |
+| nanofabrication/phase_locked_stabiliser | field_calibrator 12 to 6, superconducting_coil 48 to 24, quantum_processor 24 to 1, chronon_capacitor 24 to 1 |
+| nanofabrication/programmable_matter | nanite_swarm 24 to 1, nanite_slurry 16000 to 400 mB |
+| nanofabrication/von_neumann_probe | claytronic_catom 24 to 1, quantum_processor 6 to 1, dyson_swarm_satellite 6 to 1, entangled_bus_bar 6 to 1, nanite_slurry 64000 to 6800 mB, exotic_matter 8000 to 200 mB |
+| neural_synthesis/computronium_ingot | quantum_processor 6 to 1, photonic_neuron 6 to 1, void_essence 6 to 1, synaptic_fluid 8000 to 2200 mB |
+| neural_synthesis/error_correction_lattice | quantum_processor 6 to 1, qubit_array_wafer 6 to 1, synaptic_fluid 8000 to 600 mB, bose_einstein_condensate 8000 to 600 mB |
+| neural_synthesis/general_ai_core | narrow_ai_core 24 to 1, formal_proof_tree 12 to 1, function_graph 6 to 1, synaptic_fluid 64000 to 2200 mB, bose_einstein_condensate 8000 to 300 mB |
+| neural_synthesis/narrow_ai_core | neural_lattice 6 to 1, quantum_processor 12 to 1, strange_matter_pellet 6 to 1, cherenkov_lattice 24 to 14, synaptic_fluid 32000 to 600 mB |
+| neural_synthesis/neural_lattice | photonic_neuron 48 to 1, geiger_tube 24 to 18, synaptic_fluid 16000 to 100 mB |
+| neural_synthesis/photonic_neuron | lattice_seed 24 to 6, theodolite_lens 24 to 6, supercritical_solvent 8000 to 2200 mB |
+| neural_synthesis/superintelligence_core | general_ai_core 24 to 1, tesseract_core 6 to 1, spin_foam_lattice 6 to 1, synaptic_fluid 128000 to 44700 mB |
+| neutrino_capture/sterile_neutrino | degenerate_matter_chunk 6 to 1, circuit_substrate 24 to 1, telescope_mirror_blank 24 to 1, bose_einstein_condensate 8000 to 200 mB |
+| nucleosynthesis/main_sequence_ignition | protostar_core 8 to 1, antimatter_pellet 16 to 1, penrose_spindle 8 to 1, nebular_gas 256000 to 4500 mB, quark_gluon_plasma 64000 to 2300 mB |
+| nucleosynthesis/protostar_core | graviton_crystal 8 to 1, chronoplastic_gasket 8 to 1, nebular_gas 256000 to 800 mB, dimensional_residue 16000 to 100 mB |
+| nucleosynthesis/protostar_core_early | neutronium_block 8 to 1, chronon_capacitor 8 to 1, nebular_gas 256000 to 400 mB, tachyon_flux 16000 to 100 mB |
+| nucleosynthesis/r32_bbn_from_quarks | up_down_quarks 32 to 5, neutronium_ingot 16 to 5, quark_gluon_plasma 64000 to 23000 mB |
+| nucleosynthesis/red_giant_phase | stellar_core 8 to 4, power_set 8 to 4, raw_antigold 8 to 4, stellar_plasma 256000 to 139300 mB, quark_gluon_plasma 16000 to 8700 mB |
+| nuclide_synthesis/flerovium_ingot | alcubierre_coil 12 to 3 |
+| nuclide_synthesis/unbihexium_ingot | flerovium_ingot 24 to 3 |
+| phase_transmutation/calabi_yau_manifold | topological_insulator 12 to 1, void_lattice_shard 24 to 6, photonic_lens 12 to 3, bose_einstein_condensate 16000 to 1200 mB |
+| phase_transmutation/higgs_field_capacitor | superconducting_coil 6 to 1, magnetic_monopole 6 to 1, bose_einstein_condensate 8000 to 100 mB, dark_matter 8000 to 100 mB |
+| phase_transmutation/topological_board | circuit_substrate 12 to 2, topological_insulator 6 to 1, femto_inductor 24 to 1, photonic_processor 12 to 1, bose_einstein_condensate 8000 to 500 mB |
+| phase_transmutation/topological_insulator | cherenkov_boule 12 to 1, bose_einstein_condensate 8000 to 300 mB |
+| plasma_smelting/chronosteel | chronon_capacitor 8 to 1, hawking_absorber_plate 8 to 4, sterile_neutrino 8 to 1, crystalline_matrix_ingot 32 to 17, rf_resonator_cell 16 to 2, chronon_gas 32000 to 4000 mB, dark_matter 16000 to 1900 mB |
+| plasma_smelting/spacetime_alloy | cosmic_string_segment 8 to 7, exotic_matter_crystal 16 to 14, entangled_bus_bar 16 to 13, wave_packet 8 to 7, antihydrogen_crystal 8 to 7, exotic_matter 64000 to 54400 mB, dark_matter 16000 to 14400 mB |
+| psionic_attunement/psionic_crystal | photonic_neuron 8 to 6, cryptochrome_magnetoreceptor 8 to 1, synaptic_fluid 32000 to 15700 mB |
+| psionic_attunement/r32_boltzmann_brain_from_fluctuation | boltzmann_fluctuation 8 to 2, psionic_ether 16000 to 7100 mB |
+| psionic_attunement/thought_matrix | psionic_crystal 8 to 1, chronoplastic_gasket 8 to 1, psionic_ether 32000 to 600 mB |
+| reality_compilation/eternity_catalyst | spacetime_catalyst 32 to 1, empirical_notes_1 32 to 1, causal_solder 1179648 to 100 mB |
+| reality_compilation/omega_point | source_code_fragment 128 to 24, ontological_processor 64 to 10, einstein_rosen_core 64 to 58 |
+| reality_compilation/reality_anchor | source_code_fragment 32 to 3 |
+| reality_compilation/source_code_fragment | theoretical_notes_3 32 to 4, empirical_notes_1 32 to 4 |
+| spectrometry/lepton_triplet | sterile_neutrino 6 to 2, antimatter_pellet 6 to 2, dipole_winding 6 to 2, neutrino_flux 16000 to 4300 mB |
+| spectrometry/strange_charm_quarks | strange_matter_pellet 6 to 1, hawking_absorber_plate 6 to 1, sterile_neutrino 6 to 1, quark_gluon_plasma 16000 to 900 mB, chronon_gas 8000 to 400 mB |
+| spectrometry/virtual_quark_condensation | virtual_quark 48 to 29, entangled_bus_bar 6 to 1, proton_decay_residue 6 to 1, exotic_solder 8000 to 500 mB |
+| stellar_compression/neutronium_compression | raw_antigold 12 to 1, casimir_plate 48 to 8, differential_manifold 12 to 1, topological_wafer 24 to 3, up_down_quarks 12 to 1, carborane_superacid 32000 to 4200 mB |
+| stellar_compression/pulsar_timing_crystal | antigold_ingot 12 to 6, higgs_catalyst 12 to 6, exotic_matter 32000 to 29700 mB |
+| stellar_compression/quark_star_core | supernova_remnant 12 to 3, chronoplastic_gasket 24 to 10, hyperdimensional_boule 12 to 10, mirror_processor 12 to 3, topological_logic_wafer 48 to 42, quantum_string 12 to 3, synaptic_fluid 32000 to 25200 mB |
+| stellar_compression/r32_big_crunch | spin_foam_lattice 12 to 3 |
+| stellar_compression/supernova_remnant | red_giant_envelope 24 to 1, stellar_iron_ingot 96 to 4, neutronium_block 12 to 5, chronoplastic_gasket 24 to 1, strange_matter_singularity 12 to 5, massless_alloy 12 to 1, bose_einstein_condensate 32000 to 13800 mB, synaptic_fluid 32000 to 13800 mB |
+| string_weaving/brane_tension_weaving | quantum_string 24 to 3, bulk_crystal 12 to 2 |
+| string_weaving/cosmic_lens | tesseract_lens 12 to 2, spacetime_catalyst 12 to 2 |
+| string_weaving/m_brane | d_brane_sheet 24 to 3, g2_manifold 12 to 1 |
+| string_weaving/quantum_string | cosmic_string_segment 12 to 4, tachyon_crystal 12 to 4, exotic_matter 32000 to 13000 mB |
+| string_weaving/stabiliser_matrix | quantum_string 24 to 2, exotic_matter 64000 to 7700 mB |
+| surface_firing/r87_mobius_strip_hyperbolic | hyperbolic_stone 16 to 7 |
+| synchrotron/bottom_top_quarks | strange_charm_quarks 16 to 3, pentaquark_shard 8 to 3, fractal_set 8 to 3, general_ai_core 8 to 1, photonic_board 32 to 28, derivative_operator 8 to 1, quark_gluon_plasma 64000 to 28000 mB, chronon_gas 16000 to 6700 mB |
+| synchrotron/glueball_core | strange_matter_pellet 16 to 1, plasma_nozzle_tip 8 to 1, chronon_capacitor 8 to 1, femto_inductor 8 to 2, quark_gluon_plasma 64000 to 15300 mB, neutrino_flux 16000 to 800 mB |
+| synchrotron/higgs_boson_crystal | gauge_boson_cluster 16 to 4, bottom_top_quarks 8 to 1, entangled_bus_bar 16 to 4, atto_inductor 8 to 6, hawking_emitter 8 to 6 |
+| synchrotron/hyperon_crystal | sterile_neutrino 8 to 1, strange_matter_pellet 16 to 1, tachyon_crystal 8 to 1, qubit_array_wafer 16 to 1, tachyon_klystron 8 to 1, nanite_swarm 8 to 1, strange_matter 32000 to 500 mB, nebular_gas 16000 to 200 mB |
+| synchrotron/pentaquark_shard | strange_matter_pellet 8 to 1, antimatter_pellet 8 to 1, tachyon_klystron 8 to 1, quark_gluon_plasma 32000 to 3100 mB, bose_einstein_condensate 16000 to 1500 mB, tachyon_flux 16000 to 1500 mB |
+| synchrotron/synchrotron_strange_matter | neutronium_ingot 32 to 4, chiral_crystal 16 to 1, pixel_tracker_module 8 to 1, casimir_plate 32 to 3, gravitic_lens_element 8 to 1, quark_gluon_plasma 16000 to 1300 mB, chronon_gas 16000 to 700 mB |
+| tachyon_resonance/tachyon_crystal | photonic_board 24 to 4 |
+| tachyon_resonance/tachyon_klystron | superconducting_coil 12 to 3, genome_sample 12 to 3 |
+| tensor_calculus/einstein_field_core | riemann_curvature_tensor 16 to 3, integral_operator 16 to 15, exotic_matter 32000 to 29200 mB |
+| tensor_calculus/kerr_metric_shard | einstein_field_core 8 to 7 |
+| tensor_calculus/lorentz_transform_crystal | tachyon_crystal 8 to 5, antiproton_bundle 8 to 5, tachyon_flux 16000 to 11800 mB |
+| tensor_calculus/metric_tensor | minkowski_lattice 8 to 6, derivative_operator 16 to 15, chronoplastic_gasket 8 to 6 |
+| tensor_calculus/minkowski_lattice | lorentz_transform_crystal 16 to 2, differential_manifold 8 to 1, quaternion_crystal 8 to 1, protostar_core 8 to 1 |
+| tensor_calculus/riemann_curvature_tensor | metric_tensor 16 to 1, micro_singularity 8 to 3, chronoplastic_gasket 8 to 2, exotic_solder 16000 to 4900 mB |
+| universe_forging/pocket_universe | theoretical_notes_2 16 to 11 |
+| universe_forging/r32_pocket_universe_from_first_principles | universe_seed 16 to 1, true_vacuum_seed 16 to 9, inflaton_condensate 16 to 3, living_archive 2 to 1, unified_field_lattice 2 to 1, inflaton_field 256000 to 56100 mB |
+| universe_forging/recycle_remnants | heat_death_remnant 64 to 14, einstein_rosen_core 16 to 3 |
+| vacuum_harvesting/foam_boundary_harvest | casimir_plate 128 to 67, false_vacuum 1024000 to 540000 mB |
+| weaving/dark_matter_lens | void_lattice_shard 4 to 1, coherent_wiring_harness 4 to 1, dark_matter 8000 to 100 mB |
+| weaving/dipole_winding | superconducting_coil 12 to 2, neutronium_plate 8 to 2, superposition_crystal 8 to 2 |
+| weaving/dyson_shell_segment | stellar_iron_ingot 16 to 2, higgs_field_capacitor 4 to 1, tachyon_singularity 8 to 7, stellar_plasma 16000 to 13300 mB |
+| weaving/dyson_swarm_satellite | quantum_processor 4 to 3 |
+| weaving/gravitic_lens_element | dark_matter_lens 4 to 1, coherent_wiring_harness 4 to 1, dark_matter 4000 to 400 mB |
+| weaving/horizon_glass_lens | horizon_glass 16 to 7, coherent_wiring_harness 4 to 3, dark_matter 4000 to 1800 mB |
+| weaving/metamaterial_sheet | neutronium_plate 4 to 1, bose_einstein_condensate 1600 to 100 mB |
+| weaving/mobius_strip | topological_insulator 4 to 1, function_graph 4 to 1, coherent_wiring_harness 4 to 1, bose_einstein_condensate 4000 to 1400 mB |
+| weaving/photonic_board | circuit_substrate 4 to 1, superconducting_coil 4 to 1, neutronium_plate 8 to 3, photoresist 4000 to 1500 mB |
+| weaving/void_essence_lens | void_essence 8 to 1, coherent_wiring_harness 4 to 1, dark_matter 4000 to 100 mB |
+| white_hole/cosmic_string_segment | white_hole_fragment 8 to 1, hawking_emitter 8 to 1, entangled_bus_bar 16 to 1, pentaquark_shard 8 to 1, antiquark_shard 8 to 1, lepton_triplet 8 to 1, exotic_solder 16000 to 300 mB, chronon_gas 16000 to 300 mB |
+| white_hole/ejecta_white_hole | cosmic_lens 8 to 3 |
+| white_hole/stellar_core | white_hole_fragment 8 to 4, entangled_bus_bar 16 to 7, modular_form 8 to 4, assembly_matrix 8 to 4 |
+| white_hole/white_hole_fragment | micro_singularity 8 to 2, chronon_capacitor 8 to 2, calabi_yau_manifold 8 to 2, topological_die 8 to 2, chronon_gas 64000 to 17700 mB, neutrino_flux 16000 to 4400 mB |
+| wormhole_transit/distant_star_system | exotic_matter 1000 to 200 mB |
+</details>
+
+### Added
+
+* **Space suits of other mods hold off the vacuum.** A new item tag, theoreticalsciences:vacuum_suits, lists armour
+  that seals against the Orbital Station's vacuum. It holds Ad Astra's Space Suit, Netherite Space Suit and Jet Suit
+  when Ad Astra is installed (nothing when it is not), and packs can add their own. A full set means one sealed piece
+  in each of the four slots, in any mix of this mod's Pressure, Heated Pressure and Frontier suits and the tagged
+  pieces. Ad Astra's own oxygen use is Ad Astra's: this mod only asks whether the suit is sealed.
+* **Test kits.** /theoreticalsciences testkit <players> <kit> gives a kit of items and grants its research, to try a
+  part of the mod without crafting up to it; /theoreticalsciences testkit list names them. Kits: archaeology (1.6.0),
+  field_synthesis (one of each E1 to E5 material, 1.7.x), home (the Empyrean table, the altar, a full portal ring and
+  the 42 materials, 1.8.0), omnipotency (its blocks, tablets, disc and one egg of each creature, 1.9.0) and station
+  (the three sealed suits and rocket parts). What does not fit in the inventory goes to the Ender Chest, not the
+  ground. Kits are data (data/<namespace>/ts_testkits/<kit>.json), so a pack can add its own.
+
+
 ## 1.9.1: The angels as they were described
 
 The three angels of Omnipotency are remodelled after the accounts in Ezekiel 1 and 10, Isaiah 6 and Revelation 4.

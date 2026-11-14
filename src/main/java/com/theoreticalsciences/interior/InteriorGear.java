@@ -81,7 +81,7 @@ public final class InteriorGear {
     }
 
     public static class SuitItem extends ArmorItem {
-        final Suit suit;
+        public final Suit suit;
 
         SuitItem(Suit suit, Type type) {
             super(suit.material, type, new Item.Properties().stacksTo(1).durability(type.getDurability(30)).fireResistant());

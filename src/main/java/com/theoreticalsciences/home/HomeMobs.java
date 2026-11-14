@@ -73,7 +73,10 @@ public final class HomeMobs {
     }
 
     static boolean isBlock(BlockState s, String... ids) {
-        for (String id : ids) if (s.is(QHBlocks.get(id))) return true;
+        if (s.isAir()) return false;
+        var key = BuiltInRegistries.BLOCK.getKey(s.getBlock());
+        if (!com.theoreticalsciences.TheoreticalSciences.MODID.equals(key.getNamespace())) return false;
+        for (String id : ids) if (id.equals(key.getPath())) return true;
         return false;
     }
 
