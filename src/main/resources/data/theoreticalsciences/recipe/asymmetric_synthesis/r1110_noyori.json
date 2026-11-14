@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:asymmetric_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:chiral_ligand",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:enantiopure_reagent",
+      "count": 8
+    }
+  ],
+  "energy": 256,
+  "duration": 100,
+  "research": "theoreticalsciences:asymmetric_synthesis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dG": 7000.0,
+      "Ea": 30000.0
+    },
+    "windows": [
+      {
+        "q": "ee",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:chiral_ligand"
+    }
+  ]
+}

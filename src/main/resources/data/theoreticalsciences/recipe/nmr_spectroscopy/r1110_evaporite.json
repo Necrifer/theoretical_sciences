@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:nmr_spectroscopy",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:organic_evaporite",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:structure_card",
+      "count": 6
+    },
+    {
+      "id": "theoreticalsciences:organic_evaporite",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:nmr_spectroscopy",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "gm": 10.71
+    },
+    "windows": [
+      {
+        "q": "off",
+        "min": 0.0,
+        "max": 5.0
+      }
+    ]
+  }
+}

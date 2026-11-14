@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:provenancing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stabilised_artefact",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:radiogenic_lead",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:provenanced_artefact",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:isotope_provenance",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "R": 0.7095,
+      "Ra": 0.712,
+      "Rb": 0.708
+    },
+    "windows": [
+      {
+        "q": "sep",
+        "min": 25,
+        "max": 100000
+      }
+    ]
+  }
+}

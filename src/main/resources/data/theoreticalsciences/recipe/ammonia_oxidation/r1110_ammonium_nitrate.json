@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:ammonia_oxidation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:nitric_acid",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ammonium_nitrate",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 100,
+  "research": "theoreticalsciences:ostwald_process",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "S",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:platinum_rhodium_gauze"
+    }
+  ]
+}

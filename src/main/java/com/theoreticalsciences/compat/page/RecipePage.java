@@ -194,6 +194,12 @@ public final class RecipePage {
         // 1.7.3: another mod's mechanic, drawn on in place of its items
         if (r.mana > 0) line(0xFF40C8FF, Component.translatable("jei.theoreticalsciences.mana", String.format(java.util.Locale.ROOT, "%,d", r.mana)));
         if (r.aura > 0) line(0xFF70E080, Component.translatable("jei.theoreticalsciences.aura", String.format(java.util.Locale.ROOT, "%,d", r.aura)));
+        if (r.vis > 0) line(0xFFB070FF, Component.translatable("jei.theoreticalsciences.vis", String.format(java.util.Locale.ROOT, "%,d", r.vis)));
+        if (!r.aspects.isEmpty()) line(0xFFD0A0FF, Component.translatable("jei.theoreticalsciences.aspects", String.join(", ", r.aspects.entrySet().stream()
+                .map(e -> e.getValue() + " " + Character.toUpperCase(e.getKey().replaceFirst(".*:", "").charAt(0)) + e.getKey().replaceFirst(".*:", "").substring(1)).toList())));
+        if (r.flux > 0) line(0xFF9050C0, Component.translatable("jei.theoreticalsciences.flux", String.format(java.util.Locale.ROOT, "%,d", r.flux)));
+        if (r.lumen > 0) line(0xFF80B0FF, Component.translatable("jei.theoreticalsciences.lumen", String.format(java.util.Locale.ROOT, "%,d", r.lumen),
+                r.lumenKind.isEmpty() || r.lumenKind.equals("any") ? "any" : Character.toUpperCase(r.lumenKind.replaceFirst(".*:", "").charAt(0)) + r.lumenKind.replaceFirst(".*:", "").substring(1)));
         // the catalyst, and what happens to it
         for (Slot s : slots) {
             if (s.kind() != Kind.CATALYST || !s.catalystSlot()) continue;

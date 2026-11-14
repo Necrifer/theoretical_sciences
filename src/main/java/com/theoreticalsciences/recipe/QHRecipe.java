@@ -55,6 +55,16 @@ public class QHRecipe implements Recipe<QHRecipeInput> {
     public com.theoreticalsciences.machine.physics.RecipePhysics physics = com.theoreticalsciences.machine.physics.RecipePhysics.NONE;
     /** 1.7.3: Botania mana taken per run from a Mana Pool against the machine, and Nature's Aura aura taken from the air round it. */
     public int mana, aura;
+    /** 1.11.0: Thaumaturge vis taken from the chunk's aura, flux left in it, and aspects from the jars against the machine;
+     *  Astral Sorcery Lumen of one constellation's kind (or "any") from the Lumen network against it. */
+    public int vis, flux, lumen;
+    public String lumenKind = "";
+    public java.util.Map<String, Integer> aspects = java.util.Map.of();
+
+    /** Whether the recipe draws on any other mod's mechanic. */
+    public boolean magical() {
+        return mana > 0 || aura > 0 || vis > 0 || flux > 0 || lumen > 0 || !aspects.isEmpty();
+    }
     private final List<SizedIngredient> matchList;
 
     public QHRecipe(String typeId, List<SizedIngredient> itemInputs, List<SizedFluidIngredient> fluidInputs,

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:wormhole_transit",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:er_bridge_thread",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:exotic_matter_crystal",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:exotic_matter",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:wormhole_throat",
+      "count": 5
+    }
+  ],
+  "energy": 4194304,
+  "duration": 1200,
+  "research": "theoreticalsciences:traversable_wormholes",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "tt",
+        "min": 10.0,
+        "max": 60.0
+      },
+      {
+        "q": "b0",
+        "min": 50.0,
+        "max": 1000.0
+      }
+    ]
+  }
+}

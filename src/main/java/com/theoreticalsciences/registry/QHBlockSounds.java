@@ -40,6 +40,14 @@ public final class QHBlockSounds {
                  "void_bricks_slab", "void_bricks_stairs", "void_bricks_wall", "void_lattice_ore" -> SoundType.STONE;
             case "chondrite", "impact_breccia", "iron_meteorite" -> SoundType.TUFF;
             case "dust_cloud", "hydrogen_cloud", "oxygen_cloud" -> SoundType.WOOL;
+            case "annihilation_scar" -> SoundType.GLASS;          // 1.11.0
+            case "antihydrogen_firn" -> SoundType.SNOW;          // 1.11.0
+            case "spin_foam_mesh" -> SoundType.AMETHYST;          // 1.11.0
+            case "metastable_crust" -> SoundType.CALCITE;          // 1.11.0
+            case "stretched_rock" -> SoundType.DEEPSLATE;          // 1.11.0
+            case "blueshift_crust" -> SoundType.AMETHYST;          // 1.11.0
+            case "outflow_rock" -> SoundType.BASALT;          // 1.11.0
+            case "nucleosynthesis_crust" -> SoundType.TUFF;          // 1.11.0
             default -> null;
         };
     }

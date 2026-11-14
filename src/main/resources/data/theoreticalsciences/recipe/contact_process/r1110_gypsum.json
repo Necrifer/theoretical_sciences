@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:contact_process",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:gypsum_crystal",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sulfuric_acid",
+      "amount": 600
+    }
+  ],
+  "energy": 2048,
+  "duration": 200,
+  "research": "theoreticalsciences:contact_process",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Xp",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:vanadium_bed"
+    }
+  ]
+}

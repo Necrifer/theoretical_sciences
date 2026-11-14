@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:population_genetics",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:yeast_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:evolved_strain",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:population_genetics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "fix",
+        "min": 0.5,
+        "max": 2.0
+      }
+    ]
+  }
+}

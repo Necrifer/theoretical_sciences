@@ -1,0 +1,34 @@
+{
+  "type": "theoreticalsciences:electroplating",
+  "item_inputs": [
+    {
+      "item": "minecraft:glass",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nickel_sulfate_solution",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:telescope_mirror_blank",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:electroplating",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "th",
+        "min": 20.0,
+        "max": 50.0
+      }
+    ]
+  }
+}

@@ -249,7 +249,7 @@ def main():
         if len(rs) < 2:
             continue
         each = lambda r: unit_cost(r, cost)
-        newer = [r for r in rs if re.search(r'/r1[6-9]\d_', r['file'])]
+        newer = [r for r in rs if re.search(r'/r(1[6-9]\d|1[1-9]\d\d)_', r['file'])]
         older = [r for r in rs if r not in newer]
         for r in newer:
             if older and each(r) > min(each(o) for o in older) * 1.001:

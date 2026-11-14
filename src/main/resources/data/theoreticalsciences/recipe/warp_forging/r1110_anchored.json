@@ -1,0 +1,58 @@
+{
+  "type": "theoreticalsciences:warp_forging",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:warp_bubble_core",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:chronal_anchor",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:strained_spacetime",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:anchored_warp_bubble",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 2400,
+  "research": "theoreticalsciences:alcubierre_metric",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "v",
+        "min": 1.0,
+        "max": 99.0
+      },
+      {
+        "q": "E",
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "q": "tid",
+        "min": 0.0,
+        "max": 5.0
+      },
+      {
+        "q": "Rs",
+        "min": 10.0,
+        "max": 1000000000.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:geodesic_compass"
+    }
+  ]
+}

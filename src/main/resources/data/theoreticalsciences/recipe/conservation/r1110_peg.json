@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:conservation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:charred_beam",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stabilised_artefact",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:conservation_science",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "C0": 3000,
+      "Lt": 8
+    },
+    "windows": [
+      {
+        "q": "C",
+        "min": 0,
+        "max": 100
+      }
+    ]
+  }
+}

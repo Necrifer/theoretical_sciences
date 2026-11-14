@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:chaos_control",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:strange_attractor",
+      "count": 1
+    },
+    {
+      "item": "minecraft:redstone",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:random_number_chip",
+      "count": 20
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:chaos_theory",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lam",
+        "min": 0.5,
+        "max": 10
+      },
+      {
+        "q": "ctrl",
+        "min": 0.9,
+        "max": 1
+      }
+    ]
+  }
+}

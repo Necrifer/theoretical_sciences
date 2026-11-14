@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:encoding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:entangled_photon_pair",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:one_time_pad",
+      "count": 20
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:error_correction",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "eps": 0.001,
+      "tol": 0.001
+    },
+    "windows": [
+      {
+        "q": "fail",
+        "min": -1.0,
+        "max": 0.001
+      }
+    ]
+  }
+}

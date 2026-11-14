@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:enzyme_assay",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:mould_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:assayed_enzyme",
+      "count": 20
+    }
+  ],
+  "energy": 2,
+  "duration": 20,
+  "research": "theoreticalsciences:enzyme_kinetics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Km": 2.0,
+      "Ii": 0.0,
+      "Ki": 1.0,
+      "nH": 1.0
+    },
+    "windows": [
+      {
+        "q": "sat",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

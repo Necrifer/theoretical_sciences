@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:phage_culture",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:bacteriophage",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:sterile_pack",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antibiotic",
+      "count": 24
+    }
+  ],
+  "energy": 256,
+  "duration": 240,
+  "research": "theoreticalsciences:viruses",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "lat": 25.0
+    },
+    "windows": [
+      {
+        "q": "inf",
+        "min": 0.9,
+        "max": 1.0
+      },
+      {
+        "q": "burst",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

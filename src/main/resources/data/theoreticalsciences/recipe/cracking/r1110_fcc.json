@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:cracking",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:crude_oil",
+      "amount": 2000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ethylene",
+      "amount": 800
+    },
+    {
+      "id": "theoreticalsciences:propylene",
+      "amount": 800
+    },
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 400
+    }
+  ],
+  "energy": 925,
+  "duration": 50,
+  "research": "theoreticalsciences:petrochemistry",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Se",
+        "min": 0.6,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst"
+    }
+  ]
+}

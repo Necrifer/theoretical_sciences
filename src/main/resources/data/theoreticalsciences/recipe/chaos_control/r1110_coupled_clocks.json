@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:chaos_control",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:chemical_clock",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glowstone_dust",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:strange_attractor",
+      "count": 1
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:chaos_theory",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lam",
+        "min": 0.5,
+        "max": 10
+      },
+      {
+        "q": "ctrl",
+        "min": 0.9,
+        "max": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:chronobiology",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:circadian_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:folded_protein_crystal",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cryptochrome_magnetoreceptor",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:chronobiology",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lock",
+        "min": 0.8,
+        "max": 2.0
+      },
+      {
+        "q": "active",
+        "min": 0.6,
+        "max": 2.0
+      }
+    ]
+  }
+}

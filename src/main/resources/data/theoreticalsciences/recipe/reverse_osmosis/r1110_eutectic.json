@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:reverse_osmosis",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:eutectic_brine",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:concentrated_brine",
+      "amount": 600
+    },
+    {
+      "id": "minecraft:water",
+      "amount": 400
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:osmosis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 0.6,
+      "ii": 2.0
+    },
+    "windows": [
+      {
+        "q": "J",
+        "min": 0.5,
+        "max": 99.0
+      }
+    ]
+  }
+}

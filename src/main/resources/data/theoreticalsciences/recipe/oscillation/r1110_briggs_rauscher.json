@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:oscillation",
+  "item_inputs": [
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glowstone_dust",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chemical_clock",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:oscillating_reactions",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "hop",
+        "min": 0.2,
+        "max": 99.0
+      },
+      {
+        "q": "per",
+        "min": 3.0,
+        "max": 8.0
+      }
+    ]
+  }
+}

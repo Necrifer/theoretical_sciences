@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:storm_synthesis",
+  "item_inputs": [
+    {
+      "item": "minecraft:sand",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:fulgurite",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:meteorology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "fref": 2.0
+    },
+    "windows": [
+      {
+        "q": "fl",
+        "min": 2.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

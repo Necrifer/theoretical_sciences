@@ -70,7 +70,70 @@ public final class QHCommands {
                 .then(radiation())
                 .then(home())                                                    // 1.8.0
                 .then(testkit())                                                 // 1.10.0
+                .then(windowsReach())                                            // 1.11.0
                 .then(com.theoreticalsciences.orbit.OrbitCommands.station()));   // 1.3.0
+    }
+
+    /**
+     * 1.11.0, for the mod's own tools: /theoreticalsciences windows reach &lt;recipe type&gt;. For every recipe of that type
+     * with console windows, samples what a player can reach (every coolant, coil tiers 1 to 5, the machine's temperature
+     * and state variables settled as in play) and writes the window quantities at each working point to
+     * ts_window_reach/&lt;type&gt;.json in the server folder. Runs off the server thread. Operators only (level 4).
+     */
+    private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack> windowsReach() {
+        return Commands.literal("windows").requires(s -> s.hasPermission(4)).then(Commands.literal("reach")
+                .then(Commands.argument("type", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(ctx -> {
+                    String type = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "type");
+                    var server = ctx.getSource().getServer();
+                    com.theoreticalsciences.machine.MachineType mt = null;
+                    for (var t : com.theoreticalsciences.machine.MachineType.values()) if (t.recipeType.equals(type)) { mt = t; break; }
+                    if (mt == null) {
+                        ctx.getSource().sendFailure(Component.literal("No machine makes " + type));
+                        return 0;
+                    }
+                    final var machine = mt;
+                    var recipes = new java.util.ArrayList<>(server.getRecipeManager().getAllRecipesFor(com.theoreticalsciences.registry.QHRecipes.type(type)));
+                    var out = server.getServerDirectory().resolve("ts_window_reach").resolve(type + ".json");
+                    java.util.concurrent.CompletableFuture.runAsync(() -> {
+                        var root = new com.google.gson.JsonObject();
+                        for (var h : recipes) {
+                            var phys = h.value().physics;
+                            if (phys.windows().isEmpty()) continue;
+                            var o = new com.google.gson.JsonObject();
+                            var ws = new com.google.gson.JsonArray();
+                            for (var w : phys.windows()) {
+                                var wo = new com.google.gson.JsonObject();
+                                wo.addProperty("q", w.q());
+                                wo.addProperty("min", w.min());
+                                wo.addProperty("max", w.max());
+                                ws.add(wo);
+                            }
+                            o.add("windows", ws);
+                            var arr = new com.google.gson.JsonArray();
+                            for (int coil = 1; coil <= 5; coil++) {
+                                var pts = new com.theoreticalsciences.machine.physics.DemonSolver(machine.id(), phys, coil, Math.min(coil, 3), 0, 1, new double[0], null,
+                                        h.id().hashCode() * 31L + coil).reach(400);
+                                for (double[] p : pts) {
+                                    var a = new com.google.gson.JsonArray();
+                                    a.add(coil);
+                                    for (double v : p) a.add(Double.isFinite(v) ? v : 0.0);
+                                    arr.add(a);
+                                }
+                            }
+                            o.add("samples", arr);
+                            root.add(h.id().toString(), o);
+                        }
+                        try {
+                            java.nio.file.Files.createDirectories(out.getParent());
+                            java.nio.file.Files.writeString(out, root.toString());
+                        } catch (java.io.IOException ex) {
+                            com.theoreticalsciences.TheoreticalSciences.LOGGER.warn("windows reach: could not write {}", out, ex);
+                        }
+                        com.theoreticalsciences.TheoreticalSciences.LOGGER.info("windows reach: wrote {} ({} recipes)", out, root.size());
+                    });
+                    ctx.getSource().sendSuccess(() -> Component.literal("Sampling " + type + " off-thread; see the log"), false);
+                    return 1;
+                })));
     }
 
     /**

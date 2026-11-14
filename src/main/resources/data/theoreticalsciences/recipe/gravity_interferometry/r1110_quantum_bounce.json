@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:gravity_interferometry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cow_record",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:wave_packet",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 1200,
+  "research": "theoreticalsciences:neutron_interferometry",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "fr",
+        "min": 0.9,
+        "max": 1.0
+      },
+      {
+        "q": "phi",
+        "min": 30.0,
+        "max": 1000000000.0
+      },
+      {
+        "q": "sp",
+        "min": 0.0,
+        "max": 0.1
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:perfect_crystal_interferometer"
+    }
+  ]
+}

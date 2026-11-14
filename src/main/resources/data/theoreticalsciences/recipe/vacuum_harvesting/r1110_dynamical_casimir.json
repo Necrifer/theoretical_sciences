@@ -1,0 +1,30 @@
+{
+  "type": "theoreticalsciences:vacuum_harvesting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:casimir_plate",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:virtual_photon",
+      "count": 10
+    }
+  ],
+  "energy": 1048576,
+  "duration": 800,
+  "research": "theoreticalsciences:quantum_foam",
+  "unscaled": true,
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:planck_diver"
+    }
+  ]
+}

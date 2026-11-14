@@ -1,0 +1,56 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "astralsorcery"
+    }
+  ],
+  "type": "theoreticalsciences:femto_assembly",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:charged_lattice_seed",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:photonic_board",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:atto_capacitor",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:qubit_die",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "astralsorcery:liquid_starlight",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:unified_field_lattice",
+      "count": 1
+    }
+  ],
+  "energy": 1048576,
+  "duration": 1800,
+  "research": "theoreticalsciences:femtoengineering",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "sig",
+        "min": 5.91,
+        "max": 13.51
+      }
+    ]
+  },
+  "magic": {
+    "lumen": 1500,
+    "lumen_kind": "prismatic"
+  }
+}

@@ -1127,6 +1127,14 @@ public final class QHContentList {
         new BlockDef("antistone", "simple", 1, 3.0F, "iron", ""),
         new BlockDef("antisoil", "simple", 0, 1.5F, "none", ""),
         new BlockDef("antistone_bricks", "deco", 0, 3.0F, "iron", ""),
+        new BlockDef("annihilation_scar", "simple", 6, 3.0F, "iron", ""),          // 1.11.0
+        new BlockDef("antihydrogen_firn", "simple", 0, 0.8F, "none", ""),          // 1.11.0
+        new BlockDef("spin_foam_mesh", "simple", 4, 1.5F, "none", ""),          // 1.11.0
+        new BlockDef("metastable_crust", "simple", 3, 2.0F, "iron", ""),          // 1.11.0
+        new BlockDef("stretched_rock", "simple", 0, 5.0F, "iron", ""),          // 1.11.0
+        new BlockDef("blueshift_crust", "simple", 9, 4.0F, "iron", ""),          // 1.11.0
+        new BlockDef("outflow_rock", "simple", 6, 4.0F, "iron", ""),          // 1.11.0
+        new BlockDef("nucleosynthesis_crust", "simple", 5, 3.0F, "iron", ""),          // 1.11.0
         new BlockDef("antiiron_ore", "ore", 3, 3.5F, "iron", "antistone"),
         new BlockDef("antigold_ore", "ore", 3, 3.5F, "iron", "antistone"),
         new BlockDef("anticarbon_ore", "ore", 4, 4.5F, "diamond", "antistone"),

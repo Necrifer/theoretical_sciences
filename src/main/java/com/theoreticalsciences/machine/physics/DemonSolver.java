@@ -34,6 +34,8 @@ public final class DemonSolver {
 
     private int size = 1;
     private boolean lockCoolant;
+    /** 1.11.0: judge points by the machine's limits alone (for {@link #reach}). */
+    private boolean ignoreWindows;
 
     /** 1.2.0: search only with the coolant the machine actually holds (or none): the Tuning Fork gives nothing away. */
     public DemonSolver lockCoolant(boolean lock) {
@@ -144,6 +146,58 @@ public final class DemonSolver {
         return new Solution(bestScore >= 1000, best, bestFluid, ps.temperature, ps.rate, readout);
     }
 
+    /**
+     * 1.11.0: what a player can reach. For every coolant, {@code n} random settings are judged as {@link #solve} judges
+     * them (the machine's temperature where its coolant holds it, its state variables settled), but on the machine's
+     * limits alone; at every setting that works, the recipe's window quantities are recorded (then the rate). Used by
+     * /theoreticalsciences windows reach to set the console windows from the game's own physics.
+     */
+    public List<double[]> reach(int n) {
+        List<double[]> out = new ArrayList<>();
+        // 2) from the demon's own working point, a walk through the settings next to it that still work (how a player
+        //    tunes by hand): consoles that work only in a small region are seldom hit at random
+        Solution sol = solve();
+        if (sol != null && sol.ok()) {
+            ignoreWindows = true;
+            setCoolant(sol.coolant());
+            RandomSource rw = RandomSource.create(seed ^ 0x5DEECE66DL);
+            double[] cur = sol.params().clone();
+            boolean steady = !m.states.isEmpty();
+            for (int s = 0; s < n * 6; s++) {
+                double[] c = local(cur, rw);
+                if (score(c, steady) >= 1000) {
+                    cur = c;
+                    out.add(com.theoreticalsciences.machine.tuning.Precision.quantities(m, ps));
+                }
+            }
+            ignoreWindows = false;
+        }
+        ps = new PhysicsState(machine, () -> {}, () -> false);
+        m = ps.model();
+        if (m == null) return out;
+        ps.recipe = recipe;
+        ps.size = size;
+        if (world != null) System.arraycopy(world, 0, ps.world, 0, ps.world.length);
+        ignoreWindows = true;
+        RandomSource rnd = RandomSource.create(seed);
+        List<Fluid> fluids = new ArrayList<>();
+        for (String id : PhysicsManager.coolants().keySet()) {
+            Fluid f = BuiltInRegistries.FLUID.getOptional(ResourceLocation.tryParse(id)).orElse(null);
+            if (f != null && !fluids.contains(f)) fluids.add(f);
+        }
+        fluids.add(null);
+        for (Fluid fl : fluids) {
+            setCoolant(fl);
+            for (int s = 0; s < n; s++) {
+                double[] c = random(rnd);
+                if (score(c, !m.states.isEmpty()) >= 1000)
+                    out.add(com.theoreticalsciences.machine.tuning.Precision.quantities(m, ps));
+            }
+        }
+        ignoreWindows = false;
+        return out;
+    }
+
     private double[] defaults() {
         double[] d = new double[m.params.size()];
         for (int i = 0; i < d.length; i++) d[i] = m.params.get(i).def();
@@ -221,7 +275,7 @@ public final class DemonSolver {
             if (Double.isNaN(v)) bad += 10;
             else if (v < 0 && m.constraints.get(i).kind() != PhysicsModel.Kind.WEAR) bad += Math.min(10, 1 + -v / (1 - v));
         }
-        for (RecipePhysics.Window w : recipe.windows()) {
+        if (!ignoreWindows) for (RecipePhysics.Window w : recipe.windows()) {
             double v = m.value(ps.env, w.q());
             if (Double.isNaN(v)) bad += 10;
             else if (v < w.min()) bad += 1 + Math.min(5, (w.min() - v) / (Math.abs(w.min()) + 1e-30));

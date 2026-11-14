@@ -1,5 +1,234 @@
 # Changelog
 
+## 1.11.0: Patch B, the progression refinement
+
+The second patch of the progression review: no machine on the main path is built for a single craft any more, four
+dimensions that were one place each become three, the last 25 console windows left wide are settled, and Thaumaturge
+and Astral Sorcery give their own mechanics to recipes as Botania and Nature's Aura already do. The angels are
+remodelled in depth.
+
+### The angels, in depth
+* The Cherub, Choir Seraph and Threshold Ophan were mostly flat panels. Their wings now have thickness: a round
+  leading edge, two overlapping rows of coverts that thin toward the trailing edge, secondaries tilted in and out so
+  they overlap, and a fan of five primaries at each tip, each feather tapering in three steps with a raised quill.
+  The outer wing sweeps back, so the wings are cupped.
+* Eyes stand out from what they are set in: a rim of lid, a white that swells outward, the iris a dome on it, the
+  pupil on the iris and a glint. Shut eyes are a closed swelling of lid.
+* Cherub: rounded legs with knees and the toe of a calf's hoof, a waist, a broad chest and shoulders, elbows,
+  fingers and thumbs. The four faces stand out from the head: the man's with brow, nose and chin; the lion's with a
+  muzzle, jaw and a mane of tufts all round; the ox's with a long muzzle and horns in three segments; the eagle's
+  with a hooked beak and a crest.
+* Choir Seraph: a round body of fire with tongues of flame licking up its sides and a ball of light where a face
+  would be; the wheel of flame behind it is a thick ring with a bright inner band and flames standing from its rim.
+* Threshold Ophan: each rim is now 24 segments with a raised tread round it and a lip inside, deeper than before;
+  the great eye is a ball with a band round it.
+* Past 24 blocks they draw fewer feathers and plainer eyes (up close they are 600 to 1,250 parts each).
+
+### More recipes for the machines that had one or two
+Every machine on the main path that had fewer than three recipes now has at least three: 101 new recipes in 67
+machines. Each is a real use of its machine's science, and makes an item that already feeds the endgame. Where it
+is a new route to something the mod already made, it is cheaper than the old route (the cost check says so). First
+drafts that could not be made cheaper (Californium from the Nuclide Forge, copper and gold by electrorefining,
+rations from potatoes, cured composites, pulsar timing by atomic clock) were dropped or replaced rather than kept as
+worse routes. Item lore and the Codex now say where each is
+also made, and each machine's Codex page lists what it makes.
+
+Not given more: the Essence Distillery (its recipes are made from every other mod's fluids as the game loads), and
+three final-tier machines whose few recipes are the point (the Nuclide Forge, Pleroma Confluence and Omega Simulator).
+
+<details><summary>All 101 new recipes</summary>
+
+| Machine | In | Out | Why |
+|---|---|---|---|
+| Air Separation Unit | 1 Zeolite Catalyst | 950 mB Oxygen | pressure-swing adsorption (a zeolite sieve holds nitrogen back), and liquid air fractionated with a refrigerant |
+| Air Separation Unit | 100 mB Cold Pack Solution | 210 mB Liquid Oxygen, 780 mB Nitrogen | pressure-swing adsorption (a zeolite sieve holds nitrogen back), and liquid air fractionated with a refrigerant |
+| Analog Black Hole | 1 Paper, 4000 mB Water | 1 Hawking Correlation Record | Weinfurtner's water tank (2011): waves over an obstacle in flowing water show stimulated Hawking emission |
+| Antimatter Penning Trap | 2 Antiproton Bundle, 1 Antimatter Pellet, 500 mB Superfluid Helium | 2 Antihydrogen Crystal | ALPHA at CERN: antiprotons merged with positrons in a Penning trap make antihydrogen |
+| Asymmetric Reactor | 1 Chiral Ligand, 2 Fine Reagent, 500 mB Hydrogen | 8 Enantiopure Reagent | Noyori's chiral catalysts; a pure enantiomer crystallises as a chiral crystal |
+| Asymmetric Reactor | 2 Enantiopure Reagent, 250 mB Water | 3 Chiral Crystal | Noyori's chiral catalysts; a pure enantiomer crystallises as a chiral crystal |
+| Atomic Clock | 1 Test Mass, 2 Quartz | 8 Time-Dilated Sample | a test mass lifted in place of a proof mass; two clocks at different heights measure the height between (chronometric geodesy) |
+| Atomic Clock | 1 Time-Dilated Sample, 1 Survey Map | 20 Geoid Model | a test mass lifted in place of a proof mass; two clocks at different heights measure the height between (chronometric geodesy) |
+| Autoclave | 8 Paper, 1 String, 500 mB Water | 12 Sterile Pack | a full load in one cycle |
+| Bloomery Shaft | 1 Rich Iron Chunk, 4 Charcoal | 6 Bloomery Steel | rich ore needs no slag to start the bloom; magnetite was smelted the same way |
+| Bloomery Shaft | 2 Magnetite, 4 Charcoal | 5 Bloomery Steel | rich ore needs no slag to start the bloom; magnetite was smelted the same way |
+| Brownian Microscope | 1 Algae Culture, 1 Photographic Plate | 32 Normal Distribution Crystal, 1 Avogadro Record | a prepared suspension of even particles; algae cells jostled by the water |
+| Brownian Microscope | 1 Photographic Plate, 500 mB Brownian Suspension | 3 Avogadro Record | a prepared suspension of even particles; algae cells jostled by the water |
+| Buffer Tank | 1 Ammonium Nitrate, 500 mB Ammonia, 500 mB Water | 1000 mB Ammonia Buffer | an ammonium salt with ammonia is a buffer |
+| Burst Observatory | 1 Burst Afterglow Crystal, 4 Gold Nugget | 4 Kilonova Ash | GW170817: a neutron star merger, a short gamma-ray burst and a kilonova seen together |
+| Burst Observatory | 1 Neutron Star Merger Record, 1 Photographic Plate | 2 Burst Afterglow Crystal | GW170817: a neutron star merger, a short gamma-ray burst and a kilonova seen together |
+| Bussard Ramscoop | nothing | 500 mB Interstellar Medium | the scoop takes the interstellar medium itself |
+| CT Scanner | 1 Tumour Specimen | 2 Tomogram | CT scans of tumours |
+| Chaos Controller | 1 Strange Attractor, 2 Redstone | 20 Quantum Random Number Chip | BZ oscillators coupled turn chaotic; chaotic signals make good random numbers |
+| Chaos Controller | 2 Chemical Clock, 2 Glowstone Dust | 1 Strange Attractor | BZ oscillators coupled turn chaotic; chaotic signals make good random numbers |
+| Cipher Loom | 1 Qubit, 2 Entangled Photon Pair | 20 One-Time Pad | quantum key distribution: entangled photons give a key nobody can have read unseen |
+| Circadian Incubator | 2 Circadian Culture, 1 Folded Protein Crystal, 500 mB Nutrient Broth | 1 Cryptochrome Magnetoreceptor | yeast keeps metabolic time; cryptochrome is a protein of the circadian clock |
+| Circadian Incubator | 2 Yeast Culture, 1 Paper, 500 mB Nutrient Broth | 2 Circadian Culture | yeast keeps metabolic time; cryptochrome is a protein of the circadian clock |
+| Connectome Array | 8 Neural Organoid, 2 Tomogram, 1000 mB Synaptic Fluid | 3 Engram | a scanned brain gives its engrams |
+| Conservation Bath | 1 Charred Beam, 1 Polymer Sheet | 1 Stabilised Artefact | EDTA lifts corrosion; the Mary Rose's timbers were held with polyethylene glycol |
+| Conservation Bath | 1 Corroded Artefact, 1 EDTA | 1 Stabilised Artefact, 3 Rust Flakes | EDTA lifts corrosion; the Mary Rose's timbers were held with polyethylene glycol |
+| Contact Process Tower | 1 Vanadium Bed, 2000 mB Sulfur Dioxide, 1000 mB Oxygen, 1000 mB Water | 2400 mB Sulfuric Acid | vanadium pentoxide is the contact process's real catalyst; the Muller-Kuhne process makes acid from gypsum |
+| Contact Process Tower | 4 Gypsum Crystal, 1000 mB Water | 600 mB Sulfuric Acid | vanadium pentoxide is the contact process's real catalyst; the Muller-Kuhne process makes acid from gypsum |
+| Cracking Tower | 1 Zeolite Catalyst, 2000 mB Synthetic Crude | 800 mB Ethylene, 800 mB Propylene, 400 mB Methane | fluid catalytic cracking runs over a zeolite catalyst |
+| Decipherment Desk | 4 Ancient Potsherd, 2 Paper | 5 Lexicon Fragment | Linear B was read from inscribed pottery and tablets |
+| Doping Furnace | 1 Silicon Boule, 1 Graphite Moderator | 6 Doped Wafer | n-type doping, and neutron transmutation doping (silicon-30 turned to phosphorus-31 by neutrons) |
+| Doping Furnace | 2 Cherenkov Wafer, 1 Glowstone Dust | 2 Doped Wafer | n-type doping, and neutron transmutation doping (silicon-30 turned to phosphorus-31 by neutrons) |
+| Dose-Response Assay | 1 Mould Culture, 2 Sugar, 4 Glass Bottle, 250 mB Phosphate Buffer | 16 Antibiotic | penicillin from mould |
+| Dosing Pump | 1 Antibiotic, 1 Glass Bottle, 250 mB Tincture of Balance | 2 Stable Dose | doses worked out for an antibiotic and for an anti-inflammatory |
+| Dosing Pump | 2 Anti-Inflammatory, 1 Glass Bottle, 250 mB Tincture of Balance | 3 Stable Dose | doses worked out for an antibiotic and for an anti-inflammatory |
+| ER=EPR Weaver | 2 ER Bridge Thread, 1 Boundary CFT Chip | 1 Holographic Screen | qubits entangled are joined, on ER = EPR, by a thread of spacetime |
+| ER=EPR Weaver | 2 Qubit, 1 Exotic Matter Crystal | 2 ER Bridge Thread | qubits entangled are joined, on ER = EPR, by a thread of spacetime |
+| Einstein-Rosen Bridge Projector | 2 ER Bridge Thread, 1 Exotic Matter Crystal, 1000 mB Exotic Matter | 5 Wormhole Throat | an Einstein-Rosen thread held open becomes a throat |
+| Electroplating Bath | 2 Glass, 500 mB Nickel Sulfate Solution | 2 Telescope Mirror Blank | a full rack of iron at once; X-ray telescope mirrors (XMM-Newton's) are nickel electroformed on a polished mandrel |
+| Electroplating Bath | 8 Iron Ingot, 500 mB Nickel Sulfate Solution | 10 Nickel-Plated Iron | a full rack of iron at once; X-ray telescope mirrors (XMM-Newton's) are nickel electroformed on a polished mandrel |
+| Enzyme Assay Bench | 1 Mould Culture, 1 Paper | 20 Assayed Enzyme | fungi make enzymes in bulk (as industry grows them) |
+| Folding Chamber | 1 Messenger RNA, 4 Amino Acid Mixture, 1 Assayed Enzyme, 500 mB Water | 4 Folded Protein Crystal | chaperone proteins help a chain fold right; a misfolded protein that templates others is a prion |
+| Folding Chamber | 2 Folded Protein Crystal, 2 Rotten Flesh, 250 mB Water | 3 Prion Lattice | chaperone proteins help a chain fold right; a misfolded protein that templates others is a prion |
+| Graph Loom | 1 Network Map, 1 Bacterial Culture, 1 Markov Chain Link | 1 Contagion Network Map | an epidemic run on a network: the contacts decide who catches it |
+| Haber-Bosch Reactor | 1 Iron Catalyst, 3000 mB Hydrogen, 1000 mB Nitrogen | 2400 mB Ammonia | steam reforming fed straight into the loop (as real ammonia plants run), and a large batch over a promoted iron catalyst |
+| Haber-Bosch Reactor | 250 mB Methane, 500 mB Water, 500 mB Nitrogen | 1000 mB Ammonia, 250 mB Carbon Monoxide | steam reforming fed straight into the loop (as real ammonia plants run), and a large batch over a promoted iron catalyst |
+| Ice Core Drill | nothing | 10 Sediment Core | deep ice cores run on through the permafrost and, at bedrock, into the sediment under the ice |
+| Ice Core Drill | nothing | 2 Permafrost Sample | deep ice cores run on through the permafrost and, at bedrock, into the sediment under the ice |
+| Infrared Spectrometer | 1 Tholin | 3 Structure Card, 1 Tholin | Titan's tholins were read by their infrared spectra |
+| Isotope Provenancer | 1 Stabilised Artefact, 1 Meteoric Iron | 2 Provenanced Artefact | lead isotope ratios trace a metal to its mine; Tutankhamun's dagger was shown meteoric by its nickel |
+| Isotope Provenancer | 1 Stabilised Artefact, 1 Radiogenic Lead | 2 Provenanced Artefact | lead isotope ratios trace a metal to its mine; Tutankhamun's dagger was shown meteoric by its nickel |
+| Knot Loom | 2 Knotted Polymer, 1 Polymer Sheet, 250 mB Phosphate Buffer | 1 Self-Healing Polymer | interlocked polymer chains slide and rejoin: self-healing materials |
+| Luminescence Reader | 1 Sediment Core | 1 Stratigraphic Timeline | optically stimulated luminescence dates the moment a sediment was last in light |
+| Mass Spectrometer | 1000 mB Uranium Hexafluoride | 6 Uranium-235 Pellet | the calutron: uranium enriched by a mass spectrometer the size of a building |
+| Mirror Culture Vat | 2 Chiral Crystal, 2 Amino Acid Mixture, 500 mB Nutrient Broth | 2 Chiral Ligand | mirror-image amino acids made into mirror ligands |
+| NMR Spectrometer | 1 Organic Evaporite | 6 Structure Card, 1 Organic Evaporite | NMR of evaporite organics |
+| Neutron Interferometer | 1 Californium-252 Neutron Source, 2 Paper | 10 Gravity-Phase Record | a neutron source in place of a reactor; neutrons bouncing on a mirror show gravity's quantum states |
+| Neutron Interferometer | 1 Gravity-Phase Record, 2 Glass | 2 Wave Packet | a neutron source in place of a reactor; neutrons bouncing on a mirror show gravity's quantum states |
+| O'Neill Cylinder | 4 Humus, 1 Mycorrhizal Inoculant, 1000 mB Water | 8 Living Soil | a closed loop: the habitat's waste worked back into living soil |
+| Optimiser | 1 Function Graph, 1 Derivative Operator, 1 Quantum Random Number Chip | 2 Optimised Pathway | stochastic gradient descent: random batches find the way down faster |
+| Oscillator Vessel | 1 Chemical Clock, 2 Slime Ball, 250 mB Sulfuric Acid | 2 Pattern Template | the Briggs-Rauscher reaction (sugar-fed) also oscillates; a stirred BZ reaction turns chaotic, unstirred it makes spirals |
+| Oscillator Vessel | 2 Sugar, 1 Glowstone Dust, 250 mB Sulfuric Acid | 2 Chemical Clock | the Briggs-Rauscher reaction (sugar-fed) also oscillates; a stirred BZ reaction turns chaotic, unstirred it makes spirals |
+| Ostwald Converter | 1 Platinum-Rhodium Gauze, 2000 mB Ammonia, 4000 mB Oxygen | 2400 mB Nitric Acid | nitric acid and ammonia make ammonium nitrate; platinum-rhodium gauze is the Ostwald process's real catalyst |
+| Ostwald Converter | 500 mB Ammonia, 500 mB Nitric Acid | 4 Ammonium Nitrate | nitric acid and ammonia make ammonium nitrate; platinum-rhodium gauze is the Ostwald process's real catalyst |
+| Pattern Basin | 1 Physarum Culture, 1 Rational Field, 2 Slime Ball | 3 Network Map | Physarum, a slime mould, grew the Tokyo rail network when fed at the cities' places |
+| Perfusion Rig | 2 Stem Cell Culture, 2 Perfused Tissue, 1000 mB Nutrient Broth | 2 Grown Organ | organs grown on a perfused scaffold from stem cells |
+| Phage Lab | 2 Bacteriophage, 1 Sterile Pack, 500 mB Nutrient Broth | 24 Antibiotic | phage therapy: viruses that kill bacteria |
+| Phase Diagram Kiln | 1 Lead Pig, 1 Copper Ingot | 1000 mB Superconducting Solder | lead from the pig (no decay needed); the salt-water eutectic freezes lowest of all |
+| Phase Diagram Kiln | 2 Halite, 1000 mB Water | 1000 mB Eutectic Brine | lead from the pig (no decay needed); the salt-water eutectic freezes lowest of all |
+| Photogrammetry Gantry | 1 Satellite Image Plate, 1 Tree-Ring Chronology, 1 Provenanced Artefact, 4 Paper | 1 Excavation Record | a satellite image in place of the dated finds' hand survey; the gantry's photographs stitched into a map |
+| Photogrammetry Gantry | 4 Paper, 2 Photographic Plate | 2 Survey Map | a satellite image in place of the dated finds' hand survey; the gantry's photographs stitched into a map |
+| Phytotron | 1 Mycorrhizal Inoculant, 2 Oak Sapling, 500 mB Water | 2000 mB Auxin | mycorrhizal fungi make auxin for their plants |
+| Pound-Rebka Tower | 1 Cobalt-57 Source, 2 Paper | 4 Gravitational Redshift Record | Pound and Rebka's source was cobalt-57 (iron-57's Mossbauer line); Sirius B's light is redshifted by its gravity |
+| Pound-Rebka Tower | 1 White Dwarf Core, 1 Paper | 16 Gravitational Redshift Record | Pound and Rebka's source was cobalt-57 (iron-57's Mossbauer line); Sirius B's light is redshifted by its gravity |
+| Psychophysics Booth | 1 Rhodopsin Retina, 1 Fused Silica Lens, 1 Leather Helmet | 1 Low-Light Visor | channelrhodopsin from algae (the start of optogenetics); a retina behind a visor sees in the dark |
+| Psychophysics Booth | 2 Algae Culture, 1 Myelinated Axon, 1 Fused Silica Lens | 2 Rhodopsin Retina | channelrhodopsin from algae (the start of optogenetics); a retina behind a visor sees in the dark |
+| Quantum Computer | 2 Fine Reagent, 1 Qubit, 250 mB Superfluid Helium | 2 Molecular Orbital Lattice | Shor's algorithm factors numbers into primes; a quantum computer simulates a molecule's orbitals (VQE) |
+| Quantum Computer | 4 Natural Number Lattice, 2 Qubit, 250 mB Superfluid Helium | 64 Prime Shard | Shor's algorithm factors numbers into primes; a quantum computer simulates a molecule's orbitals (VQE) |
+| Quasicrystal Furnace | 1 Meteoric Iron, 2 Aluminium Ingot, 1 Copper Ingot | 3 Quasicrystal Plate | the Khatyrka meteorite holds natural quasicrystals; quasicrystal coatings are hard and slippery |
+| Quasicrystal Furnace | 2 Quasicrystal Plate, 1 Iron Ingot | 3 Wear Coating | the Khatyrka meteorite holds natural quasicrystals; quasicrystal coatings are hard and slippery |
+| Radar Survey Bench | 2 Copper Ingot, 1 Laser Head, 1 Compass | 2 Survey Radar | a radar fed through a waveguide; a lidar measures with a laser instead |
+| Radar Survey Bench | 4 Copper Ingot, 1 Waveguide, 1 Compass | 2 Survey Radar | a radar fed through a waveguide; a lidar measures with a laser instead |
+| Reverse Osmosis Cell | 1 Graphene Sheet, 2000 mB Deep Brine | 1000 mB Concentrated Brine, 1000 mB Water | brine from a eutectic, and graphene oxide membranes that pass water far faster |
+| Reverse Osmosis Cell | 1000 mB Eutectic Brine | 600 mB Concentrated Brine, 400 mB Water | brine from a eutectic, and graphene oxide membranes that pass water far faster |
+| Selection Chamber | 2 Yeast Culture, 1 Genome Sample, 500 mB Nutrient Broth | 2 Evolved Strain | yeast evolved under selection |
+| Sieve of Eratosthenes | 2 Integer Ring, 4 Natural Number Lattice | 12 Prime Shard | the ideals of the integers are generated by primes |
+| Sintering Press | 2 Rare Earth Oxide, 2 Iron Ingot | 2 Neodymium Alloy Blank | neodymium magnets are sintered from rare earth and iron powder |
+| Storm Chamber | 250 mB Methane, 250 mB Ammonia, 250 mB Hydrogen, 500 mB Water | 4 Amino Acid Mixture | lightning fuses sand into fulgurite; Miller and Urey's sparks through methane, ammonia, hydrogen and water made amino acids |
+| Storm Chamber | 4 Sand, 250 mB Water | 1 Fulgurite | lightning fuses sand into fulgurite; Miller and Urey's sparks through methane, ammonia, hydrogen and water made amino acids |
+| Strategy Table | 1 Monte Carlo Sample Pack, 2 Paper | 2 Evolutionarily Stable Strategy | a Monte Carlo tournament; Axelrod's prisoner's dilemma tournaments |
+| Strategy Table | 1 Quantum Random Number Chip, 1 Rational Field, 2 Paper | 1 Evolutionarily Stable Strategy | a Monte Carlo tournament; Axelrod's prisoner's dilemma tournaments |
+| Synapse Trainer | 2 Neural Organoid, 1 Neural Lattice, 1 Photonic Neuron | 1 Trained Cortex | organoids trained in place of cultured cortex |
+| Tree-Ring Correlator | 1 Arbor Heartwood Sample | 2 Tree-Ring Chronology | living trees give the youngest rings; tree rings calibrate the radiocarbon clock (IntCal) |
+| Tree-Ring Correlator | 1 Tree-Ring Chronology, 2 Paper | 2 Calibration Card | living trees give the youngest rings; tree rings calibrate the radiocarbon clock (IntCal) |
+| Tribometer | 2 Iron Ingot, 500 mB Methane | 1 Wear Coating | diamond-like carbon laid down from methane plasma; worn surfaces kept apart make bearings |
+| Tribometer | 2 Wear Coating, 1 Spacetime Alloy Ingot, 250 mB Methane | 1 Spacetime Bearing | diamond-like carbon laid down from methane plasma; worn surfaces kept apart make bearings |
+| Unruh Accelerator | 1 Cryogenic Receiver, 1 Test Mass | 6 Unruh Thermometer | a cryogenic receiver reads the Unruh temperature without the Hall bar |
+| Vacuum Fluctuation Harvester | 8 Casimir Plate, 1000 mB Superfluid Helium | 10 Virtual Photon | the dynamical Casimir effect: a moving mirror turns virtual photons real (seen in 2011) |
+| Warp Field Forge | 1 Warp Bubble Core, 1 Chronal Anchor, 500 mB Strained Spacetime | 1 Anchored Warp Bubble | a bubble pinned to a chronal anchor; the Casimir effect is real negative energy |
+| Warp Field Forge | 8 Casimir Plate, 2 Metamaterial Sheet, 250 mB Strained Spacetime | 1 Negative Energy Lattice | a bubble pinned to a chronal anchor; the Casimir effect is real negative energy |
+| Wind Tunnel | 2 Aramid Fibre, 2 Polymer Sheet | 3 Aerofoil Composite | aramid laminate aerofoils |
+
+</details>
+
+### New biomes
+The Antiverse, the Quantum Foam and the Black and White Hole Interiors had one biome each. Each now has two more,
+every one with its own ground block, its own features and its own weight of creatures; the old ground keeps the
+middle of each dimension's climate. Each block has its own texture (sixteen frames, like the dimensions' own), its
+own sound and flavour text saying where it is found, and each dimension has a Codex page for its regions.
+
+| Dimension | Biome | Ground | What is there |
+|---|---|---|---|
+| Antiverse | Annihilation Front | Annihilation Scar (glows, glass sound) | stray matter annihilating on antistone, 511 keV flashes; veins of scar in the antistone; more Annihilators |
+| Antiverse | Antihydrogen Glacier | Antihydrogen Firn (snow sound) | pools of liquid antihelium, Antihydrogen Ice running rich, more Antihydrogen Wisps |
+| Quantum Foam | Spin Network | Spin Foam Mesh (glows) | space as loop quantum gravity draws it, webs of mesh between the membranes |
+| Quantum Foam | False Vacuum Shelf | Metastable Crust (glows) | pools of false vacuum ringed in crust whose cracks brighten and fade |
+| Black Hole Interior | Spaghettified Reaches | Stretched Rock | rock drawn out by the tides, pools of tidal plasma, Tidal Ore rich, more Tidal Horrors |
+| Black Hole Interior | Mass Inflation Zone | Blueshift Crust (glows brightly) | the inner horizon's blueshifted light, spires of crust |
+| White Hole Interior | Outflow Spires | Outflow Rock (glows) | columns of ejecta set where it was thrown, more Photon Moths |
+| White Hole Interior | Reheating Fields | Nucleosynthesis Crust (glows) | a crust like the young universe's over pools of reheating plasma, Ejecta Ore rich |
+
+* The Quantum Foam and the two interiors now read a climate noise to place their biomes (they had none); their
+  shape is unchanged.
+
+### The last 25 console windows
+1.7.2 left 25 windows wide because its tool could not run their consoles outside the game: they depend on the
+machine's temperature (held by its coolant), on a plasma that settles while the machine runs, or work only in a small
+region of settings. A new operator command, `/theoreticalsciences windows reach <recipe type>`, samples what a
+player can reach with the game's own solver: every coolant, coil tiers 1 to 5, the temperature and plasma settled as
+in play, random settings and a walk through the working settings next to the solver's own point. The 1.7.2 rules
+were then applied to that (a sixth of the reach for beyond physics, a tenth for the final tier, a quarter for cosmic
+engineering), keeping at least a tenth of the working settings that met each old window.
+
+* **12 narrowed:**
+
+| Machine | Recipe | Window |
+|---|---|---|
+| Omnilex Engine | ocean_simulacrum | lam 0.3..1 to 0.3..0.413 |
+| Pleroma Reconstitutor | r171_pleromatic_weave | Pe 12..60 to 16.7..39.8 |
+| Pleroma Reconstitutor | reconstitute_eschaton_cells | Pe 25..1000 to 25..60.7 |
+| Pleroma Reconstitutor | reconstitute_omnipotent_ingot | Pe 12..60 to 19.6..47.3 |
+| Pleroma Reconstitutor | reconstitute_transcendence_crystal | Pe 15..80 to 15..35.6 |
+| Pleroma Reconstitutor | rekindle_the_transcendental | Pe 10..1000 to 10..23.6 |
+| Pleroma Reconstitutor | resonate_omnipotence_shards | Pe 20..100 to 20..48.2 |
+| Axiomatic Breach Engine | axiom_key | Rc 1e-18..1 to 1e-18..3.84e-18 |
+| Reality Compiler | eternity_catalyst | lgpL -40..-15 to -23.7..-15 |
+| Reality Compiler | omega_point | NL 200..1000 to 200..633; lgpL -40..-15 to -24.5..-15 |
+| Reality Compiler | reality_anchor | NL 50..1000 to 50..159; lgpL -30..-9 to -18.1..-9.13 |
+| Reality Compiler | source_code_fragment | NL 100..1000 to 100..303; lgpL -30..-12 to -21.1..-12 |
+
+* **13 already as narrow as what can be reached** (the working settings never stray far outside them): Cyclotron (r170_charged_lattice_seed), Eschaton Foundry (r43_transcendental_echo), Matrioshka Brain (r140_uploaded_minds), Matrioshka Brain (r171_recursive_thought_shell), Matrioshka Brain (superintelligence), Omnilex Engine (simulate_everything), Pleroma Reconstitutor (replay_the_echo), Transcendent Plasma Forge (forge_cosmic_neutronium), Transcendent Plasma Forge (hypernova_alloy_ingot), Transcendent Plasma Forge (hypernova_plasma), Transcendent Plasma Forge (r171_transcendent_alloy), Transcendent Plasma Forge (residual_starlight), Transcendent Plasma Forge (transcendent_metal_ingot).
+* A server run afterwards confirmed the solver still finds a working setting inside every new window.
+
+### Thaumaturge and Astral Sorcery, their own mechanics
+* A recipe can now ask for **vis** (taken from the aura of the machine's chunk, never below half of what the land
+  holds by nature), **aspects** (from jars or any aspect container against the machine or one of its structure's
+  ports), and leave **flux** in the aura (Thaumaturge); or for **Lumen** of one constellation's kind, or any
+  (Astral Sorcery), from whatever holds it against the machine or its ports. Packs can use these in their own
+  recipes: `"magic": {"vis": n, "flux": n, "aspects": {"ordo": n}, "lumen": n, "lumen_kind": "armara"}`.
+* **Four new optional recipes**, each the same as its 1.7.2 item route without that mod's items:
+
+| Field Synthesis | Machine | Draws | In place of |
+|---|---|---|---|
+| Perennial Catalyst Matrix | Regeneration Kiln | 120 vis, 32 Permutatio, 16 Ordo | 8 Vis Crystals, 2 Salis Mundus |
+| Engineered Mind | Load Test Rig | 60 vis, 32 Cognitio, 16 Machina, 8 Humanus; leaves 10 flux | Brain in a Jar, 4 Vis Crystals |
+| Proof Lattice | Automaton Lattice | 4,000 Armara Lumen (defence: a proof nothing gets through) | 2 Resonating Gems, a Glass Lens |
+| Unified Field Lattice | Femtoscale Assembly Line | 1,500 Prismatic Lumen (every aspect restored, for every force as one) | 4 Starmetal Ingots |
+
+* JEI and EMI show what each draws; a machine that lacks it says "Too little vis in the aura here", "Needs aspects:
+  set jars holding them against the machine or its ports" or "Needs Lumen".
+* The Codex's Other Arts page describes both.
+* The code naming either mod sits in two classes touched only when that mod is installed; a failure in the other
+  mod's interface stops the recipe, never the game. Built against Thaumaturge 1.1.0 and Astral Sorcery 2.0.3.59,
+  read from the modpack.
+
+### Checked
+* A NeoForge 21.1.265 server ran the mod alone and with the modpack's linked mods (now including Thaumaturge and
+  Astral Sorcery): every dimension generated, every block placed and left to tick, every item made, every creature
+  spawned and left to run, every structure and feature placed, each new biome located and loaded, the world saved.
+* All checks pass: every item reachable, no recipe over its machine's slots, no newer route dearer than an older one,
+  no broken puzzle.
+
+### Technical
+* `tools/round1110.py` (the recipes, the settling of their outputs, the lore and Codex lines),
+  `tools/round1110_biomes.py`, `tools/r1110_windows.py`. `tools/check_costs.py` now treats `r1xxx_` files as
+  newer routes too.
+* `DemonSolver.reach` and the operator command above (permission level 4, runs off the server thread, writes to
+  `ts_window_reach/` in the server folder).
+
 ## 1.10.0: Patch A, the check-up
 
 A pass over 1.6.0 to 1.9.1 before more is built on them: the mod was run on a real NeoForge server and every
