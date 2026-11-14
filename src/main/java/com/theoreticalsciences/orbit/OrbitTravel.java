@@ -111,7 +111,16 @@ public final class OrbitTravel {
         sp.fallDistance = 0;
         orbit.playSound(null, dest, com.theoreticalsciences.registry.QHSounds.GATEWAY.get(), SoundSource.PLAYERS, 0.8F, 1.2F);
         sp.displayClientMessage(Component.translatable("message.theoreticalsciences.orbit_arrival").withStyle(ChatFormatting.GOLD), false);
+        // 1.12.0: the capsule climbs through the Van Allen belts (Apollo crews took a few mSv; scaled up like every dose here)
+        if (com.theoreticalsciences.QHConfig.RADIATION_SICKNESS.get()) {
+            double dose = VAN_ALLEN_MSV * SpaceShelter.suit(sp) * com.theoreticalsciences.interior.InteriorGear.radiationFactor(sp);
+            com.theoreticalsciences.science.RadiationService.setDose(sp, com.theoreticalsciences.science.RadiationService.dose(sp) + dose);
+            sp.displayClientMessage(Component.translatable("message.theoreticalsciences.van_allen", String.format(java.util.Locale.ROOT, "%.0f", dose))
+                    .withStyle(ChatFormatting.YELLOW), false);
+        }
     }
+
+    static final double VAN_ALLEN_MSV = 30;
 
     // ------------------------------------------------------------------ on
     public static class ConsoleBlock extends Block {
@@ -126,17 +135,8 @@ public final class OrbitTravel {
                 sp.displayClientMessage(Component.translatable("message.theoreticalsciences.console_grounded").withStyle(ChatFormatting.GRAY), true);
                 return InteractionResult.CONSUME;
             }
-            List<Destinations.Destination> list = Destinations.INSTANCE.offered(sp);
-            if (list.isEmpty()) return InteractionResult.CONSUME;
-            int i = Math.floorMod(CHOICE.getOrDefault(sp.getUUID(), 0), list.size());
-            if (sp.isShiftKeyDown()) {
-                i = (i + 1) % list.size();
-                CHOICE.put(sp.getUUID(), i);
-                sp.displayClientMessage(Component.translatable("message.theoreticalsciences.console_target", Component.translatable(list.get(i).name()),
-                        i + 1, list.size()).withStyle(ChatFormatting.AQUA), true);
-                return InteractionResult.CONSUME;
-            }
-            depart(sp, list.get(i));
+            // 1.12.0: the console is a Mission Planner: every trip has its Δv, paid in Transfer Stages the first time
+            Planner.openConsole(sp, pos);
             return InteractionResult.CONSUME;
         }
     }

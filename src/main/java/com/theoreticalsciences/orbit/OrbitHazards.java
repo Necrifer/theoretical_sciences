@@ -67,7 +67,7 @@ public final class OrbitHazards {
                 net.minecraft.world.entity.EquipmentSlot.LEGS, net.minecraft.world.entity.EquipmentSlot.FEET}) {
             var st = p.getItemBySlot(slot);
             if (st.is(VACUUM_SUITS) || (st.getItem() instanceof InteriorGear.SuitItem si
-                    && (si.suit == InteriorGear.Suit.PRESSURE || si.suit == InteriorGear.Suit.HEATED || si.suit == InteriorGear.Suit.FRONTIER)))
+                    && (si.suit == InteriorGear.Suit.PRESSURE || si.suit == InteriorGear.Suit.HEATED || si.suit == InteriorGear.Suit.FRONTIER || si.suit == InteriorGear.Suit.SPACEFARER)))
                 n++;
         }
         return n >= 4;                                         // any mix of sealed pieces, one per slot
@@ -93,6 +93,7 @@ public final class OrbitHazards {
     @SubscribeEvent
     public static void onReload(AddReloadListenerEvent e) {
         e.addListener(Destinations.INSTANCE);
+        e.addListener(Missions.INSTANCE);        // 1.12.0
     }
 
     private OrbitHazards() {}

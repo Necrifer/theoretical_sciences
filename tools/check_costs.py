@@ -118,6 +118,8 @@ def load():
 
 
 def base(item):
+    if item.startswith('#' + NS + 'samples/'):
+        return WORLD                     # 1.12.0: what a Mission Bay brings back is a find, and a dear one
     if item.startswith('#'):
         return 1.0
     if item in TEDIOUS:

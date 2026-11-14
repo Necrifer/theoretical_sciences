@@ -121,6 +121,7 @@ public final class QHItems {
                 case "rebreather" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.RebreatherItem::new, p);
                 case "coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.CoatingItem::new, p);
                 case "prussianblue" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.PrussianBlue::new, p);
+                case "stage" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.orbit.SpaceRegistry.TransferStageItem::new, p);   // 1.12.0
                 default -> ITEMS.registerItem(def.id(), LoreItem::new, p);
             };
             ALL.put(def.id(), holder);

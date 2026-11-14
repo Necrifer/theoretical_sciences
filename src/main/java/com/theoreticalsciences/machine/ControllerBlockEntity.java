@@ -699,6 +699,9 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         int oc = overclockNow();
         // 1.5.0: a geomagnetic storm upsets the controls of every console and multiblock in the Overworld (but not under a Faraday Mesh)
         double storm = level == null ? 1.0 : com.theoreticalsciences.helio.SpaceWeather.factor(level, upgradeKind());
+        // 1.12.0: a storm is a gust of solar wind, and the Ram Scoop gathers more of it
+        if (type == com.theoreticalsciences.machine.MachineType.BUSSARD_RAMSCOOP && level != null && level.getServer() != null
+                && com.theoreticalsciences.helio.SpaceWeather.raging(level.getServer())) storm *= 1.5;
         if (hasPhysics()) return (1 << oc) * physics.rate * coil * storm;   // the physics says how well it is running
         return tuningProfile() == null ? coil * storm : (1 << oc) * tuning.efficiency() * coil * storm;
     }

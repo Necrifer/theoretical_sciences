@@ -161,6 +161,7 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.QUANTUM_COMPUTER, "coherence", Drift.JUMP, 0.6F, 2, 4, Hazard.MAGNETIC, 3);       // 1.5.0
         p(MachineType.CT_SCANNER, "gantry_alignment", Drift.OSCILLATE, 0.4F, 1, 3, Hazard.THERMAL, 1);
         p(MachineType.BLOOMERY_SHAFT, "blast_draught", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);           // 1.6.0
+        p(MachineType.PROPULSION_TEST_STAND, "mixture_ratio", Drift.WALK, 0.6F, 2, 5, Hazard.THERMAL, 4);    // 1.12.0
         p(MachineType.CANTOR_DIAGONALIZER, "diagonal_index", Drift.JUMP, 1.2F, 1, 2, Hazard.SPATIAL, 9);        // 1.7.1: now multiblocks
         p(MachineType.AXIOM_DISTILLER, "reflux_ratio", Drift.WALK, 1.0F, 1, 2, Hazard.SPATIAL, 9);
         p(MachineType.CONVERGENCE_ENGINE, "altar_phase", Drift.OSCILLATE, 1.0F, 1, 2, Hazard.SPATIAL, 8);

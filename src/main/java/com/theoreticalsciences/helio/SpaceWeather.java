@@ -61,6 +61,19 @@ public final class SpaceWeather extends SavedData {
         return w.end > sl.getGameTime();
     }
 
+    /** 1.12.0: whether a storm is raging anywhere (the station and the Frontier have no magnetosphere: the protons reach them too). */
+    public static boolean raging(MinecraftServer server) {
+        return get(server).end > server.overworld().getGameTime();
+    }
+
+    /** 1.12.0: the players a proton storm reaches with nothing in the way: aboard the station and in the Frontier. */
+    static java.util.List<ServerPlayer> exposed(MinecraftServer server) {
+        java.util.List<ServerPlayer> out = new java.util.ArrayList<>();
+        for (ServerPlayer p : server.getPlayerList().getPlayers())
+            if (com.theoreticalsciences.orbit.SpaceShelter.exposedLevel(p.level())) out.add(p);
+        return out;
+    }
+
     /** What a storm leaves of a machine's speed: 0.7 in a storm without a Faraday Mesh, otherwise 1. */
     public static double factor(Level level, String upgradeKind) {
         return "faraday_mesh".equals(upgradeKind) || !storm(level) ? 1.0 : 0.7;
@@ -75,6 +88,8 @@ public final class SpaceWeather extends SavedData {
         w.setDirty();
         for (ServerPlayer p : server.overworld().players())
             p.displayClientMessage(Component.translatable("message.theoreticalsciences.storm_begins").withStyle(ChatFormatting.GREEN), false);
+        for (ServerPlayer p : exposed(server))
+            p.displayClientMessage(Component.translatable("message.theoreticalsciences.storm_space").withStyle(ChatFormatting.RED), false);
     }
 
     @SubscribeEvent
@@ -92,6 +107,8 @@ public final class SpaceWeather extends SavedData {
         if (w.end > 0 && w.end <= now && w.end > now - 20) {
             for (ServerPlayer p : ow.players())
                 p.displayClientMessage(Component.translatable("message.theoreticalsciences.storm_ends").withStyle(ChatFormatting.GRAY), false);
+            for (ServerPlayer p : exposed(server))
+                p.displayClientMessage(Component.translatable("message.theoreticalsciences.storm_space_ends").withStyle(ChatFormatting.GRAY), false);
         }
         if (w.end > now && ow.isNight()) aurora(ow);
     }

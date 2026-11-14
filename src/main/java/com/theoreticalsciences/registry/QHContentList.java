@@ -954,7 +954,22 @@ public final class QHContentList {
         new ItemDef("mapped_mind", "", 64),
         new ItemDef("survey_probe", "", 64),
         new ItemDef("orbital_survey", "", 64),
-        new ItemDef("stratigraphic_timeline", "", 64));
+        new ItemDef("stratigraphic_timeline", "", 64),
+        // 1.12.0: Patch C1, getting there
+        new ItemDef("nuclear_thermal_core", "", 16),
+        new ItemDef("ion_thruster_grid", "", 16),
+        new ItemDef("antimatter_injector", "", 16),
+        new ItemDef("hydrolox_transfer_stage", "stage", 16),
+        new ItemDef("methalox_transfer_stage", "stage", 16),
+        new ItemDef("nuclear_transfer_stage", "stage", 16),
+        new ItemDef("ion_transfer_stage", "stage", 16),
+        new ItemDef("antimatter_transfer_stage", "stage", 16),
+        new ItemDef("sample_return_probe", "", 16),
+        new ItemDef("asteroid_regolith", "", 64),
+        new ItemDef("lunar_regolith", "", 64),
+        new ItemDef("martian_regolith", "", 64),
+        new ItemDef("venusian_aerosol", "", 64),
+        new ItemDef("mercurian_regolith", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1457,7 +1472,15 @@ public final class QHContentList {
         new BlockDef("empyrean_pillar", "deco_pillar", 0, 2.0F, "none", ""),
         new BlockDef("empyrean_marble_tiles", "deco", 0, 2.0F, "none", ""),
         new BlockDef("seraph_gold_trim", "deco", 2, 2.5F, "none", ""),
-        new BlockDef("halo_glass", "glass", 6, 0.6F, "none", ""));
+        new BlockDef("halo_glass", "glass", 6, 0.6F, "none", ""),
+        // 1.12.0: Patch C1
+        new BlockDef("test_stand_frame", "casing", 0, 5.0F, "iron", ""),
+        new BlockDef("flame_trench_block", "casing", 0, 5.0F, "iron", ""),
+        new BlockDef("propellant_tank_block", "casing", 0, 4.0F, "iron", ""),
+        new BlockDef("polyethylene_shielding", "simple", 0, 2.0F, "none", ""),
+        new BlockDef("water_shield_tank", "simple", 0, 3.0F, "none", ""),
+        new BlockDef("return_beacon", "return_beacon", 7, 3.0F, "none", ""),
+        new BlockDef("mission_bay", "mission_bay", 6, 5.0F, "none", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),

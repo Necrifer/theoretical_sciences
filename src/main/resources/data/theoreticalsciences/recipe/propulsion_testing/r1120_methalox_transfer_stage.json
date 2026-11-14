@@ -1,0 +1,57 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rocket_engine",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:pressure_hull_plate",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_methane",
+      "amount": 3000
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_oxygen",
+      "amount": 9000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:methalox_transfer_stage",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:rocket_equation",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 21,
+      "g": 1.2,
+      "ion": 0,
+      "Tmax": 3600
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 340,
+        "max": 380
+      },
+      {
+        "q": "dv",
+        "min": 4.7,
+        "max": 5.6
+      }
+    ]
+  }
+}

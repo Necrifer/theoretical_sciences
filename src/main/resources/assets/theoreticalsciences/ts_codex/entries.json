@@ -57830,5 +57830,193 @@
    }
   ],
   "research": "black_hole_interior"
+ },
+ "fluids/rocket_equation": {
+  "title": "The Rocket Equation",
+  "icon": "theoreticalsciences:hydrolox_transfer_stage",
+  "category": "fluids",
+  "research": "rocket_equation",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:propulsion_test_stand",
+     "theoreticalsciences:hydrolox_transfer_stage"
+    ],
+    "text": "Δv = ve·ln(m₀/m_f). The $(thing)Propulsion Test Stand$() is 454 blocks: a steel tower over a flame trench, the engine nozzle down. It fires engines and fills $(item)Transfer Stages$().",
+    "title": "Propulsion Test Stand"
+   },
+   {
+    "type": "multiblock",
+    "name": "Propulsion Test Stand",
+    "text": "Interface Ports either side of the controller, at the foot of the pad.",
+    "multiblock": "propulsion_test_stand"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Stages$()$(br)Hydrolox: Isp 450 s, 6.1 km/s.$(br)Methalox: 360 s, 4.9 km/s.$(br)Nuclear thermal: 900 s, 9.7 km/s.$(br)Ion: 3,000 s, 20.4 km/s.$(br)Antimatter: 20,000 s, 79.6 km/s.$(br2)Stages add up: carry two hydrolox stages and you have 12.2 km/s. A trip takes the fewest that pay for it."
+   }
+  ]
+ },
+ "fluids/transfer_orbits": {
+  "title": "Transfer Orbits",
+  "icon": "theoreticalsciences:return_beacon",
+  "category": "fluids",
+  "research": "transfer_orbits",
+  "pages": [
+   {
+    "type": "text",
+    "text": "v² = μ(2/r − 1/a). The $(thing)Transfer Console$() is a $(thing)Mission Planner$(). Each destination costs a Δv; inside its transfer window it costs the least, and between windows up to nearly twice as much. The windows come round every synodic period, a real month to a Minecraft day: Mars every 26 days, Venus every 19, Titan every 12 and a half, Mercury every 4. The Moon and the deep destinations are always open."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Cost from the station$()$(br)The Moon 5.9 km/s; Mars 4.3 and Venus 4.5 (aerobraking in their air); Titan 8.0 (aerocapture); Mercury 13; Glacio 30; the Accretion Frontier 50. The Overworld is always free.$(br2)The Planner's chart is a $(thing)porkchop plot$(): when you leave against how long you take, green where it is cheap."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:return_beacon"
+    ],
+    "text": "Your first trip to a destination is paid in Transfer Stages from your inventory. Set a $(item)Return Beacon$() down when you arrive, and the route is charted: from then on the Planner sends you there at no cost.",
+    "title": "Return Beacon"
+   }
+  ]
+ },
+ "fluids/sample_return": {
+  "title": "Sample Return",
+  "icon": "theoreticalsciences:sample_return_probe",
+  "category": "fluids",
+  "research": "sample_return",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:mission_bay",
+     "theoreticalsciences:sample_return_probe"
+    ],
+    "text": "t = π√((r₁ + r₂)³/8μ). A $(item)Mission Bay$() aboard the station flies a $(item)Sample Return Probe$() with stages enough for the round trip, in its window or not. It is gone for the transfer orbit there and back (a long one is about a Minecraft day), then its samples wait in the bay, for you or for a pipe.",
+    "title": "Mission Bay"
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Targets$()$(br)Near-Earth asteroid: 4.5 km/s, Asteroid Regolith and Meteoric Iron.$(br)Titan: 16 km/s, Tholin and Organic Evaporite.$(br2)When Ad Astra is not installed (with it, you can go yourself): the Moon 8.7 km/s, Mars 10.5, the clouds of Venus 7.5, Mercury 23, for their regolith and aerosol. Recipes that take these samples take Ad Astra's Moon Sand, Mars Sand, Venus Sand and Mercury Cobblestone too."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:asteroid_regolith",
+     "theoreticalsciences:lunar_regolith",
+     "theoreticalsciences:martian_regolith",
+     "theoreticalsciences:venusian_aerosol",
+     "theoreticalsciences:mercurian_regolith"
+    ],
+    "text": "Lunar regolith gives oxygen in the Electrolytic Cell (molten regolith electrolysis), Martian regolith oxygen and rust; Venus's aerosol gives sulfuric acid and sulfur dioxide in the Air Separation Unit; Mercury's dark crust gives graphite in the Sintering Press; asteroid metal gives Meteoric Iron in the Stellar Plasma Crucible.",
+    "title": "Samples"
+   }
+  ]
+ },
+ "fluids/propulsion_tiers": {
+  "title": "Beyond Chemistry",
+  "icon": "theoreticalsciences:nuclear_thermal_core",
+  "category": "fluids",
+  "research": "nuclear_thermal_propulsion",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:nuclear_thermal_core",
+     "theoreticalsciences:nuclear_transfer_stage"
+    ],
+    "text": "ve = √(2γ/(γ−1)·RT/M). Hydrogen alone, heated by a reactor: molar mass 2 against steam's 18, so twice the exhaust speed at a lower temperature. The $(item)Nuclear Thermal Core$() runs under 2,900 K.",
+    "title": "Nuclear thermal"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ion_thruster_grid",
+     "theoreticalsciences:ion_transfer_stage"
+    ],
+    "text": "v = √(2qV/m). Xenon ions thrown through charged grids at 30 km/s: the slow way that goes furthest. (Research: Electric Propulsion.)",
+    "title": "Ion"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:antimatter_injector",
+     "theoreticalsciences:antimatter_transfer_stage"
+    ],
+    "text": "E = 2mc². Antiprotons annihilating in hydrogen, the pions turned by a magnetic nozzle: tens of thousands of seconds of specific impulse. (Research: Antimatter Propulsion.)",
+    "title": "Antimatter"
+   }
+  ]
+ },
+ "fluids/space_radiation": {
+  "title": "Radiation in Space",
+  "icon": "theoreticalsciences:polyethylene_shielding",
+  "category": "fluids",
+  "research": "space_radiation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "f = e^(−x/λ). When a solar storm breaks, the Orbital Station and the open Frontier fill with protons: about 5 Sv an hour in the open, enough for radiation sickness in a few minutes. Cosmic rays are few and almost nothing stops them; storm protons are many and a little hydrogen stops them."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:polyethylene_shielding",
+     "theoreticalsciences:water_shield_tank",
+     "theoreticalsciences:spacefarer_suit_chestplate"
+    ],
+    "text": "Each block of $(item)Polyethylene Shielding$() or $(item)Water Shield Tank$() between you and open space (looked for in the six directions, up to eight blocks) stops most of a storm; water itself, stone and the station's hull help less. Each piece of the $(item)Spacefarer Suit$() stops a fifth. The Van Allen belts give a dose on every crew capsule ride up.",
+    "title": "Shelter"
+   }
+  ]
+ },
+ "fluids/suit_line": {
+  "title": "The Suit Line",
+  "icon": "theoreticalsciences:spacefarer_suit_helmet",
+  "category": "fluids",
+  "research": "space_radiation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Each suit is built on the one before. The $(item)Whipple Shield$() is a bumper over a Refractory Suit piece; the $(item)Frontier Suit$() is built over a Whipple piece; the $(item)Heated Pressure Suit$() over a Pressure Suit piece, as before."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:spacefarer_suit_helmet",
+     "theoreticalsciences:spacefarer_suit_chestplate",
+     "theoreticalsciences:spacefarer_suit_leggings",
+     "theoreticalsciences:spacefarer_suit_boots"
+    ],
+    "text": "A Frontier piece and a Heated Pressure piece in polyethylene and metamaterial make the $(item)Spacefarer Suit$(): it counts as every other suit wherever one is needed, and its lining stops storm protons.",
+    "title": "Spacefarer Suit"
+   }
+  ]
+ },
+ "operation/propulsion_test_stand": {
+  "title": "Propulsion Test Stand",
+  "icon": "theoreticalsciences:propulsion_test_stand",
+  "category": "operation",
+  "research": "rocket_equation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Fire the engine as hot as its chamber stands, open the nozzle wide, and fill the stage as full as its tank holds, so the specific impulse and the Δv come out at the stage's rating."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Chamber temperature, Expansion ratio, Propellant fraction, Grid voltage (ion only).$(br2)$(thing)Disturbance$(): combustion instability: exhaust speed varies by ±1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over the chamber limit the throat erodes (wear); over 93% propellant the tank fails (stops); over 4.6 kV the grids arc (wear).$(br2)$(thing)Rate$(): hotter burns, or higher grid voltage, faster."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)η = 1 − ε^(−1.7(γ−1)/γ)$(br)ve = √(2γ/(γ−1)·RT/M·η)$(br)ve (ion) = 0.75·√(2qV/m)$(br)Isp = ve/g₀$(br)Δv = ve·ln(1/(1 − ζ))"
+   }
+  ]
  }
 }

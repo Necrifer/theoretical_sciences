@@ -1,5 +1,115 @@
 # Changelog
 
+## 1.12.0: Patch C1, getting there
+
+The first half of the space patch. Space travel stops being free: every destination has a delta-v, its transfer
+windows open on a schedule, and the first trip is paid in Transfer Stages built and fired on a new multiblock. A
+Mission Bay sends probes for samples, solar storms reach the station, and the suits become one line that ends in a
+suit that counts as all of them. (The station's own modules, satellites and debris are Patch C2.)
+
+### The Mission Planner
+* Using the Orbital Station's Transfer Console now opens the Mission Planner: the destinations on the left, and for
+  the one chosen what it costs now, what it costs at its window, the Δv of the stages you carry, and when the next
+  window opens. Its chart is a porkchop plot: the day you leave (across) against how long you take (down), green where
+  it is cheap and red where it is dear.
+* Each destination's cost is the real delta-v from low orbit to its surface (aerobraking where there is air): the Moon
+  5.9 km/s, Mars 4.3, Venus 4.5, Titan 8.0, Mercury 13, Glacio 30, the Accretion Frontier 50. The Overworld is always
+  free, so the way home never costs anything.
+* Windows come round every synodic period, a real month to a Minecraft day: Mars every 26 days, Venus every 19.5,
+  Titan every 12.6, Mercury every 3.9. Between windows a trip costs up to nearly twice as much (cost = base ×
+  (1 + p·sin²(πφ)) × (1 + 2.5·ln(f)²), where φ is where you stand between windows and f the time of flight as a
+  fraction of the Hohmann time). Each destination's windows sit at their own place in the cycle.
+* Only the first trip costs. A **Return Beacon** set down at a destination charts the route for the whole world, and
+  the Planner sends you there free from then on. Worlds whose station was built before 1.12.0 keep every route
+  charted, so nobody already living on Titan is stranded.
+* Destination files (`ts_destinations`) gain `delta_v`, `synodic_days` and `penalty`; a pack can price its own planets.
+
+### Transfer Stages and the Propulsion Test Stand
+* A new multiblock, the **Propulsion Test Stand** (454 blocks: a steel tower over a concrete flame trench, the
+  engine hanging nozzle down, propellant tanks above, with Interface Ports either side of the controller). Its console
+  is the rocket equation: chamber temperature, expansion ratio, propellant fraction and, for ion engines, grid voltage
+  give exhaust speed ve = √(2γ/(γ−1)·RT/M·η) (or √(2qV/m) for ions), specific impulse Isp = ve/g₀ and stage Δv =
+  ve·ln(1/(1−ζ)). It erodes its throat over the chamber limit, stops over 93% propellant, and arcs over 4.6 kV.
+* Five stages, each with a fixed Δv. Carried stages add up (staging), and a trip burns the fewest that pay for it:
+
+| Stage | Isp | Δv | Research |
+|---|---|---|---|
+| Hydrolox Transfer Stage | 450 s | 6.1 km/s | The Rocket Equation |
+| Methalox Transfer Stage | 360 s | 4.9 km/s | The Rocket Equation |
+| Nuclear Transfer Stage | 900 s | 9.7 km/s | Nuclear Thermal Propulsion |
+| Ion Transfer Stage | 3,000 s | 20.4 km/s | Electric Propulsion |
+| Antimatter Transfer Stage | 20,000 s | 79.6 km/s | Antimatter Propulsion |
+
+* New recipes, all in the Propulsion Test Stand:
+
+| Recipe | In | Out |
+|---|---|---|
+| r1120_hydrolox_transfer_stage | Rocket Stage, Rocket Engine, 4 Pressure Hull Plate, 4000 mB liquid hydrogen, 8000 mB liquid oxygen | Hydrolox Transfer Stage |
+| r1120_methalox_transfer_stage | Rocket Stage, Rocket Engine, 4 Pressure Hull Plate, 3000 mB liquid methane, 9000 mB liquid oxygen | Methalox Transfer Stage |
+| r1120_nuclear_thermal_core | 6 Uranium 235 Pellet, 4 Graphite Moderator, 8 Corundum, 2000 mB liquid hydrogen | Nuclear Thermal Core |
+| r1120_nuclear_transfer_stage | Rocket Stage, Nuclear Thermal Core, 6 Pressure Hull Plate, 16000 mB liquid hydrogen | Nuclear Transfer Stage |
+| r1120_ion_thruster_grid | 4 Graphene Sheet, 2 Neodymium Magnet, 2 Noble Gas Clathrate | Ion Thruster Grid |
+| r1120_ion_transfer_stage | Rocket Stage, 2 Ion Thruster Grid, 4 Solar Array, 8 Noble Gas Clathrate | Ion Transfer Stage |
+| r1120_antimatter_injector | 4 Superconducting Coil, 2 Antiproton Bundle, 2 Metamaterial Sheet, 1000 mB superfluid helium | Antimatter Injector |
+| r1120_antimatter_transfer_stage | Rocket Stage, Antimatter Injector, 4 Antihydrogen Crystal, 8 Pressure Hull Plate, 8000 mB liquid hydrogen | Antimatter Transfer Stage |
+
+* New crafting recipes: Test Stand Frame (16), Flame Trench (8) and Propellant Tank (4) casings, the Sample Return
+  Probe, the Return Beacon, the Mission Bay, Polyethylene Shielding (2 from 9 Polymer Sheet) and the Water Shield
+  Tank (4).
+
+### The Mission Bay and sample return
+* The **Mission Bay** (station only) takes a Sample Return Probe and up to three stacks of Transfer Stages, by hand or
+  by pipe. Use it empty handed to open the Planner in probe mode: pick a target, and click the plot's first column
+  to choose a faster or slower transfer (faster costs more Δv, slower takes longer). The probe is gone for its transfer
+  orbit there and back (at most about a Minecraft day), then its samples wait in the bay; pipes can take them out.
+  Sneak with an empty hand to unload a probe and stages that have not flown.
+* Targets (`ts_missions`, a pack can add more): a near-Earth asteroid (4.5 km/s: Asteroid Regolith and Meteoric
+  Iron) and Titan (16 km/s: Tholin and Organic Evaporite). When Ad Astra is **not** installed, the Moon (8.7), Mars
+  (10.5), the clouds of Venus (7.5) and Mercury (23) too; with Ad Astra you go there yourself, and its Moon Sand, Mars
+  Sand, Venus Sand and Mercury Cobblestone stand in for the samples (tags `samples/*`).
+* What the samples are for (new recipes):
+
+| Recipe | Machine | In | Out |
+|---|---|---|---|
+| r1120_lunar_oxygen | Electrolytic Cell | 4 lunar regolith | 2000 mB oxygen |
+| r1120_martian_oxygen | Electrolytic Cell | 4 Martian regolith | 12 Rust Flakes, 600 mB oxygen |
+| r1120_venusian_acid | Air Separation Unit | 2 Venusian aerosol | 1500 mB sulfuric acid, 500 mB sulfur dioxide |
+| r1120_mercurian_graphite | Sintering Press | 1 Mercurian regolith | 6 Graphite Moderator |
+| r1120_asteroid_metal | Stellar Plasma Crucible | 2 asteroid regolith | 3 Meteoric Iron |
+
+### Radiation in space
+* A solar particle storm now reaches the Orbital Station and the Accretion Frontier: about 5 Sv/h in the open, enough
+  for radiation sickness in a couple of minutes. Players there are warned when one begins and when it passes.
+* Shelter stops it: the six directions around your head are looked along for eight blocks, and each block weighs:
+  Polyethylene Shielding 1.6, Water Shield Tank 1.2, water 1.0, the station's hull 0.35, other solid blocks 0.25.
+  What gets through is the average of e^(−Σw) over the six (f = e^(−x/λ)). The new blocks are also in the radiation
+  shielding tag.
+* The crew capsule's climb through the Van Allen belts gives 30 mSv on every ride up (less in a Spacefarer Suit or
+  radiation plating).
+* A storm is a gust of solar wind: the Bussard Ramscoop runs 1.5 times faster while one rages.
+
+### The suit line
+* Recipe changes: the **Whipple Shield** pieces are now built over a Refractory Suit piece (the centre of their recipe,
+  r51_whipple_shield_*), and the **Frontier Suit** pieces over a Whipple Shield piece (r56_frontier_suit_*). The
+  Heated Pressure Suit was already built over a Pressure Suit piece.
+* New: the **Spacefarer Suit** (r1120_spacefarer_suit_*): a Frontier piece and a Heated Pressure piece in metamaterial
+  and Polyethylene Shielding. It counts as every other suit wherever one is needed (vacuum, the deep sea, Titan's
+  cold, the Interior's fire, micrometeorites, the Frontier), and each piece stops a fifth of a storm's protons.
+
+### Research
+* Seven new nodes beside Orbital Mechanics, each with its derivation: The Rocket Equation (Δv = ve·ln(m₀/m_f)),
+  Transfer Orbits (vis-viva), Sample Return (Hohmann time of flight), Nuclear Thermal Propulsion (exhaust speed),
+  Electric Propulsion (√(2qV/m)), Antimatter Propulsion (E = 2mc²) and Radiation in Space (attenuation).
+* Six Codex entries on the Physics tab and an operation page for the Test Stand.
+
+### Technical
+* New classes: `orbit/MissionMath` (windows, porkchop, staging), `Missions` (the `ts_missions` reload listener),
+  `Planner` (payloads and server side), `MissionBay`, `SpaceShelter`, `SpaceRegistry`; `client/screen/PlannerScreen`.
+* `OrbitData` keeps the charted routes. `SpaceWeather.raging(server)` tells whether a storm is on anywhere.
+* `tools/round1120.py` generates the data; `tools/items3d_1120.py` and `tools/blocks1120.py` the art; the
+  Spacefarer Suit's textures are drawn from the Frontier Suit's.
+* `tools/check_costs.py` prices a `samples/*` tag as a world find rather than a common tag.
+
 ## 1.11.0: Patch B, the progression refinement
 
 The second patch of the progression review: no machine on the main path is built for a single craft any more, four

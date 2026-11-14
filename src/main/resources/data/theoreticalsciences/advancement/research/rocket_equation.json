@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:rocket_stage"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.rocket_equation"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.rocket_equation.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/orbital_mechanics",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

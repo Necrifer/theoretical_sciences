@@ -1,0 +1,99 @@
+{
+  "params": [
+    {
+      "id": "Tc",
+      "unit": "K",
+      "min": 1000,
+      "max": 4000,
+      "step": 10,
+      "default": 2500
+    },
+    {
+      "id": "eps",
+      "unit": "",
+      "min": 5,
+      "max": 200,
+      "step": 1,
+      "default": 40
+    },
+    {
+      "id": "zeta",
+      "unit": "",
+      "min": 0.3,
+      "max": 0.95,
+      "step": 0.01,
+      "default": 0.6
+    },
+    {
+      "id": "Vg",
+      "unit": "kV",
+      "min": 0.5,
+      "max": 5,
+      "step": 0.05,
+      "default": 1.0
+    }
+  ],
+  "recipe_vars": {
+    "M": 13,
+    "g": 1.2,
+    "ion": 0,
+    "Tmax": 3600
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "eta",
+      "unit": "",
+      "expr": "1 - eps^(-1.7*(g - 1)/g)",
+      "formula": "nozzle efficiency: the share of the heat the expansion turns into speed"
+    },
+    {
+      "id": "ve",
+      "unit": "m/s",
+      "expr": "(1 - ion)*sqrt(2*g/(g - 1)*8.314*Tc/(M/1000)*(1 - eps^(-1.7*(g - 1)/g)))*(1 - 0.01*d) + ion*0.75*sqrt(2*1.602e-19*Vg*1000/(M*1.6605e-27))*(1 - 0.01*d)",
+      "formula": "thermal: ve = √(2γ/(γ−1)·RT/M·η); ion: ve = √(2qV/m)"
+    },
+    {
+      "id": "Isp",
+      "unit": "s",
+      "expr": "((1 - ion)*sqrt(2*g/(g - 1)*8.314*Tc/(M/1000)*(1 - eps^(-1.7*(g - 1)/g))) + ion*0.75*sqrt(2*1.602e-19*Vg*1000/(M*1.6605e-27)))*(1 - 0.01*d)/9.80665",
+      "formula": "Isp = ve/g₀"
+    },
+    {
+      "id": "dv",
+      "unit": "km/s",
+      "expr": "((1 - ion)*sqrt(2*g/(g - 1)*8.314*Tc/(M/1000)*(1 - eps^(-1.7*(g - 1)/g))) + ion*0.75*sqrt(2*1.602e-19*Vg*1000/(M*1.6605e-27)))*(1 - 0.01*d)*ln(1/(1 - zeta))/1000",
+      "formula": "Δv = ve·ln(m₀/m_f), with m₀/m_f = 1/(1 − ζ)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "melt",
+      "kind": "wear",
+      "expr": "Tmax - Tc*(1 - ion)",
+      "formula": "chamber under its limit, or the throat erodes"
+    },
+    {
+      "id": "tank",
+      "kind": "stop",
+      "expr": "0.93 - zeta",
+      "formula": "propellant under 93% of the stage, or the tank walls are too thin to hold it"
+    },
+    {
+      "id": "arc",
+      "kind": "wear",
+      "expr": "4.6 - Vg*ion",
+      "formula": "grids under 4.6 kV, or they arc"
+    }
+  ],
+  "rate": "clamp(0.4 + Tc*(1 - ion)/4000 + ion*Vg/3, 0.3, 1.5)",
+  "rate_formula": "hotter burns (or higher grid voltage) finish the firing sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

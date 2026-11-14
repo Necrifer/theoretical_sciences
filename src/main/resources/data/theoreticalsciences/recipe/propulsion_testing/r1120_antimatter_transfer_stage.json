@@ -1,0 +1,52 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:antimatter_injector",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:antihydrogen_crystal",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:pressure_hull_plate",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_hydrogen",
+      "amount": 8000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antimatter_transfer_stage",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 1600,
+  "research": "theoreticalsciences:antimatter_propulsion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 2,
+      "g": 1.4,
+      "ion": 0,
+      "Tmax": 4000
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 900,
+        "max": 1100
+      }
+    ]
+  }
+}

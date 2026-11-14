@@ -65,6 +65,7 @@ public class TheoreticalSciences {
         com.theoreticalsciences.registry.QHSounds.register(modBus);
         com.theoreticalsciences.extreme.ExtremeRegistry.register(modBus);
         com.theoreticalsciences.home.HomeRegistry.register(modBus);          // 1.8.0: Recreating Home
+        com.theoreticalsciences.orbit.SpaceRegistry.register(modBus);        // 1.12.0: getting there
         com.theoreticalsciences.converge.ConvergenceRegistry.register(modBus);
         com.theoreticalsciences.transcend.TranscendRegistry.register(modBus);
         com.theoreticalsciences.registry.QHLogistics.register(modBus);

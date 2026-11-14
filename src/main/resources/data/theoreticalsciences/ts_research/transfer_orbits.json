@@ -1,0 +1,60 @@
+{
+  "title": "Transfer Orbits",
+  "x": 21,
+  "y": 7,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:rocket_equation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 2
+    },
+    {
+      "item": "minecraft:compass",
+      "count": 2
+    }
+  ],
+  "time": 320,
+  "description": "The cheapest way between two circular orbits is half an ellipse that touches both: Hohmann's transfer, one burn to leave and one to arrive. It only works when the target is where the ellipse will meet it, so the planets must stand in the right places: the transfer window, which comes round every synodic period (for Mars, every 26 months). Leave at another time and the trip costs far more: the Transfer Console's Mission Planner draws this as a porkchop plot. Unlocks the Return Beacon, which charts a route so that later trips cost nothing.",
+  "icon": "theoreticalsciences:orbital_transfer_console",
+  "puzzle": {
+    "goal": "In an orbit about a body of gravitational parameter μ, the speed v at distance r on an ellipse of semi-major axis a follows from energy: v²/2 − μ/r = −μ/(2a). Write v.",
+    "name": "Vis-viva",
+    "lhs": "v",
+    "form": "sqrt ( μ * ( 2 / r - 1 / a ) )",
+    "expr": "sqrt ( mu * ( 2 / r - 1 / a ) )",
+    "ask": "Find v in km/s for μ = 398600 km³/s², r = @{r} km and a = @{a} km.",
+    "vars": {
+      "v": "speed",
+      "μ": "gravitational parameter",
+      "r": "distance from the centre",
+      "a": "semi-major axis"
+    },
+    "given": {
+      "mu": 398600.0,
+      "r": 6778.0,
+      "a": 24400.0
+    },
+    "unit": "km/s",
+    "method": "The energy per unit mass of an orbit is −μ/(2a), whatever its shape; the kinetic part is what is left over.",
+    "distractors": [
+      "+",
+      "*",
+      "ln"
+    ],
+    "vary": {
+      "r": [
+        6600.0,
+        8000.0,
+        50.0
+      ],
+      "a": [
+        15000.0,
+        42000.0,
+        500.0
+      ]
+    }
+  }
+}

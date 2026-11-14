@@ -1,0 +1,56 @@
+{
+  "title": "Electric Propulsion",
+  "x": 21,
+  "y": 5,
+  "insight": 360,
+  "requires": [
+    "theoreticalsciences:rocket_equation",
+    "theoreticalsciences:electromagnetic_induction"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:noble_gas_clathrate",
+      "count": 2
+    }
+  ],
+  "time": 400,
+  "description": "An ion engine does not burn anything: it ionises a heavy gas (xenon, here freed from a clathrate) and pulls the ions out through charged grids. The exhaust leaves ten times faster than any flame, but the thrust is a breath, so an ion stage takes months to do what a chemical one does in minutes. Dawn and DS1 flew this way. Unlocks the Ion Thruster Grid.",
+  "icon": "theoreticalsciences:ion_thruster_grid",
+  "puzzle": {
+    "goal": "An ion of charge q and mass m falls through a potential difference V between the grids. Write the speed v it leaves with.",
+    "name": "Ion exhaust",
+    "lhs": "v",
+    "form": "sqrt ( 2 * q * V / m )",
+    "expr": "sqrt ( 2 * q * V / m )",
+    "ask": "Find v in km/s for a xenon ion (q = 1.602e-19 C, m = 2.18e-25 kg) through V = @{V} V (give m/s ÷ 1000).",
+    "vars": {
+      "v": "exhaust speed",
+      "q": "ion charge",
+      "V": "grid voltage",
+      "m": "ion mass"
+    },
+    "given": {
+      "q": 1.602e-19,
+      "V": 1100.0,
+      "m": 2.18e-25
+    },
+    "unit": "m/s",
+    "method": "The field does work qV on the ion; all of it becomes kinetic energy, ½mv².",
+    "distractors": [
+      "*",
+      "+",
+      "exp"
+    ],
+    "vary": {
+      "V": [
+        500.0,
+        2000.0,
+        50.0
+      ]
+    }
+  }
+}

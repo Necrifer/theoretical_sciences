@@ -1,0 +1,58 @@
+{
+  "title": "Nuclear Thermal Propulsion",
+  "x": 19,
+  "y": 5,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:rocket_equation",
+    "theoreticalsciences:nuclear_fission"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:uranium_235_pellet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:graphite_moderator",
+      "count": 2
+    }
+  ],
+  "time": 360,
+  "description": "A chemical rocket's exhaust is heavy water vapour; a nuclear thermal rocket heats pure hydrogen in a reactor instead. The exhaust speed goes as the square root of temperature over molar mass, and hydrogen's molar mass is 2 against steam's 18, so at a lower temperature it still leaves twice as fast. NERVA ran on the test stand in the 1960s at about 900 seconds of specific impulse. Unlocks the Nuclear Thermal Core.",
+  "icon": "theoreticalsciences:nuclear_thermal_core",
+  "puzzle": {
+    "goal": "A gas of ratio of specific heats γ and molar mass M leaves a chamber at temperature T through an ideal nozzle into vacuum. Write its exhaust speed ve, with R the gas constant.",
+    "name": "Exhaust speed",
+    "lhs": "ve",
+    "form": "sqrt ( 2 * γ / ( γ - 1 ) * R * T / M )",
+    "expr": "sqrt ( 2 * g / ( g - 1 ) * R * T / M )",
+    "ask": "Find ve in m/s for hydrogen (γ = 1.4, M = 0.002 kg/mol) at T = @{T} K, R = 8.314.",
+    "vars": {
+      "ve": "exhaust speed",
+      "γ": "ratio of specific heats",
+      "R": "gas constant",
+      "T": "chamber temperature",
+      "M": "molar mass"
+    },
+    "given": {
+      "g": 1.4,
+      "R": 8.314,
+      "T": 2700.0,
+      "M": 0.002
+    },
+    "unit": "m/s",
+    "method": "The gas's enthalpy cp·T, all of it turned into motion: ve² = 2·cp·T, with cp = γR/((γ − 1)M).",
+    "distractors": [
+      "*",
+      "+",
+      "ln"
+    ],
+    "vary": {
+      "T": [
+        1500.0,
+        3000.0,
+        50.0
+      ]
+    }
+  }
+}

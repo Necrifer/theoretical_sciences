@@ -106,6 +106,7 @@ public final class MachineVoices {
         V.put("quantum_computer", new Voice("data", 0.97F));
         V.put("ct_scanner", new Voice("cryo", 0.98F));
         V.put("bloomery_shaft", new Voice("heavy", 1.10F));
+        V.put("propulsion_test_stand", new Voice("heavy", 0.78F));   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));
     }

@@ -1,0 +1,54 @@
+{
+  "title": "Antimatter Propulsion",
+  "x": 23,
+  "y": 5,
+  "insight": 480,
+  "requires": [
+    "theoreticalsciences:electric_propulsion",
+    "theoreticalsciences:annihilation_power"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:antiproton_bundle",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "description": "Antiprotons meeting hydrogen turn their whole mass into energy: charged pions leaving at near the speed of light, which a magnetic nozzle can turn into thrust. A plasma-core engine of this kind would have a specific impulse in the tens of thousands of seconds: a gram of antiprotons holds the energy of forty kilotons. Unlocks the Antimatter Injector.",
+  "icon": "theoreticalsciences:antimatter_injector",
+  "puzzle": {
+    "goal": "An antiproton meets a proton and both vanish into energy. Write the energy E released when a mass m of antimatter annihilates with as much matter, with c the speed of light.",
+    "name": "Annihilation",
+    "lhs": "E",
+    "form": "2 * m * c ^ 2",
+    "expr": "2 * m * c ^ 2",
+    "ask": "Find E in TJ for m = @{m} g (give J ÷ 1e12, with m in kg and c = 3e8 m/s).",
+    "vars": {
+      "E": "energy released",
+      "m": "mass of antimatter",
+      "c": "speed of light"
+    },
+    "given": {
+      "m": 0.001,
+      "c": 300000000.0
+    },
+    "unit": "J",
+    "method": "E = mc² for each: the antimatter and the matter it meets, both turned wholly into energy.",
+    "distractors": [
+      "+",
+      "/",
+      "sqrt"
+    ],
+    "vary": {
+      "m": [
+        0.0001,
+        0.01,
+        0.0001
+      ]
+    }
+  }
+}

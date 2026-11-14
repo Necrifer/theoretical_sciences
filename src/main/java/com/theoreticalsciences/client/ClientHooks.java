@@ -86,6 +86,13 @@ public final class ClientHooks {
         else if (tag.getBoolean("open")) mc.setScreen(new com.theoreticalsciences.client.screen.AttuneScreen(core, tag));
     }
 
+    /** 1.12.0: the Mission Planner, opened or refreshed. */
+    public static void planner(com.theoreticalsciences.orbit.Planner.Open o) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.screen instanceof com.theoreticalsciences.client.screen.PlannerScreen s && s.same(o)) s.refresh(o);
+        else mc.setScreen(new com.theoreticalsciences.client.screen.PlannerScreen(o));
+    }
+
     public static void openOmnipotence(BlockPos core, int phase, int seconds) {
         Minecraft.getInstance().setScreen(new com.theoreticalsciences.client.screen.OmnipotenceScreen(core, phase, seconds));
     }

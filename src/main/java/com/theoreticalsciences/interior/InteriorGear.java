@@ -60,7 +60,9 @@ public final class InteriorGear {
         /** 1.10.1: one piece for each of the Frontier's other hazards (see FrontierHazards). */
         FRONTIER("frontier_suit", 3, 7, 6, 3, 2F, 0.05F, "station_hull"),
         /** 1.2.0: a Pressure Suit lined with aerogel and threaded with heating wire, against Titan's 94 K (see TitanHazards). */
-        HEATED("heated_pressure_suit", 3, 8, 6, 3, 3F, 0.15F, "silica_aerogel");
+        HEATED("heated_pressure_suit", 3, 8, 6, 3, 3F, 0.15F, "silica_aerogel"),
+        /** 1.12.0: Frontier and Heated pieces in one, lined with polyethylene: counts as every other suit, and stops storm protons. */
+        SPACEFARER("spacefarer_suit", 4, 9, 7, 4, 4F, 0.2F, "metamaterial_sheet");
 
         public final String id;
         final Holder<ArmorMaterial> material;
@@ -101,13 +103,13 @@ public final class InteriorGear {
     public static int pieces(LivingEntity e, Suit s) {
         int n = 0;
         for (EquipmentSlot slot : SLOTS)
-            if (e.getItemBySlot(slot).getItem() instanceof SuitItem si && si.suit == s) n++;
+            if (e.getItemBySlot(slot).getItem() instanceof SuitItem si && (si.suit == s || si.suit == Suit.SPACEFARER)) n++;
         return n;
     }
 
     /** Whether the player wears this one piece of a suit. */
     public static boolean wears(LivingEntity e, Suit s, EquipmentSlot slot) {
-        return e.getItemBySlot(slot).getItem() instanceof SuitItem si && si.suit == s;
+        return e.getItemBySlot(slot).getItem() instanceof SuitItem si && (si.suit == s || si.suit == Suit.SPACEFARER);
     }
 
     /** What part of a radiation dose still reaches this player through the radiation plating on their armour (1.3.8). */

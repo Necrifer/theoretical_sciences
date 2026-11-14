@@ -1,0 +1,53 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:nuclear_thermal_core",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:pressure_hull_plate",
+      "count": 6
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_hydrogen",
+      "amount": 16000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:nuclear_transfer_stage",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 800,
+  "research": "theoreticalsciences:nuclear_thermal_propulsion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 2,
+      "g": 1.4,
+      "ion": 0,
+      "Tmax": 2900
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 820,
+        "max": 940
+      },
+      {
+        "q": "dv",
+        "min": 9.3,
+        "max": 10.6
+      }
+    ]
+  }
+}

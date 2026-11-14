@@ -1,0 +1,61 @@
+{
+  "title": "The Rocket Equation",
+  "x": 19,
+  "y": 7,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:orbital_mechanics",
+    "theoreticalsciences:rocketry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:liquid_hydrogen_cell",
+      "count": 2
+    }
+  ],
+  "time": 300,
+  "description": "A rocket is pushed forward by everything it throws back. Each bit of exhaust leaving at speed ve takes momentum with it, and the rocket, now a little lighter, gains the same. Add it up over the whole burn and the change in speed is ve times the logarithm of how much heavier the rocket was full than empty. That logarithm is why rockets are mostly propellant, and why a better engine (a faster exhaust) is worth more than a bigger tank. Unlocks the Propulsion Test Stand, a multiblock: Transfer Stages.",
+  "icon": "theoreticalsciences:rocket_stage",
+  "puzzle": {
+    "goal": "A rocket of mass m throws back propellant dm at speed ve relative to itself. Momentum is kept, so m·dv = −ve·dm. Integrate from the full mass m0 to the empty mass mf: write the change in speed Δv.",
+    "name": "Tsiolkovsky",
+    "lhs": "Δv",
+    "form": "ve * ln ( m0 / mf )",
+    "expr": "ve * ln ( m0 / mf )",
+    "ask": "Find Δv in km/s for ve = @{ve} km/s, m0 = @{m0} t and mf = 25 t.",
+    "vars": {
+      "Δv": "change in speed",
+      "ve": "exhaust speed",
+      "m0": "mass full",
+      "mf": "mass empty"
+    },
+    "given": {
+      "ve": 4.4,
+      "m0": 100.0,
+      "mf": 25.0
+    },
+    "unit": "km/s",
+    "method": "dv = −ve·dm/m; integrate: Δv = ve·(ln m0 − ln mf).",
+    "distractors": [
+      "*",
+      "-",
+      "exp"
+    ],
+    "vary": {
+      "ve": [
+        3.0,
+        9.0,
+        0.1
+      ],
+      "m0": [
+        40.0,
+        200.0,
+        5.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Sample Return",
+  "x": 23,
+  "y": 7,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:transfer_orbits"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:survey_probe",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 4
+    }
+  ],
+  "time": 360,
+  "description": "Hayabusa2 brought back grains of the asteroid Ryugu; OSIRIS-REx brought back Bennu's; Chang'e 5 brought back the Moon. A probe flies the transfer orbit out, takes its sample, and flies it home: half an ellipse each way, so the time of the trip is set by Kepler's third law. Unlocks the Mission Bay and the Sample Return Probe.",
+  "icon": "theoreticalsciences:mission_bay",
+  "puzzle": {
+    "goal": "A Hohmann transfer between circular orbits of radii r1 and r2 about a body of parameter μ is half an ellipse of semi-major axis (r1 + r2)/2. Write the time t it takes (half the period).",
+    "name": "Time of flight",
+    "lhs": "t",
+    "form": "π * sqrt ( ( r1 + r2 ) ^ 3 / ( 8 * μ ) )",
+    "expr": "π * sqrt ( ( r1 + r2 ) ^ 3 / ( 8 * mu ) )",
+    "ask": "Find t in days for r1 = 1 AU, r2 = @{r2} AU and μ of the Sun = 39.48 AU³/year² (give years × 365.25).",
+    "vars": {
+      "t": "time of flight",
+      "r1": "inner radius",
+      "r2": "outer radius",
+      "μ": "gravitational parameter"
+    },
+    "given": {
+      "r1": 1.0,
+      "r2": 1.524,
+      "mu": 39.48
+    },
+    "unit": "years",
+    "method": "Kepler's third law: P = 2π√(a³/μ). Half of it, with a = (r1 + r2)/2.",
+    "distractors": [
+      "*",
+      "2",
+      "ln"
+    ],
+    "vary": {
+      "r2": [
+        1.2,
+        9.6,
+        0.1
+      ]
+    }
+  }
+}

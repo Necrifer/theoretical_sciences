@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:uranium_235_pellet",
+      "count": 6
+    },
+    {
+      "item": "theoreticalsciences:graphite_moderator",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:corundum",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_hydrogen",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:nuclear_thermal_core",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 800,
+  "research": "theoreticalsciences:nuclear_thermal_propulsion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 2,
+      "g": 1.4,
+      "ion": 0,
+      "Tmax": 2900
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 820,
+        "max": 940
+      }
+    ]
+  }
+}

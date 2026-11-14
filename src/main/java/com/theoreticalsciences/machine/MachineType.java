@@ -285,6 +285,8 @@ public enum MachineType {
     ISOTOPE_PROVENANCER     ("provenancing",         2, 0, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0xD080F0),
     BLOOMERY_SHAFT          ("bloomery_smelting",    3, 0, 1, 0, false, "bloomery_shaft",           8_000_000,   200_000, Effect.NONE,        0xFF7030),
     PHOTOGRAMMETRY_GANTRY   ("photogrammetry",       4, 0, 1, 0, false, "photogrammetry_gantry",   16_000_000,   400_000, Effect.NONE,        0xE0D0A0),
+    // 1.12.0: engines fired until they make their rating, then built into Transfer Stages
+    PROPULSION_TEST_STAND   ("propulsion_testing",   4, 2, 1, 0, false, "propulsion_test_stand",   64_000_000, 2_000_000, Effect.NONE,        0xFFB050),
     // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
     PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
 

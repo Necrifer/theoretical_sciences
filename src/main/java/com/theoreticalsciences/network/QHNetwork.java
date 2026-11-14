@@ -46,6 +46,12 @@ public final class QHNetwork {
         });
         r.playToClient(com.theoreticalsciences.transcend.CorePayloads.Open.TYPE, com.theoreticalsciences.transcend.CorePayloads.Open.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.openOmnipotence(p.core(), p.phase(), p.seconds()));
+        // 1.12.0: the Mission Planner
+        r.playToClient(com.theoreticalsciences.orbit.Planner.Open.TYPE, com.theoreticalsciences.orbit.Planner.Open.CODEC,
+                (p, ctx) -> com.theoreticalsciences.client.ClientHooks.planner(p));
+        r.playToServer(com.theoreticalsciences.orbit.Planner.Go.TYPE, com.theoreticalsciences.orbit.Planner.Go.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.orbit.Planner.handle(sp, p);
+        });
         // 1.8.0: Recreating Home
         r.playToClient(com.theoreticalsciences.home.PortalOpening.Start.TYPE, com.theoreticalsciences.home.PortalOpening.Start.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.portalOpening(p));
