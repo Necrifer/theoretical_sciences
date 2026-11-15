@@ -1,0 +1,52 @@
+{
+  "type": "theoreticalsciences:microgravity_processing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:folded_protein_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:microgravity_processing",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "beta": 0.0002,
+      "nu": 1e-06,
+      "alpha": 1.4e-07,
+      "sigT": 0.00015,
+      "mu": 0.001,
+      "Mac": 200000.0
+    },
+    "windows": [
+      {
+        "q": "Ra",
+        "min": 0,
+        "max": 5
+      },
+      {
+        "q": "wid",
+        "min": 15,
+        "max": 40
+      },
+      {
+        "q": "vg",
+        "min": 0.1,
+        "max": 0.5
+      }
+    ]
+  }
+}

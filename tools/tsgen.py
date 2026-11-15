@@ -53,10 +53,14 @@ def pyexpr(e):
     return e.replace('^', '**')
 
 
-def evaluate(model, params, rvars, d=0.0):
+WORLD = {}      # 1.13.0: machine id -> the world it stands in, for checks (e.g. {'grav': 9.81e-5} aboard the station)
+
+
+def evaluate(model, params, rvars, d=0.0, world=None):
     env = dict(FUNCS)
-    env.update({'d': d, 'T': 300.0, 'T_amb': 300.0, 'on': 1.0, 'size': 1.0, 'sky': 1.0, 'night': 0.0, 'sun': 0.5, 'moon': 0.5, 'rain': 0.0,
+    env.update({'grav': 9.81, 'd': d, 'T': 300.0, 'T_amb': 300.0, 'on': 1.0, 'size': 1.0, 'sky': 1.0, 'night': 0.0, 'sun': 0.5, 'moon': 0.5, 'rain': 0.0,
                 'alt': 64.0, 'rfi': 0.0, 'coil': 1.0, 'emitter': 1.0, 'oc': 0.0, 'par': 1.0, 'thr': 1.0, 'T_c': 300.0, 'sc_Tc': 0.0, 'sc_B0': 0.0})
+    env.update(world or {})
     env.update(rvars)
     env.update(params)
     for c in model.get('consts', []):
@@ -84,7 +88,7 @@ def check_reachable(machine, model, recipe):
                 v = rng.uniform(q['min'], q['max'])
                 p[q['id']] = round(v / q['step']) * q['step']
         try:
-            env, ok, rate = evaluate(model, p, rv)
+            env, ok, rate = evaluate(model, p, rv, world=WORLD.get(machine))
         except (ValueError, ZeroDivisionError, OverflowError):
             continue
         if not ok or rate <= 0:
@@ -175,7 +179,14 @@ def con(cid, kind, expr, formula):
     return {'id': cid, 'kind': kind, 'expr': expr, 'formula': formula}
 
 
+BUILTINS = {'T', 'T_c', 'T_amb', 'coil', 'emitter', 'sc_Tc', 'sc_B0', 'oc', 'par', 'thr', 'd', 'on', 'size', 'sky', 'night', 'sun', 'moon',
+            'rain', 'alt', 'rfi', 'grav'}
+
+
 def model(params, rvars, derived, constraints, rate, rate_formula, rate_max=1.5, heat='0', idle='0'):
+    clash = BUILTINS & ({p['id'] for p in params} | set(rvars) | {x['id'] for x in derived})
+    if clash:
+        raise SystemExit('model uses built-in names: %s' % sorted(clash))
     return {'params': params, 'recipe_vars': rvars, 'consts': [], 'states': [], 'derived': derived, 'constraints': constraints,
             'rate': rate, 'rate_formula': rate_formula, 'heat': heat, 'idle_heat': idle, 'quench_energy': '0', 'kappa': 40,
             'heat_capacity': 60, 'timescale': 1, 'rate_max': rate_max}

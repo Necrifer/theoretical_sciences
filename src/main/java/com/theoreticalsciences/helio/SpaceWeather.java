@@ -50,6 +50,11 @@ public final class SpaceWeather extends SavedData {
         return t;
     }
 
+    /** 1.13.0: when the next storm is due (game time), for the Solar Monitor's warning. */
+    public static long nextStorm(MinecraftServer server) {
+        return get(server).next;
+    }
+
     static SpaceWeather get(MinecraftServer server) {
         return server.overworld().getDataStorage().computeIfAbsent(new SavedData.Factory<>(SpaceWeather::new, SpaceWeather::load, null), NAME);
     }

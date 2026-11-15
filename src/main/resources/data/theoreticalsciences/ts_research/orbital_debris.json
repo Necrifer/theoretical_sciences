@@ -1,0 +1,53 @@
+{
+  "title": "Orbital Debris",
+  "x": 24,
+  "y": 8,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:satellite_orbits"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pressure_hull_plate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:light_sail",
+      "count": 1
+    }
+  ],
+  "time": 320,
+  "description": "Every launch leaves something in orbit: spent stages, bolts, flecks of paint. At 10 km/s a fleck of paint chips a window and a bolt carries a grenade's energy. When there is enough of it, collisions break satellites into more debris, which breaks more: Kessler syndrome. Low orbits clean themselves slowly, as the thin air drags things down; a sweeper can speed it up. Unlocks the Debris Sweeper. (Debris can be turned off in the config.)",
+  "icon": "theoreticalsciences:debris_sweeper",
+  "puzzle": {
+    "goal": "A fragment of mass m strikes at speed v. Write the energy E it carries.",
+    "name": "Impact energy",
+    "lhs": "E",
+    "form": "m * v ^ 2 / 2",
+    "expr": "m * v ^ 2 / 2",
+    "ask": "Find E in J for m = @{m} kg at v = 10000 m/s.",
+    "vars": {
+      "E": "energy",
+      "m": "mass",
+      "v": "speed"
+    },
+    "given": {
+      "m": 0.001,
+      "v": 10000.0
+    },
+    "unit": "J",
+    "method": "Kinetic energy, ½mv²: at orbital speed even a gram is tens of kilojoules.",
+    "distractors": [
+      "*",
+      "+",
+      "sqrt"
+    ],
+    "vary": {
+      "m": [
+        0.0001,
+        0.05,
+        0.0001
+      ]
+    }
+  }
+}

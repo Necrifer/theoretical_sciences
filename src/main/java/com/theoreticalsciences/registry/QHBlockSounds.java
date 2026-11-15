@@ -11,6 +11,7 @@ public final class QHBlockSounds {
                  "titan_ice", "void_lattice_block" -> SoundType.AMETHYST;
             // 1.12.0: polyethylene is a wax, and sounds like one; the test stand is steel, its trench refractory concrete
             case "polyethylene_shielding" -> SoundType.CANDLE;
+            case "rectenna_panel" -> SoundType.COPPER;                        // 1.13.0: copper dipoles on a wire mesh
             case "water_shield_tank", "test_stand_frame", "propellant_tank_block" -> SoundType.METAL;
             case "flame_trench_block" -> SoundType.STONE;
             case "accretion_fragment_ore", "basalt_column", "oceanic_basalt", "rich_gold_ore", "rim_slag" -> SoundType.BASALT;

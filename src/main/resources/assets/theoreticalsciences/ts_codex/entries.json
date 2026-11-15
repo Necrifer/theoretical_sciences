@@ -58018,5 +58018,176 @@
     "text": "$(thing)Equations$()$(br)η = 1 − ε^(−1.7(γ−1)/γ)$(br)ve = √(2γ/(γ−1)·RT/M·η)$(br)ve (ion) = 0.75·√(2qV/m)$(br)Isp = ve/g₀$(br)Δv = ve·ln(1/(1 − ζ))"
    }
   ]
+ },
+ "fluids/microgravity_processing": {
+  "title": "Microgravity Processing",
+  "icon": "theoreticalsciences:microgravity_factory",
+  "category": "fluids",
+  "research": "microgravity_processing",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:microgravity_factory"
+    ],
+    "text": "Ra = gβΔT·L³/(να). On the ground a melt with a gradient across it stirs itself; aboard the station, where gravity is ten millionths of the ground's, it stays still. The $(thing)Microgravity Factory$() works only aboard the Orbital Station.",
+    "title": "Microgravity Factory"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:microgravity_crystal",
+     "theoreticalsciences:zblan_fibre",
+     "theoreticalsciences:folded_protein_crystal"
+    ],
+    "text": "It grows Microgravity Crystals from a Silicon Boule (cheaper than flying a whole lab), draws ZBLAN Fibre from fluorspar and rare earths, and crystallises proteins from amino acids. Keep Ra under its window, cap the free surface against Marangoni flow, and make the melt wide.",
+    "title": "Products"
+   }
+  ]
+ },
+ "fluids/station_modules": {
+  "title": "Station Modules",
+  "icon": "theoreticalsciences:habitat_ring_module",
+  "category": "fluids",
+  "research": "space_radiation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Weeks in free fall cost bone and muscle: here a Minecraft day aboard the station stands for a week. Back in gravity you are slow, and after long stays weak, until you recover (a quarter of the time you were up). (It can be turned off in the config.)"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:habitat_ring_module"
+    ],
+    "text": "A $(item)Habitat Ring Module$() spins for the crew. Within twelve blocks of it aboard the station you have your full weight back, and the toll does not build up; it slowly goes.",
+    "title": "Habitat Ring"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:storm_shelter_module"
+    ],
+    "text": "A $(item)Storm Shelter Module$(), walled with water and polyethylene: within two blocks of it a solar storm's dose is a fiftieth. Aboard the station or in the Accretion Frontier.",
+    "title": "Storm Shelter"
+   }
+  ]
+ },
+ "fluids/satellite_orbits": {
+  "title": "Satellite Orbits",
+  "icon": "theoreticalsciences:relay_satellite",
+  "category": "fluids",
+  "research": "satellite_orbits",
+  "pages": [
+   {
+    "type": "text",
+    "text": "r = ∛(μT²/4π²). Satellites are launched by the $(thing)Rocket Assembly$(), each to its own orbit: the further, the more Δv, so lighter payloads go higher. Sneak and use a Transfer Console to see what is in orbit."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:weather_satellite",
+     "theoreticalsciences:solar_monitor_satellite",
+     "theoreticalsciences:relay_satellite"
+    ],
+    "text": "$(item)Weather Satellite$() (sun-synchronous, 9.8 km/s): forecasts rain, thunder and clearing five minutes ahead. $(item)Solar Monitor$() (L1, 12.6 km/s): warns of solar storms three minutes ahead. $(item)Relay Satellite$() (geostationary, 13.2 km/s): a Mission Bay's probes bring home half as much again.",
+    "title": "Satellites"
+   }
+  ]
+ },
+ "fluids/space_solar_power": {
+  "title": "Space Solar Power",
+  "icon": "theoreticalsciences:power_satellite",
+  "category": "fluids",
+  "research": "space_solar_power",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:power_satellite",
+     "theoreticalsciences:microwave_rectenna"
+    ],
+    "text": "d = 2.44λR/D. A $(item)Power Satellite$() in geostationary orbit beams microwaves to the ground; a $(thing)Microwave Rectenna$() (162 blocks: a field of dipoles) turns them back into current, day and night. Each Power Satellite feeds four rectennas.",
+    "title": "Power Satellite"
+   },
+   {
+    "type": "multiblock",
+    "name": "Microwave Rectenna",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "microwave_rectenna"
+   },
+   {
+    "type": "text",
+    "text": "A wider transmitter or a higher frequency focuses the beam, so the field catches more of it, but the spot's centre must stay under 230 W/m² (the safety limit), and above 12 GHz (6 in rain) the air absorbs it. Stringing more of the field together catches more, with more wiring loss."
+   }
+  ]
+ },
+ "fluids/orbital_debris": {
+  "title": "Orbital Debris",
+  "icon": "theoreticalsciences:debris_sweeper",
+  "category": "fluids",
+  "research": "orbital_debris",
+  "pages": [
+   {
+    "type": "text",
+    "text": "E = ½mv². Every launch leaves debris in orbit, and the thin air drags it down slowly (a fiftieth a day). While it is thick, strikes hurt anyone outside the station's hub without a Whipple bumper (a Whipple Shield or Spacefarer piece), and can destroy satellites; a destroyed satellite adds more (Kessler syndrome). It can be turned off in the config."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:debris_sweeper"
+    ],
+    "text": "A $(item)Debris Sweeper$(), launched by the Rocket Assembly, clears most of it.",
+    "title": "Debris Sweeper"
+   }
+  ]
+ },
+ "operation/microgravity_factory": {
+  "title": "Microgravity Factory",
+  "icon": "theoreticalsciences:microgravity_factory",
+  "category": "operation",
+  "research": "microgravity_processing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Keep the melt still: aboard the station its Rayleigh number is small, but a wide melt raises it as the cube. Cap the free surface against surface-tension flow, and use a steep gradient to grow fast."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Temperature difference, Melt width, Encapsulation.$(br2)$(thing)Disturbance$(): g-jitter: the residual gravity rises by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): Ra over 1708 stops it (it convects); Ma over its critical value wears it (striations).$(br2)$(thing)Rate$(): steeper and wider, faster; a cap slows it."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)Ra = gβΔT·L³/(να)$(br)Ma = (dσ/dT)·ΔT·L/(μα)·(1 − cap)$(br)growth = 0.05·ΔT·(1 − 0.6·cap) mm/h"
+   }
+  ]
+ },
+ "operation/microwave_rectenna": {
+  "title": "Microwave Rectenna",
+  "icon": "theoreticalsciences:microwave_rectenna",
+  "category": "operation",
+  "research": "space_solar_power",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Aim the beam so the field catches most of it while its centre stays under the safety limit."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Transmitter aperture, Beam frequency, Field in use.$(br2)$(thing)Disturbance$(): pointing jitter: the spot widens by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 230 W/m² it stops; above 12 GHz (6 in rain) it wears.$(br2)$(thing)Rate$(): what the field catches and rectifies."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)λ = c/f$(br)d = 2.44λR/D$(br)η = 1 − e^(−2(Dr/d)²)$(br)I = 8P/(πd²)"
+   }
+  ]
  }
 }

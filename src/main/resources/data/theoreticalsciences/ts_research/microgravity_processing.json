@@ -1,0 +1,62 @@
+{
+  "title": "Microgravity Processing",
+  "x": 22,
+  "y": 8,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:orbital_mechanics",
+    "theoreticalsciences:crystal_growth_physics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:microgravity_crystal",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:silicon_boule",
+      "count": 2
+    }
+  ],
+  "time": 340,
+  "description": "On the ground a melt with a warm side and a cool side stirs itself: the warm liquid is lighter and rises. Whether it does is told by one number, Rayleigh's, the push of buoyancy against the drag of viscosity and the smoothing of heat; past about 1,708 the melt rolls. In orbit gravity is a hundred thousand times smaller and the melt stays still, so crystals grow without striations and glasses cool without crystallising. A free surface still stirs itself, pulled by surface tension (the Marangoni effect), unless it is capped. Unlocks the Microgravity Factory, which works only aboard the Orbital Station.",
+  "icon": "theoreticalsciences:microgravity_factory",
+  "puzzle": {
+    "goal": "A layer of fluid of depth L is warmer by ΔT at the bottom, under gravity g. It has thermal expansion β, kinematic viscosity ν and thermal diffusivity α. Write the Rayleigh number Ra, the ratio of buoyancy to the damping.",
+    "name": "Rayleigh number",
+    "lhs": "Ra",
+    "form": "g * β * ΔT * L ^ 3 / ( ν * α )",
+    "expr": "g * b * dT * L ^ 3 / ( nu * a )",
+    "ask": "Find Ra for water (β = 2e-4 /K, ν = 1e-6 m²/s, α = 1.4e-7 m²/s), ΔT = @{dT} K, L = 0.02 m, at g = 9.81 m/s².",
+    "vars": {
+      "Ra": "Rayleigh number",
+      "g": "gravity",
+      "β": "thermal expansion",
+      "ΔT": "temperature difference",
+      "L": "depth",
+      "ν": "kinematic viscosity",
+      "α": "thermal diffusivity"
+    },
+    "given": {
+      "g": 9.81,
+      "b": 0.0002,
+      "dT": 5.0,
+      "L": 0.02,
+      "nu": 1e-06,
+      "a": 1.4e-07
+    },
+    "unit": "",
+    "method": "Buoyancy gβΔT against the two damping rates ν/L² and α/L², over the depth: the L³ comes from both.",
+    "distractors": [
+      "+",
+      "*",
+      "sqrt"
+    ],
+    "vary": {
+      "dT": [
+        1.0,
+        20.0,
+        0.5
+      ]
+    }
+  }
+}

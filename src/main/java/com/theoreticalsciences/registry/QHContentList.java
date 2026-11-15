@@ -969,7 +969,16 @@ public final class QHContentList {
         new ItemDef("lunar_regolith", "", 64),
         new ItemDef("martian_regolith", "", 64),
         new ItemDef("venusian_aerosol", "", 64),
-        new ItemDef("mercurian_regolith", "", 64));
+        new ItemDef("mercurian_regolith", "", 64),
+        // 1.13.0: Patch C2, the station grows
+        new ItemDef("zblan_fibre", "", 64),
+        new ItemDef("multijunction_solar_cell", "", 64),
+        new ItemDef("microwave_phased_array", "", 16),
+        new ItemDef("weather_satellite", "", 1),
+        new ItemDef("solar_monitor_satellite", "", 1),
+        new ItemDef("relay_satellite", "", 1),
+        new ItemDef("power_satellite", "", 1),
+        new ItemDef("debris_sweeper", "", 1));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1480,7 +1489,11 @@ public final class QHContentList {
         new BlockDef("polyethylene_shielding", "simple", 0, 2.0F, "none", ""),
         new BlockDef("water_shield_tank", "simple", 0, 3.0F, "none", ""),
         new BlockDef("return_beacon", "return_beacon", 7, 3.0F, "none", ""),
-        new BlockDef("mission_bay", "mission_bay", 6, 5.0F, "none", ""));
+        new BlockDef("mission_bay", "mission_bay", 6, 5.0F, "none", ""),
+        // 1.13.0: Patch C2
+        new BlockDef("rectenna_panel", "casing", 0, 3.0F, "iron", ""),
+        new BlockDef("storm_shelter_module", "space_module", 4, 5.0F, "none", ""),
+        new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),

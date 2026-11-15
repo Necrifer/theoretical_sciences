@@ -107,6 +107,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         w[4] = wet ? 1 : 0;
         w[5] = worldPosition.getY();
         w[6] = noisyNeighbours(level);
+        w[7] = com.theoreticalsciences.orbit.SpaceModules.gravity(level);     // 1.13.0
     }
 
     /**
@@ -742,6 +743,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     protected int parallelCount() {
         // (a save from before a /reload that lowered the limit may hold more than is allowed now)
         return tuningProfile() == null ? 1 : Math.max(1, Math.min(tuning.parallel, maxParallel()));
+    }
+
+    @Override
+    protected MachineStatus generatorGate(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe r) {
+        if (type == MachineType.MICROWAVE_RECTENNA && !com.theoreticalsciences.orbit.SpaceModules.claimBeam(level, worldPosition)) return MachineStatus.NO_BEAM;
+        return null;
     }
 
     @Override

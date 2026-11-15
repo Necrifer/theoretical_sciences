@@ -1,0 +1,56 @@
+{
+  "controller_block": "theoreticalsciences:microwave_rectenna",
+  "controller": "C",
+  "layers": [
+    [
+      "FFFPFCFPFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF",
+      "FFFFFFFFFFF"
+    ],
+    [
+      "           ",
+      " F F F F F ",
+      "  F F F F  ",
+      " F F F F F ",
+      "  F F F F  ",
+      " F F F F F ",
+      "  F F F F  ",
+      " F F F F F ",
+      "  F F F F  ",
+      " F F F F F ",
+      "           "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:rectenna_panel"
+    ],
+    "P": [
+      "theoreticalsciences:rectenna_panel",
+      "theoreticalsciences:interface_port"
+    ]
+  },
+  "tiers": {},
+  "effect_center": [
+    5,
+    2,
+    5
+  ],
+  "effect_scale": 4.0,
+  "fx": [
+    {
+      "type": "glow",
+      "chars": "F",
+      "color": "#60C8FF",
+      "hot": "#E0F4FF"
+    }
+  ]
+}

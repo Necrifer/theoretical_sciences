@@ -40,9 +40,11 @@ public final class OrbitHazards {
     public static void onTick(PlayerTickEvent.Post e) {
         if (!(e.getEntity() instanceof ServerPlayer p)) return;
         boolean here = p.level().dimension() == QHDimensions.ORBITAL_STATION && !p.isSpectator();
-        mod(p.getAttribute(Attributes.GRAVITY), here, GRAVITY_FACTOR - 1);
-        mod(p.getAttribute(Attributes.JUMP_STRENGTH), here, JUMP_FACTOR - 1);
-        mod(p.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER), here, FALL_FACTOR - 1);
+        // 1.13.0: by a Habitat Ring Module your weight comes back
+        boolean free = here && !SpaceModules.nearRing(p);
+        mod(p.getAttribute(Attributes.GRAVITY), free, GRAVITY_FACTOR - 1);
+        mod(p.getAttribute(Attributes.JUMP_STRENGTH), free, JUMP_FACTOR - 1);
+        mod(p.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER), free, FALL_FACTOR - 1);
         if (!here || p.isCreative()) return;
         if (p.isOnFire()) p.clearFire();                       // nothing burns in vacuum
         if (OrbitBuilder.inside(p.blockPosition()) || suited(p)) return;

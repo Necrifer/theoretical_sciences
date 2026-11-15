@@ -395,6 +395,12 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         return r.secret ? MachineStatus.BLOCKED : null;
     }
 
+    /** 1.13.0: a reason a generator may not start a burn (null if it may). */
+    @Nullable
+    protected MachineStatus generatorGate(ServerLevel level, QHRecipe r) {
+        return null;
+    }
+
     /** Multiplier on generator output. */
     protected double outputFactor() {
         return 1.0;
@@ -626,6 +632,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
                 else if (!tierOk(r)) setStatus(MachineStatus.LOW_TIER);
                 else if (!canOutput(r, true)) setStatus(MachineStatus.OUTPUT_FULL);
                 else if (energy.getEnergyStored() >= energy.getMaxEnergyStored()) setStatus(MachineStatus.OUTPUT_FULL);
+                else if (generatorGate(level, r) != null) setStatus(generatorGate(level, r));
                 else if (!NeoForge.EVENT_BUS.post(new MachineRecipeEvent.Start(this, holder.id(), r)).isCanceled()) {
                     if (!consumeInputs(r)) {
                         setStatus(MachineStatus.BLOCKED);

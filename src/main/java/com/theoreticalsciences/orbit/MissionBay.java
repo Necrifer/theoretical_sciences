@@ -224,6 +224,8 @@ public final class MissionBay {
             if (m != null)
                 for (ItemStack s : m.samples()) {
                     ItemStack left = s.copy();
+                    // 1.13.0: with a relay in geostationary orbit the probe is steered all the way, and brings home half as much again
+                    if (OrbitData.get(level.getServer()).satellites("relay_satellite") > 0) left.setCount((int) Math.ceil(left.getCount() * 1.5));
                     for (int i = OUT0; i < OUT0 + OUTS && !left.isEmpty(); i++) left = items.insertItem(i, left, false);
                     if (!left.isEmpty()) Containers.dropItemStack(level, worldPosition.getX() + 0.5, worldPosition.getY() + 1.1, worldPosition.getZ() + 0.5, left);
                 }

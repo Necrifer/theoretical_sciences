@@ -32,9 +32,9 @@ import java.util.Map;
  */
 public final class PhysicsModel {
     public static final String[] BUILTINS = {"T", "T_c", "T_amb", "coil", "emitter", "sc_Tc", "sc_B0", "oc", "par", "thr", "d", "on", "size",
-            "sky", "night", "sun", "moon", "rain", "alt", "rfi"};
+            "sky", "night", "sun", "moon", "rain", "alt", "rfi", "grav"};
     public static final int B_T = 0, B_TC = 1, B_TAMB = 2, B_COIL = 3, B_EMIT = 4, B_SCTC = 5, B_SCB0 = 6, B_OC = 7, B_PAR = 8, B_THR = 9, B_D = 10, B_ON = 11, B_SIZE = 12,
-            B_SKY = 13, B_NIGHT = 14, B_SUN = 15, B_MOON = 16, B_RAIN = 17, B_ALT = 18, B_RFI = 19;
+            B_SKY = 13, B_NIGHT = 14, B_SUN = 15, B_MOON = 16, B_RAIN = 17, B_ALT = 18, B_RFI = 19, B_GRAV = 20;   // 1.13.0: grav, the local gravity (m/s²)
 
     public enum Kind {
         /** the machine simply cannot work outside it (the beam is lost, the plasma will not ignite) */

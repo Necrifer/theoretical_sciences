@@ -162,6 +162,8 @@ final class ProcessScenes {
         e("isotope_provenancer", "isotope ratios", V.PIPE, C.BEAM, C.BARS, 1);
         e("bloomery_shaft", "bloomery", V.KILN, C.FLAME, C.GLOW, 4);
         e("propulsion_test_stand", "static fire", V.PIPE, C.FLAME, C.FLOW, 5);   // 1.12.0
+        e("microgravity_factory", "still melt", V.KILN, C.GLOW, C.GLOW, 3);      // 1.13.0
+        e("microwave_rectenna", "power beam", V.PIPE, C.GLOW, C.FLOW, 4);
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1
         e("pleroma_confluence", "confluence", V.UTUBE, C.FLOW, C.GLOW, 6);

@@ -245,6 +245,10 @@ public final class QHBlocks {
                     p.mapColor(MapColor.METAL).sound(SoundType.LANTERN);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.SpaceRegistry.ReturnBeaconBlock::new, p));
                 }
+                case "space_module" -> {       // 1.13.0: a station module that the station keeps track of
+                    p.mapColor(MapColor.METAL).sound(SoundType.NETHERITE_BLOCK);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.SpaceModules.ModuleBlock::new, p));
+                }
                 case "mission_bay" -> {        // 1.12.0: flies sample-return probes from the station
                     p.mapColor(MapColor.METAL).sound(SoundType.NETHERITE_BLOCK);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.MissionBay.BayBlock::new, p));

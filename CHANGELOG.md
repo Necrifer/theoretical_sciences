@@ -1,5 +1,78 @@
 # Changelog
 
+## 1.13.0: Patch C2, the station grows
+
+The second half of the space patch. The Orbital Station gains working modules, satellites go up into the orbits that
+suit them, one of them beams power to the ground, and every launch leaves debris behind (which can be turned off).
+
+### Station modules
+* **Microgravity Factory** (a single-block console, works only aboard the Orbital Station). A melt with a gradient
+  across it stirs itself on the ground; aboard the station, at the centre of mass where the residual gravity is ten
+  millionths of the ground's, it stays still. Its console is the Rayleigh number Ra = gβΔT·L³/(να) (over 1708 the melt
+  convects and the machine stops) and the Marangoni number Ma = (dσ/dT)·ΔT·L/(μα) (over its critical value surface
+  flow leaves striations), set by the temperature difference, the melt's width and a liquid cap over its free surface.
+  Every recipe was checked to be impossible at ground gravity.
+* **Habitat Ring Module**: the hub of a ring that spins for the crew. Aboard the station, within twelve blocks of it you
+  have your full weight back and deconditioning does not build up.
+* **Storm Shelter Module**: a water and polyethylene refuge. Within two blocks of it a solar storm's dose is a
+  fiftieth. Aboard the station and in the Accretion Frontier.
+* **Deconditioning** (new, can be turned off: `microgravityDeconditioning`): in the station's free fall bone and muscle
+  waste, a Minecraft day standing for a week. Back in gravity after a day's worth you have Slowness, after three days'
+  Weakness too, until you recover at four times the rate you lost it.
+
+### Satellites
+* Launched by the **Rocket Assembly** into their own orbits; the further the orbit, the more Δv, so the payloads are
+  lighter:
+
+| Satellite | Orbit | Δv from the ground | What it does |
+|---|---|---|---|
+| Weather Satellite | sun-synchronous | 9.8 km/s | forecasts rain, thunder and clearing about five minutes ahead |
+| Solar Monitor | Lagrange point L1 | 12.6 km/s | warns everyone of a solar storm about three minutes ahead |
+| Relay Satellite | geostationary | 13.2 km/s | a Mission Bay's probes bring home half as much again |
+| Power Satellite | geostationary | 13.2 km/s | beams power to up to four Microwave Rectennas |
+| Debris Sweeper | low orbit | 9.6 km/s | clears most of the debris in orbit |
+
+* Sneak and use a Transfer Console to see what is in orbit and how thick the debris is.
+
+### Space solar power
+* **Microwave Rectenna**, a multiblock generator (162 blocks: a field of Rectenna Panels). Its console is diffraction:
+  transmitter aperture, beam frequency and how much of the field is used give the spot d = 2.44λR/D from geostationary
+  height, the share the field catches, and the peak power density, which must stay under 230 W/m², the safety limit.
+  Above 12 GHz (6 in rain) the air absorbs the beam. It makes 8,192 FE/t at its rating, day and night, while a Power
+  Satellite feeds it.
+
+### Orbital debris (on by default, `spaceDebris` in the config turns it off)
+* Every Rocket Assembly launch adds debris, and the thin air drags off a fiftieth of it a day. While there is debris, a
+  pass may come each minute (more likely the more there is): players outside the station's hub take a strike unless a
+  Whipple bumper stops it (each Whipple Shield or Spacefarer piece stops a quarter), and satellites can be destroyed,
+  their wrecks adding more (Kessler syndrome). A Debris Sweeper clears most of it. Debris never breaks blocks.
+
+### New recipes
+| Recipe | Where | In | Out |
+|---|---|---|---|
+| r1130_microgravity_crystal | Microgravity Factory | Silicon Boule | 4 Microgravity Crystal |
+| r1130_zblan_fibre | Microgravity Factory | 4 Fluorspar, Rare Earth Oxide | 4 ZBLAN Fibre |
+| r1130_folded_protein_crystal | Microgravity Factory | 2 Amino Acid Mixture, 500 mB water | 2 Folded Protein Crystal |
+| r1130_power_beam | Microwave Rectenna | (a Power Satellite in orbit) | 8,192 FE/t for 400 ticks |
+| r1130_launch_* (5) | Rocket Assembly | 2 Rocket Stage, the satellite, 20,000 mB liquid oxygen, 4,000 mB liquid hydrogen | the satellite in orbit |
+
+* Crafting: Rectenna Panel (16), Multijunction Solar Cell (2), Microwave Phased Array, the five satellites, the Storm
+  Shelter Module and the Habitat Ring Module.
+
+### Research
+* Four new nodes with derivations: Microgravity Processing (the Rayleigh number), Satellite Orbits (r = ∛(μT²/4π²), as
+  a cube root), Space Solar Power (the diffraction spot) and Orbital Debris (½mv²). Five Codex entries and two operation
+  pages.
+
+### Technical
+* Machine consoles have a new built-in variable, `grav`, the local gravity in m/s² (9.81 by default; the station 9.81e-5,
+  Titan 1.35, Ad Astra's Moon 1.62, Mars 3.72, Venus 8.87, Mercury 3.70, Glacio 3.72).
+* A Microwave Rectenna's status says "No beam" when no Power Satellite is free to feed it.
+* New class `orbit/SpaceModules`; `OrbitData` keeps the satellites, the debris and where the modules stand.
+* `tools/round1130.py` generates the data and checks the factory's recipes cannot be made on the ground;
+  `tools/items3d_1130.py` and `tools/blocks1130.py` draw the art; `tsgen.evaluate` takes the machine's world, and
+  `tsgen.model` refuses a model that reuses a built-in name (the test server caught `size` reused this way).
+
 ## 1.12.0: Patch C1, getting there
 
 The first half of the space patch. Space travel stops being free: every destination has a delta-v, its transfer

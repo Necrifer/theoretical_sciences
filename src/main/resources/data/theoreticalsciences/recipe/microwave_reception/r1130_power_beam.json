@@ -1,0 +1,24 @@
+{
+  "type": "theoreticalsciences:microwave_reception",
+  "energy": 8192,
+  "duration": 400,
+  "research": "theoreticalsciences:space_solar_power",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "P": 2000000000.0
+    },
+    "windows": [
+      {
+        "q": "eta",
+        "min": 0.85,
+        "max": 1.0
+      },
+      {
+        "q": "Ipk",
+        "min": 100,
+        "max": 230
+      }
+    ]
+  }
+}

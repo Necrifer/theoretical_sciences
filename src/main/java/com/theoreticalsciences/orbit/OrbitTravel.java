@@ -135,6 +135,11 @@ public final class OrbitTravel {
                 sp.displayClientMessage(Component.translatable("message.theoreticalsciences.console_grounded").withStyle(ChatFormatting.GRAY), true);
                 return InteractionResult.CONSUME;
             }
+            // 1.13.0: sneaking, it tells you what is in orbit
+            if (sp.isShiftKeyDown()) {
+                SpaceModules.status(sp);
+                return InteractionResult.CONSUME;
+            }
             // 1.12.0: the console is a Mission Planner: every trip has its Δv, paid in Transfer Stages the first time
             Planner.openConsole(sp, pos);
             return InteractionResult.CONSUME;

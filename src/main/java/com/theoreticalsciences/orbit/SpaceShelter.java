@@ -31,7 +31,8 @@ public final class SpaceShelter {
 
     public static double stormMicroSvPerHour(ServerPlayer p) {
         if (!exposedLevel(p.level()) || !com.theoreticalsciences.helio.SpaceWeather.raging(p.server)) return 0;
-        return STORM_MICRO_SV_PER_HOUR * transmission(p.level(), p.blockPosition().above()) * suit(p);
+        double shelter = SpaceModules.near(p, "storm_shelter_module", 2) ? 0.02 : 1;          // 1.13.0
+        return STORM_MICRO_SV_PER_HOUR * transmission(p.level(), p.blockPosition().above()) * suit(p) * shelter;
     }
 
     public static double suit(Player p) {
