@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:heliography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:sunspot_magnetogram",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetopause_record",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:magnetospheres",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "r0",
+        "min": 6.0,
+        "max": 8.0
+      },
+      {
+        "q": "Kp",
+        "min": 3,
+        "max": 9
+      }
+    ]
+  }
+}

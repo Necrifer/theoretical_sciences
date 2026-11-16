@@ -58189,5 +58189,158 @@
     "text": "$(thing)Equations$()$(br)λ = c/f$(br)d = 2.44λR/D$(br)η = 1 − e^(−2(Dr/d)²)$(br)I = 8P/(πd²)"
    }
   ]
+ },
+ "fluids/radiation_pressure": {
+  "title": "Radiation Pressure",
+  "icon": "theoreticalsciences:laser_sail",
+  "category": "fluids",
+  "research": "radiation_pressure",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:radiation_pressure_balance"
+    ],
+    "text": "F = (1 + R)·I·cos²θ/c. The $(thing)Radiation Pressure Balance$() measures the push of light on a film and how hot it gets. Tune the light and the angle until the film's acceleration is what the sail needs.",
+    "title": "Radiation Pressure Balance"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:light_sail",
+     "theoreticalsciences:solar_statite",
+     "theoreticalsciences:laser_sail"
+    ],
+    "text": "Light Sails (aluminised film, about 1.3 mm/s² at Earth's distance) and Solar Statites (light enough to hover: 5.9 mm/s², the Sun's pull at 1 AU) by a newer route; and the $(item)Laser Sail$(): a gram of dielectric mirror pushed at ten thousand g, if it absorbs little enough not to melt. In a Mission Bay it gives a probe 200 km/s with no propellant.",
+    "title": "Sails"
+   }
+  ]
+ },
+ "fluids/solar_magnetism": {
+  "title": "The Sun's Magnetism",
+  "icon": "theoreticalsciences:sunspot_magnetogram",
+  "category": "fluids",
+  "research": "solar_magnetism",
+  "pages": [
+   {
+    "type": "text",
+    "text": "f = (Ts/T)⁴. Sunspots are where the field breaks through, cooler and so darker. The $(thing)Heliograph$() gains a magnetograph: Δλ = 4.67e-13·g·λ²·B. Choose the observing wavelength so the split line is wide enough to see and narrow enough to stay in the passband."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:sunspot_magnetogram",
+     "theoreticalsciences:coronal_loop_plasma"
+    ],
+    "text": "Sunspot Magnetograms from the Heliograph. A Mission Bay's probe to the $(thing)corona$() (20 km/s, with gravity assists) brings back Coronal Loop Plasma, which the Stellar Plasma Crucible turns into stellar plasma.",
+    "title": "Magnetograms"
+   }
+  ]
+ },
+ "fluids/magnetospheres": {
+  "title": "Magnetospheres",
+  "icon": "theoreticalsciences:active_magnetic_shield",
+  "category": "fluids",
+  "research": "magnetospheres",
+  "pages": [
+   {
+    "type": "text",
+    "text": "sin²α = B/Bm. A field bottles charged particles: they bounce between the poles, all but those inside the loss cone. The Heliograph charts the $(item)Magnetopause$(); a probe to the $(thing)radiation belts$() (2.5 km/s) brings back Trapped Proton Flux; the Pulsed Magnet Lab gains a magnetic mirror's loss cone."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:active_magnetic_shield"
+    ],
+    "text": "The $(item)Active Magnetic Shield$(), a station module: within eight blocks of it a solar storm's dose is a tenth (and it adds to a Storm Shelter's). Aboard the station and in the Accretion Frontier.",
+    "title": "Active Magnetic Shield"
+   }
+  ]
+ },
+ "fluids/asteroid_taxonomy": {
+  "title": "Asteroids by Type",
+  "icon": "theoreticalsciences:platinum_group_nugget",
+  "category": "fluids",
+  "research": "asteroid_taxonomy",
+  "pages": [
+   {
+    "type": "text",
+    "text": "D = 1329 km/√p · 10^(−H/5). Find your target first: the $(thing)Reflecting Telescope$() makes an $(item)Asteroid Ephemeris$() (a limiting magnitude of 17 or fainter). A Mission Bay needs one, in your inventory, for each asteroid or comet mission."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:carbonaceous_regolith",
+     "theoreticalsciences:platinum_group_nugget"
+    ],
+    "text": "C-type (5.5 km/s): Carbonaceous Regolith, which the Electrolytic Cell turns into hydrogen and organic residue. M-type (9 km/s): Platinum-Group Nuggets and Meteoric Iron; a nugget makes two Platinum-Rhodium Gauze in the Chemical Synthesis Reactor. (The S-type is the near-Earth asteroid of Sample Return.)",
+    "title": "Types"
+   }
+  ]
+ },
+ "fluids/comets": {
+  "title": "Comets",
+  "icon": "theoreticalsciences:cometary_ice",
+  "category": "fluids",
+  "research": "comets",
+  "pages": [
+   {
+    "type": "text",
+    "text": "T = aJ/a + 2√((a/aJ)(1 − e²)). A Jupiter-family comet (11 km/s, needs an Asteroid Ephemeris) gives Cometary Ice and Cometary Dust."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:cometary_ice",
+     "theoreticalsciences:cometary_dust"
+    ],
+    "text": "The Gas Centrifuge Cascade takes deuterium from the ice (three times richer than the oceans'); the Abiogenesis Crucible steeps the dust's glycine and organics in water into Primordial Soup.",
+    "title": "Samples"
+   }
+  ]
+ },
+ "fluids/nebular_gases": {
+  "title": "The Nebula's Gases",
+  "icon": "theoreticalsciences:helium_3_cell",
+  "category": "fluids",
+  "research": "nebular_gases",
+  "pages": [
+   {
+    "type": "text",
+    "text": "α = exp(Δm·v²/2RT). The $(thing)Bussard Ramscoop$() scoops Nebular Gas high in the Accretion Frontier. The $(thing)Gas Centrifuge Cascade$() separates it into hydrogen, deuterium and carbon monoxide, or into helium and $(item)helium-3$(); a probe into $(thing)Jupiter's atmosphere$() (15 km/s) brings back more."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:helium_3_cell"
+    ],
+    "text": "Helium-3 fuses with deuterium in the Tokamak into helium and a proton, with no neutrons: it needs a triple product of 40 or more, and gives twice D-T's power.",
+    "title": "Helium-3"
+   }
+  ]
+ },
+ "operation/radiation_pressure_balance": {
+  "title": "Radiation Pressure Balance",
+  "icon": "theoreticalsciences:radiation_pressure_balance",
+  "category": "operation",
+  "research": "radiation_pressure",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Shine light on the film until it feels the push the sail needs, without melting it."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Light intensity, Angle of incidence.$(br2)$(thing)Disturbance$(): fibre drift: the reading wanders by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over its melting point the film fails (stops).$(br2)$(thing)Rate$(): a stronger beam, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)F = (1 + R)·I·cos²θ/c$(br)a = F/σ$(br)T = ((1 − R)·I·cos θ/2εσ_SB)^¼"
+   }
+  ]
  }
 }

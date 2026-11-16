@@ -1,0 +1,34 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:coronal_loop_plasma",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:stellar_plasma",
+      "amount": 2000
+    }
+  ],
+  "energy": 32768,
+  "duration": 900,
+  "research": "theoreticalsciences:solar_magnetism",
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 8.0,
+        "max": 20.0
+      }
+    ]
+  }
+}

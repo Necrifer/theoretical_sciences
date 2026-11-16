@@ -37,7 +37,8 @@ public final class Missions extends SimpleJsonResourceReloadListener {
     public static final Missions INSTANCE = new Missions();
 
     public record Mission(ResourceLocation id, String name, double deltaV, double synodic, double penalty, double transferDays,
-                          @Nullable ResourceLocation research, @Nullable String mod, @Nullable String modAbsent, List<ItemStack> samples, int order) {
+                          @Nullable ResourceLocation research, @Nullable String mod, @Nullable String modAbsent, List<ItemStack> samples, int order,
+                          List<ItemStack> needs) {
         public boolean offered(ServerPlayer sp) {
             if (mod != null && !ModList.get().isLoaded(mod)) return false;
             if (modAbsent != null && ModList.get().isLoaded(modAbsent)) return false;
@@ -73,7 +74,7 @@ public final class Missions extends SimpleJsonResourceReloadListener {
                         GsonHelper.getAsDouble(o, "delta_v", 5000), GsonHelper.getAsDouble(o, "synodic_days", 0), GsonHelper.getAsDouble(o, "penalty", 0),
                         GsonHelper.getAsDouble(o, "transfer_days", 100), research == null ? null : ResourceLocation.parse(research),
                         GsonHelper.getAsString(o, "mod", null), GsonHelper.getAsString(o, "mod_absent", null), List.copyOf(samples),
-                        GsonHelper.getAsInt(o, "order", 100)));
+                        GsonHelper.getAsInt(o, "order", 100), stacks(o, "needs")));
             } catch (RuntimeException ex) {
                 TheoreticalSciences.LOGGER.error("Bad mission {}: {}", id, ex.getMessage());
             }
@@ -81,6 +82,17 @@ public final class Missions extends SimpleJsonResourceReloadListener {
         out.sort(Comparator.comparingInt(Mission::order).thenComparing(m -> m.id().toString()));
         all = List.copyOf(out);
         TheoreticalSciences.LOGGER.info("Loaded {} sample-return missions", out.size());
+    }
+
+    /** 1.14.0: a list of {"item", "count"} objects, as stacks. */
+    static List<ItemStack> stacks(JsonObject o, String key) {
+        List<ItemStack> out = new ArrayList<>();
+        for (JsonElement s : GsonHelper.getAsJsonArray(o, key, new com.google.gson.JsonArray())) {
+            JsonObject so = s.getAsJsonObject();
+            BuiltInRegistries.ITEM.getOptional(ResourceLocation.parse(GsonHelper.getAsString(so, "item")))
+                    .ifPresent(it -> out.add(new ItemStack(it, GsonHelper.getAsInt(so, "count", 1))));
+        }
+        return List.copyOf(out);
     }
 
     public List<Mission> offered(ServerPlayer sp) {

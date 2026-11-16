@@ -978,7 +978,19 @@ public final class QHContentList {
         new ItemDef("solar_monitor_satellite", "", 1),
         new ItemDef("relay_satellite", "", 1),
         new ItemDef("power_satellite", "", 1),
-        new ItemDef("debris_sweeper", "", 1));
+        new ItemDef("debris_sweeper", "", 1),
+        // 1.14.0: Patch D1, the Sun and small bodies
+        new ItemDef("laser_sail", "stage", 16),
+        new ItemDef("sunspot_magnetogram", "", 64),
+        new ItemDef("magnetopause_record", "", 64),
+        new ItemDef("coronal_loop_plasma", "", 64),
+        new ItemDef("trapped_proton_flux", "", 64),
+        new ItemDef("cometary_ice", "", 64),
+        new ItemDef("cometary_dust", "", 64),
+        new ItemDef("carbonaceous_regolith", "", 64),
+        new ItemDef("platinum_group_nugget", "", 64),
+        new ItemDef("jovian_atmosphere_sample", "", 64),
+        new ItemDef("asteroid_ephemeris", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1493,7 +1505,8 @@ public final class QHContentList {
         // 1.13.0: Patch C2
         new BlockDef("rectenna_panel", "casing", 0, 3.0F, "iron", ""),
         new BlockDef("storm_shelter_module", "space_module", 4, 5.0F, "none", ""),
-        new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""));
+        new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""),
+        new BlockDef("active_magnetic_shield", "space_module", 8, 5.0F, "none", ""));      // 1.14.0
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
@@ -1602,6 +1615,7 @@ public final class QHContentList {
         new FluidDef("liquid_oxygen", false, 0, 90, 1141, 200, 0x8FC8FF),
         new FluidDef("liquid_hydrogen", false, 0, 20, 71, 100, 0xD8ECFF),
         new FluidDef("auxin", false, 0, 295, 1000, 1000, 0xE8D890),
-        new FluidDef("gibberellin", false, 0, 295, 1000, 1000, 0xB8E090));
+        new FluidDef("gibberellin", false, 0, 295, 1000, 1000, 0xB8E090),
+        new FluidDef("helium_3", true, 0, 300, -50, 10, 0xC8E0FF));          // 1.14.0
     private QHContentList() {}
 }

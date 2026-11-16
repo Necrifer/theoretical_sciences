@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:photon_pressure",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:aluminium_ingot",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:solar_statite",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:radiation_pressure",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sig": 1.5,
+      "Rf": 0.92,
+      "Tm": 1200,
+      "I0": 1.0
+    },
+    "windows": [
+      {
+        "q": "ac",
+        "min": 5.8,
+        "max": 6.1
+      }
+    ]
+  }
+}

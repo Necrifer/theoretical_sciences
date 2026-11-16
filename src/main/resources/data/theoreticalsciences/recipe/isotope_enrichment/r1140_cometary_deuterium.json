@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:isotope_enrichment",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cometary_ice",
+      "count": 4
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:deuterium",
+      "amount": 400
+    },
+    {
+      "id": "theoreticalsciences:carbon_monoxide",
+      "amount": 100
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:comets",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dm": 0.001,
+      "xF": 0.05
+    },
+    "windows": [
+      {
+        "q": "xP",
+        "min": 0.055,
+        "max": 0.19
+      }
+    ]
+  }
+}

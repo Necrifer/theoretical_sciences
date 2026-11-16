@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:isotope_enrichment",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nebular_gas",
+      "amount": 2000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:warm_helium",
+      "amount": 400
+    },
+    {
+      "id": "theoreticalsciences:helium_3",
+      "amount": 100
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:nebular_gases",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dm": 0.001,
+      "xF": 0.05
+    },
+    "windows": [
+      {
+        "q": "xP",
+        "min": 0.055,
+        "max": 0.19
+      }
+    ]
+  }
+}

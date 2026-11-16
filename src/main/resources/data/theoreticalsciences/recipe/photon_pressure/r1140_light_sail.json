@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:photon_pressure",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:aluminium_ingot",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:light_sail",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:radiation_pressure",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sig": 7.0,
+      "Rf": 0.9,
+      "Tm": 600,
+      "I0": 1.0
+    },
+    "windows": [
+      {
+        "q": "ac",
+        "min": 1.0,
+        "max": 1.6
+      }
+    ]
+  }
+}

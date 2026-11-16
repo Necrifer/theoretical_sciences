@@ -1,0 +1,58 @@
+{
+  "title": "The Nebula's Gases",
+  "x": 28,
+  "y": 10,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:ramscoops",
+    "theoreticalsciences:isotope_separation"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:deuterium_cell",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:warm_helium_cell",
+      "count": 1
+    }
+  ],
+  "time": 360,
+  "description": "The gas between the stars is mostly hydrogen and helium, with a trace of everything else. Spun fast, a gas sorts itself by mass: heavier molecules drift outward, and a cascade of centrifuges multiplies the small difference each one makes. That is how deuterium is taken from hydrogen, and helium-3 from helium-4: helium-3, which fuses with deuterium into helium and a proton, with no neutrons to wear out the reactor. Jupiter's air holds it as the Sun was born. Unlocks scooping Nebular Gas, separating it, a probe into Jupiter's atmosphere, and D-He3 fusion.",
+  "icon": "theoreticalsciences:helium_3_cell",
+  "puzzle": {
+    "goal": "Two gases whose molar masses differ by Δm spin at peripheral speed v at temperature T. Write the separation factor α of one centrifuge, with R the gas constant.",
+    "name": "Separation factor",
+    "lhs": "α",
+    "form": "exp ( Δm * v ^ 2 / ( 2 * R * T ) )",
+    "expr": "exp ( dm * v ^ 2 / ( 2 * R * T ) )",
+    "ask": "Find α for helium-3 and helium-4 (Δm = 0.001 kg/mol) at v = @{v} m/s, T = 300 K, R = 8.314.",
+    "vars": {
+      "α": "separation factor",
+      "Δm": "difference in molar mass",
+      "v": "peripheral speed",
+      "R": "gas constant",
+      "T": "temperature"
+    },
+    "given": {
+      "dm": 0.001,
+      "v": 700.0,
+      "R": 8.314,
+      "T": 300.0
+    },
+    "unit": "",
+    "method": "In the spinning frame each gas settles as in gravity, with potential −½ω²r²: the Boltzmann factors differ by Δm.",
+    "distractors": [
+      "*",
+      "-",
+      "sqrt"
+    ],
+    "vary": {
+      "v": [
+        300.0,
+        950.0,
+        10.0
+      ]
+    }
+  }
+}

@@ -95,7 +95,9 @@ public final class Planner {
         List<Entry> list = new ArrayList<>();
         for (Destinations.Destination d : Destinations.INSTANCE.offered(sp))
             list.add(new Entry(d.id().toString(), d.name(), d.deltaV(), d.synodic(), d.penalty(), d.offset(), d.home() || data.charted(d.id()), 0));
-        PacketDistributor.sendToPlayer(sp, new Open(false, pos, today(sp), MissionMath.best(sp.getInventory().items), false, 0, list));
+        List<ItemStack> usable = new ArrayList<>();
+        for (ItemStack s : sp.getInventory().items) usable.add(s.getItem() instanceof SpaceRegistry.TransferStageItem t && !t.crewed() ? ItemStack.EMPTY : s);
+        PacketDistributor.sendToPlayer(sp, new Open(false, pos, today(sp), MissionMath.best(usable), false, 0, list));
     }
 
     static void openBay(ServerPlayer sp, MissionBay.BayEntity bay) {
@@ -121,6 +123,12 @@ public final class Planner {
             Missions.Mission m = Missions.INSTANCE.byId(id);
             if (m == null || !m.offered(sp)) return;
             double cost = MissionMath.cost(m.deltaV(), m.synodic(), m.penalty(), m.offset(), day, tof);
+            // 1.14.0: a small body must be found first
+            for (ItemStack need : m.needs())
+                if (sp.getInventory().countItem(need.getItem()) < need.getCount() && !sp.isCreative()) {
+                    sp.displayClientMessage(Component.translatable("message.theoreticalsciences.planner_needs", need.getHoverName()).withStyle(ChatFormatting.RED), false);
+                    return;
+                }
             MissionMath.Plan plan = MissionMath.choose(bay.stages(), cost);
             if (plan == null) {
                 sp.displayClientMessage(Component.translatable("message.theoreticalsciences.planner_short", kms(cost), kms(MissionMath.best(bay.stages())))
@@ -128,6 +136,16 @@ public final class Planner {
                 return;
             }
             bay.owner = sp.getUUID();
+            if (!sp.isCreative())
+                for (ItemStack need : m.needs()) {
+                    int left = need.getCount();
+                    for (ItemStack s : sp.getInventory().items)
+                        if (left > 0 && s.is(need.getItem())) {
+                            int k = Math.min(left, s.getCount());
+                            s.shrink(k);
+                            left -= k;
+                        }
+                }
             bay.launch(m, plan, tof);
             sp.displayClientMessage(Component.translatable("message.theoreticalsciences.bay_launched", Component.translatable(m.name()),
                     String.valueOf(Math.max(1, Math.round(MissionMath.missionTicks(m.transferDays(), tof) / 1200.0)))).withStyle(ChatFormatting.AQUA), false);
@@ -145,9 +163,12 @@ public final class Planner {
         if (d.home() || OrbitData.get(sp.server).charted(d.id())) return true;
         double cost = MissionMath.cost(d.deltaV(), d.synodic(), d.penalty(), d.offset(), day, 1);
         List<ItemStack> inv = sp.getInventory().items;
-        MissionMath.Plan plan = MissionMath.choose(inv, cost);
+        // 1.14.0: a crew rides no laser sail
+        List<ItemStack> usable = new ArrayList<>();
+        for (ItemStack s : inv) usable.add(s.getItem() instanceof SpaceRegistry.TransferStageItem t && !t.crewed() ? ItemStack.EMPTY : s);
+        MissionMath.Plan plan = MissionMath.choose(usable, cost);
         if (plan == null) {
-            sp.displayClientMessage(Component.translatable("message.theoreticalsciences.planner_short", kms(cost), kms(MissionMath.best(inv)))
+            sp.displayClientMessage(Component.translatable("message.theoreticalsciences.planner_short", kms(cost), kms(MissionMath.best(usable)))
                     .withStyle(ChatFormatting.RED), false);
             return false;
         }

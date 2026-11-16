@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:sunspot_magnetogram"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.solar_magnetism"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.solar_magnetism.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/space_weather",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

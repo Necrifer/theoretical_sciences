@@ -1,0 +1,54 @@
+{
+  "title": "Asteroids by Type",
+  "x": 24,
+  "y": 10,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:sample_return",
+    "theoreticalsciences:telescope_optics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:asteroid_regolith",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 2
+    }
+  ],
+  "time": 320,
+  "description": "Asteroids sort by the light they reflect. C-types are dark and carbon-rich, with water locked in clays and organic molecules; S-types are stony and bright; M-types are metal, the cores of shattered small worlds, iron and nickel with the platinum-group metals. An asteroid's brightness alone does not give its size: a dark one must be bigger to look as bright. Unlocks C-type and M-type asteroid missions, found first with the Reflecting Telescope.",
+  "icon": "theoreticalsciences:platinum_group_nugget",
+  "puzzle": {
+    "goal": "An asteroid of absolute magnitude H reflects a fraction p of the light that falls on it (its albedo). Write its diameter D in km, using 1329 km, the diameter of a body of H = 0 and p = 1.",
+    "name": "Size from brightness",
+    "lhs": "D",
+    "form": "1329 / sqrt ( p ) * 10 ^ ( - H / 5 )",
+    "expr": "1329 / sqrt ( p ) * 10 ^ ( - H / 5 )",
+    "ask": "Find D in km for H = @{H} and p = 0.05 (a C-type).",
+    "vars": {
+      "D": "diameter",
+      "p": "albedo",
+      "H": "absolute magnitude"
+    },
+    "given": {
+      "p": 0.05,
+      "H": 18.0
+    },
+    "unit": "km",
+    "method": "Reflected light goes as p·D²; five magnitudes are a factor of a hundred in light, so D goes as 10^(−H/5)/√p.",
+    "distractors": [
+      "*",
+      "ln",
+      "+"
+    ],
+    "vary": {
+      "H": [
+        10.0,
+        22.0,
+        0.1
+      ]
+    }
+  }
+}

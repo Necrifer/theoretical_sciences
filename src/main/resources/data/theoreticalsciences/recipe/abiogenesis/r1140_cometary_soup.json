@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:abiogenesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cometary_dust",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:primordial_soup",
+      "amount": 16000
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:comets",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "L": 2,
+      "sg": 10
+    },
+    "windows": [
+      {
+        "q": "Y",
+        "min": 0.5,
+        "max": 1.0
+      }
+    ]
+  }
+}

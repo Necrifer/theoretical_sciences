@@ -46,7 +46,8 @@ public final class SpaceRegistry {
             "methalox_transfer_stage", new double[]{4900, 360},
             "nuclear_transfer_stage", new double[]{9700, 900},
             "ion_transfer_stage", new double[]{20400, 3000},
-            "antimatter_transfer_stage", new double[]{79600, 20000});
+            "antimatter_transfer_stage", new double[]{79600, 20000},
+            "laser_sail", new double[]{200000, 0});              // 1.14.0: pushed by a ground laser, no propellant: probes only
 
     public static class TransferStageItem extends com.theoreticalsciences.item.LoreItem {
         public double dv, isp;
@@ -64,6 +65,12 @@ public final class SpaceRegistry {
             }
         }
 
+        /** A crew cannot ride a laser sail. */
+        public boolean crewed() {
+            resolve();
+            return isp > 0;
+        }
+
         public double dv() {
             resolve();
             return dv;
@@ -72,7 +79,9 @@ public final class SpaceRegistry {
         @Override
         public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> tip, TooltipFlag flag) {
             resolve();
-            tip.add(Component.translatable("tooltip.theoreticalsciences.stage_dv", String.format(java.util.Locale.ROOT, "%.1f", dv / 1000),
+            if (isp <= 0) tip.add(Component.translatable("tooltip.theoreticalsciences.laser_sail_dv", String.format(java.util.Locale.ROOT, "%.0f", dv / 1000))
+                    .withStyle(ChatFormatting.AQUA));
+            else tip.add(Component.translatable("tooltip.theoreticalsciences.stage_dv", String.format(java.util.Locale.ROOT, "%.1f", dv / 1000),
                     String.format(java.util.Locale.ROOT, "%,.0f", isp)).withStyle(ChatFormatting.AQUA));
             super.appendHoverText(stack, ctx, tip, flag);
         }

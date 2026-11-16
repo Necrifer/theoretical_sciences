@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:photon_pressure",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:quantum_dot",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:laser_sail",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 800,
+  "research": "theoreticalsciences:radiation_pressure",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sig": 0.06,
+      "Rf": 0.99999,
+      "Tm": 1400,
+      "I0": 1000000.0
+    },
+    "windows": [
+      {
+        "q": "ac",
+        "min": 50000000.0,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

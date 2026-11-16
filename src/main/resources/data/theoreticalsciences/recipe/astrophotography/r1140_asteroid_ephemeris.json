@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:astrophotography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 1
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:asteroid_ephemeris",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 600,
+  "research": "theoreticalsciences:asteroid_taxonomy",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "mreq": 17.0
+    },
+    "windows": [
+      {
+        "q": "mlim",
+        "min": 17.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

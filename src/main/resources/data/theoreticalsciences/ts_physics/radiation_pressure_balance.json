@@ -1,0 +1,65 @@
+{
+  "params": [
+    {
+      "id": "I",
+      "unit": "kW/m²",
+      "min": 0.1,
+      "max": 100,
+      "step": 0.1,
+      "default": 1.4
+    },
+    {
+      "id": "th",
+      "unit": "°",
+      "min": 0,
+      "max": 80,
+      "step": 0.5,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "sig": 7.0,
+    "Rf": 0.9,
+    "Tm": 600,
+    "I0": 1.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "F",
+      "unit": "N/m²",
+      "expr": "(1 + Rf)*I*I0*1000*cos(th/57.296)^2/2.998e8",
+      "formula": "F = (1 + R)·I·cos²θ/c per square metre"
+    },
+    {
+      "id": "ac",
+      "unit": "mm/s²",
+      "expr": "(1 + Rf)*I*I0*1000*cos(th/57.296)^2/2.998e8/(sig/1000)*1000*(1 + 0.01*d)",
+      "formula": "acceleration: force over the sail's mass per area"
+    },
+    {
+      "id": "Ts",
+      "unit": "K",
+      "expr": "((1 - Rf)*I*I0*1000*cos(th/57.296)/(2*0.8*5.67e-8))^0.25",
+      "formula": "what it absorbs, radiated from both faces"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "melt",
+      "kind": "stop",
+      "expr": "Tm - ((1 - Rf)*I*I0*1000*cos(th/57.296)/(2*0.8*5.67e-8))^0.25",
+      "formula": "the sail under its melting point"
+    }
+  ],
+  "rate": "clamp(0.3 + I/40, 0.3, 1.5)",
+  "rate_formula": "a stronger beam finishes the test sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

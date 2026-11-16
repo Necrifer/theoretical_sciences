@@ -289,6 +289,7 @@ public enum MachineType {
     PROPULSION_TEST_STAND   ("propulsion_testing",   4, 2, 1, 0, false, "propulsion_test_stand",   64_000_000, 2_000_000, Effect.NONE,        0xFFB050),
     // 1.13.0: the station grows
     MICROGRAVITY_FACTORY    ("microgravity_processing", 2, 1, 1, 0, false, null,                      8_000_000,   200_000, Effect.NONE,        0xA0E0FF),
+    RADIATION_PRESSURE_BALANCE ("photon_pressure",  3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xFFF0B0),   // 1.14.0
     MICROWAVE_RECTENNA      ("microwave_reception",  0, 0, 0, 0, true,  "microwave_rectenna",      64_000_000, 2_000_000, Effect.NONE,        0x60C8FF),
     // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
     PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
@@ -385,7 +386,7 @@ public enum MachineType {
      * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
      */
     public boolean standaloneConsole() {
-        return this == MICROGRAVITY_FACTORY || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
+        return this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
                 || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
                 || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN
                 || this == POLYMERISER || this == SYNTHESIS_BENCH || this == FRAMEWORK_ASSEMBLER || this == QUASICRYSTAL_FURNACE

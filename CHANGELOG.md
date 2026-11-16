@@ -1,5 +1,78 @@
 # Changelog
 
+## 1.14.0: Patch D1, the Sun and small bodies
+
+The first half of the space concepts (concepts 3 to 7 and 10 of the space document): light sails, the Sun's magnetism,
+magnetospheres, asteroids by type, comets, and the nebula's gases. Six new probe targets for the Mission Bay. (Icy moons,
+planet formation, habitability, the oldest light, radio bursts and the search for others are Patch D2.)
+
+### Sailing on light
+* **Radiation Pressure Balance**, a new single-block console: a torsion balance in a vacuum bell, as Nichols and Hull
+  used in 1901. Light intensity and angle of incidence give the pressure F = (1 + R)·I·cos²θ/c, the acceleration a sail
+  of that film would feel, and the film's temperature from what it absorbs (it stops past the film's melting point).
+* Light Sails and Solar Statites by a newer route; the **Laser Sail** (endgame): a gram of dielectric mirror pushed at
+  ten thousand g by a ground laser. Loaded in a Mission Bay it is a stage giving a probe 200 km/s with no propellant
+  (crews cannot ride one).
+
+### The Sun's magnetism
+* The **Heliograph** gains a magnetograph: a fourth setting, the observing wavelength, and the Zeeman splitting
+  Δλ = 4.67e-13·g·λ²·B. Its older recipes are unchanged.
+* Sunspot Magnetograms; a probe to the **Sun's corona** (20 km/s) brings back Coronal Loop Plasma, which the Stellar
+  Plasma Crucible turns into stellar plasma.
+
+### Magnetospheres
+* The **Pulsed Magnet Lab** gains a magnetic mirror's loss cone (sin²α = B₀/B). Its older recipes are unchanged.
+* Magnetopause Records from the Heliograph; a probe to the **radiation belts** (2.5 km/s) brings back Trapped Proton Flux.
+* The **Active Magnetic Shield**, a station module made in the Pulsed Magnet Lab: within eight blocks a solar storm's
+  dose is a tenth (it multiplies with a Storm Shelter's fiftieth). Aboard the station and in the Accretion Frontier.
+
+### Asteroids by type, and comets
+* The Reflecting Telescope makes an **Asteroid Ephemeris** (a limiting magnitude of 17 or fainter). Asteroid and comet
+  missions need one in your inventory, and use it up.
+* **C-type asteroid** (5.5 km/s): Carbonaceous Regolith (the Electrolytic Cell: hydrogen and organic residue).
+  **M-type asteroid** (9 km/s): Platinum-Group Nuggets (two Platinum-Rhodium Gauze each, in the Chemical Synthesis
+  Reactor) and Meteoric Iron.
+* **Jupiter-family comet** (11 km/s): Cometary Ice (the Gas Centrifuge Cascade takes deuterium from it) and Cometary
+  Dust (the Abiogenesis Crucible steeps its glycine into Primordial Soup).
+
+### The nebula's gases
+* The **Bussard Ramscoop** scoops Nebular Gas high in the Accretion Frontier (a fourth recipe).
+* The **Gas Centrifuge Cascade** separates nebular gas into hydrogen, deuterium and carbon monoxide, or into helium and a
+  new fluid, **helium-3**; comet ice gives deuterium; a probe into **Jupiter's atmosphere** (15 km/s) brings samples
+  that give helium-3.
+* The **Tokamak** burns deuterium with helium-3 (a triple product of 40 or more), into helium and hydrogen, with twice
+  D-T's power and no neutrons.
+
+### New recipes
+| Recipe | Machine | In | Out |
+|---|---|---|---|
+| r1140_light_sail | Radiation Pressure Balance | 4 Polymer Sheet, Aluminium Ingot | Light Sail |
+| r1140_solar_statite | Radiation Pressure Balance | 2 Graphene Sheet, Aluminium Ingot | 2 Solar Statite |
+| r1140_laser_sail | Radiation Pressure Balance | 4 Graphene Sheet, 2 Metamaterial Sheet, 4 Quantum Dot | Laser Sail |
+| r1140_sunspot_magnetogram | Heliograph | 2 Spectral Plate, Ferrite Magnet | 2 Sunspot Magnetogram |
+| r1140_magnetopause_record | Heliograph | Spectral Plate, Sunspot Magnetogram | 2 Magnetopause Record |
+| r1140_active_magnetic_shield | Pulsed Magnet Lab | 8 Superconducting Coil, 2 Magnetopause Record, 2 Trapped Proton Flux, 4 Station Hull, 1,000 mB superfluid helium | Active Magnetic Shield |
+| r1140_asteroid_ephemeris | Reflecting Telescope | Spectral Plate, 4 Paper | 4 Asteroid Ephemeris |
+| r1140_cometary_soup | Abiogenesis Crucible | Cometary Dust, 1,000 mB water | 16,000 mB primordial soup |
+| r1140_asteroid_gauze | Chemical Synthesis Reactor | Platinum-Group Nugget | 2 Platinum-Rhodium Gauze |
+| r1140_carbonaceous_water | Electrolytic Cell | 2 carbonaceous regolith | 2 Organic Evaporite, 1,000 mB hydrogen |
+| r1140_coronal_plasma | Stellar Plasma Crucible | Coronal Loop Plasma | 2,000 mB stellar plasma |
+| r1140_nebular_gas | Bussard Ramscoop | (high in the Accretion Frontier) | 1,000 mB nebular gas |
+| r1140_nebular_deuterium | Gas Centrifuge Cascade | 2,000 mB nebular gas | 1,400 mB hydrogen, 200 mB deuterium, 50 mB carbon monoxide |
+| r1140_nebular_helium3 | Gas Centrifuge Cascade | 2,000 mB nebular gas | 400 mB warm helium, 100 mB helium-3 |
+| r1140_cometary_deuterium | Gas Centrifuge Cascade | 4 Cometary Ice | 400 mB deuterium, 100 mB carbon monoxide |
+| r1140_jovian_helium3 | Gas Centrifuge Cascade | 2 Jovian Atmosphere Sample | 1,600 mB hydrogen, 200 mB helium-3 |
+| r1140_dhe3_fusion | Tokamak | 100 mB deuterium, 100 mB helium-3 | 50 mB warm helium, 50 mB hydrogen, power |
+
+### Research
+* Six new nodes with derivations: Radiation Pressure (F = 2P/c), The Sun's Magnetism (spot contrast, (Ts/T)⁴),
+  Magnetospheres (the loss cone, sin α = √(B/Bm)), Asteroids by Type (size from brightness), Comets (Tisserand's
+  parameter) and The Nebula's Gases (the centrifuge's separation factor). Six Codex entries and an operation page.
+
+### Technical
+* Mission files (`ts_missions`) can list `needs`: items taken from the player's inventory at launch.
+* `tools/round1140.py`; `tools/items3d_1140.py` and `tools/blocks1140.py` for the art.
+
 ## 1.13.0: Patch C2, the station grows
 
 The second half of the space patch. The Orbital Station gains working modules, satellites go up into the orbits that
