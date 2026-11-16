@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.15.1: smoother animated items, and the text export
+
+* **Animated items are smoother.** Every animated item was rendered at 40 steps a loop and then cut to every second step
+  (20 frames), so a spinning item turned 18 degrees at a time and looked jerky. All 1,038 animated item textures are now
+  32 frames at two ticks each (a 3.2 s loop, inside the animation cost rules of 1.1.0: no interpolation, at least two
+  ticks a frame). Each frame is the average of two renders half a frame apart, a light motion blur that joins one frame
+  to the next. 912 items were re-rendered from their builders (the `items3d_*` tools, and the 1.1.0 pipeline restored
+  from git); the fluid cells and the six items redrawn since 1.1.0 keep their current art and are re-timed instead,
+  each new frame blended from the two around it. (Animated item textures now take about 60% more memory than before.)
+* **Text export for the rewrite.** `tools/export_text.py` and `tools/export_text.js` write the tooltips and the Codex as
+  ten Word files, every piece of text under a grey line naming its key; `tools/import_text.py` reads rewritten files back
+  (tested: all 13,607 texts read back unchanged).
+* New tool: `tools/smooth_items.py`.
+
 ## 1.15.0: Patch D2, young worlds and deep sky
 
 The rest of the space concepts (8, 9 and 11 to 14 of the space document): icy moons, how planets form, habitability,
