@@ -4913,7 +4913,7 @@
  "message.theoreticalsciences.antiverse_arrival": "Everything is the same, and everything is the opposite. Do not touch anything.",
  "message.theoreticalsciences.antiwater_burns": "The antiwater is annihilating against you!",
  "message.theoreticalsciences.any_tier": "%s (or better)",
- "message.theoreticalsciences.assembler_blocked": "%s position(s) are obstructed (marked); clear them yourself; the assembler never breaks blocks.",
+ "message.theoreticalsciences.assembler_blocked": "%s position(s) are obstructed: they are outlined in red for fifteen seconds (through walls). Clear them yourself; the assembler never breaks blocks.",
  "message.theoreticalsciences.assembler_bound": "Structure Assembler bound to the ME network at %s",
  "message.theoreticalsciences.assembler_coil_best": "Coils: the best tier you have enough of",
  "message.theoreticalsciences.assembler_coil_done": "Changed %s coil(s) to %s (tier %s).",
@@ -11117,10 +11117,10 @@
  "screen.theoreticalsciences.planner.go": "Depart",
  "screen.theoreticalsciences.planner.launch": "Launch",
  "screen.theoreticalsciences.planner.short": "Not enough Δv",
- "screen.theoreticalsciences.planner.porkchop": "Departure (days from now) against time of flight; green is cheap",
- "screen.theoreticalsciences.planner.tof": "Time of flight: %s of the Hohmann time (mission %s min)",
+ "screen.theoreticalsciences.planner.porkchop": "Porkchop plot: green is cheap",
+ "screen.theoreticalsciences.planner.tof": "Flight %s× Hohmann: back in %s min",
  "screen.theoreticalsciences.planner.locked": "Needs research",
- "screen.theoreticalsciences.planner.busy": "A mission is under way: back in %s min",
+ "screen.theoreticalsciences.planner.busy": "Under way: back in %s min",
  "screen.theoreticalsciences.planner.no_probe": "Load a Sample Return Probe",
  "message.theoreticalsciences.planner_paid": "Burned %s for %s km/s of Δv.",
  "message.theoreticalsciences.planner_short": "Not enough Δv: this trip costs %s km/s now, your stages give %s km/s.",
@@ -11329,5 +11329,7 @@
  "mission.theoreticalsciences.jupiter_atmosphere": "Jupiter's Atmosphere",
  "message.theoreticalsciences.planner_needs": "This mission needs %s in your inventory.",
  "screen.theoreticalsciences.planner.needs": "Needs: %s",
- "tooltip.theoreticalsciences.laser_sail_dv": "Δv %s km/s (pushed by a ground laser; probes only)"
+ "tooltip.theoreticalsciences.laser_sail_dv": "Δv %s km/s (pushed by a ground laser; probes only)",
+ "screen.theoreticalsciences.planner.axis_now": "Leave now",
+ "screen.theoreticalsciences.planner.axis_end": "in %s days"
 }

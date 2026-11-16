@@ -285,12 +285,13 @@ def codex(entries, tab_nodes):
         def ft(T, nodes=nodes):
             mine = {n['entry'] for n in nodes}
             T['nodes'] = [n for n in T['nodes'] if n['entry'] not in mine]
-            taken = {(n['x'], n['y']) for n in T['nodes']}
+            taken = [(n['x'], n['y']) for n in T['nodes']]
             for n in nodes:
                 n = dict(n)
-                while (n['x'], n['y']) in taken:          # never on top of another node: step right
-                    n['x'] += 2
-                taken.add((n['x'], n['y']))
+                # 1.14.1: never within one grid step of another node (their icons overlap): step right
+                while any(max(abs(n['x'] - a), abs(n['y'] - b)) < 2 for a, b in taken):
+                    n['x'] += 1
+                taken.append((n['x'], n['y']))
                 T['nodes'].append(n)
         edit_json(os.path.join(A, 'ts_codex', tab + '.json'), ft)
 

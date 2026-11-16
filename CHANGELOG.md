@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.14.1: fixes
+
+* **Codex: nodes no longer overlap.** Nodes one grid step apart drew on top of each other (17 pairs on the Machines tab,
+  a few on Physics, Materials and Dimensions, some from the space patches). 42 nodes were moved to the nearest clear
+  spot; `tools/codex_spacing.py --check` now finds none, and the generator keeps new nodes two steps from any other.
+* **Structure Assembler: obstructions are now actually marked.** The mark was one particle spawned inside the block in
+  the way, where it could not be seen. Obstructed places are now outlined in pulsing red for fifteen seconds, also
+  seen through walls (in build mode and when changing coils). The message says so.
+* **Mission Planner and Mission Bay screen: nothing overlaps.** The probe's status and time of flight were drawn over the
+  list of targets, and the plot's caption ran past the window. The screen is wider and taller; every line of text sits
+  in the right-hand column and shrinks if it would not fit; the plot has a short caption above it and "Leave now" and
+  "in N days" under its ends; the target list shows twelve and scrolls past that (the Mission Bay has twelve targets
+  without Ad Astra, and only nine fitted before).
+
 ## 1.14.0: Patch D1, the Sun and small bodies
 
 The first half of the space concepts (concepts 3 to 7 and 10 of the space document): light sails, the Sun's magnetism,
