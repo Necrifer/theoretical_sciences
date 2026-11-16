@@ -2278,6 +2278,70 @@
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
       ]
+    },
+    {
+      "entry": "chemistry/buried_tells",
+      "x": 3,
+      "y": 61,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/ground_penetrating_radar",
+      "x": 5,
+      "y": 61,
+      "parents": [
+        "chemistry/buried_tells"
+      ]
+    },
+    {
+      "entry": "chemistry/luminescence_dating",
+      "x": 7,
+      "y": 61,
+      "parents": [
+        "chemistry/buried_tells"
+      ]
+    },
+    {
+      "entry": "chemistry/dendrochronology",
+      "x": 7,
+      "y": 63,
+      "parents": [
+        "chemistry/buried_tells"
+      ]
+    },
+    {
+      "entry": "chemistry/conservation_science",
+      "x": 5,
+      "y": 63,
+      "parents": [
+        "chemistry/buried_tells"
+      ]
+    },
+    {
+      "entry": "chemistry/isotope_provenance",
+      "x": 9,
+      "y": 63,
+      "parents": [
+        "chemistry/conservation_science"
+      ]
+    },
+    {
+      "entry": "chemistry/archaeometallurgy",
+      "x": 9,
+      "y": 61,
+      "parents": [
+        "chemistry/conservation_science"
+      ]
+    },
+    {
+      "entry": "chemistry/photogrammetry",
+      "x": 11,
+      "y": 62,
+      "parents": [
+        "chemistry/luminescence_dating",
+        "chemistry/dendrochronology",
+        "chemistry/isotope_provenance"
+      ]
     }
   ],
   "regions": [
@@ -2304,6 +2368,14 @@
       "x1": 172.5,
       "y0": 47,
       "y1": 58.5
+    },
+    {
+      "tier": 3,
+      "label": "Archaeology",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 60,
+      "y1": 64.5
     }
   ]
 }

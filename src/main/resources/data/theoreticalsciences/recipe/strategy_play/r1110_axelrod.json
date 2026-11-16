@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:strategy_play",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:random_number_chip",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 1
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stable_strategy",
+      "count": 1
+    }
+  ],
+  "energy": 768,
+  "duration": 300,
+  "research": "theoreticalsciences:evolutionary_games",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "V": 2.0,
+      "Cc": 5.0,
+      "tol": 0.05
+    },
+    "windows": [
+      {
+        "q": "gap",
+        "min": -1.0,
+        "max": 0.05
+      },
+      {
+        "q": "noise",
+        "min": -1.0,
+        "max": 0.05
+      }
+    ]
+  }
+}

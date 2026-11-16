@@ -320,7 +320,10 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     protected void tickClient() {
-        if (isActive()) com.theoreticalsciences.client.ClientHooks.machineParticles(this);
+        if (isActive()) {
+            com.theoreticalsciences.client.ClientHooks.machineParticles(this);
+            com.theoreticalsciences.client.ClientHooks.machineWork(this);       // 1.5.1: running multiblocks are heard
+        }
     }
 
     protected void tickServer(ServerLevel level) {
@@ -390,6 +393,12 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     @Nullable
     protected MachineStatus gate(ServerLevel level, QHRecipe r) {
         return r.secret ? MachineStatus.BLOCKED : null;
+    }
+
+    /** 1.13.0: a reason a generator may not start a burn (null if it may). */
+    @Nullable
+    protected MachineStatus generatorGate(ServerLevel level, QHRecipe r) {
+        return null;
     }
 
     /** Multiplier on generator output. */
@@ -539,6 +548,13 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             setStatus(MachineStatus.OUTPUT_FULL);
             return;
         }
+        if (r.mana > 0 || r.aura > 0) {                 // 1.7.3: another mod's mana or aura, in place of its items
+            MachineStatus lacking = com.theoreticalsciences.compat.magic.Magic.lacking(level, worldPosition, r, 1);
+            if (lacking != null) {
+                setStatus(lacking);
+                return;
+            }
+        }
         long cost = Math.max(1L, (long) Math.min(Long.MAX_VALUE / 4, (double) scaledEnergyL(r) * energyFactor()));
         ensureBuffer(cost);
         if (energy.stored() < cost) {
@@ -572,6 +588,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             int runsDone = 0;
             for (int k = 0; k < runs; k++) {
                 if (k > 0 && !(r.matches(new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0)), level) && canOutput(r, true))) break;
+                if (!com.theoreticalsciences.compat.magic.Magic.take(level, worldPosition, r)) break;       // 1.7.3: its mana or aura first
                 if (!consumeInputs(r)) break;          // (what it needed from the ME network was gone)
                 wearCatalysts(level, r);               // 1.2.0: catalysts and instruments wear
                 runsDone++;
@@ -615,6 +632,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
                 else if (!tierOk(r)) setStatus(MachineStatus.LOW_TIER);
                 else if (!canOutput(r, true)) setStatus(MachineStatus.OUTPUT_FULL);
                 else if (energy.getEnergyStored() >= energy.getMaxEnergyStored()) setStatus(MachineStatus.OUTPUT_FULL);
+                else if (generatorGate(level, r) != null) setStatus(generatorGate(level, r));
                 else if (!NeoForge.EVENT_BUS.post(new MachineRecipeEvent.Start(this, holder.id(), r)).isCanceled()) {
                     if (!consumeInputs(r)) {
                         setStatus(MachineStatus.BLOCKED);
@@ -689,7 +707,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
      */
     protected boolean singleRunOnly(QHRecipe r) {
         // 1.3.0: a launch with nothing to bring back (a Station Module) changes the world, so it runs once and is counted once
-        if (type == MachineType.ROCKET_ASSEMBLY && r.itemOutputs.isEmpty() && r.fluidOutputs.isEmpty()) return true;
+        if ((type == MachineType.ROCKET_ASSEMBLY || type == MachineType.SPACE_ELEVATOR) && r.itemOutputs.isEmpty() && r.fluidOutputs.isEmpty()) return true;
         return r.secret;
     }
 

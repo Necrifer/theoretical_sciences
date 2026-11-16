@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:graph_weaving",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:network_map",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:bacterial_culture",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:markov_chain_link",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:contagion_network_map",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:networks",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "q": 0.1,
+      "tol": 0.001,
+      "vmin": 8.0
+    },
+    "windows": [
+      {
+        "q": "fail",
+        "min": -1.0,
+        "max": 0.001
+      },
+      {
+        "q": "reach",
+        "min": 8.0,
+        "max": 99.0
+      }
+    ]
+  }
+}

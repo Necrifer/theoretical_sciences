@@ -330,9 +330,12 @@ public final class MultiblockDefinition {
         for (ResourceLocation r : ids) {
             Block b = BuiltInRegistries.BLOCK.get(r);
             if (b != Blocks.AIR) out.add(b);
+            if (r.equals(INTERFACE_PORT)) out.add(com.theoreticalsciences.registry.QHBlocks.MANA_PORT.get());     // 1.7.4: a Mana Port fits wherever an Interface Port does
         }
         return out;
     }
+
+    private static final ResourceLocation INTERFACE_PORT = ResourceLocation.fromNamespaceAndPath("theoreticalsciences", "interface_port");
 
     public boolean matches(char c, BlockState state) {
         if (c == ' ') return true;
@@ -437,8 +440,8 @@ public final class MultiblockDefinition {
                     if (!matches(c, st)) {
                         missing.add(p);
                         expected.put(p, c);
-                    } else if (BuiltInRegistries.BLOCK.getKey(st.getBlock()).equals(portBlock)) {
-                        ports.add(p);
+                    } else if (BuiltInRegistries.BLOCK.getKey(st.getBlock()).equals(portBlock) || st.getBlock() instanceof com.theoreticalsciences.machine.ManaPortBlock) {
+                        ports.add(p);                  // (a Mana Port is one of the structure's ports: its recipes draw on it)
                     } else if (tiers.containsKey(c)) {
                         int t = tierOf(c, st);          // the mod's own tier, or the one a datapack gave this block
                         if (t >= 0) tierMin.merge(tiers.get(c).family(), t, Math::min);

@@ -1,0 +1,54 @@
+{
+  "type": "theoreticalsciences:pulsed_field",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:magnetopause_record",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:trapped_proton_flux",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:station_hull",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:active_magnetic_shield",
+      "count": 1
+    }
+  ],
+  "energy": 32768,
+  "duration": 800,
+  "research": "theoreticalsciences:magnetospheres",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "B0": 2.0
+    },
+    "windows": [
+      {
+        "q": "lc",
+        "min": 5,
+        "max": 15
+      },
+      {
+        "q": "Bf",
+        "min": 30,
+        "max": 99
+      }
+    ]
+  }
+}

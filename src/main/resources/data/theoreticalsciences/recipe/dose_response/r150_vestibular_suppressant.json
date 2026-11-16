@@ -1,0 +1,57 @@
+{
+  "type": "theoreticalsciences:dose_response",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ion_channel_membrane",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:phosphate_buffer",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:vestibular_suppressant",
+      "count": 4
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:pharmacology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "EC": 10,
+      "TD": 1000,
+      "th": 8
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": 0.9,
+        "max": 1
+      },
+      {
+        "q": "Et",
+        "min": 0.5,
+        "max": 1
+      },
+      {
+        "q": "Tx",
+        "min": 0,
+        "max": 0.05
+      }
+    ]
+  }
+}

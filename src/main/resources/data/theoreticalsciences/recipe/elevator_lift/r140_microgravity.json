@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:elevator_lift",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:microgravity_lab",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:microgravity_crystal",
+      "count": 12
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:space_elevator",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Sp": 60
+    },
+    "windows": [
+      {
+        "q": "tm",
+        "min": 1.0,
+        "max": 1.5
+      }
+    ]
+  }
+}

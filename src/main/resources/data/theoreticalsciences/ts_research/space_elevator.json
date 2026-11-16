@@ -1,0 +1,60 @@
+{
+  "title": "The Space Elevator",
+  "x": 23,
+  "y": 9,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:composite_materials",
+    "theoreticalsciences:orbital_mechanics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:nanotube_composite",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:crew_capsule",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "description": "A cable from the equator to beyond geostationary orbit, held taut by the Earth's spin: climbers ride it up with no rocket at all. The cable must hold its own weight, so it tapers, thickest at the top; the taper ratio grows as exp(ρgR²/σr), which is hopeless for steel and possible only for nanotubes. Unlocks the Space Elevator: a second route to orbit, needing only power.",
+  "icon": "theoreticalsciences:space_elevator",
+  "puzzle": {
+    "goal": "A tether of density ρ and strength σ hangs from geostationary orbit. Its taper ratio (cross-section at the top over that at the ground) is exp of the characteristic stress ratio. With the planet's surface gravity g and radius R and the geostationary radius r, write the taper ratio T.",
+    "name": "The tether taper",
+    "lhs": "T",
+    "form": "exp ( ρ * g * R ^ 2 / ( σ * r ) )",
+    "expr": "exp ( rho * g * R ^ 2 / ( sigma * r ) )",
+    "ask": "Find T for a nanotube tether: ρ = @{rho} kg/m³, σ = @{sigma} Pa, g = 9.81 m/s², R = 6.371e6 m, r = 4.216e7 m.",
+    "vars": {
+      "T": "taper ratio",
+      "ρ": "tether density",
+      "σ": "tether strength",
+      "g": "surface gravity",
+      "R": "planet radius",
+      "r": "geostationary radius"
+    },
+    "given": {
+      "rho": 1300.0,
+      "sigma": 50000000000.0,
+      "g": 9.81,
+      "R": 6371000.0,
+      "r": 42160000.0
+    },
+    "unit": "",
+    "method": "Constant stress σ along the tether: dA/A = (ρ/σ)·(net gravity minus centrifugal)·dr; integrate to the top.",
+    "distractors": [
+      "ln",
+      "*",
+      "2"
+    ],
+    "vary": {
+      "sigma": [
+        30000000000.0,
+        90000000000.0,
+        10000000000.0
+      ]
+    }
+  }
+}

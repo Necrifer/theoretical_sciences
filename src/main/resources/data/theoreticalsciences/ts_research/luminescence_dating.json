@@ -1,0 +1,59 @@
+{
+  "title": "Luminescence Dating",
+  "x": 14,
+  "y": 30,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:radiometric_dating",
+    "theoreticalsciences:radioactivity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ancient_potsherd",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glowstone_dust",
+      "count": 4
+    }
+  ],
+  "time": 240,
+  "description": "Quartz grains in a pot or a hearth stone are dosimeters. Firing empties their electron traps; afterwards the trace radioactivity of the soil fills them again, at a steady rate. Heat or light the grains in the laboratory and they glow with what they stored: the dose since the fire, divided by the yearly dose, is the age. Unlocks the Luminescence Reader.",
+  "icon": "theoreticalsciences:luminescence_reader",
+  "puzzle": {
+    "goal": "A sherd has received an equivalent dose De since it was fired, at an annual dose rate Ḋ. Write its age A.",
+    "name": "The luminescence age",
+    "lhs": "A",
+    "form": "De / Ḋ",
+    "expr": "De / Dr",
+    "ask": "Find A in thousands of years for De = @{De} Gy and Ḋ = @{Dr} Gy per thousand years.",
+    "vars": {
+      "A": "age",
+      "De": "equivalent dose",
+      "Ḋ": "annual dose rate"
+    },
+    "given": {
+      "De": 12.0,
+      "Dr": 3.0
+    },
+    "unit": "ka",
+    "method": "The traps fill at a steady rate since the firing: the dose stored is the rate times the time.",
+    "distractors": [
+      "*",
+      "-",
+      "ln"
+    ],
+    "vary": {
+      "De": [
+        2.0,
+        60.0,
+        1.0
+      ],
+      "Dr": [
+        1.0,
+        6.0,
+        0.5
+      ]
+    }
+  }
+}

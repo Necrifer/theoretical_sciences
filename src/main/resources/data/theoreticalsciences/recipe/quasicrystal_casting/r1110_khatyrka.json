@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:quasicrystal_casting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:aluminium_ingot",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:quasicrystal_plate",
+      "count": 3
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:quasicrystals",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Qf",
+        "min": 0.7,
+        "max": 1.0
+      }
+    ]
+  }
+}

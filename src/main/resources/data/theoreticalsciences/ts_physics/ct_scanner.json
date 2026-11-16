@@ -1,0 +1,68 @@
+{
+  "params": [
+    {
+      "id": "Np",
+      "unit": "views",
+      "min": 10,
+      "max": 4000,
+      "step": 10,
+      "default": 200
+    },
+    {
+      "id": "Nd",
+      "unit": "pixels",
+      "min": 64,
+      "max": 2048,
+      "step": 16,
+      "default": 256
+    },
+    {
+      "id": "dose",
+      "unit": "mGy",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "K",
+      "unit": "",
+      "expr": "clamp(Np/(1.5708*Nd), 0, 1)",
+      "formula": "angular sampling: π/2 views a pixel (Crowther)"
+    },
+    {
+      "id": "Qi",
+      "unit": "",
+      "expr": "clamp(Np/(1.5708*Nd), 0, 1)*(1 - exp(-dose/10))*(1 - 0.01*d)",
+      "formula": "image quality"
+    },
+    {
+      "id": "res",
+      "unit": "mm",
+      "expr": "500/Nd",
+      "formula": "resolution over a 50 cm bore"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "burn",
+      "kind": "wear",
+      "expr": "80 - dose",
+      "formula": "under 80 mGy, or the specimen's DNA is damaged"
+    }
+  ],
+  "rate": "clamp(1600/Np, 0.2, 1.5)",
+  "rate_formula": "fewer views, faster scans",
+  "heat": "0.3 + dose/200",
+  "idle_heat": "0.05",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

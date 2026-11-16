@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:reverse_osmosis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:deep_brine",
+      "amount": 2000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:concentrated_brine",
+      "amount": 1000
+    },
+    {
+      "id": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "energy": 128,
+  "duration": 200,
+  "research": "theoreticalsciences:osmosis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 0.6,
+      "ii": 2.0
+    },
+    "windows": [
+      {
+        "q": "J",
+        "min": 0.5,
+        "max": 99.0
+      }
+    ]
+  }
+}

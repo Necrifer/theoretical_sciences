@@ -1,0 +1,54 @@
+{
+  "title": "Radiation in Space",
+  "x": 20,
+  "y": 9,
+  "insight": 280,
+  "requires": [
+    "theoreticalsciences:space_weather",
+    "theoreticalsciences:orbital_mechanics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    },
+    {
+      "item": "minecraft:water_bucket",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "description": "Above the air there is nothing between you and two kinds of radiation. Cosmic rays are few and very fast, and almost nothing stops them. Solar storms are many protons at lower energy, and a little hydrogen-rich material stops them: water, or polyethylene, which is why the ISS's sleeping quarters are lined with it. On the way up you also cross the Van Allen belts, where Earth's field holds trapped particles. Unlocks Polyethylene Shielding and the Water Shield Tank.",
+  "icon": "theoreticalsciences:polyethylene_shielding",
+  "puzzle": {
+    "goal": "Radiation passing a shield of areal density x, with an attenuation length λ for that radiation in that material, falls off exponentially. Write the fraction f that gets through.",
+    "name": "Attenuation",
+    "lhs": "f",
+    "form": "exp ( - x / λ )",
+    "expr": "exp ( - x / L )",
+    "ask": "Find f for x = @{x} g/cm² of water and λ = 8 g/cm² (storm protons).",
+    "vars": {
+      "f": "fraction through",
+      "x": "areal density",
+      "λ": "attenuation length"
+    },
+    "given": {
+      "x": 20.0,
+      "L": 8.0
+    },
+    "unit": "",
+    "method": "Each thin layer removes the same fraction of what reaches it: df/f = −dx/λ.",
+    "distractors": [
+      "*",
+      "-",
+      "ln"
+    ],
+    "vary": {
+      "x": [
+        2.0,
+        40.0,
+        1.0
+      ]
+    }
+  }
+}

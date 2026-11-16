@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:ion_thruster_grid",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:solar_array",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:noble_gas_clathrate",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ion_transfer_stage",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 1200,
+  "research": "theoreticalsciences:electric_propulsion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 131,
+      "g": 1.67,
+      "ion": 1,
+      "Tmax": 3600
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 2800,
+        "max": 3600
+      },
+      {
+        "q": "dv",
+        "min": 18.5,
+        "max": 23.0
+      }
+    ]
+  }
+}

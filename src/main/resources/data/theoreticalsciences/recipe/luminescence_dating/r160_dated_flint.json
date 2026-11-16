@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:luminescence_dating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:burnt_flint",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:dated_potsherd",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:luminescence_dating",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "De": 30,
+      "Dr": 2.5
+    },
+    "windows": [
+      {
+        "q": "Rec",
+        "min": 0.85,
+        "max": 1
+      },
+      {
+        "q": "Unc",
+        "min": 0,
+        "max": 0.08
+      }
+    ]
+  }
+}

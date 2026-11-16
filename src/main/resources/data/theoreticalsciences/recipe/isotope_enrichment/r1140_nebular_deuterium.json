@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:isotope_enrichment",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nebular_gas",
+      "amount": 2000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:hydrogen",
+      "amount": 1400
+    },
+    {
+      "id": "theoreticalsciences:deuterium",
+      "amount": 200
+    },
+    {
+      "id": "theoreticalsciences:carbon_monoxide",
+      "amount": 50
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:nebular_gases",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dm": 0.001,
+      "xF": 0.05
+    },
+    "windows": [
+      {
+        "q": "xP",
+        "min": 0.055,
+        "max": 0.19
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "params": [
+    {
+      "id": "nP",
+      "unit": "",
+      "min": 10,
+      "max": 1000,
+      "step": 5,
+      "default": 100
+    },
+    {
+      "id": "kr",
+      "unit": "rounds",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "lg",
+      "unit": "",
+      "expr": "kr*0.30103*(1 - 0.005*d)",
+      "formula": "soundness: −log₁₀ of the cheat's chance 2^(−k)"
+    },
+    {
+      "id": "Tv",
+      "unit": "s",
+      "expr": "nP^2*kr/1000000",
+      "formula": "verifier time: polynomial, n² a round"
+    },
+    {
+      "id": "Tf",
+      "unit": "log s",
+      "expr": "nP/50 - 6",
+      "formula": "finding it instead: exponential"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "slow",
+      "kind": "wear",
+      "expr": "30 - nP^2*kr/1000000",
+      "formula": "verification under 30 s"
+    }
+  ],
+  "rate": "clamp(1/(nP^2*kr/1000000 + 0.5), 0.2, 1.5)",
+  "rate_formula": "quicker checks, faster runs",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

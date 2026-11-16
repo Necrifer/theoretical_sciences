@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:tribology",
+  "item_inputs": [
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methane",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:wear_coating",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:tribology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Hg": 20,
+      "kw": 1
+    },
+    "windows": [
+      {
+        "q": "tau",
+        "min": 100,
+        "max": 100000
+      }
+    ]
+  }
+}

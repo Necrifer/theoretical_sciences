@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:heliography",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:ferrite_magnet",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sunspot_magnetogram",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:solar_magnetism",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "gL": 2.5,
+      "Bs": 2500.0
+    },
+    "windows": [
+      {
+        "q": "dl",
+        "min": 0.08,
+        "max": 0.2
+      }
+    ]
+  }
+}

@@ -1,5 +1,1602 @@
 # Changelog
 
+## 1.14.0: Patch D1, the Sun and small bodies
+
+The first half of the space concepts (concepts 3 to 7 and 10 of the space document): light sails, the Sun's magnetism,
+magnetospheres, asteroids by type, comets, and the nebula's gases. Six new probe targets for the Mission Bay. (Icy moons,
+planet formation, habitability, the oldest light, radio bursts and the search for others are Patch D2.)
+
+### Sailing on light
+* **Radiation Pressure Balance**, a new single-block console: a torsion balance in a vacuum bell, as Nichols and Hull
+  used in 1901. Light intensity and angle of incidence give the pressure F = (1 + R)·I·cos²θ/c, the acceleration a sail
+  of that film would feel, and the film's temperature from what it absorbs (it stops past the film's melting point).
+* Light Sails and Solar Statites by a newer route; the **Laser Sail** (endgame): a gram of dielectric mirror pushed at
+  ten thousand g by a ground laser. Loaded in a Mission Bay it is a stage giving a probe 200 km/s with no propellant
+  (crews cannot ride one).
+
+### The Sun's magnetism
+* The **Heliograph** gains a magnetograph: a fourth setting, the observing wavelength, and the Zeeman splitting
+  Δλ = 4.67e-13·g·λ²·B. Its older recipes are unchanged.
+* Sunspot Magnetograms; a probe to the **Sun's corona** (20 km/s) brings back Coronal Loop Plasma, which the Stellar
+  Plasma Crucible turns into stellar plasma.
+
+### Magnetospheres
+* The **Pulsed Magnet Lab** gains a magnetic mirror's loss cone (sin²α = B₀/B). Its older recipes are unchanged.
+* Magnetopause Records from the Heliograph; a probe to the **radiation belts** (2.5 km/s) brings back Trapped Proton Flux.
+* The **Active Magnetic Shield**, a station module made in the Pulsed Magnet Lab: within eight blocks a solar storm's
+  dose is a tenth (it multiplies with a Storm Shelter's fiftieth). Aboard the station and in the Accretion Frontier.
+
+### Asteroids by type, and comets
+* The Reflecting Telescope makes an **Asteroid Ephemeris** (a limiting magnitude of 17 or fainter). Asteroid and comet
+  missions need one in your inventory, and use it up.
+* **C-type asteroid** (5.5 km/s): Carbonaceous Regolith (the Electrolytic Cell: hydrogen and organic residue).
+  **M-type asteroid** (9 km/s): Platinum-Group Nuggets (two Platinum-Rhodium Gauze each, in the Chemical Synthesis
+  Reactor) and Meteoric Iron.
+* **Jupiter-family comet** (11 km/s): Cometary Ice (the Gas Centrifuge Cascade takes deuterium from it) and Cometary
+  Dust (the Abiogenesis Crucible steeps its glycine into Primordial Soup).
+
+### The nebula's gases
+* The **Bussard Ramscoop** scoops Nebular Gas high in the Accretion Frontier (a fourth recipe).
+* The **Gas Centrifuge Cascade** separates nebular gas into hydrogen, deuterium and carbon monoxide, or into helium and a
+  new fluid, **helium-3**; comet ice gives deuterium; a probe into **Jupiter's atmosphere** (15 km/s) brings samples
+  that give helium-3.
+* The **Tokamak** burns deuterium with helium-3 (a triple product of 40 or more), into helium and hydrogen, with twice
+  D-T's power and no neutrons.
+
+### New recipes
+| Recipe | Machine | In | Out |
+|---|---|---|---|
+| r1140_light_sail | Radiation Pressure Balance | 4 Polymer Sheet, Aluminium Ingot | Light Sail |
+| r1140_solar_statite | Radiation Pressure Balance | 2 Graphene Sheet, Aluminium Ingot | 2 Solar Statite |
+| r1140_laser_sail | Radiation Pressure Balance | 4 Graphene Sheet, 2 Metamaterial Sheet, 4 Quantum Dot | Laser Sail |
+| r1140_sunspot_magnetogram | Heliograph | 2 Spectral Plate, Ferrite Magnet | 2 Sunspot Magnetogram |
+| r1140_magnetopause_record | Heliograph | Spectral Plate, Sunspot Magnetogram | 2 Magnetopause Record |
+| r1140_active_magnetic_shield | Pulsed Magnet Lab | 8 Superconducting Coil, 2 Magnetopause Record, 2 Trapped Proton Flux, 4 Station Hull, 1,000 mB superfluid helium | Active Magnetic Shield |
+| r1140_asteroid_ephemeris | Reflecting Telescope | Spectral Plate, 4 Paper | 4 Asteroid Ephemeris |
+| r1140_cometary_soup | Abiogenesis Crucible | Cometary Dust, 1,000 mB water | 16,000 mB primordial soup |
+| r1140_asteroid_gauze | Chemical Synthesis Reactor | Platinum-Group Nugget | 2 Platinum-Rhodium Gauze |
+| r1140_carbonaceous_water | Electrolytic Cell | 2 carbonaceous regolith | 2 Organic Evaporite, 1,000 mB hydrogen |
+| r1140_coronal_plasma | Stellar Plasma Crucible | Coronal Loop Plasma | 2,000 mB stellar plasma |
+| r1140_nebular_gas | Bussard Ramscoop | (high in the Accretion Frontier) | 1,000 mB nebular gas |
+| r1140_nebular_deuterium | Gas Centrifuge Cascade | 2,000 mB nebular gas | 1,400 mB hydrogen, 200 mB deuterium, 50 mB carbon monoxide |
+| r1140_nebular_helium3 | Gas Centrifuge Cascade | 2,000 mB nebular gas | 400 mB warm helium, 100 mB helium-3 |
+| r1140_cometary_deuterium | Gas Centrifuge Cascade | 4 Cometary Ice | 400 mB deuterium, 100 mB carbon monoxide |
+| r1140_jovian_helium3 | Gas Centrifuge Cascade | 2 Jovian Atmosphere Sample | 1,600 mB hydrogen, 200 mB helium-3 |
+| r1140_dhe3_fusion | Tokamak | 100 mB deuterium, 100 mB helium-3 | 50 mB warm helium, 50 mB hydrogen, power |
+
+### Research
+* Six new nodes with derivations: Radiation Pressure (F = 2P/c), The Sun's Magnetism (spot contrast, (Ts/T)⁴),
+  Magnetospheres (the loss cone, sin α = √(B/Bm)), Asteroids by Type (size from brightness), Comets (Tisserand's
+  parameter) and The Nebula's Gases (the centrifuge's separation factor). Six Codex entries and an operation page.
+
+### Technical
+* Mission files (`ts_missions`) can list `needs`: items taken from the player's inventory at launch.
+* `tools/round1140.py`; `tools/items3d_1140.py` and `tools/blocks1140.py` for the art.
+
+## 1.13.0: Patch C2, the station grows
+
+The second half of the space patch. The Orbital Station gains working modules, satellites go up into the orbits that
+suit them, one of them beams power to the ground, and every launch leaves debris behind (which can be turned off).
+
+### Station modules
+* **Microgravity Factory** (a single-block console, works only aboard the Orbital Station). A melt with a gradient
+  across it stirs itself on the ground; aboard the station, at the centre of mass where the residual gravity is ten
+  millionths of the ground's, it stays still. Its console is the Rayleigh number Ra = gβΔT·L³/(να) (over 1708 the melt
+  convects and the machine stops) and the Marangoni number Ma = (dσ/dT)·ΔT·L/(μα) (over its critical value surface
+  flow leaves striations), set by the temperature difference, the melt's width and a liquid cap over its free surface.
+  Every recipe was checked to be impossible at ground gravity.
+* **Habitat Ring Module**: the hub of a ring that spins for the crew. Aboard the station, within twelve blocks of it you
+  have your full weight back and deconditioning does not build up.
+* **Storm Shelter Module**: a water and polyethylene refuge. Within two blocks of it a solar storm's dose is a
+  fiftieth. Aboard the station and in the Accretion Frontier.
+* **Deconditioning** (new, can be turned off: `microgravityDeconditioning`): in the station's free fall bone and muscle
+  waste, a Minecraft day standing for a week. Back in gravity after a day's worth you have Slowness, after three days'
+  Weakness too, until you recover at four times the rate you lost it.
+
+### Satellites
+* Launched by the **Rocket Assembly** into their own orbits; the further the orbit, the more Δv, so the payloads are
+  lighter:
+
+| Satellite | Orbit | Δv from the ground | What it does |
+|---|---|---|---|
+| Weather Satellite | sun-synchronous | 9.8 km/s | forecasts rain, thunder and clearing about five minutes ahead |
+| Solar Monitor | Lagrange point L1 | 12.6 km/s | warns everyone of a solar storm about three minutes ahead |
+| Relay Satellite | geostationary | 13.2 km/s | a Mission Bay's probes bring home half as much again |
+| Power Satellite | geostationary | 13.2 km/s | beams power to up to four Microwave Rectennas |
+| Debris Sweeper | low orbit | 9.6 km/s | clears most of the debris in orbit |
+
+* Sneak and use a Transfer Console to see what is in orbit and how thick the debris is.
+
+### Space solar power
+* **Microwave Rectenna**, a multiblock generator (162 blocks: a field of Rectenna Panels). Its console is diffraction:
+  transmitter aperture, beam frequency and how much of the field is used give the spot d = 2.44λR/D from geostationary
+  height, the share the field catches, and the peak power density, which must stay under 230 W/m², the safety limit.
+  Above 12 GHz (6 in rain) the air absorbs the beam. It makes 8,192 FE/t at its rating, day and night, while a Power
+  Satellite feeds it.
+
+### Orbital debris (on by default, `spaceDebris` in the config turns it off)
+* Every Rocket Assembly launch adds debris, and the thin air drags off a fiftieth of it a day. While there is debris, a
+  pass may come each minute (more likely the more there is): players outside the station's hub take a strike unless a
+  Whipple bumper stops it (each Whipple Shield or Spacefarer piece stops a quarter), and satellites can be destroyed,
+  their wrecks adding more (Kessler syndrome). A Debris Sweeper clears most of it. Debris never breaks blocks.
+
+### New recipes
+| Recipe | Where | In | Out |
+|---|---|---|---|
+| r1130_microgravity_crystal | Microgravity Factory | Silicon Boule | 4 Microgravity Crystal |
+| r1130_zblan_fibre | Microgravity Factory | 4 Fluorspar, Rare Earth Oxide | 4 ZBLAN Fibre |
+| r1130_folded_protein_crystal | Microgravity Factory | 2 Amino Acid Mixture, 500 mB water | 2 Folded Protein Crystal |
+| r1130_power_beam | Microwave Rectenna | (a Power Satellite in orbit) | 8,192 FE/t for 400 ticks |
+| r1130_launch_* (5) | Rocket Assembly | 2 Rocket Stage, the satellite, 20,000 mB liquid oxygen, 4,000 mB liquid hydrogen | the satellite in orbit |
+
+* Crafting: Rectenna Panel (16), Multijunction Solar Cell (2), Microwave Phased Array, the five satellites, the Storm
+  Shelter Module and the Habitat Ring Module.
+
+### Research
+* Four new nodes with derivations: Microgravity Processing (the Rayleigh number), Satellite Orbits (r = ∛(μT²/4π²), as
+  a cube root), Space Solar Power (the diffraction spot) and Orbital Debris (½mv²). Five Codex entries and two operation
+  pages.
+
+### Technical
+* Machine consoles have a new built-in variable, `grav`, the local gravity in m/s² (9.81 by default; the station 9.81e-5,
+  Titan 1.35, Ad Astra's Moon 1.62, Mars 3.72, Venus 8.87, Mercury 3.70, Glacio 3.72).
+* A Microwave Rectenna's status says "No beam" when no Power Satellite is free to feed it.
+* New class `orbit/SpaceModules`; `OrbitData` keeps the satellites, the debris and where the modules stand.
+* `tools/round1130.py` generates the data and checks the factory's recipes cannot be made on the ground;
+  `tools/items3d_1130.py` and `tools/blocks1130.py` draw the art; `tsgen.evaluate` takes the machine's world, and
+  `tsgen.model` refuses a model that reuses a built-in name (the test server caught `size` reused this way).
+
+## 1.12.0: Patch C1, getting there
+
+The first half of the space patch. Space travel stops being free: every destination has a delta-v, its transfer
+windows open on a schedule, and the first trip is paid in Transfer Stages built and fired on a new multiblock. A
+Mission Bay sends probes for samples, solar storms reach the station, and the suits become one line that ends in a
+suit that counts as all of them. (The station's own modules, satellites and debris are Patch C2.)
+
+### The Mission Planner
+* Using the Orbital Station's Transfer Console now opens the Mission Planner: the destinations on the left, and for
+  the one chosen what it costs now, what it costs at its window, the Δv of the stages you carry, and when the next
+  window opens. Its chart is a porkchop plot: the day you leave (across) against how long you take (down), green where
+  it is cheap and red where it is dear.
+* Each destination's cost is the real delta-v from low orbit to its surface (aerobraking where there is air): the Moon
+  5.9 km/s, Mars 4.3, Venus 4.5, Titan 8.0, Mercury 13, Glacio 30, the Accretion Frontier 50. The Overworld is always
+  free, so the way home never costs anything.
+* Windows come round every synodic period, a real month to a Minecraft day: Mars every 26 days, Venus every 19.5,
+  Titan every 12.6, Mercury every 3.9. Between windows a trip costs up to nearly twice as much (cost = base ×
+  (1 + p·sin²(πφ)) × (1 + 2.5·ln(f)²), where φ is where you stand between windows and f the time of flight as a
+  fraction of the Hohmann time). Each destination's windows sit at their own place in the cycle.
+* Only the first trip costs. A **Return Beacon** set down at a destination charts the route for the whole world, and
+  the Planner sends you there free from then on. Worlds whose station was built before 1.12.0 keep every route
+  charted, so nobody already living on Titan is stranded.
+* Destination files (`ts_destinations`) gain `delta_v`, `synodic_days` and `penalty`; a pack can price its own planets.
+
+### Transfer Stages and the Propulsion Test Stand
+* A new multiblock, the **Propulsion Test Stand** (454 blocks: a steel tower over a concrete flame trench, the
+  engine hanging nozzle down, propellant tanks above, with Interface Ports either side of the controller). Its console
+  is the rocket equation: chamber temperature, expansion ratio, propellant fraction and, for ion engines, grid voltage
+  give exhaust speed ve = √(2γ/(γ−1)·RT/M·η) (or √(2qV/m) for ions), specific impulse Isp = ve/g₀ and stage Δv =
+  ve·ln(1/(1−ζ)). It erodes its throat over the chamber limit, stops over 93% propellant, and arcs over 4.6 kV.
+* Five stages, each with a fixed Δv. Carried stages add up (staging), and a trip burns the fewest that pay for it:
+
+| Stage | Isp | Δv | Research |
+|---|---|---|---|
+| Hydrolox Transfer Stage | 450 s | 6.1 km/s | The Rocket Equation |
+| Methalox Transfer Stage | 360 s | 4.9 km/s | The Rocket Equation |
+| Nuclear Transfer Stage | 900 s | 9.7 km/s | Nuclear Thermal Propulsion |
+| Ion Transfer Stage | 3,000 s | 20.4 km/s | Electric Propulsion |
+| Antimatter Transfer Stage | 20,000 s | 79.6 km/s | Antimatter Propulsion |
+
+* New recipes, all in the Propulsion Test Stand:
+
+| Recipe | In | Out |
+|---|---|---|
+| r1120_hydrolox_transfer_stage | Rocket Stage, Rocket Engine, 4 Pressure Hull Plate, 4000 mB liquid hydrogen, 8000 mB liquid oxygen | Hydrolox Transfer Stage |
+| r1120_methalox_transfer_stage | Rocket Stage, Rocket Engine, 4 Pressure Hull Plate, 3000 mB liquid methane, 9000 mB liquid oxygen | Methalox Transfer Stage |
+| r1120_nuclear_thermal_core | 6 Uranium 235 Pellet, 4 Graphite Moderator, 8 Corundum, 2000 mB liquid hydrogen | Nuclear Thermal Core |
+| r1120_nuclear_transfer_stage | Rocket Stage, Nuclear Thermal Core, 6 Pressure Hull Plate, 16000 mB liquid hydrogen | Nuclear Transfer Stage |
+| r1120_ion_thruster_grid | 4 Graphene Sheet, 2 Neodymium Magnet, 2 Noble Gas Clathrate | Ion Thruster Grid |
+| r1120_ion_transfer_stage | Rocket Stage, 2 Ion Thruster Grid, 4 Solar Array, 8 Noble Gas Clathrate | Ion Transfer Stage |
+| r1120_antimatter_injector | 4 Superconducting Coil, 2 Antiproton Bundle, 2 Metamaterial Sheet, 1000 mB superfluid helium | Antimatter Injector |
+| r1120_antimatter_transfer_stage | Rocket Stage, Antimatter Injector, 4 Antihydrogen Crystal, 8 Pressure Hull Plate, 8000 mB liquid hydrogen | Antimatter Transfer Stage |
+
+* New crafting recipes: Test Stand Frame (16), Flame Trench (8) and Propellant Tank (4) casings, the Sample Return
+  Probe, the Return Beacon, the Mission Bay, Polyethylene Shielding (2 from 9 Polymer Sheet) and the Water Shield
+  Tank (4).
+
+### The Mission Bay and sample return
+* The **Mission Bay** (station only) takes a Sample Return Probe and up to three stacks of Transfer Stages, by hand or
+  by pipe. Use it empty handed to open the Planner in probe mode: pick a target, and click the plot's first column
+  to choose a faster or slower transfer (faster costs more Δv, slower takes longer). The probe is gone for its transfer
+  orbit there and back (at most about a Minecraft day), then its samples wait in the bay; pipes can take them out.
+  Sneak with an empty hand to unload a probe and stages that have not flown.
+* Targets (`ts_missions`, a pack can add more): a near-Earth asteroid (4.5 km/s: Asteroid Regolith and Meteoric
+  Iron) and Titan (16 km/s: Tholin and Organic Evaporite). When Ad Astra is **not** installed, the Moon (8.7), Mars
+  (10.5), the clouds of Venus (7.5) and Mercury (23) too; with Ad Astra you go there yourself, and its Moon Sand, Mars
+  Sand, Venus Sand and Mercury Cobblestone stand in for the samples (tags `samples/*`).
+* What the samples are for (new recipes):
+
+| Recipe | Machine | In | Out |
+|---|---|---|---|
+| r1120_lunar_oxygen | Electrolytic Cell | 4 lunar regolith | 2000 mB oxygen |
+| r1120_martian_oxygen | Electrolytic Cell | 4 Martian regolith | 12 Rust Flakes, 600 mB oxygen |
+| r1120_venusian_acid | Air Separation Unit | 2 Venusian aerosol | 1500 mB sulfuric acid, 500 mB sulfur dioxide |
+| r1120_mercurian_graphite | Sintering Press | 1 Mercurian regolith | 6 Graphite Moderator |
+| r1120_asteroid_metal | Stellar Plasma Crucible | 2 asteroid regolith | 3 Meteoric Iron |
+
+### Radiation in space
+* A solar particle storm now reaches the Orbital Station and the Accretion Frontier: about 5 Sv/h in the open, enough
+  for radiation sickness in a couple of minutes. Players there are warned when one begins and when it passes.
+* Shelter stops it: the six directions around your head are looked along for eight blocks, and each block weighs:
+  Polyethylene Shielding 1.6, Water Shield Tank 1.2, water 1.0, the station's hull 0.35, other solid blocks 0.25.
+  What gets through is the average of e^(−Σw) over the six (f = e^(−x/λ)). The new blocks are also in the radiation
+  shielding tag.
+* The crew capsule's climb through the Van Allen belts gives 30 mSv on every ride up (less in a Spacefarer Suit or
+  radiation plating).
+* A storm is a gust of solar wind: the Bussard Ramscoop runs 1.5 times faster while one rages.
+
+### The suit line
+* Recipe changes: the **Whipple Shield** pieces are now built over a Refractory Suit piece (the centre of their recipe,
+  r51_whipple_shield_*), and the **Frontier Suit** pieces over a Whipple Shield piece (r56_frontier_suit_*). The
+  Heated Pressure Suit was already built over a Pressure Suit piece.
+* New: the **Spacefarer Suit** (r1120_spacefarer_suit_*): a Frontier piece and a Heated Pressure piece in metamaterial
+  and Polyethylene Shielding. It counts as every other suit wherever one is needed (vacuum, the deep sea, Titan's
+  cold, the Interior's fire, micrometeorites, the Frontier), and each piece stops a fifth of a storm's protons.
+
+### Research
+* Seven new nodes beside Orbital Mechanics, each with its derivation: The Rocket Equation (Δv = ve·ln(m₀/m_f)),
+  Transfer Orbits (vis-viva), Sample Return (Hohmann time of flight), Nuclear Thermal Propulsion (exhaust speed),
+  Electric Propulsion (√(2qV/m)), Antimatter Propulsion (E = 2mc²) and Radiation in Space (attenuation).
+* Six Codex entries on the Physics tab and an operation page for the Test Stand.
+
+### Technical
+* New classes: `orbit/MissionMath` (windows, porkchop, staging), `Missions` (the `ts_missions` reload listener),
+  `Planner` (payloads and server side), `MissionBay`, `SpaceShelter`, `SpaceRegistry`; `client/screen/PlannerScreen`.
+* `OrbitData` keeps the charted routes. `SpaceWeather.raging(server)` tells whether a storm is on anywhere.
+* `tools/round1120.py` generates the data; `tools/items3d_1120.py` and `tools/blocks1120.py` the art; the
+  Spacefarer Suit's textures are drawn from the Frontier Suit's.
+* `tools/check_costs.py` prices a `samples/*` tag as a world find rather than a common tag.
+
+## 1.11.0: Patch B, the progression refinement
+
+The second patch of the progression review: no machine on the main path is built for a single craft any more, four
+dimensions that were one place each become three, the last 25 console windows left wide are settled, and Thaumaturge
+and Astral Sorcery give their own mechanics to recipes as Botania and Nature's Aura already do. The angels are
+remodelled in depth.
+
+### The angels, in depth
+* The Cherub, Choir Seraph and Threshold Ophan were mostly flat panels. Their wings now have thickness: a round
+  leading edge, two overlapping rows of coverts that thin toward the trailing edge, secondaries tilted in and out so
+  they overlap, and a fan of five primaries at each tip, each feather tapering in three steps with a raised quill.
+  The outer wing sweeps back, so the wings are cupped.
+* Eyes stand out from what they are set in: a rim of lid, a white that swells outward, the iris a dome on it, the
+  pupil on the iris and a glint. Shut eyes are a closed swelling of lid.
+* Cherub: rounded legs with knees and the toe of a calf's hoof, a waist, a broad chest and shoulders, elbows,
+  fingers and thumbs. The four faces stand out from the head: the man's with brow, nose and chin; the lion's with a
+  muzzle, jaw and a mane of tufts all round; the ox's with a long muzzle and horns in three segments; the eagle's
+  with a hooked beak and a crest.
+* Choir Seraph: a round body of fire with tongues of flame licking up its sides and a ball of light where a face
+  would be; the wheel of flame behind it is a thick ring with a bright inner band and flames standing from its rim.
+* Threshold Ophan: each rim is now 24 segments with a raised tread round it and a lip inside, deeper than before;
+  the great eye is a ball with a band round it.
+* Past 24 blocks they draw fewer feathers and plainer eyes (up close they are 600 to 1,250 parts each).
+
+### More recipes for the machines that had one or two
+Every machine on the main path that had fewer than three recipes now has at least three: 101 new recipes in 67
+machines. Each is a real use of its machine's science, and makes an item that already feeds the endgame. Where it
+is a new route to something the mod already made, it is cheaper than the old route (the cost check says so). First
+drafts that could not be made cheaper (Californium from the Nuclide Forge, copper and gold by electrorefining,
+rations from potatoes, cured composites, pulsar timing by atomic clock) were dropped or replaced rather than kept as
+worse routes. Item lore and the Codex now say where each is
+also made, and each machine's Codex page lists what it makes.
+
+Not given more: the Essence Distillery (its recipes are made from every other mod's fluids as the game loads), and
+three final-tier machines whose few recipes are the point (the Nuclide Forge, Pleroma Confluence and Omega Simulator).
+
+<details><summary>All 101 new recipes</summary>
+
+| Machine | In | Out | Why |
+|---|---|---|---|
+| Air Separation Unit | 1 Zeolite Catalyst | 950 mB Oxygen | pressure-swing adsorption (a zeolite sieve holds nitrogen back), and liquid air fractionated with a refrigerant |
+| Air Separation Unit | 100 mB Cold Pack Solution | 210 mB Liquid Oxygen, 780 mB Nitrogen | pressure-swing adsorption (a zeolite sieve holds nitrogen back), and liquid air fractionated with a refrigerant |
+| Analog Black Hole | 1 Paper, 4000 mB Water | 1 Hawking Correlation Record | Weinfurtner's water tank (2011): waves over an obstacle in flowing water show stimulated Hawking emission |
+| Antimatter Penning Trap | 2 Antiproton Bundle, 1 Antimatter Pellet, 500 mB Superfluid Helium | 2 Antihydrogen Crystal | ALPHA at CERN: antiprotons merged with positrons in a Penning trap make antihydrogen |
+| Asymmetric Reactor | 1 Chiral Ligand, 2 Fine Reagent, 500 mB Hydrogen | 8 Enantiopure Reagent | Noyori's chiral catalysts; a pure enantiomer crystallises as a chiral crystal |
+| Asymmetric Reactor | 2 Enantiopure Reagent, 250 mB Water | 3 Chiral Crystal | Noyori's chiral catalysts; a pure enantiomer crystallises as a chiral crystal |
+| Atomic Clock | 1 Test Mass, 2 Quartz | 8 Time-Dilated Sample | a test mass lifted in place of a proof mass; two clocks at different heights measure the height between (chronometric geodesy) |
+| Atomic Clock | 1 Time-Dilated Sample, 1 Survey Map | 20 Geoid Model | a test mass lifted in place of a proof mass; two clocks at different heights measure the height between (chronometric geodesy) |
+| Autoclave | 8 Paper, 1 String, 500 mB Water | 12 Sterile Pack | a full load in one cycle |
+| Bloomery Shaft | 1 Rich Iron Chunk, 4 Charcoal | 6 Bloomery Steel | rich ore needs no slag to start the bloom; magnetite was smelted the same way |
+| Bloomery Shaft | 2 Magnetite, 4 Charcoal | 5 Bloomery Steel | rich ore needs no slag to start the bloom; magnetite was smelted the same way |
+| Brownian Microscope | 1 Algae Culture, 1 Photographic Plate | 32 Normal Distribution Crystal, 1 Avogadro Record | a prepared suspension of even particles; algae cells jostled by the water |
+| Brownian Microscope | 1 Photographic Plate, 500 mB Brownian Suspension | 3 Avogadro Record | a prepared suspension of even particles; algae cells jostled by the water |
+| Buffer Tank | 1 Ammonium Nitrate, 500 mB Ammonia, 500 mB Water | 1000 mB Ammonia Buffer | an ammonium salt with ammonia is a buffer |
+| Burst Observatory | 1 Burst Afterglow Crystal, 4 Gold Nugget | 4 Kilonova Ash | GW170817: a neutron star merger, a short gamma-ray burst and a kilonova seen together |
+| Burst Observatory | 1 Neutron Star Merger Record, 1 Photographic Plate | 2 Burst Afterglow Crystal | GW170817: a neutron star merger, a short gamma-ray burst and a kilonova seen together |
+| Bussard Ramscoop | nothing | 500 mB Interstellar Medium | the scoop takes the interstellar medium itself |
+| CT Scanner | 1 Tumour Specimen | 2 Tomogram | CT scans of tumours |
+| Chaos Controller | 1 Strange Attractor, 2 Redstone | 20 Quantum Random Number Chip | BZ oscillators coupled turn chaotic; chaotic signals make good random numbers |
+| Chaos Controller | 2 Chemical Clock, 2 Glowstone Dust | 1 Strange Attractor | BZ oscillators coupled turn chaotic; chaotic signals make good random numbers |
+| Cipher Loom | 1 Qubit, 2 Entangled Photon Pair | 20 One-Time Pad | quantum key distribution: entangled photons give a key nobody can have read unseen |
+| Circadian Incubator | 2 Circadian Culture, 1 Folded Protein Crystal, 500 mB Nutrient Broth | 1 Cryptochrome Magnetoreceptor | yeast keeps metabolic time; cryptochrome is a protein of the circadian clock |
+| Circadian Incubator | 2 Yeast Culture, 1 Paper, 500 mB Nutrient Broth | 2 Circadian Culture | yeast keeps metabolic time; cryptochrome is a protein of the circadian clock |
+| Connectome Array | 8 Neural Organoid, 2 Tomogram, 1000 mB Synaptic Fluid | 3 Engram | a scanned brain gives its engrams |
+| Conservation Bath | 1 Charred Beam, 1 Polymer Sheet | 1 Stabilised Artefact | EDTA lifts corrosion; the Mary Rose's timbers were held with polyethylene glycol |
+| Conservation Bath | 1 Corroded Artefact, 1 EDTA | 1 Stabilised Artefact, 3 Rust Flakes | EDTA lifts corrosion; the Mary Rose's timbers were held with polyethylene glycol |
+| Contact Process Tower | 1 Vanadium Bed, 2000 mB Sulfur Dioxide, 1000 mB Oxygen, 1000 mB Water | 2400 mB Sulfuric Acid | vanadium pentoxide is the contact process's real catalyst; the Muller-Kuhne process makes acid from gypsum |
+| Contact Process Tower | 4 Gypsum Crystal, 1000 mB Water | 600 mB Sulfuric Acid | vanadium pentoxide is the contact process's real catalyst; the Muller-Kuhne process makes acid from gypsum |
+| Cracking Tower | 1 Zeolite Catalyst, 2000 mB Synthetic Crude | 800 mB Ethylene, 800 mB Propylene, 400 mB Methane | fluid catalytic cracking runs over a zeolite catalyst |
+| Decipherment Desk | 4 Ancient Potsherd, 2 Paper | 5 Lexicon Fragment | Linear B was read from inscribed pottery and tablets |
+| Doping Furnace | 1 Silicon Boule, 1 Graphite Moderator | 6 Doped Wafer | n-type doping, and neutron transmutation doping (silicon-30 turned to phosphorus-31 by neutrons) |
+| Doping Furnace | 2 Cherenkov Wafer, 1 Glowstone Dust | 2 Doped Wafer | n-type doping, and neutron transmutation doping (silicon-30 turned to phosphorus-31 by neutrons) |
+| Dose-Response Assay | 1 Mould Culture, 2 Sugar, 4 Glass Bottle, 250 mB Phosphate Buffer | 16 Antibiotic | penicillin from mould |
+| Dosing Pump | 1 Antibiotic, 1 Glass Bottle, 250 mB Tincture of Balance | 2 Stable Dose | doses worked out for an antibiotic and for an anti-inflammatory |
+| Dosing Pump | 2 Anti-Inflammatory, 1 Glass Bottle, 250 mB Tincture of Balance | 3 Stable Dose | doses worked out for an antibiotic and for an anti-inflammatory |
+| ER=EPR Weaver | 2 ER Bridge Thread, 1 Boundary CFT Chip | 1 Holographic Screen | qubits entangled are joined, on ER = EPR, by a thread of spacetime |
+| ER=EPR Weaver | 2 Qubit, 1 Exotic Matter Crystal | 2 ER Bridge Thread | qubits entangled are joined, on ER = EPR, by a thread of spacetime |
+| Einstein-Rosen Bridge Projector | 2 ER Bridge Thread, 1 Exotic Matter Crystal, 1000 mB Exotic Matter | 5 Wormhole Throat | an Einstein-Rosen thread held open becomes a throat |
+| Electroplating Bath | 2 Glass, 500 mB Nickel Sulfate Solution | 2 Telescope Mirror Blank | a full rack of iron at once; X-ray telescope mirrors (XMM-Newton's) are nickel electroformed on a polished mandrel |
+| Electroplating Bath | 8 Iron Ingot, 500 mB Nickel Sulfate Solution | 10 Nickel-Plated Iron | a full rack of iron at once; X-ray telescope mirrors (XMM-Newton's) are nickel electroformed on a polished mandrel |
+| Enzyme Assay Bench | 1 Mould Culture, 1 Paper | 20 Assayed Enzyme | fungi make enzymes in bulk (as industry grows them) |
+| Folding Chamber | 1 Messenger RNA, 4 Amino Acid Mixture, 1 Assayed Enzyme, 500 mB Water | 4 Folded Protein Crystal | chaperone proteins help a chain fold right; a misfolded protein that templates others is a prion |
+| Folding Chamber | 2 Folded Protein Crystal, 2 Rotten Flesh, 250 mB Water | 3 Prion Lattice | chaperone proteins help a chain fold right; a misfolded protein that templates others is a prion |
+| Graph Loom | 1 Network Map, 1 Bacterial Culture, 1 Markov Chain Link | 1 Contagion Network Map | an epidemic run on a network: the contacts decide who catches it |
+| Haber-Bosch Reactor | 1 Iron Catalyst, 3000 mB Hydrogen, 1000 mB Nitrogen | 2400 mB Ammonia | steam reforming fed straight into the loop (as real ammonia plants run), and a large batch over a promoted iron catalyst |
+| Haber-Bosch Reactor | 250 mB Methane, 500 mB Water, 500 mB Nitrogen | 1000 mB Ammonia, 250 mB Carbon Monoxide | steam reforming fed straight into the loop (as real ammonia plants run), and a large batch over a promoted iron catalyst |
+| Ice Core Drill | nothing | 10 Sediment Core | deep ice cores run on through the permafrost and, at bedrock, into the sediment under the ice |
+| Ice Core Drill | nothing | 2 Permafrost Sample | deep ice cores run on through the permafrost and, at bedrock, into the sediment under the ice |
+| Infrared Spectrometer | 1 Tholin | 3 Structure Card, 1 Tholin | Titan's tholins were read by their infrared spectra |
+| Isotope Provenancer | 1 Stabilised Artefact, 1 Meteoric Iron | 2 Provenanced Artefact | lead isotope ratios trace a metal to its mine; Tutankhamun's dagger was shown meteoric by its nickel |
+| Isotope Provenancer | 1 Stabilised Artefact, 1 Radiogenic Lead | 2 Provenanced Artefact | lead isotope ratios trace a metal to its mine; Tutankhamun's dagger was shown meteoric by its nickel |
+| Knot Loom | 2 Knotted Polymer, 1 Polymer Sheet, 250 mB Phosphate Buffer | 1 Self-Healing Polymer | interlocked polymer chains slide and rejoin: self-healing materials |
+| Luminescence Reader | 1 Sediment Core | 1 Stratigraphic Timeline | optically stimulated luminescence dates the moment a sediment was last in light |
+| Mass Spectrometer | 1000 mB Uranium Hexafluoride | 6 Uranium-235 Pellet | the calutron: uranium enriched by a mass spectrometer the size of a building |
+| Mirror Culture Vat | 2 Chiral Crystal, 2 Amino Acid Mixture, 500 mB Nutrient Broth | 2 Chiral Ligand | mirror-image amino acids made into mirror ligands |
+| NMR Spectrometer | 1 Organic Evaporite | 6 Structure Card, 1 Organic Evaporite | NMR of evaporite organics |
+| Neutron Interferometer | 1 Californium-252 Neutron Source, 2 Paper | 10 Gravity-Phase Record | a neutron source in place of a reactor; neutrons bouncing on a mirror show gravity's quantum states |
+| Neutron Interferometer | 1 Gravity-Phase Record, 2 Glass | 2 Wave Packet | a neutron source in place of a reactor; neutrons bouncing on a mirror show gravity's quantum states |
+| O'Neill Cylinder | 4 Humus, 1 Mycorrhizal Inoculant, 1000 mB Water | 8 Living Soil | a closed loop: the habitat's waste worked back into living soil |
+| Optimiser | 1 Function Graph, 1 Derivative Operator, 1 Quantum Random Number Chip | 2 Optimised Pathway | stochastic gradient descent: random batches find the way down faster |
+| Oscillator Vessel | 1 Chemical Clock, 2 Slime Ball, 250 mB Sulfuric Acid | 2 Pattern Template | the Briggs-Rauscher reaction (sugar-fed) also oscillates; a stirred BZ reaction turns chaotic, unstirred it makes spirals |
+| Oscillator Vessel | 2 Sugar, 1 Glowstone Dust, 250 mB Sulfuric Acid | 2 Chemical Clock | the Briggs-Rauscher reaction (sugar-fed) also oscillates; a stirred BZ reaction turns chaotic, unstirred it makes spirals |
+| Ostwald Converter | 1 Platinum-Rhodium Gauze, 2000 mB Ammonia, 4000 mB Oxygen | 2400 mB Nitric Acid | nitric acid and ammonia make ammonium nitrate; platinum-rhodium gauze is the Ostwald process's real catalyst |
+| Ostwald Converter | 500 mB Ammonia, 500 mB Nitric Acid | 4 Ammonium Nitrate | nitric acid and ammonia make ammonium nitrate; platinum-rhodium gauze is the Ostwald process's real catalyst |
+| Pattern Basin | 1 Physarum Culture, 1 Rational Field, 2 Slime Ball | 3 Network Map | Physarum, a slime mould, grew the Tokyo rail network when fed at the cities' places |
+| Perfusion Rig | 2 Stem Cell Culture, 2 Perfused Tissue, 1000 mB Nutrient Broth | 2 Grown Organ | organs grown on a perfused scaffold from stem cells |
+| Phage Lab | 2 Bacteriophage, 1 Sterile Pack, 500 mB Nutrient Broth | 24 Antibiotic | phage therapy: viruses that kill bacteria |
+| Phase Diagram Kiln | 1 Lead Pig, 1 Copper Ingot | 1000 mB Superconducting Solder | lead from the pig (no decay needed); the salt-water eutectic freezes lowest of all |
+| Phase Diagram Kiln | 2 Halite, 1000 mB Water | 1000 mB Eutectic Brine | lead from the pig (no decay needed); the salt-water eutectic freezes lowest of all |
+| Photogrammetry Gantry | 1 Satellite Image Plate, 1 Tree-Ring Chronology, 1 Provenanced Artefact, 4 Paper | 1 Excavation Record | a satellite image in place of the dated finds' hand survey; the gantry's photographs stitched into a map |
+| Photogrammetry Gantry | 4 Paper, 2 Photographic Plate | 2 Survey Map | a satellite image in place of the dated finds' hand survey; the gantry's photographs stitched into a map |
+| Phytotron | 1 Mycorrhizal Inoculant, 2 Oak Sapling, 500 mB Water | 2000 mB Auxin | mycorrhizal fungi make auxin for their plants |
+| Pound-Rebka Tower | 1 Cobalt-57 Source, 2 Paper | 4 Gravitational Redshift Record | Pound and Rebka's source was cobalt-57 (iron-57's Mossbauer line); Sirius B's light is redshifted by its gravity |
+| Pound-Rebka Tower | 1 White Dwarf Core, 1 Paper | 16 Gravitational Redshift Record | Pound and Rebka's source was cobalt-57 (iron-57's Mossbauer line); Sirius B's light is redshifted by its gravity |
+| Psychophysics Booth | 1 Rhodopsin Retina, 1 Fused Silica Lens, 1 Leather Helmet | 1 Low-Light Visor | channelrhodopsin from algae (the start of optogenetics); a retina behind a visor sees in the dark |
+| Psychophysics Booth | 2 Algae Culture, 1 Myelinated Axon, 1 Fused Silica Lens | 2 Rhodopsin Retina | channelrhodopsin from algae (the start of optogenetics); a retina behind a visor sees in the dark |
+| Quantum Computer | 2 Fine Reagent, 1 Qubit, 250 mB Superfluid Helium | 2 Molecular Orbital Lattice | Shor's algorithm factors numbers into primes; a quantum computer simulates a molecule's orbitals (VQE) |
+| Quantum Computer | 4 Natural Number Lattice, 2 Qubit, 250 mB Superfluid Helium | 64 Prime Shard | Shor's algorithm factors numbers into primes; a quantum computer simulates a molecule's orbitals (VQE) |
+| Quasicrystal Furnace | 1 Meteoric Iron, 2 Aluminium Ingot, 1 Copper Ingot | 3 Quasicrystal Plate | the Khatyrka meteorite holds natural quasicrystals; quasicrystal coatings are hard and slippery |
+| Quasicrystal Furnace | 2 Quasicrystal Plate, 1 Iron Ingot | 3 Wear Coating | the Khatyrka meteorite holds natural quasicrystals; quasicrystal coatings are hard and slippery |
+| Radar Survey Bench | 2 Copper Ingot, 1 Laser Head, 1 Compass | 2 Survey Radar | a radar fed through a waveguide; a lidar measures with a laser instead |
+| Radar Survey Bench | 4 Copper Ingot, 1 Waveguide, 1 Compass | 2 Survey Radar | a radar fed through a waveguide; a lidar measures with a laser instead |
+| Reverse Osmosis Cell | 1 Graphene Sheet, 2000 mB Deep Brine | 1000 mB Concentrated Brine, 1000 mB Water | brine from a eutectic, and graphene oxide membranes that pass water far faster |
+| Reverse Osmosis Cell | 1000 mB Eutectic Brine | 600 mB Concentrated Brine, 400 mB Water | brine from a eutectic, and graphene oxide membranes that pass water far faster |
+| Selection Chamber | 2 Yeast Culture, 1 Genome Sample, 500 mB Nutrient Broth | 2 Evolved Strain | yeast evolved under selection |
+| Sieve of Eratosthenes | 2 Integer Ring, 4 Natural Number Lattice | 12 Prime Shard | the ideals of the integers are generated by primes |
+| Sintering Press | 2 Rare Earth Oxide, 2 Iron Ingot | 2 Neodymium Alloy Blank | neodymium magnets are sintered from rare earth and iron powder |
+| Storm Chamber | 250 mB Methane, 250 mB Ammonia, 250 mB Hydrogen, 500 mB Water | 4 Amino Acid Mixture | lightning fuses sand into fulgurite; Miller and Urey's sparks through methane, ammonia, hydrogen and water made amino acids |
+| Storm Chamber | 4 Sand, 250 mB Water | 1 Fulgurite | lightning fuses sand into fulgurite; Miller and Urey's sparks through methane, ammonia, hydrogen and water made amino acids |
+| Strategy Table | 1 Monte Carlo Sample Pack, 2 Paper | 2 Evolutionarily Stable Strategy | a Monte Carlo tournament; Axelrod's prisoner's dilemma tournaments |
+| Strategy Table | 1 Quantum Random Number Chip, 1 Rational Field, 2 Paper | 1 Evolutionarily Stable Strategy | a Monte Carlo tournament; Axelrod's prisoner's dilemma tournaments |
+| Synapse Trainer | 2 Neural Organoid, 1 Neural Lattice, 1 Photonic Neuron | 1 Trained Cortex | organoids trained in place of cultured cortex |
+| Tree-Ring Correlator | 1 Arbor Heartwood Sample | 2 Tree-Ring Chronology | living trees give the youngest rings; tree rings calibrate the radiocarbon clock (IntCal) |
+| Tree-Ring Correlator | 1 Tree-Ring Chronology, 2 Paper | 2 Calibration Card | living trees give the youngest rings; tree rings calibrate the radiocarbon clock (IntCal) |
+| Tribometer | 2 Iron Ingot, 500 mB Methane | 1 Wear Coating | diamond-like carbon laid down from methane plasma; worn surfaces kept apart make bearings |
+| Tribometer | 2 Wear Coating, 1 Spacetime Alloy Ingot, 250 mB Methane | 1 Spacetime Bearing | diamond-like carbon laid down from methane plasma; worn surfaces kept apart make bearings |
+| Unruh Accelerator | 1 Cryogenic Receiver, 1 Test Mass | 6 Unruh Thermometer | a cryogenic receiver reads the Unruh temperature without the Hall bar |
+| Vacuum Fluctuation Harvester | 8 Casimir Plate, 1000 mB Superfluid Helium | 10 Virtual Photon | the dynamical Casimir effect: a moving mirror turns virtual photons real (seen in 2011) |
+| Warp Field Forge | 1 Warp Bubble Core, 1 Chronal Anchor, 500 mB Strained Spacetime | 1 Anchored Warp Bubble | a bubble pinned to a chronal anchor; the Casimir effect is real negative energy |
+| Warp Field Forge | 8 Casimir Plate, 2 Metamaterial Sheet, 250 mB Strained Spacetime | 1 Negative Energy Lattice | a bubble pinned to a chronal anchor; the Casimir effect is real negative energy |
+| Wind Tunnel | 2 Aramid Fibre, 2 Polymer Sheet | 3 Aerofoil Composite | aramid laminate aerofoils |
+
+</details>
+
+### New biomes
+The Antiverse, the Quantum Foam and the Black and White Hole Interiors had one biome each. Each now has two more,
+every one with its own ground block, its own features and its own weight of creatures; the old ground keeps the
+middle of each dimension's climate. Each block has its own texture (sixteen frames, like the dimensions' own), its
+own sound and flavour text saying where it is found, and each dimension has a Codex page for its regions.
+
+| Dimension | Biome | Ground | What is there |
+|---|---|---|---|
+| Antiverse | Annihilation Front | Annihilation Scar (glows, glass sound) | stray matter annihilating on antistone, 511 keV flashes; veins of scar in the antistone; more Annihilators |
+| Antiverse | Antihydrogen Glacier | Antihydrogen Firn (snow sound) | pools of liquid antihelium, Antihydrogen Ice running rich, more Antihydrogen Wisps |
+| Quantum Foam | Spin Network | Spin Foam Mesh (glows) | space as loop quantum gravity draws it, webs of mesh between the membranes |
+| Quantum Foam | False Vacuum Shelf | Metastable Crust (glows) | pools of false vacuum ringed in crust whose cracks brighten and fade |
+| Black Hole Interior | Spaghettified Reaches | Stretched Rock | rock drawn out by the tides, pools of tidal plasma, Tidal Ore rich, more Tidal Horrors |
+| Black Hole Interior | Mass Inflation Zone | Blueshift Crust (glows brightly) | the inner horizon's blueshifted light, spires of crust |
+| White Hole Interior | Outflow Spires | Outflow Rock (glows) | columns of ejecta set where it was thrown, more Photon Moths |
+| White Hole Interior | Reheating Fields | Nucleosynthesis Crust (glows) | a crust like the young universe's over pools of reheating plasma, Ejecta Ore rich |
+
+* The Quantum Foam and the two interiors now read a climate noise to place their biomes (they had none); their
+  shape is unchanged.
+
+### The last 25 console windows
+1.7.2 left 25 windows wide because its tool could not run their consoles outside the game: they depend on the
+machine's temperature (held by its coolant), on a plasma that settles while the machine runs, or work only in a small
+region of settings. A new operator command, `/theoreticalsciences windows reach <recipe type>`, samples what a
+player can reach with the game's own solver: every coolant, coil tiers 1 to 5, the temperature and plasma settled as
+in play, random settings and a walk through the working settings next to the solver's own point. The 1.7.2 rules
+were then applied to that (a sixth of the reach for beyond physics, a tenth for the final tier, a quarter for cosmic
+engineering), keeping at least a tenth of the working settings that met each old window.
+
+* **12 narrowed:**
+
+| Machine | Recipe | Window |
+|---|---|---|
+| Omnilex Engine | ocean_simulacrum | lam 0.3..1 to 0.3..0.413 |
+| Pleroma Reconstitutor | r171_pleromatic_weave | Pe 12..60 to 16.7..39.8 |
+| Pleroma Reconstitutor | reconstitute_eschaton_cells | Pe 25..1000 to 25..60.7 |
+| Pleroma Reconstitutor | reconstitute_omnipotent_ingot | Pe 12..60 to 19.6..47.3 |
+| Pleroma Reconstitutor | reconstitute_transcendence_crystal | Pe 15..80 to 15..35.6 |
+| Pleroma Reconstitutor | rekindle_the_transcendental | Pe 10..1000 to 10..23.6 |
+| Pleroma Reconstitutor | resonate_omnipotence_shards | Pe 20..100 to 20..48.2 |
+| Axiomatic Breach Engine | axiom_key | Rc 1e-18..1 to 1e-18..3.84e-18 |
+| Reality Compiler | eternity_catalyst | lgpL -40..-15 to -23.7..-15 |
+| Reality Compiler | omega_point | NL 200..1000 to 200..633; lgpL -40..-15 to -24.5..-15 |
+| Reality Compiler | reality_anchor | NL 50..1000 to 50..159; lgpL -30..-9 to -18.1..-9.13 |
+| Reality Compiler | source_code_fragment | NL 100..1000 to 100..303; lgpL -30..-12 to -21.1..-12 |
+
+* **13 already as narrow as what can be reached** (the working settings never stray far outside them): Cyclotron (r170_charged_lattice_seed), Eschaton Foundry (r43_transcendental_echo), Matrioshka Brain (r140_uploaded_minds), Matrioshka Brain (r171_recursive_thought_shell), Matrioshka Brain (superintelligence), Omnilex Engine (simulate_everything), Pleroma Reconstitutor (replay_the_echo), Transcendent Plasma Forge (forge_cosmic_neutronium), Transcendent Plasma Forge (hypernova_alloy_ingot), Transcendent Plasma Forge (hypernova_plasma), Transcendent Plasma Forge (r171_transcendent_alloy), Transcendent Plasma Forge (residual_starlight), Transcendent Plasma Forge (transcendent_metal_ingot).
+* A server run afterwards confirmed the solver still finds a working setting inside every new window.
+
+### Thaumaturge and Astral Sorcery, their own mechanics
+* A recipe can now ask for **vis** (taken from the aura of the machine's chunk, never below half of what the land
+  holds by nature), **aspects** (from jars or any aspect container against the machine or one of its structure's
+  ports), and leave **flux** in the aura (Thaumaturge); or for **Lumen** of one constellation's kind, or any
+  (Astral Sorcery), from whatever holds it against the machine or its ports. Packs can use these in their own
+  recipes: `"magic": {"vis": n, "flux": n, "aspects": {"ordo": n}, "lumen": n, "lumen_kind": "armara"}`.
+* **Four new optional recipes**, each the same as its 1.7.2 item route without that mod's items:
+
+| Field Synthesis | Machine | Draws | In place of |
+|---|---|---|---|
+| Perennial Catalyst Matrix | Regeneration Kiln | 120 vis, 32 Permutatio, 16 Ordo | 8 Vis Crystals, 2 Salis Mundus |
+| Engineered Mind | Load Test Rig | 60 vis, 32 Cognitio, 16 Machina, 8 Humanus; leaves 10 flux | Brain in a Jar, 4 Vis Crystals |
+| Proof Lattice | Automaton Lattice | 4,000 Armara Lumen (defence: a proof nothing gets through) | 2 Resonating Gems, a Glass Lens |
+| Unified Field Lattice | Femtoscale Assembly Line | 1,500 Prismatic Lumen (every aspect restored, for every force as one) | 4 Starmetal Ingots |
+
+* JEI and EMI show what each draws; a machine that lacks it says "Too little vis in the aura here", "Needs aspects:
+  set jars holding them against the machine or its ports" or "Needs Lumen".
+* The Codex's Other Arts page describes both.
+* The code naming either mod sits in two classes touched only when that mod is installed; a failure in the other
+  mod's interface stops the recipe, never the game. Built against Thaumaturge 1.1.0 and Astral Sorcery 2.0.3.59,
+  read from the modpack.
+
+### Checked
+* A NeoForge 21.1.265 server ran the mod alone and with the modpack's linked mods (now including Thaumaturge and
+  Astral Sorcery): every dimension generated, every block placed and left to tick, every item made, every creature
+  spawned and left to run, every structure and feature placed, each new biome located and loaded, the world saved.
+* All checks pass: every item reachable, no recipe over its machine's slots, no newer route dearer than an older one,
+  no broken puzzle.
+
+### Technical
+* `tools/round1110.py` (the recipes, the settling of their outputs, the lore and Codex lines),
+  `tools/round1110_biomes.py`, `tools/r1110_windows.py`. `tools/check_costs.py` now treats `r1xxx_` files as
+  newer routes too.
+* `DemonSolver.reach` and the operator command above (permission level 4, runs off the server thread, writes to
+  `ts_window_reach/` in the server folder).
+
+## 1.10.0: Patch A, the check-up
+
+A pass over 1.6.0 to 1.9.1 before more is built on them: the mod was run on a real NeoForge server and every
+dimension, block, item, creature, structure and feature was placed and left to run, which found the two bugs below.
+The middle of the progression is made far cheaper, and two things for testing and for packs are added.
+
+### Checked
+
+* A real NeoForge 21.1.265 server (the same libraries as your CurseForge install) loaded the mod alone and with 28
+  of the modpack's mods it links to (Ad Astra, Botania, Nature's Aura, Mekanism, GregTech, AE2, KubeJS, JEI, Jade,
+  Astral Sorcery, Thaumaturge, FTB Chunks, Nuclear Radiation, Curios, Patchouli, Modonomicon and their libraries).
+  Both load every recipe, tag, loot table and advancement with no error. Then all 18 dimensions were generated,
+  all 818 blocks placed and left to tick, all 1,129 items made, all 71 creatures spawned in the Overworld and in
+  Omnipotency and left to run, all 13 structures, 15 templates and 151 features placed, and the world saved.
+
+### Fixed
+
+* **A crash in Omnipotency.** A Dweller (or any creature there that goes to visit something) looking for a Choir
+  Bell or a Sealed Urn crashed the game, because those two blocks were looked up in the wrong list. Fixed, and the
+  lookup no longer crashes on any block it does not know.
+* **Gem pockets reaching too far.** The Garnet, Peridot, Corundum and Moissanite pockets of the Planetary Interior
+  could be generated larger than the area the game lets a feature build in, so the game refused part of the blocks
+  and logged an error for each one (and in large packs this can stall world generation). They are now vanilla
+  geode sized: walls 4 to 6 out (was 5 to 7), 3 to 4 centres (was 4 to 5), layers 1.7, 2.2, 3.2 and 4.2 blocks
+  (were up to 2.4, 3.1, 4.5 and 5.9; the Peridot pocket up to 7.1).
+
+### Costs: the middle of the progression
+
+The 1.0 chains asked for 24 to 48 of an ingredient that was itself 24 to 48 of the one before, so cost grew 20 to 50
+times a step: a Source Code Fragment came to about 600,000,000,000,000,000 vanilla items, and the E1 materials to
+about 34 million. Large numbers of that kind are now kept for the late game and endgame only.
+
+* **The rule.** A machine recipe may cost at most **4 times its single dearest ingredient**. Where one asked for
+  more, the counts of its dear ingredients (those costing at least a hundredth of the dearest) are lowered together,
+  never below 1, and their fluids never below 100 mB, until it holds. Cheap ingredients keep their counts, so a
+  recipe still asks for the same bulk materials.
+* **What is left alone.** Recipes behind research 16 or more steps deep (Omnilex Simulation, the Eschaton, Pleroma
+  Reconstitution, Transcendent and Universe Forging and the like: the late game and endgame), the E1 to E5 materials and their 1.7+ routes,
+  the Empyrean table, every crafting grid, and early recipes (anything costing under 2,000 vanilla items).
+* **What it does.** Measured in vanilla items: General AI Core 770 million to 370 thousand; Standard Model Matrix
+  670 billion to 21 million; Grand Unified Core 23 trillion to 83 million; G2 Manifold 225 trillion to 315 million;
+  Source Code Fragment 6×10^17 to 1.5×10^10. E1 materials typically 34 million to 260 thousand; E2 2 billion to
+  2.9 million. E3 and above stay large (E3 about 10^11, E5 about 3×10^15).
+* **Archaeology route kept cheaper.** The 1.6.0 Chronoweaving route to the Arrow of Time Shard from an Excavation
+  Record is meant to undercut the older route; after the rework it no longer did. It now takes 2 Chronon Capacitors
+  (was 8) and makes 3 shards (was 2).
+* The tool is tools/rescale_1100.py; tools/check_costs.py passes.
+* 279 recipes changed. Every change, as "ingredient old count to new count":
+
+<details><summary>All 279 recipe changes</summary>
+
+| Recipe | Changes |
+|---|---|
+| analog_horizon/r50_hawking | bose_einstein_condensate 250 to 100 mB |
+| analysis/complex_plane | sterile_neutrino 6 to 1, planck_shard 6 to 1, bose_einstein_condensate 8000 to 400 mB |
+| analysis/derivative_operator | function_graph 6 to 1, topological_insulator 6 to 1, fractured_essence 12 to 1, dark_matter 8000 to 300 mB |
+| analysis/differential_manifold | derivative_operator 12 to 3, integral_operator 6 to 1, error_correction_lattice 6 to 1 |
+| analysis/eigenstate_lattice | hamiltonian_operator 6 to 5, spinor_lattice 6 to 5, entangled_bus_bar 6 to 5, metallic_hydrogen 8000 to 7000 mB |
+| analysis/fourier_series | function_graph 12 to 11, complex_plane 6 to 5, integral_operator 6 to 5, exotic_matter_crystal 6 to 5, synaptic_fluid 8000 to 7300 mB |
+| analysis/fractal_core_recursion | fractal_dust 48 to 3, transcendental_crystal 6 to 1 |
+| analysis/fractal_set | complex_plane 12 to 3, function_graph 12 to 3, fractal_dust 48 to 28, tachyon_klystron 6 to 2 |
+| analysis/golden_ratio_continuum | photonic_processor 12 to 1, cherenkov_wafer 24 to 3, bose_einstein_condensate 8000 to 1100 mB, supercritical_solvent 8000 to 4000 mB |
+| analysis/hamiltonian_operator | wavefunction 12 to 2, derivative_operator 6 to 2, entangled_bus_bar 6 to 1, dilaton_crystal 6 to 1, strange_matter 8000 to 6700 mB |
+| analysis/integral_operator | function_graph 6 to 3, error_correction_lattice 6 to 3 |
+| analysis/koch_fractal_set | complex_plane 12 to 2, function_graph 6 to 1, fractal_dust 6 to 4, dark_matter 8000 to 1900 mB |
+| analysis/modular_form | complex_plane 6 to 3, fourier_series 6 to 3, dark_matter_lens 6 to 3 |
+| analysis/path_integral | hamiltonian_operator 12 to 2, integral_operator 12 to 5, entangled_bus_bar 6 to 3, chronon_gas 8000 to 3900 mB |
+| analysis/quantum_field_lattice | wave_packet 24 to 2, spinor_lattice 12 to 1, differential_manifold 6 to 1, entangled_bus_bar 6 to 1 |
+| analysis/real_continuum | transcendental_crystal 6 to 5, qubit_die 6 to 2, bose_einstein_condensate 8000 to 3100 mB |
+| analysis/riemann_zeta_crystal | modular_form 12 to 7 |
+| analysis/wavefunction | complex_plane 6 to 5, foam_substrate 24 to 22, entangled_bus_bar 6 to 5 |
+| antimatter_trapping/annihilation_core | antimatter_pellet 24 to 1, dilithium_crystal 6 to 3, photonic_logic_wafer 12 to 6, bose_einstein_condensate 8000 to 600 mB |
+| antimatter_trapping/antimatter_pellet | superconducting_coil 6 to 1, photonic_lens 12 to 1, bose_einstein_condensate 8000 to 200 mB |
+| antiproton_deceleration/antinuclei_freezing | antiproton_bundle 16 to 7 |
+| arithmetic/imaginary_unit | tachyon_flux 4000 to 3700 mB |
+| arithmetic/octonion_crystal | quaternion_crystal 8 to 1, calabi_yau_manifold 4 to 1, exotic_matter 8000 to 100 mB |
+| arithmetic/quaternion_crystal | complex_plane 8 to 1, coherent_wiring_harness 4 to 2, bose_einstein_condensate 8000 to 1700 mB |
+| bioculture/morphogenic_serum | recombinant_dna 6 to 1, engineered_enzyme 12 to 1, metal_organic_framework 6 to 1, folded_protein_crystal 6 to 1, tachyon_flux 8000 to 100 mB |
+| bioculture/neural_organoid | thought_matrix 6 to 3, room_temperature_superconductor 6 to 3 |
+| bioculture/quantum_chlorophyll | entangled_bus_bar 6 to 5, dark_matter 8000 to 7300 mB |
+| bioculture/stem_cell_culture | temporal_knot 6 to 5, nebular_gas 8000 to 7100 mB |
+| bioculture/tardigrade_culture | sterile_neutrino 6 to 1, chronon_gas 8000 to 300 mB |
+| bioculture/xenobot_swarm | general_ai_core 6 to 2, entangled_bus_bar 6 to 2, quark_gluon_plasma 8000 to 6700 mB |
+| casimir_pressing/casimir_plate | neutronium_plate 8 to 3, theodolite_lens 4 to 2 |
+| casimir_pressing/degenerate_armour_plate | spacetime_alloy_ingot 4 to 3 |
+| casimir_pressing/hawking_absorber_plate | neutronium_plate 8 to 3, metamaterial_sheet 4 to 2 |
+| casimir_pressing/quadrupole_pole_tip | neutronium_plate 8 to 4, topological_insulator 4 to 1, xenogenome_sample 16 to 3 |
+| causality_loop/bootstrap_artifact | paradox_residue 8 to 7 |
+| causality_loop/chronal_accelerator | temporal_singularity 32 to 1, inaccessible_cardinal 16 to 8 |
+| causality_loop/closed_timelike_curve | novikov_crystal 16 to 1, wormhole_throat 16 to 4, moduli_crystal 16 to 1, graviton_wisp_core 16 to 1, hyperdimensional_logic_wafer 16 to 1, chronon_gas 1024000 to 214200 mB, dimensional_residue 64000 to 2900 mB |
+| chemical_synthesis/carbon_nanotube_bundle | molecular_orbital_lattice 4 to 1, coherent_wiring_harness 4 to 1, ionic_liquid 4000 to 1200 mB |
+| chemical_synthesis/metal_organic_framework | carbon_nanotube_bundle 4 to 1, chiral_crystal 4 to 1, coherent_wiring_harness 4 to 1, ionic_liquid 8000 to 1800 mB |
+| chemical_synthesis/noble_gas_clathrate | buckyball_cage 8 to 6, coherent_wiring_harness 4 to 3 |
+| chemical_synthesis/positronium_hydride | antimatter_pellet 4 to 1, buckyball_cage 4 to 1, coherent_wiring_harness 4 to 1, carborane_superacid 4000 to 100 mB |
+| chemical_synthesis/room_temperature_superconductor | metallic_hydrogen_ingot 4 to 1, electride_crystal 8 to 3, coherent_wiring_harness 4 to 2, bose_einstein_condensate 8000 to 3500 mB |
+| chemical_synthesis/turing_morphogen | complex_plane 8 to 7 |
+| chrono_inversion/causal_shield_lattice | chronon_capacitor 12 to 2, chronosteel_ingot 12 to 2, chronon_gas 16000 to 3800 mB, nanite_slurry 8000 to 6500 mB |
+| chrono_inversion/chronon_capacitor | tachyon_crystal 6 to 2, tachyon_flux 8000 to 2800 mB |
+| chrono_inversion/chronosteel_bootstrap | chronon_capacitor 12 to 1, tachyon_klystron 6 to 3, chronon_gas 32000 to 1400 mB, bose_einstein_condensate 8000 to 4000 mB |
+| chrono_inversion/controlled_fracture | spacetime_casing 6 to 3 |
+| chrono_inversion/hawking_emitter | topological_insulator 6 to 1, hawking_absorber_plate 6 to 1, femto_inductor 12 to 1, chronon_gas 8000 to 100 mB |
+| chronoweaving/arrow_of_time_shard | chronon_capacitor 8 to 2, chronon_gas 16000 to 5000 mB |
+| chronoweaving/christoffel_symbol | geodesic_thread 16 to 3, derivative_operator 16 to 3, chronoplastic_gasket 8 to 2 |
+| chronoweaving/geodesic_thread | chronoplastic_gasket 8 to 5, evaporation_flash 8 to 5 |
+| chronoweaving/stress_energy_tensor | christoffel_symbol 16 to 2, frozen_photon 16 to 2 |
+| chronoweaving/temporal_knot | arrow_of_time_shard 16 to 2, tachyon_crystal 16 to 2, mobius_strip 8 to 5, chronon_gas 32000 to 4700 mB |
+| collider/magnetic_monopole | coherent_wiring_harness 12 to 6, quadrupole_pole_tip 6 to 3, hawking_absorber_plate 6 to 3, rf_resonator_cell 12 to 5, quark_gluon_plasma 1808 to 800 mB, nebular_gas 8000 to 3700 mB |
+| collider/r32_leptogenesis | antimatter_pellet 12 to 3, sterile_neutrino 6 to 1 |
+| collider/strange_matter | void_lattice_shard 6 to 1, degenerate_matter_chunk 6 to 1, coherent_wiring_harness 12 to 1, femto_capacitor 6 to 1, quark_gluon_plasma 16000 to 1100 mB |
+| compactification/compactified_circle | flerovium_ingot 12 to 3 |
+| compactification/d_brane_sheet | quantum_string 48 to 39, brane_tension_fiber 24 to 12, pulsar_timing_crystal 12 to 5 |
+| compactification/g2_manifold | grand_unified_core 12 to 4 |
+| compactification/m_theory_core | m_brane 24 to 2, g2_manifold 12 to 2, compactified_circle 48 to 5 |
+| compactification/string_coupling_crystal | dilaton_crystal 48 to 3, quantum_string 12 to 1, exotic_matter 32000 to 2300 mB |
+| composite_layup/r140_tether_spool | nanotube_composite 4 to 3 |
+| composite_layup/r150_tether_spool_knotted | nanotube_composite 4 to 3 |
+| concept_compression/r83_mathematics_singularity_euler | epsilon_naught 128 to 3 |
+| condensing/metallic_hydrogen_ingot | casimir_plate 4 to 1, coherent_wiring_harness 4 to 1, metallic_hydrogen 16000 to 100 mB |
+| crystal_growth/hyperdimensional_boule | lattice_seed 4 to 1, calabi_yau_manifold 4 to 1, coherent_wiring_harness 4 to 1, exotic_matter 16000 to 100 mB |
+| crystal_growth/topological_boule | lattice_seed 4 to 1, topological_insulator 8 to 1, bose_einstein_condensate 16000 to 1200 mB |
+| dark_energy_extraction/cosmological_constant | cosmic_lens 16 to 6, spacetime_alloy_singularity 32 to 30 |
+| dark_energy_extraction/r32_phantom_energy | negative_mass_ingot 16 to 1, exotic_matter_crystal 16 to 1, dark_energy 25600 to 100 mB |
+| directed_evolution/telomerase_complex | spacetime_bearing 24 to 2, standard_model_singularity 24 to 2, unified_dossier 12 to 2 |
+| electrolysis/electride_crystal | coherent_wiring_harness 4 to 3 |
+| electrolysis/split_antiwater | antiwater 1000 to 100 mB |
+| entangling/foam_superposition | foam_substrate 16 to 11, coherent_wiring_harness 4 to 3 |
+| entropy_sorting/bulk_moduli_sorting | bulk_stone 128 to 7 |
+| entropy_sorting/bulk_stone_sorting | bulk_stone 64 to 15 |
+| entropy_sorting/fallout_sorting | fractured_essence 32 to 12, photonic_lens 8 to 3 |
+| entropy_sorting/negentropy_cell | bose_einstein_condensate 250 to 200 mB |
+| entropy_sorting/reverse_heat_death | heat_death_remnant 4 to 1, dark_energy 16000 to 1800 mB |
+| eschatology/r32_boltzmann_fluctuation | de_sitter_horizon_shard 16 to 1, dark_era_haze 64000 to 35400 mB |
+| eschatology/r32_de_sitter_horizon | heat_death_ember 16 to 1, dark_matter_lens 16 to 1, dark_energy 25600 to 100 mB |
+| eschatology/r32_heat_death_remnant | heat_death_ember 64 to 43, de_sitter_horizon_shard 16 to 3, dark_era_haze 25600 to 17100 mB |
+| femto_assembly/abiogenesis_crucible | evolution_engine 16 to 3, theory_of_everything 16 to 3 |
+| femto_assembly/anomaly_containment_ward | causal_shield_lattice 32 to 18, chronoplastic_casing 32 to 18, stabiliser_matrix 16 to 1, hyperdimensional_processor 48 to 1, hyperdimensional_pearl 8 to 1, causal_solder 147456 to 2100 mB |
+| femto_assembly/anomaly_resolution_engine | reality_lattice_casing 64 to 1, hyperdimensional_processor 48 to 1, feynman_diagram 8 to 1, phantom_energy_cell 16 to 1, causal_solder 147456 to 1800 mB |
+| femto_assembly/assembly_matrix | photonic_processor 16 to 15, chronosteel_ingot 16 to 11, quantum_processor 8 to 7, topological_die 8 to 7, pixel_tracker_module 8 to 7, dark_matter 16000 to 12400 mB, bose_einstein_condensate 16000 to 12700 mB |
+| femto_assembly/autonomous_calibrator | m_brane 8 to 1, causal_solder 73728 to 43300 mB |
+| femto_assembly/axiomatic_breach_engine | reality_anchor 32 to 7, transfinite_casing 16 to 3, hopf_fibration 16 to 3 |
+| femto_assembly/burst_observatory | topological_processor 112 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, category_lattice 8 to 1, raw_antiiron 8 to 4, exotic_solder 73728 to 400 mB, strange_matter 16000 to 7200 mB |
+| femto_assembly/causality_loop_engine | hyperdimensional_processor 96 to 1, pulsar_timing_crystal 32 to 1, chronoplastic_casing 16 to 9, higgs_boson_crystal 16 to 1, causal_solder 147456 to 1600 mB |
+| femto_assembly/concept_compressor | topos 16 to 3 |
+| femto_assembly/cosmic_neutronium_coil_block | spacetime_alloy_coil_block 8 to 1, hyperdimensional_processor 8 to 1, exotic_solder 73728 to 55300 mB |
+| femto_assembly/cosmic_processor | cosmic_board 8 to 1, hyperdimensional_processor 16 to 1, brane_tension_fiber 8 to 1, causal_solder 36864 to 6500 mB |
+| femto_assembly/dark_energy_siphon | hyperdimensional_processor 64 to 1, d_brane_sheet 8 to 1, standard_model_matrix 16 to 1, causal_solder 147456 to 7600 mB, liquid_antihelium 16000 to 2700 mB |
+| femto_assembly/dyson_array | hyperdimensional_processor 96 to 1, causal_solder 147456 to 2600 mB |
+| femto_assembly/empirical_dossier | empirical_notes_1 16 to 3 |
+| femto_assembly/empirical_notes_1 | graviton_field_emitter 32 to 3 |
+| femto_assembly/empirical_notes_2 | psionic_crystal 32 to 1, atto_capacitor 32 to 4, quaternion_crystal 32 to 4, complex_plane 32 to 4, topological_boule 32 to 4, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, self_healing_polymer 8 to 1, pentaquark_shard 8 to 1 |
+| femto_assembly/empirical_notes_3 | bottom_top_quarks 32 to 1, minkowski_lattice 32 to 1, fractal_set 32 to 6, chronoplastic_gasket 16 to 4, entangled_bus_bar 16 to 1, lorentz_transform_crystal 8 to 1, carborane_superacid 16000 to 3400 mB |
+| femto_assembly/entropy_horizon | hyperdimensional_processor 48 to 1, causal_solder 147456 to 2600 mB, liquid_antihelium 16000 to 300 mB |
+| femto_assembly/er_epr_weaver | topological_processor 64 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, differential_manifold 8 to 1, antiproton_bundle 8 to 1, exotic_solder 73728 to 600 mB, nanite_slurry 16000 to 6900 mB |
+| femto_assembly/eschaton_foundry | transcendental_echo 16 to 3 |
+| femto_assembly/essence_distillery | hyperdimensional_processor 96 to 1, chronosteel_coil_block 32 to 1, fractionation_spire 16 to 1, standard_model_matrix 16 to 1, hyperdimensional_pearl 8 to 1, causal_solder 147456 to 800 mB |
+| femto_assembly/evolution_engine | theory_of_everything 16 to 3 |
+| femto_assembly/eye_of_the_horizon | ontological_processor 96 to 2, hypernova_alloy_ingot 16 to 8, einstein_rosen_core 16 to 8 |
+| femto_assembly/graviton_field_emitter | hyperdimensional_processor 8 to 6, g2_manifold 8 to 2 |
+| femto_assembly/hyperdimensional_processor | hyperdimensional_die 32 to 4, topological_processor 16 to 4, tesseract_lens 8 to 1, riemann_curvature_tensor 8 to 1, exotic_solder 36864 to 10300 mB |
+| femto_assembly/inflation_chamber | cosmogenic_casing 64 to 29, hyperdimensional_processor 48 to 6, dark_energy_siphon 16 to 1, feynman_diagram 8 to 4, cosmological_constant 8 to 2, causal_solder 147456 to 24200 mB |
+| femto_assembly/markov_chain_refinery | topological_processor 64 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, glueball_core 8 to 1, riemann_zeta_crystal 8 to 3, exotic_solder 73728 to 500 mB, dark_matter 16000 to 5200 mB |
+| femto_assembly/matrioshka_brain | hyperdimensional_processor 96 to 1, computronium_block 64 to 1, hyperdimensional_pearl 8 to 1, cosmic_board 8 to 1, causal_solder 147456 to 2200 mB |
+| femto_assembly/micro_black_hole_evaporator | horizon_cage 64 to 3 |
+| femto_assembly/mirror_foundry | topological_processor 64 to 1, antiproton_bundle 32 to 1, magnetic_confinement_casing 32 to 8, annihilation_reactor 16 to 1, event_horizon_casing 16 to 4, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, computronium_ingot 8 to 1, topological_wafer 16 to 2, antisilicon_shard 8 to 2, strange_matter_pellet 16 to 4, exotic_solder 73728 to 200 mB, synaptic_fluid 16000 to 2200 mB, tachyon_flux 16000 to 4000 mB |
+| femto_assembly/multiverse_rift | hyperdimensional_processor 96 to 1, rift_anchor 32 to 1, rift_frame_casing 16 to 9, causal_solder 147456 to 2500 mB, exotic_solder 16000 to 4200 mB |
+| femto_assembly/neutron_star_forge | neutronium_block 64 to 27, topological_processor 64 to 1, magnetic_confinement_casing 16 to 7, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, topological_logic_wafer 16 to 5, positronium_hydride 8 to 2, exotic_solder 73728 to 500 mB |
+| femto_assembly/nuclide_forge | topological_processor 64 to 1, calorimeter_detector_array 32 to 1, magnetic_confinement_casing 32 to 1, rf_accelerating_cavity 16 to 1, chemical_reactor 16 to 1, r_process_cluster 16 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, antiiron_ingot 8 to 1, dyson_shell_segment 8 to 1, exotic_solder 73728 to 100 mB |
+| femto_assembly/omnilex_engine | omnilex_casing 16 to 3, stellar_singularity 16 to 3 |
+| femto_assembly/ontological_processor | source_code_fragment 8 to 7 |
+| femto_assembly/pleroma_reconstitutor | pleroma_crystal 32 to 5, apeiron_ingot 32 to 5, omnipotence_casing 16 to 2 |
+| femto_assembly/predictive_lattice_governor | hyperdimensional_processor 64 to 49, autonomous_calibrator 8 to 2, gravitational_wave_crystal 8 to 5, grand_unified_core 16 to 11 |
+| femto_assembly/reality_compiler | reality_lattice_casing 16 to 1, einstein_rosen_core 8 to 1, flerovium_ingot 16 to 1, causal_solder 221184 to 22800 mB, liquid_antihelium 16000 to 6700 mB |
+| femto_assembly/spacetime_alloy_coil_block | chronosteel_coil_block 8 to 1, spacetime_alloy_ingot 64 to 2, topological_processor 8 to 1, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, exotic_solder 36864 to 1400 mB |
+| femto_assembly/standard_model_matrix | bottom_top_quarks 32 to 1, gauge_boson_cluster 32 to 3, higgs_boson_crystal 8 to 1, topological_processor 8 to 1, chronoplastic_gasket 16 to 4, entangled_bus_bar 16 to 4, exotic_solder 36864 to 2800 mB |
+| femto_assembly/tesseract_assembler | white_hole_fragment 32 to 1, topological_processor 64 to 1, hyperframe_casing 16 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 1, entangled_bus_bar 16 to 1, anticarbon_crystal 8 to 1, hawking_emitter 8 to 1, category_lattice 8 to 1, topological_boule 16 to 1, exotic_solder 73728 to 100 mB, nebular_gas 16000 to 1400 mB, nanite_slurry 16000 to 2700 mB |
+| femto_assembly/theoretical_dossier | theoretical_notes_1 16 to 3 |
+| femto_assembly/theoretical_notes_1 | topos 32 to 3 |
+| femto_assembly/theoretical_notes_2 | m_brane 32 to 1, compactified_circle 32 to 1, degenerate_armour_plate 32 to 22, spacetime_catalyst 32 to 8, hyperdimensional_die 8 to 5, riemann_curvature_tensor 16 to 11, d_brane_sheet 8 to 3 |
+| femto_assembly/theoretical_notes_3 | string_coupling_crystal 32 to 3, gravitational_wave_crystal 32 to 3, empirical_notes_3 16 to 15, cosmic_board 8 to 7 |
+| femto_assembly/transcendent_plasma_forge | cosmic_neutronium_coil_block 32 to 1, stellar_plasma_crucible 16 to 1, hyperdimensional_processor 8 to 1, cosmological_constant 8 to 1, causal_solder 221184 to 8100 mB |
+| femto_assembly/universe_forge | hyperdimensional_processor 96 to 1, cosmogenic_casing 16 to 1, universe_seed 16 to 1, frozen_photon 8 to 1, phantom_energy_cell 16 to 1, causal_solder 147456 to 2100 mB |
+| femto_assembly/vacuum_harvester | hyperdimensional_processor 64 to 1, causal_solder 147456 to 2600 mB |
+| femto_assembly/warp_field_forge | topological_processor 80 to 2, bubble_pedestal 32 to 1, atto_capacitor 128 to 3, atto_inductor 128 to 3, entangled_bus_bar 16 to 1, category_lattice 8 to 1, exotic_solder 73728 to 1700 mB |
+| femto_assembly/wormhole_projector | exotic_matter_crystal 64 to 1, wormhole_throat 32 to 1, topological_processor 64 to 1, wormhole_frame_casing 16 to 1, atto_capacitor 128 to 1, atto_inductor 128 to 102, chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, klein_bottle 8 to 1, exotic_solder 73728 to 100 mB, metallic_hydrogen 16000 to 100 mB |
+| femtofabrication/adaptive_feedback_core | phase_locked_stabiliser 12 to 9, general_ai_core 24 to 8, topological_processor 48 to 17, error_correction_lattice 48 to 37, stabiliser_matrix 24 to 1 |
+| femtofabrication/atto_capacitor | femto_capacitor 24 to 1, higgs_field_capacitor 6 to 1, noble_gas_clathrate 6 to 1, coherent_wiring_harness 6 to 1, exotic_solder 4608 to 100 mB, nebular_gas 8000 to 100 mB |
+| femtofabrication/atto_inductor | femto_inductor 24 to 1, electride_crystal 6 to 1, pixel_tracker_module 12 to 1, exotic_solder 4608 to 100 mB, ionic_liquid 8000 to 100 mB |
+| femtofabrication/atto_transistor | femto_transistor 24 to 1, superposition_crystal 6 to 1, topological_insulator 6 to 1, cherenkov_wafer 24 to 1, exotic_solder 4608 to 100 mB |
+| femtofabrication/pixel_tracker_module | cherenkov_wafer 6 to 2, qubit 12 to 3, lattice_seed 24 to 6 |
+| femtofabrication/plasma_nozzle_tip | tachyon_crystal 6 to 2, topological_insulator 6 to 2 |
+| femtofabrication/quantum_processor | photonic_board 6 to 1, qubit_die 12 to 2, photonic_processor 12 to 2, femto_transistor 24 to 3, photonic_logic_wafer 12 to 2, bose_einstein_condensate 8000 to 1100 mB |
+| femtofabrication/topological_processor | topological_board 6 to 1, topological_die 12 to 1, quantum_processor 12 to 3, arrow_of_time_shard 6 to 1, exotic_solder 4608 to 400 mB, tachyon_flux 8000 to 800 mB |
+| formal_proof/axiom_of_choice | continuum_shard 6 to 3 |
+| formal_proof/axiom_schema | qubit 6 to 4, spacetime_slag 12 to 7, telescope_mirror_blank 24 to 15 |
+| formal_proof/category_lattice | function_graph 24 to 9, power_set 6 to 2, lepton_triplet 6 to 2 |
+| formal_proof/empty_set | void_essence 6 to 2, crystalline_matrix_ingot 24 to 10, bose_einstein_condensate 8000 to 3300 mB |
+| formal_proof/formal_proof_tree | quantum_processor 6 to 1, function_graph 6 to 1, fractal_dust 6 to 1, crystalline_matrix_ingot 24 to 3, synaptic_fluid 8000 to 1100 mB, bose_einstein_condensate 8000 to 1100 mB |
+| formal_proof/functor_bridge | category_lattice 12 to 1, differential_manifold 6 to 1, octonion_crystal 6 to 1, entangled_bus_bar 6 to 1, topological_board 6 to 1, exotic_solder 8000 to 200 mB |
+| formal_proof/power_set | formal_proof_tree 6 to 1, topological_logic_wafer 6 to 1, dark_matter 8000 to 2000 mB |
+| formal_proof/topos | continuum_shard 6 to 3 |
+| fractionation/dimensional_residue | chronoplastic_gasket 16 to 1, entangled_bus_bar 16 to 1, dimensional_residue 64000 to 900 mB, exotic_solder 16000 to 200 mB |
+| gene_sequencing/cryptochrome_magnetoreceptor | entangled_bus_bar 6 to 3 |
+| gene_sequencing/folded_protein_crystal | molecular_orbital_lattice 12 to 11, quantum_processor 6 to 5, carbon_nanotube_bundle 6 to 5, ionic_liquid 8000 to 7300 mB |
+| gene_sequencing/recombinant_dna | error_correction_lattice 6 to 4, crystalline_matrix_ingot 24 to 18, tachyon_flux 8000 to 6000 mB |
+| gene_sequencing/silicon_life_spore | xenogenome_sample 24 to 18, bulk_crystal 24 to 4, entangled_bus_bar 6 to 2, tachyon_flux 8000 to 6000 mB |
+| gene_sequencing/synthetic_cell | buckyball_cage 12 to 10, self_healing_polymer 6 to 2, entangled_bus_bar 6 to 2, strange_matter 8000 to 5000 mB |
+| gene_sequencing/xenogenome_recoding | fractured_essence 6 to 3, void_lattice_shard 6 to 3 |
+| graviton_condensing/anchor_core | negative_mass_ingot 12 to 1, spacetime_alloy_ingot 24 to 3, exotic_matter 64000 to 8000 mB |
+| graviton_condensing/graviton_wisp_condensation | graviton_crystal 48 to 3, bulk_crystal 24 to 1 |
+| graviton_condensing/rift_anchor | graviton_crystal 24 to 1, hyperdimensional_boule 12 to 1, exotic_matter 128000 to 600 mB |
+| graviton_condensing/spin_foam_lattice | higgs_catalyst 12 to 7 |
+| graviton_condensing/universe_seed | m_brane 12 to 3 |
+| graviton_condensing/virtual_graviton_condensation | bounce_core 12 to 7 |
+| halo_collection/exotic_matter_crystal | void_lattice_shard 8 to 5, coherent_wiring_harness 16 to 6, dilithium_crystal 32 to 20, photonic_lens 32 to 20, superposition_crystal 32 to 20, topological_insulator 8 to 3 |
+| halo_collection/void_condensation | void_lattice_shard 32 to 13, casimir_plate 16 to 6 |
+| holographic_encoding/bekenstein_crystal | holographic_matrix 8 to 1, hawking_emitter 8 to 1, positronium_hydride 8 to 1 |
+| holographic_encoding/holographic_matrix | quantum_processor 8 to 1, femto_inductor 8 to 1, bose_einstein_condensate 32000 to 3000 mB |
+| hyperdimensional/alcubierre_coil | metric_tensor 24 to 1, lorentz_transform_crystal 24 to 4, hyperdimensional_boule 12 to 2, inertia_damper 12 to 1, anchor_core 12 to 1, primordial_harvest 24 to 14, exotic_matter 256000 to 150200 mB |
+| hyperdimensional/cosmic_board | cosmic_string_segment 12 to 2, atto_inductor 96 to 28, chronoplastic_gasket 24 to 2, quantum_field_lattice 12 to 2, gauge_boson_cluster 12 to 2, exotic_solder 73728 to 8500 mB, synaptic_fluid 32000 to 24200 mB |
+| hyperdimensional/einstein_rosen_core | frozen_photon 48 to 40, cosmic_lens 12 to 2, hyperdimensional_pearl 12 to 10 |
+| hyperdimensional/grand_unified_core | standard_model_matrix 24 to 1, superpartner_shard 48 to 1, quantum_string 48 to 14, empirical_notes_3 12 to 1, cosmic_neutronium_ingot 12 to 6, von_neumann_probe 12 to 6, functor_bridge 24 to 1, exotic_matter 256000 to 127900 mB |
+| hyperdimensional/klein_bottle | differential_manifold 12 to 11, tesseract_core 12 to 11, chronoplastic_gasket 24 to 8, thought_matrix 12 to 1, spin_foam_lattice 12 to 1, stellar_iron_singularity 12 to 11, primordial_harvest 24 to 8, exotic_matter 64000 to 22200 mB |
+| hyperdimensional/planck_shard | white_hole_fragment 12 to 1, micro_singularity 12 to 1, cosmic_string_segment 12 to 1, chronoplastic_gasket 24 to 2, red_giant_envelope 12 to 1, exotic_crystal_singularity 12 to 2, exotic_matter 128000 to 12000 mB, bose_einstein_condensate 32000 to 4900 mB, carborane_superacid 32000 to 4200 mB |
+| hyperdimensional/spacetime_catalyst | higgs_catalyst 12 to 1, spacetime_alloy_ingot 96 to 5, spin_foam_lattice 12 to 1, empirical_notes_2 12 to 1, exotic_matter 512000 to 165100 mB |
+| hyperdimensional/tesseract_core | topological_processor 24 to 1, exotic_matter_crystal 48 to 5, white_hole_fragment 12 to 1, chronoplastic_gasket 24 to 1, up_down_quarks 12 to 2, gravitic_lens_element 24 to 1, cryptochrome_magnetoreceptor 24 to 1, exotic_matter 128000 to 900 mB, chronon_gas 64000 to 6100 mB, strange_matter 32000 to 5100 mB, nebular_gas 32000 to 3000 mB |
+| hyperdimensional/tesseract_lens | tesseract_core 12 to 4, chronoplastic_gasket 24 to 6, hyperon_crystal 12 to 3, power_set 24 to 7, metric_tensor 12 to 1, exotic_matter 128000 to 38100 mB |
+| hyperdimensional/wormhole_throat | einstein_field_core 12 to 1, r_process_cluster 12 to 5, higgs_catalyst 24 to 2, hyperlattice_frame 24 to 5, exotic_solder 32000 to 15600 mB |
+| inflation/r32_aeon_boundary | heat_death_ember 32 to 13, de_sitter_horizon_shard 16 to 2, dark_era_haze 25600 to 10900 mB |
+| inflation/r32_inflaton_condensation | graviton_crystal 16 to 1, dark_matter_lens 16 to 1, inflaton_field 64000 to 200 mB |
+| inflation/r32_no_boundary_tunnelling | spin_foam_lattice 16 to 2, inflaton_condensate 32 to 3 |
+| kugelblitz/kugelblitz_seed | antimatter_pellet 32 to 1, strange_matter_pellet 16 to 1, photonic_processor 16 to 1, photonic_logic_wafer 16 to 2, circuit_substrate 32 to 4, void_lattice_shard 8 to 1, dark_matter 64000 to 100 mB, bose_einstein_condensate 16000 to 100 mB |
+| kugelblitz/micro_singularity | tachyon_klystron 8 to 3, topological_wafer 8 to 1, quadrupole_pole_tip 8 to 1, topological_boule 8 to 1, narrow_ai_core 8 to 1, quark_gluon_plasma 64000 to 26300 mB, bose_einstein_condensate 16000 to 5700 mB |
+| kugelblitz/micro_singularity_from_seed | kugelblitz_seed 8 to 2, lepton_triplet 8 to 2, noble_gas_clathrate 8 to 2, void_essence 16 to 6, fractal_set 8 to 2, quark_gluon_plasma 32000 to 11800 mB, ionic_liquid 16000 to 5900 mB, chronon_gas 16000 to 5900 mB |
+| lithography/cosmic_logic_wafer | hyperdimensional_wafer 4 to 3, coherent_wiring_harness 4 to 3 |
+| lithography/hyperdimensional_logic_wafer | hyperdimensional_wafer 4 to 3, coherent_wiring_harness 4 to 3 |
+| lithography/photonic_logic_wafer | cherenkov_wafer 4 to 3, genome_sample 8 to 7, photoresist 1600 to 1400 mB |
+| lithography/qubit_array_wafer | cherenkov_wafer 4 to 3, cryocooler_unit 4 to 3 |
+| lithography/topological_logic_wafer | topological_wafer 4 to 3 |
+| mass_modulation/higgs_catalyst | higgs_boson_crystal 8 to 3 |
+| mass_modulation/inertia_damper | negative_mass_ingot 8 to 1, antiproton_bundle 8 to 1, nanite_slurry 16000 to 8000 mB |
+| mass_modulation/massless_alloy | neutronium_ingot 16 to 1, sterile_neutrino 8 to 1, bose_einstein_condensate 32000 to 1400 mB |
+| mass_modulation/negative_mass_ingot | massless_alloy 8 to 1, exotic_matter_crystal 8 to 1, claytronic_catom 8 to 1, exotic_matter 32000 to 100 mB |
+| mass_modulation/r32_metastable_vacuum_mapping | higgs_field_capacitor 16 to 3 |
+| mass_modulation/r32_true_vacuum_nucleation | metastable_vacuum_lattice 8 to 1, exotic_matter_crystal 8 to 3 |
+| matrioshka/r140_uploaded_minds | engram 16 to 3, computronium_ingot 32 to 5, engineered_mind 2 to 1, proof_lattice 2 to 1, synaptic_fluid 256000 to 62200 mB |
+| matrioshka/superintelligence | general_ai_core 64 to 6, kaluza_klein_singularity 16 to 1, quantum_field_lattice 64 to 6, rift_anchor 16 to 1, novikov_crystal 64 to 6, hyperdimensional_die 16 to 1, engineered_mind 2 to 1, proof_lattice 2 to 1 |
+| mirror_synthesis/antigold_ingot | raw_antigold 24 to 1, entangled_bus_bar 24 to 1, photonic_neuron 24 to 1, raw_antiiron 12 to 1, topological_wafer 24 to 1, pentaquark_shard 12 to 1, void_essence 48 to 1, liquid_antihelium 12800 to 100 mB, exotic_solder 32000 to 100 mB, synaptic_fluid 32000 to 100 mB |
+| mirror_synthesis/antiiron_ingot | raw_antiiron 24 to 1, antisilicon_shard 12 to 1, femto_inductor 24 to 1, antiproton_bundle 12 to 1, penrose_spindle 12 to 1, tachyon_crystal 24 to 1, liquid_antihelium 12800 to 100 mB |
+| mirror_synthesis/baryogenesis_seed | antigold_ingot 48 to 1, mirror_alloy_ingot 48 to 1, arrow_of_time_shard 24 to 1, mirror_processor 12 to 1, chronoplastic_gasket 24 to 1, chronosteel_singularity 12 to 1, octonion_crystal 12 to 1, penrose_spindle 24 to 1, liquid_antihelium 128000 to 200 mB, chronon_gas 32000 to 400 mB |
+| mirror_synthesis/cpt_reflect_quarks | up_down_quarks 48 to 12, antimatter_pellet 24 to 7 |
+| mirror_synthesis/mirror_alloy_ingot | antiiron_ingot 12 to 1, chronoplastic_gasket 24 to 1, annihilation_core 24 to 1, cryptochrome_magnetoreceptor 24 to 1, liquid_antihelium 32000 to 100 mB |
+| mirror_synthesis/mirror_processor | antisilicon_shard 48 to 1, anticarbon_crystal 12 to 1, antiquark_shard 12 to 1, quantum_processor 12 to 1, raw_antigold 12 to 1, atto_transistor 12 to 1, noble_gas_clathrate 12 to 1, protostar_core 12 to 1, liquid_antihelium 32000 to 100 mB, neutrino_flux 32000 to 100 mB, chronon_gas 32000 to 100 mB |
+| mirror_synthesis/r32_baryogenesis_from_asymmetry | baryon_asymmetry_crystal 24 to 7, antihelium_nucleus 12 to 3 |
+| nanofabrication/claytronic_catom | programmable_matter 6 to 3, nanite_slurry 8000 to 4100 mB, tachyon_flux 8000 to 4100 mB |
+| nanofabrication/phase_locked_stabiliser | field_calibrator 12 to 6, superconducting_coil 48 to 24, quantum_processor 24 to 1, chronon_capacitor 24 to 1 |
+| nanofabrication/programmable_matter | nanite_swarm 24 to 1, nanite_slurry 16000 to 400 mB |
+| nanofabrication/von_neumann_probe | claytronic_catom 24 to 1, quantum_processor 6 to 1, dyson_swarm_satellite 6 to 1, entangled_bus_bar 6 to 1, nanite_slurry 64000 to 6800 mB, exotic_matter 8000 to 200 mB |
+| neural_synthesis/computronium_ingot | quantum_processor 6 to 1, photonic_neuron 6 to 1, void_essence 6 to 1, synaptic_fluid 8000 to 2200 mB |
+| neural_synthesis/error_correction_lattice | quantum_processor 6 to 1, qubit_array_wafer 6 to 1, synaptic_fluid 8000 to 600 mB, bose_einstein_condensate 8000 to 600 mB |
+| neural_synthesis/general_ai_core | narrow_ai_core 24 to 1, formal_proof_tree 12 to 1, function_graph 6 to 1, synaptic_fluid 64000 to 2200 mB, bose_einstein_condensate 8000 to 300 mB |
+| neural_synthesis/narrow_ai_core | neural_lattice 6 to 1, quantum_processor 12 to 1, strange_matter_pellet 6 to 1, cherenkov_lattice 24 to 14, synaptic_fluid 32000 to 600 mB |
+| neural_synthesis/neural_lattice | photonic_neuron 48 to 1, geiger_tube 24 to 18, synaptic_fluid 16000 to 100 mB |
+| neural_synthesis/photonic_neuron | lattice_seed 24 to 6, theodolite_lens 24 to 6, supercritical_solvent 8000 to 2200 mB |
+| neural_synthesis/superintelligence_core | general_ai_core 24 to 1, tesseract_core 6 to 1, spin_foam_lattice 6 to 1, synaptic_fluid 128000 to 44700 mB |
+| neutrino_capture/sterile_neutrino | degenerate_matter_chunk 6 to 1, circuit_substrate 24 to 1, telescope_mirror_blank 24 to 1, bose_einstein_condensate 8000 to 200 mB |
+| nucleosynthesis/main_sequence_ignition | protostar_core 8 to 1, antimatter_pellet 16 to 1, penrose_spindle 8 to 1, nebular_gas 256000 to 4500 mB, quark_gluon_plasma 64000 to 2300 mB |
+| nucleosynthesis/protostar_core | graviton_crystal 8 to 1, chronoplastic_gasket 8 to 1, nebular_gas 256000 to 800 mB, dimensional_residue 16000 to 100 mB |
+| nucleosynthesis/protostar_core_early | neutronium_block 8 to 1, chronon_capacitor 8 to 1, nebular_gas 256000 to 400 mB, tachyon_flux 16000 to 100 mB |
+| nucleosynthesis/r32_bbn_from_quarks | up_down_quarks 32 to 5, neutronium_ingot 16 to 5, quark_gluon_plasma 64000 to 23000 mB |
+| nucleosynthesis/red_giant_phase | stellar_core 8 to 4, power_set 8 to 4, raw_antigold 8 to 4, stellar_plasma 256000 to 139300 mB, quark_gluon_plasma 16000 to 8700 mB |
+| nuclide_synthesis/flerovium_ingot | alcubierre_coil 12 to 3 |
+| nuclide_synthesis/unbihexium_ingot | flerovium_ingot 24 to 3 |
+| phase_transmutation/calabi_yau_manifold | topological_insulator 12 to 1, void_lattice_shard 24 to 6, photonic_lens 12 to 3, bose_einstein_condensate 16000 to 1200 mB |
+| phase_transmutation/higgs_field_capacitor | superconducting_coil 6 to 1, magnetic_monopole 6 to 1, bose_einstein_condensate 8000 to 100 mB, dark_matter 8000 to 100 mB |
+| phase_transmutation/topological_board | circuit_substrate 12 to 2, topological_insulator 6 to 1, femto_inductor 24 to 1, photonic_processor 12 to 1, bose_einstein_condensate 8000 to 500 mB |
+| phase_transmutation/topological_insulator | cherenkov_boule 12 to 1, bose_einstein_condensate 8000 to 300 mB |
+| plasma_smelting/chronosteel | chronon_capacitor 8 to 1, hawking_absorber_plate 8 to 4, sterile_neutrino 8 to 1, crystalline_matrix_ingot 32 to 17, rf_resonator_cell 16 to 2, chronon_gas 32000 to 4000 mB, dark_matter 16000 to 1900 mB |
+| plasma_smelting/spacetime_alloy | cosmic_string_segment 8 to 7, exotic_matter_crystal 16 to 14, entangled_bus_bar 16 to 13, wave_packet 8 to 7, antihydrogen_crystal 8 to 7, exotic_matter 64000 to 54400 mB, dark_matter 16000 to 14400 mB |
+| psionic_attunement/psionic_crystal | photonic_neuron 8 to 6, cryptochrome_magnetoreceptor 8 to 1, synaptic_fluid 32000 to 15700 mB |
+| psionic_attunement/r32_boltzmann_brain_from_fluctuation | boltzmann_fluctuation 8 to 2, psionic_ether 16000 to 7100 mB |
+| psionic_attunement/thought_matrix | psionic_crystal 8 to 1, chronoplastic_gasket 8 to 1, psionic_ether 32000 to 600 mB |
+| reality_compilation/eternity_catalyst | spacetime_catalyst 32 to 1, empirical_notes_1 32 to 1, causal_solder 1179648 to 100 mB |
+| reality_compilation/omega_point | source_code_fragment 128 to 24, ontological_processor 64 to 10, einstein_rosen_core 64 to 58 |
+| reality_compilation/reality_anchor | source_code_fragment 32 to 3 |
+| reality_compilation/source_code_fragment | theoretical_notes_3 32 to 4, empirical_notes_1 32 to 4 |
+| spectrometry/lepton_triplet | sterile_neutrino 6 to 2, antimatter_pellet 6 to 2, dipole_winding 6 to 2, neutrino_flux 16000 to 4300 mB |
+| spectrometry/strange_charm_quarks | strange_matter_pellet 6 to 1, hawking_absorber_plate 6 to 1, sterile_neutrino 6 to 1, quark_gluon_plasma 16000 to 900 mB, chronon_gas 8000 to 400 mB |
+| spectrometry/virtual_quark_condensation | virtual_quark 48 to 29, entangled_bus_bar 6 to 1, proton_decay_residue 6 to 1, exotic_solder 8000 to 500 mB |
+| stellar_compression/neutronium_compression | raw_antigold 12 to 1, casimir_plate 48 to 8, differential_manifold 12 to 1, topological_wafer 24 to 3, up_down_quarks 12 to 1, carborane_superacid 32000 to 4200 mB |
+| stellar_compression/pulsar_timing_crystal | antigold_ingot 12 to 6, higgs_catalyst 12 to 6, exotic_matter 32000 to 29700 mB |
+| stellar_compression/quark_star_core | supernova_remnant 12 to 3, chronoplastic_gasket 24 to 10, hyperdimensional_boule 12 to 10, mirror_processor 12 to 3, topological_logic_wafer 48 to 42, quantum_string 12 to 3, synaptic_fluid 32000 to 25200 mB |
+| stellar_compression/r32_big_crunch | spin_foam_lattice 12 to 3 |
+| stellar_compression/supernova_remnant | red_giant_envelope 24 to 1, stellar_iron_ingot 96 to 4, neutronium_block 12 to 5, chronoplastic_gasket 24 to 1, strange_matter_singularity 12 to 5, massless_alloy 12 to 1, bose_einstein_condensate 32000 to 13800 mB, synaptic_fluid 32000 to 13800 mB |
+| string_weaving/brane_tension_weaving | quantum_string 24 to 3, bulk_crystal 12 to 2 |
+| string_weaving/cosmic_lens | tesseract_lens 12 to 2, spacetime_catalyst 12 to 2 |
+| string_weaving/m_brane | d_brane_sheet 24 to 3, g2_manifold 12 to 1 |
+| string_weaving/quantum_string | cosmic_string_segment 12 to 4, tachyon_crystal 12 to 4, exotic_matter 32000 to 13000 mB |
+| string_weaving/stabiliser_matrix | quantum_string 24 to 2, exotic_matter 64000 to 7700 mB |
+| surface_firing/r87_mobius_strip_hyperbolic | hyperbolic_stone 16 to 7 |
+| synchrotron/bottom_top_quarks | strange_charm_quarks 16 to 3, pentaquark_shard 8 to 3, fractal_set 8 to 3, general_ai_core 8 to 1, photonic_board 32 to 28, derivative_operator 8 to 1, quark_gluon_plasma 64000 to 28000 mB, chronon_gas 16000 to 6700 mB |
+| synchrotron/glueball_core | strange_matter_pellet 16 to 1, plasma_nozzle_tip 8 to 1, chronon_capacitor 8 to 1, femto_inductor 8 to 2, quark_gluon_plasma 64000 to 15300 mB, neutrino_flux 16000 to 800 mB |
+| synchrotron/higgs_boson_crystal | gauge_boson_cluster 16 to 4, bottom_top_quarks 8 to 1, entangled_bus_bar 16 to 4, atto_inductor 8 to 6, hawking_emitter 8 to 6 |
+| synchrotron/hyperon_crystal | sterile_neutrino 8 to 1, strange_matter_pellet 16 to 1, tachyon_crystal 8 to 1, qubit_array_wafer 16 to 1, tachyon_klystron 8 to 1, nanite_swarm 8 to 1, strange_matter 32000 to 500 mB, nebular_gas 16000 to 200 mB |
+| synchrotron/pentaquark_shard | strange_matter_pellet 8 to 1, antimatter_pellet 8 to 1, tachyon_klystron 8 to 1, quark_gluon_plasma 32000 to 3100 mB, bose_einstein_condensate 16000 to 1500 mB, tachyon_flux 16000 to 1500 mB |
+| synchrotron/synchrotron_strange_matter | neutronium_ingot 32 to 4, chiral_crystal 16 to 1, pixel_tracker_module 8 to 1, casimir_plate 32 to 3, gravitic_lens_element 8 to 1, quark_gluon_plasma 16000 to 1300 mB, chronon_gas 16000 to 700 mB |
+| tachyon_resonance/tachyon_crystal | photonic_board 24 to 4 |
+| tachyon_resonance/tachyon_klystron | superconducting_coil 12 to 3, genome_sample 12 to 3 |
+| tensor_calculus/einstein_field_core | riemann_curvature_tensor 16 to 3, integral_operator 16 to 15, exotic_matter 32000 to 29200 mB |
+| tensor_calculus/kerr_metric_shard | einstein_field_core 8 to 7 |
+| tensor_calculus/lorentz_transform_crystal | tachyon_crystal 8 to 5, antiproton_bundle 8 to 5, tachyon_flux 16000 to 11800 mB |
+| tensor_calculus/metric_tensor | minkowski_lattice 8 to 6, derivative_operator 16 to 15, chronoplastic_gasket 8 to 6 |
+| tensor_calculus/minkowski_lattice | lorentz_transform_crystal 16 to 2, differential_manifold 8 to 1, quaternion_crystal 8 to 1, protostar_core 8 to 1 |
+| tensor_calculus/riemann_curvature_tensor | metric_tensor 16 to 1, micro_singularity 8 to 3, chronoplastic_gasket 8 to 2, exotic_solder 16000 to 4900 mB |
+| universe_forging/pocket_universe | theoretical_notes_2 16 to 11 |
+| universe_forging/r32_pocket_universe_from_first_principles | universe_seed 16 to 1, true_vacuum_seed 16 to 9, inflaton_condensate 16 to 3, living_archive 2 to 1, unified_field_lattice 2 to 1, inflaton_field 256000 to 56100 mB |
+| universe_forging/recycle_remnants | heat_death_remnant 64 to 14, einstein_rosen_core 16 to 3 |
+| vacuum_harvesting/foam_boundary_harvest | casimir_plate 128 to 67, false_vacuum 1024000 to 540000 mB |
+| weaving/dark_matter_lens | void_lattice_shard 4 to 1, coherent_wiring_harness 4 to 1, dark_matter 8000 to 100 mB |
+| weaving/dipole_winding | superconducting_coil 12 to 2, neutronium_plate 8 to 2, superposition_crystal 8 to 2 |
+| weaving/dyson_shell_segment | stellar_iron_ingot 16 to 2, higgs_field_capacitor 4 to 1, tachyon_singularity 8 to 7, stellar_plasma 16000 to 13300 mB |
+| weaving/dyson_swarm_satellite | quantum_processor 4 to 3 |
+| weaving/gravitic_lens_element | dark_matter_lens 4 to 1, coherent_wiring_harness 4 to 1, dark_matter 4000 to 400 mB |
+| weaving/horizon_glass_lens | horizon_glass 16 to 7, coherent_wiring_harness 4 to 3, dark_matter 4000 to 1800 mB |
+| weaving/metamaterial_sheet | neutronium_plate 4 to 1, bose_einstein_condensate 1600 to 100 mB |
+| weaving/mobius_strip | topological_insulator 4 to 1, function_graph 4 to 1, coherent_wiring_harness 4 to 1, bose_einstein_condensate 4000 to 1400 mB |
+| weaving/photonic_board | circuit_substrate 4 to 1, superconducting_coil 4 to 1, neutronium_plate 8 to 3, photoresist 4000 to 1500 mB |
+| weaving/void_essence_lens | void_essence 8 to 1, coherent_wiring_harness 4 to 1, dark_matter 4000 to 100 mB |
+| white_hole/cosmic_string_segment | white_hole_fragment 8 to 1, hawking_emitter 8 to 1, entangled_bus_bar 16 to 1, pentaquark_shard 8 to 1, antiquark_shard 8 to 1, lepton_triplet 8 to 1, exotic_solder 16000 to 300 mB, chronon_gas 16000 to 300 mB |
+| white_hole/ejecta_white_hole | cosmic_lens 8 to 3 |
+| white_hole/stellar_core | white_hole_fragment 8 to 4, entangled_bus_bar 16 to 7, modular_form 8 to 4, assembly_matrix 8 to 4 |
+| white_hole/white_hole_fragment | micro_singularity 8 to 2, chronon_capacitor 8 to 2, calabi_yau_manifold 8 to 2, topological_die 8 to 2, chronon_gas 64000 to 17700 mB, neutrino_flux 16000 to 4400 mB |
+| wormhole_transit/distant_star_system | exotic_matter 1000 to 200 mB |
+</details>
+
+### Added
+
+* **Space suits of other mods hold off the vacuum.** A new item tag, theoreticalsciences:vacuum_suits, lists armour
+  that seals against the Orbital Station's vacuum. It holds Ad Astra's Space Suit, Netherite Space Suit and Jet Suit
+  when Ad Astra is installed (nothing when it is not), and packs can add their own. A full set means one sealed piece
+  in each of the four slots, in any mix of this mod's Pressure, Heated Pressure and Frontier suits and the tagged
+  pieces. Ad Astra's own oxygen use is Ad Astra's: this mod only asks whether the suit is sealed.
+* **Test kits.** /theoreticalsciences testkit <players> <kit> gives a kit of items and grants its research, to try a
+  part of the mod without crafting up to it; /theoreticalsciences testkit list names them. Kits: archaeology (1.6.0),
+  field_synthesis (one of each E1 to E5 material, 1.7.x), home (the Empyrean table, the altar, a full portal ring and
+  the 42 materials, 1.8.0), omnipotency (its blocks, tablets, disc and one egg of each creature, 1.9.0) and station
+  (the three sealed suits and rocket parts). What does not fit in the inventory goes to the Ender Chest, not the
+  ground. Kits are data (data/<namespace>/ts_testkits/<kit>.json), so a pack can add its own.
+
+
+## 1.9.1: The angels as they were described
+
+The three angels of Omnipotency are remodelled after the accounts in Ezekiel 1 and 10, Isaiah 6 and Revelation 4.
+Their behaviour is as in 1.9.0; their forms, voices, sizes and text are new.
+
+* **Cherub** (was a small winged child). Now as Ezekiel describes the cherubim: one head with four faces (a man's
+  in front, a lion's on its right, an ox's on its left, an eagle's behind), four wings (two spread upward, two folded
+  over the body), a man's hands under the wings, straight legs ending in a calf's hooves, the whole of it the colour
+  of burnished bronze, and eyes over its body, its hands and its wings. It is now nearly two blocks tall. Its voice
+  is four voices at once over a sound of wings like rushing water.
+* **Choir Seraph** (was a robed figure with a golden mask). Now as Isaiah describes the seraphim: six wings and
+  little else to see. Two cover its face, two cover its feet, two fly. The feathers run from white to flame (the name
+  means "the burning ones"), the wings are full of eyes, and a wheel of fire turns behind it. When it sings, the
+  wings over its face part and light comes out.
+* **Threshold Warden is now the Threshold Ophan** (was a kneeling marble knight). Now one of Ezekiel's wheels: three
+  rims the colour of topaz, one inside another, their rims full of eyes, about one great eye, with a ring of six
+  wings. At rest the rims lie still, the gold is dull, the wings are folded and every eye is shut. Provoked, every
+  eye opens, each rim turns about its own axis, the wings spread, and fire and sparks go between the wheels. As in
+  the text, it goes any way **without turning to face it**. Its sounds are the turning of great wheels and bells.
+  Its hitbox is now 2.2 wide and 2.5 tall. What wakes it, and how it fights and stands down, is unchanged.
+* One liberty, on request: Ezekiel gives the wheels no wings. The ring of wings follows how they are usually drawn
+  now.
+* The Codex, tooltips, subtitles, three of the Dwellers' lines and the Ninth Remembrance are reworded to match.
+* The Halo Lamb, Cloud Ray and Dweller are unchanged.
+
+## 1.9.0: Those Who Live There
+
+Omnipotency is no longer empty. Nothing here changes progression: there is no new gear, no new recipe, and no boss.
+
+### New creatures
+All six have their own minds (none is built on a vanilla creature), their own voices, box-built shaded models with
+moving parts, and their own way of dying.
+
+* **Halo Lamb** (Cloud Meadows, Gilded Gardens). A lamb with a gold-white fleece and a ring of light over its head.
+  Wanders, grazes the Halo Grass without harming it, runs if struck.
+* **Cherub** (Gilded Gardens, Cloud Meadows). A small winged keeper. Flies to Glory Lanterns and Aureate Leaves and
+  tends them, and comes to circle a visitor once or twice out of curiosity.
+* **Choir Seraph** (Choir Spires, Choir Halls). Six wings, a golden mask, an upright halo. Keeps to the crystal and
+  the bells. Now and then, when a player is near, it sings: everyone within nine blocks gets a few seconds of
+  Regeneration.
+* **Cloud Ray** (Sea of Clouds). A broad ray that swims the air in wide circles, calling.
+* **Dweller** (Hamlets, the Temple). A robed resident that keeps near its door, tends things, and bows to a visitor.
+  **Use one and it speaks**: eighteen lines between them, each Dweller starting somewhere of its own.
+* **Threshold Warden** (Hamlets, Choir Halls, the Temple). Marble in armour, kneeling with its sword point down, and
+  completely still. It wakes only if, within its sight, a player breaks part of a building, breaks a Sealed Urn, or
+  strikes one of the other five (or the Warden itself). It then fights that player only (600 health, 28 damage),
+  stops after thirty seconds without a new offence or once they are gone, walks back to its post, kneels, and is
+  whole again. It never wakes in Peaceful, or for players in Creative.
+* None of them drops anything. Each has a spawn egg and a Codex page.
+
+### New structures
+All are built of Omnipotency's own blocks, carry their footings down to the ground, and vary each time.
+
+* **Wayside Shrine** (everywhere there is land): four pillars, a roof, a light, and an urn or a bell.
+* **Hamlet** (Cloud Meadows, Gilded Gardens): three or four houses, each with a different roof, facing a well with a
+  bell over it. Dwellers live there and a Warden kneels by the well.
+* **Choir Hall** (Choir Spires): twelve pillars under a ring of stone, open to the sky, round a tall crystal, with
+  four bells. Two Seraphs and a Warden.
+* **Temple of Remembrance** (rare, any land): a stepped platform, a colonnade all round, a roof with a golden ridge,
+  and an inner room with three Remembrance Stones. Two Wardens flank the door.
+* **Beacon of Return** (Sea of Clouds): a round tower with a winding stair and a lamp room at the top.
+
+### New blocks
+* **Empyrean Pillar**, **Empyrean Marble Tiles**, **Seraph Gold Trim**, **Halo Glass**: building blocks.
+* **Choir Bell**: use it to ring it. Each bell's note depends on where it hangs, so a row of them is a scale.
+* **Remembrance Stone**: use it and one of the twelve Remembrances is read to you.
+* **Sealed Urn**: break it for what is inside.
+
+### New items
+* **Remembrance Tablets I to XII**: the history of the house, from its beginning to the player's return, one passage
+  each. One comes out of every Sealed Urn.
+* **Music Disc (Homecoming)**: Omnipotency's music for a jukebox. A 1 in 20 chance from a Sealed Urn.
+* Sealed Urns also give building blocks: Gilded Marble, tiles, pillars, trim, Halo Glass, Seraph Gold, Choir
+  Crystal, Glory Lanterns, and sometimes a Choir Bell.
+
+### Changed
+* Omnipotency's biomes now spawn the creatures above (it had no spawns at all).
+
+## 1.8.3
+* The Empyrean Assembly Table's ceiling on kinds of item is 256, up from 128, so a pack recipe that uses a different
+  item in every one of the 225 slots can still be filled. At that ceiling a table saves about 20 KB.
+
+## 1.8.2: Chunk safety for the Empyrean Assembly Table
+
+Checked against "chunk banning" (a chunk whose saved data grows too large to load). The table was already safe by
+design; this patch adds hard limits so it stays safe whatever is done to it.
+
+* **What the table saves is tiny and has a ceiling.** It does not store item stacks. It stores one line per kind of
+  item: the item's name and a single number. Holding 9 billion of something costs the same few bytes as holding 9.
+  With every ingredient of every recipe in it at once (66 kinds) a table saves about 4 KB; a chunk only fails at
+  several megabytes. New: a table refuses a new kind of item past 128 kinds, so no data pack can push it higher.
+* **Breaking a table drops exactly one item**, the table itself, with its contents written on it as those same few
+  lines. It never spills its contents into the world. New: that item never despawns, cannot be destroyed by fire,
+  lava, cactus or explosions while it holds anything, and its tooltip lists what is inside.
+* **Nothing the table does makes item entities.** Taking things out by hand only fills your inventory and stops
+  when it is full; pipes take one stack at a time; crafted items stay inside until taken.
+* Only plain items go in (nothing with its own data, such as a filled table or a shulker box), so tables cannot be
+  nested inside tables.
+* The Offering Altar stores nothing at all; what it is given becomes a number on the player's checklist.
+
+## 1.8.1: The long cycle
+
+### Recipe changes (all forty-three Empyrean Assembly Table recipes)
+* **Every slot of every recipe now asks for 650,000** of its ingredient. Before: 1 to 4 of a machine material, 64 of
+  an element or a work, 256 of a pillar, and 65,536 in the Homeward Portal Frame.
+* **Every recipe now gives 1** a craft. Before: 4,096 (the frame already gave 1).
+* The pictures, and which materials go where, are unchanged. The Consilience Core's slots are no longer an exception.
+* The table holds 64 crafts' worth of each ingredient, so its buffer grew with the recipes.
+* These numbers are deliberate and are not balanced against anything. For scale: one craft now takes between about 40
+  and 125 million items, and the checklist asks for 33,550,337 of it; each tier above multiplies
+  that again. The "what the whole checklist takes" table under 1.8.0 no longer applies.
+
+### New: the portal opens with a ceremony
+* Setting the twelfth Keystone of Return no longer fills the opening at once. Each keystone sends a beam of light
+  into the sky, one after another round the ring; the twelve lean together and meet high above; halos turn round
+  what gathers there; it comes down as one great beam onto the opening, swells until the whole ring is inside it,
+  and sinks away into the portal it leaves. About eight seconds, with its own sound.
+* The opening fills when the beam lands. Breaking a frame while the light is coming stops it.
+* Using a keyed frame with an empty hand tries the ring again, in case the game was closed mid-ceremony.
+
+### Changed: Omnipotency's blocks
+* **Silver Bark** is redrawn: pale plates with dark seams, birch-like marks, a crack with gold in it, and proper
+  rings on the cut ends, every third one gold.
+* **Aureate Leaves** are redrawn as separate leaves over a darker layer, with gaps you can see through (they no
+  longer block light or sight).
+* **Sounds now match the material** for walking, breaking and placing: marble, its bricks and gilded marble sound
+  like stone; Heaven Soil like dirt; Halo Grass like grass; Cloudstone and Radiant Cloud like wool; Seraph Gold like
+  metal; Glory Lantern like a lantern; Silver Bark like wood; Aureate Leaves like leaves. The Empyrean Assembly
+  Table, Offering Altar and Homeward Portal Frame sound like stone.
+* **Choir Crystal Spire has its own sounds.** Clear, high, ringing notes with no noise in them: a step is a single
+  soft note, a hit a bright one, and breaking it lets a chord go instead of crunching.
+
+### Fixed
+* **The Hyperobject could not be seen against Primordial Law.** It was drawn before the see-through blocks, so the
+  dark Law sea behind it was laid over it. It is now drawn after them.
+
+## 1.8.0: Recreating Home
+
+An expansion beyond the end. Nothing here can be started before every recipe of the Core Forge has been forged at
+least once, and nothing earlier is changed.
+
+### The story
+The Omnipotence Core is not the maker of all this. It is the remnant of the one who was, still running. That one had
+a home, and it was lost. The player had to understand everything to come this far; what the Core asks now is to
+rebuild what was lost, and then to come home.
+
+### New: the Core's fourth tab
+* **Recreating Home** appears on the Omnipotence Core's screen, in gold, beside Materialize and Forge, for a player
+  who has forged every Core Forge recipe at least once. The Core speaks the first time it appears.
+* It is a checklist of **forty-two** new materials and asks for **33,550,337 of each**.
+* The checklist is **per player**. On a server everyone has their own.
+* "Offer what I carry" gives the Core everything in your inventory that the checklist still needs.
+
+### New: the Empyrean Assembly Table
+* A crafting table of **15 by 15**, and **a slot holds far more than a stack** (the table counts what it holds per
+  item, with no limit a recipe will reach).
+* Choose a recipe from its list. Whatever you put in goes to the slots that ask for it, and slots light as they fill.
+  Click the grid with items to put them in (Shift-click from the inventory works too), click a slot to take a stack
+  back, click the product to take it, Shift-click to take all that fits.
+* Craft once, craft as many as it can, or set it to craft by itself. Pipes and hoppers can fill it and empty it; it
+  buffers 64 crafts of each ingredient.
+* Broken, it keeps its contents inside the item.
+* It was built so that a table this size does not slow the game: the screen has no slots for the grid at all. The
+  server sends the chosen recipe and a few numbers, and the picture is drawn from those. JEI and EMI pages draw the
+  picture at twelve pixels a slot, so the page is no larger than the 9 by 9 one, and only the slots a picture uses
+  exist on it. EMI is given the real totals, so its recipe tree counts correctly.
+* **Recipe:** on the Extreme Assembly Table, a picture of the table itself: Eschaton Steel and Transcendent Alloy
+  round the rim, then Pleromatic Weave, Confluent Essence, Convergent Matter, an Eschaton Core at the centre, and
+  Event Horizon Lenses for legs.
+
+### New: the forty-two materials
+* **Twenty-four elements** (Remembered Soil, Living Water, First Breath, First Light, Hearthfire, Seraphic Alloy,
+  Choir Crystal, Woven Memory, Still Stone, Morning Dew, Evening Ember, Quiet Snow, Deep Root, Bright Seed, Kind
+  Shadow, Warm Rain, Salt of Tears, Honey of Days, Thread of Fate, Dust of Stars, Ash of Worlds, Word Unspoken, Name
+  Forgotten, Song Unsung), each made of the materials the last machines make.
+* **Twelve works** (Firmament Plate, Foundation Stone, Garden Bed, Wellspring, Lantern of Days, Bell of Hours, Loom
+  of Years, Gate Lintel, Threshold Step, Roof of Heaven, Table of Welcome, Bed of Rest), made of the elements, 64 to
+  a slot.
+* **Five pillars** (Knowing, Making, Keeping, Mercy, Return), made of the works, 64 to a slot.
+* **The Keystone of Return**, made of all five pillars, 256 to a slot.
+* **Every recipe is a picture of what it makes**: a droplet for Living Water, a sunburst for First Light, a bell for
+  the Bell of Hours, and so on. No two share a layout.
+* Every recipe gives 4,096. 8,191 crafts reach 33,550,336, which is a perfect number; the 8,192nd is the one that
+  ends the cycle.
+* Each has its own animated 3D art, flavour text, and a line saying where it is made.
+
+### New: the Offering Altar
+* Gives the Core whatever of the forty-two is piped into it, on the checklist of the player who placed it. It takes
+  only what that checklist still needs and gives nothing back. Use it to offer what you carry and to read how many
+  lines are full.
+* **Recipe:** on the Extreme Assembly Table.
+
+### New: the Homeward Portal Frame
+* When every line of a player's checklist is full, the Core speaks again, and the Empyrean Assembly Table will make
+  the frame **for that player only** (a table placed by someone else will not).
+* The frame's recipe is a gate drawn with all forty-two materials, **65,536 to a slot**.
+* It works as an End Portal frame does: twelve in a ring round a three by three opening, each facing in. Set a
+  Keystone of Return in each, as an Eye of Ender is set, and the opening fills with light. Breaking a frame closes
+  it and gives the keystone back.
+* **Entry is checked per player too.** Only a player whose own checklist is complete passes through, whoever built
+  the ring. Omnipotency cannot be entered by command or by another mod's teleporter.
+
+### New: Omnipotency
+* Floating islands of white marble resting on cloud, under an endless noon, with its own sky (a still light at the
+  zenith, slow rays, three halos turning round it) and its own music.
+* Four biomes: Cloud Meadows, Gilded Gardens (groves of silver-barked, gold-leaved trees and Glory Lanterns), Choir
+  Spires (tall crystal on gilded marble), and the Sea of Clouds.
+* Twelve new blocks: Empyrean Marble and its Bricks, Gilded Marble, Heaven Soil, Halo Grass, Cloudstone, Radiant
+  Cloud (you sink through it slowly, unharmed), Choir Crystal Spire, Seraph Gold, Glory Lantern, Silver Bark and
+  Aureate Leaves.
+* Nothing hungers there and wounds close by themselves. Beds work.
+* You arrive on a marble terrace, built once; the light in its ring is the way back to where you came from.
+* Falling out of the bottom lands you safely in Hyperdimensional Reality Space.
+* This patch is the place itself. It has no inhabitants or structures yet.
+
+### For testing and for packs
+* `/theoreticalsciences home unlock <players>` shows the tab without the forging, `complete` fills every line,
+  `reset` starts over. Operators only.
+* Empyrean recipes are data: `"type": "theoreticalsciences:empyrean"`, a `pattern` of up to 15 rows of 15, a `key`
+  whose entries are `{"item": ..., "count": n}`, a `result` of `{"item": ..., "count": n}`, and optionally
+  `"needs_home": true`.
+
+### What the whole checklist takes
+Balance was set aside for this on purpose: it is meant to be long. Counting what the later recipes use up, the
+whole of it comes to about 1.2 million crafts in the table, and of the materials the last machines make:
+
+| Material | In all |
+| --- | --- |
+| Unified Field Lattice | 9,031,455 |
+| Perennial Catalyst Matrix | 4,351,682 |
+| Proof Lattice | 3,516,865 |
+| Living Archive | 3,270,242 |
+| Engineered Mind | 5,146,540 |
+| Planetary Survey | 5,644,566 |
+| Deep Record | 3,468,894 |
+| Dyson Lattice Panel | 6,576,188 |
+| Stellar Wind Condensate | 3,852,648 |
+| Recursive Thought Shell | 5,295,241 |
+| Embryonic Vacuum | 3,848,312 |
+| Compiled Law | 3,603,658 |
+| Lex Prima | 4,638,518 |
+| Breach Shard | 4,846,248 |
+| Pure Concept Ingot | 3,338,592 |
+| Diagonal Ingot | 6,683,491 |
+| Distilled Axiom | 5,031,016 |
+| Transcendent Alloy | 7,302,030 |
+| Event Horizon Lens | 3,749,892 |
+| Pleromatic Weave | 3,095,629 |
+| Confluent Essence | 8,793,516 |
+| Eschaton Steel | 5,989,322 |
+| Convergent Matter | 5,540,805 |
+| Consilience Core | 111,832 |
+
+### Unchanged
+* Every earlier recipe, machine, structure and dimension.
+
+## 1.7.4: The Mana Port
+
+### New
+* **Mana Port.** A block that takes the place of a structure's block wherever an Interface Port may, in every
+  structure of the mod. It holds 1,000,000 mana, as much as a Mana Pool, and takes it from Mana Spreaders' bursts:
+  aim a spreader at it. The structure's recipes that ask for mana draw on its Mana Ports first, then on any Mana Pool
+  against the controller. Several ports add together.
+* Set against a single-block machine, a Mana Port serves that machine the same way.
+* Use it with an empty hand to read what it holds; a comparator reads it too.
+* **Recipe:** an Interface Port in the middle, four Manasteel Ingots at the corners and four Mana Pearls at the
+  sides, on a crafting table. The recipe only exists with Botania installed; without Botania the block is inert.
+* A machine short of mana now says "Needs mana: fill a Mana Port in the structure, or stand a Mana Pool against it".
+
+### Unchanged
+* The 1.7.3 mana and aura recipes and their amounts. A Mana Pool against the machine still works.
+
+## 1.7.3: Mana and aura themselves
+
+Two of the four magic mods can now give their own mechanic to a recipe, beside the item routes of 1.7.2. Botania and
+Nature's Aura come first; Thaumaturge and Astral Sorcery are more involved and follow once these two have been played.
+Without the mod, none of this exists and nothing changes.
+
+### New
+* **A recipe can ask for mana or aura** (`"magic": {"mana": n}` or `{"aura": n}`), and a pack can use this in its
+  own recipes for any machine.
+  * **Mana (Botania)** is taken from a Mana Pool standing against the machine; for a structure, against its
+    controller. Anything else that holds mana works too. Several pools are added together.
+  * **Aura (Nature's Aura)** is taken from the air within 20 blocks of the machine, richest spot first. The machine
+    stops when the land is down to half of what it holds by nature, so it cannot ruin the land by itself.
+* **Three new optional recipes**, each the same as its 1.7.2 item route without the mod's items:
+
+| Field Synthesis | Machine | Draws | In place of |
+| --- | --- | --- | --- |
+| Living Archive | Revival Vat | 50,000 mana | 4 Mana Pearls, 2 Mana Diamonds |
+| Planetary Survey | Heliograph | 60,000 aura | 2 Ingots of the Skies, 4 Bottled Aura |
+| Deep Record | Causality Loop Engine | 80,000 aura | 1 Hand of Time, 2 Ingots of the Depths |
+
+* The item routes stay. With the items in the machine it takes the item route; without them, the mana or aura one.
+* JEI and EMI show the amount on the recipe; a machine that lacks it says "Needs mana: stand a Mana Pool against it"
+  or "Too little aura in the air here".
+* No new block: I had proposed port blocks, but a Mana Pool against the machine does the same with nothing new to
+  craft, and aura needs no block at all.
+
+### Technical
+* The code that names Botania or Nature's Aura sits in two classes that are only touched when that mod is installed,
+  and a failure in the other mod's interface stops the recipe, never the game.
+* Built against Botania Revived 2.0.1 and Nature's Aura 41.10, read from the modpack.
+
+## 1.7.2: The Consilience Core (endgame rework, last step)
+
+The last step of the endgame rework: one last material that needs every field, a balance pass from the cost check's
+report, narrower console windows towards the end, and optional routes for four magic mods. The changes apply at once.
+
+### The Consilience Core
+* **Made in the Convergence Engine**, on its thirteen altars: one **Gamma** of each of the seven Field Syntheses (a
+  Gamma is 729 of the plain item) and one of each of the six final-tier signature materials. 2,000,000,000 FE/t for
+  ten minutes.
+* **The Core Forge needs one present to forge an Eschaton Core**, and keeps it (like the Rekindled Spark). Everything
+  the last things are made of comes through the Eschaton Core, so one Consilience Core opens all of them.
+* **The Forged Omnipotence Core takes four** into itself.
+
+### Balance pass
+The cost check's report showed costs inside one tier thousands to billions of times apart.
+
+**Field Syntheses** (cheapest to dearest was 320 times; now 6 times):
+* Unified Field Lattice: 2 Coherent Field Beams, 8 Photonic Boards, 1 Atto Capacitor, 4 Qubit Dies (was 2 beams,
+  8 Entangled Bus Bars, 8 Atto Capacitors, 4 Qubit Dies).
+* Framework Catalyst (Perennial Catalyst Matrix chain): 1 Atto Capacitor (was 2).
+* Proof Lattice: 4 Certified Theorems (was 2).
+* Living Archive: 6 Chronon Capacitors (was 1).
+* Engineered Mind: 2 Mapped Minds (was 1).
+
+**Signature materials.** Each had been built on one recipe of its structure and had kept that recipe's dearest
+inputs. Each now takes modest things of its own structure; its Field Syntheses and the tier below's materials are
+unchanged.
+| Material | Now takes, of its own structure | Was |
+| --- | --- | --- |
+| Dyson Lattice Panel | 1 Stellar Core, 16 Stellar Frame Casings | 1 Stellar Core, 4 Stellar Containment Plates |
+| Stellar Wind Condensate | 1 Stellar Core, 64 Shkadov Mirrors, 16 Stellar Frame Casings | 1 Stellar Core, 1 Caplan Jet |
+| Recursive Thought Shell | 16 Engrams, 32 Computronium Ingots, 1 Computronium Block, 1 Superintelligence Core | 16 Engrams, 32 Computronium Ingots, 16 Neural Organoids, 1 Superintelligence Core |
+| Embryonic Vacuum | 1 True Vacuum Seed, 16 Baryon Asymmetry Crystals; 1,000 mB of each fluid | 16 Universe Seeds, 16 True Vacuum Seeds, 16 crystals, 4 Cosmogenic Casings; 256,000 mB |
+| Compiled Law | 2 Source Code Fragments; 4,000 mB Psionic Ether | 32 each of Resolved Anomaly, Quarantine Field Matrix, Source Code Fragment; 256,000 mB |
+| Lex Prima | 1 Eternity Catalyst, 4 Bubble Universe Samples | a No-Boundary Seed, a Universe Seed, a Baryogenesis Seed and more |
+| Breach Shard | 16 Paradox Residue, 16 Ordinal Shards; a sixteenth of the fluids | 128 Ordinal Shards, 256 Temporal Knots and more; 256,000 mB Hypernova Plasma |
+| Pure Concept Ingot | 1 Surreal Number | 1 Topos, 1 Surreal Number and more |
+| Diagonal Ingot | 1 Gödel Sentence, 16 Power Sets, 16 Formal Proof Trees | 64 Power Sets, 64 Formal Proof Trees and more |
+| Distilled Axiom | 64 Axiom Fragments, 2 Source Code Fragments | 128 Mathematics Singularities, 256 Fourier Series and more |
+| Transcendent Alloy | 64 Hypernova Alloy Ingots, 1 Transcendent Metal Ingot | 32 Russell Paradox Sets, 256 Hypernova Alloy Ingots and more |
+| Event Horizon Lens | 16 Micro Singularities, 16 Graviton Crystals | three of the Eye's own inputs |
+| Pleromatic Weave | 1 Transcendent Metal Ingot, 4 Reality Anchors; 16,000 mB Pleroma; no Rekindled Spark | 512 Apeiron Ingots, 128 Pleroma Crystals, 512 Omnipotence Dust; 2,048,000 mB; the Spark as catalyst |
+| Confluent Essence | 1,000 mB of each of the five fluids | 4,000 mB of each |
+| Eschaton Steel | 64 Cosmic Neutronium Ingots, 64 Hypernova Alloy Ingots, 1 Transcendent Metal Ingot; 16,000 mB Pleroma | 16 Eschaton Cores, 96 Transcendence Crystals, 384 Omnipotent Ingots; 2,048,000 mB |
+| Convergent Matter | 16 Coherent Wiring Harnesses, 4 Entangled Bus Bars, 4 Chronoplastic Gaskets | 2 Transfinite Lattice Bolts, a Transfinite Processor and more |
+
+* Cheapest to dearest inside a tier is now 17 times in cosmic engineering (was about 100,000), 11 times beyond
+  physics (was about ten billion) and about 2,800 times in the final tier, where the Confluent Essence carries the
+  cost of the five fluids. Each tier still costs many times the tier below.
+* The Eschaton Steel can no longer ask for Eschaton Cores, which would have needed the Consilience Core it goes into.
+
+### Narrower console windows
+A Field Synthesis step allows about a third of what its console can reach, cosmic engineering a quarter, beyond
+physics a sixth, the final tier a tenth. A threshold ("at least", "at most") keeps its bound, which is the physics,
+and gets a limit on its open side; a band shrinks round its middle. Every new window lies inside the old one, and for
+each a setting was found that holds while an auto-calibrated disturbance swings.
+* **24 recipes narrowed.** Concept Compressor (10: the compression ratio now has a ceiling just above its Shannon
+  limit, for example 1.6 to 1.76 where it was 1.6 or more); Eschaton Foundry (4: the entropy band is 0.3 to 0.6
+  decades wide, was 4); Omnilex Engine (2); Universe Forge (2: 60 to 96 e-folds, was 60 or more; spectral index 0.963
+  to 0.975, was 0.955 to 0.975); Matrioshka Brain (1); Eye of the Horizon (1); and four Field Synthesis steps
+  (Certificate Verifier, Femtoscale Assembly Line, Heliograph, Neural Culture Array).
+* **The Pleroma Confluence** needs 3 to 5 blend times in the basin (was 3 or more): over 5 and the five part again.
+* **29 were already that narrow.**
+* **25 are unchanged because my tool could not check them outside the game:** the Transcendent Plasma Forge (6: its
+  window is on the plasma temperature, which changes as it runs), the Pleroma Reconstitutor (7), the Reality Compiler
+  (4), three of the Matrioshka Brain's, two of the Omnilex Engine's and one each of the Axiomatic Breach Engine,
+  Eschaton Foundry and Cyclotron (they depend on the built structure). So two of the four final-tier structures are
+  not narrowed yet.
+* The Dyson Array and the Stellar Engine are left out on purpose: a ceiling there would only cap their output.
+
+### Other arts (optional)
+With one of these mods installed, each Field Synthesis has a second recipe on the last machine of its chain that
+skips one machine. They are tuned on the same console to the same windows. None is ever needed, and without the mod
+the recipe does not exist.
+| Mod | Field Synthesis | Takes | Skips |
+| --- | --- | --- | --- |
+| Astral Sorcery | Unified Field Lattice | 4 Charged Lattice Seeds, 4 Starmetal Ingots, 4,000 mB Liquid Starlight (with the boards, capacitor and dies) | Synchrotron |
+| Astral Sorcery | Proof Lattice | 8 Verified Lemmas, 2 Resonating Gems, 1 Glass Lens (with the attractors and polymer) | Certificate Verifier |
+| Thaumaturge | Perennial Catalyst Matrix | 2 Framework Catalysts, 8 Vis Crystals of any aspect, 2 Salis Mundus (with the polymer) | Chelation Column |
+| Thaumaturge | Engineered Mind | 4 Trained Cortices, 1 Brain in a Jar, 4 Vis Crystals (with the I-beams) | Connectome Array |
+| Botania | Living Archive | 2 Genome Libraries, 4 Mana Pearls, 2 Mana Diamonds (with the rest) | Ancient DNA Lab |
+| Nature's Aura | Planetary Survey | 2 Survey Probes, 2 Ingots of the Skies, 4 Bottled Aura (with the mesh and capacitor) | Space Elevator |
+| Nature's Aura | Deep Record | 4 Excavation Records, 1 Hand of Time, 2 Ingots of the Depths (with the tachyon crystals) | Chrono Loom |
+
+* These take the mods' items and one fluid. Mana, aura, essentia and starlight are not drawn from a pool, the air, a
+  jar or the sky directly: that needs each mod's own interface and is not in this patch.
+* Item names were read from the modpack's own copies: Thaumaturge 1.1.0, Botania Revived 2.0.1, Nature's Aura 41.10,
+  Astral Sorcery 2.0.3.
+
+### Fixes
+* **The Dyson Array and the Stellar Engine did not have enough slots.** As generators they kept their old slot counts
+  (the Dyson Array one usable fuel slot, the Stellar Engine three), so the Dyson Array still could not burn its 1.7.0
+  fuels after the 1.7.1 fix, and neither could make its signature material. The Stellar Engine has six item slots
+  now and the Dyson Array eight (its second and third are still the swarm's).
+* The Dyson Lattice Panel no longer takes Dyson Swarm Satellites or Shell Segments, which the array would have
+  absorbed into its swarm.
+
+### Tools
+* `tools/check_progression.py` also counts catalysts and the Core Forge's recipes, never excuses a new loop, and
+  fails on any recipe with more inputs than its machine has slots.
+* `tools/check_costs.py` counts lettered Field Syntheses (nine of the level below each) and checks the Consilience
+  Core against the final tier.
+* `tools/r172_windows.py`: the window narrowing, with its report.
+
+## 1.7.1: Signature materials and the endgame structures (endgame rework, step two)
+
+The second step of the endgame rework. Every endgame structure now makes one material that nothing else can make,
+each tier needs the materials of the tier below, eight structures have new shapes, and four machines that were single
+blocks are structures now. The changes apply at once.
+
+**Before updating:** empty the Cantor Diagonalizer, Axiom Distiller, Convergence Engine and Pleroma Confluence. They
+are controllers of structures now, and what an old one held (items, fluids, energy) is not carried over. The eight
+reshaped structures stop working until they are rebuilt: the Structure Assembler takes an old build apart, and every
+new shape uses at least as many of each block as the old one, so nothing you built is wasted.
+
+### Signature materials
+| Tier | Material | Made only in |
+| --- | --- | --- |
+| Cosmic engineering | Dyson Lattice Panel | Dyson Array |
+| Cosmic engineering | Stellar Wind Condensate | Stellar Engine |
+| Cosmic engineering | Recursive Thought Shell | Matrioshka Brain |
+| Cosmic engineering | Embryonic Vacuum | Universe Forge |
+| Beyond physics | Compiled Law | Reality Compiler |
+| Beyond physics | Lex Prima | Omnilex Engine |
+| Beyond physics | Breach Shard | Axiomatic Breach Engine |
+| Beyond physics | Pure Concept Ingot | Concept Compressor |
+| Beyond physics | Diagonal Ingot | Cantor Diagonalizer |
+| Beyond physics | Distilled Axiom | Axiom Distiller |
+| Final tier | Transcendent Alloy | Transcendent Plasma Forge |
+| Final tier | Event Horizon Lens | Eye of the Horizon |
+| Final tier | Pleromatic Weave | Pleroma Reconstitutor |
+| Final tier | Confluent Essence | Pleroma Confluence |
+| Final tier | Eschaton Steel | Eschaton Foundry |
+| Final tier | Convergent Matter | Convergence Engine |
+
+* The four of cosmic engineering are made from plain Field Syntheses (two each of the structure's pair) and that
+  structure's own materials. The Dyson Array and the Stellar Engine make theirs as a fuel burns, so the Dyson Array has
+  an item output now.
+* Each of the six beyond physics takes two each of three of the four below, and one Alpha Field Synthesis.
+* Each of the six of the final tier takes three each of all six beyond physics, and three Beta Field Syntheses.
+* The final tier's materials go into the last recipes in 1.7.2.
+
+### Changed recipes
+* **51 recipes now take one signature material of the tier below**, in turn: Concept Compression 16, Transfinite
+  Computation 9, Pleroma Reconstitution 7, Omnilex Simulation 4, Eschaton Founding 4, Transcendent Forging 4, Reality
+  Compilation 3, Axiom Distillation 2, Reality Breach 2. Recipes of the six structures beyond physics take a cosmic
+  engineering material; those of the Pleroma Reconstitutor, Eschaton Foundry and Transcendent Plasma Forge take one
+  from beyond physics.
+* **22 recipes of those structures are unchanged**, because the tiers below are built from what they make (a new
+  check, below, found each one): Hypernova Alloy, Hypernova Plasma, Cosmic Neutronium, Residual Starlight and
+  Transcendent Metal (Transcendent Plasma Forge); Aleph-Null Shard and Absolute Infinity (Cantor Diagonalizer);
+  Crystallised Law, Primordial Law and Axiom Fragments from law (Axiom Distiller); Eternity Catalyst, Omega Point and
+  Source Code Fragment (Reality Compiler); Rewrite Laws and Simulate Everything (Omnilex Engine); the three
+  simulations of the Eye of the Horizon; and the runs that only give insight.
+* The Convergence Engine's part recipes are unchanged, as in 1.7.0.
+* **Pleroma** is a machine recipe now: 1,000 mB each of Quintessence, Alkahest, Mathesis, Panacea and Anima Mundi make
+  1,000 mB of Pleroma in the Pleroma Confluence, 65,536 FE/t for 10 seconds, tuned on its console. The amounts are the
+  same as before; the energy, the time and the tuning are new.
+* **Turning Vane:** nine Polymer Sheets in place of nine Aerofoil Composites (see Fixes).
+
+### Reshaped structures
+Every one keeps at least the blocks of its old build, block by block, and adds to them.
+
+| Structure | Was | Now | Shape |
+| --- | --- | --- | --- |
+| Stellar Engine | 951 blocks, 27 x 27 x 27 | 3,750 blocks, 51 x 54 x 53 | A Shkadov thruster: a mirror dish behind the star on a spine, a turning ring of Caplan jets ahead of it |
+| Dyson Array | 2,587 blocks, 129 x 34 x 129 | 6,626 blocks, 89 x 58 x 89 | A sphere of collector panels open between its ribs, an equatorial belt, eight arms out to swinging dishes |
+| Matrioshka Brain | 12,975 blocks, 81 x 78 x 81 | 17,740 blocks, 79 x 91 x 59 | Four nested rings, each tilted on its own axis like an armillary sphere; the innermost turns |
+| Universe Forge | 8,904 blocks, 91 x 70 x 91 | 13,024 blocks, 73 x 56 x 74 | A disc under a stepped glass dome with a coil round every step, and a spire with a turning crown |
+| Concept Compressor | 6,187 blocks, 111 x 52 x 111 | 10,416 blocks, 109 x 18 x 22 | A press line of nine bays, each with a lens array over a ram that beats down on the bed |
+| Omnilex Engine | 9,983 blocks, 75 x 71 x 75 | 14,138 blocks, 57 x 69 x 58 | Nineteen glass spires on a solid base of heartwood sheathed in casing |
+| Reality Compiler | 11,415 blocks, 95 x 66 x 95 | 15,180 blocks, 35 x 73 x 36 | A tower whose plan changes at every stage (square, octagon, circle, diamond), then an open lantern with a turning hoop |
+| Axiomatic Breach Engine | 6,678 blocks, 81 x 88 x 41 | 9,315 blocks, 59 x 90 x 16 | Twin towers on one plinth with the breach between them, a coil strip down each inner face |
+
+(Sizes are width x height x depth.)
+
+### New structures
+| Structure | Blocks | Size | Shape | Built from |
+| --- | --- | --- | --- | --- |
+| Cantor Diagonalizer | 2,954 | 35 x 16 x 36 | A hall over a grid of 64 digit columns under a glass lattice; the diagonal columns stand taller and their heads flip | 1,678 Hyperframe Casing, 843 Containment Field Glass, 336 Cryogenic Cooling Jacket, 80 Quantum Error Correction Core, 16 Field Emitter |
+| Axiom Distiller | 3,134 | 21 x 52 x 22 | A still of seven stages on a coil-wound boiler, with trembling trays, cooling collars and a condenser dome | 1,485 Precision Assembly Casing, 776 Hyperframe Casing, 416 Cryogenic Cooling Jacket, 280 Containment Field Glass, 176 coil blocks |
+| Pleroma Confluence | 4,930 | 79 x 22 x 76 | Five channels coming down in terraces from five fonts into a round basin ringed with pylons | 2,836 Reality Lattice Casing, 1,109 Containment Field Glass, 765 Transfinite Casing, 210 Spacetime Anchor Pylon, 8 Field Emitter, 1 Dimensional Stabiliser |
+| Convergence Engine | 2,658 | 45 x 27 x 46 | Thirteen altars with pedestals in a ring round a column, a glass arch from each, thirteen cores circling above | 1,313 Precision Assembly Casing, 1,064 Hyperframe Casing, 189 Containment Field Glass, 64 coil blocks, 13 pedestals (Resonance, Harmonic or Absolute), 13 Quantum Error Correction Core, 1 Field Emitter |
+
+* The first, second and fourth are built only from casings that need none of their products, so nothing needs itself.
+* **The Pleroma Confluence** was a block with a screen of its own. It is a machine like the others now, with a console
+  (stirrer speed, stirrer width, flow; Reynolds number, blend time θ = 5.3/N·(T/D)², stirring power), a working sound,
+  a face and a JEI and EMI page like any machine. Its own screen and its own JEI and EMI pages are gone.
+* All four have working sounds; the Codex shows each structure, its shape and its signature material.
+
+### Fixes
+* **The Wind Tunnel could not be built.** Its structure needs Turning Vanes, which were crafted from Aerofoil
+  Composite, which only the Wind Tunnel makes. That blocked nozzles, rockets, the Space Elevator, the Planetary Survey
+  and the Stellar Engine. Turning Vanes are made of Polymer Sheets now.
+* **The Dyson Array could not burn anything since 1.7.0.** It only looked at its first slot for fuel, and its fuels
+  have needed Field Syntheses beside the Stellar Core since 1.7.0. It reads the first slot and every slot after the
+  third now (the second and third are still the swarm's).
+
+### Tools
+* `tools/check_progression.py`: walks every recipe outward from what the world gives, and counts a machine's recipes
+  only once its controller and every block of its structure can be made. It prints anything that can never be reached.
+  It found the Wind Tunnel's loop, and it decides which recipes may take a signature material.
+* `tools/check_costs.py`: no longer takes an endgame material as a world find while something else blocks it.
+* `tools/r171_shapes.py`: the twelve structures; it refuses to write a reshaped structure with fewer of any block than
+  its old build.
+
+## 1.7.0: Field Syntheses (endgame rework, step one)
+
+The first step of the endgame rework (see the design document of 10 November). The endgame now needs every field:
+seven Field Syntheses, each made by a chain of one field's machines, go into every endgame recipe. The changes apply
+at once.
+
+### The Field Syntheses
+| Field Synthesis | Chain |
+| --- | --- |
+| Unified Field Lattice | Cyclotron (Charged Lattice Seed) → Synchrotron (Coherent Field Beam) → Femtoscale Assembly Line |
+| Perennial Catalyst Matrix | Catalyst Formulator (Doped Catalyst Bed) → Framework Assembler (Framework Catalyst) → Chelation Column (Chelated Catalyst) → Regeneration Kiln |
+| Proof Lattice | Proof Assistant (Verified Lemma) → Certificate Verifier (Certified Theorem) → Automaton Lattice |
+| Living Archive | Gene Sequencer (Genome Library) → Ancient DNA Lab (Reconstructed Genome) → Revival Vat |
+| Engineered Mind | Neural Culture Array (Cultured Cortex) → Synapse Trainer (Trained Cortex) → Connectome Array (Mapped Mind) → Load Test Rig |
+| Planetary Survey | Rocket Assembly, with ice cores (Survey Probe) → Space Elevator (Orbital Survey) → Heliograph |
+| Deep Record | Chrono Loom, with Excavation Records (Stratigraphic Timeline) → Causality Loop Engine |
+
+* Every step is tuned on its console like any other recipe of that machine.
+* **Lettered levels:** nine Field Syntheses of one kind and level make one of the next level in a crafting grid:
+  Alpha to Omega, then Aleph to Tav (46 levels).
+* The Perennial Catalyst Matrix is an endgame catalyst: it never wears.
+
+### Changed recipes (all endgame recipes now take Field Syntheses)
+* **Cosmic engineering** (the plain item, two of each): every recipe of the Dyson Array (Planetary Survey and Unified
+  Field Lattice), Stellar Engine (Planetary Survey and Perennial Catalyst Matrix), Matrioshka Brain (Engineered Mind
+  and Proof Lattice) and Universe Forge (Living Archive and Unified Field Lattice) takes two of each of its pair.
+* **Beyond physics** (one Alpha): every recipe of the Reality Compiler, Omnilex Engine, Axiomatic Breach Engine,
+  Concept Compressor, Cantor Diagonalizer and Axiom Distiller takes one Alpha Field Synthesis; each machine's recipes
+  take its three syntheses in turn.
+* **The final tier** (one Beta of each of three): every recipe of the Transcendent Plasma Forge, Eye of the Horizon,
+  Pleroma Reconstitutor and Eschaton Foundry. Between them they need all seven.
+* In all, 88 endgame recipes changed: Transfinite Computation 12, Concept Compression 16, Transcendent Forging 9,
+  Universe Forging 9, Axiom Distillation 7, Omnilex Simulation 7, Pleroma Reconstitution 7, Reality Compilation 6,
+  Matrioshka 4, Eschaton Founding 4, Horizon Simulation 3, Reality Breach 2, Dyson 1, Stellar Thrust 1.
+* New: two more Dyson Array fuels and two more Stellar Engine fuels, burning Field Syntheses (each machine had one).
+* The Stellar Engine now has three item inputs (it had one).
+* The Convergence Engine's recipes are unchanged: it automates mid-game parts that the chains themselves use.
+
+### Balance
+* tools/check_costs.py works out every item's cost (vanilla materials at 1, tedious ones more, plus time and energy)
+  and fails if a newer route costs more than an older one, or a tier is not steep enough over the one below.
+* It found the 1.6.0 Bloomery route to Rated I-Beams dearer than iron. Changed: the Bloomery Shaft now makes 6
+  Bloomery Steel per smelt (was 3), and the Load Test Rig rolls 1 Bloomery Steel into 6 Rated I-Beams (was 2 into 4).
+
+## 1.6.0: Archaeology
+
+Digging up the past with physics, chemistry and mathematics. Seven research entries, a new Overworld site with finds
+you brush out of the ground, a handheld radar, five consoles and two multiblocks. Every concept has its console, its
+real equation and its derivation, and the chain ends in the endgame. (Economics and the social sciences are left out,
+as they do not fit Minecraft.)
+
+### The Buried Tell (new Overworld site)
+* A low mound in plains, savannas, deserts, badlands and meadows: a town rebuilt on its own ruins for thousands of
+  years. Layers of **Tell Soil**, grey **Ash Layers** where its towns burnt, stubs of **Ancient Mud Brick** walls in every
+  layer, a trial trench cut into one flank with survey stakes round it, and the excavators' cache at its foot.
+* **Suspicious Tell Soil** and **Suspicious Ash** are brushed with the game's Brush, like suspicious sand. Tell Soil
+  gives Ancient Potsherds, Corroded Artefacts, Burnt Flint and Charred Beams; Ash gives Charred Beams, Burnt Flint and
+  Slag Cakes. Dig them instead and the find is lost.
+* Tell Soil can also be crafted (eight dirt round a brick), for the Photogrammetry Gantry's platform.
+
+### Research, consoles and multiblocks
+* **Ground-Penetrating Radar**: d = c·t/(2√εr). The **Radar Survey Bench** builds the **Survey Radar**: use it and
+  every buried find within 16 blocks (in tells and in the old dig sites) glows where its echo came from, and the nearest
+  is reported by distance, direction and depth.
+* **Luminescence Dating**: A = De/Ḋ. The **Luminescence Reader** dates potsherds and burnt flint into Dated Potsherds.
+* **Dendrochronology**: t = r·√((n − 2)/(1 − r²)). The **Tree-Ring Correlator** cross-dates Charred Beams into a
+  Tree-Ring Chronology.
+* **Conservation Science**: C = C₀·e^(−π²Dt/L²). The **Conservation Bath** draws the chloride out of Corroded
+  Artefacts: Stabilised Artefacts and rust flakes.
+* **Isotope Provenance**: f = (R − Rb)/(Ra − Rb). The **Isotope Provenancer** reads where a find's metal was mined.
+* **Archaeometallurgy**: x = 2√(Dt). The **Bloomery Shaft** (452 blocks): a tapering clay shaft whose six bellows pump
+  air through glowing tuyeres. Slag Cakes, raw iron and charcoal make **Bloomery Steel**.
+* **Photogrammetry**: Z = f·B/d. The **Photogrammetry Gantry** (670 blocks): a camera bridge running on rails up and
+  down a stepped trench. It brings the dated, conserved and provenanced finds together into an **Excavation Record**.
+
+### New recipes (cheaper routes into later content)
+* Chrono Loom: 2 Excavation Records, 8 Chronon Capacitors, 16 Zeolite Catalysts and 8000 mB Chronon Gas make 2
+  **Arrow of Time Shards** (the old route needs 8 Negentropy Cells and 8 Imaginary Units as well, and twice the zeolite
+  and gas). Stratigraphy is the arrow of time written in the ground.
+* Load Test Rig: 1 Bloomery Steel makes 6 **Rated I-Beams** (changed in 1.7.0; was 2 for 4).
+
+### Fixes
+* The **Woolly Mammoth** and **Meganeura** walked backwards: their models were turned the wrong way round. Fixed.
+* Both models are rebuilt with many tones instead of one: the mammoth has a shaggy skirt of hair strands in several
+  shades, a lighter back and hump, a forelock, furred ears, nailed feet, a ringed trunk and ringed tusks; the Meganeura
+  has a yellow face and jaws, gold-striped thorax, spotted abdominal rings, jointed spiny legs, and veined wings tinted
+  amber at the root.
+
+## 1.5.1: Seen and Heard
+
+An art and sound pass over every machine. No recipes changed.
+
+### Every console has its own simulation
+* Until now 154 consoles (every machine without a special effect, from 1.0 up to 1.5.0) had no simulation of their
+  own and all showed the same stirred beaker, titled "reaction vessel". Eight endgame structures also shared their
+  picture with another structure.
+* Every machine now draws what it actually does, under its own title: a titration curve dripping into a flask, bands
+  separating down a chromatography column, spins precessing in the NMR's Dewar, primes being struck off a sieve, cells
+  dividing in a petri dish, a beam crossing the magnetic sector of the mass spectrometer, and so on.
+* A new check (tools/check_scenes.py) fails the build if any machine falls back to a shared picture again.
+
+### New machine art
+* All 225 machines and multiblock controllers have new faces, sides and tops. Each one is built from a body material
+  that matches its science (brass and walnut instruments, white enamel chemistry, slate and oak mathematics, green
+  ceramic biology, riveted gunmetal for heavy physics, basalt for earth science, aerospace panels, frosted cryogenics,
+  indigo quantum hardware, obsidian and gold for the endgame), a face layout (screen, porthole, dial, twin displays,
+  glass tank, grille, arched window, turbine) and its own animated readout.
+* Sides show what the machine takes in: pipes and a sight glass for fluids, cooling fins for generators, a lit conduit
+  band on multiblock controllers, and hatches, vents, cables or plates for items. Controllers also carry a trim
+  chevron in their top corner.
+
+### Multiblocks can be heard
+* A formed multiblock plays a working sound from the middle of the structure while it runs, fading in as it starts and
+  out as it stops. Larger structures carry further (16 blocks for the smallest, up to 64 for the largest).
+* Fourteen synthesised voices, matched to what the structure looks like: plasma crackle for tokamaks and colliders, a
+  howling void for horizons and wormholes, data chirps for simulators and compilers, relays for mathematics, bubbling
+  for chemistry, a pump for biology, a drill for earth science, engines for space, a compressor for cryogenics, a
+  turbine for generators, and more. Each structure plays its voice at its own pitch.
+* This is the same interference the Radio Telescope has always counted from machines running nearby; now the player
+  can hear it too. Each voice has a subtitle.
+
+### For pack makers
+* docs/MULTIBLOCK_REFERENCE.md: notes on the shapes and sizes of multiblocks in GregTech Odyssey, GT New Horizons and
+  MeatballCraft, for the coming endgame rework.
+
+## 1.5.0 — Small Wonders
+
+The smaller candidates of the expansion plan, each a full concept (a console with its real equation, a derivation and
+a material chain that feeds the endgame): nine research entries, seven consoles and two multiblocks, a new world
+event, a new machine upgrade and two medicines.
+
+### Sound and space weather (physics)
+* **Acoustic Resonance**: standing waves, f = n·v/2L. Unlocks the **Resonance Chamber**: raw iron and raw gold shaken
+  apart at their own notes give 14 nuggets each (more than smelting's 9), and amethyst is tuned into **Resonant
+  Shards**.
+* **Space Weather**: the magnetopause stand-off, r = (B₀²/2μ₀ρv²)^(1/6). **New world event: geomagnetic storms.** Every
+  three to seven days a storm strikes the Overworld for five minutes. It changes no block and harms no one: consoles
+  and multiblocks in the Overworld run at 70% while it lasts, aurorae hang in the night sky, and players are told when
+  it starts and ends. Unlocks the **Heliograph**, which makes the **Faraday Mesh**, a new machine upgrade (full speed
+  through storms).
+
+### Patterns and computation (mathematics)
+* **Chaos Theory**: the Lyapunov exponent. Unlocks the **Chaos Controller**, which tames the Lorenz flow into a
+  **Strange Attractor**.
+* **Knot Theory**: the writhe. Unlocks the **Knot Loom**: **Molecular Knots** (trefoils) and **Knotted Polymer**
+  (pentafoils).
+* **Cellular Automata**: neighbours in Life. Unlocks the **Automaton Lattice**: **Von Neumann Constructors**.
+* **Complexity Theory**: the soundness of an interactive proof. Unlocks the **Certificate Verifier**:
+  **Zero-Knowledge Proofs** and **Grover Oracles**.
+* **Quantum Computing**: Grover's speed-up. Unlocks the **Quantum Computer**, a 613-block dilution refrigerator (a
+  cryostat with a chandelier of dilution stages, its qubits turning slowly at the tip). Each Grover Oracle it runs
+  shortens its owner's current study by fifteen minutes; it runs only while you are studying something.
+
+### Medicine (biology)
+* **Pharmacology**: the Hill equation. Unlocks the **Dose-Response Assay**, which makes two medicines with a dosing
+  window: the **Vestibular Suppressant** (cures nausea and Seismic Vertigo) and the **Anti-Inflammatory** (cures
+  Inflammation and weakness). A dose cures, then guards against what it treats for three minutes; a second dose
+  within two minutes is an overdose (slowness and poison).
+* **Medical Imaging**: Beer–Lambert attenuation. Unlocks the **CT Scanner**, a 257-block multiblock whose gantry ring
+  spins round the couch while it scans. It turns fossil fragments and raw amber into **Tomograms**.
+
+### Recipes (all new; each newer route is cheaper than the one it parallels)
+* Automaton Lattice: a Von Neumann Constructor and 3 Nanite Swarms make 4 Quine Replicators (the Nanofabricator needs 6
+  Undecidable Kernels, 6 Nanite Swarms and 8,000 mB of autocatalytic broth). The old recipe is unchanged.
+* Ancient DNA Lab: 2 Dated Bones and a Tomogram make a Mammoth Genome (was 4 Dated Bones); 2 Dated Amber and a
+  Tomogram make a Meganeura Genome (was 4 Dated Amber).
+* Composite Layup Press: a Tether Spool from Knotted Polymer in place of 2 Aramid Fibre.
+
+## 1.4.0 — Mind and Language, and Engineering of the Large
+
+Two new branches, the fifth and sixth of the expansion plan: the sciences between a neuron and a god-machine, and the
+science of how big things stand up, wear out and rust. Twelve new research entries, twelve new machines (eight consoles
+and four multiblocks), two new creatures, a new region of Inner Space and two new kinds of ruin.
+
+### Part one: Mind and Language
+
+**Research** (after Neurobiology and Membrane Potential)
+* **The Action Potential**: the cable equation, λ = √(r_m/r_i). Unlocks the **Neural Culture Array** (a Biology
+  console: it can be contaminated like the others), which grows **Myelinated Axons** from Neural Organoids and Lipid
+  Bilayers in blood plasma. Its dials: sodium channels, axon diameter and myelin wraps; the recipe wants a fast fibre.
+* **Synaptic Plasticity**: Hebb's rule, Δw = η·x·y. Unlocks the **Synapse Trainer**, which trains a **Synaptic
+  Lattice**: a new machine upgrade (+10% products, and precision falls off a third slower).
+* **Psychophysics**: the Weber–Fechner law, S = k·ln(I/I₀), and signal detection. Unlocks the **Psychophysics Booth**,
+  which trains a **Rhodopsin Retina** to see faint flashes without imagining them.
+* **Linguistics**: Zipf and Shannon, H = log₂N. Unlocks the **Decipherment Desk**, which reads the **Glyph Tablets** of
+  the new Library Ruins into **Lexicon Fragments**, and those into the **Universal Grammar**.
+* **Integrated Information**: a toy Φ, high only for a network both integrated and differentiated. Unlocks the
+  **Connectome Array**, a 469-block dome of Glial Scaffold threaded with Axon Bundle tracts and Synapse Relays, with a
+  ring of relays turning inside while it runs. It maps networks into **Engrams**.
+
+**New gear**
+* **Low-Light Visor** (made by crafting from a Rhodopsin Retina, an Anglerfish Lure, Pressure Hull Plate and a Photonic
+  Lens): worn on the head it gives night vision, and in the Hadal Trench it is the first gear that sees the deep
+  clearly (it carries the `theoreticalsciences:hadal_vision` tag).
+
+**The world**
+* **The Neural Cortex**, a sixth region of Inner Space (it takes the warm half of what was Tissue): a floor of Grey
+  Matter over White Matter, with neurons the size of trees whose cell bodies and synapses glow (Neuron Soma).
+* **Dreaming Colony** (new creature, its own AI, model and sounds): a floating knot of neurons that dreams aloud. It
+  learns how it is fought: each kind of blow (melee, projectiles, magic, fire, blasts) does less the more often it has
+  landed, down to half, and the counts fade over time; it keeps further from players who close in and nearer to
+  those who shoot. Every few seconds it pulses, dazing players within seven blocks. Drops Dream Polyps, which the
+  Neural Culture Array grows back into Neural Organoids.
+* **Library Ruins** (Overworld forests, taigas and jungles; rare): sunken halls of the new Glyph Stone Bricks and
+  Inscribed Glyph Stone, with Archive Shelves of tablets and a cache of Glyph Tablets.
+
+### Part two: Engineering of the Large
+
+**Research** (after Constructions and Ceramics)
+* **Structural Mechanics**: Euler buckling, P = π²EI/L². Unlocks the **Load Test Rig**, which rates **I-Beams** to a
+  safety factor between two and four.
+* **Composite Materials**: the rule of mixtures. Unlocks the **Composite Layup Press**: **Carbon-Fibre** and
+  **Nanotube Composites**, and later the **Tether Spool** and **Shkadov Mirror Film**.
+* **Tribology**: Archard wear, V = k·W·L/H. Unlocks the **Tribometer**, which qualifies the **Wear Coating**: a new
+  machine upgrade (catalysts wear half as fast).
+* **Corrosion Science**: Nernst and Pourbaix. Unlocks the **Corrosion Cell**: **Passivated Plate**, and **Sacrificial
+  Anodes** (a block).
+* **The Space Elevator**: the tether taper, e^(ρgR²/σr). Unlocks the **Space Elevator**, a 770-block multiblock: an
+  anchor platform, a tether 48 blocks tall under a counterweight, and a climber that rides it while it runs. It is a
+  second route to orbit on power alone.
+* **Rotating Habitats**: spin gravity, a = ω²r. Unlocks the **O'Neill Cylinder**, a 1,001-block habitat that turns on
+  its bearings.
+* **Stellar Engines**: Shkadov thrust, F = fL/c. Unlocks the **Stellar Engine**, a 951-block generator: a mirror held
+  up by a captive star's light, and Caplan jets.
+
+**The world**
+* **Rust Mite** (new creature, its own AI, model and sounds): an iron-eating pest of Titan, the Antiverse and the
+  derelict rings. It never breaks blocks: it clings to a machine with charge in it within 16 blocks and drains it, a
+  bite a second. A live **Sacrificial Anode** within 12 blocks draws it off, and it eats the anode instead (four bites,
+  after which the anode is spent and drops Rust Flakes). It bites players only when struck.
+* **Derelict Rings** (Orbital Station, far from the station): torn arcs of old habitat rings with Rust Mites aboard and
+  a cache of engineering salvage.
+
+**Recipes** (all new; each newer route is cheaper than the one it parallels)
+* Matrioshka Brain: 16 Engrams, 32 Computronium Ingots, 16 Neural Organoids and synaptic fluid make 2 Superintelligence
+  Cores, far cheaper than the old route (which is unchanged).
+* Space Elevator: a Crew Capsule becomes a Fuelled Crew Capsule on power alone (no Rocket Stages or propellant); a
+  Microgravity Lab gives 12 Microgravity Crystals (the Rocket Assembly gives 8 to 10); a Station Module docks as from the
+  Rocket Assembly. A fuelled capsule can now be flown from beside a Space Elevator too.
+* O'Neill Cylinder: a Stable Ecosystem with Living Soil and water grows six; wheat and Living Soil give Field Rations in
+  bulk.
+* Stellar Engine: a Stellar Core and residual starlight give four times a Dyson Array's energy for one core, with
+  stellar plasma skimmed off by the jets.
+* Corrosion Cell: Rust Flakes make Passivated Plate more cheaply than nickel-plated iron does.
+* Neural Culture Array: two Dream Polyps grow a Neural Organoid.
+
+### Fixes
+* Eleven research derivations from 1.3.0 (Compressible Flow, De-extinction, Food Science, Meteorology, Orbital
+  Mechanics, Plant Hormones, Plant Physiology, Radiometric Dating, Rocketry, Soil Science, Volcanology) could never
+  accept the right number in their second step: their answers were written without spaces between symbols, which the
+  game reads as one unknown name. They are spaced out now. (`tools/check_puzzles.py` checks every derivation the way
+  the game computes it.)
+
 ## 1.3.0 — Fluids and Flight, the Living Planet, the Green Kingdom and Deep Time
 
 Three parts, newest first: the Green Kingdom and Deep Time, Into Orbit and the Living Planet, and Fluids and Flight.

@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:photogrammetry",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:survey_map",
+      "count": 2
+    }
+  ],
+  "energy": 4096,
+  "duration": 800,
+  "research": "theoreticalsciences:photogrammetry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Z0": 4
+    },
+    "windows": [
+      {
+        "q": "sz",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "q": "gsd",
+        "min": 0,
+        "max": 0.3
+      }
+    ]
+  }
+}

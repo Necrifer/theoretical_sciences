@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:radiation_pressure_balance"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.radiation_pressure"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.radiation_pressure.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/satellite_orbits",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

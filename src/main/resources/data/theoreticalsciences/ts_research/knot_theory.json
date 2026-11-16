@@ -1,0 +1,59 @@
+{
+  "title": "Knot Theory",
+  "x": 16,
+  "y": 26,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:geometric_topology",
+    "theoreticalsciences:chaos_theory"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:string",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 2
+    }
+  ],
+  "time": 240,
+  "description": "A knot is a closed loop in space that cannot be untangled without cutting. Two drawings show the same knot if Reidemeister's three moves turn one into the other, and invariants that survive the moves tell knots apart: the crossing number, the writhe, the Jones polynomial. Chemists tie them into molecules on a metal-ion template, and knotted chains are far tougher than plain ones. Unlocks the Knot Loom: Molecular Knots and Knotted Polymer.",
+  "icon": "theoreticalsciences:knot_loom",
+  "puzzle": {
+    "goal": "A knot diagram has p positive and m negative crossings. Write its writhe w.",
+    "name": "The writhe",
+    "lhs": "w",
+    "form": "p - m",
+    "expr": "p - m",
+    "ask": "Find w for a diagram with p = @{p} positive and m = @{m} negative crossings.",
+    "vars": {
+      "w": "writhe",
+      "p": "positive crossings",
+      "m": "negative crossings"
+    },
+    "given": {
+      "p": 5.0,
+      "m": 2.0
+    },
+    "unit": "",
+    "method": "Each crossing counts +1 or −1 by the right-hand rule; the writhe is their sum.",
+    "distractors": [
+      "+",
+      "*",
+      "2"
+    ],
+    "vary": {
+      "p": [
+        3.0,
+        9.0,
+        1.0
+      ],
+      "m": [
+        0.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

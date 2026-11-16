@@ -29,7 +29,7 @@ public final class InnerRegistry {
     static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, TheoreticalSciences.MODID);
     /** Shown in the mod's creative tab. */
     public static final List<DeferredHolder<Item, ? extends Item>> TAB = new ArrayList<>();
-    static final Set<String> IDS = Set.of("red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra");
+    static final Set<String> IDS = Set.of("red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra", "dreaming_colony");
 
     private static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> mob(String id, EntityType.EntityFactory<T> f, MobCategory cat,
                                                                                    float w, float h, int bg, int fg) {

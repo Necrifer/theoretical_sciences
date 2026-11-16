@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:certificate_check",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:proof_certificate",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:one_time_pad",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:zero_knowledge_proof",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:complexity_theory",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lg",
+        "min": 9,
+        "max": 40
+      }
+    ]
+  }
+}

@@ -57,6 +57,10 @@ public final class EffectRenderer {
         // 1.3.8: drawn before translucent blocks, not after the whole level - glass writes depth, so effects drawn after it
         // vanished behind every window (the Eschaton Foundry's core, inside its glass sphere, could not be seen at all).
         // Now the glass is laid over them as it should be.
+        if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS) {
+            lateHyperobjects(event);
+            return;
+        }
         if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) return;
         Minecraft mc = Minecraft.getInstance();
         boolean selfGlitch = mc.player != null && mc.player.hasEffect(com.theoreticalsciences.registry.QHEffects.REALITY_DESTABILISATION);
@@ -491,7 +495,71 @@ public final class EffectRenderer {
                 case PENTERACT -> scaled(p, 0.28F, mvs, () -> penteract(p, 1.1F, 1F));
             }
         }
-        // collapsed Omnilex Engines
+        // Axiom Sentinels proving something: a line of light grows from the sentinel to its target
+        for (var en : List.copyOf(ClientHooks.SENTINELS)) {
+            if (en.isRemoved() || en.level() != mc.level || !(en instanceof com.theoreticalsciences.entity.AxiomSentinel sn)) {
+                ClientHooks.SENTINELS.remove(en);
+                continue;
+            }
+            int ch = sn.charge();
+            var t = mc.level.getEntity(sn.targetId());
+            if (ch <= 0 || t == null) continue;
+            float f = Math.min(1F, (ch + partial) / com.theoreticalsciences.entity.AxiomSentinel.CHARGE_TICKS);
+            Vec3 a = sn.getPosition(partial).add(0, sn.getBbHeight() / 2, 0), b = t.getPosition(partial).add(0, t.getBbHeight() / 2, 0);
+            Vec3 tip = a.lerp(b, f);
+            beginAdditive();
+            BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+            ribbon(bb, a, tip, 0.05F + 0.1F * f, 0xFFFFFF, 0.9F, 0xFFE080, 0.9F);
+            ribbon(bb, a, tip, 0.3F * f, 0x80C0FF, 0.25F, 0xFFE080, 0.25F);
+            draw(bb);
+            glow(tip, 0.3F + 0.4F * f, 0xFFF0C0, 0.8F);
+        }
+    }
+
+    /**
+     * 1.8.1: collapsed Omnilex Engines are drawn after the translucent blocks, not before them. Drawn before, the
+     * Primordial Law sea behind one (dark, and nearly opaque) was laid over it and it could not be seen.
+     */
+    private static void lateHyperobjects(RenderLevelStageEvent event) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.level == null || ClientHooks.HYPEROBJECTS.isEmpty()) return;
+        Camera camera = event.getCamera();
+        cam = camera.getPosition();
+        left = new Vector3f(camera.getLeftVector());
+        up = new Vector3f(camera.getUpVector());
+        float partial = event.getPartialTick().getGameTimeDeltaPartialTick(false);
+        time = com.theoreticalsciences.client.render.effects.FxFrame.wrapSeconds((double) mc.level.getGameTime() + partial);
+        Matrix4fStack mvs = RenderSystem.getModelViewStack();
+        mvs.pushMatrix();
+        mvs.identity();
+        mvs.mul(event.getModelViewMatrix());
+        RenderSystem.applyModelViewMatrix();
+        Matrix4f oldProj = new Matrix4f(RenderSystem.getProjectionMatrix());
+        VertexSorting oldSort = RenderSystem.getVertexSorting();
+        RenderSystem.setProjectionMatrix(event.getProjectionMatrix(), VertexSorting.DISTANCE_TO_ORIGIN);
+        mc.getMainRenderTarget().bindWrite(false);
+        try {
+            LENSES.clear();
+            FOREGROUND.clear();
+            hyperobjects(mc, partial);
+            if (!LENSES.isEmpty() && QHConfig.LENSING_ENABLED.get() && QHShaders.LENS != null) drawLenses(mc, event.getModelViewMatrix(), event.getProjectionMatrix());
+            for (Runnable r : FOREGROUND) r.run();
+        } finally {
+            RenderSystem.disableBlend();
+            RenderSystem.defaultBlendFunc();
+            RenderSystem.depthMask(true);
+            RenderSystem.enableDepthTest();
+            RenderSystem.enableCull();
+            RenderSystem.setShaderColor(1, 1, 1, 1);
+            RenderSystem.setShaderTexture(0, 0);
+            RenderSystem.setProjectionMatrix(oldProj, oldSort);
+            mvs.popMatrix();
+            RenderSystem.applyModelViewMatrix();
+            mc.getMainRenderTarget().bindWrite(false);
+        }
+    }
+
+    private static void hyperobjects(Minecraft mc, float partial) {
         for (var en : List.copyOf(ClientHooks.HYPEROBJECTS)) {
             if (en.isRemoved() || en.level() != mc.level || en.distanceToSqr(cam) > 256 * 256) {
                 ClientHooks.HYPEROBJECTS.remove(en);
@@ -511,25 +579,6 @@ public final class EffectRenderer {
             penteract(c, grow, pulling ? 1.0F : 0.7F);
             glow(c, grow * 1.6F, 0xFFFFFF, pulling ? 0.35F : 0.2F);
             LENSES.add(new Lens(c, 0.25F * grow, 1.8F * grow, 4, 1.0F));
-        }
-        // Axiom Sentinels proving something: a line of light grows from the sentinel to its target
-        for (var en : List.copyOf(ClientHooks.SENTINELS)) {
-            if (en.isRemoved() || en.level() != mc.level || !(en instanceof com.theoreticalsciences.entity.AxiomSentinel sn)) {
-                ClientHooks.SENTINELS.remove(en);
-                continue;
-            }
-            int ch = sn.charge();
-            var t = mc.level.getEntity(sn.targetId());
-            if (ch <= 0 || t == null) continue;
-            float f = Math.min(1F, (ch + partial) / com.theoreticalsciences.entity.AxiomSentinel.CHARGE_TICKS);
-            Vec3 a = sn.getPosition(partial).add(0, sn.getBbHeight() / 2, 0), b = t.getPosition(partial).add(0, t.getBbHeight() / 2, 0);
-            Vec3 tip = a.lerp(b, f);
-            beginAdditive();
-            BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-            ribbon(bb, a, tip, 0.05F + 0.1F * f, 0xFFFFFF, 0.9F, 0xFFE080, 0.9F);
-            ribbon(bb, a, tip, 0.3F * f, 0x80C0FF, 0.25F, 0xFFE080, 0.25F);
-            draw(bb);
-            glow(tip, 0.3F + 0.4F * f, 0xFFF0C0, 0.8F);
         }
     }
 

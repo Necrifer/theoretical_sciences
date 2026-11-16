@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:microgravity_processing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:silicon_boule",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:microgravity_crystal",
+      "count": 4
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:microgravity_processing",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "beta": 0.00014,
+      "nu": 3e-07,
+      "alpha": 2.2e-05,
+      "sigT": 0.00028,
+      "mu": 0.0007,
+      "Mac": 40000.0
+    },
+    "windows": [
+      {
+        "q": "Ra",
+        "min": 0,
+        "max": 30
+      },
+      {
+        "q": "wid",
+        "min": 25,
+        "max": 40
+      },
+      {
+        "q": "vg",
+        "min": 0.3,
+        "max": 1.5
+      }
+    ]
+  }
+}

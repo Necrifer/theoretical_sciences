@@ -88,14 +88,14 @@ public final class OrbitTravel {
         return InteractionResultHolder.fail(st);
     }
 
-    /** A formed Rocket Assembly within 32 blocks (loaded chunks only; nothing is loaded to look). */
+    /** A formed Rocket Assembly (or, 1.4.0, Space Elevator) within 32 blocks (loaded chunks only; nothing is loaded to look). */
     static boolean nearPad(ServerLevel level, BlockPos at) {
         int cx = at.getX() >> 4, cz = at.getZ() >> 4;
         for (int dx = -2; dx <= 2; dx++)
             for (int dz = -2; dz <= 2; dz++) {
                 if (!level.hasChunk(cx + dx, cz + dz)) continue;
                 for (BlockEntity be : level.getChunk(cx + dx, cz + dz).getBlockEntities().values())
-                    if (be instanceof ControllerBlockEntity c && c.type == MachineType.ROCKET_ASSEMBLY && c.isFormed()
+                    if (be instanceof ControllerBlockEntity c && (c.type == MachineType.ROCKET_ASSEMBLY || c.type == MachineType.SPACE_ELEVATOR) && c.isFormed()
                             && c.getBlockPos().distSqr(at) <= 32 * 32) return true;
             }
         return false;
@@ -111,7 +111,16 @@ public final class OrbitTravel {
         sp.fallDistance = 0;
         orbit.playSound(null, dest, com.theoreticalsciences.registry.QHSounds.GATEWAY.get(), SoundSource.PLAYERS, 0.8F, 1.2F);
         sp.displayClientMessage(Component.translatable("message.theoreticalsciences.orbit_arrival").withStyle(ChatFormatting.GOLD), false);
+        // 1.12.0: the capsule climbs through the Van Allen belts (Apollo crews took a few mSv; scaled up like every dose here)
+        if (com.theoreticalsciences.QHConfig.RADIATION_SICKNESS.get()) {
+            double dose = VAN_ALLEN_MSV * SpaceShelter.suit(sp) * com.theoreticalsciences.interior.InteriorGear.radiationFactor(sp);
+            com.theoreticalsciences.science.RadiationService.setDose(sp, com.theoreticalsciences.science.RadiationService.dose(sp) + dose);
+            sp.displayClientMessage(Component.translatable("message.theoreticalsciences.van_allen", String.format(java.util.Locale.ROOT, "%.0f", dose))
+                    .withStyle(ChatFormatting.YELLOW), false);
+        }
     }
+
+    static final double VAN_ALLEN_MSV = 30;
 
     // ------------------------------------------------------------------ on
     public static class ConsoleBlock extends Block {
@@ -126,17 +135,13 @@ public final class OrbitTravel {
                 sp.displayClientMessage(Component.translatable("message.theoreticalsciences.console_grounded").withStyle(ChatFormatting.GRAY), true);
                 return InteractionResult.CONSUME;
             }
-            List<Destinations.Destination> list = Destinations.INSTANCE.offered(sp);
-            if (list.isEmpty()) return InteractionResult.CONSUME;
-            int i = Math.floorMod(CHOICE.getOrDefault(sp.getUUID(), 0), list.size());
+            // 1.13.0: sneaking, it tells you what is in orbit
             if (sp.isShiftKeyDown()) {
-                i = (i + 1) % list.size();
-                CHOICE.put(sp.getUUID(), i);
-                sp.displayClientMessage(Component.translatable("message.theoreticalsciences.console_target", Component.translatable(list.get(i).name()),
-                        i + 1, list.size()).withStyle(ChatFormatting.AQUA), true);
+                SpaceModules.status(sp);
                 return InteractionResult.CONSUME;
             }
-            depart(sp, list.get(i));
+            // 1.12.0: the console is a Mission Planner: every trip has its Δv, paid in Transfer Stages the first time
+            Planner.openConsole(sp, pos);
             return InteractionResult.CONSUME;
         }
     }

@@ -1,0 +1,39 @@
+{
+  "type": "theoreticalsciences:brownian_tracking",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:algae_culture",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:normal_distribution_crystal",
+      "count": 32
+    },
+    {
+      "id": "theoreticalsciences:avogadro_record",
+      "count": 1
+    }
+  ],
+  "energy": 128,
+  "duration": 800,
+  "research": "theoreticalsciences:brownian_motion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "r": 0.5
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": 0.0,
+        "max": 3.0
+      }
+    ]
+  }
+}

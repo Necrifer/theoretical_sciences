@@ -46,6 +46,25 @@ public final class QHNetwork {
         });
         r.playToClient(com.theoreticalsciences.transcend.CorePayloads.Open.TYPE, com.theoreticalsciences.transcend.CorePayloads.Open.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.openOmnipotence(p.core(), p.phase(), p.seconds()));
+        // 1.12.0: the Mission Planner
+        r.playToClient(com.theoreticalsciences.orbit.Planner.Open.TYPE, com.theoreticalsciences.orbit.Planner.Open.CODEC,
+                (p, ctx) -> com.theoreticalsciences.client.ClientHooks.planner(p));
+        r.playToServer(com.theoreticalsciences.orbit.Planner.Go.TYPE, com.theoreticalsciences.orbit.Planner.Go.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.orbit.Planner.handle(sp, p);
+        });
+        // 1.8.0: Recreating Home
+        r.playToClient(com.theoreticalsciences.home.PortalOpening.Start.TYPE, com.theoreticalsciences.home.PortalOpening.Start.CODEC,
+                (p, ctx) -> com.theoreticalsciences.client.ClientHooks.portalOpening(p));
+        r.playToClient(com.theoreticalsciences.home.HomePayloads.State.TYPE, com.theoreticalsciences.home.HomePayloads.State.CODEC,
+                (p, ctx) -> com.theoreticalsciences.home.HomeClient.state(p));
+        r.playToClient(com.theoreticalsciences.home.HomePayloads.TableSync.TYPE, com.theoreticalsciences.home.HomePayloads.TableSync.CODEC,
+                (p, ctx) -> com.theoreticalsciences.home.HomeClient.table(p.pos(), p.tag(), p.blocked()));
+        r.playToServer(com.theoreticalsciences.home.HomePayloads.Submit.TYPE, com.theoreticalsciences.home.HomePayloads.Submit.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.home.HomePayloads.Submit.handle(sp, p);
+        });
+        r.playToServer(com.theoreticalsciences.home.HomePayloads.TableAction.TYPE, com.theoreticalsciences.home.HomePayloads.TableAction.CODEC, (p, ctx) -> {
+            if (ctx.player() instanceof ServerPlayer sp) com.theoreticalsciences.home.HomePayloads.TableAction.handle(sp, p);
+        });
         r.playToClient(com.theoreticalsciences.transcend.ForgeDrift.Sync.TYPE, com.theoreticalsciences.transcend.ForgeDrift.Sync.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.screen.ForgeDriftClient.accept(p.data()));
         r.playToServer(com.theoreticalsciences.transcend.CorePayloads.Action.TYPE, com.theoreticalsciences.transcend.CorePayloads.Action.CODEC, (p, ctx) -> {

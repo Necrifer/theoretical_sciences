@@ -1,0 +1,52 @@
+{
+  "title": "Complexity Theory",
+  "x": 20,
+  "y": 26,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:computability",
+    "theoreticalsciences:cryptography"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:proof_certificate",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:one_time_pad",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "description": "Some problems are hard to solve but easy to check: given a certificate, a verifier can confirm a solution in polynomial time even when finding one may take exponential time (NP). Whether every such problem is also easy to solve (P = NP) is the great open question. A zero-knowledge proof convinces a verifier, round by round, that a certificate exists without showing it. Unlocks the Certificate Verifier: Zero-Knowledge Proofs and Grover Oracles.",
+  "icon": "theoreticalsciences:certificate_verifier",
+  "puzzle": {
+    "goal": "In each round of an interactive proof a cheating prover is caught with probability one half. Write the chance ε that a cheat survives k rounds.",
+    "name": "Soundness of an interactive proof",
+    "lhs": "ε",
+    "form": "( 1 / 2 ) ^ k",
+    "expr": "( 1 / 2 ) ^ k",
+    "ask": "Find ε after k = @{k} rounds.",
+    "vars": {
+      "ε": "soundness error",
+      "k": "rounds"
+    },
+    "given": {
+      "k": 20.0
+    },
+    "unit": "",
+    "method": "The rounds are independent: the cheat must be lucky every time.",
+    "distractors": [
+      "*",
+      "2",
+      "-"
+    ],
+    "vary": {
+      "k": [
+        10.0,
+        40.0,
+        1.0
+      ]
+    }
+  }
+}

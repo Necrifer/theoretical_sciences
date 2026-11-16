@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:photogrammetry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:dated_potsherd",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:tree_ring_chronology",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:provenanced_artefact",
+      "count": 1
+    },
+    {
+      "item": "minecraft:paper",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:excavation_record",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 800,
+  "research": "theoreticalsciences:photogrammetry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Z0": 4
+    },
+    "windows": [
+      {
+        "q": "sz",
+        "min": 0,
+        "max": 2
+      },
+      {
+        "q": "gsd",
+        "min": 0,
+        "max": 0.3
+      }
+    ]
+  }
+}

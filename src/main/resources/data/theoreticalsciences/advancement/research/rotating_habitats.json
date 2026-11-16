@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:oneill_cylinder"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.rotating_habitats"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.rotating_habitats.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/space_elevator",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

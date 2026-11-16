@@ -1,0 +1,74 @@
+{
+  "params": [
+    {
+      "id": "eta",
+      "unit": "",
+      "min": 0.001,
+      "max": 0.5,
+      "step": 0.001,
+      "default": 0.05
+    },
+    {
+      "id": "N",
+      "unit": "epochs",
+      "min": 1,
+      "max": 500,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "xa",
+      "unit": "",
+      "min": 0.05,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "dw",
+      "unit": "",
+      "expr": "eta*xa^2",
+      "formula": "Δw = η·x·y per step (y ≈ x)"
+    },
+    {
+      "id": "w",
+      "unit": "",
+      "expr": "(1 - exp(-eta*N*xa^2))*(1 - 0.01*d)",
+      "formula": "w = 1 − e^(−η·x²·N): how much of the pattern is learnt"
+    },
+    {
+      "id": "ov",
+      "unit": "",
+      "expr": "eta*xa^2/0.25",
+      "formula": "step size over the stable limit (Oja)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "stop",
+      "expr": "0.25 - eta*xa^2",
+      "formula": "η·x² < 0.25 or the weights run away"
+    },
+    {
+      "id": "fatigue",
+      "kind": "wear",
+      "expr": "400 - N",
+      "formula": "under 400 epochs: overtraining wears the lattice"
+    }
+  ],
+  "rate": "clamp(100/N, 0.2, 1.2)",
+  "rate_formula": "more epochs, slower runs",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

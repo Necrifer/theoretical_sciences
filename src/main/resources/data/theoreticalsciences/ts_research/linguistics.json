@@ -1,0 +1,52 @@
+{
+  "title": "Linguistics",
+  "x": 16,
+  "y": 21,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:psychophysics",
+    "theoreticalsciences:information_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:glyph_tablet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:one_time_pad",
+      "count": 1
+    }
+  ],
+  "time": 300,
+  "description": "In any language the commonest word turns up about twice as often as the second, three times as often as the third: Zipf's law. Count the symbols of an unknown script and their frequencies tell you its alphabet, then its words, then its grammar; how much each symbol says is its entropy, H = log₂N for N symbols used equally. Unlocks the Decipherment Desk: the glyph tablets of the Library Ruins can be read.",
+  "icon": "theoreticalsciences:decipherment_desk",
+  "puzzle": {
+    "goal": "A script of N symbols, each as likely as any other. Write the information H each symbol carries, in bits.",
+    "name": "Shannon's entropy of an alphabet",
+    "lhs": "H",
+    "form": "ln ( N ) / ln ( 2 )",
+    "expr": "ln ( N ) / ln ( 2 )",
+    "ask": "Find H in bits for a script of N = @{N} symbols.",
+    "vars": {
+      "H": "information per symbol",
+      "N": "number of symbols"
+    },
+    "given": {
+      "N": 24.0
+    },
+    "unit": "bits",
+    "method": "H = −Σ p·log₂p with every p = 1/N: N terms of (1/N)·log₂N.",
+    "distractors": [
+      "N",
+      "*",
+      "exp"
+    ],
+    "vary": {
+      "N": [
+        16.0,
+        64.0,
+        2.0
+      ]
+    }
+  }
+}

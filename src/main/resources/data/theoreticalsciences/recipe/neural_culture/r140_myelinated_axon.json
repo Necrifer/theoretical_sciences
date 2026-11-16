@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:neural_culture",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:lipid_bilayer",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:blood_plasma",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:myelinated_axon",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 400,
+  "research": "theoreticalsciences:action_potential",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "vmin": 60
+    },
+    "windows": [
+      {
+        "q": "v",
+        "min": 60,
+        "max": 150
+      }
+    ]
+  }
+}

@@ -42,7 +42,6 @@ public class TheoreticalSciences {
         // Inventory Tweaks (Refoxed) puts its "sort" button on any slot group it finds: not on machine slots (round 23)
         modBus.addListener((net.neoforged.fml.event.lifecycle.InterModEnqueueEvent e) -> {
             for (String c : new String[]{"com.theoreticalsciences.machine.MachineMenu", "com.theoreticalsciences.client.screen.MachineScreen",
-                    "com.theoreticalsciences.transcend.ConfluenceMenu", "com.theoreticalsciences.client.screen.ConfluenceScreen",
                     "com.theoreticalsciences.storage.InfinityCacheMenu", "com.theoreticalsciences.client.screen.InfinityCacheScreen",
                     "com.theoreticalsciences.extreme.ExtremeTableMenu", "com.theoreticalsciences.extreme.ExtremeTableScreen",
                     "com.theoreticalsciences.extreme.CompactorMenu", "com.theoreticalsciences.extreme.CompactorScreen",
@@ -65,6 +64,8 @@ public class TheoreticalSciences {
         QHEntities.register(modBus);
         com.theoreticalsciences.registry.QHSounds.register(modBus);
         com.theoreticalsciences.extreme.ExtremeRegistry.register(modBus);
+        com.theoreticalsciences.home.HomeRegistry.register(modBus);          // 1.8.0: Recreating Home
+        com.theoreticalsciences.orbit.SpaceRegistry.register(modBus);        // 1.12.0: getting there
         com.theoreticalsciences.converge.ConvergenceRegistry.register(modBus);
         com.theoreticalsciences.transcend.TranscendRegistry.register(modBus);
         com.theoreticalsciences.registry.QHLogistics.register(modBus);
@@ -76,13 +77,18 @@ public class TheoreticalSciences {
         com.theoreticalsciences.ocean.OceanRegistry.register(modBus);          // 1.2.0
         com.theoreticalsciences.weather.WeatherRegistry.register(modBus);      // 1.3.0
         com.theoreticalsciences.deeptime.DeepTimeRegistry.register(modBus);    // 1.3.0
+        com.theoreticalsciences.mind.MindRegistry.register(modBus);            // 1.4.0: Mind and Language
+        com.theoreticalsciences.engineering.EngineeringRegistry.register(modBus);   // 1.4.0: Engineering of the Large
         com.theoreticalsciences.math.MathRegistry.register(modBus);            // 1.2.0
+        com.theoreticalsciences.archaeology.ArchaeologyRegistry.register(modBus);   // 1.6.0: Archaeology
+        com.theoreticalsciences.endgame.FieldSynthesis.register(modBus);     // 1.7.0: the Field Syntheses and their lettered levels
         com.theoreticalsciences.science.Wear.register(modBus);          // 1.2.0: catalysts and instruments that wear
         com.theoreticalsciences.green.PlantTraits.register(modBus);     // 1.3.0: bred seeds carry their traits
 
         modBus.addListener(QHNetwork::register);
         modBus.addListener(QHCapabilities::register);
         modBus.addListener(com.theoreticalsciences.compat.MEBridge::registerCaps);
+        modBus.addListener(com.theoreticalsciences.compat.magic.Magic::registerCaps);          // 1.7.4: the Mana Port, for Botania
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> com.theoreticalsciences.transcend.CoreForge.invalidate());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.event.TagsUpdatedEvent e) -> com.theoreticalsciences.extreme.Collections.invalidate());
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.endgame.EntropyCenserItem::cloudApplies);
@@ -124,6 +130,8 @@ public class TheoreticalSciences {
         com.theoreticalsciences.network.DestabilisedPayload.registerServerEvents();
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.DimensionLaws::onPlayerTick);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.VoidFall::onPlayerTick);
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.HomeTravel::onPlayerTick);
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.PortalOpening::onLevelTick);                // 1.8.1
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.SpawnRules::onFinalizeSpawn);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.world.SpawnRules::onJoin);
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.machine.tuning.Materialisation::tick);

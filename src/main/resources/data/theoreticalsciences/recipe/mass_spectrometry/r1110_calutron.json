@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:mass_spectrometry",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:uranium_hexafluoride",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:uranium_235_pellet",
+      "count": 6
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:mass_spectrometry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "mz": 4.0
+    },
+    "windows": [
+      {
+        "q": "rr",
+        "min": 0.495,
+        "max": 0.505
+      }
+    ]
+  }
+}

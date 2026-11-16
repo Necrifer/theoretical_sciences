@@ -22,6 +22,11 @@ public final class DeepTimeFeatures {
         return QHBlocks.get(id).defaultBlockState();
     }
 
+    /** 1.4.0: the same test for the other ruins (the Library Ruin). */
+    public static int flatGroundPublic(WorldGenLevel level, BlockPos o, int r) {
+        return flatGround(level, o, r);
+    }
+
     /** True if the ground under a w-by-w square is solid and roughly level (no more than 2 blocks of relief). */
     static int flatGround(WorldGenLevel level, BlockPos o, int r) {
         int lo = Integer.MAX_VALUE, hi = Integer.MIN_VALUE;

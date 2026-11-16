@@ -46,6 +46,7 @@ import java.util.Map;
 public class OmnipotenceScreen extends Screen {
     private static final int INTACT = 0, SHUTDOWN = 1, REBORN = 3;
     private static final int GREEN = 0xFF5CFF8A, DIM = 0xFF2F8A4C, FAINT = 0xFF1A4A2A, AMBER = 0xFFFFC24A, RED = 0xFFFF5A4A, BG = 0xF0020A05;
+    private static final String HOME_TAB = "[ RECREATING HOME ]";
     private static final int ROW = 18;          // height of one recipe in the catalogue (an item icon and a little air)
     private final BlockPos core;
     private final int phase;
@@ -488,6 +489,11 @@ public class OmnipotenceScreen extends Screen {
         tabButton(g, L + 6, T + 20, "[ MATERIALIZE ]", tab == 0, mx, my, phase != SHUTDOWN);
         tabButton(g, L + 96, T + 20, "[ FORGE ]", tab == 1, mx, my, phase != SHUTDOWN);
         if (phase == INTACT) tabButton(g, L + W - 96, T + 20, "[ SHUTDOWN ]", tab == 2, mx, my, true);
+        // 1.8.0: for one who has forged everything the Core can forge. It is not the program's green.
+        if (phase != SHUTDOWN && com.theoreticalsciences.home.HomeClient.unlocked) {
+            boolean over = inTab(mx, my, L + 156, T + 20, HOME_TAB);
+            g.drawString(font, HOME_TAB, L + 156, T + 20, over ? 0xFFFFF4D0 : 0xFFE0C070, false);
+        }
         if (phase == SHUTDOWN) renderShutdown(g);
         else if (tab == 2) renderWarning(g, mx, my);
         else if (tab == 1) renderForge(g, mx, my);
@@ -812,6 +818,10 @@ public class OmnipotenceScreen extends Screen {
             if (inTab(mx, my, L + 6, T + 20, "[ MATERIALIZE ]")) return setTab(0);
             if (inTab(mx, my, L + 96, T + 20, "[ FORGE ]")) return setTab(1);
             if (phase == INTACT && inTab(mx, my, L + W - 96, T + 20, "[ SHUTDOWN ]")) return setTab(2);
+            if (com.theoreticalsciences.home.HomeClient.unlocked && inTab(mx, my, L + 156, T + 20, HOME_TAB)) {
+                minecraft.setScreen(new HomeScreen(this, core));
+                return true;
+            }
         }
         if (super.mouseClicked(mx, my, button)) return true;
         if (phase == SHUTDOWN) return false;

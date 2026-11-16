@@ -1,0 +1,54 @@
+{
+  "title": "The Sun's Magnetism",
+  "x": 28,
+  "y": 7,
+  "insight": 320,
+  "requires": [
+    "theoreticalsciences:space_weather",
+    "theoreticalsciences:spectroscopy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:ferrite_magnet",
+      "count": 2
+    }
+  ],
+  "time": 340,
+  "description": "Sunspots are where the Sun's magnetic field breaks through its surface, kilogauss strong, holding back the heat from below, so they are cooler and look dark. The field is measured from here by the Zeeman effect: in a magnetic field a spectral line splits, by an amount that grows with the field and with the square of the wavelength, which is why magnetographs often look in the infrared. Where the field lines tangle and snap, flares and coronal mass ejections begin. Adds a magnetograph to the Heliograph; unlocks a probe to the corona.",
+  "icon": "theoreticalsciences:sunspot_magnetogram",
+  "puzzle": {
+    "goal": "A sunspot is at temperature Ts, its surroundings at T. By the Stefan-Boltzmann law the flux a surface gives off goes as the fourth power of its temperature. Write the fraction f of the surroundings' brightness the spot gives off.",
+    "name": "Spot contrast",
+    "lhs": "f",
+    "form": "( Ts / T ) ^ 4",
+    "expr": "( Ts / T ) ^ 4",
+    "ask": "Find f for Ts = @{Ts} K and T = 5778 K.",
+    "vars": {
+      "f": "brightness fraction",
+      "Ts": "spot temperature",
+      "T": "surface temperature"
+    },
+    "given": {
+      "Ts": 4278.0,
+      "T": 5778.0
+    },
+    "unit": "",
+    "method": "Flux is σT⁴ for each; the σ cancels in the ratio.",
+    "distractors": [
+      "*",
+      "2",
+      "sqrt"
+    ],
+    "vary": {
+      "Ts": [
+        3500.0,
+        5000.0,
+        10.0
+      ]
+    }
+  }
+}

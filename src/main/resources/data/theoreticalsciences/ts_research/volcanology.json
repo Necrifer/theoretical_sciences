@@ -25,7 +25,7 @@
     "name": "Arrhenius viscosity",
     "lhs": "\u03b7",
     "form": "A * exp ( E / ( R * T ) )",
-    "expr": "A * exp(E / (R * T))",
+    "expr": "A * exp ( E / ( R * T ) )",
     "ask": "Find \u03b7 in Pa\u00b7s for a basaltic melt: A = @{A} Pa\u00b7s, E = @{E} J/mol, R = @{R} J/(mol\u00b7K), T = @{T} K.",
     "vars": {
       "\u03b7": "viscosity (Pa\u00b7s)",

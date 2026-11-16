@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:sieving",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:integer_ring",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:prime_shard",
+      "count": 12
+    }
+  ],
+  "energy": 256,
+  "duration": 20,
+  "research": "theoreticalsciences:primes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "need": 1000.0
+    },
+    "windows": [
+      {
+        "q": "found",
+        "min": 1000.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

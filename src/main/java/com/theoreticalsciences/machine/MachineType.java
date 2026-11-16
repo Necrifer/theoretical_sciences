@@ -30,8 +30,8 @@ public enum MachineType {
     PLANCK_CUTTER           ("planck_cutting",       1, 1, 2, 1, false, null,                         200_000,    4_000, Effect.NONE,        0xFFE060),
     QUANTUM_LITHOGRAPHER    ("lithography",          2, 1, 1, 0, false, null,                         400_000,    8_000, Effect.NONE,        0xA0FF80),
     FEMTO_FABRICATOR        ("femtofabrication",     4, 1, 1, 0, false, null,                       1_000_000,   20_000, Effect.NONE,        0x60FFD0),
-    CANTOR_DIAGONALIZER     ("transfinite_computation", 4, 1, 2, 0, false, null,                  2_000_000_000, 200_000_000, Effect.NONE,   0xD0C0FF),
-    AXIOM_DISTILLER         ("axiom_distillation",   3, 2, 2, 1, false, null,                   2_000_000_000, 200_000_000, Effect.NONE,      0xA060FF),
+    CANTOR_DIAGONALIZER     ("transfinite_computation", 4, 1, 2, 0, false, "cantor_diagonalizer",                2_000_000_000, 200_000_000, Effect.NONE,   0xD0C0FF),
+    AXIOM_DISTILLER         ("axiom_distillation",   3, 2, 2, 1, false, "axiom_distiller",                 2_000_000_000, 200_000_000, Effect.NONE,      0xA060FF),
     SPECTROGRAPH            ("spectroscopy",         2, 0, 2, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xB080FF),
     // round 38 (1.2): the Tier II instruments of the new sciences (ScienceMachineBlockEntity gives each its physics)
     SEISMOGRAPH             ("seismography",         2, 0, 1, 0, false, null,                         100_000,    2_000, Effect.NONE,        0xC09060),
@@ -54,7 +54,7 @@ public enum MachineType {
     MULTIVERSE_RIFT         ("rift_harvesting",      2, 1, 4, 1, false, "multiverse_rift",        128_000_000, 4_000_000, Effect.RIFT,        0xC040FF),
     UNIVERSE_FORGE          ("universe_forging",     4, 2, 4, 1, false, "universe_forge",         256_000_000, 8_000_000, Effect.POCKET_UNIVERSE, 0xFFD080),
     MATRIOSHKA_BRAIN        ("matrioshka",           3, 1, 2, 0, false, "matrioshka_brain",       512_000_000, 16_000_000, Effect.MATRIOSHKA, 0x60FF9A),
-    DYSON_ARRAY             ("dyson",                3, 0, 0, 0, true,  "dyson_array",          1_000_000_000, 50_000_000, Effect.DYSON,      0xFFB040),
+    DYSON_ARRAY             ("dyson",                3, 0, 1, 0, true,  "dyson_array",          1_000_000_000, 50_000_000, Effect.DYSON,      0xFFB040),
     ANNIHILATION_REACTOR    ("annihilation",         2, 1, 0, 1, true,  "annihilation_reactor",   256_000_000, 16_000_000, Effect.ANNIHILATION, 0xFF40C0),
     NEUTRON_STAR_FORGE      ("stellar_compression",  3, 1, 2, 1, false, "neutron_star_forge",     128_000_000, 4_000_000, Effect.PULSAR,      0x80FFFF),
     WORMHOLE_PROJECTOR      ("wormhole_transit",     2, 1, 4, 1, false, "wormhole_projector",     128_000_000, 4_000_000, Effect.WORMHOLE,    0x80C0FF),
@@ -89,7 +89,7 @@ public enum MachineType {
     MIRROR_FOUNDRY          ("mirror_synthesis", 4, 2, 2, 1, false, "mirror_foundry", 256_000_000, 8_000_000, Effect.ANNIHILATION, 0xFFB070),
     OMEGA_SIMULATOR         ("omega_simulation", 4, 1, 1, 0, false, null, 256_000_000, 16_000_000, Effect.CONCEPT, 0xFFE080),
     PLEROMA_RECONSTITUTOR   ("pleroma_reconstitution", 6, 2, 1, 0, false, "pleroma_reconstitutor", 2_000_000_000, 500_000_000, Effect.POCKET_UNIVERSE, 0xFFE8A0),
-    CONVERGENCE_ENGINE      ("convergence_automation", 13, 1, 1, 0, false, null, 2_000_000_000, 100_000_000, Effect.NONE, 0xB080FF),
+    CONVERGENCE_ENGINE      ("convergence_automation", 13, 1, 1, 0, false, "convergence_engine", 2_000_000_000, 100_000_000, Effect.NONE, 0xB080FF),
     ESSENCE_DISTILLERY      ("essence_distillation", 1, 12, 1, 1, false, "essence_distillery", 256_000_000, 8_000_000, Effect.FRACTIONATION, 0x80FFE0),
     // round 29: the first power there is - burns ordinary furnace fuel, so the mod can start without another mod's generators
     THERMOELECTRIC_GENERATOR("thermoelectric",       1, 0, 0, 0, true,  null,                         200_000,    4_000, Effect.NONE,        0xFF8040),
@@ -252,7 +252,47 @@ public enum MachineType {
     BREEDING_BENCH          ("plant_breeding",       2, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0x80C050),
     DATING_SPECTROMETER     ("radiometric_dating",   1, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0xD0A040),
     ANCIENT_DNA_LAB         ("ancient_dna",          1, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC0D8A0),
-    REVIVAL_VAT             ("revival",              3, 1, 1, 0, false, "revival_vat",             16_000_000,   400_000, Effect.NONE,        0x80D0C0);
+    REVIVAL_VAT             ("revival",              3, 1, 1, 0, false, "revival_vat",             16_000_000,   400_000, Effect.NONE,        0x80D0C0),
+    // 1.4.0: Mind and Language
+    NEURAL_CULTURE_ARRAY    ("neural_culture",       2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xE8A0C8),
+    SYNAPSE_TRAINER         ("synaptic_training",    3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC090FF),
+    PSYCHOPHYSICS_BOOTH     ("psychophysics",        3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF0D070),
+    DECIPHERMENT_DESK       ("decipherment",         3, 0, 1, 0, false, null,                       1_000_000,    20_000, Effect.NONE,        0xD8B880),
+    CONNECTOME_ARRAY        ("connectome_mapping",   3, 1, 1, 0, false, "connectome_array",        64_000_000, 1_000_000, Effect.NONE,        0xB070FF),
+    // 1.4.0: Engineering of the Large
+    LOAD_TEST_RIG           ("load_testing",         2, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xA0A8B0),
+    COMPOSITE_LAYUP_PRESS   ("composite_layup",      3, 1, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0x404850),
+    TRIBOMETER              ("tribology",            2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x8090A0),
+    CORROSION_CELL          ("corrosion_testing",    2, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC07040),
+    SPACE_ELEVATOR          ("elevator_lift",        2, 0, 1, 0, false, "space_elevator",          64_000_000, 2_000_000, Effect.NONE,        0xD0E0F0),
+    ONEILL_CYLINDER         ("habitat_spin",         3, 1, 2, 0, false, "oneill_cylinder",        256_000_000, 4_000_000, Effect.NONE,        0x80C0A0),
+    STELLAR_ENGINE          ("stellar_thrust",       1, 1, 1, 1, true,  "stellar_engine",       2_000_000_000, 200_000_000, Effect.NONE,    0xFFD060),
+    // 1.5.0: Small Wonders
+    RESONANCE_CHAMBER       ("acoustic_resonance",   1, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x90C8E0),
+    HELIOGRAPH              ("heliography",          3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x70F0A0),
+    CHAOS_CONTROLLER        ("chaos_control",        3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF07070),
+    KNOT_LOOM               ("knot_tying",           3, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xD0A060),
+    AUTOMATON_LATTICE       ("automaton_growth",     3, 0, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0x70E070),
+    CERTIFICATE_VERIFIER    ("certificate_check",    3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x8080F0),
+    DOSE_RESPONSE_ASSAY     ("dose_response",        3, 1, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xF0A0A0),
+    QUANTUM_COMPUTER        ("quantum_search",       3, 1, 1, 0, false, "quantum_computer",        32_000_000,   800_000, Effect.NONE,        0x80E0FF),
+    CT_SCANNER              ("tomography",           2, 0, 1, 0, false, "ct_scanner",               8_000_000,   200_000, Effect.NONE,        0xE0E0F0),
+    // 1.6.0: Archaeology
+    RADAR_SURVEY_BENCH      ("radar_survey",         3, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x70C0A0),
+    LUMINESCENCE_READER     ("luminescence_dating",  2, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x60A0FF),
+    TREE_RING_CORRELATOR    ("cross_dating",         2, 0, 1, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0xC09060),
+    CONSERVATION_BATH       ("conservation",         2, 0, 2, 0, false, null,                       2_000_000,    40_000, Effect.NONE,        0x60C0C0),
+    ISOTOPE_PROVENANCER     ("provenancing",         2, 0, 1, 0, false, null,                       4_000_000,    80_000, Effect.NONE,        0xD080F0),
+    BLOOMERY_SHAFT          ("bloomery_smelting",    3, 0, 1, 0, false, "bloomery_shaft",           8_000_000,   200_000, Effect.NONE,        0xFF7030),
+    PHOTOGRAMMETRY_GANTRY   ("photogrammetry",       4, 0, 1, 0, false, "photogrammetry_gantry",   16_000_000,   400_000, Effect.NONE,        0xE0D0A0),
+    // 1.12.0: engines fired until they make their rating, then built into Transfer Stages
+    PROPULSION_TEST_STAND   ("propulsion_testing",   4, 2, 1, 0, false, "propulsion_test_stand",   64_000_000, 2_000_000, Effect.NONE,        0xFFB050),
+    // 1.13.0: the station grows
+    MICROGRAVITY_FACTORY    ("microgravity_processing", 2, 1, 1, 0, false, null,                      8_000_000,   200_000, Effect.NONE,        0xA0E0FF),
+    RADIATION_PRESSURE_BALANCE ("photon_pressure",  3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xFFF0B0),   // 1.14.0
+    MICROWAVE_RECTENNA      ("microwave_reception",  0, 0, 0, 0, true,  "microwave_rectenna",      64_000_000, 2_000_000, Effect.NONE,        0x60C8FF),
+    // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
+    PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
 
     public enum Effect { NONE, COLLIDER, DARK_LENS, BLACK_HOLE, BLACK_HOLE_DISK, WHITE_HOLE, TESSERACT, RIFT, POCKET_UNIVERSE, MATRIOSHKA, DYSON,
         ANNIHILATION, PULSAR, WORMHOLE, TIME_LOOP, EXPANSION, MATRIX, BREACH, OMNILEX, ASSEMBLY, PLASMA, FRACTIONATION, SYNCHROTRON, STAR_FORGE, EYE, CONCEPT, FOAM, HEARTH,
@@ -279,7 +319,10 @@ public enum MachineType {
         this.legacyItemInputs = in;
         this.legacyFluidInputs = fin;
         boolean mb = multiblock != null && !gen;          // generators burn fuel: their slots stay as they were
-        this.itemInputs = mb ? 16 : gen ? in : in >= 6 ? in : Math.min(6, Math.max(in + 2, 4));
+        // 1.7.2: the two megastructure generators take Field Syntheses and make a signature material, so they need room:
+        // the Stellar Engine 6 slots, the Dyson Array 8 (its second and third are the swarm's, which leaves it six)
+        this.itemInputs = mb ? 16 : gen ? Math.max(in, "stellar_thrust".equals(recipeType) ? 6 : "dyson".equals(recipeType) ? 8 : 0)
+                : in >= 6 ? in : Math.min(6, Math.max(in + 2, 4));
         this.fluidInputs = mb ? 16 : gen ? fin : fin >= 3 ? fin : fin + 1;
         this.itemOutputs = mb ? Math.max(out, 4) : out;
         this.fluidOutputs = mb ? Math.max(fout, 4) : fout;
@@ -304,7 +347,8 @@ public enum MachineType {
     public static java.util.List<net.minecraft.resources.ResourceLocation> allowedDimensions(MachineType t) {
         java.util.List<String> ids = com.theoreticalsciences.custom.MachineParams.get(t).dimensions();
         if (ids == null) ids = t == OMNILEX_ENGINE ? java.util.List.of("theoreticalsciences:hyperdimensional_reality")
-                : t == VACUUM_HARVESTER ? java.util.List.of("theoreticalsciences:quantum_foam") : java.util.List.of();
+                : t == VACUUM_HARVESTER ? java.util.List.of("theoreticalsciences:quantum_foam")
+                : t == MICROGRAVITY_FACTORY ? java.util.List.of("theoreticalsciences:orbital_station") : java.util.List.of();
         java.util.List<net.minecraft.resources.ResourceLocation> out = new java.util.ArrayList<>();
         for (String s : ids) {
             net.minecraft.resources.ResourceLocation rl = net.minecraft.resources.ResourceLocation.tryParse(s);
@@ -342,7 +386,7 @@ public enum MachineType {
      * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
      */
     public boolean standaloneConsole() {
-        return this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
+        return this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
                 || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
                 || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN
                 || this == POLYMERISER || this == SYNTHESIS_BENCH || this == FRAMEWORK_ASSEMBLER || this == QUASICRYSTAL_FURNACE
@@ -354,6 +398,12 @@ public enum MachineType {
                 || this == OPTIMISER || this == GRAPH_LOOM || this == STRATEGY_TABLE || this == PATTERN_BASIN
                 || this == ANALYTIC_CONTINUATOR          // 1.2.0: revamped as a console
                 || this == WAVE_ENERGY_CONVERTER || this == GEOTHERMAL_PLANT || this == PHYTOTRON || this == BREEDING_BENCH || this == DATING_SPECTROMETER || this == ANCIENT_DNA_LAB   // 1.3.0
+                || this == SYNAPSE_TRAINER || this == PSYCHOPHYSICS_BOOTH || this == DECIPHERMENT_DESK                         // 1.4.0
+                || this == LOAD_TEST_RIG || this == COMPOSITE_LAYUP_PRESS || this == TRIBOMETER || this == CORROSION_CELL
+                || this == RESONANCE_CHAMBER || this == HELIOGRAPH || this == CHAOS_CONTROLLER || this == KNOT_LOOM            // 1.5.0
+                || this == AUTOMATON_LATTICE || this == CERTIFICATE_VERIFIER || this == DOSE_RESPONSE_ASSAY
+                || this == RADAR_SURVEY_BENCH || this == LUMINESCENCE_READER || this == TREE_RING_CORRELATOR           // 1.6.0
+                || this == CONSERVATION_BATH || this == ISOTOPE_PROVENANCER
                 || biology();
     }
 
@@ -366,7 +416,8 @@ public enum MachineType {
         return this == AUTOCLAVE || this == PATCH_CLAMP_RIG || this == FERMENTER || this == PHOTOBIOREACTOR || this == RIBOSOME_ASSEMBLER
                 || this == FOLDING_CHAMBER || this == PHAGE_LAB || this == MYCELIUM_BED || this == ANTIBODY_BENCH
                 || this == PERFUSION_RIG || this == REGENERATION_TANK || this == CIRCADIAN_INCUBATOR || this == DOSING_PUMP
-                || this == ECOSPHERE || this == SELECTION_CHAMBER || this == GENE_CIRCUIT_LOOM || this == MIRROR_CULTURE_VAT || this == CLONAL_SELECTOR;
+                || this == ECOSPHERE || this == SELECTION_CHAMBER || this == GENE_CIRCUIT_LOOM || this == MIRROR_CULTURE_VAT || this == CLONAL_SELECTOR
+                || this == NEURAL_CULTURE_ARRAY;       // 1.4.0: a dish of living neurons catches what any culture catches
     }
 
     public boolean isMultiblock() {

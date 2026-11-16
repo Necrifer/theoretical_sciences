@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:corrosion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:aluminium_ingot",
+      "count": 4
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:concentrated_brine",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sacrificial_anode",
+      "count": 2
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:corrosion_science",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "cr",
+        "min": 0,
+        "max": 0.01
+      },
+      {
+        "q": "clv",
+        "min": -1,
+        "max": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:quantum_search",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:natural_number_lattice",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:prime_shard",
+      "count": 64
+    }
+  ],
+  "energy": 131072,
+  "duration": 1200,
+  "research": "theoreticalsciences:quantum_computing",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "F",
+        "min": 0.9,
+        "max": 1
+      },
+      {
+        "q": "Sx",
+        "min": 5,
+        "max": 20
+      }
+    ]
+  }
+}

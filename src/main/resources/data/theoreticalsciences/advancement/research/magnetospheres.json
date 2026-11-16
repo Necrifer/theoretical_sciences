@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:active_magnetic_shield"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.magnetospheres"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.magnetospheres.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/solar_magnetism",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Psychophysics",
+  "x": 14,
+  "y": 21,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:action_potential"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:myelinated_axon",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:eel_photophore",
+      "count": 2
+    }
+  ],
+  "time": 240,
+  "description": "How bright a light seems grows not with its intensity but with the logarithm of it (Weber and Fechner): S = k·ln(I/I₀). Whether you notice a faint signal at all depends on how far it stands out of the noise (d′) and on where you set your threshold: low, and you see things that are not there; high, and you miss things that are. Unlocks the Psychophysics Booth, the Rhodopsin Retina and the Low-Light Visor.",
+  "icon": "theoreticalsciences:psychophysics_booth",
+  "puzzle": {
+    "goal": "A light of intensity I against a threshold intensity I₀. Fechner: equal ratios of intensity feel like equal steps. Write the sensation S, with a constant k.",
+    "name": "The Weber–Fechner law",
+    "lhs": "S",
+    "form": "k * ln ( I / I0 )",
+    "expr": "k * ln ( I / I0 )",
+    "ask": "Find S for k = @{k}, I = @{I} and I₀ = @{I0} (in the same units).",
+    "vars": {
+      "S": "perceived sensation",
+      "k": "constant of the sense",
+      "I": "stimulus intensity",
+      "I0": "threshold intensity"
+    },
+    "given": {
+      "k": 2.0,
+      "I": 80.0,
+      "I0": 5.0
+    },
+    "unit": "",
+    "method": "Weber: the just-noticeable step dI is a fixed fraction of I. Add up dS = k·dI/I from I₀ to I.",
+    "distractors": [
+      "exp",
+      "-",
+      "I"
+    ],
+    "vary": {
+      "I": [
+        20.0,
+        200.0,
+        10.0
+      ]
+    }
+  }
+}

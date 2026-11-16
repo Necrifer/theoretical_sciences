@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "thaumaturge"
+    }
+  ],
+  "type": "theoreticalsciences:load_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:trained_cortex",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rated_i_beam",
+      "count": 8
+    },
+    {
+      "item": "thaumaturge:jar_brain",
+      "count": 1
+    },
+    {
+      "item": "thaumaturge:essentia_crystal",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:engineered_mind",
+      "count": 1
+    }
+  ],
+  "energy": 32768,
+  "duration": 600,
+  "research": "theoreticalsciences:structural_mechanics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Pk": 500,
+      "Eg": 200
+    },
+    "windows": [
+      {
+        "q": "SF",
+        "min": 2.0,
+        "max": 4.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:plasma_smelting",
+  "item_inputs": [
+    {
+      "tag": "theoreticalsciences:samples/asteroid_regolith",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:meteoric_iron",
+      "count": 3
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:sample_return",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "EG": 1180.0,
+      "Cf": 3.68e-18,
+      "Ef": 17.6,
+      "fch": 0.2,
+      "Zf": 1.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 8.0,
+        "max": 20.0
+      }
+    ]
+  }
+}

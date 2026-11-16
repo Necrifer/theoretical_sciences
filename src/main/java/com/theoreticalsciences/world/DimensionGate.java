@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * The mod's own ways in call {@link #allow} just before moving a player; that one-time pass is spent on arrival.
  */
 public final class DimensionGate {
-    private static final Set<ResourceKey<Level>> GUARDED = Set.of(QHDimensions.TRANSCENDENTAL, QHDimensions.LIVING_PROOF);
+    private static final Set<ResourceKey<Level>> GUARDED = Set.of(QHDimensions.TRANSCENDENTAL, QHDimensions.LIVING_PROOF, QHDimensions.OMNIPOTENCY);
     private static final Map<UUID, ResourceKey<Level>> PASSES = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());
     /** Players to send back to the Overworld on their next tick (never from inside a dimension change). */
     private static final Map<UUID, ResourceKey<Level>> KICK = com.theoreticalsciences.world.SessionMaps.perPlayer(new ConcurrentHashMap<>());
@@ -76,7 +76,7 @@ public final class DimensionGate {
     }
 
     private static void refuse(ServerPlayer sp, ResourceKey<Level> dim) {
-        String k = dim == QHDimensions.LIVING_PROOF ? "living_proof" : "transcendental";
+        String k = dim == QHDimensions.LIVING_PROOF ? "living_proof" : dim == QHDimensions.OMNIPOTENCY ? "omnipotency" : "transcendental";
         sp.sendSystemMessage(Component.translatable("message.theoreticalsciences.gate." + k).withStyle(ChatFormatting.DARK_PURPLE, ChatFormatting.ITALIC));
     }
 

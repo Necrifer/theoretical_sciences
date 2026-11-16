@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:antiproton_bundle",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:metamaterial_sheet",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:superfluid_helium",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antimatter_injector",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 1200,
+  "research": "theoreticalsciences:antimatter_propulsion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 2,
+      "g": 1.4,
+      "ion": 0,
+      "Tmax": 4000
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 900,
+        "max": 1100
+      }
+    ]
+  }
+}

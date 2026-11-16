@@ -47,6 +47,7 @@ public final class QHClient {
             ItemBlockRenderTypes.setRenderLayer(e.flowing.get(), RenderType.translucent());
         }));
         NeoForge.EVENT_BUS.addListener(EffectRenderer::onRenderLevel);
+        NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.home.PortalOpeningRenderer::onRenderLevel);     // 1.8.1
         // 1.2.0: animated multiblocks (moving parts, stars, shells, beams), for this mod's machines and others'
         NeoForge.EVENT_BUS.addListener(com.theoreticalsciences.client.render.effects.FxRenderer::onRenderLevel);
         NeoForge.EVENT_BUS.addListener((RegisterClientCommandsEvent e) -> com.theoreticalsciences.client.render.effects.FxCommands.register(e.getDispatcher()));
@@ -150,7 +151,7 @@ public final class QHClient {
         event.register(QHMenus.ANOMALY_ENGINE.get(), com.theoreticalsciences.client.screen.AnomalyEngineScreen::new);
         event.register(com.theoreticalsciences.extreme.ExtremeRegistry.EXTREME_MENU.get(), com.theoreticalsciences.extreme.ExtremeTableScreen::new);
         event.register(com.theoreticalsciences.extreme.ExtremeRegistry.COMPACTOR_MENU.get(), com.theoreticalsciences.extreme.CompactorScreen::new);
-        event.register(com.theoreticalsciences.transcend.TranscendRegistry.CONFLUENCE_MENU.get(), com.theoreticalsciences.client.screen.ConfluenceScreen::new);
+        event.register(com.theoreticalsciences.home.HomeRegistry.TABLE_MENU.get(), com.theoreticalsciences.home.EmpyreanTableScreen::new);
     }
 
     @SubscribeEvent
@@ -205,6 +206,7 @@ public final class QHClient {
         event.register(TheoreticalSciences.id("white_hole_interior"), new com.theoreticalsciences.client.render.FractalSkyEffects(3));
         event.register(TheoreticalSciences.id("transfinite_hierarchy"), new com.theoreticalsciences.client.render.FractalSkyEffects(4));
         event.register(TheoreticalSciences.id("living_proof"), new com.theoreticalsciences.client.render.FractalSkyEffects(5));
+        event.register(TheoreticalSciences.id("omnipotency"), new com.theoreticalsciences.client.render.EmpyreanSkyEffects());   // 1.8.0
     }
 
     @SubscribeEvent

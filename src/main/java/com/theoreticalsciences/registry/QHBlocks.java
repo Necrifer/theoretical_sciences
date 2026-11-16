@@ -31,12 +31,17 @@ public final class QHBlocks {
     public static final DeferredBlock<PortBlock> INTERFACE_PORT = BLOCKS.registerBlock("interface_port", PortBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(5.0F, 12.0F).requiresCorrectToolForDrops()
                     .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 5));
+    /** 1.7.4: holds Botania mana for a structure; fits wherever an Interface Port does. */
+    public static final DeferredBlock<com.theoreticalsciences.machine.ManaPortBlock> MANA_PORT = BLOCKS.registerBlock("mana_port", com.theoreticalsciences.machine.ManaPortBlock::new,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_BLUE).strength(5.0F, 12.0F).requiresCorrectToolForDrops()
+                    .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 7));
     public static final DeferredBlock<ResearchTerminalBlock> RESEARCH_TERMINAL = BLOCKS.registerBlock("research_terminal", ResearchTerminalBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(3.5F, 10.0F).requiresCorrectToolForDrops()
                     .sound(com.theoreticalsciences.registry.QHSounds.MACHINE).lightLevel(s -> 9).noOcclusion());
 
     static final java.util.Set<String> SQUISH = java.util.Set.of("extracellular_matrix", "cell_membrane", "bone_matrix", "lymph_tissue", "chromatin",
-            "tumour_mass", "bioluminescent_membrane", "collagen_seam", "nucleotide_cluster", "tumour_nodule");
+            "tumour_mass", "bioluminescent_membrane", "collagen_seam", "nucleotide_cluster", "tumour_nodule",
+            "grey_matter", "white_matter", "neuron_soma");                    // 1.4.0: the Neural Cortex
 
     static {
         for (QHContentList.BlockDef def : QHContentList.BLOCKS) {
@@ -204,6 +209,12 @@ public final class QHBlocks {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), Block::new, p));
                 }
+                case "foliage" -> {
+                    // 1.8.1: leaves with gaps in them. They let light and sight through and nothing suffocates in them.
+                    p.mapColor(MapColor.GOLD).sound(SoundType.CHERRY_LEAVES).noOcclusion()
+                            .isViewBlocking((s, l, pos) -> false).isSuffocating((s, l, pos) -> false).isRedstoneConductor((s, l, pos) -> false);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), Block::new, p));
+                }
                 case "deco_pillar" -> {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), net.minecraft.world.level.block.RotatedPillarBlock::new, p));
@@ -221,6 +232,27 @@ public final class QHBlocks {
                     p.mapColor(MapColor.COLOR_GRAY).sound(com.theoreticalsciences.registry.QHSounds.MACHINE).forceSolidOn();
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), net.minecraft.world.level.block.WallBlock::new, p));
                 }
+                case "anode" -> {               // 1.4.0: corrosion: eaten in place of the machines
+                    p.mapColor(MapColor.METAL).sound(SoundType.METAL);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.engineering.SacrificialAnodeBlock::new, p));
+                }
+                case "brushable" -> {           // 1.6.0: brushed like suspicious sand, turning into its base block
+                    p.mapColor(MapColor.DIRT).sound(SoundType.SUSPICIOUS_GRAVEL).pushReaction(net.minecraft.world.level.material.PushReaction.DESTROY);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), pp -> new net.minecraft.world.level.block.BrushableBlock(SIMPLE.get(def.base()).get(),
+                            net.minecraft.sounds.SoundEvents.BRUSH_GRAVEL, net.minecraft.sounds.SoundEvents.BRUSH_GRAVEL_COMPLETED, pp), p));
+                }
+                case "return_beacon" -> {      // 1.12.0: charts the route to where it stands
+                    p.mapColor(MapColor.METAL).sound(SoundType.LANTERN);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.SpaceRegistry.ReturnBeaconBlock::new, p));
+                }
+                case "space_module" -> {       // 1.13.0: a station module that the station keeps track of
+                    p.mapColor(MapColor.METAL).sound(SoundType.NETHERITE_BLOCK);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.SpaceModules.ModuleBlock::new, p));
+                }
+                case "mission_bay" -> {        // 1.12.0: flies sample-return probes from the station
+                    p.mapColor(MapColor.METAL).sound(SoundType.NETHERITE_BLOCK);
+                    SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), com.theoreticalsciences.orbit.MissionBay.BayBlock::new, p));
+                }
                 case "casing" -> {
                     p.mapColor(MapColor.COLOR_BLACK).sound(com.theoreticalsciences.registry.QHSounds.MACHINE);
                     SIMPLE.put(def.id(), BLOCKS.registerBlock(def.id(), CasingBlock::new, p));
@@ -236,6 +268,22 @@ public final class QHBlocks {
             // 1.10.1: rock sounds like stone, crystal like amethyst, glass and lamps like glass, gas like wool
             net.minecraft.world.level.block.SoundType look = QHBlockSounds.of(def.id());
             if (look != null) p.sound(look);
+            // 1.8.1: Omnipotency's blocks sound like what they are
+            net.minecraft.world.level.block.SoundType heaven = switch (def.id()) {
+                case "empyrean_marble", "empyrean_marble_bricks", "gilded_marble", "empyrean_pillar", "empyrean_marble_tiles" -> SoundType.STONE;
+                case "seraph_gold_trim" -> SoundType.METAL;
+                case "halo_glass" -> SoundType.GLASS;
+                case "heaven_soil" -> SoundType.GRAVEL;                 // (what dirt itself uses)
+                case "halo_grass" -> SoundType.GRASS;
+                case "cloudstone", "radiant_cloud" -> SoundType.WOOL;
+                case "choir_crystal_block" -> com.theoreticalsciences.registry.QHSounds.CHOIR_CRYSTAL;
+                case "seraph_gold_block" -> SoundType.METAL;
+                case "glory_lantern" -> SoundType.LANTERN;
+                case "silver_bark" -> SoundType.WOOD;
+                case "aureate_leaves" -> SoundType.CHERRY_LEAVES;
+                default -> null;
+            };
+            if (heaven != null) p.sound(heaven);
             // 1.2.0: Inner Space is living tissue: every block of it squelches like a slime block
             if (SQUISH.contains(def.id())) p.sound(SoundType.SLIME_BLOCK);
         }
@@ -260,7 +308,11 @@ public final class QHBlocks {
     }
 
     public static Block get(String id) {
-        return SIMPLE.get(id).get();
+        DeferredBlock<Block> b = SIMPLE.get(id);
+        if (b != null) return b.get();
+        // 1.10.0: blocks registered elsewhere (Recreating Home's urn and bell, for one) are found by their id; an unknown id
+        // gives air rather than a crash (a Dweller looking for a bell crashed the server in 1.9.x)
+        return net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(com.theoreticalsciences.TheoreticalSciences.id(id));
     }
 
     public static void register(IEventBus bus) {

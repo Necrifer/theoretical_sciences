@@ -27,6 +27,8 @@ public final class QHConfig {
     public static final ModConfigSpec.DoubleValue GREAVES_SPEED;
     public static final ModConfigSpec.BooleanValue FAILURE_DESTROYS_BLOCKS;
     public static final ModConfigSpec.BooleanValue RADIATION_SICKNESS;
+    /** 1.13.0 */
+    public static final ModConfigSpec.BooleanValue SPACE_DEBRIS, DECONDITIONING;
     public static final ModConfigSpec.BooleanValue RADIATION_SHARE;
     public static final ModConfigSpec.DoubleValue INGREDIENT_MULTIPLIER;
     public static final ModConfigSpec.IntValue CHRONAL_MAX_SPEED, CHRONAL_MAX_RADIUS;
@@ -122,6 +124,12 @@ public final class QHConfig {
                 .define("radiationSickness", true);
         RADIATION_SHARE = b.comment("If true and Mekanism or GregTech is installed, the same dose is also handed to that mod's own radiation system (Mekanism radiation, GregTech's carcinogen condition), so its detectors and protective gear apply. NuclearRadiation (NuclearCraft) reads this mod's data files under data/theoreticalsciences/nuclear_radiation/bindings instead; override those with a datapack to change or remove them.")
                 .define("shareRadiationWithOtherMods", true);
+        b.pop();
+        b.push("space");
+        SPACE_DEBRIS = b.comment("1.13.0: orbital debris. Every launch leaves some; while it is thick, strikes hurt players outside the Orbital Station's hub without a Whipple bumper, and can destroy satellites. Turn off to have no debris at all (it never breaks blocks either way).")
+                .define("spaceDebris", true);
+        DECONDITIONING = b.comment("1.13.0: long stays in the Orbital Station's free fall weaken bone and muscle (Slowness, then Weakness, back in gravity, until you recover). A Habitat Ring Module prevents it. Turn off to have no such effect.")
+                .define("microgravityDeconditioning", true);
         b.pop();
         COMMON_SPEC = b.build();
 

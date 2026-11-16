@@ -61,14 +61,7 @@ public final class TranscendRegistry {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ForgedCoreBlockEntity>> FORGED_CORE_BE = BES.register("forged_omnipotence_core",
             () -> BlockEntityType.Builder.of(ForgedCoreBlockEntity::new, FORGED_CORE.get()).build(null));
 
-    // ---- Pleroma Confluence
-    public static final DeferredHolder<Block, ConfluenceBlock> CONFLUENCE = BLOCKS.registerBlock("pleroma_confluence", ConfluenceBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(10.0F, 1200.0F).requiresCorrectToolForDrops().lightLevel(s -> 10).sound(com.theoreticalsciences.registry.QHSounds.MACHINE));
-    public static final DeferredHolder<Item, BlockItem> CONFLUENCE_ITEM = tab(ITEMS.registerSimpleBlockItem(CONFLUENCE, new Item.Properties().rarity(Rarity.EPIC)));
-    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ConfluenceBlockEntity>> CONFLUENCE_BE = BES.register("pleroma_confluence",
-            () -> BlockEntityType.Builder.of(ConfluenceBlockEntity::new, CONFLUENCE.get()).build(null));
-    public static final DeferredHolder<MenuType<?>, MenuType<ConfluenceMenu>> CONFLUENCE_MENU = MENUS.register("pleroma_confluence",
-            () -> IMenuTypeExtension.create(ConfluenceMenu::fromNetwork));
+    // ---- 1.7.1: the Pleroma Confluence is a multiblock machine now (MachineType.PLEROMA_CONFLUENCE)
 
     // ---- display miniatures
     public static final Map<DecorBlock.Kind, DeferredHolder<Block, DecorBlock>> DECOR = new EnumMap<>(DecorBlock.Kind.class);
@@ -195,8 +188,6 @@ public final class TranscendRegistry {
         MENUS.register(bus);
         ENTITIES.register(bus);
         FEATURES.register(bus);
-        bus.addListener((RegisterCapabilitiesEvent e) ->
-                e.registerBlockEntity(Capabilities.FluidHandler.BLOCK, CONFLUENCE_BE.get(), (be, side) -> be.fluids));
         bus.addListener((EntityAttributeCreationEvent e) -> {
             e.put(FRACTAL_WYRM.get(), FractalWyrm.createAttributes().build());
             e.put(AXIOM_SENTINEL.get(), AxiomSentinel.createAttributes().build());

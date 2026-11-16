@@ -92,6 +92,10 @@ public final class MachineConsole {
     }
 
     private String effectName() {
+        String own = MachineScenes.title(be.type.id());
+        if (own != null) return own;
+        own = ProcessScenes.title(be.type.id());
+        if (own != null) return own;
         return be.type.effect == MachineType.Effect.NONE ? "reaction vessel" : be.type.effect.name().toLowerCase(Locale.ROOT).replace('_', ' ');
     }
 
@@ -363,7 +367,10 @@ public final class MachineConsole {
             }
         }
         // 1.14.2: most machines have a picture of their own; the rest keep their family's
-        if (!SimScenes.draw(fx, be.type.effect, cx + jit, cy, R, col, hot, run, f, phase)) switch (arch) {
+        // 1.5.1: the machines since 1.3.0 each draw their own scene (they had no effect family, so all fell to the beaker)
+        if (!MachineScenes.draw(fx, be.type.id(), cx + jit, cy, R, col, hot, run, f, phase)
+                && !ProcessScenes.draw(fx, be.type.id(), cx + jit, cy, R, col, hot, run, f, phase)
+                && !SimScenes.draw(fx, be.type.effect, cx + jit, cy, R, col, hot, run, f, phase)) switch (arch) {
             case RING -> ring(fx, cx + jit, cy, R, col, hot, run, f);
             case WELL -> well(fx, cx + jit, cy, R, col, hot, run, f);
             case HYPER -> hyper(fx, cx + jit, cy, R, col, hot, run, f);

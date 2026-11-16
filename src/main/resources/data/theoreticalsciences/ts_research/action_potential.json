@@ -1,0 +1,54 @@
+{
+  "title": "The Action Potential",
+  "x": 14,
+  "y": 19,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:membrane_potential",
+    "theoreticalsciences:neurobiology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:ion_channel_membrane",
+      "count": 4
+    }
+  ],
+  "time": 240,
+  "description": "A neuron fires when sodium channels open faster than potassium ones can close the gap: the voltage runs away upwards, then recovers. Down a long axon the signal leaks out through the membrane and fades over a length λ = √(r_m/r_i); wrap the axon in myelin and the leak all but stops, so the spike jumps from gap to gap, a hundred times faster. Unlocks the Neural Culture Array and Myelinated Axons.",
+  "icon": "theoreticalsciences:neural_culture_array",
+  "puzzle": {
+    "goal": "A long axon leaks its signal through its membrane (resistance r_m per length, outward) while the current runs on along its core (resistance r_i per length). Write the length λ over which the voltage falls to 1/e.",
+    "name": "The cable equation",
+    "lhs": "λ",
+    "form": "sqrt ( r_m / r_i )",
+    "expr": "sqrt ( rm / ri )",
+    "ask": "Find λ in metres for an axon with r_m = @{rm} Ω·m and r_i = @{ri} Ω/m.",
+    "vars": {
+      "λ": "length constant",
+      "r_m": "membrane resistance × length",
+      "r_i": "axial resistance per length"
+    },
+    "given": {
+      "rm": 4.0,
+      "ri": 64.0
+    },
+    "unit": "m",
+    "method": "λ²·d²V/dx² = V: the leak through the wall balances the drop along the core where V falls by e each λ.",
+    "distractors": [
+      "r_m",
+      "*",
+      "π"
+    ],
+    "vary": {
+      "rm": [
+        2.0,
+        9.0,
+        1.0
+      ]
+    }
+  }
+}

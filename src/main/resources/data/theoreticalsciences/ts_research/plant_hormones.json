@@ -25,7 +25,7 @@
     "name": "Logistic growth",
     "lhs": "N",
     "form": "K / ( 1 + ( K / n - 1 ) * exp ( - r * t ) )",
-    "expr": "K / (1 + (K / n - 1) * exp(-r * t))",
+    "expr": "K / ( 1 + ( K / n - 1 ) * exp ( - r * t ) )",
     "ask": "Find N: K = @{K}, n = @{n}, r = @{r} per day, t = @{t} days.",
     "vars": {
       "N": "size at time t",

@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:tribology",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methane",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:wear_coating",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:tribology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Hg": 20,
+      "kw": 1
+    },
+    "windows": [
+      {
+        "q": "tau",
+        "min": 100,
+        "max": 100000
+      }
+    ]
+  }
+}

@@ -140,7 +140,19 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
 
     public QHRecipeSerializer(String typeId) {
         this.typeId = typeId;
-        this.codec = RecordCodecBuilder.mapCodec(i -> i.group(
+        // 1.7.3: "magic": {"mana": n, "aura": n} (a seventeenth field; a record codec holds sixteen, so it rides beside)
+        // 1.11.0: and "vis", "flux", "aspects": {"ordo": n, ...} (Thaumaturge), "lumen": n, "lumen_kind": "aevitas" (Astral Sorcery)
+        MapCodec<Magic> magic = RecordCodecBuilder.mapCodec(i -> i.group(
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("mana", 0).forGetter(Magic::mana),
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("aura", 0).forGetter(Magic::aura),
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("vis", 0).forGetter(Magic::vis),
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("flux", 0).forGetter(Magic::flux),
+                Codec.unboundedMap(Codec.STRING, Codec.intRange(1, Integer.MAX_VALUE)).optionalFieldOf("aspects", java.util.Map.of()).forGetter(Magic::aspects),
+                Codec.intRange(0, Integer.MAX_VALUE).optionalFieldOf("lumen", 0).forGetter(Magic::lumen),
+                Codec.STRING.optionalFieldOf("lumen_kind", "").forGetter(Magic::lumenKind)
+        ).apply(i, Magic::new));
+        MapCodec<Magic> magicField = magic.codec().optionalFieldOf("magic", Magic.NONE);
+        MapCodec<QHRecipe> main = RecordCodecBuilder.mapCodec(i -> i.group(
                 SizedIngredient.FLAT_CODEC.listOf().optionalFieldOf("item_inputs", List.of()).forGetter(r -> r.itemInputs),
                 SizedFluidIngredient.FLAT_CODEC.listOf().optionalFieldOf("fluid_inputs", List.of()).forGetter(r -> r.fluidInputs),
                 ItemStack.CODEC.listOf().optionalFieldOf("item_outputs", List.of()).forGetter(r -> r.itemOutputs),
@@ -166,6 +178,10 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             r.physics = ph;
             return r;
         }));
+        this.codec = Codec.mapPair(main, magicField).xmap(p -> {
+            p.getSecond().into(p.getFirst());
+            return p.getFirst();
+        }, r -> com.mojang.datafixers.util.Pair.of(r, Magic.of(r)));
 
         StreamCodec<RegistryFriendlyByteBuf, List<SizedIngredient>> items = SizedIngredient.STREAM_CODEC.apply(ByteBufCodecs.list());
         StreamCodec<RegistryFriendlyByteBuf, List<SizedFluidIngredient>> fluids = SizedFluidIngredient.STREAM_CODEC.apply(ByteBufCodecs.list());
@@ -189,6 +205,17 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             buf.writeVarInt(r.insight);
             r.environment.write(buf);
             r.physics.write(buf);
+            buf.writeVarInt(r.mana);
+            buf.writeVarInt(r.aura);
+            buf.writeVarInt(r.vis);
+            buf.writeVarInt(r.flux);
+            buf.writeVarInt(r.lumen);
+            buf.writeUtf(r.lumenKind);
+            buf.writeVarInt(r.aspects.size());
+            r.aspects.forEach((k, v) -> {
+                buf.writeUtf(k);
+                buf.writeVarInt(v);
+            });
         }, buf -> {
             List<SizedIngredient> a = items.decode(buf);
             List<SizedFluidIngredient> b = fluids.decode(buf);
@@ -206,8 +233,37 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             r.insight = buf.readVarInt();
             r.environment = com.theoreticalsciences.field.Environment.read(buf);
             r.physics = com.theoreticalsciences.machine.physics.RecipePhysics.read(buf);
+            r.mana = buf.readVarInt();
+            r.aura = buf.readVarInt();
+            r.vis = buf.readVarInt();
+            r.flux = buf.readVarInt();
+            r.lumen = buf.readVarInt();
+            r.lumenKind = buf.readUtf();
+            int na = buf.readVarInt();
+            java.util.Map<String, Integer> asp = new java.util.LinkedHashMap<>();
+            for (int j = 0; j < na; j++) asp.put(buf.readUtf(), buf.readVarInt());
+            r.aspects = asp;
             return r;
         });
+    }
+
+    /** 1.11.0: the "magic" block of a recipe. */
+    public record Magic(int mana, int aura, int vis, int flux, java.util.Map<String, Integer> aspects, int lumen, String lumenKind) {
+        static final Magic NONE = new Magic(0, 0, 0, 0, java.util.Map.of(), 0, "");
+
+        static Magic of(QHRecipe r) {
+            return new Magic(r.mana, r.aura, r.vis, r.flux, r.aspects, r.lumen, r.lumenKind);
+        }
+
+        void into(QHRecipe r) {
+            r.mana = mana;
+            r.aura = aura;
+            r.vis = vis;
+            r.flux = flux;
+            r.aspects = aspects;
+            r.lumen = lumen;
+            r.lumenKind = lumenKind;
+        }
     }
 
     public String typeId() {

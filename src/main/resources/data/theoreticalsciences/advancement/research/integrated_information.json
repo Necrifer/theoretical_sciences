@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:connectome_array"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.integrated_information"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.integrated_information.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/synaptic_plasticity",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

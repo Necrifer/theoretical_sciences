@@ -1,0 +1,47 @@
+{
+  "type": "theoreticalsciences:perfusion",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stem_cell_culture",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:perfused_tissue",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:grown_organ",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:circulation",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "eta": 3.0,
+      "Lv": 10.0
+    },
+    "windows": [
+      {
+        "q": "Qf",
+        "min": 20.0,
+        "max": 1000000.0
+      },
+      {
+        "q": "shear",
+        "min": 0.0,
+        "max": 10.0
+      }
+    ]
+  }
+}

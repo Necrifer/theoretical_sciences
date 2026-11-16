@@ -1,0 +1,23 @@
+{
+  "type": "theoreticalsciences:air_separation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:cold_pack_solution",
+      "amount": 100
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:liquid_oxygen",
+      "amount": 210
+    },
+    {
+      "id": "theoreticalsciences:nitrogen",
+      "amount": 780
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:reaction_kinetics",
+  "unscaled": true
+}

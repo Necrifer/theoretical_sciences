@@ -25,6 +25,10 @@ public final class QHBlockEntities {
             () -> BlockEntityType.Builder.of(PortBlockEntity::new, QHBlocks.INTERFACE_PORT.get()).build(null));
 
     @SuppressWarnings("DataFlowIssue")
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.machine.ManaPortBlockEntity>> MANA_PORT = BLOCK_ENTITIES.register("mana_port",
+            () -> BlockEntityType.Builder.of(com.theoreticalsciences.machine.ManaPortBlockEntity::new, QHBlocks.MANA_PORT.get()).build(null));
+
+    @SuppressWarnings("DataFlowIssue")
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<com.theoreticalsciences.block.BubbleUniverseBlockEntity>> BUBBLE_UNIVERSE =
             BLOCK_ENTITIES.register("bubble_universe", () -> BlockEntityType.Builder.<com.theoreticalsciences.block.BubbleUniverseBlockEntity>of(
                     (pos, state) -> new com.theoreticalsciences.block.BubbleUniverseBlockEntity(QHBlockEntities.BUBBLE_UNIVERSE.get(), pos, state),

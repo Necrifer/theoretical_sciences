@@ -330,12 +330,12 @@ public final class Singularities extends SimpleJsonResourceReloadListener {
         return Component.translatable("item.theoreticalsciences.dynamic_singularity.of", src.isEmpty() ? Component.literal(d.id()) : stripIngot(src.getHoverName()));
     }
 
-    static final String[] GREEK = {"Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu",
+    public static final String[] GREEK = {"Alpha", "Beta", "Gamma", "Delta", "Epsilon", "Zeta", "Eta", "Theta", "Iota", "Kappa", "Lambda", "Mu",
             "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Tau", "Upsilon", "Phi", "Chi", "Psi", "Omega"};
-    static final String[] HEBREW = {"Aleph", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "Het", "Tet", "Yod", "Kaf", "Lamed", "Mem", "Nun",
+    public static final String[] HEBREW = {"Aleph", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "Het", "Tet", "Yod", "Kaf", "Lamed", "Mem", "Nun",
             "Samekh", "Ayin", "Pe", "Tsadi", "Qof", "Resh", "Shin", "Tav"};
-    static final String[] GREEK_SYM = {"α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ", "λ", "μ", "ν", "ξ", "ο", "π", "ρ", "σ", "τ", "υ", "φ", "χ", "ψ", "ω"};
-    static final String[] HEBREW_SYM = {"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ", "ק", "ר", "ש", "ת"};
+    public static final String[] GREEK_SYM = {"α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ", "λ", "μ", "ν", "ξ", "ο", "π", "ρ", "σ", "τ", "υ", "φ", "χ", "ψ", "ω"};
+    public static final String[] HEBREW_SYM = {"א", "ב", "ג", "ד", "ה", "ו", "ז", "ח", "ט", "י", "כ", "ל", "מ", "נ", "ס", "ע", "פ", "צ", "ק", "ר", "ש", "ת"};
 
     /**
      * 1.14.2: clusters are lettered, not numbered - Greek for clusters (Singularity Cluster Alpha α), Hebrew for

@@ -1,0 +1,21 @@
+{
+  "name": "mission.theoreticalsciences.c_type_asteroid",
+  "delta_v": 5500,
+  "synodic_days": 16,
+  "penalty": 0.7,
+  "transfer_days": 400,
+  "order": 11,
+  "research": "theoreticalsciences:asteroid_taxonomy",
+  "samples": [
+    {
+      "item": "theoreticalsciences:carbonaceous_regolith",
+      "count": 8
+    }
+  ],
+  "needs": [
+    {
+      "item": "theoreticalsciences:asteroid_ephemeris",
+      "count": 1
+    }
+  ]
+}

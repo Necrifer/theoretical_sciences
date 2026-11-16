@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:ammonia_oxidation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:platinum_rhodium_gauze",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 2000
+    },
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 4000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:nitric_acid",
+      "amount": 2400
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:ostwald_process",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "S",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:platinum_rhodium_gauze"
+    }
+  ]
+}

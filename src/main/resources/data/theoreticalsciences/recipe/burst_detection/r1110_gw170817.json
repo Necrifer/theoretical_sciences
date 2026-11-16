@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:burst_detection",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:gw_record_bns",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:burst_afterglow_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 2400,
+  "research": "theoreticalsciences:gamma_ray_bursts",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Pdet",
+        "min": 0.9,
+        "max": 1.0
+      },
+      {
+        "q": "FA",
+        "min": 0.0,
+        "max": 0.2
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "TR",
+      "unit": "",
+      "min": 1,
+      "max": 20,
+      "step": 0.05,
+      "default": 1.5
+    },
+    {
+      "id": "vc",
+      "unit": "m/s",
+      "min": 10,
+      "max": 300,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "id": "mt",
+      "unit": "t",
+      "min": 1,
+      "max": 50,
+      "step": 0.5,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "Sp": 60
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Rq",
+      "unit": "",
+      "expr": "exp(48.4/Sp)",
+      "formula": "taper the tether needs: exp(ρgR²/σr) = e^(48.4/specific strength)"
+    },
+    {
+      "id": "tm",
+      "unit": "",
+      "expr": "TR/(Rq*(1 + 0.02*d))",
+      "formula": "taper margin"
+    },
+    {
+      "id": "Pc",
+      "unit": "MW",
+      "expr": "mt*9.81*vc/1000",
+      "formula": "climber power P = mgv"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "snap",
+      "kind": "stop",
+      "expr": "TR - exp(48.4/Sp)",
+      "formula": "taper over the needed ratio, or the tether snaps"
+    },
+    {
+      "id": "beam",
+      "kind": "damage",
+      "expr": "50 - mt*9.81*vc/1000",
+      "formula": "climber under 50 MW of beamed power"
+    }
+  ],
+  "rate": "clamp(vc/100, 0.1, 2)",
+  "rate_formula": "faster climbers, faster lifts",
+  "heat": "0.2 + mt*9.81*vc/100000",
+  "idle_heat": "0.05",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 2
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Conservation Science",
+  "x": 18,
+  "y": 30,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:corrosion_science",
+    "theoreticalsciences:electrochemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:corroded_artefact",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 4
+    }
+  ],
+  "time": 240,
+  "description": "An iron object out of the ground is full of chloride. Left in the air it rusts from the inside and splits apart within years. Soaked in an alkaline bath, the chloride diffuses out of it; the bath is changed until none is left. Unlocks the Conservation Bath: Corroded Artefacts become Stabilised Artefacts.",
+  "icon": "theoreticalsciences:conservation_bath",
+  "puzzle": {
+    "goal": "A slab of thickness L soaks in a bath; the chloride in it, C₀ at first, diffuses out with diffusivity D. Write the chloride C left after a time t (the slowest mode of the diffusion).",
+    "name": "Desalination by diffusion",
+    "lhs": "C",
+    "form": "C0 * exp ( - π ^ 2 * D * t / L ^ 2 )",
+    "expr": "C0 * exp ( - π ^ 2 * D * t / L ^ 2 )",
+    "ask": "Find C in ppm for C₀ = @{C0} ppm, D = @{D} mm²/day, t = @{t} days and L = @{L} mm.",
+    "vars": {
+      "C": "chloride left",
+      "C0": "chloride at first",
+      "D": "diffusivity",
+      "t": "time",
+      "L": "thickness"
+    },
+    "given": {
+      "C0": 2000.0,
+      "D": 0.5,
+      "t": 20.0,
+      "L": 10.0
+    },
+    "unit": "ppm",
+    "method": "Fick's second law: the slowest mode of a slab decays as e^(−π²Dt/L²); the faster ones are long gone.",
+    "distractors": [
+      "ln",
+      "+",
+      "2"
+    ],
+    "vary": {
+      "t": [
+        5.0,
+        60.0,
+        5.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Integrated Information",
+  "x": 18,
+  "y": 20,
+  "insight": 360,
+  "requires": [
+    "theoreticalsciences:synaptic_plasticity",
+    "theoreticalsciences:linguistics",
+    "theoreticalsciences:superintelligence"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:synaptic_lattice",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:universal_grammar",
+      "count": 1
+    }
+  ],
+  "time": 600,
+  "description": "A mind is more than its parts: a network is conscious, on one theory, to the degree that it is both integrated (every part affects every other) and differentiated (its parts do different things). Integrated information Φ is low for a crystal, where everything does the same, and low for a heap of separate parts; it peaks between. Unlocks the Connectome Array, Engrams, and a cheaper Superintelligence Core.",
+  "icon": "theoreticalsciences:connectome_array",
+  "puzzle": {
+    "goal": "A toy network of n units, each joined to the rest with probability p. Its integration grows as 1 − e^(−n·p) and its differentiation falls as e^(−p·n/10). Write the toy Φ as their product times n.",
+    "name": "A toy Φ",
+    "lhs": "Φ",
+    "form": "n * ( 1 - exp ( - n * p ) ) * exp ( - p * n / 10 )",
+    "expr": "n * ( 1 - exp ( - n * p ) ) * exp ( - p * n / 10 )",
+    "ask": "Find Φ for n = @{n} units joined with p = @{p}.",
+    "vars": {
+      "Φ": "integrated information (toy)",
+      "n": "units",
+      "p": "connection probability"
+    },
+    "given": {
+      "n": 40.0,
+      "p": 0.05
+    },
+    "unit": "",
+    "method": "Each factor alone is a monotone curve; their product is a hump: Φ is largest for a sparse but connected net.",
+    "distractors": [
+      "+",
+      "ln",
+      "2"
+    ],
+    "vary": {
+      "p": [
+        0.02,
+        0.1,
+        0.01
+      ]
+    }
+  }
+}

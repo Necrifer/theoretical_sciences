@@ -73,6 +73,14 @@ public final class QHItems {
                 case "antibiotic" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.CleaningItem::antibiotic, p);
                 case "anomaly_ward" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.bio.VaccineItem::new, p);   // 1.2.0
                 case "symbiont_lining" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::symbiontLining, p);
+                case "synaptic_lattice" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::synapticLattice, p);   // 1.4.0
+                case "wear_coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::wearCoating, p);
+                case "visor" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.mind.LowLightVisorItem::new, p);
+                case "synthesis" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.endgame.FieldSynthesis.SynthesisItem::new, p);   // 1.7.0
+                case "survey_radar" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.archaeology.SurveyRadarItem::new, p.durability(256));   // 1.6.0
+                case "faraday_mesh" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::faradayMesh, p);   // 1.5.0
+                case "vestibular" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.medicine.MedicineItem::vestibular, p);
+                case "anti_inflammatory" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.medicine.MedicineItem::antiInflammatory, p);
                 case "probiotic_seal" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.UpgradeItem::probioticSeal, p);
                 case "tuning_fork" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.TuningForkItem::new, p);   // 1.2.0
                 case "calibration_card" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.machine.tuning.CalibrationCardItem::new, p);   // 1.2.0
@@ -113,6 +121,7 @@ public final class QHItems {
                 case "rebreather" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.RebreatherItem::new, p);
                 case "coating" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.titan.TitanGear.CoatingItem::new, p);
                 case "prussianblue" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.science.ScienceTools.PrussianBlue::new, p);
+                case "stage" -> ITEMS.registerItem(def.id(), com.theoreticalsciences.orbit.SpaceRegistry.TransferStageItem::new, p);   // 1.12.0
                 default -> ITEMS.registerItem(def.id(), LoreItem::new, p);
             };
             ALL.put(def.id(), holder);
@@ -123,6 +132,7 @@ public final class QHItems {
                 ITEMS.registerItem(type.id(), p -> new MachineBlockItem(block.get(), p, type),
                         new Item.Properties().rarity(type.isMultiblock() ? Rarity.EPIC : Rarity.RARE))));
         BLOCK_ITEMS.put("interface_port", ITEMS.registerSimpleBlockItem(QHBlocks.INTERFACE_PORT));
+        BLOCK_ITEMS.put("mana_port", ITEMS.registerSimpleBlockItem(QHBlocks.MANA_PORT));
         BLOCK_ITEMS.put("research_terminal", ITEMS.registerSimpleBlockItem(QHBlocks.RESEARCH_TERMINAL, new Item.Properties().rarity(Rarity.RARE)));
     }
 

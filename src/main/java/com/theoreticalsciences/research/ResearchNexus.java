@@ -55,6 +55,22 @@ public final class ResearchNexus {
         return null;
     }
 
+    /** 1.5.0: the Quantum Computer needs only that its owner is studying something. */
+    public static MachineStatus gateAny(ServerLevel level, UUID owner) {
+        if (owner == null) return MachineStatus.NO_ACTIVE_RESEARCH;
+        ResearchSavedData.Entry e = ResearchSavedData.get(level.getServer()).peek(owner);
+        return e == null || e.active == null ? MachineStatus.NO_ACTIVE_RESEARCH : null;
+    }
+
+    /** 1.5.0: each Grover search shortens the owner's current study by fifteen minutes. */
+    public static void quantum(ServerLevel level, UUID owner, int runs) {
+        if (owner == null) return;
+        int done = ResearchService.accelerate(level.getServer(), owner, 900 * Math.max(1, runs));
+        ServerPlayer p = level.getServer().getPlayerList().getPlayer(owner);
+        if (p != null && done > 0)
+            p.displayClientMessage(Component.translatable("message.theoreticalsciences.nexus_progress", ResearchService.formatTime(done)), true);
+    }
+
     public static void apply(ServerLevel level, UUID owner, QHRecipe r) {
         apply(level, owner, r, 1);
     }

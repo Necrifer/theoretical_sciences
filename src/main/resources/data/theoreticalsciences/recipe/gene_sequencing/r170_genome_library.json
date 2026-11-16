@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:gene_sequencing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:mammoth_genome",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:meganeura_genome",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:tomogram",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:genome_library",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 500,
+  "research": "theoreticalsciences:genomics",
+  "unscaled": true
+}

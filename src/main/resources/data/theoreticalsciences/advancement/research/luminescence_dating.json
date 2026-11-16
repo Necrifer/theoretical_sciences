@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:luminescence_reader"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.luminescence_dating"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.luminescence_dating.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/radiometric_dating",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

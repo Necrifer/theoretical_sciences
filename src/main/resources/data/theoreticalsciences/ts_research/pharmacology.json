@@ -1,0 +1,56 @@
+{
+  "title": "Pharmacology",
+  "x": 14,
+  "y": 28,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:pharmacokinetics",
+    "theoreticalsciences:enzyme_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ion_channel_membrane",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 4
+    }
+  ],
+  "time": 240,
+  "description": "A drug's effect rises with its dose along Hill's curve, E = D^n/(EC₅₀^n + D^n): nothing, then a steep rise, then a plateau. Toxicity follows its own curve at a higher dose; between the two lies the therapeutic window. Dose again before the last has cleared, and the level climbs out of the window. Unlocks the Dose-Response Assay: the Vestibular Suppressant and the Anti-Inflammatory.",
+  "icon": "theoreticalsciences:dose_response_assay",
+  "puzzle": {
+    "goal": "A drug acts on its receptors with a Hill coefficient n and a half-maximal dose EC₅₀. Write the fraction E of the full effect at dose D.",
+    "name": "The Hill equation",
+    "lhs": "E",
+    "form": "D ^ n / ( EC50 ^ n + D ^ n )",
+    "expr": "D ^ n / ( EC50 ^ n + D ^ n )",
+    "ask": "Find E for D = @{D} mg, EC₅₀ = @{EC50} mg and n = @{n}.",
+    "vars": {
+      "E": "fractional effect",
+      "D": "dose",
+      "EC50": "half-maximal dose",
+      "n": "Hill coefficient"
+    },
+    "given": {
+      "D": 30.0,
+      "EC50": 10.0,
+      "n": 2.0
+    },
+    "unit": "",
+    "method": "n molecules bind at once: occupancy is D^n over the sum of D^n and the dissociation constant EC₅₀^n.",
+    "distractors": [
+      "-",
+      "*",
+      "exp"
+    ],
+    "vary": {
+      "D": [
+        5.0,
+        60.0,
+        5.0
+      ]
+    }
+  }
+}

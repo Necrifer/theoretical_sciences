@@ -1,0 +1,25 @@
+{
+  "type": "theoreticalsciences:ice_core_drilling",
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:permafrost_sample",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:glaciology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "rref": 2.0
+    },
+    "windows": [
+      {
+        "q": "Tb",
+        "min": -100.0,
+        "max": -8.0
+      }
+    ]
+  }
+}

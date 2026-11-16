@@ -1,0 +1,57 @@
+{
+  "type": "theoreticalsciences:dose_response",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:mould_culture",
+      "count": 1
+    },
+    {
+      "item": "minecraft:sugar",
+      "count": 2
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:phosphate_buffer",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:antibiotic",
+      "count": 16
+    }
+  ],
+  "energy": 128,
+  "duration": 300,
+  "research": "theoreticalsciences:pharmacology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "EC": 30,
+      "TD": 2000,
+      "th": 4
+    },
+    "windows": [
+      {
+        "q": "E",
+        "min": 0.9,
+        "max": 1
+      },
+      {
+        "q": "Et",
+        "min": 0.5,
+        "max": 1
+      },
+      {
+        "q": "Tx",
+        "min": 0,
+        "max": 0.05
+      }
+    ]
+  }
+}

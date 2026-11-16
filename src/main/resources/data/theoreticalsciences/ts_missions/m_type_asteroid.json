@@ -1,0 +1,25 @@
+{
+  "name": "mission.theoreticalsciences.m_type_asteroid",
+  "delta_v": 9000,
+  "synodic_days": 15.6,
+  "penalty": 0.8,
+  "transfer_days": 1300,
+  "order": 12,
+  "research": "theoreticalsciences:asteroid_taxonomy",
+  "samples": [
+    {
+      "item": "theoreticalsciences:platinum_group_nugget",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 8
+    }
+  ],
+  "needs": [
+    {
+      "item": "theoreticalsciences:asteroid_ephemeris",
+      "count": 1
+    }
+  ]
+}

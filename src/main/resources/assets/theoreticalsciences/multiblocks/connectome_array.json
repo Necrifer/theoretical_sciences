@@ -1,0 +1,218 @@
+{
+  "controller_block": "theoreticalsciences:connectome_array",
+  "controller": "C",
+  "layers": [
+    [
+      "      PPP      ",
+      "    FFPFPFF    ",
+      "  FFFFFFFFFFF  ",
+      "  FFFFFFFFFFF  ",
+      " FFFFFFFFFFFFF ",
+      " FFFFFFFFFFFFF ",
+      "FFFFFFFFFFFFFFF",
+      "FFFFFFFFFFFFFFF",
+      "FFFFFFFFFFFFFFF",
+      " FFFFFFFFFFFFF ",
+      " FFFFFFFFFFFFF ",
+      "  FFFFFFFFFFF  ",
+      "  FFFFFFFFFFF  ",
+      "    FFFFFFF    ",
+      "      FFF      "
+    ],
+    [
+      "      FCG      ",
+      "    GFFAFFG    ",
+      "  FG       FG  ",
+      "  G         F  ",
+      " G           G ",
+      " F           F ",
+      "FF           FG",
+      "AA           AA",
+      "GF           FF",
+      " F           F ",
+      " G           G ",
+      "  F         G  ",
+      "  GF       GF  ",
+      "    GFFAFFG    ",
+      "      GAF      "
+    ],
+    [
+      "       A       ",
+      "    FFGAFGF    ",
+      "   FF     FG   ",
+      "  F         F  ",
+      " FF         GF ",
+      " F           F ",
+      " G           G ",
+      "AA           AA",
+      " F           F ",
+      " G           G ",
+      " FF         GF ",
+      "  G         F  ",
+      "   FG     GF   ",
+      "    FFGAFGF    ",
+      "       A       "
+    ],
+    [
+      "               ",
+      "     AASAA     ",
+      "   AAA   AAA   ",
+      "  AA       AA  ",
+      "  A         A  ",
+      " AA         AA ",
+      " A           A ",
+      " S           S ",
+      " A           A ",
+      " AA         AA ",
+      "  A         A  ",
+      "  AA       AA  ",
+      "   AAA   AAA   ",
+      "     AASAA     ",
+      "               "
+    ],
+    [
+      "               ",
+      "       A       ",
+      "    FFGAFGF    ",
+      "   FF     FG   ",
+      "  FF RRRR  FF  ",
+      "  F  R   RR G  ",
+      "  G R     R F  ",
+      " AA R  S  R AA ",
+      "  F R     R G  ",
+      "  G  R   R  F  ",
+      "  FF  RRR  FF  ",
+      "   GF     FF   ",
+      "    FGFAGFF    ",
+      "       A       ",
+      "               "
+    ],
+    [
+      "               ",
+      "               ",
+      "      FAG      ",
+      "    GFFAFFG    ",
+      "   GFF   GFF   ",
+      "   FF     FG   ",
+      "  FF       FF  ",
+      "  AA       AA  ",
+      "  GF       GF  ",
+      "   FG     GF   ",
+      "   GFF   GFF   ",
+      "    FGFAGFF    ",
+      "      FAF      ",
+      "               ",
+      "               "
+    ],
+    [
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "     GFAGF     ",
+      "    GFFAFFG    ",
+      "    FFGAFGF    ",
+      "    AAAAAAA    ",
+      "    GFFAFFG    ",
+      "    FFGAFGF    ",
+      "     GFAGF     ",
+      "               ",
+      "               ",
+      "               ",
+      "               "
+    ],
+    [
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               "
+    ],
+    [
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               ",
+      "               "
+    ]
+  ],
+  "key": {
+    "F": [
+      "theoreticalsciences:glial_scaffold"
+    ],
+    "P": [
+      "theoreticalsciences:glial_scaffold",
+      "theoreticalsciences:interface_port"
+    ],
+    "A": [
+      "theoreticalsciences:axon_bundle"
+    ],
+    "S": [
+      "theoreticalsciences:synapse_relay"
+    ],
+    "R": [
+      "theoreticalsciences:synapse_relay"
+    ],
+    "G": [
+      "theoreticalsciences:containment_field_glass"
+    ]
+  },
+  "tiers": {},
+  "effect_center": [
+    7,
+    4.5,
+    7
+  ],
+  "effect_scale": 3.0,
+  "moving": [
+    {
+      "id": "thought_ring",
+      "chars": "R",
+      "split": "none",
+      "pivot": "centre",
+      "ramp_seconds": 3,
+      "motion": [
+        {
+          "type": "spin",
+          "axis": "up",
+          "deg_per_sec": 24
+        }
+      ]
+    }
+  ],
+  "fx": [
+    {
+      "type": "glow",
+      "chars": "AS",
+      "color": "#B080E0",
+      "hot": "#FFE0FF"
+    },
+    {
+      "type": "inflow",
+      "radius": 4.5,
+      "color": "#C090FF",
+      "waves": 3,
+      "period": 2.0
+    }
+  ]
+}

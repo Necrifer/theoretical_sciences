@@ -9,6 +9,12 @@ public final class QHBlockSounds {
             case "aleph_glass", "bulk_crystal", "cherenkov_quartz_block", "corundum_crystal", "dilithium_block", "fractal_lattice_block",
                  "garnet_crystal", "hyperbolic_stone", "koch_crystal", "moissanite_crystal", "peridot_crystal", "polished_dilithium",
                  "titan_ice", "void_lattice_block" -> SoundType.AMETHYST;
+            // 1.12.0: polyethylene is a wax, and sounds like one; the test stand is steel, its trench refractory concrete
+            case "polyethylene_shielding" -> SoundType.CANDLE;
+            case "rectenna_panel" -> SoundType.COPPER;
+            case "active_magnetic_shield" -> SoundType.METAL;                // 1.14.0: a steel coil housing                        // 1.13.0: copper dipoles on a wire mesh
+            case "water_shield_tank", "test_stand_frame", "propellant_tank_block" -> SoundType.METAL;
+            case "flame_trench_block" -> SoundType.STONE;
             case "accretion_fragment_ore", "basalt_column", "oceanic_basalt", "rich_gold_ore", "rim_slag" -> SoundType.BASALT;
             case "arbor_planks", "arbor_planks_slab", "arbor_planks_stairs" -> SoundType.CHERRY_WOOD;
             case "deepslate_cherenkov_quartz_ore", "deepslate_pitchblende_ore", "stromatolite_ore" -> SoundType.DEEPSLATE;
@@ -20,6 +26,8 @@ public final class QHBlockSounds {
                  "radium_lamp", "stellar_lamp", "void_glass" -> SoundType.GLASS;
             case "antisoil", "frontier_regolith" -> SoundType.GRAVEL;
             case "hadal_ooze" -> SoundType.MUD;                  // 1.3.0
+            case "inscribed_glyph_stone", "glyph_stone_bricks" -> SoundType.DEEPSLATE_BRICKS;   // 1.4.0
+            case "archive_shelf" -> SoundType.CHISELED_BOOKSHELF;
             case "cosmic_ray_ore", "magnetar_crust_ore", "pulsar_crust", "pulsar_timing_ore" -> SoundType.METAL;
             case "dilithium_ore" -> SoundType.NETHER_ORE;
             case "abyssal_silicate", "anticarbon_ore", "antigold_ore", "antihydrogen_ice", "antiiron_ore", "antisilicon_ore",
@@ -38,6 +46,14 @@ public final class QHBlockSounds {
                  "void_bricks_slab", "void_bricks_stairs", "void_bricks_wall", "void_lattice_ore" -> SoundType.STONE;
             case "chondrite", "impact_breccia", "iron_meteorite" -> SoundType.TUFF;
             case "dust_cloud", "hydrogen_cloud", "oxygen_cloud" -> SoundType.WOOL;
+            case "annihilation_scar" -> SoundType.GLASS;          // 1.11.0
+            case "antihydrogen_firn" -> SoundType.SNOW;          // 1.11.0
+            case "spin_foam_mesh" -> SoundType.AMETHYST;          // 1.11.0
+            case "metastable_crust" -> SoundType.CALCITE;          // 1.11.0
+            case "stretched_rock" -> SoundType.DEEPSLATE;          // 1.11.0
+            case "blueshift_crust" -> SoundType.AMETHYST;          // 1.11.0
+            case "outflow_rock" -> SoundType.BASALT;          // 1.11.0
+            case "nucleosynthesis_crust" -> SoundType.TUFF;          // 1.11.0
             default -> null;
         };
     }

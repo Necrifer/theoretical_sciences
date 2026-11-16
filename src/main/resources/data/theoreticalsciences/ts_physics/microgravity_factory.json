@@ -1,0 +1,87 @@
+{
+  "params": [
+    {
+      "id": "dT",
+      "unit": "K",
+      "min": 1,
+      "max": 100,
+      "step": 0.5,
+      "default": 10
+    },
+    {
+      "id": "L",
+      "unit": "mm",
+      "min": 1,
+      "max": 40,
+      "step": 0.5,
+      "default": 8
+    },
+    {
+      "id": "enc",
+      "unit": "",
+      "min": 0,
+      "max": 0.95,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {
+    "beta": 0.0002,
+    "nu": 1e-06,
+    "alpha": 1.4e-07,
+    "sigT": 0.00015,
+    "mu": 0.001,
+    "Mac": 20000.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Ra",
+      "unit": "",
+      "expr": "grav*beta*dT*(L/1000)^3/(nu*alpha)*(1 + 0.01*d)",
+      "formula": "Ra = gβΔT·L³/(να): buoyancy against the damping"
+    },
+    {
+      "id": "Ma",
+      "unit": "",
+      "expr": "sigT*dT*(L/1000)/(mu*alpha)*(1 - enc)",
+      "formula": "Ma = (dσ/dT)·ΔT·L/(μα): the free surface pulling, less what the cap stops"
+    },
+    {
+      "id": "vg",
+      "unit": "mm/h",
+      "expr": "0.05*dT*(1 - 0.6*enc)",
+      "formula": "growth speed: faster with a steeper gradient, slower under a thick cap"
+    },
+    {
+      "id": "wid",
+      "unit": "mm",
+      "expr": "L",
+      "formula": "the crystal (or fibre preform) is as wide as the melt"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "buoy",
+      "kind": "stop",
+      "expr": "1708 - Ra",
+      "formula": "Ra under 1708, or the melt rolls over and stirs itself"
+    },
+    {
+      "id": "stri",
+      "kind": "wear",
+      "expr": "Mac - Ma",
+      "formula": "Ma under its critical value, or surface flow leaves striations"
+    }
+  ],
+  "rate": "clamp(0.05*dT*(1 - 0.6*enc)*L/12, 0.2, 1.5)",
+  "rate_formula": "a steeper gradient and a wider melt grow faster; a thick cap slows it",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

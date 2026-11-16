@@ -68,6 +68,14 @@ public final class QHSounds {
     /** Machines, casings and structure parts: servos and magnetic latches instead of netherite. */
     public static final net.minecraft.world.level.block.SoundType MACHINE = new net.neoforged.neoforge.common.util.DeferredSoundType(1.0F, 1.0F,
             MB_BREAK, MB_STEP, MB_PLACE, MB_HIT, MB_FALL);
+    private static final DeferredHolder<SoundEvent, SoundEvent>
+            CC_BREAK = s("choir_crystal.break"), CC_STEP = s("choir_crystal.step"), CC_PLACE = s("choir_crystal.place"),
+            CC_HIT = s("choir_crystal.hit"), CC_FALL = s("choir_crystal.fall");
+    /** 1.8.1: the Homeward Portal opening (the whole seven seconds of it). */
+    public static final DeferredHolder<SoundEvent, SoundEvent> HOME_PORTAL_OPEN = s("homeward_portal.open");
+    /** 1.8.1: the Choir Crystal Spire. Clear, high and ringing; nothing in it crunches. */
+    public static final net.minecraft.world.level.block.SoundType CHOIR_CRYSTAL = new net.neoforged.neoforge.common.util.DeferredSoundType(1.0F, 1.0F,
+            CC_BREAK, CC_STEP, CC_PLACE, CC_HIT, CC_FALL);
     /** Crystals and glass of the mod. */
     public static final net.minecraft.world.level.block.SoundType CRYSTAL = new net.neoforged.neoforge.common.util.DeferredSoundType(1.0F, 1.0F,
             CB_BREAK, CB_STEP, CB_PLACE, CB_HIT, CB_FALL);
@@ -79,26 +87,38 @@ public final class QHSounds {
             "nebuloid", "pulsar_wisp", "tidal_stretcher", "lens_phantom", "hawking_imp", "boltzmann_brain", "black_swan", "binary_serpent",
             "tholin_drifter", "catalyst_sprite", "methane_skater", "cryolava_slug", "ouroboros", "euclids_automaton", "paradox_shade", "tessellate", "fourier_wisp",
             "red_cell", "macrophage", "t_cell", "polymerase", "tumour_hydra", "vent_grazer", "ice_eel", "mirror_microbe", "brine_jelly", "vent_crab",
-            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental", "mammoth", "meganeura"};
+            "karman_wraith", "hadal_anglerfish", "siphonophore", "storm_elemental", "mammoth", "meganeura", "dreaming_colony", "rust_mite",
+            "halo_lamb", "cherub", "choir_seraph", "cloud_ray", "dweller", "threshold_warden"};       // 1.9.0
     private static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MOB = new java.util.HashMap<>();
 
     static {
         for (String m : NEW_MOBS) for (String k : new String[]{"ambient", "hurt", "death"}) MOB.put(m + "." + k, s(m + "." + k));
         MOB.put("mammoth.step", s("mammoth.step"));     // 1.3.0: the ground shakes
         // 1.3.0: each attack has its own sound, not the creature's hurt cry
-        for (String k : new String[]{"karman_wraith.gust", "storm_elemental.strike", "hadal_anglerfish.lunge", "siphonophore.sting", "mammoth.trumpet"})
+        for (String k : new String[]{"karman_wraith.gust", "storm_elemental.strike", "hadal_anglerfish.lunge", "siphonophore.sting", "mammoth.trumpet", "dreaming_colony.pulse", "rust_mite.chew",
+                "choir_seraph.sing", "threshold_warden.wake", "threshold_warden.strike"})
             MOB.put(k, s(k));
     }
 
     /** The soundtrack: one piece per dimension, the Living Proof, and Alpha Omega. */
     public static final String[] TRACKS = {"the_bulk", "hyperdimensional_reality", "platonic_realm", "quantum_foam", "transfinite_hierarchy",
             "black_hole_interior", "white_hole_interior", "transcendental", "living_proof", "alpha_omega", "antiverse",
-            "planetary_interior", "accretion_frontier", "titan", "the_elements", "the_axioms", "curved_space", "the_continuum", "inner_space", "orbital_station", "hadal_trench"};
+            "planetary_interior", "accretion_frontier", "titan", "the_elements", "the_axioms", "curved_space", "the_continuum", "inner_space", "orbital_station", "hadal_trench", "omnipotency"};
     public static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> MUSIC = new java.util.HashMap<>();
 
     static {
         for (String t : TRACKS)
             MUSIC.put(t, SOUNDS.register("music." + t, () -> SoundEvent.createVariableRangeEvent(TheoreticalSciences.id("music." + t))));
+    }
+
+    /** 1.5.1: the looping work sounds of running multiblocks (see client/MachineVoices and tools/sounds_work.py). */
+    public static final String[] WORK_VOICES = {"quantum", "cosmic", "instrument", "heavy", "chem", "math", "bio", "earth", "space",
+            "cryo", "turbine", "plasma", "void", "data"};
+    public static final java.util.Map<String, DeferredHolder<SoundEvent, SoundEvent>> WORK = new java.util.HashMap<>();
+
+    static {
+        for (String v : WORK_VOICES)
+            WORK.put(v, SOUNDS.register("machine.work." + v, () -> SoundEvent.createVariableRangeEvent(TheoreticalSciences.id("machine.work." + v))));
     }
 
     public static SoundEvent mob(String mob, String kind) {

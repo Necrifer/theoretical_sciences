@@ -1,0 +1,50 @@
+{
+  "type": "theoreticalsciences:synchrotron",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:charged_lattice_seed",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:photonic_board",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:maxwell_demon_chip",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:quark_gluon_plasma",
+      "amount": 8000
+    },
+    {
+      "fluid": "theoreticalsciences:superconducting_solder",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:coherent_field_beam",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 900,
+  "research": "theoreticalsciences:accelerator_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "m": 0.938,
+      "q": 1.0
+    },
+    "windows": [
+      {
+        "q": "Ek",
+        "min": 500.0,
+        "max": 700.0
+      }
+    ]
+  }
+}

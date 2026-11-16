@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:protein_folding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:folded_protein_crystal",
+      "count": 2
+    },
+    {
+      "item": "minecraft:rotten_flesh",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:prion_lattice",
+      "count": 3
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:protein_folding",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dH": 200.0,
+      "Tm": 340.0,
+      "mU": 5.0
+    },
+    "windows": [
+      {
+        "q": "fold",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

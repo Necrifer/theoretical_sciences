@@ -1,0 +1,36 @@
+{
+  "type": "theoreticalsciences:synaptic_training",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neural_organoid",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:neural_lattice",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:photonic_neuron",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:trained_cortex",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 600,
+  "research": "theoreticalsciences:synaptic_plasticity",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "w",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

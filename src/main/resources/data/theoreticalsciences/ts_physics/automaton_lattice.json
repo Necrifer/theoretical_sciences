@@ -1,0 +1,68 @@
+{
+  "params": [
+    {
+      "id": "lam",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.005,
+      "default": 0.5
+    },
+    {
+      "id": "Ls",
+      "unit": "log",
+      "min": 2,
+      "max": 8,
+      "step": 0.1,
+      "default": 3
+    },
+    {
+      "id": "p0",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.5
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Cx",
+      "unit": "",
+      "expr": "exp(-((lam - 0.27)/0.06)^2)*(1 - 0.01*d)",
+      "formula": "complexity: Langton's edge of chaos"
+    },
+    {
+      "id": "rep",
+      "unit": "",
+      "expr": "exp(-((lam - 0.27)/0.06)^2)*clamp(Ls - 4, 0, 1)*(1 - abs(p0 - 0.3))",
+      "formula": "a constructor fits and copies itself"
+    },
+    {
+      "id": "cells",
+      "unit": "",
+      "expr": "10^Ls",
+      "formula": "cells in the lattice"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "heat",
+      "kind": "wear",
+      "expr": "7.5 - Ls",
+      "formula": "under 10^7.5 cells: more overheats the lattice"
+    }
+  ],
+  "rate": "clamp(6/Ls, 0.4, 1.5)",
+  "rate_formula": "bigger lattices are slower",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

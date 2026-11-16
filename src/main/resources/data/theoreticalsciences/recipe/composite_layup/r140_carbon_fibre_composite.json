@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:composite_layup",
+  "item_inputs": [
+    {
+      "item": "minecraft:coal",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:carbon_fibre_composite",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "research": "theoreticalsciences:composite_materials",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ef": 230,
+      "rf": 1.8,
+      "Em": 3.5,
+      "rm": 1.2
+    },
+    "windows": [
+      {
+        "q": "S",
+        "min": 80,
+        "max": 1000
+      },
+      {
+        "q": "q",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

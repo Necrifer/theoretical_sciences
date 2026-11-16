@@ -33,14 +33,18 @@ public final class OrbitHazards {
     static final double GRAVITY_FACTOR = 0.10, JUMP_FACTOR = 1.0, FALL_FACTOR = 0.0;
     /** The recipe that docks a module (data/theoreticalsciences/recipe/orbital_launch/r103_station_module.json). */
     static final ResourceLocation MODULE_RECIPE = TheoreticalSciences.id("orbital_launch/r103_station_module");
+    /** 1.4.0: the same module carried up the Space Elevator's tether. */
+    static final ResourceLocation MODULE_LIFT = TheoreticalSciences.id("elevator_lift/r140_station_module");
 
     @SubscribeEvent
     public static void onTick(PlayerTickEvent.Post e) {
         if (!(e.getEntity() instanceof ServerPlayer p)) return;
         boolean here = p.level().dimension() == QHDimensions.ORBITAL_STATION && !p.isSpectator();
-        mod(p.getAttribute(Attributes.GRAVITY), here, GRAVITY_FACTOR - 1);
-        mod(p.getAttribute(Attributes.JUMP_STRENGTH), here, JUMP_FACTOR - 1);
-        mod(p.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER), here, FALL_FACTOR - 1);
+        // 1.13.0: by a Habitat Ring Module your weight comes back
+        boolean free = here && !SpaceModules.nearRing(p);
+        mod(p.getAttribute(Attributes.GRAVITY), free, GRAVITY_FACTOR - 1);
+        mod(p.getAttribute(Attributes.JUMP_STRENGTH), free, JUMP_FACTOR - 1);
+        mod(p.getAttribute(Attributes.FALL_DAMAGE_MULTIPLIER), free, FALL_FACTOR - 1);
         if (!here || p.isCreative()) return;
         if (p.isOnFire()) p.clearFire();                       // nothing burns in vacuum
         if (OrbitBuilder.inside(p.blockPosition()) || suited(p)) return;
@@ -54,9 +58,21 @@ public final class OrbitHazards {
             p.displayClientMessage(Component.translatable("message.theoreticalsciences.orbit_vacuum").withStyle(ChatFormatting.RED), true);
     }
 
+    /** 1.10.0: armour of other mods that seals against vacuum (Ad Astra's space suits by default; packs may add their own). */
+    public static final net.minecraft.tags.TagKey<net.minecraft.world.item.Item> VACUUM_SUITS =
+            net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM, TheoreticalSciences.id("vacuum_suits"));
+
     static boolean suited(Player p) {
-        return InteriorGear.pieces(p, InteriorGear.Suit.PRESSURE) + InteriorGear.pieces(p, InteriorGear.Suit.HEATED)
-                + InteriorGear.pieces(p, InteriorGear.Suit.FRONTIER) >= 4;
+        int n = 0;
+        for (net.minecraft.world.entity.EquipmentSlot slot : new net.minecraft.world.entity.EquipmentSlot[]{
+                net.minecraft.world.entity.EquipmentSlot.HEAD, net.minecraft.world.entity.EquipmentSlot.CHEST,
+                net.minecraft.world.entity.EquipmentSlot.LEGS, net.minecraft.world.entity.EquipmentSlot.FEET}) {
+            var st = p.getItemBySlot(slot);
+            if (st.is(VACUUM_SUITS) || (st.getItem() instanceof InteriorGear.SuitItem si
+                    && (si.suit == InteriorGear.Suit.PRESSURE || si.suit == InteriorGear.Suit.HEATED || si.suit == InteriorGear.Suit.FRONTIER || si.suit == InteriorGear.Suit.SPACEFARER)))
+                n++;
+        }
+        return n >= 4;                                         // any mix of sealed pieces, one per slot
     }
 
     static void mod(AttributeInstance a, boolean on, double amount) {
@@ -68,7 +84,7 @@ public final class OrbitHazards {
 
     @SubscribeEvent
     public static void onLaunch(MachineRecipeEvent.Finish e) {
-        if (!MODULE_RECIPE.equals(e.getRecipeId()) || e.getMachine().getLevel() == null || e.getMachine().getLevel().getServer() == null) return;
+        if (!(MODULE_RECIPE.equals(e.getRecipeId()) || MODULE_LIFT.equals(e.getRecipeId())) || e.getMachine().getLevel() == null || e.getMachine().getLevel().getServer() == null) return;
         var server = e.getMachine().getLevel().getServer();
         int n = OrbitData.get(server).addModule();
         if (e.getMachine().getOwner() != null && server.getPlayerList().getPlayer(e.getMachine().getOwner()) instanceof ServerPlayer owner)
@@ -79,6 +95,7 @@ public final class OrbitHazards {
     @SubscribeEvent
     public static void onReload(AddReloadListenerEvent e) {
         e.addListener(Destinations.INSTANCE);
+        e.addListener(Missions.INSTANCE);        // 1.12.0
     }
 
     private OrbitHazards() {}

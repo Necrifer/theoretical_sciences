@@ -1,0 +1,49 @@
+{
+  "type": "theoreticalsciences:orbital_launch",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ice_core",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_oxygen",
+      "amount": 20000
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_hydrogen",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:survey_probe",
+      "count": 1
+    }
+  ],
+  "energy": 8192,
+  "duration": 600,
+  "research": "theoreticalsciences:rocketry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ipk": 450.0,
+      "rpk": 5.0,
+      "rs": 8.0,
+      "mp": 20.0,
+      "drq": 9400.0
+    },
+    "windows": [
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

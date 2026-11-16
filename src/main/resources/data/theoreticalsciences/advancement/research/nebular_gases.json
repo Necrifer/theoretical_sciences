@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:helium_3_cell"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.nebular_gases"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.nebular_gases.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/ramscoops",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

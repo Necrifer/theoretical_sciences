@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:habitat_spin",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:humus",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:mycorrhizal_inoculant",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:living_soil",
+      "count": 8
+    }
+  ],
+  "energy": 262144,
+  "duration": 2400,
+  "research": "theoreticalsciences:rotating_habitats",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "rhoh": 1600,
+      "sy": 1500
+    },
+    "windows": [
+      {
+        "q": "a",
+        "min": 9.3,
+        "max": 10.3
+      }
+    ]
+  }
+}

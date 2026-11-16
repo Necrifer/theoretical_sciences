@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:pattern_forming",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:physarum_culture",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rational_field",
+      "count": 1
+    },
+    {
+      "item": "minecraft:slime_ball",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:network_map",
+      "count": 3
+    }
+  ],
+  "energy": 512,
+  "duration": 240,
+  "research": "theoreticalsciences:reaction_diffusion",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "spacing",
+        "min": 1.5,
+        "max": 2.0
+      },
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 999.0
+      }
+    ]
+  }
+}

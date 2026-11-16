@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:ammonia_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:iron_catalyst",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 3000
+    },
+    {
+      "fluid": "theoreticalsciences:nitrogen",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:ammonia",
+      "amount": 2400
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:chemical_equilibrium",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "y",
+        "min": 0.15,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:iron_catalyst"
+    }
+  ]
+}

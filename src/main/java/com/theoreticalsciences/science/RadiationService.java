@@ -230,7 +230,8 @@ public final class RadiationService {
         if (!(e.getEntity() instanceof ServerPlayer p) || (p.tickCount + p.getId()) % 20 != 0 || p.isSpectator()) return;
         ServerLevel level = p.serverLevel();
         double[] ar = aroundParts(level, p);
-        Reading r = new Reading(carried(p), ar[0], backgroundMicroSvPerHour(level, p.blockPosition()) / 3.6e6, ar[1]);
+        Reading r = new Reading(carried(p), ar[0], (backgroundMicroSvPerHour(level, p.blockPosition()) + com.theoreticalsciences.orbit.SpaceShelter.stormMicroSvPerHour(p))
+                / 3.6e6, ar[1]);
         LAST.put(p.getUUID(), r);
         double rate = r.total();
         if (rate > 1e-6 && QHConfig.RADIATION_SHARE.get()) RadiationCompat.share(p, r.carried() + r.around() - r.fromMachines(), r.fromMachines());

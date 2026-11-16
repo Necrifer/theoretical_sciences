@@ -1,0 +1,55 @@
+{
+  "title": "Comets",
+  "x": 26,
+  "y": 10,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:asteroid_taxonomy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:asteroid_regolith",
+      "count": 2
+    },
+    {
+      "item": "minecraft:packed_ice",
+      "count": 4
+    }
+  ],
+  "time": 360,
+  "description": "Comets are the leftovers of the outer solar system: ice, dust and organic molecules, kept cold since the planets formed. Jupiter-family comets were thrown inward by Jupiter and come round every few years; long-period comets fall in from the Oort cloud, far out. One number from the orbit, Tisserand's parameter, tells which: between 2 and 3, Jupiter's family. Rosetta found comet 67P's water three times richer in deuterium than our oceans; Stardust found glycine, an amino acid, in comet Wild 2's dust. Unlocks a comet mission.",
+  "icon": "theoreticalsciences:cometary_dust",
+  "puzzle": {
+    "goal": "For an orbit of semi-major axis a and eccentricity e in Jupiter's plane, write Tisserand's parameter T with respect to Jupiter, whose semi-major axis is aJ.",
+    "name": "Tisserand parameter",
+    "lhs": "T",
+    "form": "aJ / a + 2 * sqrt ( a / aJ * ( 1 - e ^ 2 ) )",
+    "expr": "aJ / a + 2 * sqrt ( a / aJ * ( 1 - e ^ 2 ) )",
+    "ask": "Find T for aJ = 5.2 AU, a = @{a} AU and e = 0.64 (comet 67P).",
+    "vars": {
+      "T": "Tisserand parameter",
+      "aJ": "Jupiter's semi-major axis",
+      "a": "semi-major axis",
+      "e": "eccentricity"
+    },
+    "given": {
+      "aJ": 5.2,
+      "a": 3.46,
+      "e": 0.64
+    },
+    "unit": "",
+    "method": "In the frame turning with Jupiter, the Jacobi constant is kept through an encounter; far from Jupiter it reduces to this.",
+    "distractors": [
+      "-",
+      "*",
+      "ln"
+    ],
+    "vary": {
+      "a": [
+        2.5,
+        30.0,
+        0.1
+      ]
+    }
+  }
+}

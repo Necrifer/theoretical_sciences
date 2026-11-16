@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:ancient_dna",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:dated_bone",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:tomogram",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mammoth_genome",
+      "count": 1
+    }
+  ],
+  "energy": 512,
+  "duration": 600,
+  "research": "theoreticalsciences:medical_imaging",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "lam": 0.02,
+      "Gs": 3300000000.0,
+      "mol0": 3000000000.0,
+      "c0": 0.3
+    },
+    "windows": [
+      {
+        "q": "Cv",
+        "min": 10.0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

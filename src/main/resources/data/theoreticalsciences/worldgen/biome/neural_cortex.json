@@ -1,0 +1,58 @@
+{
+  "has_precipitation": false,
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "effects": {
+    "sky_color": 9072816,
+    "fog_color": 13154528,
+    "water_color": 14207216,
+    "water_fog_color": 9469104,
+    "particle": {
+      "options": {
+        "type": "minecraft:end_rod"
+      },
+      "probability": 0.0015
+    },
+    "music": {
+      "sound": "theoreticalsciences:music.inner_space",
+      "min_delay": 600,
+      "max_delay": 2400,
+      "replace_current_music": true
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "theoreticalsciences:dreaming_colony",
+        "weight": 8,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "creature": [
+      {
+        "type": "theoreticalsciences:red_cell",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [
+      "theoreticalsciences:neuron_arbor"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

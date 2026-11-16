@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:elevator_lift",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:survey_probe",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:tether_spool",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:orbital_survey",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:space_elevator",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Sp": 60
+    },
+    "windows": [
+      {
+        "q": "tm",
+        "min": 1.0,
+        "max": 1.5
+      }
+    ]
+  }
+}

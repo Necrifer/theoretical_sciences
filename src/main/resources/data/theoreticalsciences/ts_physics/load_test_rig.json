@@ -1,0 +1,101 @@
+{
+  "params": [
+    {
+      "id": "h",
+      "unit": "mm",
+      "min": 50,
+      "max": 600,
+      "step": 5,
+      "default": 150
+    },
+    {
+      "id": "tf",
+      "unit": "mm",
+      "min": 4,
+      "max": 40,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "id": "Lm",
+      "unit": "m",
+      "min": 1,
+      "max": 12,
+      "step": 0.5,
+      "default": 6
+    }
+  ],
+  "recipe_vars": {
+    "Pk": 500,
+    "Eg": 200
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "b",
+      "unit": "mm",
+      "expr": "h/2",
+      "formula": "flange width"
+    },
+    {
+      "id": "I",
+      "unit": "mm⁴",
+      "expr": "(b*h^3 - (b - tf/2)*(h - 2*tf)^3)/12",
+      "formula": "second moment of the I-section"
+    },
+    {
+      "id": "Ar",
+      "unit": "mm²",
+      "expr": "2*b*tf + (h - 2*tf)*tf/2",
+      "formula": "section area"
+    },
+    {
+      "id": "Pcr",
+      "unit": "kN",
+      "expr": "9.8696*Eg*I/(1000*Lm)^2",
+      "formula": "P = π²EI/L²"
+    },
+    {
+      "id": "SF",
+      "unit": "",
+      "expr": "Pcr/(Pk*(1 + 0.02*d))",
+      "formula": "safety factor against buckling"
+    },
+    {
+      "id": "sig",
+      "unit": "MPa",
+      "expr": "Pk*1000/Ar",
+      "formula": "direct stress σ = P/A"
+    },
+    {
+      "id": "kg",
+      "unit": "kg",
+      "expr": "0.00785*Ar*Lm",
+      "formula": "mass of the beam"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "yield",
+      "kind": "stop",
+      "expr": "250 - Pk*1000/Ar",
+      "formula": "σ < 250 MPa: steel yields"
+    },
+    {
+      "id": "heavy",
+      "kind": "wear",
+      "expr": "400 - 0.00785*Ar*Lm",
+      "formula": "under 400 kg on the rig"
+    }
+  ],
+  "rate": "clamp(150/(0.00785*Ar*Lm), 0.2, 1.5)",
+  "rate_formula": "lighter beams test faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

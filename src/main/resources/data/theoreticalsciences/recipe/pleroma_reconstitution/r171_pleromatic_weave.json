@@ -1,0 +1,94 @@
+{
+  "type": "theoreticalsciences:pleroma_reconstitution",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:reality_anchor",
+      "count": 4
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:perennial_catalyst_matrix",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:living_archive",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:engineered_mind",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:compiled_law",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:lex_prima",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:breach_shard",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:pure_concept_ingot",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:diagonal_ingot",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:distilled_axiom",
+      "count": 3
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:pleroma",
+      "amount": 16000
+    }
+  ],
+  "energy": 2000000000,
+  "duration": 1800,
+  "research": "theoreticalsciences:the_rekindling",
+  "physics": {
+    "vars": {
+      "F0": 1.6
+    },
+    "windows": [
+      {
+        "q": "A",
+        "min": 0.6,
+        "max": 1.01
+      },
+      {
+        "q": "Pe",
+        "min": 16.7,
+        "max": 39.8
+      }
+    ]
+  },
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pleromatic_weave",
+      "count": 1
+    }
+  ],
+  "unscaled": true
+}

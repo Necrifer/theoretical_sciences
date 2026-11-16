@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:gradient_descent",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:function_graph",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:derivative_operator",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:random_number_chip",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:optimised_pathway",
+      "count": 2
+    }
+  ],
+  "energy": 768,
+  "duration": 300,
+  "research": "theoreticalsciences:topology_optimisation",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "lam": 8.0,
+      "tol": 0.001
+    },
+    "windows": [
+      {
+        "q": "err",
+        "min": -1.0,
+        "max": 0.001
+      }
+    ]
+  }
+}

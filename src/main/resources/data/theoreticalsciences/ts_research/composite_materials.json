@@ -1,0 +1,56 @@
+{
+  "title": "Composite Materials",
+  "x": 21,
+  "y": 10,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:structural_mechanics",
+    "theoreticalsciences:nanotechnology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rated_i_beam",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:carbon_nanotube_bundle",
+      "count": 1
+    }
+  ],
+  "time": 240,
+  "description": "Stiff fibres in a light matrix: along the fibres, the composite is as stiff as the mixture of the two by volume (the rule of mixtures, E = V_f·E_f + V_m·E_m), and far lighter than metal. Off the fibre direction it is weak, so plies are laid at angles; pack the fibres too tight and the matrix cannot wet them, and voids weaken it. Unlocks the Composite Layup Press: carbon-fibre and nanotube composites.",
+  "icon": "theoreticalsciences:composite_layup_press",
+  "puzzle": {
+    "goal": "Fibres of modulus E_f fill a fraction V_f of a part; the rest is matrix of modulus E_m. Along the fibres both stretch alike. Write the part's modulus E.",
+    "name": "The rule of mixtures",
+    "lhs": "E",
+    "form": "V_f * E_f + ( 1 - V_f ) * E_m",
+    "expr": "Vf * Ef + ( 1 - Vf ) * Em",
+    "ask": "Find E in GPa for V_f = @{Vf}, E_f = @{Ef} GPa and E_m = @{Em} GPa.",
+    "vars": {
+      "E": "composite modulus",
+      "V_f": "fibre volume fraction",
+      "E_f": "fibre modulus",
+      "E_m": "matrix modulus"
+    },
+    "given": {
+      "Vf": 0.6,
+      "Ef": 230.0,
+      "Em": 3.5
+    },
+    "unit": "GPa",
+    "method": "Equal strain in both: the stresses add, each weighted by the share of the section it carries.",
+    "distractors": [
+      "/",
+      "V_m",
+      "2"
+    ],
+    "vary": {
+      "Vf": [
+        0.3,
+        0.7,
+        0.05
+      ]
+    }
+  }
+}

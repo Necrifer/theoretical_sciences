@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:propulsion_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:graphene_sheet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:noble_gas_clathrate",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ion_thruster_grid",
+      "count": 1
+    }
+  ],
+  "energy": 16384,
+  "duration": 800,
+  "research": "theoreticalsciences:electric_propulsion",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 131,
+      "g": 1.67,
+      "ion": 1,
+      "Tmax": 3600
+    },
+    "windows": [
+      {
+        "q": "Isp",
+        "min": 2800,
+        "max": 3600
+      }
+    ]
+  }
+}

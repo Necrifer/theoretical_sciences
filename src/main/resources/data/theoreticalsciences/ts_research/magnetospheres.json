@@ -1,0 +1,54 @@
+{
+  "title": "Magnetospheres",
+  "x": 28,
+  "y": 8,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:solar_magnetism",
+    "theoreticalsciences:magnetic_confinement"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:ferrite_magnet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:survey_satellite",
+      "count": 1
+    }
+  ],
+  "time": 360,
+  "description": "Earth's field holds off the solar wind: the boundary, the magnetopause, stands where the wind's pressure equals the field's, about ten Earth radii sunward. Inside it, charged particles spiral along the field lines and bounce between the poles, where the field grows stronger and turns them back: a magnetic mirror. That is what holds the Van Allen belts. Only particles moving nearly along the field, inside the loss cone, escape into the air as aurorae. Adds a magnetic mirror to the Pulsed Magnet Lab; unlocks a probe to the belts and the Active Magnetic Shield.",
+  "icon": "theoreticalsciences:active_magnetic_shield",
+  "puzzle": {
+    "goal": "A particle spiralling along a field line keeps its magnetic moment, so the field B where it is and the strongest field Bm it can turn back from fix the pitch angle α it must have to be trapped. Write sin α at the edge of the loss cone.",
+    "name": "Loss cone",
+    "lhs": "sinα",
+    "form": "sqrt ( B / Bm )",
+    "expr": "sqrt ( B / Bm )",
+    "ask": "Find sin α for B = @{B} nT at the equator of a field line and Bm = 50000 nT at its foot.",
+    "vars": {
+      "sinα": "sine of the loss-cone angle",
+      "B": "field where it is",
+      "Bm": "field at the mirror point"
+    },
+    "given": {
+      "B": 500.0,
+      "Bm": 50000.0
+    },
+    "unit": "",
+    "method": "μ = mv⊥²/2B is kept and so is the speed: sin²α/B is the same everywhere, and at the mirror point α = 90°.",
+    "distractors": [
+      "*",
+      "2",
+      "ln"
+    ],
+    "vary": {
+      "B": [
+        100.0,
+        5000.0,
+        50.0
+      ]
+    }
+  }
+}

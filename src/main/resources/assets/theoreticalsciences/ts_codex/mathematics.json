@@ -2282,6 +2282,44 @@
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
       ]
+    },
+    {
+      "entry": "mathematics/chaos_theory",
+      "x": 3,
+      "y": 83,
+      "parents": []
+    },
+    {
+      "entry": "mathematics/knot_theory",
+      "x": 5,
+      "y": 83,
+      "parents": [
+        "mathematics/chaos_theory"
+      ]
+    },
+    {
+      "entry": "mathematics/cellular_automata",
+      "x": 5,
+      "y": 85,
+      "parents": [
+        "mathematics/chaos_theory"
+      ]
+    },
+    {
+      "entry": "mathematics/complexity_theory",
+      "x": 7,
+      "y": 85,
+      "parents": [
+        "mathematics/cellular_automata"
+      ]
+    },
+    {
+      "entry": "mathematics/quantum_computing",
+      "x": 9,
+      "y": 85,
+      "parents": [
+        "mathematics/complexity_theory"
+      ]
     }
   ],
   "regions": [
@@ -2324,6 +2362,14 @@
       "x1": 136.5,
       "y0": 68,
       "y1": 79.5
+    },
+    {
+      "tier": 5,
+      "label": "Patterns & Computation",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 81.5,
+      "y1": 86.5
     }
   ]
 }

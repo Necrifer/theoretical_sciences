@@ -49,6 +49,18 @@
     {
       "item": "theoreticalsciences:superconducting_coil",
       "count": 128
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:engineered_mind",
+      "components": {
+        "theoreticalsciences:synthesis_level": 1
+      },
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:dyson_lattice_panel",
+      "count": 1
     }
   ],
   "fluid_inputs": [
@@ -95,11 +107,11 @@
       {
         "q": "ratio",
         "min": 3.3,
-        "max": 1000.0
+        "max": 3.58
       },
       {
         "q": "lgPe",
-        "min": -1000.0,
+        "min": -867.0,
         "max": -9.0
       }
     ]

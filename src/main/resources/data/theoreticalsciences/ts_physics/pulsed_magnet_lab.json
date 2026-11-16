@@ -25,7 +25,9 @@
       "default": 10
     }
   ],
-  "recipe_vars": {},
+  "recipe_vars": {
+    "B0": 0.0
+  },
   "consts": [],
   "states": [],
   "derived": [
@@ -39,13 +41,19 @@
       "id": "Bf",
       "unit": "T",
       "expr": "0.0012566*N*I*(1 + 0.02*d)/Lc",
-      "formula": "B = \u03bc\u2080NI/L"
+      "formula": "B = μ₀NI/L"
     },
     {
       "id": "dT",
       "unit": "K",
       "expr": "0.0004*N*I^2*t/size",
-      "formula": "\u0394T \u221d NI\u00b2t"
+      "formula": "ΔT ∝ NI²t"
+    },
+    {
+      "id": "lc",
+      "unit": "°",
+      "expr": "57.296*atan(sqrt(clamp(B0/max(Bf, 0.01), 0, 0.999))/sqrt(1 - clamp(B0/max(Bf, 0.01), 0, 0.999)))",
+      "formula": "loss cone of a mirror from B0 to the peak field: sin²α = B0/Bf"
     }
   ],
   "constraints": [
@@ -53,7 +61,7 @@
       "id": "melt",
       "kind": "damage",
       "expr": "400 - dT",
-      "formula": "\u0394T < 400 K"
+      "formula": "ΔT < 400 K"
     },
     {
       "id": "burst",

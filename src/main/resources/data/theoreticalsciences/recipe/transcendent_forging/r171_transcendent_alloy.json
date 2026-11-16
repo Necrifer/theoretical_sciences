@@ -1,0 +1,114 @@
+{
+  "type": "theoreticalsciences:transcendent_forging",
+  "min_tier": 5,
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:hypernova_alloy_ingot",
+      "count": 64
+    },
+    {
+      "item": "theoreticalsciences:transcendent_metal_ingot",
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:unified_field_lattice",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:perennial_catalyst_matrix",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "type": "neoforge:components",
+      "items": "theoreticalsciences:planetary_survey",
+      "components": {
+        "theoreticalsciences:synthesis_level": 2
+      },
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:compiled_law",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:lex_prima",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:breach_shard",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:pure_concept_ingot",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:diagonal_ingot",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:distilled_axiom",
+      "count": 3
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hypernova_plasma",
+      "amount": 16000
+    },
+    {
+      "fluid": "theoreticalsciences:causal_solder",
+      "amount": 9216
+    },
+    {
+      "fluid": "theoreticalsciences:liquid_spacetime",
+      "amount": 4000
+    },
+    {
+      "fluid": "theoreticalsciences:neutrino_flux",
+      "amount": 4000
+    },
+    {
+      "fluid": "theoreticalsciences:antihydrogen",
+      "amount": 4000
+    }
+  ],
+  "energy": 16777216,
+  "duration": 4000,
+  "research": "theoreticalsciences:stellar_transcendence",
+  "environment": {
+    "gravity_min": 1000,
+    "time_min": 10
+  },
+  "physics": {
+    "vars": {
+      "EG": 22460.0,
+      "Cf": 3.2e-17,
+      "Ef": 8.7,
+      "fch": 1.0,
+      "Zf": 3.0
+    },
+    "windows": [
+      {
+        "q": "Tp",
+        "min": 300.0,
+        "max": 600.0
+      }
+    ]
+  },
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:transcendent_alloy",
+      "count": 1
+    }
+  ],
+  "unscaled": true
+}

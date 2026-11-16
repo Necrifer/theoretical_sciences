@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:causality_loop",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:stratigraphic_timeline",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:tachyon_crystal",
+      "count": 4
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:chronon_gas",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:deep_record",
+      "count": 1
+    }
+  ],
+  "energy": 1048576,
+  "duration": 1200,
+  "research": "theoreticalsciences:causality_violation",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "loop",
+        "min": 10.0,
+        "max": 60.0
+      }
+    ]
+  }
+}

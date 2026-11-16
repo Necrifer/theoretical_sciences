@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:catalyst_regeneration",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:chelated_catalyst",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:knotted_polymer",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:perennial_catalyst_matrix",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 600,
+  "research": "theoreticalsciences:heterogeneous_catalysis",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Rr",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

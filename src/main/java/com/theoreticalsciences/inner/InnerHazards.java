@@ -66,7 +66,8 @@ public final class InnerHazards {
             "tissue", new String[]{"macrophage", "macrophage", "red_cell"},
             "lymph_node", new String[]{"t_cell", "t_cell", "macrophage"},
             "nucleus", new String[]{"polymerase", "polymerase", "t_cell"},
-            "tumour", new String[]{"macrophage", "t_cell"});
+            "tumour", new String[]{"macrophage", "t_cell"},
+            "neural_cortex", new String[]{"dreaming_colony", "dreaming_colony", "macrophage"});     // 1.4.0
 
     @SubscribeEvent
     public static void onTick(PlayerTickEvent.Post e) {
@@ -171,12 +172,13 @@ public final class InnerHazards {
         if (kinds == null) return;
         String kind = kinds[r.nextInt(kinds.length)];
         boolean wet = !level.getFluidState(pos.below()).isEmpty();
-        if (kind.equals("red_cell") != wet && !kind.equals("macrophage")) return;     // red cells live in the plasma, the others on the ground
+        if (kind.equals("red_cell") != wet && !kind.equals("macrophage") && !kind.equals("dreaming_colony")) return;     // red cells live in the plasma, the others on the ground
         boolean hostile = !kind.equals("red_cell") && !kind.equals("polymerase");
         if (hostile && level.getDifficulty() == net.minecraft.world.Difficulty.PEACEFUL) return;
         var type = net.minecraft.core.registries.BuiltInRegistries.ENTITY_TYPE.get(TheoreticalSciences.id(kind));
         if (!(type.create(level) instanceof Mob m)) return;
-        m.moveTo(x + 0.5, wet ? y - 0.5 : y, z + 0.5, r.nextFloat() * 360, 0);
+        boolean floats = kind.equals("dreaming_colony");                              // 1.4.0: it drifts, a few blocks up
+        m.moveTo(x + 0.5, wet ? y - 0.5 : floats ? y + 3 : y, z + 0.5, r.nextFloat() * 360, 0);
         if (!level.noCollision(m)) return;
         m.finalizeSpawn(level, level.getCurrentDifficultyAt(pos), MobSpawnType.NATURAL, null);
         level.addFreshEntity(m);

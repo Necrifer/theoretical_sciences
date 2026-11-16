@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:debris_sweeper"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.orbital_debris"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.orbital_debris.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/satellite_orbits",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

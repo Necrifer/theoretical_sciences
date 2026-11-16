@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:habitat_spin",
+  "item_inputs": [
+    {
+      "item": "minecraft:wheat",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:living_soil",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:field_ration",
+      "count": 24
+    }
+  ],
+  "energy": 65536,
+  "duration": 1200,
+  "research": "theoreticalsciences:rotating_habitats",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "rhoh": 1600,
+      "sy": 1500
+    },
+    "windows": [
+      {
+        "q": "a",
+        "min": 9.3,
+        "max": 10.3
+      }
+    ]
+  }
+}

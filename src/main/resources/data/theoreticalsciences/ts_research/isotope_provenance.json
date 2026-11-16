@@ -1,0 +1,56 @@
+{
+  "title": "Isotope Provenance",
+  "x": 20,
+  "y": 30,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:mass_spectrometry",
+    "theoreticalsciences:conservation_science"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:stabilised_artefact",
+      "count": 1
+    },
+    {
+      "item": "minecraft:quartz",
+      "count": 8
+    }
+  ],
+  "time": 300,
+  "description": "Every ore body and every landscape carries its own ratio of strontium or lead isotopes, and that ratio passes unchanged into the metal smelted from it and the bones of those who ate from it. Measure the ratio in a find and it tells where it came from, or how much came from each of two sources. Unlocks the Isotope Provenancer.",
+  "icon": "theoreticalsciences:isotope_provenancer",
+  "puzzle": {
+    "goal": "A find mixes metal from two sources with isotope ratios Ra and Rb; its own ratio is R. Write the fraction f that came from source a.",
+    "name": "Two-source mixing",
+    "lhs": "f",
+    "form": "( R - Rb ) / ( Ra - Rb )",
+    "expr": "( R - Rb ) / ( Ra - Rb )",
+    "ask": "Find f for R = @{R}, Ra = 0.712 and Rb = 0.708.",
+    "vars": {
+      "f": "fraction from source a",
+      "R": "ratio in the find",
+      "Ra": "ratio of source a",
+      "Rb": "ratio of source b"
+    },
+    "given": {
+      "R": 0.7095,
+      "Ra": 0.712,
+      "Rb": 0.708
+    },
+    "unit": "",
+    "method": "The ratio is a weighted mean: R = f·Ra + (1 − f)·Rb. Solve for f.",
+    "distractors": [
+      "*",
+      "+",
+      "ln"
+    ],
+    "vary": {
+      "R": [
+        0.7085,
+        0.7115,
+        0.0005
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "title": "Dendrochronology",
+  "x": 16,
+  "y": 30,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:statistics",
+    "theoreticalsciences:plant_physiology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:charred_beam",
+      "count": 2
+    },
+    {
+      "item": "minecraft:oak_log",
+      "count": 8
+    }
+  ],
+  "time": 240,
+  "description": "A tree lays down a ring a year, wide in good years and narrow in bad, and every tree in a region keeps the same pattern. Slide a beam's rings along a master chronology until the patterns match, and its outermost ring is dated to the year it was felled. The match is tested by correlation: Baillie and Pilcher's t. Unlocks the Tree-Ring Correlator.",
+  "icon": "theoreticalsciences:tree_ring_correlator",
+  "puzzle": {
+    "goal": "A beam's ring widths correlate with the master chronology with coefficient r over n overlapping years. Write Student's t for that correlation.",
+    "name": "The cross-dating t",
+    "lhs": "t",
+    "form": "r * sqrt ( ( n - 2 ) / ( 1 - r ^ 2 ) )",
+    "expr": "r * sqrt ( ( n - 2 ) / ( 1 - r ^ 2 ) )",
+    "ask": "Find t for r = @{r} over n = @{n} years.",
+    "vars": {
+      "t": "Student's t",
+      "r": "correlation",
+      "n": "overlapping years"
+    },
+    "given": {
+      "r": 0.6,
+      "n": 80.0
+    },
+    "unit": "",
+    "method": "The correlation measured over n pairs is tested against no match at all: t has n − 2 degrees of freedom.",
+    "distractors": [
+      "+",
+      "*",
+      "exp"
+    ],
+    "vary": {
+      "r": [
+        0.3,
+        0.8,
+        0.05
+      ],
+      "n": [
+        30.0,
+        200.0,
+        10.0
+      ]
+    }
+  }
+}

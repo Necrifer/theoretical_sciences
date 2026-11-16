@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:asymmetric_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chiral_crystal",
+      "count": 3
+    }
+  ],
+  "energy": 256,
+  "duration": 100,
+  "research": "theoreticalsciences:asymmetric_synthesis",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dG": 7000.0,
+      "Ea": 30000.0
+    },
+    "windows": [
+      {
+        "q": "ee",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:chiral_ligand"
+    }
+  ]
+}

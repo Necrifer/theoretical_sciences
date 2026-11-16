@@ -1,0 +1,54 @@
+{
+  "title": "Radiation Pressure",
+  "x": 26,
+  "y": 8,
+  "insight": 300,
+  "requires": [
+    "theoreticalsciences:satellite_orbits",
+    "theoreticalsciences:electromagnetic_induction"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:light_sail",
+      "count": 1
+    },
+    {
+      "item": "minecraft:glowstone_dust",
+      "count": 4
+    }
+  ],
+  "time": 320,
+  "description": "Light carries momentum: a beam of power P pushes on what absorbs it with a force P/c, and twice that on a mirror, since the light bounces back. Sunlight at Earth pushes on a square metre with about the weight of a grain of sand, but in space nothing pushes back, so a sail light enough keeps gaining speed. Nichols and Hull measured it with a torsion balance in 1901; JAXA's IKAROS sailed to Venus on it in 2010. A sail pushed by a laser array instead of the Sun could reach a fifth of the speed of light, if it does not melt. Unlocks the Radiation Pressure Balance.",
+  "icon": "theoreticalsciences:radiation_pressure_balance",
+  "puzzle": {
+    "goal": "Light of power P, carrying momentum P/c each second, falls straight onto a perfect mirror and bounces back. Write the force F on the mirror.",
+    "name": "Light pressure",
+    "lhs": "F",
+    "form": "2 * P / c",
+    "expr": "2 * P / c",
+    "ask": "Find F in newtons for P = @{P} W and c = 3e8 m/s.",
+    "vars": {
+      "F": "force",
+      "P": "power",
+      "c": "speed of light"
+    },
+    "given": {
+      "P": 1000.0,
+      "c": 300000000.0
+    },
+    "unit": "N",
+    "method": "The momentum per second arriving is P/c; it leaves with the same, reversed, so the change is 2P/c.",
+    "distractors": [
+      "*",
+      "+",
+      "sqrt"
+    ],
+    "vary": {
+      "P": [
+        10.0,
+        10000.0,
+        10.0
+      ]
+    }
+  }
+}

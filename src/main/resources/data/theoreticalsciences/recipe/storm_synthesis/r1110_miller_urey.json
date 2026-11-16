@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:storm_synthesis",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:methane",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:ammonia",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 250
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:amino_acid_mixture",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 200,
+  "research": "theoreticalsciences:meteorology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "fref": 2.0
+    },
+    "windows": [
+      {
+        "q": "fl",
+        "min": 2.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

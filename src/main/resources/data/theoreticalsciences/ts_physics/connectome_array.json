@@ -1,0 +1,74 @@
+{
+  "params": [
+    {
+      "id": "Ln",
+      "unit": "log",
+      "min": 3,
+      "max": 11,
+      "step": 0.1,
+      "default": 6
+    },
+    {
+      "id": "p",
+      "unit": "",
+      "min": 0.001,
+      "max": 0.5,
+      "step": 0.001,
+      "default": 0.2
+    },
+    {
+      "id": "Q",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.2
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "fp",
+      "unit": "",
+      "expr": "(1 - exp(-50*p))*exp(-4*p)",
+      "formula": "integration × sparseness"
+    },
+    {
+      "id": "Phi",
+      "unit": "",
+      "expr": "Ln*4*Q*(1 - Q)*fp*(1 - 0.01*d)",
+      "formula": "Φ ≈ log n · 4Q(1−Q) · f(p): integrated and differentiated"
+    },
+    {
+      "id": "Pw",
+      "unit": "MW",
+      "expr": "10^(Ln - 9)*p*40",
+      "formula": "power to run the connections"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "power",
+      "kind": "wear",
+      "expr": "20 - 10^(Ln - 9)*p*40",
+      "formula": "P < 20 MW"
+    },
+    {
+      "id": "seizure",
+      "kind": "damage",
+      "expr": "0.3 - p*(1 - Q)",
+      "formula": "a dense, unmodular net seizes"
+    }
+  ],
+  "rate": "clamp(Phi/6, 0.2, 1.5)",
+  "rate_formula": "more Φ, faster mapping",
+  "heat": "0.5 + 10^(Ln - 9)*p*4",
+  "idle_heat": "0.1",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

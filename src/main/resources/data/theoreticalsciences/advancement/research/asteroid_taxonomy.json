@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:platinum_group_nugget"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.asteroid_taxonomy"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.asteroid_taxonomy.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/sample_return",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

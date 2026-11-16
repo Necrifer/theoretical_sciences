@@ -1,0 +1,25 @@
+{
+  "name": "mission.theoreticalsciences.comet",
+  "delta_v": 11000,
+  "synodic_days": 14.6,
+  "penalty": 0.7,
+  "transfer_days": 2000,
+  "order": 13,
+  "research": "theoreticalsciences:comets",
+  "samples": [
+    {
+      "item": "theoreticalsciences:cometary_ice",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:cometary_dust",
+      "count": 4
+    }
+  ],
+  "needs": [
+    {
+      "item": "theoreticalsciences:asteroid_ephemeris",
+      "count": 1
+    }
+  ]
+}

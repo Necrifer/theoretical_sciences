@@ -1,0 +1,64 @@
+{
+  "params": [
+    {
+      "id": "n",
+      "unit": "years",
+      "min": 20,
+      "max": 300,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "id": "lag",
+      "unit": "years",
+      "min": -40,
+      "max": 40,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "id": "dt",
+      "unit": "years",
+      "min": 10,
+      "max": 300,
+      "step": 5,
+      "default": 100
+    }
+  ],
+  "recipe_vars": {
+    "L0": 17,
+    "rho": 0.7
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "m",
+      "unit": "",
+      "expr": "exp(-((lag - L0)/2)^2)",
+      "formula": "match: the patterns line up"
+    },
+    {
+      "id": "r",
+      "unit": "",
+      "expr": "rho*exp(-((lag - L0)/2)^2)*(1 - exp(-dt/30))*exp(-dt/600)*(1 - 0.01*d)",
+      "formula": "correlation after detrending"
+    },
+    {
+      "id": "t",
+      "unit": "",
+      "expr": "rho*exp(-((lag - L0)/2)^2)*(1 - exp(-dt/30))*exp(-dt/600)*sqrt((n - 2)/(1 - (rho*exp(-((lag - L0)/2)^2)*(1 - exp(-dt/30))*exp(-dt/600))^2))",
+      "formula": "Student's t = r·√((n − 2)/(1 − r²))"
+    }
+  ],
+  "constraints": [],
+  "rate": "clamp(100/n, 0.3, 1.5)",
+  "rate_formula": "shorter overlaps match faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

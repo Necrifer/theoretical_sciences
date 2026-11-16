@@ -9,7 +9,10 @@ public enum MachineStatus {
     NO_ACTIVE_RESEARCH(0x8899AA), DOSSIER_TOO_WEAK(0xFF9040), WRONG_ENVIRONMENT(0xC060FF), WRONG_DIMENSION(0xFF60C0),
     QUENCHED(0xFF5020), UNSTABLE(0xFF8040), OVERHEATING(0xFF3010), OUT_OF_WINDOW(0xFFC040), NEEDS_OMEGA(0xFF2060),
     TRANSCENDENTAL_STANDS(0xFFC040), TRANSCENDENTAL_COLLAPSING(0xFF8040), ALREADY_REKINDLED(0xC0A060),
-    NOT_YET_FORGED(0xFFC040), CONTAMINATED(0x90C040);
+    NOT_YET_FORGED(0xFFC040), CONTAMINATED(0x90C040),
+    NO_MANA(0x40C8FF), NO_AURA(0x70E080),          // 1.7.3: a recipe that draws on Botania's mana or Nature's Aura's aura
+    NO_VIS(0xB070FF), NO_ASPECTS(0xD0A0FF), NO_LUMEN(0x80B0FF),
+    NO_BEAM(0x60C8FF);          // 1.13.0: a Microwave Rectenna with no Power Satellite to feed it          // 1.11.0: Thaumaturge's vis and aspects, Astral Sorcery's Lumen          // 1.7.3: a recipe that draws on Botania's mana or Nature's Aura's aura
 
     public final int color;
 

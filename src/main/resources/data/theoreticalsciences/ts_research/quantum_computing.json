@@ -1,0 +1,53 @@
+{
+  "title": "Quantum Computing",
+  "x": 22,
+  "y": 26,
+  "insight": 420,
+  "requires": [
+    "theoreticalsciences:complexity_theory",
+    "theoreticalsciences:quantum_entanglement",
+    "theoreticalsciences:error_correction"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:qubit_die",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:zero_knowledge_proof",
+      "count": 2
+    }
+  ],
+  "time": 600,
+  "description": "A register of n qubits holds all 2ⁿ of its values at once; a quantum algorithm makes the wrong answers cancel. Grover's search finds one marked item among N in about (π/4)·√N steps, where a classical search needs N/2; but every gate must be faultless enough that the whole circuit keeps its coherence, so the qubits are cooled to a hundredth of a degree. Unlocks the Quantum Computer: each run shortens your current study by fifteen minutes.",
+  "icon": "theoreticalsciences:quantum_computer",
+  "puzzle": {
+    "goal": "Grover's search among N items needs about (π/4)·√N oracle calls. Write the speed-up S over a classical search, which needs N/2 on average.",
+    "name": "Grover's speed-up",
+    "lhs": "S",
+    "form": "( N / 2 ) / ( π / 4 * sqrt ( N ) )",
+    "expr": "( N / 2 ) / ( π / 4 * sqrt ( N ) )",
+    "ask": "Find S for N = @{N} items.",
+    "vars": {
+      "S": "speed-up",
+      "N": "items searched"
+    },
+    "given": {
+      "N": 1000000.0
+    },
+    "unit": "×",
+    "method": "Divide the classical expected count by the quantum one; it grows as √N.",
+    "distractors": [
+      "N",
+      "*",
+      "ln"
+    ],
+    "vary": {
+      "N": [
+        10000.0,
+        100000000.0,
+        10000.0
+      ]
+    }
+  }
+}

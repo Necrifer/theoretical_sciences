@@ -107,6 +107,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         w[4] = wet ? 1 : 0;
         w[5] = worldPosition.getY();
         w[6] = noisyNeighbours(level);
+        w[7] = com.theoreticalsciences.orbit.SpaceModules.gravity(level);     // 1.13.0
     }
 
     /**
@@ -162,7 +163,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     /** 1.2.0: a Symbiont Lining repairs the catalysts as they work: they wear 40% slower. */
     @Override
     protected double wearScale() {
-        return "symbiont_lining".equals(upgradeKind()) ? 0.6 : 1.0;
+        String k = upgradeKind();
+        return "wear_coating".equals(k) ? 0.5 : "symbiont_lining".equals(k) ? 0.6 : 1.0;
     }
 
     public String upgradeKind() {
@@ -304,11 +306,11 @@ public class ControllerBlockEntity extends MachineBlockEntity {
                 }
                 if (precision.knows(rp) && !physics.stopped() && physics.windowIdx < 0)
                     v = precision.of(com.theoreticalsciences.machine.tuning.Precision.quantities(m, physics),
-                            "stability_margin".equals(upgradeKind()) ? 2.0 : 1.0);
+                            "stability_margin".equals(upgradeKind()) ? 2.0 : "synaptic_lattice".equals(upgradeKind()) ? 1.5 : 1.0);
             }
         } else if (tuningProfile() != null && !tuning.faulted)
             v = com.theoreticalsciences.machine.tuning.Precision.ofDial(tuning.setting, tuning.target,
-                    "stability_margin".equals(upgradeKind()) ? 2.0 : 1.0);
+                    "stability_margin".equals(upgradeKind()) ? 2.0 : "synaptic_lattice".equals(upgradeKind()) ? 1.5 : 1.0);
         if (Math.abs(v - precision.value) > 0.005) {
             precision.value = v;
             markSync();
@@ -418,7 +420,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
 
     /** Extra products per cycle: precision, plus a Rate Table (which goes past perfect). */
     public double productBonus() {
-        return precision.bonus() + ("rate_table".equals(upgradeKind()) ? 0.2 : 0);
+        return precision.bonus() + ("rate_table".equals(upgradeKind()) ? 0.2 : "synaptic_lattice".equals(upgradeKind()) ? 0.1 : 0);
     }
 
     @Override
@@ -696,8 +698,13 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     protected double speedFactor() {
         double coil = coilSpeed();
         int oc = overclockNow();
-        if (hasPhysics()) return (1 << oc) * physics.rate * coil;   // the physics says how well it is running
-        return tuningProfile() == null ? coil : (1 << oc) * tuning.efficiency() * coil;
+        // 1.5.0: a geomagnetic storm upsets the controls of every console and multiblock in the Overworld (but not under a Faraday Mesh)
+        double storm = level == null ? 1.0 : com.theoreticalsciences.helio.SpaceWeather.factor(level, upgradeKind());
+        // 1.12.0: a storm is a gust of solar wind, and the Ram Scoop gathers more of it
+        if (type == com.theoreticalsciences.machine.MachineType.BUSSARD_RAMSCOOP && level != null && level.getServer() != null
+                && com.theoreticalsciences.helio.SpaceWeather.raging(level.getServer())) storm *= 1.5;
+        if (hasPhysics()) return (1 << oc) * physics.rate * coil * storm;   // the physics says how well it is running
+        return tuningProfile() == null ? coil * storm : (1 << oc) * tuning.efficiency() * coil * storm;
     }
 
     @Override
@@ -736,6 +743,12 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     protected int parallelCount() {
         // (a save from before a /reload that lowered the limit may hold more than is allowed now)
         return tuningProfile() == null ? 1 : Math.max(1, Math.min(tuning.parallel, maxParallel()));
+    }
+
+    @Override
+    protected MachineStatus generatorGate(ServerLevel level, com.theoreticalsciences.recipe.QHRecipe r) {
+        if (type == MachineType.MICROWAVE_RECTENNA && !com.theoreticalsciences.orbit.SpaceModules.claimBeam(level, worldPosition)) return MachineStatus.NO_BEAM;
+        return null;
     }
 
     @Override
@@ -1246,6 +1259,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             if (ps != null) return ps;
         }
         if (type == MachineType.RESEARCH_NEXUS) return com.theoreticalsciences.research.ResearchNexus.gate(level, owner, r);
+        if (type == MachineType.QUANTUM_COMPUTER) return com.theoreticalsciences.research.ResearchNexus.gateAny(level, owner);   // 1.5.0
         // 1.3.6: the Eschaton Foundry repeats only what its owner has forged by hand in the Core's Forge
         if (type == MachineType.ESCHATON_FOUNDRY) {
             for (var o : r.itemOutputs)
@@ -1373,6 +1387,11 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         // the Research Nexus: every dossier fed in counts, so parallel runs speed the research up that many times
         if (type == MachineType.RESEARCH_NEXUS) {
             com.theoreticalsciences.research.ResearchNexus.apply(level, owner, recipe, runs);
+            return;
+        }
+        // 1.5.0: the Quantum Computer searches the space of proofs for its owner: Grover's speed-up, fifteen minutes a run
+        if (type == MachineType.QUANTUM_COMPUTER) {
+            com.theoreticalsciences.research.ResearchNexus.quantum(level, owner, runs);
             return;
         }
         onRecipeFinished(level, recipe);

@@ -154,6 +154,22 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.ICE_CORE_DRILL, "rotation_speed", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 2);
         p(MachineType.STORM_CHAMBER, "charge_separation", Drift.JUMP, 0.8F, 2, 4, Hazard.MAGNETIC, 4);
         p(MachineType.HYDROPONIC_TOWER, "light_intensity", Drift.OSCILLATE, 0.4F, 2, 4, Hazard.CHEMICAL, 1);
+        p(MachineType.CONNECTOME_ARRAY, "synaptic_gain", Drift.WALK, 0.5F, 2, 4, Hazard.MAGNETIC, 2);      // 1.4.0
+        p(MachineType.SPACE_ELEVATOR, "tether_tension", Drift.OSCILLATE, 0.6F, 2, 4, Hazard.THERMAL, 3);
+        p(MachineType.ONEILL_CYLINDER, "spin_rate", Drift.WALK, 0.4F, 2, 4, Hazard.THERMAL, 2);
+        p(MachineType.STELLAR_ENGINE, "mirror_attitude", Drift.JUMP, 0.8F, 2, 4, Hazard.THERMAL, 6);
+        p(MachineType.QUANTUM_COMPUTER, "coherence", Drift.JUMP, 0.6F, 2, 4, Hazard.MAGNETIC, 3);       // 1.5.0
+        p(MachineType.CT_SCANNER, "gantry_alignment", Drift.OSCILLATE, 0.4F, 1, 3, Hazard.THERMAL, 1);
+        p(MachineType.BLOOMERY_SHAFT, "blast_draught", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);           // 1.6.0
+        p(MachineType.PROPULSION_TEST_STAND, "mixture_ratio", Drift.WALK, 0.6F, 2, 5, Hazard.THERMAL, 4);    // 1.12.0
+        p(MachineType.MICROGRAVITY_FACTORY, "g_jitter", Drift.WALK, 0.4F, 1, 3, Hazard.THERMAL, 2);          // 1.13.0
+        p(MachineType.MICROWAVE_RECTENNA, "beam_pointing", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);
+        p(MachineType.RADIATION_PRESSURE_BALANCE, "fibre_drift", Drift.WALK, 0.3F, 1, 3, Hazard.THERMAL, 2);   // 1.14.0
+        p(MachineType.CANTOR_DIAGONALIZER, "diagonal_index", Drift.JUMP, 1.2F, 1, 2, Hazard.SPATIAL, 9);        // 1.7.1: now multiblocks
+        p(MachineType.AXIOM_DISTILLER, "reflux_ratio", Drift.WALK, 1.0F, 1, 2, Hazard.SPATIAL, 9);
+        p(MachineType.CONVERGENCE_ENGINE, "altar_phase", Drift.OSCILLATE, 1.0F, 1, 2, Hazard.SPATIAL, 8);
+        p(MachineType.PLEROMA_CONFLUENCE, "confluence_balance", Drift.WALK, 1.4F, 1, 1, Hazard.SPATIAL, 12);
+        p(MachineType.PHOTOGRAMMETRY_GANTRY, "camera_baseline", Drift.OSCILLATE, 0.3F, 1, 3, Hazard.THERMAL, 1);
     }
 
     /** The profiles with a datapack's changes applied (data/<ns>/ts_machines), rebuilt when that data changes. */

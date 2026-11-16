@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:automaton_growth",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:strange_attractor",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:undecidable_kernel",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:von_neumann_constructor",
+      "count": 2
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:cellular_automata",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "rep",
+        "min": 0.85,
+        "max": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "params": [
+    {
+      "id": "f",
+      "unit": "MHz",
+      "min": 50,
+      "max": 1600,
+      "step": 10,
+      "default": 250
+    },
+    {
+      "id": "Pw",
+      "unit": "W",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "er": 9
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "v",
+      "unit": "m/ns",
+      "expr": "0.3/sqrt(er)",
+      "formula": "v = c/√εr"
+    },
+    {
+      "id": "res",
+      "unit": "m",
+      "expr": "75/(f*sqrt(er))*(1 + 0.01*d)",
+      "formula": "resolution: a quarter wavelength"
+    },
+    {
+      "id": "reach",
+      "unit": "m",
+      "expr": "30*sqrt(Pw/10)/(1 + f/400)",
+      "formula": "reach: power against attenuation, which grows with frequency"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "burn",
+      "kind": "wear",
+      "expr": "80 - Pw",
+      "formula": "under 80 W, or the transmitter overheats"
+    }
+  ],
+  "rate": "clamp(f/400, 0.3, 1.5)",
+  "rate_formula": "higher frequencies tune faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

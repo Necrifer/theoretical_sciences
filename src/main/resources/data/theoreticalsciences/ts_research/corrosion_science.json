@@ -1,0 +1,48 @@
+{
+  "title": "Corrosion Science",
+  "x": 21,
+  "y": 12,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:tribology",
+    "theoreticalsciences:electrochemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "count": 4
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 16
+    }
+  ],
+  "time": 240,
+  "description": "Rust is a battery shorted out: iron gives up electrons where it dissolves, oxygen takes them where it does not. Whether iron corrodes, rusts over and stops (passivity) or cannot corrode at all (immunity) depends on its potential and the pH: Pourbaix's map. Chloride punches through the passive film, so sea water is worst. Hold a structure below its immunity line with a less noble metal, and that metal dissolves instead: a sacrificial anode. Unlocks the Corrosion Cell, Sacrificial Anodes and Passivated Plate.",
+  "icon": "theoreticalsciences:corrosion_cell",
+  "puzzle": {
+    "goal": "Iron dissolves as Fe → Fe²⁺ + 2e⁻ (standard potential E⁰). Write its equilibrium potential E when the iron ions in the water have concentration c (Nernst, at 25 °C, in volts).",
+    "name": "The Nernst equation for iron",
+    "lhs": "E",
+    "form": "E0 + 0.0296 * ln ( c ) / ln ( 10 )",
+    "expr": "E0 + 0.0296 * ln ( c ) / ln ( 10 )",
+    "ask": "Find E in volts for E⁰ = −0.44 V and c = @{c} mol/L.",
+    "vars": {
+      "E": "equilibrium potential",
+      "E0": "standard potential",
+      "c": "concentration of Fe²⁺"
+    },
+    "given": {
+      "E0": -0.44,
+      "c": 1e-06
+    },
+    "unit": "V",
+    "method": "E = E⁰ + (RT/nF)·ln c; with n = 2 at 25 °C, RT/2F·ln 10 = 0.0296 V per decade.",
+    "distractors": [
+      "*",
+      "2",
+      "exp"
+    ],
+    "vary": {}
+  }
+}

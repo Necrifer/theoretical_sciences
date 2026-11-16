@@ -27,7 +27,8 @@ public enum TransitStyle {
     INNER("inner_space", 0x1A0408, 0xE04060, 0xFFC0D0, 0xFFE0E8, 0xC08090, false),
     TITAN_OCEAN("titan_ocean", 0x020C12, 0x40C0D0, 0xA0FFF0, 0xD0F8FF, 0x6090A0, false),
     ORBITAL_STATION("orbital_station", 0x01030A, 0x60A8FF, 0xFFE0A0, 0xE0ECFF, 0x8098B8, false),   // 1.3.0
-    HADAL_TRENCH("hadal_trench", 0x00050A, 0x2080A0, 0x80FFE0, 0xC8F0F8, 0x5888A0, false);
+    HADAL_TRENCH("hadal_trench", 0x00050A, 0x2080A0, 0x80FFE0, 0xC8F0F8, 0x5888A0, false),
+    OMNIPOTENCY("omnipotency", 0xFFF6DC, 0xE8B040, 0xFFFFFF, 0x4A3810, 0x806830, true);                 // 1.8.0: the one bright place
 
     public final String id;
     public final int bg, ink, accent, title, subtitle;
