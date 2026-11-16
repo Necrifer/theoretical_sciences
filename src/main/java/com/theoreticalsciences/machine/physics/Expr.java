@@ -21,6 +21,10 @@ import java.util.Map;
 public abstract class Expr {
     public abstract double eval(double[] env);
 
+    /** 1.16.0: the slots this expression reads (so the console can say what a quantity is built from). */
+    public void vars(java.util.Set<Integer> out) {
+    }
+
     public static Expr parse(String src, Map<String, Integer> slots) {
         P p = new P(lex(src), slots, src);
         Expr e = p.expr();
@@ -190,6 +194,11 @@ public abstract class Expr {
         }
 
         @Override
+        public void vars(java.util.Set<Integer> out) {
+            out.add(slot);
+        }
+
+        @Override
         public double eval(double[] env) {
             return env[slot];
         }
@@ -203,6 +212,12 @@ public abstract class Expr {
             this.a = a;
             this.b = b;
             this.op = op;
+        }
+
+        @Override
+        public void vars(java.util.Set<Integer> out) {
+            a.vars(out);
+            b.vars(out);
         }
 
         @Override
@@ -225,6 +240,11 @@ public abstract class Expr {
         Fn(String f, Expr[] args) {
             this.f = f;
             this.args = args;
+        }
+
+        @Override
+        public void vars(java.util.Set<Integer> out) {
+            for (Expr e : args) e.vars(out);
         }
 
         @Override

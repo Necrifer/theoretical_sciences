@@ -5,6 +5,8 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public final class QHConfig {
     public static final ModConfigSpec COMMON_SPEC;
     public static final ModConfigSpec CLIENT_SPEC;
+    /** 1.16.0: show every machine's equations from the start instead of after its first watched cycle. */
+    public static final ModConfigSpec.BooleanValue EQUATIONS_AT_ONCE;
 
     public static final ModConfigSpec.DoubleValue ENERGY_COST_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue GENERATOR_OUTPUT_MULTIPLIER;
@@ -144,6 +146,10 @@ public final class QHConfig {
         ANIMATION_DISTANCE = c.comment("How far away (blocks, to the nearest edge of the effect) animated multiblocks are still drawn.").defineInRange("animationDistance", 256, 32, 1024);
         ANIMATION_FREEZE_DISTANCE = c.comment("Beyond this distance (blocks) animated parts are still drawn, but stop moving.").defineInRange("animationFreezeDistance", 160, 16, 1024);
         MOVING_PARTS_COMPAT = c.comment("Draw multiblocks' moving parts through the game's own block buffers (slower) instead of from cached buffers on the graphics card. Only for a mod that moves block entities about (it is used anyway with Sable installed). Takes effect when resources are next reloaded (F3+T) or the world is rejoined.").define("movingPartsCompatibility", false);
+        c.pop();
+        c.push("learning");
+        EQUATIONS_AT_ONCE = c.comment("1.16.0: a machine's console first explains its quantities in words, and shows the equations behind them after you have watched it finish one cycle. Turn on to see every equation from the start.")
+                .define("showEquationsAtOnce", false);
         c.pop();
         CLIENT_SPEC = c.build();
     }

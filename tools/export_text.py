@@ -103,6 +103,25 @@ for n, tab in enumerate(order, 2):
                  'intro': intro, 'tab': {'key': 'codextab:%s#description' % tab, 'text': T.get('description', '')},
                  'sections': [{'heading': title, 'entries': entries}]})
 print('codex entries placed', len(placed), 'of', len(E))
+# 1.16.0: the "In plain words" drafts, a file of their own, in the order of the tabs
+plain = []
+for tab in order:
+    for node in TABS[tab].get('nodes', []):
+        eid = node['entry']
+        if home.get(eid) != tab or 'plain' not in E.get(eid, {}) or any(x['id'] == 'codex:' + eid for x in plain):
+            continue
+        pl = E[eid]['plain']
+        plain.append({'name': '%s  (%s)' % (E[eid].get('title', eid), TABS[tab].get('name', tab)), 'id': 'codex:' + eid, 'parts': [
+            {'label': 'In plain words', 'key': 'codex:%s#plain.line' % eid, 'text': pl.get('line', '')},
+            {'label': 'It is like', 'key': 'codex:%s#plain.like' % eid, 'text': pl.get('like', '')},
+            {'label': 'Where the comparison breaks', 'key': 'codex:%s#plain.breaks' % eid, 'text': pl.get('breaks', '')}]})
+if plain:
+    docs.append({'file': '%02d Codex - Plain words (draft).docx' % (len(docs) + 1), 'title': 'Theoretical Sciences Codex: In plain words (draft)',
+                 'intro': ['Drafts of the new first page of each entry: one plain sentence with no symbols, an everyday comparison, '
+                           'and where that comparison stops being true. The hardest subjects come first (sets and infinities, '
+                           'imaginary and higher numbers, quantum physics, general relativity). Rewrite freely; the grey key under '
+                           'each text is how it is read back in.'],
+                 'sections': [{'heading': 'In plain words', 'entries': plain}]})
 json.dump(docs, open(os.path.join(out, 'export.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 for d in docs:
     print(d['file'], sum(len(s['entries']) for s in d['sections']), 'entries',

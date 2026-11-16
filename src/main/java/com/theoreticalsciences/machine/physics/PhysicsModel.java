@@ -167,6 +167,21 @@ public final class PhysicsModel {
         return -1;
     }
 
+    /**
+     * 1.16.0: the names an expression is built from, in the model's own order (parameters first, then the rest), so the
+     * console can say in words what each piece of an equation is.
+     */
+    public List<String> uses(Expr e) {
+        java.util.Set<Integer> used = new java.util.TreeSet<>();
+        e.vars(used);
+        List<String> out = new ArrayList<>();
+        for (Param p : params) if (used.contains(p.slot())) out.add(p.id());
+        for (Map.Entry<String, Integer> me : slots.entrySet())      // what the model defines, then the world's built-ins
+            if (me.getValue() >= BUILTINS.length && used.contains(me.getValue()) && !out.contains(me.getKey())) out.add(me.getKey());
+        for (int b = 0; b < BUILTINS.length; b++) if (used.contains(b)) out.add(BUILTINS[b]);
+        return out;
+    }
+
     /** Value of any name in an evaluated environment (for recipe windows). NaN if unknown. */
     public double value(double[] env, String id) {
         Integer s = slots.get(id);

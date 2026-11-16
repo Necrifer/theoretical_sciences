@@ -242,6 +242,7 @@ public final class PhysicsPanel {
         smooth.frame();
         PhysicsModel m = model();
         TuningState s = be.tuning;
+        watchCycle();
         int bx = x + W - 64, bw = 58;
         int icol = s.integrity > 50 ? 0xFF40C080 : s.integrity > 25 ? 0xFFE0B030 : 0xFFE04040;
         if (holo) {
@@ -277,6 +278,13 @@ public final class PhysicsPanel {
             case 0 -> controls(g, m, mx, my);
             case 1 -> readout(g, m, mx, my);
             default -> plant(g, m, mx, my);
+        }
+        long since = System.currentTimeMillis() - unlockedAt;
+        if (unlockedAt > 0 && since < 6000) {        // 1.16.0: the first watched cycle unlocks the equations
+            int al = since < 5000 ? 0xE0 : (int) (0xE0 * (6000 - since) / 1000);
+            Component msg = Component.translatable("gui.theoreticalsciences.phys.eq_unlocked");
+            g.fill(x + 3, y + 33, x + W - 3, y + 46, (al << 24) | 0x081810);
+            TextFit.draw(g, font, msg, x + 7, y + 36, W - 14, (Math.max(0x10, al) << 24) | 0x80FFB0);
         }
         // why it is (not) running, along the bottom
         Component why = reason(m);
@@ -345,6 +353,8 @@ public final class PhysicsPanel {
         if (m.paramIndex(id) >= 0) return Component.translatable(key(mid, "p", id));
         if (m.derivedIndex(id) >= 0) return Component.translatable(key(mid, "d", id));
         for (PhysicsModel.State s : m.states) if (s.id().equals(id)) return Component.translatable(key(mid, "s", id));
+        if (m.recipeVars.containsKey(id)) return Component.translatable(key(mid, "v", id));
+        for (String b : PhysicsModel.BUILTINS) if (b.equals(id)) return Component.translatable("gui.theoreticalsciences.phys.builtin." + id);
         return Component.literal(id);
     }
 
@@ -355,12 +365,63 @@ public final class PhysicsPanel {
         return "";
     }
 
+    // ---- 1.16.0: words before symbols. Each quantity has its colour; the equations appear after one watched cycle.
+    private float lastFrac;
+    private long unlockedAt;
+    /** The quantities the line under the mouse is built from (last frame), lit up behind their own lines. */
+    private java.util.Set<String> lit = java.util.Set.of(), litNext = java.util.Set.of();
+
+    private void watchCycle() {
+        int max = be.getMaxProgress();
+        float f = max > 0 ? Mth.clamp(be.getProgress() / (float) max, 0F, 1F) : 0F;
+        if (lastFrac > 0.75F && f < 0.25F && EquationsSeen.mark(be.type.id())) unlockedAt = System.currentTimeMillis();
+        lastFrac = f;
+        lit = litNext;
+        litNext = java.util.Set.of();
+    }
+
+    private boolean equations() {
+        return EquationsSeen.shown(be.type.id());
+    }
+
+    /** A small square in the quantity's colour, the key that ties it to everywhere else it appears. */
+    private void swatch(GuiGraphics g, int sx, int sy, int col) {
+        g.fill(sx, sy + 2, sx + 4, sy + 6, 0xFF000000 | col);
+    }
+
+    /** Lights the line of a quantity another line (under the mouse) is built from. */
+    private void litBand(GuiGraphics g, String id, int ly, int h) {
+        if (lit.contains(id)) g.fill(x + 3, ly - 1, x + W - 3, ly + h - 1, 0x30000000 | (QuantityColours.of(model(), id) & 0xFFFFFF));
+    }
+
+    /** The equation line of a tooltip, or, before the first watched cycle, the promise of one. */
+    private void equationLine(List<Component> tip, String formula) {
+        if (formula.isEmpty()) return;
+        if (equations()) tip.add(Component.literal(formula).withStyle(ChatFormatting.WHITE));
+        else tip.add(Component.translatable("gui.theoreticalsciences.phys.eq_locked").withStyle(ChatFormatting.DARK_GRAY, ChatFormatting.ITALIC));
+    }
+
+    /** "Built from": each quantity the expression uses, in its own colour, with what it means. */
+    private void builtFrom(List<Component> tip, PhysicsModel m, com.theoreticalsciences.machine.physics.Expr e, String self) {
+        List<String> ids = new ArrayList<>(m.uses(e));
+        ids.remove(self);
+        if (ids.isEmpty()) return;
+        tip.add(Component.translatable("gui.theoreticalsciences.phys.built_from").withStyle(ChatFormatting.GRAY));
+        for (String id : ids) {
+            int col = QuantityColours.of(m, id);
+            tip.add(Component.literal(" \u25A0 ").withStyle(st -> st.withColor(col)).append(name(m, id).copy().withStyle(st -> st.withColor(col))));
+        }
+        litNext = new java.util.HashSet<>(ids);
+    }
+
     private void controls(GuiGraphics g, PhysicsModel m, int mx, int my) {
         int ry = y + 34;
         String mid = be.type.id();
         for (int i = 0; i < m.params.size() && i < 6; i++, ry += ROW) {
             PhysicsModel.Param p = m.params.get(i);
-            TextFit.draw(g, font, Component.translatable(key(mid, "p", p.id())), x + 6, ry, W - 12, 0xC0C8D8);
+            litBand(g, p.id(), ry, ROW);
+            swatch(g, x + 6, ry, QuantityColours.of(m, p.id()));
+            TextFit.draw(g, font, Component.translatable(key(mid, "p", p.id())), x + 13, ry, W - 19, 0xC0C8D8);
             if (editing != i) {
                 if (holo) {
                     int fy = ry;
@@ -381,7 +442,8 @@ public final class PhysicsPanel {
             }
             if (in(mx, my, x + 4, ry, W - 76, ROW)) {
                 List<Component> tip = new ArrayList<>();
-                tip.add(Component.translatable(key(mid, "p", p.id())).withStyle(ChatFormatting.AQUA));
+                int pc = QuantityColours.of(m, p.id());
+                tip.add(Component.translatable(key(mid, "p", p.id())).withStyle(st -> st.withColor(pc)));
                 tip.add(Component.translatable(key(mid, "p", p.id()) + ".desc").withStyle(ChatFormatting.GRAY));
                 tip.add(Component.translatable("gui.theoreticalsciences.phys.range", fmt(p.min()), fmt(p.max()), p.unit(), fmt(p.step())).withStyle(ChatFormatting.DARK_GRAY));
                 tip.add(Component.translatable("gui.theoreticalsciences.phys.edit_hint").withStyle(ChatFormatting.DARK_GRAY));
@@ -494,13 +556,17 @@ public final class PhysicsPanel {
             String label = Component.translatable(key(mid, "d", d.id())).getString();
             String val = fmt(v) + " " + d.unit();
             int vw = font.width(val);
-            TextFit.draw(g, font, Component.literal(label), x + 6, ry, W - 14 - vw, 0xB0B8C8);
+            int dc = QuantityColours.of(m, d.id());
+            litBand(g, d.id(), ry, 10);
+            swatch(g, x + 6, ry, dc);
+            TextFit.draw(g, font, Component.literal(label), x + 13, ry, W - 21 - vw, 0xB0B8C8);
             g.drawString(font, val, x + W - 6 - vw, ry, Double.isFinite(v) ? 0xFFFFFF : 0xFF6050, false);
             if (in(mx, my, x, ry - 1, W, 10) && my >= top && my < bottom) {
                 List<Component> tip = new ArrayList<>();
-                tip.add(Component.literal(label).withStyle(ChatFormatting.AQUA));
-                if (!d.formula().isEmpty()) tip.add(Component.literal(d.formula()).withStyle(ChatFormatting.WHITE));
+                tip.add(Component.literal(label).withStyle(st -> st.withColor(dc)));
                 tip.add(Component.translatable(key(mid, "d", d.id()) + ".desc").withStyle(ChatFormatting.GRAY));
+                builtFrom(tip, m, d.expr(), d.id());
+                equationLine(tip, d.formula());
                 tooltip = tip;
             }
             ry += 10;
@@ -511,7 +577,9 @@ public final class PhysicsPanel {
             String label = Component.translatable(key(mid, "s", s.id())).getString();
             String val = fmt(v) + " " + s.unit();
             int vw = font.width(val);
-            TextFit.draw(g, font, Component.literal(label), x + 6, ry, W - 14 - vw, 0xD0B0FF);
+            litBand(g, s.id(), ry, 10);
+            swatch(g, x + 6, ry, QuantityColours.of(m, s.id()));
+            TextFit.draw(g, font, Component.literal(label), x + 13, ry, W - 21 - vw, 0xD0B0FF);
             g.drawString(font, val, x + W - 6 - vw, ry, 0xFFFFFF, false);
             if (in(mx, my, x, ry - 1, W, 10) && my >= top && my < bottom)
                 tooltip = List.of(Component.literal(label).withStyle(ChatFormatting.LIGHT_PURPLE),
@@ -535,7 +603,8 @@ public final class PhysicsPanel {
             if (in(mx, my, x, ry - 1, W, 10) && my >= top && my < bottom) {
                 List<Component> tip = new ArrayList<>();
                 tip.add(Component.translatable(key(mid, "c", c.id())).withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED));
-                if (!c.formula().isEmpty()) tip.add(Component.literal(c.formula()).withStyle(ChatFormatting.WHITE));
+                builtFrom(tip, m, c.expr(), "");
+                equationLine(tip, c.formula());
                 tip.add(Component.translatable("gui.theoreticalsciences.phys.kind." + c.kind().name().toLowerCase(java.util.Locale.ROOT)).withStyle(ChatFormatting.GRAY));
                 tip.add(Component.translatable("gui.theoreticalsciences.phys.margin", fmt(mg)).withStyle(ChatFormatting.DARK_GRAY));
                 tooltip = tip;
@@ -590,9 +659,13 @@ public final class PhysicsPanel {
             ry += 3;
             String rt = Component.translatable("gui.theoreticalsciences.phys.rate", fmt(ps.rate)).getString();
             TextFit.draw(g, font, Component.literal(rt), x + 6, ry, W - 12, 0xFFD070);
-            if (in(mx, my, x, ry - 1, W, 10) && my >= top && my < bottom && !m.rateFormula.isEmpty())
-                tooltip = List.of(Component.literal(m.rateFormula).withStyle(ChatFormatting.WHITE),
-                        Component.translatable("physics.theoreticalsciences." + mid + ".rate.desc").withStyle(ChatFormatting.GRAY));
+            if (in(mx, my, x, ry - 1, W, 10) && my >= top && my < bottom) {
+                List<Component> tip = new ArrayList<>();
+                tip.add(Component.translatable("physics.theoreticalsciences." + mid + ".rate.desc").withStyle(ChatFormatting.GRAY));
+                builtFrom(tip, m, m.rate, "");
+                equationLine(tip, m.rateFormula);
+                tooltip = tip;
+            }
             ry += 10;
         }
         g.disableScissor();

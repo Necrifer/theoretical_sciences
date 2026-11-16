@@ -77,6 +77,13 @@ def main():
             eid, where = k[6:].split('#', 1)
             if eid not in E:
                 continue
+            if where.startswith('plain.'):            # 1.16.0: "In plain words" drafts
+                field = where[6:]
+                pl = E[eid].setdefault('plain', {})
+                if pl.get(field, '') != v:
+                    changed.append(k)
+                    pl[field] = v
+                continue
             if where == 'title':
                 old = E[eid].get('title', '')
                 if old != v:

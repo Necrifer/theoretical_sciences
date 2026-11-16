@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.16.0: words before symbols (first step of the teaching plan)
+
+The first changes from "Making the Science Visible": every concept should be met as something familiar, then as a
+picture, and only then as an equation. No recipes changed.
+
+* **Consoles explain before they calculate.** A machine's console now explains each quantity in words first. The
+  equation behind a quantity, a limit or the output appears once you have watched that kind of machine finish one
+  cycle with its screen open ("Cycle watched: the equations behind these numbers are now shown"). Until then the line
+  says how to unlock it. What you have unlocked is kept on your own computer
+  (`config/theoreticalsciences/seen_equations.txt`) for every world. The client config option
+  `learning.showEquationsAtOnce` shows every equation from the start. Nothing about how machines work has changed.
+* **Every quantity has its own colour.** A small square in that colour sits beside each dial and each readout line. When
+  you hover a quantity, a limit or the output, the tooltip lists what it is **built from**, each piece in its own colour
+  and named in words, and those lines light up in the console behind the tooltip. The console's oscilloscope labels its
+  trace in the colour of the quantity it follows. The world's built-in quantities (temperature, gravity, darkness,
+  disturbance and the rest) now have names too, instead of bare symbols.
+* **"In plain words" for the hardest entries.** 44 Codex entries now open with a new first page: one plain sentence
+  with no symbols, an everyday comparison, and where that comparison stops being true. This first batch covers sets
+  and infinities, imaginary and higher numbers, quantum physics and general relativity (and four-dimensional shapes and
+  hidden dimensions). They are drafts for the author's rewrite.
+* **Text tools.** `tools/export_text.py` also writes the drafts as `11 Codex - Plain words (draft).docx`;
+  `tools/import_text.py` reads them back (tested: all 132 draft texts read back unchanged). New tool:
+  `tools/plain_1160.py`.
+
 ## 1.15.1: smoother animated items, and the text export
 
 * **Animated items are smoother.** Every animated item was rendered at 40 steps a loop and then cut to every second step
