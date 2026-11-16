@@ -66,6 +66,9 @@ public final class HomeTravel {
         sp.setPortalCooldown(100);
         target.playSound(null, dest, QHSounds.POWER_UP.get(), SoundSource.PLAYERS, 1.2F, 0.5F);
         sp.displayClientMessage(Component.translatable("message.theoreticalsciences.home.arrival").withStyle(ChatFormatting.GOLD, ChatFormatting.ITALIC), false);
+        // 1.15.0: a player who heard the signal at the water hole knows this place
+        if (sp.getPersistentData().getBoolean(com.theoreticalsciences.transcend.OmnipotenceCoreBlock.HEARD_HOME))
+            sp.displayClientMessage(Component.translatable("message.theoreticalsciences.home_signal_arrival").withStyle(ChatFormatting.AQUA, ChatFormatting.ITALIC), false);
     }
 
     private static void leave(ServerPlayer sp) {

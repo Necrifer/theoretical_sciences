@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ad_astra"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "E",
+    "P"
+  ],
+  "key": {
+    "E": {
+      "item": "ad_astra:desh_engine"
+    },
+    "P": {
+      "item": "theoreticalsciences:pressure_hull_plate"
+    }
+  },
+  "result": {
+    "id": "theoreticalsciences:rocket_engine",
+    "count": 1
+  }
+}

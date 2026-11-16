@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:radio_observation",
+  "item_inputs": [
+    {
+      "item": "minecraft:paper",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:dispersion_record",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 600,
+  "research": "theoreticalsciences:fast_transients",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "S": 1.0,
+      "al": -1.5,
+      "wl": 1000000.0,
+      "nl": 1400.0,
+      "DM": 500.0,
+      "Sreq": 10.0
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 10,
+        "max": 1000000000.0
+      },
+      {
+        "q": "ts",
+        "min": 0,
+        "max": 1.0
+      }
+    ]
+  }
+}

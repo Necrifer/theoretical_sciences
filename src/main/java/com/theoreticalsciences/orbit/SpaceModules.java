@@ -221,6 +221,13 @@ public final class SpaceModules {
         sp.displayClientMessage(Component.translatable("message.theoreticalsciences.orbit_status", sats, deb).withStyle(ChatFormatting.AQUA), false);
     }
 
+    /** 1.15.0: the Core's recognition of the signal stays with the player through death. */
+    @SubscribeEvent
+    public static void onClone(net.neoforged.neoforge.event.entity.player.PlayerEvent.Clone e) {
+        String k = com.theoreticalsciences.transcend.OmnipotenceCoreBlock.HEARD_HOME;
+        if (e.getOriginal().getPersistentData().getBoolean(k)) e.getEntity().getPersistentData().putBoolean(k, true);
+    }
+
     // ------------------------------------------------------------------ deconditioning
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent.Post e) {

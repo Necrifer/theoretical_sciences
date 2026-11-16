@@ -1,5 +1,80 @@
 # Changelog
 
+## 1.15.0: Patch D2, young worlds and deep sky
+
+The rest of the space concepts (8, 9 and 11 to 14 of the space document): icy moons, how planets form, habitability,
+the oldest light, radio flashes and torn stars, and the search for others, which ties the space branch to the Core and
+Recreating Home. Two new biomes, and recipes for Ad Astra's metals when it is installed.
+
+### Icy moons
+* **Ice Rheometer**, a new single-block console: a press that squeezes ice in cycles. Forcing period, eccentricity and
+  ice temperature give the ice's Maxwell dissipation (1/Q = ωτ/(1 + ω²τ²)) and the moon's tidal heating
+  Ė = (21/2)·(k₂/Q)·G·M²·R⁵·n·e²/a⁶: Enceladus 5 to 50 GW, Europa 100 to 2,000.
+* **Plume Field**, a third biome for the Titan Ocean: where the vents run hottest the ice shell overhead is **Plume
+  Ice**, which gives Plume Ice Grains (silica in the ice, as Cassini found at Enceladus). Its sound is ice's.
+
+### How planets form
+* **Protoplanetary Disk**, a sixth biome for the Accretion Frontier: every floor is **Chondritic Regolith**, which gives
+  Chondrules and, one time in twelve, a Calcium-Aluminium-rich Inclusion (silk touch keeps the block). Gravel's sound.
+* The Dating Spectrometer dates the inclusions (uranium to lead, 4.567 billion years): a Solar System Age Record,
+  which the Chronoweaver takes in place of tree rings for a Stratigraphic Timeline.
+
+### Habitability
+* The **Reflecting Telescope** gains transit spectroscopy: an atmosphere's feature depth against the photon noise.
+  Its older recipes are unchanged.
+* Transmission Spectrum Plates; with an Ocean World Record the Spectrograph makes a Biosignature Record.
+
+### The oldest light
+* **CMB Bolometer Array**, a new multiblock (194 blocks: a tilted mirror on a mount over a cryostat, built of the
+  Cryostat Shell and a new casing, the Bolometer Focal Plane). Its console is Planck's law against the galaxy's
+  synchrotron and dust, and the map noise of its detectors; it burns helium-3 for its sub-kelvin stage.
+* The Last Scattering Map; with a Dark Matter Lens the Inflation Chamber makes Inflaton Condensate from it.
+
+### Radio flashes and torn stars
+* The **Radio Telescope** catches fast radio bursts (bright, and swept across each channel in under a millisecond):
+  Dispersion Records, which the Spectrograph turns into Cosmic Web Filaments (bursts weighed the gas between galaxies).
+* The **Burst Observatory** catches tidal disruption events: Disrupted Stellar Streams, which the Stellar Plasma
+  Crucible turns into tidal plasma.
+
+### Listening for others, and the story
+* With a Biosignature Record to point it, the Radio Telescope finds a **Narrowband Candidate** at the water hole: tuned
+  exactly to 1420.4 MHz, with the narrowest band, listening long.
+* Use the candidate on the **Omnipotence Core**. The Core hears it, and recognises it: the signal came from Home. You
+  receive the **Signal from Home**, and arriving in Omnipotency afterwards, you know the place. (Once per player.)
+
+### Ad Astra (only when it is installed)
+* Desh Plates make Pressure Hull Plates, Ostrum Plates Station Hull, Calorite Plates Flame Trench blocks, and a Desh
+  Engine a Rocket Engine (`r1150_ad_astra_*`, loaded only with Ad Astra).
+
+### New recipes
+| Recipe | Machine | In | Out |
+|---|---|---|---|
+| r1150_enceladus_model | Ice Rheometer | 4 Plume Ice Grains, 500 mB water | Ocean World Record |
+| r1150_europa_model | Ice Rheometer | 2 Plume Ice Grains, 2 Cometary Ice, 500 mB water | 2 Ocean World Record |
+| r1150_cai_age | Dating Spectrometer | 2 Calcium-Aluminium-rich Inclusion | Solar System Age Record |
+| r1150_transmission_spectrum | Reflecting Telescope | 2 Spectral Plate, 2 Paper | Transmission Spectrum Plate |
+| r1150_last_scattering_map | CMB Bolometer Array | 2 Doped Wafer, 50 mB helium-3 | 2 Last Scattering Map |
+| r1150_fast_radio_burst | Radio Telescope | 2 Paper | Dispersion Record |
+| r1150_narrowband_candidate | Radio Telescope | Biosignature Record | Narrowband Candidate |
+| r1150_tidal_disruption | Burst Observatory | 2 Photographic Plate, Spectral Plate | Disrupted Stellar Stream |
+| r1150_chondrule_assay | Spectrograph | 4 Chondrule, Spectral Plate | 2 Meteoric Iron, 3 Presolar Grains |
+| r1150_biosignature | Spectrograph | Ocean World Record, Transmission Spectrum Plate | Biosignature Record |
+| r1150_cosmic_web_from_bursts | Spectrograph | 2 Dispersion Record, Spectral Plate | 2 Cosmic Web Filament |
+| r1150_inflaton_from_cmb | Inflation Chamber | Last Scattering Map, Dark Matter Lens | 4 Inflaton Condensate |
+| r1150_stream_plasma | Stellar Plasma Crucible | Disrupted Stellar Stream | 2,000 mB tidal plasma |
+| r1150_stratigraphic_timeline | Chronoweaver | as r170, with a Solar System Age Record for the tree rings | 2 Stratigraphic Timeline |
+| r1150_bolometer_focal_plane | crafting | | 4 Bolometer Focal Plane |
+
+### Research
+* Six new nodes with derivations: Icy Moons (the tidal acceleration, 2GMR/d³), How Planets Form (Toomre's Q),
+  Habitability (the equilibrium temperature), The Oldest Light (cooling by expansion), Radio Flashes and Torn Stars
+  (the dispersion delay) and Listening for Others (Drake's equation). Six Codex entries, two biome pages and two
+  operation pages.
+
+### Technical
+* `tools/round1150.py` and `tools/round1150_biomes.py`; `tools/items3d_1150.py` and `tools/blocks1150.py` for the art.
+* `tsgen` can be given points to try first for a window too narrow for random sampling (`HINTS`).
+
 ## 1.14.1: fixes
 
 * **Codex: nodes no longer overlap.** Nodes one grid step apart drew on top of each other (17 pairs on the Machines tab,

@@ -53,6 +53,7 @@ def pyexpr(e):
     return e.replace('^', '**')
 
 
+HINTS = {}      # 1.15.0: recipe id -> parameter points to try first
 WORLD = {}      # 1.13.0: machine id -> the world it stands in, for checks (e.g. {'grav': 9.81e-5} aboard the station)
 
 
@@ -79,6 +80,16 @@ def check_reachable(machine, model, recipe):
     rng = random.Random(1400)
     ps = model['params']
     best = None
+    # 1.15.0: a recipe may name points to try first (a window too narrow for random sampling, e.g. one exact frequency)
+    for h in HINTS.get(recipe.get('_id'), []):
+        p = {q['id']: q['default'] for q in ps}
+        p.update(h)
+        try:
+            env, ok, rate = evaluate(model, p, rv, world=WORLD.get(machine))
+        except (ValueError, ZeroDivisionError, OverflowError):
+            continue
+        if ok and rate > 0 and all(w['min'] <= env[w['q']] <= w['max'] for w in wins):
+            return p, {w['q']: env[w['q']] for w in wins}, rate
     for i in range(60000):
         p = {}
         for q in ps:

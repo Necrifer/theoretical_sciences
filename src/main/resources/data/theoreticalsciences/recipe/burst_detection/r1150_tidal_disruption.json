@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:burst_detection",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:photographic_plate",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:disrupted_stellar_stream",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 800,
+  "research": "theoreticalsciences:fast_transients",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Pdet",
+        "min": 0.97,
+        "max": 1.0
+      },
+      {
+        "q": "FA",
+        "min": 0,
+        "max": 0.3
+      }
+    ]
+  }
+}

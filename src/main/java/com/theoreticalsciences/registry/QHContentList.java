@@ -990,7 +990,20 @@ public final class QHContentList {
         new ItemDef("carbonaceous_regolith", "", 64),
         new ItemDef("platinum_group_nugget", "", 64),
         new ItemDef("jovian_atmosphere_sample", "", 64),
-        new ItemDef("asteroid_ephemeris", "", 64));
+        new ItemDef("asteroid_ephemeris", "", 64),
+        // 1.15.0: Patch D2, young worlds and deep sky
+        new ItemDef("plume_ice_grains", "", 64),
+        new ItemDef("ocean_world_record", "", 64),
+        new ItemDef("chondrule", "", 64),
+        new ItemDef("calcium_aluminium_inclusion", "", 64),
+        new ItemDef("solar_system_age_record", "", 64),
+        new ItemDef("transmission_spectrum_plate", "", 64),
+        new ItemDef("biosignature_record", "", 64),
+        new ItemDef("last_scattering_map", "", 64),
+        new ItemDef("dispersion_record", "", 64),
+        new ItemDef("disrupted_stellar_stream", "", 64),
+        new ItemDef("narrowband_candidate", "", 16),
+        new ItemDef("signal_from_home", "", 1));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1163,6 +1176,8 @@ public final class QHContentList {
         new BlockDef("antistone", "simple", 1, 3.0F, "iron", ""),
         new BlockDef("antisoil", "simple", 0, 1.5F, "none", ""),
         new BlockDef("antistone_bricks", "deco", 0, 3.0F, "iron", ""),
+        new BlockDef("plume_ice", "simple", 1, 2.5F, "none", ""),          // 1.15.0
+        new BlockDef("chondritic_regolith", "simple", 0, 0.8F, "none", ""),          // 1.15.0
         new BlockDef("annihilation_scar", "simple", 6, 3.0F, "iron", ""),          // 1.11.0
         new BlockDef("antihydrogen_firn", "simple", 0, 0.8F, "none", ""),          // 1.11.0
         new BlockDef("spin_foam_mesh", "simple", 4, 1.5F, "none", ""),          // 1.11.0
@@ -1506,7 +1521,8 @@ public final class QHContentList {
         new BlockDef("rectenna_panel", "casing", 0, 3.0F, "iron", ""),
         new BlockDef("storm_shelter_module", "space_module", 4, 5.0F, "none", ""),
         new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""),
-        new BlockDef("active_magnetic_shield", "space_module", 8, 5.0F, "none", ""));      // 1.14.0
+        new BlockDef("active_magnetic_shield", "space_module", 8, 5.0F, "none", ""),       // 1.14.0
+        new BlockDef("bolometer_focal_plane", "casing", 2, 4.0F, "iron", ""));            // 1.15.0
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),

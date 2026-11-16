@@ -1,0 +1,54 @@
+{
+  "title": "The Oldest Light",
+  "x": 28,
+  "y": 12,
+  "insight": 400,
+  "requires": [
+    "theoreticalsciences:nebular_gases",
+    "theoreticalsciences:superconductivity"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:helium_3_cell",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "380,000 years after the Big Bang the universe cooled enough for atoms to form, and the light that had been trapped in the hot plasma went free. It is still arriving from every direction, stretched by the universe's expansion from 3,000 kelvin to 2.725, so it is now microwaves, with the spectrum of a perfect black body. Its temperature varies by a hundred-thousandth from place to place: the seeds of every galaxy. Unlocks the CMB Bolometer Array.",
+  "icon": "theoreticalsciences:last_scattering_map",
+  "puzzle": {
+    "goal": "Light released by a gas at temperature T₀ travels while the universe stretches by a factor 1 + z. Wavelengths stretch with it, so a black body stays a black body, cooler. Write the temperature T we see.",
+    "name": "Cooling by expansion",
+    "lhs": "T",
+    "form": "T0 / ( 1 + z )",
+    "expr": "T0 / ( 1 + z )",
+    "ask": "Find T in kelvin for T₀ = 3000 K and z = @{z}.",
+    "vars": {
+      "T": "temperature now",
+      "T0": "temperature then",
+      "z": "redshift"
+    },
+    "given": {
+      "T0": 3000.0,
+      "z": 1100.0
+    },
+    "unit": "K",
+    "method": "Every wavelength grows by 1 + z; Wien's law makes the peak, and so the temperature, fall by the same factor.",
+    "distractors": [
+      "*",
+      "-",
+      "sqrt"
+    ],
+    "vary": {
+      "z": [
+        500.0,
+        1500.0,
+        10.0
+      ]
+    }
+  }
+}

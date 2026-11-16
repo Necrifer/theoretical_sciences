@@ -18,22 +18,24 @@
     }
   ],
   "recipe_vars": {
-    "mreq": 9
+    "mreq": 9,
+    "mstar": 0.0,
+    "dep": 0.0
   },
   "consts": [],
   "states": [],
   "derived": [
     {
       "id": "see",
-      "unit": "\u2033",
+      "unit": "″",
       "expr": "2.5*exp(-pos(alt - 64)/120)*(1 + 0.15*d)",
-      "formula": "\u03b8_see \u2248 2.5\u2033\u00b7e^(\u2212(h \u2212 64)/120)"
+      "formula": "θ_see ≈ 2.5″·e^(−(h − 64)/120)"
     },
     {
       "id": "th",
-      "unit": "\u2033",
+      "unit": "″",
       "expr": "0.1384/D",
-      "formula": "\u03b8 = 1.22\u03bb/D"
+      "formula": "θ = 1.22λ/D"
     },
     {
       "id": "fr",
@@ -44,21 +46,27 @@
     },
     {
       "id": "res",
-      "unit": "\u2033",
+      "unit": "″",
       "expr": "sqrt(th^2 + (see*fr)^2)",
-      "formula": "\u03b8 = \u221a(\u03b8_diff\u00b2 + \u03b8_see\u00b2)"
+      "formula": "θ = √(θ_diff² + θ_see²)"
     },
     {
       "id": "msky",
-      "unit": "mag/\u25a1\u2033",
+      "unit": "mag/□″",
       "expr": "21.6 - 3.2*moon - 8*(1 - night)",
-      "formula": "\u03bc_sky"
+      "formula": "μ_sky"
     },
     {
       "id": "mlim",
       "unit": "mag",
       "expr": "13.2 + 5*log10(D) + 1.25*log10(t) + 0.5*(msky - 21.6) - 2.5*log10(max(res, 0.05))",
-      "formula": "m_lim \u2248 m\u2080 + 5 log D + 1.25 log t + \u00bd(\u03bc \u2212 \u03bc\u2080) \u2212 2.5 log \u03b8"
+      "formula": "m_lim ≈ m₀ + 5 log D + 1.25 log t + ½(μ − μ₀) − 2.5 log θ"
+    },
+    {
+      "id": "snrT",
+      "unit": "",
+      "expr": "dep*sqrt(1e10*D^2*t*10^(-0.4*mstar))/1e6",
+      "formula": "transit spectroscopy: the feature's depth (ppm) over the photon noise 1/√N"
     }
   ],
   "constraints": [
@@ -82,7 +90,7 @@
     }
   ],
   "rate": "clamp((1 + 0.3*(mlim - mreq))/(1 + t/1200), 0.2, 2)",
-  "rate_formula": "rate = (1 + 0.3\u00b7(m_lim \u2212 m_need)) / (1 + t/1200 s)",
+  "rate_formula": "rate = (1 + 0.3·(m_lim − m_need)) / (1 + t/1200 s)",
   "heat": "0.02",
   "idle_heat": "0",
   "quench_energy": "0",

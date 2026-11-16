@@ -1,0 +1,55 @@
+{
+  "title": "Radio Flashes and Torn Stars",
+  "x": 30,
+  "y": 10,
+  "insight": 380,
+  "requires": [
+    "theoreticalsciences:cosmic_microwave_background"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pulsar_timing_record",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:burst_afterglow_crystal",
+      "count": 1
+    }
+  ],
+  "time": 400,
+  "description": "A fast radio burst lasts a thousandth of a second and comes from another galaxy. On its way it crosses free electrons, which slow the low frequencies more than the high, so it arrives as a sweep: how long a sweep says how much gas it crossed, and so the bursts have weighed the gas between galaxies that nothing else could see. Some come from magnetars. A star that strays too near a supermassive black hole is torn into a stream and half of it falls in, flaring for months: a tidal disruption event. Adds both to the Radio Telescope and the Burst Observatory.",
+  "icon": "theoreticalsciences:dispersion_record",
+  "puzzle": {
+    "goal": "A pulse crossing a dispersion measure DM (in pc/cm³) arrives later at lower frequency. Write the delay Δt in ms between frequencies f₁ < f₂ (in GHz), with the constant 4.15 ms.",
+    "name": "Dispersion delay",
+    "lhs": "Δt",
+    "form": "4.15 * DM * ( 1 / f1 ^ 2 - 1 / f2 ^ 2 )",
+    "expr": "4.15 * DM * ( 1 / f1 ^ 2 - 1 / f2 ^ 2 )",
+    "ask": "Find Δt in ms for DM = @{DM}, f₁ = 1.2 GHz and f₂ = 1.5 GHz.",
+    "vars": {
+      "Δt": "delay",
+      "DM": "dispersion measure",
+      "f1": "lower frequency",
+      "f2": "upper frequency"
+    },
+    "given": {
+      "DM": 500.0,
+      "f1": 1.2,
+      "f2": 1.5
+    },
+    "unit": "ms",
+    "method": "In a plasma the group speed falls short of c by an amount growing as the plasma frequency squared over f²: integrate over the path.",
+    "distractors": [
+      "*",
+      "+",
+      "sqrt"
+    ],
+    "vary": {
+      "DM": [
+        50.0,
+        2000.0,
+        10.0
+      ]
+    }
+  }
+}

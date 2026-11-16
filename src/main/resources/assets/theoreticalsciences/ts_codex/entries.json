@@ -58342,5 +58342,219 @@
     "text": "$(thing)Equations$()$(br)F = (1 + R)·I·cos²θ/c$(br)a = F/σ$(br)T = ((1 − R)·I·cos θ/2εσ_SB)^¼"
    }
   ]
+ },
+ "fluids/tidal_heating": {
+  "title": "Icy Moons",
+  "icon": "theoreticalsciences:plume_ice_grains",
+  "category": "fluids",
+  "research": "tidal_heating",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Ė = (21/2)·(k₂/Q)·G·M²·R⁵·n·e²/a⁶. A moon on an eccentric orbit is squeezed once each turn, and its ice rubs itself warm. The $(thing)Plume Field$() in the Titan Ocean has $(item)Plume Ice$(), which gives Plume Ice Grains."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ice_rheometer",
+     "theoreticalsciences:ocean_world_record"
+    ],
+    "text": "The $(thing)Ice Rheometer$() squeezes the ice in cycles. Warm ice dissipates most when the forcing matches its Maxwell time, ωτ = 1; set the period, eccentricity and temperature until the moon's tidal heating is what keeps its ocean: Enceladus 5 to 50 GW, Europa 100 to 2,000.",
+    "title": "Ice Rheometer"
+   }
+  ]
+ },
+ "fluids/planet_formation": {
+  "title": "How Planets Form",
+  "icon": "theoreticalsciences:chondrule",
+  "category": "fluids",
+  "research": "planet_formation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Q = cs·κ/(πGΣ). Below 1 a disk breaks into clumps. The $(thing)Protoplanetary Disk$() in the Accretion Frontier is made of $(item)Chondritic Regolith$(), which gives Chondrules and, rarely, Calcium-Aluminium-rich Inclusions."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:calcium_aluminium_inclusion",
+     "theoreticalsciences:solar_system_age_record"
+    ],
+    "text": "The Dating Spectrometer dates the inclusions by uranium's decay to lead, 4.567 billion years: a Solar System Age Record, which the Chronoweaver sets as the first layer of a Stratigraphic Timeline. The Spectrograph assays chondrules for Meteoric Iron and Presolar Grains.",
+    "title": "The oldest solids"
+   }
+  ]
+ },
+ "fluids/habitability": {
+  "title": "Habitability and Signs of Life",
+  "icon": "theoreticalsciences:biosignature_record",
+  "category": "fluids",
+  "research": "habitability",
+  "pages": [
+   {
+    "type": "text",
+    "text": "T = T★·(1 − A)^¼·√(R★/2a). The $(thing)Reflecting Telescope$() gains transit spectroscopy: an atmosphere's lines against the photon noise, S/N = depth·√N. Long exposures with a wide mirror on a bright star make a Transmission Spectrum Plate."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:transmission_spectrum_plate",
+     "theoreticalsciences:biosignature_record"
+    ],
+    "text": "The Spectrograph sets an Ocean World Record beside a Transmission Spectrum Plate: a $(item)Biosignature Record$().",
+    "title": "Biosignatures"
+   }
+  ]
+ },
+ "fluids/cosmic_microwave_background": {
+  "title": "The Oldest Light",
+  "icon": "theoreticalsciences:last_scattering_map",
+  "category": "fluids",
+  "research": "cosmic_microwave_background",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:cmb_bolometer_array"
+    ],
+    "text": "B(ν, T) = (2hν³/c²)/(e^(hν/kT) − 1), at T = 2.725 K. The $(thing)CMB Bolometer Array$() (194 blocks: a tilted mirror on a mount over a cryostat) maps it. Look where the CMB outshines the galaxy (60 to 250 GHz), with detectors and hours enough for a noise under 0.05 µK, and keep the focal plane cold: it burns helium-3.",
+    "title": "CMB Bolometer Array"
+   },
+   {
+    "type": "multiblock",
+    "name": "CMB Bolometer Array",
+    "text": "Interface Ports either side of the controller, on the mount.",
+    "multiblock": "cmb_bolometer_array"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:last_scattering_map"
+    ],
+    "text": "The $(item)Last Scattering Map$() fixes the inflaton's spectrum: with a Dark Matter Lens, the Inflation Chamber makes Inflaton Condensate.",
+    "title": "Last Scattering Map"
+   }
+  ]
+ },
+ "fluids/fast_transients": {
+  "title": "Radio Flashes and Torn Stars",
+  "icon": "theoreticalsciences:dispersion_record",
+  "category": "fluids",
+  "research": "fast_transients",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Δt = 4.15 ms·DM·(f₁⁻² − f₂⁻²). The $(thing)Radio Telescope$() catches fast radio bursts: bright enough, and with the sweep across each channel under a millisecond. A Dispersion Record weighs the gas between galaxies; the Spectrograph turns two into Cosmic Web Filaments."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:disrupted_stellar_stream"
+    ],
+    "text": "The $(thing)Burst Observatory$() catches a star torn apart by a black hole: almost certain to see one, almost never fooled. The Stellar Plasma Crucible makes its stream into tidal plasma.",
+    "title": "Tidal disruption"
+   }
+  ]
+ },
+ "fluids/search_for_others": {
+  "title": "Listening for Others",
+  "icon": "theoreticalsciences:narrowband_candidate",
+  "category": "fluids",
+  "research": "search_for_others",
+  "pages": [
+   {
+    "type": "text",
+    "text": "N = R★·fp·ne·fl·fi·fc·L. With a Biosignature Record to point it, the $(thing)Radio Telescope$() listens at the water hole for a carrier a hundred hertz wide: tune exactly to 1420.4 MHz with the narrowest band, and listen long."
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:narrowband_candidate",
+     "theoreticalsciences:signal_from_home"
+    ],
+    "text": "Take the $(item)Narrowband Candidate$() to the $(thing)Omnipotence Core$() and use it there. The Core has heard this before.",
+    "title": "The signal"
+   }
+  ]
+ },
+ "operation/ice_rheometer": {
+  "title": "Ice Rheometer",
+  "icon": "theoreticalsciences:ice_rheometer",
+  "category": "operation",
+  "research": "tidal_heating",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Squeeze the ice in cycles until the moon's tidal heating is what its ocean needs."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Forcing period, Eccentricity, Ice temperature.$(br2)$(thing)Disturbance$(): grain growth: the dissipation drifts by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a strain over 0.05 cracks the sample (wear).$(br2)$(thing)Rate$(): faster cycles, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)a = (GM·P²/4π²)^⅓$(br)ωτ = ω·η/μ$(br)1/Q = ωτ/(1 + ω²τ²)$(br)Ė = (21/2)(k₂/Q)GM²R⁵ne²/a⁶"
+   }
+  ]
+ },
+ "operation/cmb_bolometer_array": {
+  "title": "CMB Bolometer Array",
+  "icon": "theoreticalsciences:cmb_bolometer_array",
+  "category": "operation",
+  "research": "cosmic_microwave_background",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Look where the CMB outshines the galaxy, quietly enough to see a hundred-thousandth."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Observing frequency, Detectors, Integration.$(br2)$(thing)Disturbance$(): atmospheric drift: the foregrounds rise by 2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 10 K it stops; too many detectors at too high a frequency overheat the readout (wear).$(br2)$(thing)Rate$(): a shorter integration, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)B = (2hν³/c²)/(e^(hν/kT) − 1)$(br)contrast = B/foreground$(br)noise = 300 µK·√s/√(n·t)"
+   }
+  ]
+ },
+ "world/plume_field": {
+  "title": "Plume Field",
+  "icon": "theoreticalsciences:plume_ice",
+  "category": "world",
+  "research": "tidal_heating",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:plume_ice"
+    ],
+    "text": "In the Titan Ocean, where the vents run hot enough to break the ice: the shell overhead is $(item)Plume Ice$(), grainy with silica from the rock below, and the water is full of bubbles. Mine it for Plume Ice Grains.",
+    "title": "Plume Field"
+   }
+  ]
+ },
+ "world/protoplanetary_disk": {
+  "title": "Protoplanetary Disk",
+  "icon": "theoreticalsciences:chondritic_regolith",
+  "category": "world",
+  "research": "planet_formation",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:chondritic_regolith"
+    ],
+    "text": "In the Accretion Frontier, a young disk still settling: every floor is $(item)Chondritic Regolith$(), packed with chondrules, and now and then a white Calcium-Aluminium-rich Inclusion, the oldest solid there is.",
+    "title": "Protoplanetary Disk"
+   }
+  ]
  }
 }

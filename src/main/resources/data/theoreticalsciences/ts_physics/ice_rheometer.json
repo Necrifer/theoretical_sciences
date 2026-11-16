@@ -1,0 +1,78 @@
+{
+  "params": [
+    {
+      "id": "P",
+      "unit": "h",
+      "min": 1,
+      "max": 100,
+      "step": 0.1,
+      "default": 33
+    },
+    {
+      "id": "e",
+      "unit": "",
+      "min": 0,
+      "max": 0.1,
+      "step": 0.0005,
+      "default": 0.005
+    },
+    {
+      "id": "Ti",
+      "unit": "K",
+      "min": 150,
+      "max": 272,
+      "step": 1,
+      "default": 250
+    }
+  ],
+  "recipe_vars": {
+    "M": 5.68e+26,
+    "R": 252000.0,
+    "k2": 0.02
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "a",
+      "unit": "km",
+      "expr": "(6.674e-11*M*(P*3600)^2/(4*3.14159^2))^(1/3)/1000",
+      "formula": "the orbit of that period, by Kepler"
+    },
+    {
+      "id": "wt",
+      "unit": "",
+      "expr": "2*3.14159/(P*3600)*1e14*exp(7217*(1/Ti - 1/270))/3.5e9",
+      "formula": "ωτ: forcing against the ice's Maxwell time η/μ"
+    },
+    {
+      "id": "qi",
+      "unit": "",
+      "expr": "2*3.14159/(P*3600)*1e14*exp(7217*(1/Ti - 1/270))/3.5e9/(1 + (2*3.14159/(P*3600)*1e14*exp(7217*(1/Ti - 1/270))/3.5e9)^2)*(1 + 0.01*d)",
+      "formula": "1/Q = ωτ/(1 + ω²τ²): most at ωτ = 1"
+    },
+    {
+      "id": "Ed",
+      "unit": "GW",
+      "expr": "10.5*k2*(2*3.14159/(P*3600)*1e14*exp(7217*(1/Ti - 1/270))/3.5e9/(1 + (2*3.14159/(P*3600)*1e14*exp(7217*(1/Ti - 1/270))/3.5e9)^2))*(1 + 0.01*d)*6.674e-11*M^2*R^5*(2*3.14159/(P*3600))*e^2/((6.674e-11*M*(P*3600)^2/(4*3.14159^2))^(1/3))^6/1e9",
+      "formula": "Ė = (21/2)·(k₂/Q)·G·M²·R⁵·n·e²/a⁶"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "crack",
+      "kind": "wear",
+      "expr": "0.05 - e",
+      "formula": "a strain under 0.05, or the sample cracks"
+    }
+  ],
+  "rate": "clamp(0.3 + 40/P, 0.3, 1.5)",
+  "rate_formula": "faster cycles finish sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

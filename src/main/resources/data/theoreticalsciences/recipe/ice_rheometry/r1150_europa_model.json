@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:ice_rheometry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:plume_ice_grains",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:cometary_ice",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:ocean_world_record",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:tidal_heating",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "M": 1.898e+27,
+      "R": 1561000.0,
+      "k2": 0.25
+    },
+    "windows": [
+      {
+        "q": "Ed",
+        "min": 100,
+        "max": 2000
+      }
+    ]
+  }
+}

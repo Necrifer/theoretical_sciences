@@ -1,0 +1,64 @@
+{
+  "title": "Listening for Others",
+  "x": 30,
+  "y": 12,
+  "insight": 480,
+  "requires": [
+    "theoreticalsciences:fast_transients",
+    "theoreticalsciences:habitability"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:hydrogen_line_map",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:biosignature_record",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "description": "Where would anyone call from, and at what frequency? Between the hydrogen line at 1420 MHz and the hydroxyl lines at 1660, the galaxy is quiet: the water hole, where water's two halves both sing. Nature makes nothing narrower than about a kilohertz there; a carrier one hertz wide would be made. How many might be out there is Drake's equation, a product of guesses, most of them unknown by factors of a thousand. The Omnipotence Core, though, may know a signal when it hears one.",
+  "icon": "theoreticalsciences:narrowband_candidate",
+  "puzzle": {
+    "goal": "Stars form at a rate R★; a fraction fp have planets; ne per system could support life; fractions fl, fi and fc of those develop life, intelligence and transmitters; each transmits for L years. Write the number N transmitting now.",
+    "name": "Drake equation",
+    "lhs": "N",
+    "form": "Rs * fp * ne * fl * fi * fc * L",
+    "expr": "Rs * fp * ne * fl * fi * fc * L",
+    "ask": "Find N for R★ = 1.5 /year, fp = 0.9, ne = 0.4, fl = 0.1, fi = 0.01, fc = 0.1 and L = @{L} years.",
+    "vars": {
+      "N": "civilisations transmitting",
+      "Rs": "star formation rate",
+      "fp": "with planets",
+      "ne": "habitable per system",
+      "fl": "with life",
+      "fi": "with intelligence",
+      "fc": "transmitting",
+      "L": "lifetime"
+    },
+    "given": {
+      "Rs": 1.5,
+      "fp": 0.9,
+      "ne": 0.4,
+      "fl": 0.1,
+      "fi": 0.01,
+      "fc": 0.1,
+      "L": 10000.0
+    },
+    "unit": "",
+    "method": "In a steady state, the number present is the rate they appear times how long each lasts.",
+    "distractors": [
+      "+",
+      "/",
+      "^ 2"
+    ],
+    "vary": {
+      "L": [
+        100.0,
+        1000000.0,
+        100.0
+      ]
+    }
+  }
+}
