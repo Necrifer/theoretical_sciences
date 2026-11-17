@@ -1,5 +1,37 @@
 # Changelog
 
+## 1.3.2: the rest of the performance review
+
+The remaining items from the outside performance review. No recipes, items or progression changed, and nothing looks
+different.
+
+### Server
+* **Large multiblocks are checked a piece at a time.** A structure with more than 4,096 blocks used to be checked in a
+  single tick, which could cause a lag spike when a big machine was placed, loaded or rechecked. The check now spreads
+  over several ticks (up to 4,096 blocks each) and the result is the same. Small machines still finish in one tick.
+
+### Client (drawing)
+* **Glows are drawn together.** The soft glows round machine effects were each their own draw call, up to hundreds a
+  frame; they are now gathered and drawn in one go wherever the drawing settings allow.
+* **Lensing copies less of the screen.** The gravitational lensing effect copied the whole screen up to twice a frame;
+  it now copies only the part round the lenses.
+* **Sky backgrounds are built once.** The fixed parts of the Bulk, Hyperreal, Empyrean, Frontier and Orbit skies (the
+  colour dome, the backdrop, Orbit's steady stars) are kept on the graphics card instead of being rebuilt every frame.
+  Twinkling stars and moving parts are still drawn fresh. The fractal sky's cube is one draw instead of six.
+* **Singularity items** use tables of ready worked out circle points instead of thousands of sine and cosine sums per
+  item per frame.
+* **Machine effects keep separate buffers** for each kind of drawing (beams, items, see through), so switching between
+  them no longer forces a draw each time.
+* **Fewer throwaway objects every frame** (lists of effects, the penteract's corners, the altar's lightning), and the
+  Forged Core is no longer drawn when it is off screen. An unused helper class was removed.
+* **Sodium:** moving machine parts now tell Sodium their animated textures are in use, so with "Animate only visible
+  textures" on they no longer risk looking frozen. Keep that Sodium setting on; it saves a lot of work with this mod.
+  Sodium is not needed; without it nothing changes.
+
+### Looked at and left as is
+* Splitting animated textures into a still base and a shared moving overlay: of 1,711 animated textures, only 2 pairs
+  share an overlay exactly, so it would save almost nothing without changing how they look.
+
 ## 1.3.1: security and performance fixes
 
 From an outside review of 1.3.0 for security and performance. No recipes, items or progression changed.

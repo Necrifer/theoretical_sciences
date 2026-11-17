@@ -91,17 +91,7 @@ public class FrontierSkyEffects extends DimensionSpecialEffects {
         try {
             RenderSystem.defaultBlendFunc();
             // the backdrop: almost black, a little bluer towards the hole's side of the sky
-            BufferBuilder bg = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-            int seg = 32;
-            for (int i = 0; i < seg; i++)
-                for (int band = 0; band < 8; band++) {
-                    double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg, t0 = Math.PI * band / 8, t1 = Math.PI * (band + 1) / 8;
-                    vtx(bg, sph(a0, t0), back(a0, t0), 1);
-                    vtx(bg, sph(a1, t0), back(a1, t0), 1);
-                    vtx(bg, sph(a1, t1), back(a1, t1), 1);
-                    vtx(bg, sph(a0, t1), back(a0, t1), 1);
-                }
-            draw(bg);
+            BACKDROP.draw();                                    // 1.3.2: built once, kept on the card
 
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
             BufferBuilder st = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
@@ -256,6 +246,18 @@ public class FrontierSkyEffects extends DimensionSpecialEffects {
             vtx(bb, new float[]{x + s, y + s, z}, rgb, a); vtx(bb, new float[]{x - s, y + s, z}, rgb, a);
         }
     }
+
+    private static final BakedSky BACKDROP = new BakedSky(VertexFormat.Mode.QUADS, bg -> {
+        int seg = 32;
+        for (int i = 0; i < seg; i++)
+            for (int band = 0; band < 8; band++) {
+                double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg, t0 = Math.PI * band / 8, t1 = Math.PI * (band + 1) / 8;
+                vtx(bg, sph(a0, t0), back(a0, t0), 1);
+                vtx(bg, sph(a1, t0), back(a1, t0), 1);
+                vtx(bg, sph(a1, t1), back(a1, t1), 1);
+                vtx(bg, sph(a0, t1), back(a0, t1), 1);
+            }
+    });
 
     private static void draw(BufferBuilder bb) {
         MeshData m = bb.build();

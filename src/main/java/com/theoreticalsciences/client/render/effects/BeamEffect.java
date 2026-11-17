@@ -15,7 +15,7 @@ import org.joml.Matrix4f;
  * its tint and a thin white core inside it.
  */
 public final class BeamEffect {
-    private static final ResourceLocation BEAM = ResourceLocation.withDefaultNamespace("textures/entity/beacon_beam.png");
+    static final ResourceLocation BEAM = ResourceLocation.withDefaultNamespace("textures/entity/beacon_beam.png");
 
     public static void draw(PoseStack ps, Matrix4f local, MultiBufferSource buf, float up, float z0, float z1, float radius, int rgb, float alpha,
                             float scroll, boolean soft) {

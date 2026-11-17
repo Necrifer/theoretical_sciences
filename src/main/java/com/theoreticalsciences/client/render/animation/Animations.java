@@ -147,6 +147,8 @@ public final class Animations {
         public int quads;
         /** Furthest any vertex lies from the part's pivot (for culling while it turns). */
         public float radius;
+        /** 1.3.2: its moving textures, to tell Sodium they are in use (null when it has none). */
+        public net.minecraft.client.renderer.texture.TextureAtlasSprite[] animated;
     }
 
     public static final class Baked {
@@ -278,6 +280,7 @@ public final class Animations {
         final boolean gpu;
         float radius;
         int quads;
+        final Set<TextureAtlasSprite> sprites = new HashSet<>();
 
         Builder(Vector3f pivot, boolean gpu) {
             this.pivot = pivot;
@@ -320,6 +323,8 @@ public final class Animations {
             }
             out.quads = quads;
             out.radius = radius;
+            TextureAtlasSprite[] moving = sprites.stream().filter(com.theoreticalsciences.client.render.SodiumSprites::animated).toArray(TextureAtlasSprite[]::new);
+            if (moving.length > 0) out.animated = moving;
             return out;
         }
     }
@@ -439,6 +444,7 @@ public final class Animations {
                 }
                 rand.setSeed(42L);
                 for (BakedQuad q : model.getQuads(st, d, rand, ModelData.EMPTY, rt)) {
+                    b.sprites.add(q.getSprite());
                     int col = tintDefault;
                     if (q.isTinted()) {
                         try {
@@ -467,6 +473,7 @@ public final class Animations {
         String shape = s.has("shape") ? s.get("shape").getAsString().toLowerCase(Locale.ROOT) : "hoop";
         ResourceLocation tex = ResourceLocation.tryParse(s.has("texture") ? s.get("texture").getAsString() : "theoreticalsciences:block/neutronium_block");
         TextureAtlasSprite sp = Minecraft.getInstance().getModelManager().getAtlas(TextureAtlas.LOCATION_BLOCKS).getSprite(tex);
+        b.sprites.add(sp);
         int col = com.theoreticalsciences.client.render.effects.FxSpec.parseColor(s.has("color") ? s.get("color").getAsString() : null, 0xFFFFFF);
         boolean translucent = s.has("translucent") && s.get("translucent").getAsBoolean();
         VertexConsumer bb = b.get(translucent ? 3 : 0);

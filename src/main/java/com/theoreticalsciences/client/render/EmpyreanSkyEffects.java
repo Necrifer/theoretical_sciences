@@ -67,16 +67,7 @@ public class EmpyreanSkyEffects extends DimensionSpecialEffects {
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
         try {
             RenderSystem.defaultBlendFunc();
-            BufferBuilder bg = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
-            int seg = 32;
-            for (int i = 0; i < seg; i++) {
-                double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
-                for (int band = 0; band < 12; band++) {
-                    double t0 = Math.PI * band / 12, t1 = Math.PI * (band + 1) / 12;
-                    quad(bg, a0, a1, t0, t1, skyColor(t0), skyColor(t1));
-                }
-            }
-            draw(bg);
+            DOME.draw();                                        // 1.3.2: built once, kept on the card
 
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
             // the far glints
@@ -203,6 +194,17 @@ public class EmpyreanSkyEffects extends DimensionSpecialEffects {
         col(bb.addVertex(x0, y0, z0 - w), rgb, a); col(bb.addVertex(x0, y0, z0 + w), rgb, a);
         col(bb.addVertex(x1, y1, z1 + w), rgb, a); col(bb.addVertex(x1, y1, z1 - w), rgb, a);
     }
+
+    private static final BakedSky DOME = new BakedSky(VertexFormat.Mode.TRIANGLES, bg -> {
+        int seg = 32;
+        for (int i = 0; i < seg; i++) {
+            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
+            for (int band = 0; band < 12; band++) {
+                double t0 = Math.PI * band / 12, t1 = Math.PI * (band + 1) / 12;
+                quad(bg, a0, a1, t0, t1, skyColor(t0), skyColor(t1));
+            }
+        }
+    });
 
     private static void draw(BufferBuilder bb) {
         MeshData m = bb.build();
