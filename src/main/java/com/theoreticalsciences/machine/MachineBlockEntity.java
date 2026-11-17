@@ -113,7 +113,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         // intake is limited only by the buffer; generators push out as fast as anything will take it
         // (round 31: a datapack may change the buffer size and the intake limit - data/<ns>/ts_machines/<machine>.json)
         this.energy = new QHEnergyStorage(com.theoreticalsciences.custom.MachineParams.energyCapacity(type), type.generator ? 0 : Integer.MAX_VALUE, type.generator ? Integer.MAX_VALUE : 0, () -> {
-            markSync();
+            markProgress();
             // 1.2.0: the stored energy is saved too (a reload lost a consumer's charge, gave a generator back what it sent);
             // only the chunk is marked for saving, not setChanged's neighbour updates, as this runs every tick
             if (level != null && !level.isClientSide) level.blockEntityChanged(worldPosition);
@@ -172,13 +172,32 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     protected void onInventoryChanged() {
         recipeDirty = true;
+        if (batching) {                    // 1.3.1: inside a parallel finish, settle once at the end
+            batchChanged = true;
+            return;
+        }
         markSync();
         setChanged();
     }
 
+    /** 1.3.1: true while a parallel finish runs: inventory changes are gathered into one update at the end. */
+    private boolean batching, batchChanged;
+
     protected void markSync() {
         syncDirty = true;
     }
+
+    /**
+     * 1.3.1: progress and stored energy changed (every working tick). These reach the client often only while someone
+     * has the machine's screen open; otherwise every ten seconds. Real changes (status, recipe, inventory) still go
+     * at once through {@link #markSync()}.
+     */
+    protected void markProgress() {
+        progressDirty = true;
+    }
+
+    private boolean progressDirty;
+    private int quietSyncs;
 
     public boolean isActive() {
         return status == MachineStatus.RUNNING || status == MachineStatus.GENERATING;
@@ -349,12 +368,16 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             BlockState st = getBlockState();
             if (st.hasProperty(MachineBlock.ACTIVE) && st.getValue(MachineBlock.ACTIVE) != active)
                 level.setBlock(worldPosition, st.setValue(MachineBlock.ACTIVE, active), 3);
+            level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());     // 1.3.1: comparators read "active"
             markSync();
         }
         if (++syncTimer >= 10) {
             syncTimer = 0;
-            if (syncDirty) {
+            boolean progressDue = progressDirty && (viewers > 0 || ++quietSyncs >= 20);
+            if (syncDirty || progressDue) {
                 syncDirty = false;
+                progressDirty = false;
+                quietSyncs = 0;
                 level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 2);
             }
         }
@@ -457,8 +480,11 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     @Nullable
     protected RecipeHolder<QHRecipe> findRecipe(ServerLevel level) {
-        QHRecipeInput input = new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0));
+        // 1.3.1: the input (with a copy of the ME stock, for a linked controller) is built only when it will be used,
+        // not on every idle tick
+        QHRecipeInput input = null;
         if (currentRecipe != null) {
+            input = new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0));
             Optional<RecipeHolder<?>> cached = byKey(level, currentRecipe);
             if (cached.isPresent() && cached.get().value() instanceof QHRecipe r && r.typeId().equals(type.recipeType) && recipeAllowed(currentRecipe) && r.matches(input, level)) {
                 @SuppressWarnings("unchecked") RecipeHolder<QHRecipe> h = (RecipeHolder<QHRecipe>) cached.get();
@@ -468,6 +494,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         if (!recipeDirty && ++idleTimer < 40) return null;
         idleTimer = 0;
         recipeDirty = false;
+        if (input == null) input = new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0));
         // Prefer the most specific match (most ingredients) so catalyst-free recipes never shadow richer ones.
         RecipeHolder<QHRecipe> best = null;
         int bestScore = -1;
@@ -586,6 +613,9 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             // (a recipe whose finish does something to the world, not just make items, runs once - see singleRunOnly)
             int runs = singleRunOnly(r) ? 1 : parallelCount();
             int runsDone = 0;
+            batching = runs > 1;
+            batchChanged = false;
+            try {
             for (int k = 0; k < runs; k++) {
                 if (k > 0 && !(r.matches(new QHRecipeInput(inputStacks(), inputFluids(), catalyst.getStackInSlot(0)), level) && canOutput(r, true))) break;
                 if (!com.theoreticalsciences.compat.magic.Magic.take(level, worldPosition, r)) break;       // 1.7.3: its mana or aura first
@@ -596,6 +626,14 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
                 canOutput(r, false);
                 bonusOutputs(level, r);                // 1.2.0: a finely tuned multiblock makes more
             }
+            } finally {
+                batching = false;
+                if (batchChanged) {
+                    batchChanged = false;
+                    markSync();
+                    setChanged();
+                }
+            }
             rolled = null;
             if (runsDone > 0) {
                 NeoForge.EVENT_BUS.post(new MachineRecipeEvent.Finish(this, holder.id(), r));
@@ -604,8 +642,8 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             if (r.insight > 0 && owner != null) ResearchService.addInsight(level.getServer(), owner, (int) Math.min(Integer.MAX_VALUE, (long) r.insight * Math.max(1, runsDone)));
             recipeDirty = true;
         }
-        markSync();
-        setChanged();
+        markProgress();                                    // 1.3.1: was a full sync and neighbour update every tick
+        level.blockEntityChanged(worldPosition);
     }
 
     protected void tickGenerator(ServerLevel level) {
@@ -619,8 +657,8 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
                 burnRate = 0;
                 recipeDirty = true;
             }
-            markSync();
-            setChanged();
+            markProgress();                                // 1.3.1: was a full sync and neighbour update every tick
+            level.blockEntityChanged(worldPosition);
         } else {
             RecipeHolder<QHRecipe> holder = findRecipe(level);
             if (holder == null) {

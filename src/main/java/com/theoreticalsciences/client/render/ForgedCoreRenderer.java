@@ -100,8 +100,4 @@ public class ForgedCoreRenderer implements BlockEntityRenderer<ForgedCoreBlockEn
         return new AABB(be.getBlockPos()).inflate(2.5);
     }
 
-    @Override
-    public boolean shouldRenderOffScreen(ForgedCoreBlockEntity be) {
-        return true;
-    }
 }

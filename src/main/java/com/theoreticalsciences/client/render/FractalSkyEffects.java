@@ -199,6 +199,8 @@ public class FractalSkyEffects extends DimensionSpecialEffects {
         PoseStack ps = new PoseStack();
         ps.mulPose(Axis.YP.rotationDegrees(degrees));
         ps.mulPose(Axis.XP.rotationDegrees(degrees * 0.3F));
+        // 1.3.2: all six faces go in one draw (they were six)
+        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
         for (int face = 0; face < 6; face++) {
             ps.pushPose();
             switch (face) {
@@ -210,15 +212,14 @@ public class FractalSkyEffects extends DimensionSpecialEffects {
                 default -> {}
             }
             Matrix4f m = ps.last().pose();
-            BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
             float d = 100F;
             bb.addVertex(m, -d, -d, -d).setUv(0, 0).setColor(1F, 1F, 1F, alpha);
             bb.addVertex(m, -d, -d, d).setUv(0, tile).setColor(1F, 1F, 1F, alpha);
             bb.addVertex(m, d, -d, d).setUv(tile, tile).setColor(1F, 1F, 1F, alpha);
             bb.addVertex(m, d, -d, -d).setUv(tile, 0).setColor(1F, 1F, 1F, alpha);
-            MeshData mesh = bb.build();
-            if (mesh != null) BufferUploader.drawWithShader(mesh);
             ps.popPose();
         }
+        MeshData mesh = bb.build();
+        if (mesh != null) BufferUploader.drawWithShader(mesh);
     }
 }

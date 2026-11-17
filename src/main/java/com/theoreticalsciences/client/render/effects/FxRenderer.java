@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.core.BlockPos;
@@ -120,7 +121,7 @@ public final class FxRenderer {
         f.up = new Vector3f(event.getCamera().getUpVector());
 
         List<Object[]> sources = new ArrayList<>();
-        for (ControllerBlockEntity c : List.copyOf(ClientHooks.CONTROLLERS)) {
+        for (ControllerBlockEntity c : ClientHooks.snapshot(ClientHooks.CONTROLLERS)) {
             MultiblockDefinition def = c.definition();
             if (def == null || (def.animation == null && def.moving.isEmpty() && def.fx.isEmpty()) || c.isRemoved()) continue;
             sources.add(new Object[]{c, OWN.computeIfAbsent(c, ControllerSource::new)});
@@ -232,7 +233,17 @@ public final class FxRenderer {
 
     /** A buffer source of its own, so flushing it never draws the game's own queued (translucent) entities early. */
     static MultiBufferSource.BufferSource buffers() {
-        if (FX_BUFFERS == null) FX_BUFFERS = MultiBufferSource.immediate(new com.mojang.blaze3d.vertex.ByteBufferBuilder(1 << 18));
+        if (FX_BUFFERS == null) {
+            // 1.3.2: one buffer for each kind of drawing these effects use, so switching between them (a beam, then an
+            // item, then a beam) no longer draws and empties the buffer each time. They are drawn in this order when a
+            // pass ends: solid, cut out, see-through, then beams. Any other kind still works through the shared buffer.
+            java.util.SequencedMap<RenderType, com.mojang.blaze3d.vertex.ByteBufferBuilder> fixed = new java.util.LinkedHashMap<>();
+            for (RenderType rt : new RenderType[]{Sheets.solidBlockSheet(), Sheets.cutoutBlockSheet(), Sheets.translucentItemSheet(),
+                    Sheets.translucentCullBlockSheet(), RenderType.glint(), RenderType.glintTranslucent(), RenderType.entityGlint(),
+                    RenderType.beaconBeam(BeamEffect.BEAM, false), RenderType.beaconBeam(BeamEffect.BEAM, true)})
+                fixed.putIfAbsent(rt, new com.mojang.blaze3d.vertex.ByteBufferBuilder(rt.bufferSize()));
+            FX_BUFFERS = MultiBufferSource.immediateWithBuffers(fixed, new com.mojang.blaze3d.vertex.ByteBufferBuilder(1 << 18));
+        }
         return FX_BUFFERS;
     }
 
@@ -309,6 +320,7 @@ public final class FxRenderer {
                 light = 0.25F + 0.75F * Math.max(bl, sl);
             }
             Matrix4f pm = new Matrix4f(mv).mul(tr[p.index]);
+            if (!translucent) com.theoreticalsciences.client.render.SodiumSprites.mark(bp.animated);      // 1.3.2
             for (int L = translucent ? 3 : 0; L < (translucent ? 4 : 3); L++) {
                 VertexBuffer vb = bp.layers[L];
                 if (vb == null) continue;

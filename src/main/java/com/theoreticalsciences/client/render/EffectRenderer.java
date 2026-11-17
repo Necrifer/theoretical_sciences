@@ -27,6 +27,7 @@ import org.lwjgl.opengl.GL30;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Map;
 
 /**
  * Draws every large-scale physics effect after the level has rendered:
@@ -78,7 +79,7 @@ public final class EffectRenderer {
         List<ControllerBlockEntity> visible = new ArrayList<>();
         List<ControllerBlockEntity> sweeping = new ArrayList<>();
         double tick = (double) mc.level.getGameTime() + partial;
-        for (ControllerBlockEntity c : List.copyOf(ClientHooks.CONTROLLERS)) {
+        for (ControllerBlockEntity c : ClientHooks.snapshot(ClientHooks.CONTROLLERS)) {
             if (c.isRemoved() || c.getLevel() != mc.level || !c.isFormed()) continue;
             PowerAnimator.State ps = PowerAnimator.update(c, tick);
             Vec3 ctr = c.effectCenter();
@@ -92,23 +93,23 @@ public final class EffectRenderer {
             visible.add(c);
         }
         List<Vec3> bubbles = new ArrayList<>();
-        for (var b : List.copyOf(ClientHooks.BUBBLES)) {
+        for (var b : ClientHooks.snapshot(ClientHooks.BUBBLES)) {
             if (b.isRemoved() || b.getLevel() != mc.level) continue;
             Vec3 bp = Vec3.atCenterOf(b.getBlockPos());
             if (bp.distanceToSqr(cam) > 96 * 96 || !event.getFrustum().isVisible(new AABB(bp, bp).inflate(2))) continue;
             bubbles.add(bp);
         }
         List<com.theoreticalsciences.entity.ContainmentRupture> ruptures = new ArrayList<>();
-        for (var en : List.copyOf(ClientHooks.RUPTURES))
+        for (var en : ClientHooks.snapshot(ClientHooks.RUPTURES))
             if (en instanceof com.theoreticalsciences.entity.ContainmentRupture r && !r.isRemoved() && r.level() == mc.level && r.distanceToSqr(cam) < 256 * 256) ruptures.add(r);
         List<net.minecraft.world.entity.Entity> wraiths = new ArrayList<>();
-        for (var en : List.copyOf(ClientHooks.WRAITHS)) {
+        for (var en : ClientHooks.snapshot(ClientHooks.WRAITHS)) {
             if (en.isRemoved() || en.level() != mc.level || en.distanceToSqr(cam) > 128 * 128) { ClientHooks.WRAITHS.remove(en); continue; }
             if (event.getFrustum().isVisible(en.getBoundingBox().inflate(2))) wraiths.add(en);
         }
         // the nearest few fractured blocks bend the view around them
         List<Vec3> fractures = new ArrayList<>();
-        for (var f : List.copyOf(ClientHooks.FRACTURES)) {
+        for (var f : ClientHooks.snapshot(ClientHooks.FRACTURES)) {
             if (f.isRemoved() || f.getLevel() != mc.level) continue;
             Vec3 fp = Vec3.atCenterOf(f.getBlockPos());
             if (fp.distanceToSqr(cam) < 48 * 48 && event.getFrustum().isVisible(new AABB(fp, fp).inflate(1))) fractures.add(fp);
@@ -134,9 +135,11 @@ public final class EffectRenderer {
         mvs.pushMatrix();
         mvs.identity();
         mvs.mul(event.getModelViewMatrix());
+        flushGlows();
         RenderSystem.applyModelViewMatrix();
         Matrix4f oldProj = new Matrix4f(RenderSystem.getProjectionMatrix());
         VertexSorting oldSort = RenderSystem.getVertexSorting();
+        flushGlows();
         RenderSystem.setProjectionMatrix(event.getProjectionMatrix(), VertexSorting.DISTANCE_TO_ORIGIN);
         mc.getMainRenderTarget().bindWrite(false);
 
@@ -169,11 +172,14 @@ public final class EffectRenderer {
                 Vec3 look = new Vec3(camera.getLookVector());
                 LENSES.add(new Lens(cam.add(look.scale(0.6)), 0.6F, 1.6F, 5, 1.0F));
             }
+            flushGlows();
             if (!LENSES.isEmpty() && QHConfig.LENSING_ENABLED.get() && QHShaders.LENS != null) {
                 drawLenses(mc, event.getModelViewMatrix(), event.getProjectionMatrix());
             }
+            flushGlows();
             for (Runnable r : FOREGROUND) r.run();
         } finally {
+            flushGlows();
             RenderSystem.disableBlend();
             RenderSystem.defaultBlendFunc();
             RenderSystem.depthMask(true);
@@ -183,6 +189,7 @@ public final class EffectRenderer {
             RenderSystem.setShaderTexture(0, 0);
             RenderSystem.setProjectionMatrix(oldProj, oldSort);
             mvs.popMatrix();
+            flushGlows();
             RenderSystem.applyModelViewMatrix();
             mc.getMainRenderTarget().bindWrite(false);
         }
@@ -223,6 +230,7 @@ public final class EffectRenderer {
             mvs.translate((float) rel.x, (float) rel.y, (float) rel.z);
             mvs.scale(scale);
             mvs.translate((float) -rel.x, (float) -rel.y, (float) -rel.z);
+            flushGlows();
             RenderSystem.applyModelViewMatrix();
         }
         FX_A = alpha;
@@ -232,6 +240,7 @@ public final class EffectRenderer {
             FX_A = 1F;
             if (transform) {
                 mvs.popMatrix();
+                flushGlows();
                 RenderSystem.applyModelViewMatrix();
             }
         }
@@ -249,6 +258,7 @@ public final class EffectRenderer {
                     mvs.translate((float) rel.x, (float) rel.y, (float) rel.z);
                     mvs.scale(sc);
                     mvs.translate((float) -rel.x, (float) -rel.y, (float) -rel.z);
+                    flushGlows();
                     RenderSystem.applyModelViewMatrix();
                 }
                 FX_A = a;
@@ -258,6 +268,7 @@ public final class EffectRenderer {
                     FX_A = 1F;
                     if (sc != 1F) {
                         mvs.popMatrix();
+                        flushGlows();
                         RenderSystem.applyModelViewMatrix();
                     }
                 }
@@ -416,11 +427,13 @@ public final class EffectRenderer {
         mvs.translate((float) rel.x, (float) rel.y, (float) rel.z);
         mvs.scale(scale);
         mvs.translate((float) -rel.x, (float) -rel.y, (float) -rel.z);
+        flushGlows();
         RenderSystem.applyModelViewMatrix();
         try {
             body.run();
         } finally {
             mvs.popMatrix();
+            flushGlows();
             RenderSystem.applyModelViewMatrix();
         }
         for (int i = lensStart; i < LENSES.size(); i++) {
@@ -434,11 +447,13 @@ public final class EffectRenderer {
                 mvs.translate((float) rel.x, (float) rel.y, (float) rel.z);
                 mvs.scale(scale);
                 mvs.translate((float) -rel.x, (float) -rel.y, (float) -rel.z);
+                flushGlows();
                 RenderSystem.applyModelViewMatrix();
                 try {
                     r.run();
                 } finally {
                     mvs.popMatrix();
+                    flushGlows();
                     RenderSystem.applyModelViewMatrix();
                 }
             });
@@ -449,7 +464,7 @@ public final class EffectRenderer {
         Minecraft mc = Minecraft.getInstance();
         // display miniatures: nearest 24 within 48 blocks
         List<com.theoreticalsciences.transcend.DecorBlockEntity> shown = new ArrayList<>();
-        for (var be : List.copyOf(ClientHooks.DECOR)) {
+        for (var be : ClientHooks.snapshot(ClientHooks.DECOR)) {
             if (be.isRemoved() || be.getLevel() != mc.level || !(be instanceof com.theoreticalsciences.transcend.DecorBlockEntity d)) continue;
             Vec3 p = Vec3.atCenterOf(be.getBlockPos());
             if (p.distanceToSqr(cam) > 48 * 48 || !frustum.isVisible(new AABB(p, p).inflate(1.5))) continue;
@@ -496,7 +511,7 @@ public final class EffectRenderer {
             }
         }
         // Axiom Sentinels proving something: a line of light grows from the sentinel to its target
-        for (var en : List.copyOf(ClientHooks.SENTINELS)) {
+        for (var en : ClientHooks.snapshot(ClientHooks.SENTINELS)) {
             if (en.isRemoved() || en.level() != mc.level || !(en instanceof com.theoreticalsciences.entity.AxiomSentinel sn)) {
                 ClientHooks.SENTINELS.remove(en);
                 continue;
@@ -533,18 +548,23 @@ public final class EffectRenderer {
         mvs.pushMatrix();
         mvs.identity();
         mvs.mul(event.getModelViewMatrix());
+        flushGlows();
         RenderSystem.applyModelViewMatrix();
         Matrix4f oldProj = new Matrix4f(RenderSystem.getProjectionMatrix());
         VertexSorting oldSort = RenderSystem.getVertexSorting();
+        flushGlows();
         RenderSystem.setProjectionMatrix(event.getProjectionMatrix(), VertexSorting.DISTANCE_TO_ORIGIN);
         mc.getMainRenderTarget().bindWrite(false);
         try {
             LENSES.clear();
             FOREGROUND.clear();
             hyperobjects(mc, partial);
+            flushGlows();
             if (!LENSES.isEmpty() && QHConfig.LENSING_ENABLED.get() && QHShaders.LENS != null) drawLenses(mc, event.getModelViewMatrix(), event.getProjectionMatrix());
+            flushGlows();
             for (Runnable r : FOREGROUND) r.run();
         } finally {
+            flushGlows();
             RenderSystem.disableBlend();
             RenderSystem.defaultBlendFunc();
             RenderSystem.depthMask(true);
@@ -554,13 +574,14 @@ public final class EffectRenderer {
             RenderSystem.setShaderTexture(0, 0);
             RenderSystem.setProjectionMatrix(oldProj, oldSort);
             mvs.popMatrix();
+            flushGlows();
             RenderSystem.applyModelViewMatrix();
             mc.getMainRenderTarget().bindWrite(false);
         }
     }
 
     private static void hyperobjects(Minecraft mc, float partial) {
-        for (var en : List.copyOf(ClientHooks.HYPEROBJECTS)) {
+        for (var en : ClientHooks.snapshot(ClientHooks.HYPEROBJECTS)) {
             if (en.isRemoved() || en.level() != mc.level || en.distanceToSqr(cam) > 256 * 256) {
                 ClientHooks.HYPEROBJECTS.remove(en);
                 continue;
@@ -583,29 +604,52 @@ public final class EffectRenderer {
     }
 
     /** A spiral galaxy: two logarithmic arms of stars around a bright bulge, turning slowly. */
+    /** 1.3.1: a galaxy's stars by seed (radius, angle before the turn, height, colour, size): drawn the same as before. */
+    private static final Map<Long, double[]> GALAXIES = new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static double[] galaxyStars(long seed) {
+        return GALAXIES.computeIfAbsent(seed, sd -> {
+            Random r = new Random(sd);
+            double[] out = new double[260 * 5];
+            for (int i = 0; i < 260; i++) {
+                int arm = i & 1;
+                double t = r.nextDouble();
+                double rad = 0.2 + t * 2.4, base = arm * Math.PI + Math.log(rad + 0.3) * 2.6, g = r.nextGaussian() * 0.25;
+                double y = r.nextGaussian() * 0.06 * (1.2 - t);
+                int col = t < 0.25 ? 0xFFE0A0 : (r.nextInt(4) == 0 ? 0xFF90C0 : 0xA0C0FF);
+                out[i * 5] = rad;
+                out[i * 5 + 1] = base + g;
+                out[i * 5 + 2] = y;
+                out[i * 5 + 3] = col;
+                out[i * 5 + 4] = 0.05F + (float) (0.06 * (1 - t));
+            }
+            return out;
+        });
+    }
+
     private static void galaxy(Vec3 c, long seed) {
-        Random r = new Random(seed);
+        double[] st = galaxyStars(seed);
         beginAdditive();
         BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
         float spin = time * 0.15F;
         for (int i = 0; i < 260; i++) {
-            int arm = i & 1;
-            double t = r.nextDouble();
-            double rad = 0.2 + t * 2.4, ang = arm * Math.PI + Math.log(rad + 0.3) * 2.6 + spin + r.nextGaussian() * 0.25;
-            double y = r.nextGaussian() * 0.06 * (1.2 - t);
-            Vec3 p = c.add(Math.cos(ang) * rad, y, Math.sin(ang) * rad);
-            int col = t < 0.25 ? 0xFFE0A0 : (r.nextInt(4) == 0 ? 0xFF90C0 : 0xA0C0FF);
-            glowInto(pts, p, 0.05F + (float) (0.06 * (1 - t)), col, 0.7F);
+            double rad = st[i * 5], ang = st[i * 5 + 1] + spin;
+            Vec3 p = c.add(Math.cos(ang) * rad, st[i * 5 + 2], Math.sin(ang) * rad);
+            glowInto(pts, p, (float) st[i * 5 + 4], (int) st[i * 5 + 3], 0.7F);
         }
         draw(pts);
         glow(c, 0.9F, 0xFFE8B0, 0.8F);
     }
 
     /** A 5-cube (penteract): 32 vertices, 80 edges, rotating in three planes at once and projected 5D -> 4D -> 3D. */
+    private static final double[][] PENT_V = new double[32][5];
+    private static final float[][] PENT_P = new float[32][4];
+    private static final int[] PENT_HUES = {0x60E0FF, 0xFF60D0, 0xFFD060, 0x80FF90, 0xC090FF};
+
     private static void penteract(Vec3 c, float scale, float alpha) {
-        double[][] v = new double[32][5];
+        double[][] v = PENT_V;                                  // 1.3.2: reused, not allocated each frame
         double a1 = time * 0.5, a2 = time * 0.37, a3 = time * 0.23;
-        float[][] p3 = new float[32][4];
+        float[][] p3 = PENT_P;
         for (int i = 0; i < 32; i++) {
             for (int k = 0; k < 5; k++) v[i][k] = ((i >> k) & 1) == 0 ? -1 : 1;
             rot(v[i], 0, 3, a1);
@@ -615,9 +659,9 @@ public final class EffectRenderer {
             double f5 = 3.0 / (3.6 - v[i][4]);
             double x = v[i][0] * f5, y = v[i][1] * f5, z = v[i][2] * f5, w = v[i][3] * f5;
             double f4 = 2.4 / (3.4 - w);
-            p3[i] = new float[]{(float) (x * f4), (float) (y * f4), (float) (z * f4), (float) v[i][4]};
+            p3[i][0] = (float) (x * f4); p3[i][1] = (float) (y * f4); p3[i][2] = (float) (z * f4); p3[i][3] = (float) v[i][4];
         }
-        int[] hues = {0x60E0FF, 0xFF60D0, 0xFFD060, 0x80FF90, 0xC090FF};
+        int[] hues = PENT_HUES;
         beginAdditive();
         BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
         float s = scale * 0.6F;
@@ -1708,10 +1752,18 @@ public final class EffectRenderer {
         RenderSystem.enableDepthTest();
         RenderSystem.disableCull();
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
+        additive = true;
     }
+
+    /** True while the drawing state is the additive one glows use (any other change of state flushes and clears it). */
+    private static boolean additive;
 
     private static void draw(BufferBuilder bb) {
         MeshData mesh = bb.build();
+        if (glowBatch != null) {                       // (only ever while the additive state is still set)
+            flushGlows();
+            beginAdditive();
+        }
         if (mesh != null) BufferUploader.drawWithShader(mesh);
     }
 
@@ -1722,21 +1774,54 @@ public final class EffectRenderer {
 
     /** Soft radial glow billboard (triangle fan baked into triangles). */
     private static void glow(Vec3 c, float radius, int rgb, float alpha) {
-        beginAdditive();
-        BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
-        glowInto(bb, c, radius, rgb, alpha);
-        draw(bb);
+        // 1.3.2: glows are gathered and drawn together (each was its own draw call: up to hundreds a frame). They are
+        // additive and write no depth, so the order among them does not matter; the batch is drawn before anything
+        // that changes the drawing state, so everything else keeps its order.
+        if (!additive) {                                    // somewhere else's drawing state: drawn now, as before
+            beginAdditive();
+            BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+            glowInto(bb, c, radius, rgb, alpha);
+            draw(bb);
+            return;
+        }
+        if (glowBatch == null) glowBatch = new BufferBuilder(GLOW_BYTES, VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+        glowInto(glowBatch, c, radius, rgb, alpha);
+    }
+
+    private static final com.mojang.blaze3d.vertex.ByteBufferBuilder GLOW_BYTES = new com.mojang.blaze3d.vertex.ByteBufferBuilder(1 << 16);
+    @javax.annotation.Nullable
+    private static BufferBuilder glowBatch;
+
+    /** Draws the gathered glows (with the additive state they need). */
+    private static void flushGlows() {
+        BufferBuilder b = glowBatch;
+        glowBatch = null;
+        MeshData mesh = b == null ? null : b.build();
+        if (mesh != null) {
+            beginAdditive();
+            BufferUploader.drawWithShader(mesh);
+        }
+        additive = false;                                   // (the caller is about to change the state)
+    }
+
+    /** 1.3.1: the glow's 24 directions, worked out once (it was 12 sine and cosine calls per segment, per glow, per frame). */
+    private static final double[] GLOW_COS = new double[25], GLOW_SIN = new double[25];
+
+    static {
+        for (int i = 0; i <= 24; i++) {
+            double a = i * Math.PI * 2 / 24;
+            GLOW_COS[i] = Math.cos(a);
+            GLOW_SIN[i] = Math.sin(a);
+        }
     }
 
     private static void glowInto(BufferBuilder bb, Vec3 c, float radius, int rgb, float alpha) {
-        int seg = 24;
-        for (int i = 0; i < seg; i++) {
-            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
+        double lx = left.x * radius, ly = left.y * radius, lz = left.z * radius, ux = up.x * radius, uy = up.y * radius, uz = up.z * radius;
+        for (int i = 0; i < 24; i++) {
+            double c0 = GLOW_COS[i], s0 = GLOW_SIN[i], c1 = GLOW_COS[i + 1], s1 = GLOW_SIN[i + 1];
             v(bb, c.x, c.y, c.z, rgb, alpha);
-            v(bb, c.x + (left.x * Math.cos(a0) + up.x * Math.sin(a0)) * radius, c.y + (left.y * Math.cos(a0) + up.y * Math.sin(a0)) * radius,
-                    c.z + (left.z * Math.cos(a0) + up.z * Math.sin(a0)) * radius, rgb, 0);
-            v(bb, c.x + (left.x * Math.cos(a1) + up.x * Math.sin(a1)) * radius, c.y + (left.y * Math.cos(a1) + up.y * Math.sin(a1)) * radius,
-                    c.z + (left.z * Math.cos(a1) + up.z * Math.sin(a1)) * radius, rgb, 0);
+            v(bb, c.x + lx * c0 + ux * s0, c.y + ly * c0 + uy * s0, c.z + lz * c0 + uz * s0, rgb, 0);
+            v(bb, c.x + lx * c1 + ux * s1, c.y + ly * c1 + uy * s1, c.z + lz * c1 + uz * s1, rgb, 0);
         }
     }
 
@@ -1995,6 +2080,7 @@ public final class EffectRenderer {
         draw(pts);
         if (shells <= 0) return;
         // panels: 8 x 8 grid on a sphere, alpha blended so a finished sphere hides its star
+        flushGlows();
         RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         RenderSystem.depthMask(true);
         BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
@@ -2015,6 +2101,7 @@ public final class EffectRenderer {
             }
         draw(bb);
         // glowing seams
+        flushGlows();
         RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
         RenderSystem.depthMask(false);
         BufferBuilder seams = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
@@ -2035,12 +2122,34 @@ public final class EffectRenderer {
         int w = main.width, h = main.height;
         if (sceneCopy == null) sceneCopy = new TextureTarget(w, h, false, Minecraft.ON_OSX);
         else if (sceneCopy.width != w || sceneCopy.height != h) sceneCopy.resize(w, h, Minecraft.ON_OSX);
+        // 1.3.2: copy only the part of the screen the lenses can sample - their quads, grown by half again on every
+        // side, not the whole screen (up to twice a frame)
+        Matrix4f mvpc = new Matrix4f(proj).mul(modelView);
+        int x0 = w, y0 = h, x1 = 0, y1 = 0;
+        for (Lens l : LENSES) {
+            float q = l.quadRadius;
+            for (int k = 0; k < 4; k++) {
+                float a1 = (k & 1) == 0 ? -q : q, a2 = (k & 2) == 0 ? -q : q;
+                Vec3 corner = l.pos.add(left.x * a1 + up.x * a2, left.y * a1 + up.y * a2, left.z * a1 + up.z * a2);
+                Vector4f pc = project(mvpc, corner, w, h);
+                if (pc == null) {                       // a corner behind the camera: take the whole screen
+                    x0 = 0; y0 = 0; x1 = w; y1 = h;
+                    break;
+                }
+                x0 = Math.min(x0, (int) pc.x); x1 = Math.max(x1, (int) Math.ceil(pc.x));
+                y0 = Math.min(y0, (int) pc.y); y1 = Math.max(y1, (int) Math.ceil(pc.y));
+            }
+        }
+        int mx = Math.max(8, (x1 - x0) / 2), my = Math.max(8, (y1 - y0) / 2);
+        x0 = Math.max(0, x0 - mx); y0 = Math.max(0, y0 - my);
+        x1 = Math.min(w, x1 + mx); y1 = Math.min(h, y1 + my);
         GlStateManager._glBindFramebuffer(GL30.GL_READ_FRAMEBUFFER, main.frameBufferId);
         GlStateManager._glBindFramebuffer(GL30.GL_DRAW_FRAMEBUFFER, sceneCopy.frameBufferId);
-        GlStateManager._glBlitFrameBuffer(0, 0, w, h, 0, 0, w, h, GL11.GL_COLOR_BUFFER_BIT, GL11.GL_NEAREST);
+        if (x1 > x0 && y1 > y0) GlStateManager._glBlitFrameBuffer(x0, y0, x1, y1, x0, y0, x1, y1, GL11.GL_COLOR_BUFFER_BIT, GL11.GL_NEAREST);
         main.bindWrite(false);
 
         ShaderInstance sh = QHShaders.LENS;
+        flushGlows();
         RenderSystem.disableBlend();
         RenderSystem.depthMask(false);
         RenderSystem.enableDepthTest();

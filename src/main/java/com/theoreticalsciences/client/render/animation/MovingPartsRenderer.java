@@ -73,6 +73,7 @@ public class MovingPartsRenderer implements BlockEntityRenderer<MachineBlockEnti
             ps.last().pose().mul(m);
             ps.last().normal().mul(new org.joml.Matrix3f(m));
             boolean drawn = false;
+            com.theoreticalsciences.client.render.SodiumSprites.mark(bp.animated);          // 1.3.2
             if (!Animations.cpuOnly()) {
                 // the fast way: the part's buffers already on the graphics card, drawn where the pose says
                 float light = p.fullBright ? 1F : 0.25F + 0.75F * Math.max(net.minecraft.client.renderer.LightTexture.block(lt) / 15F,

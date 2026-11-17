@@ -46,11 +46,35 @@ public final class MachineWorkSound extends AbstractTickableSoundInstance {
     public static void keepAlive(ControllerBlockEntity be) {
         MachineVoices.Voice v = MachineVoices.of(be.type.id());
         if (v == null || !QHSounds.WORK.containsKey(v.sound())) return;
+        Minecraft mc = Minecraft.getInstance();
         MachineWorkSound s = PLAYING.get(be.getBlockPos());
-        if (s != null && !s.isStopped() && s.be == be) return;
+        // 1.3.1: a sound the engine dropped (too many channels, F3+T, a new audio device) is not "stopped" but no longer
+        // plays either: ask the engine, so the machine is heard again instead of staying silent until a relog
+        if (s != null && !s.isStopped() && s.be == be && (mc.getSoundManager().isActive(s) || System.currentTimeMillis() - s.born < 2000)) return;
+        if (s != null) {
+            PLAYING.remove(be.getBlockPos());
+            if (!s.isStopped()) s.stop();
+        }
+        // 1.3.1: only start the loop where it can be heard (16 blocks per unit of volume, and a margin)
+        if (mc.player == null) return;
+        double reach = 16 * (double) Math.max(1F, Math.min(4F, sizeOf(be) / 12F)) + 8;
+        if (mc.player.distanceToSqr(be.effectCenter()) > reach * reach) return;
         s = new MachineWorkSound(be, v);
         PLAYING.put(be.getBlockPos(), s);
         Minecraft.getInstance().getSoundManager().play(s);
+    }
+
+    /** When this loop was handed to the engine (it may take a moment to start). */
+    private final long born = System.currentTimeMillis();
+
+    private static int sizeOf(ControllerBlockEntity be) {
+        MultiblockDefinition def = be.definition();
+        return def == null ? 3 : Math.max(def.sizeX, Math.max(def.sizeY, def.sizeZ));
+    }
+
+    /** 1.3.1: forgets every loop (on logging out), so no machine of the last world is kept alive. */
+    public static void clear() {
+        PLAYING.clear();
     }
 
     private boolean running() {

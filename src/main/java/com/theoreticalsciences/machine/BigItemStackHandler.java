@@ -70,4 +70,11 @@ public class BigItemStackHandler extends ItemStackHandler {
         }
         onLoad();
     }
+
+    /** 1.3.1: a saved inventory with its slot count set to what the handler really has (a saved "Size" is not trusted). */
+    public static net.minecraft.nbt.CompoundTag sized(net.minecraft.nbt.CompoundTag saved, int slots) {
+        net.minecraft.nbt.CompoundTag c = saved.copy();
+        c.putInt("Size", slots);
+        return c;
+    }
 }
