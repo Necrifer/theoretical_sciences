@@ -1,5 +1,307 @@
 # Changelog
 
+## 1.3.0: the CurseForge release (17 November 2026)
+
+Everything since 1.2.0 (3 Forgotten Memories), in short. The full list, with every recipe change and number, follows
+below.
+
+### Before updating
+
+* **Empty the Cantor Diagonalizer, Axiom Distiller, Convergence Engine and Pleroma Confluence.** They are now the
+  controllers of multiblocks, and what an old one held (items, fluids, energy) is not carried over.
+* **Eight endgame structures have new shapes** and stop working until rebuilt. The Structure Assembler takes an old
+  build apart, and every new shape uses at least as many of each block as the old one, so nothing you built is lost.
+* **Recipes have changed.** Every endgame recipe now takes Field Syntheses, the middle of the progression is much
+  cheaper, and many machines gained new and cheaper routes. JEI or EMI shows the current recipes.
+
+### New branches and concepts
+
+Every new concept comes with a console window driven by a real equation, a derivation puzzle and a material chain
+that leads into the endgame.
+
+**Fluids and Flight.** Fluid dynamics, aerodynamics and compressible flow, with the Wind Tunnel, the Laminar Flow
+Conduit and the MHD Generator.
+
+**Into Orbit.** Rocketry (Liquid Oxygen and Liquid Hydrogen, the Rocket Assembly), orbital mechanics and the
+**Orbital Station**, a new dimension. The Jet Stream above the Accretion Frontier, with the Kármán Wraiths, and the
+Bussard Ramscoop.
+
+**The Living Planet.** Oceanography and ocean waves, with the **Hadal Trench**, a new dimension at the bottom of the
+Overworld's sea, its vent fields, Hadal Anglerfish and Siphonophore Colonies, and the Wave Energy Converter.
+Meteorology, volcanology and glaciology, with the Storm Chamber, the Storm Elemental, the Ice Core Drill and the
+Geothermal Plant.
+
+**The Green Kingdom.** Plant physiology, plant hormones, plant breeding, soil science and food science: the
+Hydroponic Tower, the Phytotron, the Breeding Bench, Biochar, Humus, Living Soil and Field Rations (the Well Fed effect).
+
+**Deep Time.** Three new Overworld ores (Fossil, Amber, Stromatolite), radiometric dating, ancient DNA and
+de-extinction. The Revival Vat brings back the **Woolly Mammoth** and the **Meganeura**. New ruins: Dig Sites and
+Greenhouse Ruins.
+
+**Mind and Language.** The action potential, synaptic plasticity, psychophysics, linguistics and integrated
+information, with eight consoles, the Neural Cortex (a new region of Inner Space), Library Ruins and the Low-Light Visor.
+
+**Engineering of the Large.** Structural mechanics, composite materials, tribology and corrosion science: the Load Test
+Rig, I-Beams, the Composite Layup Press, carbon-fibre and nanotube composites, wear coatings and sacrificial anodes.
+
+**Small Wonders.** Acoustic resonance, space weather (a new world event: geomagnetic storms), chaos theory, knot
+theory, cellular automata, complexity theory, quantum computing, pharmacology (two medicines) and medical imaging.
+
+**Archaeology.** The **Buried Tell**, a new Overworld site with finds you brush out of the ground, the
+Ground-Penetrating Radar, luminescence dating, tree-ring dating, conservation, isotope provenance, the Bloomery Shaft
+(Bloomery Steel) and photogrammetry.
+
+**Space, from launch to the edge of the universe.**
+* Getting there: every destination has a delta-v and transfer windows. The **Mission Planner**, Transfer Stages and
+  the Propulsion Test Stand. The **Mission Bay** sends probes for samples. Radiation in space, and one line of space
+  suits that ends in the Spacefarer Suit.
+* The station grows: station modules (Microgravity Factory, Habitat Ring, Storm Shelter), satellites, space solar power
+  beamed to a Microwave Rectenna, and orbital debris (on by default, `spaceDebris` in the config turns it off).
+* The Sun and small bodies: light sails (Radiation Pressure Balance, Laser Sail), the Sun's magnetism, magnetospheres
+  and the Active Magnetic Shield, asteroids by type and comets, the nebula's gases, helium-3 and the Tokamak.
+* Young worlds and deep sky: icy moons and the **Plume Field**, how planets form and the **Protoplanetary Disk**,
+  habitability, the oldest light (the CMB Bolometer Array), radio flashes (Radio Telescope, Burst Observatory) and the
+  search for others, which ties the space branch to the Omnipotence Core.
+* With **Ad Astra** installed: recipes for Ad Astra's metals, and Ad Astra's space suits hold off the station's vacuum.
+
+### The endgame, reworked
+
+* **Field Syntheses:** the endgame now needs every field. Seven Field Syntheses, each made by one field's machines, go
+  into every endgame recipe.
+* **Signature materials:** every endgame structure makes one material nothing else can, and each tier needs the tier
+  below. Eight structures have new shapes, and four machines became multiblocks.
+* **The Consilience Core:** one last material that needs every field.
+* **Recreating Home**, an expansion beyond the end, opened only after every recipe of the Core Forge has been forged
+  once: the Empyrean Assembly Table (a 15 by 15 table), forty two materials, the Offering Altar, the Homeward Portal
+  and **Omnipotency**, a new dimension.
+* **Those Who Live There:** Omnipotency is inhabited, with the Halo Lamb, Cherub, Choir Seraph, Cloud Ray, Dweller and
+  Threshold Ophan, and new structures (Wayside Shrines, Hamlets, Choir Halls, the Temple of Remembrance), blocks, the
+  Remembrance Tablets and a music disc.
+* **Magic mods (optional):** Botania mana, Nature's Aura, Thaumaturge (vis, aspects, flux) and Astral Sorcery (Lumen)
+  can give their own mechanics to recipes, with the Mana Port. Without those mods nothing changes.
+
+### Progression and balance
+
+* The middle of the progression is far cheaper: a machine recipe now costs at most four times its dearest ingredient.
+  Large counts are kept for the late game and endgame.
+* No machine on the main path is built for a single craft any more.
+* The Antiverse, the Quantum Foam and the Black and White Hole Interiors each gained two new biomes.
+* The last 25 console windows that were left too wide are narrowed, and recipes were added to the machines that had
+  only one or two.
+* For testing and for packs: `/theoreticalsciences testkit` gives a kit of items and grants its research.
+
+### Learning the science
+
+* **Consoles explain before they calculate.** Each quantity is explained in words first, with its own colour. Its
+  equation appears after you have watched that machine finish one cycle (a client config option shows them all at once).
+* **"In plain words"**: the hardest Codex entries (sets and infinities, imaginary numbers, quantum physics, general
+  relativity) open with a plain sentence, an everyday comparison and where that comparison stops being true.
+* Every console has its own animated simulation, and every machine has new art and working sounds.
+* Animated items are smoother (32 frames with light motion blur).
+
+### Working with other mods
+
+* **Fluids:** recipes accept other mods' versions of the shared chemicals: crude oil (Immersive Petroleum, Oritech,
+  Ad Astra, GregTech's four oils), ethylene, propylene, methane, methanol, Liquid Oxygen and Liquid Hydrogen
+  (GregTech, Mekanism), Liquid Sodium, radon, helium-3, carbon monoxide, hydrogen cyanide and uranium hexafluoride.
+  The mod's own fluids carry the common tags too.
+* **Ingots:** every ingot of the mod has a tag (`theoreticalsciences:ingots/<material>`), and recipes take other mods'
+  ingots of the same metal (lithium, aluminium, steel, neutronium).
+* Immersive Petroleum no longer places oil and lava reservoirs in the mod's dimensions.
+* **Anima Mundi config:** `animaMundiNeedsModEssences` and `animaMundiSkipMods` choose whether, and which, other
+  mods' Essences Anima Mundi needs.
+
+### Fixes
+
+* A crash in Omnipotency when a creature looked for a Choir Bell or a Sealed Urn.
+* Planetary Interior gem pockets could grow past the world generation limit and stall large packs.
+* Codex nodes no longer overlap.
+* The Structure Assembler now really marks obstructions (a pulsing red outline).
+* The Mission Planner and Mission Bay screen no longer overlap their text.
+* The Empyrean Assembly Table is safe from chunk banning (its saved data stays a few kilobytes).
+
+The entries below, numbered 1.3.0 to 1.16.3, are the development builds that make up this release, newest first.
+
+## 1.16.3: other mods' ingots in the mod's recipes, and an easy switch for Anima Mundi
+
+* **Every ingot of the mod has a tag, and the mod's recipes use it.** Each of the 25 ingots gets
+  `theoreticalsciences:ingots/<material>` (for example `theoreticalsciences:ingots/lithium`), holding the mod's ingot
+  and the common tag other mods use for the same metal. 243 ingredients in 200 recipes now name the tag instead of the
+  mod's ingot, so another mod's ingot of the same metal works there too:
+  * Lithium: any `c:ingots/lithium` (NuclearCraft's).
+  * Aluminium: `c:ingots/aluminium` and `c:ingots/aluminum` (GregTech's, NuclearCraft's).
+  * Bloomery Steel: any `c:ingots/steel` (Mekanism's, GregTech's, Ad Astra's, NuclearCraft's).
+  * Neutronium: any `c:ingots/neutronium` (GregTech's, NuclearCraft's, Re-Avaritia's).
+  * Lithium-6: `c:ingots/lithium_6` or `c:ingots/lithium6`, if a mod has one.
+  * Every other ingot: `c:ingots/<its name>`, should a mod ever add one. Stellar Iron, Anti-Iron and Anti-Gold take
+    only the mod's own (a star's iron and antimatter are not everyday metal).
+  Packs can add more ingots to these tags. The mod's own ingots are not added to other mods' tags, so other mods'
+  balance is unchanged. The Empyrean Assembly Table's patterns still ask for the mod's own ingots (their slots hold
+  exact items). No amounts changed; the cost and progression checks give the same results as before.
+* **Anima Mundi: switch other mods' Essences on or off in the config.** Two new options in the common config
+  (`theoreticalsciences-common.toml`, section `singularities`), each taking effect after a restart:
+  * `animaMundiNeedsModEssences` (default true): set to false and Anima Mundi is distilled from water, lava, Basaltic
+    Magma and Deep Brine only. Other mods' Essences can still be made, but Anima Mundi and Pleroma no longer need them.
+  * `animaMundiSkipMods`: a list of mod ids whose Essence Anima Mundi does not need, for example `["gtceu", "mekanism"]`.
+  Before, the only way was the fluid blacklist, which took fluid names.
+
+## 1.16.2: cryogenic liquids and gases from other mods, and no foreign oil in the mod's worlds
+
+* **Liquid Oxygen and Liquid Hydrogen from other mods work.** Mekanism's "Liquid Oxygen" and "Liquid Hydrogen" carry
+  only the c:oxygen and c:hydrogen tags, so recipes asking for the mod's own Liquid Oxygen or Liquid Hydrogen refused
+  them. Those recipes now take `theoreticalsciences:liquid_oxygens` (GregTech's Liquid Oxygen and Mekanism's) and
+  `theoreticalsciences:liquid_hydrogens` (Mekanism's, and GregTech's if it has one). Liquid Sodium the same way
+  (`theoreticalsciences:liquid_sodiums`: Mekanism's Liquid Sodium).
+* **More shared fluids.** Recipes naming Radon-222, Helium-3, Carbon Monoxide, Hydrogen Cyanide or Uranium Hexafluoride
+  take any fluid in `c:radon`, `c:helium_3`, `c:carbon_monoxide`, `c:hydrogen_cyanide` or `c:uranium_hexafluoride`
+  (GregTech's, NuclearCraft's, Mekanism's). The mod's own versions of all eight join those `c:` tags and
+  `c:liquid_oxygen`, `c:liquid_hydrogen` and `c:liquid_sodium`, so other mods take them too.
+* **No Immersive Petroleum reservoirs in the mod's dimensions.** Immersive Petroleum places oil and lava reservoirs in
+  every dimension but the End, Titan's ocean included. When it is installed, its reservoir feature is now removed from
+  all 53 of the mod's biomes (biome tag `theoreticalsciences:no_foreign_reservoirs`). Reservoirs elsewhere are
+  unchanged. (Only that feature creates reservoirs, checked in Immersive Petroleum 4.5.0.)
+* Tested on a server with GregTech, Mekanism and Ad Astra: each tag lists the fluids above. No recipes changed.
+
+## 1.16.1: other mods' oils and gases are accepted
+
+* **Every crude oil in the pack now works.** Recipes that take Synthetic Crude used to accept only Immersive Petroleum's
+  crude (`c:crude_oil`), so the Codex line "the pack's crude oil will do as well" was only partly true. They now take
+  the new tag `theoreticalsciences:crude_oils`, which gathers Immersive Petroleum's crude, `c:oil` (Oritech, Ad Astra)
+  and GregTech's Oil, Heavy Oil, Light Oil and Raw Oil. Ad Astra's own oil tag already includes `c:crude_oil`, so
+  Synthetic Crude also feeds Ad Astra's fuel refinery.
+* **Ethylene, propylene, methane and methanol are shared.** Recipes naming the mod's own take the matching fluid from
+  other mods too (tags `theoreticalsciences:ethylenes`, `propylenes`, `methanes`, `methanols`): GregTech's Ethylene,
+  Propene, Methane and Methanol, and Mekanism's Ethene. The mod's fluids join `c:ethylene`, `c:ethene`, `c:propylene`,
+  `c:propene`, `c:methane` and `c:methanol`, so other mods can take them as well.
+* Tested on a server with GregTech, Mekanism and Ad Astra: every tag lists the fluids above. No recipes changed.
+
+## 1.16.0: words before symbols (first step of the teaching plan)
+
+The first changes from "Making the Science Visible": every concept should be met as something familiar, then as a
+picture, and only then as an equation. No recipes changed.
+
+* **Consoles explain before they calculate.** A machine's console now explains each quantity in words first. The
+  equation behind a quantity, a limit or the output appears once you have watched that kind of machine finish one
+  cycle with its screen open ("Cycle watched: the equations behind these numbers are now shown"). Until then the line
+  says how to unlock it. What you have unlocked is kept on your own computer
+  (`config/theoreticalsciences/seen_equations.txt`) for every world. The client config option
+  `learning.showEquationsAtOnce` shows every equation from the start. Nothing about how machines work has changed.
+* **Every quantity has its own colour.** A small square in that colour sits beside each dial and each readout line. When
+  you hover a quantity, a limit or the output, the tooltip lists what it is **built from**, each piece in its own colour
+  and named in words, and those lines light up in the console behind the tooltip. The console's oscilloscope labels its
+  trace in the colour of the quantity it follows. The world's built-in quantities (temperature, gravity, darkness,
+  disturbance and the rest) now have names too, instead of bare symbols.
+* **"In plain words" for the hardest entries.** 44 Codex entries now open with a new first page: one plain sentence
+  with no symbols, an everyday comparison, and where that comparison stops being true. This first batch covers sets
+  and infinities, imaginary and higher numbers, quantum physics and general relativity (and four-dimensional shapes and
+  hidden dimensions). They are drafts for the author's rewrite.
+* **Text tools.** `tools/export_text.py` also writes the drafts as `11 Codex - Plain words (draft).docx`;
+  `tools/import_text.py` reads them back (tested: all 132 draft texts read back unchanged). New tool:
+  `tools/plain_1160.py`.
+
+## 1.15.1: smoother animated items, and the text export
+
+* **Animated items are smoother.** Every animated item was rendered at 40 steps a loop and then cut to every second step
+  (20 frames), so a spinning item turned 18 degrees at a time and looked jerky. All 1,038 animated item textures are now
+  32 frames at two ticks each (a 3.2 s loop, inside the animation cost rules of 1.1.0: no interpolation, at least two
+  ticks a frame). Each frame is the average of two renders half a frame apart, a light motion blur that joins one frame
+  to the next. 912 items were re-rendered from their builders (the `items3d_*` tools, and the 1.1.0 pipeline restored
+  from git); the fluid cells and the six items redrawn since 1.1.0 keep their current art and are re-timed instead,
+  each new frame blended from the two around it. (Animated item textures now take about 60% more memory than before.)
+* **Text export for the rewrite.** `tools/export_text.py` and `tools/export_text.js` write the tooltips and the Codex as
+  ten Word files, every piece of text under a grey line naming its key; `tools/import_text.py` reads rewritten files back
+  (tested: all 13,607 texts read back unchanged).
+* New tool: `tools/smooth_items.py`.
+
+## 1.15.0: Patch D2, young worlds and deep sky
+
+The rest of the space concepts (8, 9 and 11 to 14 of the space document): icy moons, how planets form, habitability,
+the oldest light, radio flashes and torn stars, and the search for others, which ties the space branch to the Core and
+Recreating Home. Two new biomes, and recipes for Ad Astra's metals when it is installed.
+
+### Icy moons
+* **Ice Rheometer**, a new single-block console: a press that squeezes ice in cycles. Forcing period, eccentricity and
+  ice temperature give the ice's Maxwell dissipation (1/Q = ωτ/(1 + ω²τ²)) and the moon's tidal heating
+  Ė = (21/2)·(k₂/Q)·G·M²·R⁵·n·e²/a⁶: Enceladus 5 to 50 GW, Europa 100 to 2,000.
+* **Plume Field**, a third biome for the Titan Ocean: where the vents run hottest the ice shell overhead is **Plume
+  Ice**, which gives Plume Ice Grains (silica in the ice, as Cassini found at Enceladus). Its sound is ice's.
+
+### How planets form
+* **Protoplanetary Disk**, a sixth biome for the Accretion Frontier: every floor is **Chondritic Regolith**, which gives
+  Chondrules and, one time in twelve, a Calcium-Aluminium-rich Inclusion (silk touch keeps the block). Gravel's sound.
+* The Dating Spectrometer dates the inclusions (uranium to lead, 4.567 billion years): a Solar System Age Record,
+  which the Chronoweaver takes in place of tree rings for a Stratigraphic Timeline.
+
+### Habitability
+* The **Reflecting Telescope** gains transit spectroscopy: an atmosphere's feature depth against the photon noise.
+  Its older recipes are unchanged.
+* Transmission Spectrum Plates; with an Ocean World Record the Spectrograph makes a Biosignature Record.
+
+### The oldest light
+* **CMB Bolometer Array**, a new multiblock (194 blocks: a tilted mirror on a mount over a cryostat, built of the
+  Cryostat Shell and a new casing, the Bolometer Focal Plane). Its console is Planck's law against the galaxy's
+  synchrotron and dust, and the map noise of its detectors; it burns helium-3 for its sub-kelvin stage.
+* The Last Scattering Map; with a Dark Matter Lens the Inflation Chamber makes Inflaton Condensate from it.
+
+### Radio flashes and torn stars
+* The **Radio Telescope** catches fast radio bursts (bright, and swept across each channel in under a millisecond):
+  Dispersion Records, which the Spectrograph turns into Cosmic Web Filaments (bursts weighed the gas between galaxies).
+* The **Burst Observatory** catches tidal disruption events: Disrupted Stellar Streams, which the Stellar Plasma
+  Crucible turns into tidal plasma.
+
+### Listening for others, and the story
+* With a Biosignature Record to point it, the Radio Telescope finds a **Narrowband Candidate** at the water hole: tuned
+  exactly to 1420.4 MHz, with the narrowest band, listening long.
+* Use the candidate on the **Omnipotence Core**. The Core hears it, and recognises it: the signal came from Home. You
+  receive the **Signal from Home**, and arriving in Omnipotency afterwards, you know the place. (Once per player.)
+
+### Ad Astra (only when it is installed)
+* Desh Plates make Pressure Hull Plates, Ostrum Plates Station Hull, Calorite Plates Flame Trench blocks, and a Desh
+  Engine a Rocket Engine (`r1150_ad_astra_*`, loaded only with Ad Astra).
+
+### New recipes
+| Recipe | Machine | In | Out |
+|---|---|---|---|
+| r1150_enceladus_model | Ice Rheometer | 4 Plume Ice Grains, 500 mB water | Ocean World Record |
+| r1150_europa_model | Ice Rheometer | 2 Plume Ice Grains, 2 Cometary Ice, 500 mB water | 2 Ocean World Record |
+| r1150_cai_age | Dating Spectrometer | 2 Calcium-Aluminium-rich Inclusion | Solar System Age Record |
+| r1150_transmission_spectrum | Reflecting Telescope | 2 Spectral Plate, 2 Paper | Transmission Spectrum Plate |
+| r1150_last_scattering_map | CMB Bolometer Array | 2 Doped Wafer, 50 mB helium-3 | 2 Last Scattering Map |
+| r1150_fast_radio_burst | Radio Telescope | 2 Paper | Dispersion Record |
+| r1150_narrowband_candidate | Radio Telescope | Biosignature Record | Narrowband Candidate |
+| r1150_tidal_disruption | Burst Observatory | 2 Photographic Plate, Spectral Plate | Disrupted Stellar Stream |
+| r1150_chondrule_assay | Spectrograph | 4 Chondrule, Spectral Plate | 2 Meteoric Iron, 3 Presolar Grains |
+| r1150_biosignature | Spectrograph | Ocean World Record, Transmission Spectrum Plate | Biosignature Record |
+| r1150_cosmic_web_from_bursts | Spectrograph | 2 Dispersion Record, Spectral Plate | 2 Cosmic Web Filament |
+| r1150_inflaton_from_cmb | Inflation Chamber | Last Scattering Map, Dark Matter Lens | 4 Inflaton Condensate |
+| r1150_stream_plasma | Stellar Plasma Crucible | Disrupted Stellar Stream | 2,000 mB tidal plasma |
+| r1150_stratigraphic_timeline | Chronoweaver | as r170, with a Solar System Age Record for the tree rings | 2 Stratigraphic Timeline |
+| r1150_bolometer_focal_plane | crafting | | 4 Bolometer Focal Plane |
+
+### Research
+* Six new nodes with derivations: Icy Moons (the tidal acceleration, 2GMR/d³), How Planets Form (Toomre's Q),
+  Habitability (the equilibrium temperature), The Oldest Light (cooling by expansion), Radio Flashes and Torn Stars
+  (the dispersion delay) and Listening for Others (Drake's equation). Six Codex entries, two biome pages and two
+  operation pages.
+
+### Technical
+* `tools/round1150.py` and `tools/round1150_biomes.py`; `tools/items3d_1150.py` and `tools/blocks1150.py` for the art.
+* `tsgen` can be given points to try first for a window too narrow for random sampling (`HINTS`).
+
+## 1.14.1: fixes
+
+* **Codex: nodes no longer overlap.** Nodes one grid step apart drew on top of each other (17 pairs on the Machines tab,
+  a few on Physics, Materials and Dimensions, some from the space patches). 42 nodes were moved to the nearest clear
+  spot; `tools/codex_spacing.py --check` now finds none, and the generator keeps new nodes two steps from any other.
+* **Structure Assembler: obstructions are now actually marked.** The mark was one particle spawned inside the block in
+  the way, where it could not be seen. Obstructed places are now outlined in pulsing red for fifteen seconds, also
+  seen through walls (in build mode and when changing coils). The message says so.
+* **Mission Planner and Mission Bay screen: nothing overlaps.** The probe's status and time of flight were drawn over the
+  list of targets, and the plot's caption ran past the window. The screen is wider and taller; every line of text sits
+  in the right-hand column and shrinks if it would not fit; the plot has a short caption above it and "Leave now" and
+  "in N days" under its ends; the target list shows twelve and scrolls past that (the Mission Bay has twelve targets
+  without Ad Astra, and only nine fitted before).
+
 ## 1.14.0: Patch D1, the Sun and small bodies
 
 The first half of the space concepts (concepts 3 to 7 and 10 of the space document): light sails, the Sun's magnetism,

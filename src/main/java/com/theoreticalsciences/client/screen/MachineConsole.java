@@ -744,7 +744,8 @@ public final class MachineConsole {
         }
         double cur = trace[(head + SAMPLES - 1) % SAMPLES];
         String v = label.equals("cycle") ? Math.round(cur * 100) + "%" : PhysicsPanel.fmt(cur) + (m != null && win != null ? " " + unitOf(m, win.q()) : "");
-        HoloStyle.miniText(g, font, cut(font, label, (int) ((w / 2) / 0.75F)), x + 3, y + 2, 0xA0B0C0, 0.75F, false);
+        int lcol = win != null && m != null ? QuantityColours.of(m, win.q()) : 0xA0B0C0;    // 1.16.0: the quantity's own colour
+        HoloStyle.miniText(g, font, cut(font, label, (int) ((w / 2) / 0.75F)), x + 3, y + 2, lcol, 0.75F, false);
         HoloStyle.miniText(g, font, v, x + w - 3 - (int) (font.width(v) * 0.75F), y + 2, 0xFFFFFF, 0.75F, false);
         if (mx >= x && my >= y && mx < x + w && my < y + h) {
             tip.add(Component.translatable("gui.theoreticalsciences.console.scope", label).withStyle(net.minecraft.ChatFormatting.AQUA));

@@ -1,0 +1,58 @@
+{
+  "title": "How Planets Form",
+  "x": 24,
+  "y": 12,
+  "insight": 340,
+  "requires": [
+    "theoreticalsciences:asteroid_taxonomy",
+    "theoreticalsciences:radiometric_dating"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:chondrite_fragment",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:interstellar_dust",
+      "count": 4
+    }
+  ],
+  "time": 360,
+  "description": "Planets grow in the disk of gas and dust about a young star. Dust sticks into pebbles, pebbles into planetesimals, and where the disk is heavy enough it can break straight into clumps: whether it does is told by Toomre's Q, its pressure and spin against its own gravity. The first solids still survive in meteorites: chondrules, droplets melted in flashes, and calcium-aluminium-rich inclusions, which lead-lead dating puts at 4.567 billion years, the age of the solar system. The Protoplanetary Disk lies in the Accretion Frontier.",
+  "icon": "theoreticalsciences:calcium_aluminium_inclusion",
+  "puzzle": {
+    "goal": "A disk of surface density Σ, sound speed cs and epicyclic frequency κ resists collapsing into clumps by pressure and by spin. Write Toomre's Q: below 1 it breaks up.",
+    "name": "Toomre parameter",
+    "lhs": "Q",
+    "form": "cs * κ / ( π * G * Σ )",
+    "expr": "cs * k / ( π * G * S )",
+    "ask": "Find Q for cs = @{cs} m/s, κ = 2e-7 /s, Σ = 1700 kg/m² and G = 6.674e-11.",
+    "vars": {
+      "Q": "Toomre parameter",
+      "cs": "sound speed",
+      "κ": "epicyclic frequency",
+      "G": "gravitational constant",
+      "Σ": "surface density"
+    },
+    "given": {
+      "cs": 1000.0,
+      "k": 2e-07,
+      "G": 6.674e-11,
+      "S": 1700.0
+    },
+    "unit": "",
+    "method": "A ring of size λ collapses if πGΣ beats both the pressure (cs²/λ) and the spin (κ²λ); the worst case gives Q = csκ/πGΣ.",
+    "distractors": [
+      "*",
+      "+",
+      "sqrt"
+    ],
+    "vary": {
+      "cs": [
+        200.0,
+        2000.0,
+        10.0
+      ]
+    }
+  }
+}

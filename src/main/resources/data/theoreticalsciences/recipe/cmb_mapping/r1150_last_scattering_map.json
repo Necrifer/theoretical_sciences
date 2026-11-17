@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:cmb_mapping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:doped_wafer",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:helium_3",
+      "amount": 50
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:last_scattering_map",
+      "count": 2
+    }
+  ],
+  "energy": 16384,
+  "duration": 1200,
+  "research": "theoreticalsciences:cosmic_microwave_background",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tc": 2.725
+    },
+    "windows": [
+      {
+        "q": "cf",
+        "min": 400,
+        "max": 1000000000000.0
+      },
+      {
+        "q": "dT",
+        "min": 0,
+        "max": 0.05
+      }
+    ]
+  }
+}

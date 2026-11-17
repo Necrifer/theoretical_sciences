@@ -109,7 +109,9 @@ public final class MachineVoices {
         V.put("propulsion_test_stand", new Voice("heavy", 0.78F));
         V.put("microgravity_factory", new Voice("space", 1.30F));          // 1.13.0
         V.put("microwave_rectenna", new Voice("space", 0.90F));
-        V.put("radiation_pressure_balance", new Voice("space", 1.50F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
+        V.put("radiation_pressure_balance", new Voice("space", 1.50F));
+        V.put("ice_rheometer", new Voice("heavy", 1.40F));                  // 1.15.0: a press, cycling
+        V.put("cmb_bolometer_array", new Voice("space", 0.70F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));
     }

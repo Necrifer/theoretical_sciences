@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "id": "nu",
+      "unit": "GHz",
+      "min": 20,
+      "max": 900,
+      "step": 1,
+      "default": 150
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "min": 1,
+      "max": 1024,
+      "step": 1,
+      "default": 64
+    },
+    {
+      "id": "t",
+      "unit": "h",
+      "min": 1,
+      "max": 500,
+      "step": 1,
+      "default": 24
+    }
+  ],
+  "recipe_vars": {
+    "Tc": 2.725
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "x",
+      "unit": "",
+      "expr": "0.04799*nu/Tc",
+      "formula": "hν/kT"
+    },
+    {
+      "id": "Bc",
+      "unit": "W/m²/Hz/sr",
+      "expr": "1.4745e-50*(nu*1e9)^3/(exp(0.04799*nu/Tc) - 1)",
+      "formula": "Planck's law, B = (2hν³/c²)/(e^(hν/kT) − 1)"
+    },
+    {
+      "id": "fg",
+      "unit": "W/m²/Hz/sr",
+      "expr": "2e-21*((nu/100)^(-0.7) + 0.3*(nu/100)^3.6)*(1 + 0.02*d)",
+      "formula": "the galaxy: synchrotron below, dust above"
+    },
+    {
+      "id": "cf",
+      "unit": "",
+      "expr": "1.4745e-50*(nu*1e9)^3/(exp(0.04799*nu/Tc) - 1)/(2e-21*((nu/100)^(-0.7) + 0.3*(nu/100)^3.6)*(1 + 0.02*d))",
+      "formula": "CMB over foreground"
+    },
+    {
+      "id": "dT",
+      "unit": "µK",
+      "expr": "300/sqrt(n*t*3600)",
+      "formula": "map noise: a detector's 300 µK·√s over all the detectors and the time"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "cryo",
+      "kind": "stop",
+      "expr": "10 - T",
+      "formula": "the focal plane under 10 K (it is cooled further with helium-3)"
+    },
+    {
+      "id": "load",
+      "kind": "wear",
+      "expr": "200000 - n*nu",
+      "formula": "readout heat: detectors × frequency under 200,000"
+    }
+  ],
+  "rate": "clamp(30/t, 0.2, 1.5)",
+  "rate_formula": "a shorter integration finishes sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

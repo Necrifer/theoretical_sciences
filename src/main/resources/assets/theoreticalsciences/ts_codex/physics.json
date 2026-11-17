@@ -7077,14 +7077,14 @@
     {
       "entry": "fluids/rocket_equation",
       "x": 45,
-      "y": 85,
+      "y": 83,
       "parents": [
         "fluids/orbital_mechanics"
       ]
     },
     {
       "entry": "fluids/transfer_orbits",
-      "x": 47,
+      "x": 48,
       "y": 85,
       "parents": [
         "fluids/rocket_equation"
@@ -7092,7 +7092,7 @@
     },
     {
       "entry": "fluids/sample_return",
-      "x": 49,
+      "x": 50,
       "y": 85,
       "parents": [
         "fluids/transfer_orbits"
@@ -7100,15 +7100,15 @@
     },
     {
       "entry": "fluids/propulsion_tiers",
-      "x": 45,
-      "y": 87,
+      "x": 46,
+      "y": 89,
       "parents": [
         "fluids/rocket_equation"
       ]
     },
     {
       "entry": "fluids/space_radiation",
-      "x": 47,
+      "x": 48,
       "y": 87,
       "parents": [
         "fluids/orbital_mechanics"
@@ -7116,15 +7116,15 @@
     },
     {
       "entry": "fluids/suit_line",
-      "x": 49,
-      "y": 87,
+      "x": 52,
+      "y": 85,
       "parents": [
         "fluids/space_radiation"
       ]
     },
     {
       "entry": "fluids/microgravity_processing",
-      "x": 45,
+      "x": 42,
       "y": 89,
       "parents": [
         "fluids/rocket_equation"
@@ -7132,8 +7132,8 @@
     },
     {
       "entry": "fluids/station_modules",
-      "x": 47,
-      "y": 89,
+      "x": 48,
+      "y": 91,
       "parents": [
         "fluids/space_radiation"
       ]
@@ -7141,14 +7141,14 @@
     {
       "entry": "fluids/satellite_orbits",
       "x": 51,
-      "y": 85,
+      "y": 83,
       "parents": [
         "fluids/transfer_orbits"
       ]
     },
     {
       "entry": "fluids/space_solar_power",
-      "x": 53,
+      "x": 54,
       "y": 85,
       "parents": [
         "fluids/satellite_orbits"
@@ -7172,7 +7172,7 @@
     },
     {
       "entry": "fluids/solar_magnetism",
-      "x": 55,
+      "x": 56,
       "y": 85,
       "parents": [
         "fluids/space_solar_power"
@@ -7188,7 +7188,7 @@
     },
     {
       "entry": "fluids/asteroid_taxonomy",
-      "x": 49,
+      "x": 50,
       "y": 91,
       "parents": [
         "fluids/sample_return"
@@ -7196,7 +7196,7 @@
     },
     {
       "entry": "fluids/comets",
-      "x": 51,
+      "x": 52,
       "y": 91,
       "parents": [
         "fluids/asteroid_taxonomy"
@@ -7204,10 +7204,59 @@
     },
     {
       "entry": "fluids/nebular_gases",
-      "x": 53,
+      "x": 54,
       "y": 91,
       "parents": [
         "fluids/comets"
+      ]
+    },
+    {
+      "entry": "fluids/tidal_heating",
+      "x": 54,
+      "y": 93,
+      "parents": [
+        "fluids/comets"
+      ]
+    },
+    {
+      "entry": "fluids/planet_formation",
+      "x": 56,
+      "y": 93,
+      "parents": [
+        "fluids/asteroid_taxonomy"
+      ]
+    },
+    {
+      "entry": "fluids/habitability",
+      "x": 58,
+      "y": 93,
+      "parents": [
+        "fluids/tidal_heating"
+      ]
+    },
+    {
+      "entry": "fluids/cosmic_microwave_background",
+      "x": 56,
+      "y": 89,
+      "parents": [
+        "fluids/nebular_gases"
+      ]
+    },
+    {
+      "entry": "fluids/fast_transients",
+      "x": 58,
+      "y": 89,
+      "parents": [
+        "fluids/cosmic_microwave_background"
+      ]
+    },
+    {
+      "entry": "fluids/search_for_others",
+      "x": 67,
+      "y": 93,
+      "parents": [
+        "fluids/habitability",
+        "fluids/fast_transients"
       ]
     }
   ],

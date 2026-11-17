@@ -233,6 +233,23 @@ public final class CodexData {
                     e.pages.add(p);
                     sb.append(' ').append(p.title).append(' ').append(CodexText.plain(p.text)).append(' ').append(p.name);
                 }
+            // 1.16.0: "In plain words" opens the entry: one plain sentence, an everyday comparison and where that comparison
+            // stops being true. The picture comes before the symbols.
+            if (o.has("plain") && o.get("plain").isJsonObject()) {
+                JsonObject pl = o.getAsJsonObject("plain");
+                String line = str(pl, "line"), like = str(pl, "like"), breaks = str(pl, "breaks");
+                if (!line.isEmpty()) {
+                    Page p = new Page();
+                    p.type = "text";
+                    p.title = net.minecraft.client.resources.language.I18n.get("gui.theoreticalsciences.codex.plain");
+                    StringBuilder t = new StringBuilder(line);
+                    if (!like.isEmpty()) t.append("$(br2)$(l)").append(net.minecraft.client.resources.language.I18n.get("gui.theoreticalsciences.codex.plain_like")).append("$() ").append(like);
+                    if (!breaks.isEmpty()) t.append("$(br2)$(l)").append(net.minecraft.client.resources.language.I18n.get("gui.theoreticalsciences.codex.plain_breaks")).append("$() ").append(breaks);
+                    p.text = t.toString();
+                    e.pages.add(0, p);
+                    sb.append(' ').append(CodexText.plain(p.text));
+                }
+            }
             e.searchTitle = e.title.toLowerCase(Locale.ROOT);
             e.searchText = sb.toString().toLowerCase(Locale.ROOT);
             ents.put(e.id, e);

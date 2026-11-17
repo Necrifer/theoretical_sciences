@@ -1,0 +1,54 @@
+{
+  "title": "Habitability and Signs of Life",
+  "x": 26,
+  "y": 12,
+  "insight": 360,
+  "requires": [
+    "theoreticalsciences:tidal_heating",
+    "theoreticalsciences:exoplanetology"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:spectral_plate",
+      "count": 4
+    }
+  ],
+  "time": 380,
+  "description": "A planet's warmth comes first from its star: how bright, how near, how much light the planet reflects. Its air can be read when it passes in front of the star: starlight through the thin ring of atmosphere picks up the gases' lines, a change of a few parts in a million. Oxygen and methane together would be a sign of life, since each destroys the other and something must keep making both. Adds transit spectroscopy to the Reflecting Telescope.",
+  "icon": "theoreticalsciences:biosignature_record",
+  "puzzle": {
+    "goal": "A planet at distance a from a star of temperature T★ and radius R★ reflects a fraction A of the light. Balancing what it absorbs against what it radiates, write its equilibrium temperature T.",
+    "name": "Equilibrium temperature",
+    "lhs": "T",
+    "form": "Ts * ( 1 - A ) ^ ( 1 / 4 ) * sqrt ( Rs / ( 2 * a ) )",
+    "expr": "Ts * ( 1 - A ) ^ ( 1 / 4 ) * sqrt ( Rs / ( 2 * a ) )",
+    "ask": "Find T in kelvin for the Sun (Ts = 5772 K, Rs = 6.96e8 m), a = @{a} m and A = 0.3.",
+    "vars": {
+      "T": "equilibrium temperature",
+      "Ts": "star temperature",
+      "A": "albedo",
+      "Rs": "star radius",
+      "a": "distance"
+    },
+    "given": {
+      "Ts": 5772.0,
+      "A": 0.3,
+      "Rs": 696000000.0,
+      "a": 149600000000.0
+    },
+    "unit": "K",
+    "method": "Absorbed: σTs⁴·(Rs/a)²·πR²·(1 − A). Radiated: 4πR²·σT⁴. Solve for T.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "a": [
+        50000000000.0,
+        400000000000.0,
+        1000000000.0
+      ]
+    }
+  }
+}

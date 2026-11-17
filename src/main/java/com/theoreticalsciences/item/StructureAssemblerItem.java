@@ -197,6 +197,7 @@ public class StructureAssemblerItem extends LoreItem {
         todo.sort(Comparator.comparingInt(BlockPos::getY));
         Map<Block, Integer> lacking = new LinkedHashMap<>();
         int placed = 0, blocked = 0;
+        java.util.List<BlockPos> marks = new java.util.ArrayList<>();     // 1.14.1: outlined on the client
         int portsLeft = creative ? Integer.MAX_VALUE : count(player.getInventory(), ControllerBlockEntity.portBlock());   // (ports only from your own inventory, never the network)
         // 1.2.0: each tiered kind of part (coils, emitters) is built in one tier, the highest you have enough of for every
         // place it goes (your inventory and a bound network together); short of that, the highest you have any of
@@ -228,7 +229,7 @@ public class StructureAssemblerItem extends LoreItem {
             BlockState current = level.getBlockState(p);
             if (c == '.') {                       // must be air, but something is there: never break it, just show it
                 blocked++;
-                level.sendParticles(player, com.theoreticalsciences.registry.QHParticles.FAULT.get(), true, p.getX() + 0.5, p.getY() + 0.5, p.getZ() + 0.5, 1, 0, 0, 0, 0);
+                marks.add(p);
                 continue;
             }
             List<Block> options = def.componentsFor(c, ControllerBlockEntity.portBlock());   // the casing (or tiers), not the port
@@ -258,7 +259,7 @@ public class StructureAssemblerItem extends LoreItem {
             }
             if (!current.canBeReplaced()) {
                 blocked++;
-                level.sendParticles(player, com.theoreticalsciences.registry.QHParticles.FAULT.get(), true, p.getX() + 0.5, p.getY() + 0.5, p.getZ() + 0.5, 1, 0, 0, 0, 0);
+                marks.add(p);
                 continue;
             }
             if (dryRun) {
@@ -268,6 +269,7 @@ public class StructureAssemblerItem extends LoreItem {
             }
             if (!player.mayBuild() || !level.mayInteract(player, p)) {
                 blocked++;
+                marks.add(p);
                 continue;
             }
             if (!creative && !take(player, grid, want)) {
@@ -283,8 +285,10 @@ public class StructureAssemblerItem extends LoreItem {
             level.playSound(null, controller.getBlockPos(), com.theoreticalsciences.registry.QHSounds.CONFIRM.get(), SoundSource.BLOCKS, 0.8F, 1.6F);
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_placed", placed).withStyle(ChatFormatting.AQUA), false);
         }
-        if (blocked > 0)
+        if (blocked > 0) {
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_blocked", blocked).withStyle(ChatFormatting.RED), false);
+            net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(player, new com.theoreticalsciences.client.render.ObstructionMarks.Marks(marks));
+        }
         if (!lacking.isEmpty()) {
             player.displayClientMessage(Component.translatable(dryRun ? "message.theoreticalsciences.assembler_needs" : "message.theoreticalsciences.assembler_missing")
                     .withStyle(ChatFormatting.GOLD), false);
@@ -476,6 +480,7 @@ public class StructureAssemblerItem extends LoreItem {
         }
         Block want = tiers.get(target);
         int changed = 0, kept = 0, lacking = 0;
+        List<BlockPos> marks = new ArrayList<>();
         List<ItemStack> back = new ArrayList<>();
         for (BlockPos p : spots) {
             if (!level.isLoaded(p)) continue;
@@ -485,6 +490,7 @@ public class StructureAssemblerItem extends LoreItem {
             boolean ours = st.isAir() || st.canBeReplaced() || def.matches(chars.get(p), st);
             if (!ours || !player.mayBuild() || !level.mayInteract(player, p) || st.getDestroySpeed(level, p) < 0) {
                 kept++;
+                marks.add(p);
                 continue;
             }
             if (!creative && !take(player, grid, want)) {
@@ -516,8 +522,10 @@ public class StructureAssemblerItem extends LoreItem {
         player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_done", changed, want.getName(), target).withStyle(ChatFormatting.AQUA), false);
         if (lacking > 0)
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_coil_short", lacking, want.getName()).withStyle(ChatFormatting.GOLD), false);
-        if (kept > 0)
+        if (kept > 0) {
             player.displayClientMessage(Component.translatable("message.theoreticalsciences.assembler_blocked", kept).withStyle(ChatFormatting.RED), false);
+            net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(player, new com.theoreticalsciences.client.render.ObstructionMarks.Marks(marks));
+        }
         return InteractionResult.CONSUME;
     }
 

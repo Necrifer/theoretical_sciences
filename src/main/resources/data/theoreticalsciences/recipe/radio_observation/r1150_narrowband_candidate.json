@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:radio_observation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:biosignature_record",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:narrowband_candidate",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 1200,
+  "research": "theoreticalsciences:search_for_others",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "S": 10.0,
+      "al": 0.0,
+      "wl": 0.0001,
+      "nl": 1420.4,
+      "DM": 0.0,
+      "Sreq": 10.0
+    },
+    "windows": [
+      {
+        "q": "SNR",
+        "min": 10,
+        "max": 1000000000.0
+      },
+      {
+        "q": "inb",
+        "min": 0,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

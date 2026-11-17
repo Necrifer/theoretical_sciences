@@ -46,6 +46,9 @@ public final class QHNetwork {
         });
         r.playToClient(com.theoreticalsciences.transcend.CorePayloads.Open.TYPE, com.theoreticalsciences.transcend.CorePayloads.Open.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.openOmnipotence(p.core(), p.phase(), p.seconds()));
+        // 1.14.1: the Structure Assembler's obstruction marks
+        r.playToClient(com.theoreticalsciences.client.render.ObstructionMarks.Marks.TYPE, com.theoreticalsciences.client.render.ObstructionMarks.Marks.CODEC,
+                (p, ctx) -> com.theoreticalsciences.client.ClientHooks.marks(p));
         // 1.12.0: the Mission Planner
         r.playToClient(com.theoreticalsciences.orbit.Planner.Open.TYPE, com.theoreticalsciences.orbit.Planner.Open.CODEC,
                 (p, ctx) -> com.theoreticalsciences.client.ClientHooks.planner(p));

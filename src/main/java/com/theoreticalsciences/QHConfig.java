@@ -5,6 +5,8 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public final class QHConfig {
     public static final ModConfigSpec COMMON_SPEC;
     public static final ModConfigSpec CLIENT_SPEC;
+    /** 1.16.0: show every machine's equations from the start instead of after its first watched cycle. */
+    public static final ModConfigSpec.BooleanValue EQUATIONS_AT_ONCE;
 
     public static final ModConfigSpec.DoubleValue ENERGY_COST_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue GENERATOR_OUTPUT_MULTIPLIER;
@@ -36,6 +38,9 @@ public final class QHConfig {
     public static final ModConfigSpec.IntValue AUTO_SINGULARITY_COUNT;
     public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> AUTO_SINGULARITY_BLACKLIST;
     public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> ESSENCE_BLACKLIST;
+    /** 1.16.3: whether other mods' Essences go into Anima Mundi at all, and which mods' are left out. */
+    public static final ModConfigSpec.BooleanValue ANIMA_MOD_ESSENCES;
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> ANIMA_SKIP_MODS;
     public static final ModConfigSpec.IntValue CHRONAL_ENERGY_PER_TICK, CHRONAL_ENERGY_PER_RANDOM_TICK;   // (int: config screens such as Jupiter can show it)
 
     public static final ModConfigSpec.BooleanValue LENSING_ENABLED;
@@ -109,6 +114,10 @@ public final class QHConfig {
                         "projectexpansion:*", "extendedcrafting:ultimate_ingot"), () -> "modid:item", o -> o instanceof String);
         ESSENCE_BLACKLIST = b.comment("Fluids that are not distilled into a mod's Essence (and so are not needed for Pleroma): \"modid:fluid\", or \"modid:*\" for a whole mod. Only fluids with a bucket count at all.")
                 .defineListAllowEmpty("essenceBlacklist", java.util.List.of(), () -> "modid:fluid", o -> o instanceof String);
+        ANIMA_MOD_ESSENCES = b.comment("1.16.3: Anima Mundi (one of Pleroma's five fluids) is distilled from water, lava, Basaltic Magma, Deep Brine and the Essence of every other mod installed. Set to false to make it from those four world fluids only: other mods' Essences can still be distilled, but Anima Mundi (and so Pleroma) no longer needs them.")
+                .define("animaMundiNeedsModEssences", true);
+        ANIMA_SKIP_MODS = b.comment("1.16.3: mods whose Essence Anima Mundi does not need, by mod id (the part before the colon in their item names, for example \"mekanism\" or \"gtceu\"). Their Essence can still be distilled. Leave empty to need every mod's. Takes effect after a restart.")
+                .defineListAllowEmpty("animaMundiSkipMods", java.util.List.of(), () -> "modid", o -> o instanceof String);
         b.pop();
         b.push("chronal_accelerator");
         CHRONAL_MAX_SPEED = b.comment("Highest time acceleration the Chronal Accelerator may be set to (2..256).").defineInRange("maxSpeed", 256, 2, 256);
@@ -144,6 +153,10 @@ public final class QHConfig {
         ANIMATION_DISTANCE = c.comment("How far away (blocks, to the nearest edge of the effect) animated multiblocks are still drawn.").defineInRange("animationDistance", 256, 32, 1024);
         ANIMATION_FREEZE_DISTANCE = c.comment("Beyond this distance (blocks) animated parts are still drawn, but stop moving.").defineInRange("animationFreezeDistance", 160, 16, 1024);
         MOVING_PARTS_COMPAT = c.comment("Draw multiblocks' moving parts through the game's own block buffers (slower) instead of from cached buffers on the graphics card. Only for a mod that moves block entities about (it is used anyway with Sable installed). Takes effect when resources are next reloaded (F3+T) or the world is rejoined.").define("movingPartsCompatibility", false);
+        c.pop();
+        c.push("learning");
+        EQUATIONS_AT_ONCE = c.comment("1.16.0: a machine's console first explains its quantities in words, and shows the equations behind them after you have watched it finish one cycle. Turn on to see every equation from the start.")
+                .define("showEquationsAtOnce", false);
         c.pop();
         CLIENT_SPEC = c.build();
     }
