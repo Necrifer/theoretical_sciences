@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.16.1: other mods' oils and gases are accepted
+
+* **Every crude oil in the pack now works.** Recipes that take Synthetic Crude used to accept only Immersive Petroleum's
+  crude (`c:crude_oil`), so the Codex line "the pack's crude oil will do as well" was only partly true. They now take
+  the new tag `theoreticalsciences:crude_oils`, which gathers Immersive Petroleum's crude, `c:oil` (Oritech, Ad Astra)
+  and GregTech's Oil, Heavy Oil, Light Oil and Raw Oil. Ad Astra's own oil tag already includes `c:crude_oil`, so
+  Synthetic Crude also feeds Ad Astra's fuel refinery.
+* **Ethylene, propylene, methane and methanol are shared.** Recipes naming the mod's own take the matching fluid from
+  other mods too (tags `theoreticalsciences:ethylenes`, `propylenes`, `methanes`, `methanols`): GregTech's Ethylene,
+  Propene, Methane and Methanol, and Mekanism's Ethene. The mod's fluids join `c:ethylene`, `c:ethene`, `c:propylene`,
+  `c:propene`, `c:methane` and `c:methanol`, so other mods can take them as well.
+* Tested on a server with GregTech, Mekanism and Ad Astra: every tag lists the fluids above. No recipes changed.
+
 ## 1.16.0: words before symbols (first step of the teaching plan)
 
 The first changes from "Making the Science Visible": every concept should be met as something familiar, then as a

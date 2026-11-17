@@ -83,7 +83,16 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
      * fluids are in those tags as well.
      */
     public static final java.util.Set<String> SHARED = java.util.Set.of("hydrogen", "oxygen", "nitrogen", "ammonia", "nitric_acid",
-            "sulfuric_acid", "sulfur_dioxide", "heavy_water", "deuterium", "tritium", "chlorine", "crude_oil");
+            "sulfuric_acid", "sulfur_dioxide", "heavy_water", "deuterium", "tritium", "chlorine", "crude_oil",
+            "ethylene", "propylene", "methane", "methanol");
+
+    /**
+     * 1.16.1: fluids whose other mods' versions do not share one common tag. A recipe naming one of these takes the
+     * mod's own union tag instead, which gathers every name the pack uses (crude oil is c:crude_oil in Immersive
+     * Petroleum, c:oil in Oritech and Ad Astra, and gtceu:oil, heavy_oil, light_oil and raw_oil in GregTech).
+     */
+    static final java.util.Map<String, String> UNION = java.util.Map.of(
+            "crude_oil", "crude_oils", "ethylene", "ethylenes", "propylene", "propylenes", "methane", "methanes", "methanol", "methanols");
 
     static List<SizedFluidIngredient> shared(List<SizedFluidIngredient> in) {
         List<SizedFluidIngredient> out = null;
@@ -93,7 +102,10 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             var id = net.minecraft.core.registries.BuiltInRegistries.FLUID.getKey(one.fluid().value());
             if (!com.theoreticalsciences.TheoreticalSciences.MODID.equals(id.getNamespace()) || !SHARED.contains(id.getPath())) continue;
             if (out == null) out = new java.util.ArrayList<>(in);
-            var tag = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.FLUID, net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c", id.getPath()));
+            String union = UNION.get(id.getPath());
+            var tag = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.FLUID, union != null
+                    ? net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(com.theoreticalsciences.TheoreticalSciences.MODID, union)
+                    : net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c", id.getPath()));
             out.set(i, new SizedFluidIngredient(net.neoforged.neoforge.fluids.crafting.FluidIngredient.tag(tag), s.amount()));
         }
         return out == null ? in : out;
