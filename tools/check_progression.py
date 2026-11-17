@@ -50,7 +50,7 @@ def extra():
             continue
         rel = os.path.relpath(f, cc.D)
         if 'pedestals' in r and 'result' in r:
-            ins = [(cc.norm(i['item']), 1) for i in [r.get('core', {})] + r['pedestals'] if 'item' in i]
+            ins = [(cc.norm(i['item']) if 'item' in i else cc.own_tag(i['tag']), 1) for i in [r.get('core', {})] + r['pedestals'] if 'item' in i or 'tag' in i]
             out.append(dict(file=rel, type=r['type'], ins=ins, fins=[], outs=[(cc.norm(r['result']['id']), 1)], fouts=[], extra=0))
         elif 'fluid_outputs' in r and not any(k in r for k in ('item_inputs', 'item_outputs', 'fluid_inputs')):
             out.append(dict(file=rel, type=r['type'], ins=[], fins=[], outs=[], fouts=[(cc.norm(o['id']), o.get('amount', 1000)) for o in r['fluid_outputs']], extra=0))
@@ -75,7 +75,7 @@ def recipes():
             j = json.load(open(os.path.join(cc.D, r['file']), encoding='utf-8'))
         except Exception:
             continue
-        r['ins'] = list(r['ins']) + [(cc.norm(c['item']), 1) for c in j.get('catalysts', []) if 'item' in c]
+        r['ins'] = list(r['ins']) + [(cc.norm(c['item']) if 'item' in c else cc.own_tag(c['tag']), 1) for c in j.get('catalysts', []) if 'item' in c or 'tag' in c]
     return recs
 
 

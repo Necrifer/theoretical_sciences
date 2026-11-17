@@ -38,6 +38,9 @@ public final class QHConfig {
     public static final ModConfigSpec.IntValue AUTO_SINGULARITY_COUNT;
     public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> AUTO_SINGULARITY_BLACKLIST;
     public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> ESSENCE_BLACKLIST;
+    /** 1.16.3: whether other mods' Essences go into Anima Mundi at all, and which mods' are left out. */
+    public static final ModConfigSpec.BooleanValue ANIMA_MOD_ESSENCES;
+    public static final ModConfigSpec.ConfigValue<java.util.List<? extends String>> ANIMA_SKIP_MODS;
     public static final ModConfigSpec.IntValue CHRONAL_ENERGY_PER_TICK, CHRONAL_ENERGY_PER_RANDOM_TICK;   // (int: config screens such as Jupiter can show it)
 
     public static final ModConfigSpec.BooleanValue LENSING_ENABLED;
@@ -111,6 +114,10 @@ public final class QHConfig {
                         "projectexpansion:*", "extendedcrafting:ultimate_ingot"), () -> "modid:item", o -> o instanceof String);
         ESSENCE_BLACKLIST = b.comment("Fluids that are not distilled into a mod's Essence (and so are not needed for Pleroma): \"modid:fluid\", or \"modid:*\" for a whole mod. Only fluids with a bucket count at all.")
                 .defineListAllowEmpty("essenceBlacklist", java.util.List.of(), () -> "modid:fluid", o -> o instanceof String);
+        ANIMA_MOD_ESSENCES = b.comment("1.16.3: Anima Mundi (one of Pleroma's five fluids) is distilled from water, lava, Basaltic Magma, Deep Brine and the Essence of every other mod installed. Set to false to make it from those four world fluids only: other mods' Essences can still be distilled, but Anima Mundi (and so Pleroma) no longer needs them.")
+                .define("animaMundiNeedsModEssences", true);
+        ANIMA_SKIP_MODS = b.comment("1.16.3: mods whose Essence Anima Mundi does not need, by mod id (the part before the colon in their item names, for example \"mekanism\" or \"gtceu\"). Their Essence can still be distilled. Leave empty to need every mod's. Takes effect after a restart.")
+                .defineListAllowEmpty("animaMundiSkipMods", java.util.List.of(), () -> "modid", o -> o instanceof String);
         b.pop();
         b.push("chronal_accelerator");
         CHRONAL_MAX_SPEED = b.comment("Highest time acceleration the Chronal Accelerator may be set to (2..256).").defineInRange("maxSpeed", 256, 2, 256);

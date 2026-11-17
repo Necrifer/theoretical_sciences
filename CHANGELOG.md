@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.16.3: other mods' ingots in the mod's recipes, and an easy switch for Anima Mundi
+
+* **Every ingot of the mod has a tag, and the mod's recipes use it.** Each of the 25 ingots gets
+  `theoreticalsciences:ingots/<material>` (for example `theoreticalsciences:ingots/lithium`), holding the mod's ingot
+  and the common tag other mods use for the same metal. 243 ingredients in 200 recipes now name the tag instead of the
+  mod's ingot, so another mod's ingot of the same metal works there too:
+  * Lithium: any `c:ingots/lithium` (NuclearCraft's).
+  * Aluminium: `c:ingots/aluminium` and `c:ingots/aluminum` (GregTech's, NuclearCraft's).
+  * Bloomery Steel: any `c:ingots/steel` (Mekanism's, GregTech's, Ad Astra's, NuclearCraft's).
+  * Neutronium: any `c:ingots/neutronium` (GregTech's, NuclearCraft's, Re-Avaritia's).
+  * Lithium-6: `c:ingots/lithium_6` or `c:ingots/lithium6`, if a mod has one.
+  * Every other ingot: `c:ingots/<its name>`, should a mod ever add one. Stellar Iron, Anti-Iron and Anti-Gold take
+    only the mod's own (a star's iron and antimatter are not everyday metal).
+  Packs can add more ingots to these tags. The mod's own ingots are not added to other mods' tags, so other mods'
+  balance is unchanged. The Empyrean Assembly Table's patterns still ask for the mod's own ingots (their slots hold
+  exact items). No amounts changed; the cost and progression checks give the same results as before.
+* **Anima Mundi: switch other mods' Essences on or off in the config.** Two new options in the common config
+  (`theoreticalsciences-common.toml`, section `singularities`), each taking effect after a restart:
+  * `animaMundiNeedsModEssences` (default true): set to false and Anima Mundi is distilled from water, lava, Basaltic
+    Magma and Deep Brine only. Other mods' Essences can still be made, but Anima Mundi and Pleroma no longer need them.
+  * `animaMundiSkipMods`: a list of mod ids whose Essence Anima Mundi does not need, for example `["gtceu", "mekanism"]`.
+  Before, the only way was the fluid blacklist, which took fluid names.
+
 ## 1.16.2: cryogenic liquids and gases from other mods, and no foreign oil in the mod's worlds
 
 * **Liquid Oxygen and Liquid Hydrogen from other mods work.** Mekanism's "Liquid Oxygen" and "Liquid Hydrogen" carry

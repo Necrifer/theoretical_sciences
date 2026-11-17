@@ -54,7 +54,7 @@ public final class Essences {
 
     private static volatile List<Step> steps;
     private static volatile Map<String, List<Fluid>> byMod;
-    private static boolean early;
+    private static boolean early, animaEarly;
 
     public static Fluid essenceFluid() {
         return QHFluids.ALL.get("mod_essence").source.get();
@@ -155,6 +155,7 @@ public final class Essences {
     /** Every distillation step there is, for every mod. */
     public static synchronized List<Step> steps() {
         if (steps != null) return steps;
+        animaEarly = false;
         List<Step> out = new ArrayList<>();
         for (var e : fluids().entrySet()) {
             String mod = e.getKey();
@@ -177,7 +178,7 @@ public final class Essences {
         }
         out.addAll(worldSteps(out));
         List<Step> l = List.copyOf(out);
-        if (byMod != null) steps = l;
+        if (byMod != null && !animaEarly) steps = l;
         return l;
     }
 
@@ -194,7 +195,7 @@ public final class Essences {
             Fluid f = BuiltInRegistries.FLUID.get(ResourceLocation.parse(id));
             if (f != null && f != Fluids.EMPTY) below.add(new FluidStack(f, PER));
         }
-        for (Step s : mods) if (s.last()) below.add(s.output().copyWithAmount(PART_IN));
+        for (Step s : mods) if (s.last() && inAnima(s.mod())) below.add(s.output().copyWithAmount(PART_IN));
         int levels = 1;
         for (int n = (below.size() + PART - 1) / PART; n > 1; n = (n + PART - 1) / PART) levels++;
         for (int lv = 1; lv <= levels; lv++) {
@@ -210,16 +211,27 @@ public final class Essences {
         return out;
     }
 
+    /** 1.16.3: whether this mod's whole Essence goes into Anima Mundi (config: animaMundiNeedsModEssences, animaMundiSkipMods). */
+    static boolean inAnima(String mod) {
+        try {
+            if (!com.theoreticalsciences.QHConfig.ANIMA_MOD_ESSENCES.get()) return false;
+            return !com.theoreticalsciences.QHConfig.ANIMA_SKIP_MODS.get().contains(mod);
+        } catch (IllegalStateException e) {
+            animaEarly = true;      // the config is not loaded yet: answer, but do not remember the steps
+            return true;
+        }
+    }
+
     @Nullable
     static Fluid animaFluid() {
         var e = QHFluids.ALL.get("anima_mundi");
         return e == null ? null : e.source.get();
     }
 
-    /** The whole essence of every mod (what goes, with the world's own fluids, into Anima Mundi). */
+    /** The whole essence of every mod that goes, with the world's own fluids, into Anima Mundi. */
     public static List<FluidStack> finals() {
         List<FluidStack> out = new ArrayList<>();
-        for (Step s : steps()) if (s.last() && !WORLD.equals(s.mod())) out.add(s.output().copyWithAmount(1));
+        for (Step s : steps()) if (s.last() && !WORLD.equals(s.mod()) && inAnima(s.mod())) out.add(s.output().copyWithAmount(1));
         return out;
     }
 

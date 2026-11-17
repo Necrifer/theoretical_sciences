@@ -52,7 +52,7 @@ def load():
         t = r.get('type', '')
         if 'item_inputs' in r or 'item_outputs' in r or 'fluid_inputs' in r:
             for i in r.get('item_inputs', []):
-                k = i.get('item') or ('#' + i['tag'] if 'tag' in i else None)
+                k = i.get('item') or (own_tag(i['tag']) if 'tag' in i else None)
                 if k:
                     ins.append((norm(k) if not k.startswith('#') else k, i.get('count', 1)))
                 elif 'items' in i and isinstance(i['items'], str):
@@ -77,7 +77,7 @@ def load():
                     k = k[0]
                 if not k:
                     continue
-                key = k.get('item') or ('#' + k['tag'] if 'tag' in k else None)
+                key = k.get('item') or (own_tag(k['tag']) if 'tag' in k else None)
                 if key:
                     ins.append((norm(key) if not key.startswith('#') else key, n * k.get('count', 1)))      # (1.8.0: an Empyrean slot holds many)
             res = r.get('result', {})
@@ -90,7 +90,7 @@ def load():
             k = r['ingredient']
             if isinstance(k, list):
                 k = k[0]
-            key = k.get('item') or ('#' + k['tag'] if 'tag' in k else None)
+            key = k.get('item') or (own_tag(k['tag']) if 'tag' in k else None)
             if key:
                 ins.append((norm(key) if not key.startswith('#') else key, 1))
             res = r['result']
@@ -103,7 +103,7 @@ def load():
             for k in r['ingredients']:
                 if isinstance(k, list):
                     k = k[0]
-                key = k.get('item') or ('#' + k['tag'] if 'tag' in k else None)
+                key = k.get('item') or (own_tag(k['tag']) if 'tag' in k else None)
                 if key:
                     ins.append((norm(key) if not key.startswith('#') else key, 1))
             res = r.get('result', {})
@@ -115,6 +115,13 @@ def load():
         if outs or fouts:
             recipes.append(dict(file=os.path.relpath(f, D), type=t, ins=ins, fins=fins, outs=outs, fouts=fouts, extra=extra))
     return recipes
+
+
+def own_tag(t):
+    # 1.16.3: theoreticalsciences:ingots/<m> holds the mod's own <m>_ingot first; cost it as that ingot
+    if t.startswith(NS + 'ingots/'):
+        return NS + t[len(NS + 'ingots/'):] + '_ingot'
+    return '#' + t
 
 
 def base(item):
