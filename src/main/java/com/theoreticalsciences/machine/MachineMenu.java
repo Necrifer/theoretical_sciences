@@ -30,6 +30,7 @@ public class MachineMenu extends AbstractContainerMenu {
             addSlot(new SlotItemHandler(be.items, i, layout.itemInX[i], layout.itemInY[i]) {
                 @Override
                 public ItemStack remove(int amount) {      // big input slots: never hand out more than one normal stack
+                    if (amount <= 0) amount = getItem().getMaxStackSize();      // 1.3.1: half of a full pile overflows to below 0
                     return super.remove(Math.min(amount, getItem().getMaxStackSize()));
                 }
 

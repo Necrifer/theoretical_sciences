@@ -15,9 +15,14 @@ import java.util.*;
  * JEI and the in-world hologram always agree on them without any syncing.
  */
 public final class Multiblocks {
-    private static Map<String, MultiblockDefinition> cache;
+    private static volatile Map<String, MultiblockDefinition> cache;
 
-    public static synchronized Map<String, MultiblockDefinition> all() {
+    public static Map<String, MultiblockDefinition> all() {
+        Map<String, MultiblockDefinition> c = cache;          // 1.3.1: no lock once loaded (it is read many times a tick)
+        return c != null ? c : load();
+    }
+
+    private static synchronized Map<String, MultiblockDefinition> load() {
         if (cache == null) {
             Map<String, MultiblockDefinition> map = new LinkedHashMap<>();
             for (MachineType t : MachineType.values()) {

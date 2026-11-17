@@ -27,6 +27,7 @@ import org.lwjgl.opengl.GL30;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Map;
 
 /**
  * Draws every large-scale physics effect after the level has rendered:
@@ -583,19 +584,38 @@ public final class EffectRenderer {
     }
 
     /** A spiral galaxy: two logarithmic arms of stars around a bright bulge, turning slowly. */
+    /** 1.3.1: a galaxy's stars by seed (radius, angle before the turn, height, colour, size): drawn the same as before. */
+    private static final Map<Long, double[]> GALAXIES = new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static double[] galaxyStars(long seed) {
+        return GALAXIES.computeIfAbsent(seed, sd -> {
+            Random r = new Random(sd);
+            double[] out = new double[260 * 5];
+            for (int i = 0; i < 260; i++) {
+                int arm = i & 1;
+                double t = r.nextDouble();
+                double rad = 0.2 + t * 2.4, base = arm * Math.PI + Math.log(rad + 0.3) * 2.6, g = r.nextGaussian() * 0.25;
+                double y = r.nextGaussian() * 0.06 * (1.2 - t);
+                int col = t < 0.25 ? 0xFFE0A0 : (r.nextInt(4) == 0 ? 0xFF90C0 : 0xA0C0FF);
+                out[i * 5] = rad;
+                out[i * 5 + 1] = base + g;
+                out[i * 5 + 2] = y;
+                out[i * 5 + 3] = col;
+                out[i * 5 + 4] = 0.05F + (float) (0.06 * (1 - t));
+            }
+            return out;
+        });
+    }
+
     private static void galaxy(Vec3 c, long seed) {
-        Random r = new Random(seed);
+        double[] st = galaxyStars(seed);
         beginAdditive();
         BufferBuilder pts = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
         float spin = time * 0.15F;
         for (int i = 0; i < 260; i++) {
-            int arm = i & 1;
-            double t = r.nextDouble();
-            double rad = 0.2 + t * 2.4, ang = arm * Math.PI + Math.log(rad + 0.3) * 2.6 + spin + r.nextGaussian() * 0.25;
-            double y = r.nextGaussian() * 0.06 * (1.2 - t);
-            Vec3 p = c.add(Math.cos(ang) * rad, y, Math.sin(ang) * rad);
-            int col = t < 0.25 ? 0xFFE0A0 : (r.nextInt(4) == 0 ? 0xFF90C0 : 0xA0C0FF);
-            glowInto(pts, p, 0.05F + (float) (0.06 * (1 - t)), col, 0.7F);
+            double rad = st[i * 5], ang = st[i * 5 + 1] + spin;
+            Vec3 p = c.add(Math.cos(ang) * rad, st[i * 5 + 2], Math.sin(ang) * rad);
+            glowInto(pts, p, (float) st[i * 5 + 4], (int) st[i * 5 + 3], 0.7F);
         }
         draw(pts);
         glow(c, 0.9F, 0xFFE8B0, 0.8F);
@@ -1728,15 +1748,24 @@ public final class EffectRenderer {
         draw(bb);
     }
 
+    /** 1.3.1: the glow's 24 directions, worked out once (it was 12 sine and cosine calls per segment, per glow, per frame). */
+    private static final double[] GLOW_COS = new double[25], GLOW_SIN = new double[25];
+
+    static {
+        for (int i = 0; i <= 24; i++) {
+            double a = i * Math.PI * 2 / 24;
+            GLOW_COS[i] = Math.cos(a);
+            GLOW_SIN[i] = Math.sin(a);
+        }
+    }
+
     private static void glowInto(BufferBuilder bb, Vec3 c, float radius, int rgb, float alpha) {
-        int seg = 24;
-        for (int i = 0; i < seg; i++) {
-            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
+        double lx = left.x * radius, ly = left.y * radius, lz = left.z * radius, ux = up.x * radius, uy = up.y * radius, uz = up.z * radius;
+        for (int i = 0; i < 24; i++) {
+            double c0 = GLOW_COS[i], s0 = GLOW_SIN[i], c1 = GLOW_COS[i + 1], s1 = GLOW_SIN[i + 1];
             v(bb, c.x, c.y, c.z, rgb, alpha);
-            v(bb, c.x + (left.x * Math.cos(a0) + up.x * Math.sin(a0)) * radius, c.y + (left.y * Math.cos(a0) + up.y * Math.sin(a0)) * radius,
-                    c.z + (left.z * Math.cos(a0) + up.z * Math.sin(a0)) * radius, rgb, 0);
-            v(bb, c.x + (left.x * Math.cos(a1) + up.x * Math.sin(a1)) * radius, c.y + (left.y * Math.cos(a1) + up.y * Math.sin(a1)) * radius,
-                    c.z + (left.z * Math.cos(a1) + up.z * Math.sin(a1)) * radius, rgb, 0);
+            v(bb, c.x + lx * c0 + ux * s0, c.y + ly * c0 + uy * s0, c.z + lz * c0 + uz * s0, rgb, 0);
+            v(bb, c.x + lx * c1 + ux * s1, c.y + ly * c1 + uy * s1, c.z + lz * c1 + uz * s1, rgb, 0);
         }
     }
 

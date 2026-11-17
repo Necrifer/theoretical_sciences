@@ -317,7 +317,7 @@ public class AnomalyEngineBlockEntity extends BlockEntity implements MenuProvide
         owner = tag.hasUUID("Owner") ? tag.getUUID("Owner") : null;
         int[] k = tag.getIntArray("Knobs");
         for (int i = 0; i < SpawnTuning.N && i < k.length; i++) knobs[i] = k[i];
-        if (tag.contains("Items")) items.deserializeNBT(reg, tag.getCompound("Items"));
+        if (tag.contains("Items")) items.deserializeNBT(reg, com.theoreticalsciences.machine.BigItemStackHandler.sized(tag.getCompound("Items"), items.getSlots()));
         energy.setRaw(tag.getLong("Energy"));
     }
 }

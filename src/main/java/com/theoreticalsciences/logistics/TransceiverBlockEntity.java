@@ -22,22 +22,63 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TransceiverBlockEntity extends BlockEntity {
     /** Every loaded transceiver on the server, by frequency. */
-    static final Map<Integer, Set<TransceiverBlockEntity>> CHANNELS = new ConcurrentHashMap<>();
+    static final Map<Integer, Set<TransceiverBlockEntity>> CHANNELS = com.theoreticalsciences.world.SessionMaps.perServer(new ConcurrentHashMap<>());   // 1.3.1: cleared when the server stops
 
     public int frequency;
     private int rr;      // round-robin start among receivers
 
+    /** 1.3.1: the tier, read once from the block (it was two registry lookups and string compares per call). */
+    private final int tier;
+
     public TransceiverBlockEntity(BlockPos pos, BlockState state) {
         super(QHLogistics.TRANSCEIVER.get(), pos, state);
+        String path = BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath();
+        tier = path.equals("entangled_transceiver") ? 2 : path.equals("entangled_link") ? 0 : 1;
     }
 
     boolean tier2() {
-        return BuiltInRegistries.BLOCK.getKey(getBlockState().getBlock()).getPath().equals("entangled_transceiver");
+        return tier == 2;
     }
 
     /** 1.2.0: the Entangled Link, the first tier (right after Quantum Entanglement): it crosses dimensions as the others do. */
     boolean tier0() {
-        return BuiltInRegistries.BLOCK.getKey(getBlockState().getBlock()).getPath().equals("entangled_link");
+        return tier == 0;
+    }
+
+    // 1.3.1: the handlers of the block this transceiver faces, cached (they were looked up three times a tick, and three
+    // times more for every receiver). The game invalidates a cache when that block changes.
+    private net.neoforged.neoforge.capabilities.BlockCapabilityCache<IItemHandler, Direction> itemCache;
+    private net.neoforged.neoforge.capabilities.BlockCapabilityCache<IFluidHandler, Direction> fluidCache;
+    private net.neoforged.neoforge.capabilities.BlockCapabilityCache<IEnergyStorage, Direction> energyCache;
+    private Direction cachedFacing;
+
+    private void caches() {
+        Direction f = facing();
+        if (itemCache != null && f == cachedFacing) return;
+        cachedFacing = f;
+        net.minecraft.server.level.ServerLevel sl = (net.minecraft.server.level.ServerLevel) level;
+        BlockPos t = target();
+        itemCache = net.neoforged.neoforge.capabilities.BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, sl, t, f.getOpposite());
+        fluidCache = net.neoforged.neoforge.capabilities.BlockCapabilityCache.create(Capabilities.FluidHandler.BLOCK, sl, t, f.getOpposite());
+        energyCache = net.neoforged.neoforge.capabilities.BlockCapabilityCache.create(Capabilities.EnergyStorage.BLOCK, sl, t, f.getOpposite());
+    }
+
+    @javax.annotation.Nullable
+    IItemHandler targetItems() {
+        caches();
+        return itemCache.getCapability();
+    }
+
+    @javax.annotation.Nullable
+    IFluidHandler targetFluids() {
+        caches();
+        return fluidCache.getCapability();
+    }
+
+    @javax.annotation.Nullable
+    IEnergyStorage targetEnergy() {
+        caches();
+        return energyCache.getCapability();
     }
 
     public int itemRate() {
@@ -112,28 +153,25 @@ public class TransceiverBlockEntity extends BlockEntity {
         if (frequency == 0 || !sending() || level == null) return;
         List<TransceiverBlockEntity> rx = receivers();
         if (rx.isEmpty()) return;
-        Direction f = facing(), in = f.getOpposite();
-        BlockPos src = target();
-        IItemHandler items = level.getCapability(Capabilities.ItemHandler.BLOCK, src, in);
-        IFluidHandler fluids = level.getCapability(Capabilities.FluidHandler.BLOCK, src, in);
-        IEnergyStorage energy = level.getCapability(Capabilities.EnergyStorage.BLOCK, src, in);
+        IItemHandler items = targetItems();
+        IFluidHandler fluids = targetFluids();
+        IEnergyStorage energy = targetEnergy();
         int itemBudget = itemRate(), fluidBudget = fluidRate();
         long energyBudget = energyRate();
         for (TransceiverBlockEntity r : rx) {
             var rl = r.level;
-            Direction rf = r.facing();
             BlockPos dst = r.target();
-            if (!rl.isLoaded(dst)) continue;
+            if (rl == null || !rl.isLoaded(dst)) continue;
             if (items != null && itemBudget > 0) {
-                IItemHandler d = rl.getCapability(Capabilities.ItemHandler.BLOCK, dst, rf.getOpposite());
+                IItemHandler d = r.targetItems();
                 if (d != null) itemBudget -= moveItems(items, d, itemBudget, this::spill);
             }
             if (fluids != null && fluidBudget > 0) {
-                IFluidHandler d = rl.getCapability(Capabilities.FluidHandler.BLOCK, dst, rf.getOpposite());
+                IFluidHandler d = r.targetFluids();
                 if (d != null) fluidBudget -= moveFluids(fluids, d, fluidBudget);
             }
             if (energy != null && energyBudget > 0 && energy.canExtract()) {
-                IEnergyStorage d = rl.getCapability(Capabilities.EnergyStorage.BLOCK, dst, rf.getOpposite());
+                IEnergyStorage d = r.targetEnergy();
                 if (d != null && d.canReceive()) {
                     int can = energy.extractEnergy((int) Math.min(Integer.MAX_VALUE, energyBudget), true);
                     int took = d.receiveEnergy(can, true);

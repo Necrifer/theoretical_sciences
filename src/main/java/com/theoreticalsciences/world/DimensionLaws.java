@@ -154,7 +154,7 @@ public final class DimensionLaws {
         if (grav == null) return;
         if (mul == 0) {
             if (grav.hasModifier(GRAVITY)) grav.removeModifier(GRAVITY);
-        } else grav.addOrUpdateTransientModifier(new AttributeModifier(GRAVITY, mul, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+        } else com.theoreticalsciences.util.Attrs.mulTotal(grav, GRAVITY, mul);
     }
 
     public static void onPlayerTick(PlayerTickEvent.Post e) {
@@ -319,7 +319,7 @@ public final class DimensionLaws {
             double g = !on ? 0 : cur[0] == 0 ? -0.5 : cur[0] == 1 ? (safe ? 1.0 : 2.0) : 0;
             if (g == 0) {
                 if (grav.hasModifier(LAW_GRAVITY)) grav.removeModifier(LAW_GRAVITY);
-            } else grav.addOrUpdateTransientModifier(new AttributeModifier(LAW_GRAVITY, g, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+            } else com.theoreticalsciences.util.Attrs.mulTotal(grav, LAW_GRAVITY, g);
         }
         if (!on) return;
         switch ((int) cur[0]) {

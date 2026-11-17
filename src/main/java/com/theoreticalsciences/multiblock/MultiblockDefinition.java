@@ -81,6 +81,8 @@ public final class MultiblockDefinition {
     public final int repeatFrom, repeatTo, repeatMax;
     private final JsonObject source;
     private final MultiblockDefinition[] variants;
+    /** 1.3.1: variants already built, published safely, so the common case takes no lock. */
+    private final java.util.concurrent.atomic.AtomicReferenceArray<MultiblockDefinition> built;
     /** 1.3.6: earlier layouts of a reworked structure (same key), so the Structure Assembler can still take old builds apart. */
     public final List<MultiblockDefinition> legacy;
 
@@ -97,6 +99,7 @@ public final class MultiblockDefinition {
             this.repeatMax = 0;
         }
         this.variants = new MultiblockDefinition[repeatMax + 1];
+        this.built = new java.util.concurrent.atomic.AtomicReferenceArray<>(repeatMax + 1);
         List<MultiblockDefinition> leg = new ArrayList<>();
         if (json.has("legacy")) for (JsonElement l : json.getAsJsonArray("legacy")) {
             JsonObject j = json.deepCopy();
@@ -236,9 +239,14 @@ public final class MultiblockDefinition {
     }
 
     /** The build with {@code extra} more copies of the repeated unit (0 = this, the smallest). */
-    public synchronized MultiblockDefinition variant(int extra) {
+    public MultiblockDefinition variant(int extra) {
         extra = Math.max(0, Math.min(extra, repeatMax));
         if (extra == 0) return this;
+        MultiblockDefinition done = built.get(extra);
+        return done != null ? done : buildVariant(extra);
+    }
+
+    private synchronized MultiblockDefinition buildVariant(int extra) {
         if (variants[extra] == null) {
             JsonObject j = source.deepCopy();
             j.remove("repeat");
@@ -267,6 +275,7 @@ public final class MultiblockDefinition {
             }
             variants[extra].baseY = by;
         }
+        built.set(extra, variants[extra]);
         return variants[extra];
     }
 
@@ -322,7 +331,32 @@ public final class MultiblockDefinition {
         return new Vec3(controller.getX() + 0.5 + rx, controller.getY() + 0.5 + (ey - cy), controller.getZ() + 0.5 + rz);
     }
 
+    // 1.3.1: what each character accepts, looked up once (a scan asked for every cell, building a list and doing a
+    // registry lookup per block each time). Index = the character; the registries are fixed by the time a scan runs.
+    private final java.util.concurrent.ConcurrentHashMap<Character, List<Block>> accepted = new java.util.concurrent.ConcurrentHashMap<>();
+    private final java.util.concurrent.ConcurrentHashMap<Character, java.util.Set<Block>> acceptedSet = new java.util.concurrent.ConcurrentHashMap<>();
+
     public List<Block> blocksFor(char c) {
+        List<Block> l = accepted.get(c);
+        if (l == null) {
+            l = List.copyOf(lookUpBlocks(c));
+            accepted.put(c, l);
+        }
+        return l;
+    }
+
+    private java.util.Set<Block> blockSetFor(char c) {
+        java.util.Set<Block> st = acceptedSet.get(c);
+        if (st == null) {
+            java.util.Set<Block> n = java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+            n.addAll(blocksFor(c));
+            st = java.util.Collections.unmodifiableSet(n);
+            acceptedSet.put(c, st);
+        }
+        return st;
+    }
+
+    private List<Block> lookUpBlocks(char c) {
         if (c == controllerChar) return List.of(BuiltInRegistries.BLOCK.get(controllerBlock));
         List<ResourceLocation> ids = key.get(c);
         if (ids == null) return List.of();
@@ -340,7 +374,7 @@ public final class MultiblockDefinition {
     public boolean matches(char c, BlockState state) {
         if (c == ' ') return true;
         if (c == '.') return state.isAir();
-        for (Block b : blocksFor(c)) if (state.is(b)) return true;
+        if (blockSetFor(c).contains(state.getBlock())) return true;
         // round 31: a tiered position also takes any block a datapack added to that family (data/<ns>/ts_component_tiers)
         TierSpec ts = tiers.get(c);
         return ts != null && com.theoreticalsciences.custom.ComponentTiers.tierOf(ts.family(), state) >= 0;
@@ -421,6 +455,8 @@ public final class MultiblockDefinition {
         Map<BlockPos, Character> expected = new LinkedHashMap<>();
         Map<String, Integer> tierMin = new HashMap<>();
         boolean partial = false;
+        Block portB = BuiltInRegistries.BLOCK.get(portBlock);          // 1.3.1: once, not a registry key per cell
+        BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos();   // 1.3.1: no new position for every cell read
         for (int y = 0; y < sizeY; y++) {
             List<String> rows = layers.get(y);
             for (int z = 0; z < rows.size(); z++) {
@@ -428,7 +464,14 @@ public final class MultiblockDefinition {
                 for (int x = 0; x < row.length(); x++) {
                     char c = row.charAt(x);
                     if (c == ' ' || c == controllerChar) continue;
-                    BlockPos p = toWorld(controller, facing, x, y, z);
+                    int dx = x - cx, dz = z - cz, rx, rz;
+                    switch (facing) {
+                        case SOUTH -> { rx = -dx; rz = -dz; }
+                        case EAST -> { rx = -dz; rz = dx; }
+                        case WEST -> { rx = dz; rz = -dx; }
+                        default -> { rx = dx; rz = dz; }
+                    }
+                    BlockPos p = m.set(controller.getX() + rx, controller.getY() + y - cy, controller.getZ() + rz);
                     // round 36: a part in a chunk that is not loaded (the controller's chunk kept loaded by a chunk
                     // loader, its neighbour not) is never read - reading it would load that chunk from inside a block
                     // entity's tick, every scan. The scan says "partial" and the machine keeps the state it had.
@@ -438,10 +481,11 @@ public final class MultiblockDefinition {
                     }
                     BlockState st = level.getBlockState(p);
                     if (!matches(c, st)) {
-                        missing.add(p);
-                        expected.put(p, c);
-                    } else if (BuiltInRegistries.BLOCK.getKey(st.getBlock()).equals(portBlock) || st.getBlock() instanceof com.theoreticalsciences.machine.ManaPortBlock) {
-                        ports.add(p);                  // (a Mana Port is one of the structure's ports: its recipes draw on it)
+                        BlockPos q = p.immutable();
+                        missing.add(q);
+                        expected.put(q, c);
+                    } else if (st.getBlock() == portB || st.getBlock() instanceof com.theoreticalsciences.machine.ManaPortBlock) {
+                        ports.add(p.immutable());      // (a Mana Port is one of the structure's ports: its recipes draw on it)
                     } else if (tiers.containsKey(c)) {
                         int t = tierOf(c, st);          // the mod's own tier, or the one a datapack gave this block
                         if (t >= 0) tierMin.merge(tiers.get(c).family(), t, Math::min);

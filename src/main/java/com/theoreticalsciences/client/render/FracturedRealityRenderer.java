@@ -37,6 +37,8 @@ public class FracturedRealityRenderer implements BlockEntityRenderer<FracturedRe
         return (h & 0xFFFFFF) / (float) 0xFFFFFF;
     }
 
+    private int maxLevel = 2;
+
     @Override
     public void render(FracturedRealityBlockEntity be, float partial, PoseStack ps, MultiBufferSource buf, int light, int overlay) {
         BlockState state = be.original();
@@ -56,11 +58,14 @@ public class FracturedRealityRenderer implements BlockEntityRenderer<FracturedRe
         ps.popPose();
 
         // fractal splitting: half-size copies drift out of the faces, each with quarter-size copies of its own
+        // (1.3.1: the quarter-size copies only within 16 blocks, where they can be told apart)
+        var cam = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
+        maxLevel = cam.distanceToSqr(be.getBlockPos().getCenter()) > 16 * 16 ? 1 : 2;
         fractal(state, ps, base, light, seed, t, 1, 0.5F);
     }
 
     private void fractal(BlockState state, PoseStack ps, VertexConsumer base, int light, long seed, float t, int level, float scale) {
-        if (level > 2) return;
+        if (level > maxLevel) return;
         int copies = level == 1 ? 3 : 2;
         for (int i = 0; i < copies; i++) {
             long s = seed * 31 + level * 7 + i;

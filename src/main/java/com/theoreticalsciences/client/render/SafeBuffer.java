@@ -19,9 +19,14 @@ public final class SafeBuffer implements VertexConsumer {
     private final RenderType type;
     private VertexConsumer cur;
 
+    /** 1.3.1: vertices per primitive (4 for quads): the buffer is asked for again only at the start of each primitive. */
+    private final int prim;
+    private int n;
+
     private SafeBuffer(MultiBufferSource src, RenderType type) {
         this.src = src;
         this.type = type;
+        this.prim = Math.max(1, type.mode().primitiveLength);
     }
 
     public static VertexConsumer of(MultiBufferSource src, RenderType type) {
@@ -34,7 +39,8 @@ public final class SafeBuffer implements VertexConsumer {
 
     @Override
     public VertexConsumer addVertex(float x, float y, float z) {
-        cur = b();
+        if (cur == null || n % prim == 0) cur = b();     // (a switch of buffer only happens between primitives)
+        n++;
         cur.addVertex(x, y, z);
         return this;
     }

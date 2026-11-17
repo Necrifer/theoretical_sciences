@@ -20,8 +20,9 @@ import java.util.Set;
 
 /** Which items and fluids any recipe of a machine type can use: what an ME network is asked about. Rebuilt on /reload. */
 public record MEWanted(java.util.List<ItemStack> items, java.util.List<FluidStack> fluids) {
-    private static RecipeManager seen;
-    private static final Map<String, MEWanted> CACHE = new HashMap<>();
+    /** 1.3.1: held weakly, so the last world's recipe manager is not kept alive after leaving it. */
+    private static java.lang.ref.WeakReference<RecipeManager> seen = new java.lang.ref.WeakReference<>(null);
+    private static final Map<String, MEWanted> CACHE = com.theoreticalsciences.world.SessionMaps.perServer(new HashMap<>());
 
     private static String key(ItemStack s) {
         return net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(s.getItem()) + s.getComponentsPatch().toString();
@@ -29,8 +30,8 @@ public record MEWanted(java.util.List<ItemStack> items, java.util.List<FluidStac
 
     public static synchronized MEWanted of(Level level, String recipeType) {
         RecipeManager rm = level.getRecipeManager();
-        if (rm != seen) {
-            seen = rm;
+        if (rm != seen.get()) {
+            seen = new java.lang.ref.WeakReference<>(rm);
             CACHE.clear();
         }
         return CACHE.computeIfAbsent(recipeType, t -> {

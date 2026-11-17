@@ -959,7 +959,8 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         boolean working = running || burning;
         physics.stabiliser = tuning.stabiliser;
         physics.tickDisturbance(tp, on, level.random, QHConfig.TUNING_DIFFICULTY.get());
-        evaluatePhysics(on);
+        // 1.3.1: an unbuilt structure nobody is looking at is evaluated once a second, not every tick
+        if (formed || viewers > 0 || level.getGameTime() % 20 == 0) evaluatePhysics(on);
         physics.tickThermal();
         physics.tickStates(on);
         if (formed && working && !physics.stopped()) {

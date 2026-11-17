@@ -65,16 +65,32 @@ public record Environment(double gravityMin, double gravityMax, int dimensionsMi
         } else if (!dimensions.isEmpty() && !inDim) return false;
         if (biomes.isEmpty()) return true;
         var biome = level.getBiome(pos);
-        for (String b : biomes) {
-            if (b.startsWith("#")) {
-                ResourceLocation t = ResourceLocation.tryParse(b.substring(1));
-                if (t != null && biome.is(TagKey.create(Registries.BIOME, t))) return true;
-            } else {
-                ResourceLocation id = ResourceLocation.tryParse(b);
-                if (id != null && biome.is(id)) return true;
-            }
+        for (Object o : parsed(biomes)) {
+            if (o instanceof TagKey<?> t) {
+                @SuppressWarnings("unchecked") TagKey<net.minecraft.world.level.biome.Biome> bt = (TagKey<net.minecraft.world.level.biome.Biome>) t;
+                if (biome.is(bt)) return true;
+            } else if (o instanceof ResourceLocation id && biome.is(id)) return true;
         }
         return false;
+    }
+
+    /** 1.3.1: the biome list read once (ids and tags), not parsed again on every working tick. */
+    private static final java.util.Map<List<String>, List<Object>> PARSED = new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static List<Object> parsed(List<String> biomes) {
+        return PARSED.computeIfAbsent(biomes, l -> {
+            List<Object> out = new ArrayList<>();
+            for (String b : l) {
+                if (b.startsWith("#")) {
+                    ResourceLocation t = ResourceLocation.tryParse(b.substring(1));
+                    if (t != null) out.add(TagKey.create(Registries.BIOME, t));
+                } else {
+                    ResourceLocation id = ResourceLocation.tryParse(b);
+                    if (id != null) out.add(id);
+                }
+            }
+            return List.copyOf(out);
+        });
     }
 
     public boolean test(Level level, BlockPos pos) {

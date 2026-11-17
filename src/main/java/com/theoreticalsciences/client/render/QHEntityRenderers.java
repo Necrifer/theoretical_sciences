@@ -44,16 +44,20 @@ public final class QHEntityRenderers {
         e.registerEntityRenderer(QHEntities.DESTABILISED_HUSK.get(), ctx -> new ZombieRenderer(ctx) {
             {
                 addLayer(new EyesLayer<Zombie, ZombieModel<Zombie>>(this) {
+                    private final RenderType glow = RenderType.eyes(tex("destabilised_husk_glow"));     // 1.3.1: made once
+
                     @Override
                     public RenderType renderType() {
-                        return RenderType.eyes(tex("destabilised_husk_glow"));
+                        return glow;
                     }
                 });
             }
 
+            private final ResourceLocation skin = tex("destabilised_husk");
+
             @Override
             public ResourceLocation getTextureLocation(Zombie entity) {
-                return tex("destabilised_husk");
+                return skin;
             }
         });
         e.registerEntityRenderer(QHEntities.VOID_WRAITH.get(), SpaceWarpRenderer::new);

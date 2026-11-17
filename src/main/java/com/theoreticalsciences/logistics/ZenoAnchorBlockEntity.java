@@ -40,7 +40,7 @@ public class ZenoAnchorBlockEntity extends BlockEntity {
         @Override
         public int receiveEnergy(int amount, boolean simulate) {
             int r = super.receiveEnergy(amount, simulate);
-            if (r > 0 && !simulate) setChanged();
+            if (r > 0 && !simulate && level != null) level.blockEntityChanged(worldPosition);     // 1.3.1: no neighbour updates
             return r;
         }
 
