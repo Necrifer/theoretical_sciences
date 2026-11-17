@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.16.2: cryogenic liquids and gases from other mods, and no foreign oil in the mod's worlds
+
+* **Liquid Oxygen and Liquid Hydrogen from other mods work.** Mekanism's "Liquid Oxygen" and "Liquid Hydrogen" carry
+  only the c:oxygen and c:hydrogen tags, so recipes asking for the mod's own Liquid Oxygen or Liquid Hydrogen refused
+  them. Those recipes now take `theoreticalsciences:liquid_oxygens` (GregTech's Liquid Oxygen and Mekanism's) and
+  `theoreticalsciences:liquid_hydrogens` (Mekanism's, and GregTech's if it has one). Liquid Sodium the same way
+  (`theoreticalsciences:liquid_sodiums`: Mekanism's Liquid Sodium).
+* **More shared fluids.** Recipes naming Radon-222, Helium-3, Carbon Monoxide, Hydrogen Cyanide or Uranium Hexafluoride
+  take any fluid in `c:radon`, `c:helium_3`, `c:carbon_monoxide`, `c:hydrogen_cyanide` or `c:uranium_hexafluoride`
+  (GregTech's, NuclearCraft's, Mekanism's). The mod's own versions of all eight join those `c:` tags and
+  `c:liquid_oxygen`, `c:liquid_hydrogen` and `c:liquid_sodium`, so other mods take them too.
+* **No Immersive Petroleum reservoirs in the mod's dimensions.** Immersive Petroleum places oil and lava reservoirs in
+  every dimension but the End, Titan's ocean included. When it is installed, its reservoir feature is now removed from
+  all 53 of the mod's biomes (biome tag `theoreticalsciences:no_foreign_reservoirs`). Reservoirs elsewhere are
+  unchanged. (Only that feature creates reservoirs, checked in Immersive Petroleum 4.5.0.)
+* Tested on a server with GregTech, Mekanism and Ad Astra: each tag lists the fluids above. No recipes changed.
+
 ## 1.16.1: other mods' oils and gases are accepted
 
 * **Every crude oil in the pack now works.** Recipes that take Synthetic Crude used to accept only Immersive Petroleum's
