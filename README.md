@@ -19,13 +19,14 @@ at the end of everything.
 * **A massive research tree with multiple entries**, with seven branches added in 1.1: astrophysics, Earth & mapping, nuclear
   science, electromagnetism, general relativity, optics and probability. Many entries are unlocked by solving a
   derivation puzzle (build the equation, find the answer) with values that differ in every world.
-* **Fifteen dimensions:** the Quantum Foam, the Bulk, Hyperdimensional Reality, the Platonic Realm, the Transfinite
+* **Fifteen dimensions, more to come:** the Quantum Foam, the Bulk, Hyperdimensional Reality, the Platonic Realm, the Transfinite
   Hierarchy, the Antiverse, black and white hole interiors, the Living Proof, the Transcendental, the Planetary
   Interior and the Accretion Frontier. Each has its own laws, creatures and soundtrack.
 * **The endgame:** the Omnilex Engine's impossible recipe opens the Transcendental; Alpha Omega waits in the Living
-  Proof; the Omnipotence Core can materialize and forge anything — until its Shutdown Sequence, the Sundering and the
-  Rekindling. After that come tools, armour and weapons that run on Eschaton Charge, and an Omnipotence Core of your
-  own that must be attuned to every place it stands in.
+  Proof; the Omnipotence Core can materialize and forge anything — This require initiating Shutdown Sequence, the Sundering and the
+  Rekindling. After that you may forge tools, armour and weapons that run on Eschaton Charge, and an Omnipotence Core of your
+  own that must be attuned to every place it stands in. The Core will also ask of you to recreate a way to Home once
+  all items were forged, involving a new type of crafting table.
 * **Singularities for every mod:** every ingot of every installed mod gets one automatically.
 * **The Quantum Codex:** the mod's own guide book, revealed as you progress, with every recipe in it.
 * **Way too much items, fluids and creatures**, all with generated art and a synthesised soundtrack.
@@ -33,7 +34,7 @@ at the end of everything.
 ## Compatibility
 
 * No mixins, no access transformers, no coremods, no required dependencies.
-* Standard FE, item and fluid capabilities on every machine and on Interface Ports.
+* Standard RF, item and fluid capabilities on every machine and on Interface Ports.
 * Optional integrations: **JEI** or **EMI** (every recipe, 3D structure previews), **Jade** (machine status, recipe
   and progress), **KubeJS** (see below),
   **AE2** (Interface Ports join an ME network).
