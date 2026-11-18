@@ -1,5 +1,6 @@
 package com.theoreticalsciences.home;
 
+import com.theoreticalsciences.custom.HomeSettings;
 import com.theoreticalsciences.transcend.CoreForge;
 import com.theoreticalsciences.transcend.ForgeAttainment;
 import net.minecraft.core.BlockPos;
@@ -25,7 +26,8 @@ import java.util.UUID;
  */
 public final class HomeProgress extends SavedData {
     private static final class Entry {
-        final long[] given = new long[HomeMaterials.IDS.size()];
+        /** 1.3.1: by item id, so a pack that changes the checklist keeps what was already given. */
+        final Map<String, Long> given = new HashMap<>();
         boolean greeted, finished, forced;
         String backDim = "";
         long backPos;
@@ -42,19 +44,53 @@ public final class HomeProgress extends SavedData {
         return players.computeIfAbsent(id, k -> new Entry());
     }
 
-    /** The tab appears for a player who has forged every recipe of the Core Forge at least once. */
+    /**
+     * The tab appears for a player who has forged every recipe of the Core Forge at least once. 1.3.1: "every recipe" is
+     * the Forge as the pack has it (a recipe a datapack removed is no longer asked for), and packs can choose other
+     * recipes, or none, with a {@code ts_home} file.
+     */
     public static boolean unlocked(MinecraftServer s, UUID player) {
         Entry had = get(s).players.get(player);
         if (had != null && had.forced) return true;              // (the operator's command, for testing)
-        for (CoreForge.Recipe r : CoreForge.RECIPES) {
-            ResourceLocation out = BuiltInRegistries.ITEM.getKey(r.out().get());
-            if (!ForgeAttainment.has(s, player, out.toString())) return false;
+        HomeSettings.Settings set = HomeSettings.get();
+        switch (set.unlock()) {
+            case ALWAYS -> {
+                return true;
+            }
+            case LISTED -> {
+                for (String id : set.unlockRecipes()) {
+                    CoreForge.Recipe r = CoreForge.byId(id);
+                    if (r == null && id.startsWith(com.theoreticalsciences.TheoreticalSciences.MODID + ":"))
+                        r = CoreForge.byId(id.substring(com.theoreticalsciences.TheoreticalSciences.MODID.length() + 1));
+                    if (r != null && !forged(s, player, r)) return false;      // (a recipe the pack does not have is not asked for)
+                }
+                return true;
+            }
+            default -> {
+                for (CoreForge.Recipe r : CoreForge.base()) {
+                    if (set.unlockSkip().contains(r.id()) || set.unlockSkip().contains(com.theoreticalsciences.TheoreticalSciences.MODID + ":" + r.id())) continue;
+                    if (!forged(s, player, r)) return false;
+                }
+                return true;
+            }
         }
-        return true;
     }
 
+    private static boolean forged(MinecraftServer s, UUID player, CoreForge.Recipe r) {
+        ResourceLocation out = BuiltInRegistries.ITEM.getKey(r.out().get());
+        return ForgeAttainment.has(s, player, out.toString());
+    }
+
+    private static String key(int index) {
+        return BuiltInRegistries.ITEM.getKey(HomeMaterials.item(index)).toString();
+    }
+
+    /** How much of each line has been given, in the checklist's order. */
     public static long[] given(MinecraftServer s, UUID player) {
-        return get(s).of(player).given.clone();
+        Entry e = get(s).of(player);
+        long[] out = new long[HomeMaterials.size()];
+        for (int i = 0; i < out.length; i++) out[i] = e.given.getOrDefault(key(i), 0L);
+        return out;
     }
 
     /** For operators (/theoreticalsciences home ...): show the tab without the forging, fill every line, or start over. */
@@ -65,13 +101,13 @@ public final class HomeProgress extends SavedData {
             case "unlock" -> e.forced = true;
             case "complete" -> {
                 e.forced = true;
-                java.util.Arrays.fill(e.given, HomeMaterials.TARGET);
+                for (int i = 0; i < HomeMaterials.size(); i++) e.given.put(key(i), HomeMaterials.target());
             }
             default -> {
                 e.forced = false;
                 e.greeted = false;
                 e.finished = false;
-                java.util.Arrays.fill(e.given, 0L);
+                e.given.clear();
             }
         }
         d.setDirty();
@@ -82,7 +118,8 @@ public final class HomeProgress extends SavedData {
         if (player == null) return false;
         Entry e = get(s).players.get(player);
         if (e == null) return false;
-        for (long g : e.given) if (g < HomeMaterials.TARGET) return false;
+        long t = HomeMaterials.target();
+        for (int i = 0; i < HomeMaterials.size(); i++) if (e.given.getOrDefault(key(i), 0L) < t) return false;
         return true;
     }
 
@@ -90,9 +127,12 @@ public final class HomeProgress extends SavedData {
     public static long give(MinecraftServer s, UUID player, int index, long count) {
         HomeProgress d = get(s);
         Entry e = d.of(player);
-        long take = Math.max(0, Math.min(count, HomeMaterials.TARGET - e.given[index]));
+        if (index < 0 || index >= HomeMaterials.size()) return 0;
+        String k = key(index);
+        long had = e.given.getOrDefault(k, 0L);
+        long take = Math.max(0, Math.min(count, HomeMaterials.target() - had));
         if (take > 0) {
-            e.given[index] += take;
+            e.given.put(k, had + take);
             d.setDirty();
         }
         return take;
@@ -155,7 +195,9 @@ public final class HomeProgress extends SavedData {
         players.forEach((id, e) -> {
             CompoundTag t = new CompoundTag();
             t.putUUID("Player", id);
-            t.putLongArray("Given", e.given);
+            CompoundTag g = new CompoundTag();
+            e.given.forEach(g::putLong);
+            t.put("GivenById", g);
             t.putBoolean("Greeted", e.greeted);
             t.putBoolean("Finished", e.finished);
             t.putBoolean("Forced", e.forced);
@@ -172,8 +214,14 @@ public final class HomeProgress extends SavedData {
         for (Tag raw : tag.getList("Players", Tag.TAG_COMPOUND)) {
             CompoundTag t = (CompoundTag) raw;
             Entry e = d.of(t.getUUID("Player"));
-            long[] g = t.getLongArray("Given");
-            System.arraycopy(g, 0, e.given, 0, Math.min(g.length, e.given.length));
+            if (t.contains("GivenById")) {
+                CompoundTag g = t.getCompound("GivenById");
+                for (String k : g.getAllKeys()) e.given.put(k, g.getLong(k));
+            } else {                                              // saved before 1.3.1: by position in the built list
+                long[] g = t.getLongArray("Given");
+                for (int i = 0; i < Math.min(g.length, HomeMaterials.DEFAULT_IDS.size()); i++)
+                    if (g[i] > 0) e.given.put(com.theoreticalsciences.TheoreticalSciences.MODID + ":" + HomeMaterials.DEFAULT_IDS.get(i), g[i]);
+            }
             e.greeted = t.getBoolean("Greeted");
             e.finished = t.getBoolean("Finished");
             e.forced = t.getBoolean("Forced");

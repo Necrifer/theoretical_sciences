@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.3.1: Recreating Home for modpacks
+
+Recreating Home could not be changed by a pack, and a pack that removed a Core Forge recipe made it impossible to
+unlock. It can now be set from a datapack or KubeJS, and both guides explain it. No recipes changed.
+
+### For modpacks
+* **Unlocking follows the pack's Forge.** The Recreating Home tab used to need every Core Forge recipe the mod ships
+  with, even ones a datapack had removed, so those players could never unlock it. It now asks for every Forge recipe
+  as the pack has it: removed ones are not needed, added ones are. The generated Simulated Universe and creative
+  recipes never count.
+* **New `ts_home` data** (`data/<namespace>/ts_home/<name>.json`) sets:
+  * `unlock`: `"all_forge_recipes"` (as before), `"always"`, or a list of Forge recipe ids; `unlock_skip` leaves
+    recipes out of `all_forge_recipes`;
+  * `materials`, `add_materials`, `remove_materials`: the checklist (any mod's items, at most 96);
+  * `target`: how many of each material (33,550,337 as shipped);
+  * `keystone`: what the Homeward Portal's frame takes.
+* **Checklist progress is kept by item,** so a pack that changes the list never loses what players already gave.
+  Worlds saved before this version are read as they were.
+* When a pack changes the checklist, the Core's greeting names the pack's numbers instead of "forty-two" and
+  33,550,337.
+* **Documented:** DATAPACKS.md section 11 and KUBEJS.md section 8 cover `ts_home` and the Empyrean Assembly Table's
+  recipes (type `theoreticalsciences:empyrean`), which could already be added, replaced and removed like any recipe.
+  Later sections of both guides moved down by one.
+
 ## 1.3.0: the CurseForge release (18 November 2026)
 
 Everything since 1.2.0 (3 Forgotten Memories), in short. The full list, with every recipe change and number, follows

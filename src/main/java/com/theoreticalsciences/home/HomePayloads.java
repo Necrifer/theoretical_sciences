@@ -39,8 +39,14 @@ public final class HomePayloads {
         boolean un = HomeProgress.unlocked(sp.server, sp.getUUID());
         PacketDistributor.sendToPlayer(sp, new State(un, un ? HomeProgress.given(sp.server, sp.getUUID()) : new long[0]));
         if (un && HomeProgress.greetOnce(sp.server, sp.getUUID()))
-            for (int i = 1; i <= 4; i++)
-                sp.sendSystemMessage(Component.translatable("message.theoreticalsciences.home.greeting." + i).withStyle(ChatFormatting.GOLD, ChatFormatting.ITALIC));
+            for (int i = 1; i <= 4; i++) {
+                // 1.3.1: a pack that changed the checklist gets its own numbers in the last line
+                boolean custom = i == 4 && (HomeMaterials.size() != HomeMaterials.DEFAULT_IDS.size() || HomeMaterials.target() != com.theoreticalsciences.custom.HomeSettings.DEFAULT_TARGET);
+                Component line = custom
+                        ? Component.translatable("message.theoreticalsciences.home.greeting.4.custom", HomeMaterials.size(), String.format(java.util.Locale.ROOT, "%,d", HomeMaterials.target()))
+                        : Component.translatable("message.theoreticalsciences.home.greeting." + i);
+                sp.sendSystemMessage(line.copy().withStyle(ChatFormatting.GOLD, ChatFormatting.ITALIC));
+            }
     }
 
     /** Client -> server: give the Core everything carried that the checklist still needs. */

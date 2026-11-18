@@ -1,7 +1,6 @@
 package com.theoreticalsciences.home;
 
-import com.theoreticalsciences.TheoreticalSciences;
-import net.minecraft.core.registries.BuiltInRegistries;
+import com.theoreticalsciences.custom.HomeSettings;
 import net.minecraft.world.item.Item;
 
 import java.util.List;
@@ -14,10 +13,11 @@ import java.util.List;
 public final class HomeMaterials {
     private HomeMaterials() {}
 
-    public static final long TARGET = 33_550_337L;
-
-    /** Twenty-four elements, twelve works, five pillars, and the keystone (the order of the checklist). */
-    public static final List<String> IDS = List.of(
+    /**
+     * Twenty-four elements, twelve works, five pillars, and the keystone (the order of the checklist). 1.3.1: this is the
+     * list as built; packs can change it (and the target and the keystone) with {@code ts_home} files, see HomeSettings.
+     */
+    public static final List<String> DEFAULT_IDS = List.of(
             // the elements: what a world is made of
             "remembered_soil", "living_water", "first_breath", "first_light", "hearthfire", "seraphic_alloy", "choir_crystal", "woven_memory",
             "still_stone", "morning_dew", "evening_ember", "quiet_snow", "deep_root", "bright_seed", "kind_shadow", "warm_rain",
@@ -30,12 +30,27 @@ public final class HomeMaterials {
             // and the way in
             "keystone_of_return");
 
+    /** How many of each material the checklist asks for. */
+    public static long target() {
+        return HomeSettings.get().target();
+    }
+
+    /** How many lines the checklist has. */
+    public static int size() {
+        return HomeSettings.get().materials().size();
+    }
+
+    /** The checklist's line for this item, or -1. */
     public static int index(Item item) {
-        var key = BuiltInRegistries.ITEM.getKey(item);
-        return key.getNamespace().equals(TheoreticalSciences.MODID) ? IDS.indexOf(key.getPath()) : -1;
+        return HomeSettings.get().materials().indexOf(item);
     }
 
     public static Item item(int i) {
-        return BuiltInRegistries.ITEM.get(TheoreticalSciences.id(IDS.get(i)));
+        return HomeSettings.get().materials().get(i);
+    }
+
+    /** What the Homeward Portal's frame takes. */
+    public static Item keystone() {
+        return HomeSettings.get().keystone();
     }
 }
