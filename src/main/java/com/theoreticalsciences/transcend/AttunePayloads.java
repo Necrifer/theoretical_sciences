@@ -41,7 +41,7 @@ public final class AttunePayloads {
             if (!sp.level().isLoaded(p.core()) || !sp.blockPosition().closerThan(p.core(), 10)) return;
             if (!(sp.level().getBlockEntity(p.core()) instanceof ForgedCoreBlockEntity core)) return;
             if (!sp.level().mayInteract(sp, p.core())) return;
-            // 1.3.1: only from the attuning screen this player opened with the Hand (which paid its charge and passed the
+            // 1.3.0: only from the attuning screen this player opened with the Hand (which paid its charge and passed the
             // claim checks), and only where they may still act: a modified client cannot attune someone else's Core
             if (!CorePayloads.inSession(sp, p.core())) return;
             if (!com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, p.core(), null, com.theoreticalsciences.compat.ClaimChecks.Kind.PLACE)
@@ -64,7 +64,7 @@ public final class AttunePayloads {
 
     public static void send(ServerPlayer sp, ForgedCoreBlockEntity core, boolean open) {
         if (open) {
-            if (!CorePayloads.begin(sp, core.getBlockPos())) return;      // 1.3.1: the screen's packets need this session
+            if (!CorePayloads.begin(sp, core.getBlockPos())) return;      // 1.3.0: the screen's packets need this session
             core.handled();
         }
         PacketDistributor.sendToPlayer(sp, new State(core.getBlockPos(), core.screenState(open)));

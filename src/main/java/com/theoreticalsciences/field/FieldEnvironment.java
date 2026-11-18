@@ -28,7 +28,7 @@ public final class FieldEnvironment {
             {64_000_000, 4_000_000, 4_000_000, 64_000_000}, {1_000_000, 32_000_000, 512_000_000}};
 
     /** Powered projectors, by dimension. Maintained by the projectors themselves. */
-    static final Map<ResourceKey<Level>, Map<BlockPos, FieldProjectorBlockEntity>> ACTIVE = com.theoreticalsciences.world.SessionMaps.perServer(new ConcurrentHashMap<>());   // 1.3.1: cleared when the server stops
+    static final Map<ResourceKey<Level>, Map<BlockPos, FieldProjectorBlockEntity>> ACTIVE = com.theoreticalsciences.world.SessionMaps.perServer(new ConcurrentHashMap<>());   // 1.3.0: cleared when the server stops
 
     static void add(FieldProjectorBlockEntity be) {
         if (be.getLevel() == null || be.getLevel().isClientSide) return;        // 1.2.0: the server's own map only

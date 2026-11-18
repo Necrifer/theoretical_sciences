@@ -124,7 +124,7 @@ public class SingularItemRenderer extends BlockEntityWithoutLevelRenderer {
 
     // -------------------------------------------------------------- geometry helpers (in the item's XY plane)
 
-    // 1.3.2: the circle points each shape uses, worked out once (they were recomputed for every item drawn, every frame;
+    // 1.3.0: the circle points each shape uses, worked out once (they were recomputed for every item drawn, every frame;
     // a full inventory of these items is hundreds of thousands of sines a second)
     private static float[][] circle(int seg) {
         float[][] t = new float[2][seg + 1];

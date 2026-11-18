@@ -234,7 +234,7 @@ public final class FxRenderer {
     /** A buffer source of its own, so flushing it never draws the game's own queued (translucent) entities early. */
     static MultiBufferSource.BufferSource buffers() {
         if (FX_BUFFERS == null) {
-            // 1.3.2: one buffer for each kind of drawing these effects use, so switching between them (a beam, then an
+            // 1.3.0: one buffer for each kind of drawing these effects use, so switching between them (a beam, then an
             // item, then a beam) no longer draws and empties the buffer each time. They are drawn in this order when a
             // pass ends: solid, cut out, see-through, then beams. Any other kind still works through the shared buffer.
             java.util.SequencedMap<RenderType, com.mojang.blaze3d.vertex.ByteBufferBuilder> fixed = new java.util.LinkedHashMap<>();
@@ -320,7 +320,7 @@ public final class FxRenderer {
                 light = 0.25F + 0.75F * Math.max(bl, sl);
             }
             Matrix4f pm = new Matrix4f(mv).mul(tr[p.index]);
-            if (!translucent) com.theoreticalsciences.client.render.SodiumSprites.mark(bp.animated);      // 1.3.2
+            if (!translucent) com.theoreticalsciences.client.render.SodiumSprites.mark(bp.animated);      // 1.3.0
             for (int L = translucent ? 3 : 0; L < (translucent ? 4 : 3); L++) {
                 VertexBuffer vb = bp.layers[L];
                 if (vb == null) continue;

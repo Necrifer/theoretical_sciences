@@ -74,7 +74,7 @@ public record Environment(double gravityMin, double gravityMax, int dimensionsMi
         return false;
     }
 
-    /** 1.3.1: the biome list read once (ids and tags), not parsed again on every working tick. */
+    /** 1.3.0: the biome list read once (ids and tags), not parsed again on every working tick. */
     private static final java.util.Map<List<String>, List<Object>> PARSED = new java.util.concurrent.ConcurrentHashMap<>();
 
     private static List<Object> parsed(List<String> biomes) {

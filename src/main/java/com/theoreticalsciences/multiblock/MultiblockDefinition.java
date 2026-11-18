@@ -81,7 +81,7 @@ public final class MultiblockDefinition {
     public final int repeatFrom, repeatTo, repeatMax;
     private final JsonObject source;
     private final MultiblockDefinition[] variants;
-    /** 1.3.1: variants already built, published safely, so the common case takes no lock. */
+    /** 1.3.0: variants already built, published safely, so the common case takes no lock. */
     private final java.util.concurrent.atomic.AtomicReferenceArray<MultiblockDefinition> built;
     /** 1.3.6: earlier layouts of a reworked structure (same key), so the Structure Assembler can still take old builds apart. */
     public final List<MultiblockDefinition> legacy;
@@ -281,7 +281,7 @@ public final class MultiblockDefinition {
 
     /** A cheap yes/no check that stops at the first wrong block (top layers first); unloaded chunks count as no. */
     public boolean quickMatch(Level level, BlockPos controller, Direction facing) {
-        int[] c = cells();                                       // (1.3.2: no new position per cell)
+        int[] c = cells();                                       // (1.3.0: no new position per cell)
         BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos();
         for (int i = c.length - 4; i >= 0; i -= 4) {             // top layers first
             place(m, controller, facing, c[i], c[i + 1], c[i + 2]);
@@ -325,7 +325,7 @@ public final class MultiblockDefinition {
         return new Vec3(controller.getX() + 0.5 + rx, controller.getY() + 0.5 + (ey - cy), controller.getZ() + 0.5 + rz);
     }
 
-    // 1.3.1: what each character accepts, looked up once (a scan asked for every cell, building a list and doing a
+    // 1.3.0: what each character accepts, looked up once (a scan asked for every cell, building a list and doing a
     // registry lookup per block each time). Index = the character; the registries are fixed by the time a scan runs.
     private final java.util.concurrent.ConcurrentHashMap<Character, List<Block>> accepted = new java.util.concurrent.ConcurrentHashMap<>();
     private final java.util.concurrent.ConcurrentHashMap<Character, java.util.Set<Block>> acceptedSet = new java.util.concurrent.ConcurrentHashMap<>();
@@ -443,7 +443,7 @@ public final class MultiblockDefinition {
         }
     }
 
-    // ------------------------------------------------------------------ 1.3.2: scanning in steps
+    // ------------------------------------------------------------------ 1.3.0: scanning in steps
     /**
      * Every cell a scan reads, worked out once from the layers: four ints a cell (x, y, z relative to the controller,
      * before turning to the facing, and the pattern character), in the order the scan has always read them.

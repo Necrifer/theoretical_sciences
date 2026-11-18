@@ -71,7 +71,7 @@ public class GlossaryScreen extends Screen {
         addRenderableWidget(new HoloButton(left, height - 24, 98, 18, Component.translatable("gui.back"), 0x40C0FF, b -> onClose()));
     }
 
-    // 1.3.1: the list and each entry's wrapped lines are kept until what they depend on changes (they were rebuilt
+    // 1.3.0: the list and each entry's wrapped lines are kept until what they depend on changes (they were rebuilt
     // for every entry, three times over, every frame)
     private String shownKey;
     private List<GlyphRegistry.Glyph> shownList = List.of();

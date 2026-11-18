@@ -1,94 +1,6 @@
 # Changelog
 
-## 1.3.2: the rest of the performance review
-
-The remaining items from the outside performance review. No recipes, items or progression changed, and nothing looks
-different.
-
-### Server
-* **Large multiblocks are checked a piece at a time.** A structure with more than 4,096 blocks used to be checked in a
-  single tick, which could cause a lag spike when a big machine was placed, loaded or rechecked. The check now spreads
-  over several ticks (up to 4,096 blocks each) and the result is the same. Small machines still finish in one tick.
-
-### Client (drawing)
-* **Glows are drawn together.** The soft glows round machine effects were each their own draw call, up to hundreds a
-  frame; they are now gathered and drawn in one go wherever the drawing settings allow.
-* **Lensing copies less of the screen.** The gravitational lensing effect copied the whole screen up to twice a frame;
-  it now copies only the part round the lenses.
-* **Sky backgrounds are built once.** The fixed parts of the Bulk, Hyperreal, Empyrean, Frontier and Orbit skies (the
-  colour dome, the backdrop, Orbit's steady stars) are kept on the graphics card instead of being rebuilt every frame.
-  Twinkling stars and moving parts are still drawn fresh. The fractal sky's cube is one draw instead of six.
-* **Singularity items** use tables of ready worked out circle points instead of thousands of sine and cosine sums per
-  item per frame.
-* **Machine effects keep separate buffers** for each kind of drawing (beams, items, see through), so switching between
-  them no longer forces a draw each time.
-* **Fewer throwaway objects every frame** (lists of effects, the penteract's corners, the altar's lightning), and the
-  Forged Core is no longer drawn when it is off screen. An unused helper class was removed.
-* **Sodium:** moving machine parts now tell Sodium their animated textures are in use, so with "Animate only visible
-  textures" on they no longer risk looking frozen. Keep that Sodium setting on; it saves a lot of work with this mod.
-  Sodium is not needed; without it nothing changes.
-
-### Looked at and left as is
-* Splitting animated textures into a still base and a shared moving overlay: of 1,711 animated textures, only 2 pairs
-  share an overlay exactly, so it would save almost nothing without changing how they look.
-
-## 1.3.1: security and performance fixes
-
-From an outside review of 1.3.0 for security and performance. No recipes, items or progression changed.
-
-### Security and correctness
-* **Disconnect on a large Structure Assembler check fixed.** The obstruction marks sent every position but the client
-  read at most 1,024, and leftover bytes in a message disconnect the player. Now at most 1,024 are sent. Marks are also
-  dropped when you change world or log out.
-* **Attuning a Forged Core needs the attuning screen.** The attune message is accepted only from the screen the player
-  opened with the Hand of the Demiurge (which already pays its charge and checks claims), and only where they may act
-  (claims, spawn protection, adventure mode). A modified client could put another player's Core to sleep before.
-* **The Omnipotence Core no longer makes admin or unbreakable blocks.** Command, structure and jigsaw blocks, blocks
-  that can never be broken (bedrock, barrier, end portal frame, reinforced deepslate...), spawners, the debug stick and
-  anything in `c:hidden_from_recipe_viewers` are refused and hidden from its list. Packs add more to the new item tag
-  `theoreticalsciences:not_materializable`.
-* **Mission Bay launches only from the planner the player opened,** and only where they may act (claims). A launch no
-  longer changes who owns the bay.
-* **Right-clicking a full pile no longer deletes it.** Halving a pile of 2,147,483,647 (a full Transcendent Cache pile,
-  or a machine's big input) overflowed below zero and emptied the slot.
-* **Saved data is bounded on load:** the Chronal Accelerator's radius (also kept within the config after it is
-  lowered), and the slot counts of the Anomaly Engine, Convergence Altar and Mission Bay inventories.
-
-### Server performance
-* **Running machines no longer send themselves twice a second.** Progress and stored energy reach the client every
-  half second while the machine's screen is open, and every ten seconds otherwise; status, recipe and inventory changes
-  still go at once. Per tick, a running machine only marks its chunk for saving instead of updating all its
-  neighbours (comparators still see it start and stop). Energy Cells tell neighbours only when their comparator level
-  changes; Field Projectors and Zeno Anchors no longer update neighbours on every transfer.
-* **Gravity and jump laws no longer send an attribute update every tick;** they change the player's attributes only
-  when the value really changes.
-* **A parallel finish settles once:** all the runs of a parallel recipe update the machine and its neighbours once at
-  the end, not once per item moved.
-* **Idle machines** no longer build their recipe input (with a copy of the ME stock, when linked) on every idle tick.
-* **Structure scans** look up what each part of a structure accepts once, and no longer make a new position and list
-  for every cell; an unbuilt structure nobody is looking at evaluates its physics once a second.
-* **Arrivals on Titan, in Inner Space and on the Accretion Frontier** skip columns the world generator says are sea or
-  plasma, instead of generating their chunks while searching for land.
-* **Memory:** lists of field projectors, transceivers, power beams and the ME recipe cache are cleared when a world is
-  closed, so leaving a world no longer keeps it in memory.
-* **Transceivers** keep the handlers of the blocks they face (they were looked up several times a tick) and read their
-  tier once. Recipe biome lists are read once. Multiblock definitions are read without a lock. The Empyrean Assembly
-  Table answers pipes from a kept list.
-
-### Client performance
-* **Animated textures, pixel for pixel the same:** 21 animations whose frames were all identical are now still images,
-  and 630 strips store each different frame once, with repeated frames joined into longer steps (fewer texture
-  uploads; 5,066 fewer frames). Checked tick by tick against the old textures: identical.
-* **Machine working sounds** start again if the sound engine dropped them (they could stay silent until a relog), only
-  start within hearing range, and are forgotten on logging out.
-* **Glows and galaxies** use precomputed directions and star layouts, and no longer allocate for every glow.
-* **Machine effects** read their settings once instead of parsing them every frame.
-* **Procedural renderers** ask for their buffer once per quad, not once per vertex.
-* **Fractured Reality** draws its smallest copies only within 16 blocks.
-* **The glossary** keeps its list and wrapped text between frames; console panels draw their pattern in one batch.
-* Sodium's "Animate only visible textures" option should stay on: it saves the most with this many animated textures.
-
-## 1.3.0: the CurseForge release (17 November 2026)
+## 1.3.0: the CurseForge release (18 November 2026)
 
 Everything since 1.2.0 (3 Forgotten Memories), in short. The full list, with every recipe change and number, follows
 below.
@@ -198,6 +110,85 @@ Ground-Penetrating Radar, luminescence dating, tree-ring dating, conservation, i
 * Immersive Petroleum no longer places oil and lava reservoirs in the mod's dimensions.
 * **Anima Mundi config:** `animaMundiNeedsModEssences` and `animaMundiSkipMods` choose whether, and which, other
   mods' Essences Anima Mundi needs.
+
+### Security
+
+From an outside review for security and performance, done before release. None of it changes recipes, items or
+progression, and nothing looks different.
+
+* **Disconnect on a large Structure Assembler check fixed.** The obstruction marks sent every position but the client
+  read at most 1,024, and leftover bytes in a message disconnect the player. Now at most 1,024 are sent. Marks are also
+  dropped when you change world or log out.
+* **Attuning a Forged Core needs the attuning screen.** The attune message is accepted only from the screen the player
+  opened with the Hand of the Demiurge (which already pays its charge and checks claims), and only where they may act
+  (claims, spawn protection, adventure mode). A modified client could put another player's Core to sleep before.
+* **The Omnipotence Core no longer makes admin or unbreakable blocks.** Command, structure and jigsaw blocks, blocks
+  that can never be broken (bedrock, barrier, end portal frame, reinforced deepslate...), spawners, the debug stick and
+  anything in `c:hidden_from_recipe_viewers` are refused and hidden from its list. Packs add more to the new item tag
+  `theoreticalsciences:not_materializable`.
+* **Mission Bay launches only from the planner the player opened,** and only where they may act (claims). A launch no
+  longer changes who owns the bay.
+* **Right-clicking a full pile no longer deletes it.** Halving a pile of 2,147,483,647 (a full Transcendent Cache pile,
+  or a machine's big input) overflowed below zero and emptied the slot.
+* **Saved data is bounded on load:** the Chronal Accelerator's radius (also kept within the config after it is
+  lowered), and the slot counts of the Anomaly Engine, Convergence Altar and Mission Bay inventories.
+
+### Performance: server
+
+* **Large multiblocks are checked a piece at a time.** A structure with more than 4,096 blocks used to be checked in a
+  single tick, which could cause a lag spike when a big machine was placed, loaded or rechecked. The check now spreads
+  over several ticks (up to 4,096 blocks each) and the result is the same. Small machines still finish in one tick.
+* **Running machines no longer send themselves twice a second.** Progress and stored energy reach the client every
+  half second while the machine's screen is open, and every ten seconds otherwise; status, recipe and inventory changes
+  still go at once. Per tick, a running machine only marks its chunk for saving instead of updating all its
+  neighbours (comparators still see it start and stop). Energy Cells tell neighbours only when their comparator level
+  changes; Field Projectors and Zeno Anchors no longer update neighbours on every transfer.
+* **Gravity and jump laws no longer send an attribute update every tick;** they change the player's attributes only
+  when the value really changes.
+* **A parallel finish settles once:** all the runs of a parallel recipe update the machine and its neighbours once at
+  the end, not once per item moved.
+* **Idle machines** no longer build their recipe input (with a copy of the ME stock, when linked) on every idle tick.
+* **Structure scans** look up what each part of a structure accepts once, and no longer make a new position and list
+  for every cell; an unbuilt structure nobody is looking at evaluates its physics once a second.
+* **Arrivals on Titan, in Inner Space and on the Accretion Frontier** skip columns the world generator says are sea or
+  plasma, instead of generating their chunks while searching for land.
+* **Memory:** lists of field projectors, transceivers, power beams and the ME recipe cache are cleared when a world is
+  closed, so leaving a world no longer keeps it in memory.
+* **Transceivers** keep the handlers of the blocks they face (they were looked up several times a tick) and read their
+  tier once. Recipe biome lists are read once. Multiblock definitions are read without a lock. The Empyrean Assembly
+  Table answers pipes from a kept list.
+
+### Performance: client
+
+* **Glows are drawn together.** The soft glows round machine effects were each their own draw call, up to hundreds a
+  frame; they are now gathered and drawn in one go wherever the drawing settings allow.
+* **Lensing copies less of the screen.** The gravitational lensing effect copied the whole screen up to twice a frame;
+  it now copies only the part round the lenses.
+* **Sky backgrounds are built once.** The fixed parts of the Bulk, Hyperreal, Empyrean, Frontier and Orbit skies (the
+  colour dome, the backdrop, Orbit's steady stars) are kept on the graphics card instead of being rebuilt every frame.
+  Twinkling stars and moving parts are still drawn fresh. The fractal sky's cube is one draw instead of six.
+* **Singularity items** use tables of ready worked out circle points instead of thousands of sine and cosine sums per
+  item per frame.
+* **Machine effects keep separate buffers** for each kind of drawing (beams, items, see through), so switching between
+  them no longer forces a draw each time.
+* **Fewer throwaway objects every frame** (lists of effects, the penteract's corners, the altar's lightning), and the
+  Forged Core is no longer drawn when it is off screen. An unused helper class was removed.
+* **Sodium:** moving machine parts now tell Sodium their animated textures are in use, so with "Animate only visible
+  textures" on they no longer risk looking frozen. Keep that Sodium setting on; it saves a lot of work with this mod.
+  Sodium is not needed; without it nothing changes.
+* **Animated textures, pixel for pixel the same:** 21 animations whose frames were all identical are now still images,
+  and 630 strips store each different frame once, with repeated frames joined into longer steps (fewer texture
+  uploads; 5,066 fewer frames). Checked tick by tick against the old textures: identical.
+* **Machine working sounds** start again if the sound engine dropped them (they could stay silent until a relog), only
+  start within hearing range, and are forgotten on logging out.
+* **Glows and galaxies** use precomputed directions and star layouts, and no longer allocate for every glow.
+* **Machine effects** read their settings once instead of parsing them every frame.
+* **Procedural renderers** ask for their buffer once per quad, not once per vertex.
+* **Fractured Reality** draws its smallest copies only within 16 blocks.
+* **The glossary** keeps its list and wrapped text between frames; console panels draw their pattern in one batch.
+
+Looked at and left as is: splitting animated textures into a still base and a shared moving overlay. Of 1,711
+animated textures only 2 pairs share an overlay exactly, so it would save almost nothing without changing their look.
 
 ### Fixes
 

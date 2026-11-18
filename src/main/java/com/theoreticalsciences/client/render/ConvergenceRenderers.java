@@ -195,7 +195,7 @@ public final class ConvergenceRenderers {
             if (f >= AltarBlockEntity.RISE && c <= 0) {
                 long tick = (long) (t / 2);
                 for (int k = 0; k < 4; k++) {
-                    java.util.Random rnd = BOLT_RND;                     // 1.3.2: one, reseeded (same sequence)
+                    java.util.Random rnd = BOLT_RND;                     // 1.3.0: one, reseeded (same sequence)
                     rnd.setSeed(o.asLong() * 31 + tick * 7 + k);
                     double th = rnd.nextDouble() * Math.PI * 2, ph = (rnd.nextDouble() - 0.5) * Math.PI;
                     double dx = Math.cos(th) * Math.cos(ph), dy = Math.sin(ph), dz = Math.sin(th) * Math.cos(ph);

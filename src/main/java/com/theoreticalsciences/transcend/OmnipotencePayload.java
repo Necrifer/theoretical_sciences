@@ -33,14 +33,14 @@ public record OmnipotencePayload(BlockPos core, String item, int count) implemen
     }
 
     /** Round 28: the Core will not materialize anything of this mod. */
-    /** 1.3.1: items no Core will make (admin and unbreakable blocks); packs add more. Shown in the list as hidden. */
+    /** 1.3.0: items no Core will make (admin and unbreakable blocks); packs add more. Shown in the list as hidden. */
     public static final net.minecraft.tags.TagKey<Item> NOT_MATERIALIZABLE = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
             TheoreticalSciences.id("not_materializable"));
     private static final net.minecraft.tags.TagKey<Item> HIDDEN = net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,
             ResourceLocation.fromNamespaceAndPath("c", "hidden_from_recipe_viewers"));
 
     /**
-     * 1.3.1: an item no player should be handed: listed in {@link #NOT_MATERIALIZABLE} or c:hidden_from_recipe_viewers, an
+     * 1.3.0: an item no player should be handed: listed in {@link #NOT_MATERIALIZABLE} or c:hidden_from_recipe_viewers, an
      * operator's block (command, structure and jigsaw blocks), or a block that can never be broken (bedrock, barrier, end
      * portal frame, reinforced deepslate...), which would let anyone build walls nobody can take down.
      */
@@ -92,7 +92,7 @@ public record OmnipotencePayload(BlockPos core, String item, int count) implemen
         // beyond Omnipotence: the Sundering's and the Forge's materials and everything made from them
         if (new ItemStack(item).is(BEYOND)) return;
         if (CoreForge.forgeOnly(item)) return;            // creative items: only the rebuilt Core's Forge
-        if (unobtainable(item)) return;                   // 1.3.1: admin and unbreakable blocks
+        if (unobtainable(item)) return;                   // 1.3.0: admin and unbreakable blocks
         Omnipotence.Phase ph = Omnipotence.phase(sp.server);
         if (!forged && ph != Omnipotence.Phase.INTACT && ph != Omnipotence.Phase.REBORN) return;
         ItemStack stack = new ItemStack(item);

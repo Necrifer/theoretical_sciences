@@ -44,7 +44,7 @@ public final class QHEntityRenderers {
         e.registerEntityRenderer(QHEntities.DESTABILISED_HUSK.get(), ctx -> new ZombieRenderer(ctx) {
             {
                 addLayer(new EyesLayer<Zombie, ZombieModel<Zombie>>(this) {
-                    private final RenderType glow = RenderType.eyes(tex("destabilised_husk_glow"));     // 1.3.1: made once
+                    private final RenderType glow = RenderType.eyes(tex("destabilised_husk_glow"));     // 1.3.0: made once
 
                     @Override
                     public RenderType renderType() {

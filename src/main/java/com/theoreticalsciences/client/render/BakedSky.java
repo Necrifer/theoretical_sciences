@@ -12,7 +12,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import java.util.function.Consumer;
 
 /**
- * A part of a sky that never changes (1.3.2). It is built once and kept on the graphics card, instead of being
+ * A part of a sky that never changes (1.3.0). It is built once and kept on the graphics card, instead of being
  * rebuilt from scratch and sent over every frame.
  */
 final class BakedSky {

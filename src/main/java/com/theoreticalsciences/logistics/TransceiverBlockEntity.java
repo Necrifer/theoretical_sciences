@@ -22,12 +22,12 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TransceiverBlockEntity extends BlockEntity {
     /** Every loaded transceiver on the server, by frequency. */
-    static final Map<Integer, Set<TransceiverBlockEntity>> CHANNELS = com.theoreticalsciences.world.SessionMaps.perServer(new ConcurrentHashMap<>());   // 1.3.1: cleared when the server stops
+    static final Map<Integer, Set<TransceiverBlockEntity>> CHANNELS = com.theoreticalsciences.world.SessionMaps.perServer(new ConcurrentHashMap<>());   // 1.3.0: cleared when the server stops
 
     public int frequency;
     private int rr;      // round-robin start among receivers
 
-    /** 1.3.1: the tier, read once from the block (it was two registry lookups and string compares per call). */
+    /** 1.3.0: the tier, read once from the block (it was two registry lookups and string compares per call). */
     private final int tier;
 
     public TransceiverBlockEntity(BlockPos pos, BlockState state) {
@@ -45,7 +45,7 @@ public class TransceiverBlockEntity extends BlockEntity {
         return tier == 0;
     }
 
-    // 1.3.1: the handlers of the block this transceiver faces, cached (they were looked up three times a tick, and three
+    // 1.3.0: the handlers of the block this transceiver faces, cached (they were looked up three times a tick, and three
     // times more for every receiver). The game invalidates a cache when that block changes.
     private net.neoforged.neoforge.capabilities.BlockCapabilityCache<IItemHandler, Direction> itemCache;
     private net.neoforged.neoforge.capabilities.BlockCapabilityCache<IFluidHandler, Direction> fluidCache;

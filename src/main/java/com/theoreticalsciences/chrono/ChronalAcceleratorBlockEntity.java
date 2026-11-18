@@ -142,7 +142,7 @@ public class ChronalAcceleratorBlockEntity extends BlockEntity {
     }
 
     private void rescan(ServerLevel sl) {
-        radius = Math.max(1, Math.min(radius, QHConfig.CHRONAL_MAX_RADIUS.get()));      // 1.3.1: a lowered config applies to old ones too
+        radius = Math.max(1, Math.min(radius, QHConfig.CHRONAL_MAX_RADIUS.get()));      // 1.3.0: a lowered config applies to old ones too
         lastScan = sl.getGameTime();
         field.clear();
         for (BlockPos p : BlockPos.betweenClosed(worldPosition.offset(-radius, -radius, -radius), worldPosition.offset(radius, radius, radius))) {
@@ -180,7 +180,7 @@ public class ChronalAcceleratorBlockEntity extends BlockEntity {
         energy.setRaw(tag.getLong("Energy"));
         chronons.readFromNBT(regs, tag.getCompound("Chronons"));
         speedIdx = Math.max(0, Math.min(SPEEDS.length - 1, tag.getInt("Speed")));
-        radius = Math.max(1, Math.min(8, tag.contains("Radius") ? tag.getInt("Radius") : 1));     // 1.3.1: bounded (8 = the config's top)
+        radius = Math.max(1, Math.min(8, tag.contains("Radius") ? tag.getInt("Radius") : 1));     // 1.3.0: bounded (8 = the config's top)
     }
 
     @SuppressWarnings("unused")

@@ -90,7 +90,7 @@ public final class Planner {
     }
 
     // ------------------------------------------------------------------ opening
-    // ------------------------------------------------------------------ 1.3.1: sessions
+    // ------------------------------------------------------------------ 1.3.0: sessions
     /** The planner screen a player opened (by using a console or a bay): which block, where, and until when. */
     private record Session(BlockPos pos, net.minecraft.resources.ResourceKey<net.minecraft.world.level.Level> dim, long until) {}
 
@@ -133,7 +133,7 @@ public final class Planner {
 
     public static void handle(ServerPlayer sp, Go g) {
         if (sp.level().dimension() != QHDimensions.ORBITAL_STATION || !sp.level().isLoaded(g.pos()) || !sp.blockPosition().closerThan(g.pos(), 8)) return;
-        if (!inSession(sp, g.pos())) return;                    // 1.3.1: only from the planner this player opened
+        if (!inSession(sp, g.pos())) return;                    // 1.3.0: only from the planner this player opened
         ResourceLocation id = ResourceLocation.tryParse(g.id());
         if (id == null) return;
         double tof = Math.max(0.5, Math.min(2.5, g.tof()));
@@ -156,7 +156,7 @@ public final class Planner {
                         .withStyle(ChatFormatting.RED), false);
                 return;
             }
-            if (bay.owner == null) bay.owner = sp.getUUID();      // 1.3.1: a launch never takes over someone's bay
+            if (bay.owner == null) bay.owner = sp.getUUID();      // 1.3.0: a launch never takes over someone's bay
             if (!sp.isCreative())
                 for (ItemStack need : m.needs()) {
                     int left = need.getCount();

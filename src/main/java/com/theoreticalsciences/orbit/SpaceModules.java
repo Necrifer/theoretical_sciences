@@ -105,7 +105,7 @@ public final class SpaceModules {
 
     // ------------------------------------------------------------------ the power beam
     /** Rectennas fed lately, by dimension and position, and when. */
-    static final Map<String, Long> BEAMS = com.theoreticalsciences.world.SessionMaps.perServer(new HashMap<>());   // 1.3.1: cleared when the server stops
+    static final Map<String, Long> BEAMS = com.theoreticalsciences.world.SessionMaps.perServer(new HashMap<>());   // 1.3.0: cleared when the server stops
 
     /** Whether this rectenna may have a beam: each Power Satellite in orbit feeds four. */
     public static boolean claimBeam(ServerLevel level, BlockPos pos) {

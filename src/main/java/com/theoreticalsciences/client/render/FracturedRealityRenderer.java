@@ -58,7 +58,7 @@ public class FracturedRealityRenderer implements BlockEntityRenderer<FracturedRe
         ps.popPose();
 
         // fractal splitting: half-size copies drift out of the faces, each with quarter-size copies of its own
-        // (1.3.1: the quarter-size copies only within 16 blocks, where they can be told apart)
+        // (1.3.0: the quarter-size copies only within 16 blocks, where they can be told apart)
         var cam = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
         maxLevel = cam.distanceToSqr(be.getBlockPos().getCenter()) > 16 * 16 ? 1 : 2;
         fractal(state, ps, base, light, seed, t, 1, 0.5F);

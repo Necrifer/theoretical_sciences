@@ -8,7 +8,7 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * 1.3.2: with Sodium's "animate only visible textures" on, Sodium moves an animated texture on only when it has seen
+ * 1.3.0: with Sodium's "animate only visible textures" on, Sodium moves an animated texture on only when it has seen
  * something drawn with it. The moving machine parts are drawn from buffers kept on the graphics card, which Sodium
  * never sees, so their animated textures could look frozen. This tells Sodium they are in use. It does nothing when
  * Sodium is not installed, and it does not need Sodium to build (it looks the call up by name when the game starts).

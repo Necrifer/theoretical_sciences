@@ -76,7 +76,7 @@ public final class FxDraw {
     /** A soft round glow facing the camera, brightest in the middle. */
     public static void glow(Vec3 c, float radius, int rgb, float alpha) {
         if (alpha <= 0.003F || radius <= 0) return;
-        // 1.3.1: table directions and no new vectors (it made about 56 per glow, hundreds of glows a frame)
+        // 1.3.0: table directions and no new vectors (it made about 56 per glow, hundreds of glows a frame)
         double lx = left.x() * radius, ly = left.y() * radius, lz = left.z() * radius, ux = up.x() * radius, uy = up.y() * radius, uz = up.z() * radius;
         float r = (rgb >> 16 & 255) / 255F, g = (rgb >> 8 & 255) / 255F, b = (rgb & 255) / 255F, ca = Math.max(0, Math.min(1, alpha));
         float x0 = (float) (c.x - cam.x), y0 = (float) (c.y - cam.y), z0 = (float) (c.z - cam.z);

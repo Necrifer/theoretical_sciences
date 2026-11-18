@@ -18,7 +18,7 @@ public final class Multiblocks {
     private static volatile Map<String, MultiblockDefinition> cache;
 
     public static Map<String, MultiblockDefinition> all() {
-        Map<String, MultiblockDefinition> c = cache;          // 1.3.1: no lock once loaded (it is read many times a tick)
+        Map<String, MultiblockDefinition> c = cache;          // 1.3.0: no lock once loaded (it is read many times a tick)
         return c != null ? c : load();
     }
 

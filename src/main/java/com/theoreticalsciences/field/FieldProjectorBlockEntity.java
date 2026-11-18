@@ -16,7 +16,7 @@ public class FieldProjectorBlockEntity extends BlockEntity {
     private int level;
     private boolean on;
 
-    /** 1.3.1: energy changes every tick; only the chunk needs saving (no neighbour updates). */
+    /** 1.3.0: energy changes every tick; only the chunk needs saving (no neighbour updates). */
     private void energyChanged() {
         if (getLevel() != null) getLevel().blockEntityChanged(worldPosition);
     }

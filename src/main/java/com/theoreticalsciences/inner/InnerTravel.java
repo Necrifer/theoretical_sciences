@@ -71,7 +71,7 @@ public final class InnerTravel {
                 for (int dz = -r; dz <= r; dz += 4) {
                     if (Math.max(Math.abs(dx), Math.abs(dz)) != r) continue;
                     int cx = x + dx, cz = z + dz;
-                    if (r > 0 && !com.theoreticalsciences.world.SafeLanding.mayBeDry(l, cx, cz)) continue;    // 1.3.1: no chunk made for a sea
+                    if (r > 0 && !com.theoreticalsciences.world.SafeLanding.mayBeDry(l, cx, cz)) continue;    // 1.3.0: no chunk made for a sea
                     l.getChunk(cx >> 4, cz >> 4);
                     int y = l.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, cx, cz);
                     if (y <= l.getMinBuildHeight() + 1 || y >= l.getMaxBuildHeight() - 4) continue;

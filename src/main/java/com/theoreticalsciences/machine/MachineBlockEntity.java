@@ -172,7 +172,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     protected void onInventoryChanged() {
         recipeDirty = true;
-        if (batching) {                    // 1.3.1: inside a parallel finish, settle once at the end
+        if (batching) {                    // 1.3.0: inside a parallel finish, settle once at the end
             batchChanged = true;
             return;
         }
@@ -180,7 +180,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
         setChanged();
     }
 
-    /** 1.3.1: true while a parallel finish runs: inventory changes are gathered into one update at the end. */
+    /** 1.3.0: true while a parallel finish runs: inventory changes are gathered into one update at the end. */
     private boolean batching, batchChanged;
 
     protected void markSync() {
@@ -188,7 +188,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     /**
-     * 1.3.1: progress and stored energy changed (every working tick). These reach the client often only while someone
+     * 1.3.0: progress and stored energy changed (every working tick). These reach the client often only while someone
      * has the machine's screen open; otherwise every ten seconds. Real changes (status, recipe, inventory) still go
      * at once through {@link #markSync()}.
      */
@@ -368,7 +368,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             BlockState st = getBlockState();
             if (st.hasProperty(MachineBlock.ACTIVE) && st.getValue(MachineBlock.ACTIVE) != active)
                 level.setBlock(worldPosition, st.setValue(MachineBlock.ACTIVE, active), 3);
-            level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());     // 1.3.1: comparators read "active"
+            level.updateNeighbourForOutputSignal(worldPosition, getBlockState().getBlock());     // 1.3.0: comparators read "active"
             markSync();
         }
         if (++syncTimer >= 10) {
@@ -480,7 +480,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
 
     @Nullable
     protected RecipeHolder<QHRecipe> findRecipe(ServerLevel level) {
-        // 1.3.1: the input (with a copy of the ME stock, for a linked controller) is built only when it will be used,
+        // 1.3.0: the input (with a copy of the ME stock, for a linked controller) is built only when it will be used,
         // not on every idle tick
         QHRecipeInput input = null;
         if (currentRecipe != null) {
@@ -642,7 +642,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
             if (r.insight > 0 && owner != null) ResearchService.addInsight(level.getServer(), owner, (int) Math.min(Integer.MAX_VALUE, (long) r.insight * Math.max(1, runsDone)));
             recipeDirty = true;
         }
-        markProgress();                                    // 1.3.1: was a full sync and neighbour update every tick
+        markProgress();                                    // 1.3.0: was a full sync and neighbour update every tick
         level.blockEntityChanged(worldPosition);
     }
 
@@ -657,7 +657,7 @@ public class MachineBlockEntity extends BlockEntity implements MenuProvider {
                 burnRate = 0;
                 recipeDirty = true;
             }
-            markProgress();                                // 1.3.1: was a full sync and neighbour update every tick
+            markProgress();                                // 1.3.0: was a full sync and neighbour update every tick
             level.blockEntityChanged(worldPosition);
         } else {
             RecipeHolder<QHRecipe> holder = findRecipe(level);

@@ -47,10 +47,10 @@ import java.util.*;
  * </ul>
  */
 public final class MachineFx {
-    /** {@code orbiterBlocks}: 1.3.1, the "orbiters" blocks looked up once (they were parsed and looked up every frame). */
+    /** {@code orbiterBlocks}: 1.3.0, the "orbiters" blocks looked up once (they were parsed and looked up every frame). */
     record Entry(String type, JsonObject o, List<Vec3> points, List<BlockPos> cells, List<net.minecraft.world.level.block.state.BlockState> orbiterBlocks) {}
 
-    /** 1.3.1: numbers read once (a number in a parsed JSON file is kept as text and parsed again at every read). */
+    /** 1.3.0: numbers read once (a number in a parsed JSON file is kept as text and parsed again at every read). */
     private static JsonObject numbersParsed(JsonObject o) {
         JsonObject c = new JsonObject();
         for (var en : o.entrySet()) {
@@ -95,7 +95,7 @@ public final class MachineFx {
         });
     }
 
-    /** 1.3.1: colours parsed once per text. */
+    /** 1.3.0: colours parsed once per text. */
     private static final Map<String, Integer> COLOURS = new java.util.concurrent.ConcurrentHashMap<>();
 
     static int col(JsonObject o, String k, int d) {
