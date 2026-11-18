@@ -608,7 +608,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     }
 
     /** Picks the tallest build that stands complete; if none does, keeps the size it had (so the hologram shows that). */
-    /** 1.3.2: cells of a structure read per tick by a check in progress. */
+    /** 1.3.0: cells of a structure read per tick by a check in progress. */
     private static final int SCAN_BUDGET = 4096;
     @javax.annotation.Nullable
     private MultiblockDefinition.Scan pendingScan;
@@ -902,7 +902,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     public void recheckSoon() {
         checkTimer = 1;
         lookRefresh = 0;
-        pendingScan = null;          // (1.3.2: a check already under way started before the change: begin again)
+        pendingScan = null;          // (1.3.0: a check already under way started before the change: begin again)
     }
 
     @Override
@@ -911,7 +911,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         if ((level.getGameTime() + worldPosition.hashCode()) % 20 == 0 && hasPhysics()) senseWorld(level);
         if (level.getGameTime() % 20 == 0) frameDrag(level);
         if (type == MachineType.TESLA_COIL && level.getGameTime() % 30 == 0) teslaStrike(level);
-        // 1.3.2: a giant structure's check, read a part each tick (it was read whole in one tick, a visible stutter)
+        // 1.3.0: a giant structure's check, read a part each tick (it was read whole in one tick, a visible stutter)
         if (pendingScan != null) {
             MultiblockDefinition def = definition();
             if (pendingScan.definition() != def || pendingScan.facing() != facing()) pendingScan = null;     // changed meanwhile: start over
@@ -985,7 +985,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         boolean working = running || burning;
         physics.stabiliser = tuning.stabiliser;
         physics.tickDisturbance(tp, on, level.random, QHConfig.TUNING_DIFFICULTY.get());
-        // 1.3.1: an unbuilt structure nobody is looking at is evaluated once a second, not every tick
+        // 1.3.0: an unbuilt structure nobody is looking at is evaluated once a second, not every tick
         if (formed || viewers > 0 || level.getGameTime() % 20 == 0) evaluatePhysics(on);
         physics.tickThermal();
         physics.tickStates(on);

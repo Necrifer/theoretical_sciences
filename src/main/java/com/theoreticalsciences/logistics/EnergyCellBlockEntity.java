@@ -43,7 +43,7 @@ public class EnergyCellBlockEntity extends BlockEntity {
     private int lastSignal = -1;
 
     /**
-     * 1.3.1: every transfer marks the chunk for saving, but neighbours (comparators) are only told when the cell's
+     * 1.3.0: every transfer marks the chunk for saving, but neighbours (comparators) are only told when the cell's
      * signal (its fill in fifteenths) changes: setChanged on every transfer woke every cable around it every tick.
      */
     private void energyChanged() {

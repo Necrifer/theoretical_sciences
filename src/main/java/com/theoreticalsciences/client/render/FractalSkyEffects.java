@@ -199,7 +199,7 @@ public class FractalSkyEffects extends DimensionSpecialEffects {
         PoseStack ps = new PoseStack();
         ps.mulPose(Axis.YP.rotationDegrees(degrees));
         ps.mulPose(Axis.XP.rotationDegrees(degrees * 0.3F));
-        // 1.3.2: all six faces go in one draw (they were six)
+        // 1.3.0: all six faces go in one draw (they were six)
         BufferBuilder bb = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX_COLOR);
         for (int face = 0; face < 6; face++) {
             ps.pushPose();

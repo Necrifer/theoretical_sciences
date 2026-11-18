@@ -19,7 +19,7 @@ public final class SafeBuffer implements VertexConsumer {
     private final RenderType type;
     private VertexConsumer cur;
 
-    /** 1.3.1: vertices per primitive (4 for quads): the buffer is asked for again only at the start of each primitive. */
+    /** 1.3.0: vertices per primitive (4 for quads): the buffer is asked for again only at the start of each primitive. */
     private final int prim;
     private int n;
 

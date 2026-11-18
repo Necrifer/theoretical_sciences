@@ -67,7 +67,7 @@ public class BulkSkyEffects extends DimensionSpecialEffects {
         try {
             // background gradient dome
             RenderSystem.defaultBlendFunc();
-            DOME.draw();                                        // 1.3.2: built once, kept on the card
+            DOME.draw();                                        // 1.3.0: built once, kept on the card
 
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
             // nebula bands

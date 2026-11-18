@@ -202,7 +202,7 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
      * slot for the product. Anything inserted goes to its ingredient whichever slot it was offered to.
      */
     public final IItemHandler automation = new IItemHandler() {
-        // 1.3.1: the list is kept for the recipe it was made for (pipes ask for it on every slot they poll)
+        // 1.3.0: the list is kept for the recipe it was made for (pipes ask for it on every slot they poll)
         private EmpyreanRecipe wantedFor;
         private List<Item> wantedList = List.of();
 

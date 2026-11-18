@@ -39,7 +39,7 @@ public final class ObstructionMarks {
     public record Marks(List<BlockPos> positions) implements CustomPacketPayload {
         public static final Type<Marks> TYPE = new Type<>(TheoreticalSciences.id("obstruction_marks"));
         public static final StreamCodec<FriendlyByteBuf, Marks> CODEC = StreamCodec.of((b, m) -> {
-            int n = Math.min(MAX, m.positions.size());     // 1.3.1: write only what the reader takes (left-over bytes disconnect)
+            int n = Math.min(MAX, m.positions.size());     // 1.3.0: write only what the reader takes (left-over bytes disconnect)
             b.writeVarInt(n);
             for (int i = 0; i < n; i++) b.writeBlockPos(m.positions.get(i));
         }, b -> {

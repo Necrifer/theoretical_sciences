@@ -5,7 +5,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 /**
- * 1.3.1: setting a transient attribute modifier only when it really changes. Replacing it with a new but equal modifier
+ * 1.3.0: setting a transient attribute modifier only when it really changes. Replacing it with a new but equal modifier
  * still marks the attribute dirty, and that sends an attributes packet to the player and everyone tracking them; the
  * gravity and jump laws do it every tick.
  */

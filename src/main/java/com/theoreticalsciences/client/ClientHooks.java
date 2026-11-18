@@ -207,7 +207,7 @@ public final class ClientHooks {
     private static final java.util.IdentityHashMap<Set<?>, java.util.ArrayList<Object>> SNAPSHOTS = new java.util.IdentityHashMap<>();
 
     /**
-     * A copy of one of these sets to walk through while drawing (1.3.2). The same list is refilled each time instead of
+     * A copy of one of these sets to walk through while drawing (1.3.0). The same list is refilled each time instead of
      * a new one being made every frame; render thread only, and never walk the same set inside its own walk.
      */
     @SuppressWarnings("unchecked")

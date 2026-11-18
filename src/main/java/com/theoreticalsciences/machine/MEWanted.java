@@ -20,7 +20,7 @@ import java.util.Set;
 
 /** Which items and fluids any recipe of a machine type can use: what an ME network is asked about. Rebuilt on /reload. */
 public record MEWanted(java.util.List<ItemStack> items, java.util.List<FluidStack> fluids) {
-    /** 1.3.1: held weakly, so the last world's recipe manager is not kept alive after leaving it. */
+    /** 1.3.0: held weakly, so the last world's recipe manager is not kept alive after leaving it. */
     private static java.lang.ref.WeakReference<RecipeManager> seen = new java.lang.ref.WeakReference<>(null);
     private static final Map<String, MEWanted> CACHE = com.theoreticalsciences.world.SessionMaps.perServer(new HashMap<>());
 

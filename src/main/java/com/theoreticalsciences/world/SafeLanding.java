@@ -163,7 +163,7 @@ public final class SafeLanding {
     private SafeLanding() {}
 
     /**
-     * 1.3.1: whether a column may be dry land, judged from the world generator's noise alone, without generating its
+     * 1.3.0: whether a column may be dry land, judged from the world generator's noise alone, without generating its
      * chunk: false when the generator says liquid lies over its floor (or there is no floor). A chunk already loaded
      * is always worth a look. Generators that are not noise based cannot be judged, so the answer is then yes.
      * Arrivals search outwards ring by ring, and on a world mostly of sea or plasma this skips generating dozens of

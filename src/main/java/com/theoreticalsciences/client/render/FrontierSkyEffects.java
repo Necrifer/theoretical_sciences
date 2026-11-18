@@ -91,7 +91,7 @@ public class FrontierSkyEffects extends DimensionSpecialEffects {
         try {
             RenderSystem.defaultBlendFunc();
             // the backdrop: almost black, a little bluer towards the hole's side of the sky
-            BACKDROP.draw();                                    // 1.3.2: built once, kept on the card
+            BACKDROP.draw();                                    // 1.3.0: built once, kept on the card
 
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
             BufferBuilder st = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);

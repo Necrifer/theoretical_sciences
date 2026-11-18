@@ -604,7 +604,7 @@ public final class EffectRenderer {
     }
 
     /** A spiral galaxy: two logarithmic arms of stars around a bright bulge, turning slowly. */
-    /** 1.3.1: a galaxy's stars by seed (radius, angle before the turn, height, colour, size): drawn the same as before. */
+    /** 1.3.0: a galaxy's stars by seed (radius, angle before the turn, height, colour, size): drawn the same as before. */
     private static final Map<Long, double[]> GALAXIES = new java.util.concurrent.ConcurrentHashMap<>();
 
     private static double[] galaxyStars(long seed) {
@@ -647,7 +647,7 @@ public final class EffectRenderer {
     private static final int[] PENT_HUES = {0x60E0FF, 0xFF60D0, 0xFFD060, 0x80FF90, 0xC090FF};
 
     private static void penteract(Vec3 c, float scale, float alpha) {
-        double[][] v = PENT_V;                                  // 1.3.2: reused, not allocated each frame
+        double[][] v = PENT_V;                                  // 1.3.0: reused, not allocated each frame
         double a1 = time * 0.5, a2 = time * 0.37, a3 = time * 0.23;
         float[][] p3 = PENT_P;
         for (int i = 0; i < 32; i++) {
@@ -1774,7 +1774,7 @@ public final class EffectRenderer {
 
     /** Soft radial glow billboard (triangle fan baked into triangles). */
     private static void glow(Vec3 c, float radius, int rgb, float alpha) {
-        // 1.3.2: glows are gathered and drawn together (each was its own draw call: up to hundreds a frame). They are
+        // 1.3.0: glows are gathered and drawn together (each was its own draw call: up to hundreds a frame). They are
         // additive and write no depth, so the order among them does not matter; the batch is drawn before anything
         // that changes the drawing state, so everything else keeps its order.
         if (!additive) {                                    // somewhere else's drawing state: drawn now, as before
@@ -1804,7 +1804,7 @@ public final class EffectRenderer {
         additive = false;                                   // (the caller is about to change the state)
     }
 
-    /** 1.3.1: the glow's 24 directions, worked out once (it was 12 sine and cosine calls per segment, per glow, per frame). */
+    /** 1.3.0: the glow's 24 directions, worked out once (it was 12 sine and cosine calls per segment, per glow, per frame). */
     private static final double[] GLOW_COS = new double[25], GLOW_SIN = new double[25];
 
     static {
@@ -2122,7 +2122,7 @@ public final class EffectRenderer {
         int w = main.width, h = main.height;
         if (sceneCopy == null) sceneCopy = new TextureTarget(w, h, false, Minecraft.ON_OSX);
         else if (sceneCopy.width != w || sceneCopy.height != h) sceneCopy.resize(w, h, Minecraft.ON_OSX);
-        // 1.3.2: copy only the part of the screen the lenses can sample - their quads, grown by half again on every
+        // 1.3.0: copy only the part of the screen the lenses can sample - their quads, grown by half again on every
         // side, not the whole screen (up to twice a frame)
         Matrix4f mvpc = new Matrix4f(proj).mul(modelView);
         int x0 = w, y0 = h, x1 = 0, y1 = 0;

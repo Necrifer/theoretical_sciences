@@ -147,7 +147,7 @@ public final class Animations {
         public int quads;
         /** Furthest any vertex lies from the part's pivot (for culling while it turns). */
         public float radius;
-        /** 1.3.2: its moving textures, to tell Sodium they are in use (null when it has none). */
+        /** 1.3.0: its moving textures, to tell Sodium they are in use (null when it has none). */
         public net.minecraft.client.renderer.texture.TextureAtlasSprite[] animated;
     }
 

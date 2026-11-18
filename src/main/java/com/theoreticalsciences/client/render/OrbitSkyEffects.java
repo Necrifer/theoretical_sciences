@@ -75,7 +75,7 @@ public class OrbitSkyEffects extends DimensionSpecialEffects {
             RenderSystem.defaultBlendFunc();
             // stars, steady
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
-            STEADY_STARS.draw();                                        // 1.3.2: built once, kept on the card
+            STEADY_STARS.draw();                                        // 1.3.0: built once, kept on the card
 
             // the Earth: a cap of the sky sphere round straight down, patterned and turning slowly
             RenderSystem.defaultBlendFunc();

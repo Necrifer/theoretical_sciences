@@ -109,6 +109,23 @@ Ground-Penetrating Radar, luminescence dating, tree-ring dating, conservation, i
 * **Anima Mundi config:** `animaMundiNeedsModEssences` and `animaMundiSkipMods` choose whether, and which, other
   mods' Essences Anima Mundi needs.
 
+## Security and performance
+
+An outside review for security and performance, done before release. Nothing here changes recipes or how things look.
+
+* **Security:** a large Structure Assembler check can no longer disconnect a player. Attuning a Forged Core and
+  launching from a Mission Bay now need the right screen and respect claims. The Omnipotence Core no longer makes admin
+  or unbreakable blocks (packs add more to `theoreticalsciences:not_materializable`). Right-clicking a full pile no
+  longer deletes it, and saved data is bounded when loaded.
+* **Server:** huge multiblocks are checked over several ticks instead of one, running machines sync far less often,
+  neighbour and attribute updates happen only when something really changes, arrivals on Titan, Inner Space and the
+  Accretion Frontier no longer generate chunks while searching for land, and closing a world frees its memory.
+* **Client:** glows and fixed sky parts are drawn in far fewer calls, lensing copies only part of the screen, animated
+  textures store each frame once (5,066 fewer frames, pixel for pixel the same), and machine sounds no longer go
+  silent until a relog.
+* **Sodium:** keep "Animate only visible textures" on. Moving machine parts now tell Sodium their textures are in use,
+  so they keep animating.
+
 ## Fixes
 
 * A crash in Omnipotency when a creature looked for a Choir Bell or a Sealed Urn.
