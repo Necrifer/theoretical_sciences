@@ -42,10 +42,10 @@ public class EmpyreanTableScreen extends AbstractContainerScreen<EmpyreanTableMe
     protected void init() {
         super.init();
         recipes = new ArrayList<>(minecraft.level.getRecipeManager().getAllRecipesFor(HomeRegistry.EMPYREAN_TYPE.get()));
-        List<String> order = HomeMaterials.IDS;
+        int lines = HomeMaterials.size();
         recipes.sort(Comparator.comparingInt((RecipeHolder<EmpyreanRecipe> h) -> {
             int i = HomeMaterials.index(h.value().result.item());
-            return i < 0 ? order.size() : i;
+            return i < 0 ? lines : i;
         }).thenComparing(h -> h.id().toString()));
         ResourceLocation cur = menu.be.recipeId();
         for (int i = 0; i < recipes.size(); i++) if (recipes.get(i).id().equals(cur)) scroll = Math.max(0, Math.min(i - 2, recipes.size() - ROWS));

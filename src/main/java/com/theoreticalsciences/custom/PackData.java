@@ -72,7 +72,7 @@ public final class PackData {
     public static Payload payload() {
         // each part is the raw files (id -> JSON); the client reads them with the same code the server used
         return new Payload("{\"tiers\":" + ComponentTiers.syncJson() + ",\"forge\":" + ForgeRecipes.syncJson()
-                + ",\"machines\":" + MachineParams.syncJson() + "}");
+                + ",\"machines\":" + MachineParams.syncJson() + ",\"home\":" + HomeSettings.syncJson() + "}");
     }
 
     /** Client: the server's data arrived. */
@@ -82,6 +82,7 @@ public final class PackData {
             ComponentTiers.load(o.has("tiers") ? o.getAsJsonObject("tiers") : new JsonObject());
             ForgeRecipes.load(o.has("forge") ? o.getAsJsonObject("forge") : new JsonObject());
             MachineParams.load(o.has("machines") ? o.getAsJsonObject("machines") : new JsonObject());
+            HomeSettings.load(o.has("home") ? o.getAsJsonObject("home") : new JsonObject());
         } catch (RuntimeException e) {
             TheoreticalSciences.LOGGER.error("Bad pack data from the server: {}", e.getMessage());
         }
@@ -92,6 +93,7 @@ public final class PackData {
         ComponentTiers.clear();
         ForgeRecipes.clear();
         MachineParams.clear();
+        HomeSettings.clear();
     }
 
     public static void registerPayload(PayloadRegistrar r) {
@@ -107,6 +109,7 @@ public final class PackData {
             e.addListener(ComponentTiers.INSTANCE);
             e.addListener(ForgeRecipes.INSTANCE);
             e.addListener(MachineParams.INSTANCE);
+            e.addListener(HomeSettings.INSTANCE);
         });
         // fired for a player who joins (getPlayer) and for everyone after /reload (getRelevantPlayers covers both)
         NeoForge.EVENT_BUS.addListener((OnDatapackSyncEvent e) -> {

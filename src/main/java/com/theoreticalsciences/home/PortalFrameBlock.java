@@ -84,7 +84,7 @@ public class PortalFrameBlock extends Block {
 
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (state.getValue(KEYSTONE) || HomeMaterials.index(stack.getItem()) != HomeMaterials.IDS.size() - 1) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        if (state.getValue(KEYSTONE) || stack.getItem() != HomeMaterials.keystone()) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         if (level.isClientSide) return ItemInteractionResult.SUCCESS;
         level.setBlock(pos, state.setValue(KEYSTONE, true), 3);
         level.updateNeighbourForOutputSignal(pos, this);
@@ -127,7 +127,7 @@ public class PortalFrameBlock extends Block {
     @Override
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState next, boolean moved) {
         if (!state.is(next.getBlock()) && !level.isClientSide) {
-            if (state.getValue(KEYSTONE)) Block.popResource(level, pos, new ItemStack(HomeMaterials.item(HomeMaterials.IDS.size() - 1)));
+            if (state.getValue(KEYSTONE)) Block.popResource(level, pos, new ItemStack(HomeMaterials.keystone()));
             // a broken ring closes: the opening this frame faced empties
             Direction f = state.getValue(FACING);
             for (int k = -1; k <= 1; k++) {

@@ -1,7 +1,7 @@
 # Customising Theoretical Sciences with KubeJS
 
 Theoretical Sciences is built to be reshaped by modpacks. Almost everything — machine recipes,
-the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, singularities — all of
+the research tree, structure parts, machine numbers, the Omnipotence Core's Forge, Recreating Home, singularities — all of
 it can be changed from KubeJS without touching the mod.
 
 Requires **KubeJS for NeoForge 1.21.1** (`2101.7` or newer). Everything below is optional: with no scripts, the mod
@@ -18,14 +18,15 @@ behaves exactly as shipped.
 5. [Coil and emitter tiers (`ts_component_tiers`)](#5-coil-and-emitter-tiers-ts_component_tiers)
 6. [Machine physics (`ts_physics`)](#6-machine-physics-ts_physics)
 7. [Omnipotence Core Forge recipes (`ts_forge`)](#7-omnipotence-core-forge-recipes-ts_forge)
-8. [Research (`ts_research`)](#8-research-ts_research)
-9. [Singularities (`ts_singularities`)](#9-singularities-ts_singularities)
-10. [Tags the mod reads](#10-tags-the-mod-reads)
-11. [Events](#11-events)
-12. [The `TheoreticalSciences` helper](#12-the-theoreticalsciences-helper)
-13. [Text, names and the Quantum Codex](#13-text-names-and-the-quantum-codex)
-14. [Worked example: a tier 6 coil](#14-worked-example-a-tier-6-coil)
-15. [Troubleshooting](#15-troubleshooting)
+8. [Recreating Home (`ts_home`) and the Empyrean Assembly Table](#8-recreating-home-ts_home-and-the-empyrean-assembly-table)
+9. [Research (`ts_research`)](#9-research-ts_research)
+10. [Singularities (`ts_singularities`)](#10-singularities-ts_singularities)
+11. [Tags the mod reads](#11-tags-the-mod-reads)
+12. [Events](#12-events)
+13. [The `TheoreticalSciences` helper](#13-the-theoreticalsciences-helper)
+14. [Text, names and the Quantum Codex](#14-text-names-and-the-quantum-codex)
+15. [Worked example: a tier 6 coil](#15-worked-example-a-tier-6-coil)
+16. [Troubleshooting](#16-troubleshooting)
 
 ---
 
@@ -197,7 +198,7 @@ ServerEvents.recipes(event => {
 })
 ```
 
-Singularities made in the Compactor from section 9 are not recipe files. Use methods listed there to disable them, not with
+Singularities made in the Compactor from section 10 are not recipe files. Use methods listed there to disable them, not with
 `event.remove`.
 
 ---
@@ -440,7 +441,56 @@ your recipes either. The Core's screen, the JEI/EMI "Omnipotence Forge" pages an
 
 ---
 
-## 8. Research (`ts_research`)
+## 8. Recreating Home (`ts_home`) and the Empyrean Assembly Table
+
+**When it unlocks, the checklist and the keystone** are `ts_home` data. Every field is optional; files are read in id
+order and a later one only changes the fields it names.
+
+```js
+ServerEvents.generateData('after_mods', event => {
+  event.json('mypack:ts_home/settings', {
+    unlock: 'all_forge_recipes',          // or 'always', or a list: ['omnipotent_ingot', 'mypack:dragon_egg']
+    unlock_skip: ['euclidean_anchor'],    // with all_forge_recipes: these need not be forged
+    add_materials: ['mypack:star_heart'], // or materials: [...] to replace the whole checklist (at most 96)
+    remove_materials: ['theoreticalsciences:quiet_snow'],
+    target: 4096,                         // how many of each (the mod's is 33,550,337)
+    keystone: 'theoreticalsciences:keystone_of_return'   // what the Homeward Portal's frame takes
+  })
+})
+```
+
+* `all_forge_recipes` (the default) means every Core Forge recipe as your pack has it (section 7): removed ones are not
+  asked for, added ones are, and the generated `simulate/...` and `creative/...` ones never count.
+* Progress is kept by item, so changing the list never loses what players already gave.
+* `/theoreticalsciences home unlock|complete|reset <players>` still works for testing.
+
+**Empyrean Assembly Table recipes** are ordinary recipes of type `theoreticalsciences:empyrean` (ids
+`theoreticalsciences:empyrean/<material>`, plus `theoreticalsciences:empyrean/homeward_portal_frame`). Add them with
+`event.custom`:
+
+```js
+ServerEvents.recipes(event => {
+  event.custom({
+    type: 'theoreticalsciences:empyrean',
+    pattern: ['aaa', 'aba', 'aaa'],                  // up to 15 by 15; a space is an empty slot
+    key: {
+      a: { item: 'theoreticalsciences:omnipotent_ingot', count: 4096 },
+      b: { item: 'minecraft:nether_star', count: 64 }
+    },
+    result: { item: 'mypack:star_heart', count: 4096 },
+    needs_home: false                                 // true: only for a player whose checklist is complete
+  }).id('mypack:empyrean/star_heart')
+
+  event.remove({ id: 'theoreticalsciences:empyrean/quiet_snow' })
+})
+```
+
+Each slot is one exact item (no tags), and `replaceInput`/`replaceOutput` don't reach these recipes: remove one and add
+your own version instead.
+
+---
+
+## 9. Research (`ts_research`)
 
 The research tree is data: `ts_research/<name>.json`, the research id being `<namespace>:<name>`. Add your own
 entries, or replace one of the mod's by using its id (`theoreticalsciences:ts_research/quantum_entanglement`).
@@ -476,11 +526,11 @@ ServerEvents.generateData('after_mods', event => {
 | `puzzle` | none | A derivation puzzle (see any of the mod's research files for the format). Leave it out for none. |
 
 Gate any recipe behind it with `.research('mypack:advanced_containment')` (section 2), or grant it from a script
-(section 12).
+(section 13).
 
 ---
 
-## 9. Singularities (`ts_singularities`)
+## 10. Singularities (`ts_singularities`)
 
 Add singularities of your own (like Avaritia's), made in the Singularity Compactor. The Omniscience Catalyst then
 needs one of each.
@@ -507,7 +557,7 @@ ServerEvents.generateData('after_mods', event => {
 
 ---
 
-## 10. Tags the mod reads
+## 11. Tags the mod reads
 
 Change them with `ServerEvents.tags`:
 
@@ -541,7 +591,7 @@ ServerEvents.tags('entity_type', event => {
 
 ---
 
-## 11. Events
+## 12. Events
 
 Server script events, group `TheoreticalSciencesEvents`:
 
@@ -575,7 +625,7 @@ TheoreticalSciencesEvents.multiblockFormed(event => {
 
 ---
 
-## 12. The `TheoreticalSciences` helper
+## 13. The `TheoreticalSciences` helper
 
 Available in every script:
 
@@ -596,7 +646,7 @@ PlayerEvents.loggedIn(event => {
 
 ---
 
-## 13. Text, names and the Quantum Codex
+## 14. Text, names and the Quantum Codex
 
 These are client assets, so they go in `kubejs/assets/` (KubeJS loads it like a resource pack):
 
@@ -610,7 +660,7 @@ These are client assets, so they go in `kubejs/assets/` (KubeJS loads it like a 
 
 ---
 
-## 14. Worked example: a tier 6 coil
+## 15. Worked example: a tier 6 coil
 
 **Step 1 — the block** (startup script; needs a full restart):
 
@@ -656,7 +706,7 @@ Build a Stellar Plasma Crucible with every coil position filled with Dark Matter
 
 ---
 
-## 15. Troubleshooting
+## 16. Troubleshooting
 
 * **Nothing changed after `/reload`:** check the path. The folder name (`ts_machines`, `ts_forge`, ...) must be exactly
   as written, directly under `data/<namespace>/`. Check `logs/latest.log` for a message naming your file.

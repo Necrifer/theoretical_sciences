@@ -27,8 +27,8 @@ public final class HomeClient {
     }
 
     public static boolean complete() {
-        if (given.length < HomeMaterials.IDS.size()) return false;
-        for (long g : given) if (g < HomeMaterials.TARGET) return false;
+        if (given.length < HomeMaterials.size()) return false;
+        for (long g : given) if (g < HomeMaterials.target()) return false;
         return true;
     }
 
