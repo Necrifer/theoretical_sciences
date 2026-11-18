@@ -94,10 +94,10 @@ public class EmpyreanCategory implements IRecipeCategory<EmpyreanRecipe> {
             for (int x = 0; x < N; x++) {
                 EmpyreanRecipe.Slot s = recipe.cell(x, y);
                 if (s == null) continue;
-                long total = recipe.totals().get(s.item());
+                long total = recipe.totals().get(s.need());
                 b.addSlot(RecipeIngredientRole.INPUT, 1 + x * CELL, 1 + y * CELL)
                         .setCustomRenderer(VanillaTypes.ITEM_STACK, SMALL)
-                        .addItemStack(new ItemStack(s.item()))
+                        .addItemStacks(s.need().items().stream().map(ItemStack::new).toList())       // 1.3.1: a tag cycles its items
                         .addRichTooltipCallback((view, tip) -> {
                             tip.add(Component.translatable("gui.theoreticalsciences.empyrean.tip_slot", HomeClient.full(s.count())).withStyle(ChatFormatting.GOLD));
                             tip.add(Component.translatable("gui.theoreticalsciences.empyrean.tip_recipe_total", HomeClient.full(total)).withStyle(ChatFormatting.GRAY));

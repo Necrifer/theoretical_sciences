@@ -68,7 +68,8 @@ public class EmpyreanTableScreen extends AbstractContainerScreen<EmpyreanTableMe
         g.renderOutline(x + 2, y + 2, imageWidth - 4, imageHeight - 4, FAINT);
         // the picture
         EmpyreanRecipe r = menu.be.recipe();
-        Map<Item, Long> left = new HashMap<>(menu.be.held());
+        Map<EmpyreanRecipe.Need, Long> left = new HashMap<>();             // what is held towards each need, used up slot by slot
+        if (r != null) for (EmpyreanRecipe.Need n : r.totals().keySet()) left.put(n, menu.be.heldFor(r, n));
         g.fill(x + GX - 2, y + GY - 2, x + GX + N * CELL + 2, y + GY + N * CELL + 2, FAINT);
         for (int cy = 0; cy < N; cy++)
             for (int cx = 0; cx < N; cx++) {
@@ -76,10 +77,10 @@ public class EmpyreanTableScreen extends AbstractContainerScreen<EmpyreanTableMe
                 g.fill(px, py, px + CELL - 1, py + CELL - 1, CELL_BG);
                 EmpyreanRecipe.Slot s = r == null ? null : r.cell(cx, cy);
                 if (s == null) continue;
-                long have = left.getOrDefault(s.item(), 0L);
+                long have = left.getOrDefault(s.need(), 0L);
                 boolean lit = have >= s.count();
-                if (lit) left.put(s.item(), have - s.count());
-                icon(g, new ItemStack(s.item()), px, py, CELL - 1);
+                if (lit) left.put(s.need(), have - s.count());
+                icon(g, new ItemStack(shown(r, s.need())), px, py, CELL - 1);
                 if (!lit) g.fill(RenderTypeHolder.OVER, px, py, px + CELL - 1, py + CELL - 1, 0xB0120E06);
             }
         // the recipe list
@@ -160,6 +161,21 @@ public class EmpyreanTableScreen extends AbstractContainerScreen<EmpyreanTableMe
         if (!gridTip(g, mx, my)) renderTooltip(g, mx, my);
     }
 
+    /** 1.3.1: the first held item that counts towards a need (what a click takes back), else the need's own picture. */
+    private Item heldOf(EmpyreanRecipe r, EmpyreanRecipe.Need need) {
+        if (r != null && need.isTag())
+            for (Item it : menu.be.held().keySet()) if (r.needFor(it) == need) return it;
+        return need.display();
+    }
+
+    /** What a slot shows: for a tag, the item held towards it, else its items in turn (a new one every second). */
+    private Item shown(EmpyreanRecipe r, EmpyreanRecipe.Need need) {
+        if (!need.isTag()) return need.item();
+        for (Item it : menu.be.held().keySet()) if (r.needFor(it) == need) return it;
+        List<Item> all = need.items();
+        return all.isEmpty() ? net.minecraft.world.item.Items.BARRIER : all.get((int) ((System.currentTimeMillis() / 1000) % all.size()));
+    }
+
     private EmpyreanRecipe.Slot cellAt(double mx, double my) {
         EmpyreanRecipe r = menu.be.recipe();
         int cx = (int) Math.floor((mx - leftPos - GX) / CELL), cy = (int) Math.floor((my - topPos - GY) / CELL);
@@ -171,8 +187,8 @@ public class EmpyreanTableScreen extends AbstractContainerScreen<EmpyreanTableMe
         EmpyreanRecipe r = menu.be.recipe();
         EmpyreanRecipe.Slot s = cellAt(mx, my);
         if (s != null) {
-            long need = r.totals().get(s.item()), have = menu.be.held().getOrDefault(s.item(), 0L);
-            g.renderComponentTooltip(font, List.of(s.item().getDescription(),
+            long need = r.totals().get(s.need()), have = menu.be.heldFor(r, s.need());
+            g.renderComponentTooltip(font, List.of(s.need().name(),
                     Component.translatable("gui.theoreticalsciences.empyrean.tip_slot", HomeClient.full(s.count())).withStyle(net.minecraft.ChatFormatting.GRAY),
                     Component.translatable("gui.theoreticalsciences.empyrean.tip_total", HomeClient.full(have), HomeClient.full(need))
                             .withStyle(have >= need ? net.minecraft.ChatFormatting.GREEN : net.minecraft.ChatFormatting.GOLD),
@@ -204,7 +220,7 @@ public class EmpyreanTableScreen extends AbstractContainerScreen<EmpyreanTableMe
             if (!menu.getCarried().isEmpty()) send(1, "");
             else {
                 EmpyreanRecipe.Slot s = cellAt(mx, my);
-                if (s != null) send(5, net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(s.item()) + (hasShiftDown() ? ";all" : ""));
+                if (s != null) send(5, net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(heldOf(menu.be.recipe(), s.need())) + (hasShiftDown() ? ";all" : ""));
             }
             return true;
         }

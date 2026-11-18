@@ -552,7 +552,7 @@ plus `homeward_portal_frame.json`.
   ],
   "key": {
     "a": { "item": "theoreticalsciences:omnipotent_ingot", "count": 4096 },
-    "b": { "item": "minecraft:nether_star", "count": 64 }
+    "b": { "tag": "c:nether_stars", "count": 64 }
   },
   "result": { "item": "mypack:star_heart", "count": 4096 },
   "needs_home": false
@@ -561,8 +561,11 @@ plus `homeward_portal_frame.json`.
 
 * `pattern`: up to 15 rows of up to 15 characters; a space is an empty slot. The picture is what the table shows: it
   takes the totals of each item, not a shape.
-* `key`: each character's item and how many it needs (`count`, far beyond a stack is fine). Each slot is one exact
-  item: tags are not supported here.
+* `key`: each character's `item` or `tag` and how many it needs (`count`, far beyond a stack is fine). A tag slot
+  takes any item of the tag, mixed freely: 40 of one mod's ingot and 24 of another's fill a slot of 64. Slots with
+  the same item, or the same tag, share one count. An item that has its own slot in the recipe always goes there,
+  never to a tag slot that also lists it. The mod's own recipes use `theoreticalsciences:ingots/<metal>` for its
+  ingots (section 15), so adding another mod's ingot to that tag lets it be used here too.
 * `result`: the item and how many one craft gives.
 * `needs_home`: `true` makes the recipe work only for a player whose checklist is complete (the mod uses it for the
   Homeward Portal frame).

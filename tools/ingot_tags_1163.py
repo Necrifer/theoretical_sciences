@@ -31,8 +31,9 @@ ALIASES = {
 }
 
 
-# recipe types whose slots hold an exact item with a count (an item stack, not an ingredient), so they cannot take a tag
-SKIP = {'theoreticalsciences:empyrean'}
+# recipe types whose result is also written {"item": ...}: only their "key" is switched (1.3.1: the Empyrean Assembly
+# Table takes tags in its slots; before that it was skipped)
+KEY_ONLY = {'theoreticalsciences:empyrean'}
 
 
 def ingots():
@@ -83,10 +84,8 @@ def main():
         if '_ingot"' not in txt:
             continue
         j = json.loads(txt)
-        if j.get('type') in SKIP:
-            continue
         before = changed
-        fix(j)
+        fix(j['key'] if j.get('type') in KEY_ONLY else j)
         if changed != before:
             files += 1
             with open(p, 'w', encoding='utf-8') as f:

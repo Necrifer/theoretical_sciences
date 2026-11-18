@@ -475,7 +475,7 @@ ServerEvents.recipes(event => {
     pattern: ['aaa', 'aba', 'aaa'],                  // up to 15 by 15; a space is an empty slot
     key: {
       a: { item: 'theoreticalsciences:omnipotent_ingot', count: 4096 },
-      b: { item: 'minecraft:nether_star', count: 64 }
+      b: { tag: 'c:nether_stars', count: 64 }        // a tag: any of its items, mixed freely
     },
     result: { item: 'mypack:star_heart', count: 4096 },
     needs_home: false                                 // true: only for a player whose checklist is complete
@@ -485,8 +485,9 @@ ServerEvents.recipes(event => {
 })
 ```
 
-Each slot is one exact item (no tags), and `replaceInput`/`replaceOutput` don't reach these recipes: remove one and add
-your own version instead.
+A slot is `{ item, count }` or `{ tag, count }`. An item with its own slot in a recipe always goes there, never to a
+tag slot that also lists it. `replaceInput`/`replaceOutput` don't reach these recipes: remove one and add your own
+version instead.
 
 ---
 
