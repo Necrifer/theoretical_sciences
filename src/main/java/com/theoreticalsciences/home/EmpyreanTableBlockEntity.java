@@ -114,13 +114,21 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
     }
 
     // ------------------------------------------------------------------ in and out
+    /** How many of the held items count towards this need (1.3.1: a tag's need is filled by any of its items). */
+    public long heldFor(EmpyreanRecipe r, EmpyreanRecipe.Need need) {
+        if (!need.isTag()) return r.needFor(need.item()) == need ? held.getOrDefault(need.item(), 0L) : 0;
+        long sum = 0;
+        for (Map.Entry<Item, Long> e : held.entrySet()) if (r.needFor(e.getKey()) == need) sum += e.getValue();
+        return sum;
+    }
+
     /** How many more of this item the table will take now. */
     public long room(Item item) {
         EmpyreanRecipe r = recipe();
         if (r == null) return 0;
-        Long need = r.totals().get(item);
+        EmpyreanRecipe.Need need = r.needFor(item);
         if (need == null) return 0;
-        return Math.max(0, need * BUFFER_CRAFTS - held.getOrDefault(item, 0L));
+        return Math.max(0, r.totals().get(need) * BUFFER_CRAFTS - heldFor(r, need));
     }
 
     /** Puts in as many as fit; returns how many went in. */
@@ -165,8 +173,8 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
         if (r.needsHome && (level == null || level.getServer() == null || !HomeProgress.complete(level.getServer(), owner))) return "needs_home";
         if (outCount > 0 && outItem != r.result.item()) return "output_other";
         if (outCount + r.result.count() > OUT_CAP) return "output_full";
-        for (Map.Entry<Item, Long> e : r.totals().entrySet())
-            if (held.getOrDefault(e.getKey(), 0L) < e.getValue()) return "missing";
+        for (Map.Entry<EmpyreanRecipe.Need, Long> e : r.totals().entrySet())
+            if (heldFor(r, e.getKey()) < e.getValue()) return "missing";
         return null;
     }
 
@@ -175,10 +183,17 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
         int made = 0;
         EmpyreanRecipe r = recipe();
         while (made < times && r != null && blocked() == null) {
-            for (Map.Entry<Item, Long> e : r.totals().entrySet()) {
-                long left = held.get(e.getKey()) - e.getValue();
-                if (left == 0) held.remove(e.getKey());
-                else held.put(e.getKey(), left);
+            for (Map.Entry<EmpyreanRecipe.Need, Long> e : r.totals().entrySet()) {
+                long want = e.getValue();
+                // the items that count towards this need, in the order they were put in
+                for (Item it : new ArrayList<>(held.keySet())) {
+                    if (want == 0) break;
+                    if (r.needFor(it) != e.getKey()) continue;
+                    long have = held.get(it), use = Math.min(have, want);
+                    want -= use;
+                    if (have == use) held.remove(it);
+                    else held.put(it, have - use);
+                }
             }
             outItem = r.result.item();
             outCount += r.result.count();
@@ -204,9 +219,9 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
     public final IItemHandler automation = new IItemHandler() {
         // 1.3.0: the list is kept for the recipe it was made for (pipes ask for it on every slot they poll)
         private EmpyreanRecipe wantedFor;
-        private List<Item> wantedList = List.of();
+        private List<EmpyreanRecipe.Need> wantedList = List.of();
 
-        private List<Item> wanted() {
+        private List<EmpyreanRecipe.Need> wanted() {
             EmpyreanRecipe r = recipe();
             if (r != wantedFor) {
                 wantedFor = r;
@@ -222,11 +237,15 @@ public class EmpyreanTableBlockEntity extends BlockEntity implements MenuProvide
 
         @Override
         public ItemStack getStackInSlot(int slot) {
-            List<Item> w = wanted();
+            List<EmpyreanRecipe.Need> w = wanted();
             if (slot == w.size()) return outCount > 0 ? new ItemStack(outItem, (int) Math.min(outCount, outItem.getDefaultMaxStackSize())) : ItemStack.EMPTY;
-            if (slot < 0 || slot > w.size()) return ItemStack.EMPTY;
-            long h = held.getOrDefault(w.get(slot), 0L);
-            return h > 0 ? new ItemStack(w.get(slot), (int) Math.min(h, w.get(slot).getDefaultMaxStackSize())) : ItemStack.EMPTY;
+            if (slot < 0 || slot > w.size() || wantedFor == null) return ItemStack.EMPTY;
+            EmpyreanRecipe.Need need = w.get(slot);
+            Item shown = null;                          // a tag's slot shows the first of its items held, with the sum of them
+            if (!need.isTag()) shown = need.item();
+            else for (Item it : held.keySet()) if (wantedFor.needFor(it) == need) { shown = it; break; }
+            long h = shown == null ? 0 : heldFor(wantedFor, need);
+            return h > 0 ? new ItemStack(shown, (int) Math.min(h, shown.getDefaultMaxStackSize())) : ItemStack.EMPTY;
         }
 
         @Override

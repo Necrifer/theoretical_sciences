@@ -3,7 +3,8 @@
 ## 1.3.1: Recreating Home for modpacks
 
 Recreating Home could not be changed by a pack, and a pack that removed a Core Forge recipe made it impossible to
-unlock. It can now be set from a datapack or KubeJS, and both guides explain it. No recipes changed.
+unlock. It can now be set from a datapack or KubeJS, and both guides explain it. The Empyrean Assembly Table also
+takes tags.
 
 ### For modpacks
 * **Unlocking follows the pack's Forge.** The Recreating Home tab used to need every Core Forge recipe the mod ships
@@ -20,6 +21,13 @@ unlock. It can now be set from a datapack or KubeJS, and both guides explain it.
   Worlds saved before this version are read as they were.
 * When a pack changes the checklist, the Core's greeting names the pack's numbers instead of "forty-two" and
   33,550,337.
+* **Empyrean Assembly Table slots take tags.** A slot can be `{"tag": ..., "count": n}` as well as
+  `{"item": ..., "count": n}`, and is filled by any items of the tag, mixed. An item with its own slot in a recipe
+  always goes there, not to a tag slot that also lists it. The table's picture, its tooltips, pipes and hoppers, JEI
+  and EMI all show tag slots (JEI and EMI cycle through the tag's items).
+* **Recipe change:** the 9 Empyrean recipes that used the Diagonal Ingot or the Pure Concept Ingot now take the tags
+  `theoreticalsciences:ingots/diagonal` and `theoreticalsciences:ingots/pure_concept` (as every other recipe has done
+  since 1.16.3). Same amounts; the mod's own ingots still work.
 * **Documented:** DATAPACKS.md section 11 and KUBEJS.md section 8 cover `ts_home` and the Empyrean Assembly Table's
   recipes (type `theoreticalsciences:empyrean`), which could already be added, replaced and removed like any recipe.
   Later sections of both guides moved down by one.

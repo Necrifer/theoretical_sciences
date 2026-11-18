@@ -26,8 +26,13 @@ public class EmpyreanEmiRecipe extends BasicEmiRecipe {
     public EmpyreanEmiRecipe(EmiRecipeCategory cat, ResourceLocation id, EmpyreanRecipe recipe) {
         super(cat, id, N * CELL + 46, N * CELL + 2);
         this.recipe = recipe;
-        recipe.totals().forEach((item, n) -> inputs.add(EmiStack.of(item, n)));
+        recipe.totals().forEach((need, n) -> inputs.add(ingredient(need, n)));
         outputs.add(EmiStack.of(recipe.result.item(), recipe.result.count()));
+    }
+
+    /** 1.3.1: an exact item, or a tag (which EMI shows as the tag, cycling its items). */
+    private static EmiIngredient ingredient(EmpyreanRecipe.Need need, long amount) {
+        return need.isTag() ? EmiIngredient.of(need.tag(), amount) : EmiStack.of(need.item(), amount);
     }
 
     /** A slot twelve pixels wide whose item is drawn at three quarters size, without its count. */
@@ -78,8 +83,8 @@ public class EmpyreanEmiRecipe extends BasicEmiRecipe {
             for (int x = 0; x < N; x++) {
                 EmpyreanRecipe.Slot s = recipe.cell(x, y);
                 if (s == null) continue;
-                long total = recipe.totals().get(s.item());
-                w.add(new Small(EmiStack.of(s.item(), s.count()), 1 + x * CELL, 1 + y * CELL)
+                long total = recipe.totals().get(s.need());
+                w.add(new Small(ingredient(s.need(), s.count()), 1 + x * CELL, 1 + y * CELL)
                         .appendTooltip(Component.translatable("gui.theoreticalsciences.empyrean.tip_slot", HomeClient.full(s.count())).withStyle(ChatFormatting.GOLD))
                         .appendTooltip(Component.translatable("gui.theoreticalsciences.empyrean.tip_recipe_total", HomeClient.full(total)).withStyle(ChatFormatting.GRAY)));
             }
