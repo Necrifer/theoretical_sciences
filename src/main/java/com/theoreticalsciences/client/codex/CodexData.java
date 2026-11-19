@@ -42,6 +42,8 @@ public final class CodexData {
         public List<Page> pages = new ArrayList<>();
         /** Everything searchable, in lower case. */
         public String searchTitle = "", searchText = "";
+        /** 1.3.1: an item's own page is open exactly when the entry about its concept is (null: on its own). */
+        public String follows;
     }
 
     /** A place on a tab's map. */
@@ -315,11 +317,94 @@ public final class CodexData {
             String n = new net.minecraft.world.item.ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(rl)).getHoverName().getString().toLowerCase(Locale.ROOT);
             if (!n.isEmpty()) names.putIfAbsent(n, it.getValue());
         }
+        Map<String, String> lookup = itemPages(ents, items);
         entries = ents;
         tabs = ts;
         categories = cats;
         byName = names;
-        byItem = items;
+        byItem = lookup;
+    }
+
+    /**
+     * 1.3.1: the mod's items no longer describe themselves in tooltips, so the Codex says it: every item with something
+     * to say gets it on a page of its own (its description, where it is found, what uses it, how to use it, and every
+     * way to make it), linking on to the entry about its concept. An item that already has a page of its own (a small
+     * node whose icon it is) gets the description as that page's first page instead. Looking an item up opens this.
+     */
+    private static Map<String, String> itemPages(Map<String, Entry> ents, Map<String, String> concepts) {
+        Map<String, String> lookup = new HashMap<>(concepts);
+        net.minecraft.world.item.Item.TooltipContext ctx = net.minecraft.client.Minecraft.getInstance().level != null
+                ? net.minecraft.world.item.Item.TooltipContext.of(net.minecraft.client.Minecraft.getInstance().level)
+                : net.minecraft.world.item.Item.TooltipContext.EMPTY;
+        String seeAlso = net.minecraft.client.resources.language.I18n.get("gui.theoreticalsciences.codex.item_concept");
+        for (net.minecraft.world.item.Item it : net.minecraft.core.registries.BuiltInRegistries.ITEM) {
+            ResourceLocation rl = net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(it);
+            if (!TheoreticalSciences.MODID.equals(rl.getNamespace())) continue;
+            List<String> paras;
+            try {
+                paras = itemText(it, rl, ctx);
+            } catch (Throwable t) {
+                continue;                                  // (an item whose text cannot be worked out here: no page)
+            }
+            if (paras.isEmpty()) continue;
+            String id = rl.toString(), text = String.join("$(br2)", paras);
+            String conceptId = concepts.get(id);
+            Entry concept = conceptId == null ? null : ents.get(conceptId);
+            Page p = new Page();
+            p.type = "spotlight";
+            p.items = List.of(id);
+            if (concept != null && concept.node && id.equals(concept.icon)) {
+                p.text = text;
+                concept.pages.add(0, p);
+                concept.searchText += " " + CodexText.plain(text).toLowerCase(Locale.ROOT);
+                continue;
+            }
+            if (concept != null) p.text = text + "$(br2)$(l)" + seeAlso + "$() $(l:" + concept.id + ")" + concept.title + "$(/l)";
+            else p.text = text;
+            Entry e = new Entry();
+            e.id = "item/" + rl.getPath();
+            e.title = new net.minecraft.world.item.ItemStack(it).getHoverName().getString();
+            e.icon = id;
+            e.category = concept != null ? concept.category : "world";
+            e.follows = concept != null ? concept.id : null;
+            e.pages.add(p);
+            e.searchTitle = e.title.toLowerCase(Locale.ROOT);
+            e.searchText = CodexText.plain(text).toLowerCase(Locale.ROOT);
+            ents.put(e.id, e);
+            lookup.put(id, e.id);
+        }
+        return lookup;
+    }
+
+    /** The paragraphs an item's page says (what its tooltip used to say about the kind of item). */
+    private static List<String> itemText(net.minecraft.world.item.Item it, ResourceLocation rl, net.minecraft.world.item.Item.TooltipContext ctx) {
+        List<String> out = new ArrayList<>();
+        String base = it.getDescriptionId();
+        for (String k : new String[]{base + ".lore", base + ".shield", base + ".found"})
+            if (net.minecraft.client.resources.language.I18n.exists(k)) add(out, net.minecraft.client.resources.language.I18n.get(k));
+        List<net.minecraft.network.chat.Component> lines = new ArrayList<>();
+        it.appendHoverText(new net.minecraft.world.item.ItemStack(it), ctx, lines, net.minecraft.world.item.TooltipFlag.NORMAL);
+        StringBuilder uses = new StringBuilder();
+        for (net.minecraft.network.chat.Component c : lines)
+            if (com.theoreticalsciences.client.TooltipTrim.descriptive(c)) {
+                String t = c.getString().trim();
+                if (t.isEmpty() || out.contains(t)) continue;
+                uses.append(uses.length() == 0 ? "" : "$(br)").append("$(li)").append(esc(t));
+            }
+        for (net.minecraft.network.chat.Component c : com.theoreticalsciences.client.ItemTips.codexFacts(it, rl))
+            uses.append(uses.length() == 0 ? "" : "$(br)").append("$(li)").append(esc(c.getString().trim()));
+        if (uses.length() > 0) out.add(uses.toString());
+        return out;
+    }
+
+    private static void add(List<String> out, String t) {
+        t = t.trim();
+        if (!t.isEmpty() && !out.contains(esc(t))) out.add(esc(t));
+    }
+
+    /** Text from the language file is plain: never let it read as the Codex's formatting codes. */
+    private static String esc(String t) {
+        return t.replace("$(", "$ (");
     }
 
     /** The entry a piece of highlighted text names, or null ("Bubble Universes" finds "Bubble Universe"). */

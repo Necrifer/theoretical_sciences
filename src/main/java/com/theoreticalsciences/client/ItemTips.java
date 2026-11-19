@@ -108,7 +108,29 @@ public final class ItemTips {
         return tiers.get(b);
     }
 
+    /**
+     * 1.3.1: what the item's tooltip used to say about the kind of item, for its page in the Codex: its tier (for a
+     * tiered part), which structures use it, whether the Core's Forge makes it, whether it is beyond Omnipotence.
+     */
+    public static List<Component> codexFacts(Item item, ResourceLocation id) {
+        List<Component> out = new ArrayList<>();
+        if (item instanceof BlockItem tb) {
+            int[] t = tierOf(tb.getBlock());
+            if (t != null) {
+                String fam = t[2] == 0 ? "coil" : t[2] == 1 ? "emitter" : "other";
+                out.add(Component.translatable("tooltip.theoreticalsciences.part_tier." + fam, t[0], t[1]));
+                out.add(Component.translatable("tooltip.theoreticalsciences.part_tier.lowest"));
+            }
+        }
+        out.addAll(details(item, id, false));
+        return out;
+    }
+
     private static List<Component> details(Item item, ResourceLocation id) {
+        return details(item, id, true);
+    }
+
+    private static List<Component> details(Item item, ResourceLocation id, boolean withCodexKey) {
         List<Component> out = new ArrayList<>();
         // part of a structure
         if (item instanceof BlockItem bi) {
@@ -123,6 +145,7 @@ public final class ItemTips {
             out.add(Component.translatable("tooltip.theoreticalsciences.forged_at_core").withStyle(ChatFormatting.GOLD));
         if (new ItemStack(item).is(com.theoreticalsciences.transcend.OmnipotencePayload.BEYOND))
             out.add(Component.translatable("tooltip.theoreticalsciences.beyond_omnipotence").withStyle(ChatFormatting.LIGHT_PURPLE));
+        if (!withCodexKey) return out;
         try {
             if (com.theoreticalsciences.client.codex.CodexData.ensure() && com.theoreticalsciences.client.codex.CodexData.entryForItem(id.toString()) != null)
                 out.add(Component.translatable("tooltip.theoreticalsciences.codex_key",

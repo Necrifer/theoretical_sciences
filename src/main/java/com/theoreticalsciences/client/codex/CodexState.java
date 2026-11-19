@@ -55,6 +55,7 @@ public final class CodexState {
         boolean res;
         ResourceLocation r = e == null ? null : researchId(e);
         if (e == null) res = false;
+        else if (e.follows != null) res = open(e.follows, visiting);              // 1.3.1: an item's page opens with its concept
         else if (r != null && ClientResearch.defs.containsKey(r)) res = ClientResearch.unlocked.contains(r);
         else if (r != null && !ClientResearch.defs.isEmpty()) res = true;        // research this world does not have: nothing to wait for
         else {

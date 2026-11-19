@@ -32,6 +32,17 @@ takes tags.
   recipes (type `theoreticalsciences:empyrean`), which could already be added, replaced and removed like any recipe.
   Later sections of both guides moved down by one.
 
+### Text rework: descriptions move to the Codex
+* **The mod's items and blocks no longer describe themselves in tooltips.** Their descriptions, "where found" lines,
+  uses, stats, structure and tier lines and the "Hold Shift" details are gone from tooltips. What is live about one
+  particular item still shows: what it holds, its charge, mode, channel, wear, coating, plating, traits and the like.
+  Other mods' items keep the tier line the mod adds to them. Enchantments, attributes and F3+H lines are untouched.
+* **Every item with something to say has it in the Quantum Codex.** Looking an item up (hover it and press K) opens a
+  page with its description, where it is found, what it is for and how to use it, every way to make it, and a link
+  to the entry about its concept. An item that already had a page of its own gets the description as that page's
+  first page. These pages unlock together with their concept's entry, and the Codex search finds them.
+* Client option `itemDescriptionsInTooltips` (off) brings the old tooltips back.
+
 ## 1.3.0: the CurseForge release (18 November 2026)
 
 Everything since 1.2.0 (3 Forgotten Memories), in short. The full list, with every recipe change and number, follows
