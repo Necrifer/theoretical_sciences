@@ -1,0 +1,59 @@
+{
+  "title": "Molecular Machines",
+  "x": 30,
+  "y": -6,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:stereochemistry",
+    "theoreticalsciences:aromaticity",
+    "theoreticalsciences:reaction_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:kekule_ring",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "description": "At a molecule's scale everything shakes, so a machine cannot push: it must ratchet. Feringa's motor turns by light twisting a double bond, then by heat flipping its crowded halves past each other, always one way because the other way is uphill: two flashes and two flips a turn, the slowest setting the pace. Each flip is a barrier crossed at Eyring's rate, kT/h times e to the minus ΔG‡ over RT. A rotaxane is a ring threaded on an axle and stoppered, which can be made to shuttle between stations. Unlocks the Molecular Machine Bench.",
+  "icon": "theoreticalsciences:molecular_machine_bench",
+  "puzzle": {
+    "goal": "A barrier ΔG per mole is crossed at temperature T. Write the rate k by transition state theory, with kB/h the ratio of Boltzmann's to Planck's constant (Eyring).",
+    "name": "Eyring equation",
+    "lhs": "k",
+    "form": "c * T * exp ( - G / ( R * T ) )",
+    "expr": "c * T * exp ( - G / ( R * T ) )",
+    "ask": "Find k in /s for c = kB/h = 2.0837e10, ΔG = 70000 J/mol, R = 8.314 and T = @{T} K.",
+    "vars": {
+      "k": "rate",
+      "c": "kB/h",
+      "T": "temperature",
+      "G": "barrier",
+      "R": "gas constant"
+    },
+    "given": {
+      "c": 20837000000.0,
+      "T": 298.0,
+      "G": 70000.0,
+      "R": 8.314
+    },
+    "unit": "/s",
+    "method": "The transition state is in equilibrium with the start, K‡ = e^(−ΔG‡/RT), and falls apart at the frequency of one vibration, kT/h.",
+    "distractors": [
+      "*",
+      "ln",
+      "+"
+    ],
+    "vary": {
+      "T": [
+        250.0,
+        350.0,
+        1.0
+      ]
+    }
+  }
+}

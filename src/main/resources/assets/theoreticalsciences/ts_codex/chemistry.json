@@ -2342,6 +2342,52 @@
         "chemistry/dendrochronology",
         "chemistry/isotope_provenance"
       ]
+    },
+    {
+      "entry": "chemistry/r1400_syngas",
+      "x": 2,
+      "y": 68,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/r1400_polymer_physics",
+      "x": 6,
+      "y": 68,
+      "parents": [
+        "chemistry/r1400_syngas"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_aromatic_substitution",
+      "x": 2,
+      "y": 72,
+      "parents": []
+    },
+    {
+      "entry": "chemistry/r1400_stereochemistry",
+      "x": 10,
+      "y": 72,
+      "parents": [
+        "chemistry/r1400_aromatic_substitution"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_aromaticity",
+      "x": 6,
+      "y": 72,
+      "parents": [
+        "chemistry/r1400_aromatic_substitution"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_molecular_machines",
+      "x": 14,
+      "y": 70,
+      "parents": [
+        "chemistry/r1400_stereochemistry",
+        "chemistry/r1400_aromaticity",
+        "chemistry/r1400_polymer_physics"
+      ]
     }
   ],
   "regions": [
@@ -2376,6 +2422,14 @@
       "x1": 125.5,
       "y0": 60,
       "y1": 64.5
+    },
+    {
+      "tier": 4,
+      "label": "Petrochemistry & Organic",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 66,
+      "y1": 74.5
     }
   ]
 }

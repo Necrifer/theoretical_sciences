@@ -1,0 +1,56 @@
+{
+  "title": "Aromatic Substitution",
+  "x": 26,
+  "y": -6,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:organic_synthesis",
+    "theoreticalsciences:infrared_spectroscopy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 4
+    },
+    {
+      "item": "minecraft:glass_bottle",
+      "count": 8
+    }
+  ],
+  "time": 400,
+  "description": "Benzene will not add to itself, but it will swap a hydrogen for a stronger electrophile: a nitronium ion from mixed acid, a diazonium salt, a bromine. What is already on the ring decides how fast, and where. Hammett found one rule for all of it: each substituent has a number σ, each reaction a number ρ, and the rate is multiplied by ten to the σρ. How strong the acid is counts too, beyond what pH can say: Hammett's acidity H₀. Unlocks the Substituent Bench.",
+  "icon": "theoreticalsciences:substituent_bench",
+  "puzzle": {
+    "goal": "A substituent with constant σ changes the rate of a reaction with constant ρ. Write the rate k against the rate k0 of plain benzene (Hammett).",
+    "name": "Hammett equation",
+    "lhs": "k",
+    "form": "k0 * 10 ^ ( σ * ρ )",
+    "expr": "k0 * 10 ^ ( s * p )",
+    "ask": "Find k for k0 = 1, σ = @{s} and ρ = −6.",
+    "vars": {
+      "k": "rate",
+      "k0": "rate for benzene",
+      "σ": "substituent constant",
+      "ρ": "reaction constant"
+    },
+    "given": {
+      "k0": 1.0,
+      "s": -0.17,
+      "p": -6.0
+    },
+    "unit": "",
+    "method": "log(k/k0) is linear in σ: the free energy of the transition state shifts in proportion to how the substituent pushes or pulls charge.",
+    "distractors": [
+      "+",
+      "exp",
+      "/"
+    ],
+    "vary": {
+      "s": [
+        -0.3,
+        0.3,
+        0.01
+      ]
+    }
+  }
+}

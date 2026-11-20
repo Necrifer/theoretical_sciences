@@ -86,7 +86,7 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             "sulfuric_acid", "sulfur_dioxide", "heavy_water", "deuterium", "tritium", "chlorine", "crude_oil",
             "ethylene", "propylene", "methane", "methanol",
             "liquid_oxygen", "liquid_hydrogen", "liquid_sodium", "radon", "helium_3", "carbon_monoxide", "hydrogen_cyanide",
-            "uranium_hexafluoride");
+            "uranium_hexafluoride", "benzene");
 
     /**
      * 1.16.1: fluids whose other mods' versions do not share one common tag. A recipe naming one of these takes the

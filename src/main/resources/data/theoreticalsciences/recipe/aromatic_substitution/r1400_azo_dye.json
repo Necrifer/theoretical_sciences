@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:aromatic_substitution",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:aniline",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:nitric_acid",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:azo_dye",
+      "count": 4
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:aromatic_substitution",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": -1.7,
+      "rh": -3.8,
+      "Ea": 60,
+      "Tmx": 278
+    },
+    "windows": [
+      {
+        "q": "kr",
+        "min": 1,
+        "max": 40
+      }
+    ]
+  }
+}

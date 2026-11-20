@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:polarimeter"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.stereochemistry"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.stereochemistry.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/asymmetric_synthesis",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

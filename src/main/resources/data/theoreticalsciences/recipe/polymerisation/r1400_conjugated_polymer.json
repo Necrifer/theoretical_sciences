@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:polymerisation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:annulene_lattice",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:ethylene",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:conjugated_polymer",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:polymer_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "r": 0.99,
+      "M0": 26.0,
+      "Kmh": 0.01,
+      "amh": 0.9
+    },
+    "windows": [
+      {
+        "q": "Xs",
+        "min": 60,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

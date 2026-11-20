@@ -120,6 +120,8 @@ public final class SpaceModules {
 
     // ------------------------------------------------------------------ launches
     static final String LAUNCH = "orbital_launch/r1130_launch_";
+    /** 1.4.0: the same launches on rocket kerosene (orbital_launch/r1400_kerolox_launch_<kind>). */
+    static final String KEROLOX = "orbital_launch/r1400_kerolox_launch_";
 
     @SubscribeEvent
     public static void onLaunch(MachineRecipeEvent.Finish e) {
@@ -128,8 +130,11 @@ public final class SpaceModules {
         OrbitData data = OrbitData.get(server);
         if (QHConfig.SPACE_DEBRIS.get()) data.debris(data.debris() + 1);        // a spent upper stage, bolts, shrouds
         String path = e.getRecipeId().getPath();
-        if (!e.getRecipeId().getNamespace().equals(TheoreticalSciences.MODID) || !path.startsWith(LAUNCH)) return;
-        String kind = path.substring(LAUNCH.length());
+        if (!e.getRecipeId().getNamespace().equals(TheoreticalSciences.MODID)) return;
+        String kind;
+        if (path.startsWith(LAUNCH)) kind = path.substring(LAUNCH.length());
+        else if (path.startsWith(KEROLOX)) kind = path.substring(KEROLOX.length());
+        else return;
         ServerPlayer owner = e.getMachine().getOwner() == null ? null : server.getPlayerList().getPlayer(e.getMachine().getOwner());
         if (kind.equals("debris_sweeper")) {
             data.debris(data.debris() * 0.15);

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:orbital_launch",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rocket_stage",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:debris_sweeper",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_oxygen",
+      "amount": 14000
+    },
+    {
+      "fluid": "theoreticalsciences:rocket_kerosene",
+      "amount": 5000
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "unscaled": true,
+  "research": "theoreticalsciences:syngas_chemistry",
+  "physics": {
+    "vars": {
+      "Ipk": 348.0,
+      "rpk": 2.6,
+      "rs": 3.4,
+      "mp": 3.0,
+      "drq": 9600.0
+    },
+    "windows": [
+      {
+        "q": "margin",
+        "min": 0.0,
+        "max": 1000000.0
+      }
+    ]
+  }
+}

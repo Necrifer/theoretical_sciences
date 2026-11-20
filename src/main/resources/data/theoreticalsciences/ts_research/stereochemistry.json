@@ -1,0 +1,55 @@
+{
+  "title": "Stereochemistry",
+  "x": 30,
+  "y": -4,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:asymmetric_synthesis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:chiral_ligand",
+      "count": 1
+    }
+  ],
+  "time": 400,
+  "description": "A molecule and its mirror image weigh the same, boil together and look the same to every test but one: polarised light turns one way through one and the other way through the other. Biot measured it in 1815 with sugar and turpentine, and a tube of solution still certifies a drug's purity. Rings have a hand of their own: cyclohexane folds into a chair, and a bulky group would rather sit out along the equator than up against the ring; the A value says by how much. Unlocks the Polarimeter.",
+  "icon": "theoreticalsciences:polarimeter",
+  "puzzle": {
+    "goal": "A group sits equatorial or axial on a chair, the equatorial lower by A per mole. At temperature T, write the ratio K of equatorial to axial (Boltzmann).",
+    "name": "Conformer ratio",
+    "lhs": "K",
+    "form": "exp ( A / ( R * T ) )",
+    "expr": "exp ( A / ( R * T ) )",
+    "ask": "Find K for a phenyl group, A = 11700 J/mol, with R = 8.314 at T = @{T} K.",
+    "vars": {
+      "K": "equatorial over axial",
+      "A": "A value",
+      "R": "gas constant",
+      "T": "temperature"
+    },
+    "given": {
+      "A": 11700.0,
+      "R": 8.314,
+      "T": 298.0
+    },
+    "unit": "",
+    "method": "ΔG = −RT ln K, with ΔG = −A from axial to equatorial.",
+    "distractors": [
+      "*",
+      "ln",
+      "-"
+    ],
+    "vary": {
+      "T": [
+        200.0,
+        350.0,
+        1.0
+      ]
+    }
+  }
+}

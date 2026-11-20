@@ -1,0 +1,65 @@
+{
+  "params": [
+    {
+      "id": "H0",
+      "unit": "",
+      "min": -12,
+      "max": 0,
+      "step": 0.05,
+      "default": -6
+    },
+    {
+      "id": "Ts",
+      "unit": "K",
+      "min": 250,
+      "max": 380,
+      "step": 0.5,
+      "default": 298
+    }
+  ],
+  "recipe_vars": {
+    "sg": 0.0,
+    "rh": -6.0,
+    "Ea": 60,
+    "Tmx": 340
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "ef",
+      "unit": "",
+      "expr": "10^(sg*rh)",
+      "formula": "the substituent: 10^(σρ)"
+    },
+    {
+      "id": "kr",
+      "unit": "",
+      "expr": "10^(sg*rh)*10^(-(H0 + 6))*exp(-Ea*1000/8.314*(1/Ts - 1/298))*(1 + 0.02*d)",
+      "formula": "k = 10^(σρ)·10^(−(H₀ + 6))·e^(−Eₐ/R·(1/T − 1/298 K))"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "runaway",
+      "kind": "stop",
+      "expr": "Tmx - Ts",
+      "formula": "under the temperature the intermediate survives"
+    },
+    {
+      "id": "over",
+      "kind": "wear",
+      "expr": "50 - 10^(sg*rh)*10^(-(H0 + 6))*exp(-Ea*1000/8.314*(1/Ts - 1/298))*(1 + 0.02*d)",
+      "formula": "k under 50, or a second group goes on and tars the batch"
+    }
+  ],
+  "rate": "clamp(10^(sg*rh)*10^(-(H0 + 6))*exp(-Ea*1000/8.314*(1/Ts - 1/298))/5, 0.25, 3)",
+  "rate_formula": "faster substitution finishes sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

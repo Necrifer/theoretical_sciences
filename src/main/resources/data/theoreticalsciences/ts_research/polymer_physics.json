@@ -1,0 +1,53 @@
+{
+  "title": "Polymer Physics",
+  "x": 28,
+  "y": -2,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:polymer_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:nylon_fibre",
+      "count": 2
+    }
+  ],
+  "time": 380,
+  "description": "A chain made of two partners, each end hunting the other, can only grow as long as the scarcer partner lasts. Carothers saw that a single percent too much of one caps the chains at a few hundred units, however far the reaction runs; Kevlar needs both weighed to a part in a thousand. How long the chains are shows in how thick the solution pours: Mark and Houwink's power law, steeper for stiff rods than for loose coils. Adds both to the Polymeriser.",
+  "icon": "theoreticalsciences:rigid_rod_fibre",
+  "puzzle": {
+    "goal": "Monomers A and B link end to end; r = N_A/N_B ≤ 1 is their ratio and p the fraction of A ends that have reacted. Write the mean chain length X (Carothers).",
+    "name": "Carothers with an imbalance",
+    "lhs": "X",
+    "form": "( 1 + r ) / ( 1 + r - 2 * r * p )",
+    "expr": "( 1 + r ) / ( 1 + r - 2 * r * p )",
+    "ask": "Find X for r = @{r} and p = 0.995.",
+    "vars": {
+      "X": "mean chain length",
+      "r": "ratio of the partners",
+      "p": "extent of reaction"
+    },
+    "given": {
+      "r": 0.99,
+      "p": 0.995
+    },
+    "unit": "",
+    "method": "Count the molecules before, (N_A + N_B)/2 in units, and after: every bond made joins two into one, leaving N_A(1 + 1/r − 2p)/2.",
+    "distractors": [
+      "*",
+      "^ 2",
+      "+"
+    ],
+    "vary": {
+      "r": [
+        0.95,
+        0.999,
+        0.001
+      ]
+    }
+  }
+}

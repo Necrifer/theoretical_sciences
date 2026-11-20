@@ -1,0 +1,114 @@
+{
+  "params": [
+    {
+      "id": "Tr",
+      "unit": "K",
+      "min": 900,
+      "max": 1350,
+      "step": 1,
+      "default": 1100
+    },
+    {
+      "id": "P",
+      "unit": "bar",
+      "min": 1,
+      "max": 40,
+      "step": 0.1,
+      "default": 20
+    },
+    {
+      "id": "sc",
+      "unit": "",
+      "min": 0.5,
+      "max": 5,
+      "step": 0.01,
+      "default": 3
+    },
+    {
+      "id": "ox",
+      "unit": "",
+      "min": 0,
+      "max": 0.6,
+      "step": 0.01,
+      "default": 0
+    },
+    {
+      "id": "x",
+      "unit": "",
+      "min": 0.3,
+      "max": 0.99,
+      "step": 0.01,
+      "default": 0.8
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Ks",
+      "unit": "bar²",
+      "expr": "4.707e12*exp(-26943/Tr)",
+      "formula": "K = 4.707×10¹²·e^(−26943 K/T) bar²: CH₄ + H₂O ⇌ CO + 3H₂"
+    },
+    {
+      "id": "Kw",
+      "unit": "",
+      "expr": "1.142e-2*exp(4619/Tr)",
+      "formula": "K = 0.01142·e^(4619 K/T): CO + H₂O ⇌ CO₂ + H₂"
+    },
+    {
+      "id": "w",
+      "unit": "mol",
+      "expr": "(2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox))))",
+      "formula": "the shift, solved at its equilibrium"
+    },
+    {
+      "id": "Qs",
+      "unit": "bar²",
+      "expr": "(x - (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)))))*((3*x - 2*ox) + (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)))))^3/((1 - x)*((sc - x + 2*ox) - (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox))))))*(P/(1 + sc + 2*x))^2",
+      "formula": "Q = p_CO·p_H₂³/(p_CH₄·p_H₂O)"
+    },
+    {
+      "id": "ratio",
+      "unit": "",
+      "expr": "((3*x - 2*ox) + (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)))))/(x - (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)))))*(1 + 0.01*d)",
+      "formula": "H₂/CO of the gas made"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "eq",
+      "kind": "stop",
+      "expr": "4.707e12*exp(-26943/Tr)/((x - (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)))))*((3*x - 2*ox) + (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)))))^3/((1 - x)*((sc - x + 2*ox) - (2*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox)/(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox))) + sqrt(((3*x - 2*ox) + 1.142e-2*exp(4619/Tr)*(x + (sc - x + 2*ox)))^2 + 4*(1 - 1.142e-2*exp(4619/Tr))*1.142e-2*exp(4619/Tr)*x*(sc - x + 2*ox))))))*(P/(1 + sc + 2*x))^2) - 1",
+      "formula": "Q < K: the methane cannot convert past its equilibrium"
+    },
+    {
+      "id": "flame",
+      "kind": "stop",
+      "expr": "x - 2*ox",
+      "formula": "oxygen under half the methane converted, or it burns through"
+    },
+    {
+      "id": "water",
+      "kind": "stop",
+      "expr": "sc + 2*ox - x",
+      "formula": "steam enough for the methane asked to convert"
+    },
+    {
+      "id": "coke",
+      "kind": "wear",
+      "expr": "sc + ox - 1",
+      "formula": "steam and oxygen over one per carbon, or the nickel cokes"
+    }
+  ],
+  "rate": "clamp(exp(-10000*(1/Tr - 1/1100))*sqrt(P/10), 0.25, 3)",
+  "rate_formula": "hotter and denser is faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

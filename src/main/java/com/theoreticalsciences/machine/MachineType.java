@@ -292,6 +292,13 @@ public enum MachineType {
     RADIATION_PRESSURE_BALANCE ("photon_pressure",  3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xFFF0B0),   // 1.14.0
     ICE_RHEOMETER           ("ice_rheometry",        2, 1, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xA8D8F0),   // 1.15.0
     CMB_BOLOMETER_ARRAY     ("cmb_mapping",          1, 1, 1, 0, false, "cmb_bolometer_array",    64_000_000, 2_000_000, Effect.NONE,        0xFFB878),   // 1.15.0
+    // 1.4.0 stage 1: the organic core and the syngas hub
+    SYNGAS_REFORMER         ("reforming",            0, 3, 0, 1, false, null,                      2_000_000,    40_000, Effect.NONE,        0xFFA050),
+    FISCHER_TROPSCH_REACTOR ("fischer_tropsch",      3, 1, 1, 1, false, "fischer_tropsch_reactor", 16_000_000,   400_000, Effect.NONE,        0xE0B060),
+    SUBSTITUENT_BENCH       ("aromatic_substitution", 2, 3, 1, 1, false, null,                     1_000_000,    20_000, Effect.NONE,        0xF0A040),
+    POLARIMETER             ("polarimetry",          2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xC0E0FF),
+    HUCKEL_ANALYSER         ("ring_current_analysis", 2, 1, 1, 0, false, null,                     2_000_000,    40_000, Effect.NONE,        0x80C0FF),
+    MOLECULAR_MACHINE_BENCH ("molecular_assembly",   3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xA0FFC0),
     MICROWAVE_RECTENNA      ("microwave_reception",  0, 0, 0, 0, true,  "microwave_rectenna",      64_000_000, 2_000_000, Effect.NONE,        0x60C8FF),
     // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
     PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
@@ -388,7 +395,8 @@ public enum MachineType {
      * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
      */
     public boolean standaloneConsole() {
-        return this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == ICE_RHEOMETER || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
+        return this == SYNGAS_REFORMER || this == SUBSTITUENT_BENCH || this == POLARIMETER || this == HUCKEL_ANALYSER || this == MOLECULAR_MACHINE_BENCH
+                || this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == ICE_RHEOMETER || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
                 || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
                 || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN
                 || this == POLYMERISER || this == SYNTHESIS_BENCH || this == FRAMEWORK_ASSEMBLER || this == QUASICRYSTAL_FURNACE

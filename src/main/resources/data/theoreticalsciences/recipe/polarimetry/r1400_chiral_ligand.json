@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:polarimetry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:kekule_ring",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:chiral_ligand",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:stereochemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sr": 40.0,
+      "ee0": 0.9,
+      "Av": 2.8
+    },
+    "windows": [
+      {
+        "q": "fa",
+        "min": 0,
+        "max": 0.005
+      }
+    ]
+  }
+}

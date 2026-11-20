@@ -1,0 +1,80 @@
+{
+  "params": [
+    {
+      "id": "nr",
+      "unit": "atoms",
+      "min": 4,
+      "max": 30,
+      "step": 2,
+      "default": 6
+    },
+    {
+      "id": "Tz",
+      "unit": "K",
+      "min": 150,
+      "max": 400,
+      "step": 1,
+      "default": 298
+    }
+  ],
+  "recipe_vars": {
+    "dGx": 45
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Er",
+      "unit": "|β|",
+      "expr": "((1 + cos(3.14159265*(nr - 2)/2))/2*4/sin(3.14159265/nr) + (1 - cos(3.14159265*(nr - 2)/2))/2*4*cos(3.14159265/nr)/sin(3.14159265/nr))",
+      "formula": "the ring: 4/sin(π/n) for 4n + 2, 4·cot(π/n) for 4n"
+    },
+    {
+      "id": "Ec",
+      "unit": "|β|",
+      "expr": "(4*sin(nr/2*(3.14159265/(nr + 1))/2)*cos((nr/2 + 1)*(3.14159265/(nr + 1))/2)/sin((3.14159265/(nr + 1))/2))",
+      "formula": "the open chain: 4·Σ cos(kπ/(n + 1))"
+    },
+    {
+      "id": "ae",
+      "unit": "|β|",
+      "expr": "((((1 + cos(3.14159265*(nr - 2)/2))/2*4/sin(3.14159265/nr) + (1 - cos(3.14159265*(nr - 2)/2))/2*4*cos(3.14159265/nr)/sin(3.14159265/nr))) - ((4*sin(nr/2*(3.14159265/(nr + 1))/2)*cos((nr/2 + 1)*(3.14159265/(nr + 1))/2)/sin((3.14159265/(nr + 1))/2))))*exp(-(nr/26)^4)",
+      "formula": "aromatic stabilisation: ring − chain, fading past 26 atoms as the bonds alternate"
+    },
+    {
+      "id": "dd",
+      "unit": "ppm",
+      "expr": "(((((1 + cos(3.14159265*(nr - 2)/2))/2*4/sin(3.14159265/nr) + (1 - cos(3.14159265*(nr - 2)/2))/2*4*cos(3.14159265/nr)/sin(3.14159265/nr))) - ((4*sin(nr/2*(3.14159265/(nr + 1))/2)*cos((nr/2 + 1)*(3.14159265/(nr + 1))/2)/sin((3.14159265/(nr + 1))/2))))*exp(-(nr/26)^4))*nr*(1 + 0.01*d)",
+      "formula": "inner to outer protons: the ring current"
+    },
+    {
+      "id": "kx",
+      "unit": "/s",
+      "expr": "2.0837e10*Tz*exp(-dGx*1000/(8.314*Tz))",
+      "formula": "exchange of inner and outer protons, Eyring"
+    },
+    {
+      "id": "sharp",
+      "unit": "",
+      "expr": "2.22*abs((((((1 + cos(3.14159265*(nr - 2)/2))/2*4/sin(3.14159265/nr) + (1 - cos(3.14159265*(nr - 2)/2))/2*4*cos(3.14159265/nr)/sin(3.14159265/nr))) - ((4*sin(nr/2*(3.14159265/(nr + 1))/2)*cos((nr/2 + 1)*(3.14159265/(nr + 1))/2)/sin((3.14159265/(nr + 1))/2))))*exp(-(nr/26)^4))*nr*(1 + 0.01*d))*400/(2.0837e10*Tz*exp(-dGx*1000/(8.314*Tz)))",
+      "formula": "coalescence: πΔν/√2 at 400 MHz over the exchange"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "freeze",
+      "kind": "stop",
+      "expr": "Tz - 160",
+      "formula": "over 160 K, or the solvent freezes"
+    }
+  ],
+  "rate": "clamp(Tz/250, 0.3, 1.5)",
+  "rate_formula": "a warmer probe settles sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

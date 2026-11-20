@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:cracking",
+  "item_inputs": [],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:crude_oil",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:benzene",
+      "amount": 250
+    },
+    {
+      "id": "theoreticalsciences:ethylene",
+      "amount": 250
+    }
+  ],
+  "energy": 925,
+  "duration": 50,
+  "unscaled": true,
+  "research": "theoreticalsciences:aromatic_substitution",
+  "physics": {
+    "windows": [
+      {
+        "q": "Se",
+        "min": 0.6,
+        "max": 1.0
+      }
+    ]
+  }
+}

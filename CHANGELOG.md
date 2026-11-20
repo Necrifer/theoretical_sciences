@@ -1,5 +1,52 @@
 # Changelog
 
+## 1.4.0: Organic chemistry, petrochemistry and engineering (in progress)
+
+Built in stages; this section grows with each test build.
+
+### Stage 1: the organic core and the syngas hub
+Six new research nodes in Chemistry, after Petrochemistry, Polymer Chemistry, Organic Synthesis and Asymmetric
+Synthesis, each with its derivation puzzle, and a new Codex region in the Chemistry tab, "Petrochemistry & Organic".
+
+* **Syngas and Chain Growth** (ASF distribution). New console, the **Syngas Reformer**: steam reforming, partial
+  oxidation and the water gas shift, each held to its real equilibrium constant (Xu and Froment), so the methane cannot
+  convert past what K allows. Makes **Syngas** (H₂/CO near 2) or hydrogen (plenty of steam, no oxygen). New multiblock,
+  the **Fischer Tropsch Reactor** (341 blocks, with the new Fischer Tropsch Tube Bundle casing): chain growth α from the
+  bed temperature and H₂/CO (Song's correlation) sets the Anderson Schulz Flory spread. Iron makes **Rocket Kerosene**
+  (C10 to C16); the new **Cobalt Chain Growth Catalyst** (wears, poisonable, restored in the Regeneration Kiln) makes
+  **Synthetic Wax** and, from wax, **Monodisperse Paraffin** (C24 to C28).
+* **Polymer Physics** (Carothers with an imbalance). The Polymeriser shows the chain length of two partner monomers
+  and the Mark Houwink viscosity. Makes **Rigid Rod Fibre** and **Conjugated Polymer**.
+* **Aromatic Substitution** (Hammett). New console, the **Substituent Bench**: σρ, the acidity function H₀ and the bath
+  temperature set the rate. Makes **Aniline**, **Para Phenylenediamine** and **Azo Dye**. **Benzene** comes from the
+  Cracking Tower (pyrolysis gasoline from crude oil).
+* **Stereochemistry** (conformer ratio). New console, the **Polarimeter**: Biot's law certifies **Mirror Reagent**;
+  cooled, it holds rings in their chairs (A values) for a new Chiral Ligand route.
+* **Aromaticity** (Hückel ring orbitals). New console, the **Hückel Analyser**: the ring's π energy against the open
+  chain's gives 4n + 2, the ring current shift is read by NMR, and the ring must be cold enough (Eyring) for the inner
+  and outer protons to stand apart. Makes **Annulene Lattice**.
+* **Molecular Machines** (Eyring). New console, the **Molecular Machine Bench**: two photochemical and two thermal steps
+  a turn, with a ratchet bias for direction. Makes **Rotaxane Shuttle**, **Light Driven Rotor**, **Molecular Logic
+  Gate** and **Programmable Matter**.
+* New fluids, each with a Containment Cell: Syngas, Rocket Kerosene, Benzene (also takes `c:benzene`, so GregTech's
+  benzene works), Aniline.
+
+### New routes to existing items (all cheaper than the old ones, which still work)
+* Tether Spool: Composite Layup Press, 2 Nanotube Composite and 2 Rigid Rod Fibre (was 3 and 2 Aramid Fibre).
+* Shkadov Mirror Film: Composite Layup Press, 1 aluminium ingot and 2 Rigid Rod Fibre for 6 (was 4 Polymer Sheet for 4).
+* Form Tincture: Alkahest Still, Monodisperse Paraffin, Fine Reagent and Balance Tincture (no Structure Card,
+  Quasicrystal Plate or ethylene).
+* Chirality Tincture: Alkahest Still, Mirror Reagent, 2 Tholin and Form Tincture (no Chemical Clock or ammonia buffer).
+* Chiral Ligand: Polarimeter, 3 Fine Reagent and a Kekulé Ring for 2.
+* Computronium Ingot: Neural Synthesizer, 8 neutronium ingots, Programmable Matter, a Quantum Processor and 1,100 mB
+  synaptic fluid (no Photonic Neuron, Void Essence or photoresist).
+* Weather Satellite and Debris Sweeper launches on kerosene: Rocket Assembly, 5,000 mB Rocket Kerosene and 14,000 mB
+  liquid oxygen in place of 4,000 mB liquid hydrogen and 20,000 mB liquid oxygen (a lower Isp, but no cryogenic fuel).
+* Hydrogen: Syngas Reformer, from methane and steam.
+
+### Fixes
+* The Field Calibrator showed raw names for 26 machines' drifting settings; they now have English names.
+
 ## 1.3.1: Recreating Home for modpacks, and the text rework
 
 Recreating Home could not be changed by a pack, and a pack that removed a Core Forge recipe made it impossible to

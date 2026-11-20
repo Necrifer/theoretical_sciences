@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:polarimetry",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:enantiopure_reagent",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:mirror_reagent",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:stereochemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sr": 120.0,
+      "ee0": 0.99,
+      "Av": 2.8
+    },
+    "windows": [
+      {
+        "q": "er",
+        "min": 0,
+        "max": 0.0001
+      },
+      {
+        "q": "Tq",
+        "min": 292,
+        "max": 294
+      }
+    ]
+  }
+}

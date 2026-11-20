@@ -1,0 +1,85 @@
+{
+  "params": [
+    {
+      "id": "Tf",
+      "unit": "K",
+      "min": 440,
+      "max": 620,
+      "step": 1,
+      "default": 500
+    },
+    {
+      "id": "Pf",
+      "unit": "bar",
+      "min": 10,
+      "max": 40,
+      "step": 0.5,
+      "default": 20
+    },
+    {
+      "id": "hc",
+      "unit": "",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.01,
+      "default": 2
+    }
+  ],
+  "recipe_vars": {
+    "ca": 0.0,
+    "n1": 10,
+    "n2": 16,
+    "Tmax": 560
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "al",
+      "unit": "",
+      "expr": "min((0.2332/(1 + hc) + 0.633)*(1 - 0.0039*(Tf - 533)) + 0.0005*(Pf - 20) + ca, 0.995)*(1 - 0.002*d)",
+      "formula": "α = (0.2332·y_CO/(y_CO + y_H₂) + 0.633)·(1 − 0.0039·(T − 533 K)), Song's correlation"
+    },
+    {
+      "id": "cut",
+      "unit": "",
+      "expr": "(1 - (min((0.2332/(1 + hc) + 0.633)*(1 - 0.0039*(Tf - 533)) + 0.0005*(Pf - 20) + ca, 0.995)*(1 - 0.002*d))^n2*(1 + n2*(1 - (min((0.2332/(1 + hc) + 0.633)*(1 - 0.0039*(Tf - 533)) + 0.0005*(Pf - 20) + ca, 0.995)*(1 - 0.002*d))))) - (1 - (min((0.2332/(1 + hc) + 0.633)*(1 - 0.0039*(Tf - 533)) + 0.0005*(Pf - 20) + ca, 0.995)*(1 - 0.002*d))^(n1 - 1)*(1 + (n1 - 1)*(1 - (min((0.2332/(1 + hc) + 0.633)*(1 - 0.0039*(Tf - 533)) + 0.0005*(Pf - 20) + ca, 0.995)*(1 - 0.002*d)))))",
+      "formula": "the mass in carbons n₁ to n₂: F(N) = 1 − α^N·(1 + N(1 − α))"
+    },
+    {
+      "id": "ch4",
+      "unit": "",
+      "expr": "(1 - (min((0.2332/(1 + hc) + 0.633)*(1 - 0.0039*(Tf - 533)) + 0.0005*(Pf - 20) + ca, 0.995)*(1 - 0.002*d)))^2",
+      "formula": "methane, the ASF share of C₁: (1 − α)²"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sinter",
+      "kind": "wear",
+      "expr": "Tmax - Tf",
+      "formula": "under the catalyst's limit, or it sinters"
+    },
+    {
+      "id": "carbon",
+      "kind": "wear",
+      "expr": "hc - 0.7",
+      "formula": "H₂/CO over 0.7, or carbon fouls the catalyst"
+    },
+    {
+      "id": "shell",
+      "kind": "stop",
+      "expr": "38 - Pf",
+      "formula": "under 38 bar, the shell's rating"
+    }
+  ],
+  "rate": "clamp(exp(-9000*(1/Tf - 1/500))*(Pf/20)^0.7, 0.2, 3)",
+  "rate_formula": "hotter and denser is faster",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}
