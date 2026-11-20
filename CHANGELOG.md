@@ -47,6 +47,14 @@ Synthesis, each with its derivation puzzle, and a new Codex region in the Chemis
 * Hydrogen: Syngas Reformer, from methane and steam.
 
 ### Fixes
+* **Icy Moons' derivation showed "(template error)".** Its formula named the distance `d`, which the equation reader
+  takes for a derivative. The distance is now `a` (and the answer Δg). Photogrammetry had the same fault (its disparity
+  is now `p`); Ground Penetrating Radar and Space Solar Power named their answer `d` and now use `z` and `S`. Every
+  research puzzle is now checked with the mod's own equation code: all 431 parse, fit their template and give an answer.
+* **The research map is laid out again.** It had grown to 434 nodes packed into a 31 by 41 grid. Each node's column
+  is now its depth (the longest chain of research it needs), so nothing reachable early sits off to the right, and
+  columns and rows are spread wider (3 and 2 steps). Within a column, each node sits near what it links to, so lines
+  run shorter and cross less. The map opens on the first node.
 * The Field Calibrator showed raw names for 26 machines' drifting settings; they now have English names.
 
 ## 1.3.1: Recreating Home for modpacks, and the text rework

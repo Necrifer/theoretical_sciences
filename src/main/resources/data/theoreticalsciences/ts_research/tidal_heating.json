@@ -1,7 +1,7 @@
 {
   "title": "Icy Moons",
-  "x": 21,
-  "y": 11,
+  "x": 57,
+  "y": 4,
   "insight": 320,
   "requires": [
     "theoreticalsciences:comets"
@@ -20,24 +20,24 @@
   "description": "Far from the Sun there should be nothing but ice, yet Europa and Enceladus hide oceans. Their planets keep flexing them: an eccentric orbit brings a moon nearer and farther each turn, so its tidal bulge rises and falls, and the ice rubs itself warm. How warm depends on how the ice yields, which a lab measures by squeezing it in cycles. Cassini flew through Enceladus's plumes and found grains of silica, which form only where hot water meets rock. Unlocks the Ice Rheometer; the Plume Field lies in the Titan Ocean.",
   "icon": "theoreticalsciences:ice_rheometer",
   "puzzle": {
-    "goal": "A moon of radius R at distance d from a planet of mass M feels a stronger pull on its near side than its far side. For R much less than d, write the difference in the planet's acceleration across the moon, with G the gravitational constant.",
+    "goal": "A moon of radius R at distance a from a planet of mass M feels a stronger pull on its near side than its far side. For R much less than a, write the difference Δg in the planet's acceleration across the moon, with G the gravitational constant.",
     "name": "Tidal acceleration",
-    "lhs": "Δa",
-    "form": "2 * G * M * R / d ^ 3",
-    "expr": "2 * G * M * R / d ^ 3",
-    "ask": "Find Δa in m/s² for Saturn (M = 5.68e26 kg) acting across Enceladus (R = 2.52e5 m) at d = @{d} m, G = 6.674e-11.",
+    "lhs": "Δg",
+    "form": "2 * G * M * R / a ^ 3",
+    "expr": "2 * G * M * R / a ^ 3",
+    "ask": "Find Δg in m/s² for Saturn (M = 5.68e26 kg) acting across Enceladus (R = 2.52e5 m) at a = @{a} m, G = 6.674e-11.",
     "vars": {
-      "Δa": "tidal acceleration",
+      "Δg": "tidal acceleration",
       "G": "gravitational constant",
       "M": "planet mass",
       "R": "moon radius",
-      "d": "distance"
+      "a": "distance"
     },
     "given": {
       "G": 6.674e-11,
       "M": 5.68e+26,
       "R": 252000.0,
-      "d": 238000000.0
+      "a": 238000000.0
     },
     "unit": "m/s²",
     "method": "GM/(d − R)² − GM/(d + R)² ≈ GM·4R/d³ across the diameter, 2GMR/d³ from centre to surface: the derivative of 1/d² adds a power.",
@@ -47,7 +47,7 @@
       "sqrt"
     ],
     "vary": {
-      "d": [
+      "a": [
         150000000.0,
         600000000.0,
         1000000.0

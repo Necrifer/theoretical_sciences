@@ -36,6 +36,14 @@ public class ResearchScreen extends Screen {
         if (Double.isNaN(panX)) {
             panX = width / 2.0 - 120;
             panY = height / 2.0 - 60;
+            // 1.4.0: the map runs left to right by depth; open on the first node, a third of the way across
+            ResearchDefinition first = null;
+            for (ResearchDefinition d : ClientResearch.defs.values())
+                if (first == null || d.x() < first.x() || (d.x() == first.x() && Math.abs(d.y()) < Math.abs(first.y()))) first = d;
+            if (first != null) {
+                panX = width / 3.0 - first.x() * SPACING_X * zoom;
+                panY = height / 2.0 - first.y() * SPACING_Y * zoom;
+            }
         }
         clampPan();
         // the book of symbols: every glyph a derivation can use, and how to learn the ones still missing
