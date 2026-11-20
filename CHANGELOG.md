@@ -26,8 +26,8 @@ Synthesis, each with its derivation puzzle, and a new Codex region in the Chemis
   chain's gives 4n + 2, the ring current shift is read by NMR, and the ring must be cold enough (Eyring) for the inner
   and outer protons to stand apart. Makes **Annulene Lattice**.
 * **Molecular Machines** (Eyring). New console, the **Molecular Machine Bench**: two photochemical and two thermal steps
-  a turn, with a ratchet bias for direction. Makes **Rotaxane Shuttle**, **Light Driven Rotor**, **Molecular Logic
-  Gate** and **Programmable Matter**.
+  a turn, with a ratchet bias for direction. Makes **Rotaxane Shuttle**, **Light Driven Rotor** and **Molecular Logic
+  Gate**, and from them Programmable Matter.
 * New fluids, each with a Containment Cell: Syngas, Rocket Kerosene, Benzene (also takes `c:benzene`, so GregTech's
   benzene works), Aniline.
 
@@ -37,6 +37,8 @@ Synthesis, each with its derivation puzzle, and a new Codex region in the Chemis
 * Form Tincture: Alkahest Still, Monodisperse Paraffin, Fine Reagent and Balance Tincture (no Structure Card,
   Quasicrystal Plate or ethylene).
 * Chirality Tincture: Alkahest Still, Mirror Reagent, 2 Tholin and Form Tincture (no Chemical Clock or ammonia buffer).
+* Programmable Matter: Molecular Machine Bench, 2 Light Driven Rotors, 2 Molecular Logic Gates and 2 Rotaxane
+  Shuttles.
 * Chiral Ligand: Polarimeter, 3 Fine Reagent and a Kekulé Ring for 2.
 * Computronium Ingot: Neural Synthesizer, 8 neutronium ingots, Programmable Matter, a Quantum Processor and 1,100 mB
   synaptic fluid (no Photonic Neuron, Void Essence or photoresist).

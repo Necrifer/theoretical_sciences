@@ -1016,8 +1016,7 @@ public final class QHContentList {
         new ItemDef("conjugated_polymer", "", 64),
         new ItemDef("rotaxane_shuttle", "", 64),
         new ItemDef("light_driven_rotor", "", 64),
-        new ItemDef("molecular_logic_gate", "", 64),
-        new ItemDef("programmable_matter", "", 64));
+        new ItemDef("molecular_logic_gate", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
