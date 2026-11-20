@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:syngas_reformer"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.syngas_chemistry"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.syngas_chemistry.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/petrochemistry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

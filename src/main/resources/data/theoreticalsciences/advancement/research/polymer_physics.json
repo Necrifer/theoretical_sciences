@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:rigid_rod_fibre"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.polymer_physics"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.polymer_physics.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/polymer_chemistry",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

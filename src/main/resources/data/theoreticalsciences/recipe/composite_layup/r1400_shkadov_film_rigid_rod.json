@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:composite_layup",
+  "item_inputs": [
+    {
+      "tag": "theoreticalsciences:ingots/aluminium",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:rigid_rod_fibre",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:shkadov_mirror_film",
+      "count": 6
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "unscaled": true,
+  "research": "theoreticalsciences:polymer_physics",
+  "physics": {
+    "vars": {
+      "Ef": 280,
+      "rf": 1.5,
+      "Em": 3.5,
+      "rm": 1.2
+    },
+    "windows": [
+      {
+        "q": "S",
+        "min": 15,
+        "max": 1000
+      },
+      {
+        "q": "q",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

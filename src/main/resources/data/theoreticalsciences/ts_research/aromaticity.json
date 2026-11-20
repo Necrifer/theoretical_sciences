@@ -1,0 +1,58 @@
+{
+  "title": "Aromaticity",
+  "x": 28,
+  "y": -6,
+  "insight": 190,
+  "requires": [
+    "theoreticalsciences:aromatic_substitution",
+    "theoreticalsciences:quantum_chemistry"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:kekule_ring",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 2
+    }
+  ],
+  "time": 440,
+  "description": "Why is benzene so content? Hückel put its six p electrons on a ring of six atoms and solved for the orbitals: one low level, then pairs, so six fill a closed shell. Any ring with 4n + 2 electrons does, and is stabilised; 4n fills a pair halfway and is worse off than an open chain: antiaromatic. The test is a magnet: an aromatic ring's electrons circle in the field, shielding the protons inside the ring and deshielding those outside, so [18]annulene's inner hydrogens sit at minus three parts per million. Unlocks the Hückel Analyser.",
+  "icon": "theoreticalsciences:huckel_analyser",
+  "puzzle": {
+    "goal": "On a ring of n atoms each joined by β, Hückel theory gives orbital energies α + 2β·cos(2πk/n) for k = 0 to n − 1. Write the energy E of the lowest orbital.",
+    "name": "Hückel ring orbitals",
+    "lhs": "E",
+    "form": "α + 2 * β * cos ( 2 * π * k / n )",
+    "expr": "a + 2 * b * cos ( 2 * π * k / n )",
+    "ask": "Find E in eV for α = −6.6, β = −2.7, n = 6 and k = @{k}.",
+    "vars": {
+      "E": "orbital energy",
+      "α": "Coulomb integral",
+      "β": "resonance integral",
+      "k": "orbital index",
+      "n": "ring size"
+    },
+    "given": {
+      "a": -6.6,
+      "b": -2.7,
+      "k": 0.0,
+      "n": 6.0
+    },
+    "unit": "eV",
+    "method": "The ring is symmetric under turning by one atom: the orbitals are waves e^(2πikj/n), each atom coupled to its two neighbours.",
+    "distractors": [
+      "sin",
+      "-",
+      "^ 2"
+    ],
+    "vary": {
+      "k": [
+        0.0,
+        3.0,
+        1.0
+      ]
+    }
+  }
+}

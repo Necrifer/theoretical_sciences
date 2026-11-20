@@ -1,0 +1,49 @@
+{
+  "type": "theoreticalsciences:fischer_tropsch",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cobalt_ft_catalyst",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:synthetic_wax",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:syngas",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:monodisperse_paraffin",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:syngas_chemistry",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "ca": 0.0,
+      "n1": 24,
+      "n2": 28,
+      "Tmax": 520
+    },
+    "windows": [
+      {
+        "q": "cut",
+        "min": 0.095,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cobalt_ft_catalyst"
+    }
+  ]
+}

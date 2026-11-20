@@ -58776,5 +58776,299 @@
     "title": "Protoplanetary Disk"
    }
   ]
+ },
+ "chemistry/r1400_syngas": {
+  "title": "Syngas and Chain Growth",
+  "icon": "theoreticalsciences:syngas_reformer",
+  "category": "chemistry",
+  "research": "syngas_chemistry",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:syngas_reformer",
+     "theoreticalsciences:syngas_cell"
+    ],
+    "text": "CH₄ + H₂O ⇌ CO + 3H₂ and CO + H₂O ⇌ CO₂ + H₂, each held to its K. The $(thing)Syngas Reformer$() makes $(item)Syngas$() with H₂/CO near 2 by burning part of the methane (partial oxidation) hot, with little steam; or hydrogen, with plenty of steam and no oxygen.",
+    "title": "Syngas Reformer"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fischer_tropsch_reactor",
+     "theoreticalsciences:rocket_kerosene_cell",
+     "theoreticalsciences:synthetic_wax"
+    ],
+    "text": "W_n = n(1 − α)²α^(n−1). In the $(thing)Fischer Tropsch Reactor$() (341 blocks) the chain growth α rises as the bed cools and as the gas leans to carbon monoxide. Iron makes $(item)Rocket Kerosene$(); cobalt makes $(item)Synthetic Wax$() and, from wax, the narrow $(item)Monodisperse Paraffin$().",
+    "title": "Fischer Tropsch Reactor"
+   },
+   {
+    "type": "multiblock",
+    "name": "Fischer Tropsch Reactor",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "fischer_tropsch_reactor"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:cobalt_ft_catalyst"
+    ],
+    "text": "The cobalt catalyst is made in the Catalyst Formulator from Meteoric Iron and a Platinum Group Nugget. It wears with use and sulfur poisons it; the Regeneration Kiln restores it. Kerosene launches the Rocket Assembly, wax and paraffin feed Form Tincture and the molecular machines.",
+    "title": "Catalysts"
+   }
+  ]
+ },
+ "chemistry/r1400_polymer_physics": {
+  "title": "Polymer Physics",
+  "icon": "theoreticalsciences:rigid_rod_fibre",
+  "category": "chemistry",
+  "research": "polymer_physics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:polymeriser",
+     "theoreticalsciences:rigid_rod_fibre",
+     "theoreticalsciences:conjugated_polymer"
+    ],
+    "text": "X = (1 + r)/(1 + r − 2rp). With two partners in the ratio r, the scarcer caps the chains. The $(thing)Polymeriser$() spins $(item)Rigid Rod Fibre$() from Para Phenylenediamine in sulfuric acid, and $(item)Conjugated Polymer$() from an Annulene Lattice; [η] = K·M^a shows how long they grew.",
+    "title": "Two partners"
+   },
+   {
+    "type": "text",
+    "text": "Rigid Rod Fibre lays up into Tether Spools and Shkadov Mirror Film for less than aramid does."
+   }
+  ]
+ },
+ "chemistry/r1400_aromatic_substitution": {
+  "title": "Aromatic Substitution",
+  "icon": "theoreticalsciences:substituent_bench",
+  "category": "chemistry",
+  "research": "aromatic_substitution",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:substituent_bench",
+     "theoreticalsciences:aniline_cell",
+     "theoreticalsciences:azo_dye"
+    ],
+    "text": "k = k₀·10^(σρ). On the $(thing)Substituent Bench$() the ring's group, the acid's H₀ and the bath set the rate: between 1 and 40 times benzene's in 90% acid. Benzene becomes $(item)Aniline$(); aniline, $(item)Para Phenylenediamine$() and, cold, $(item)Azo Dye$().",
+    "title": "Substituent Bench"
+   },
+   {
+    "type": "text",
+    "text": "$(item)Benzene$() comes from the Cracking Tower, run on crude oil hot enough to make pyrolysis gasoline."
+   }
+  ]
+ },
+ "chemistry/r1400_stereochemistry": {
+  "title": "Stereochemistry",
+  "icon": "theoreticalsciences:polarimeter",
+  "category": "chemistry",
+  "research": "stereochemistry",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:polarimeter",
+     "theoreticalsciences:mirror_reagent"
+    ],
+    "text": "α = [α]·l·c·ee. The $(thing)Polarimeter$() certifies $(item)Mirror Reagent$(): read at 293 K, with tube and concentration enough that the scale resolves ee to a part in ten thousand, but not so much that the light scatters.",
+    "title": "Polarimeter"
+   },
+   {
+    "type": "text",
+    "text": "K = e^(A/RT). Cooled, the cell holds rings in their chairs: a phenyl group's A value keeps it equatorial, and under half a percent axial gives Chiral Ligands from Fine Reagent and a Kekulé Ring. Mirror Reagent makes Chirality Tincture for less."
+   }
+  ]
+ },
+ "chemistry/r1400_aromaticity": {
+  "title": "Aromaticity",
+  "icon": "theoreticalsciences:annulene_lattice",
+  "category": "chemistry",
+  "research": "aromaticity",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:huckel_analyser",
+     "theoreticalsciences:annulene_lattice"
+    ],
+    "text": "E_k = α + 2β·cos(2πk/n). The $(thing)Hückel Analyser$() compares a ring with the chain it would open into: 4n + 2 is stabilised, 4n is not. An $(item)Annulene Lattice$() needs a ring big enough for a ring current shift of 9 ppm, held cold until the inner and outer signals stand apart.",
+    "title": "Hückel Analyser"
+   }
+  ]
+ },
+ "chemistry/r1400_molecular_machines": {
+  "title": "Molecular Machines",
+  "icon": "theoreticalsciences:light_driven_rotor",
+  "category": "chemistry",
+  "research": "molecular_machines",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:molecular_machine_bench",
+     "theoreticalsciences:light_driven_rotor",
+     "theoreticalsciences:rotaxane_shuttle"
+    ],
+    "text": "f = 1/(2/k_L + 2/k_T), k_T = (kT/h)·e^(−ΔG‡/RT). On the $(thing)Molecular Machine Bench$() tune the light to the motor's band and warm the stage until it turns fast enough, without blurring its bias: $(item)Rotaxane Shuttles$(), $(item)Light Driven Rotors$() and $(item)Molecular Logic Gates$().",
+    "title": "Molecular Machine Bench"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:programmable_matter",
+     "theoreticalsciences:computronium_ingot"
+    ],
+    "text": "Rotors, shuttles and gates together make $(item)Programmable Matter$(), from which the Neural Synthesizer makes Computronium with fewer parts.",
+    "title": "Programmable Matter"
+   }
+  ]
+ },
+ "operation/syngas_reformer": {
+  "title": "Syngas Reformer",
+  "icon": "theoreticalsciences:syngas_reformer",
+  "category": "operation",
+  "research": "syngas_chemistry",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Convert the methane as far as its equilibrium allows, to the H₂/CO the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Tube temperature, Pressure, Steam to carbon, Oxygen to carbon, Methane converted.$(br2)$(thing)Disturbance$(): catalyst ageing: the ratio drifts by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): Q over K stops it; oxygen over half the conversion stops it; under one steam and oxygen per carbon cokes it (wear).$(br2)$(thing)Rate$(): hotter and denser, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)K₁ = 4.707×10¹²·e^(−26943/T)$(br)K₂ = 0.01142·e^(4619/T)$(br)Q = p_CO·p_H₂³/(p_CH₄·p_H₂O) < K₁"
+   }
+  ]
+ },
+ "operation/fischer_tropsch_reactor": {
+  "title": "Fischer Tropsch Reactor",
+  "icon": "theoreticalsciences:fischer_tropsch_reactor",
+  "category": "operation",
+  "research": "syngas_chemistry",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Set α so the cut the recipe wants carries enough of the mass."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Bed temperature, Pressure, H₂/CO.$(br2)$(thing)Disturbance$(): catalyst ageing: α falls by 0.2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over the catalyst's limit it sinters; under 0.7 H₂/CO carbon fouls it (wear); over 38 bar it stops.$(br2)$(thing)Rate$(): hotter and denser, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)α = (0.2332/(1 + H₂/CO) + 0.633)(1 − 0.0039(T − 533))$(br)F(N) = 1 − α^N(1 + N(1 − α))"
+   }
+  ]
+ },
+ "operation/substituent_bench": {
+  "title": "Substituent Bench",
+  "icon": "theoreticalsciences:substituent_bench",
+  "category": "operation",
+  "research": "aromatic_substitution",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Keep the substitution between 1 and 40 times benzene's rate."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Acidity H₀, Bath temperature.$(br2)$(thing)Disturbance$(): water in the acid: the rate drifts by 2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): too warm for the intermediate stops it; over 50 a second group goes on (wear).$(br2)$(thing)Rate$(): faster substitution, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)k = 10^(σρ)·10^(−(H₀ + 6))·e^(−Eₐ/R(1/T − 1/298))"
+   }
+  ]
+ },
+ "operation/polarimeter": {
+  "title": "Polarimeter",
+  "icon": "theoreticalsciences:polarimeter",
+  "category": "operation",
+  "research": "stereochemistry",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Read the rotation finely enough, or hold the rings cold enough."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Tube length, Concentration, Cell temperature.$(br2)$(thing)Disturbance$(): lamp drift: the resolution worsens by 5%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 89° the reading wraps; l·c over 0.4 scatters (wear).$(br2)$(thing)Rate$(): a shorter tube, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)α = [α]·l·c·ee$(br)Δee = 0.002°/([α]lc)$(br)K = e^(A/RT)"
+   }
+  ]
+ },
+ "operation/huckel_analyser": {
+  "title": "Hückel Analyser",
+  "icon": "theoreticalsciences:huckel_analyser",
+  "category": "operation",
+  "research": "aromaticity",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Find a ring with a strong ring current, and cool it until it is seen."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Ring size, Probe temperature.$(br2)$(thing)Disturbance$(): field drift: the shift drifts by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 160 K the solvent freezes.$(br2)$(thing)Rate$(): a warmer probe, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)E_ring − E_chain$(br)k = (kT/h)e^(−ΔG‡/RT)$(br)coalescence at πΔν/√2"
+   }
+  ]
+ },
+ "operation/molecular_machine_bench": {
+  "title": "Molecular Machine Bench",
+  "icon": "theoreticalsciences:molecular_machine_bench",
+  "category": "operation",
+  "research": "molecular_machines",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Turn the motors fast enough without losing their direction."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Stage temperature, Light intensity, Wavelength.$(br2)$(thing)Disturbance$(): lamp ageing: the light falls by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 60 mW/cm² bleaches; under 320 nm breaks bonds (wear).$(br2)$(thing)Rate$(): faster turning, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)k_T = (kT/h)e^(−ΔG‡/RT)$(br)f = 1/(2/k_L + 2/k_T)$(br)direction = 1 − e^(−ΔG/RT)"
+   }
+  ]
  }
 }

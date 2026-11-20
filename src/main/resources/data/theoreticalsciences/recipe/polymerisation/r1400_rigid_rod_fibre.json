@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:polymerisation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:p_phenylenediamine",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:sulfuric_acid",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rigid_rod_fibre",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:polymer_physics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "r": 0.995,
+      "M0": 238.0,
+      "Kmh": 1e-05,
+      "amh": 1.8
+    },
+    "windows": [
+      {
+        "q": "Xs",
+        "min": 150,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

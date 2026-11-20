@@ -1,0 +1,54 @@
+{
+  "title": "Syngas and Chain Growth",
+  "x": 22,
+  "y": -6,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:petrochemistry",
+    "theoreticalsciences:heterogeneous_catalysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:methanol_cell",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:iron_catalyst",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "description": "Natural gas burned halfway, or boiled with steam over nickel, becomes synthesis gas: carbon monoxide and hydrogen. Each reaction stops where its equilibrium constant says, and the water gas shift trades one for the other. Over iron or cobalt the gas grows chains, one carbon at a time, each step a coin toss between growing and stopping: the chance to grow, α, fixes the whole spread of lengths, from methane to wax. Germany ran its trucks on it in the war, and Sasol still does. Unlocks the Syngas Reformer and the Fischer Tropsch Reactor.",
+  "icon": "theoreticalsciences:syngas_reformer",
+  "puzzle": {
+    "goal": "A chain grows with probability α at each step and stops otherwise. Write the mass fraction W of chains with n carbons (the Anderson Schulz Flory distribution).",
+    "name": "Chain growth",
+    "lhs": "W",
+    "form": "n * ( 1 - α ) ^ 2 * α ^ ( n - 1 )",
+    "expr": "n * ( 1 - a ) ^ 2 * a ^ ( n - 1 )",
+    "ask": "Find W for α = @{a} and n = 12.",
+    "vars": {
+      "W": "mass fraction",
+      "n": "carbon number",
+      "α": "chance to grow"
+    },
+    "given": {
+      "a": 0.85,
+      "n": 12.0
+    },
+    "unit": "",
+    "method": "A chain of n carbons grew n − 1 times and stopped once: α^(n−1)(1 − α) by number. Weight by its mass n and divide by the mean, 1/(1 − α).",
+    "distractors": [
+      "+",
+      "^ 3",
+      "sqrt"
+    ],
+    "vary": {
+      "a": [
+        0.7,
+        0.95,
+        0.01
+      ]
+    }
+  }
+}

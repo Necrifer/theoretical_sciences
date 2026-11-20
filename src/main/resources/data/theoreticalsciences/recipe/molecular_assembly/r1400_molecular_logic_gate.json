@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:molecular_assembly",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:conjugated_polymer",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:rotaxane_shuttle",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:molecular_logic_gate",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:molecular_machines",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dGt": 64,
+      "Phi": 0.2,
+      "lmx": 420,
+      "dGr": 9
+    },
+    "windows": [
+      {
+        "q": "f",
+        "min": 0.5,
+        "max": 3
+      },
+      {
+        "q": "pd",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

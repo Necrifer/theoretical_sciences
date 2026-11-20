@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:ring_current_analysis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:kekule_ring",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:fine_reagent",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:benzene",
+      "amount": 250
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:annulene_lattice",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:aromaticity",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dGx": 45
+    },
+    "windows": [
+      {
+        "q": "dd",
+        "min": 9,
+        "max": 1000000000.0
+      },
+      {
+        "q": "sharp",
+        "min": 10,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

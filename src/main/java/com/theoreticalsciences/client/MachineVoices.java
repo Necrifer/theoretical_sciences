@@ -111,6 +111,12 @@ public final class MachineVoices {
         V.put("microwave_rectenna", new Voice("space", 0.90F));
         V.put("radiation_pressure_balance", new Voice("space", 1.50F));
         V.put("ice_rheometer", new Voice("heavy", 1.40F));                  // 1.15.0: a press, cycling
+        V.put("syngas_reformer", new Voice("turbine", 0.90F));              // 1.4.0 stage 1: a fired tube furnace
+        V.put("fischer_tropsch_reactor", new Voice("chem", 0.75F));         // boiling water round the tubes
+        V.put("substituent_bench", new Voice("chem", 1.25F));               // a stirred flask
+        V.put("polarimeter", new Voice("instrument", 1.30F));
+        V.put("huckel_analyser", new Voice("instrument", 0.85F));            // an NMR magnet's cold head
+        V.put("molecular_machine_bench", new Voice("quantum", 1.20F));
         V.put("cmb_bolometer_array", new Voice("space", 0.70F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));

@@ -17,7 +17,12 @@
       "default": 350
     }
   ],
-  "recipe_vars": {},
+  "recipe_vars": {
+    "r": 1.0,
+    "M0": 100.0,
+    "Kmh": 0.02,
+    "amh": 0.7
+  },
   "consts": [],
   "states": [],
   "derived": [
@@ -25,13 +30,25 @@
       "id": "Xn",
       "unit": "units",
       "expr": "1/(1 - pc*(1 - 0.0001*d))",
-      "formula": "X_n = 1/(1 \u2212 p)"
+      "formula": "X_n = 1/(1 − p)"
     },
     {
       "id": "kp",
       "unit": "",
       "expr": "exp(-8000*(1/Tp - 1/350))",
-      "formula": "k \u221d e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/350 K))"
+      "formula": "k ∝ e^(−Eₐ/R·(1/T − 1/350 K))"
+    },
+    {
+      "id": "Xs",
+      "unit": "units",
+      "expr": "(1 + r)/(1 + r - 2*r*pc*(1 - 0.0001*d))",
+      "formula": "X = (1 + r)/(1 + r − 2rp), Carothers with an imbalance"
+    },
+    {
+      "id": "eta",
+      "unit": "mL/g",
+      "expr": "Kmh*((1 + r)/(1 + r - 2*r*pc*(1 - 0.0001*d))*M0)^amh",
+      "formula": "[η] = K·M^a, Mark Houwink"
     }
   ],
   "constraints": [
@@ -43,7 +60,7 @@
     }
   ],
   "rate": "clamp(kp*5/Xn^0.35, 0.1, 4)",
-  "rate_formula": "rate = k\u00b75/X_n^0.35",
+  "rate_formula": "rate = k·5/X_n^0.35",
   "heat": "0",
   "idle_heat": "0",
   "quench_energy": "0",

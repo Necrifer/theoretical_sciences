@@ -1003,7 +1003,20 @@ public final class QHContentList {
         new ItemDef("dispersion_record", "", 64),
         new ItemDef("disrupted_stellar_stream", "", 64),
         new ItemDef("narrowband_candidate", "", 16),
-        new ItemDef("signal_from_home", "", 1));
+        new ItemDef("signal_from_home", "", 1),
+        // 1.4.0 stage 1: the organic core and the syngas hub
+        new ItemDef("cobalt_ft_catalyst", "", 16),
+        new ItemDef("synthetic_wax", "", 64),
+        new ItemDef("monodisperse_paraffin", "", 64),
+        new ItemDef("p_phenylenediamine", "", 64),
+        new ItemDef("azo_dye", "", 64),
+        new ItemDef("rigid_rod_fibre", "", 64),
+        new ItemDef("mirror_reagent", "", 64),
+        new ItemDef("annulene_lattice", "", 64),
+        new ItemDef("conjugated_polymer", "", 64),
+        new ItemDef("rotaxane_shuttle", "", 64),
+        new ItemDef("light_driven_rotor", "", 64),
+        new ItemDef("molecular_logic_gate", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1522,7 +1535,8 @@ public final class QHContentList {
         new BlockDef("storm_shelter_module", "space_module", 4, 5.0F, "none", ""),
         new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""),
         new BlockDef("active_magnetic_shield", "space_module", 8, 5.0F, "none", ""),       // 1.14.0
-        new BlockDef("bolometer_focal_plane", "casing", 2, 4.0F, "iron", ""));            // 1.15.0
+        new BlockDef("bolometer_focal_plane", "casing", 2, 4.0F, "iron", ""),            // 1.15.0
+        new BlockDef("fischer_tropsch_tube", "casing", 0, 4.0F, "iron", ""));            // 1.4.0 stage 1
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
@@ -1632,6 +1646,11 @@ public final class QHContentList {
         new FluidDef("liquid_hydrogen", false, 0, 20, 71, 100, 0xD8ECFF),
         new FluidDef("auxin", false, 0, 295, 1000, 1000, 0xE8D890),
         new FluidDef("gibberellin", false, 0, 295, 1000, 1000, 0xB8E090),
-        new FluidDef("helium_3", true, 0, 300, -50, 10, 0xC8E0FF));          // 1.14.0
+        new FluidDef("helium_3", true, 0, 300, -50, 10, 0xC8E0FF),          // 1.14.0
+        // 1.4.0 stage 1: syngas, the Fischer Tropsch cut and the aromatics
+        new FluidDef("syngas", true, 0, 300, 1, 150, 0x484030),
+        new FluidDef("rocket_kerosene", false, 0, 300, 810, 1200, 0x5A4A20),
+        new FluidDef("benzene", false, 0, 300, 876, 600, 0x3A3828),
+        new FluidDef("aniline", false, 0, 300, 1022, 3700, 0x4A3418));
     private QHContentList() {}
 }

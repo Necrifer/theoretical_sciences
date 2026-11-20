@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:molecular_assembly",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:monodisperse_paraffin",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:annulene_lattice",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rotaxane_shuttle",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:molecular_machines",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dGt": 60,
+      "Phi": 0.2,
+      "lmx": 365,
+      "dGr": 10
+    },
+    "windows": [
+      {
+        "q": "f",
+        "min": 2,
+        "max": 1000000000.0
+      },
+      {
+        "q": "pd",
+        "min": 0.98,
+        "max": 1.0
+      }
+    ]
+  }
+}

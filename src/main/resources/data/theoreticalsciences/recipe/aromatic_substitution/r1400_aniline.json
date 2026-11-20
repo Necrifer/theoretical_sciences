@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:aromatic_substitution",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:benzene",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:nitric_acid",
+      "amount": 250
+    },
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 750
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:aniline",
+      "amount": 500
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:aromatic_substitution",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "sg": 0.0,
+      "rh": -6.0,
+      "Ea": 60,
+      "Tmx": 340
+    },
+    "windows": [
+      {
+        "q": "kr",
+        "min": 1,
+        "max": 40
+      }
+    ]
+  }
+}
