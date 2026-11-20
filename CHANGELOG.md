@@ -1,10 +1,10 @@
 # Changelog
 
-## 1.3.1: Recreating Home for modpacks
+## 1.3.1: Recreating Home for modpacks, and the text rework
 
 Recreating Home could not be changed by a pack, and a pack that removed a Core Forge recipe made it impossible to
 unlock. It can now be set from a datapack or KubeJS, and both guides explain it. The Empyrean Assembly Table also
-takes tags.
+takes tags. And the first part of the text rework: item descriptions move from tooltips into the Codex, rewritten.
 
 ### For modpacks
 * **Unlocking follows the pack's Forge.** The Recreating Home tab used to need every Core Forge recipe the mod ships
@@ -42,6 +42,8 @@ takes tags.
   to the entry about its concept. An item that already had a page of its own gets the description as that page's
   first page. These pages unlock together with their concept's entry, and the Codex search finds them.
 * Client option `itemDescriptionsInTooltips` (off) brings the old tooltips back.
+* **Rewritten text.** 936 item and block descriptions and 128 "where found" lines are rewritten (they now show on the
+  items' Codex pages), and so are the "In plain words" pages of 44 Codex entries.
 
 ## 1.3.0: the CurseForge release (18 November 2026)
 
