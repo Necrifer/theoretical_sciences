@@ -1,0 +1,55 @@
+{
+  "title": "Superconductivity Theory",
+  "x": 30,
+  "y": 43,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:superconductivity",
+    "theoreticalsciences:refrigeration_cycles"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:superfluid_helium_cell",
+      "count": 1
+    }
+  ],
+  "time": 480,
+  "description": "Why does a metal lose all resistance when cold? Bardeen, Cooper and Schrieffer found that the lattice's vibrations bind electrons in pairs, which move as one quantum state no scattering can disturb. The pairing is weak: the critical temperature is the Debye temperature times a factor exponentially small in the coupling, and heavier isotopes, vibrating slower, superconduct colder. A magnetic field breaks the pairs too, more easily the warmer the wire. The copper oxides at 92 K are beyond the theory still. Unlocks the BCS Cryostat.",
+  "icon": "theoreticalsciences:bcs_cryostat",
+  "puzzle": {
+    "goal": "In BCS theory a metal with Debye temperature Θ and electron phonon coupling λ = N(0)V superconducts below T_c. Write T_c.",
+    "name": "BCS critical temperature",
+    "lhs": "T",
+    "form": "1.13 * Θ * exp ( - 1 / λ )",
+    "expr": "1.13 * th * exp ( - 1 / lam )",
+    "ask": "Find T_c in kelvin for Θ = 275 K and λ = @{lam}.",
+    "vars": {
+      "T": "critical temperature",
+      "Θ": "Debye temperature",
+      "λ": "coupling"
+    },
+    "given": {
+      "th": 275.0,
+      "lam": 0.29
+    },
+    "unit": "K",
+    "method": "The gap equation, cut off at the Debye energy, solves to Δ = 2ħω_D·e^(−1/λ); T_c is Δ/1.764k.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "lam": [
+        0.2,
+        0.4,
+        0.01
+      ]
+    }
+  },
+  "category": "chemistry"
+}

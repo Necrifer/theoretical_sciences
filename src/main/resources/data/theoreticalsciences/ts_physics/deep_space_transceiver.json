@@ -1,0 +1,99 @@
+{
+  "params": [
+    {
+      "id": "Dd",
+      "unit": "m",
+      "min": 1,
+      "max": 70,
+      "step": 0.5,
+      "default": 3
+    },
+    {
+      "id": "Pt",
+      "unit": "W",
+      "min": 1,
+      "max": 100000,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "f",
+      "unit": "GHz",
+      "min": 0.1,
+      "max": 40,
+      "step": 0.1,
+      "default": 8.4
+    },
+    {
+      "id": "Tr",
+      "unit": "K",
+      "min": 2,
+      "max": 300,
+      "step": 0.5,
+      "default": 100
+    },
+    {
+      "id": "B",
+      "unit": "MHz",
+      "min": 0.001,
+      "max": 100,
+      "step": 0.001,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "dist": 384000000.0,
+    "Rq": 1000000.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Pr",
+      "unit": "W",
+      "expr": "Pt*0.6*(3.14159265*Dd/(0.29979/f))^2*0.6*(3.14159265*70/(0.29979/f))^2*((0.29979/f)/(4*3.14159265*dist))^2",
+      "formula": "P_r = P_t·G_t·G_r·(λ/4πd)², Friis: to a 70 m dish at the far end"
+    },
+    {
+      "id": "snr",
+      "unit": "dB",
+      "expr": "10*ln((Pt*0.6*(3.14159265*Dd/(0.29979/f))^2*0.6*(3.14159265*70/(0.29979/f))^2*((0.29979/f)/(4*3.14159265*dist))^2)/(1.380649e-23*Tr*B*1e6*(1 + 0.5*rfi)))/2.302585",
+      "formula": "S/N against the noise k·T·B"
+    },
+    {
+      "id": "C",
+      "unit": "bit/s",
+      "expr": "B*1e6*ln(1 + (Pt*0.6*(3.14159265*Dd/(0.29979/f))^2*0.6*(3.14159265*70/(0.29979/f))^2*((0.29979/f)/(4*3.14159265*dist))^2)/(1.380649e-23*Tr*B*1e6*(1 + 0.5*rfi)))/0.693147*(1 - 0.01*d)",
+      "formula": "C = B·log₂(1 + S/N), Shannon"
+    },
+    {
+      "id": "mg",
+      "unit": "",
+      "expr": "(B*1e6*ln(1 + (Pt*0.6*(3.14159265*Dd/(0.29979/f))^2*0.6*(3.14159265*70/(0.29979/f))^2*((0.29979/f)/(4*3.14159265*dist))^2)/(1.380649e-23*Tr*B*1e6*(1 + 0.5*rfi)))/0.693147*(1 - 0.01*d))/Rq",
+      "formula": "capacity over the rate needed"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "tube",
+      "kind": "wear",
+      "expr": "20000 - Pt",
+      "formula": "under 20 kW, or the travelling wave tube overheats"
+    },
+    {
+      "id": "cold",
+      "kind": "stop",
+      "expr": "Tr - 2.7",
+      "formula": "no receiver is colder than the sky behind it"
+    }
+  ],
+  "rate": "clamp((B*1e6*ln(1 + (Pt*0.6*(3.14159265*Dd/(0.29979/f))^2*0.6*(3.14159265*70/(0.29979/f))^2*((0.29979/f)/(4*3.14159265*dist))^2)/(1.380649e-23*Tr*B*1e6*(1 + 0.5*rfi)))/0.693147*(1 - 0.01*d))/Rq/2, 0.25, 3)",
+  "rate_formula": "a faster link sends the job sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:deep_space_transceiver"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.information_channels"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.information_channels.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/information_theory",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

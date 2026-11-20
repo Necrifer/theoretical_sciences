@@ -1,0 +1,33 @@
+{
+  "type": "theoreticalsciences:fibre_drawing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:doped_silica_preform",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:single_mode_fibre_spool",
+      "count": 8
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:fibre_optics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "V",
+        "min": 1.6,
+        "max": 2.405
+      },
+      {
+        "q": "att",
+        "min": 0,
+        "max": 0.2
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:superconductor_certification",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rare_earth_oxide",
+      "count": 1
+    },
+    {
+      "item": "#c:ingots/copper",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_nitrogen",
+      "amount": 200
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rebco_tape",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:superconductivity_theory",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Tc",
+        "min": 88,
+        "max": 95
+      },
+      {
+        "q": "Hr",
+        "min": 0.85,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -7258,6 +7258,34 @@
         "fluids/habitability",
         "fluids/fast_transients"
       ]
+    },
+    {
+      "entry": "physics/r1400_refrigeration",
+      "x": 2,
+      "y": 145,
+      "parents": []
+    },
+    {
+      "entry": "physics/r1400_bcs",
+      "x": 6,
+      "y": 145,
+      "parents": [
+        "physics/r1400_refrigeration"
+      ]
+    },
+    {
+      "entry": "physics/r1400_channels",
+      "x": 2,
+      "y": 148,
+      "parents": []
+    },
+    {
+      "entry": "physics/r1400_fibre",
+      "x": 6,
+      "y": 148,
+      "parents": [
+        "physics/r1400_channels"
+      ]
     }
   ],
   "regions": [
@@ -7404,6 +7432,14 @@
       "x1": 125.5,
       "y0": 138.5,
       "y1": 141.5
+    },
+    {
+      "tier": 18,
+      "label": "Cryogenics & Communications",
+      "x0": -1.5,
+      "x1": 125.5,
+      "y0": 143.5,
+      "y1": 150.5
     }
   ]
 }

@@ -68,6 +68,15 @@ public final class SpaceModules {
         return GRAVITY.getOrDefault(level.dimension().location().toString(), 9.81);
     }
 
+    /** 1.4.0: the surroundings a machine rejects its heat to (K): a refrigerator on Titan's 94 K surface works far cheaper. */
+    static final Map<String, Double> AMBIENT = Map.of(
+            "theoreticalsciences:titan", 94.0, "theoreticalsciences:titan_ocean", 273.0,
+            "ad_astra:moon", 250.0, "ad_astra:mars", 210.0, "ad_astra:venus", 737.0, "ad_astra:mercury", 440.0, "ad_astra:glacio", 250.0);
+
+    public static double ambient(Level level) {
+        return AMBIENT.getOrDefault(level.dimension().location().toString(), 300.0);
+    }
+
     // ------------------------------------------------------------------ the module blocks
     public static class ModuleBlock extends Block {
         public ModuleBlock(Properties p) {

@@ -59315,5 +59315,185 @@
     "title": "Overcooked Depths"
    }
   ]
+ },
+ "physics/r1400_refrigeration": {
+  "title": "Refrigeration Cycles",
+  "icon": "theoreticalsciences:helium_liquefier",
+  "category": "physics",
+  "research": "refrigeration_cycles",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:helium_liquefier",
+     "theoreticalsciences:liquid_nitrogen_cell",
+     "theoreticalsciences:liquid_helium_cell"
+    ],
+    "text": "COP = T_c/(T_h − T_c). The $(thing)Helium Liquefier$() (253 blocks) liquefies nitrogen, then helium, then pumps it below the λ point into Superfluid Helium. Pre-cool the gas below its inversion temperature (helium 43 K) before the valve. Heat goes to the surroundings: on Titan, at 94 K, each watt of cold costs a third of the work and the machine runs three times as fast.",
+    "title": "Helium Liquefier"
+   },
+   {
+    "type": "multiblock",
+    "name": "Helium Liquefier",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "helium_liquefier"
+   }
+  ]
+ },
+ "physics/r1400_bcs": {
+  "title": "Superconductivity Theory",
+  "icon": "theoreticalsciences:bcs_cryostat",
+  "category": "physics",
+  "research": "superconductivity_theory",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bcs_cryostat",
+     "theoreticalsciences:nbti_wire",
+     "theoreticalsciences:nb3sn_strand",
+     "theoreticalsciences:rebco_tape"
+    ],
+    "text": "T_c = 1.13·Θ_D·e^(−1/λ). The $(thing)BCS Cryostat$() tunes a conductor until its critical temperature matches the real one and certifies it with field to spare at its operating temperature: $(item)NbTi Wire$() (9.2 K), $(item)Nb₃Sn Strand$() (18 K) and $(item)REBCO Tape$() (92 K, run under liquid nitrogen). The Metamaterial Weaver winds them into Superconducting Coils, two, three and four at a time.",
+    "title": "BCS Cryostat"
+   }
+  ]
+ },
+ "physics/r1400_channels": {
+  "title": "Information Channels",
+  "icon": "theoreticalsciences:deep_space_transceiver",
+  "category": "physics",
+  "research": "information_channels",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:deep_space_transceiver",
+     "theoreticalsciences:deep_space_relay"
+    ],
+    "text": "C = B·log₂(1 + S/N), with P_r = P_t·G_t·G_r·(λ/4πd)². The $(thing)Deep Space Transceiver$() must carry the rate the job asks across the distance: a bigger dish, more power, a higher frequency and a colder receiver all help; wider bandwidth lets in more noise. Other machines running nearby add noise too. A link to Titan's distance makes a $(item)Deep Space Relay$().",
+    "title": "Deep Space Transceiver"
+   }
+  ]
+ },
+ "physics/r1400_fibre": {
+  "title": "Fibre Optics",
+  "icon": "theoreticalsciences:single_mode_fibre_spool",
+  "category": "physics",
+  "research": "fibre_optics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fibre_draw_tower",
+     "theoreticalsciences:doped_silica_preform",
+     "theoreticalsciences:single_mode_fibre_spool"
+    ],
+    "text": "V = 2πa·NA/λ < 2.405. The Chemical Reactor deposits doped glass into a $(item)Doped Silica Preform$(); the $(thing)Fibre Draw Tower$() (212 blocks) pulls it into $(item)Single Mode Fibre$(): thin core, V between 1.6 and 2.405, loss under 0.2 dB/km near 1.55 µm, drawn no faster than defects allow. The Metamaterial Weaver makes Photonic Interconnects for a cheaper Photonic Processor.",
+    "title": "Fibre Draw Tower"
+   },
+   {
+    "type": "multiblock",
+    "name": "Fibre Draw Tower",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "fibre_draw_tower"
+   }
+  ]
+ },
+ "operation/helium_liquefier": {
+  "title": "Helium Liquefier",
+  "icon": "theoreticalsciences:helium_liquefier",
+  "category": "operation",
+  "research": "refrigeration_cycles",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Liquefy as much as the recipe asks, for no more work than it allows."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Pre-cooled to, High pressure, Heat rejected at.$(br2)$(thing)Disturbance$(): compressor wear: the liquid fraction falls by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): rejecting below the surroundings stops it; liquid in the expanders wears it.$(br2)$(thing)Rate$(): more liquid for less work, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)COP = T_c/(T_h − T_c)$(br)W = 1/(η·COP)$(br)y ∝ (1 − T/T_inv)"
+   }
+  ]
+ },
+ "operation/bcs_cryostat": {
+  "title": "BCS Cryostat",
+  "icon": "theoreticalsciences:bcs_cryostat",
+  "category": "operation",
+  "research": "superconductivity_theory",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Tune the conductor's T_c into the recipe's range, with field to spare."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Debye temperature, Coupling, Isotope mass, Operating temperature.$(br2)$(thing)Disturbance$(): thermometer drift: T_c reads 0.5%·d high."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): warmer than T_c stops it; under 1.5 K wears it.$(br2)$(thing)Rate$(): a colder sample, slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)T_c = 1.13·Θ·M^(−1/2)·e^(−1/λ)$(br)H_c(T) = H_c(0)(1 − (T/T_c)²)"
+   }
+  ]
+ },
+ "operation/deep_space_transceiver": {
+  "title": "Deep Space Transceiver",
+  "icon": "theoreticalsciences:deep_space_transceiver",
+  "category": "operation",
+  "research": "information_channels",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Carry the rate needed across the distance."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Dish diameter, Transmit power, Frequency, Receiver temperature, Bandwidth.$(br2)$(thing)Disturbance$(): pointing jitter: the capacity drops by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 20 kW wears the amplifier; under 2.7 K stops it.$(br2)$(thing)Rate$(): a faster link, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)P_r = P_t·G_t·G_r·(λ/4πd)²$(br)N = kTB$(br)C = B·log₂(1 + S/N)"
+   }
+  ]
+ },
+ "operation/fibre_draw_tower": {
+  "title": "Fibre Draw Tower",
+  "icon": "theoreticalsciences:fibre_draw_tower",
+  "category": "operation",
+  "research": "fibre_optics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Draw fibre with the modes and loss the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Furnace temperature, Draw speed, Core radius, Design wavelength, Index step.$(br2)$(thing)Disturbance$(): furnace drift: the loss rises by 2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 2050 K snaps; over 2350 K sags (wear).$(br2)$(thing)Rate$(): a faster draw, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)V = 2πa·NA/λ$(br)α = 0.12(1.55/λ)⁴ + ..."
+   }
+  ]
  }
 }

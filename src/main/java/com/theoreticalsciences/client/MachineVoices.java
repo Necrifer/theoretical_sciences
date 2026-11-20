@@ -121,6 +121,10 @@ public final class MachineVoices {
         V.put("catalytic_reformer", new Voice("turbine", 0.80F));           // fired heaters between the reactors
         V.put("claus_unit", new Voice("turbine", 1.10F));                   // a roaring burner
         V.put("delayed_coker", new Voice("heavy", 0.70F));                  // drums and water jets
+        V.put("helium_liquefier", new Voice("turbine", 1.30F));             // 1.4.0 stage 3: compressors and expansion turbines
+        V.put("bcs_cryostat", new Voice("instrument", 0.70F));
+        V.put("deep_space_transceiver", new Voice("instrument", 1.15F));
+        V.put("fibre_draw_tower", new Voice("heavy", 1.15F));
         V.put("cmb_bolometer_array", new Voice("space", 0.70F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));

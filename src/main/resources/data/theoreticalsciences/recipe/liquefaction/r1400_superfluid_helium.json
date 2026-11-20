@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:liquefaction",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_helium",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:superfluid_helium",
+      "amount": 900
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:refrigeration_cycles",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Tl": 1.8,
+      "Tinv": 43,
+      "eta": 0.25
+    },
+    "windows": [
+      {
+        "q": "y",
+        "min": 0.1,
+        "max": 1.0
+      },
+      {
+        "q": "W",
+        "min": 0,
+        "max": 700
+      }
+    ]
+  }
+}

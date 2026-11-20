@@ -176,6 +176,10 @@ final class ProcessScenes {
         e("catalytic_reformer", "catalytic reforming", V.PIPE, C.FLAME, C.GLOW, 1);
         e("claus_unit", "sulfur recovery", V.KILN, C.FLAME, C.DROPS, 0);
         e("delayed_coker", "coking", V.TANK, C.FLAME, C.CRYSTAL, 1);
+        e("helium_liquefier", "liquefaction", V.DEWAR, C.FLOW, C.DROPS, 0);       // 1.4.0 stage 3
+        e("bcs_cryostat", "superconductivity", V.DEWAR, C.FIELD, C.BARS, 2);
+        e("deep_space_transceiver", "deep space link", V.PLATE, C.WAVES, C.BEAM, 1);
+        e("fibre_draw_tower", "fibre drawing", V.COLUMN, C.FLAME, C.BEAM, 0);
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1

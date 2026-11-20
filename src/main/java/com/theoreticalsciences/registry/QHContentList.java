@@ -1023,7 +1023,15 @@ public final class QHContentList {
         new ItemDef("sulfur_dust", "", 64),
         new ItemDef("petroleum_coke", "", 64),
         new ItemDef("needle_coke", "", 64),
-        new ItemDef("source_rock_core", "", 64));
+        new ItemDef("source_rock_core", "", 64),
+        // 1.4.0 stage 3: cryogenics and communications
+        new ItemDef("nbti_wire", "", 64),
+        new ItemDef("nb3sn_strand", "", 64),
+        new ItemDef("rebco_tape", "", 64),
+        new ItemDef("doped_silica_preform", "", 64),
+        new ItemDef("single_mode_fibre_spool", "", 64),
+        new ItemDef("photonic_interconnect", "", 64),
+        new ItemDef("deep_space_relay", "", 16));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1547,7 +1555,9 @@ public final class QHContentList {
         new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""),
         new BlockDef("active_magnetic_shield", "space_module", 8, 5.0F, "none", ""),       // 1.14.0
         new BlockDef("bolometer_focal_plane", "casing", 2, 4.0F, "iron", ""),            // 1.15.0
-        new BlockDef("fischer_tropsch_tube", "casing", 0, 4.0F, "iron", ""));            // 1.4.0 stage 1
+        new BlockDef("fischer_tropsch_tube", "casing", 0, 4.0F, "iron", ""),            // 1.4.0 stage 1
+        new BlockDef("cold_box_casing", "casing", 0, 4.0F, "iron", ""),                 // 1.4.0 stage 3
+        new BlockDef("draw_tower_frame", "casing", 0, 4.0F, "iron", ""));
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
@@ -1670,6 +1680,9 @@ public final class QHContentList {
         new FluidDef("vacuum_residue", false, 0, 300, 1000, 50000, 0x100C08),
         new FluidDef("bitumen", false, 0, 300, 1030, 60000, 0x0C0A08),
         new FluidDef("hydrogen_sulfide", true, 0, 300, 1, 120, 0x403C20),
-        new FluidDef("btx_reformate", false, 0, 300, 870, 600, 0x48402C));
+        new FluidDef("btx_reformate", false, 0, 300, 870, 600, 0x48402C),
+        // 1.4.0 stage 3: the cryogens
+        new FluidDef("liquid_nitrogen", false, 0, 77, 808, 160, 0xC8E8FF),
+        new FluidDef("liquid_helium", false, 0, 4, 125, 30, 0xE0F4FF));
     private QHContentList() {}
 }

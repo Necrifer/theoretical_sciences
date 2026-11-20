@@ -78,6 +78,26 @@ New routes (all cheaper than the old ones): Graphite Moderator from Needle Coke 
 Reformate (Fractionation Spire); Syngas from Petroleum Coke, Bitumen from Tar Sand and methane from Methane Clathrate
 (Chemical Reactor); hydrogen from the Catalytic Reformer; crude oil from Oil Shale and Source Rock Cores.
 
+### Stage 3: cryogenics and communications
+Four new research nodes in Physics (each with its derivation puzzle) and four new machines, two of them multiblocks.
+
+* **Refrigeration Cycles** (Carnot refrigerator). New multiblock, the **Helium Liquefier** (253 blocks, with the new
+  Cold Box Casing): Carnot's COP sets the work for each watt of cold, and a gas liquefies only once pre-cooled below its
+  inversion temperature. Makes **Liquid Nitrogen** and **Liquid Helium**, and pumps liquid helium below the λ point into
+  Superfluid Helium (a cheaper route; the old ones still work). Multiblocks now feel the temperature of their
+  surroundings: on Titan (94 K) the liquefier needs a third of the work and runs three times as fast; Venus is worse.
+* **Superconductivity Theory** (BCS critical temperature). New console, the **BCS Cryostat**: Debye temperature,
+  electron phonon coupling, isotope mass and operating temperature give T_c and the critical field margin. It
+  certifies **NbTi Wire**, **Nb₃Sn Strand** and **REBCO Tape**, which the Metamaterial Weaver winds into Superconducting
+  Coils at two, three and four a time (cheaper than the old route).
+* **Information Channels** (Shannon). New console, the **Deep Space Transceiver**: Friis for the power received, k·T·B
+  for the receiver's noise (other machines nearby add to it), Shannon for the capacity. A link at Titan's distance
+  makes a **Deep Space Relay**.
+* **Fibre Optics** (fibre V number). New multiblock, the **Fibre Draw Tower** (212 blocks, twenty tall, with the new
+  Draw Tower Frame): Rayleigh scattering, infrared absorption and draw defects set the loss; single mode below
+  V = 2.405. The Chemical Reactor makes **Doped Silica Preforms**; the tower draws **Single Mode Fibre**; the Metamaterial
+  Weaver makes **Photonic Interconnects**, and from them Photonic Processors six at a time (cheaper than the old routes).
+
 ### Fixes
 * **Icy Moons' derivation showed "(template error)".** Its formula named the distance `d`, which the equation reader
   takes for a derivative. The distance is now `a` (and the answer Δg). Photogrammetry had the same fault (its disparity
