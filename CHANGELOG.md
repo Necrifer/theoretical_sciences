@@ -115,6 +115,8 @@ Four new research nodes in Physics (each with its derivation puzzle) and four ne
   * links between fields, and the whole chain behind any research, light up when you hover over it, with what it
     unlocks; everything else dims.
   The map opens on the first node. Each research's field is its `category` in the data, so datapacks can place theirs.
+* Multiblocks now sense the temperature of their dimension (`T_amb` in machine physics): 94 K on Titan, 210 K on Mars,
+  737 K on Venus, 300 K elsewhere. Only the Solar Furnace and the Pound Rebka Tower used it before, and only slightly.
 * **Fluid cells of the 1.4.0 fluids** were drawn in the old cutaway style; they now use the current cell design
   (painted from an existing cell, so the frame, glint and animation match).
 * The Field Calibrator showed raw names for 26 machines' drifting settings; they now have English names.
