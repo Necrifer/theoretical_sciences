@@ -172,6 +172,10 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.POLARIMETER, "lamp_drift", Drift.OSCILLATE, 0.3F, 1, 3, Hazard.OPTICAL, 1);
         p(MachineType.HUCKEL_ANALYSER, "field_drift", Drift.WALK, 0.3F, 1, 3, Hazard.MAGNETIC, 2);
         p(MachineType.MOLECULAR_MACHINE_BENCH, "lamp_ageing", Drift.DECAY, 0.4F, 1, 3, Hazard.OPTICAL, 2);
+        p(MachineType.HYDROTREATER, "feed_swings", Drift.WALK, 0.4F, 1, 3, Hazard.CHEMICAL, 2);              // 1.4.0 stage 2
+        p(MachineType.CATALYTIC_REFORMER, "catalyst_ageing", Drift.DECAY, 0.4F, 1, 3, Hazard.THERMAL, 3);
+        p(MachineType.CLAUS_UNIT, "feed_swings", Drift.OSCILLATE, 0.3F, 1, 3, Hazard.CHEMICAL, 3);
+        p(MachineType.DELAYED_COKER, "feed_swings", Drift.WALK, 0.4F, 1, 3, Hazard.THERMAL, 2);
         p(MachineType.CMB_BOLOMETER_ARRAY, "atmospheric_drift", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);   // 1.14.0
         p(MachineType.CANTOR_DIAGONALIZER, "diagonal_index", Drift.JUMP, 1.2F, 1, 2, Hazard.SPATIAL, 9);        // 1.7.1: now multiblocks
         p(MachineType.AXIOM_DISTILLER, "reflux_ratio", Drift.WALK, 1.0F, 1, 2, Hazard.SPATIAL, 9);

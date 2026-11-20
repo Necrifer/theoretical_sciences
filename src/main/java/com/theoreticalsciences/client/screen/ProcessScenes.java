@@ -166,12 +166,16 @@ final class ProcessScenes {
         e("microwave_rectenna", "power beam", V.PIPE, C.GLOW, C.FLOW, 4);
         e("radiation_pressure_balance", "light pressure", V.CHAMBER, C.BEAM, C.GLOW, 2);
         e("ice_rheometer", "cyclic squeeze", V.CELL, C.WAVES, C.CRYSTAL, 2);         // 1.15.0
-        e("syngas_reformer", "reforming", V.PIPE, C.FLAME, C.MOLECULES, 0);          // 1.4.0 stage 1
+        e("syngas_reformer", "steam reforming", V.PIPE, C.FLAME, C.MOLECULES, 0);          // 1.4.0 stage 1
         e("fischer_tropsch_reactor", "chain growth", V.COLUMN, C.BUBBLES, C.MOLECULES, 1);
         e("substituent_bench", "substitution", V.FLASK, C.MOLECULES, C.DROPS, 0);
         e("polarimeter", "optical rotation", V.UTUBE, C.BEAM, C.SPIN, 0);
         e("huckel_analyser", "ring current", V.DEWAR, C.FIELD, C.SPIN, 1);
         e("molecular_machine_bench", "molecular machines", V.PLATE, C.SPIN, C.GLOW, 2);
+        e("hydrotreater", "hydrotreating", V.COLUMN, C.DROPS, C.MOLECULES, 2);   // 1.4.0 stage 2
+        e("catalytic_reformer", "catalytic reforming", V.PIPE, C.FLAME, C.GLOW, 1);
+        e("claus_unit", "sulfur recovery", V.KILN, C.FLAME, C.DROPS, 0);
+        e("delayed_coker", "coking", V.TANK, C.FLAME, C.CRYSTAL, 1);
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1

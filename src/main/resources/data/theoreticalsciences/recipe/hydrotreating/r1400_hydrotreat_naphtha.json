@@ -1,0 +1,52 @@
+{
+  "type": "theoreticalsciences:hydrotreating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cobalt_molybdenum_catalyst",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:sour_naphtha",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:hydrogen",
+      "amount": 100
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:naphtha",
+      "amount": 1000
+    },
+    {
+      "id": "theoreticalsciences:hydrogen_sulfide",
+      "amount": 100
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:hydroprocessing",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "S0": 5000.0,
+      "Ea": 100,
+      "cat": 1.0
+    },
+    "windows": [
+      {
+        "q": "Sout",
+        "min": 0,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:cobalt_molybdenum_catalyst"
+    }
+  ]
+}

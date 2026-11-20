@@ -59070,5 +59070,250 @@
     "text": "$(thing)Equations$()$(br)k_T = (kT/h)e^(−ΔG‡/RT)$(br)f = 1/(2/k_L + 2/k_T)$(br)direction = 1 − e^(−ΔG/RT)"
    }
   ]
+ },
+ "chemistry/r1400_crude_assay": {
+  "title": "Crude Assay and Coking",
+  "icon": "theoreticalsciences:delayed_coker",
+  "category": "chemistry",
+  "research": "heavy_oil_upgrading",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fractionation_spire",
+     "theoreticalsciences:sour_naphtha_cell",
+     "theoreticalsciences:gas_oil_cell",
+     "theoreticalsciences:vacuum_residue_cell"
+    ],
+    "text": "API = 141.5/SG − 131.5. The $(thing)Fractionation Spire$() splits crude oil into $(item)Sour Naphtha$(), $(item)Gas Oil$() and $(item)Vacuum Residue$().",
+    "title": "Crude assay"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:delayed_coker",
+     "theoreticalsciences:petroleum_coke",
+     "theoreticalsciences:needle_coke"
+    ],
+    "text": "The $(thing)Delayed Coker$() cracks residue and Bitumen to gas oil and $(item)Petroleum Coke$(): keep the drums at low pressure for liquids. From gas oil, slow cycles under pressure at the right heat grow $(item)Needle Coke$(), which the Sintering Press makes into Graphite Moderator. Petroleum Coke burns with steam and oxygen in the Chemical Reactor to Syngas.",
+    "title": "Delayed Coker"
+   }
+  ]
+ },
+ "chemistry/r1400_hydroprocessing": {
+  "title": "Hydrotreating and Reforming",
+  "icon": "theoreticalsciences:catalytic_reformer",
+  "category": "chemistry",
+  "research": "hydroprocessing",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:hydrotreater",
+     "theoreticalsciences:cobalt_molybdenum_catalyst",
+     "theoreticalsciences:naphtha_cell"
+    ],
+    "text": "S = S₀·e^(−kτ). The $(thing)Hydrotreater$() takes Sour Naphtha below one part per million of sulfur: $(item)Naphtha$(), and Hydrogen Sulfide for the Claus Unit.",
+    "title": "Hydrotreater"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:catalytic_reformer",
+     "theoreticalsciences:platinum_reforming_catalyst",
+     "theoreticalsciences:btx_reformate_cell"
+    ],
+    "text": "K = e^(−(ΔH − TΔS)/RT). The $(thing)Catalytic Reformer$() turns Naphtha into $(item)BTX Reformate$() of octane 98 and more, and hydrogen. Low pressure favours the aromatics but lays coke on the platinum. The Fractionation Spire splits the reformate into Benzene.",
+    "title": "Catalytic Reformer"
+   }
+  ]
+ },
+ "chemistry/r1400_sulfur_recovery": {
+  "title": "Sulfur Recovery",
+  "icon": "theoreticalsciences:sulfur_dust",
+  "category": "chemistry",
+  "research": "sulfur_recovery",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:claus_unit",
+     "theoreticalsciences:sulfur_dust"
+    ],
+    "text": "2H₂S + SO₂ → 3S + 2H₂O. In the $(thing)Claus Unit$() burn exactly a third of the Hydrogen Sulfide, keep the burner hot and the beds just above 490 K: 97% of the sulfur comes out as $(item)Sulfur$(), which the Chemical Reactor burns to sulfur dioxide for sulfuric acid.",
+    "title": "Claus Unit"
+   }
+  ]
+ },
+ "chemistry/r1400_fcc": {
+  "title": "Fluid Catalytic Cracking",
+  "icon": "theoreticalsciences:cracking_tower",
+  "category": "chemistry",
+  "research": "fluid_catalytic_cracking",
+  "pages": [
+   {
+    "type": "text",
+    "text": "ΔT = (c·H − q)/(r·c_p). The $(thing)Cracking Tower$() gains a catalyst to oil setting: crack Gas Oil over zeolite at a riser near 808 K, with the regenerator 960 to 1010 K from the coke it burns, for Naphtha and Propylene."
+   }
+  ]
+ },
+ "chemistry/r1400_petroleum_geology": {
+  "title": "Petroleum Geology",
+  "icon": "theoreticalsciences:source_rock_core",
+  "category": "chemistry",
+  "research": "petroleum_geology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:deep_drilling_rig",
+     "theoreticalsciences:source_rock_core"
+    ],
+    "text": "TTI = Σ Δt·2ⁿ. The $(thing)Deep Drilling Rig$() reads how cooked the rock is at depth: drill where a hundred million years puts it in the oil window, TTI 15 to 160, for $(item)Source Rock Cores$(), which the Delayed Coker retorts to crude oil.",
+    "title": "The oil window"
+   },
+   {
+    "type": "text",
+    "text": "Q = k·A·Δp/(μL). In the Overworld: Oil Shale in badlands, Tar Sand in deserts, Asphalt Lakes in savannas and swamps, and Methane Clathrate at cold seeps on the deep ocean floor. In the Planetary Interior, the Overcooked Depths' shale gives only gas."
+   }
+  ]
+ },
+ "operation/hydrotreater": {
+  "title": "Hydrotreater",
+  "icon": "theoreticalsciences:hydrotreater",
+  "category": "operation",
+  "research": "hydroprocessing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Strip the sulfur below what the recipe allows."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Bed temperature, Hydrogen pressure, Space velocity.$(br2)$(thing)Disturbance$(): feed swings: the sulfur left drifts by 3%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 690 K the catalyst cokes (wear); under 25 bar it stops.$(br2)$(thing)Rate$(): a higher space velocity, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)k = A·e^(−Eₐ/RT)·√p$(br)S = S₀·e^(−k/LHSV)"
+   }
+  ]
+ },
+ "operation/catalytic_reformer": {
+  "title": "Catalytic Reformer",
+  "icon": "theoreticalsciences:catalytic_reformer",
+  "category": "operation",
+  "research": "hydroprocessing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Make high octane reformate without losing the liquid to gas or the platinum to coke."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Reactor inlet, Pressure, Hydrogen to oil.$(br2)$(thing)Disturbance$(): catalyst ageing: the octane falls by 0.5%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): coke over 2.5 fouls the platinum (wear).$(br2)$(thing)Rate$(): hotter, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)K = e^(−(ΔH − TΔS)/RT)$(br)aromatics = K/p³/(1 + K/p³)·(1 − e^(−k))"
+   }
+  ]
+ },
+ "operation/claus_unit": {
+  "title": "Claus Unit",
+  "icon": "theoreticalsciences:claus_unit",
+  "category": "operation",
+  "research": "sulfur_recovery",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Recover the sulfur: a third burned, the beds just above its dew point."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Share burned, Burner temperature, Bed temperature.$(br2)$(thing)Disturbance$(): feed gas swings: the recovery drifts by 0.3%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 1120 K the flame goes out; over 1550 K the lining spalls; under 490 K sulfur floods the beds (wear).$(br2)$(thing)Rate$(): a hotter burner, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)H₂S : SO₂ = (1 − f)/f$(br)recovery = (1 − (1 − X_flame)(1 − X_bed)³)"
+   }
+  ]
+ },
+ "operation/delayed_coker": {
+  "title": "Delayed Coker",
+  "icon": "theoreticalsciences:delayed_coker",
+  "category": "operation",
+  "research": "heavy_oil_upgrading",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Crack the heavy oil: liquids, coke or needles, as the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Furnace outlet, Drum pressure, Drum cycle.$(br2)$(thing)Disturbance$(): feed swings: the coke yield drifts by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 785 K coke grows in the tubes (wear); under 715 K it stops.$(br2)$(thing)Rate$(): shorter cycles, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)API = 141.5/SG − 131.5$(br)coke = 1.6 × CCR"
+   }
+  ]
+ },
+ "world/oil_country": {
+  "title": "Oil Country",
+  "icon": "theoreticalsciences:kerogen_shale",
+  "category": "world",
+  "research": "petroleum_geology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:kerogen_shale",
+     "theoreticalsciences:tar_sand"
+    ],
+    "text": "In the Overworld: $(item)Oil Shale$() in veins under badlands, its kerogen never cooked; $(item)Tar Sand$() near the surface in deserts and badlands, which hot water parts into Bitumen and sand in the Chemical Reactor.",
+    "title": "Oil shale and tar sand"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bitumen_cell",
+     "theoreticalsciences:methane_clathrate"
+    ],
+    "text": "$(item)Asphalt Lakes$() of Bitumen, ringed with Tar Sand, lie in savannas and swamps, like Pitch Lake in Trinidad. On the deep ocean floor, cold seeps leave $(item)Methane Clathrate$(), which melts to methane in the Chemical Reactor.",
+    "title": "Lakes and seeps"
+   }
+  ]
+ },
+ "world/overcooked_depths": {
+  "title": "Overcooked Depths",
+  "icon": "theoreticalsciences:overmature_shale",
+  "category": "world",
+  "research": "petroleum_geology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:overmature_shale"
+    ],
+    "text": "In the Planetary Interior, where the crust's source rock was buried far past the oil window: every floor is $(item)Overmature Shale$(), its oil cracked long ago to gas. The Delayed Coker retorts it to methane.",
+    "title": "Overcooked Depths"
+   }
+  ]
  }
 }

@@ -117,6 +117,10 @@ public final class MachineVoices {
         V.put("polarimeter", new Voice("instrument", 1.30F));
         V.put("huckel_analyser", new Voice("instrument", 0.85F));            // an NMR magnet's cold head
         V.put("molecular_machine_bench", new Voice("quantum", 1.20F));
+        V.put("hydrotreater", new Voice("chem", 0.80F));                    // 1.4.0 stage 2
+        V.put("catalytic_reformer", new Voice("turbine", 0.80F));           // fired heaters between the reactors
+        V.put("claus_unit", new Voice("turbine", 1.10F));                   // a roaring burner
+        V.put("delayed_coker", new Voice("heavy", 0.70F));                  // drums and water jets
         V.put("cmb_bolometer_array", new Voice("space", 0.70F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));

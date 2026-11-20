@@ -1,0 +1,52 @@
+{
+  "title": "Crude Assay and Coking",
+  "x": 30,
+  "y": 38,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:petrochemistry",
+    "theoreticalsciences:fractional_distillation"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:coal_block",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:methanol_cell",
+      "count": 1
+    }
+  ],
+  "time": 400,
+  "description": "Crude oils differ: a light one pours like water and floats high, a heavy one barely flows. The trade grades them by API gravity, a scale on which water is 10 and the lightest crudes pass 40. What will not boil even under vacuum is the residue: a delayed coker heats it to five hundred degrees and lets it crack in a drum for a day, so the light half boils off and the rest sets as petroleum coke. From aromatic feeds, slowly, the coke grows into needles, the raw material of nuclear graphite. Oil shale and tar sands go the same way. Unlocks the Delayed Coker.",
+  "icon": "theoreticalsciences:delayed_coker",
+  "puzzle": {
+    "goal": "An oil has specific gravity SG against water at 60 °F. Write its API gravity, the scale on which water is 10.",
+    "name": "API gravity",
+    "lhs": "API",
+    "form": "141.5 / SG - 131.5",
+    "expr": "141.5 / SG - 131.5",
+    "ask": "Find the API gravity of a crude of SG = @{SG}.",
+    "vars": {
+      "API": "API gravity",
+      "SG": "specific gravity"
+    },
+    "given": {
+      "SG": 0.85
+    },
+    "unit": "°",
+    "method": "An inverse scale, so that lighter oils read higher, fixed so that water (SG 1) reads 10: 141.5 − 131.5.",
+    "distractors": [
+      "*",
+      "+",
+      "100"
+    ],
+    "vary": {
+      "SG": [
+        0.78,
+        1.02,
+        0.01
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:source_rock_core"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.petroleum_geology"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.petroleum_geology.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/deep_drilling",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

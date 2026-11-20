@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:coking",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:kerogen_shale",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:petroleum_coke",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:crude_oil",
+      "amount": 500
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:petroleum_geology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "CCR": 0.05,
+      "SG": 0.9
+    },
+    "windows": [
+      {
+        "q": "Tc",
+        "min": 740,
+        "max": 790
+      }
+    ]
+  }
+}

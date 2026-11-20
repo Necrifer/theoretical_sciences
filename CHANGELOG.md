@@ -31,7 +31,7 @@ Synthesis, each with its derivation puzzle, and a new Codex region in the Chemis
 * New fluids, each with a Containment Cell: Syngas, Rocket Kerosene, Benzene (also takes `c:benzene`, so GregTech's
   benzene works), Aniline.
 
-### New routes to existing items (all cheaper than the old ones, which still work)
+### Stage 1: new routes to existing items (all cheaper than the old ones, which still work)
 * Tether Spool: Composite Layup Press, 2 Nanotube Composite and 2 Rigid Rod Fibre (was 3 and 2 Aramid Fibre).
 * Shkadov Mirror Film: Composite Layup Press, 1 aluminium ingot and 2 Rigid Rod Fibre for 6 (was 4 Polymer Sheet for 4).
 * Form Tincture: Alkahest Still, Monodisperse Paraffin, Fine Reagent and Balance Tincture (no Structure Card,
@@ -45,6 +45,38 @@ Synthesis, each with its derivation puzzle, and a new Codex region in the Chemis
 * Weather Satellite and Debris Sweeper launches on kerosene: Rocket Assembly, 5,000 mB Rocket Kerosene and 14,000 mB
   liquid oxygen in place of 4,000 mB liquid hydrogen and 20,000 mB liquid oxygen (a lower Isp, but no cryogenic fuel).
 * Hydrogen: Syngas Reformer, from methane and steam.
+
+### Stage 2: hydrocarbon systems
+Five new research nodes in Chemistry (each with its derivation puzzle) and four new consoles, a working refinery from
+crude to aromatics, sulfur and coke.
+
+* **Crude Assay and Coking** (API gravity). The Fractionation Spire splits crude oil into **Sour Naphtha**, **Gas Oil**
+  and **Vacuum Residue**. New console, the **Delayed Coker**: residue and Bitumen crack to gas oil and **Petroleum
+  Coke** (keep the drums at low pressure for liquids); slow, pressed cycles grow **Needle Coke** from gas oil; it also
+  retorts Oil Shale and Source Rock Cores to crude oil and Overmature Shale to methane.
+* **Hydrotreating and Reforming** (first order removal). New console, the **Hydrotreater**: sulfur out of Sour Naphtha
+  below one part per million (Arrhenius and hydrogen pressure against the space velocity), giving **Naphtha** and
+  **Hydrogen Sulfide**. New console, the **Catalytic Reformer**: naphthenes to aromatics against their equilibrium
+  constant, with hydrocracking and coke on the platinum, giving **BTX Reformate** of octane 98+ and hydrogen. Two new
+  catalysts that wear and are poisonable: Cobalt Molybdenum and Platinum Reforming.
+* **Sulfur Recovery** (air for the Claus burner). New console, the **Claus Unit**: burn exactly a third of the hydrogen
+  sulfide, then three beds just above the sulfur's dew point; 97% recovery gives **Sulfur** (tagged `c:dusts/sulfur`).
+* **Fluid Catalytic Cracking** (FCC heat balance). The Cracking Tower gains a catalyst to oil setting and the
+  regenerator temperature its coke sets; cracks Gas Oil to Naphtha and Propylene. Older Cracking Tower recipes are
+  unchanged.
+* **Petroleum Geology** (Darcy's law). The Deep Drilling Rig shows Lopatin's maturity index: drill where the rock sits
+  in the oil window for **Source Rock Cores**.
+* New fluids, each with a Containment Cell: Sour Naphtha, Naphtha (also takes `c:naphtha`, so GregTech's and
+  Immersive Petroleum's work), Gas Oil, Vacuum Residue, Bitumen, Hydrogen Sulfide (also `c:hydrogen_sulfide`), BTX
+  Reformate. GregTech's Sulfuric Naphtha works as Sour Naphtha.
+* **The world:** Oil Shale veins under badlands; Tar Sand in deserts and badlands; Asphalt Lakes of Bitumen ringed with
+  Tar Sand in savannas and swamps; Methane Clathrate at cold seeps on the deep ocean floor (all features in vanilla
+  biomes, no new dimension). A new Planetary Interior biome, the **Overcooked Depths**, floored with Overmature Shale.
+  Two new Codex pages in the Dimensions tab.
+
+New routes (all cheaper than the old ones): Graphite Moderator from Needle Coke (Sintering Press); Benzene from BTX
+Reformate (Fractionation Spire); Syngas from Petroleum Coke, Bitumen from Tar Sand and methane from Methane Clathrate
+(Chemical Reactor); hydrogen from the Catalytic Reformer; crude oil from Oil Shale and Source Rock Cores.
 
 ### Fixes
 * **Icy Moons' derivation showed "(template error)".** Its formula named the distance `d`, which the equation reader

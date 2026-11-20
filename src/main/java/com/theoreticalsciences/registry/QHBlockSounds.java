@@ -58,6 +58,10 @@ public final class QHBlockSounds {
             case "nucleosynthesis_crust" -> SoundType.TUFF;          // 1.11.0
             case "plume_ice" -> SoundType.GLASS;          // 1.15.0
             case "chondritic_regolith" -> SoundType.GRAVEL;          // 1.15.0
+            case "kerogen_shale" -> SoundType.DEEPSLATE;          // 1.4.0 stage 2
+            case "tar_sand" -> SoundType.SAND;          // 1.4.0 stage 2
+            case "methane_clathrate" -> SoundType.GLASS;          // 1.4.0 stage 2
+            case "overmature_shale" -> SoundType.DEEPSLATE;          // 1.4.0 stage 2
             default -> null;
         };
     }

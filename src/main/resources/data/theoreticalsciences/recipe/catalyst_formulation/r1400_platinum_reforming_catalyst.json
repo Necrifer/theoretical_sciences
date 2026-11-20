@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:catalyst_formulation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:platinum_group_nugget",
+      "count": 1
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:platinum_reforming_catalyst",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "unscaled": true,
+  "research": "theoreticalsciences:hydroprocessing",
+  "physics": {
+    "vars": {
+      "Eb0": 0.55,
+      "Eo": 0.6,
+      "Ts": 850.0
+    },
+    "windows": [
+      {
+        "q": "Y",
+        "min": 0.85,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "title": "Hydrotreating and Reforming",
+  "x": 27,
+  "y": 20,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:petrochemistry",
+    "theoreticalsciences:heterogeneous_catalysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:methanol_cell",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "Crude oil carries sulfur, a few thousand parts per million of it, and a platinum catalyst dies at one. So a refinery treats its naphtha first: hot, under hydrogen, over cobalt and molybdenum, the sulfur leaves as hydrogen sulfide. The rate is first order, so each pass through the bed takes the same fraction of what is left. Then the platinum can work: it strips hydrogen from ring shaped naphthenes, turning them into aromatics with an octane near a hundred, and the hydrogen it frees is the refinery's cheapest. Unlocks the Hydrotreater and the Catalytic Reformer.",
+  "icon": "theoreticalsciences:hydrotreater",
+  "puzzle": {
+    "goal": "Sulfur is removed at a rate proportional to what is left, with rate constant k, over a contact time t. Starting from S0 parts per million, write what is left, S.",
+    "name": "First order removal",
+    "lhs": "S",
+    "form": "S0 * exp ( - k * t )",
+    "expr": "S0 * exp ( - k * t )",
+    "ask": "Find S in ppm for S0 = 5000 ppm, k = @{k} per hour and t = 0.5 hours.",
+    "vars": {
+      "S": "sulfur left",
+      "S0": "sulfur fed",
+      "k": "rate constant",
+      "t": "contact time"
+    },
+    "given": {
+      "S0": 5000.0,
+      "k": 17.0,
+      "t": 0.5
+    },
+    "unit": "ppm",
+    "method": "dS/dt = −kS: the fraction removed each moment is the same, so the sulfur falls exponentially.",
+    "distractors": [
+      "+",
+      "/",
+      "^ 2"
+    ],
+    "vary": {
+      "k": [
+        10.0,
+        25.0,
+        0.5
+      ]
+    }
+  }
+}

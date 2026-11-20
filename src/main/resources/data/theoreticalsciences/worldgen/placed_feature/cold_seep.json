@@ -1,0 +1,24 @@
+{
+  "feature": "theoreticalsciences:cold_seep",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 6
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": -2
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

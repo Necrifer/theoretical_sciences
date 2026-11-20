@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:coking",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:source_rock_core",
+      "count": 2
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:crude_oil",
+      "amount": 1000
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:petroleum_geology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "CCR": 0.05,
+      "SG": 0.86
+    },
+    "windows": [
+      {
+        "q": "Tc",
+        "min": 740,
+        "max": 790
+      }
+    ]
+  }
+}

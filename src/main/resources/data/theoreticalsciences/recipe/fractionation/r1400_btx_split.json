@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:btx_reformate",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:benzene",
+      "amount": 500
+    },
+    {
+      "id": "theoreticalsciences:naphtha",
+      "amount": 300
+    }
+  ],
+  "energy": 512,
+  "duration": 200,
+  "research": "theoreticalsciences:hydroprocessing",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 2.2,
+      "xF": 0.5,
+      "Tb": 353,
+      "dH": 31
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.98,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "title": "Fluid Catalytic Cracking",
+  "x": 33,
+  "y": 26,
+  "insight": 180,
+  "requires": [
+    "theoreticalsciences:heavy_oil_upgrading",
+    "theoreticalsciences:heterogeneous_catalysis"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:zeolite_catalyst",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "description": "Gas oil is too heavy for petrol, so it is cracked: sprayed onto hot zeolite powder in a riser, it splits in seconds into petrol and propylene, and the coke it leaves blackens the catalyst. The powder flows on to a regenerator, where the coke burns off and heats it again, and back to the riser. The unit runs on its own coke: too little and the riser goes cold, too much and the regenerator overheats. Half the world's petrol, and much of its propylene, is made so. Adds the heat balance to the Cracking Tower.",
+  "icon": "theoreticalsciences:naphtha_cell",
+  "puzzle": {
+    "goal": "Each kilogram of oil leaves c kilograms of coke, which burns giving H per kilogram; cracking and boiling the oil take q. The heat warms r kilograms of catalyst of heat capacity cp. Write how much hotter the regenerator runs than the riser, ΔT.",
+    "name": "FCC heat balance",
+    "lhs": "ΔT",
+    "form": "( c * H - q ) / ( r * cp )",
+    "expr": "( c * H - q ) / ( r * cp )",
+    "ask": "Find ΔT in kelvin for c = @{c}, H = 30000 kJ/kg, q = 500 kJ/kg, r = 5 and cp = 1.1 kJ/(kg·K).",
+    "vars": {
+      "ΔT": "regenerator over riser",
+      "c": "coke yield",
+      "H": "heat of burning coke",
+      "q": "heat the oil takes",
+      "r": "catalyst to oil",
+      "cp": "catalyst heat capacity"
+    },
+    "given": {
+      "c": 0.05,
+      "H": 30000.0,
+      "q": 500.0,
+      "r": 5.0,
+      "cp": 1.1
+    },
+    "unit": "K",
+    "method": "In steady state every kilogram of oil brings c·H of fire and takes q; the rest is carried by the catalyst as r·cp·ΔT.",
+    "distractors": [
+      "+",
+      "*",
+      "^ 2"
+    ],
+    "vary": {
+      "c": [
+        0.04,
+        0.08,
+        0.002
+      ]
+    }
+  }
+}

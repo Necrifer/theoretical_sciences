@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:coking",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:overmature_shale",
+      "count": 8
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:petroleum_coke",
+      "count": 1
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 1000
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:petroleum_geology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "CCR": 0.02,
+      "SG": 0.8
+    },
+    "windows": [
+      {
+        "q": "Tc",
+        "min": 760,
+        "max": 800
+      }
+    ]
+  }
+}

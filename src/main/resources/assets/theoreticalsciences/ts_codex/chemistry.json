@@ -2388,6 +2388,46 @@
         "chemistry/r1400_aromaticity",
         "chemistry/r1400_polymer_physics"
       ]
+    },
+    {
+      "entry": "chemistry/r1400_crude_assay",
+      "x": 18,
+      "y": 68,
+      "parents": [
+        "chemistry/r1400_syngas"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_hydroprocessing",
+      "x": 22,
+      "y": 68,
+      "parents": [
+        "chemistry/r1400_crude_assay"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_sulfur_recovery",
+      "x": 26,
+      "y": 68,
+      "parents": [
+        "chemistry/r1400_hydroprocessing"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_fcc",
+      "x": 22,
+      "y": 72,
+      "parents": [
+        "chemistry/r1400_crude_assay"
+      ]
+    },
+    {
+      "entry": "chemistry/r1400_petroleum_geology",
+      "x": 18,
+      "y": 72,
+      "parents": [
+        "chemistry/r1400_crude_assay"
+      ]
     }
   ],
   "regions": [
