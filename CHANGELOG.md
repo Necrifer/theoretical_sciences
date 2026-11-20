@@ -83,10 +83,20 @@ Reformate (Fractionation Spire); Syngas from Petroleum Coke, Bitumen from Tar Sa
   takes for a derivative. The distance is now `a` (and the answer Δg). Photogrammetry had the same fault (its disparity
   is now `p`); Ground Penetrating Radar and Space Solar Power named their answer `d` and now use `z` and `S`. Every
   research puzzle is now checked with the mod's own equation code: all 431 parse, fit their template and give an answer.
-* **The research map is laid out again.** It had grown to 434 nodes packed into a 31 by 41 grid. Each node's column
-  is now its depth (the longest chain of research it needs), so nothing reachable early sits off to the right, and
-  columns and rows are spread wider (3 and 2 steps). Within a column, each node sits near what it links to, so lines
-  run shorter and cross less. The map opens on the first node.
+* **The research map is now a tech tree.** It had grown to 434 nodes packed into a 31 by 41 grid, with every
+  prerequisite drawn as a line. Taking after Civilization's and Factorio's trees and the chapters of quest book mods:
+  * each field has its own band with its name: Mathematics, Physics, Earth and Space, Chemistry, Biology,
+    Engineering and The Anomaly;
+  * a node's column is its depth (the longest chain of research it needs), shared by every band like an era, so
+    nothing reachable early sits off to the right;
+  * only direct links are drawn (one another prerequisite already implies is left out, 811 down to 713), as right
+    angled lines through the gaps between columns and rows, never through a node; within a band, nodes sit by what
+    they link to, so the lines run short;
+  * links between fields, and the whole chain behind any research, light up when you hover over it, with what it
+    unlocks; everything else dims.
+  The map opens on the first node. Each research's field is its `category` in the data, so datapacks can place theirs.
+* **Fluid cells of the 1.4.0 fluids** were drawn in the old cutaway style; they now use the current cell design
+  (painted from an existing cell, so the frame, glint and animation match).
 * The Field Calibrator showed raw names for 26 machines' drifting settings; they now have English names.
 
 ## 1.3.1: Recreating Home for modpacks, and the text rework
