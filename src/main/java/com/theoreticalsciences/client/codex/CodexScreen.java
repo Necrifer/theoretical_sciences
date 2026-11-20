@@ -758,18 +758,22 @@ public class CodexScreen extends Screen {
         // on it), and dims the rest, so a crowded map stays readable
         java.util.Set<String> linked = new java.util.HashSet<>();
         String hid = hovered == null ? null : hovered.entry();
+        Tree tr = tab.tree ? tree(tab) : null;
         if (hid != null) {
             linked.add(hid);
             linked.addAll(hovered.parents());
             for (CodexData.Node m : tab.nodes) if (m.parents().contains(hid)) linked.add(m.entry());
+            if (tr != null) linked.addAll(tr.focus(hid));      // 1.4.0: the whole chain behind it, as on the research map
         }
         // 1.1.3: everything flat on the map is drawn as one batch per pass. Each rectangle used to be sent to the graphics
         // card on its own (thousands a frame), which made a crowded map such as Discovery - nearly all on screen at once - lag.
         float thick = (float) Math.max(1, Math.min(2.5, zoom * 1.2));
         List<CodexData.Node> shown = new ArrayList<>();
         g.drawManaged(() -> {
+            // 1.4.0: a tree tab draws its links the way the research map does (see drawTreeLinks)
+            if (tr != null) drawTreeLinks(g, tr, hid, linked, thick, a, x0, y0, x1, y1);
             // connections: to the chapter it builds on (bright, with a moving spark when open) or to its hub (faint)
-            for (CodexData.Node n : tab.nodes) {
+            if (tr == null) for (CodexData.Node n : tab.nodes) {
                 double nx = sx(n), ny = sy(n);
                 for (String pid : n.parents()) {
                     CodexData.Node p = tab.byEntry.get(pid);
@@ -872,6 +876,155 @@ public class CodexScreen extends Screen {
             g.pose().popPose();
         });
         g.disableScissor();
+    }
+
+    // ================================================================== 1.4.0: the tree layout
+    /** What a tree tab's links are: direct links between chapters, each item's chapter, and every chapter's ancestors. */
+    private static final class Tree {
+        final Map<String, List<String>> direct = new HashMap<>();
+        final Map<String, java.util.Set<String>> ancestors = new HashMap<>();
+        final Map<String, List<String>> unlocks = new HashMap<>();
+        final Map<String, List<CodexData.Node>> items = new HashMap<>();
+        final Map<String, String> owner = new HashMap<>();
+
+        java.util.Set<String> focus(String id) {
+            java.util.Set<String> f = new java.util.HashSet<>();
+            String c = owner.getOrDefault(id, id);
+            f.add(id);
+            f.add(c);
+            f.addAll(ancestors.getOrDefault(c, java.util.Set.of()));
+            f.addAll(unlocks.getOrDefault(c, List.of()));
+            if (c.equals(id)) for (CodexData.Node n : items.getOrDefault(c, List.of())) f.add(n.entry());
+            return f;
+        }
+    }
+
+    private static final Map<CodexData.Tab, Tree> TREES = new java.util.WeakHashMap<>();
+
+    private static Tree tree(CodexData.Tab tab) {
+        Tree t = TREES.get(tab);
+        if (t != null) return t;
+        Tree tr = new Tree();
+        Map<String, List<String>> par = new HashMap<>();
+        for (CodexData.Node n : tab.nodes) {
+            List<String> ps = new ArrayList<>();
+            for (String p : n.parents()) {
+                CodexData.Node pn = tab.byEntry.get(p);
+                if (pn == null) continue;
+                if (n.small() && !pn.small() && !tr.owner.containsKey(n.entry())) {
+                    tr.owner.put(n.entry(), p);
+                    tr.items.computeIfAbsent(p, k -> new ArrayList<>()).add(n);
+                    continue;
+                }
+                ps.add(p);
+            }
+            if (!tr.owner.containsKey(n.entry())) par.put(n.entry(), ps);
+        }
+        for (String id : par.keySet()) ancestorsOf(id, par, tr.ancestors, new java.util.HashSet<>());
+        for (var e : par.entrySet()) {
+            List<String> keep = new ArrayList<>();
+            for (String p : e.getValue()) {
+                boolean implied = false;
+                for (String q : e.getValue()) if (!q.equals(p) && tr.ancestors.getOrDefault(q, java.util.Set.of()).contains(p)) { implied = true; break; }
+                if (!implied) keep.add(p);
+            }
+            tr.direct.put(e.getKey(), keep);
+            for (String p : keep) tr.unlocks.computeIfAbsent(p, k -> new ArrayList<>()).add(e.getKey());
+        }
+        TREES.put(tab, tr);
+        return tr;
+    }
+
+    private static java.util.Set<String> ancestorsOf(String id, Map<String, List<String>> par, Map<String, java.util.Set<String>> memo, java.util.Set<String> path) {
+        java.util.Set<String> got = memo.get(id);
+        if (got != null) return got;
+        java.util.Set<String> out = new java.util.HashSet<>();
+        if (path.add(id)) {
+            for (String p : par.getOrDefault(id, List.of())) {
+                out.add(p);
+                out.addAll(ancestorsOf(p, par, memo, path));
+            }
+            path.remove(id);
+        }
+        memo.put(id, out);
+        return out;
+    }
+
+    private double ux(double v) {
+        return panX + v * UNIT * zoom;
+    }
+
+    private double uy(double v) {
+        return panY + v * UNIT * zoom;
+    }
+
+    /**
+     * Links as on the research map: out of the chapter's right side, down or up in the gap after its column, into the
+     * next chapter's left side; a link that skips columns climbs to its group's lane along the top and runs there, so
+     * no line passes through a node. Each chapter's items hang from it on a thin spine. Links to another band or group,
+     * and the chain behind a hovered node, are drawn only while a node is hovered.
+     */
+    private void drawTreeLinks(GuiGraphics g, Tree tr, String hid, java.util.Set<String> lit, float thick, int a, int x0, int y0, int x1, int y1) {
+        int th = Math.max(1, Math.round(thick));
+        for (int pass = 0; pass < 2; pass++) {               // the hovered chain last, on top
+            for (var e : tr.direct.entrySet()) {
+                CodexData.Node c = tab.byEntry.get(e.getKey());
+                if (c == null) continue;
+                CodexData.Entry ce = CodexData.entries.get(c.entry());
+                if (!CodexState.visible(ce)) continue;
+                for (String pid : e.getValue()) {
+                    CodexData.Node p = tab.byEntry.get(pid);
+                    if (p == null) continue;
+                    boolean on = hid != null && lit.contains(pid) && lit.contains(c.entry());
+                    if ((pass == 1) != on) continue;
+                    boolean same = p.route() != null && c.route() != null && p.route()[0] == c.route()[0] && p.band().equals(c.band());
+                    if (!same && !on) continue;
+                    boolean open = CodexState.unlocked(ce);
+                    int col = on ? 0xFFFFE070 : open ? HoloStyle.argb(hid != null ? 0x40 : 0xB0, a) : hid != null ? 0x30607080 : 0x70607080;
+                    int S = size(p), Sc = size(c);
+                    double px = sx(p) + S / 2.0, py = sy(p), cx = sx(c) - Sc / 2.0, cy = sy(c);
+                    if ((px < x0 && cx < x0) || (px > x1 && cx > x1) || (Math.max(py, cy) < y0 && (!same || uy(p.route()[2]) < y0)) || (Math.min(py, cy) > y1)) continue;
+                    int k = on ? th + 1 : th;
+                    if (same && c.route()[1] > p.route()[1] + 1 && p.route()[2] > -1e8) {
+                        double xo = ux(p.route()[4]), xg = ux(c.route()[3]), ly = uy(p.route()[2]);
+                        seg(g, px, py, xo, py, k, col);
+                        seg(g, xo, py, xo, ly, k, col);
+                        seg(g, xo, ly, xg, ly, k, col);
+                        seg(g, xg, ly, xg, cy, k, col);
+                        seg(g, xg, cy, cx, cy, k, col);
+                    } else {
+                        double xg = same ? ux(c.route()[3]) : (px + cx) / 2;
+                        seg(g, px, py, xg, py, k, col);
+                        seg(g, xg, py, xg, cy, k, col);
+                        seg(g, xg, cy, cx, cy, k, col);
+                    }
+                }
+            }
+        }
+        // each chapter's items hang from it
+        for (var e : tr.items.entrySet()) {
+            CodexData.Node c = tab.byEntry.get(e.getKey());
+            if (c == null || !CodexState.visible(CodexData.entries.get(c.entry()))) continue;
+            double sx = sx(c) - size(c) / 2.0 - 3 * zoom, top = sy(c) + size(c) / 2.0, bottom = top;
+            if (sx > x1 || sx < x0 - 40) continue;
+            boolean on = hid != null && lit.contains(c.entry());
+            int col = on ? 0xC0FFE070 : HoloStyle.argb(hid != null ? 0x20 : 0x50, a);
+            for (CodexData.Node n : e.getValue()) {
+                if (n.y() <= c.y() || !CodexState.visible(CodexData.entries.get(n.entry()))) continue;
+                double ny = sy(n);
+                bottom = Math.max(bottom, ny);
+                if (Math.abs(n.x() - c.x()) < 1) seg(g, sx, ny, sx(n) - size(n) / 2.0, ny, 1, col);     // a tick to each row
+            }
+            if (bottom > top) seg(g, sx, sy(c), sx, bottom, 1, col);
+        }
+    }
+
+    private static void seg(GuiGraphics g, double xa, double ya, double xb, double yb, int k, int col) {
+        int ax = (int) Math.round(Math.min(xa, xb)), bx = (int) Math.round(Math.max(xa, xb));
+        int ay = (int) Math.round(Math.min(ya, yb)), by = (int) Math.round(Math.max(ya, yb));
+        int h = k / 2;
+        if (ay == by) g.fill(ax - h, ay - h, bx + k - h, ay + k - h, col);
+        else g.fill(ax - h, ay - h, ax + k - h, by + k - h, col);
     }
 
     private void padlock(GuiGraphics g, int cx, int cy) {

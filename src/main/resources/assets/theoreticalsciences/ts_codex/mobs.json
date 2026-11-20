@@ -6,27 +6,37 @@
   "nodes": [
     {
       "entry": "basics/containment_failure",
-      "x": 3,
-      "y": 5,
-      "parents": []
+      "x": 1,
+      "y": 3,
+      "parents": [],
+      "band": "Getting Started",
+      "route": [
+        1,
+        0,
+        -999999997.0,
+        -1.5,
+        7.5
+      ]
     },
     {
       "entry": "basics/node_destabilised_husk",
-      "x": 3,
-      "y": 3,
-      "parents": [
-        "basics/containment_failure"
-      ],
-      "node": true
-    },
-    {
-      "entry": "basics/node_law_wraith",
       "x": 1,
       "y": 5,
       "parents": [
         "basics/containment_failure"
       ],
-      "node": true
+      "node": true,
+      "band": "Getting Started"
+    },
+    {
+      "entry": "basics/node_law_wraith",
+      "x": 3,
+      "y": 5,
+      "parents": [
+        "basics/containment_failure"
+      ],
+      "node": true,
+      "band": "Getting Started"
     },
     {
       "entry": "basics/node_nanite_swarm",
@@ -35,835 +45,1204 @@
       "parents": [
         "basics/containment_failure"
       ],
-      "node": true
+      "node": true,
+      "band": "Getting Started"
     },
     {
       "entry": "basics/node_void_wraith",
-      "x": 3,
+      "x": 1,
       "y": 7,
       "parents": [
         "basics/containment_failure"
       ],
-      "node": true
+      "node": true,
+      "band": "Getting Started"
     },
     {
       "entry": "world/ruins",
-      "x": 3,
-      "y": 13,
+      "x": 1,
+      "y": 15,
       "parents": [
         "basics/guide_04_neutronium"
+      ],
+      "band": "The World",
+      "route": [
+        2,
+        0,
+        -999999985.0,
+        -1.5,
+        3.5
       ]
     },
     {
       "entry": "biology/anomaly_spawner",
-      "x": 107,
-      "y": 25,
-      "parents": []
+      "x": 21,
+      "y": 103,
+      "parents": [],
+      "band": "Biology",
+      "route": [
+        22,
+        0,
+        -999999897.0,
+        18.5,
+        23.5
+      ]
     },
     {
       "entry": "world/r87_axioms",
-      "x": 10,
-      "y": 17,
-      "parents": []
+      "x": 7,
+      "y": 25,
+      "parents": [],
+      "band": "The World",
+      "route": [
+        3,
+        0,
+        15.5,
+        4.5,
+        13.5
+      ]
     },
     {
       "entry": "world/node_paradox_shade",
-      "x": 10,
-      "y": 15,
+      "x": 7,
+      "y": 27,
       "parents": [
         "world/r87_axioms"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "mathematics/fractal_space",
-      "x": 89,
-      "y": 45,
-      "parents": []
+      "x": 1,
+      "y": 123,
+      "parents": [],
+      "band": "Mathematics",
+      "route": [
+        25,
+        0,
+        -999999877.0,
+        -1.5,
+        7.5
+      ]
     },
     {
       "entry": "mathematics/node_axiom_sentinel",
-      "x": 89,
-      "y": 43,
+      "x": 1,
+      "y": 125,
       "parents": [
         "mathematics/fractal_space"
       ],
-      "node": true
+      "node": true,
+      "band": "Mathematics"
     },
     {
       "entry": "mathematics/node_fractal_wyrm",
-      "x": 87,
-      "y": 45,
+      "x": 3,
+      "y": 125,
       "parents": [
         "mathematics/fractal_space"
       ],
-      "node": true
+      "node": true,
+      "band": "Mathematics"
     },
     {
       "entry": "world/r78_elements",
-      "x": 3,
-      "y": 18,
-      "parents": []
+      "x": 7,
+      "y": 19,
+      "parents": [],
+      "band": "The World",
+      "route": [
+        3,
+        0,
+        15.5,
+        4.5,
+        13.5
+      ]
     },
     {
       "entry": "world/node_euclids_automaton",
-      "x": 3,
-      "y": 16,
+      "x": 7,
+      "y": 21,
       "parents": [
         "world/r78_elements"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "nanotech/nanite_assembler",
-      "x": 89,
-      "y": 15,
-      "parents": []
+      "x": 1,
+      "y": 93,
+      "parents": [],
+      "band": "Nanotech & Mass",
+      "route": [
+        19,
+        0,
+        -999999907.0,
+        -1.5,
+        7.5
+      ]
     },
     {
       "entry": "nanotech/node_nanite_swarm",
-      "x": 89,
-      "y": 13,
+      "x": 1,
+      "y": 95,
       "parents": [
         "nanotech/nanite_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Nanotech & Mass"
     },
     {
       "entry": "world/r87_continuum",
-      "x": 17,
-      "y": 17,
+      "x": 16,
+      "y": 22,
       "parents": [
         "world/r87_axioms"
+      ],
+      "band": "The World",
+      "route": [
+        3,
+        1,
+        15.5,
+        13.5,
+        22.5
       ]
     },
     {
       "entry": "world/node_fourier_wisp",
-      "x": 17,
-      "y": 15,
+      "x": 16,
+      "y": 24,
       "parents": [
         "world/r87_continuum"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "geography/r44_creatures",
-      "x": 89,
-      "y": 5,
-      "parents": []
+      "x": 1,
+      "y": 83,
+      "parents": [],
+      "band": "Earth & Mapping",
+      "route": [
+        18,
+        0,
+        -999999917.0,
+        -1.5,
+        7.5
+      ]
     },
     {
       "entry": "geography/node_fission_husk",
-      "x": 87,
-      "y": 5,
+      "x": 3,
+      "y": 85,
       "parents": [
         "geography/r44_creatures"
       ],
-      "node": true
+      "node": true,
+      "band": "Earth & Mapping"
     },
     {
       "entry": "geography/node_geodynamo_wraith",
-      "x": 91,
-      "y": 5,
+      "x": 5,
+      "y": 85,
       "parents": [
         "geography/r44_creatures"
       ],
-      "node": true
+      "node": true,
+      "band": "Earth & Mapping"
     },
     {
       "entry": "geography/node_plume_elemental",
-      "x": 89,
-      "y": 3,
+      "x": 1,
+      "y": 85,
       "parents": [
         "geography/r44_creatures"
       ],
-      "node": true
+      "node": true,
+      "band": "Earth & Mapping"
     },
     {
       "entry": "minds/psionic_resonator",
-      "x": 89,
-      "y": 35,
+      "x": 1,
+      "y": 113,
       "parents": [
         "world/r78_elements"
+      ],
+      "band": "Artificial Minds",
+      "route": [
+        24,
+        0,
+        -999999887.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "minds/node_boltzmann_brain",
-      "x": 89,
-      "y": 33,
+      "x": 1,
+      "y": 115,
       "parents": [
         "minds/psionic_resonator"
       ],
-      "node": true
+      "node": true,
+      "band": "Artificial Minds"
     },
     {
       "entry": "world/r87_curved",
-      "x": 27,
-      "y": 17,
+      "x": 25,
+      "y": 21,
       "parents": [
         "world/r78_elements",
         "world/r87_continuum"
+      ],
+      "band": "The World",
+      "route": [
+        3,
+        2,
+        15.5,
+        22.5,
+        31.5
       ]
     },
     {
       "entry": "world/node_tessellate",
-      "x": 27,
-      "y": 15,
+      "x": 25,
+      "y": 23,
       "parents": [
         "world/r87_curved"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/r51_frontier_life",
-      "x": 34,
-      "y": 17,
-      "parents": []
+      "x": 35,
+      "y": 15,
+      "parents": [],
+      "band": "The World",
+      "route": [
+        4,
+        0,
+        -999999985.0,
+        32.5,
+        41.5
+      ]
     },
     {
       "entry": "world/node_binary_serpent",
-      "x": 32,
-      "y": 15,
+      "x": 35,
+      "y": 17,
       "parents": [
         "world/r51_frontier_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_hawking_imp",
-      "x": 34,
+      "x": 37,
       "y": 19,
       "parents": [
         "world/r51_frontier_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_lens_phantom",
-      "x": 36,
-      "y": 17,
+      "x": 35,
+      "y": 19,
       "parents": [
         "world/r51_frontier_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_pulsar_wisp",
-      "x": 34,
-      "y": 15,
-      "parents": [
-        "world/r51_frontier_life"
-      ],
-      "node": true
-    },
-    {
-      "entry": "world/node_tidal_stretcher",
-      "x": 32,
+      "x": 37,
       "y": 17,
       "parents": [
         "world/r51_frontier_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
+    },
+    {
+      "entry": "world/node_tidal_stretcher",
+      "x": 39,
+      "y": 17,
+      "parents": [
+        "world/r51_frontier_life"
+      ],
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "antimatter/antiverse_life",
-      "x": 3,
-      "y": 48,
+      "x": 1,
+      "y": 63,
       "parents": [
         "world/r87_continuum"
+      ],
+      "band": "Antimatter",
+      "route": [
+        16,
+        0,
+        -999999937.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "antimatter/node_annihilator",
-      "x": 3,
-      "y": 46,
+      "x": 1,
+      "y": 65,
       "parents": [
         "antimatter/antiverse_life"
       ],
-      "node": true
+      "node": true,
+      "band": "Antimatter"
     },
     {
       "entry": "antimatter/node_antihydrogen_wisp",
-      "x": 1,
-      "y": 48,
+      "x": 3,
+      "y": 65,
       "parents": [
         "antimatter/antiverse_life"
       ],
-      "node": true
+      "node": true,
+      "band": "Antimatter"
     },
     {
       "entry": "antimatter/node_positronium_skitterer",
       "x": 5,
-      "y": 48,
+      "y": 65,
       "parents": [
         "antimatter/antiverse_life"
       ],
-      "node": true
+      "node": true,
+      "band": "Antimatter"
     },
     {
       "entry": "probability/r55_extremes",
-      "x": 89,
-      "y": 55,
+      "x": 1,
+      "y": 133,
       "parents": [
         "world/r87_continuum"
+      ],
+      "band": "Probability",
+      "route": [
+        27,
+        0,
+        -999999867.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "probability/node_black_swan",
-      "x": 89,
-      "y": 53,
+      "x": 1,
+      "y": 135,
       "parents": [
         "probability/r55_extremes"
       ],
-      "node": true
+      "node": true,
+      "band": "Probability"
     },
     {
       "entry": "world/bulk_life",
-      "x": 51,
+      "x": 16,
       "y": 17,
       "parents": [
         "world/r78_elements"
+      ],
+      "band": "The World",
+      "route": [
+        3,
+        1,
+        15.5,
+        13.5,
+        22.5
       ]
     },
     {
       "entry": "world/node_moduli_crawler",
-      "x": 51,
-      "y": 15,
+      "x": 16,
+      "y": 19,
       "parents": [
         "world/bulk_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/r68_titan_life",
-      "x": 71,
-      "y": 17,
-      "parents": []
+      "x": 45,
+      "y": 18,
+      "parents": [],
+      "band": "The World",
+      "route": [
+        5,
+        0,
+        -999999985.0,
+        42.5,
+        51.5
+      ]
     },
     {
       "entry": "world/node_catalyst_sprite",
-      "x": 69,
-      "y": 17,
+      "x": 47,
+      "y": 20,
       "parents": [
         "world/r68_titan_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_cryolava_slug",
-      "x": 73,
-      "y": 17,
+      "x": 49,
+      "y": 20,
       "parents": [
         "world/r68_titan_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_tholin_drifter",
-      "x": 71,
-      "y": 15,
+      "x": 45,
+      "y": 20,
       "parents": [
         "world/r68_titan_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "spacetime/black_hole_interior",
-      "x": 3,
-      "y": 38,
+      "x": 1,
+      "y": 53,
       "parents": [
         "world/r87_continuum"
+      ],
+      "band": "Wormholes & Causality",
+      "route": [
+        15,
+        0,
+        -999999947.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "spacetime/node_photon_moth",
-      "x": 3,
-      "y": 36,
+      "x": 1,
+      "y": 55,
       "parents": [
         "spacetime/black_hole_interior"
       ],
-      "node": true
+      "node": true,
+      "band": "Wormholes & Causality"
     },
     {
       "entry": "spacetime/node_tidal_horror",
-      "x": 1,
-      "y": 38,
+      "x": 3,
+      "y": 55,
       "parents": [
         "spacetime/black_hole_interior"
       ],
-      "node": true
+      "node": true,
+      "band": "Wormholes & Causality"
     },
     {
       "entry": "strings/compactification",
-      "x": 3,
-      "y": 58,
+      "x": 1,
+      "y": 73,
       "parents": [
         "world/r87_curved"
+      ],
+      "band": "Strings & the Multiverse",
+      "route": [
+        17,
+        0,
+        -999999927.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "strings/node_brane_strider",
-      "x": 3,
-      "y": 56,
+      "x": 1,
+      "y": 75,
       "parents": [
         "strings/compactification"
       ],
-      "node": true
+      "node": true,
+      "band": "Strings & the Multiverse"
     },
     {
       "entry": "strings/node_graviton_wisp",
-      "x": 1,
-      "y": 58,
+      "x": 3,
+      "y": 75,
       "parents": [
         "strings/compactification"
       ],
-      "node": true
+      "node": true,
+      "band": "Strings & the Multiverse"
     },
     {
       "entry": "biology/r92_scale",
-      "x": 99,
-      "y": 25,
+      "x": 11,
+      "y": 103,
       "parents": [
         "world/r78_elements"
+      ],
+      "band": "Biology",
+      "route": [
+        21,
+        0,
+        -999999897.0,
+        8.5,
+        17.5
       ]
     },
     {
       "entry": "biology/node_mirror_microbe",
-      "x": 99,
-      "y": 23,
+      "x": 11,
+      "y": 105,
       "parents": [
         "biology/r92_scale"
       ],
-      "node": true
+      "node": true,
+      "band": "Biology"
     },
     {
       "entry": "quantum/foam_boundaries",
-      "x": 3,
-      "y": 28,
+      "x": 1,
+      "y": 43,
       "parents": [
         "world/r78_elements"
+      ],
+      "band": "Quantum Engineering",
+      "route": [
+        14,
+        0,
+        -999999957.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "quantum/node_planck_mite",
-      "x": 3,
-      "y": 26,
+      "x": 1,
+      "y": 45,
       "parents": [
         "quantum/foam_boundaries"
       ],
-      "node": true
+      "node": true,
+      "band": "Quantum Engineering"
     },
     {
       "entry": "quantum/node_vacuum_drifter",
-      "x": 1,
-      "y": 28,
+      "x": 3,
+      "y": 45,
       "parents": [
         "quantum/foam_boundaries"
       ],
-      "node": true
+      "node": true,
+      "band": "Quantum Engineering"
     },
     {
       "entry": "quantum/node_virtual_pair",
       "x": 5,
-      "y": 28,
+      "y": 45,
       "parents": [
         "quantum/foam_boundaries"
       ],
-      "node": true
+      "node": true,
+      "band": "Quantum Engineering"
     },
     {
       "entry": "world/r94_titan_ocean",
-      "x": 61,
-      "y": 17,
+      "x": 54,
+      "y": 21,
       "parents": [
         "world/r68_titan_life"
+      ],
+      "band": "The World",
+      "route": [
+        5,
+        1,
+        -999999985.0,
+        51.5,
+        60.5
       ]
     },
     {
       "entry": "world/node_brine_jelly",
-      "x": 63,
-      "y": 17,
+      "x": 58,
+      "y": 23,
       "parents": [
         "world/r94_titan_ocean"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_ice_eel",
-      "x": 59,
-      "y": 17,
+      "x": 56,
+      "y": 23,
       "parents": [
         "world/r94_titan_ocean"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_vent_crab",
-      "x": 61,
-      "y": 19,
+      "x": 54,
+      "y": 25,
       "parents": [
         "world/r94_titan_ocean"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_vent_grazer",
-      "x": 61,
-      "y": 15,
+      "x": 54,
+      "y": 23,
       "parents": [
         "world/r94_titan_ocean"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/r68_ouroboros",
-      "x": 78,
-      "y": 17,
+      "x": 54,
+      "y": 15,
       "parents": [
         "world/r68_titan_life"
+      ],
+      "band": "The World",
+      "route": [
+        5,
+        1,
+        -999999985.0,
+        51.5,
+        60.5
       ]
     },
     {
       "entry": "world/node_ouroboros",
-      "x": 78,
-      "y": 15,
+      "x": 54,
+      "y": 17,
       "parents": [
         "world/r68_ouroboros"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/r93_inner_life",
-      "x": 44,
-      "y": 17,
+      "x": 16,
+      "y": 27,
       "parents": [
         "world/r87_axioms"
+      ],
+      "band": "The World",
+      "route": [
+        3,
+        1,
+        15.5,
+        13.5,
+        22.5
       ]
     },
     {
       "entry": "world/node_macrophage",
-      "x": 42,
-      "y": 17,
+      "x": 18,
+      "y": 29,
       "parents": [
         "world/r93_inner_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_polymerase",
-      "x": 44,
-      "y": 19,
+      "x": 16,
+      "y": 31,
       "parents": [
         "world/r93_inner_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_red_cell",
-      "x": 44,
-      "y": 15,
+      "x": 16,
+      "y": 29,
       "parents": [
         "world/r93_inner_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "world/node_t_cell",
-      "x": 46,
-      "y": 17,
+      "x": 20,
+      "y": 29,
       "parents": [
         "world/r93_inner_life"
       ],
-      "node": true
+      "node": true,
+      "band": "The World"
     },
     {
       "entry": "biology/r90_defence",
-      "x": 89,
-      "y": 25,
+      "x": 1,
+      "y": 103,
       "parents": [
         "world/r87_axioms"
+      ],
+      "band": "Biology",
+      "route": [
+        20,
+        0,
+        -999999897.0,
+        -1.5,
+        7.5
       ]
     },
     {
       "entry": "biology/node_paradox_echo",
-      "x": 89,
-      "y": 23,
+      "x": 1,
+      "y": 105,
       "parents": [
         "biology/r90_defence"
       ],
-      "node": true
+      "node": true,
+      "band": "Biology"
     },
     {
       "entry": "mathematics/transfinite",
-      "x": 99,
-      "y": 45,
+      "x": 11,
+      "y": 123,
       "parents": [
         "world/r87_axioms"
+      ],
+      "band": "Mathematics",
+      "route": [
+        26,
+        0,
+        -999999877.0,
+        8.5,
+        17.5
       ]
     },
     {
       "entry": "mathematics/node_hilbert_bellhop",
-      "x": 99,
-      "y": 43,
+      "x": 11,
+      "y": 125,
       "parents": [
         "mathematics/transfinite"
       ],
-      "node": true
+      "node": true,
+      "band": "Mathematics"
     },
     {
       "entry": "mathematics/node_hypercube_drifter",
-      "x": 97,
-      "y": 45,
+      "x": 13,
+      "y": 125,
       "parents": [
         "mathematics/transfinite"
       ],
-      "node": true
+      "node": true,
+      "band": "Mathematics"
     },
     {
       "entry": "mathematics/node_ordinal_hound",
-      "x": 101,
-      "y": 45,
+      "x": 15,
+      "y": 125,
       "parents": [
         "mathematics/transfinite"
       ],
-      "node": true
+      "node": true,
+      "band": "Mathematics"
     },
     {
       "entry": "biology/r94_anomaly_lived",
-      "x": 112,
-      "y": 25,
+      "x": 27,
+      "y": 103,
       "parents": [
         "world/bulk_life"
+      ],
+      "band": "Biology",
+      "route": [
+        23,
+        0,
+        -999999897.0,
+        24.5,
+        33.5
       ]
     },
     {
       "entry": "biology/node_tumour_hydra",
-      "x": 112,
-      "y": 23,
+      "x": 27,
+      "y": 105,
       "parents": [
         "biology/r94_anomaly_lived"
       ],
-      "node": true
+      "node": true,
+      "band": "Biology"
     },
     {
       "entry": "endgame/alpha_omega",
-      "x": 87,
-      "y": 63,
+      "x": 1,
+      "y": 143,
       "parents": [
         "world/bulk_life"
+      ],
+      "band": "Beyond Mathematics",
+      "route": [
+        28,
+        0,
+        -999999857.0,
+        -1.5,
+        3.5
       ]
     },
     {
       "entry": "world/node_karman_wraith",
-      "x": 63,
+      "x": 70,
       "y": 15,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        7,
+        0,
+        -999999985.0,
+        67.5,
+        72.5
+      ]
     },
     {
       "entry": "world/node_hadal_anglerfish",
-      "x": 63,
-      "y": 19,
+      "x": 76,
+      "y": 15,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        8,
+        0,
+        -999999985.0,
+        73.5,
+        78.5
+      ]
     },
     {
       "entry": "world/node_siphonophore",
-      "x": 65,
-      "y": 19,
+      "x": 94,
+      "y": 15,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        11,
+        0,
+        -999999985.0,
+        91.5,
+        96.5
+      ]
     },
     {
       "entry": "world/node_storm_elemental",
-      "x": 63,
-      "y": 21,
+      "x": 82,
+      "y": 15,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        9,
+        0,
+        -999999985.0,
+        79.5,
+        84.5
+      ]
     },
     {
       "entry": "world/node_mammoth",
-      "x": 63,
-      "y": 13,
+      "x": 64,
+      "y": 15,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        6,
+        0,
+        -999999985.0,
+        61.5,
+        66.5
+      ]
     },
     {
       "entry": "world/node_meganeura",
-      "x": 65,
-      "y": 13,
+      "x": 88,
+      "y": 15,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        10,
+        0,
+        -999999985.0,
+        85.5,
+        90.5
+      ]
     },
     {
       "entry": "world/node_dreaming_colony",
-      "x": 67,
-      "y": 13,
+      "x": 1,
+      "y": 35,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        12,
+        0,
+        -999999965.0,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "world/node_rust_mite",
-      "x": 69,
-      "y": 13,
+      "x": 7,
+      "y": 35,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "The World",
+      "route": [
+        13,
+        0,
+        -999999965.0,
+        4.5,
+        9.5
+      ]
     },
     {
       "entry": "world/node_halo_lamb",
-      "x": 86,
-      "y": 68,
+      "x": 1,
+      "y": 151,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "Omnipotency",
+      "route": [
+        29,
+        0,
+        -999999849.0,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "world/node_cherub",
-      "x": 88,
-      "y": 68,
+      "x": 7,
+      "y": 151,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "Omnipotency",
+      "route": [
+        30,
+        0,
+        -999999849.0,
+        4.5,
+        9.5
+      ]
     },
     {
       "entry": "world/node_choir_seraph",
-      "x": 90,
-      "y": 68,
+      "x": 13,
+      "y": 151,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "Omnipotency",
+      "route": [
+        31,
+        0,
+        -999999849.0,
+        10.5,
+        15.5
+      ]
     },
     {
       "entry": "world/node_cloud_ray",
-      "x": 92,
-      "y": 68,
+      "x": 19,
+      "y": 151,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "Omnipotency",
+      "route": [
+        32,
+        0,
+        -999999849.0,
+        16.5,
+        21.5
+      ]
     },
     {
       "entry": "world/node_dweller",
-      "x": 94,
-      "y": 68,
+      "x": 25,
+      "y": 151,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "Omnipotency",
+      "route": [
+        33,
+        0,
+        -999999849.0,
+        22.5,
+        27.5
+      ]
     },
     {
       "entry": "world/node_threshold_warden",
-      "x": 96,
-      "y": 68,
+      "x": 31,
+      "y": 151,
       "parents": [],
-      "node": true
+      "node": true,
+      "band": "Omnipotency",
+      "route": [
+        34,
+        0,
+        -999999849.0,
+        28.5,
+        33.5
+      ]
     }
   ],
   "regions": [
     {
       "tier": 0,
       "label": "Getting Started",
-      "x0": -1.5,
-      "x1": 82.5,
-      "y0": 0,
-      "y1": 8.5
+      "x0": -1.0,
+      "y0": 0.0,
+      "x1": 96.0,
+      "y1": 9.5
     },
     {
       "tier": 1,
       "label": "The World",
-      "x0": -1.5,
-      "x1": 82.5,
-      "y0": 10,
-      "y1": 21.5
+      "x0": -1.0,
+      "y0": 12.0,
+      "x1": 96.0,
+      "y1": 37.5
     },
     {
       "tier": 2,
       "label": "Quantum Engineering",
-      "x0": -1.5,
-      "x1": 82.5,
-      "y0": 23,
-      "y1": 31.5
+      "x0": -1.0,
+      "y0": 40.0,
+      "x1": 96.0,
+      "y1": 47.5
     },
     {
       "tier": 3,
       "label": "Wormholes & Causality",
-      "x0": -1.5,
-      "x1": 82.5,
-      "y0": 33,
-      "y1": 41.5
+      "x0": -1.0,
+      "y0": 50.0,
+      "x1": 96.0,
+      "y1": 57.5
     },
     {
       "tier": 4,
       "label": "Antimatter",
-      "x0": -1.5,
-      "x1": 82.5,
-      "y0": 43,
-      "y1": 51.5
+      "x0": -1.0,
+      "y0": 60.0,
+      "x1": 96.0,
+      "y1": 67.5
     },
     {
       "tier": 5,
       "label": "Strings & the Multiverse",
-      "x0": -1.5,
-      "x1": 82.5,
-      "y0": 53,
-      "y1": 61.5
+      "x0": -1.0,
+      "y0": 70.0,
+      "x1": 96.0,
+      "y1": 77.5
     },
     {
       "tier": 6,
       "label": "Earth & Mapping",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 0,
-      "y1": 8.5
+      "x0": -1.0,
+      "y0": 80.0,
+      "x1": 96.0,
+      "y1": 87.5
     },
     {
       "tier": 7,
       "label": "Nanotech & Mass",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 10,
-      "y1": 18.5
+      "x0": -1.0,
+      "y0": 90.0,
+      "x1": 96.0,
+      "y1": 97.5
     },
     {
       "tier": 8,
       "label": "Biology",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 20,
-      "y1": 28.5
+      "x0": -1.0,
+      "y0": 100.0,
+      "x1": 96.0,
+      "y1": 107.5
     },
     {
       "tier": 9,
       "label": "Artificial Minds",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 30,
-      "y1": 38.5
+      "x0": -1.0,
+      "y0": 110.0,
+      "x1": 96.0,
+      "y1": 117.5
     },
     {
       "tier": 10,
       "label": "Mathematics",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 40,
-      "y1": 48.5
+      "x0": -1.0,
+      "y0": 120.0,
+      "x1": 96.0,
+      "y1": 127.5
     },
     {
       "tier": 11,
       "label": "Probability",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 50,
-      "y1": 58.5
+      "x0": -1.0,
+      "y0": 130.0,
+      "x1": 96.0,
+      "y1": 137.5
     },
     {
       "tier": 12,
       "label": "Beyond Mathematics",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 60,
-      "y1": 64.5
+      "x0": -1.0,
+      "y0": 140.0,
+      "x1": 96.0,
+      "y1": 145.5
     },
     {
       "tier": 13,
       "label": "Omnipotency",
-      "x0": 84.5,
-      "x1": 116.5,
-      "y0": 66,
-      "y1": 70.5
+      "x0": -1.0,
+      "y0": 148.0,
+      "x1": 96.0,
+      "y1": 153.5
     }
-  ]
+  ],
+  "layout": "tree"
 }

@@ -117,6 +117,18 @@ Four new research nodes in Physics (each with its derivation puzzle) and four ne
   The map opens on the first node. Each research's field is its `category` in the data, so datapacks can place theirs.
 * Multiblocks now sense the temperature of their dimension (`T_amb` in machine physics): 94 K on Titan, 210 K on Mars,
   737 K on Venus, 300 K elsewhere. Only the Solar Furnace and the Pound Rebka Tower used it before, and only slightly.
+* **The Codex maps are laid out the same way as the research tree**, on every tab:
+  * each region is one full width band with its name, stacked in order (several tabs had their bands side by side,
+    with links running diagonally across the whole map); the bands now actually show (a datapack merge step dropped
+    them, so they had not been drawn since 1.2.0);
+  * chapters inside a band are laid out as small trees, a column per step of depth, groups packed left to right;
+  * each chapter's items (the small nodes) sit in a neat grid right under it on a thin spine, like a quest's sub tasks,
+    instead of a cluster round it;
+  * links between chapters are right angled, through the gaps between columns, and a link that skips columns runs
+    along its group's lane at the top, so no line crosses a node; only direct links are drawn;
+  * hovering a node lights the whole chain of chapters behind it, what it leads to, and (for a chapter) its items;
+    links to other bands show only then. Everything else dims.
+  The old Discovery tier legend (I to VI along the top) is gone; its bands remain.
 * **Fluid cells of the 1.4.0 fluids** were drawn in the old cutaway style; they now use the current cell design
   (painted from an existing cell, so the frame, glint and animation match).
 * The Field Calibrator showed raw names for 26 machines' drifting settings; they now have English names.

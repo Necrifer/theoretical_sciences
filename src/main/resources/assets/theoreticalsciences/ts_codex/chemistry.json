@@ -6,2427 +6,3558 @@
   "nodes": [
     {
       "entry": "chemistry/r58_index",
-      "x": 6,
-      "y": 23,
-      "parents": []
+      "x": 19,
+      "y": 34,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        6,
+        0,
+        -999999966.0,
+        16.5,
+        21.5
+      ]
     },
     {
       "entry": "chemistry/r58_reactor_console",
-      "x": 6,
-      "y": 26,
-      "parents": []
+      "x": 25,
+      "y": 34,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        7,
+        0,
+        -999999966.0,
+        22.5,
+        27.5
+      ]
     },
     {
       "entry": "chemistry/r58_wear",
       "x": 1,
-      "y": 27,
-      "parents": []
+      "y": 34,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        3,
+        0,
+        -999999966.0,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "chemistry/r58_catalyst_slot",
-      "x": 1,
-      "y": 30,
-      "parents": []
+      "x": 7,
+      "y": 34,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        4,
+        0,
+        -999999966.0,
+        4.5,
+        9.5
+      ]
     },
     {
       "entry": "chemistry/r58_technetium",
-      "x": 1,
-      "y": 33,
-      "parents": []
+      "x": 13,
+      "y": 34,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        5,
+        0,
+        -999999966.0,
+        10.5,
+        15.5
+      ]
     },
     {
       "entry": "chemistry/essences",
-      "x": 88,
-      "y": 22,
-      "parents": []
+      "x": 11,
+      "y": 122,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        11,
+        0,
+        -999999878.0,
+        8.5,
+        17.5
+      ]
     },
     {
       "entry": "chemistry/node_mod_essence",
-      "x": 88,
-      "y": 20,
+      "x": 11,
+      "y": 124,
       "parents": [
         "chemistry/essences"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/bonds",
-      "x": 6,
-      "y": 31,
-      "parents": []
+      "x": 31,
+      "y": 70,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        8,
+        0,
+        34.5,
+        28.5,
+        37.5
+      ]
     },
     {
       "entry": "chemistry/node_chiral_crystal",
-      "x": 4,
-      "y": 31,
+      "x": 35,
+      "y": 72,
       "parents": [
         "chemistry/bonds"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_molecular_orbital_lattice",
-      "x": 8,
-      "y": 31,
+      "x": 31,
+      "y": 74,
       "parents": [
         "chemistry/bonds"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_quantum_chemistry",
-      "x": 6,
-      "y": 29,
+      "x": 33,
+      "y": 72,
       "parents": [
         "chemistry/bonds"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_supercritical_solvent",
-      "x": 4,
-      "y": 29,
+      "x": 31,
+      "y": 72,
       "parents": [
         "chemistry/bonds"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_zeolite_catalyst",
-      "x": 6,
-      "y": 33,
+      "x": 33,
+      "y": 74,
       "parents": [
         "chemistry/bonds"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/chemical_reactor",
-      "x": 6,
-      "y": 36,
-      "parents": []
+      "x": 31,
+      "y": 77,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        8,
+        0,
+        34.5,
+        28.5,
+        37.5
+      ]
     },
     {
       "entry": "chemistry/regeneration_kiln",
-      "x": 6,
-      "y": 39,
-      "parents": []
+      "x": 95,
+      "y": 34,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        9,
+        0,
+        -999999966.0,
+        92.5,
+        97.5
+      ]
     },
     {
       "entry": "chemistry/electrochem",
-      "x": 13,
-      "y": 31,
+      "x": 40,
+      "y": 58,
       "parents": [
         "chemistry/bonds",
         "chemistry/chemical_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        1,
+        34.5,
+        37.5,
+        46.5
       ]
     },
     {
       "entry": "chemistry/node_carborane_superacid",
-      "x": 13,
-      "y": 33,
+      "x": 44,
+      "y": 62,
       "parents": [
         "chemistry/electrochem"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_electride_crystal",
-      "x": 11,
-      "y": 31,
+      "x": 40,
+      "y": 62,
       "parents": [
         "chemistry/electrochem"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_ionic_liquid",
-      "x": 11,
-      "y": 29,
+      "x": 40,
+      "y": 60,
       "parents": [
         "chemistry/electrochem"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_liquid_sodium",
-      "x": 15,
-      "y": 29,
+      "x": 44,
+      "y": 60,
       "parents": [
         "chemistry/electrochem"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_lithium_ingot",
-      "x": 15,
-      "y": 31,
+      "x": 42,
+      "y": 62,
       "parents": [
         "chemistry/electrochem"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_superacid_chemistry",
-      "x": 13,
-      "y": 29,
+      "x": 42,
+      "y": 60,
       "parents": [
         "chemistry/electrochem"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r59_kinetics",
-      "x": 57,
-      "y": 33,
+      "x": 40,
+      "y": 96,
       "parents": [
         "chemistry/bonds",
         "chemistry/chemical_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        1,
+        34.5,
+        37.5,
+        46.5
       ]
     },
     {
       "entry": "chemistry/electrolytic_cell",
-      "x": 13,
-      "y": 36,
+      "x": 40,
+      "y": 65,
       "parents": [
         "chemistry/bonds",
         "chemistry/chemical_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        1,
+        34.5,
+        37.5,
+        46.5
       ]
     },
     {
       "entry": "chemistry/air_separation_unit",
-      "x": 57,
-      "y": 38,
+      "x": 40,
+      "y": 99,
       "parents": [
         "chemistry/bonds",
         "chemistry/chemical_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        1,
+        34.5,
+        37.5,
+        46.5
       ]
     },
     {
       "entry": "chemistry/node_abyssal_silicate",
-      "x": 57,
-      "y": 40,
+      "x": 42,
+      "y": 103,
       "parents": [
         "chemistry/air_separation_unit"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_hydrogen",
-      "x": 57,
-      "y": 36,
+      "x": 42,
+      "y": 101,
       "parents": [
         "chemistry/air_separation_unit"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_nitrogen",
-      "x": 55,
-      "y": 38,
+      "x": 44,
+      "y": 101,
       "parents": [
         "chemistry/air_separation_unit"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_oxygen",
-      "x": 59,
-      "y": 38,
+      "x": 40,
+      "y": 103,
       "parents": [
         "chemistry/air_separation_unit"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_titan_ice",
-      "x": 55,
-      "y": 36,
+      "x": 40,
+      "y": 101,
       "parents": [
         "chemistry/air_separation_unit"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r59_haber",
-      "x": 67,
-      "y": 31,
+      "x": 49,
+      "y": 85,
       "parents": [
         "chemistry/r59_kinetics",
         "chemistry/air_separation_unit"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/r61_calorimetry",
-      "x": 88,
-      "y": 37,
+      "x": 49,
+      "y": 96,
       "parents": [
         "chemistry/r59_kinetics",
         "chemistry/air_separation_unit"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/haber_bosch_reactor",
-      "x": 67,
-      "y": 36,
+      "x": 49,
+      "y": 88,
       "parents": [
         "chemistry/r59_kinetics",
         "chemistry/air_separation_unit"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/node_ammonia_converter_bed",
-      "x": 65,
-      "y": 36,
+      "x": 51,
+      "y": 90,
       "parents": [
         "chemistry/haber_bosch_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_iron_catalyst",
-      "x": 67,
-      "y": 34,
+      "x": 49,
+      "y": 90,
       "parents": [
         "chemistry/haber_bosch_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_synthesis_compressor",
-      "x": 69,
-      "y": 36,
+      "x": 53,
+      "y": 90,
       "parents": [
         "chemistry/haber_bosch_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/bomb_calorimeter",
-      "x": 88,
-      "y": 42,
+      "x": 49,
+      "y": 99,
       "parents": [
         "chemistry/r59_kinetics",
         "chemistry/air_separation_unit"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/node_hydrophobic_coating",
-      "x": 88,
-      "y": 40,
+      "x": 49,
+      "y": 101,
       "parents": [
         "chemistry/bomb_calorimeter"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_thermochemical_data_card",
-      "x": 86,
-      "y": 42,
+      "x": 51,
+      "y": 101,
       "parents": [
         "chemistry/bomb_calorimeter"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "optics/r46_overview",
       "x": 1,
-      "y": 7,
+      "y": 16,
       "parents": [
         "chemistry/bonds"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        0,
+        3.5,
+        -1.5,
+        3.5
       ]
     },
     {
       "entry": "optics/r46_diffraction",
-      "x": 4,
-      "y": 7,
+      "x": 1,
+      "y": 13,
       "parents": [
         "chemistry/bonds"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        0,
+        3.5,
+        -1.5,
+        3.5
       ]
     },
     {
       "entry": "optics/x_ray_diffractometer",
-      "x": 11,
-      "y": 7,
+      "x": 23,
+      "y": 3,
       "parents": [
         "chemistry/bonds"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        2,
+        0,
+        -999999997.0,
+        20.5,
+        31.5
       ]
     },
     {
       "entry": "optics/node_corundum_crystal",
-      "x": 11,
-      "y": 3,
-      "parents": [
-        "optics/x_ray_diffractometer"
-      ],
-      "node": true
-    },
-    {
-      "entry": "optics/node_faraday_isolator",
-      "x": 11,
+      "x": 25,
       "y": 5,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
+    },
+    {
+      "entry": "optics/node_faraday_isolator",
+      "x": 29,
+      "y": 5,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_fluorite_boule",
-      "x": 9,
+      "x": 27,
       "y": 7,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_garnet_boule",
-      "x": 13,
+      "x": 29,
       "y": 7,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_laue_pattern",
-      "x": 11,
+      "x": 27,
       "y": 9,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_mhd_electrode",
-      "x": 7,
+      "x": 25,
       "y": 7,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_moissanite",
-      "x": 9,
+      "x": 27,
       "y": 5,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_moissanite_crystal",
-      "x": 15,
+      "x": 23,
+      "y": 9,
+      "parents": [
+        "optics/x_ray_diffractometer"
+      ],
+      "node": true,
+      "band": "Optics & Crystals"
+    },
+    {
+      "entry": "optics/node_moissanite_drill",
+      "x": 23,
       "y": 7,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
-    },
-    {
-      "entry": "optics/node_moissanite_drill",
-      "x": 13,
-      "y": 5,
-      "parents": [
-        "optics/x_ray_diffractometer"
-      ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_press_ram",
-      "x": 11,
+      "x": 23,
       "y": 11,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_sapphire_boule",
-      "x": 9,
+      "x": 25,
       "y": 9,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_silicon_boule",
-      "x": 13,
+      "x": 29,
       "y": 9,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_xray_tube",
-      "x": 9,
-      "y": 3,
+      "x": 23,
+      "y": 5,
       "parents": [
         "optics/x_ray_diffractometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "chemistry/carbon",
-      "x": 23,
-      "y": 33,
+      "x": 40,
+      "y": 49,
       "parents": [
         "chemistry/bonds",
         "chemistry/chemical_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        1,
+        34.5,
+        37.5,
+        46.5
       ]
     },
     {
       "entry": "chemistry/node_buckyball_cage",
-      "x": 25,
-      "y": 33,
+      "x": 42,
+      "y": 53,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_carbon_nanotube_bundle",
-      "x": 23,
-      "y": 35,
+      "x": 40,
+      "y": 55,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_metal_organic_framework",
-      "x": 21,
-      "y": 31,
+      "x": 40,
+      "y": 51,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_noble_gas_clathrate",
-      "x": 25,
-      "y": 31,
+      "x": 44,
+      "y": 51,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_superconductivity",
-      "x": 23,
-      "y": 31,
+      "x": 42,
+      "y": 51,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_supramolecular_chemistry",
-      "x": 21,
-      "y": 33,
+      "x": 40,
+      "y": 53,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_self_healing_polymer",
-      "x": 21,
-      "y": 35,
+      "x": 44,
+      "y": 53,
       "parents": [
         "chemistry/carbon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r59_contact",
-      "x": 88,
-      "y": 27,
+      "x": 58,
+      "y": 75,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/r60_acids",
-      "x": 81,
-      "y": 33,
+      "x": 58,
+      "y": 60,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/r62_cells",
-      "x": 102,
-      "y": 31,
+      "x": 49,
+      "y": 77,
       "parents": [
         "chemistry/electrochem",
         "chemistry/electrolytic_cell"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/contact_process_tower",
-      "x": 88,
-      "y": 32,
+      "x": 58,
+      "y": 85,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_contact_tower_casing",
-      "x": 86,
-      "y": 32,
+      "x": 62,
+      "y": 87,
       "parents": [
         "chemistry/contact_process_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_oleum_absorber",
-      "x": 90,
-      "y": 32,
+      "x": 58,
+      "y": 89,
       "parents": [
         "chemistry/contact_process_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_vanadium_bed",
-      "x": 88,
-      "y": 30,
+      "x": 60,
+      "y": 87,
       "parents": [
         "chemistry/contact_process_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_vanadium_bed_tray",
-      "x": 88,
-      "y": 34,
+      "x": 60,
+      "y": 89,
       "parents": [
         "chemistry/contact_process_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_vanadium_flow_battery",
-      "x": 86,
-      "y": 30,
+      "x": 58,
+      "y": 87,
       "parents": [
         "chemistry/contact_process_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/titration_bench",
-      "x": 81,
-      "y": 38,
+      "x": 58,
+      "y": 63,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_ammonia",
-      "x": 79,
-      "y": 38,
+      "x": 58,
+      "y": 67,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_black_smoker",
-      "x": 83,
-      "y": 36,
+      "x": 62,
+      "y": 65,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_eel_photophore",
-      "x": 81,
-      "y": 36,
+      "x": 60,
+      "y": 65,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_hydrothermal_chimney",
-      "x": 79,
-      "y": 40,
+      "x": 62,
+      "y": 67,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_nitric_acid",
-      "x": 83,
-      "y": 38,
+      "x": 60,
+      "y": 67,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_sulfur_dioxide",
-      "x": 81,
-      "y": 40,
+      "x": 58,
+      "y": 69,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_sulfuric_acid",
-      "x": 79,
-      "y": 36,
+      "x": 58,
+      "y": 65,
       "parents": [
         "chemistry/titration_bench"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/fuel_cell",
-      "x": 102,
-      "y": 36,
+      "x": 49,
+      "y": 80,
       "parents": [
         "chemistry/electrochem",
         "chemistry/electrolytic_cell"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/node_caustic_soda",
-      "x": 102,
-      "y": 34,
+      "x": 49,
+      "y": 82,
       "parents": [
         "chemistry/fuel_cell"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_chlorine",
-      "x": 100,
-      "y": 36,
+      "x": 51,
+      "y": 82,
       "parents": [
         "chemistry/fuel_cell"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "optics/r46_growth",
-      "x": 23,
-      "y": 7,
+      "x": 6,
+      "y": 10,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        1,
+        3.5,
+        3.5,
+        14.5
       ]
     },
     {
       "entry": "optics/node_iridium_crucible",
-      "x": 23,
-      "y": 5,
+      "x": 6,
+      "y": 12,
       "parents": [
         "optics/r46_growth"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/crystal_growth_furnace",
-      "x": 30,
-      "y": 7,
+      "x": 6,
+      "y": 5,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        1,
+        3.5,
+        3.5,
+        14.5
       ]
     },
     {
       "entry": "optics/node_growth_furnace_casing",
-      "x": 30,
-      "y": 5,
+      "x": 6,
+      "y": 7,
       "parents": [
         "optics/crystal_growth_furnace"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "chemistry/r59_ostwald",
-      "x": 102,
-      "y": 41,
+      "x": 58,
+      "y": 92,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/r60_buffers",
-      "x": 95,
-      "y": 27,
+      "x": 67,
+      "y": 65,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/r60_solubility",
-      "x": 119,
-      "y": 27,
+      "x": 67,
+      "y": 81,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/r62_plating",
-      "x": 109,
-      "y": 26,
+      "x": 49,
+      "y": 40,
       "parents": [
         "chemistry/electrochem",
         "chemistry/electrolytic_cell"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/r63_chromatography",
-      "x": 81,
-      "y": 23,
+      "x": 67,
+      "y": 73,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/ostwald_converter",
-      "x": 109,
-      "y": 31,
+      "x": 58,
+      "y": 78,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_absorption_column",
-      "x": 107,
-      "y": 31,
+      "x": 60,
+      "y": 80,
       "parents": [
         "chemistry/ostwald_converter"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_gauze_pack",
-      "x": 111,
-      "y": 31,
+      "x": 62,
+      "y": 80,
       "parents": [
         "chemistry/ostwald_converter"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_ostwald_casing",
-      "x": 109,
-      "y": 33,
+      "x": 58,
+      "y": 82,
       "parents": [
         "chemistry/ostwald_converter"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_platinum_rhodium_gauze",
-      "x": 109,
-      "y": 29,
+      "x": 58,
+      "y": 80,
       "parents": [
         "chemistry/ostwald_converter"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/buffer_tank",
-      "x": 95,
-      "y": 32,
+      "x": 67,
+      "y": 68,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/node_ammonia_buffer",
-      "x": 95,
-      "y": 30,
+      "x": 67,
+      "y": 70,
       "parents": [
         "chemistry/buffer_tank"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_phosphate_buffer",
-      "x": 93,
-      "y": 32,
+      "x": 69,
+      "y": 70,
       "parents": [
         "chemistry/buffer_tank"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/brine_evaporator",
-      "x": 119,
-      "y": 32,
+      "x": 67,
+      "y": 84,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/node_gypsum_crystal",
-      "x": 119,
-      "y": 30,
+      "x": 67,
+      "y": 86,
       "parents": [
         "chemistry/brine_evaporator"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_halite",
-      "x": 117,
-      "y": 32,
+      "x": 69,
+      "y": 86,
       "parents": [
         "chemistry/brine_evaporator"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_lithium_carbonate",
-      "x": 121,
-      "y": 32,
+      "x": 71,
+      "y": 86,
       "parents": [
         "chemistry/brine_evaporator"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/electroplating_bath",
-      "x": 109,
-      "y": 38,
+      "x": 49,
+      "y": 44,
       "parents": [
         "chemistry/electrochem",
         "chemistry/electrolytic_cell"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/node_corrosion_proof_casing",
-      "x": 111,
-      "y": 38,
+      "x": 53,
+      "y": 46,
       "parents": [
         "chemistry/electroplating_bath"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_nickel_plated_iron",
-      "x": 109,
-      "y": 36,
+      "x": 49,
+      "y": 46,
       "parents": [
         "chemistry/electroplating_bath"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_nickel_sulfate_solution",
-      "x": 107,
-      "y": 38,
+      "x": 51,
+      "y": 46,
       "parents": [
         "chemistry/electroplating_bath"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/chromatography_column",
-      "x": 81,
-      "y": 28,
+      "x": 67,
+      "y": 76,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/node_carbon_monoxide",
-      "x": 81,
-      "y": 26,
+      "x": 67,
+      "y": 78,
       "parents": [
         "chemistry/chromatography_column"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_column_detector",
-      "x": 79,
-      "y": 28,
+      "x": 69,
+      "y": 78,
       "parents": [
         "chemistry/chromatography_column"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_packed_column",
-      "x": 83,
-      "y": 28,
+      "x": 71,
+      "y": 78,
       "parents": [
         "chemistry/chromatography_column"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "optics/r46_workshop",
-      "x": 35,
-      "y": 7,
+      "x": 6,
+      "y": 26,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        1,
+        3.5,
+        3.5,
+        14.5
       ]
     },
     {
       "entry": "optics/optical_workshop",
-      "x": 42,
-      "y": 7,
+      "x": 6,
+      "y": 15,
       "parents": [
         "optics/r46_overview",
         "optics/r46_diffraction"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        1,
+        3.5,
+        3.5,
+        14.5
       ]
     },
     {
       "entry": "optics/node_apochromatic_objective",
-      "x": 42,
-      "y": 5,
+      "x": 6,
+      "y": 19,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_cryogenic_receiver",
-      "x": 40,
-      "y": 7,
+      "x": 12,
+      "y": 19,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_echelle_grating",
-      "x": 44,
-      "y": 7,
+      "x": 6,
+      "y": 21,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_feed_horn",
-      "x": 46,
-      "y": 7,
+      "x": 8,
+      "y": 21,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_fluorite_lens",
-      "x": 42,
-      "y": 9,
+      "x": 12,
+      "y": 21,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_fused_silica_lens",
-      "x": 40,
-      "y": 5,
+      "x": 12,
+      "y": 17,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_laser_head",
-      "x": 44,
-      "y": 5,
+      "x": 8,
+      "y": 19,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_lens_grinder",
-      "x": 42,
-      "y": 11,
+      "x": 8,
+      "y": 23,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_microscope_column",
-      "x": 40,
-      "y": 3,
+      "x": 6,
+      "y": 17,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_moissanite_lens",
-      "x": 40,
-      "y": 9,
+      "x": 10,
+      "y": 21,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_photonic_lens",
-      "x": 44,
-      "y": 9,
+      "x": 6,
+      "y": 23,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_sapphire_window",
-      "x": 42,
-      "y": 3,
+      "x": 8,
+      "y": 17,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_schmidt_corrector",
-      "x": 38,
-      "y": 7,
+      "x": 10,
+      "y": 19,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "optics/node_step_laser",
-      "x": 44,
-      "y": 3,
+      "x": 10,
+      "y": 17,
       "parents": [
         "optics/optical_workshop"
       ],
-      "node": true
+      "node": true,
+      "band": "Optics & Crystals"
     },
     {
       "entry": "chemistry/exotic",
-      "x": 33,
-      "y": 33,
+      "x": 49,
+      "y": 54,
       "parents": [
         "chemistry/carbon"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/node_muonic_catalyst",
-      "x": 33,
-      "y": 31,
+      "x": 49,
+      "y": 56,
       "parents": [
         "chemistry/exotic"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r60_osmosis",
-      "x": 133,
-      "y": 25,
+      "x": 76,
+      "y": 81,
       "parents": [
         "chemistry/r60_solubility",
         "chemistry/brine_evaporator"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/r61_heat_packs",
-      "x": 119,
-      "y": 37,
+      "x": 58,
+      "y": 95,
       "parents": [
         "chemistry/r61_calorimetry",
         "chemistry/bomb_calorimeter"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/r63_nebula",
-      "x": 57,
-      "y": 23,
+      "x": 76,
+      "y": 97,
       "parents": [
         "chemistry/r63_chromatography",
         "chemistry/chromatography_column"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/r64_catalysis",
-      "x": 126,
-      "y": 37,
+      "x": 58,
+      "y": 103,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/r69_oscillating",
-      "x": 95,
-      "y": 37,
+      "x": 49,
+      "y": 106,
       "parents": [
         "chemistry/r59_kinetics",
         "chemistry/air_separation_unit"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/reverse_osmosis_cell",
-      "x": 133,
-      "y": 30,
+      "x": 76,
+      "y": 91,
       "parents": [
         "chemistry/r60_solubility",
         "chemistry/brine_evaporator"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_brinicle",
-      "x": 131,
-      "y": 30,
+      "x": 78,
+      "y": 93,
       "parents": [
         "chemistry/reverse_osmosis_cell"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_concentrated_brine",
-      "x": 133,
-      "y": 28,
+      "x": 76,
+      "y": 93,
       "parents": [
         "chemistry/reverse_osmosis_cell"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/heat_pack_reactor",
-      "x": 119,
-      "y": 42,
+      "x": 58,
+      "y": 98,
       "parents": [
         "chemistry/r61_calorimetry",
         "chemistry/bomb_calorimeter"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_ammonium_nitrate",
-      "x": 119,
-      "y": 40,
+      "x": 58,
+      "y": 100,
       "parents": [
         "chemistry/heat_pack_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_cold_pack_solution",
-      "x": 117,
-      "y": 42,
+      "x": 60,
+      "y": 100,
       "parents": [
         "chemistry/heat_pack_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_eutectic_brine",
-      "x": 121,
-      "y": 42,
+      "x": 62,
+      "y": 100,
       "parents": [
         "chemistry/heat_pack_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/cloud_siphon",
-      "x": 57,
-      "y": 28,
+      "x": 76,
+      "y": 71,
       "parents": [
         "chemistry/r63_chromatography",
         "chemistry/chromatography_column"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_hydrogen_cyanide",
-      "x": 55,
-      "y": 28,
+      "x": 78,
+      "y": 73,
       "parents": [
         "chemistry/cloud_siphon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_methanol",
-      "x": 59,
-      "y": 28,
+      "x": 80,
+      "y": 73,
       "parents": [
         "chemistry/cloud_siphon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_pah_soot",
-      "x": 57,
-      "y": 26,
+      "x": 76,
+      "y": 73,
       "parents": [
         "chemistry/cloud_siphon"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/catalyst_formulator",
-      "x": 126,
-      "y": 42,
+      "x": 58,
+      "y": 116,
       "parents": [
         "chemistry/r59_haber",
         "chemistry/haber_bosch_reactor"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_nickel_catalyst",
-      "x": 126,
-      "y": 40,
+      "x": 58,
+      "y": 118,
       "parents": [
         "chemistry/catalyst_formulator"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/oscillator_vessel",
-      "x": 95,
-      "y": 42,
+      "x": 49,
+      "y": 109,
       "parents": [
         "chemistry/r59_kinetics",
         "chemistry/air_separation_unit"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        2,
+        34.5,
+        46.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/node_chemical_clock",
-      "x": 95,
-      "y": 40,
+      "x": 49,
+      "y": 111,
       "parents": [
         "chemistry/oscillator_vessel"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "optics/r47_lasers",
-      "x": 49,
-      "y": 7,
+      "x": 17,
+      "y": 11,
       "parents": [
         "optics/r46_growth",
         "optics/crystal_growth_furnace"
+      ],
+      "band": "Optics & Crystals",
+      "route": [
+        1,
+        2,
+        3.5,
+        14.5,
+        19.5
       ]
     },
     {
       "entry": "chemistry/r63_mass_spec",
-      "x": 74,
-      "y": 27,
+      "x": 76,
+      "y": 68,
       "parents": [
         "chemistry/r63_chromatography",
         "chemistry/chromatography_column"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/r65_petrochem",
-      "x": 140,
-      "y": 37,
+      "x": 67,
+      "y": 104,
       "parents": [
         "chemistry/r64_catalysis",
         "chemistry/catalyst_formulator"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/r65_frameworks",
-      "x": 126,
-      "y": 17,
+      "x": 85,
+      "y": 83,
       "parents": [
         "chemistry/r63_nebula",
         "chemistry/r64_catalysis"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/r66_coordination",
-      "x": 126,
-      "y": 20,
+      "x": 85,
+      "y": 86,
       "parents": [
         "chemistry/r63_nebula",
         "chemistry/r64_catalysis"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/mass_spectrometer",
-      "x": 74,
-      "y": 32,
+      "x": 76,
+      "y": 76,
       "parents": [
         "chemistry/r63_chromatography",
         "chemistry/chromatography_column"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_deuterium",
-      "x": 74,
-      "y": 30,
+      "x": 76,
+      "y": 78,
       "parents": [
         "chemistry/mass_spectrometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/cracking_tower",
-      "x": 140,
-      "y": 42,
+      "x": 67,
+      "y": 107,
       "parents": [
         "chemistry/r64_catalysis",
         "chemistry/catalyst_formulator"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/node_cracking_coil",
-      "x": 138,
-      "y": 44,
+      "x": 71,
+      "y": 111,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_crude_oil",
-      "x": 140,
-      "y": 44,
+      "x": 67,
+      "y": 113,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_distillate_tray",
-      "x": 142,
-      "y": 44,
+      "x": 69,
+      "y": 113,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_ethylene",
-      "x": 138,
-      "y": 40,
+      "x": 67,
+      "y": 109,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_propylene",
-      "x": 142,
-      "y": 40,
+      "x": 71,
+      "y": 109,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_cryogenic_survival",
-      "x": 140,
-      "y": 40,
+      "x": 69,
+      "y": 109,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_subsurface_ocean",
-      "x": 138,
-      "y": 42,
+      "x": 67,
+      "y": 111,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_research_titan",
-      "x": 142,
-      "y": 42,
+      "x": 69,
+      "y": 111,
       "parents": [
         "chemistry/cracking_tower"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/framework_assembler",
-      "x": 126,
-      "y": 25,
+      "x": 85,
+      "y": 89,
       "parents": [
         "chemistry/r63_nebula",
         "chemistry/r64_catalysis"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/node_cryobot",
-      "x": 126,
-      "y": 23,
+      "x": 87,
+      "y": 91,
       "parents": [
         "chemistry/framework_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_cryogenic_lander",
-      "x": 124,
-      "y": 25,
+      "x": 85,
+      "y": 93,
       "parents": [
         "chemistry/framework_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_mof_gas_sorbent",
-      "x": 128,
-      "y": 25,
+      "x": 87,
+      "y": 93,
       "parents": [
         "chemistry/framework_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_mof_gas_storage_cell",
-      "x": 124,
-      "y": 23,
+      "x": 85,
+      "y": 91,
       "parents": [
         "chemistry/framework_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_nmr_casing",
-      "x": 128,
-      "y": 23,
+      "x": 89,
+      "y": 91,
       "parents": [
         "chemistry/framework_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_silica_aerogel",
-      "x": 126,
-      "y": 27,
+      "x": 89,
+      "y": 93,
       "parents": [
         "chemistry/framework_assembler"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/coordination_reactor",
-      "x": 126,
-      "y": 32,
+      "x": 85,
+      "y": 96,
       "parents": [
         "chemistry/r63_nebula",
         "chemistry/r64_catalysis"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/node_copper_ammine_complex",
-      "x": 126,
-      "y": 30,
+      "x": 85,
+      "y": 98,
       "parents": [
         "chemistry/coordination_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_prussian_blue_pigment",
-      "x": 124,
-      "y": 32,
+      "x": 87,
+      "y": 98,
       "parents": [
         "chemistry/coordination_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_prussian_blue_tablet",
-      "x": 128,
-      "y": 32,
+      "x": 89,
+      "y": 98,
       "parents": [
         "chemistry/coordination_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/island",
-      "x": 50,
-      "y": 31,
+      "x": 58,
+      "y": 52,
       "parents": [
         "chemistry/exotic"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_flerovium_ingot",
-      "x": 50,
-      "y": 29,
+      "x": 58,
+      "y": 54,
       "parents": [
         "chemistry/island"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_unbihexium_ingot",
-      "x": 48,
-      "y": 31,
+      "x": 60,
+      "y": 54,
       "parents": [
         "chemistry/island"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r65_polymers",
-      "x": 154,
-      "y": 32,
+      "x": 76,
+      "y": 104,
       "parents": [
         "chemistry/r65_petrochem",
         "chemistry/cracking_tower"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/r65_synthesis",
-      "x": 140,
-      "y": 21,
+      "x": 67,
+      "y": 48,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/nuclide_forge",
-      "x": 50,
-      "y": 36,
+      "x": 58,
+      "y": 57,
       "parents": [
         "chemistry/exotic"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/essence_distillery",
-      "x": 40,
-      "y": 31,
-      "parents": []
+      "x": 1,
+      "y": 122,
+      "parents": [],
+      "band": "Chemistry",
+      "route": [
+        10,
+        0,
+        -999999878.0,
+        -1.5,
+        7.5
+      ]
     },
     {
       "entry": "chemistry/node_anima_mundi",
-      "x": 38,
-      "y": 31,
+      "x": 3,
+      "y": 124,
       "parents": [
         "chemistry/essence_distillery"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_inflaton_field",
-      "x": 40,
-      "y": 29,
+      "x": 1,
+      "y": 124,
       "parents": [
         "chemistry/essence_distillery"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/polymeriser",
-      "x": 154,
-      "y": 37,
+      "x": 76,
+      "y": 107,
       "parents": [
         "chemistry/r65_petrochem",
         "chemistry/cracking_tower"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_aramid_fibre",
-      "x": 154,
-      "y": 35,
+      "x": 78,
+      "y": 109,
       "parents": [
         "chemistry/polymeriser"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_ceramic_armour_plate",
-      "x": 152,
-      "y": 37,
+      "x": 76,
+      "y": 111,
       "parents": [
         "chemistry/polymeriser"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_crab_chitin",
-      "x": 156,
-      "y": 37,
+      "x": 78,
+      "y": 111,
       "parents": [
         "chemistry/polymeriser"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_nylon_fibre",
-      "x": 154,
-      "y": 39,
+      "x": 80,
+      "y": 111,
       "parents": [
         "chemistry/polymeriser"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_oxygen_rebreather",
-      "x": 152,
-      "y": 35,
+      "x": 76,
+      "y": 109,
       "parents": [
         "chemistry/polymeriser"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_polymer_sheet",
-      "x": 156,
-      "y": 35,
+      "x": 80,
+      "y": 109,
       "parents": [
         "chemistry/polymeriser"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/synthesis_bench",
-      "x": 140,
-      "y": 24,
+      "x": 67,
+      "y": 52,
       "parents": [
         "chemistry/r60_acids",
         "chemistry/titration_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/quasicrystal_furnace",
-      "x": 133,
-      "y": 37,
+      "x": 58,
+      "y": 42,
       "parents": [
         "chemistry/r62_plating",
         "chemistry/electroplating_bath"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_alumina",
-      "x": 133,
-      "y": 35,
+      "x": 58,
+      "y": 44,
       "parents": [
         "chemistry/quasicrystal_furnace"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_aluminium_ingot",
-      "x": 131,
-      "y": 37,
+      "x": 60,
+      "y": 44,
       "parents": [
         "chemistry/quasicrystal_furnace"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_quasicrystal_plate",
-      "x": 135,
-      "y": 37,
+      "x": 62,
+      "y": 44,
       "parents": [
         "chemistry/quasicrystal_furnace"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/chelation_column",
-      "x": 133,
-      "y": 20,
+      "x": 76,
+      "y": 63,
       "parents": [
         "chemistry/r63_chromatography",
         "chemistry/chromatography_column"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_edta",
-      "x": 133,
-      "y": 18,
+      "x": 76,
+      "y": 65,
       "parents": [
         "chemistry/chelation_column"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r67_titan_lakes",
-      "x": 147,
-      "y": 24,
+      "x": 76,
+      "y": 60,
       "parents": [
         "chemistry/r60_solubility",
         "chemistry/brine_evaporator"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/r66_spectroscopy",
-      "x": 154,
-      "y": 22,
+      "x": 76,
+      "y": 57,
       "parents": [
         "chemistry/r65_synthesis",
         "chemistry/synthesis_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/r66_materials",
-      "x": 140,
-      "y": 27,
+      "x": 67,
+      "y": 36,
       "parents": [
         "chemistry/quasicrystal_furnace"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/infrared_spectrometer",
-      "x": 154,
-      "y": 27,
+      "x": 76,
+      "y": 43,
       "parents": [
         "chemistry/r65_synthesis",
         "chemistry/synthesis_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_amino_acid_mixture",
-      "x": 154,
-      "y": 25,
+      "x": 76,
+      "y": 45,
       "parents": [
         "chemistry/infrared_spectrometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_fine_reagent",
-      "x": 152,
-      "y": 27,
+      "x": 78,
+      "y": 45,
       "parents": [
         "chemistry/infrared_spectrometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_structure_card",
-      "x": 156,
-      "y": 27,
+      "x": 80,
+      "y": 45,
       "parents": [
         "chemistry/infrared_spectrometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/phase_diagram_kiln",
-      "x": 147,
-      "y": 34,
+      "x": 67,
+      "y": 40,
       "parents": [
         "chemistry/quasicrystal_furnace"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/sintering_press",
-      "x": 140,
-      "y": 32,
+      "x": 67,
+      "y": 56,
       "parents": [
         "chemistry/quasicrystal_furnace"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        4,
+        34.5,
+        64.5,
+        73.5
       ]
     },
     {
       "entry": "chemistry/node_alumina_ceramic_plate",
-      "x": 140,
-      "y": 30,
+      "x": 67,
+      "y": 58,
       "parents": [
         "chemistry/sintering_press"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/lake_pump",
-      "x": 147,
-      "y": 29,
+      "x": 76,
+      "y": 84,
       "parents": [
         "chemistry/r60_solubility",
         "chemistry/brine_evaporator"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_cryolava",
-      "x": 145,
-      "y": 29,
+      "x": 76,
+      "y": 88,
       "parents": [
         "chemistry/lake_pump"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_cryolava_rock",
-      "x": 147,
-      "y": 31,
+      "x": 80,
+      "y": 88,
       "parents": [
         "chemistry/lake_pump"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_evaporite_crust",
-      "x": 145,
-      "y": 27,
+      "x": 76,
+      "y": 86,
       "parents": [
         "chemistry/lake_pump"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_liquid_methane",
-      "x": 149,
-      "y": 29,
+      "x": 78,
+      "y": 88,
       "parents": [
         "chemistry/lake_pump"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_organic_evaporite",
-      "x": 147,
-      "y": 27,
+      "x": 78,
+      "y": 86,
       "parents": [
         "chemistry/lake_pump"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_tholin_sand",
-      "x": 149,
-      "y": 27,
+      "x": 80,
+      "y": 86,
       "parents": [
         "chemistry/lake_pump"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r68_photochemistry",
-      "x": 161,
-      "y": 18,
+      "x": 85,
+      "y": 68,
       "parents": [
         "chemistry/r67_titan_lakes",
         "chemistry/r66_spectroscopy"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/nmr_spectrometer",
-      "x": 102,
-      "y": 26,
+      "x": 85,
+      "y": 51,
       "parents": [
         "chemistry/r66_spectroscopy",
         "chemistry/infrared_spectrometer"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/node_nmr_probe",
-      "x": 102,
-      "y": 24,
+      "x": 85,
+      "y": 53,
       "parents": [
         "chemistry/nmr_spectrometer"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/doping_furnace",
-      "x": 161,
-      "y": 30,
+      "x": 76,
+      "y": 38,
       "parents": [
         "chemistry/r66_materials",
         "chemistry/phase_diagram_kiln"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_doped_wafer",
-      "x": 161,
-      "y": 28,
+      "x": 76,
+      "y": 40,
       "parents": [
         "chemistry/doping_furnace"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/photochemical_reactor",
-      "x": 161,
-      "y": 23,
+      "x": 85,
+      "y": 72,
       "parents": [
         "chemistry/r67_titan_lakes",
         "chemistry/r66_spectroscopy"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        6,
+        34.5,
+        82.5,
+        91.5
       ]
     },
     {
       "entry": "chemistry/node_kekules_dream",
-      "x": 161,
-      "y": 21,
+      "x": 85,
+      "y": 74,
       "parents": [
         "chemistry/photochemical_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_tholin",
-      "x": 159,
-      "y": 23,
+      "x": 87,
+      "y": 74,
       "parents": [
         "chemistry/photochemical_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r69_asymmetric",
-      "x": 168,
-      "y": 19,
+      "x": 76,
+      "y": 48,
       "parents": [
         "chemistry/r65_synthesis",
         "chemistry/synthesis_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/asymmetric_reactor",
-      "x": 168,
-      "y": 24,
+      "x": 76,
+      "y": 52,
       "parents": [
         "chemistry/r65_synthesis",
         "chemistry/synthesis_bench"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        5,
+        34.5,
+        73.5,
+        82.5
       ]
     },
     {
       "entry": "chemistry/node_chiral_ligand",
-      "x": 168,
-      "y": 22,
+      "x": 76,
+      "y": 54,
       "parents": [
         "chemistry/asymmetric_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_enantiopure_reagent",
-      "x": 166,
-      "y": 24,
+      "x": 78,
+      "y": 54,
       "parents": [
         "chemistry/asymmetric_reactor"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/r69_alkahest",
-      "x": 147,
-      "y": 37,
+      "x": 58,
+      "y": 106,
       "parents": [
         "chemistry/r69_oscillating",
         "chemistry/oscillator_vessel"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/alkahest_still",
-      "x": 147,
-      "y": 42,
+      "x": 58,
+      "y": 109,
       "parents": [
         "chemistry/r69_oscillating",
         "chemistry/oscillator_vessel"
+      ],
+      "band": "Chemistry",
+      "route": [
+        8,
+        3,
+        34.5,
+        55.5,
+        64.5
       ]
     },
     {
       "entry": "chemistry/node_alkahest",
-      "x": 145,
-      "y": 42,
+      "x": 62,
+      "y": 111,
       "parents": [
         "chemistry/alkahest_still"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_balance_tincture",
-      "x": 149,
-      "y": 42,
+      "x": 58,
+      "y": 113,
       "parents": [
         "chemistry/alkahest_still"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_chirality_tincture",
-      "x": 147,
-      "y": 44,
+      "x": 60,
+      "y": 113,
       "parents": [
         "chemistry/alkahest_still"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_form_tincture",
-      "x": 145,
-      "y": 40,
+      "x": 58,
+      "y": 111,
       "parents": [
         "chemistry/alkahest_still"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "chemistry/node_kekule_ring",
-      "x": 147,
-      "y": 40,
+      "x": 60,
+      "y": 111,
       "parents": [
         "chemistry/alkahest_still"
       ],
-      "node": true
+      "node": true,
+      "band": "Chemistry"
     },
     {
       "entry": "anomaly/anomaly_intro",
       "x": 1,
-      "y": 52,
-      "parents": []
+      "y": 137,
+      "parents": [],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        0,
+        132.5,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "anomaly/anomaly_containment_ward",
       "x": 1,
-      "y": 55,
-      "parents": []
+      "y": 140,
+      "parents": [],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        0,
+        132.5,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "anomaly/anomaly_origin_defects",
       "x": 6,
-      "y": 50,
+      "y": 134,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        1,
+        132.5,
+        3.5,
+        12.5
       ]
     },
     {
       "entry": "anomaly/anomaly_origin_autocatalysis",
       "x": 6,
-      "y": 55,
+      "y": 143,
       "parents": [
         "anomaly/anomaly_containment_ward",
         "anomaly/anomaly_intro"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        1,
+        132.5,
+        3.5,
+        12.5
       ]
     },
     {
       "entry": "anomaly/node_autocatalytic_broth",
       "x": 6,
-      "y": 53,
+      "y": 145,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis"
       ],
-      "node": true
+      "node": true,
+      "band": "Abnormality & Infection"
     },
     {
       "entry": "anomaly/anomaly_origin_oncogenesis",
-      "x": 11,
-      "y": 51,
+      "x": 6,
+      "y": 137,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        1,
+        132.5,
+        3.5,
+        12.5
       ]
     },
     {
       "entry": "anomaly/anomaly_origin_pathology",
-      "x": 11,
-      "y": 54,
+      "x": 6,
+      "y": 140,
       "parents": [
         "anomaly/anomaly_intro",
         "anomaly/anomaly_containment_ward"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        1,
+        132.5,
+        3.5,
+        12.5
       ]
     },
     {
       "entry": "anomaly/anomaly_escape",
-      "x": 19,
-      "y": 52,
+      "x": 15,
+      "y": 136,
       "parents": [
         "anomaly/anomaly_origin_oncogenesis"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        2,
+        132.5,
+        12.5,
+        21.5
       ]
     },
     {
       "entry": "anomaly/node_immortal_cell_line",
-      "x": 19,
-      "y": 50,
+      "x": 15,
+      "y": 138,
       "parents": [
         "anomaly/anomaly_escape"
       ],
-      "node": true
+      "node": true,
+      "band": "Abnormality & Infection"
     },
     {
       "entry": "anomaly/anomaly_selfref",
-      "x": 19,
-      "y": 57,
+      "x": 15,
+      "y": 141,
       "parents": [
         "anomaly/anomaly_origin_autocatalysis",
         "anomaly/anomaly_origin_pathology"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        2,
+        132.5,
+        12.5,
+        21.5
       ]
     },
     {
       "entry": "anomaly/anomaly_clonal",
       "x": 24,
-      "y": 53,
+      "y": 140,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        3,
+        132.5,
+        21.5,
+        26.5
       ]
     },
     {
       "entry": "anomaly/anomaly_systems",
       "x": 24,
-      "y": 56,
+      "y": 137,
       "parents": [
         "anomaly/anomaly_escape",
         "anomaly/anomaly_selfref"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        3,
+        132.5,
+        21.5,
+        26.5
       ]
     },
     {
       "entry": "anomaly/anomaly_epidemics",
-      "x": 30,
-      "y": 54,
+      "x": 29,
+      "y": 139,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_systems"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        4,
+        132.5,
+        26.5,
+        31.5
       ]
     },
     {
       "entry": "anomaly/anomaly_leakage",
-      "x": 27,
-      "y": 51,
+      "x": 29,
+      "y": 136,
       "parents": [
         "anomaly/anomaly_origin_defects",
         "anomaly/anomaly_systems"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        4,
+        132.5,
+        26.5,
+        31.5
       ]
     },
     {
       "entry": "anomaly/anomaly_symbiosis",
-      "x": 27,
-      "y": 54,
+      "x": 34,
+      "y": 140,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_epidemics"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        5,
+        132.5,
+        31.5,
+        36.5
       ]
     },
     {
       "entry": "anomaly/anomaly_extent",
-      "x": 33,
-      "y": 52,
+      "x": 34,
+      "y": 136,
       "parents": [
         "anomaly/anomaly_epidemics",
         "anomaly/anomaly_leakage"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        5,
+        132.5,
+        31.5,
+        36.5
       ]
     },
     {
       "entry": "anomaly/anomaly_containment",
-      "x": 36,
-      "y": 51,
+      "x": 39,
+      "y": 138,
       "parents": [
         "anomaly/anomaly_extent"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        6,
+        132.5,
+        36.5,
+        41.5
       ]
     },
     {
       "entry": "anomaly/anomaly_therapy",
-      "x": 36,
-      "y": 54,
+      "x": 44,
+      "y": 140,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        7,
+        132.5,
+        41.5,
+        50.5
       ]
     },
     {
       "entry": "anomaly/anomaly_resolution_engine",
-      "x": 41,
-      "y": 52,
+      "x": 44,
+      "y": 135,
       "parents": [
         "anomaly/anomaly_clonal",
         "anomaly/anomaly_containment"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        7,
+        132.5,
+        41.5,
+        50.5
       ]
     },
     {
       "entry": "anomaly/node_car_t_culture",
-      "x": 41,
-      "y": 50,
+      "x": 44,
+      "y": 137,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
-      "node": true
+      "node": true,
+      "band": "Abnormality & Infection"
     },
     {
       "entry": "anomaly/node_renormalised_essence",
-      "x": 39,
-      "y": 52,
+      "x": 46,
+      "y": 137,
       "parents": [
         "anomaly/anomaly_resolution_engine"
       ],
-      "node": true
+      "node": true,
+      "band": "Abnormality & Infection"
     },
     {
       "entry": "anomaly/anomaly_resolution",
-      "x": 49,
-      "y": 53,
+      "x": 53,
+      "y": 139,
       "parents": [
         "anomaly/anomaly_extent",
         "anomaly/anomaly_therapy"
+      ],
+      "band": "Abnormality & Infection",
+      "route": [
+        12,
+        8,
+        132.5,
+        50.5,
+        55.5
       ]
     },
     {
       "entry": "chemistry/buried_tells",
-      "x": 3,
-      "y": 61,
-      "parents": []
+      "x": 1,
+      "y": 160,
+      "parents": [],
+      "band": "Archaeology",
+      "route": [
+        13,
+        0,
+        153.5,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "chemistry/ground_penetrating_radar",
-      "x": 5,
-      "y": 61,
+      "x": 6,
+      "y": 155,
       "parents": [
         "chemistry/buried_tells"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        1,
+        153.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/luminescence_dating",
-      "x": 7,
-      "y": 61,
+      "x": 6,
+      "y": 161,
       "parents": [
         "chemistry/buried_tells"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        1,
+        153.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/dendrochronology",
-      "x": 7,
-      "y": 63,
+      "x": 6,
+      "y": 164,
       "parents": [
         "chemistry/buried_tells"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        1,
+        153.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/conservation_science",
-      "x": 5,
-      "y": 63,
+      "x": 6,
+      "y": 158,
       "parents": [
         "chemistry/buried_tells"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        1,
+        153.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/isotope_provenance",
-      "x": 9,
-      "y": 63,
+      "x": 11,
+      "y": 161,
       "parents": [
         "chemistry/conservation_science"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        2,
+        153.5,
+        8.5,
+        13.5
       ]
     },
     {
       "entry": "chemistry/archaeometallurgy",
-      "x": 9,
-      "y": 61,
+      "x": 11,
+      "y": 157,
       "parents": [
         "chemistry/conservation_science"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        2,
+        153.5,
+        8.5,
+        13.5
       ]
     },
     {
       "entry": "chemistry/photogrammetry",
-      "x": 11,
-      "y": 62,
+      "x": 16,
+      "y": 161,
       "parents": [
         "chemistry/luminescence_dating",
         "chemistry/dendrochronology",
         "chemistry/isotope_provenance"
+      ],
+      "band": "Archaeology",
+      "route": [
+        13,
+        3,
+        153.5,
+        13.5,
+        18.5
       ]
     },
     {
       "entry": "chemistry/r1400_syngas",
-      "x": 2,
-      "y": 68,
-      "parents": []
+      "x": 1,
+      "y": 180,
+      "parents": [],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        0,
+        172.5,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "chemistry/r1400_polymer_physics",
       "x": 6,
-      "y": 68,
+      "y": 183,
       "parents": [
         "chemistry/r1400_syngas"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        1,
+        172.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/r1400_aromatic_substitution",
-      "x": 2,
-      "y": 72,
-      "parents": []
+      "x": 1,
+      "y": 188,
+      "parents": [],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        0,
+        172.5,
+        -1.5,
+        3.5
+      ]
     },
     {
       "entry": "chemistry/r1400_stereochemistry",
-      "x": 10,
-      "y": 72,
+      "x": 6,
+      "y": 189,
       "parents": [
         "chemistry/r1400_aromatic_substitution"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        1,
+        172.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/r1400_aromaticity",
       "x": 6,
-      "y": 72,
+      "y": 186,
       "parents": [
         "chemistry/r1400_aromatic_substitution"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        1,
+        172.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/r1400_molecular_machines",
-      "x": 14,
-      "y": 70,
+      "x": 11,
+      "y": 186,
       "parents": [
         "chemistry/r1400_stereochemistry",
         "chemistry/r1400_aromaticity",
         "chemistry/r1400_polymer_physics"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        2,
+        172.5,
+        8.5,
+        13.5
       ]
     },
     {
       "entry": "chemistry/r1400_crude_assay",
-      "x": 18,
-      "y": 68,
+      "x": 6,
+      "y": 177,
       "parents": [
         "chemistry/r1400_syngas"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        1,
+        172.5,
+        3.5,
+        8.5
       ]
     },
     {
       "entry": "chemistry/r1400_hydroprocessing",
-      "x": 22,
-      "y": 68,
+      "x": 11,
+      "y": 174,
       "parents": [
         "chemistry/r1400_crude_assay"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        2,
+        172.5,
+        8.5,
+        13.5
       ]
     },
     {
       "entry": "chemistry/r1400_sulfur_recovery",
-      "x": 26,
-      "y": 68,
+      "x": 16,
+      "y": 175,
       "parents": [
         "chemistry/r1400_hydroprocessing"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        3,
+        172.5,
+        13.5,
+        18.5
       ]
     },
     {
       "entry": "chemistry/r1400_fcc",
-      "x": 22,
-      "y": 72,
+      "x": 11,
+      "y": 177,
       "parents": [
         "chemistry/r1400_crude_assay"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        2,
+        172.5,
+        8.5,
+        13.5
       ]
     },
     {
       "entry": "chemistry/r1400_petroleum_geology",
-      "x": 18,
-      "y": 72,
+      "x": 11,
+      "y": 180,
       "parents": [
         "chemistry/r1400_crude_assay"
+      ],
+      "band": "Petrochemistry & Organic",
+      "route": [
+        14,
+        2,
+        172.5,
+        8.5,
+        13.5
       ]
     }
   ],
@@ -2434,42 +3565,43 @@
     {
       "tier": 0,
       "label": "Optics & Crystals",
-      "x0": -1.5,
-      "x1": 172.5,
-      "y0": 0,
-      "y1": 12.5
+      "x0": -1.0,
+      "y0": 0.0,
+      "x1": 97.0,
+      "y1": 28.5
     },
     {
       "tier": 1,
       "label": "Chemistry",
-      "x0": -1.5,
-      "x1": 172.5,
-      "y0": 14,
-      "y1": 45.5
+      "x0": -1.0,
+      "y0": 31.0,
+      "x1": 97.0,
+      "y1": 126.5
     },
     {
       "tier": 2,
       "label": "Abnormality & Infection",
-      "x0": -1.5,
-      "x1": 172.5,
-      "y0": 47,
-      "y1": 58.5
+      "x0": -1.0,
+      "y0": 129.0,
+      "x1": 97.0,
+      "y1": 147.5
     },
     {
       "tier": 3,
       "label": "Archaeology",
-      "x0": -1.5,
-      "x1": 125.5,
-      "y0": 60,
-      "y1": 64.5
+      "x0": -1.0,
+      "y0": 150.0,
+      "x1": 97.0,
+      "y1": 166.5
     },
     {
       "tier": 4,
       "label": "Petrochemistry & Organic",
-      "x0": -1.5,
-      "x1": 125.5,
-      "y0": 66,
-      "y1": 74.5
+      "x0": -1.0,
+      "y0": 169.0,
+      "x1": 97.0,
+      "y1": 191.5
     }
-  ]
+  ],
+  "layout": "tree"
 }
