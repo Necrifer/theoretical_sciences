@@ -71,32 +71,6 @@ public class GlossaryScreen extends Screen {
         addRenderableWidget(new HoloButton(left, height - 24, 98, 18, Component.translatable("gui.back"), 0x40C0FF, b -> onClose()));
     }
 
-    // 1.3.0: the list and each entry's wrapped lines are kept until what they depend on changes (they were rebuilt
-    // for every entry, three times over, every frame)
-    private String shownKey;
-    private List<GlyphRegistry.Glyph> shownList = List.of();
-    private final java.util.Map<String, List<FormattedCharSequence>> lines = new java.util.HashMap<>();
-    private int linesWidth = -1;
-
-    private List<GlyphRegistry.Glyph> shownCached(int known) {
-        String key = cat + "\u0000" + (search == null ? "" : search.getValue()) + "\u0000" + known + "\u0000" + GlyphRegistry.client().size() + "\u0000" + wanted.size();
-        if (!key.equals(shownKey)) {
-            shownKey = key;
-            shownList = shown();
-            lines.clear();
-        }
-        return shownList;
-    }
-
-    private List<FormattedCharSequence> meaningLines(GlyphRegistry.Glyph gl, int colW) {
-        if (colW != linesWidth) {
-            linesWidth = colW;
-            lines.clear();
-        }
-        boolean k = ClientResearch.knows(gl.token());
-        return lines.computeIfAbsent((k ? "+" : "-") + gl.token(), t -> font.split(Component.literal(k ? gl.meaning() : "???"), colW - 70));
-    }
-
     private List<GlyphRegistry.Glyph> shown() {
         String q = search == null ? "" : search.getValue().trim().toLowerCase(Locale.ROOT);
         List<GlyphRegistry.Glyph> out = new ArrayList<>();
@@ -146,7 +120,7 @@ public class GlossaryScreen extends Screen {
         String count = known + " / " + total;
         g.drawString(font, count, left + w - font.width(count), 8, 0xC0A060, false);
         int x = listX, y = top + 20, bottom = height - 8, colW = w - 104 - ScrollBar.W - 4;
-        List<GlyphRegistry.Glyph> list = shownCached(known);
+        List<GlyphRegistry.Glyph> list = shown();
         // measure first, so the bar and the clamp agree with what is drawn this frame
         int content = 0;
         for (GlyphRegistry.Glyph gl : list) content += height(gl, colW);
@@ -156,7 +130,7 @@ public class GlossaryScreen extends Screen {
         int yy = y - scroll;
         for (GlyphRegistry.Glyph gl : list) {
             boolean k = ClientResearch.knows(gl.token());
-            List<FormattedCharSequence> mean = meaningLines(gl, colW);
+            List<FormattedCharSequence> mean = font.split(Component.literal(k ? gl.meaning() : "???"), colW - 70);
             int h = height(gl, colW);
             if (yy + h > y && yy < bottom) {
                 g.fill(x, yy, x + colW, yy + h - 3, k ? 0x40302010 : 0x40100808);
@@ -179,7 +153,8 @@ public class GlossaryScreen extends Screen {
     }
 
     private int height(GlyphRegistry.Glyph gl, int colW) {
-        return 14 + 10 * Math.max(1, meaningLines(gl, colW).size()) + 12;
+        boolean k = ClientResearch.knows(gl.token());
+        return 14 + 10 * Math.max(1, font.split(Component.literal(k ? gl.meaning() : "???"), colW - 70).size()) + 12;
     }
 
     @Override

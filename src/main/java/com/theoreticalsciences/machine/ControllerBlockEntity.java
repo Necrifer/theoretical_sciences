@@ -108,7 +108,6 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         w[5] = worldPosition.getY();
         w[6] = noisyNeighbours(level);
         w[7] = com.theoreticalsciences.orbit.SpaceModules.gravity(level);     // 1.13.0
-        w[8] = com.theoreticalsciences.orbit.SpaceModules.ambient(level);     // 1.4.0
     }
 
     /**
@@ -609,21 +608,6 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     }
 
     /** Picks the tallest build that stands complete; if none does, keeps the size it had (so the hologram shows that). */
-    /** 1.3.0: cells of a structure read per tick by a check in progress. */
-    private static final int SCAN_BUDGET = 4096;
-    @javax.annotation.Nullable
-    private MultiblockDefinition.Scan pendingScan;
-
-    private void applyScan(ServerLevel level, MultiblockDefinition.ScanResult scan) {
-        // round 36: part of the structure sits in an unloaded chunk (a chunk loader keeps only this one): keep
-        // the state from the last full check rather than "breaking" it - nothing outside loaded chunks is touched
-        if (scan.partial()) return;
-        setFormed(level, scan.complete(), scan.ports());
-        updateTiers(scan);
-        // casings that were unloaded when the structure formed get their formed look once they are back
-        if (formed && lookRefresh++ % 10 == 0) applyFormedLook(level, true);       // 1.2.0: also on the first check after loading
-    }
-
     private void pickSize(Level level) {
         MultiblockDefinition base = Multiblocks.get(type.multiblock).orElse(null);
         if (base == null || !base.variable()) return;
@@ -903,7 +887,6 @@ public class ControllerBlockEntity extends MachineBlockEntity {
     public void recheckSoon() {
         checkTimer = 1;
         lookRefresh = 0;
-        pendingScan = null;          // (1.3.0: a check already under way started before the change: begin again)
     }
 
     @Override
@@ -912,16 +895,6 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         if ((level.getGameTime() + worldPosition.hashCode()) % 20 == 0 && hasPhysics()) senseWorld(level);
         if (level.getGameTime() % 20 == 0) frameDrag(level);
         if (type == MachineType.TESLA_COIL && level.getGameTime() % 30 == 0) teslaStrike(level);
-        // 1.3.0: a giant structure's check, read a part each tick (it was read whole in one tick, a visible stutter)
-        if (pendingScan != null) {
-            MultiblockDefinition def = definition();
-            if (pendingScan.definition() != def || pendingScan.facing() != facing()) pendingScan = null;     // changed meanwhile: start over
-            else if (pendingScan.step(level, SCAN_BUDGET)) {
-                MultiblockDefinition.ScanResult scan = pendingScan.result();
-                pendingScan = null;
-                applyScan(level, scan);
-            }
-        }
         if (--checkTimer <= 0) {
             checkTimer = 40;
             pickSize(level);
@@ -929,19 +902,19 @@ public class ControllerBlockEntity extends MachineBlockEntity {
             // 1.2.0: the giants are checked less often (a check reads every block of the structure)
             if (def != null) checkTimer += Math.min(160, def.sizeX * def.sizeY * def.sizeZ / 4000);
             if (def == null && !type.standaloneConsole()) return;
+            MultiblockDefinition.ScanResult scan = def == null ? null : def.scan(level, worldPosition, facing(), portId());
             // 1.2.0: a single-block console machine is always complete
             if (def == null) {
                 if (!formed) setFormed(level, true, List.of());
-            } else if (def.cellCount() > SCAN_BUDGET) {
-                if (pendingScan == null) {
-                    pendingScan = def.startScan(worldPosition, facing(), portId());
-                    if (pendingScan.step(level, SCAN_BUDGET)) {
-                        MultiblockDefinition.ScanResult scan = pendingScan.result();
-                        pendingScan = null;
-                        applyScan(level, scan);
-                    }
-                }
-            } else applyScan(level, def.scan(level, worldPosition, facing(), portId()));
+            } else
+            // round 36: part of the structure sits in an unloaded chunk (a chunk loader keeps only this one): keep
+            // the state from the last full check rather than "breaking" it - nothing outside loaded chunks is touched
+            if (!scan.partial()) {
+                setFormed(level, scan.complete(), scan.ports());
+                updateTiers(scan);
+                // casings that were unloaded when the structure formed get their formed look once they are back
+                if (formed && lookRefresh++ % 10 == 0) applyFormedLook(level, true);       // 1.2.0: also on the first check after loading
+            }
             // round 31: a /reload may have lowered this machine's limits (data/<ns>/ts_machines)
             var lim = tuningProfile();
             if (lim != null && (tuning.overclock > lim.maxOverclock() || tuning.parallel > maxParallel())) {
@@ -986,8 +959,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         boolean working = running || burning;
         physics.stabiliser = tuning.stabiliser;
         physics.tickDisturbance(tp, on, level.random, QHConfig.TUNING_DIFFICULTY.get());
-        // 1.3.0: an unbuilt structure nobody is looking at is evaluated once a second, not every tick
-        if (formed || viewers > 0 || level.getGameTime() % 20 == 0) evaluatePhysics(on);
+        evaluatePhysics(on);
         physics.tickThermal();
         physics.tickStates(on);
         if (formed && working && !physics.stopped()) {

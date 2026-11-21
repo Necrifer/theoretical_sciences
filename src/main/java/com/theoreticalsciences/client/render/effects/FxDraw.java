@@ -76,28 +76,14 @@ public final class FxDraw {
     /** A soft round glow facing the camera, brightest in the middle. */
     public static void glow(Vec3 c, float radius, int rgb, float alpha) {
         if (alpha <= 0.003F || radius <= 0) return;
-        // 1.3.0: table directions and no new vectors (it made about 56 per glow, hundreds of glows a frame)
-        double lx = left.x() * radius, ly = left.y() * radius, lz = left.z() * radius, ux = up.x() * radius, uy = up.y() * radius, uz = up.z() * radius;
-        float r = (rgb >> 16 & 255) / 255F, g = (rgb >> 8 & 255) / 255F, b = (rgb & 255) / 255F, ca = Math.max(0, Math.min(1, alpha));
-        float x0 = (float) (c.x - cam.x), y0 = (float) (c.y - cam.y), z0 = (float) (c.z - cam.z);
-        for (int i = 0; i < 14; i++) {
-            double c0 = COS14[i], s0 = SIN14[i], c1 = COS14[i + 1], s1 = SIN14[i + 1];
-            float px0 = (float) (c.x + lx * c0 + ux * s0 - cam.x), py0 = (float) (c.y + ly * c0 + uy * s0 - cam.y), pz0 = (float) (c.z + lz * c0 + uz * s0 - cam.z);
-            float px1 = (float) (c.x + lx * c1 + ux * s1 - cam.x), py1 = (float) (c.y + ly * c1 + uy * s1 - cam.y), pz1 = (float) (c.z + lz * c1 + uz * s1 - cam.z);
-            bb.addVertex(x0, y0, z0).setColor(r, g, b, ca);
-            bb.addVertex(px0, py0, pz0).setColor(r, g, b, 0F);
-            bb.addVertex(px1, py1, pz1).setColor(r, g, b, 0F);
-            bb.addVertex(px1, py1, pz1).setColor(r, g, b, 0F);
-        }
-    }
-
-    private static final double[] COS14 = new double[15], SIN14 = new double[15];
-
-    static {
-        for (int i = 0; i <= 14; i++) {
-            double a = i * Math.PI * 2 / 14;
-            COS14[i] = Math.cos(a);
-            SIN14[i] = Math.sin(a);
+        int seg = 14;
+        for (int i = 0; i < seg; i++) {
+            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
+            Vec3 p0 = c.add(off(a0, radius)), p1 = c.add(off(a1, radius));
+            v(c, rgb, alpha);
+            v(p0, rgb, 0);
+            v(p1, rgb, 0);
+            v(p1, rgb, 0);
         }
     }
 

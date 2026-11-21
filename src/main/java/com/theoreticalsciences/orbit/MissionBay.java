@@ -251,7 +251,7 @@ public final class MissionBay {
         @Override
         protected void loadAdditional(CompoundTag t, HolderLookup.Provider r) {
             super.loadAdditional(t, r);
-            if (t.contains("Items")) items.deserializeNBT(r, com.theoreticalsciences.machine.BigItemStackHandler.sized(t.getCompound("Items"), items.getSlots()));
+            if (t.contains("Items")) items.deserializeNBT(r, t.getCompound("Items"));
             mission = t.contains("Mission") ? ResourceLocation.tryParse(t.getString("Mission")) : null;
             returnAt = t.getLong("ReturnAt");
             owner = t.hasUUID("Owner") ? t.getUUID("Owner") : null;

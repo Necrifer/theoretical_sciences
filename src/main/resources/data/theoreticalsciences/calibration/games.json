@@ -1,6 +1,6 @@
 {
   "abiogenesis_crucible": {
-    "game": "codon"
+    "game": "wave"
   },
   "accretion_disk_reactor": {
     "game": "flow"
@@ -20,7 +20,7 @@
     "game": "flow"
   },
   "anomaly_containment_ward": {
-    "game": "loop"
+    "game": "wave"
   },
   "anomaly_resolution_engine": {
     "game": "wave"
@@ -82,18 +82,18 @@
     "tier": 3
   },
   "circadian_incubator": {
-    "game": "codon",
+    "game": "wave",
     "tier": 2
   },
   "climate_engine": {
-    "game": "loop"
+    "game": "flow"
   },
   "clonal_selector": {
     "game": "equilibrium",
     "tier": 3
   },
   "concept_compressor": {
-    "game": "logic"
+    "game": "chain"
   },
   "contact_process_tower": {
     "game": "equilibrium",
@@ -111,7 +111,7 @@
     "game": "wave"
   },
   "cyclotron": {
-    "game": "decay"
+    "game": "flow"
   },
   "dark_energy_siphon": {
     "game": "flow"
@@ -162,7 +162,7 @@
     "game": "wave"
   },
   "evolution_engine": {
-    "game": "codon"
+    "game": "wave"
   },
   "eye_of_the_horizon": {
     "game": "spectrum"
@@ -190,7 +190,7 @@
     "tier": 2
   },
   "gas_centrifuge_cascade": {
-    "game": "decay"
+    "game": "flow"
   },
   "gene_circuit_loom": {
     "game": "cipher",
@@ -243,10 +243,10 @@
     "tier": 3
   },
   "matrioshka_brain": {
-    "game": "logic"
+    "game": "chain"
   },
   "mhd_generator": {
-    "game": "circuit"
+    "game": "flow"
   },
   "micro_black_hole_evaporator": {
     "game": "wave"
@@ -259,7 +259,7 @@
     "game": "wave"
   },
   "molten_salt_reactor": {
-    "game": "decay"
+    "game": "flow"
   },
   "monte_carlo_engine": {
     "game": "chain"
@@ -282,10 +282,10 @@
     "tier": 3
   },
   "nuclide_forge": {
-    "game": "decay"
+    "game": "wave"
   },
   "omnilex_engine": {
-    "game": "logic"
+    "game": "chain"
   },
   "optical_workshop": {
     "game": "spectrum"
@@ -303,7 +303,7 @@
     "tier": 2
   },
   "patch_clamp_rig": {
-    "game": "circuit",
+    "game": "wave",
     "tier": 2
   },
   "pattern_basin": {
@@ -318,7 +318,7 @@
     "tier": 3
   },
   "phage_lab": {
-    "game": "codon",
+    "game": "flow",
     "tier": 2
   },
   "phase_diagram_kiln": {
@@ -344,7 +344,7 @@
     "game": "spectrum"
   },
   "pulsed_magnet_lab": {
-    "game": "circuit"
+    "game": "wave"
   },
   "quark_gluon_collider": {
     "game": "flow"
@@ -357,7 +357,7 @@
     "game": "spectrum"
   },
   "reality_compiler": {
-    "game": "logic"
+    "game": "chain"
   },
   "reflecting_telescope": {
     "game": "spectrum"
@@ -418,7 +418,7 @@
     "game": "wave"
   },
   "tesla_coil": {
-    "game": "circuit"
+    "game": "wave"
   },
   "tesseract_assembler": {
     "game": "wave"
@@ -431,7 +431,7 @@
     "tier": 2
   },
   "tokamak": {
-    "game": "loop"
+    "game": "flow"
   },
   "topology_kiln": {
     "game": "flow",
@@ -450,7 +450,7 @@
     "game": "flow"
   },
   "warp_field_forge": {
-    "game": "loop"
+    "game": "wave"
   },
   "white_hole_emitter": {
     "game": "flow"
@@ -516,7 +516,7 @@
     "tier": 2
   },
   "ancient_dna_lab": {
-    "game": "codon",
+    "game": "chain",
     "tier": 2
   },
   "revival_vat": {
@@ -588,7 +588,7 @@
     "tier": 2
   },
   "automaton_lattice": {
-    "game": "logic",
+    "game": "chain",
     "tier": 3
   },
   "certificate_verifier": {
@@ -648,7 +648,7 @@
     "tier": 3
   },
   "microwave_rectenna": {
-    "game": "circuit",
+    "game": "chain",
     "tier": 3
   },
   "radiation_pressure_balance": {
@@ -661,126 +661,6 @@
   },
   "cmb_bolometer_array": {
     "game": "chain",
-    "tier": 4
-  },
-  "syngas_reformer": {
-    "game": "chain",
-    "tier": 2
-  },
-  "fischer_tropsch_reactor": {
-    "game": "chain",
-    "tier": 3
-  },
-  "substituent_bench": {
-    "game": "chain",
-    "tier": 2
-  },
-  "polarimeter": {
-    "game": "chain",
-    "tier": 2
-  },
-  "huckel_analyser": {
-    "game": "chain",
-    "tier": 3
-  },
-  "molecular_machine_bench": {
-    "game": "chain",
-    "tier": 4
-  },
-  "hydrotreater": {
-    "game": "chain",
-    "tier": 2
-  },
-  "catalytic_reformer": {
-    "game": "chain",
-    "tier": 3
-  },
-  "claus_unit": {
-    "game": "chain",
-    "tier": 2
-  },
-  "delayed_coker": {
-    "game": "chain",
-    "tier": 2
-  },
-  "helium_liquefier": {
-    "game": "loop",
-    "tier": 3
-  },
-  "bcs_cryostat": {
-    "game": "circuit",
-    "tier": 3
-  },
-  "deep_space_transceiver": {
-    "game": "chain",
-    "tier": 3
-  },
-  "fibre_draw_tower": {
-    "game": "chain",
-    "tier": 3
-  },
-  "fracture_bench": {
-    "game": "chain",
-    "tier": 3
-  },
-  "bridgman_furnace": {
-    "game": "flow",
-    "tier": 4
-  },
-  "josephson_logic_bench": {
-    "game": "logic",
-    "tier": 4
-  },
-  "media_sputter_chamber": {
-    "game": "circuit",
-    "tier": 4
-  },
-  "pid_bench": {
-    "game": "loop",
-    "tier": 3
-  },
-  "reliability_ledger": {
-    "game": "logic",
-    "tier": 3
-  },
-  "expansion_orrery": {
-    "game": "wave",
-    "tier": 4
-  },
-  "isochron_bench": {
-    "game": "decay",
-    "tier": 3
-  },
-  "gene_pool_bench": {
-    "game": "codon",
-    "tier": 3
-  },
-  "oxygen_binding_bench": {
-    "game": "codon",
-    "tier": 3
-  },
-  "laue_goniometer": {
-    "game": "symmetry",
-    "tier": 3
-  },
-  "langmuir_probe_station": {
-    "game": "wave",
-    "tier": 3
-  },
-  "ion_channel_bench": {
-    "game": "circuit",
-    "tier": 3
-  },
-  "reef_mesocosm": {
-    "game": "tree",
-    "tier": 3
-  },
-  "kalman_filter_bench": {
-    "game": "loop",
-    "tier": 3
-  },
-  "lloyd_engine": {
-    "game": "logic",
     "tier": 4
   }
 }

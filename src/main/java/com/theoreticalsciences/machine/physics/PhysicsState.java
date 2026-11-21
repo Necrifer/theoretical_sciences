@@ -151,7 +151,7 @@ public final class PhysicsState {
     public int size = 1;
 
     /** 1.2.0: the world around the machine - sky, night, sun, moon, rain, alt, rfi (see {@link PhysicsModel}); set by the controller. */
-    public final double[] world = {1, 1, 1, 0.5, 0, 64, 0, 9.81, 300};      // 1.4.0: the last is the ambient temperature, T_amb
+    public final double[] world = {1, 1, 1, 0.5, 0, 64, 0, 9.81};
 
     private boolean evaluate0(int coil, int emitter, int oc, int par, boolean on, boolean autoCal) {
         PhysicsModel m = model();
@@ -160,7 +160,7 @@ public final class PhysicsState {
         e[PhysicsModel.B_T] = temperature;
         PhysicsManager.Coolant cl = PhysicsManager.coolant(coolant.getFluid());
         e[PhysicsModel.B_TC] = cl == null ? 300 : cl.temperature();
-        e[PhysicsModel.B_TAMB] = world[8];
+        e[PhysicsModel.B_TAMB] = 300;
         e[PhysicsModel.B_COIL] = coil;
         e[PhysicsModel.B_EMIT] = emitter;
         e[PhysicsModel.B_SCTC] = PhysicsModel.scTc(coil);
@@ -171,7 +171,7 @@ public final class PhysicsState {
         e[PhysicsModel.B_D] = autoCal ? disturbance * 0.3 : disturbance;
         e[PhysicsModel.B_ON] = on ? 1 : 0;
         e[PhysicsModel.B_SIZE] = Math.max(1, size);
-        System.arraycopy(world, 0, e, PhysicsModel.B_SKY, 8);
+        System.arraycopy(world, 0, e, PhysicsModel.B_SKY, world.length);
         for (int i = 0; i < params.length; i++) e[m.params.get(i).slot()] = params[i];
         m.recipeVars.forEach((k, v) -> e[m.recipeVarSlots.get(k)] = recipe.vars().getOrDefault(k, v));
         for (PhysicsModel.Named c : m.consts) e[c.slot()] = c.expr().eval(e);

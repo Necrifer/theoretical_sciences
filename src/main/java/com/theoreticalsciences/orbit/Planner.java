@@ -90,25 +90,7 @@ public final class Planner {
     }
 
     // ------------------------------------------------------------------ opening
-    // ------------------------------------------------------------------ 1.3.0: sessions
-    /** The planner screen a player opened (by using a console or a bay): which block, where, and until when. */
-    private record Session(BlockPos pos, net.minecraft.resources.ResourceKey<net.minecraft.world.level.Level> dim, long until) {}
-
-    private static final java.util.Map<java.util.UUID, Session> SESSIONS =
-            com.theoreticalsciences.world.SessionMaps.perPlayer(new java.util.concurrent.ConcurrentHashMap<>());
-
-    private static void begin(ServerPlayer sp, BlockPos pos) {
-        SESSIONS.put(sp.getUUID(), new Session(pos.immutable(), sp.level().dimension(), sp.level().getGameTime() + 20 * 60 * 10));
-    }
-
-    /** True when sp opened this block's planner (so a modified client cannot launch from a bay it never opened). */
-    private static boolean inSession(ServerPlayer sp, BlockPos pos) {
-        Session s = SESSIONS.get(sp.getUUID());
-        return s != null && !sp.isSpectator() && s.pos().equals(pos) && s.dim() == sp.level().dimension() && sp.level().getGameTime() <= s.until();
-    }
-
     public static void openConsole(ServerPlayer sp, BlockPos pos) {
-        begin(sp, pos);
         OrbitData data = OrbitData.get(sp.server);
         List<Entry> list = new ArrayList<>();
         for (Destinations.Destination d : Destinations.INSTANCE.offered(sp))
@@ -119,7 +101,6 @@ public final class Planner {
     }
 
     static void openBay(ServerPlayer sp, MissionBay.BayEntity bay) {
-        begin(sp, bay.getBlockPos());
         List<Entry> list = new ArrayList<>();
         for (Missions.Mission m : Missions.INSTANCE.offered(sp))
             list.add(new Entry(m.id().toString(), m.name(), m.deltaV(), m.synodic(), m.penalty(), m.offset(), false, m.transferDays()));
@@ -133,14 +114,12 @@ public final class Planner {
 
     public static void handle(ServerPlayer sp, Go g) {
         if (sp.level().dimension() != QHDimensions.ORBITAL_STATION || !sp.level().isLoaded(g.pos()) || !sp.blockPosition().closerThan(g.pos(), 8)) return;
-        if (!inSession(sp, g.pos())) return;                    // 1.3.0: only from the planner this player opened
         ResourceLocation id = ResourceLocation.tryParse(g.id());
         if (id == null) return;
         double tof = Math.max(0.5, Math.min(2.5, g.tof()));
         double day = today(sp);
         if (g.bay()) {
             if (!(sp.level().getBlockEntity(g.pos()) instanceof MissionBay.BayEntity bay) || bay.mission != null || !bay.hasProbe()) return;
-            if (!com.theoreticalsciences.compat.ClaimChecks.mayAffect(sp, g.pos(), null, com.theoreticalsciences.compat.ClaimChecks.Kind.PLACE)) return;
             Missions.Mission m = Missions.INSTANCE.byId(id);
             if (m == null || !m.offered(sp)) return;
             double cost = MissionMath.cost(m.deltaV(), m.synodic(), m.penalty(), m.offset(), day, tof);
@@ -156,7 +135,7 @@ public final class Planner {
                         .withStyle(ChatFormatting.RED), false);
                 return;
             }
-            if (bay.owner == null) bay.owner = sp.getUUID();      // 1.3.0: a launch never takes over someone's bay
+            bay.owner = sp.getUUID();
             if (!sp.isCreative())
                 for (ItemStack need : m.needs()) {
                     int left = need.getCount();

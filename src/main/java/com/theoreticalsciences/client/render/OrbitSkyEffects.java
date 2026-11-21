@@ -75,7 +75,12 @@ public class OrbitSkyEffects extends DimensionSpecialEffects {
             RenderSystem.defaultBlendFunc();
             // stars, steady
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
-            STEADY_STARS.draw();                                        // 1.3.0: built once, kept on the card
+            BufferBuilder st = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+            for (float[] s : STARS) {
+                if (Math.acos(-s[1]) < EARTH) continue;            // hidden behind the Earth
+                billboard(st, s[0] * 100, s[1] * 100, s[2] * 100, 0.2F + s[3] * 0.5F, 0xFFFFFF, s[3]);
+            }
+            draw(st);
 
             // the Earth: a cap of the sky sphere round straight down, patterned and turning slowly
             RenderSystem.defaultBlendFunc();
@@ -166,13 +171,6 @@ public class OrbitSkyEffects extends DimensionSpecialEffects {
             vtx(bb, new float[]{x + s, y + s, z}, rgb, a); vtx(bb, new float[]{x - s, y + s, z}, rgb, a);
         }
     }
-
-    private static final BakedSky STEADY_STARS = new BakedSky(VertexFormat.Mode.QUADS, st -> {
-        for (float[] s : STARS) {
-            if (Math.acos(-s[1]) < EARTH) continue;            // hidden behind the Earth
-            billboard(st, s[0] * 100, s[1] * 100, s[2] * 100, 0.2F + s[3] * 0.5F, 0xFFFFFF, s[3]);
-        }
-    });
 
     private static void draw(BufferBuilder bb) {
         MeshData m = bb.build();

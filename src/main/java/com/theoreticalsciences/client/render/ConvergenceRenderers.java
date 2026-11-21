@@ -195,8 +195,7 @@ public final class ConvergenceRenderers {
             if (f >= AltarBlockEntity.RISE && c <= 0) {
                 long tick = (long) (t / 2);
                 for (int k = 0; k < 4; k++) {
-                    java.util.Random rnd = BOLT_RND;                     // 1.3.0: one, reseeded (same sequence)
-                    rnd.setSeed(o.asLong() * 31 + tick * 7 + k);
+                    java.util.Random rnd = new java.util.Random(o.asLong() * 31 + tick * 7 + k);
                     double th = rnd.nextDouble() * Math.PI * 2, ph = (rnd.nextDouble() - 0.5) * Math.PI;
                     double dx = Math.cos(th) * Math.cos(ph), dy = Math.sin(ph), dz = Math.sin(th) * Math.cos(ph);
                     double ex, ey, ez;
@@ -280,8 +279,6 @@ public final class ConvergenceRenderers {
     }
 
     /** A jagged arc of lightning from a to b, with a faint halo. */
-    private static final java.util.Random BOLT_RND = new java.util.Random();
-
     private static void bolt(Matrix4f m, VertexConsumer vc, java.util.Random rnd, double x0, double y0, double z0, double x1, double y1, double z1) {
         final int seg = 6;
         double len = Math.sqrt((x1 - x0) * (x1 - x0) + (y1 - y0) * (y1 - y0) + (z1 - z0) * (z1 - z0));

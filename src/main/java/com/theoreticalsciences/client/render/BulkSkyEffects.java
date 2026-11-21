@@ -67,7 +67,17 @@ public class BulkSkyEffects extends DimensionSpecialEffects {
         try {
             // background gradient dome
             RenderSystem.defaultBlendFunc();
-            DOME.draw();                                        // 1.3.0: built once, kept on the card
+            BufferBuilder bg = Tesselator.getInstance().begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
+            int seg = 32;
+            for (int i = 0; i < seg; i++) {
+                double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
+                for (int band = 0; band < 6; band++) {
+                    double t0 = Math.PI * band / 6, t1 = Math.PI * (band + 1) / 6;
+                    int c0 = skyColor(t0), c1 = skyColor(t1);
+                    quad(bg, a0, a1, t0, t1, c0, c1);
+                }
+            }
+            draw(bg);
 
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
             // nebula bands
@@ -119,17 +129,6 @@ public class BulkSkyEffects extends DimensionSpecialEffects {
         }
         return true;
     }
-
-    private static final BakedSky DOME = new BakedSky(VertexFormat.Mode.TRIANGLES, bg -> {
-        int seg = 32;
-        for (int i = 0; i < seg; i++) {
-            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
-            for (int band = 0; band < 6; band++) {
-                double t0 = Math.PI * band / 6, t1 = Math.PI * (band + 1) / 6;
-                quad(bg, a0, a1, t0, t1, skyColor(t0), skyColor(t1));
-            }
-        }
-    });
 
     private static int skyColor(double theta) {
         double t = theta / Math.PI; // 0 top .. 1 bottom

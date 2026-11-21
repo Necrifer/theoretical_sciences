@@ -86,7 +86,7 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
             "sulfuric_acid", "sulfur_dioxide", "heavy_water", "deuterium", "tritium", "chlorine", "crude_oil",
             "ethylene", "propylene", "methane", "methanol",
             "liquid_oxygen", "liquid_hydrogen", "liquid_sodium", "radon", "helium_3", "carbon_monoxide", "hydrogen_cyanide",
-            "uranium_hexafluoride", "benzene", "naphtha", "hydrogen_sulfide", "sour_naphtha");
+            "uranium_hexafluoride");
 
     /**
      * 1.16.1: fluids whose other mods' versions do not share one common tag. A recipe naming one of these takes the
@@ -97,7 +97,7 @@ public class QHRecipeSerializer implements RecipeSerializer<QHRecipe> {
      */
     static final java.util.Map<String, String> UNION = java.util.Map.of(
             "crude_oil", "crude_oils", "ethylene", "ethylenes", "propylene", "propylenes", "methane", "methanes", "methanol", "methanols",
-            "liquid_oxygen", "liquid_oxygens", "liquid_hydrogen", "liquid_hydrogens", "liquid_sodium", "liquid_sodiums", "sour_naphtha", "sour_naphthas");
+            "liquid_oxygen", "liquid_oxygens", "liquid_hydrogen", "liquid_hydrogens", "liquid_sodium", "liquid_sodiums");
 
     static List<SizedFluidIngredient> shared(List<SizedFluidIngredient> in) {
         List<SizedFluidIngredient> out = null;

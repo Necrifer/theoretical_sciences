@@ -2,7 +2,6 @@ package com.theoreticalsciences.client.screen;
 
 import com.theoreticalsciences.machine.tuning.CalibrationGames;
 import com.theoreticalsciences.machine.tuning.ChemGames;
-import com.theoreticalsciences.machine.tuning.EngGames;
 import com.theoreticalsciences.machine.tuning.TuningForkItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -88,17 +87,6 @@ public class CalibrationScreen extends Screen {
     // NASH
     private CalibrationGames.Game game;
     private int pick = -1;
-    // 1.4.0: LOGIC, LOOP, DECAY, CODON, CIRCUIT (see EngGames)
-    private EngGames.Logic logic;
-    private int[] gates;
-    private EngGames.Loop loop;
-    private final int[] pid = {4, 2, 0};
-    private EngGames.Decay decay;
-    private final List<Integer> moves = new ArrayList<>();
-    private EngGames.Codon codon;
-    private int[] codons;
-    private EngGames.Circuit circuit;
-    private int[] res;
 
     public CalibrationScreen(BlockPos pos, int kind, long seed, int tier, boolean hints, int colour) {
         super(Component.translatable("gui.theoreticalsciences.calibrate.title"));
@@ -156,21 +144,6 @@ public class CalibrationScreen extends Screen {
                 links = new int[graph.edges().length];
                 for (int k = 0; k < links.length; k++) if (graph.forced()[k]) links[k] = 1;
             }
-            case CalibrationGames.LOGIC -> {
-                logic = EngGames.logic(seed, tier);
-                gates = new int[logic.gates()];
-            }
-            case CalibrationGames.LOOP -> loop = EngGames.loop(seed, tier);
-            case CalibrationGames.DECAY -> decay = EngGames.decay(seed, tier);
-            case CalibrationGames.CODON -> {
-                codon = EngGames.codon(seed, tier);
-                codons = new int[codon.peptide().length];
-            }
-            case CalibrationGames.CIRCUIT -> {
-                circuit = EngGames.circuit(seed, tier);
-                res = new int[circuit.resistors()];
-                for (int i = 0; i < res.length; i++) res[i] = circuit.fixed()[i] ? circuit.given()[i] : 12;
-            }
             default -> {}
         }
     }
@@ -191,11 +164,6 @@ public class CalibrationScreen extends Screen {
             case CalibrationGames.PATH -> "path";
             case CalibrationGames.TREE -> "tree";
             case CalibrationGames.NASH -> "nash";
-            case CalibrationGames.LOGIC -> "logic";
-            case CalibrationGames.LOOP -> "loop";
-            case CalibrationGames.DECAY -> "decay";
-            case CalibrationGames.CODON -> "codon";
-            case CalibrationGames.CIRCUIT -> "circuit";
             default -> "wave";
         };
     }
@@ -283,33 +251,6 @@ public class CalibrationScreen extends Screen {
                     Component.translatable("gui.theoreticalsciences.calibrate.clear"), accent, () -> {
                         for (int k = 0; k < links.length; k++) links[k] = graph.forced()[k] ? 1 : 0;
                     }));
-            case CalibrationGames.LOOP -> {
-                int n = loop.derivative() ? 3 : 2;
-                int[] hi = {EngGames.KP_MAX, EngGames.KI_MAX, EngGames.KD_MAX};
-                for (int i = 0; i < n; i++) {
-                    final int ii = i;
-                    spinners.add(new Spinner(x0 + W / 2 - n * 50 + i * 100 + 8, y0 + 178, 84, 0, hi[i], () -> pid[ii], v -> pid[ii] = v,
-                            v -> String.format("%.2f", ii == 0 ? EngGames.kp(v) : ii == 1 ? EngGames.ki(v) : EngGames.kd(v))));
-                }
-            }
-            case CalibrationGames.DECAY -> addRenderableWidget(HoloButton.of(x0 + 72, fy, 58, 15,
-                    Component.translatable("gui.theoreticalsciences.calibrate.undo"), accent, () -> {
-                        if (!moves.isEmpty()) moves.remove(moves.size() - 1);
-                    }));
-            case CalibrationGames.CODON -> {
-                for (int i = 0; i < codons.length; i++) {
-                    final int ii = i;
-                    spinners.add(new Spinner(codonX(i), codonY(i) + 11, 74, 0, 63, () -> codons[ii], v -> codons[ii] = v, EngGames::codon));
-                }
-            }
-            case CalibrationGames.CIRCUIT -> {
-                for (int i = 0; i < res.length; i++) {
-                    final int ii = i;
-                    int lo = circuit.fixed()[i] ? res[i] : 0, hi = circuit.fixed()[i] ? res[i] : EngGames.R_MAX;
-                    spinners.add(new Spinner(x0 + W / 2 - res.length * 40 + i * 80 + 4, y0 + 178, 72, lo, hi, () -> res[ii], v -> res[ii] = v,
-                            EngGames::ohmsText));
-                }
-            }
             default -> {}
         }
     }
@@ -373,11 +314,6 @@ public class CalibrationScreen extends Screen {
             }
             case CalibrationGames.PATH, CalibrationGames.TREE -> links.clone();
             case CalibrationGames.NASH -> new int[]{pick};
-            case CalibrationGames.LOGIC -> gates.clone();
-            case CalibrationGames.LOOP -> pid.clone();
-            case CalibrationGames.DECAY -> moves.stream().mapToInt(Integer::intValue).toArray();
-            case CalibrationGames.CODON -> codons.clone();
-            case CalibrationGames.CIRCUIT -> res.clone();
             default -> new int[0];
         };
     }
@@ -499,26 +435,6 @@ public class CalibrationScreen extends Screen {
                     return true;
                 }
             }
-            case CalibrationGames.LOGIC -> {
-                for (int j = 0; j < gates.length; j++) {
-                    int[] p = gatePos(j);
-                    if (mx >= p[0] && mx < p[0] + GATE_W && my >= p[1] && my < p[1] + GATE_H) {
-                        gates[j] = Math.floorMod(gates[j] + (button == 1 ? -1 : 1), logic.types());
-                        click(1.0F + 0.08F * gates[j]);
-                        return true;
-                    }
-                }
-            }
-            case CalibrationGames.DECAY -> {
-                for (int m = 0; m < decay.moves(); m++) {
-                    int bx = x0 + 244, by = decayButtonY(m);
-                    if (mx >= bx && mx < bx + 86 && my >= by && my < by + 18) {
-                        if (moves.size() < decay.limit()) moves.add(m);
-                        click(m == 0 ? 0.8F : 1.3F);
-                        return true;
-                    }
-                }
-            }
             default -> {}
         }
         return super.mouseClicked(mx, my, button);
@@ -537,7 +453,6 @@ public class CalibrationScreen extends Screen {
     private void bump(Spinner s, int d) {
         int v = s.get().getAsInt() + d;
         if (s.lo() == 0 && s.hi() == 7) v = Math.floorMod(v, 8);            // a phase goes round
-        else if (s.lo() == 0 && s.hi() == 63) v = Math.floorMod(v, 64);     // and so do the codons
         else v = Mth.clamp(v, s.lo(), s.hi());
         s.set().accept(v);
         click(d > 0 ? 1.25F : 0.95F);
@@ -578,11 +493,6 @@ public class CalibrationScreen extends Screen {
             case CalibrationGames.FLOW -> renderFlow(g, mx, my, time);
             case CalibrationGames.PATH, CalibrationGames.TREE -> renderGraph(g, mx, my, time);
             case CalibrationGames.NASH -> renderNash(g, mx, my);
-            case CalibrationGames.LOGIC -> renderLogic(g, top, mx, my);
-            case CalibrationGames.LOOP -> renderLoop(g, top);
-            case CalibrationGames.DECAY -> renderDecay(g, top, mx, my);
-            case CalibrationGames.CODON -> renderCodon(g);
-            case CalibrationGames.CIRCUIT -> renderCircuit(g);
             default -> {}
         }
         for (Spinner s : spinners) spinner(g, s, mx, my);
@@ -1267,280 +1177,5 @@ public class CalibrationScreen extends Screen {
             }
         int px = b[0] + k * b[2] + 24, pw = x0 + W - 12 - px;
         g.drawWordWrap(font, Component.translatable("gui.theoreticalsciences.calibrate.nash.key"), px, b[1] + 4, pw, DIM);
-    }
-    // LOGIC --------------------------------------------------------------
-    private static final int GATE_W = 40, GATE_H = 18;
-
-    private int depth(int src) {
-        if (src < logic.inputs()) return 0;
-        int[] s = logic.src()[src - logic.inputs()];
-        return 1 + Math.max(depth(s[0]), depth(s[1]));
-    }
-
-    /** Where gate j is drawn: one column per depth, spread down the column. */
-    private int[] gatePos(int j) {
-        int d = depth(logic.inputs() + j), idx = 0, count = 0;
-        for (int k = 0; k < logic.gates(); k++)
-            if (depth(logic.inputs() + k) == d) {
-                if (k < j) idx++;
-                count++;
-            }
-        int top = y0 + 62, bottom = y0 + 190;
-        int y = top + (bottom - top) * (2 * idx + 1) / (2 * count) - GATE_H / 2;
-        return new int[]{x0 + 24 + d * 50, y};
-    }
-
-    private int inputY(int i) {
-        int top = y0 + 62, bottom = y0 + 190;
-        return top + (bottom - top) * (2 * i + 1) / (2 * logic.inputs());
-    }
-
-    /** The point a source's output leaves from. */
-    private int[] outPoint(int src) {
-        if (src < logic.inputs()) return new int[]{x0 + 24, inputY(src)};
-        int[] p = gatePos(src - logic.inputs());
-        return new int[]{p[0] + GATE_W, p[1] + GATE_H / 2};
-    }
-
-    private void wire(GuiGraphics g, int ax, int ay, int bx, int by, int col) {
-        int mid = (ax + bx) / 2;
-        g.fill(ax, ay, mid + 1, ay + 1, col);
-        g.fill(mid, Math.min(ay, by), mid + 1, Math.max(ay, by) + 1, col);
-        g.fill(mid, by, bx, by + 1, col);
-    }
-
-    private void renderLogic(GuiGraphics g, int top, int mx, int my) {
-        int n = logic.inputs(), rows = 1 << n;
-        int wireCol = HoloStyle.argb(0x90, accent);
-        for (int i = 0; i < n; i++) g.drawString(font, sym(i), x0 + 14, inputY(i) - 4, GOLD, false);
-        for (int j = 0; j < logic.gates(); j++) {
-            int[] p = gatePos(j);
-            for (int k = 0; k < 2; k++) {
-                int[] o = outPoint(logic.src()[j][k]);
-                wire(g, o[0], o[1], p[0], p[1] + 5 + 8 * k, wireCol);
-            }
-        }
-        int[] last = gatePos(logic.gates() - 1);
-        g.fill(last[0] + GATE_W, last[1] + GATE_H / 2, last[0] + GATE_W + 12, last[1] + GATE_H / 2 + 1, bright);
-        g.drawString(font, "Q", last[0] + GATE_W + 14, last[1] + GATE_H / 2 - 4, bright, false);
-        for (int j = 0; j < logic.gates(); j++) {
-            int[] p = gatePos(j);
-            boolean over = mx >= p[0] && mx < p[0] + GATE_W && my >= p[1] && my < p[1] + GATE_H;
-            HoloStyle.chamferFill(g, p[0], p[1], GATE_W, GATE_H, 3, over ? 0xE01A2632 : 0xE0101820);
-            HoloStyle.chamferFrame(g, p[0], p[1], GATE_W, GATE_H, 3, over ? bright : HoloStyle.argb(0xC0, accent));
-            g.drawCenteredString(font, EngGames.GATES[gates[j]], p[0] + GATE_W / 2, p[1] + 5, TEXT);
-        }
-        // the truth table: inputs, the target, yours
-        int tx = x0 + 242, ty = y0 + 60, rh = rows > 4 ? 15 : 22;
-        for (int i = 0; i < n; i++) g.drawCenteredString(font, sym(i), tx + 6 + i * 14, ty, DIM);
-        g.drawCenteredString(font, Component.translatable("gui.theoreticalsciences.calibrate.logic.target"), tx + 6 + n * 14 + 10, ty, GOLD);
-        g.drawCenteredString(font, "Q", tx + 6 + n * 14 + 38, ty, bright);
-        for (int row = 0; row < rows; row++) {
-            int y = ty + 12 + row * rh;
-            for (int i = 0; i < n; i++) g.drawCenteredString(font, String.valueOf((row >> (n - 1 - i)) & 1), tx + 6 + i * 14, y, TEXT);
-            int want = EngGames.output(logic, logic.target(), row), got = EngGames.output(logic, gates, row);
-            g.drawCenteredString(font, String.valueOf(want), tx + 6 + n * 14 + 10, y, GOLD);
-            g.drawCenteredString(font, String.valueOf(got), tx + 6 + n * 14 + 38, y, got == want ? GOOD : BAD);
-        }
-    }
-
-    // LOOP ---------------------------------------------------------------
-    private int[] loopKey;
-    private final List<Double> loopTrace = new ArrayList<>();
-    private double[] loopMetrics;
-
-    private void renderLoop(GuiGraphics g, int top) {
-        if (loopKey == null || !java.util.Arrays.equals(loopKey, pid)) {
-            loopKey = pid.clone();
-            loopTrace.clear();
-            loopMetrics = EngGames.response(loop, pid, 5, loopTrace);
-        }
-        String plant = loop.tau2() > 0 ? String.format("G(s) = %.1f / ((%.1fs + 1)(%.1fs + 1))", loop.k(), loop.tau1(), loop.tau2())
-                : String.format("G(s) = %.1f / (%.1fs + 1)", loop.k(), loop.tau1());
-        g.drawString(font, plant, x0 + 12, top + 2, GOLD, false);
-        int px = x0 + 12, py = top + 14, pw = W - 24, ph = Math.max(50, y0 + 158 - py);
-        g.fill(px, py, px + pw, py + ph, 0xE0060A10);
-        HoloStyle.chamferFrame(g, px - 1, py - 1, pw + 2, ph + 2, 2, HoloStyle.argb(0x80, accent));
-        double ymax = 1.7;
-        java.util.function.DoubleToIntFunction Y = v -> py + ph - 1 - (int) Math.round(Mth.clamp(v / ymax, 0, 1) * (ph - 2));
-        int bandTop = Y.applyAsInt(1 + EngGames.BAND), bandBot = Y.applyAsInt(1 - EngGames.BAND);
-        g.fill(px, bandTop, px + pw, bandBot, 0x3070FF9A);
-        g.fill(px, Y.applyAsInt(1), px + pw, Y.applyAsInt(1) + 1, 0x8070FF9A);
-        int osY = Y.applyAsInt(1 + loop.overshootPct() / 100.0);
-        for (int x = px; x < px + pw; x += 4) g.fill(x, osY, x + 2, osY + 1, BAD);
-        int tsX = px + (int) Math.round(loop.settle() / EngGames.HORIZON * pw);
-        for (int y = py; y < py + ph; y += 4) g.fill(tsX, y, tsX + 1, y + 2, GOLD);
-        int prev = -1;
-        boolean ok = CalibrationGames.check(CalibrationGames.LOOP, seed, tier, pid);
-        for (int i = 0; i < loopTrace.size(); i++) {
-            int x = px + (int) Math.round((i * 5 * EngGames.DT) / EngGames.HORIZON * pw);
-            int y = Y.applyAsInt(loopTrace.get(i));
-            if (prev >= 0) g.fill(x, Math.min(prev, y), x + 1, Math.max(prev, y) + 1, ok ? GOOD : bright);
-            prev = y;
-        }
-        double os = loopMetrics[0] * 100, ts = loopMetrics[1];
-        Component m = Component.translatable("gui.theoreticalsciences.calibrate.loop.metrics", String.format("%.0f", os), loop.overshootPct(),
-                Double.isFinite(ts) ? String.format("%.1f", ts) : "∞", String.format("%.1f", loop.settle()));
-        g.drawString(font, m, x0 + 12, y0 + 161, ok ? GOOD : DIM, false);
-        String[] names = {"Kp", "Ki", "Kd"};
-        int n = loop.derivative() ? 3 : 2;
-        for (int i = 0; i < n; i++) label(g, Component.literal(names[i]), x0 + W / 2 - n * 50 + i * 100 + 50, y0 + 170);
-    }
-
-    // DECAY --------------------------------------------------------------
-    private int decayButtonY(int m) {
-        return y0 + 92 + m * 22;
-    }
-
-    /** A nuclide as its mass number in superscript before the symbol, ²³⁸U. */
-    private static String nuclide(int z, int a) {
-        String sup = "⁰¹²³⁴⁵⁶⁷⁸⁹", n = String.valueOf(a);
-        StringBuilder out = new StringBuilder();
-        for (char ch : n.toCharArray()) out.append(sup.charAt(ch - '0'));
-        return out + EngGames.symbol(z);
-    }
-
-    private void renderDecay(GuiGraphics g, int top, int mx, int my) {
-        List<int[]> w = EngGames.walk(decay, moves.stream().mapToInt(Integer::intValue).toArray());
-        int zLo = Math.min(decay.z0(), decay.z1()), zHi = Math.max(decay.z0(), decay.z1());
-        int nLo = Math.min(decay.a0() - decay.z0(), decay.a1() - decay.z1()), nHi = Math.max(decay.a0() - decay.z0(), decay.a1() - decay.z1());
-        List<int[]> all = new ArrayList<>(w);
-        all.addAll(decay.forbidden());
-        for (int[] p : all) {
-            zLo = Math.min(zLo, p[0]);
-            zHi = Math.max(zHi, p[0]);
-            nLo = Math.min(nLo, p[1] - p[0]);
-            nHi = Math.max(nHi, p[1] - p[0]);
-        }
-        zLo--;
-        zHi++;
-        nLo--;
-        nHi++;
-        int areaW = 222, areaH = y0 + 186 - (top + 14);
-        int cell = Math.max(3, Math.min(12, Math.min(areaW / (nHi - nLo + 1), areaH / (zHi - zLo + 1))));
-        int gx = x0 + 12, gy = top + 14;
-        // N along, Z up: a Segrè chart
-        final int nL = nLo, zH = zHi;
-        java.util.function.BiFunction<Integer, Integer, int[]> at = (z, a) -> new int[]{gx + (a - z - nL) * cell, gy + (zH - z) * cell};
-        g.fill(gx, gy, gx + (nHi - nLo + 1) * cell, gy + (zHi - zLo + 1) * cell, 0xE0060A10);
-        for (int z = zLo; z <= zHi; z++) for (int n = nLo; n <= nHi; n++) {
-            int[] c = at.apply(z, n + z);
-            g.fill(c[0], c[1], c[0] + cell - 1, c[1] + cell - 1, 0xFF101A24);
-        }
-        for (int[] f : decay.forbidden()) {
-            int[] c = at.apply(f[0], f[1]);
-            g.fill(c[0], c[1], c[0] + cell - 1, c[1] + cell - 1, 0xFF7A2420);
-        }
-        int[] t = at.apply(decay.z1(), decay.a1());
-        g.fill(t[0], t[1], t[0] + cell - 1, t[1] + cell - 1, 0xFF20703A);
-        int[] s0 = at.apply(decay.z0(), decay.a0());
-        g.fill(s0[0], s0[1], s0[0] + cell - 1, s0[1] + cell - 1, 0xFF806020);
-        for (int i = 1; i < w.size(); i++) {
-            int[] a = at.apply(w.get(i - 1)[0], w.get(i - 1)[1]), b = at.apply(w.get(i)[0], w.get(i)[1]);
-            int ax = a[0] + cell / 2, ay = a[1] + cell / 2, bx = b[0] + cell / 2, by = b[1] + cell / 2;
-            g.fill(Math.min(ax, bx), ay, Math.max(ax, bx) + 1, ay + 1, bright);
-            g.fill(bx, Math.min(ay, by), bx + 1, Math.max(ay, by) + 1, bright);
-        }
-        int[] here = w.get(w.size() - 1);
-        int[] hc = at.apply(here[0], here[1]);
-        HoloStyle.chamferFrame(g, hc[0] - 1, hc[1] - 1, cell + 1, cell + 1, 1, 0xFFFFFFFF);
-        g.drawString(font, Component.translatable("gui.theoreticalsciences.calibrate.decay.axes"), gx, y0 + 198 - 9, FAINT | 0xFF000000, false);
-        // the right: the goal, where you are, the moves
-        int rx = x0 + 244;
-        g.drawString(font, nuclide(decay.z0(), decay.a0()) + " → " + nuclide(decay.z1(), decay.a1()), rx, top + 2, GOLD, false);
-        boolean onBad = false;
-        for (int[] p : w) onBad |= decay.isForbidden(p[0], p[1]);
-        g.drawString(font, Component.translatable("gui.theoreticalsciences.calibrate.decay.at", nuclide(here[0], here[1])), rx, top + 14,
-                onBad ? BAD : here[0] == decay.z1() && here[1] == decay.a1() ? GOOD : TEXT, false);
-        String[] lab = {"α  Z−2, A−4", "β⁻  Z+1", "β⁺  Z−1"};
-        for (int m = 0; m < decay.moves(); m++) {
-            int by = decayButtonY(m);
-            boolean over = mx >= rx && mx < rx + 86 && my >= by && my < by + 18;
-            HoloStyle.chamferFill(g, rx, by, 86, 18, 3, over ? 0xE01A2632 : 0xE0101820);
-            HoloStyle.chamferFrame(g, rx, by, 86, 18, 3, over ? bright : HoloStyle.argb(0xC0, accent));
-            g.drawCenteredString(font, lab[m], rx + 43, by + 5, TEXT);
-        }
-        g.drawString(font, Component.translatable("gui.theoreticalsciences.calibrate.decay.steps", moves.size(), decay.limit()), rx, y0 + 168, DIM, false);
-    }
-
-    // CODON --------------------------------------------------------------
-    private int codonX(int i) {
-        int perRow = Math.min(4, codons.length);
-        return x0 + W / 2 - perRow * 40 + (i % 4) * 80 + 3;
-    }
-
-    private int codonY(int i) {
-        return y0 + 64 + (i / 4) * 52;
-    }
-
-    private void renderCodon(GuiGraphics g) {
-        for (int i = 0; i < codons.length; i++) {
-            int cx = codonX(i) + 37, cy = codonY(i);
-            g.drawCenteredString(font, codon.peptide()[i], cx, cy, GOLD);
-            String got = EngGames.CODE[codons[i]];
-            g.drawCenteredString(font, got, cx, cy + 30, got.equals(codon.peptide()[i]) ? GOOD : BAD);
-        }
-        if (codon.gcLo() > 0 || codon.gcHi() < 100) {
-            int pct = EngGames.gcPercent(codons);
-            boolean ok = pct >= codon.gcLo() && pct <= codon.gcHi();
-            label(g, Component.translatable("gui.theoreticalsciences.calibrate.codon.gc", pct, codon.gcLo(), codon.gcHi()), x0 + W / 2, y0 + 172);
-            g.fill(x0 + W / 2 - 60, y0 + 184, x0 + W / 2 + 60, y0 + 187, 0xFF141E28);
-            g.fill(x0 + W / 2 - 60 + codon.gcLo() * 120 / 100, y0 + 184, x0 + W / 2 - 60 + codon.gcHi() * 120 / 100, y0 + 187, 0xFF20703A);
-            int px = x0 + W / 2 - 60 + pct * 120 / 100;
-            g.fill(px, y0 + 182, px + 1, y0 + 189, ok ? GOOD : BAD);
-        }
-    }
-
-    // CIRCUIT ------------------------------------------------------------
-    private static String amps(double a) {
-        double ma = a * 1000;
-        return (ma >= 100 ? String.format("%.0f", ma) : ma >= 10 ? String.format("%.1f", ma) : String.format("%.2f", ma)) + " mA";
-    }
-
-    private void resistor(GuiGraphics g, int x, int y, boolean vertical, String name, int col) {
-        int w = vertical ? 10 : 30, h = vertical ? 30 : 10;
-        g.fill(x - w / 2, y - h / 2, x + w / 2, y + h / 2, 0xFF0C141C);
-        HoloStyle.chamferFrame(g, x - w / 2, y - h / 2, w, h, 1, col);
-        if (vertical) g.drawString(font, name, x + 8, y - 4, DIM, false);
-        else g.drawCenteredString(font, name, x, y + 8, DIM);
-    }
-
-    private void renderCircuit(GuiGraphics g) {
-        int col = HoloStyle.argb(0xC0, accent);
-        int left = x0 + 34, mid = x0 + 160, right = x0 + 236, yt = y0 + 70, yb = y0 + 156;
-        // the source
-        g.fill(left - 8, (yt + yb) / 2 - 6, left + 9, (yt + yb) / 2 - 5, GOLD);
-        g.fill(left - 4, (yt + yb) / 2 + 2, left + 5, (yt + yb) / 2 + 3, GOLD);
-        g.drawString(font, String.format("%.0f V", circuit.volts()), left - 28, (yt + yb) / 2 - 4, GOLD, false);
-        g.fill(left, yt, left + 1, (yt + yb) / 2 - 6, col);
-        g.fill(left, (yt + yb) / 2 + 3, left + 1, yb + 1, col);
-        // the top wire through R1 to the split, and the bottom wire back
-        g.fill(left, yt, right + 1, yt + 1, col);
-        g.fill(left, yb, right + 1, yb + 1, col);
-        resistor(g, (left + mid) / 2, yt, false, "R1", col);
-        g.fill(mid, yt, mid + 1, yb, col);
-        g.fill(right, yt, right + 1, yb, col);
-        resistor(g, mid, (yt + yb) / 2, true, "R2", col);
-        if (circuit.resistors() > 3) {
-            resistor(g, right, yt + 22, true, "R3", col);
-            resistor(g, right, yb - 22, true, "R4", col);
-        } else resistor(g, right, (yt + yb) / 2, true, "R3", col);
-        // the ammeter
-        int ax = circuit.measure() == 0 ? left + 18 : right, ay = circuit.measure() == 0 ? yt : yb - 6;
-        if (circuit.measure() != 0 && circuit.resistors() > 3) ay = (yt + yb) / 2;
-        HoloStyle.chamferFill(g, ax - 6, ay - 6, 13, 13, 3, 0xFF0C141C);
-        HoloStyle.chamferFrame(g, ax - 6, ay - 6, 13, 13, 3, GOLD);
-        g.drawCenteredString(font, "A", ax + 1, ay - 3, GOLD);
-        double got = EngGames.currents(circuit, res)[circuit.measure()];
-        boolean ok = CalibrationGames.check(CalibrationGames.CIRCUIT, seed, tier, res);
-        int tx = x0 + 272;
-        g.drawString(font, Component.translatable("gui.theoreticalsciences.calibrate.circuit.want"), tx, yt - 6, GOLD, false);
-        g.drawString(font, amps(circuit.target()), tx, yt + 4, GOLD, false);
-        g.drawString(font, Component.translatable("gui.theoreticalsciences.calibrate.circuit.got"), tx, yt + 24, DIM, false);
-        g.drawString(font, amps(got), tx, yt + 34, ok ? GOOD : BAD, false);
-        for (int i = 0; i < res.length; i++)
-            label(g, circuit.fixed()[i] ? Component.translatable("gui.theoreticalsciences.calibrate.circuit.fixed", "R" + (i + 1)) : Component.literal("R" + (i + 1)),
-                    x0 + W / 2 - res.length * 40 + i * 80 + 40, y0 + 168);
-        g.drawString(font, Component.translatable("gui.theoreticalsciences.calibrate.circuit.measure." + circuit.measure()), x0 + 12, y0 + 56, DIM, false);
     }
 }

@@ -67,7 +67,7 @@ public final class FieldHazards {
             double mul = g < 1 ? -0.9 : g >= 10 ? 2.0 : 0;
             if (mul == 0) {
                 if (grav.hasModifier(GRAV)) grav.removeModifier(GRAV);
-            } else com.theoreticalsciences.util.Attrs.mulTotal(grav, GRAV, mul);
+            } else grav.addOrUpdateTransientModifier(new AttributeModifier(GRAV, mul, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         }
         if (g < 10) {
             AttributeInstance jump = sp.getAttribute(Attributes.JUMP_STRENGTH);
@@ -84,7 +84,7 @@ public final class FieldHazards {
         }
         eff(sp, MobEffects.MOVEMENT_SLOWDOWN, 2);
         AttributeInstance jump = sp.getAttribute(Attributes.JUMP_STRENGTH);
-        if (jump != null) com.theoreticalsciences.util.Attrs.mulTotal(jump, JUMP, -0.9);
+        if (jump != null) jump.addOrUpdateTransientModifier(new AttributeModifier(JUMP, -0.9, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
         if (g >= 100 && sp.tickCount % 20 == 0) {
             sp.hurt(sp.damageSources().cramming(), g >= 1000 ? 8F : 2F);
             sp.displayClientMessage(Component.translatable("message.theoreticalsciences.crushing").withStyle(ChatFormatting.DARK_RED), true);

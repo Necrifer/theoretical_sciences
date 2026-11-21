@@ -203,23 +203,4 @@ public final class ClientHooks {
     public static void portalOpening(com.theoreticalsciences.home.PortalOpening.Start p) {
         com.theoreticalsciences.home.PortalOpeningRenderer.start(p);
     }
-
-    private static final java.util.IdentityHashMap<Set<?>, java.util.ArrayList<Object>> SNAPSHOTS = new java.util.IdentityHashMap<>();
-
-    /**
-     * A copy of one of these sets to walk through while drawing (1.3.0). The same list is refilled each time instead of
-     * a new one being made every frame; render thread only, and never walk the same set inside its own walk.
-     */
-    @SuppressWarnings("unchecked")
-    public static <T> java.util.List<T> snapshot(Set<T> set) {
-        java.util.ArrayList<Object> l = SNAPSHOTS.computeIfAbsent(set, k -> new java.util.ArrayList<>());
-        l.clear();
-        l.addAll(set);
-        return (java.util.List<T>) l;
-    }
-
-    /** Lets go of the last copies (they would otherwise hold the old world's things until the next frame drawn). */
-    public static void clearSnapshots() {
-        SNAPSHOTS.values().forEach(java.util.ArrayList::clear);
-    }
 }

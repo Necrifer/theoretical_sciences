@@ -349,7 +349,7 @@ public class AltarBlockEntity extends BlockEntity {
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider regs) {
         super.loadAdditional(tag, regs);
-        items.deserializeNBT(regs, com.theoreticalsciences.machine.BigItemStackHandler.sized(tag.getCompound("Items"), items.getSlots()));
+        items.deserializeNBT(regs, tag.getCompound("Items"));
         energy.setRaw(tag.getLong("Energy"));
         active = tag.contains("Active") ? ResourceLocation.tryParse(tag.getString("Active")) : null;
         progress = tag.getInt("Progress");
@@ -384,7 +384,7 @@ public class AltarBlockEntity extends BlockEntity {
 
     @Override
     public void handleUpdateTag(CompoundTag t, HolderLookup.Provider regs) {
-        items.deserializeNBT(regs, com.theoreticalsciences.machine.BigItemStackHandler.sized(t.getCompound("Items"), items.getSlots()));
+        items.deserializeNBT(regs, t.getCompound("Items"));
         active = t.contains("Active") ? ResourceLocation.tryParse(t.getString("Active")) : null;
         progress = t.getInt("Progress");
         duration = t.getInt("Duration");

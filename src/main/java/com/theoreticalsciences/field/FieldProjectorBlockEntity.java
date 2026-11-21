@@ -12,14 +12,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 public class FieldProjectorBlockEntity extends BlockEntity {
-    public final QHEnergyStorage energy = new QHEnergyStorage(400_000_000L, Integer.MAX_VALUE, 0, this::energyChanged);
+    public final QHEnergyStorage energy = new QHEnergyStorage(400_000_000L, Integer.MAX_VALUE, 0, this::setChanged);
     private int level;
     private boolean on;
-
-    /** 1.3.0: energy changes every tick; only the chunk needs saving (no neighbour updates). */
-    private void energyChanged() {
-        if (getLevel() != null) getLevel().blockEntityChanged(worldPosition);
-    }
 
     public FieldProjectorBlockEntity(BlockPos pos, BlockState state) {
         super(QHLogistics.FIELD_PROJECTOR.get(), pos, state);

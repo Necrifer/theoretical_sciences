@@ -47,19 +47,7 @@ import java.util.*;
  * </ul>
  */
 public final class MachineFx {
-    /** {@code orbiterBlocks}: 1.3.0, the "orbiters" blocks looked up once (they were parsed and looked up every frame). */
-    record Entry(String type, JsonObject o, List<Vec3> points, List<BlockPos> cells, List<net.minecraft.world.level.block.state.BlockState> orbiterBlocks) {}
-
-    /** 1.3.0: numbers read once (a number in a parsed JSON file is kept as text and parsed again at every read). */
-    private static JsonObject numbersParsed(JsonObject o) {
-        JsonObject c = new JsonObject();
-        for (var en : o.entrySet()) {
-            JsonElement v = en.getValue();
-            if (v.isJsonPrimitive() && v.getAsJsonPrimitive().isNumber()) v = new com.google.gson.JsonPrimitive(v.getAsDouble());
-            c.add(en.getKey(), v);
-        }
-        return c;
-    }
+    record Entry(String type, JsonObject o, List<Vec3> points, List<BlockPos> cells) {}
 
     private static final Map<MultiblockDefinition, List<Entry>> PARSED = new WeakHashMap<>();
     private static final Map<Object, float[]> HEAT = new WeakHashMap<>();
@@ -83,31 +71,14 @@ public final class MachineFx {
                             for (int x = 0; x < row.length(); x++) if (ch.indexOf(row.charAt(x)) >= 0) cells.add(new BlockPos(x, y, z));
                         }
                 }
-                List<net.minecraft.world.level.block.state.BlockState> blocks = new ArrayList<>();
-                if (o.has("blocks")) for (JsonElement b : o.getAsJsonArray("blocks")) {
-                    var bl = net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(ResourceLocation.parse(b.getAsString()));
-                    if (bl != net.minecraft.world.level.block.Blocks.AIR) blocks.add(bl.defaultBlockState());
-                }
-                if (blocks.isEmpty()) blocks.add(net.minecraft.world.level.block.Blocks.OBSIDIAN.defaultBlockState());
-                out.add(new Entry(o.has("type") ? o.get("type").getAsString() : "", numbersParsed(o), pts, cells, List.copyOf(blocks)));
+                out.add(new Entry(o.has("type") ? o.get("type").getAsString() : "", o, pts, cells));
             }
             return out;
         });
     }
 
-    /** 1.3.0: colours parsed once per text. */
-    private static final Map<String, Integer> COLOURS = new java.util.concurrent.ConcurrentHashMap<>();
-
     static int col(JsonObject o, String k, int d) {
-        if (!o.has(k)) return d;
-        String t = o.get(k).getAsString();
-        Integer c = COLOURS.get(t);
-        if (c == null) {
-            int parsed = FxSpec.parseColor(t, Integer.MIN_VALUE);
-            c = parsed;
-            COLOURS.put(t, c);
-        }
-        return c == Integer.MIN_VALUE ? d : c;
+        return FxSpec.parseColor(o.has(k) ? o.get(k).getAsString() : null, d);
     }
 
     static float num(JsonObject o, String k, float d) {
@@ -150,7 +121,12 @@ public final class MachineFx {
                 case "star" -> StarEffect.drawSurface(f, mv, at(e.o, centre), num(e.o, "radius", 3), col(e.o, "color", FxSpec.STAR_ORANGE), power);
                 case "shell" -> SpaceShellEffect.draw(f, mv, at(e.o, centre), num(e.o, "radius", 8), col(e.o, "color", 0x8060FF), power);
                 case "orbiters" -> {
-                    List<net.minecraft.world.level.block.state.BlockState> blocks = e.orbiterBlocks();
+                    List<net.minecraft.world.level.block.state.BlockState> blocks = new ArrayList<>();
+                    if (e.o.has("blocks")) for (JsonElement b : e.o.getAsJsonArray("blocks")) {
+                        var bl = net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(ResourceLocation.parse(b.getAsString()));
+                        if (bl != net.minecraft.world.level.block.Blocks.AIR) blocks.add(bl.defaultBlockState());
+                    }
+                    if (blocks.isEmpty()) blocks.add(net.minecraft.world.level.block.Blocks.OBSIDIAN.defaultBlockState());
                     float in = num(e.o, "inner", 3), out = num(e.o, "outer", in + 4);
                     OrbiterEffect.draw(ps, f.machineLocal(ctr, front), buf, at(e.o, centre), Math.min(16, (int) num(e.o, "count", 8)), in, out, blocks, seed, clock, power);
                 }

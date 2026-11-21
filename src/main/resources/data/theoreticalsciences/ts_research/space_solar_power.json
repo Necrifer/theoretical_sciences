@@ -1,7 +1,7 @@
 {
   "title": "Space Solar Power",
-  "x": 51,
-  "y": 33,
+  "x": 26,
+  "y": 7,
   "insight": 400,
   "requires": [
     "theoreticalsciences:satellite_orbits",
@@ -21,14 +21,14 @@
   "description": "In geostationary orbit the Sun shines almost all the time, through no air. A power satellite gathers it, turns it into microwaves, and beams them to a field of antennas on the ground, a rectenna, that turns them back into current. Diffraction spreads the beam: the spot on the ground is wider the longer the wavelength and the smaller the transmitter. It must be wide enough to keep the beam's power per square metre safe, and the rectenna wide enough to catch it. Unlocks the Power Satellite and the Microwave Rectenna.",
   "icon": "theoreticalsciences:microwave_rectenna",
   "puzzle": {
-    "goal": "A transmitter of diameter D sends waves of wavelength λ over a distance R. Diffraction spreads the beam; write the diameter S of the spot it makes (to its first dark ring).",
+    "goal": "A transmitter of diameter D sends waves of wavelength λ over a distance R. Diffraction spreads the beam; write the diameter d of the spot it makes (to its first dark ring).",
     "name": "Diffraction spot",
-    "lhs": "S",
+    "lhs": "d",
     "form": "2.44 * λ * R / D",
     "expr": "2.44 * lam * R / D",
-    "ask": "Find S in m for λ = 0.0517 m (5.8 GHz), R = 35786000 m and D = @{D} m.",
+    "ask": "Find d in m for λ = 0.0517 m (5.8 GHz), R = 35786000 m and D = @{D} m.",
     "vars": {
-      "S": "spot diameter",
+      "d": "spot diameter",
       "λ": "wavelength",
       "R": "distance",
       "D": "transmitter diameter"
@@ -52,6 +52,5 @@
         10.0
       ]
     }
-  },
-  "category": "space"
+  }
 }

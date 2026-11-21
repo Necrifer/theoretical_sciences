@@ -161,25 +161,4 @@ public final class SafeLanding {
     }
 
     private SafeLanding() {}
-
-    /**
-     * 1.3.0: whether a column may be dry land, judged from the world generator's noise alone, without generating its
-     * chunk: false when the generator says liquid lies over its floor (or there is no floor). A chunk already loaded
-     * is always worth a look. Generators that are not noise based cannot be judged, so the answer is then yes.
-     * Arrivals search outwards ring by ring, and on a world mostly of sea or plasma this skips generating dozens of
-     * chunks that could never be landed on.
-     */
-    public static boolean mayBeDry(ServerLevel l, int x, int z) {
-        if (l.hasChunk(x >> 4, z >> 4)) return true;
-        var gen = l.getChunkSource().getGenerator();
-        if (!(gen instanceof net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator)) return true;
-        try {
-            var rs = l.getChunkSource().randomState();
-            int top = gen.getBaseHeight(x, z, net.minecraft.world.level.levelgen.Heightmap.Types.WORLD_SURFACE_WG, l, rs);
-            int floor = gen.getBaseHeight(x, z, net.minecraft.world.level.levelgen.Heightmap.Types.OCEAN_FLOOR_WG, l, rs);
-            return floor > l.getMinBuildHeight() + 1 && top <= floor;
-        } catch (RuntimeException e) {
-            return true;
-        }
-    }
 }

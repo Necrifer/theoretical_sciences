@@ -68,15 +68,6 @@ public final class SpaceModules {
         return GRAVITY.getOrDefault(level.dimension().location().toString(), 9.81);
     }
 
-    /** 1.4.0: the surroundings a machine rejects its heat to (K): a refrigerator on Titan's 94 K surface works far cheaper. */
-    static final Map<String, Double> AMBIENT = Map.of(
-            "theoreticalsciences:titan", 94.0, "theoreticalsciences:titan_ocean", 273.0,
-            "ad_astra:moon", 250.0, "ad_astra:mars", 210.0, "ad_astra:venus", 737.0, "ad_astra:mercury", 440.0, "ad_astra:glacio", 250.0);
-
-    public static double ambient(Level level) {
-        return AMBIENT.getOrDefault(level.dimension().location().toString(), 300.0);
-    }
-
     // ------------------------------------------------------------------ the module blocks
     public static class ModuleBlock extends Block {
         public ModuleBlock(Properties p) {
@@ -114,7 +105,7 @@ public final class SpaceModules {
 
     // ------------------------------------------------------------------ the power beam
     /** Rectennas fed lately, by dimension and position, and when. */
-    static final Map<String, Long> BEAMS = com.theoreticalsciences.world.SessionMaps.perServer(new HashMap<>());   // 1.3.0: cleared when the server stops
+    static final Map<String, Long> BEAMS = new HashMap<>();
 
     /** Whether this rectenna may have a beam: each Power Satellite in orbit feeds four. */
     public static boolean claimBeam(ServerLevel level, BlockPos pos) {
@@ -129,8 +120,6 @@ public final class SpaceModules {
 
     // ------------------------------------------------------------------ launches
     static final String LAUNCH = "orbital_launch/r1130_launch_";
-    /** 1.4.0: the same launches on rocket kerosene (orbital_launch/r1400_kerolox_launch_<kind>). */
-    static final String KEROLOX = "orbital_launch/r1400_kerolox_launch_";
 
     @SubscribeEvent
     public static void onLaunch(MachineRecipeEvent.Finish e) {
@@ -139,11 +128,8 @@ public final class SpaceModules {
         OrbitData data = OrbitData.get(server);
         if (QHConfig.SPACE_DEBRIS.get()) data.debris(data.debris() + 1);        // a spent upper stage, bolts, shrouds
         String path = e.getRecipeId().getPath();
-        if (!e.getRecipeId().getNamespace().equals(TheoreticalSciences.MODID)) return;
-        String kind;
-        if (path.startsWith(LAUNCH)) kind = path.substring(LAUNCH.length());
-        else if (path.startsWith(KEROLOX)) kind = path.substring(KEROLOX.length());
-        else return;
+        if (!e.getRecipeId().getNamespace().equals(TheoreticalSciences.MODID) || !path.startsWith(LAUNCH)) return;
+        String kind = path.substring(LAUNCH.length());
         ServerPlayer owner = e.getMachine().getOwner() == null ? null : server.getPlayerList().getPlayer(e.getMachine().getOwner());
         if (kind.equals("debris_sweeper")) {
             data.debris(data.debris() * 0.15);

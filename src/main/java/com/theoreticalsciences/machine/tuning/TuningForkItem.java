@@ -82,11 +82,6 @@ public class TuningForkItem extends LoreItem {
                             case "path" -> CalibrationGames.PATH;
                             case "tree" -> CalibrationGames.TREE;
                             case "nash" -> CalibrationGames.NASH;
-                            case "logic" -> CalibrationGames.LOGIC;
-                            case "loop" -> CalibrationGames.LOOP;
-                            case "decay" -> CalibrationGames.DECAY;
-                            case "codon" -> CalibrationGames.CODON;
-                            case "circuit" -> CalibrationGames.CIRCUIT;
                             default -> CalibrationGames.WAVE;
                         };
                         games.put(e.getKey(), new int[]{kind, g.has("tier") ? g.get("tier").getAsInt() : 0});

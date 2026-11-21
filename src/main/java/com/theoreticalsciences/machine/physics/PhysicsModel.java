@@ -17,7 +17,7 @@ import java.util.Map;
  * <p>
  * Every expression may use these built-in names:
  * <ul>
- *   <li>{@code T} machine (cold-mass) temperature in K, {@code T_c} coolant temperature, {@code T_amb} ambient (300 K; 1.4.0: the dimension's, for multiblocks: 94 K on Titan)</li>
+ *   <li>{@code T} machine (cold-mass) temperature in K, {@code T_c} coolant temperature, {@code T_amb} ambient (300 K)</li>
  *   <li>{@code coil}, {@code emitter} - component tiers of the formed structure</li>
  *   <li>{@code sc_Tc}, {@code sc_B0} - critical temperature (K) and upper critical field at 0 K (T) of the coil material</li>
  *   <li>{@code oc}, {@code par}, {@code thr} - overclock, parallels and throughput (2^oc x par)</li>

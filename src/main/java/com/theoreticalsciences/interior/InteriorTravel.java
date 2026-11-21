@@ -24,7 +24,7 @@ public final class InteriorTravel {
     private InteriorTravel() {}
 
     /**
-     * 1.3.0: a place to stand inside the Interior - under its bedrock roof, never on top of it (the general landing search
+     * 1.3.2: a place to stand inside the Interior - under its bedrock roof, never on top of it (the general landing search
      * prefers open sky, which here is only above the roof). Two blocks of air over solid, dry rock, as near y 100 as can
      * be found within 24 blocks; failing that, a small chamber is cut at y 100.
      */

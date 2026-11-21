@@ -91,7 +91,7 @@ public class OmnipotenceScreen extends Screen {
             if (i == Items.AIR) continue;
             ItemStack s = new ItemStack(i);
             // round 28: everything of this mod is listed (and denied when asked for); other mods' as before
-            if (OmnipotencePayload.denied(i) || !s.is(OmnipotencePayload.BEYOND) && !CoreForge.forgeOnly(i) && !OmnipotencePayload.unobtainable(i)) all.add(s);
+            if (OmnipotencePayload.denied(i) || !s.is(OmnipotencePayload.BEYOND) && !CoreForge.forgeOnly(i)) all.add(s);
         }
         shown = all;
         tab = phase == REBORN ? 1 : 0;

@@ -81,8 +81,6 @@ public final class MultiblockDefinition {
     public final int repeatFrom, repeatTo, repeatMax;
     private final JsonObject source;
     private final MultiblockDefinition[] variants;
-    /** 1.3.0: variants already built, published safely, so the common case takes no lock. */
-    private final java.util.concurrent.atomic.AtomicReferenceArray<MultiblockDefinition> built;
     /** 1.3.6: earlier layouts of a reworked structure (same key), so the Structure Assembler can still take old builds apart. */
     public final List<MultiblockDefinition> legacy;
 
@@ -99,7 +97,6 @@ public final class MultiblockDefinition {
             this.repeatMax = 0;
         }
         this.variants = new MultiblockDefinition[repeatMax + 1];
-        this.built = new java.util.concurrent.atomic.AtomicReferenceArray<>(repeatMax + 1);
         List<MultiblockDefinition> leg = new ArrayList<>();
         if (json.has("legacy")) for (JsonElement l : json.getAsJsonArray("legacy")) {
             JsonObject j = json.deepCopy();
@@ -239,14 +236,9 @@ public final class MultiblockDefinition {
     }
 
     /** The build with {@code extra} more copies of the repeated unit (0 = this, the smallest). */
-    public MultiblockDefinition variant(int extra) {
+    public synchronized MultiblockDefinition variant(int extra) {
         extra = Math.max(0, Math.min(extra, repeatMax));
         if (extra == 0) return this;
-        MultiblockDefinition done = built.get(extra);
-        return done != null ? done : buildVariant(extra);
-    }
-
-    private synchronized MultiblockDefinition buildVariant(int extra) {
         if (variants[extra] == null) {
             JsonObject j = source.deepCopy();
             j.remove("repeat");
@@ -275,17 +267,22 @@ public final class MultiblockDefinition {
             }
             variants[extra].baseY = by;
         }
-        built.set(extra, variants[extra]);
         return variants[extra];
     }
 
     /** A cheap yes/no check that stops at the first wrong block (top layers first); unloaded chunks count as no. */
     public boolean quickMatch(Level level, BlockPos controller, Direction facing) {
-        int[] c = cells();                                       // (1.3.0: no new position per cell)
-        BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos();
-        for (int i = c.length - 4; i >= 0; i -= 4) {             // top layers first
-            place(m, controller, facing, c[i], c[i + 1], c[i + 2]);
-            if (!level.isLoaded(m) || !matches((char) c[i + 3], level.getBlockState(m))) return false;
+        for (int y = sizeY - 1; y >= 0; y--) {
+            List<String> rows = layers.get(y);
+            for (int z = 0; z < rows.size(); z++) {
+                String row = rows.get(z);
+                for (int x = 0; x < row.length(); x++) {
+                    char c = row.charAt(x);
+                    if (c == ' ' || c == controllerChar) continue;
+                    BlockPos p = toWorld(controller, facing, x, y, z);
+                    if (!level.isLoaded(p) || !matches(c, level.getBlockState(p))) return false;
+                }
+            }
         }
         return true;
     }
@@ -325,32 +322,7 @@ public final class MultiblockDefinition {
         return new Vec3(controller.getX() + 0.5 + rx, controller.getY() + 0.5 + (ey - cy), controller.getZ() + 0.5 + rz);
     }
 
-    // 1.3.0: what each character accepts, looked up once (a scan asked for every cell, building a list and doing a
-    // registry lookup per block each time). Index = the character; the registries are fixed by the time a scan runs.
-    private final java.util.concurrent.ConcurrentHashMap<Character, List<Block>> accepted = new java.util.concurrent.ConcurrentHashMap<>();
-    private final java.util.concurrent.ConcurrentHashMap<Character, java.util.Set<Block>> acceptedSet = new java.util.concurrent.ConcurrentHashMap<>();
-
     public List<Block> blocksFor(char c) {
-        List<Block> l = accepted.get(c);
-        if (l == null) {
-            l = List.copyOf(lookUpBlocks(c));
-            accepted.put(c, l);
-        }
-        return l;
-    }
-
-    private java.util.Set<Block> blockSetFor(char c) {
-        java.util.Set<Block> st = acceptedSet.get(c);
-        if (st == null) {
-            java.util.Set<Block> n = java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
-            n.addAll(blocksFor(c));
-            st = java.util.Collections.unmodifiableSet(n);
-            acceptedSet.put(c, st);
-        }
-        return st;
-    }
-
-    private List<Block> lookUpBlocks(char c) {
         if (c == controllerChar) return List.of(BuiltInRegistries.BLOCK.get(controllerBlock));
         List<ResourceLocation> ids = key.get(c);
         if (ids == null) return List.of();
@@ -368,7 +340,7 @@ public final class MultiblockDefinition {
     public boolean matches(char c, BlockState state) {
         if (c == ' ') return true;
         if (c == '.') return state.isAir();
-        if (blockSetFor(c).contains(state.getBlock())) return true;
+        for (Block b : blocksFor(c)) if (state.is(b)) return true;
         // round 31: a tiered position also takes any block a datapack added to that family (data/<ns>/ts_component_tiers)
         TierSpec ts = tiers.get(c);
         return ts != null && com.theoreticalsciences.custom.ComponentTiers.tierOf(ts.family(), state) >= 0;
@@ -443,135 +415,41 @@ public final class MultiblockDefinition {
         }
     }
 
-    // ------------------------------------------------------------------ 1.3.0: scanning in steps
-    /**
-     * Every cell a scan reads, worked out once from the layers: four ints a cell (x, y, z relative to the controller,
-     * before turning to the facing, and the pattern character), in the order the scan has always read them.
-     */
-    private volatile int[] cellData;
-
-    private int[] cells() {
-        int[] c = cellData;
-        if (c != null) return c;
-        int n = 0;
-        for (int y = 0; y < sizeY; y++)
-            for (String row : layers.get(y))
-                for (int x = 0; x < row.length(); x++) {
-                    char ch = row.charAt(x);
-                    if (ch != ' ' && ch != controllerChar) n++;
-                }
-        c = new int[n * 4];
-        int i = 0;
+    public ScanResult scan(Level level, BlockPos controller, Direction facing, ResourceLocation portBlock) {
+        List<BlockPos> missing = new ArrayList<>();
+        List<BlockPos> ports = new ArrayList<>();
+        Map<BlockPos, Character> expected = new LinkedHashMap<>();
+        Map<String, Integer> tierMin = new HashMap<>();
+        boolean partial = false;
         for (int y = 0; y < sizeY; y++) {
             List<String> rows = layers.get(y);
             for (int z = 0; z < rows.size(); z++) {
                 String row = rows.get(z);
                 for (int x = 0; x < row.length(); x++) {
-                    char ch = row.charAt(x);
-                    if (ch == ' ' || ch == controllerChar) continue;
-                    c[i++] = x - cx;
-                    c[i++] = y - cy;
-                    c[i++] = z - cz;
-                    c[i++] = ch;
+                    char c = row.charAt(x);
+                    if (c == ' ' || c == controllerChar) continue;
+                    BlockPos p = toWorld(controller, facing, x, y, z);
+                    // round 36: a part in a chunk that is not loaded (the controller's chunk kept loaded by a chunk
+                    // loader, its neighbour not) is never read - reading it would load that chunk from inside a block
+                    // entity's tick, every scan. The scan says "partial" and the machine keeps the state it had.
+                    if (!level.isLoaded(p)) {
+                        partial = true;
+                        continue;
+                    }
+                    BlockState st = level.getBlockState(p);
+                    if (!matches(c, st)) {
+                        missing.add(p);
+                        expected.put(p, c);
+                    } else if (BuiltInRegistries.BLOCK.getKey(st.getBlock()).equals(portBlock) || st.getBlock() instanceof com.theoreticalsciences.machine.ManaPortBlock) {
+                        ports.add(p);                  // (a Mana Port is one of the structure's ports: its recipes draw on it)
+                    } else if (tiers.containsKey(c)) {
+                        int t = tierOf(c, st);          // the mod's own tier, or the one a datapack gave this block
+                        if (t >= 0) tierMin.merge(tiers.get(c).family(), t, Math::min);
+                    }
                 }
             }
         }
-        cellData = c;
-        return c;
-    }
-
-    /** How many cells a full scan reads. */
-    public int cellCount() {
-        return cells().length / 4;
-    }
-
-    private static void place(BlockPos.MutableBlockPos m, BlockPos controller, Direction facing, int dx, int dy, int dz) {
-        int rx, rz;
-        switch (facing) {
-            case SOUTH -> { rx = -dx; rz = -dz; }
-            case EAST -> { rx = -dz; rz = dx; }
-            case WEST -> { rx = dz; rz = -dx; }
-            default -> { rx = dx; rz = dz; }
-        }
-        m.set(controller.getX() + rx, controller.getY() + dy, controller.getZ() + rz);
-    }
-
-    /**
-     * A scan that can be done a part at a time: a giant structure (tens of thousands of cells) is read over several
-     * ticks instead of all in one, which showed as a stutter. The result is the same as reading it all at once.
-     */
-    public final class Scan {
-        private final BlockPos controller;
-        private final Direction facing;
-        private final Block portB;
-        private final List<BlockPos> missing = new ArrayList<>();
-        private final List<BlockPos> ports = new ArrayList<>();
-        private final Map<BlockPos, Character> expected = new LinkedHashMap<>();
-        private final Map<String, Integer> tierMin = new HashMap<>();
-        private final BlockPos.MutableBlockPos m = new BlockPos.MutableBlockPos();
-        private boolean partial;
-        private int next;
-
-        Scan(BlockPos controller, Direction facing, ResourceLocation portBlock) {
-            this.controller = controller.immutable();
-            this.facing = facing;
-            this.portB = BuiltInRegistries.BLOCK.get(portBlock);
-        }
-
-        public MultiblockDefinition definition() {
-            return MultiblockDefinition.this;
-        }
-
-        public Direction facing() {
-            return facing;
-        }
-
-        public BlockPos controller() {
-            return controller;
-        }
-
-        /** Reads up to {@code budget} more cells. True when the whole structure has been read. */
-        public boolean step(Level level, int budget) {
-            int[] c = cells();
-            int end = Math.min(c.length, next + Math.max(1, budget) * 4);
-            for (; next < end; next += 4) {
-                char ch = (char) c[next + 3];
-                place(m, controller, facing, c[next], c[next + 1], c[next + 2]);
-                // round 36: a part in a chunk that is not loaded (the controller's chunk kept loaded by a chunk
-                // loader, its neighbour not) is never read - reading it would load that chunk from inside a block
-                // entity's tick, every scan. The scan says "partial" and the machine keeps the state it had.
-                if (!level.isLoaded(m)) {
-                    partial = true;
-                    continue;
-                }
-                BlockState st = level.getBlockState(m);
-                if (!matches(ch, st)) {
-                    BlockPos q = m.immutable();
-                    missing.add(q);
-                    expected.put(q, ch);
-                } else if (st.getBlock() == portB || st.getBlock() instanceof com.theoreticalsciences.machine.ManaPortBlock) {
-                    ports.add(m.immutable());      // (a Mana Port is one of the structure's ports: its recipes draw on it)
-                } else if (tiers.containsKey(ch)) {
-                    int t = tierOf(ch, st);          // the mod's own tier, or the one a datapack gave this block
-                    if (t >= 0) tierMin.merge(tiers.get(ch).family(), t, Math::min);
-                }
-            }
-            return next >= c.length;
-        }
-
-        public ScanResult result() {
-            return new ScanResult(missing, ports, expected, tierMin, partial);
-        }
-    }
-
-    public Scan startScan(BlockPos controller, Direction facing, ResourceLocation portBlock) {
-        return new Scan(controller, facing, portBlock);
-    }
-
-    public ScanResult scan(Level level, BlockPos controller, Direction facing, ResourceLocation portBlock) {
-        Scan sc = startScan(controller, facing, portBlock);
-        sc.step(level, Integer.MAX_VALUE / 8);
-        return sc.result();
+        return new ScanResult(missing, ports, expected, tierMin, partial);
     }
 
     /** Whether an Interface Port is accepted at this character. */

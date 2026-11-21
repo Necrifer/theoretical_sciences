@@ -166,36 +166,6 @@ final class ProcessScenes {
         e("microwave_rectenna", "power beam", V.PIPE, C.GLOW, C.FLOW, 4);
         e("radiation_pressure_balance", "light pressure", V.CHAMBER, C.BEAM, C.GLOW, 2);
         e("ice_rheometer", "cyclic squeeze", V.CELL, C.WAVES, C.CRYSTAL, 2);         // 1.15.0
-        e("syngas_reformer", "steam reforming", V.PIPE, C.FLAME, C.MOLECULES, 0);          // 1.4.0 stage 1
-        e("fischer_tropsch_reactor", "chain growth", V.COLUMN, C.BUBBLES, C.MOLECULES, 1);
-        e("substituent_bench", "substitution", V.FLASK, C.MOLECULES, C.DROPS, 0);
-        e("polarimeter", "optical rotation", V.UTUBE, C.BEAM, C.SPIN, 0);
-        e("huckel_analyser", "ring current", V.DEWAR, C.FIELD, C.SPIN, 1);
-        e("molecular_machine_bench", "molecular machines", V.PLATE, C.SPIN, C.GLOW, 2);
-        e("hydrotreater", "hydrotreating", V.COLUMN, C.DROPS, C.MOLECULES, 2);   // 1.4.0 stage 2
-        e("catalytic_reformer", "catalytic reforming", V.PIPE, C.FLAME, C.GLOW, 1);
-        e("claus_unit", "sulfur recovery", V.KILN, C.FLAME, C.DROPS, 0);
-        e("delayed_coker", "coking", V.TANK, C.FLAME, C.CRYSTAL, 1);
-        e("helium_liquefier", "liquefaction", V.DEWAR, C.FLOW, C.DROPS, 0);       // 1.4.0 stage 3
-        e("bcs_cryostat", "superconductivity", V.DEWAR, C.FIELD, C.BARS, 2);
-        e("deep_space_transceiver", "deep space link", V.PLATE, C.WAVES, C.BEAM, 1);
-        e("fibre_draw_tower", "fibre drawing", V.COLUMN, C.FLAME, C.BEAM, 0);
-        e("fracture_bench", "fatigue testing", V.BENCH, C.LATTICE, C.BARS, 1);       // 1.4.0 stage 4
-        e("bridgman_furnace", "directional solidification", V.KILN, C.CRYSTAL, C.BARS, 2);
-        e("josephson_logic_bench", "flux quantum logic", V.DEWAR, C.PEAKS, C.BEAM, 1);
-        e("media_sputter_chamber", "sputtering", V.CHAMBER, C.PARTICLES, C.TILES, 0);
-        e("pid_bench", "loop tuning", V.BOARD, C.CURVE, C.WAVES, 0);
-        e("reliability_ledger", "reliability testing", V.BOARD, C.GRAPH, C.BARS, 2);
-        e("expansion_orrery", "cosmological fitting", V.RING, C.ORBITS, C.CURVE, 1);      // 1.4.0 stage 5
-        e("isochron_bench", "isochron dating", V.BENCH, C.GRAPH, C.PARTICLES, 0);
-        e("gene_pool_bench", "breeding plan", V.BOARD, C.HELIX, C.BARS, 1);
-        e("oxygen_binding_bench", "oxygen binding", V.FLASK, C.CURVE, C.DROPS, 2);
-        e("laue_goniometer", "crystal indexing", V.SCOPE, C.LATTICE, C.PEAKS, 2);           // 1.4.0 stage 6
-        e("langmuir_probe_station", "plasma probing", V.CHAMBER, C.ARCS, C.CURVE, 1);
-        e("ion_channel_bench", "channel tuning", V.PLATE, C.CELLS, C.WAVES, 2);
-        e("reef_mesocosm", "reef culture", V.TANK, C.CELLS, C.CRYSTAL, 1);
-        e("kalman_filter_bench", "state estimation", V.SCOPE, C.CURVE, C.SPIN, 1);     // 1.4.0 stage 8
-        e("lloyd_engine", "ultimate computing", V.RING, C.GLOW, C.TILES, 2);                  // 1.4.0 stage 7
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1

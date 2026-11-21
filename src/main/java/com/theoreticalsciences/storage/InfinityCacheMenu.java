@@ -79,7 +79,6 @@ public class InfinityCacheMenu extends AbstractContainerMenu {
         @Override
         public ItemStack remove(int n) {
             ItemStack cur = getItem();
-            if (n <= 0) n = cur.isEmpty() ? 1 : cur.getMaxStackSize();     // 1.3.0: half of a full pile overflows to below 0
             return store.extractItem(index(), Math.min(n, cur.isEmpty() ? n : cur.getMaxStackSize()), false);
         }
 

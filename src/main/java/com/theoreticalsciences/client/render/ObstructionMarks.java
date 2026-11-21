@@ -29,21 +29,16 @@ public final class ObstructionMarks {
     private ObstructionMarks() {}
 
     static final int LIFE = 300;
-    /** Most marks one message carries; a structure with more obstructions shows the first ones. */
-    public static final int MAX = 1024;
-    /** The world the marks belong to: they are timed against its clock, so a new world (or logging out) drops them. */
-    private static Object markedLevel;
     static final Map<BlockPos, Long> MARKS = new HashMap<>();
 
     /** Server → client: mark these positions. */
     public record Marks(List<BlockPos> positions) implements CustomPacketPayload {
         public static final Type<Marks> TYPE = new Type<>(TheoreticalSciences.id("obstruction_marks"));
         public static final StreamCodec<FriendlyByteBuf, Marks> CODEC = StreamCodec.of((b, m) -> {
-            int n = Math.min(MAX, m.positions.size());     // 1.3.0: write only what the reader takes (left-over bytes disconnect)
-            b.writeVarInt(n);
-            for (int i = 0; i < n; i++) b.writeBlockPos(m.positions.get(i));
+            b.writeVarInt(m.positions.size());
+            for (BlockPos p : m.positions) b.writeBlockPos(p);
         }, b -> {
-            int n = Math.min(MAX, b.readVarInt());
+            int n = Math.min(1024, b.readVarInt());
             List<BlockPos> l = new ArrayList<>(n);
             for (int i = 0; i < n; i++) l.add(b.readBlockPos());
             return new Marks(l);
@@ -58,10 +53,6 @@ public final class ObstructionMarks {
     public static void receive(Marks m) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null) return;
-        if (markedLevel != mc.level) {
-            MARKS.clear();
-            markedLevel = mc.level;
-        }
         long until = mc.level.getGameTime() + LIFE;
         for (BlockPos p : m.positions()) MARKS.put(p.immutable(), until);
     }
@@ -69,7 +60,7 @@ public final class ObstructionMarks {
     public static void onRenderLevel(RenderLevelStageEvent e) {
         if (e.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS || MARKS.isEmpty()) return;
         Minecraft mc = Minecraft.getInstance();
-        if (mc.level == null || mc.level != markedLevel) {
+        if (mc.level == null) {
             MARKS.clear();
             return;
         }

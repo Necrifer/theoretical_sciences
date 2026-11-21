@@ -292,44 +292,6 @@ public enum MachineType {
     RADIATION_PRESSURE_BALANCE ("photon_pressure",  3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xFFF0B0),   // 1.14.0
     ICE_RHEOMETER           ("ice_rheometry",        2, 1, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xA8D8F0),   // 1.15.0
     CMB_BOLOMETER_ARRAY     ("cmb_mapping",          1, 1, 1, 0, false, "cmb_bolometer_array",    64_000_000, 2_000_000, Effect.NONE,        0xFFB878),   // 1.15.0
-    // 1.4.0 stage 1: the organic core and the syngas hub
-    SYNGAS_REFORMER         ("reforming",            0, 3, 0, 1, false, null,                      2_000_000,    40_000, Effect.NONE,        0xFFA050),
-    FISCHER_TROPSCH_REACTOR ("fischer_tropsch",      3, 1, 1, 1, false, "fischer_tropsch_reactor", 16_000_000,   400_000, Effect.NONE,        0xE0B060),
-    SUBSTITUENT_BENCH       ("aromatic_substitution", 2, 3, 1, 1, false, null,                     1_000_000,    20_000, Effect.NONE,        0xF0A040),
-    POLARIMETER             ("polarimetry",          2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xC0E0FF),
-    HUCKEL_ANALYSER         ("ring_current_analysis", 2, 1, 1, 0, false, null,                     2_000_000,    40_000, Effect.NONE,        0x80C0FF),
-    MOLECULAR_MACHINE_BENCH ("molecular_assembly",   3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xA0FFC0),
-    // 1.4.0 stage 2: the refinery
-    HYDROTREATER            ("hydrotreating",        1, 2, 0, 2, false, null,                      2_000_000,    40_000, Effect.NONE,        0xC0B070),
-    CATALYTIC_REFORMER      ("catalytic_reforming",  1, 1, 0, 2, false, null,                      4_000_000,   100_000, Effect.NONE,        0xFFB040),
-    CLAUS_UNIT              ("sulfur_recovery",      0, 2, 1, 1, false, null,                      1_000_000,    20_000, Effect.NONE,        0xF0E040),
-    DELAYED_COKER           ("coking",               1, 1, 1, 2, false, null,                      2_000_000,    40_000, Effect.NONE,        0xC07040),
-    // 1.4.0 stage 3: cryogenics and communications
-    HELIUM_LIQUEFIER        ("liquefaction",         1, 2, 0, 1, false, "helium_liquefier",         8_000_000,   200_000, Effect.NONE,        0xA0E0FF),
-    BCS_CRYOSTAT            ("superconductor_certification", 3, 1, 1, 0, false, null,               2_000_000,    40_000, Effect.NONE,        0x80C0FF),
-    DEEP_SPACE_TRANSCEIVER  ("deep_space_link",      3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.RADIO,       0x80FFC0),
-    FIBRE_DRAW_TOWER        ("fibre_drawing",        1, 0, 1, 0, false, "fibre_draw_tower",         8_000_000,   200_000, Effect.NONE,        0xFF9040),
-    // 1.4.0 stage 4: materials failure, computer engineering, control and reliability
-    FRACTURE_BENCH          ("fracture_testing",     2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xC0C8D0),
-    BRIDGMAN_FURNACE        ("directional_solidification", 2, 0, 1, 0, false, "bridgman_furnace",   16_000_000,  400_000, Effect.NONE,        0xFF8030),
-    JOSEPHSON_LOGIC_BENCH   ("rsfq_logic",           1, 1, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0x90B0FF),
-    MEDIA_SPUTTER_CHAMBER   ("sputtering",           2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xB070FF),
-    PID_BENCH               ("controller_tuning",    3, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0x70FFB0),
-    RELIABILITY_LEDGER      ("reliability_testing",  2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xE0D070),
-    // 1.4.0 stage 5: cosmology, geochronology, population genetics, oxygen transport
-    EXPANSION_ORRERY        ("cosmological_fitting", 2, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xA080FF),
-    ISOCHRON_BENCH          ("isochron_dating",      2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xD0A0C0),
-    GENE_POOL_BENCH         ("gene_pool_breeding",   2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0x80E070),
-    OXYGEN_BINDING_BENCH    ("oxygen_binding",       2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xFF5050),
-    // 1.4.0 stage 6: crystal indexing, plasma diagnostics, excitable membranes
-    LAUE_GONIOMETER         ("crystal_indexing",     2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xB0E0FF),
-    LANGMUIR_PROBE_STATION  ("plasma_probing",       2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xFF80E0),
-    ION_CHANNEL_BENCH       ("neuron_tuning",        2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xFFE070),
-    // 1.4.0 stage 7: reef and island ecology
-    REEF_MESOCOSM           ("reef_culture",         2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xFF9070),
-    // 1.4.0 stage 8: state estimation, the limits of computation
-    KALMAN_FILTER_BENCH     ("state_estimation",     2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0x70D0FF),
-    LLOYD_ENGINE            ("limit_computing",      2, 0, 1, 0, false, null,                     16_000_000,   400_000, Effect.NONE,        0xFFF0B0),
     MICROWAVE_RECTENNA      ("microwave_reception",  0, 0, 0, 0, true,  "microwave_rectenna",      64_000_000, 2_000_000, Effect.NONE,        0x60C8FF),
     // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
     PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
@@ -426,8 +388,7 @@ public enum MachineType {
      * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
      */
     public boolean standaloneConsole() {
-        return this == KALMAN_FILTER_BENCH || this == LLOYD_ENGINE || this == REEF_MESOCOSM || this == LAUE_GONIOMETER || this == LANGMUIR_PROBE_STATION || this == ION_CHANNEL_BENCH || this == EXPANSION_ORRERY || this == ISOCHRON_BENCH || this == GENE_POOL_BENCH || this == OXYGEN_BINDING_BENCH || this == FRACTURE_BENCH || this == JOSEPHSON_LOGIC_BENCH || this == MEDIA_SPUTTER_CHAMBER || this == PID_BENCH || this == RELIABILITY_LEDGER || this == BCS_CRYOSTAT || this == DEEP_SPACE_TRANSCEIVER || this == HYDROTREATER || this == CATALYTIC_REFORMER || this == CLAUS_UNIT || this == DELAYED_COKER || this == SYNGAS_REFORMER || this == SUBSTITUENT_BENCH || this == POLARIMETER || this == HUCKEL_ANALYSER || this == MOLECULAR_MACHINE_BENCH
-                || this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == ICE_RHEOMETER || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
+        return this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == ICE_RHEOMETER || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
                 || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
                 || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN
                 || this == POLYMERISER || this == SYNTHESIS_BENCH || this == FRAMEWORK_ASSEMBLER || this == QUASICRYSTAL_FURNACE

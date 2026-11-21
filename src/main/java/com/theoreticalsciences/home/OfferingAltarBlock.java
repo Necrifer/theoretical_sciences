@@ -66,7 +66,7 @@ public class OfferingAltarBlock extends BaseEntityBlock {
                 long n = HomeProgress.submitInventory(sp);            // by hand too: everything carried that is still needed
                 long[] g = HomeProgress.given(sp.server, sp.getUUID());
                 int full = 0;
-                for (long v : g) if (v >= HomeMaterials.target()) full++;
+                for (long v : g) if (v >= HomeMaterials.TARGET) full++;
                 sp.displayClientMessage(Component.translatable("message.theoreticalsciences.offering_altar.status", String.format(java.util.Locale.ROOT, "%,d", n), full, g.length)
                         .withStyle(ChatFormatting.GOLD), true);
                 HomePayloads.announceIfComplete(sp);
@@ -91,7 +91,7 @@ public class OfferingAltarBlock extends BaseEntityBlock {
             if (owner == null || level == null || level.getServer() == null || stack.isEmpty() || !stack.getComponentsPatch().isEmpty()) return 0;
             int idx = HomeMaterials.index(stack.getItem());
             if (idx < 0 || !HomeProgress.unlocked(level.getServer(), owner)) return 0;
-            return Math.max(0, HomeMaterials.target() - HomeProgress.given(level.getServer(), owner)[idx]);
+            return Math.max(0, HomeMaterials.TARGET - HomeProgress.given(level.getServer(), owner)[idx]);
         }
 
         /** Takes only the forty-two materials, and only as many as the owner's checklist still needs. Nothing comes out. */

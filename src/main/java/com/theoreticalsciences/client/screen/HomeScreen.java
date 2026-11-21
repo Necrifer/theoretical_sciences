@@ -46,7 +46,7 @@ public class HomeScreen extends Screen {
         colW = (W - 16) / cols;
         listTop = T + 62;
         listH = H - 62 - 26;
-        int rows = (HomeMaterials.size() + cols - 1) / cols;
+        int rows = (HomeMaterials.IDS.size() + cols - 1) / cols;
         maxScroll = Math.max(0, rows * ROW - listH);
         scroll = Mth.clamp(scroll, 0, maxScroll);
     }
@@ -74,16 +74,16 @@ public class HomeScreen extends Screen {
         long[] given = HomeClient.given;
         int full = 0;
         double sum = 0;
-        for (int i = 0; i < HomeMaterials.size(); i++) {
+        for (int i = 0; i < HomeMaterials.IDS.size(); i++) {
             long v = i < given.length ? given[i] : 0;
-            if (v >= HomeMaterials.target()) full++;
-            sum += Math.min(v, HomeMaterials.target()) / (double) HomeMaterials.target();
+            if (v >= HomeMaterials.TARGET) full++;
+            sum += Math.min(v, HomeMaterials.TARGET) / (double) HomeMaterials.TARGET;
         }
-        String count = full + " / " + HomeMaterials.size();
-        g.drawString(font, count, L + W - 8 - font.width(count), T + 7, full == HomeMaterials.size() ? DONE : GOLD, false);
+        String count = full + " / " + HomeMaterials.IDS.size();
+        g.drawString(font, count, L + W - 8 - font.width(count), T + 7, full == HomeMaterials.IDS.size() ? DONE : GOLD, false);
         int ty = T + 20;
         for (var line : font.split(Component.translatable(HomeClient.complete() ? "gui.theoreticalsciences.home.done" : "gui.theoreticalsciences.home.intro",
-                HomeClient.full(HomeMaterials.target())), W - 16)) {
+                HomeClient.full(HomeMaterials.TARGET)), W - 16)) {
             if (ty > T + 40) break;
             g.drawString(font, line, L + 8, ty, DIM, false);
             ty += 10;
@@ -91,26 +91,26 @@ public class HomeScreen extends Screen {
         // the whole of it, as one bar
         int bw = W - 16, by = T + 52;
         g.fill(L + 8, by, L + 8 + bw, by + 4, 0xFF30260F);
-        g.fill(L + 8, by, L + 8 + (int) (bw * sum / HomeMaterials.size()), by + 4, full == HomeMaterials.size() ? DONE : GOLD);
+        g.fill(L + 8, by, L + 8 + (int) (bw * sum / HomeMaterials.IDS.size()), by + 4, full == HomeMaterials.IDS.size() ? DONE : GOLD);
         // the lines
         g.enableScissor(L + 4, listTop, L + W - 4, listTop + listH);
         Component tip = null;
-        for (int i = 0; i < HomeMaterials.size(); i++) {
+        for (int i = 0; i < HomeMaterials.IDS.size(); i++) {
             int x = L + 8 + (i % cols) * colW, y = listTop + (i / cols) * ROW - scroll;
             if (y + ROW < listTop || y > listTop + listH) continue;
-            long v = Math.min(i < given.length ? given[i] : 0, HomeMaterials.target());
-            boolean done = v >= HomeMaterials.target();
+            long v = Math.min(i < given.length ? given[i] : 0, HomeMaterials.TARGET);
+            boolean done = v >= HomeMaterials.TARGET;
             ItemStack st = new ItemStack(HomeMaterials.item(i));
             g.renderItem(st, x, y);
             String name = font.plainSubstrByWidth(st.getHoverName().getString(), colW - 30);
             g.drawString(font, name, x + 20, y, done ? DONE : GOLD, false);
             int barW = colW - 30;
             g.fill(x + 20, y + 10, x + 20 + barW, y + 16, 0xFF30260F);
-            g.fill(x + 20, y + 10, x + 20 + (int) (barW * (v / (double) HomeMaterials.target())), y + 16, done ? 0xFF4C9A60 : 0xFF9A7C30);
+            g.fill(x + 20, y + 10, x + 20 + (int) (barW * (v / (double) HomeMaterials.TARGET)), y + 16, done ? 0xFF4C9A60 : 0xFF9A7C30);
             String n = HomeClient.full(v);
             HoloStyle.miniText(g, font, n, x + 22, y + 11, 0xFFFFFFFF, 0.5F, false);
             if (mx >= x && mx < x + colW - 6 && my >= y && my < y + ROW - 2 && my >= listTop && my < listTop + listH)
-                tip = Component.literal(st.getHoverName().getString() + ": " + n + " / " + HomeClient.full(HomeMaterials.target()));
+                tip = Component.literal(st.getHoverName().getString() + ": " + n + " / " + HomeClient.full(HomeMaterials.TARGET));
         }
         g.disableScissor();
         if (maxScroll > 0) {

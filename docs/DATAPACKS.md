@@ -2,7 +2,7 @@
 
 Everything in Theoretical Sciences that a modpack would want to change is data. A plain datapack can add, replace or
 remove machine recipes, the research tree, structure parts, machine numbers, the Omnipotence Core's Forge recipes,
-Recreating Home and the Empyrean Assembly Table, singularities and the tags the mod reads. No other mod is needed.
+singularities and the tags the mod reads. No other mod is needed.
 
 With no datapack, the mod behaves exactly as shipped. (Using KubeJS instead? The same folders and more are covered in
 [KUBEJS.md](KUBEJS.md).)
@@ -21,13 +21,12 @@ With no datapack, the mod behaves exactly as shipped. (Using KubeJS instead? The
 8. [Coil and emitter tiers (`ts_component_tiers`)](#8-coil-and-emitter-tiers-ts_component_tiers)
 9. [Machine physics (`ts_physics`)](#9-machine-physics-ts_physics)
 10. [Omnipotence Core Forge recipes (`ts_forge`)](#10-omnipotence-core-forge-recipes-ts_forge)
-11. [Recreating Home (`ts_home`) and the Empyrean Assembly Table](#11-recreating-home-ts_home-and-the-empyrean-assembly-table)
-12. [Research (`ts_research`)](#12-research-ts_research)
-13. [Singularities (`ts_singularities`)](#13-singularities-ts_singularities)
-14. [Orbital destinations (`ts_destinations`)](#14-orbital-destinations-ts_destinations)
-15. [Tags](#15-tags)
-16. [Names, tooltips and the Codex (resource packs)](#16-names-tooltips-and-the-codex-resource-packs)
-17. [Troubleshooting](#17-troubleshooting)
+11. [Research (`ts_research`)](#11-research-ts_research)
+12. [Singularities (`ts_singularities`)](#12-singularities-ts_singularities)
+13. [Orbital destinations (`ts_destinations`)](#13-orbital-destinations-ts_destinations)
+14. [Tags](#14-tags)
+15. [Names, tooltips and the Codex (resource packs)](#15-names-tooltips-and-the-codex-resource-packs)
+16. [Troubleshooting](#16-troubleshooting)
 
 ---
 
@@ -219,7 +218,7 @@ The table also crafts every ordinary crafting-table recipe.
 ```
 
 `count` is how many of the ingredient go in. The Compactor has no timer: it finishes as fast as it is fed. (For new
-singularities, see section 13 instead.)
+singularities, see section 12 instead.)
 
 ---
 
@@ -283,7 +282,7 @@ is `theoreticalsciences:collider/superpartner_shard`. JEI and EMI show a recipe'
   }
   ```
 
-  Singularities from section 13 aren't recipe files: switch those off there.
+  Singularities from section 12 aren't recipe files: switch those off there.
 
 * **Only when another mod is present:** add a condition to your own recipe:
 
@@ -495,87 +494,7 @@ A forged Core can never forge another Omnipotence Core or a Hand of the Demiurge
 
 ---
 
-## 11. Recreating Home (`ts_home`) and the Empyrean Assembly Table
-
-Recreating Home is the expansion beyond the end: a checklist of materials given to the Omnipotence Core, made on the
-Empyrean Assembly Table, which opens the way to Omnipotency. Three parts of it can be changed.
-
-### When it unlocks, the checklist, and the keystone
-
-`data/<namespace>/ts_home/<name>.json`. Every field is optional. Files are read in id order, and a later file only
-changes the fields it names.
-
-```json
-{
-  "unlock": "all_forge_recipes",
-  "unlock_skip": ["euclidean_anchor"],
-  "materials": ["theoreticalsciences:remembered_soil", "theoreticalsciences:living_water"],
-  "add_materials": ["mypack:star_heart"],
-  "remove_materials": ["theoreticalsciences:quiet_snow"],
-  "target": 4096,
-  "keystone": "theoreticalsciences:keystone_of_return"
-}
-```
-
-* `unlock`: when the Core's Recreating Home tab appears for a player.
-  * `"all_forge_recipes"` (the default): once the player has forged every Core Forge recipe at least once. This is the
-    Forge as your pack has it (section 10): recipes you removed are not asked for, recipes you added are. The
-    generated `simulate/...` and `creative/...` recipes never count.
-  * `"always"`: from the start (once the player has a reborn Core to open).
-  * A list of Forge recipe ids, such as `["omnipotent_ingot", "mypack:dragon_egg"]`: only those. An id the Forge
-    doesn't have is ignored.
-* `unlock_skip`: with `all_forge_recipes`, Forge recipes that need not be forged.
-* `materials`: the whole checklist, in order (it replaces the mod's 42). Any mod's items work. At most 96.
-  `add_materials` and `remove_materials` change the list instead of replacing it.
-* `target`: how many of each material, 1 to 1,000,000,000,000 (the mod's is 33,550,337).
-* `keystone`: the item the Homeward Portal's frame takes (the mod's is the Keystone of Return, the checklist's last line).
-
-Progress is kept by item, so changing the list never loses what players already gave: a material taken off the list
-just stops counting, and one put back counts again. `/theoreticalsciences home unlock|complete|reset <players>` still
-works for testing. Changes apply after `/reload` and reach every player.
-
-A material you add needs a way to be made: give it an Empyrean recipe (below) or any other recipe.
-
-### Empyrean Assembly Table recipes
-
-These are normal recipe files of type `theoreticalsciences:empyrean`, in `data/<namespace>/recipe/`. The mod's own are
-in `data/theoreticalsciences/recipe/empyrean/`, one per material (`remembered_soil.json`, `keystone_of_return.json` ...)
-plus `homeward_portal_frame.json`.
-
-```json
-{
-  "type": "theoreticalsciences:empyrean",
-  "pattern": [
-    "aaa",
-    "aba",
-    "aaa"
-  ],
-  "key": {
-    "a": { "item": "theoreticalsciences:omnipotent_ingot", "count": 4096 },
-    "b": { "tag": "c:nether_stars", "count": 64 }
-  },
-  "result": { "item": "mypack:star_heart", "count": 4096 },
-  "needs_home": false
-}
-```
-
-* `pattern`: up to 15 rows of up to 15 characters; a space is an empty slot. The picture is what the table shows: it
-  takes the totals of each item, not a shape.
-* `key`: each character's `item` or `tag` and how many it needs (`count`, far beyond a stack is fine). A tag slot
-  takes any item of the tag, mixed freely: 40 of one mod's ingot and 24 of another's fill a slot of 64. Slots with
-  the same item, or the same tag, share one count. An item that has its own slot in the recipe always goes there,
-  never to a tag slot that also lists it. The mod's own recipes use `theoreticalsciences:ingots/<metal>` for its
-  ingots (section 15), so adding another mod's ingot to that tag lets it be used here too.
-* `result`: the item and how many one craft gives.
-* `needs_home`: `true` makes the recipe work only for a player whose checklist is complete (the mod uses it for the
-  Homeward Portal frame).
-
-Replace, change or remove the mod's own the same way as any recipe (section 6), for example
-`data/theoreticalsciences/recipe/empyrean/quiet_snow.json` with only the `neoforge:false` condition removes it.
-
----
-
-## 12. Research (`ts_research`)
+## 11. Research (`ts_research`)
 
 `data/<namespace>/ts_research/<name>.json` is the research `<namespace>:<name>`. Use the `theoreticalsciences` namespace and
 an existing name to replace one of the mod's entries.
@@ -613,7 +532,7 @@ Gate any recipe behind it with `"research": "<namespace>:<name>"`.
 
 ---
 
-## 13. Singularities (`ts_singularities`)
+## 12. Singularities (`ts_singularities`)
 
 `data/<namespace>/ts_singularities/<name>.json` adds a singularity, made in the Singularity Compactor. The Omniscience
 Catalyst then needs one of each.
@@ -640,7 +559,7 @@ Catalyst then needs one of each.
 
 ---
 
-## 14. Orbital destinations (`ts_destinations`)
+## 13. Orbital destinations (`ts_destinations`)
 
 `data/<namespace>/ts_destinations/<name>.json` adds a place the Orbital Station's Transfer Consoles can send players
 to. The mod ships the Overworld, Titan and the Accretion Frontier, plus Ad Astra's Moon, Mars, Venus, Mercury and
@@ -672,7 +591,7 @@ Glacio, offered only when Ad Astra is installed.
 
 ---
 
-## 15. Tags
+## 14. Tags
 
 Add to a tag with a file at `data/theoreticalsciences/tags/<type>/<tag name>.json`. Keep `"replace": false`, so you add to
 the mod's list instead of wiping it:
@@ -698,7 +617,7 @@ the mod's list instead of wiping it:
 
 ---
 
-## 16. Names, tooltips and the Codex (resource packs)
+## 15. Names, tooltips and the Codex (resource packs)
 
 Text and the Codex are client assets, so they belong in a **resource pack**, not a datapack.
 
@@ -709,7 +628,7 @@ Text and the Codex are client assets, so they belong in a **resource pack**, not
 
 ---
 
-## 17. Troubleshooting
+## 16. Troubleshooting
 
 * **Nothing changed:** check the path. Folder names must be exactly as written, directly under `data/<namespace>/`,
   and `recipe` is singular. Check `/datapack list` to see whether the pack is enabled, and `logs/latest.log` for a

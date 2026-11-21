@@ -124,59 +124,42 @@ public class SingularItemRenderer extends BlockEntityWithoutLevelRenderer {
 
     // -------------------------------------------------------------- geometry helpers (in the item's XY plane)
 
-    // 1.3.0: the circle points each shape uses, worked out once (they were recomputed for every item drawn, every frame;
-    // a full inventory of these items is hundreds of thousands of sines a second)
-    private static float[][] circle(int seg) {
-        float[][] t = new float[2][seg + 1];
-        for (int i = 0; i <= seg; i++) {
-            double a = i * Math.PI * 2 / seg;
-            t[0][i] = (float) Math.cos(a);
-            t[1][i] = (float) Math.sin(a);
-        }
-        return t;
-    }
-    private static final float[][] C20 = circle(20), C32 = circle(32), C40 = circle(40), LON16 = circle(16);
-    private static final float[] LAT_SIN = new float[11], LAT_COS = new float[11];
-    static {
-        for (int i = 0; i <= 10; i++) {
-            LAT_SIN[i] = (float) Math.sin(Math.PI * i / 10);
-            LAT_COS[i] = (float) Math.cos(Math.PI * i / 10);
-        }
-    }
-
     private static void vtx(VertexConsumer c, Matrix4f m, float x, float y, float z, int rgb, float a) {
         c.addVertex(m, x, y, z).setColor(((rgb >> 16) & 255) / 255F, ((rgb >> 8) & 255) / 255F, (rgb & 255) / 255F, a);
     }
 
     /** Radial gradient disc (lightning render type uses quads). */
     private static void disc(VertexConsumer c, Matrix4f m, float r, int rgb, float a, float edgeAlpha) {
-        float[] cs = C20[0], sn = C20[1];
-        for (int i = 0; i < 20; i++) {
+        int seg = 20;
+        for (int i = 0; i < seg; i++) {
+            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
             vtx(c, m, 0, 0, 0, rgb, a);
-            vtx(c, m, cs[i] * r, sn[i] * r, 0, rgb, edgeAlpha);
-            vtx(c, m, cs[i + 1] * r, sn[i + 1] * r, 0, rgb, edgeAlpha);
+            vtx(c, m, (float) Math.cos(a0) * r, (float) Math.sin(a0) * r, 0, rgb, edgeAlpha);
+            vtx(c, m, (float) Math.cos(a1) * r, (float) Math.sin(a1) * r, 0, rgb, edgeAlpha);
             vtx(c, m, 0, 0, 0, rgb, a);
         }
     }
 
     private static void ringBillboard(VertexConsumer c, Matrix4f m, float r0, float r1, int rgb, float a) {
-        float[] cs = C32[0], sn = C32[1];
-        for (int i = 0; i < 32; i++) {
-            vtx(c, m, cs[i] * r0, sn[i] * r0, 0.001F, rgb, a);
-            vtx(c, m, cs[i] * r1, sn[i] * r1, 0.001F, rgb, 0);
-            vtx(c, m, cs[i + 1] * r1, sn[i + 1] * r1, 0.001F, rgb, 0);
-            vtx(c, m, cs[i + 1] * r0, sn[i + 1] * r0, 0.001F, rgb, a);
+        int seg = 32;
+        for (int i = 0; i < seg; i++) {
+            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
+            vtx(c, m, (float) Math.cos(a0) * r0, (float) Math.sin(a0) * r0, 0.001F, rgb, a);
+            vtx(c, m, (float) Math.cos(a0) * r1, (float) Math.sin(a0) * r1, 0.001F, rgb, 0);
+            vtx(c, m, (float) Math.cos(a1) * r1, (float) Math.sin(a1) * r1, 0.001F, rgb, 0);
+            vtx(c, m, (float) Math.cos(a1) * r0, (float) Math.sin(a1) * r0, 0.001F, rgb, a);
         }
     }
 
     private static void ring(VertexConsumer c, Matrix4f m, float r0, float r1, int inner, float ai, int outer, float ao, float t) {
-        float[] cs = C40[0], sn = C40[1];
-        for (int i = 0; i < 40; i++) {
+        int seg = 40;
+        for (int i = 0; i < seg; i++) {
+            double a0 = i * Math.PI * 2 / seg, a1 = (i + 1) * Math.PI * 2 / seg;
             float flick = 0.7F + 0.3F * (float) Math.sin(i * 1.9 + t * 6);
-            vtx(c, m, cs[i] * r0, sn[i] * r0, 0, inner, ai * flick);
-            vtx(c, m, cs[i] * r1, sn[i] * r1, 0, outer, ao);
-            vtx(c, m, cs[i + 1] * r1, sn[i + 1] * r1, 0, outer, ao);
-            vtx(c, m, cs[i + 1] * r0, sn[i + 1] * r0, 0, inner, ai * flick);
+            vtx(c, m, (float) Math.cos(a0) * r0, (float) Math.sin(a0) * r0, 0, inner, ai * flick);
+            vtx(c, m, (float) Math.cos(a0) * r1, (float) Math.sin(a0) * r1, 0, outer, ao);
+            vtx(c, m, (float) Math.cos(a1) * r1, (float) Math.sin(a1) * r1, 0, outer, ao);
+            vtx(c, m, (float) Math.cos(a1) * r0, (float) Math.sin(a1) * r0, 0, inner, ai * flick);
         }
     }
 
@@ -216,17 +199,21 @@ public class SingularItemRenderer extends BlockEntityWithoutLevelRenderer {
     /** Black sphere for event horizons. */
     private static void sphere(VertexConsumer c, PoseStack pose, float r, float ox, float oy, float oz) {
         PoseStack.Pose p = pose.last();
-        for (int i = 0; i < 10; i++)
-            for (int j = 0; j < 16; j++) {
-                sv(c, p, r, i, j);
-                sv(c, p, r, i + 1, j);
-                sv(c, p, r, i + 1, j + 1);
-                sv(c, p, r, i, j + 1);
+        int lat = 10, lon = 16;
+        for (int i = 0; i < lat; i++) {
+            double t0 = Math.PI * i / lat, t1 = Math.PI * (i + 1) / lat;
+            for (int j = 0; j < lon; j++) {
+                double p0 = Math.PI * 2 * j / lon, p1 = Math.PI * 2 * (j + 1) / lon;
+                sv(c, p, r, t0, p0);
+                sv(c, p, r, t1, p0);
+                sv(c, p, r, t1, p1);
+                sv(c, p, r, t0, p1);
             }
+        }
     }
 
-    private static void sv(VertexConsumer c, PoseStack.Pose p, float r, int lat, int lon) {
-        float st = LAT_SIN[lat], x = st * LON16[0][lon], y = LAT_COS[lat], z = st * LON16[1][lon];
+    private static void sv(VertexConsumer c, PoseStack.Pose p, float r, double th, double ph) {
+        float x = (float) (Math.sin(th) * Math.cos(ph)), y = (float) Math.cos(th), z = (float) (Math.sin(th) * Math.sin(ph));
         c.addVertex(p, x * r, y * r, z * r).setColor(0, 0, 0, 255).setUv(0.5F, 0.5F).setOverlay(OverlayTexture.NO_OVERLAY)
                 .setLight(0xF000F0).setNormal(p, x, y, z);
     }

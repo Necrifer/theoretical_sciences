@@ -59,10 +59,6 @@ public final class QHClient {
         });
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.ClientTickEvent.Post e) -> com.theoreticalsciences.client.QHMusic.tick());
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent.LoggingOut e) -> com.theoreticalsciences.client.QHMusic.reset());
-        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent.LoggingOut e) -> {    // 1.3.0
-            MachineWorkSound.clear();
-            ClientHooks.clearSnapshots();                                                                     // 1.3.0
-        });
         // standing near a meltdown shakes the view
         NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.ViewportEvent.ComputeCameraAngles e) -> {
             var mc = net.minecraft.client.Minecraft.getInstance();

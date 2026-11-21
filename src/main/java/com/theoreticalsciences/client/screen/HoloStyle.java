@@ -137,12 +137,6 @@ public final class HoloStyle {
      */
     public static void panel(GuiGraphics g, int x, int y, int w, int h, int c, int accent, int tier, float time,
                              int patY0, int patY1, int latticeAlpha) {
-        // 1.3.0: the thousands of small fills go out as one batch (plain 1.21.1 draws each fill on its own)
-        g.drawManaged(() -> panelFills(g, x, y, w, h, c, accent, tier, time, patY0, patY1, latticeAlpha));
-    }
-
-    private static void panelFills(GuiGraphics g, int x, int y, int w, int h, int c, int accent, int tier, float time,
-                                   int patY0, int patY1, int latticeAlpha) {
         chamferFill(g, x, y, w, h, c, 0xEC06090F);
         g.fillGradient(x + 1, y + c, x + w - 1, y + Math.min(h - c, 96), argb(0x2C, accent), argb(0x00, accent));
         g.fillGradient(x + 1, y + Math.max(c, h - 48), x + w - 1, y + h - c, argb(0x00, accent), argb(0x12, accent));

@@ -40,25 +40,10 @@ public class EnergyCellBlockEntity extends BlockEntity {
     public final QHEnergyStorage energy;
     private final IEnergyStorage in, out;
 
-    private int lastSignal = -1;
-
-    /**
-     * 1.3.0: every transfer marks the chunk for saving, but neighbours (comparators) are only told when the cell's
-     * signal (its fill in fifteenths) changes: setChanged on every transfer woke every cable around it every tick.
-     */
-    private void energyChanged() {
-        if (level == null) return;
-        int sig = (int) Math.round(15.0 * energy.stored() / Math.max(1, energy.capacity()));
-        if (sig != lastSignal) {
-            lastSignal = sig;
-            setChanged();
-        } else level.blockEntityChanged(worldPosition);
-    }
-
     public EnergyCellBlockEntity(BlockPos pos, BlockState state) {
         super(QHLogistics.ENERGY_CELL.get(), pos, state);
         String id = BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath();
-        energy = new QHEnergyStorage(capacityOf(id), rateOf(id), rateOf(id), this::energyChanged);
+        energy = new QHEnergyStorage(capacityOf(id), rateOf(id), rateOf(id), this::setChanged);
         in = new Side(true);
         out = new Side(false);
     }

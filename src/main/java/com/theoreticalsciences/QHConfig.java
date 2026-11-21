@@ -8,7 +8,6 @@ public final class QHConfig {
     /** 1.16.0: show every machine's equations from the start instead of after its first watched cycle. */
     public static final ModConfigSpec.BooleanValue EQUATIONS_AT_ONCE;
 
-    public static final ModConfigSpec.BooleanValue ITEM_DESCRIPTIONS;
     public static final ModConfigSpec.DoubleValue ENERGY_COST_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue GENERATOR_OUTPUT_MULTIPLIER;
     public static final ModConfigSpec.DoubleValue DURATION_MULTIPLIER;
@@ -158,10 +157,6 @@ public final class QHConfig {
         c.push("learning");
         EQUATIONS_AT_ONCE = c.comment("1.16.0: a machine's console first explains its quantities in words, and shows the equations behind them after you have watched it finish one cycle. Turn on to see every equation from the start.")
                 .define("showEquationsAtOnce", false);
-        c.pop();
-        c.push("tooltips");
-        ITEM_DESCRIPTIONS = c.comment("1.3.1: the mod's items and blocks describe themselves in the Quantum Codex only, and their tooltips show just what is live about that one item (what it holds, its charge, its mode, its wear...). Turn on to also see the old descriptions, uses and \"where found\" lines in tooltips.")
-                .define("itemDescriptionsInTooltips", false);
         c.pop();
         CLIENT_SPEC = c.build();
     }

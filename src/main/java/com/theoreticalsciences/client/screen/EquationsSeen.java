@@ -47,18 +47,13 @@ public final class EquationsSeen {
     /** Records a watched cycle. True if this unlocked the machine's equations just now. */
     public static boolean mark(String machine) {
         if (!set().add(machine)) return false;
-        java.util.List<String> copy = java.util.List.copyOf(set());     // written off the render thread
-        net.minecraft.Util.ioPool().execute(() -> {
-            try {
-                Path f = file();
-                Files.createDirectories(f.getParent());
-                synchronized (EquationsSeen.class) {
-                    Files.write(f, copy, StandardCharsets.UTF_8);
-                }
-            } catch (Exception ignored) {
-                // still unlocked for this session
-            }
-        });
+        try {
+            Path f = file();
+            Files.createDirectories(f.getParent());
+            Files.write(f, set(), StandardCharsets.UTF_8);
+        } catch (Exception ignored) {
+            // still unlocked for this session
+        }
         return !QHConfig.EQUATIONS_AT_ONCE.get();
     }
 }
