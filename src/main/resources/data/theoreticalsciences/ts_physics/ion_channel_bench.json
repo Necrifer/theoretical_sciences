@@ -1,0 +1,90 @@
+{
+  "params": [
+    {
+      "id": "rNa",
+      "unit": "",
+      "min": 0.001,
+      "max": 1.5,
+      "step": 0.001,
+      "default": 0.04
+    },
+    {
+      "id": "rCl",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "default": 0.45
+    },
+    {
+      "id": "dia",
+      "unit": "µm",
+      "min": 0.2,
+      "max": 20,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "id": "my",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "Ko": 5,
+    "Ki": 140,
+    "Nao": 145,
+    "Nai": 12,
+    "Clo": 110,
+    "Cli": 10,
+    "Tb": 310
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "V",
+      "unit": "mV",
+      "expr": "26.7*(Tb/310)*ln((Ko + rNa*Nao + rCl*Cli)/(Ki + rNa*Nai + rCl*Clo))*(1 + 0.01*d)",
+      "formula": "Goldman, Hodgkin and Katz: the resting voltage, each ion weighted by its permeability"
+    },
+    {
+      "id": "EK",
+      "unit": "mV",
+      "expr": "26.7*(Tb/310)*ln(Ko/Ki)",
+      "formula": "potassium's Nernst potential"
+    },
+    {
+      "id": "ENa",
+      "unit": "mV",
+      "expr": "26.7*(Tb/310)*ln(Nao/Nai)",
+      "formula": "sodium's Nernst potential"
+    },
+    {
+      "id": "vc",
+      "unit": "m/s",
+      "expr": "my*6*dia + (1 - my)*sqrt(dia)",
+      "formula": "conduction: about 6 m/s per µm myelinated, √d bare"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "pump",
+      "kind": "wear",
+      "expr": "1 - rNa",
+      "formula": "P_Na over P_K: the sodium pump cannot keep up"
+    }
+  ],
+  "rate": "clamp((my*6*dia + (1 - my)*sqrt(dia))/30, 0.25, 2)",
+  "rate_formula": "a faster axon is tested sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

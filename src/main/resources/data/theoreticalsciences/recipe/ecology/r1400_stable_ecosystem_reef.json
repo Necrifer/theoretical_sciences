@@ -1,0 +1,45 @@
+{
+  "type": "theoreticalsciences:ecology",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:reef_keystone",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:algae_culture",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:nutrient_broth",
+      "amount": 2000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:stable_ecosystem",
+      "count": 4
+    }
+  ],
+  "energy": 2048,
+  "duration": 113,
+  "research": "theoreticalsciences:island_biogeography",
+  "unscaled": true,
+  "insight_per_run": 4,
+  "physics": {
+    "vars": {
+      "ar": 1.0,
+      "br": 0.04,
+      "gr": 1.0,
+      "dr": 0.04
+    },
+    "windows": [
+      {
+        "q": "swing",
+        "min": 0.8,
+        "max": 2.0
+      }
+    ]
+  }
+}

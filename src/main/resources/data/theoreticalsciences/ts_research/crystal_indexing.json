@@ -1,0 +1,59 @@
+{
+  "title": "Crystal Indexing",
+  "x": 15,
+  "y": 30,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:crystallography",
+    "theoreticalsciences:group_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:doped_wafer",
+      "count": 1
+    },
+    {
+      "item": "minecraft:quartz",
+      "count": 8
+    }
+  ],
+  "time": 420,
+  "description": "Every peak of a diffraction pattern is one family of lattice planes, named by three whole numbers (h k l), and their spacing in a cubic crystal is the cube's edge over √(h² + k² + l²). Not every family shows: in a body centred or face centred lattice, waves from the extra atoms cancel some reflections exactly, and which ones are missing tells you the lattice. Indexing a pattern is reading a crystal's structure from its fingerprint. Unlocks the Laue Goniometer.",
+  "icon": "theoreticalsciences:laue_goniometer",
+  "puzzle": {
+    "goal": "In a cubic crystal of edge a, the planes (h k l) are spaced d = a/√(h² + k² + l²). Write d.",
+    "name": "Cubic plane spacing",
+    "lhs": "D",
+    "form": "a / sqrt ( h ^ 2 + k ^ 2 + l ^ 2 )",
+    "expr": "a / sqrt ( h ^ 2 + k ^ 2 + l ^ 2 )",
+    "ask": "Find d in ångströms for silicon, a = 5.431 Å, planes (@{h} 1 1).",
+    "vars": {
+      "D": "plane spacing",
+      "a": "cube edge",
+      "h": "first index",
+      "k": "second index",
+      "l": "third index"
+    },
+    "given": {
+      "a": 5.431,
+      "h": 3.0,
+      "k": 1.0,
+      "l": 1.0
+    },
+    "unit": "Å",
+    "method": "The plane (h k l) cuts the axes at a/h, a/k and a/l; its distance from the origin is one over the length of (h, k, l)/a.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 3"
+    ],
+    "vary": {
+      "h": [
+        1.0,
+        4.0,
+        1.0
+      ]
+    }
+  },
+  "category": "space"
+}

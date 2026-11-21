@@ -1,0 +1,61 @@
+{
+  "title": "Plasma Diagnostics",
+  "x": 24,
+  "y": 21,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:plasma_metallurgy",
+    "theoreticalsciences:electrodynamics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:magnetized_plasma_cell",
+      "count": 1
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "description": "A gas becomes a plasma when its charges screen each other: any stray charge is wrapped in a cloud of opposite charge a Debye length thick, and the gas behaves as one body only if many particles share each such cloud. The same few numbers describe the solar core, a fusion reactor, the ionosphere and the space between galaxies, where the Debye length runs from a hundredth of a nanometre to a hundred kilometres. A small wire dipped in, a Langmuir probe, reads them all. Unlocks the Langmuir Probe Station.",
+  "icon": "theoreticalsciences:langmuir_probe_station",
+  "puzzle": {
+    "goal": "Poisson and Boltzmann together screen a charge over the Debye length. With permittivity ε₀, temperature kT, density n and charge q, write λ_D.",
+    "name": "Debye length",
+    "lhs": "L",
+    "form": "sqrt ( ε * k * T / ( n * q ^ 2 ) )",
+    "expr": "sqrt ( e0 * k * T / ( n * q ^ 2 ) )",
+    "ask": "Find λ_D in metres for T = @{T} K and n = 10¹⁸ per cubic metre.",
+    "vars": {
+      "L": "Debye length",
+      "ε": "permittivity",
+      "k": "Boltzmann constant",
+      "T": "temperature",
+      "n": "density",
+      "q": "charge"
+    },
+    "given": {
+      "e0": 8.854e-12,
+      "k": 1.380649e-23,
+      "T": 11600.0,
+      "n": 1e+18,
+      "q": 1.602e-19
+    },
+    "unit": "m",
+    "method": "Linearise the Boltzmann charge density, ρ ≈ −n·q²·φ/kT, into Poisson: ∇²φ = φ/λ_D².",
+    "distractors": [
+      "*",
+      "+",
+      "exp"
+    ],
+    "vary": {
+      "T": [
+        5000.0,
+        50000.0,
+        100.0
+      ]
+    }
+  },
+  "category": "physics"
+}

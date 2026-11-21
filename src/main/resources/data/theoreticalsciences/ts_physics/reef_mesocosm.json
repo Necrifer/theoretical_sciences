@@ -1,0 +1,99 @@
+{
+  "params": [
+    {
+      "id": "A",
+      "unit": "ha",
+      "min": 1,
+      "max": 1000,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "id": "Dk",
+      "unit": "km",
+      "min": 1,
+      "max": 2000,
+      "step": 1,
+      "default": 500
+    },
+    {
+      "id": "SST",
+      "unit": "°C",
+      "min": 22,
+      "max": 34,
+      "step": 0.1,
+      "default": 26
+    },
+    {
+      "id": "sig",
+      "unit": "",
+      "min": 0.01,
+      "max": 0.5,
+      "step": 0.01,
+      "default": 0.3
+    }
+  ],
+  "recipe_vars": {
+    "P": 300,
+    "MMM": 28.5,
+    "wk": 8,
+    "C": 0.05
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Seq",
+      "unit": "species",
+      "expr": "(P*(10*exp(-Dk/500))/((10*exp(-Dk/500)) + (20/sqrt(A))))",
+      "formula": "S = P·I/(I + E): I falls with distance, E with area"
+    },
+    {
+      "id": "DHW",
+      "unit": "°C weeks",
+      "expr": "(pos(SST - MMM - 1)*wk)",
+      "formula": "degree heating weeks over the bleaching threshold, MMM + 1"
+    },
+    {
+      "id": "cover",
+      "unit": "",
+      "expr": "exp(-pos((pos(SST - MMM - 1)*wk) - 4)/4)",
+      "formula": "live coral left: bleaching from 4 DHW"
+    },
+    {
+      "id": "G",
+      "unit": "",
+      "expr": "(SST - 22)/6*exp(-pos((pos(SST - MMM - 1)*wk) - 4)/4)*(1 - 0.01*d)",
+      "formula": "calcification: faster in warmer water, times the live cover"
+    },
+    {
+      "id": "may",
+      "unit": "",
+      "expr": "sig*sqrt((P*(10*exp(-Dk/500))/((10*exp(-Dk/500)) + (20/sqrt(A))))*C)",
+      "formula": "May: σ·√(S·C), stable under 1"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "unstable",
+      "kind": "stop",
+      "expr": "1 - sig*sqrt((P*(10*exp(-Dk/500))/((10*exp(-Dk/500)) + (20/sqrt(A))))*C)",
+      "formula": "σ·√(S·C) under 1, or the community collapses"
+    },
+    {
+      "id": "death",
+      "kind": "wear",
+      "expr": "8 - (pos(SST - MMM - 1)*wk)",
+      "formula": "over 8 degree heating weeks the corals die"
+    }
+  ],
+  "rate": "clamp((SST - 22)/6*exp(-pos((pos(SST - MMM - 1)*wk) - 4)/4)*(1 - 0.01*d), 0.25, 2)",
+  "rate_formula": "a reef that calcifies faster builds sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

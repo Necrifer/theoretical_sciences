@@ -1,0 +1,57 @@
+{
+  "title": "Genetic Drift",
+  "x": 36,
+  "y": 62,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:population_genetics",
+    "theoreticalsciences:de_extinction"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:dated_stromatolite",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "In a small population, chance alone decides which alleles reach the next generation, and every generation a little variation is lost for good. Inbreeding follows, and with it the hidden recessive faults every genome carries. A few migrants a generation are enough to undo it. A species brought back from a handful of genomes has to be bred against this arithmetic, or it dies out a second time. Unlocks the Gene Pool Bench.",
+  "icon": "theoreticalsciences:gene_pool_bench",
+  "puzzle": {
+    "goal": "Each generation a population of N keeps a fraction 1 − 1/(2N) of its heterozygosity. Write H after t generations, from H₀.",
+    "name": "Loss of heterozygosity",
+    "lhs": "H",
+    "form": "K * ( 1 - 1 / ( 2 * N ) ) ^ t",
+    "expr": "K * ( 1 - 1 / ( 2 * N ) ) ^ t",
+    "ask": "Find H after t = @{t} generations for N = 50 and H₀ = 0.8.",
+    "vars": {
+      "H": "heterozygosity",
+      "K": "starting heterozygosity",
+      "N": "population",
+      "t": "generations"
+    },
+    "given": {
+      "K": 0.8,
+      "N": 50.0,
+      "t": 20.0
+    },
+    "unit": "",
+    "method": "Two copies drawn from the same parent gene in a population of N come together with chance 1/(2N); multiply once for each generation.",
+    "distractors": [
+      "*",
+      "+",
+      "exp"
+    ],
+    "vary": {
+      "t": [
+        5.0,
+        60.0,
+        1.0
+      ]
+    }
+  },
+  "category": "biology"
+}

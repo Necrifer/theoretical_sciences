@@ -1040,7 +1040,20 @@ public final class QHContentList {
         new ItemDef("sputter_target", "", 64),
         new ItemDef("magnetic_archive_platter", "", 64),
         new ItemDef("pid_governor_core", "", 64),
-        new ItemDef("triple_modular_controller", "", 16));
+        new ItemDef("triple_modular_controller", "", 16),
+        // 1.4.0 stage 5
+        new ItemDef("hubble_constant_plate", "", 64),
+        new ItemDef("scale_factor_crystal", "", 64),
+        new ItemDef("isochron_record", "", 64),
+        new ItemDef("diverse_gene_pool", "", 64),
+        new ItemDef("synthetic_haemoglobin", "", 64),
+        // 1.4.0 stage 6
+        new ItemDef("indexed_crystal", "", 64),
+        new ItemDef("debye_sheath_film", "", 64),
+        new ItemDef("pacemaker_neuron", "", 64),
+        new ItemDef("reef_keystone", "", 64),                      // 1.4.0 stage 7
+        new ItemDef("kalman_navigation_core", "", 64),             // 1.4.0 stage 8
+        new ItemDef("ultimate_laptop_core", "", 16));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1218,6 +1231,8 @@ public final class QHContentList {
         new BlockDef("methane_clathrate", "simple", 1, 1.0F, "none", ""),          // 1.4.0 stage 2
         new BlockDef("overmature_shale", "simple", 0, 3.0F, "none", ""),          // 1.4.0 stage 2
         new BlockDef("nickel_laterite", "simple", 0, 0.8F, "none", ""),           // 1.4.0 stage 4
+        new BlockDef("lepidolite_pegmatite", "simple", 0, 3.0F, "none", ""),      // 1.4.0 stage 5
+        new BlockDef("ooid_sand", "simple", 0, 0.5F, "none", ""),                 // 1.4.0 stage 7
         new BlockDef("plume_ice", "simple", 1, 2.5F, "none", ""),          // 1.15.0
         new BlockDef("chondritic_regolith", "simple", 0, 0.8F, "none", ""),          // 1.15.0
         new BlockDef("annihilation_scar", "simple", 6, 3.0F, "iron", ""),          // 1.11.0

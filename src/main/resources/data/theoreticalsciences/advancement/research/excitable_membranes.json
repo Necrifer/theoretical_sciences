@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:ion_channel_bench"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.excitable_membranes"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.excitable_membranes.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/membrane_potential",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

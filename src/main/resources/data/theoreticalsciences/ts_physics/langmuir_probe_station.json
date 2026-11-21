@@ -1,0 +1,72 @@
+{
+  "params": [
+    {
+      "id": "lgn",
+      "unit": "log m⁻³",
+      "min": 6,
+      "max": 30,
+      "step": 0.1,
+      "default": 12
+    },
+    {
+      "id": "lgT",
+      "unit": "log eV",
+      "min": -1,
+      "max": 4,
+      "step": 0.05,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Te",
+      "unit": "eV",
+      "expr": "10^lgT",
+      "formula": "electron temperature"
+    },
+    {
+      "id": "lamD",
+      "unit": "µm",
+      "expr": "7.434e9*sqrt(10^lgT/10^lgn)*(1 + 0.01*d)",
+      "formula": "λ_D ≈ 7434·√(T_eV/n) m, the screening length"
+    },
+    {
+      "id": "fp",
+      "unit": "GHz",
+      "expr": "8.98*sqrt(10^lgn)/1e9",
+      "formula": "f_p ≈ 8.98·√n Hz: waves below it are reflected"
+    },
+    {
+      "id": "lgND",
+      "unit": "log",
+      "expr": "log10(4.18879) + lgn + 3*log10(7434*sqrt(10^lgT/10^lgn))",
+      "formula": "N_D = (4π/3)·n·λ_D³, particles in a Debye sphere"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "recomb",
+      "kind": "stop",
+      "expr": "10^lgT - 0.5",
+      "formula": "over 0.5 eV, or the gas recombines and is no plasma"
+    },
+    {
+      "id": "power",
+      "kind": "wear",
+      "expr": "26 - lgn - lgT",
+      "formula": "over 10²⁶ eV a cubic metre the probe melts"
+    }
+  ],
+  "rate": "clamp(lgn/18, 0.5, 1.5)",
+  "rate_formula": "a denser plasma is sampled sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:reef_culture",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:ooid_sand",
+      "count": 4
+    },
+    {
+      "item": "minecraft:brain_coral_block",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:reef_keystone",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:island_biogeography",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "P": 300,
+      "MMM": 28.5,
+      "wk": 8,
+      "C": 0.05
+    },
+    "windows": [
+      {
+        "q": "Seq",
+        "min": 150,
+        "max": 1000000000.0
+      },
+      {
+        "q": "DHW",
+        "min": 0,
+        "max": 4
+      },
+      {
+        "q": "G",
+        "min": 0.6,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

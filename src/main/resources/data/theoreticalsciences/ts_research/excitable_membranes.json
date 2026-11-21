@@ -1,0 +1,57 @@
+{
+  "title": "Excitable Membranes",
+  "x": 36,
+  "y": 53,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:membrane_potential",
+    "theoreticalsciences:action_potential"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neuron_soma",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:axon_bundle",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "A cell's resting voltage is a vote among its ions, each weighted by how easily it crosses the membrane: potassium pulls toward minus ninety millivolts, sodium toward plus sixty, and the cell settles in between. Open more sodium channels and it drifts toward its threshold and fires by itself, as the heart's pacemaker does. Wrap the axon in myelin and the spike jumps from gap to gap, ten times faster. Unlocks the Ion Channel Bench.",
+  "icon": "theoreticalsciences:ion_channel_bench",
+  "puzzle": {
+    "goal": "For one ion alone the membrane rests at the Nernst potential. With kT/q and the concentrations outside (o) and inside (i), write E.",
+    "name": "Nernst potential",
+    "lhs": "E",
+    "form": "v * ln ( o / i )",
+    "expr": "v * ln ( o / i )",
+    "ask": "Find E in millivolts for potassium, kT/q = 26.7 mV, 5 mM outside and @{i} mM inside.",
+    "vars": {
+      "E": "potential",
+      "v": "thermal voltage",
+      "o": "outside",
+      "i": "inside"
+    },
+    "given": {
+      "v": 26.7,
+      "o": 5.0,
+      "i": 140.0
+    },
+    "unit": "mV",
+    "method": "At rest the ion's electrical energy across the membrane, qE, balances its tendency to diffuse down its gradient, kT·ln(o/i).",
+    "distractors": [
+      "*",
+      "-",
+      "exp"
+    ],
+    "vary": {
+      "i": [
+        100.0,
+        160.0,
+        1.0
+      ]
+    }
+  },
+  "category": "biology"
+}

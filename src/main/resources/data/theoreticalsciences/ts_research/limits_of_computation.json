@@ -1,0 +1,55 @@
+{
+  "title": "Limits of Computation",
+  "x": 36,
+  "y": 67,
+  "insight": 260,
+  "requires": [
+    "theoreticalsciences:thermodynamics_of_information",
+    "theoreticalsciences:superconducting_logic"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rsfq_logic_core",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:magnetic_archive_platter",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "description": "How fast can any computer be? Quantum mechanics answers: a system of energy E can pass through at most 2E/(πħ) distinct states a second. A kilogram, converted wholly into computation, runs 5×10⁵⁰ operations a second. Its memory is the entropy of its stuff, capped by the Bekenstein bound; erasing a bit costs kT ln 2 of heat it must shed; and squeeze it too small and it becomes a black hole. Seth Lloyd worked out the ultimate laptop in 2000. Unlocks the Lloyd Engine.",
+  "icon": "theoreticalsciences:lloyd_engine",
+  "puzzle": {
+    "goal": "Margolus and Levitin: a system of mean energy E above its ground state takes at least πħ/(2E) to reach an orthogonal state. Write the most operations a second, N.",
+    "name": "Margolus Levitin bound",
+    "lhs": "N",
+    "form": "2 * E / ( π * ħ )",
+    "expr": "2 * E / ( π * hb )",
+    "ask": "Find N for E = @{E} J, with ħ = 1.0546×10⁻³⁴ J s.",
+    "vars": {
+      "N": "operations a second",
+      "E": "energy",
+      "ħ": "reduced Planck constant"
+    },
+    "given": {
+      "E": 1.0,
+      "hb": 1.0546e-34
+    },
+    "unit": "1/s",
+    "method": "One operation is one step to an orthogonal state; take the reciprocal of the quickest such step.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "E": [
+        0.5,
+        9.0,
+        0.5
+      ]
+    }
+  },
+  "category": "engineering"
+}

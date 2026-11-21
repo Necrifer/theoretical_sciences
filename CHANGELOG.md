@@ -130,6 +130,85 @@ machines, one of them a multiblock.
   Engineering and Control & Reliability. The Processor Tiers, Feedback, Control Theory and the Governor also appear
   there, linked to what builds on them.
 
+### Stage 5: cosmology, deep time, gene pools and blood
+Four new research nodes (each with its derivation puzzle) and four new consoles, one equation set each, from the
+smaller extensions of the expansion study.
+
+* **Friedmann Cosmology** (age of a matter universe). New console, the **Expansion Orrery**: H₀, Ω_m, Ω_Λ and w give the
+  curvature, the age of a flat universe, the deceleration q₀ and how far H₀ sits from Planck's 67.4 (the Hubble tension,
+  shown as unsettled). Fits a Cepheid and redshifts into a **Hubble Constant Plate**; a model flat, 13.6 to 14.0 billion
+  years old and accelerating grows **Scale Factor Crystals**, and one with a Last Scattering Map makes six Inflaton
+  Condensate (four by the old route).
+* **Isochron Dating** (age from the slope). New console, the **Isochron Bench**: mineral fractions, rubidium spread and
+  counting time against the age's uncertainty and the MSWD. Dates the new **Lepidolite Pegmatite** into an **Isochron
+  Record**.
+* **Genetic Drift** (loss of heterozygosity). New console, the **Gene Pool Bench**: effective population and migrants
+  against drift, Wright's migration balance and inbreeding depression, over a hundred generations. Makes a **Diverse
+  Gene Pool**, which with an Isochron Record makes a cheaper **Living Archive**.
+* **Oxygen Transport** (Hill). New console, the **Oxygen Binding Bench**: P₅₀, cooperativity and the Bohr shift decide
+  how much oxygen a carrier loads in thin air and gives up in working tissue. Makes **Synthetic Haemoglobin**; a
+  Meganeura revived with it gives three capsules from one genome (two by the old route).
+* **The world:** **Lepidolite Pegmatite** veins in mountains, between Y 40 and 160 (a feature in vanilla biomes).
+
+### Stage 6: crystals, plasmas and nerves
+Three new research nodes (each with its derivation puzzle) and three new consoles.
+
+* **Crystal Indexing** (cubic plane spacing). New console, the **Laue Goniometer**: choose the Miller indices (h k l);
+  it gives the plane spacing, the peak's 2θ by Bragg and whether the lattice allows it at all (body centred, face
+  centred and diamond extinction rules). Index silicon's peak at 56.1° for **Indexed Crystals**; one turns into three
+  Symmetry Crystals (two from four Cherenkov Quartz by the old route).
+* **Plasma Diagnostics** (Debye length). New console, the **Langmuir Probe Station**: density and temperature give the
+  Debye length, the plasma frequency and the plasma parameter. A plasma with the right screening lays down **Debye
+  Sheath Film**, which stands in for the graphite of a Fusion Blanket Tile, four at a time instead of two.
+* **Excitable Membranes** (Nernst). New console, the **Ion Channel Bench**: sodium and chloride permeability against
+  potassium's give the resting voltage by Goldman, Hodgkin and Katz; myelin and diameter give the conduction speed. A
+  neuron resting just under threshold on a fast axon is a **Pacemaker Neuron**; two of them, with Quantum Dots and
+  Theodolite Lenses, make two Photonic Neurons without Lattice Seeds or Cherenkov Quartz.
+* **Changed recipe:** Tomography in the Connectome Mapper now makes four Engrams instead of three, so it stays cheaper
+  than the older route now that Photonic Neurons cost less.
+
+### Stage 7: reefs and islands
+* **Island Biogeography** (equilibrium species). New console, the **Reef Mesocosm**: reef area and distance from its
+  source set the species it holds (MacArthur and Wilson); water temperature against the warmest month's mean sets the
+  degree heating weeks and the bleaching, and speeds calcification until then; interaction strength must keep May's
+  σ·√(S·C) under 1. A reef rich, stable, fast growing and unbleached is a **Reef Keystone**; with an algae culture it
+  makes two Stable Ecosystems.
+* **The world:** **Ooid Sand** in patches on the floor of warm and lukewarm oceans (a feature in vanilla biomes).
+
+### Stage 8: state estimation and the limits of computation
+Two new research nodes in Engineering (each with its derivation puzzle) and two new consoles, closing the engineering
+branches of the plan.
+
+* **State Estimation** (Kalman gain). New console, the **Kalman Filter Bench**: tell the filter the noise of its world
+  and its sensors and choose how many sensors to fuse; it shows the steady gain, the real error against the true noise,
+  and how close that is to the best possible (only the ratio of the two noises matters). Makes **Kalman Navigation
+  Cores**, which keep a Dyson Swarm Satellite on station in place of three Quantum Processors.
+* **Limits of Computation** (Margolus and Levitin). New console, the **Lloyd Engine**: mass, radius, temperature and the
+  share of operations that erase a bit, against the speed limit 2mc²/(πħ), memory as the entropy of hot radiation, the
+  Bekenstein bound, the black hole radius, and Landauer's heat radiated by its surface. Seth Lloyd's ultimate laptop
+  (a kilogram, a litre, nearly reversible) makes an **Ultimate Laptop Core**; with six Neutronium it makes three
+  Computronium Ingots.
+* Both appear in the Engineering tab of the Codex, under Control & Reliability and Computer Engineering.
+
+### Polish
+* **Codex: one description per item.** Since descriptions moved from tooltips to the Codex, an item with a node of its
+  own showed its description twice: the rewritten one (from the item description rewrite) and the entry's old page in
+  the old words. The old description pages are gone from 1,176 entries; where one carried a fact the rewrite does not
+  (what a creature drops, where it lives, where something is made or found), that line stays on a short page of its
+  own. Notebook pages, fact pages, structure pages and the plain words pages are untouched. An item's own node now
+  always gets its description page, even where a research node shares its icon.
+* **Codex brought up to date:** Operation pages for the Geothermal Plant, Ice Core Drill, Storm Chamber and Wave
+  Energy Converter; entries for Electric Propulsion, Antimatter Propulsion and Geodesy, which had none; descriptions
+  for the Spacefarer Suit's helmet, leggings and boots.
+* **Tar Sand** has a new texture: rounded pockets of glossy bitumen sunk in sand, each with a soaked brown rim, in
+  place of a scatter of black pixels that read as broken. It comes in three layouts, and each block picks one, turned
+  and flipped at random, so a stretch of tar sand never repeats in rows.
+
+### Research map
+* Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
+  drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;
+  Engineering now holds only engineering.
+
 ### Five new Tuning Fork games
 The Tuning Fork had fifteen games, and three of them (waves, proof chains, pipe flow) covered over half of the
 machines. Five new ones, each a piece of real science, and 25 machines moved to the one that fits them:

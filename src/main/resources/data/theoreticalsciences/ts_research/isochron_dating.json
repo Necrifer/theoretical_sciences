@@ -1,0 +1,55 @@
+{
+  "title": "Isochron Dating",
+  "x": 30,
+  "y": 36,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:radiometric_dating",
+    "theoreticalsciences:plate_tectonics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:dated_stromatolite",
+      "count": 1
+    },
+    {
+      "item": "minecraft:granite",
+      "count": 8
+    }
+  ],
+  "time": 420,
+  "description": "A single age from one crystal assumes you know how much daughter isotope it started with. An isochron does not: minerals that froze together share one starting strontium ratio but took in different amounts of rubidium, so plotted against each other they lie on a line whose tilt grows with time. The scatter about the line, the MSWD, says whether the rock stayed closed since. The oldest Earth rocks and meteorites are dated this way. Unlocks the Isochron Bench.",
+  "icon": "theoreticalsciences:isochron_bench",
+  "puzzle": {
+    "goal": "On an isochron the slope is m = e^(λt) − 1, with λ the parent's decay constant. Write the age t.",
+    "name": "Isochron age",
+    "lhs": "t",
+    "form": "ln ( 1 + m ) / λ",
+    "expr": "ln ( 1 + m ) / l",
+    "ask": "Find t in years for ⁸⁷Rb (λ = 1.42×10⁻¹¹ per year) and a slope of @{m}.",
+    "vars": {
+      "t": "age",
+      "m": "slope",
+      "λ": "decay constant"
+    },
+    "given": {
+      "m": 0.05,
+      "l": 1.42e-11
+    },
+    "unit": "yr",
+    "method": "Add one to the slope, take the natural logarithm, divide by λ.",
+    "distractors": [
+      "*",
+      "exp",
+      "log"
+    ],
+    "vary": {
+      "m": [
+        0.01,
+        0.07,
+        0.001
+      ]
+    }
+  },
+  "category": "space"
+}

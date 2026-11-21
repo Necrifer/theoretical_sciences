@@ -1,0 +1,54 @@
+{
+  "title": "Friedmann Cosmology",
+  "x": 33,
+  "y": 34,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:big_bang_cosmology",
+    "theoreticalsciences:dark_energy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:redshift_record",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:cepheid_standard_candle",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "description": "Put matter, radiation, curvature and dark energy into Einstein's equations for a universe the same everywhere, and out comes one equation for how fast space stretches: Friedmann's. Its parameters are measured, not chosen, and they decide everything: the universe's age, whether its expansion is speeding up, and how it ends. The two best ways to measure today's expansion rate disagree by five standard deviations, and nobody yet knows why. Unlocks the Expansion Orrery.",
+  "icon": "theoreticalsciences:expansion_orrery",
+  "puzzle": {
+    "goal": "A flat universe of matter alone expands as a ∝ t^(2/3), so its Hubble rate is H = ȧ/a. Write its age t in terms of today's H.",
+    "name": "Age of a matter universe",
+    "lhs": "t",
+    "form": "2 / ( 3 * H )",
+    "expr": "2 / ( 3 * H )",
+    "ask": "Find t in gigayears for 1/H = @{h} Gyr.",
+    "vars": {
+      "t": "age",
+      "H": "Hubble rate"
+    },
+    "given": {
+      "H": 0.0714,
+      "h": 14.0
+    },
+    "unit": "Gyr",
+    "method": "With a = (t/t₀)^(2/3), ȧ/a = 2/(3t); solve for t.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "H": [
+        0.06,
+        0.08,
+        0.0005
+      ]
+    }
+  },
+  "category": "space"
+}

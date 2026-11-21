@@ -1,0 +1,77 @@
+{
+  "params": [
+    {
+      "id": "nf",
+      "unit": "",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "id": "sp",
+      "unit": "",
+      "min": 0.2,
+      "max": 30,
+      "step": 0.1,
+      "default": 1
+    },
+    {
+      "id": "tA",
+      "unit": "h",
+      "min": 0.5,
+      "max": 24,
+      "step": 0.5,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "age": 3.5,
+    "opn": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "m",
+      "unit": "",
+      "expr": "(exp(1.42e-11*age*1e9) - 1)",
+      "formula": "the slope e^(λt) − 1"
+    },
+    {
+      "id": "sigt",
+      "unit": "Myr",
+      "expr": "2e-4/(sp*sqrt((nf - 1)*tA))/((1 + (exp(1.42e-11*age*1e9) - 1))*1.42e-11)/1e6",
+      "formula": "the age's uncertainty: a wider spread, more fractions and longer counting pin the line"
+    },
+    {
+      "id": "mswd",
+      "unit": "",
+      "expr": "(1 + opn*sp^2*0.01)*(1 + 0.01*d)",
+      "formula": "MSWD, scatter about the line: near 1 the rock stayed closed; rubidium rich micas open first"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "open",
+      "kind": "stop",
+      "expr": "4 - (1 + opn*sp^2*0.01)*(1 + 0.01*d)",
+      "formula": "MSWD over 4: the minerals were reset, there is no isochron"
+    },
+    {
+      "id": "fil",
+      "kind": "wear",
+      "expr": "20 - tA",
+      "formula": "over 20 hours the filament burns out"
+    }
+  ],
+  "rate": "clamp(4/(nf*tA), 0.25, 3)",
+  "rate_formula": "fewer fractions, counted shorter, finish sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

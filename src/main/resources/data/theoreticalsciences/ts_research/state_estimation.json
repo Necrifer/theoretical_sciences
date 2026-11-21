@@ -1,0 +1,55 @@
+{
+  "title": "State Estimation",
+  "x": 30,
+  "y": 69,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:control_engineering",
+    "theoreticalsciences:probability_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:precision_gyroscope",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:strain_sensor",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "description": "Where is the spacecraft now? Its last estimate drifts as it moves; each new measurement is noisy. Kalman's filter blends the two, trusting each in proportion to how little it is in doubt, and the blend is the best possible while the noise is what the filter thinks it is. It guided Apollo to the Moon and runs in every phone's GPS. Unlocks the Kalman Filter Bench.",
+  "icon": "theoreticalsciences:kalman_filter_bench",
+  "puzzle": {
+    "goal": "The prediction is in doubt by variance P, the measurement by R. Write the gain K, the share of the new measurement that goes into the estimate.",
+    "name": "Kalman gain",
+    "lhs": "K",
+    "form": "P / ( P + R )",
+    "expr": "P / ( P + R )",
+    "ask": "Find K for P = @{P} and R = 1.",
+    "vars": {
+      "K": "gain",
+      "P": "prediction variance",
+      "R": "measurement variance"
+    },
+    "given": {
+      "P": 0.25,
+      "R": 1.0
+    },
+    "unit": "",
+    "method": "Blend x = x⁻ + K(z − x⁻); its variance (1 − K)²P + K²R is smallest where its slope in K is zero.",
+    "distractors": [
+      "*",
+      "-",
+      "sqrt"
+    ],
+    "vary": {
+      "P": [
+        0.05,
+        4.0,
+        0.05
+      ]
+    }
+  },
+  "category": "engineering"
+}
