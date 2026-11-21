@@ -193,7 +193,9 @@ final class ProcessScenes {
         e("laue_goniometer", "crystal indexing", V.SCOPE, C.LATTICE, C.PEAKS, 2);           // 1.4.0 stage 6
         e("langmuir_probe_station", "plasma probing", V.CHAMBER, C.ARCS, C.CURVE, 1);
         e("ion_channel_bench", "channel tuning", V.PLATE, C.CELLS, C.WAVES, 2);
-        e("reef_mesocosm", "reef culture", V.TANK, C.CELLS, C.CRYSTAL, 1);                  // 1.4.0 stage 7
+        e("reef_mesocosm", "reef culture", V.TANK, C.CELLS, C.CRYSTAL, 1);
+        e("kalman_filter_bench", "state estimation", V.SCOPE, C.CURVE, C.SPIN, 1);     // 1.4.0 stage 8
+        e("lloyd_engine", "ultimate computing", V.RING, C.GLOW, C.TILES, 2);                  // 1.4.0 stage 7
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1

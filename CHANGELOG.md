@@ -175,6 +175,21 @@ Three new research nodes (each with its derivation puzzle) and three new console
   makes two Stable Ecosystems.
 * **The world:** **Ooid Sand** in patches on the floor of warm and lukewarm oceans (a feature in vanilla biomes).
 
+### Stage 8: state estimation and the limits of computation
+Two new research nodes in Engineering (each with its derivation puzzle) and two new consoles, closing the engineering
+branches of the plan.
+
+* **State Estimation** (Kalman gain). New console, the **Kalman Filter Bench**: tell the filter the noise of its world
+  and its sensors and choose how many sensors to fuse; it shows the steady gain, the real error against the true noise,
+  and how close that is to the best possible (only the ratio of the two noises matters). Makes **Kalman Navigation
+  Cores**, which keep a Dyson Swarm Satellite on station in place of three Quantum Processors.
+* **Limits of Computation** (Margolus and Levitin). New console, the **Lloyd Engine**: mass, radius, temperature and the
+  share of operations that erase a bit, against the speed limit 2mc²/(πħ), memory as the entropy of hot radiation, the
+  Bekenstein bound, the black hole radius, and Landauer's heat radiated by its surface. Seth Lloyd's ultimate laptop
+  (a kilogram, a litre, nearly reversible) makes an **Ultimate Laptop Core**; with six Neutronium it makes three
+  Computronium Ingots.
+* Both appear in the Engineering tab of the Codex, under Control & Reliability and Computer Engineering.
+
 ### Research map
 * Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
   drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;

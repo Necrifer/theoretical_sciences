@@ -1,0 +1,71 @@
+{
+  "params": [
+    {
+      "id": "lgQ",
+      "unit": "log",
+      "min": -4,
+      "max": 2,
+      "step": 0.02,
+      "default": 0
+    },
+    {
+      "id": "lgR",
+      "unit": "log",
+      "min": -4,
+      "max": 2,
+      "step": 0.02,
+      "default": 0
+    },
+    {
+      "id": "ns",
+      "unit": "",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "recipe_vars": {
+    "Qt": 0.01,
+    "Rt": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "K",
+      "unit": "",
+      "expr": "(((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR)",
+      "formula": "the steady gain from the noise the filter is told: K = P/(P + R)"
+    },
+    {
+      "id": "rms",
+      "unit": "",
+      "expr": "sqrt(((1 - (((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR))^2*Qt + ((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR))^2*(Rt/ns))/(1 - (1 - (((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR))^2)*(1 + 0.01*d))",
+      "formula": "the real error, given the true noise: ns sensors average their noise down"
+    },
+    {
+      "id": "eff",
+      "unit": "",
+      "expr": "(1 - ((Qt + sqrt(Qt^2 + 4*Qt*(Rt/ns)))/2)/(((Qt + sqrt(Qt^2 + 4*Qt*(Rt/ns)))/2) + (Rt/ns)))*((Qt + sqrt(Qt^2 + 4*Qt*(Rt/ns)))/2)/(((1 - (((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR))^2*Qt + ((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR))^2*(Rt/ns))/(1 - (1 - (((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2)/((((10^lgQ) + sqrt((10^lgQ)^2 + 4*(10^lgQ)*(10^lgR)))/2) + 10^lgR))^2)*(1 + 0.01*d))",
+      "formula": "the best possible error over the real one: 1 when the filter is told the truth"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "weight",
+      "kind": "wear",
+      "expr": "6.5 - ns",
+      "formula": "over six sensors the craft is overweight"
+    }
+  ],
+  "rate": "clamp(3/ns, 0.25, 2)",
+  "rate_formula": "fewer sensors are calibrated sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

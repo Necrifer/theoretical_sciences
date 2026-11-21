@@ -327,6 +327,9 @@ public enum MachineType {
     ION_CHANNEL_BENCH       ("neuron_tuning",        2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xFFE070),
     // 1.4.0 stage 7: reef and island ecology
     REEF_MESOCOSM           ("reef_culture",         2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xFF9070),
+    // 1.4.0 stage 8: state estimation, the limits of computation
+    KALMAN_FILTER_BENCH     ("state_estimation",     2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0x70D0FF),
+    LLOYD_ENGINE            ("limit_computing",      2, 0, 1, 0, false, null,                     16_000_000,   400_000, Effect.NONE,        0xFFF0B0),
     MICROWAVE_RECTENNA      ("microwave_reception",  0, 0, 0, 0, true,  "microwave_rectenna",      64_000_000, 2_000_000, Effect.NONE,        0x60C8FF),
     // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
     PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
@@ -423,7 +426,7 @@ public enum MachineType {
      * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
      */
     public boolean standaloneConsole() {
-        return this == REEF_MESOCOSM || this == LAUE_GONIOMETER || this == LANGMUIR_PROBE_STATION || this == ION_CHANNEL_BENCH || this == EXPANSION_ORRERY || this == ISOCHRON_BENCH || this == GENE_POOL_BENCH || this == OXYGEN_BINDING_BENCH || this == FRACTURE_BENCH || this == JOSEPHSON_LOGIC_BENCH || this == MEDIA_SPUTTER_CHAMBER || this == PID_BENCH || this == RELIABILITY_LEDGER || this == BCS_CRYOSTAT || this == DEEP_SPACE_TRANSCEIVER || this == HYDROTREATER || this == CATALYTIC_REFORMER || this == CLAUS_UNIT || this == DELAYED_COKER || this == SYNGAS_REFORMER || this == SUBSTITUENT_BENCH || this == POLARIMETER || this == HUCKEL_ANALYSER || this == MOLECULAR_MACHINE_BENCH
+        return this == KALMAN_FILTER_BENCH || this == LLOYD_ENGINE || this == REEF_MESOCOSM || this == LAUE_GONIOMETER || this == LANGMUIR_PROBE_STATION || this == ION_CHANNEL_BENCH || this == EXPANSION_ORRERY || this == ISOCHRON_BENCH || this == GENE_POOL_BENCH || this == OXYGEN_BINDING_BENCH || this == FRACTURE_BENCH || this == JOSEPHSON_LOGIC_BENCH || this == MEDIA_SPUTTER_CHAMBER || this == PID_BENCH || this == RELIABILITY_LEDGER || this == BCS_CRYOSTAT || this == DEEP_SPACE_TRANSCEIVER || this == HYDROTREATER || this == CATALYTIC_REFORMER || this == CLAUS_UNIT || this == DELAYED_COKER || this == SYNGAS_REFORMER || this == SUBSTITUENT_BENCH || this == POLARIMETER || this == HUCKEL_ANALYSER || this == MOLECULAR_MACHINE_BENCH
                 || this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == ICE_RHEOMETER || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
                 || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
                 || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN

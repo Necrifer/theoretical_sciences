@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:state_estimation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:precision_gyroscope",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:pid_governor_core",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:kalman_navigation_core",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:state_estimation",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Qt": 0.01,
+      "Rt": 1
+    },
+    "windows": [
+      {
+        "q": "rms",
+        "min": 0,
+        "max": 0.25
+      },
+      {
+        "q": "eff",
+        "min": 0.95,
+        "max": 2
+      }
+    ]
+  }
+}

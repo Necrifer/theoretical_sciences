@@ -1051,7 +1051,9 @@ public final class QHContentList {
         new ItemDef("indexed_crystal", "", 64),
         new ItemDef("debye_sheath_film", "", 64),
         new ItemDef("pacemaker_neuron", "", 64),
-        new ItemDef("reef_keystone", "", 64));                     // 1.4.0 stage 7
+        new ItemDef("reef_keystone", "", 64),                      // 1.4.0 stage 7
+        new ItemDef("kalman_navigation_core", "", 64),             // 1.4.0 stage 8
+        new ItemDef("ultimate_laptop_core", "", 16));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),

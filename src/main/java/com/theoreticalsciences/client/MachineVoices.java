@@ -139,6 +139,8 @@ public final class MachineVoices {
         V.put("langmuir_probe_station", new Voice("turbine", 1.25F));
         V.put("ion_channel_bench", new Voice("bio", 1.15F));
         V.put("reef_mesocosm", new Voice("bio", 0.80F));                    // 1.4.0 stage 7
+        V.put("kalman_filter_bench", new Voice("instrument", 1.30F));       // 1.4.0 stage 8
+        V.put("lloyd_engine", new Voice("cosmic", 1.20F));
         V.put("cmb_bolometer_array", new Voice("space", 0.70F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));

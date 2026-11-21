@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:kalman_filter_bench"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.state_estimation"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.state_estimation.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/control_engineering",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

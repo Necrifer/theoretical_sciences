@@ -1,0 +1,106 @@
+{
+  "params": [
+    {
+      "id": "lgm",
+      "unit": "log kg",
+      "min": -3,
+      "max": 3,
+      "step": 0.05,
+      "default": -1
+    },
+    {
+      "id": "lgR",
+      "unit": "log m",
+      "min": -3,
+      "max": 1,
+      "step": 0.05,
+      "default": 0
+    },
+    {
+      "id": "lgT",
+      "unit": "log K",
+      "min": 2,
+      "max": 10,
+      "step": 0.05,
+      "default": 4
+    },
+    {
+      "id": "lgi",
+      "unit": "log",
+      "min": -20,
+      "max": 0,
+      "step": 0.1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "lops",
+      "unit": "log ops/s",
+      "expr": "(50.7345 + lgm + log10(pos(1 - 0.01*d) + 1e-9))",
+      "formula": "Margolus Levitin: 2mc²/(πħ) operations a second"
+    },
+    {
+      "id": "lbits",
+      "unit": "log bits",
+      "expr": "(8.0229 + 3*lgT + (0.62209 + 3*lgR))",
+      "formula": "memory: the entropy of radiation at T in its volume, (4/3)aT³V/(k ln 2)"
+    },
+    {
+      "id": "lbek",
+      "unit": "log bits",
+      "expr": "(43.4111 + lgm + lgR)",
+      "formula": "the Bekenstein bound 2πRmc/(ħ ln 2): no more can fit"
+    },
+    {
+      "id": "lheat",
+      "unit": "log W",
+      "expr": "(lgi + (50.7345 + lgm + log10(pos(1 - 0.01*d) + 1e-9)) - 23.0191 + lgT)",
+      "formula": "Landauer: the erased fraction of operations, kT ln 2 each"
+    },
+    {
+      "id": "lcool",
+      "unit": "log W",
+      "expr": "(-6.1472 + 4*lgT + 2*lgR)",
+      "formula": "what its surface radiates, σT⁴·4πR²"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "energy",
+      "kind": "stop",
+      "expr": "(16.9536 + lgm) - (-15.1212 + 4*lgT + (0.62209 + 3*lgR))",
+      "formula": "its radiation cannot hold more energy than mc²"
+    },
+    {
+      "id": "hole",
+      "kind": "stop",
+      "expr": "lgR - (-26.8282 + lgm)",
+      "formula": "a radius over 2Gm/c², or it collapses into a black hole"
+    },
+    {
+      "id": "melt",
+      "kind": "stop",
+      "expr": "(-6.1472 + 4*lgT + 2*lgR) - (lgi + (50.7345 + lgm + log10(pos(1 - 0.01*d) + 1e-9)) - 23.0191 + lgT)",
+      "formula": "it must shed its Landauer heat as fast as it makes it"
+    },
+    {
+      "id": "holo",
+      "kind": "stop",
+      "expr": "(43.4111 + lgm + lgR) - (8.0229 + 3*lgT + (0.62209 + 3*lgR))",
+      "formula": "its memory under the Bekenstein bound"
+    }
+  ],
+  "rate": "clamp(((50.7345 + lgm + log10(pos(1 - 0.01*d) + 1e-9)) - 50)/0.7, 0.25, 1.5)",
+  "rate_formula": "a heavier engine computes the job sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

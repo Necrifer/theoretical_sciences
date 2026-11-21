@@ -210,13 +210,13 @@
     {
       "entry": "fabrication/processors",
       "x": 1,
-      "y": 35,
+      "y": 37,
       "parents": [],
       "band": "Computer Engineering",
       "route": [
         5,
         0,
-        -999999967.0,
+        33.5,
         -1.5,
         3.5
       ]
@@ -224,7 +224,7 @@
     {
       "entry": "engineering/r1400_rsfq",
       "x": 6,
-      "y": 33,
+      "y": 35,
       "parents": [
         "fabrication/processors",
         "physics/r1400_bcs"
@@ -233,7 +233,7 @@
       "route": [
         5,
         1,
-        -999999967.0,
+        33.5,
         3.5,
         8.5
       ]
@@ -241,7 +241,7 @@
     {
       "entry": "engineering/r1400_storage",
       "x": 6,
-      "y": 37,
+      "y": 39,
       "parents": [
         "fabrication/processors"
       ],
@@ -249,7 +249,7 @@
       "route": [
         5,
         1,
-        -999999967.0,
+        33.5,
         3.5,
         8.5
       ]
@@ -257,13 +257,13 @@
     {
       "entry": "mathematics/node_research_feedback",
       "x": 1,
-      "y": 49,
+      "y": 53,
       "parents": [],
       "band": "Control & Reliability",
       "route": [
         6,
         0,
-        45.5,
+        47.5,
         -1.5,
         3.5
       ]
@@ -271,7 +271,7 @@
     {
       "entry": "mathematics/node_research_control_theory",
       "x": 6,
-      "y": 49,
+      "y": 53,
       "parents": [
         "mathematics/node_research_feedback"
       ],
@@ -279,7 +279,7 @@
       "route": [
         6,
         1,
-        45.5,
+        47.5,
         3.5,
         8.5
       ]
@@ -287,7 +287,7 @@
     {
       "entry": "mathematics/node_governor",
       "x": 11,
-      "y": 50,
+      "y": 54,
       "parents": [
         "mathematics/node_research_control_theory"
       ],
@@ -295,7 +295,7 @@
       "route": [
         6,
         2,
-        45.5,
+        47.5,
         8.5,
         13.5
       ]
@@ -303,7 +303,7 @@
     {
       "entry": "engineering/r1400_pid",
       "x": 11,
-      "y": 47,
+      "y": 51,
       "parents": [
         "mathematics/node_research_control_theory"
       ],
@@ -311,7 +311,7 @@
       "route": [
         6,
         2,
-        45.5,
+        47.5,
         8.5,
         13.5
       ]
@@ -319,7 +319,7 @@
     {
       "entry": "engineering/r1400_reliability",
       "x": 16,
-      "y": 47,
+      "y": 53,
       "parents": [
         "engineering/r1400_pid",
         "engineering/r1400_rsfq"
@@ -328,9 +328,42 @@
       "route": [
         6,
         3,
-        45.5,
+        47.5,
         13.5,
         18.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_kalman",
+      "x": 16,
+      "y": 49,
+      "parents": [
+        "engineering/r1400_pid"
+      ],
+      "band": "Control & Reliability",
+      "route": [
+        6,
+        3,
+        47.5,
+        13.5,
+        18.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_lloyd",
+      "x": 11,
+      "y": 37,
+      "parents": [
+        "engineering/r1400_rsfq",
+        "engineering/r1400_storage"
+      ],
+      "band": "Computer Engineering",
+      "route": [
+        5,
+        2,
+        33.5,
+        8.5,
+        13.5
       ]
     }
   ],
@@ -365,15 +398,15 @@
       "x0": -1.0,
       "y0": 30.0,
       "x1": 23.0,
-      "y1": 39.5
+      "y1": 41.5
     },
     {
       "tier": 4,
       "label": "Control & Reliability",
       "x0": -1.0,
-      "y0": 42.0,
+      "y0": 44.0,
       "x1": 23.0,
-      "y1": 52.5
+      "y1": 56.5
     }
   ],
   "layout": "tree"

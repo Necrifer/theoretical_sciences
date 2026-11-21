@@ -60147,5 +60147,92 @@
     "text": "$(thing)Equations$()$(br)S = P·I/(I + E)$(br)DHW = (SST − MMM − 1)·weeks$(br)σ√(SC) < 1"
    }
   ]
+ },
+ "engineering/r1400_kalman": {
+  "title": "State Estimation",
+  "icon": "theoreticalsciences:kalman_navigation_core",
+  "category": "engineering",
+  "research": "state_estimation",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:kalman_filter_bench",
+     "theoreticalsciences:kalman_navigation_core"
+    ],
+    "text": "P = (Q + √(Q² + 4QR))/2; K = P/(P + R). On the $(thing)Kalman Filter Bench$(), tell the filter the noise of its world and sensors and add sensors until its real error is under 0.25 and within 5% of the best possible: a $(item)Kalman Navigation Core$(), which keeps a Dyson Swarm Satellite on station in place of three Quantum Processors.",
+    "title": "Kalman Filter Bench"
+   },
+   {
+    "type": "text",
+    "title": "Only the ratio matters",
+    "text": "A steady Kalman filter's gain depends only on how the process noise compares with the sensor noise, Q/R. Get the ratio right and the filter is optimal whatever the scale you told it; get it wrong and it either chases the noise or lags behind the truth."
+   }
+  ]
+ },
+ "engineering/r1400_lloyd": {
+  "title": "Limits of Computation",
+  "icon": "theoreticalsciences:ultimate_laptop_core",
+  "category": "engineering",
+  "research": "limits_of_computation",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:lloyd_engine",
+     "theoreticalsciences:ultimate_laptop_core"
+    ],
+    "text": "N ≤ 2mc²/(πħ); bits ≈ (4/3)aT³V/(k ln 2) ≤ 2πRmc/(ħ ln 2); R > 2Gm/c²; Landauer heat ≤ σT⁴·4πR². In the $(thing)Lloyd Engine$(), find a mass, size and temperature that run over 3×10⁵⁰ operations a second on over 3×10³⁰ bits without exceeding its own mass in radiation, collapsing, or cooking: almost nothing may be erased. That is an $(item)Ultimate Laptop Core$(); with six Neutronium it makes three Computronium Ingots.",
+    "title": "Lloyd Engine"
+   }
+  ]
+ },
+ "operation/kalman_filter_bench": {
+  "title": "Kalman Filter Bench",
+  "icon": "theoreticalsciences:kalman_filter_bench",
+  "category": "operation",
+  "research": "state_estimation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Make the estimate good enough, and nearly the best possible."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Process noise told, Sensor noise told, Sensors.$(br2)$(thing)Disturbance$(): bias drift: the error reads 1%·d high."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over six sensors wears it.$(br2)$(thing)Rate$(): fewer sensors, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)K = P/(P + R)$(br)P = (Q + √(Q² + 4QR))/2"
+   }
+  ]
+ },
+ "operation/lloyd_engine": {
+  "title": "Lloyd Engine",
+  "icon": "theoreticalsciences:lloyd_engine",
+  "category": "operation",
+  "research": "limits_of_computation",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Compute as fast and remember as much as the recipe asks, within physics."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Mass, Radius, Temperature, Irreversible share.$(br2)$(thing)Disturbance$(): decoherence: it runs 1%·d slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): too much radiation, a black hole, its own heat, or the Bekenstein bound stop it.$(br2)$(thing)Rate$(): heavier, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)N = 2mc²/(πħ)$(br)S = (4/3)aT³V$(br)I ≤ 2πRE/(ħc ln 2)"
+   }
+  ]
  }
 }
