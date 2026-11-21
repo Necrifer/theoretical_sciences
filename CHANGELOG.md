@@ -201,7 +201,8 @@ branches of the plan.
   Energy Converter; entries for Electric Propulsion, Antimatter Propulsion and Geodesy, which had none; descriptions
   for the Spacefarer Suit's helmet, leggings and boots.
 * **Tar Sand** has a new texture: rounded pockets of glossy bitumen sunk in sand, each with a soaked brown rim, in
-  place of a scatter of black pixels that read as broken.
+  place of a scatter of black pixels that read as broken. It comes in three layouts, and each block picks one, turned
+  and flipped at random, so a stretch of tar sand never repeats in rows.
 
 ### Research map
 * Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
