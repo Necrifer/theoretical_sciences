@@ -190,6 +190,16 @@ branches of the plan.
   Computronium Ingots.
 * Both appear in the Engineering tab of the Codex, under Control & Reliability and Computer Engineering.
 
+### Plain words, part 1
+* **75 more Codex entries open with "In plain words"** (one plain sentence, an everyday comparison, and where the
+  comparison breaks), in the style of the 44 the author wrote: the science entries of the Basics guide, the first
+  chapters of the Discovery map (radioactivity, magnetic fields, induction, telescopes and spectra, the Big Bang,
+  chance, the foundations of mathematics and more), and every concept added in 1.4.0 (organic and petroleum
+  chemistry, cryogenics and communications, engineering, and stages 5 to 8). Three Discovery summaries of chapters the
+  author already wrote plain words for reuse those words exactly. The author's own plain words are never replaced.
+* Geodesy had a Codex entry after all (in Getting Started), without its research tag: it is tagged, and the copy
+  added in the polish pass is removed.
+
 ### Polish
 * **Codex: one description per item.** Since descriptions moved from tooltips to the Codex, an item with a node of its
   own showed its description twice: the rewritten one (from the item description rewrite) and the entry's old page in
@@ -198,7 +208,7 @@ branches of the plan.
   own. Notebook pages, fact pages, structure pages and the plain words pages are untouched. An item's own node now
   always gets its description page, even where a research node shares its icon.
 * **Codex brought up to date:** Operation pages for the Geothermal Plant, Ice Core Drill, Storm Chamber and Wave
-  Energy Converter; entries for Electric Propulsion, Antimatter Propulsion and Geodesy, which had none; descriptions
+  Energy Converter; entries for Electric Propulsion and Antimatter Propulsion, which had none; descriptions
   for the Spacefarer Suit's helmet, leggings and boots.
 * **Tar Sand** has a new texture: rounded pockets of glossy bitumen sunk in sand, each with a soaked brown rim, in
   place of a scatter of black pixels that read as broken. It comes in three layouts, and each block picks one, turned

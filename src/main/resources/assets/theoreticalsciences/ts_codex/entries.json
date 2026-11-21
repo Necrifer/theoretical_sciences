@@ -4119,7 +4119,13 @@
     "text": "$(thing)Insight$(): 10$(br2)$(thing)Builds on$(): Cartography, Number Systems.$(br2)$(thing)Derivation$(): Surveyors measure one side c of a triangle and the angles at both its ends; the third angle γ follows. Write the length a of the side opposite the angle α."
    }
   ],
-  "node": true
+  "node": true,
+  "research": "geodesy",
+  "plain": {
+   "line": "Geodesy measures the size and shape of the Earth itself. Measure one baseline and a few angles, and every other distance can be worked out with triangles.",
+   "like": "It is like finding how far away a tree is by looking at it from two ends of a fence you have measured, then doing a little drawing.",
+   "breaks": "However, a drawing on paper is flat. The Earth is round and lumpy, so real geodesy has to account for its curve and for gravity being slightly different everywhere."
+  }
  },
  "basics/node_research_vacuum_energy_storage": {
   "title": "Vacuum Energy Storage",
@@ -4140,7 +4146,12 @@
    }
   ],
   "research": "vacuum_energy_storage",
-  "node": true
+  "node": true,
+  "plain": {
+   "line": "Energy can be stored in the gap between two plates where the vacuum is slightly emptier than outside, and released by letting the plates spring apart.",
+   "like": "A compressed spring holds energy while you keep it squeezed, and gives it back when you let go.",
+   "breaks": "However, a spring is squeezed by your hand. Here the vacuum itself does the pushing, and the effect is so tiny in reality that storing useful energy this way is a sci fi extension of a real effect, the Casimir effect."
+  }
  },
  "basics/node_specimen_bundle": {
   "title": "Specimen Bundle",
@@ -4450,7 +4461,12 @@
     ],
     "text": "Made on the $(item)Extreme Assembly Table$()."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Some materials turn a difference in temperature straight into electricity: heat one side, keep the other cool, and a current flows. This is the Seebeck effect.",
+   "like": "Think of a crowd leaving a hot, packed room for a cool, empty one. The movement from hot to cold is itself a flow, and here that flow is electric charge.",
+   "breaks": "However, people choose where to go. Electrons simply spread out faster on the hot side, and only the special metals in a thermocouple turn that spreading into a useful current, which is why the generator is so humble."
+  }
  },
  "basics/thought_experiments": {
   "title": "Thought Experiments",
@@ -4568,7 +4584,12 @@
     "text": "Made on the $(item)Extreme Assembly Table$()."
    }
   ],
-  "research": "casimir_effect"
+  "research": "casimir_effect",
+  "plain": {
+   "line": "Even a perfect vacuum is never completely still: at the smallest scale it keeps jittering, and the machine pretends that jitter can be drained for power.",
+   "like": "Imagine a calm lake that is never truly flat, always covered in tiny ripples, and a water wheel that tries to turn on those ripples.",
+   "breaks": "However, a lake's ripples can be harvested because the water can sit calmer. The vacuum is already at the lowest energy anything can have, so real physics says there is nothing left to take: this machine is science fiction."
+  }
  },
  "biology/abiogenesis_crucible": {
   "title": "Abiogenesis Crucible",
@@ -42992,7 +43013,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "spectroscopy"
+  "research": "spectroscopy",
+  "plain": {
+   "line": "Splitting light into its colours tells you how hot the thing that made it is, and which elements it contains, even if it is a star far away.",
+   "like": "Hot metal glows red, then orange, then white as it heats up: the colour tells you the temperature.",
+   "breaks": "However, you can only judge colour by eye roughly. A spectrograph spreads the light out so finely that each element's own sharp lines show up, like a barcode."
+  }
  },
  "astrophysics/intro__r37_telescopes": {
   "title": "Telescopes",
@@ -43008,7 +43034,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "observational_astronomy"
+  "research": "observational_astronomy",
+  "plain": {
+   "line": "A telescope is a big bucket for light: the wider its mirror, the more light it collects from a faint star, and the finer the detail it can see.",
+   "like": "Catching rain: a wide bucket fills much faster than a narrow cup.",
+   "breaks": "However, more rain is all a bucket gets. A wider mirror also sharpens the picture, though the air above us blurs it, which is why the best telescopes are on mountains or in space."
+  }
  },
  "astrophysics/intro__r38_clocks": {
   "title": "Clocks in a Gravity Well",
@@ -43056,7 +43087,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "meteoritics"
+  "research": "meteoritics",
+  "plain": {
+   "line": "Meteorites are rocks from space that survived falling to the ground. Iron ones are pieces of the core of a small planet that broke apart long ago.",
+   "like": "Finding a piece of a shattered pot and working out the whole pot from it.",
+   "breaks": "However, the pot broke yesterday. These pieces are billions of years old, older than any rock on Earth, so they tell us how the planets formed."
+  }
  },
  "astrophysics/intro__r45_radio": {
   "title": "The Radio Telescope",
@@ -43564,7 +43600,12 @@
     "text": "$(thing)More$(): the $(thing)Chemistry$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "heterogeneous_catalysis"
+  "research": "heterogeneous_catalysis",
+  "plain": {
+   "line": "A catalyst speeds up a reaction without being used up by it, but over time it gets clogged and poisoned, so it slowly stops working.",
+   "like": "A sieve that helps you sift flour, but whose holes slowly fill with lumps.",
+   "breaks": "However, a sieve can be washed. Some catalyst poisons stick for good, which is why industry regenerates them, or replaces them entirely."
+  }
  },
  "chemistry/intro__r59_contact": {
   "title": "The Contact Process",
@@ -44028,7 +44069,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "magnetostatics"
+  "research": "magnetostatics",
+  "plain": {
+   "line": "An electric current makes a magnetic field that circles around the wire, and gets weaker the further you are from it.",
+   "like": "Stirring water in a bath makes a whirlpool around the spoon, strongest close to it.",
+   "breaks": "However, water actually moves around the spoon. A magnetic field is not anything flowing; it is a pull that a compass needle or another wire feels."
+  }
  },
  "electromagnetism/intro__r37_induction": {
   "title": "Induction & Magnets",
@@ -44044,7 +44090,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "electromagnetic_induction"
+  "research": "electromagnetic_induction",
+  "plain": {
+   "line": "Moving a magnet near a coil of wire, or spinning the coil near a magnet, makes electricity flow in the wire. Every power station works this way.",
+   "like": "Waving your hand through bath water makes the water move; moving a magnet through a coil makes the charge in it move.",
+   "breaks": "However, still water stays still. A coil only makes current while the magnetism through it is changing; a magnet sitting still inside a coil does nothing."
+  }
  },
  "electromagnetism/intro__r38_generator": {
   "title": "The Induction Generator",
@@ -44060,7 +44111,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "electromagnetic_induction"
+  "research": "electromagnetic_induction",
+  "plain": {
+   "line": "A generator spins a coil inside a magnet's field to make electricity, and a stronger magnet makes much more power from the same spinning.",
+   "like": "A bicycle dynamo: pedal faster and the lamp shines brighter.",
+   "breaks": "However, pedalling feels the same whatever lamp you use. A real generator pushes back harder the more power you draw, so the turbine must work harder to keep it spinning."
+  }
  },
  "electromagnetism/intro__r38_magnets": {
   "title": "Permanent Magnets",
@@ -44076,7 +44132,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "ferromagnetism"
+  "research": "ferromagnetism",
+  "plain": {
+   "line": "A permanent magnet is a material that keeps the magnetism a strong field gave it, and the best materials need a stronger field to set them and to undo them.",
+   "like": "Bending a paperclip: once bent past a certain point, it stays bent.",
+   "breaks": "However, you can see a bent paperclip. A magnet's tiny regions each point a way you cannot see, and heat or a strong opposite field can scramble them again."
+  }
  },
  "electromagnetism/intro__r42_mhd": {
   "title": "The MHD Generator",
@@ -44108,7 +44169,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "cyclotron_physics"
+  "research": "cyclotron_physics",
+  "plain": {
+   "line": "A cyclotron speeds up charged particles by sending them round and round in a magnetic field, giving them a small electric kick each time they cross a gap.",
+   "like": "Pushing a child on a swing: a small push at just the right moment each time adds up to a big swing.",
+   "breaks": "However, a swing goes back and forth in place. The particles spiral outward as they speed up, and near the speed of light they get heavier, falling out of step with the pushes."
+  }
  },
  "electromagnetism/intro__r49_tesla": {
   "title": "The Tesla Coil",
@@ -44220,7 +44286,12 @@
     "text": "$(thing)More$(): the $(thing)Dimensions$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "transfinite_mathematics"
+  "research": "transfinite_mathematics",
+  "plain": {
+   "line": "Every set of mathematical rules big enough for arithmetic has true statements it can never prove, and some rules can even contradict themselves.",
+   "like": "These matches a rulebook for a game that cannot settle every argument the game can produce, however many rules you add.",
+   "breaks": "However, a rulebook can be patched with a new rule. Gödel showed that any patch creates new unprovable statements of its own. This is one of the many paradoxes of Mathematics, and there are many more like this."
+  }
  },
  "endgame/intro__hyperreal": {
   "title": "Outside Every Universe",
@@ -44252,7 +44323,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "standard_model"
+  "research": "standard_model",
+  "plain": {
+   "line": "Everything around you is built from a short list of smallest pieces: six kinds of quark, six leptons like the electron, and the particles that carry forces between them.",
+   "like": "A Lego set with only a dozen or so kinds of brick, from which every model in the box is built.",
+   "breaks": "However, Lego bricks are solid little blocks. These particles are more like ripples in invisible fields that fill all of space, and the list does not yet include gravity or dark matter."
+  }
  },
  "geography/intro__r37_ground": {
   "title": "Reading the Ground",
@@ -44268,7 +44344,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "geomorphology"
+  "research": "geomorphology",
+  "plain": {
+   "line": "Rivers shape the land by carrying sand and stones when they flow fast, and dropping them when they slow down, the heaviest first.",
+   "like": "Shaking a jar of mixed sand and pebbles with water, then letting it settle: the pebbles sink first, the fine sand on top.",
+   "breaks": "However, a jar settles in a minute. Rivers sort the land over thousands of years, and a single flood can move more than decades of calm flow."
+  }
  },
  "geography/intro__r37_mapping": {
   "title": "Maps & Measurement",
@@ -44284,7 +44365,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "cartography"
+  "research": "cartography",
+  "plain": {
+   "line": "A flat map of a round planet always gets something wrong: either the shapes, the sizes or the distances must be stretched.",
+   "like": "Try to flatten an orange peel on a table: it tears or bunches up somewhere.",
+   "breaks": "However, the peel tears. A map instead stretches smoothly, and mapmakers choose which thing to keep true for the job, such as straight compass courses for sailors."
+  }
  },
  "geography/intro__r38_seismology": {
   "title": "Seismology",
@@ -44492,7 +44578,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "thermodynamics_of_information"
+  "research": "thermodynamics_of_information",
+  "plain": {
+   "line": "Maxwell imagined a tiny being sorting fast molecules from slow ones to make heat for free. It fails, because remembering and then forgetting each molecule costs energy.",
+   "like": "A bouncer sorting a crowd into two rooms has to remember who went where, and his notebook fills up.",
+   "breaks": "However, a bouncer can buy a new notebook. For the demon, wiping its memory clean always gives off at least as much heat as the sorting saved: information itself has a price in energy."
+  }
  },
  "mathematics/intro__analysis": {
   "title": "Analysis & Calculus",
@@ -44508,7 +44599,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "real_analysis"
+  "research": "real_analysis",
+  "plain": {
+   "line": "Calculus studies changes (and rate of change) by cutting it into infinitely many, infinitely small pieces, then adding them back up.",
+   "like": "Think of a curved path drawn as a staircase of tiny straight steps. The smaller the steps, the closer the staircase hugs the curve.",
+   "breaks": "Now, any real staircase still has individual steps. Calculus asks what happens when this is pushed to the absolute limit, when there are no steps left at all."
+  }
  },
  "mathematics/intro__fractal_space": {
   "title": "Fractal Space",
@@ -44524,7 +44620,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() and $(thing)Dimensions$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "platonic_realm"
+  "research": "platonic_realm",
+  "plain": {
+   "line": "A fractal is a shape that looks the same when you zoom into it, again and again, endlessly.",
+   "like": "A real life example is a fern. Each leaf looks like a small copy of the whole plant, and each leaflet like a copy of the leaf.",
+   "breaks": "However in reality, a real fern stops after a few levels of this “zooming”. A mathematical fractal has no end, no matter how far you zoom in."
+  }
  },
  "mathematics/intro__logic_sets": {
   "title": "Logic, Sets & Categories",
@@ -44540,7 +44641,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "formal_logic"
+  "research": "formal_logic",
+  "plain": {
+   "line": "All of mathematics can be built from almost nothing: a few rules of logic and the empty set, a collection with nothing in it.",
+   "like": "Counting with empty boxes: an empty box is zero, a box holding an empty box is one, and so on.",
+   "breaks": "However, real boxes are made of cardboard. These collections are pure ideas, and the rules for building them must be chosen carefully, or they lead to contradictions."
+  }
  },
  "mathematics/intro__math_overview": {
   "title": "The Road to Infinity",
@@ -44588,7 +44694,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() and $(thing)Dimensions$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "platonic_realm"
+  "research": "platonic_realm",
+  "plain": {
+   "line": "Some mathematicians believe numbers and shapes really exist somewhere outside our world, and we discover them rather than invent them. This mod makes that place real.",
+   "like": "Explorers discovering a continent that was there long before anyone found it.",
+   "breaks": "However, a continent can be visited. Whether mathematical objects exist anywhere at all is still argued about by philosophers; the Platonic Realm is the mod's imagining of it."
+  }
  },
  "mathematics/intro__r72_foundations": {
   "title": "Foundations",
@@ -44604,7 +44715,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "primes"
+  "research": "primes",
+  "plain": {
+   "line": "Mathematics rests on a few simple starting rules, called axioms, from which everything else is proved step by step.",
+   "like": "The rules of chess: a handful of moves, from which every possible game follows.",
+   "breaks": "However, chess's rules were simply agreed on. Mathematicians choose axioms that seem obviously true, and even then some questions turn out to have no answer from them."
+  }
  },
  "mathematics/intro__r73_first_steps": {
   "title": "First Steps in Mathematics",
@@ -44636,7 +44752,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "euclidean_geometry"
+  "research": "euclidean_geometry",
+  "plain": {
+   "line": "Geometry and symmetry study shape and space: which moves leave a shape looking the same, and how space can have more than three directions.",
+   "like": "Turning a square a quarter turn leaves it looking the same; a rectangle needs a half turn.",
+   "breaks": "However, you can see squares. Some of the spaces mathematics studies have more dimensions than we can picture, yet physics needs them."
+  }
  },
  "mathematics/intro__r75_change": {
   "title": "Change",
@@ -44652,7 +44773,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "rates_as_equations"
+  "research": "rates_as_equations",
+  "plain": {
+   "line": "Many things change at a rate that depends on how much there already is, and the maths of change tells you where they will end up and whether they will stay there.",
+   "like": "A cup of hot tea cools fast at first, then slower, settling at room temperature.",
+   "breaks": "However, tea always settles. Some systems never settle and swing forever, and some fall into chaos, where a tiny change at the start makes a completely different future."
+  }
  },
  "mathematics/intro__r76_chance": {
   "title": "Chance and Computation",
@@ -44700,7 +44826,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "optimisation"
+  "research": "optimisation",
+  "plain": {
+   "line": "Optimisation finds the best choice among many, the shortest route or the cheapest plan, and graphs are the maths of networks: points joined by lines.",
+   "like": "Planning the quickest route to visit all your friends' houses using a map.",
+   "breaks": "However, a few friends is easy to try by hand. With many stops the number of possible routes grows so fast that even the fastest computers cannot check them all."
+  }
  },
  "mathematics/intro__r80_control": {
   "title": "Control",
@@ -44844,7 +44975,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "nuclear_binding_energy"
+  "research": "nuclear_binding_energy",
+  "plain": {
+   "line": "A nucleus weighs a little less than the protons and neutrons it is made from. The missing mass became the energy that holds them together.",
+   "like": "Snapping magnets together: they click and give off a little energy, and you must put that energy back to pull them apart.",
+   "breaks": "However, magnets do not get noticeably lighter. In a nucleus the energy is so large that the lost mass can be weighed, and it is where nuclear power comes from."
+  }
  },
  "nuclear/intro__r37_radioactivity": {
   "title": "Radioactivity",
@@ -44860,7 +44996,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "radioactivity"
+  "research": "radioactivity",
+  "plain": {
+   "line": "Some atoms are unstable and break apart on their own. You cannot tell when one will go, but in a large pile, half of them always go in the same amount of time.",
+   "like": "Popcorn in a pan: you never know which kernel will pop next, but the bag is half popped after about the same time every time.",
+   "breaks": "However, popcorn pops because of heat. Radioactive atoms decay at the same rate whether hot, cold, squeezed or left alone, which is what makes them such good clocks."
+  }
  },
  "nuclear/intro__r38_decay": {
   "title": "Radon & Decay Chains",
@@ -44876,7 +45017,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "radiochemistry"
+  "research": "radiochemistry",
+  "plain": {
+   "line": "When an unstable atom decays it often becomes another unstable atom, and so on down a chain, until it reaches one that is stable.",
+   "like": "Water running down a staircase of pools, pausing longer in some pools than others before reaching the bottom.",
+   "breaks": "However, water flows smoothly. Each atom jumps at a random moment, and some steps of the chain last seconds while others last thousands of years."
+  }
  },
  "nuclear/intro__r38_radiation": {
   "title": "Radiation & Shielding",
@@ -44892,7 +45038,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "radioactivity"
+  "research": "radioactivity",
+  "plain": {
+   "line": "Radiation spreads out from its source and gets weaker quickly with distance; different kinds are stopped by different shields.",
+   "like": "The light of a campfire: bright up close, dim a few steps away, and a wall puts you in its shadow.",
+   "breaks": "However, any wall stops firelight. Some radiation is stopped by paper, some needs thick lead or water, and you cannot see or feel any of it."
+  }
  },
  "nuclear/intro__r42_enrichment": {
   "title": "Enrichment",
@@ -45068,7 +45219,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "probability_theory"
+  "research": "probability_theory",
+  "plain": {
+   "line": "Chance follows rules: a single coin toss is unpredictable, but over many tosses the count of heads becomes very predictable.",
+   "like": "One raindrop's landing spot is random, yet a whole shower wets the pavement evenly.",
+   "breaks": "However, rain falls everywhere at once. Each coin toss knows nothing of the last; a run of heads does not make tails more likely next time."
+  }
  },
  "probability/intro__r38_bayes": {
   "title": "Belief & Evidence",
@@ -45276,7 +45432,12 @@
     "text": "$(thing)More$(): the $(thing)Mathematics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "simulation_hypothesis"
+  "research": "simulation_hypothesis",
+  "plain": {
+   "line": "The Omega Point is an idea that at the very end of time, the universe could become one vast computer that has worked out everything that can be worked out.",
+   "like": "The last page of a book where every thread of the story comes together.",
+   "breaks": "However, a book has an author who plans the ending. The Omega Point is a speculation; today's measurements suggest the universe will expand forever and simply grow cold."
+  }
  },
  "singularities/intro__lensing": {
   "title": "Gravitational Lensing",
@@ -45532,7 +45693,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "gravitational_lensing"
+  "research": "gravitational_lensing",
+  "plain": {
+   "line": "Mass bends space and time around it, so light passing a heavy object curves, and things falling are just following the straightest path through that bent space.",
+   "like": "A heavy ball on a trampoline makes a dip, and a marble rolled past curves around it.",
+   "breaks": "However, the marble is pulled down by Earth's gravity into the dip. In real spacetime there is no outside pull; the curve itself is gravity, and it bends time as well as space."
+  }
  },
  "spacetime/intro__r53_mergers": {
   "title": "Binary Mergers",
@@ -45724,7 +45890,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "big_bang_cosmology"
+  "research": "big_bang_cosmology",
+  "plain": {
+   "line": "Run the expansion of the universe backwards and everything gets closer and hotter, until about 13.8 billion years ago it was all packed into a hot, dense soup: the Big Bang.",
+   "like": "Watching a firework's sparks spread out, then playing the video backwards until they all meet in one bright point.",
+   "breaks": "However, a firework explodes into the air around it. The Big Bang did not happen at a place in space; space itself was everywhere at once, and it has been stretching ever since."
+  }
  },
  "strings/intro__origin_ccc": {
   "title": "Conformal Cyclic Cosmology",
@@ -45756,7 +45927,12 @@
     "text": "$(thing)More$(): the $(thing)Physics$() tab has the rest of this study: its machines, materials, recipes and how they connect."
    }
   ],
-  "research": "cosmic_inflation"
+  "research": "cosmic_inflation",
+  "plain": {
+   "line": "In its first instant, the universe grew enormously in a tiny fraction of a second. This inflation explains why the whole sky looks so even.",
+   "like": "Blowing up a wrinkled balloon: once it is huge, any small patch looks perfectly smooth.",
+   "breaks": "However, a balloon grows into the air around it. Inflation stretched space itself, far faster than light could cross it, and nobody yet knows exactly what drove it."
+  }
  },
  "strings/intro__origin_matter": {
   "title": "Why There Is Anything",
@@ -47644,7 +47820,12 @@
     "text": "P = π²EI/L². The $(thing)Load Test Rig$() loads a beam until it bows and rates it: a $(item)Rated I-Beam$() has a safety factor of two to four, no more, no less.",
     "title": "Load Test Rig"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A long, thin column under load does not crush; it suddenly bends sideways, or buckles, and the longer it is the less it takes.",
+   "like": "Push down on the end of a dry spaghetti strand: it bows and snaps long before the pasta itself is crushed. A short piece holds far more.",
+   "breaks": "However, spaghetti is weak and brittle. Real beams are shaped like an I to resist bending with as little metal as possible, and engineers rate them for safety rather than pushing them to their limit."
+  }
  },
  "engineering/composite_materials": {
   "title": "Composite Materials",
@@ -47662,7 +47843,12 @@
     "text": "E = V_f·E_f + V_m·E_m. The $(thing)Composite Layup Press$() makes $(item)Carbon-Fibre$() and $(item)Nanotube Composites$(), and later the $(item)Tether Spool$() and $(item)Shkadov Mirror Film$(). Lay the plies along the load and do not pack the fibre past 62%.",
     "title": "Composite Layup Press"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A composite mixes strong fibres with a glue that holds them together, so the whole is stronger and lighter than either part alone.",
+   "like": "Straw mixed into mud bricks: the straw carries the pull, the mud holds the shape.",
+   "breaks": "However, straw lies every which way. In a real composite the fibres are lined up along the direction of the load, and packing in too many leaves too little glue to hold them."
+  }
  },
  "engineering/tribology": {
   "title": "Tribology",
@@ -47679,7 +47865,12 @@
     "text": "V = k·W·L/H. The $(thing)Tribometer$() qualifies a diamond-like carbon $(item)Wear Coating$(): an upgrade that makes a machine's catalysts wear half as fast.",
     "title": "Tribometer"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Tribology is the study of rubbing surfaces: friction, and how fast things wear away, which depends on how hard they are pressed and how hard the material is.",
+   "like": "A pencil wears down faster the harder you press and the longer you write, and a harder lead lasts longer.",
+   "breaks": "However, a pencil is meant to wear away. Machines are not, so engineers coat their surfaces in very hard films like diamond like carbon so they hardly wear at all."
+  }
  },
  "engineering/corrosion_science": {
   "title": "Corrosion Science",
@@ -47705,7 +47896,12 @@
     ],
     "text": "$(thing)Rust Mites$() eat the charge of machines. A live anode within twelve blocks draws them off: they eat it instead, four bites, and leave $(item)Rust Flakes$(). Flakes make passivated plate more cheaply."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Metals rust because they react with water and air, and whether they do depends on the metal's voltage and on how acidic the water is.",
+   "like": "Some metals are like ice in a warm room, slowly melting away, while others build a thin skin that protects them, like a frozen crust on a puddle.",
+   "breaks": "However, ice melts no matter what. Metal can be protected: a more reactive metal bolted on beside it corrodes instead, sacrificing itself, which is how ships' hulls are kept from rusting."
+  }
  },
  "engineering/space_elevator": {
   "title": "The Space Elevator",
@@ -47729,7 +47925,12 @@
     "text": "Interface Ports in the middle of each side of the platform. A fuelled Crew Capsule can be flown from beside it, as from a Rocket Assembly.",
     "multiblock": "space_elevator"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A space elevator is a cable from the ground to beyond geostationary orbit, held tight by the Earth's spin, which climbers ride up instead of using rockets.",
+   "like": "Swing a ball on a string around your head: the string stays tight, and a bead could slide out along it.",
+   "breaks": "However, your string is short. A real tether would be about a hundred thousand kilometres long and has to hold its own weight, which no material known today is strong enough to do."
+  }
  },
  "engineering/rotating_habitats": {
   "title": "Rotating Habitats",
@@ -47754,7 +47955,12 @@
     "text": "Interface Ports in the cradles and keel.",
     "multiblock": "oneill_cylinder"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A spinning cylinder in space presses everyone inside against its outer wall, making a feeling of gravity without any planet.",
+   "like": "On a spinning fairground ride, you are pressed against the wall and can feel which way is down.",
+   "breaks": "However, a ride spins fast and small, and you get dizzy. A habitat has to be huge and turn slowly, about once a minute or less, so that your head and feet do not feel different gravity."
+  }
  },
  "engineering/stellar_engines": {
   "title": "Stellar Engines",
@@ -47792,7 +47998,12 @@
     "text": "Its signature material is the $(item)Stellar Wind Condensate$(): made here and nowhere else.$(br2)Made in $(item)Stellar Engine$().",
     "r171": true
    }
-  ]
+  ],
+  "plain": {
+   "line": "A stellar engine pushes a whole star by reflecting its light one way: light carries a tiny push, and a star gives off an enormous amount of it.",
+   "like": "A sailboat moved by wind in its sail, only here the star blows on a giant mirror and the mirror pushes the star.",
+   "breaks": "However, a boat crosses a lake in minutes. Even the biggest stellar engine would move its star only a little over millions of years, which is still far enough to steer a solar system."
+  }
  },
  "world/node_dreaming_colony": {
   "title": "Dreaming Colony",
@@ -50250,7 +50461,12 @@
     "text": "The cobalt catalyst is made in the Catalyst Formulator from Meteoric Iron and a Platinum Group Nugget. It wears with use and sulfur poisons it; the Regeneration Kiln restores it. Kerosene launches the Rocket Assembly, wax and paraffin feed Form Tincture and the molecular machines.",
     "title": "Catalysts"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Natural gas and steam can be heated together into a mix of carbon monoxide and hydrogen, called syngas, which can then be rebuilt into almost any fuel.",
+   "like": "Breaking a Lego model into single bricks so you can build something entirely different from them.",
+   "breaks": "However, Lego bricks stay the same. Here the bricks are atoms, and every rebuilding step needs the right heat, pressure and catalyst, with some energy lost each time."
+  }
  },
  "chemistry/r1400_polymer_physics": {
   "title": "Polymer Physics",
@@ -50272,7 +50488,12 @@
     "type": "text",
     "text": "Rigid Rod Fibre lays up into Tether Spools and Shkadov Mirror Film for less than aramid does."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Plastics are made of very long chains of small molecules linked together, and how long the chains get depends on having exactly the right mix of ingredients.",
+   "like": "Making paper chains with two colours that must alternate: if you run out of one colour, every chain stops there.",
+   "breaks": "However, paper chains are linked by hand one at a time. Polymer chains grow by the millions at once, and even a tiny imbalance in the mix keeps them all short."
+  }
  },
  "chemistry/r1400_aromatic_substitution": {
   "title": "Aromatic Substitution",
@@ -50294,7 +50515,12 @@
     "type": "text",
     "text": "$(item)Benzene$() comes from the Cracking Tower, run on crude oil hot enough to make pyrolysis gasoline."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Benzene is a very stable ring of carbon. Chemists swap one of its hydrogen atoms for something new, and whatever is already on the ring speeds this up or slows it down.",
+   "like": "Changing one tyre on a car: some cars have the jack point right there, others make it hard work.",
+   "breaks": "However, a mechanic picks which tyre to change. On a ring, what is already attached also decides which position the new piece goes to."
+  }
  },
  "chemistry/r1400_stereochemistry": {
   "title": "Stereochemistry",
@@ -50315,7 +50541,12 @@
     "type": "text",
     "text": "K = e^(A/RT). Cooled, the cell holds rings in their chairs: a phenyl group's A value keeps it equatorial, and under half a percent axial gives Chiral Ligands from Fine Reagent and a Kekulé Ring. Mirror Reagent makes Chirality Tincture for less."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Some molecules come in a left handed and a right handed version, mirror images that cannot be stacked on each other, and living things can tell them apart.",
+   "like": "Your left and right hands: the same parts, yet a left glove does not fit your right hand.",
+   "breaks": "However, you can see which hand is which. Mirror molecules look identical to most tests; only polarised light, twisted one way or the other, tells them apart."
+  }
  },
  "chemistry/r1400_aromaticity": {
   "title": "Aromaticity",
@@ -50332,7 +50563,12 @@
     "text": "E_k = α + 2β·cos(2πk/n). The $(thing)Hückel Analyser$() compares a ring with the chain it would open into: 4n + 2 is stabilised, 4n is not. An $(item)Annulene Lattice$() needs a ring big enough for a ring current shift of 9 ppm, held cold until the inner and outer signals stand apart.",
     "title": "Hückel Analyser"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Some rings of atoms are unusually stable because their electrons can flow all the way around them, but only when the ring has the right number of electrons.",
+   "like": "Children holding hands in a circle are steadier than a line, but only if everyone has a partner.",
+   "breaks": "However, any even number of children can pair up. For rings the rule is stricter: 6, 10 or 14 electrons are stable, while 4, 8 or 12 make the ring less stable than a chain."
+  }
  },
  "chemistry/r1400_molecular_machines": {
   "title": "Molecular Machines",
@@ -50359,7 +50595,12 @@
     "text": "Rotors, shuttles and gates together make $(item)Programmable Matter$(), from which the Neural Synthesizer makes Computronium with fewer parts.",
     "title": "Programmable Matter"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Chemists have built single molecules that work as tiny machines: rings that slide along rods, and rotors that spin when light shines on them.",
+   "like": "A clockwork toy, only made of a few dozen atoms and wound up by light instead of a key.",
+   "breaks": "However, a toy is still once wound. At this size everything is constantly shaken by heat, so the machine must use light to make the shaking push it in one direction only."
+  }
  },
  "operation/syngas_reformer": {
   "title": "Syngas Reformer",
@@ -50532,7 +50773,12 @@
     "text": "The $(thing)Delayed Coker$() cracks residue and Bitumen to gas oil and $(item)Petroleum Coke$(): keep the drums at low pressure for liquids. From gas oil, slow cycles under pressure at the right heat grow $(item)Needle Coke$(), which the Sintering Press makes into Graphite Moderator. Petroleum Coke burns with steam and oxygen in the Chemical Reactor to Syngas.",
     "title": "Delayed Coker"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Crude oil is a mixture of thousands of compounds, light and heavy. Heating it separates them by boiling point, and the heaviest leftovers are cracked into lighter ones.",
+   "like": "Sieving gravel into sand, pebbles and stones, then smashing the stones into pebbles.",
+   "breaks": "However, sieving only sorts. Cracking actually breaks the big molecules apart with heat, leaving solid coke behind."
+  }
  },
  "chemistry/r1400_hydroprocessing": {
   "title": "Hydrotreating and Reforming",
@@ -50560,7 +50806,12 @@
     "text": "K = e^(−(ΔH − TΔS)/RT). The $(thing)Catalytic Reformer$() turns Naphtha into $(item)BTX Reformate$() of octane 98 and more, and hydrogen. Low pressure favours the aromatics but lays coke on the platinum. The Fractionation Spire splits the reformate into Benzene.",
     "title": "Catalytic Reformer"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Raw fuel contains sulfur that would poison engines and make acid rain, so it is scrubbed out with hydrogen, then the fuel's molecules are reshaped to burn better.",
+   "like": "Washing vegetables before cooking, then cutting them to the right shape for the recipe.",
+   "breaks": "However, washing takes the dirt off the surface. Here the sulfur is locked inside the molecules, and only hydrogen with a catalyst can pull it out."
+  }
  },
  "chemistry/r1400_sulfur_recovery": {
   "title": "Sulfur Recovery",
@@ -50577,7 +50828,12 @@
     "text": "2H₂S + SO₂ → 3S + 2H₂O. In the $(thing)Claus Unit$() burn exactly a third of the Hydrogen Sulfide, keep the burner hot and the beds just above 490 K: 97% of the sulfur comes out as $(item)Sulfur$(), which the Chemical Reactor burns to sulfur dioxide for sulfuric acid.",
     "title": "Claus Unit"
    }
-  ]
+  ],
+  "plain": {
+   "line": "The smelly gas hydrogen sulfide is burned in exactly the right amount of air so that it turns into harmless yellow sulfur instead of pollution.",
+   "like": "Baking with exactly the right ratio of ingredients: too much or too little of one and the cake does not come out right.",
+   "breaks": "However, a slightly wrong cake is still edible. Here only one third of the gas may burn; any more or less, and the poison escapes instead of becoming sulfur."
+  }
  },
  "chemistry/r1400_fcc": {
   "title": "Fluid Catalytic Cracking",
@@ -50589,7 +50845,12 @@
     "type": "text",
     "text": "ΔT = (c·H − q)/(r·c_p). The $(thing)Cracking Tower$() gains a catalyst to oil setting: crack Gas Oil over zeolite at a riser near 808 K, with the regenerator 960 to 1010 K from the coke it burns, for Naphtha and Propylene."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Heavy oil is cracked into petrol by blowing it through a hot powder catalyst, which is then cleaned by burning off the soot, and that burning heats it for the next round.",
+   "like": "A frying pan that cooks food, gets coated in burnt bits, then is cleaned by a fire that also heats it up for the next meal.",
+   "breaks": "However, a pan is cleaned by hand. The catalyst flows round in a loop like a liquid, cracking and cleaning thousands of times a day."
+  }
  },
  "chemistry/r1400_petroleum_geology": {
   "title": "Petroleum Geology",
@@ -50610,7 +50871,12 @@
     "type": "text",
     "text": "Q = k·A·Δp/(μL). In the Overworld: Oil Shale in badlands, Tar Sand in deserts, Asphalt Lakes in savannas and swamps, and Methane Clathrate at cold seeps on the deep ocean floor. In the Planetary Interior, the Overcooked Depths' shale gives only gas."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Oil forms when buried remains of ancient life are slowly cooked by the Earth's heat for millions of years, but only within a narrow range of temperature and time.",
+   "like": "Baking bread: too short and it is raw dough, too long and it burns to charcoal.",
+   "breaks": "However, bread bakes in an hour. Oil cooks for tens of millions of years, and overcooking turns it into natural gas rather than charcoal."
+  }
  },
  "operation/hydrotreater": {
   "title": "Hydrotreater",
@@ -50772,7 +51038,12 @@
     "text": "Interface Ports either side of the controller.",
     "multiblock": "helium_liquefier"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Gases cool down when they expand quickly. Repeat this enough times and air turns to liquid, and finally helium too, at just a few degrees above absolute zero.",
+   "like": "The spray from an aerosol can feels cold, because the gas expands as it leaves the can.",
+   "breaks": "However, an aerosol only gets a little cold. Helium has to be cooled a long way first, before it will cool any further when it expands, otherwise it actually warms up."
+  }
  },
  "physics/r1400_bcs": {
   "title": "Superconductivity Theory",
@@ -50791,7 +51062,12 @@
     "text": "T_c = 1.13·Θ_D·e^(−1/λ). The $(thing)BCS Cryostat$() tunes a conductor until its critical temperature matches the real one and certifies it with field to spare at its operating temperature: $(item)NbTi Wire$() (9.2 K), $(item)Nb₃Sn Strand$() (18 K) and $(item)REBCO Tape$() (92 K, run under liquid nitrogen). The Metamaterial Weaver winds them into Superconducting Coils, two, three and four at a time.",
     "title": "BCS Cryostat"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Below a certain temperature some metals carry electricity with no resistance at all, because their electrons pair up and move together without bumping into anything.",
+   "like": "Dancers pairing up and moving across a crowded floor without bumping anyone, where people alone would keep colliding.",
+   "breaks": "However, dancers pair up by choice. Electrons pair through tiny vibrations of the metal around them, and warmth breaks the pairs apart, which is why it only works when very cold."
+  }
  },
  "physics/r1400_channels": {
   "title": "Information Channels",
@@ -50808,7 +51084,12 @@
     "text": "C = B·log₂(1 + S/N), with P_r = P_t·G_t·G_r·(λ/4πd)². The $(thing)Deep Space Transceiver$() must carry the rate the job asks across the distance: a bigger dish, more power, a higher frequency and a colder receiver all help; wider bandwidth lets in more noise. Other machines running nearby add noise too. A link to Titan's distance makes a $(item)Deep Space Relay$().",
     "title": "Deep Space Transceiver"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Any connection can only carry so much information each second, and that limit depends on how wide the signal is and how loud it is compared with the noise.",
+   "like": "Talking across a noisy room: you can say more if you speak louder or the room is quieter, and less as you walk further away.",
+   "breaks": "However, you can always shout louder. Far in space the signal fades so much that only bigger dishes, colder receivers and slower talking get any message through."
+  }
  },
  "physics/r1400_fibre": {
   "title": "Fibre Optics",
@@ -50832,7 +51113,12 @@
     "text": "Interface Ports either side of the controller.",
     "multiblock": "fibre_draw_tower"
    }
-  ]
+  ],
+  "plain": {
+   "line": "An optical fibre is a glass thread that carries light along it by bouncing it off its own walls, and a thin enough core lets light take only one path.",
+   "like": "Shouting down a long pipe: the sound stays inside and travels far.",
+   "breaks": "However, sound in a pipe spreads and echoes. In a single mode fibre the core is so thin that only one way through fits, so the pulses stay sharp over many kilometres."
+  }
  },
  "operation/helium_liquefier": {
   "title": "Helium Liquefier",
@@ -50945,7 +51231,12 @@
     "text": "K = Yσ√(πa); a_c = (K_Ic/Yσ)²/π; da/dN = C·ΔK^m. The $(thing)Fracture Bench$() rates a part for the cycles it survives from the worst flaw inspection could miss. A wall whose critical crack is longer than it is thick leaks before it breaks: Nickel Plated Iron and iron certified so become eight $(item)Pressure Vessel Walls$(), far cheaper than by hand.",
     "title": "Fracture Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Every real part has tiny cracks. Each time it is loaded the crack grows a little, until one day it is long enough to snap the part in an instant.",
+   "like": "Bend a paperclip back and forth: nothing seems to happen for a while, then it suddenly breaks.",
+   "breaks": "However, a paperclip is bent far past its limit. Real parts carry much smaller loads, so their cracks take millions of loads to grow, and engineers calculate exactly how many before replacing the part."
+  }
  },
  "engineering/r1400_creep": {
   "title": "Creep and Superalloys",
@@ -50977,7 +51268,12 @@
     "text": "Interface Ports either side of the controller.",
     "multiblock": "bridgman_furnace"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Hot enough, metal slowly stretches under a steady load, even one it could hold forever when cold. This is creep, and it limits how hot an engine can run.",
+   "like": "Candle wax on a warm day: a candle left leaning slowly droops, even though nothing is pushing hard on it.",
+   "breaks": "However, wax droops in hours. A jet turbine blade, grown as one single crystal of a special alloy, runs glowing hot for years before it stretches too much."
+  }
  },
  "engineering/r1400_rsfq": {
   "title": "Superconducting Logic",
@@ -50995,7 +51291,12 @@
     "text": "E = I_c·Φ₀; W = P·(T_h − T_b)/(η·T_b); γ = I_cΦ₀/2πkT. The Doping Furnace lays down a $(item)Josephson Wafer$(); the $(thing)Josephson Logic Bench$() clocks it into an $(item)RSFQ Logic Core$(): stable (γ over 500), and cheap to keep cold (under 60 mW at the wall). RSFQ cores drive qubits for a cheaper Error Correction Lattice.",
     "title": "Josephson Logic Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "In a superconducting computer, a bit is a single tiny pulse of magnetism passing through a circuit, which switches far faster and with far less energy than a normal transistor.",
+   "like": "Instead of flipping a heavy light switch, the computer sends a single quick tap down the line.",
+   "breaks": "However, a light switch works at room temperature. These circuits only work a few degrees above absolute zero, and keeping them that cold costs hundreds of times more energy than the chip itself uses."
+  }
  },
  "engineering/r1400_storage": {
   "title": "Magnetic Storage",
@@ -51013,7 +51314,12 @@
     "text": "t = τ₀·e^(K_uV/kT); μ₀H_K = 2K_u/M_s·(1 − T/T_C). The $(thing)Media Sputter Chamber$() coats glass from a $(item)Sputter Target$(): small grains for density, tall enough to keep their bits ten years, and a write temperature near the Curie point, where the head's 2.4 T can switch them. $(item)Magnetic Archive Platters$() make a cheaper Holographic Matrix.",
     "title": "Media Sputter Chamber"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A hard drive stores each bit as a tiny patch of magnetic grains pointing one way or the other. Smaller grains hold more data, but are easier for heat to flip at random.",
+   "like": "A field of tiny compass needles: the smaller they are, the more you fit, but the more a passing breeze turns them.",
+   "breaks": "However, compass needles point at the Earth. These grains have no outside field to follow, and the hardest magnetic material is so stiff that a laser must heat each spot before it can be written."
+  }
  },
  "engineering/r1400_pid": {
   "title": "Control Engineering",
@@ -51030,7 +51336,12 @@
     "text": "ω_n = √(K·K_i/τ); ζ = (1 + K·K_p)/(2√(τK·K_i)); overshoot e^(−πζ/√(1−ζ²)). On the $(thing)PID Bench$(), tune a loop to overshoot under 10% and settle within 3 s, and it is burned into a $(item)PID Governor Core$(): two of them make a cheaper Phase Locked Stabiliser.",
     "title": "PID Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A controller keeps something at a target by pushing back on the error: harder when it is far off, and steadily if it stays off.",
+   "like": "Steering a car to stay in your lane: you turn more the further you drift, and you correct for a steady crosswind.",
+   "breaks": "However, a driver can think ahead and see the road. A simple controller only reacts to the error it measures, and if it reacts too strongly it overshoots and wobbles back and forth."
+  }
  },
  "engineering/r1400_reliability": {
   "title": "Reliability Engineering",
@@ -51047,7 +51358,12 @@
     "text": "R = e^(−λt); 1 − (1 − R)ⁿ; 3R² − 2R³. The $(thing)Reliability Ledger$() arranges RSFQ cores until the controller survives ten years with three nines: a $(item)Triple Modular Controller$(), the heart of a cheaper Von Neumann Probe, which must not fail between the stars.",
     "title": "Reliability Ledger"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Parts fail at random, so the chance a whole system still works can be calculated, and raised by keeping spare copies that take over or vote.",
+   "like": "Three friends checking the same sum and going with the answer two of them agree on: one mistake does not matter.",
+   "breaks": "However, friends can all make the same mistake. Voting only helps while each copy is likely to work: if each is very unreliable, three of them agree on the wrong answer more often than one alone."
+  }
  },
  "world/nickel_laterite": {
   "title": "Nickel Laterite",
@@ -51230,7 +51546,12 @@
     "title": "The Hubble tension",
     "text": "The early universe (Planck, 67.4 ± 0.5) and the distance ladder (Cepheids and supernovae, 73.0 ± 1.0) disagree on H₀ by about five standard deviations. The Orrery shows the gap; the Hubble Constant Plate accepts any value between them. Recent survey results also hint that dark energy may change with time (w not exactly −1): unsettled."
    }
-  ]
+  ],
+  "plain": {
+   "line": "The whole universe is expanding, and how fast depends on what it contains. One equation, Friedmann's, uses that mix to give the universe's age and future.",
+   "like": "Raisins in rising bread: as the dough grows, every raisin moves away from every other.",
+   "breaks": "However, the bread rises into the oven around it. The universe has nothing outside it, and it is space itself that stretches, now faster and faster because of dark energy."
+  }
  },
  "nuclear/r1400_isochron": {
   "title": "Isochron Dating",
@@ -51248,7 +51569,12 @@
     "text": "⁸⁷Sr/⁸⁶Sr = (⁸⁷Sr/⁸⁶Sr)₀ + (⁸⁷Rb/⁸⁶Sr)(e^(λt) − 1). On the $(thing)Isochron Bench$(), date $(item)Lepidolite Pegmatite$() from mountain veins against a Dated Stromatolite: enough fractions, spread and counting for an age within half a million years, with an MSWD under 2, makes an $(item)Isochron Record$(), deep time for a cheaper Living Archive.",
     "title": "Isochron Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Rocks can be dated because some atoms slowly turn into others at a steady rate. Comparing several minerals from one rock lets you read the age without knowing how it started.",
+   "like": "Several sand timers started together but filled differently: by comparing them all, you can tell how long they have been running.",
+   "breaks": "However, a sand timer runs for minutes. Rubidium turns into strontium so slowly that half of it takes about fifty billion years, so the timer works for the oldest rocks there are."
+  }
  },
  "biology/r1400_gene_pool": {
   "title": "Genetic Drift",
@@ -51265,7 +51591,12 @@
     "text": "H_t = H₀(1 − 1/2N)^t; F = 1/(1 + 4Nm); viability e^(−BF). On the $(thing)Gene Pool Bench$(), size the herd and its migrants so that after a hundred generations it keeps 95% of its variation and 80% of its fitness: a $(item)Diverse Gene Pool$(), which with an Isochron Record makes a Living Archive for less.",
     "title": "Gene Pool Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "In a small population, chance decides which genes are passed on, so variety is slowly lost and relatives end up breeding with each other.",
+   "like": "A bag of mixed marbles: draw a few to start a new bag, again and again, and soon every marble is the same colour.",
+   "breaks": "However, marbles do not have offspring. Bringing in a few animals from another herd each generation adds new colours back, which is how real conservation breeding keeps a species healthy."
+  }
  },
  "biology/r1400_oxygen": {
   "title": "Oxygen Transport",
@@ -51282,7 +51613,12 @@
     "text": "S = Pⁿ/(P₅₀ⁿ + Pⁿ); P₅₀ shifts by 10^(Bohr·ΔpH). On the $(thing)Oxygen Binding Bench$(), tune a carrier to load in thin air (55 mmHg) and give up 60% of its load in working tissue (25 mmHg, pH 7.2): $(item)Synthetic Haemoglobin$(). A Meganeura revived with it, in its Carboniferous air, makes three capsules from one genome.",
     "title": "Oxygen Binding Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Haemoglobin in your blood grabs oxygen in the lungs and lets it go in the muscles, and its four parts help each other so it fills up and empties more easily.",
+   "like": "A team loading a delivery van: once one person starts lifting boxes in, the others join faster, and the same when unloading.",
+   "breaks": "However, a van is told where to unload. Haemoglobin simply lets go more oxygen where there is less of it and where hard working muscle has made the blood slightly acidic."
+  }
  },
  "world/lepidolite_pegmatite": {
   "title": "Lepidolite Pegmatite",
@@ -51411,7 +51747,12 @@
     "text": "d = a/√(h² + k² + l²); λ = 2d·sin θ. Body centred lattices show only h + k + l even; face centred only unmixed indices; diamond also drops h + k + l = 4n + 2. On the $(thing)Laue Goniometer$(), find which planes of silicon (a = 5.431 Å) reflect copper Kα at 2θ = 56.1°: that indexes a reference, an $(item)Indexed Crystal$(), and one turns into three Symmetry Crystals.",
     "title": "Laue Goniometer"
    }
-  ]
+  ],
+  "plain": {
+   "line": "X rays bounce off the neat layers of atoms in a crystal, and each angle where they bounce strongly reveals how far apart one set of layers is.",
+   "like": "Light glinting off the rows of seats in a stadium from just the right angles.",
+   "breaks": "However, you can see the seats. Atoms are far too small to see, so the pattern of glints is the only way to work out how they are arranged."
+  }
  },
  "nuclear/r1400_plasma_probe": {
   "title": "Plasma Diagnostics",
@@ -51428,7 +51769,12 @@
     "text": "λ_D ≈ 7434·√(T_eV/n) m; f_p ≈ 8.98·√n Hz; N_D = (4π/3)·n·λ_D³. On the $(thing)Langmuir Probe Station$(), set a plasma whose Debye length is 10 to 100 µm, with at least ten thousand particles in each Debye sphere and a plasma frequency over 10 GHz: it lays down a $(item)Debye Sheath Film$(), which stands in for the graphite of a Fusion Blanket Tile, four at a time.",
     "title": "Langmuir Probe Station"
    }
-  ]
+  ],
+  "plain": {
+   "line": "A plasma is a gas so hot its atoms have split into charged particles, which shield each other and act together as one body.",
+   "like": "A crowd where everyone keeps their own small space and pushes back together if anyone tries to push in.",
+   "breaks": "However, people in a crowd choose to move. In a plasma the charges are pushed only by each other's electric fields, and a thin wire dipped in can measure how hot and dense the crowd is."
+  }
  },
  "biology/r1400_membranes": {
   "title": "Excitable Membranes",
@@ -51445,7 +51791,12 @@
     "text": "V = (kT/q)·ln((P_K[K]o + P_Na[Na]o + P_Cl[Cl]i)/(P_K[K]i + P_Na[Na]i + P_Cl[Cl]o)). On the $(thing)Ion Channel Bench$(), open sodium channels until a neuron rests between −62 and −52 mV, just under its threshold, and myelinate an axon thick enough for 30 m/s: a $(item)Pacemaker Neuron$(). Two of them, with Quantum Dots and Theodolite Lenses, make two Photonic Neurons without the Lattice Seeds or Cherenkov Quartz.",
     "title": "Ion Channel Bench"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Every nerve cell holds a small voltage across its outer skin, set by which charged particles can slip through its channels, and opening more channels makes it fire.",
+   "like": "A battery made of salt water, where tiny gates decide which way the charge flows.",
+   "breaks": "However, a battery runs flat. Living cells keep pumping the particles back, so the voltage stays ready to fire over and over again."
+  }
  },
  "operation/laue_goniometer": {
   "title": "Laue Goniometer",
@@ -51540,7 +51891,12 @@
     "title": "Bleaching",
     "text": "Reef corals live a degree or two below the temperature that kills them. Above the warmest month's mean plus one degree, every week counts: four degree heating weeks and the corals expel their algae and turn white; eight, and most die. The Mesocosm's weeks of heat are fixed by the job; only the water temperature is yours."
    }
-  ]
+  ],
+  "plain": {
+   "line": "Islands and reefs hold a balance of species: new ones keep arriving and some die out. Big, close islands keep more; water that is too warm can wipe a reef out.",
+   "like": "A busy café, where people keep coming in and leaving: a big café near the station is always fuller.",
+   "breaks": "However, a café can turn up the air conditioning. Corals cannot cool their water, and a few weeks too warm makes them lose the algae that feed them."
+  }
  },
  "world/ooid_sand": {
   "title": "Ooid Sand",
@@ -51602,7 +51958,12 @@
     "title": "Only the ratio matters",
     "text": "A steady Kalman filter's gain depends only on how the process noise compares with the sensor noise, Q/R. Get the ratio right and the filter is optimal whatever the scale you told it; get it wrong and it either chases the noise or lags behind the truth."
    }
-  ]
+  ],
+  "plain": {
+   "line": "A Kalman filter keeps track of where something is by blending its own prediction with each new noisy measurement, trusting whichever is more reliable.",
+   "like": "Walking in the dark, you count your steps to guess where you are, and correct the guess whenever you touch a familiar wall.",
+   "breaks": "However, you know how good your counting is. The filter has to be told how noisy its world and its sensors are, and if it is told wrong it trusts the wrong one."
+  }
  },
  "engineering/r1400_lloyd": {
   "title": "Limits of Computation",
@@ -51619,7 +51980,12 @@
     "text": "N ≤ 2mc²/(πħ); bits ≈ (4/3)aT³V/(k ln 2) ≤ 2πRmc/(ħ ln 2); R > 2Gm/c²; Landauer heat ≤ σT⁴·4πR². In the $(thing)Lloyd Engine$(), find a mass, size and temperature that run over 3×10⁵⁰ operations a second on over 3×10³⁰ bits without exceeding its own mass in radiation, collapsing, or cooking: almost nothing may be erased. That is an $(item)Ultimate Laptop Core$(); with six Neutronium it makes three Computronium Ingots.",
     "title": "Lloyd Engine"
    }
-  ]
+  ],
+  "plain": {
+   "line": "Physics sets a hard upper limit on how fast any computer can be and how much it can remember, set by its mass and its size.",
+   "like": "Like a speed limit for thinking: no matter how good the engine, a car of a given weight can only go so fast.",
+   "breaks": "However, a car's speed limit is a rule you could break. This one is set by quantum mechanics and gravity, and the computer that reaches it would be a ball of matter hotter than the Sun's core."
+  }
  },
  "operation/kalman_filter_bench": {
   "title": "Kalman Filter Bench",
@@ -51779,7 +52145,12 @@
     "text": "v_e = √(2qV/m). An ion engine burns nothing: it ionises xenon (freed here from a clathrate) and pulls the ions out through charged grids, ten times faster than any flame. The thrust is a breath, so an ion stage takes months to do what a chemical one does in minutes. The $(item)Ion Thruster Grid$() is that engine's heart.",
     "title": "Electric Propulsion"
    }
-  ]
+  ],
+  "plain": {
+   "line": "An ion engine uses electricity to throw charged atoms out of the back of a spacecraft very fast, pushing it forward very gently for a very long time.",
+   "like": "Pushing a rowing boat by throwing tennis balls off the back, one after another, very fast.",
+   "breaks": "However, tennis balls would run out quickly. An ion engine uses so little fuel that it can push for years, slowly reaching speeds no chemical rocket could."
+  }
  },
  "cosmic/r1400_antimatter_propulsion": {
   "title": "Antimatter Propulsion",
@@ -51795,22 +52166,11 @@
     "text": "E = 2mc². Antiprotons meeting hydrogen turn their whole mass into energy, as charged pions leaving near the speed of light, which a magnetic nozzle turns into thrust: a specific impulse in the tens of thousands of seconds, and a gram of antiprotons holds the energy of forty kilotons. The $(item)Antimatter Injector$() meters them in.",
     "title": "Antimatter Propulsion"
    }
-  ]
- },
- "geography/r1400_geodesy": {
-  "title": "Geodesy",
-  "icon": "theoreticalsciences:theodolite_lens",
-  "category": "geography",
-  "research": "geodesy",
-  "pages": [
-   {
-    "type": "spotlight",
-    "items": [
-     "theoreticalsciences:theodolite_lens"
-    ],
-    "text": "c = a·sin γ/sin α. Measure one baseline and two angles and every other distance follows: countries were mapped this way, triangle by triangle. Geodesy measures the planet itself. It unlocks the $(item)Theodolite Lens$(), the Geoid Model and the Geodetic Surveyor.",
-    "title": "Geodesy"
-   }
-  ]
+  ],
+  "plain": {
+   "line": "When matter meets antimatter, both vanish completely into energy, the most energy any fuel could ever give, which could push a spacecraft extremely fast.",
+   "like": "A fire that burns not just the wood but every last bit of it, leaving no ash at all.",
+   "breaks": "However, firewood is easy to get. Antimatter is so hard to make and store that all of it ever made by humans would barely warm a cup of tea."
+  }
  }
 }
