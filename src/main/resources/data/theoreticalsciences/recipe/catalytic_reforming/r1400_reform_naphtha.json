@@ -1,0 +1,48 @@
+{
+  "type": "theoreticalsciences:catalytic_reforming",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:platinum_reforming_catalyst",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:naphtha",
+      "amount": 1000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:btx_reformate",
+      "amount": 800
+    },
+    {
+      "id": "theoreticalsciences:hydrogen",
+      "amount": 600
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:hydroprocessing",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "RON",
+        "min": 98,
+        "max": 1000000000.0
+      },
+      {
+        "q": "yl",
+        "min": 0.85,
+        "max": 1.0
+      }
+    ]
+  },
+  "catalysts": [
+    {
+      "item": "theoreticalsciences:platinum_reforming_catalyst"
+    }
+  ]
+}

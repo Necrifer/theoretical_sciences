@@ -59070,5 +59070,709 @@
     "text": "$(thing)Equations$()$(br)k_T = (kT/h)e^(−ΔG‡/RT)$(br)f = 1/(2/k_L + 2/k_T)$(br)direction = 1 − e^(−ΔG/RT)"
    }
   ]
+ },
+ "chemistry/r1400_crude_assay": {
+  "title": "Crude Assay and Coking",
+  "icon": "theoreticalsciences:delayed_coker",
+  "category": "chemistry",
+  "research": "heavy_oil_upgrading",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fractionation_spire",
+     "theoreticalsciences:sour_naphtha_cell",
+     "theoreticalsciences:gas_oil_cell",
+     "theoreticalsciences:vacuum_residue_cell"
+    ],
+    "text": "API = 141.5/SG − 131.5. The $(thing)Fractionation Spire$() splits crude oil into $(item)Sour Naphtha$(), $(item)Gas Oil$() and $(item)Vacuum Residue$().",
+    "title": "Crude assay"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:delayed_coker",
+     "theoreticalsciences:petroleum_coke",
+     "theoreticalsciences:needle_coke"
+    ],
+    "text": "The $(thing)Delayed Coker$() cracks residue and Bitumen to gas oil and $(item)Petroleum Coke$(): keep the drums at low pressure for liquids. From gas oil, slow cycles under pressure at the right heat grow $(item)Needle Coke$(), which the Sintering Press makes into Graphite Moderator. Petroleum Coke burns with steam and oxygen in the Chemical Reactor to Syngas.",
+    "title": "Delayed Coker"
+   }
+  ]
+ },
+ "chemistry/r1400_hydroprocessing": {
+  "title": "Hydrotreating and Reforming",
+  "icon": "theoreticalsciences:catalytic_reformer",
+  "category": "chemistry",
+  "research": "hydroprocessing",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:hydrotreater",
+     "theoreticalsciences:cobalt_molybdenum_catalyst",
+     "theoreticalsciences:naphtha_cell"
+    ],
+    "text": "S = S₀·e^(−kτ). The $(thing)Hydrotreater$() takes Sour Naphtha below one part per million of sulfur: $(item)Naphtha$(), and Hydrogen Sulfide for the Claus Unit.",
+    "title": "Hydrotreater"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:catalytic_reformer",
+     "theoreticalsciences:platinum_reforming_catalyst",
+     "theoreticalsciences:btx_reformate_cell"
+    ],
+    "text": "K = e^(−(ΔH − TΔS)/RT). The $(thing)Catalytic Reformer$() turns Naphtha into $(item)BTX Reformate$() of octane 98 and more, and hydrogen. Low pressure favours the aromatics but lays coke on the platinum. The Fractionation Spire splits the reformate into Benzene.",
+    "title": "Catalytic Reformer"
+   }
+  ]
+ },
+ "chemistry/r1400_sulfur_recovery": {
+  "title": "Sulfur Recovery",
+  "icon": "theoreticalsciences:sulfur_dust",
+  "category": "chemistry",
+  "research": "sulfur_recovery",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:claus_unit",
+     "theoreticalsciences:sulfur_dust"
+    ],
+    "text": "2H₂S + SO₂ → 3S + 2H₂O. In the $(thing)Claus Unit$() burn exactly a third of the Hydrogen Sulfide, keep the burner hot and the beds just above 490 K: 97% of the sulfur comes out as $(item)Sulfur$(), which the Chemical Reactor burns to sulfur dioxide for sulfuric acid.",
+    "title": "Claus Unit"
+   }
+  ]
+ },
+ "chemistry/r1400_fcc": {
+  "title": "Fluid Catalytic Cracking",
+  "icon": "theoreticalsciences:cracking_tower",
+  "category": "chemistry",
+  "research": "fluid_catalytic_cracking",
+  "pages": [
+   {
+    "type": "text",
+    "text": "ΔT = (c·H − q)/(r·c_p). The $(thing)Cracking Tower$() gains a catalyst to oil setting: crack Gas Oil over zeolite at a riser near 808 K, with the regenerator 960 to 1010 K from the coke it burns, for Naphtha and Propylene."
+   }
+  ]
+ },
+ "chemistry/r1400_petroleum_geology": {
+  "title": "Petroleum Geology",
+  "icon": "theoreticalsciences:source_rock_core",
+  "category": "chemistry",
+  "research": "petroleum_geology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:deep_drilling_rig",
+     "theoreticalsciences:source_rock_core"
+    ],
+    "text": "TTI = Σ Δt·2ⁿ. The $(thing)Deep Drilling Rig$() reads how cooked the rock is at depth: drill where a hundred million years puts it in the oil window, TTI 15 to 160, for $(item)Source Rock Cores$(), which the Delayed Coker retorts to crude oil.",
+    "title": "The oil window"
+   },
+   {
+    "type": "text",
+    "text": "Q = k·A·Δp/(μL). In the Overworld: Oil Shale in badlands, Tar Sand in deserts, Asphalt Lakes in savannas and swamps, and Methane Clathrate at cold seeps on the deep ocean floor. In the Planetary Interior, the Overcooked Depths' shale gives only gas."
+   }
+  ]
+ },
+ "operation/hydrotreater": {
+  "title": "Hydrotreater",
+  "icon": "theoreticalsciences:hydrotreater",
+  "category": "operation",
+  "research": "hydroprocessing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Strip the sulfur below what the recipe allows."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Bed temperature, Hydrogen pressure, Space velocity.$(br2)$(thing)Disturbance$(): feed swings: the sulfur left drifts by 3%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 690 K the catalyst cokes (wear); under 25 bar it stops.$(br2)$(thing)Rate$(): a higher space velocity, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)k = A·e^(−Eₐ/RT)·√p$(br)S = S₀·e^(−k/LHSV)"
+   }
+  ]
+ },
+ "operation/catalytic_reformer": {
+  "title": "Catalytic Reformer",
+  "icon": "theoreticalsciences:catalytic_reformer",
+  "category": "operation",
+  "research": "hydroprocessing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Make high octane reformate without losing the liquid to gas or the platinum to coke."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Reactor inlet, Pressure, Hydrogen to oil.$(br2)$(thing)Disturbance$(): catalyst ageing: the octane falls by 0.5%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): coke over 2.5 fouls the platinum (wear).$(br2)$(thing)Rate$(): hotter, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)K = e^(−(ΔH − TΔS)/RT)$(br)aromatics = K/p³/(1 + K/p³)·(1 − e^(−k))"
+   }
+  ]
+ },
+ "operation/claus_unit": {
+  "title": "Claus Unit",
+  "icon": "theoreticalsciences:claus_unit",
+  "category": "operation",
+  "research": "sulfur_recovery",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Recover the sulfur: a third burned, the beds just above its dew point."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Share burned, Burner temperature, Bed temperature.$(br2)$(thing)Disturbance$(): feed gas swings: the recovery drifts by 0.3%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 1120 K the flame goes out; over 1550 K the lining spalls; under 490 K sulfur floods the beds (wear).$(br2)$(thing)Rate$(): a hotter burner, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)H₂S : SO₂ = (1 − f)/f$(br)recovery = (1 − (1 − X_flame)(1 − X_bed)³)"
+   }
+  ]
+ },
+ "operation/delayed_coker": {
+  "title": "Delayed Coker",
+  "icon": "theoreticalsciences:delayed_coker",
+  "category": "operation",
+  "research": "heavy_oil_upgrading",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Crack the heavy oil: liquids, coke or needles, as the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Furnace outlet, Drum pressure, Drum cycle.$(br2)$(thing)Disturbance$(): feed swings: the coke yield drifts by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 785 K coke grows in the tubes (wear); under 715 K it stops.$(br2)$(thing)Rate$(): shorter cycles, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)API = 141.5/SG − 131.5$(br)coke = 1.6 × CCR"
+   }
+  ]
+ },
+ "world/oil_country": {
+  "title": "Oil Country",
+  "icon": "theoreticalsciences:kerogen_shale",
+  "category": "world",
+  "research": "petroleum_geology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:kerogen_shale",
+     "theoreticalsciences:tar_sand"
+    ],
+    "text": "In the Overworld: $(item)Oil Shale$() in veins under badlands, its kerogen never cooked; $(item)Tar Sand$() near the surface in deserts and badlands, which hot water parts into Bitumen and sand in the Chemical Reactor.",
+    "title": "Oil shale and tar sand"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bitumen_cell",
+     "theoreticalsciences:methane_clathrate"
+    ],
+    "text": "$(item)Asphalt Lakes$() of Bitumen, ringed with Tar Sand, lie in savannas and swamps, like Pitch Lake in Trinidad. On the deep ocean floor, cold seeps leave $(item)Methane Clathrate$(), which melts to methane in the Chemical Reactor.",
+    "title": "Lakes and seeps"
+   }
+  ]
+ },
+ "world/overcooked_depths": {
+  "title": "Overcooked Depths",
+  "icon": "theoreticalsciences:overmature_shale",
+  "category": "world",
+  "research": "petroleum_geology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:overmature_shale"
+    ],
+    "text": "In the Planetary Interior, where the crust's source rock was buried far past the oil window: every floor is $(item)Overmature Shale$(), its oil cracked long ago to gas. The Delayed Coker retorts it to methane.",
+    "title": "Overcooked Depths"
+   }
+  ]
+ },
+ "physics/r1400_refrigeration": {
+  "title": "Refrigeration Cycles",
+  "icon": "theoreticalsciences:helium_liquefier",
+  "category": "physics",
+  "research": "refrigeration_cycles",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:helium_liquefier",
+     "theoreticalsciences:liquid_nitrogen_cell",
+     "theoreticalsciences:liquid_helium_cell"
+    ],
+    "text": "COP = T_c/(T_h − T_c). The $(thing)Helium Liquefier$() (253 blocks) liquefies nitrogen, then helium, then pumps it below the λ point into Superfluid Helium. Pre-cool the gas below its inversion temperature (helium 43 K) before the valve. Heat goes to the surroundings: on Titan, at 94 K, each watt of cold costs a third of the work and the machine runs three times as fast.",
+    "title": "Helium Liquefier"
+   },
+   {
+    "type": "multiblock",
+    "name": "Helium Liquefier",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "helium_liquefier"
+   }
+  ]
+ },
+ "physics/r1400_bcs": {
+  "title": "Superconductivity Theory",
+  "icon": "theoreticalsciences:bcs_cryostat",
+  "category": "physics",
+  "research": "superconductivity_theory",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bcs_cryostat",
+     "theoreticalsciences:nbti_wire",
+     "theoreticalsciences:nb3sn_strand",
+     "theoreticalsciences:rebco_tape"
+    ],
+    "text": "T_c = 1.13·Θ_D·e^(−1/λ). The $(thing)BCS Cryostat$() tunes a conductor until its critical temperature matches the real one and certifies it with field to spare at its operating temperature: $(item)NbTi Wire$() (9.2 K), $(item)Nb₃Sn Strand$() (18 K) and $(item)REBCO Tape$() (92 K, run under liquid nitrogen). The Metamaterial Weaver winds them into Superconducting Coils, two, three and four at a time.",
+    "title": "BCS Cryostat"
+   }
+  ]
+ },
+ "physics/r1400_channels": {
+  "title": "Information Channels",
+  "icon": "theoreticalsciences:deep_space_transceiver",
+  "category": "physics",
+  "research": "information_channels",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:deep_space_transceiver",
+     "theoreticalsciences:deep_space_relay"
+    ],
+    "text": "C = B·log₂(1 + S/N), with P_r = P_t·G_t·G_r·(λ/4πd)². The $(thing)Deep Space Transceiver$() must carry the rate the job asks across the distance: a bigger dish, more power, a higher frequency and a colder receiver all help; wider bandwidth lets in more noise. Other machines running nearby add noise too. A link to Titan's distance makes a $(item)Deep Space Relay$().",
+    "title": "Deep Space Transceiver"
+   }
+  ]
+ },
+ "physics/r1400_fibre": {
+  "title": "Fibre Optics",
+  "icon": "theoreticalsciences:single_mode_fibre_spool",
+  "category": "physics",
+  "research": "fibre_optics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fibre_draw_tower",
+     "theoreticalsciences:doped_silica_preform",
+     "theoreticalsciences:single_mode_fibre_spool"
+    ],
+    "text": "V = 2πa·NA/λ < 2.405. The Chemical Reactor deposits doped glass into a $(item)Doped Silica Preform$(); the $(thing)Fibre Draw Tower$() (212 blocks) pulls it into $(item)Single Mode Fibre$(): thin core, V between 1.6 and 2.405, loss under 0.2 dB/km near 1.55 µm, drawn no faster than defects allow. The Metamaterial Weaver makes Photonic Interconnects for a cheaper Photonic Processor.",
+    "title": "Fibre Draw Tower"
+   },
+   {
+    "type": "multiblock",
+    "name": "Fibre Draw Tower",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "fibre_draw_tower"
+   }
+  ]
+ },
+ "operation/helium_liquefier": {
+  "title": "Helium Liquefier",
+  "icon": "theoreticalsciences:helium_liquefier",
+  "category": "operation",
+  "research": "refrigeration_cycles",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Liquefy as much as the recipe asks, for no more work than it allows."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Pre-cooled to, High pressure, Heat rejected at.$(br2)$(thing)Disturbance$(): compressor wear: the liquid fraction falls by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): rejecting below the surroundings stops it; liquid in the expanders wears it.$(br2)$(thing)Rate$(): more liquid for less work, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)COP = T_c/(T_h − T_c)$(br)W = 1/(η·COP)$(br)y ∝ (1 − T/T_inv)"
+   }
+  ]
+ },
+ "operation/bcs_cryostat": {
+  "title": "BCS Cryostat",
+  "icon": "theoreticalsciences:bcs_cryostat",
+  "category": "operation",
+  "research": "superconductivity_theory",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Tune the conductor's T_c into the recipe's range, with field to spare."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Debye temperature, Coupling, Isotope mass, Operating temperature.$(br2)$(thing)Disturbance$(): thermometer drift: T_c reads 0.5%·d high."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): warmer than T_c stops it; under 1.5 K wears it.$(br2)$(thing)Rate$(): a colder sample, slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)T_c = 1.13·Θ·M^(−1/2)·e^(−1/λ)$(br)H_c(T) = H_c(0)(1 − (T/T_c)²)"
+   }
+  ]
+ },
+ "operation/deep_space_transceiver": {
+  "title": "Deep Space Transceiver",
+  "icon": "theoreticalsciences:deep_space_transceiver",
+  "category": "operation",
+  "research": "information_channels",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Carry the rate needed across the distance."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Dish diameter, Transmit power, Frequency, Receiver temperature, Bandwidth.$(br2)$(thing)Disturbance$(): pointing jitter: the capacity drops by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over 20 kW wears the amplifier; under 2.7 K stops it.$(br2)$(thing)Rate$(): a faster link, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)P_r = P_t·G_t·G_r·(λ/4πd)²$(br)N = kTB$(br)C = B·log₂(1 + S/N)"
+   }
+  ]
+ },
+ "operation/fibre_draw_tower": {
+  "title": "Fibre Draw Tower",
+  "icon": "theoreticalsciences:fibre_draw_tower",
+  "category": "operation",
+  "research": "fibre_optics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Draw fibre with the modes and loss the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Furnace temperature, Draw speed, Core radius, Design wavelength, Index step.$(br2)$(thing)Disturbance$(): furnace drift: the loss rises by 2%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 2050 K snaps; over 2350 K sags (wear).$(br2)$(thing)Rate$(): a faster draw, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)V = 2πa·NA/λ$(br)α = 0.12(1.55/λ)⁴ + ..."
+   }
+  ]
+ },
+ "engineering/r1400_fracture": {
+  "title": "Fracture Mechanics",
+  "icon": "theoreticalsciences:fracture_bench",
+  "category": "engineering",
+  "research": "fracture_mechanics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fracture_bench",
+     "theoreticalsciences:pressure_vessel_wall"
+    ],
+    "text": "K = Yσ√(πa); a_c = (K_Ic/Yσ)²/π; da/dN = C·ΔK^m. The $(thing)Fracture Bench$() rates a part for the cycles it survives from the worst flaw inspection could miss. A wall whose critical crack is longer than it is thick leaks before it breaks: Nickel Plated Iron and iron certified so become eight $(item)Pressure Vessel Walls$(), far cheaper than by hand.",
+    "title": "Fracture Bench"
+   }
+  ]
+ },
+ "engineering/r1400_creep": {
+  "title": "Creep and Superalloys",
+  "icon": "theoreticalsciences:single_crystal_turbine_blade",
+  "category": "engineering",
+  "research": "creep_and_superalloys",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:nickel_superalloy",
+     "theoreticalsciences:nickel_laterite"
+    ],
+    "text": "$(item)Nickel Superalloy$() is alloyed in the Phase Diagram Kiln from Nickel Plated Iron and Meteoric Iron. Nickel also comes from $(item)Nickel Laterite$(), jungle soil leached with sulfuric acid in the Chemical Reactor.",
+    "title": "Superalloy"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bridgman_furnace",
+     "theoreticalsciences:single_crystal_turbine_blade"
+    ],
+    "text": "λ₁ ∝ G^(−1/2)·v^(−1/4); t_r = 10^(P/T − 20). The $(thing)Bridgman Furnace$() (368 blocks) grows a $(item)Single Crystal Turbine Blade$(): keep G/v above the alloy's limit or stray grains form; a steeper gradient and faster withdrawal give finer dendrites and a longer creep life. Two blades make a cheaper Nuclear Thermal Core.",
+    "title": "Bridgman Furnace"
+   },
+   {
+    "type": "multiblock",
+    "name": "Bridgman Furnace",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "bridgman_furnace"
+   }
+  ]
+ },
+ "engineering/r1400_rsfq": {
+  "title": "Superconducting Logic",
+  "icon": "theoreticalsciences:rsfq_logic_core",
+  "category": "engineering",
+  "research": "superconducting_logic",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:josephson_logic_bench",
+     "theoreticalsciences:josephson_wafer",
+     "theoreticalsciences:rsfq_logic_core"
+    ],
+    "text": "E = I_c·Φ₀; W = P·(T_h − T_b)/(η·T_b); γ = I_cΦ₀/2πkT. The Doping Furnace lays down a $(item)Josephson Wafer$(); the $(thing)Josephson Logic Bench$() clocks it into an $(item)RSFQ Logic Core$(): stable (γ over 500), and cheap to keep cold (under 60 mW at the wall). RSFQ cores drive qubits for a cheaper Error Correction Lattice.",
+    "title": "Josephson Logic Bench"
+   }
+  ]
+ },
+ "engineering/r1400_storage": {
+  "title": "Magnetic Storage",
+  "icon": "theoreticalsciences:magnetic_archive_platter",
+  "category": "engineering",
+  "research": "magnetic_storage",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:media_sputter_chamber",
+     "theoreticalsciences:sputter_target",
+     "theoreticalsciences:magnetic_archive_platter"
+    ],
+    "text": "t = τ₀·e^(K_uV/kT); μ₀H_K = 2K_u/M_s·(1 − T/T_C). The $(thing)Media Sputter Chamber$() coats glass from a $(item)Sputter Target$(): small grains for density, tall enough to keep their bits ten years, and a write temperature near the Curie point, where the head's 2.4 T can switch them. $(item)Magnetic Archive Platters$() make a cheaper Holographic Matrix.",
+    "title": "Media Sputter Chamber"
+   }
+  ]
+ },
+ "engineering/r1400_pid": {
+  "title": "Control Engineering",
+  "icon": "theoreticalsciences:pid_governor_core",
+  "category": "engineering",
+  "research": "control_engineering",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:pid_bench",
+     "theoreticalsciences:pid_governor_core"
+    ],
+    "text": "ω_n = √(K·K_i/τ); ζ = (1 + K·K_p)/(2√(τK·K_i)); overshoot e^(−πζ/√(1−ζ²)). On the $(thing)PID Bench$(), tune a loop to overshoot under 10% and settle within 3 s, and it is burned into a $(item)PID Governor Core$(): two of them make a cheaper Phase Locked Stabiliser.",
+    "title": "PID Bench"
+   }
+  ]
+ },
+ "engineering/r1400_reliability": {
+  "title": "Reliability Engineering",
+  "icon": "theoreticalsciences:triple_modular_controller",
+  "category": "engineering",
+  "research": "reliability_engineering",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:reliability_ledger",
+     "theoreticalsciences:triple_modular_controller"
+    ],
+    "text": "R = e^(−λt); 1 − (1 − R)ⁿ; 3R² − 2R³. The $(thing)Reliability Ledger$() arranges RSFQ cores until the controller survives ten years with three nines: a $(item)Triple Modular Controller$(), the heart of a cheaper Von Neumann Probe, which must not fail between the stars.",
+    "title": "Reliability Ledger"
+   }
+  ]
+ },
+ "world/nickel_laterite": {
+  "title": "Nickel Laterite",
+  "icon": "theoreticalsciences:nickel_laterite",
+  "category": "world",
+  "research": "creep_and_superalloys",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:nickel_laterite"
+    ],
+    "text": "In the Overworld's jungles, a few blocks under the surface: $(item)Nickel Laterite$(), soil the rain has leached of all but iron and nickel. The Chemical Reactor leaches it with sulfuric acid to Nickel Sulfate Solution.",
+    "title": "Nickel Laterite"
+   }
+  ]
+ },
+ "operation/fracture_bench": {
+  "title": "Fracture Bench",
+  "icon": "theoreticalsciences:fracture_bench",
+  "category": "operation",
+  "research": "fracture_mechanics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Rate the part for the cycles the recipe asks, and leak before it breaks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Stress range, Starting flaw, Geometry factor.$(br2)$(thing)Disturbance$(): crack gauge drift: the life reads 1%·d short."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): K over K_Ic stops it; over 600 MPa wears the grips.$(br2)$(thing)Rate$(): a harsher test, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)K = Yσ√(πa)$(br)a_c = (K_Ic/Yσ)²/π$(br)N = ∫da/(CΔK^m)"
+   }
+  ]
+ },
+ "operation/bridgman_furnace": {
+  "title": "Bridgman Furnace",
+  "icon": "theoreticalsciences:bridgman_furnace",
+  "category": "operation",
+  "research": "creep_and_superalloys",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Grow a single crystal with the creep life the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Thermal gradient, Withdrawal rate.$(br2)$(thing)Disturbance$(): baffle wear: the dendrites coarsen by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): G/v under the limit stops it; over 12 K/mm wears the mould.$(br2)$(thing)Rate$(): faster withdrawal, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)λ₁ ∝ G^(−1/2)v^(−1/4)$(br)t_r = 10^(P/T − 20)"
+   }
+  ]
+ },
+ "operation/josephson_logic_bench": {
+  "title": "Josephson Logic Bench",
+  "icon": "theoreticalsciences:josephson_logic_bench",
+  "category": "operation",
+  "research": "superconducting_logic",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Clock the chip stably and cheaply enough."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Critical current, Clock, Bath temperature.$(br2)$(thing)Disturbance$(): flux trapping: the wall power rises by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a clock past the gap's limit, or a bath above T_c, stops it.$(br2)$(thing)Rate$(): a faster clock, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)E = I_cΦ₀$(br)W = P(T_h − T_b)/(ηT_b)$(br)γ = I_cΦ₀/2πkT"
+   }
+  ]
+ },
+ "operation/media_sputter_chamber": {
+  "title": "Media Sputter Chamber",
+  "icon": "theoreticalsciences:media_sputter_chamber",
+  "category": "operation",
+  "research": "magnetic_storage",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Lay down media dense enough that keeps its bits and can be written."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Grain size, Film thickness, Write temperature.$(br2)$(thing)Disturbance$(): target erosion: the retention reads 1%·d low."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a switching field over 2.4 T stops it; past the Curie point wears it.$(br2)$(thing)Rate$(): a thinner film, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)t = τ₀e^(K_uV/kT)$(br)μ₀H_K = 2K_u/M_s(1 − T/T_C)"
+   }
+  ]
+ },
+ "operation/pid_bench": {
+  "title": "PID Bench",
+  "icon": "theoreticalsciences:pid_bench",
+  "category": "operation",
+  "research": "control_engineering",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Tune the loop to the overshoot and settling the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Proportional gain, Integral gain.$(br2)$(thing)Disturbance$(): sensor lag: the loop settles 1%·d slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): K_p over 12 wears the actuator.$(br2)$(thing)Rate$(): a loop that settles faster, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)ω_n = √(KK_i/τ)$(br)ζ = (1 + KK_p)/(2√(τKK_i))$(br)M = e^(−πζ/√(1−ζ²))"
+   }
+  ]
+ },
+ "operation/reliability_ledger": {
+  "title": "Reliability Ledger",
+  "icon": "theoreticalsciences:reliability_ledger",
+  "category": "operation",
+  "research": "reliability_engineering",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Reach the nines the mission asks, within budget."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Failure rate, Copies, Voting.$(br2)$(thing)Disturbance$(): infant mortality: the nines read 1%·d low."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over nine units wears it.$(br2)$(thing)Rate$(): cheaper parts, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)R = e^(−λt)$(br)1 − (1 − R)ⁿ$(br)3R² − 2R³"
+   }
+  ]
  }
 }

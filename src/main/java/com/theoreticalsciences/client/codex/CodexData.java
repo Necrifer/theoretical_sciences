@@ -47,7 +47,11 @@ public final class CodexData {
     }
 
     /** A place on a tab's map. */
-    public record Node(String entry, int x, int y, List<String> parents, boolean small) {}
+    public record Node(String entry, int x, int y, List<String> parents, boolean small, String band, double[] route) {
+        public Node(String entry, int x, int y, List<String> parents, boolean small) {
+            this(entry, x, y, parents, small, "", null);
+        }
+    }
 
     /** Round 36: a tier band behind a map (a stage of the game), in map units. */
     public record Region(int tier, String label, double x0, double y0, double x1, double y1) {}
@@ -56,6 +60,8 @@ public final class CodexData {
         public String id, name, description, icon;
         public List<Node> nodes = new ArrayList<>();
         public List<Region> regions = new ArrayList<>();
+        /** 1.4.0: laid out as a tree (tools/relayout_codex.py): bands, chapter columns, items under their chapter. */
+        public boolean tree;
         /** Grid bounds of all nodes. */
         public int minX, maxX, minY, maxY;
         /** Where each entry stands on this map (an entry is on a map at most once). */
@@ -176,6 +182,12 @@ public final class CodexData {
         JsonArray arr = new JsonArray();
         nodes.values().forEach(arr::add);
         out.add("nodes", arr);
+        // 1.4.0: the bands and the layout come with the map (the highest pack that has them wins)
+        for (JsonElement f : all)
+            if (f.isJsonObject()) {
+                if (f.getAsJsonObject().has("regions")) out.add("regions", f.getAsJsonObject().get("regions"));
+                if (f.getAsJsonObject().has("layout")) out.add("layout", f.getAsJsonObject().get("layout"));
+            }
         return out;
     }
 
@@ -278,7 +290,13 @@ public final class CodexData {
                 JsonObject no = ne.getAsJsonObject();
                 String id = str(no, "entry");
                 if (!ents.containsKey(id) || t.byEntry.containsKey(id)) continue;
-                Node n = new Node(id, no.get("x").getAsInt(), no.get("y").getAsInt(), strings(no, "parents"), no.has("node") && no.get("node").getAsBoolean());
+                double[] route = null;
+                if (no.has("route") && no.get("route").isJsonArray() && no.getAsJsonArray("route").size() == 5) {
+                    route = new double[5];
+                    for (int i = 0; i < 5; i++) route[i] = no.getAsJsonArray("route").get(i).getAsDouble();
+                }
+                Node n = new Node(id, no.get("x").getAsInt(), no.get("y").getAsInt(), strings(no, "parents"), no.has("node") && no.get("node").getAsBoolean(),
+                        str(no, "band"), route);
                 t.nodes.add(n);
                 t.byEntry.put(id, n);
                 x0 = Math.min(x0, n.x()); x1 = Math.max(x1, n.x());
@@ -286,6 +304,7 @@ public final class CodexData {
             }
             if (t.nodes.isEmpty()) continue;
             t.minX = x0; t.maxX = x1; t.minY = y0; t.maxY = y1;
+            t.tree = "tree".equals(str(file, "layout"));
             if (file.has("regions") && file.get("regions").isJsonArray())
                 for (JsonElement re : file.getAsJsonArray("regions")) {
                     try {

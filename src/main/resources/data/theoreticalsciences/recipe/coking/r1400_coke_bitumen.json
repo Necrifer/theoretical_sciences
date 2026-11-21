@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:coking",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:bitumen",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:petroleum_coke",
+      "count": 3
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:gas_oil",
+      "amount": 500
+    },
+    {
+      "id": "theoreticalsciences:sour_naphtha",
+      "amount": 100
+    }
+  ],
+  "energy": 512,
+  "duration": 400,
+  "research": "theoreticalsciences:heavy_oil_upgrading",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "CCR": 0.15,
+      "SG": 1.01
+    },
+    "windows": [
+      {
+        "q": "liq",
+        "min": 0.65,
+        "max": 1.0
+      }
+    ]
+  }
+}

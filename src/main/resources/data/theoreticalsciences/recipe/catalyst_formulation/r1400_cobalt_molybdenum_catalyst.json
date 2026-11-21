@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:catalyst_formulation",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 1
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 1
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:cobalt_molybdenum_catalyst",
+      "count": 2
+    }
+  ],
+  "energy": 256,
+  "duration": 300,
+  "unscaled": true,
+  "research": "theoreticalsciences:hydroprocessing",
+  "physics": {
+    "vars": {
+      "Eb0": 0.45,
+      "Eo": 0.5,
+      "Ts": 900.0
+    },
+    "windows": [
+      {
+        "q": "Y",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "title": "Sulfur Recovery",
+  "x": 30,
+  "y": 39,
+  "insight": 160,
+  "requires": [
+    "theoreticalsciences:hydroprocessing",
+    "theoreticalsciences:contact_process"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:sulfuric_acid_cell",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:iron_catalyst",
+      "count": 1
+    }
+  ],
+  "time": 360,
+  "description": "The hydrogen sulfide a refinery strips out is poison, and too valuable to flare. Claus found the trick in 1883: burn exactly a third of it, so what is left is two parts hydrogen sulfide to one of sulfur dioxide, and the two react to sulfur and water. Two thirds of the sulfur forms in the flame; beds of catalyst, each cooler than the last, take most of the rest, but not so cool that the sulfur condenses on them. Most of the world's sulfur, and so its sulfuric acid, comes this way. Unlocks the Claus Unit.",
+  "icon": "theoreticalsciences:claus_unit",
+  "puzzle": {
+    "goal": "A third of n moles of hydrogen sulfide burns, 2H₂S + 3O₂ → 2SO₂ + 2H₂O, in air whose oxygen fraction is x. Write the moles A of air needed.",
+    "name": "Air for the Claus burner",
+    "lhs": "A",
+    "form": "n / ( 2 * x )",
+    "expr": "n / ( 2 * x )",
+    "ask": "Find A in moles for n = @{n} moles and x = 0.21.",
+    "vars": {
+      "A": "air",
+      "n": "hydrogen sulfide",
+      "x": "oxygen fraction of air"
+    },
+    "given": {
+      "n": 300.0,
+      "x": 0.21
+    },
+    "unit": "mol",
+    "method": "n/3 moles burn, each needing 3/2 of oxygen: n/2 of oxygen in all, carried in n/(2x) of air.",
+    "distractors": [
+      "*",
+      "3",
+      "+"
+    ],
+    "vary": {
+      "n": [
+        60.0,
+        900.0,
+        10.0
+      ]
+    }
+  },
+  "category": "chemistry"
+}

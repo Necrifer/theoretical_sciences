@@ -1,0 +1,55 @@
+{
+  "title": "Refrigeration Cycles",
+  "x": 12,
+  "y": 18,
+  "insight": 190,
+  "requires": [
+    "theoreticalsciences:cryogenics",
+    "theoreticalsciences:thermodynamics_of_information"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:nitrogen_cell",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:cryostat_shell",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "Cold is not made, it is moved: a refrigerator pumps heat from the cold end to a warmer place, and the second law sets the least work that takes. At 4 K, rejecting to room temperature, each watt of cold costs at least seventy of work, and real machines need three times that. A gas cools as it expands only below its inversion temperature, so helium must first be cooled by expansion engines to near 10 K before a valve can liquefy it. Rejecting heat to Titan's 94 K air costs a third as much. Unlocks the Helium Liquefier.",
+  "icon": "theoreticalsciences:helium_liquefier",
+  "puzzle": {
+    "goal": "A perfect refrigerator takes heat from T_c and rejects it at T_h. From Q_h/T_h = Q_c/T_c and W = Q_h − Q_c, write the heat removed per unit of work, COP.",
+    "name": "Carnot refrigerator",
+    "lhs": "COP",
+    "form": "Tc / ( Th - Tc )",
+    "expr": "Tc / ( Th - Tc )",
+    "ask": "Find COP for a cold end at 4.2 K rejecting to Th = @{Th} K.",
+    "vars": {
+      "COP": "coefficient of performance",
+      "Tc": "cold end",
+      "Th": "heat rejected at"
+    },
+    "given": {
+      "Tc": 4.2,
+      "Th": 300.0
+    },
+    "unit": "",
+    "method": "No entropy is made: the heat leaving at T_h carries away exactly the entropy brought in at T_c.",
+    "distractors": [
+      "+",
+      "*",
+      "Th / ( Th - Tc )"
+    ],
+    "vary": {
+      "Th": [
+        80.0,
+        320.0,
+        1.0
+      ]
+    }
+  },
+  "category": "physics"
+}

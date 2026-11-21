@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:naphtha_cell"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.fluid_catalytic_cracking"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.fluid_catalytic_cracking.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/heavy_oil_upgrading",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

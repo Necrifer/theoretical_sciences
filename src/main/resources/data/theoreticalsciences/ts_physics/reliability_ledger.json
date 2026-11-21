@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "lam",
+      "unit": "/10⁶ h",
+      "min": 0.1,
+      "max": 50,
+      "step": 0.1,
+      "default": 10
+    },
+    {
+      "id": "n",
+      "unit": "",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "id": "vote",
+      "unit": "",
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "tm": 87600
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "R1",
+      "unit": "",
+      "expr": "exp(-lam*1e-6*tm)",
+      "formula": "R = e^(−λt), one part over the mission"
+    },
+    {
+      "id": "Rs",
+      "unit": "",
+      "expr": "((1 - (1 - exp(-lam*1e-6*tm))^n) + vote*(3*(1 - (1 - exp(-lam*1e-6*tm))^n)^2 - 2*(1 - (1 - exp(-lam*1e-6*tm))^n)^3 - (1 - (1 - exp(-lam*1e-6*tm))^n)))",
+      "formula": "n in parallel: 1 − (1 − R)ⁿ; voted three ways: 3R² − 2R³"
+    },
+    {
+      "id": "nines",
+      "unit": "",
+      "expr": "(-ln(pos(1 - ((1 - (1 - exp(-lam*1e-6*tm))^n) + vote*(3*(1 - (1 - exp(-lam*1e-6*tm))^n)^2 - 2*(1 - (1 - exp(-lam*1e-6*tm))^n)^3 - (1 - (1 - exp(-lam*1e-6*tm))^n)))) + 1e-12)/2.302585)*(1 - 0.01*d)",
+      "formula": "nines of reliability: −log₁₀(1 − R)"
+    },
+    {
+      "id": "mtbf",
+      "unit": "h",
+      "expr": "1e6/lam",
+      "formula": "one part's mean time between failures, 1/λ"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "budget",
+      "kind": "wear",
+      "expr": "10 - n*(1 + 2*vote)",
+      "formula": "no more than nine units, or the weight and power budget is blown"
+    }
+  ],
+  "rate": "clamp(lam/10, 0.25, 3)",
+  "rate_formula": "cheaper parts (a higher failure rate) need less burn in",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

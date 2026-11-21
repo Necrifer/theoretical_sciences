@@ -26,14 +26,16 @@
     },
     {
       "id": "rm",
-      "unit": "g/cm\u00b3",
+      "unit": "g/cm³",
       "min": 1,
       "max": 2.5,
       "step": 0.01,
       "default": 1.2
     }
   ],
-  "recipe_vars": {},
+  "recipe_vars": {
+    "age": 0.0
+  },
   "consts": [],
   "states": [],
   "derived": [
@@ -41,19 +43,19 @@
       "id": "Tz",
       "unit": "K",
       "expr": "288 + 25*h",
-      "formula": "T = T\u2080 + (dT/dz)\u00b7h"
+      "formula": "T = T₀ + (dT/dz)·h"
     },
     {
       "id": "Pp",
       "unit": "MPa",
       "expr": "9.81*h*(1 + 0.04*h)*(1 + 0.03*d)",
-      "formula": "P_p \u2248 \u03c1_w g h (overpressured below)"
+      "formula": "P_p ≈ ρ_w g h (overpressured below)"
     },
     {
       "id": "Pm",
       "unit": "MPa",
       "expr": "9.81*rm*h",
-      "formula": "P_m = \u03c1_m g h"
+      "formula": "P_m = ρ_m g h"
     },
     {
       "id": "Pf",
@@ -65,13 +67,19 @@
       "id": "ROP",
       "unit": "m/h",
       "expr": "0.5*W*N^0.7*exp(-0.08*pos(Pm - Pp))/(1 + 0.3*h)",
-      "formula": "ROP \u221d W\u00b7N^0.7\u00b7e^(\u2212c\u00b7(P_m \u2212 P_p))"
+      "formula": "ROP ∝ W·N^0.7·e^(−c·(P_m − P_p))"
     },
     {
       "id": "Tb",
       "unit": "K",
       "expr": "Tz + 0.02*W*N",
       "formula": "T_bit = T + friction"
+    },
+    {
+      "id": "tti",
+      "unit": "",
+      "expr": "age*2^((Tz - 378)/10)",
+      "formula": "Lopatin's index: TTI = Σ Δt·2ⁿ, n counting 10 K steps from 105 °C"
     }
   ],
   "constraints": [
@@ -79,7 +87,7 @@
       "id": "kick",
       "kind": "damage",
       "expr": "Pm - Pp",
-      "formula": "P_m \u2265 P_p"
+      "formula": "P_m ≥ P_p"
     },
     {
       "id": "losses",

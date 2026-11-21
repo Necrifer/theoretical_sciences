@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:fractionation",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:crude_oil",
+      "amount": 2000
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sour_naphtha",
+      "amount": 600
+    },
+    {
+      "id": "theoreticalsciences:gas_oil",
+      "amount": 700
+    },
+    {
+      "id": "theoreticalsciences:vacuum_residue",
+      "amount": 500
+    },
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 200
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:heavy_oil_upgrading",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "al": 2.5,
+      "xF": 0.3,
+      "Tb": 450,
+      "dH": 30
+    },
+    "windows": [
+      {
+        "q": "xD",
+        "min": 0.95,
+        "max": 1.0
+      }
+    ]
+  }
+}

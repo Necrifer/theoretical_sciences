@@ -1,0 +1,85 @@
+{
+  "params": [
+    {
+      "id": "s",
+      "unit": "MPa",
+      "min": 20,
+      "max": 800,
+      "step": 1,
+      "default": 200
+    },
+    {
+      "id": "a0",
+      "unit": "mm",
+      "min": 0.05,
+      "max": 10,
+      "step": 0.01,
+      "default": 1
+    },
+    {
+      "id": "Y",
+      "unit": "",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.01,
+      "default": 1.12
+    }
+  ],
+  "recipe_vars": {
+    "Kc": 50,
+    "Cpa": 1e-11,
+    "mpa": 3,
+    "tw": 5
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "K",
+      "unit": "MPa√m",
+      "expr": "Y*s*sqrt(3.14159265*a0/1000)",
+      "formula": "K = Y·σ·√(πa), the stress intensity at the starting flaw"
+    },
+    {
+      "id": "ac",
+      "unit": "mm",
+      "expr": "1000/3.14159265*(Kc/(Y*s))^2",
+      "formula": "a_c = (K_Ic/Yσ)²/π: the crack that runs"
+    },
+    {
+      "id": "N",
+      "unit": "cycles",
+      "expr": "(pos((1000/3.14159265*(Kc/(Y*s))^2/1000)^(1 - mpa/2) - (a0/1000)^(1 - mpa/2)) + pos((a0/1000)^(1 - mpa/2) - (1000/3.14159265*(Kc/(Y*s))^2/1000)^(1 - mpa/2)))/(Cpa*(Y*s*sqrt(3.14159265))^mpa*abs((1 - mpa/2)))*(1 - 0.01*d)",
+      "formula": "N = ∫ da/(C·ΔK^m) from a₀ to a_c, Paris"
+    },
+    {
+      "id": "lbb",
+      "unit": "",
+      "expr": "(1000/3.14159265*(Kc/(Y*s))^2)/tw",
+      "formula": "critical crack over wall thickness: over 1 it leaks before it breaks"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brittle",
+      "kind": "stop",
+      "expr": "Kc - (Y*s*sqrt(3.14159265*a0/1000))",
+      "formula": "K under K_Ic, or the sample snaps on the first load"
+    },
+    {
+      "id": "grips",
+      "kind": "wear",
+      "expr": "600 - s",
+      "formula": "over 600 MPa the grips yield"
+    }
+  ],
+  "rate": "clamp(s/200, 0.25, 3)",
+  "rate_formula": "a harsher test reaches the answer sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

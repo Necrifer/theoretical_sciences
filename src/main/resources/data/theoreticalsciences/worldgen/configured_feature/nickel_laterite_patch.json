@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 36,
+    "discard_chance_on_air_exposure": 0.0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "minecraft:block_match",
+          "block": "minecraft:dirt"
+        },
+        "state": {
+          "Name": "theoreticalsciences:nickel_laterite"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:block_match",
+          "block": "minecraft:coarse_dirt"
+        },
+        "state": {
+          "Name": "theoreticalsciences:nickel_laterite"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:stone_ore_replaceables"
+        },
+        "state": {
+          "Name": "theoreticalsciences:nickel_laterite"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:superconductor_certification",
+  "item_inputs": [
+    {
+      "tag": "c:ingots/copper",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_helium",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:nbti_wire",
+      "count": 4
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:superconductivity_theory",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "Tc",
+        "min": 8.8,
+        "max": 9.6
+      },
+      {
+        "q": "Hr",
+        "min": 0.75,
+        "max": 1.0
+      }
+    ]
+  }
+}

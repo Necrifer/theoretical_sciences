@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:neural_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:qubit",
+      "count": 32
+    },
+    {
+      "item": "theoreticalsciences:superposition_crystal",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:rsfq_logic_core",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:qubit_array_wafer",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:synaptic_fluid",
+      "amount": 600
+    },
+    {
+      "fluid": "theoreticalsciences:bose_einstein_condensate",
+      "amount": 600
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:error_correction_lattice",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 500,
+  "research": "theoreticalsciences:superconducting_logic"
+}

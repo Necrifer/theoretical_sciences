@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:coking",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:gas_oil",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:needle_coke",
+      "count": 4
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:sour_naphtha",
+      "amount": 300
+    }
+  ],
+  "energy": 1024,
+  "duration": 600,
+  "research": "theoreticalsciences:heavy_oil_upgrading",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "CCR": 0.1,
+      "SG": 1.08
+    },
+    "windows": [
+      {
+        "q": "ndl",
+        "min": 0.8,
+        "max": 1.0
+      }
+    ]
+  }
+}

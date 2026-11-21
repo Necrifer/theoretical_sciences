@@ -36,6 +36,14 @@ public class ResearchScreen extends Screen {
         if (Double.isNaN(panX)) {
             panX = width / 2.0 - 120;
             panY = height / 2.0 - 60;
+            // 1.4.0: the map runs left to right by depth; open on the first node, a third of the way across
+            ResearchDefinition first = null;
+            for (ResearchDefinition d : ClientResearch.defs.values())
+                if (first == null || d.x() < first.x() || (d.x() == first.x() && Math.abs(d.y()) < Math.abs(first.y()))) first = d;
+            if (first != null) {
+                panX = width / 3.0 - first.x() * SPACING_X * zoom;
+                panY = height / 2.0 - first.y() * SPACING_Y * zoom;
+            }
         }
         clampPan();
         // the book of symbols: every glyph a derivation can use, and how to learn the ones still missing
@@ -92,24 +100,53 @@ public class ResearchScreen extends Screen {
         super.render(g, mx, my, partial);
         Map<ResourceLocation, ResearchDefinition> defs = ClientResearch.defs;
         float t = (minecraft.level != null ? minecraft.level.getGameTime() : 0) + partial;
-        // links
+        // 1.4.0: the map is a tech tree in bands, one per field; hovering a node lights its whole chain
+        Graph gr = graph(defs);
+        ResourceLocation hovered = null;
         for (var e : defs.entrySet()) {
-            ResearchDefinition d = e.getValue();
             if (!ClientResearch.visible(e.getKey())) continue;
-            for (ResourceLocation req : d.requires()) {
+            int sx = nx(e.getValue()), sy = ny(e.getValue()), S = ns();
+            if (mx >= sx && my >= sy && mx < sx + S && my < sy + S && my > 22) hovered = e.getKey();
+        }
+        for (var w : children())
+            if (w instanceof net.minecraft.client.gui.components.AbstractWidget aw && aw.isMouseOver(mx, my)) hovered = null;
+        java.util.Set<ResourceLocation> focus = hovered == null ? null : gr.focus(hovered);
+        // the bands
+        for (var b : gr.bands.entrySet()) {
+            int y0 = (int) (panY + b.getValue()[0] * SPACING_Y * zoom) - (int) (10 * zoom), y1 = (int) (panY + b.getValue()[1] * SPACING_Y * zoom) + ns() + (int) (10 * zoom);
+            if (y1 < 22 || y0 > height) continue;
+            int tint = bandTint(b.getKey());
+            g.fill(0, Math.max(22, y0), width, y1, 0x30000000 | tint);
+            g.fill(0, Math.max(22, y0), width, Math.max(22, y0) + 1, 0x80000000 | tint);
+            int ly = Math.max(26, Math.min(y0 + 2, y1 - 12));
+            g.drawString(font, Component.translatableWithFallback("gui.theoreticalsciences.research.field." + b.getKey(),
+                    b.getKey().substring(0, 1).toUpperCase(java.util.Locale.ROOT) + b.getKey().substring(1)), 6, ly, 0xC0000000 | brighten(tint), false);
+        }
+        // the links: direct ones only, through the gaps between columns and rows; a field's links to another field show on hover
+        for (var e : gr.direct.entrySet()) {
+            ResearchDefinition d = defs.get(e.getKey());
+            if (d == null || !ClientResearch.visible(e.getKey())) continue;
+            for (ResourceLocation req : e.getValue()) {
                 ResearchDefinition p = defs.get(req);
                 if (p == null) continue;
+                boolean inFocus = focus != null && focus.contains(req) && focus.contains(e.getKey());
+                boolean sameField = p.category().equals(d.category());
+                if (!sameField && !inFocus) continue;
                 boolean lit = ClientResearch.unlocked.contains(req);
-                line(g, nx(p) + ns() / 2, ny(p) + ns() / 2, nx(d) + ns() / 2, ny(d) + ns() / 2, lit ? 0xFF40E0FF : 0x60406080, t);
+                int col = inFocus ? 0xFFFFD060 : focus != null ? 0x30406080 : lit ? 0xC040E0FF : 0x70406080;
+                if (!inFocus) route(g, p, d, col);
             }
         }
-        ResourceLocation hovered = null;
+        if (focus != null)
+            for (var e : gr.direct.entrySet())
+                if (focus.contains(e.getKey()))
+                    for (ResourceLocation req : e.getValue())
+                        if (focus.contains(req) && defs.containsKey(req) && ClientResearch.visible(e.getKey())) route(g, defs.get(req), defs.get(e.getKey()), 0xFFFFD060);
         for (var e : defs.entrySet()) {
             ResearchDefinition d = e.getValue();
             if (!ClientResearch.visible(e.getKey())) continue;
             int sx = nx(d), sy = ny(d), S = ns();
             if (sx + S < 0 || sy + S < 0 || sx > width || sy > height) continue;      // off screen
-            if (mx >= sx && my >= sy && mx < sx + S && my < sy + S) hovered = e.getKey();
             // each node is drawn at its normal size, scaled about its corner
             g.pose().pushPose();
             g.pose().translate(sx, sy, 0);
@@ -130,6 +167,8 @@ public class ResearchScreen extends Screen {
                 g.fill(x, y + NODE + 2, x + NODE, y + NODE + 4, 0xFF102030);
                 g.fill(x, y + NODE + 2, x + (int) (NODE * f), y + NODE + 4, 0xFF40E0FF);
             }
+            if (focus != null && !focus.contains(e.getKey())) g.fill(x - 1, y - 1, x + NODE + 1, y + NODE + 1, 0xB0050410);
+            else if (focus != null && !e.getKey().equals(hovered)) g.renderOutline(x - 1, y - 1, NODE + 2, NODE + 2, 0xFFFFD060);
             g.pose().popPose();
         }
         // header
@@ -145,8 +184,6 @@ public class ResearchScreen extends Screen {
         if (defs.isEmpty()) g.drawCenteredString(font, Component.translatable("gui.theoreticalsciences.no_research"), width / 2, height / 2, 0xAAAAAA);
         // the buttons stay on top of the map (and a node under one is not "hovered")
         for (var r : renderables) r.render(g, mx, my, partial);
-        for (var w : children())
-            if (w instanceof net.minecraft.client.gui.components.AbstractWidget aw && aw.isMouseOver(mx, my)) hovered = null;
 
         if (hovered != null) {
             ResearchDefinition d = defs.get(hovered);
@@ -186,6 +223,124 @@ public class ResearchScreen extends Screen {
         }
     }
 
+    // ------------------------------------------------------------------ 1.4.0: the tech tree's structure
+    /** Direct links (a prerequisite that another prerequisite already needs is left out), and each field's rows. */
+    private static final class Graph {
+        final Map<ResourceLocation, List<ResourceLocation>> direct = new java.util.HashMap<>();
+        final Map<ResourceLocation, java.util.Set<ResourceLocation>> ancestors = new java.util.HashMap<>();
+        final Map<ResourceLocation, List<ResourceLocation>> unlocks = new java.util.HashMap<>();
+        final Map<String, int[]> bands = new java.util.LinkedHashMap<>();
+
+        java.util.Set<ResourceLocation> ancestors(Map<ResourceLocation, ResearchDefinition> defs, ResourceLocation id, java.util.Set<ResourceLocation> path) {
+            java.util.Set<ResourceLocation> got = ancestors.get(id);
+            if (got != null) return got;
+            java.util.Set<ResourceLocation> out = new java.util.HashSet<>();
+            ResearchDefinition d = defs.get(id);
+            if (d != null && path.add(id)) {
+                for (ResourceLocation r : d.requires())
+                    if (defs.containsKey(r)) {
+                        out.add(r);
+                        out.addAll(ancestors(defs, r, path));
+                    }
+                path.remove(id);
+            }
+            ancestors.put(id, out);
+            return out;
+        }
+
+        /** What a hovered node shows: everything it needs, all the way back, and what it opens next. */
+        java.util.Set<ResourceLocation> focus(ResourceLocation id) {
+            java.util.Set<ResourceLocation> f = new java.util.HashSet<>(ancestors.getOrDefault(id, java.util.Set.of()));
+            f.add(id);
+            f.addAll(unlocks.getOrDefault(id, List.of()));
+            return f;
+        }
+    }
+
+    private static Graph cached;
+    private static Map<ResourceLocation, ResearchDefinition> cachedFor;
+    private static int cachedSize = -1;
+
+    private static Graph graph(Map<ResourceLocation, ResearchDefinition> defs) {
+        if (cached != null && cachedFor == defs && cachedSize == defs.size()) return cached;
+        Graph gr = new Graph();
+        for (ResourceLocation id : defs.keySet()) gr.ancestors(defs, id, new java.util.HashSet<>());
+        for (var e : defs.entrySet()) {
+            List<ResourceLocation> reqs = new ArrayList<>();
+            for (ResourceLocation r : e.getValue().requires()) if (defs.containsKey(r)) reqs.add(r);
+            List<ResourceLocation> keep = new ArrayList<>();
+            for (ResourceLocation r : reqs) {
+                boolean implied = false;
+                for (ResourceLocation q : reqs) if (q != r && gr.ancestors.get(q).contains(r)) { implied = true; break; }
+                if (!implied) keep.add(r);
+            }
+            gr.direct.put(e.getKey(), keep);
+            for (ResourceLocation r : keep) gr.unlocks.computeIfAbsent(r, k -> new ArrayList<>()).add(e.getKey());
+        }
+        java.util.TreeMap<Integer, String> order = new java.util.TreeMap<>();
+        Map<String, int[]> b = new java.util.HashMap<>();
+        for (ResearchDefinition d : defs.values()) {
+            int[] r = b.computeIfAbsent(d.category(), k -> new int[]{Integer.MAX_VALUE, Integer.MIN_VALUE});
+            r[0] = Math.min(r[0], d.y());
+            r[1] = Math.max(r[1], d.y());
+        }
+        for (var e : b.entrySet()) order.put(e.getValue()[0], e.getKey());
+        for (String c : order.values()) gr.bands.put(c, b.get(c));
+        cached = gr;
+        cachedFor = defs;
+        cachedSize = defs.size();
+        return gr;
+    }
+
+    /** A link as the Civilization trees draw them: out of the prerequisite, down or up in the gap after its column,
+     *  along the gap between rows just above the target if the target is further away, and into the target. */
+    private void route(GuiGraphics g, ResearchDefinition p, ResearchDefinition d, int col) {
+        int S = ns();
+        int gap = (int) (SPACING_X * zoom) - S;
+        int x0 = nx(p) + S, y0 = ny(p) + S / 2;
+        int x1 = nx(d), y1 = ny(d) + S / 2;
+        int xj = x0 + gap / 2;
+        if (d.x() - p.x() <= 3 || x1 - x0 <= gap) {
+            hline(g, x0, xj, y0, col);
+            vline(g, xj, y0, y1, col);
+            hline(g, xj, x1, y1, col);
+        } else {
+            int ych = ny(d) - ((int) (SPACING_Y * zoom) - S) / 2;
+            int xj2 = x1 - gap / 2;
+            hline(g, x0, xj, y0, col);
+            vline(g, xj, y0, ych, col);
+            hline(g, xj, xj2, ych, col);
+            vline(g, xj2, ych, y1, col);
+            hline(g, xj2, x1, y1, col);
+        }
+    }
+
+    private static void hline(GuiGraphics g, int a, int b, int y, int col) {
+        g.fill(Math.min(a, b), y, Math.max(a, b) + 1, y + 1, col);
+    }
+
+    private static void vline(GuiGraphics g, int x, int a, int b, int col) {
+        g.fill(x, Math.min(a, b), x + 1, Math.max(a, b) + 1, col);
+    }
+
+    private static int bandTint(String field) {
+        return switch (field) {
+            case "mathematics" -> 0x5040A0;
+            case "physics" -> 0x2050A0;
+            case "space" -> 0x207080;
+            case "chemistry" -> 0x907020;
+            case "biology" -> 0x308838;
+            case "engineering" -> 0x905830;
+            case "anomaly" -> 0x902870;
+            default -> 0x404858;
+        };
+    }
+
+    private static int brighten(int rgb) {
+        int r = Math.min(255, ((rgb >> 16) & 255) * 2 + 60), gg = Math.min(255, ((rgb >> 8) & 255) * 2 + 60), b = Math.min(255, (rgb & 255) * 2 + 60);
+        return (r << 16) | (gg << 8) | b;
+    }
+
     private static List<String> wrap(String s, int width) {
         List<String> out = new ArrayList<>();
         StringBuilder line = new StringBuilder();
@@ -199,25 +354,6 @@ public class ResearchScreen extends Screen {
         }
         if (!line.isEmpty()) out.add(line.toString());
         return out;
-    }
-
-    private static void line(GuiGraphics g, int x0, int y0, int x1, int y1, int color, float t) {
-        // orthogonal circuit-style link with a travelling pulse
-        int mx = (x0 + x1) / 2;
-        g.fill(Math.min(x0, mx), y0, Math.max(x0, mx) + 1, y0 + 1, color);
-        g.fill(mx, Math.min(y0, y1), mx + 1, Math.max(y0, y1) + 1, color);
-        g.fill(Math.min(mx, x1), y1, Math.max(mx, x1) + 1, y1 + 1, color);
-        if ((color >>> 24) == 0xFF) {
-            int len = Math.abs(mx - x0) + Math.abs(y1 - y0) + Math.abs(x1 - mx);
-            if (len > 0) {
-                int p = (int) (t * 2) % len;
-                int px, py;
-                if (p < Math.abs(mx - x0)) { px = x0 + Integer.signum(mx - x0) * p; py = y0; }
-                else if (p < Math.abs(mx - x0) + Math.abs(y1 - y0)) { px = mx; py = y0 + Integer.signum(y1 - y0) * (p - Math.abs(mx - x0)); }
-                else { px = mx + Integer.signum(x1 - mx) * (p - Math.abs(mx - x0) - Math.abs(y1 - y0)); py = y1; }
-                g.fill(px - 1, py - 1, px + 2, py + 2, 0xFFFFFFFF);
-            }
-        }
     }
 
     @Override

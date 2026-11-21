@@ -1,0 +1,57 @@
+{
+  "title": "Fibre Optics",
+  "x": 27,
+  "y": 15,
+  "insight": 190,
+  "requires": [
+    "theoreticalsciences:information_channels",
+    "theoreticalsciences:geometric_optics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 8
+    },
+    {
+      "item": "theoreticalsciences:fluorite_lens",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "Light can be trapped in a thread of glass: a core of slightly higher index guides it by total internal reflection, around corners and across oceans. Pure silica is so clear that at 1.55 micrometres a kilometre of it loses only four percent of the light, and what is lost is mostly Rayleigh scattering from frozen in density ripples, which falls as the fourth power of the wavelength. Make the core thin enough, V under 2.405, and only one mode travels, so pulses do not smear. Unlocks the Fibre Draw Tower.",
+  "icon": "theoreticalsciences:single_mode_fibre_spool",
+  "puzzle": {
+    "goal": "A fibre core of radius a guides light of wavelength λ with numerical aperture NA. Write its normalised frequency V, which must stay under 2.405 for a single mode.",
+    "name": "Fibre V number",
+    "lhs": "V",
+    "form": "2 * π * a * NA / λ",
+    "expr": "2 * π * a * na / wl",
+    "ask": "Find V for a = @{a} µm, NA = 0.14 and λ = 1.55 µm.",
+    "vars": {
+      "V": "V number",
+      "a": "core radius",
+      "NA": "numerical aperture",
+      "λ": "wavelength"
+    },
+    "given": {
+      "a": 4.1,
+      "na": 0.14,
+      "wl": 1.55
+    },
+    "unit": "",
+    "method": "The modes are Bessel functions in the core and decaying ones outside; the second mode appears at the first zero of J₀, 2.405.",
+    "distractors": [
+      "*",
+      "^ 2",
+      "sqrt"
+    ],
+    "vary": {
+      "a": [
+        1.5,
+        8.0,
+        0.1
+      ]
+    }
+  },
+  "category": "physics"
+}

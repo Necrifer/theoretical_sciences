@@ -1,0 +1,31 @@
+{
+  "type": "theoreticalsciences:deep_drilling",
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:source_rock_core",
+      "count": 2
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:petroleum_geology",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "age": 100.0
+    },
+    "windows": [
+      {
+        "q": "tti",
+        "min": 15,
+        "max": 160
+      }
+    ]
+  }
+}

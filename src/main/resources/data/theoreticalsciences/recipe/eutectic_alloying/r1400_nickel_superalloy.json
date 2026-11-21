@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:eutectic_alloying",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:meteoric_iron",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:nickel_superalloy",
+      "count": 2
+    }
+  ],
+  "energy": 1,
+  "duration": 50,
+  "unscaled": true,
+  "research": "theoreticalsciences:creep_and_superalloys",
+  "physics": {
+    "vars": {
+      "xe": 0.62,
+      "Te": 456.0
+    },
+    "windows": [
+      {
+        "q": "ex",
+        "min": 0.0,
+        "max": 0.01
+      },
+      {
+        "q": "sup",
+        "min": 5.0,
+        "max": 60.0
+      }
+    ]
+  }
+}

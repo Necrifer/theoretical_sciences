@@ -1,0 +1,61 @@
+{
+  "title": "Petroleum Geology",
+  "x": 33,
+  "y": 32,
+  "insight": 170,
+  "requires": [
+    "theoreticalsciences:deep_drilling",
+    "theoreticalsciences:heavy_oil_upgrading"
+  ],
+  "cost": [
+    {
+      "item": "minecraft:coal",
+      "count": 16
+    },
+    {
+      "item": "minecraft:clay_ball",
+      "count": 8
+    }
+  ],
+  "time": 400,
+  "description": "Oil is cooked: buried mud full of dead plankton warms as it sinks, and the kerogen in it breaks down. Too cool and it stays solid shale; in the oil window, about 60 to 120 °C held for millions of years, it gives oil; hotter, only gas; hotter still, nothing. Lopatin added it up as a time temperature index, the rate doubling every ten degrees. Then the oil must flow to a trap through the pores of the rock, by Darcy's law. Adds the oil window to the Deep Drilling Rig; oil shale, tar sands, asphalt lakes and cold seeps lie in the Overworld, and the Overcooked Depths in the Planetary Interior.",
+  "icon": "theoreticalsciences:source_rock_core",
+  "puzzle": {
+    "goal": "Oil of viscosity μ flows through rock of permeability k and cross section A, pushed by a pressure drop Δp over a length L. Write the flow Q (Darcy).",
+    "name": "Darcy's law",
+    "lhs": "Q",
+    "form": "k * A * Δp / ( μ * L )",
+    "expr": "k * A * dp / ( mu * L )",
+    "ask": "Find Q in m³/s for k = 1e-13 m², A = 100 m², Δp = @{dp} Pa, μ = 0.005 Pa·s and L = 500 m.",
+    "vars": {
+      "Q": "flow",
+      "k": "permeability",
+      "A": "area",
+      "Δp": "pressure drop",
+      "μ": "viscosity",
+      "L": "length"
+    },
+    "given": {
+      "k": 1e-13,
+      "A": 100.0,
+      "dp": 10000000.0,
+      "mu": 0.005,
+      "L": 500.0
+    },
+    "unit": "m³/s",
+    "method": "Like current through a resistor: flow is proportional to the push and the area, against the viscosity and the length.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "dp": [
+        1000000.0,
+        30000000.0,
+        100000.0
+      ]
+    }
+  },
+  "category": "space"
+}

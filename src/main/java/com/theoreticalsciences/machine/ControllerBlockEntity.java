@@ -108,6 +108,7 @@ public class ControllerBlockEntity extends MachineBlockEntity {
         w[5] = worldPosition.getY();
         w[6] = noisyNeighbours(level);
         w[7] = com.theoreticalsciences.orbit.SpaceModules.gravity(level);     // 1.13.0
+        w[8] = com.theoreticalsciences.orbit.SpaceModules.ambient(level);     // 1.4.0
     }
 
     /**

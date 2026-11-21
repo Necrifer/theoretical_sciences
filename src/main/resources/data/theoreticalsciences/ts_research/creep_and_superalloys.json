@@ -1,0 +1,57 @@
+{
+  "title": "Creep and Superalloys",
+  "x": 45,
+  "y": 70,
+  "insight": 240,
+  "requires": [
+    "theoreticalsciences:fracture_mechanics",
+    "theoreticalsciences:phase_diagrams"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:pressure_vessel_wall",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:alumina_ceramic_plate",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "description": "Hot enough, any metal flows like slow honey under load: creep. A turbine blade runs a few hundred kelvin below its melting point for years, so it is cast from nickel superalloy, strengthened by tiny cubes of a second phase, and grown as a single crystal so no grain boundary can slide. Larson and Miller found that temperature and time trade together: a few percent hotter costs most of the life. Unlocks the Bridgman Furnace.",
+  "icon": "theoreticalsciences:bridgman_furnace",
+  "puzzle": {
+    "goal": "Larson and Miller: P = T·(C + log₁₀ t) is the same for every test at one stress. Write the rupture life t at temperature T.",
+    "name": "Larson Miller life",
+    "lhs": "t",
+    "form": "10 ^ ( P / T - C )",
+    "expr": "10 ^ ( P / T - C )",
+    "ask": "Find t in hours for P = 26000, C = 20 and T = @{T} K.",
+    "vars": {
+      "t": "rupture life",
+      "P": "Larson Miller parameter",
+      "T": "temperature",
+      "C": "material constant"
+    },
+    "given": {
+      "P": 26000.0,
+      "C": 20.0,
+      "T": 1200.0
+    },
+    "unit": "h",
+    "method": "Divide by T, take away C, and undo the logarithm.",
+    "distractors": [
+      "*",
+      "+",
+      "ln"
+    ],
+    "vary": {
+      "T": [
+        1100.0,
+        1300.0,
+        10.0
+      ]
+    }
+  },
+  "category": "engineering"
+}

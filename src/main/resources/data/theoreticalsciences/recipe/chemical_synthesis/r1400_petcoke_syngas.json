@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:petroleum_coke",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 500
+    },
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 250
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:syngas",
+      "amount": 2000
+    }
+  ],
+  "energy": 512,
+  "duration": 100,
+  "unscaled": true,
+  "research": "theoreticalsciences:heavy_oil_upgrading",
+  "physics": {
+    "vars": {
+      "Ea": 150.0,
+      "Af": 100000000.0,
+      "Xt": 0.9,
+      "Ts": 2000
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -117,6 +117,20 @@ public final class MachineVoices {
         V.put("polarimeter", new Voice("instrument", 1.30F));
         V.put("huckel_analyser", new Voice("instrument", 0.85F));            // an NMR magnet's cold head
         V.put("molecular_machine_bench", new Voice("quantum", 1.20F));
+        V.put("hydrotreater", new Voice("chem", 0.80F));                    // 1.4.0 stage 2
+        V.put("catalytic_reformer", new Voice("turbine", 0.80F));           // fired heaters between the reactors
+        V.put("claus_unit", new Voice("turbine", 1.10F));                   // a roaring burner
+        V.put("delayed_coker", new Voice("heavy", 0.70F));                  // drums and water jets
+        V.put("helium_liquefier", new Voice("turbine", 1.30F));             // 1.4.0 stage 3: compressors and expansion turbines
+        V.put("bcs_cryostat", new Voice("instrument", 0.70F));
+        V.put("deep_space_transceiver", new Voice("instrument", 1.15F));
+        V.put("fibre_draw_tower", new Voice("heavy", 1.15F));
+        V.put("fracture_bench", new Voice("heavy", 0.85F));                  // 1.4.0 stage 4: a servo hydraulic frame
+        V.put("bridgman_furnace", new Voice("heavy", 0.70F));
+        V.put("josephson_logic_bench", new Voice("instrument", 1.35F));
+        V.put("media_sputter_chamber", new Voice("turbine", 0.90F));
+        V.put("pid_bench", new Voice("instrument", 1.00F));
+        V.put("reliability_ledger", new Voice("instrument", 0.80F));
         V.put("cmb_bolometer_array", new Voice("space", 0.70F));     // 1.14.0   // 1.12.0: a rocket engine on a test stand roars low
         V.put("photogrammetry_gantry", new Voice("instrument", 1.14F));
         V.put("pleroma_confluence", new Voice("cosmic", 0.89F));

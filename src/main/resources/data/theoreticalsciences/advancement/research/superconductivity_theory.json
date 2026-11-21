@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:bcs_cryostat"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.superconductivity_theory"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.superconductivity_theory.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/superconductivity",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

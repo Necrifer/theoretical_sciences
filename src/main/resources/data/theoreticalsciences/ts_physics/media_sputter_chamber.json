@@ -1,0 +1,85 @@
+{
+  "params": [
+    {
+      "id": "Dg",
+      "unit": "nm",
+      "min": 2,
+      "max": 20,
+      "step": 0.1,
+      "default": 8
+    },
+    {
+      "id": "hf",
+      "unit": "nm",
+      "min": 4,
+      "max": 30,
+      "step": 0.5,
+      "default": 10
+    },
+    {
+      "id": "Tw",
+      "unit": "K",
+      "min": 300,
+      "max": 900,
+      "step": 5,
+      "default": 300
+    }
+  ],
+  "recipe_vars": {
+    "Ku": 7000000.0,
+    "Ms": 1100000.0,
+    "Tcu": 750,
+    "Tst": 300
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Del",
+      "unit": "",
+      "expr": "Ku*(3.14159265/4*Dg^2*hf*1e-27)/(1.380649e-23*Tst)",
+      "formula": "Δ = K_u·V/kT, the barrier over the warmth"
+    },
+    {
+      "id": "ly",
+      "unit": "log₁₀ years",
+      "expr": "(Ku*(3.14159265/4*Dg^2*hf*1e-27)/(1.380649e-23*Tst)*0.434294 - 16.5)*(1 - 0.01*d)",
+      "formula": "retention t = τ₀·e^Δ, as the logarithm of years"
+    },
+    {
+      "id": "rho",
+      "unit": "Tbit/in²",
+      "expr": "80.6/Dg^2",
+      "formula": "eight grains a bit"
+    },
+    {
+      "id": "Hk",
+      "unit": "T",
+      "expr": "2*Ku/Ms*pos(1 - Tw/Tcu)",
+      "formula": "the field to switch a grain, at the write temperature: μ₀H_K = 2K_u/M_s·(1 − T/T_C)"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "write",
+      "kind": "stop",
+      "expr": "2.4 - (2*Ku/Ms*pos(1 - Tw/Tcu))",
+      "formula": "the switching field under the head's 2.4 T, or no bit is written"
+    },
+    {
+      "id": "curie",
+      "kind": "wear",
+      "expr": "Tcu - Tw",
+      "formula": "past the Curie point the ordered alloy disorders"
+    }
+  ],
+  "rate": "clamp(10/hf, 0.25, 3)",
+  "rate_formula": "a thinner film is laid down sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

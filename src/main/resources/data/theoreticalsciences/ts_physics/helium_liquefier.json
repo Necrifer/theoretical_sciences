@@ -1,0 +1,78 @@
+{
+  "params": [
+    {
+      "id": "Tp",
+      "unit": "K",
+      "min": 4,
+      "max": 120,
+      "step": 0.5,
+      "default": 60
+    },
+    {
+      "id": "p",
+      "unit": "bar",
+      "min": 2,
+      "max": 200,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "Th",
+      "unit": "K",
+      "min": 80,
+      "max": 320,
+      "step": 1,
+      "default": 300
+    }
+  ],
+  "recipe_vars": {
+    "Tl": 4.2,
+    "Tinv": 43,
+    "eta": 0.3
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "COP",
+      "unit": "",
+      "expr": "Tl/(Th - Tl)",
+      "formula": "Carnot: COP = T_c/(T_h − T_c)"
+    },
+    {
+      "id": "W",
+      "unit": "W/W",
+      "expr": "(Th - Tl)/(Tl*eta)",
+      "formula": "work per watt of cold, at a fraction η of Carnot"
+    },
+    {
+      "id": "y",
+      "unit": "",
+      "expr": "0.35*pos(1 - Tp/Tinv)*p/(p + 25)*(1 - 0.01*d)",
+      "formula": "liquid per pass: Joule Thomson below the inversion temperature"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sink",
+      "kind": "stop",
+      "expr": "Th - T_amb + 2",
+      "formula": "heat can only be rejected to something colder: the surroundings"
+    },
+    {
+      "id": "ice",
+      "kind": "wear",
+      "expr": "Tp - 1.2*Tl",
+      "formula": "the expanders above the liquid's boiling point, or liquid wrecks them"
+    }
+  ],
+  "rate": "clamp(0.35*pos(1 - Tp/Tinv)*p/(p + 25)*(1 - 0.01*d)*600/((Th - Tl)/(Tl*eta)), 0.2, 3)",
+  "rate_formula": "more liquid per pass, for less work, finishes sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

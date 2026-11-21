@@ -1,0 +1,35 @@
+{
+  "type": "theoreticalsciences:reliability_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:rsfq_logic_core",
+      "count": 3
+    },
+    {
+      "item": "theoreticalsciences:pid_governor_core",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:triple_modular_controller",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:reliability_engineering",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "tm": 87600
+    },
+    "windows": [
+      {
+        "q": "nines",
+        "min": 3,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

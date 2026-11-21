@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:directional_solidification",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:nickel_superalloy",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:alumina_ceramic_plate",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:single_crystal_turbine_blade",
+      "count": 1
+    }
+  ],
+  "energy": 4096,
+  "duration": 600,
+  "research": "theoreticalsciences:creep_and_superalloys",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Gc": 0.8,
+      "Ts": 1150,
+      "P0": 26000
+    },
+    "windows": [
+      {
+        "q": "life",
+        "min": 1500,
+        "max": 1e+30
+      }
+    ]
+  }
+}

@@ -299,6 +299,23 @@ public enum MachineType {
     POLARIMETER             ("polarimetry",          2, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0xC0E0FF),
     HUCKEL_ANALYSER         ("ring_current_analysis", 2, 1, 1, 0, false, null,                     2_000_000,    40_000, Effect.NONE,        0x80C0FF),
     MOLECULAR_MACHINE_BENCH ("molecular_assembly",   3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0xA0FFC0),
+    // 1.4.0 stage 2: the refinery
+    HYDROTREATER            ("hydrotreating",        1, 2, 0, 2, false, null,                      2_000_000,    40_000, Effect.NONE,        0xC0B070),
+    CATALYTIC_REFORMER      ("catalytic_reforming",  1, 1, 0, 2, false, null,                      4_000_000,   100_000, Effect.NONE,        0xFFB040),
+    CLAUS_UNIT              ("sulfur_recovery",      0, 2, 1, 1, false, null,                      1_000_000,    20_000, Effect.NONE,        0xF0E040),
+    DELAYED_COKER           ("coking",               1, 1, 1, 2, false, null,                      2_000_000,    40_000, Effect.NONE,        0xC07040),
+    // 1.4.0 stage 3: cryogenics and communications
+    HELIUM_LIQUEFIER        ("liquefaction",         1, 2, 0, 1, false, "helium_liquefier",         8_000_000,   200_000, Effect.NONE,        0xA0E0FF),
+    BCS_CRYOSTAT            ("superconductor_certification", 3, 1, 1, 0, false, null,               2_000_000,    40_000, Effect.NONE,        0x80C0FF),
+    DEEP_SPACE_TRANSCEIVER  ("deep_space_link",      3, 0, 1, 0, false, null,                      4_000_000,   100_000, Effect.RADIO,       0x80FFC0),
+    FIBRE_DRAW_TOWER        ("fibre_drawing",        1, 0, 1, 0, false, "fibre_draw_tower",         8_000_000,   200_000, Effect.NONE,        0xFF9040),
+    // 1.4.0 stage 4: materials failure, computer engineering, control and reliability
+    FRACTURE_BENCH          ("fracture_testing",     2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xC0C8D0),
+    BRIDGMAN_FURNACE        ("directional_solidification", 2, 0, 1, 0, false, "bridgman_furnace",   16_000_000,  400_000, Effect.NONE,        0xFF8030),
+    JOSEPHSON_LOGIC_BENCH   ("rsfq_logic",           1, 1, 1, 0, false, null,                      4_000_000,   100_000, Effect.NONE,        0x90B0FF),
+    MEDIA_SPUTTER_CHAMBER   ("sputtering",           2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xB070FF),
+    PID_BENCH               ("controller_tuning",    3, 0, 1, 0, false, null,                      1_000_000,    20_000, Effect.NONE,        0x70FFB0),
+    RELIABILITY_LEDGER      ("reliability_testing",  2, 0, 1, 0, false, null,                      2_000_000,    40_000, Effect.NONE,        0xE0D070),
     MICROWAVE_RECTENNA      ("microwave_reception",  0, 0, 0, 0, true,  "microwave_rectenna",      64_000_000, 2_000_000, Effect.NONE,        0x60C8FF),
     // 1.7.1: the Pleroma Confluence, rebuilt as a multiblock (it was a block with its own screen): five fluids in, Pleroma out
     PLEROMA_CONFLUENCE      ("pleroma_confluence",   2, 5, 1, 1, false, "pleroma_confluence",   2_000_000_000, 200_000_000, Effect.NONE,      0xFFE8C0);
@@ -395,7 +412,7 @@ public enum MachineType {
      * controller's block entity, always complete, with no structure, no containment to wear and no upgrades.
      */
     public boolean standaloneConsole() {
-        return this == SYNGAS_REFORMER || this == SUBSTITUENT_BENCH || this == POLARIMETER || this == HUCKEL_ANALYSER || this == MOLECULAR_MACHINE_BENCH
+        return this == FRACTURE_BENCH || this == JOSEPHSON_LOGIC_BENCH || this == MEDIA_SPUTTER_CHAMBER || this == PID_BENCH || this == RELIABILITY_LEDGER || this == BCS_CRYOSTAT || this == DEEP_SPACE_TRANSCEIVER || this == HYDROTREATER || this == CATALYTIC_REFORMER || this == CLAUS_UNIT || this == DELAYED_COKER || this == SYNGAS_REFORMER || this == SUBSTITUENT_BENCH || this == POLARIMETER || this == HUCKEL_ANALYSER || this == MOLECULAR_MACHINE_BENCH
                 || this == MICROGRAVITY_FACTORY || this == RADIATION_PRESSURE_BALANCE || this == ICE_RHEOMETER || this == CHEMICAL_REACTOR || this == TITRATION_BENCH || this == BUFFER_TANK || this == BRINE_EVAPORATOR || this == REVERSE_OSMOSIS_CELL
                 || this == BOMB_CALORIMETER || this == HEAT_PACK_REACTOR || this == FUEL_CELL || this == ELECTROPLATING_BATH
                 || this == MASS_SPECTROMETER || this == CATALYST_FORMULATOR || this == REGENERATION_KILN

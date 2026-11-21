@@ -1,0 +1,72 @@
+{
+  "params": [
+    {
+      "id": "Th",
+      "unit": "K",
+      "min": 520,
+      "max": 720,
+      "step": 1,
+      "default": 600
+    },
+    {
+      "id": "Ph",
+      "unit": "bar",
+      "min": 20,
+      "max": 140,
+      "step": 0.5,
+      "default": 50
+    },
+    {
+      "id": "lh",
+      "unit": "/h",
+      "min": 0.5,
+      "max": 10,
+      "step": 0.1,
+      "default": 4
+    }
+  ],
+  "recipe_vars": {
+    "S0": 5000.0,
+    "Ea": 100,
+    "cat": 1.0
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "k",
+      "unit": "/h",
+      "expr": "17*cat*exp(-Ea*1000/8.314*(1/Th - 1/600))*(Ph/50)^0.5",
+      "formula": "k = A·e^(−Eₐ/RT)·√p_H₂"
+    },
+    {
+      "id": "Sout",
+      "unit": "ppm",
+      "expr": "S0*exp(-17*cat*exp(-Ea*1000/8.314*(1/Th - 1/600))*(Ph/50)^0.5/lh)*(1 + 0.03*d)",
+      "formula": "S = S₀·e^(−k/LHSV): first order"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "coke",
+      "kind": "wear",
+      "expr": "690 - Th",
+      "formula": "under 690 K, or the naphtha cracks and cokes the catalyst"
+    },
+    {
+      "id": "h2",
+      "kind": "stop",
+      "expr": "Ph - 25",
+      "formula": "over 25 bar of hydrogen, or the sulfur stays put"
+    }
+  ],
+  "rate": "clamp(lh/2, 0.25, 3)",
+  "rate_formula": "a higher space velocity pushes more through",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

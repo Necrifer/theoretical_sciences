@@ -1,0 +1,40 @@
+{
+  "type": "theoreticalsciences:deep_space_link",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:radio_dish_panel",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:feed_horn",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:cryogenic_receiver",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:deep_space_relay",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 600,
+  "research": "theoreticalsciences:information_channels",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "dist": 1300000000000.0,
+      "Rq": 10000.0
+    },
+    "windows": [
+      {
+        "q": "mg",
+        "min": 1,
+        "max": 1000000000000.0
+      }
+    ]
+  }
+}

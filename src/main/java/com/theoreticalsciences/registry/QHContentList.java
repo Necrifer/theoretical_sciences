@@ -1016,7 +1016,31 @@ public final class QHContentList {
         new ItemDef("conjugated_polymer", "", 64),
         new ItemDef("rotaxane_shuttle", "", 64),
         new ItemDef("light_driven_rotor", "", 64),
-        new ItemDef("molecular_logic_gate", "", 64));
+        new ItemDef("molecular_logic_gate", "", 64),
+        // 1.4.0 stage 2: hydrocarbon systems
+        new ItemDef("cobalt_molybdenum_catalyst", "", 16),
+        new ItemDef("platinum_reforming_catalyst", "", 16),
+        new ItemDef("sulfur_dust", "", 64),
+        new ItemDef("petroleum_coke", "", 64),
+        new ItemDef("needle_coke", "", 64),
+        new ItemDef("source_rock_core", "", 64),
+        // 1.4.0 stage 3: cryogenics and communications
+        new ItemDef("nbti_wire", "", 64),
+        new ItemDef("nb3sn_strand", "", 64),
+        new ItemDef("rebco_tape", "", 64),
+        new ItemDef("doped_silica_preform", "", 64),
+        new ItemDef("single_mode_fibre_spool", "", 64),
+        new ItemDef("photonic_interconnect", "", 64),
+        new ItemDef("deep_space_relay", "", 16),
+        // 1.4.0 stage 4: materials failure, computer engineering, control and reliability
+        new ItemDef("nickel_superalloy", "", 64),
+        new ItemDef("single_crystal_turbine_blade", "", 64),
+        new ItemDef("josephson_wafer", "", 64),
+        new ItemDef("rsfq_logic_core", "", 64),
+        new ItemDef("sputter_target", "", 64),
+        new ItemDef("magnetic_archive_platter", "", 64),
+        new ItemDef("pid_governor_core", "", 64),
+        new ItemDef("triple_modular_controller", "", 16));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1189,6 +1213,11 @@ public final class QHContentList {
         new BlockDef("antistone", "simple", 1, 3.0F, "iron", ""),
         new BlockDef("antisoil", "simple", 0, 1.5F, "none", ""),
         new BlockDef("antistone_bricks", "deco", 0, 3.0F, "iron", ""),
+        new BlockDef("kerogen_shale", "simple", 0, 2.0F, "none", ""),          // 1.4.0 stage 2
+        new BlockDef("tar_sand", "simple", 0, 0.8F, "none", ""),          // 1.4.0 stage 2
+        new BlockDef("methane_clathrate", "simple", 1, 1.0F, "none", ""),          // 1.4.0 stage 2
+        new BlockDef("overmature_shale", "simple", 0, 3.0F, "none", ""),          // 1.4.0 stage 2
+        new BlockDef("nickel_laterite", "simple", 0, 0.8F, "none", ""),           // 1.4.0 stage 4
         new BlockDef("plume_ice", "simple", 1, 2.5F, "none", ""),          // 1.15.0
         new BlockDef("chondritic_regolith", "simple", 0, 0.8F, "none", ""),          // 1.15.0
         new BlockDef("annihilation_scar", "simple", 6, 3.0F, "iron", ""),          // 1.11.0
@@ -1536,7 +1565,10 @@ public final class QHContentList {
         new BlockDef("habitat_ring_module", "space_module", 9, 5.0F, "none", ""),
         new BlockDef("active_magnetic_shield", "space_module", 8, 5.0F, "none", ""),       // 1.14.0
         new BlockDef("bolometer_focal_plane", "casing", 2, 4.0F, "iron", ""),            // 1.15.0
-        new BlockDef("fischer_tropsch_tube", "casing", 0, 4.0F, "iron", ""));            // 1.4.0 stage 1
+        new BlockDef("fischer_tropsch_tube", "casing", 0, 4.0F, "iron", ""),            // 1.4.0 stage 1
+        new BlockDef("cold_box_casing", "casing", 0, 4.0F, "iron", ""),                 // 1.4.0 stage 3
+        new BlockDef("draw_tower_frame", "casing", 0, 4.0F, "iron", ""),
+        new BlockDef("bridgman_furnace_shell", "casing", 0, 4.0F, "iron", ""));         // 1.4.0 stage 4
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),
@@ -1651,6 +1683,17 @@ public final class QHContentList {
         new FluidDef("syngas", true, 0, 300, 1, 150, 0x484030),
         new FluidDef("rocket_kerosene", false, 0, 300, 810, 1200, 0x5A4A20),
         new FluidDef("benzene", false, 0, 300, 876, 600, 0x3A3828),
-        new FluidDef("aniline", false, 0, 300, 1022, 3700, 0x4A3418));
+        new FluidDef("aniline", false, 0, 300, 1022, 3700, 0x4A3418),
+        // 1.4.0 stage 2: the refinery
+        new FluidDef("sour_naphtha", false, 0, 300, 700, 500, 0x403820),
+        new FluidDef("naphtha", false, 0, 300, 690, 450, 0x484430),
+        new FluidDef("gas_oil", false, 0, 300, 850, 3000, 0x3A2A14),
+        new FluidDef("vacuum_residue", false, 0, 300, 1000, 50000, 0x100C08),
+        new FluidDef("bitumen", false, 0, 300, 1030, 60000, 0x0C0A08),
+        new FluidDef("hydrogen_sulfide", true, 0, 300, 1, 120, 0x403C20),
+        new FluidDef("btx_reformate", false, 0, 300, 870, 600, 0x48402C),
+        // 1.4.0 stage 3: the cryogens
+        new FluidDef("liquid_nitrogen", false, 0, 77, 808, 160, 0xC8E8FF),
+        new FluidDef("liquid_helium", false, 0, 4, 125, 30, 0xE0F4FF));
     private QHContentList() {}
 }

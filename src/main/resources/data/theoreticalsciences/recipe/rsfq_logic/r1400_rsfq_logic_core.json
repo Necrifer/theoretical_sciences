@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:rsfq_logic",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:josephson_wafer",
+      "count": 2
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:liquid_helium",
+      "amount": 100
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:rsfq_logic_core",
+      "count": 1
+    }
+  ],
+  "energy": 2048,
+  "duration": 400,
+  "research": "theoreticalsciences:superconducting_logic",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "NG": 10000,
+      "Th": 300,
+      "Tj": 9.2
+    },
+    "windows": [
+      {
+        "q": "gam",
+        "min": 500,
+        "max": 1000000000.0
+      },
+      {
+        "q": "W",
+        "min": 0,
+        "max": 60
+      }
+    ]
+  }
+}

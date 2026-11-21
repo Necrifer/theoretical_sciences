@@ -1,0 +1,34 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:methane_clathrate",
+      "count": 4
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:methane",
+      "amount": 1000
+    }
+  ],
+  "energy": 512,
+  "duration": 100,
+  "unscaled": true,
+  "research": "theoreticalsciences:syngas_chemistry",
+  "physics": {
+    "vars": {
+      "Ea": 20.0,
+      "Af": 500.0,
+      "Xt": 0.9,
+      "Ts": 2000
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "title": "Information Channels",
+  "x": 24,
+  "y": 15,
+  "insight": 190,
+  "requires": [
+    "theoreticalsciences:information_theory",
+    "theoreticalsciences:radio_astronomy"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:feed_horn",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:cryogenic_receiver",
+      "count": 1
+    }
+  ],
+  "time": 420,
+  "description": "How much can be said across a distance, through noise? Friis: a signal spreads out, so the power caught falls as the square of the distance, and a bigger dish catches more. Johnson and Nyquist: every receiver hisses with noise proportional to its temperature and its bandwidth, which is why the deep space dishes cool theirs. Shannon: the rate a channel can carry without error is its bandwidth times the logarithm of one plus the signal over the noise. Voyager, beyond the planets, still sends 160 bits a second. Unlocks the Deep Space Transceiver.",
+  "icon": "theoreticalsciences:deep_space_transceiver",
+  "puzzle": {
+    "goal": "A channel of bandwidth B carries a signal of power S over noise N. Write the most bits a second it can carry without error, C (Shannon and Hartley).",
+    "name": "Channel capacity",
+    "lhs": "C",
+    "form": "B * ln ( 1 + S / N ) / ln ( 2 )",
+    "expr": "B * ln ( 1 + S / N ) / ln ( 2 )",
+    "ask": "Find C in bit/s for a 4000 Hz line with S/N = @{S}.",
+    "vars": {
+      "C": "capacity",
+      "B": "bandwidth",
+      "S": "signal",
+      "N": "noise"
+    },
+    "given": {
+      "B": 4000.0,
+      "S": 100.0,
+      "N": 1.0
+    },
+    "unit": "bit/s",
+    "method": "Count how many signal levels the noise lets you tell apart, √(1 + S/N), sending 2B symbols a second.",
+    "distractors": [
+      "*",
+      "-",
+      "exp"
+    ],
+    "vary": {
+      "S": [
+        1.0,
+        1000.0,
+        1.0
+      ]
+    }
+  },
+  "category": "physics"
+}

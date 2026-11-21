@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:doping",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:doped_wafer",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:nbti_wire",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:josephson_wafer",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "unscaled": true,
+  "research": "theoreticalsciences:superconducting_logic",
+  "physics": {
+    "windows": [
+      {
+        "q": "lc",
+        "min": 16.0,
+        "max": 18.0
+      }
+    ]
+  }
+}

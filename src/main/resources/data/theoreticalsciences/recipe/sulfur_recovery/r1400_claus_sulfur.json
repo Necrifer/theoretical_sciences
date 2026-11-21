@@ -1,0 +1,38 @@
+{
+  "type": "theoreticalsciences:sulfur_recovery",
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:hydrogen_sulfide",
+      "amount": 1000
+    },
+    {
+      "fluid": "theoreticalsciences:oxygen",
+      "amount": 500
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:sulfur_dust",
+      "count": 4
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "energy": 256,
+  "duration": 200,
+  "research": "theoreticalsciences:sulfur_recovery",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "rec",
+        "min": 0.97,
+        "max": 1.0
+      }
+    ]
+  }
+}

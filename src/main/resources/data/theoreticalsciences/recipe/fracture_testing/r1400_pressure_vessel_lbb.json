@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:fracture_testing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:nickel_plated_iron",
+      "count": 4
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pressure_vessel_wall",
+      "count": 8
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:fracture_mechanics",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Kc": 100,
+      "Cpa": 1e-11,
+      "mpa": 3,
+      "tw": 5
+    },
+    "windows": [
+      {
+        "q": "N",
+        "min": 1000000.0,
+        "max": 1e+30
+      },
+      {
+        "q": "lbb",
+        "min": 1,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

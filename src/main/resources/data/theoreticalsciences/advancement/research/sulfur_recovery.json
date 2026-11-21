@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:claus_unit"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.sulfur_recovery"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.sulfur_recovery.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/hydroprocessing",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

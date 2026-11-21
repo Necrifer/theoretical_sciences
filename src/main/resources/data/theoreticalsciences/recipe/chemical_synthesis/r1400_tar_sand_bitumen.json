@@ -1,0 +1,51 @@
+{
+  "type": "theoreticalsciences:chemical_synthesis",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:tar_sand",
+      "count": 8
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "minecraft:water",
+      "amount": 1000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "minecraft:sand",
+      "count": 6
+    }
+  ],
+  "fluid_outputs": [
+    {
+      "id": "theoreticalsciences:bitumen",
+      "amount": 1000
+    }
+  ],
+  "energy": 512,
+  "duration": 100,
+  "unscaled": true,
+  "research": "theoreticalsciences:petroleum_geology",
+  "physics": {
+    "vars": {
+      "Ea": 30.0,
+      "Af": 2000.0,
+      "Xt": 0.9,
+      "Ts": 2000
+    },
+    "windows": [
+      {
+        "q": "X",
+        "min": 0.9,
+        "max": 1.0
+      },
+      {
+        "q": "Th",
+        "min": 330,
+        "max": 370
+      }
+    ]
+  }
+}

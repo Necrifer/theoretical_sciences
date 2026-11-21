@@ -15,9 +15,19 @@
       "max": 2,
       "step": 0.01,
       "default": 0.5
+    },
+    {
+      "id": "co",
+      "unit": "",
+      "min": 2,
+      "max": 12,
+      "step": 0.1,
+      "default": 5
     }
   ],
-  "recipe_vars": {},
+  "recipe_vars": {
+    "fcc": 0.0
+  },
   "consts": [],
   "states": [],
   "derived": [
@@ -32,19 +42,31 @@
       "id": "Se",
       "unit": "",
       "expr": "exp(-((Te - 1100)/80)^2)",
-      "formula": "S \u2248 e^(\u2212((T \u2212 T*)/80 K)\u00b2)"
+      "formula": "S ≈ e^(−((T − T*)/80 K)²)"
     },
     {
       "id": "Sp",
       "unit": "",
       "expr": "exp(-((Te - 1000)/80)^2)",
-      "formula": "S \u2248 e^(\u2212((T \u2212 T*)/80 K)\u00b2)"
+      "formula": "S ≈ e^(−((T − T*)/80 K)²)"
     },
     {
       "id": "ck",
       "unit": "",
       "expr": "exp((Te - 1150)/40)/(1 + 2*sr)",
-      "formula": "coke \u221d e^((T \u2212 1150 K)/40 K) / (1 + 2\u00b7steam)"
+      "formula": "coke ∝ e^((T − 1150 K)/40 K) / (1 + 2·steam)"
+    },
+    {
+      "id": "cyF",
+      "unit": "",
+      "expr": "0.01*co*exp((Tk - 808)/60)",
+      "formula": "coke on the catalyst, per kilogram of oil"
+    },
+    {
+      "id": "Treg",
+      "unit": "K",
+      "expr": "Tk + (0.01*co*exp((Tk - 808)/60)*30000 - 500)/(co*1.1)*(1 + 0.01*d)",
+      "formula": "regenerator: T_riser + (c·H − q)/(r·c_p)"
     }
   ],
   "constraints": [
@@ -53,10 +75,16 @@
       "kind": "wear",
       "expr": "1 - ck",
       "formula": "coke < 1"
+    },
+    {
+      "id": "regen",
+      "kind": "wear",
+      "expr": "1 - fcc*step(Tk + (0.01*co*exp((Tk - 808)/60)*30000 - 500)/(co*1.1)*(1 + 0.01*d) - 1030)",
+      "formula": "FCC: the regenerator under 1030 K, or the zeolite loses its structure"
     }
   ],
   "rate": "clamp(exp(-15000*(1/Te - 1/1000))/(1 + 0.3*sr), 0.25, 3)",
-  "rate_formula": "rate = e^(\u2212E\u2090/R\u00b7(1/T \u2212 1/1000 K))/(1 + 0.3\u00b7steam)",
+  "rate_formula": "rate = e^(−Eₐ/R·(1/T − 1/1000 K))/(1 + 0.3·steam)",
   "heat": "0",
   "idle_heat": "0",
   "quench_energy": "0",

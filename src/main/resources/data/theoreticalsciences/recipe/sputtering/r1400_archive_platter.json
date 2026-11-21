@@ -1,0 +1,43 @@
+{
+  "type": "theoreticalsciences:sputtering",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:sputter_target",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:magnetic_archive_platter",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 400,
+  "research": "theoreticalsciences:magnetic_storage",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ku": 7000000.0,
+      "Ms": 1100000.0,
+      "Tcu": 750,
+      "Tst": 300
+    },
+    "windows": [
+      {
+        "q": "ly",
+        "min": 1,
+        "max": 1000000000.0
+      },
+      {
+        "q": "rho",
+        "min": 1.5,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}
