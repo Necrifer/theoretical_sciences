@@ -193,6 +193,7 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.LAUE_GONIOMETER, "goniometer_offset", Drift.WALK, 0.3F, 1, 3, Hazard.RADIOLOGICAL, 1);   // 1.4.0 stage 6
         p(MachineType.LANGMUIR_PROBE_STATION, "probe_contamination", Drift.DECAY, 0.3F, 1, 3, Hazard.THERMAL, 2);
         p(MachineType.ION_CHANNEL_BENCH, "seal_leak", Drift.WALK, 0.3F, 1, 3, Hazard.CHEMICAL, 1);
+        p(MachineType.REEF_MESOCOSM, "algal_bloom", Drift.OSCILLATE, 0.3F, 1, 3, Hazard.CHEMICAL, 1);          // 1.4.0 stage 7
         p(MachineType.CMB_BOLOMETER_ARRAY, "atmospheric_drift", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);   // 1.14.0
         p(MachineType.CANTOR_DIAGONALIZER, "diagonal_index", Drift.JUMP, 1.2F, 1, 2, Hazard.SPATIAL, 9);        // 1.7.1: now multiblocks
         p(MachineType.AXIOM_DISTILLER, "reflux_ratio", Drift.WALK, 1.0F, 1, 2, Hazard.SPATIAL, 9);

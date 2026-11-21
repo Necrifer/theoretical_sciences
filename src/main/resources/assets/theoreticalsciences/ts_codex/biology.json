@@ -6,16 +6,16 @@
  "nodes": [
   {
    "entry": "biology/anomaly_spawner",
-   "x": 7,
+   "x": 29,
    "y": 3,
    "parents": [],
    "band": "Biology",
    "route": [
-    2,
+    4,
     0,
     -999999997.0,
-    4.5,
-    9.5
+    26.5,
+    31.5
    ]
   },
   {
@@ -25,7 +25,7 @@
    "parents": [],
    "band": "Artificial Minds",
    "route": [
-    6,
+    7,
     0,
     -999999915.0,
     -1.5,
@@ -114,36 +114,36 @@
   },
   {
    "entry": "biology/life",
-   "x": 19,
-   "y": 33,
+   "x": 1,
+   "y": 45,
    "parents": [],
    "band": "Biology",
    "route": [
-    4,
+    6,
     0,
-    3.5,
-    16.5,
-    25.5
+    15.5,
+    -1.5,
+    7.5
    ]
   },
   {
    "entry": "biology/bioreactor",
-   "x": 19,
-   "y": 36,
+   "x": 1,
+   "y": 48,
    "parents": [],
    "band": "Biology",
    "route": [
-    4,
+    6,
     0,
-    3.5,
-    16.5,
-    25.5
+    15.5,
+    -1.5,
+    7.5
    ]
   },
   {
    "entry": "biology/node_nutrient_broth",
-   "x": 19,
-   "y": 38,
+   "x": 1,
+   "y": 50,
    "parents": [
     "biology/bioreactor"
    ],
@@ -152,42 +152,42 @@
   },
   {
    "entry": "biology/r88_cell",
-   "x": 28,
-   "y": 22,
+   "x": 10,
+   "y": 34,
    "parents": [
     "biology/life",
     "biology/bioreactor"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     1,
-    3.5,
-    25.5,
-    34.5
+    15.5,
+    7.5,
+    16.5
    ]
   },
   {
    "entry": "biology/gene_sequencer",
-   "x": 28,
-   "y": 43,
+   "x": 10,
+   "y": 55,
    "parents": [
     "biology/life",
     "biology/bioreactor"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     1,
-    3.5,
-    25.5,
-    34.5
+    15.5,
+    7.5,
+    16.5
    ]
   },
   {
    "entry": "biology/node_engineered_enzyme",
-   "x": 28,
-   "y": 47,
+   "x": 10,
+   "y": 59,
    "parents": [
     "biology/gene_sequencer"
    ],
@@ -196,8 +196,8 @@
   },
   {
    "entry": "biology/node_genome_sample",
-   "x": 30,
-   "y": 47,
+   "x": 12,
+   "y": 59,
    "parents": [
     "biology/gene_sequencer"
    ],
@@ -206,8 +206,8 @@
   },
   {
    "entry": "biology/node_recombinant_dna",
-   "x": 32,
-   "y": 47,
+   "x": 14,
+   "y": 59,
    "parents": [
     "biology/gene_sequencer"
    ],
@@ -216,8 +216,8 @@
   },
   {
    "entry": "biology/node_research_extremophiles",
-   "x": 30,
-   "y": 45,
+   "x": 12,
+   "y": 57,
    "parents": [
     "biology/gene_sequencer"
    ],
@@ -226,8 +226,8 @@
   },
   {
    "entry": "biology/node_stable_strategy",
-   "x": 28,
-   "y": 45,
+   "x": 10,
+   "y": 57,
    "parents": [
     "biology/gene_sequencer"
    ],
@@ -236,8 +236,8 @@
   },
   {
    "entry": "biology/node_tardigrade_culture",
-   "x": 32,
-   "y": 45,
+   "x": 14,
+   "y": 57,
    "parents": [
     "biology/gene_sequencer"
    ],
@@ -246,25 +246,25 @@
   },
   {
    "entry": "biology/autoclave",
-   "x": 28,
-   "y": 59,
+   "x": 10,
+   "y": 71,
    "parents": [
     "biology/life",
     "biology/bioreactor"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     1,
-    3.5,
-    25.5,
-    34.5
+    15.5,
+    7.5,
+    16.5
    ]
   },
   {
    "entry": "biology/node_biosafety_panel",
-   "x": 32,
-   "y": 61,
+   "x": 14,
+   "y": 73,
    "parents": [
     "biology/autoclave"
    ],
@@ -273,8 +273,8 @@
   },
   {
    "entry": "biology/node_probiotic_seal",
-   "x": 28,
-   "y": 61,
+   "x": 10,
+   "y": 73,
    "parents": [
     "biology/autoclave"
    ],
@@ -283,8 +283,8 @@
   },
   {
    "entry": "biology/node_sterile_pack",
-   "x": 30,
-   "y": 61,
+   "x": 12,
+   "y": 73,
    "parents": [
     "biology/autoclave"
    ],
@@ -293,25 +293,25 @@
   },
   {
    "entry": "biology/patch_clamp_rig",
-   "x": 28,
-   "y": 15,
+   "x": 10,
+   "y": 27,
    "parents": [
     "biology/life",
     "biology/bioreactor"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     1,
-    3.5,
-    25.5,
-    34.5
+    15.5,
+    7.5,
+    16.5
    ]
   },
   {
    "entry": "biology/node_ion_channel_membrane",
-   "x": 32,
-   "y": 19,
+   "x": 14,
+   "y": 31,
    "parents": [
     "biology/patch_clamp_rig"
    ],
@@ -320,8 +320,8 @@
   },
   {
    "entry": "biology/node_lipid_bilayer",
-   "x": 28,
-   "y": 17,
+   "x": 10,
+   "y": 29,
    "parents": [
     "biology/patch_clamp_rig"
    ],
@@ -330,8 +330,8 @@
   },
   {
    "entry": "biology/node_living_cell",
-   "x": 32,
-   "y": 17,
+   "x": 14,
+   "y": 29,
    "parents": [
     "biology/patch_clamp_rig"
    ],
@@ -340,8 +340,8 @@
   },
   {
    "entry": "biology/node_research_membrane_potential",
-   "x": 30,
-   "y": 17,
+   "x": 12,
+   "y": 29,
    "parents": [
     "biology/patch_clamp_rig"
    ],
@@ -350,8 +350,8 @@
   },
   {
    "entry": "biology/node_research_metabolism",
-   "x": 28,
-   "y": 19,
+   "x": 10,
+   "y": 31,
    "parents": [
     "biology/patch_clamp_rig"
    ],
@@ -360,8 +360,8 @@
   },
   {
    "entry": "biology/node_research_respiration",
-   "x": 30,
-   "y": 19,
+   "x": 12,
+   "y": 31,
    "parents": [
     "biology/patch_clamp_rig"
    ],
@@ -377,7 +377,7 @@
    ],
    "band": "Artificial Minds",
    "route": [
-    6,
+    7,
     1,
     -999999915.0,
     7.5,
@@ -426,24 +426,24 @@
   },
   {
    "entry": "biology/ribosome_assembler",
-   "x": 37,
-   "y": 54,
+   "x": 19,
+   "y": 66,
    "parents": [
     "biology/gene_sequencer"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_messenger_rna",
-   "x": 39,
-   "y": 56,
+   "x": 21,
+   "y": 68,
    "parents": [
     "biology/ribosome_assembler"
    ],
@@ -452,8 +452,8 @@
   },
   {
    "entry": "biology/node_research_translation",
-   "x": 37,
-   "y": 56,
+   "x": 19,
+   "y": 68,
    "parents": [
     "biology/ribosome_assembler"
    ],
@@ -462,24 +462,24 @@
   },
   {
    "entry": "biology/fermenter",
-   "x": 37,
-   "y": 59,
+   "x": 19,
+   "y": 71,
    "parents": [
     "biology/autoclave"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_antibody",
-   "x": 39,
-   "y": 61,
+   "x": 21,
+   "y": 73,
    "parents": [
     "biology/fermenter"
    ],
@@ -488,8 +488,8 @@
   },
   {
    "entry": "biology/node_bacterial_culture",
-   "x": 43,
-   "y": 61,
+   "x": 25,
+   "y": 73,
    "parents": [
     "biology/fermenter"
    ],
@@ -498,8 +498,8 @@
   },
   {
    "entry": "biology/node_methane",
-   "x": 37,
-   "y": 61,
+   "x": 19,
+   "y": 73,
    "parents": [
     "biology/fermenter"
    ],
@@ -508,8 +508,8 @@
   },
   {
    "entry": "biology/node_research_biomineralisation",
-   "x": 41,
-   "y": 61,
+   "x": 23,
+   "y": 73,
    "parents": [
     "biology/fermenter"
    ],
@@ -518,8 +518,8 @@
   },
   {
    "entry": "biology/node_research_innate_immunity",
-   "x": 39,
-   "y": 63,
+   "x": 21,
+   "y": 75,
    "parents": [
     "biology/fermenter"
    ],
@@ -528,8 +528,8 @@
   },
   {
    "entry": "biology/node_research_microbiology",
-   "x": 41,
-   "y": 63,
+   "x": 23,
+   "y": 75,
    "parents": [
     "biology/fermenter"
    ],
@@ -538,8 +538,8 @@
   },
   {
    "entry": "biology/node_research_probiotics",
-   "x": 37,
-   "y": 65,
+   "x": 19,
+   "y": 77,
    "parents": [
     "biology/fermenter"
    ],
@@ -548,8 +548,8 @@
   },
   {
    "entry": "biology/node_tube_worms",
-   "x": 37,
-   "y": 63,
+   "x": 19,
+   "y": 75,
    "parents": [
     "biology/fermenter"
    ],
@@ -558,8 +558,8 @@
   },
   {
    "entry": "biology/node_vent_biofilm",
-   "x": 43,
-   "y": 63,
+   "x": 25,
+   "y": 75,
    "parents": [
     "biology/fermenter"
    ],
@@ -568,8 +568,8 @@
   },
   {
    "entry": "biology/node_yeast_culture",
-   "x": 39,
-   "y": 65,
+   "x": 21,
+   "y": 77,
    "parents": [
     "biology/fermenter"
    ],
@@ -578,25 +578,25 @@
   },
   {
    "entry": "biology/photobioreactor",
-   "x": 37,
-   "y": 27,
+   "x": 19,
+   "y": 39,
    "parents": [
     "biology/r88_cell",
     "biology/patch_clamp_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_algae_culture",
-   "x": 37,
-   "y": 29,
+   "x": 19,
+   "y": 41,
    "parents": [
     "biology/photobioreactor"
    ],
@@ -605,24 +605,24 @@
   },
   {
    "entry": "biology/folding_chamber",
-   "x": 37,
-   "y": 32,
+   "x": 19,
+   "y": 44,
    "parents": [
     "biology/gene_sequencer"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_folded_protein_crystal",
-   "x": 37,
-   "y": 34,
+   "x": 19,
+   "y": 46,
    "parents": [
     "biology/folding_chamber"
    ],
@@ -631,24 +631,24 @@
   },
   {
    "entry": "biology/quantum_life",
-   "x": 48,
-   "y": 37,
+   "x": 30,
+   "y": 49,
    "parents": [
     "biology/folding_chamber"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_cryptochrome_magnetoreceptor",
-   "x": 48,
-   "y": 39,
+   "x": 30,
+   "y": 51,
    "parents": [
     "biology/quantum_life"
    ],
@@ -657,40 +657,40 @@
   },
   {
    "entry": "biology/r89_microbes",
-   "x": 48,
-   "y": 55,
+   "x": 30,
+   "y": 67,
    "parents": [
     "biology/fermenter"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/synthetic",
-   "x": 48,
-   "y": 27,
+   "x": 30,
+   "y": 39,
    "parents": [
     "biology/folding_chamber"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_breached_anomaly_engine",
-   "x": 48,
-   "y": 31,
+   "x": 30,
+   "y": 43,
    "parents": [
     "biology/synthetic"
    ],
@@ -699,8 +699,8 @@
   },
   {
    "entry": "biology/node_morphogenic_serum",
-   "x": 48,
-   "y": 33,
+   "x": 30,
+   "y": 45,
    "parents": [
     "biology/synthetic"
    ],
@@ -709,8 +709,8 @@
   },
   {
    "entry": "biology/node_neural_organoid",
-   "x": 50,
-   "y": 29,
+   "x": 32,
+   "y": 41,
    "parents": [
     "biology/synthetic"
    ],
@@ -719,8 +719,8 @@
   },
   {
    "entry": "biology/node_research_morphogenesis",
-   "x": 52,
-   "y": 29,
+   "x": 34,
+   "y": 41,
    "parents": [
     "biology/synthetic"
    ],
@@ -729,8 +729,8 @@
   },
   {
    "entry": "biology/node_research_neurobiology",
-   "x": 50,
-   "y": 31,
+   "x": 32,
+   "y": 43,
    "parents": [
     "biology/synthetic"
    ],
@@ -739,8 +739,8 @@
   },
   {
    "entry": "biology/node_research_xenobiology",
-   "x": 52,
-   "y": 31,
+   "x": 34,
+   "y": 43,
    "parents": [
     "biology/synthetic"
    ],
@@ -749,8 +749,8 @@
   },
   {
    "entry": "biology/node_silicon_life_spore",
-   "x": 54,
-   "y": 29,
+   "x": 36,
+   "y": 41,
    "parents": [
     "biology/synthetic"
    ],
@@ -759,8 +759,8 @@
   },
   {
    "entry": "biology/node_xenobot_swarm",
-   "x": 54,
-   "y": 31,
+   "x": 36,
+   "y": 43,
    "parents": [
     "biology/synthetic"
    ],
@@ -769,8 +769,8 @@
   },
   {
    "entry": "biology/node_xenogenome_sample",
-   "x": 50,
-   "y": 33,
+   "x": 32,
+   "y": 45,
    "parents": [
     "biology/synthetic"
    ],
@@ -779,8 +779,8 @@
   },
   {
    "entry": "biology/node_xenoplasm",
-   "x": 48,
-   "y": 29,
+   "x": 30,
+   "y": 41,
    "parents": [
     "biology/synthetic"
    ],
@@ -789,42 +789,42 @@
   },
   {
    "entry": "biology/r91_body",
-   "x": 37,
-   "y": 21,
+   "x": 19,
+   "y": 33,
    "parents": [
     "biology/r88_cell",
     "biology/patch_clamp_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/perfusion_rig",
-   "x": 37,
-   "y": 8,
+   "x": 19,
+   "y": 20,
    "parents": [
     "biology/r88_cell",
     "biology/patch_clamp_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_bioluminescent_membrane",
-   "x": 43,
-   "y": 14,
+   "x": 25,
+   "y": 26,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -833,8 +833,8 @@
   },
   {
    "entry": "biology/node_blood_plasma",
-   "x": 37,
-   "y": 14,
+   "x": 19,
+   "y": 26,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -843,8 +843,8 @@
   },
   {
    "entry": "biology/node_bone_matrix",
-   "x": 41,
-   "y": 18,
+   "x": 23,
+   "y": 30,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -853,8 +853,8 @@
   },
   {
    "entry": "biology/node_cell_membrane",
-   "x": 37,
-   "y": 10,
+   "x": 19,
+   "y": 22,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -863,8 +863,8 @@
   },
   {
    "entry": "biology/node_chromatin",
-   "x": 41,
-   "y": 10,
+   "x": 23,
+   "y": 22,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -873,8 +873,8 @@
   },
   {
    "entry": "biology/node_collagen_seam",
-   "x": 43,
-   "y": 10,
+   "x": 25,
+   "y": 22,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -883,8 +883,8 @@
   },
   {
    "entry": "biology/node_extracellular_matrix",
-   "x": 43,
-   "y": 12,
+   "x": 25,
+   "y": 24,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -893,8 +893,8 @@
   },
   {
    "entry": "biology/node_luminous_mesoglea",
-   "x": 41,
-   "y": 16,
+   "x": 23,
+   "y": 28,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -903,8 +903,8 @@
   },
   {
    "entry": "biology/node_lymph_tissue",
-   "x": 37,
-   "y": 16,
+   "x": 19,
+   "y": 28,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -913,8 +913,8 @@
   },
   {
    "entry": "biology/node_matrix_fibre",
-   "x": 37,
-   "y": 12,
+   "x": 19,
+   "y": 24,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -923,8 +923,8 @@
   },
   {
    "entry": "biology/node_memory_cell",
-   "x": 41,
-   "y": 12,
+   "x": 23,
+   "y": 24,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -933,8 +933,8 @@
   },
   {
    "entry": "biology/node_nucleotide",
-   "x": 39,
-   "y": 16,
+   "x": 21,
+   "y": 28,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -943,8 +943,8 @@
   },
   {
    "entry": "biology/node_nucleotide_cluster",
-   "x": 37,
-   "y": 18,
+   "x": 19,
+   "y": 30,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -953,8 +953,8 @@
   },
   {
    "entry": "biology/node_perfused_tissue",
-   "x": 43,
-   "y": 16,
+   "x": 25,
+   "y": 28,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -963,8 +963,8 @@
   },
   {
    "entry": "biology/node_research_circulation",
-   "x": 39,
-   "y": 12,
+   "x": 21,
+   "y": 24,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -973,8 +973,8 @@
   },
   {
    "entry": "biology/node_research_inner_space",
-   "x": 39,
-   "y": 14,
+   "x": 21,
+   "y": 26,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -983,8 +983,8 @@
   },
   {
    "entry": "biology/node_research_stem_cells",
-   "x": 41,
-   "y": 14,
+   "x": 23,
+   "y": 26,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -993,8 +993,8 @@
   },
   {
    "entry": "biology/node_tumour_mass",
-   "x": 39,
-   "y": 18,
+   "x": 21,
+   "y": 30,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -1003,8 +1003,8 @@
   },
   {
    "entry": "biology/node_tumour_nodule",
-   "x": 43,
-   "y": 18,
+   "x": 25,
+   "y": 30,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -1013,8 +1013,8 @@
   },
   {
    "entry": "biology/node_tumour_specimen",
-   "x": 39,
-   "y": 10,
+   "x": 21,
+   "y": 22,
    "parents": [
     "biology/perfusion_rig"
    ],
@@ -1023,25 +1023,25 @@
   },
   {
    "entry": "biology/r92_scale",
-   "x": 48,
-   "y": 12,
+   "x": 30,
+   "y": 24,
    "parents": [
     "biology/r91_body",
     "biology/perfusion_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_mirror_microbe",
-   "x": 48,
-   "y": 14,
+   "x": 30,
+   "y": 26,
    "parents": [
     "biology/r92_scale"
    ],
@@ -1050,25 +1050,25 @@
   },
   {
    "entry": "biology/phage_lab",
-   "x": 59,
-   "y": 51,
+   "x": 41,
+   "y": 63,
    "parents": [
     "biology/ribosome_assembler",
     "biology/r89_microbes"
    ],
    "band": "Biology",
    "route": [
+    6,
     4,
-    4,
-    3.5,
-    56.5,
-    65.5
+    15.5,
+    38.5,
+    47.5
    ]
   },
   {
    "entry": "biology/node_bacteriophage",
-   "x": 61,
-   "y": 53,
+   "x": 43,
+   "y": 65,
    "parents": [
     "biology/phage_lab"
    ],
@@ -1077,8 +1077,8 @@
   },
   {
    "entry": "biology/node_research_lysogeny",
-   "x": 59,
-   "y": 53,
+   "x": 41,
+   "y": 65,
    "parents": [
     "biology/phage_lab"
    ],
@@ -1087,24 +1087,24 @@
   },
   {
    "entry": "biology/mycelium_bed",
-   "x": 59,
-   "y": 57,
+   "x": 41,
+   "y": 69,
    "parents": [
     "biology/r89_microbes"
    ],
    "band": "Biology",
    "route": [
+    6,
     4,
-    4,
-    3.5,
-    56.5,
-    65.5
+    15.5,
+    38.5,
+    47.5
    ]
   },
   {
    "entry": "biology/node_antibiotic",
-   "x": 61,
-   "y": 59,
+   "x": 43,
+   "y": 71,
    "parents": [
     "biology/mycelium_bed"
    ],
@@ -1113,8 +1113,8 @@
   },
   {
    "entry": "biology/node_mould_culture",
-   "x": 63,
-   "y": 59,
+   "x": 45,
+   "y": 71,
    "parents": [
     "biology/mycelium_bed"
    ],
@@ -1123,8 +1123,8 @@
   },
   {
    "entry": "biology/node_physarum_culture",
-   "x": 59,
-   "y": 61,
+   "x": 41,
+   "y": 73,
    "parents": [
     "biology/mycelium_bed"
    ],
@@ -1133,8 +1133,8 @@
   },
   {
    "entry": "biology/node_research_slime_moulds",
-   "x": 59,
-   "y": 59,
+   "x": 41,
+   "y": 71,
    "parents": [
     "biology/mycelium_bed"
    ],
@@ -1143,25 +1143,25 @@
   },
   {
    "entry": "biology/circadian_incubator",
-   "x": 48,
-   "y": 17,
+   "x": 30,
+   "y": 29,
    "parents": [
     "biology/r91_body",
     "biology/perfusion_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_circadian_culture",
-   "x": 48,
-   "y": 19,
+   "x": 30,
+   "y": 31,
    "parents": [
     "biology/circadian_incubator"
    ],
@@ -1170,25 +1170,25 @@
   },
   {
    "entry": "biology/dosing_pump",
-   "x": 48,
-   "y": 22,
+   "x": 30,
+   "y": 34,
    "parents": [
     "biology/r91_body",
     "biology/perfusion_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_miniaturiser",
-   "x": 48,
-   "y": 24,
+   "x": 30,
+   "y": 36,
    "parents": [
     "biology/dosing_pump"
    ],
@@ -1197,8 +1197,8 @@
   },
   {
    "entry": "biology/node_stable_dose",
-   "x": 50,
-   "y": 24,
+   "x": 32,
+   "y": 36,
    "parents": [
     "biology/dosing_pump"
    ],
@@ -1207,25 +1207,25 @@
   },
   {
    "entry": "biology/ecosphere",
-   "x": 48,
-   "y": 5,
+   "x": 30,
+   "y": 17,
    "parents": [
     "biology/r91_body",
     "biology/perfusion_rig"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_research_predator_prey",
-   "x": 48,
-   "y": 7,
+   "x": 30,
+   "y": 19,
    "parents": [
     "biology/ecosphere"
    ],
@@ -1234,8 +1234,8 @@
   },
   {
    "entry": "biology/node_research_tree_of_life",
-   "x": 50,
-   "y": 7,
+   "x": 32,
+   "y": 19,
    "parents": [
     "biology/ecosphere"
    ],
@@ -1244,8 +1244,8 @@
   },
   {
    "entry": "biology/node_stable_ecosystem",
-   "x": 52,
-   "y": 7,
+   "x": 34,
+   "y": 19,
    "parents": [
     "biology/ecosphere"
    ],
@@ -1254,8 +1254,8 @@
   },
   {
    "entry": "biology/node_symbiont_lining",
-   "x": 48,
-   "y": 9,
+   "x": 30,
+   "y": 21,
    "parents": [
     "biology/ecosphere"
    ],
@@ -1271,7 +1271,7 @@
    ],
    "band": "Artificial Minds",
    "route": [
-    6,
+    7,
     1,
     -999999915.0,
     7.5,
@@ -1280,24 +1280,24 @@
   },
   {
    "entry": "biology/evolution",
-   "x": 59,
-   "y": 25,
+   "x": 41,
+   "y": 37,
    "parents": [
     "biology/synthetic"
    ],
    "band": "Biology",
    "route": [
+    6,
     4,
-    4,
-    3.5,
-    56.5,
-    65.5
+    15.5,
+    38.5,
+    47.5
    ]
   },
   {
    "entry": "biology/node_lasting_ward_fracture",
-   "x": 61,
-   "y": 27,
+   "x": 43,
+   "y": 39,
    "parents": [
     "biology/evolution"
    ],
@@ -1306,8 +1306,8 @@
   },
   {
    "entry": "biology/node_lasting_ward_grey_goo",
-   "x": 59,
-   "y": 29,
+   "x": 41,
+   "y": 41,
    "parents": [
     "biology/evolution"
    ],
@@ -1316,8 +1316,8 @@
   },
   {
    "entry": "biology/node_lasting_ward_hollowing",
-   "x": 61,
-   "y": 29,
+   "x": 43,
+   "y": 41,
    "parents": [
     "biology/evolution"
    ],
@@ -1326,8 +1326,8 @@
   },
   {
    "entry": "biology/node_lasting_ward_metastasis",
-   "x": 59,
-   "y": 31,
+   "x": 41,
+   "y": 43,
    "parents": [
     "biology/evolution"
    ],
@@ -1336,8 +1336,8 @@
   },
   {
    "entry": "biology/node_lasting_ward_rewind",
-   "x": 59,
-   "y": 27,
+   "x": 41,
+   "y": 39,
    "parents": [
     "biology/evolution"
    ],
@@ -1346,8 +1346,8 @@
   },
   {
    "entry": "biology/node_omnicellular_genome",
-   "x": 63,
-   "y": 27,
+   "x": 45,
+   "y": 39,
    "parents": [
     "biology/evolution"
    ],
@@ -1356,8 +1356,8 @@
   },
   {
    "entry": "biology/node_telomerase_complex",
-   "x": 63,
-   "y": 29,
+   "x": 45,
+   "y": 41,
    "parents": [
     "biology/evolution"
    ],
@@ -1366,24 +1366,24 @@
   },
   {
    "entry": "biology/r90_defence",
-   "x": 37,
-   "y": 48,
+   "x": 19,
+   "y": 60,
    "parents": [
     "biology/gene_sequencer"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_paradox_echo",
-   "x": 37,
-   "y": 50,
+   "x": 19,
+   "y": 62,
    "parents": [
     "biology/r90_defence"
    ],
@@ -1392,40 +1392,40 @@
   },
   {
    "entry": "biology/evolution_engine",
-   "x": 59,
-   "y": 34,
+   "x": 41,
+   "y": 46,
    "parents": [
     "biology/synthetic"
    ],
    "band": "Biology",
    "route": [
+    6,
     4,
-    4,
-    3.5,
-    56.5,
-    65.5
+    15.5,
+    38.5,
+    47.5
    ]
   },
   {
    "entry": "biology/antibody_bench",
-   "x": 37,
-   "y": 39,
+   "x": 19,
+   "y": 51,
    "parents": [
     "biology/gene_sequencer"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     2,
-    3.5,
-    34.5,
-    45.5
+    15.5,
+    16.5,
+    27.5
    ]
   },
   {
    "entry": "biology/node_research_antibodies",
-   "x": 39,
-   "y": 41,
+   "x": 21,
+   "y": 53,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1434,8 +1434,8 @@
   },
   {
    "entry": "biology/node_research_immune_memory",
-   "x": 37,
-   "y": 43,
+   "x": 19,
+   "y": 55,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1444,8 +1444,8 @@
   },
   {
    "entry": "biology/node_research_immunisation",
-   "x": 39,
-   "y": 43,
+   "x": 21,
+   "y": 55,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1454,8 +1454,8 @@
   },
   {
    "entry": "biology/node_research_tolerance",
-   "x": 37,
-   "y": 45,
+   "x": 19,
+   "y": 57,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1464,8 +1464,8 @@
   },
   {
    "entry": "biology/node_ward_fracture",
-   "x": 37,
-   "y": 41,
+   "x": 19,
+   "y": 53,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1474,8 +1474,8 @@
   },
   {
    "entry": "biology/node_ward_grey_goo",
-   "x": 41,
-   "y": 41,
+   "x": 23,
+   "y": 53,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1484,8 +1484,8 @@
   },
   {
    "entry": "biology/node_ward_hollowing",
-   "x": 41,
-   "y": 43,
+   "x": 23,
+   "y": 55,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1494,8 +1494,8 @@
   },
   {
    "entry": "biology/node_ward_rewind",
-   "x": 39,
-   "y": 45,
+   "x": 21,
+   "y": 57,
    "parents": [
     "biology/antibody_bench"
    ],
@@ -1504,25 +1504,25 @@
   },
   {
    "entry": "biology/regeneration_tank",
-   "x": 59,
-   "y": 19,
+   "x": 41,
+   "y": 31,
    "parents": [
     "biology/synthetic",
     "biology/r91_body"
    ],
    "band": "Biology",
    "route": [
+    6,
     4,
-    4,
-    3.5,
-    56.5,
-    65.5
+    15.5,
+    38.5,
+    47.5
    ]
   },
   {
    "entry": "biology/node_grown_organ",
-   "x": 59,
-   "y": 21,
+   "x": 41,
+   "y": 33,
    "parents": [
     "biology/regeneration_tank"
    ],
@@ -1531,25 +1531,25 @@
   },
   {
    "entry": "biology/selection_chamber",
-   "x": 59,
-   "y": 13,
+   "x": 41,
+   "y": 25,
    "parents": [
     "biology/r92_scale",
     "biology/ecosphere"
    ],
    "band": "Biology",
    "route": [
+    6,
     4,
-    4,
-    3.5,
-    56.5,
-    65.5
+    15.5,
+    38.5,
+    47.5
    ]
   },
   {
    "entry": "biology/node_evolved_strain",
-   "x": 59,
-   "y": 15,
+   "x": 41,
+   "y": 27,
    "parents": [
     "biology/selection_chamber"
    ],
@@ -1558,42 +1558,42 @@
   },
   {
    "entry": "biology/r94_evasion",
-   "x": 48,
-   "y": 42,
+   "x": 30,
+   "y": 54,
    "parents": [
     "biology/r90_defence",
     "biology/antibody_bench"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/gene_circuit_loom",
-   "x": 68,
-   "y": 17,
+   "x": 50,
+   "y": 29,
    "parents": [
     "biology/synthetic",
     "biology/selection_chamber"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     5,
-    3.5,
-    65.5,
-    74.5
+    15.5,
+    47.5,
+    56.5
    ]
   },
   {
    "entry": "biology/node_gene_circuit",
-   "x": 68,
-   "y": 19,
+   "x": 50,
+   "y": 31,
    "parents": [
     "biology/gene_circuit_loom"
    ],
@@ -1602,8 +1602,8 @@
   },
   {
    "entry": "biology/node_living_catalyst",
-   "x": 70,
-   "y": 19,
+   "x": 52,
+   "y": 31,
    "parents": [
     "biology/gene_circuit_loom"
    ],
@@ -1612,8 +1612,8 @@
   },
   {
    "entry": "biology/node_tree_of_life",
-   "x": 72,
-   "y": 19,
+   "x": 54,
+   "y": 31,
    "parents": [
     "biology/gene_circuit_loom"
    ],
@@ -1622,25 +1622,25 @@
   },
   {
    "entry": "biology/clonal_selector",
-   "x": 48,
-   "y": 45,
+   "x": 30,
+   "y": 57,
    "parents": [
     "biology/r90_defence",
     "biology/antibody_bench"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     3,
-    3.5,
-    45.5,
-    56.5
+    15.5,
+    27.5,
+    38.5
    ]
   },
   {
    "entry": "biology/node_matured_antibody",
-   "x": 48,
-   "y": 47,
+   "x": 30,
+   "y": 59,
    "parents": [
     "biology/clonal_selector"
    ],
@@ -1649,8 +1649,8 @@
   },
   {
    "entry": "biology/node_ward_metastasis",
-   "x": 50,
-   "y": 47,
+   "x": 32,
+   "y": 59,
    "parents": [
     "biology/clonal_selector"
    ],
@@ -1659,24 +1659,24 @@
   },
   {
    "entry": "biology/mirror_culture_vat",
-   "x": 77,
-   "y": 17,
+   "x": 59,
+   "y": 29,
    "parents": [
     "biology/gene_circuit_loom"
    ],
    "band": "Biology",
    "route": [
-    4,
     6,
-    3.5,
-    74.5,
-    83.5
+    6,
+    15.5,
+    56.5,
+    65.5
    ]
   },
   {
    "entry": "biology/node_mirror_antibody",
-   "x": 77,
-   "y": 19,
+   "x": 59,
+   "y": 31,
    "parents": [
     "biology/mirror_culture_vat"
    ],
@@ -1685,8 +1685,8 @@
   },
   {
    "entry": "biology/node_mirror_cell",
-   "x": 79,
-   "y": 19,
+   "x": 61,
+   "y": 31,
    "parents": [
     "biology/mirror_culture_vat"
    ],
@@ -1695,25 +1695,25 @@
   },
   {
    "entry": "biology/abiogenesis_crucible",
-   "x": 68,
-   "y": 25,
+   "x": 50,
+   "y": 37,
    "parents": [
     "biology/evolution",
     "biology/evolution_engine"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     5,
-    3.5,
-    65.5,
-    74.5
+    15.5,
+    47.5,
+    56.5
    ]
   },
   {
    "entry": "biology/node_panspermia_seed",
-   "x": 70,
-   "y": 27,
+   "x": 52,
+   "y": 39,
    "parents": [
     "biology/abiogenesis_crucible"
    ],
@@ -1722,8 +1722,8 @@
   },
   {
    "entry": "biology/node_primordial_soup",
-   "x": 68,
-   "y": 29,
+   "x": 50,
+   "y": 41,
    "parents": [
     "biology/abiogenesis_crucible"
    ],
@@ -1732,8 +1732,8 @@
   },
   {
    "entry": "biology/node_research_panspermia",
-   "x": 68,
-   "y": 27,
+   "x": 50,
+   "y": 39,
    "parents": [
     "biology/abiogenesis_crucible"
    ],
@@ -1742,8 +1742,8 @@
   },
   {
    "entry": "biology/node_spark_of_life",
-   "x": 72,
-   "y": 27,
+   "x": 54,
+   "y": 39,
    "parents": [
     "biology/abiogenesis_crucible"
    ],
@@ -1759,7 +1759,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     0,
     101.5,
     -1.5,
@@ -1775,7 +1775,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     0,
     101.5,
     -1.5,
@@ -1784,25 +1784,25 @@
   },
   {
    "entry": "biology/r94_anomaly_lived",
-   "x": 68,
-   "y": 32,
+   "x": 50,
+   "y": 44,
    "parents": [
     "biology/evolution",
     "biology/evolution_engine"
    ],
    "band": "Biology",
    "route": [
-    4,
+    6,
     5,
-    3.5,
-    65.5,
-    74.5
+    15.5,
+    47.5,
+    56.5
    ]
   },
   {
    "entry": "biology/node_tumour_hydra",
-   "x": 68,
-   "y": 34,
+   "x": 50,
+   "y": 46,
    "parents": [
     "biology/r94_anomaly_lived"
    ],
@@ -1819,7 +1819,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     1,
     101.5,
     3.5,
@@ -1836,7 +1836,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     1,
     101.5,
     3.5,
@@ -1863,7 +1863,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     1,
     101.5,
     3.5,
@@ -1880,7 +1880,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     1,
     101.5,
     3.5,
@@ -1896,7 +1896,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     2,
     101.5,
     12.5,
@@ -1923,7 +1923,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     2,
     101.5,
     12.5,
@@ -1940,7 +1940,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     3,
     101.5,
     21.5,
@@ -1957,7 +1957,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     3,
     101.5,
     21.5,
@@ -1974,7 +1974,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     4,
     101.5,
     26.5,
@@ -1991,7 +1991,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     4,
     101.5,
     26.5,
@@ -2008,7 +2008,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     5,
     101.5,
     31.5,
@@ -2025,7 +2025,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     5,
     101.5,
     31.5,
@@ -2041,7 +2041,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     6,
     101.5,
     36.5,
@@ -2058,7 +2058,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     7,
     101.5,
     41.5,
@@ -2075,7 +2075,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     7,
     101.5,
     41.5,
@@ -2112,7 +2112,7 @@
    ],
    "band": "Abnormality & Infection",
    "route": [
-    8,
+    9,
     8,
     101.5,
     50.5,
@@ -2121,80 +2121,80 @@
   },
   {
    "entry": "biology/plant_physiology",
-   "x": 1,
-   "y": 74,
+   "x": 13,
+   "y": 8,
    "parents": [],
    "band": "Biology",
    "route": [
-    5,
+    3,
     0,
-    69.5,
-    -1.5,
-    3.5
+    3.5,
+    10.5,
+    15.5
    ]
   },
   {
    "entry": "biology/plant_hormones",
-   "x": 6,
-   "y": 74,
+   "x": 18,
+   "y": 8,
    "parents": [
     "biology/plant_physiology"
    ],
    "band": "Biology",
    "route": [
-    5,
+    3,
     1,
-    69.5,
     3.5,
-    8.5
+    15.5,
+    20.5
    ]
   },
   {
    "entry": "biology/plant_breeding",
-   "x": 11,
-   "y": 76,
+   "x": 23,
+   "y": 10,
    "parents": [
     "biology/plant_hormones"
    ],
    "band": "Biology",
    "route": [
-    5,
+    3,
     2,
-    69.5,
-    8.5,
-    13.5
+    3.5,
+    20.5,
+    25.5
    ]
   },
   {
    "entry": "biology/soil_science",
-   "x": 6,
-   "y": 77,
+   "x": 18,
+   "y": 11,
    "parents": [
     "biology/plant_physiology"
    ],
    "band": "Biology",
    "route": [
-    5,
+    3,
     1,
-    69.5,
     3.5,
-    8.5
+    15.5,
+    20.5
    ]
   },
   {
    "entry": "biology/food_science",
-   "x": 11,
-   "y": 72,
+   "x": 23,
+   "y": 6,
    "parents": [
     "biology/plant_hormones"
    ],
    "band": "Biology",
    "route": [
-    5,
+    3,
     2,
-    69.5,
-    8.5,
-    13.5
+    3.5,
+    20.5,
+    25.5
    ]
   },
   {
@@ -2206,7 +2206,7 @@
    ],
    "band": "Artificial Minds",
    "route": [
-    7,
+    8,
     0,
     -999999915.0,
     17.5,
@@ -2222,7 +2222,7 @@
    ],
    "band": "Artificial Minds",
    "route": [
-    7,
+    8,
     1,
     -999999915.0,
     22.5,
@@ -2236,7 +2236,7 @@
    "parents": [],
    "band": "Mind & Language",
    "route": [
-    9,
+    10,
     0,
     122.5,
     -1.5,
@@ -2252,7 +2252,7 @@
    ],
    "band": "Mind & Language",
    "route": [
-    9,
+    10,
     1,
     122.5,
     3.5,
@@ -2268,7 +2268,7 @@
    ],
    "band": "Mind & Language",
    "route": [
-    9,
+    10,
     1,
     122.5,
     3.5,
@@ -2284,7 +2284,7 @@
    ],
    "band": "Mind & Language",
    "route": [
-    9,
+    10,
     2,
     122.5,
     8.5,
@@ -2301,7 +2301,7 @@
    ],
    "band": "Mind & Language",
    "route": [
-    9,
+    10,
     3,
     122.5,
     13.5,
@@ -2315,7 +2315,7 @@
    "parents": [],
    "band": "Medicine",
    "route": [
-    10,
+    11,
     0,
     -999999864.0,
     -1.5,
@@ -2331,7 +2331,7 @@
    ],
    "band": "Medicine",
    "route": [
-    10,
+    11,
     1,
     -999999864.0,
     3.5,
@@ -2340,38 +2340,52 @@
   },
   {
    "entry": "biology/r1400_gene_pool",
-   "x": 13,
+   "x": 35,
    "y": 3,
    "parents": [
     "biology/de_extinction"
    ],
    "band": "Biology",
    "route": [
-    3,
+    5,
     0,
     -999999997.0,
-    10.5,
-    15.5
+    32.5,
+    37.5
    ]
   },
   {
    "entry": "biology/r1400_oxygen",
-   "x": 6,
-   "y": 71,
+   "x": 18,
+   "y": 5,
    "parents": [
     "biology/plant_physiology"
    ],
    "band": "Biology",
    "route": [
-    5,
+    3,
     1,
-    69.5,
     3.5,
-    8.5
+    15.5,
+    20.5
    ]
   },
   {
    "entry": "biology/r1400_membranes",
+   "x": 7,
+   "y": 3,
+   "parents": [],
+   "band": "Biology",
+   "route": [
+    2,
+    0,
+    -999999997.0,
+    4.5,
+    9.5
+   ]
+  },
+  {
+   "entry": "biology/r1400_reef",
    "x": 1,
    "y": 3,
    "parents": [],
@@ -2391,7 +2405,7 @@
    "label": "Biology",
    "x0": -1.0,
    "y0": 0.0,
-   "x1": 83.0,
+   "x1": 65.0,
    "y1": 79.5
   },
   {
@@ -2399,7 +2413,7 @@
    "label": "Artificial Minds",
    "x0": -1.0,
    "y0": 82.0,
-   "x1": 83.0,
+   "x1": 65.0,
    "y1": 95.5
   },
   {
@@ -2407,7 +2421,7 @@
    "label": "Abnormality & Infection",
    "x0": -1.0,
    "y0": 98.0,
-   "x1": 83.0,
+   "x1": 65.0,
    "y1": 116.5
   },
   {
@@ -2415,7 +2429,7 @@
    "label": "Mind & Language",
    "x0": -1.0,
    "y0": 119.0,
-   "x1": 83.0,
+   "x1": 65.0,
    "y1": 130.5
   },
   {
@@ -2423,7 +2437,7 @@
    "label": "Medicine",
    "x0": -1.0,
    "y0": 133.0,
-   "x1": 83.0,
+   "x1": 65.0,
    "y1": 138.5
   }
  ],

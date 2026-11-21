@@ -1050,7 +1050,8 @@ public final class QHContentList {
         // 1.4.0 stage 6
         new ItemDef("indexed_crystal", "", 64),
         new ItemDef("debye_sheath_film", "", 64),
-        new ItemDef("pacemaker_neuron", "", 64));
+        new ItemDef("pacemaker_neuron", "", 64),
+        new ItemDef("reef_keystone", "", 64));                     // 1.4.0 stage 7
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1229,6 +1230,7 @@ public final class QHContentList {
         new BlockDef("overmature_shale", "simple", 0, 3.0F, "none", ""),          // 1.4.0 stage 2
         new BlockDef("nickel_laterite", "simple", 0, 0.8F, "none", ""),           // 1.4.0 stage 4
         new BlockDef("lepidolite_pegmatite", "simple", 0, 3.0F, "none", ""),      // 1.4.0 stage 5
+        new BlockDef("ooid_sand", "simple", 0, 0.5F, "none", ""),                 // 1.4.0 stage 7
         new BlockDef("plume_ice", "simple", 1, 2.5F, "none", ""),          // 1.15.0
         new BlockDef("chondritic_regolith", "simple", 0, 0.8F, "none", ""),          // 1.15.0
         new BlockDef("annihilation_scar", "simple", 6, 3.0F, "iron", ""),          // 1.11.0

@@ -64,6 +64,7 @@ public final class QHBlockSounds {
             case "overmature_shale" -> SoundType.DEEPSLATE;          // 1.4.0 stage 2
             case "nickel_laterite" -> SoundType.ROOTED_DIRT;         // 1.4.0 stage 4: a red soil
             case "lepidolite_pegmatite" -> SoundType.AMETHYST;       // 1.4.0 stage 5: coarse mica and quartz
+            case "ooid_sand" -> SoundType.SAND;                      // 1.4.0 stage 7
             default -> null;
         };
     }

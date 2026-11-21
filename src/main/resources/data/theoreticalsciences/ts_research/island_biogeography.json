@@ -1,0 +1,57 @@
+{
+  "title": "Island Biogeography",
+  "x": 39,
+  "y": 54,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:ecology",
+    "theoreticalsciences:oceanography"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:algae_culture",
+      "count": 4
+    },
+    {
+      "item": "minecraft:brain_coral_block",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "description": "Why do big islands near the mainland hold more species than small, far ones? MacArthur and Wilson saw a balance: newcomers arrive less often the farther the island, and residents die out more often the smaller it is, and the count settles where the two rates meet. Mangrove islets emptied of insects filled back to their old numbers within a year. A coral reef is such an island in the sea, and a few weeks of water too warm can empty it. Unlocks the Reef Mesocosm.",
+  "icon": "theoreticalsciences:reef_mesocosm",
+  "puzzle": {
+    "goal": "Immigration falls as the island fills, I·(1 − S/P); extinction rises with it, E·S/P. Set them equal and write the equilibrium species count S.",
+    "name": "Equilibrium species",
+    "lhs": "S",
+    "form": "P * I / ( I + E )",
+    "expr": "P * I / ( I + E )",
+    "ask": "Find S for a pool of P = 300 species, I = @{I} and E = 2 a year.",
+    "vars": {
+      "S": "species",
+      "P": "species pool",
+      "I": "immigration rate",
+      "E": "extinction rate"
+    },
+    "given": {
+      "P": 300.0,
+      "I": 6.0,
+      "E": 2.0
+    },
+    "unit": "",
+    "method": "I − I·S/P = E·S/P; gather the S terms and divide.",
+    "distractors": [
+      "*",
+      "-",
+      "^ 2"
+    ],
+    "vary": {
+      "I": [
+        1.0,
+        12.0,
+        0.5
+      ]
+    }
+  },
+  "category": "biology"
+}

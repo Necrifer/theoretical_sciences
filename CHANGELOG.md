@@ -167,6 +167,14 @@ Three new research nodes (each with its derivation puzzle) and three new console
 * **Changed recipe:** Tomography in the Connectome Mapper now makes four Engrams instead of three, so it stays cheaper
   than the older route now that Photonic Neurons cost less.
 
+### Stage 7: reefs and islands
+* **Island Biogeography** (equilibrium species). New console, the **Reef Mesocosm**: reef area and distance from its
+  source set the species it holds (MacArthur and Wilson); water temperature against the warmest month's mean sets the
+  degree heating weeks and the bleaching, and speeds calcification until then; interaction strength must keep May's
+  σ·√(S·C) under 1. A reef rich, stable, fast growing and unbleached is a **Reef Keystone**; with an algae culture it
+  makes two Stable Ecosystems.
+* **The world:** **Ooid Sand** in patches on the floor of warm and lukewarm oceans (a feature in vanilla biomes).
+
 ### Research map
 * Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
   drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;

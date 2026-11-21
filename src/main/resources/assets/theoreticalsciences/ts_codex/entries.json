@@ -60084,5 +60084,68 @@
     "text": "$(thing)Equations$()$(br)V = (kT/q)·ln(ΣP·c_o / ΣP·c_i)$(br)v ≈ 6 m/s per µm"
    }
   ]
+ },
+ "biology/r1400_reef": {
+  "title": "Island Biogeography",
+  "icon": "theoreticalsciences:reef_keystone",
+  "category": "biology",
+  "research": "island_biogeography",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:reef_mesocosm",
+     "theoreticalsciences:ooid_sand",
+     "theoreticalsciences:reef_keystone"
+    ],
+    "text": "S = P·I/(I + E); DHW = (SST − MMM − 1)·weeks; May: σ·√(S·C) < 1. In the $(thing)Reef Mesocosm$(), grow $(item)Ooid Sand$() from warm ocean floors and a coral into a $(item)Reef Keystone$(): a reef large and near enough to hold 150 species, weakly enough linked to stay stable, warm enough to calcify fast but under 4 degree heating weeks. A keystone and an algae culture make two Stable Ecosystems.",
+    "title": "Reef Mesocosm"
+   },
+   {
+    "type": "text",
+    "title": "Bleaching",
+    "text": "Reef corals live a degree or two below the temperature that kills them. Above the warmest month's mean plus one degree, every week counts: four degree heating weeks and the corals expel their algae and turn white; eight, and most die. The Mesocosm's weeks of heat are fixed by the job; only the water temperature is yours."
+   }
+  ]
+ },
+ "world/ooid_sand": {
+  "title": "Ooid Sand",
+  "icon": "theoreticalsciences:ooid_sand",
+  "category": "world",
+  "research": "island_biogeography",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ooid_sand"
+    ],
+    "text": "On the floor of the Overworld's warm and lukewarm oceans, in patches: $(item)Ooid Sand$(), round grains of aragonite. Used in the Reef Mesocosm.",
+    "title": "Ooid Sand"
+   }
+  ]
+ },
+ "operation/reef_mesocosm": {
+  "title": "Reef Mesocosm",
+  "icon": "theoreticalsciences:reef_mesocosm",
+  "category": "operation",
+  "research": "island_biogeography",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Grow a reef rich, stable, fast and unbleached."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Reef area, Distance, Water temperature, Interaction strength.$(br2)$(thing)Disturbance$(): algal bloom: calcification falls by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): σ√(SC) over 1 stops it; over 8 DHW wears it.$(br2)$(thing)Rate$(): faster growth, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)S = P·I/(I + E)$(br)DHW = (SST − MMM − 1)·weeks$(br)σ√(SC) < 1"
+   }
+  ]
  }
 }
