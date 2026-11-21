@@ -130,6 +130,31 @@ machines, one of them a multiblock.
   Engineering and Control & Reliability. The Processor Tiers, Feedback, Control Theory and the Governor also appear
   there, linked to what builds on them.
 
+### Stage 5: cosmology, deep time, gene pools and blood
+Four new research nodes (each with its derivation puzzle) and four new consoles, one equation set each, from the
+smaller extensions of the expansion study.
+
+* **Friedmann Cosmology** (age of a matter universe). New console, the **Expansion Orrery**: H₀, Ω_m, Ω_Λ and w give the
+  curvature, the age of a flat universe, the deceleration q₀ and how far H₀ sits from Planck's 67.4 (the Hubble tension,
+  shown as unsettled). Fits a Cepheid and redshifts into a **Hubble Constant Plate**; a model flat, 13.6 to 14.0 billion
+  years old and accelerating grows **Scale Factor Crystals**, and one with a Last Scattering Map makes six Inflaton
+  Condensate (four by the old route).
+* **Isochron Dating** (age from the slope). New console, the **Isochron Bench**: mineral fractions, rubidium spread and
+  counting time against the age's uncertainty and the MSWD. Dates the new **Lepidolite Pegmatite** into an **Isochron
+  Record**.
+* **Genetic Drift** (loss of heterozygosity). New console, the **Gene Pool Bench**: effective population and migrants
+  against drift, Wright's migration balance and inbreeding depression, over a hundred generations. Makes a **Diverse
+  Gene Pool**, which with an Isochron Record makes a cheaper **Living Archive**.
+* **Oxygen Transport** (Hill). New console, the **Oxygen Binding Bench**: P₅₀, cooperativity and the Bohr shift decide
+  how much oxygen a carrier loads in thin air and gives up in working tissue. Makes **Synthetic Haemoglobin**; a
+  Meganeura revived with it gives three capsules from one genome (two by the old route).
+* **The world:** **Lepidolite Pegmatite** veins in mountains, between Y 40 and 160 (a feature in vanilla biomes).
+
+### Research map
+* Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
+  drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;
+  Engineering now holds only engineering.
+
 ### Five new Tuning Fork games
 The Tuning Fork had fifteen games, and three of them (waves, proof chains, pipe flow) covered over half of the
 machines. Five new ones, each a piece of real science, and 25 machines moved to the one that fits them:

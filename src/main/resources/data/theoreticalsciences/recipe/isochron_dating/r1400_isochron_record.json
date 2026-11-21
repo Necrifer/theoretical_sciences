@@ -1,0 +1,41 @@
+{
+  "type": "theoreticalsciences:isochron_dating",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:lepidolite_pegmatite",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:dated_stromatolite",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:isochron_record",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:isochron_dating",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "age": 3.5,
+      "opn": 1
+    },
+    "windows": [
+      {
+        "q": "sigt",
+        "min": 0,
+        "max": 0.5
+      },
+      {
+        "q": "mswd",
+        "min": 0,
+        "max": 2
+      }
+    ]
+  }
+}

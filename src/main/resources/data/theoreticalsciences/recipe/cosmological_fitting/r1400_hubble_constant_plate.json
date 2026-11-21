@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:cosmological_fitting",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:cepheid_standard_candle",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:redshift_record",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:hubble_constant_plate",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:friedmann_cosmology",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "H0",
+        "min": 67,
+        "max": 74
+      },
+      {
+        "q": "age",
+        "min": 12.5,
+        "max": 14.5
+      }
+    ]
+  }
+}

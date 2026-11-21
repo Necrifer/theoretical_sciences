@@ -186,6 +186,10 @@ final class ProcessScenes {
         e("media_sputter_chamber", "sputtering", V.CHAMBER, C.PARTICLES, C.TILES, 0);
         e("pid_bench", "loop tuning", V.BOARD, C.CURVE, C.WAVES, 0);
         e("reliability_ledger", "reliability testing", V.BOARD, C.GRAPH, C.BARS, 2);
+        e("expansion_orrery", "cosmological fitting", V.RING, C.ORBITS, C.CURVE, 1);      // 1.4.0 stage 5
+        e("isochron_bench", "isochron dating", V.BENCH, C.GRAPH, C.PARTICLES, 0);
+        e("gene_pool_bench", "breeding plan", V.BOARD, C.HELIX, C.BARS, 1);
+        e("oxygen_binding_bench", "oxygen binding", V.FLASK, C.CURVE, C.DROPS, 2);
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1

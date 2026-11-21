@@ -1,0 +1,94 @@
+{
+  "params": [
+    {
+      "id": "H0",
+      "unit": "km/s/Mpc",
+      "min": 55,
+      "max": 85,
+      "step": 0.1,
+      "default": 70
+    },
+    {
+      "id": "Om",
+      "unit": "",
+      "min": 0.05,
+      "max": 2,
+      "step": 0.005,
+      "default": 1
+    },
+    {
+      "id": "OL",
+      "unit": "",
+      "min": -0.5,
+      "max": 1.5,
+      "step": 0.005,
+      "default": 0
+    },
+    {
+      "id": "w",
+      "unit": "",
+      "min": -1.5,
+      "max": -0.33,
+      "step": 0.01,
+      "default": -1
+    }
+  ],
+  "recipe_vars": {},
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "Ok",
+      "unit": "",
+      "expr": "(1 - Om - OL)",
+      "formula": "Ω_k = 1 − Ω_m − Ω_Λ: curvature takes whatever is left"
+    },
+    {
+      "id": "tH",
+      "unit": "Gyr",
+      "expr": "977.8/H0",
+      "formula": "the Hubble time 1/H₀"
+    },
+    {
+      "id": "age",
+      "unit": "Gyr",
+      "expr": "977.8/H0*2/(3*sqrt(pos(OL) + 1e-6))*ln(sqrt(pos(OL)/Om) + sqrt(pos(OL)/Om + 1))*(1 + 0.005*d)",
+      "formula": "t₀ = 2/(3H₀√Ω_Λ)·asinh√(Ω_Λ/Ω_m), the age of a flat universe"
+    },
+    {
+      "id": "q0",
+      "unit": "",
+      "expr": "Om/2 + OL*(1 + 3*w)/2",
+      "formula": "q₀ = Ω_m/2 + Ω_Λ(1 + 3w)/2: under zero the expansion speeds up"
+    },
+    {
+      "id": "sig",
+      "unit": "σ",
+      "expr": "abs(H0 - 67.4)/0.5",
+      "formula": "how far from Planck's 67.4 ± 0.5, in standard deviations"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "rip",
+      "kind": "wear",
+      "expr": "w + 1",
+      "formula": "w under −1, phantom energy: the model tears its own instruments apart"
+    },
+    {
+      "id": "closed",
+      "kind": "stop",
+      "expr": "0.5 + (1 - Om - OL)",
+      "formula": "a universe this closed recollapses before it can be measured"
+    }
+  ],
+  "rate": "clamp(H0/70, 0.5, 1.5)",
+  "rate_formula": "a faster expansion is fitted sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

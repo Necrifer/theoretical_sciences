@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:gene_pool_breeding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:genome_sample",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:recombinant_dna",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:diverse_gene_pool",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:genetic_drift",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "tg": 100,
+      "B": 6,
+      "q": 0.1
+    },
+    "windows": [
+      {
+        "q": "Het",
+        "min": 0.95,
+        "max": 1
+      },
+      {
+        "q": "V",
+        "min": 0.8,
+        "max": 1
+      }
+    ]
+  }
+}

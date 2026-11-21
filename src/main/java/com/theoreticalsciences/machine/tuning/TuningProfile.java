@@ -186,6 +186,10 @@ public record TuningProfile(String param, Drift drift, float volatility, int max
         p(MachineType.MEDIA_SPUTTER_CHAMBER, "target_erosion", Drift.DECAY, 0.3F, 1, 3, Hazard.MAGNETIC, 2);
         p(MachineType.PID_BENCH, "sensor_lag", Drift.OSCILLATE, 0.3F, 1, 3, Hazard.THERMAL, 1);
         p(MachineType.RELIABILITY_LEDGER, "infant_mortality", Drift.DECAY, 0.3F, 1, 3, Hazard.THERMAL, 1);
+        p(MachineType.EXPANSION_ORRERY, "calibration_drift", Drift.WALK, 0.3F, 1, 3, Hazard.THERMAL, 2);       // 1.4.0 stage 5
+        p(MachineType.ISOCHRON_BENCH, "laboratory_blank", Drift.WALK, 0.3F, 1, 3, Hazard.THERMAL, 1);
+        p(MachineType.GENE_POOL_BENCH, "founder_error", Drift.DECAY, 0.3F, 1, 3, Hazard.THERMAL, 1);
+        p(MachineType.OXYGEN_BINDING_BENCH, "methaemoglobin", Drift.DECAY, 0.3F, 1, 3, Hazard.CHEMICAL, 1);
         p(MachineType.CMB_BOLOMETER_ARRAY, "atmospheric_drift", Drift.WALK, 0.5F, 2, 4, Hazard.THERMAL, 3);   // 1.14.0
         p(MachineType.CANTOR_DIAGONALIZER, "diagonal_index", Drift.JUMP, 1.2F, 1, 2, Hazard.SPATIAL, 9);        // 1.7.1: now multiblocks
         p(MachineType.AXIOM_DISTILLER, "reflux_ratio", Drift.WALK, 1.0F, 1, 2, Hazard.SPATIAL, 9);

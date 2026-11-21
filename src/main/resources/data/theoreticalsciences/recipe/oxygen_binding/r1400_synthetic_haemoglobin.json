@@ -1,0 +1,37 @@
+{
+  "type": "theoreticalsciences:oxygen_binding",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:porphyrin_oxygen_carrier",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:amino_acid_mixture",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:synthetic_haemoglobin",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:oxygen_transport",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "PL": 55,
+      "PT": 25,
+      "pHt": 7.2
+    },
+    "windows": [
+      {
+        "q": "D",
+        "min": 0.6,
+        "max": 1
+      }
+    ]
+  }
+}

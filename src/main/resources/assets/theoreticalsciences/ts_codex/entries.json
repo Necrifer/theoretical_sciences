@@ -59774,5 +59774,192 @@
     "text": "$(thing)Equations$()$(br)R = e^(−λt)$(br)1 − (1 − R)ⁿ$(br)3R² − 2R³"
    }
   ]
+ },
+ "spacetime/r1400_friedmann": {
+  "title": "Friedmann Cosmology",
+  "icon": "theoreticalsciences:scale_factor_crystal",
+  "category": "spacetime",
+  "research": "friedmann_cosmology",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:expansion_orrery",
+     "theoreticalsciences:hubble_constant_plate",
+     "theoreticalsciences:scale_factor_crystal"
+    ],
+    "text": "H² = H₀²[Ω_m·a⁻³ + Ω_k·a⁻² + Ω_Λ·a^(−3(1+w))]; t₀ = 2/(3H₀√Ω_Λ)·asinh√(Ω_Λ/Ω_m); q₀ = Ω_m/2 + Ω_Λ(1 + 3w)/2. The $(thing)Expansion Orrery$() fits a Cepheid and two redshifts to a $(item)Hubble Constant Plate$(); with Dark Energy, a model that is flat, 13.6 to 14.0 billion years old and accelerating grows two $(item)Scale Factor Crystals$(). With a Last Scattering Map, one makes six Inflaton Condensate in the Inflation Chamber.",
+    "title": "Expansion Orrery"
+   },
+   {
+    "type": "text",
+    "title": "The Hubble tension",
+    "text": "The early universe (Planck, 67.4 ± 0.5) and the distance ladder (Cepheids and supernovae, 73.0 ± 1.0) disagree on H₀ by about five standard deviations. The Orrery shows the gap; the Hubble Constant Plate accepts any value between them. Recent survey results also hint that dark energy may change with time (w not exactly −1): unsettled."
+   }
+  ]
+ },
+ "nuclear/r1400_isochron": {
+  "title": "Isochron Dating",
+  "icon": "theoreticalsciences:isochron_record",
+  "category": "nuclear",
+  "research": "isochron_dating",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:isochron_bench",
+     "theoreticalsciences:lepidolite_pegmatite",
+     "theoreticalsciences:isochron_record"
+    ],
+    "text": "⁸⁷Sr/⁸⁶Sr = (⁸⁷Sr/⁸⁶Sr)₀ + (⁸⁷Rb/⁸⁶Sr)(e^(λt) − 1). On the $(thing)Isochron Bench$(), date $(item)Lepidolite Pegmatite$() from mountain veins against a Dated Stromatolite: enough fractions, spread and counting for an age within half a million years, with an MSWD under 2, makes an $(item)Isochron Record$(), deep time for a cheaper Living Archive.",
+    "title": "Isochron Bench"
+   }
+  ]
+ },
+ "biology/r1400_gene_pool": {
+  "title": "Genetic Drift",
+  "icon": "theoreticalsciences:diverse_gene_pool",
+  "category": "biology",
+  "research": "genetic_drift",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:gene_pool_bench",
+     "theoreticalsciences:diverse_gene_pool"
+    ],
+    "text": "H_t = H₀(1 − 1/2N)^t; F = 1/(1 + 4Nm); viability e^(−BF). On the $(thing)Gene Pool Bench$(), size the herd and its migrants so that after a hundred generations it keeps 95% of its variation and 80% of its fitness: a $(item)Diverse Gene Pool$(), which with an Isochron Record makes a Living Archive for less.",
+    "title": "Gene Pool Bench"
+   }
+  ]
+ },
+ "biology/r1400_oxygen": {
+  "title": "Oxygen Transport",
+  "icon": "theoreticalsciences:synthetic_haemoglobin",
+  "category": "biology",
+  "research": "oxygen_transport",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:oxygen_binding_bench",
+     "theoreticalsciences:synthetic_haemoglobin"
+    ],
+    "text": "S = Pⁿ/(P₅₀ⁿ + Pⁿ); P₅₀ shifts by 10^(Bohr·ΔpH). On the $(thing)Oxygen Binding Bench$(), tune a carrier to load in thin air (55 mmHg) and give up 60% of its load in working tissue (25 mmHg, pH 7.2): $(item)Synthetic Haemoglobin$(). A Meganeura revived with it, in its Carboniferous air, makes three capsules from one genome.",
+    "title": "Oxygen Binding Bench"
+   }
+  ]
+ },
+ "world/lepidolite_pegmatite": {
+  "title": "Lepidolite Pegmatite",
+  "icon": "theoreticalsciences:lepidolite_pegmatite",
+  "category": "world",
+  "research": "isochron_dating",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:lepidolite_pegmatite"
+    ],
+    "text": "In the Overworld's mountains, between Y 40 and 160: veins of $(item)Lepidolite Pegmatite$(), lilac mica rich in rubidium. Dated on the Isochron Bench.",
+    "title": "Lepidolite Pegmatite"
+   }
+  ]
+ },
+ "operation/expansion_orrery": {
+  "title": "Expansion Orrery",
+  "icon": "theoreticalsciences:expansion_orrery",
+  "category": "operation",
+  "research": "friedmann_cosmology",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Fit a universe that matches what the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Hubble constant, Matter density, Dark energy, Equation of state.$(br2)$(thing)Disturbance$(): calibration drift: the age reads 0.5%·d long."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a universe too closed stops it; w under −1 wears it.$(br2)$(thing)Rate$(): a faster expansion, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)t₀ = 2/(3H₀√Ω_Λ)·asinh√(Ω_Λ/Ω_m)$(br)q₀ = Ω_m/2 + Ω_Λ(1 + 3w)/2"
+   }
+  ]
+ },
+ "operation/isochron_bench": {
+  "title": "Isochron Bench",
+  "icon": "theoreticalsciences:isochron_bench",
+  "category": "operation",
+  "research": "isochron_dating",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Pin the line well enough, with the rock still closed."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Mineral fractions, Rubidium spread, Counting time.$(br2)$(thing)Disturbance$(): laboratory blank: the scatter rises by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): MSWD over 4 stops it; over 20 hours wears the filament.$(br2)$(thing)Rate$(): fewer fractions, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)t = ln(1 + m)/λ$(br)MSWD"
+   }
+  ]
+ },
+ "operation/gene_pool_bench": {
+  "title": "Gene Pool Bench",
+  "icon": "theoreticalsciences:gene_pool_bench",
+  "category": "operation",
+  "research": "genetic_drift",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Keep the herd's variation and fitness for a hundred generations."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Effective population, Migrants.$(br2)$(thing)Disturbance$(): founder error: inbreeding reads 1%·d high."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over ten migrants a generation wears it.$(br2)$(thing)Rate$(): a smaller herd, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)H_t = H₀(1 − 1/2N)^t$(br)F = 1/(1 + 4Nm)$(br)V = e^(−BF)"
+   }
+  ]
+ },
+ "operation/oxygen_binding_bench": {
+  "title": "Oxygen Binding Bench",
+  "icon": "theoreticalsciences:oxygen_binding_bench",
+  "category": "operation",
+  "research": "oxygen_transport",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Deliver the fraction of oxygen the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): P₅₀, Hill coefficient, Bohr coefficient.$(br2)$(thing)Disturbance$(): methaemoglobin: delivery reads 1%·d low."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 70% full in the lung stops it.$(br2)$(thing)Rate$(): more delivered, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)S = Pⁿ/(P₅₀ⁿ + Pⁿ)$(br)P₅₀ × 10^(Bohr·ΔpH)"
+   }
+  ]
  }
 }

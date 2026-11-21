@@ -1,0 +1,70 @@
+{
+  "params": [
+    {
+      "id": "Ne",
+      "unit": "",
+      "min": 10,
+      "max": 5000,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "mig",
+      "unit": "/gen",
+      "min": 0,
+      "max": 20,
+      "step": 0.1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "tg": 100,
+    "B": 6,
+    "q": 0.1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "F",
+      "unit": "",
+      "expr": "((1/(1 + 4*mig))*(1 - ((1 - 1/(2*Ne))*(1 - mig/Ne)^2)^tg))*(1 + 0.01*d)",
+      "formula": "inbreeding after the breeding programme: drift toward 1, held at 1/(1 + 4Nm) by migrants"
+    },
+    {
+      "id": "Het",
+      "unit": "",
+      "expr": "1 - ((1/(1 + 4*mig))*(1 - ((1 - 1/(2*Ne))*(1 - mig/Ne)^2)^tg))*(1 + 0.01*d)",
+      "formula": "heterozygosity kept, as a fraction of the founders'"
+    },
+    {
+      "id": "V",
+      "unit": "",
+      "expr": "exp(-B*((1/(1 + 4*mig))*(1 - ((1 - 1/(2*Ne))*(1 - mig/Ne)^2)^tg))*(1 + 0.01*d))",
+      "formula": "viability e^(−BF), B lethal equivalents"
+    },
+    {
+      "id": "carriers",
+      "unit": "",
+      "expr": "2*q*(1 - q)",
+      "formula": "Hardy Weinberg: 2pq carry the recessive fault"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "swamp",
+      "kind": "wear",
+      "expr": "10 - mig",
+      "formula": "over ten migrants a generation swamps local adaptation"
+    }
+  ],
+  "rate": "clamp(200/Ne, 0.25, 3)",
+  "rate_formula": "a smaller herd is bred sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

@@ -1,0 +1,57 @@
+{
+  "title": "Oxygen Transport",
+  "x": 30,
+  "y": 59,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:physiology",
+    "theoreticalsciences:enzyme_kinetics"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:porphyrin_oxygen_carrier",
+      "count": 2
+    },
+    {
+      "item": "minecraft:iron_ingot",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "description": "Haemoglobin is four iron porphyrins that help each other: once one binds oxygen the others grab it more eagerly, so the binding curve is an S. That shape is the trick: nearly full in the lungs, it lets go of much of its load a few dozen mmHg lower, in the tissue, and lets go of more where acid from working muscle shifts it (the Bohr effect). Carbon monoxide binds two hundred times tighter. Unlocks the Oxygen Binding Bench.",
+  "icon": "theoreticalsciences:oxygen_binding_bench",
+  "puzzle": {
+    "goal": "Hill: a carrier of cooperativity n that is half full at P₅₀ is a fraction S full at oxygen pressure P. Write S.",
+    "name": "Hill saturation",
+    "lhs": "S",
+    "form": "P ^ n / ( K ^ n + P ^ n )",
+    "expr": "P ^ n / ( K ^ n + P ^ n )",
+    "ask": "Find S at P = @{P} mmHg for P₅₀ = 26.6 mmHg and n = 2.7.",
+    "vars": {
+      "S": "saturation",
+      "P": "oxygen pressure",
+      "K": "half saturation pressure",
+      "n": "Hill coefficient"
+    },
+    "given": {
+      "P": 40.0,
+      "K": 26.6,
+      "n": 2.7
+    },
+    "unit": "",
+    "method": "n oxygens bind together: Pⁿ over the same plus P₅₀ⁿ, the pressure at which half the sites are full.",
+    "distractors": [
+      "*",
+      "-",
+      "exp"
+    ],
+    "vary": {
+      "P": [
+        10.0,
+        100.0,
+        1.0
+      ]
+    }
+  },
+  "category": "biology"
+}

@@ -1,0 +1,78 @@
+{
+  "params": [
+    {
+      "id": "P50",
+      "unit": "mmHg",
+      "min": 5,
+      "max": 60,
+      "step": 0.1,
+      "default": 15
+    },
+    {
+      "id": "nH",
+      "unit": "",
+      "min": 1,
+      "max": 4,
+      "step": 0.05,
+      "default": 1
+    },
+    {
+      "id": "bohr",
+      "unit": "",
+      "min": -0.8,
+      "max": 0,
+      "step": 0.01,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "PL": 55,
+    "PT": 25,
+    "pHt": 7.2
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "SL",
+      "unit": "",
+      "expr": "PL^nH/(P50^nH + PL^nH)",
+      "formula": "S in the lung, by Hill"
+    },
+    {
+      "id": "P50t",
+      "unit": "mmHg",
+      "expr": "P50*10^(bohr*(pHt - 7.4))",
+      "formula": "P₅₀ in the tissue, shifted by its acid (Bohr)"
+    },
+    {
+      "id": "ST",
+      "unit": "",
+      "expr": "PT^nH/((P50*10^(bohr*(pHt - 7.4)))^nH + PT^nH)",
+      "formula": "S in the tissue"
+    },
+    {
+      "id": "D",
+      "unit": "",
+      "expr": "(PL^nH/(P50^nH + PL^nH) - PT^nH/((P50*10^(bohr*(pHt - 7.4)))^nH + PT^nH))*(1 - 0.01*d)",
+      "formula": "delivered: what loads in the lung and unloads in the tissue"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "load",
+      "kind": "stop",
+      "expr": "PL^nH/(P50^nH + PL^nH) - 0.7",
+      "formula": "under 70% full in the lung, the carrier cannot load"
+    }
+  ],
+  "rate": "clamp(((PL^nH/(P50^nH + PL^nH) - PT^nH/((P50*10^(bohr*(pHt - 7.4)))^nH + PT^nH))*(1 - 0.01*d))/0.4, 0.25, 3)",
+  "rate_formula": "a carrier that delivers more is made sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}
