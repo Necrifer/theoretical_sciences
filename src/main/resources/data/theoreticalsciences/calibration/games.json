@@ -1,6 +1,6 @@
 {
   "abiogenesis_crucible": {
-    "game": "wave"
+    "game": "codon"
   },
   "accretion_disk_reactor": {
     "game": "flow"
@@ -20,7 +20,7 @@
     "game": "flow"
   },
   "anomaly_containment_ward": {
-    "game": "wave"
+    "game": "loop"
   },
   "anomaly_resolution_engine": {
     "game": "wave"
@@ -82,18 +82,18 @@
     "tier": 3
   },
   "circadian_incubator": {
-    "game": "wave",
+    "game": "codon",
     "tier": 2
   },
   "climate_engine": {
-    "game": "flow"
+    "game": "loop"
   },
   "clonal_selector": {
     "game": "equilibrium",
     "tier": 3
   },
   "concept_compressor": {
-    "game": "chain"
+    "game": "logic"
   },
   "contact_process_tower": {
     "game": "equilibrium",
@@ -111,7 +111,7 @@
     "game": "wave"
   },
   "cyclotron": {
-    "game": "flow"
+    "game": "decay"
   },
   "dark_energy_siphon": {
     "game": "flow"
@@ -162,7 +162,7 @@
     "game": "wave"
   },
   "evolution_engine": {
-    "game": "wave"
+    "game": "codon"
   },
   "eye_of_the_horizon": {
     "game": "spectrum"
@@ -190,7 +190,7 @@
     "tier": 2
   },
   "gas_centrifuge_cascade": {
-    "game": "flow"
+    "game": "decay"
   },
   "gene_circuit_loom": {
     "game": "cipher",
@@ -243,10 +243,10 @@
     "tier": 3
   },
   "matrioshka_brain": {
-    "game": "chain"
+    "game": "logic"
   },
   "mhd_generator": {
-    "game": "flow"
+    "game": "circuit"
   },
   "micro_black_hole_evaporator": {
     "game": "wave"
@@ -259,7 +259,7 @@
     "game": "wave"
   },
   "molten_salt_reactor": {
-    "game": "flow"
+    "game": "decay"
   },
   "monte_carlo_engine": {
     "game": "chain"
@@ -282,10 +282,10 @@
     "tier": 3
   },
   "nuclide_forge": {
-    "game": "wave"
+    "game": "decay"
   },
   "omnilex_engine": {
-    "game": "chain"
+    "game": "logic"
   },
   "optical_workshop": {
     "game": "spectrum"
@@ -303,7 +303,7 @@
     "tier": 2
   },
   "patch_clamp_rig": {
-    "game": "wave",
+    "game": "circuit",
     "tier": 2
   },
   "pattern_basin": {
@@ -318,7 +318,7 @@
     "tier": 3
   },
   "phage_lab": {
-    "game": "flow",
+    "game": "codon",
     "tier": 2
   },
   "phase_diagram_kiln": {
@@ -344,7 +344,7 @@
     "game": "spectrum"
   },
   "pulsed_magnet_lab": {
-    "game": "wave"
+    "game": "circuit"
   },
   "quark_gluon_collider": {
     "game": "flow"
@@ -357,7 +357,7 @@
     "game": "spectrum"
   },
   "reality_compiler": {
-    "game": "chain"
+    "game": "logic"
   },
   "reflecting_telescope": {
     "game": "spectrum"
@@ -418,7 +418,7 @@
     "game": "wave"
   },
   "tesla_coil": {
-    "game": "wave"
+    "game": "circuit"
   },
   "tesseract_assembler": {
     "game": "wave"
@@ -431,7 +431,7 @@
     "tier": 2
   },
   "tokamak": {
-    "game": "flow"
+    "game": "loop"
   },
   "topology_kiln": {
     "game": "flow",
@@ -450,7 +450,7 @@
     "game": "flow"
   },
   "warp_field_forge": {
-    "game": "wave"
+    "game": "loop"
   },
   "white_hole_emitter": {
     "game": "flow"
@@ -516,7 +516,7 @@
     "tier": 2
   },
   "ancient_dna_lab": {
-    "game": "chain",
+    "game": "codon",
     "tier": 2
   },
   "revival_vat": {
@@ -588,7 +588,7 @@
     "tier": 2
   },
   "automaton_lattice": {
-    "game": "chain",
+    "game": "logic",
     "tier": 3
   },
   "certificate_verifier": {
@@ -648,7 +648,7 @@
     "tier": 3
   },
   "microwave_rectenna": {
-    "game": "chain",
+    "game": "circuit",
     "tier": 3
   },
   "radiation_pressure_balance": {
@@ -704,11 +704,11 @@
     "tier": 2
   },
   "helium_liquefier": {
-    "game": "chain",
+    "game": "loop",
     "tier": 3
   },
   "bcs_cryostat": {
-    "game": "chain",
+    "game": "circuit",
     "tier": 3
   },
   "deep_space_transceiver": {
@@ -717,6 +717,30 @@
   },
   "fibre_draw_tower": {
     "game": "chain",
+    "tier": 3
+  },
+  "fracture_bench": {
+    "game": "chain",
+    "tier": 3
+  },
+  "bridgman_furnace": {
+    "game": "flow",
+    "tier": 4
+  },
+  "josephson_logic_bench": {
+    "game": "logic",
+    "tier": 4
+  },
+  "media_sputter_chamber": {
+    "game": "circuit",
+    "tier": 4
+  },
+  "pid_bench": {
+    "game": "loop",
+    "tier": 3
+  },
+  "reliability_ledger": {
+    "game": "logic",
     "tier": 3
   }
 }

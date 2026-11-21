@@ -27,7 +27,8 @@ import java.util.Random;
  * The tier (the machine's stage of the game, 1 to 6) makes a game harder.
  */
 public final class CalibrationGames {
-    public static final int WAVE = 0, SIEVE = 1, CHAIN = 2, BALANCE = 3, SPECTRUM = 4, FLOW = 5, BUILD = 6, OXIDATION = 7, EQUILIBRIUM = 8, VERTEX = 9, SYMMETRY = 10, CIPHER = 11, PATH = 12, TREE = 13, NASH = 14;
+    public static final int WAVE = 0, SIEVE = 1, CHAIN = 2, BALANCE = 3, SPECTRUM = 4, FLOW = 5, BUILD = 6, OXIDATION = 7, EQUILIBRIUM = 8, VERTEX = 9, SYMMETRY = 10, CIPHER = 11, PATH = 12, TREE = 13, NASH = 14,
+            LOGIC = 15, LOOP = 16, DECAY = 17, CODON = 18, CIRCUIT = 19;   // 1.4.0: see EngGames
     public static final int SIEVE_N = 40;
 
     private CalibrationGames() {}
@@ -870,6 +871,21 @@ public final class CalibrationGames {
                 Game g = game(seed, tier);
                 return a.length == 1 && a[0] >= 0 && a[0] < g.k() * g.k() && equilibrium(g, a[0] / g.k(), a[0] % g.k()) ? 0 : 1;
             }
+            case LOGIC -> {
+                return EngGames.logicErrors(seed, tier, a);
+            }
+            case LOOP -> {
+                return EngGames.loopErrors(seed, tier, a);
+            }
+            case DECAY -> {
+                return EngGames.decayErrors(seed, tier, a);
+            }
+            case CODON -> {
+                return EngGames.codonErrors(seed, tier, a);
+            }
+            case CIRCUIT -> {
+                return EngGames.circuitErrors(seed, tier, a);
+            }
             default -> {
                 return 1;
             }
@@ -893,6 +909,7 @@ public final class CalibrationGames {
             case FLOW -> flowReach(flow(seed, tier), answer) < 0;
             case PATH, TREE -> graphErrors(kind, seed, tier, answer) == 0;
             case NASH -> errors(NASH, seed, tier, answer) == 0;
+            case LOGIC, LOOP, DECAY, CODON, CIRCUIT -> errors(kind, seed, tier, answer) == 0;
             default -> false;
         };
     }

@@ -1,0 +1,90 @@
+{
+  "params": [
+    {
+      "id": "Ic",
+      "unit": "µA",
+      "min": 20,
+      "max": 600,
+      "step": 1,
+      "default": 200
+    },
+    {
+      "id": "f",
+      "unit": "GHz",
+      "min": 1,
+      "max": 200,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "id": "Tb",
+      "unit": "K",
+      "min": 1.5,
+      "max": 12,
+      "step": 0.1,
+      "default": 4.2
+    }
+  ],
+  "recipe_vars": {
+    "NG": 10000,
+    "Th": 300,
+    "Tj": 9.2
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "E",
+      "unit": "aJ",
+      "expr": "Ic*2.0678e-3",
+      "formula": "E = I_c·Φ₀, the energy of each switch"
+    },
+    {
+      "id": "P",
+      "unit": "mW",
+      "expr": "Ic*2.0678e-21*f*1e9*NG*1000",
+      "formula": "P = E·f·N, the chip's power at the cold stage"
+    },
+    {
+      "id": "W",
+      "unit": "mW",
+      "expr": "(Ic*2.0678e-21*f*1e9*NG*1000)*(Th - Tb)/(Tb*0.3)*(1 + 0.01*d)",
+      "formula": "at the wall: P·(T_h − T_b)/(η·T_b), refrigeration at 30% of Carnot"
+    },
+    {
+      "id": "gam",
+      "unit": "",
+      "expr": "Ic*1e-6*2.0678e-15/(2*3.14159265*1.380649e-23*Tb)",
+      "formula": "γ = I_cΦ₀/(2πkT): the junction's energy over the warmth that would flip it"
+    },
+    {
+      "id": "fmax",
+      "unit": "GHz",
+      "expr": "350*sqrt(pos(1 - (Tb/Tj)^2))",
+      "formula": "the fastest clock: set by the gap, which closes as T nears T_c"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "clock",
+      "kind": "stop",
+      "expr": "(350*sqrt(pos(1 - (Tb/Tj)^2))) - f",
+      "formula": "the clock under the gap's limit, or pulses are lost"
+    },
+    {
+      "id": "normal",
+      "kind": "stop",
+      "expr": "Tj - Tb",
+      "formula": "below the niobium junctions' T_c"
+    }
+  ],
+  "rate": "clamp(f/50, 0.25, 3)",
+  "rate_formula": "a faster clock finishes the job sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

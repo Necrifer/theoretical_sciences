@@ -13,7 +13,7 @@ public final class QHBlockSounds {
             case "polyethylene_shielding" -> SoundType.CANDLE;
             case "rectenna_panel" -> SoundType.COPPER;
             case "active_magnetic_shield" -> SoundType.METAL;
-            case "fischer_tropsch_tube", "cold_box_casing", "draw_tower_frame" -> SoundType.METAL;                    // 1.4.0 stage 1: steel tubes
+            case "fischer_tropsch_tube", "cold_box_casing", "draw_tower_frame", "bridgman_furnace_shell" -> SoundType.METAL;                    // 1.4.0 stage 1: steel tubes
             case "bolometer_focal_plane" -> SoundType.METAL;                  // 1.15.0: silicon on a copper stage                // 1.14.0: a steel coil housing                        // 1.13.0: copper dipoles on a wire mesh
             case "water_shield_tank", "test_stand_frame", "propellant_tank_block" -> SoundType.METAL;
             case "flame_trench_block" -> SoundType.STONE;
@@ -62,6 +62,7 @@ public final class QHBlockSounds {
             case "tar_sand" -> SoundType.SAND;          // 1.4.0 stage 2
             case "methane_clathrate" -> SoundType.GLASS;          // 1.4.0 stage 2
             case "overmature_shale" -> SoundType.DEEPSLATE;          // 1.4.0 stage 2
+            case "nickel_laterite" -> SoundType.ROOTED_DIRT;         // 1.4.0 stage 4: a red soil
             default -> null;
         };
     }

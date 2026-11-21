@@ -180,6 +180,12 @@ final class ProcessScenes {
         e("bcs_cryostat", "superconductivity", V.DEWAR, C.FIELD, C.BARS, 2);
         e("deep_space_transceiver", "deep space link", V.PLATE, C.WAVES, C.BEAM, 1);
         e("fibre_draw_tower", "fibre drawing", V.COLUMN, C.FLAME, C.BEAM, 0);
+        e("fracture_bench", "fatigue testing", V.BENCH, C.LATTICE, C.BARS, 1);       // 1.4.0 stage 4
+        e("bridgman_furnace", "directional solidification", V.KILN, C.CRYSTAL, C.BARS, 2);
+        e("josephson_logic_bench", "flux quantum logic", V.DEWAR, C.PEAKS, C.BEAM, 1);
+        e("media_sputter_chamber", "sputtering", V.CHAMBER, C.PARTICLES, C.TILES, 0);
+        e("pid_bench", "loop tuning", V.BOARD, C.CURVE, C.WAVES, 0);
+        e("reliability_ledger", "reliability testing", V.BOARD, C.GRAPH, C.BARS, 2);
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1

@@ -1,0 +1,380 @@
+{
+  "id": "engineering",
+  "name": "Engineering",
+  "description": "Structures that hold and break, the cold, signals, computers and control.",
+  "icon": "theoreticalsciences:rated_i_beam",
+  "nodes": [
+    {
+      "entry": "engineering/structural_mechanics",
+      "x": 1,
+      "y": 7,
+      "parents": [],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        0,
+        3.5,
+        -1.5,
+        3.5
+      ]
+    },
+    {
+      "entry": "engineering/composite_materials",
+      "x": 6,
+      "y": 5,
+      "parents": [
+        "engineering/structural_mechanics"
+      ],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        1,
+        3.5,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "engineering/tribology",
+      "x": 6,
+      "y": 9,
+      "parents": [
+        "engineering/structural_mechanics"
+      ],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        1,
+        3.5,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "engineering/corrosion_science",
+      "x": 11,
+      "y": 9,
+      "parents": [
+        "engineering/tribology"
+      ],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        2,
+        3.5,
+        8.5,
+        13.5
+      ]
+    },
+    {
+      "entry": "engineering/space_elevator",
+      "x": 11,
+      "y": 5,
+      "parents": [
+        "engineering/composite_materials"
+      ],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        2,
+        3.5,
+        8.5,
+        13.5
+      ]
+    },
+    {
+      "entry": "engineering/rotating_habitats",
+      "x": 16,
+      "y": 5,
+      "parents": [
+        "engineering/space_elevator"
+      ],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        3,
+        3.5,
+        13.5,
+        18.5
+      ]
+    },
+    {
+      "entry": "engineering/stellar_engines",
+      "x": 21,
+      "y": 5,
+      "parents": [
+        "engineering/rotating_habitats"
+      ],
+      "band": "Structures & Megastructures",
+      "route": [
+        1,
+        4,
+        3.5,
+        18.5,
+        23.5
+      ]
+    },
+    {
+      "entry": "physics/r1400_refrigeration",
+      "x": 1,
+      "y": 25,
+      "parents": [],
+      "band": "Cryogenics & Communications",
+      "route": [
+        3,
+        0,
+        -999999975.0,
+        -1.5,
+        3.5
+      ]
+    },
+    {
+      "entry": "physics/r1400_bcs",
+      "x": 6,
+      "y": 25,
+      "parents": [
+        "physics/r1400_refrigeration"
+      ],
+      "band": "Cryogenics & Communications",
+      "route": [
+        3,
+        1,
+        -999999975.0,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "physics/r1400_channels",
+      "x": 12,
+      "y": 25,
+      "parents": [],
+      "band": "Cryogenics & Communications",
+      "route": [
+        4,
+        0,
+        -999999975.0,
+        9.5,
+        14.5
+      ]
+    },
+    {
+      "entry": "physics/r1400_fibre",
+      "x": 17,
+      "y": 25,
+      "parents": [
+        "physics/r1400_channels"
+      ],
+      "band": "Cryogenics & Communications",
+      "route": [
+        4,
+        1,
+        -999999975.0,
+        14.5,
+        19.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_fracture",
+      "x": 1,
+      "y": 17,
+      "parents": [
+        "engineering/structural_mechanics",
+        "engineering/corrosion_science"
+      ],
+      "band": "Materials Failure",
+      "route": [
+        2,
+        0,
+        -999999983.0,
+        -1.5,
+        3.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_creep",
+      "x": 6,
+      "y": 17,
+      "parents": [
+        "engineering/r1400_fracture"
+      ],
+      "band": "Materials Failure",
+      "route": [
+        2,
+        1,
+        -999999983.0,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "fabrication/processors",
+      "x": 1,
+      "y": 35,
+      "parents": [],
+      "band": "Computer Engineering",
+      "route": [
+        5,
+        0,
+        -999999967.0,
+        -1.5,
+        3.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_rsfq",
+      "x": 6,
+      "y": 33,
+      "parents": [
+        "fabrication/processors",
+        "physics/r1400_bcs"
+      ],
+      "band": "Computer Engineering",
+      "route": [
+        5,
+        1,
+        -999999967.0,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_storage",
+      "x": 6,
+      "y": 37,
+      "parents": [
+        "fabrication/processors"
+      ],
+      "band": "Computer Engineering",
+      "route": [
+        5,
+        1,
+        -999999967.0,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "mathematics/node_research_feedback",
+      "x": 1,
+      "y": 49,
+      "parents": [],
+      "band": "Control & Reliability",
+      "route": [
+        6,
+        0,
+        45.5,
+        -1.5,
+        3.5
+      ]
+    },
+    {
+      "entry": "mathematics/node_research_control_theory",
+      "x": 6,
+      "y": 49,
+      "parents": [
+        "mathematics/node_research_feedback"
+      ],
+      "band": "Control & Reliability",
+      "route": [
+        6,
+        1,
+        45.5,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "mathematics/node_governor",
+      "x": 11,
+      "y": 50,
+      "parents": [
+        "mathematics/node_research_control_theory"
+      ],
+      "band": "Control & Reliability",
+      "route": [
+        6,
+        2,
+        45.5,
+        8.5,
+        13.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_pid",
+      "x": 11,
+      "y": 47,
+      "parents": [
+        "mathematics/node_research_control_theory"
+      ],
+      "band": "Control & Reliability",
+      "route": [
+        6,
+        2,
+        45.5,
+        8.5,
+        13.5
+      ]
+    },
+    {
+      "entry": "engineering/r1400_reliability",
+      "x": 16,
+      "y": 47,
+      "parents": [
+        "engineering/r1400_pid",
+        "engineering/r1400_rsfq"
+      ],
+      "band": "Control & Reliability",
+      "route": [
+        6,
+        3,
+        45.5,
+        13.5,
+        18.5
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "tier": 0,
+      "label": "Structures & Megastructures",
+      "x0": -1.0,
+      "y0": 0.0,
+      "x1": 23.0,
+      "y1": 11.5
+    },
+    {
+      "tier": 1,
+      "label": "Materials Failure",
+      "x0": -1.0,
+      "y0": 14.0,
+      "x1": 23.0,
+      "y1": 19.5
+    },
+    {
+      "tier": 2,
+      "label": "Cryogenics & Communications",
+      "x0": -1.0,
+      "y0": 22.0,
+      "x1": 23.0,
+      "y1": 27.5
+    },
+    {
+      "tier": 3,
+      "label": "Computer Engineering",
+      "x0": -1.0,
+      "y0": 30.0,
+      "x1": 23.0,
+      "y1": 39.5
+    },
+    {
+      "tier": 4,
+      "label": "Control & Reliability",
+      "x0": -1.0,
+      "y0": 42.0,
+      "x1": 23.0,
+      "y1": 52.5
+    }
+  ],
+  "layout": "tree"
+}

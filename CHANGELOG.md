@@ -98,6 +98,61 @@ Four new research nodes in Physics (each with its derivation puzzle) and four ne
   V = 2.405. The Chemical Reactor makes **Doped Silica Preforms**; the tower draws **Single Mode Fibre**; the Metamaterial
   Weaver makes **Photonic Interconnects**, and from them Photonic Processors six at a time (cheaper than the old routes).
 
+### Stage 4: materials failure, computer engineering, control and reliability
+Six new research nodes in the Engineering band of the research map (each with its derivation puzzle) and six new
+machines, one of them a multiblock.
+
+* **Fracture Mechanics** (critical crack length). New console, the **Fracture Bench**: K = Yσ√(πa) against the
+  toughness, the critical crack, and the Paris law integrated for the fatigue life. A wall whose critical crack is longer
+  than it is thick leaks before it breaks: Nickel Plated Iron and iron certified so make eight **Pressure Vessel
+  Walls** (a cheaper route; the crafted one still works).
+* **Creep and Superalloys** (Larson Miller). **Nickel Superalloy** from the Phase Diagram Kiln. New multiblock, the
+  **Bridgman Furnace** (368 blocks, with the new Bridgman Furnace Shell): keep G/v above the alloy's limit or stray
+  grains form; finer dendrites give a longer creep life at the service temperature. Grows **Single Crystal Turbine
+  Blades**; two of them make a cheaper Nuclear Thermal Core.
+* **Superconducting Logic** (the flux quantum). New console, the **Josephson Logic Bench**: switching energy I_c·Φ₀,
+  the chip's power counted again at the wall through the refrigerator, the junction's stability against its own warmth,
+  and a clock limit set by the gap. The Doping Furnace lays down **Josephson Wafers**; the bench clocks them into **RSFQ
+  Logic Cores**, which drive qubits for a cheaper Error Correction Lattice.
+* **Magnetic Storage** (Néel relaxation). New console, the **Media Sputter Chamber**: grain size against retention and
+  density (the superparamagnetic limit), and iron platinum so hard it only writes when heated near its Curie point. A
+  crafted **Sputter Target** becomes **Magnetic Archive Platters**, eight of which make a cheaper Holographic Matrix.
+* **Control Engineering** (peak overshoot). New console, the **PID Bench**: a PI loop on a lagging plant, its natural
+  frequency, damping, overshoot and settling time. Makes **PID Governor Cores**, two of which make a cheaper Phase Locked
+  Stabiliser.
+* **Reliability Engineering** (triple modular redundancy). New console, the **Reliability Ledger**: failure rate,
+  copies in parallel and majority voting, for the nines a mission needs. Makes **Triple Modular Controllers**, the heart
+  of a cheaper Von Neumann Probe.
+* **The world:** **Nickel Laterite** in jungles, a few blocks under the surface (a feature in vanilla biomes); the
+  Chemical Reactor leaches it with sulfuric acid to Nickel Sulfate Solution.
+* **A new Codex tab, Engineering**, between Mathematics and Dimensions, laid out as a tree like the others: Structures
+  & Megastructures (moved from Physics), Materials Failure, Cryogenics & Communications (moved from Physics), Computer
+  Engineering and Control & Reliability. The Processor Tiers, Feedback, Control Theory and the Governor also appear
+  there, linked to what builds on them.
+
+### Five new Tuning Fork games
+The Tuning Fork had fifteen games, and three of them (waves, proof chains, pipe flow) covered over half of the
+machines. Five new ones, each a piece of real science, and 25 machines moved to the one that fits them:
+
+* **Wire the logic:** click each gate (AND, OR, XOR, NAND, NOR, and XNOR from stage 3) until the circuit's truth table
+  matches the target. Two to four gates, two or three inputs. The Matrioshka Brain, Reality Compiler, Automaton
+  Lattice, Concept Compressor, Omnilex Engine, Josephson Logic Bench and Reliability Ledger.
+* **Tune the loop:** set Kp and Ki (and Kd from stage 5) so a plant's step response, drawn live, overshoots no more than
+  the red line and settles in the green band before the gold one. One lag, then two from stage 3. The Tokamak,
+  Anomaly Containment Ward, Climate Engine, Warp Field Forge, Helium Liquefier and PID Bench.
+* **Walk the decay chain:** take a heavy nuclide (²³⁸U, ²³²Th, ²⁴¹Am and others) to the target by α and β⁻ decays (β⁺
+  from stage 4), on a chart of protons against neutrons, without passing through the red nuclides that decay too fast.
+  The Nuclide Forge, Molten Salt Reactor, Gas Centrifuge Cascade and Cyclotron.
+* **Write the gene:** scroll each codon until the mRNA codes the peptide by the standard genetic code; from stage 2 it
+  starts with AUG, from stage 3 it ends with a stop codon, and from stage 4 its GC content must fall in a range. The
+  Ancient DNA Lab, Phage Lab, Evolution Engine, Abiogenesis Crucible and Circadian Incubator.
+* **Balance the circuit:** choose standard E12 resistors until the ammeter reads within 2% of the target, first the
+  total current, then one branch of a current divider, with some resistors given. The Tesla Coil, Pulsed Magnet Lab,
+  Microwave Rectenna, Patch Clamp Rig, BCS Cryostat, MHD Generator and Media Sputter Chamber.
+
+As with the other games, the server builds the same puzzle from the same seed and checks the answer itself, and the
+Resonant Tuning Fork says how far off a wrong answer is.
+
 ### Fixes
 * **Icy Moons' derivation showed "(template error)".** Its formula named the distance `d`, which the equation reader
   takes for a derivative. The distance is now `a` (and the answer Δg). Photogrammetry had the same fault (its disparity

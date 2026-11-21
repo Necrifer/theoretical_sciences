@@ -1,0 +1,76 @@
+{
+  "params": [
+    {
+      "id": "G",
+      "unit": "K/mm",
+      "min": 1,
+      "max": 14,
+      "step": 0.1,
+      "default": 4
+    },
+    {
+      "id": "v",
+      "unit": "mm/h",
+      "min": 1,
+      "max": 40,
+      "step": 0.5,
+      "default": 10
+    }
+  ],
+  "recipe_vars": {
+    "Gc": 0.8,
+    "Ts": 1150,
+    "P0": 26000
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "gv",
+      "unit": "K·h/mm²",
+      "expr": "G/v",
+      "formula": "G/v: above the alloy's limit the front stays flat and no stray grains form"
+    },
+    {
+      "id": "lam",
+      "unit": "µm",
+      "expr": "800*G^(-0.5)*v^(-0.25)*(1 + 0.01*d)",
+      "formula": "λ₁ ∝ G^(−1/2)·v^(−1/4), the primary dendrite spacing"
+    },
+    {
+      "id": "LMP",
+      "unit": "",
+      "expr": "P0*(1 + 0.0004*(200 - 800*G^(-0.5)*v^(-0.25)*(1 + 0.01*d)))",
+      "formula": "Larson Miller parameter: finer dendrites, less segregation, a stronger blade"
+    },
+    {
+      "id": "life",
+      "unit": "h",
+      "expr": "10^(P0*(1 + 0.0004*(200 - 800*G^(-0.5)*v^(-0.25)*(1 + 0.01*d)))/Ts - 20)",
+      "formula": "t_r = 10^(P/T − 20) at the service temperature"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "stray",
+      "kind": "stop",
+      "expr": "G/v - Gc",
+      "formula": "G/v above the limit, or stray grains nucleate and the blade is no single crystal"
+    },
+    {
+      "id": "mould",
+      "kind": "wear",
+      "expr": "12 - G",
+      "formula": "over 12 K/mm the ceramic mould cracks"
+    }
+  ],
+  "rate": "clamp(v/10, 0.2, 3)",
+  "rate_formula": "a faster withdrawal finishes the blade sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

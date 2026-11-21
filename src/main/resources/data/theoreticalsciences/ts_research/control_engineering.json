@@ -1,0 +1,53 @@
+{
+  "title": "Control Engineering",
+  "x": 27,
+  "y": 71,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:control_theory",
+    "theoreticalsciences:feedback"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:precision_gyroscope",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:strain_sensor",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "description": "Push back on an error in proportion to it, and to how long it has lasted, and to how fast it is growing: the proportional, integral and derivative controller, which holds steady most of the world's furnaces, autopilots and reactors. Too little gain and the loop is sluggish; too much and it overshoots and rings. A loop of this kind behaves like a spring and damper, and its damping ratio decides how far it overshoots. Unlocks the PID Bench.",
+  "icon": "theoreticalsciences:pid_bench",
+  "puzzle": {
+    "goal": "A second order loop with damping ratio ζ below one overshoots its setpoint by a fraction M before settling. Write M.",
+    "name": "Peak overshoot",
+    "lhs": "M",
+    "form": "exp ( - π * ζ / sqrt ( 1 - ζ ^ 2 ) )",
+    "expr": "exp ( - π * z / sqrt ( 1 - z ^ 2 ) )",
+    "ask": "Find M for ζ = @{z}.",
+    "vars": {
+      "M": "overshoot",
+      "ζ": "damping ratio"
+    },
+    "given": {
+      "z": 0.5
+    },
+    "unit": "",
+    "method": "The step response is 1 − e^(−ζωt)·cos(ω√(1−ζ²)t + φ)/√(1−ζ²); its first peak comes half a damped period in.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "z": [
+        0.2,
+        0.8,
+        0.01
+      ]
+    }
+  },
+  "category": "engineering"
+}

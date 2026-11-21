@@ -59495,5 +59495,284 @@
     "text": "$(thing)Equations$()$(br)V = 2πa·NA/λ$(br)α = 0.12(1.55/λ)⁴ + ..."
    }
   ]
+ },
+ "engineering/r1400_fracture": {
+  "title": "Fracture Mechanics",
+  "icon": "theoreticalsciences:fracture_bench",
+  "category": "engineering",
+  "research": "fracture_mechanics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:fracture_bench",
+     "theoreticalsciences:pressure_vessel_wall"
+    ],
+    "text": "K = Yσ√(πa); a_c = (K_Ic/Yσ)²/π; da/dN = C·ΔK^m. The $(thing)Fracture Bench$() rates a part for the cycles it survives from the worst flaw inspection could miss. A wall whose critical crack is longer than it is thick leaks before it breaks: Nickel Plated Iron and iron certified so become eight $(item)Pressure Vessel Walls$(), far cheaper than by hand.",
+    "title": "Fracture Bench"
+   }
+  ]
+ },
+ "engineering/r1400_creep": {
+  "title": "Creep and Superalloys",
+  "icon": "theoreticalsciences:single_crystal_turbine_blade",
+  "category": "engineering",
+  "research": "creep_and_superalloys",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:nickel_superalloy",
+     "theoreticalsciences:nickel_laterite"
+    ],
+    "text": "$(item)Nickel Superalloy$() is alloyed in the Phase Diagram Kiln from Nickel Plated Iron and Meteoric Iron. Nickel also comes from $(item)Nickel Laterite$(), jungle soil leached with sulfuric acid in the Chemical Reactor.",
+    "title": "Superalloy"
+   },
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:bridgman_furnace",
+     "theoreticalsciences:single_crystal_turbine_blade"
+    ],
+    "text": "λ₁ ∝ G^(−1/2)·v^(−1/4); t_r = 10^(P/T − 20). The $(thing)Bridgman Furnace$() (368 blocks) grows a $(item)Single Crystal Turbine Blade$(): keep G/v above the alloy's limit or stray grains form; a steeper gradient and faster withdrawal give finer dendrites and a longer creep life. Two blades make a cheaper Nuclear Thermal Core.",
+    "title": "Bridgman Furnace"
+   },
+   {
+    "type": "multiblock",
+    "name": "Bridgman Furnace",
+    "text": "Interface Ports either side of the controller.",
+    "multiblock": "bridgman_furnace"
+   }
+  ]
+ },
+ "engineering/r1400_rsfq": {
+  "title": "Superconducting Logic",
+  "icon": "theoreticalsciences:rsfq_logic_core",
+  "category": "engineering",
+  "research": "superconducting_logic",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:josephson_logic_bench",
+     "theoreticalsciences:josephson_wafer",
+     "theoreticalsciences:rsfq_logic_core"
+    ],
+    "text": "E = I_c·Φ₀; W = P·(T_h − T_b)/(η·T_b); γ = I_cΦ₀/2πkT. The Doping Furnace lays down a $(item)Josephson Wafer$(); the $(thing)Josephson Logic Bench$() clocks it into an $(item)RSFQ Logic Core$(): stable (γ over 500), and cheap to keep cold (under 60 mW at the wall). RSFQ cores drive qubits for a cheaper Error Correction Lattice.",
+    "title": "Josephson Logic Bench"
+   }
+  ]
+ },
+ "engineering/r1400_storage": {
+  "title": "Magnetic Storage",
+  "icon": "theoreticalsciences:magnetic_archive_platter",
+  "category": "engineering",
+  "research": "magnetic_storage",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:media_sputter_chamber",
+     "theoreticalsciences:sputter_target",
+     "theoreticalsciences:magnetic_archive_platter"
+    ],
+    "text": "t = τ₀·e^(K_uV/kT); μ₀H_K = 2K_u/M_s·(1 − T/T_C). The $(thing)Media Sputter Chamber$() coats glass from a $(item)Sputter Target$(): small grains for density, tall enough to keep their bits ten years, and a write temperature near the Curie point, where the head's 2.4 T can switch them. $(item)Magnetic Archive Platters$() make a cheaper Holographic Matrix.",
+    "title": "Media Sputter Chamber"
+   }
+  ]
+ },
+ "engineering/r1400_pid": {
+  "title": "Control Engineering",
+  "icon": "theoreticalsciences:pid_governor_core",
+  "category": "engineering",
+  "research": "control_engineering",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:pid_bench",
+     "theoreticalsciences:pid_governor_core"
+    ],
+    "text": "ω_n = √(K·K_i/τ); ζ = (1 + K·K_p)/(2√(τK·K_i)); overshoot e^(−πζ/√(1−ζ²)). On the $(thing)PID Bench$(), tune a loop to overshoot under 10% and settle within 3 s, and it is burned into a $(item)PID Governor Core$(): two of them make a cheaper Phase Locked Stabiliser.",
+    "title": "PID Bench"
+   }
+  ]
+ },
+ "engineering/r1400_reliability": {
+  "title": "Reliability Engineering",
+  "icon": "theoreticalsciences:triple_modular_controller",
+  "category": "engineering",
+  "research": "reliability_engineering",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:reliability_ledger",
+     "theoreticalsciences:triple_modular_controller"
+    ],
+    "text": "R = e^(−λt); 1 − (1 − R)ⁿ; 3R² − 2R³. The $(thing)Reliability Ledger$() arranges RSFQ cores until the controller survives ten years with three nines: a $(item)Triple Modular Controller$(), the heart of a cheaper Von Neumann Probe, which must not fail between the stars.",
+    "title": "Reliability Ledger"
+   }
+  ]
+ },
+ "world/nickel_laterite": {
+  "title": "Nickel Laterite",
+  "icon": "theoreticalsciences:nickel_laterite",
+  "category": "world",
+  "research": "creep_and_superalloys",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:nickel_laterite"
+    ],
+    "text": "In the Overworld's jungles, a few blocks under the surface: $(item)Nickel Laterite$(), soil the rain has leached of all but iron and nickel. The Chemical Reactor leaches it with sulfuric acid to Nickel Sulfate Solution.",
+    "title": "Nickel Laterite"
+   }
+  ]
+ },
+ "operation/fracture_bench": {
+  "title": "Fracture Bench",
+  "icon": "theoreticalsciences:fracture_bench",
+  "category": "operation",
+  "research": "fracture_mechanics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Rate the part for the cycles the recipe asks, and leak before it breaks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Stress range, Starting flaw, Geometry factor.$(br2)$(thing)Disturbance$(): crack gauge drift: the life reads 1%·d short."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): K over K_Ic stops it; over 600 MPa wears the grips.$(br2)$(thing)Rate$(): a harsher test, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)K = Yσ√(πa)$(br)a_c = (K_Ic/Yσ)²/π$(br)N = ∫da/(CΔK^m)"
+   }
+  ]
+ },
+ "operation/bridgman_furnace": {
+  "title": "Bridgman Furnace",
+  "icon": "theoreticalsciences:bridgman_furnace",
+  "category": "operation",
+  "research": "creep_and_superalloys",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Grow a single crystal with the creep life the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Thermal gradient, Withdrawal rate.$(br2)$(thing)Disturbance$(): baffle wear: the dendrites coarsen by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): G/v under the limit stops it; over 12 K/mm wears the mould.$(br2)$(thing)Rate$(): faster withdrawal, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)λ₁ ∝ G^(−1/2)v^(−1/4)$(br)t_r = 10^(P/T − 20)"
+   }
+  ]
+ },
+ "operation/josephson_logic_bench": {
+  "title": "Josephson Logic Bench",
+  "icon": "theoreticalsciences:josephson_logic_bench",
+  "category": "operation",
+  "research": "superconducting_logic",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Clock the chip stably and cheaply enough."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Critical current, Clock, Bath temperature.$(br2)$(thing)Disturbance$(): flux trapping: the wall power rises by 1%·d."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a clock past the gap's limit, or a bath above T_c, stops it.$(br2)$(thing)Rate$(): a faster clock, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)E = I_cΦ₀$(br)W = P(T_h − T_b)/(ηT_b)$(br)γ = I_cΦ₀/2πkT"
+   }
+  ]
+ },
+ "operation/media_sputter_chamber": {
+  "title": "Media Sputter Chamber",
+  "icon": "theoreticalsciences:media_sputter_chamber",
+  "category": "operation",
+  "research": "magnetic_storage",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Lay down media dense enough that keeps its bits and can be written."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Grain size, Film thickness, Write temperature.$(br2)$(thing)Disturbance$(): target erosion: the retention reads 1%·d low."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): a switching field over 2.4 T stops it; past the Curie point wears it.$(br2)$(thing)Rate$(): a thinner film, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)t = τ₀e^(K_uV/kT)$(br)μ₀H_K = 2K_u/M_s(1 − T/T_C)"
+   }
+  ]
+ },
+ "operation/pid_bench": {
+  "title": "PID Bench",
+  "icon": "theoreticalsciences:pid_bench",
+  "category": "operation",
+  "research": "control_engineering",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Tune the loop to the overshoot and settling the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Proportional gain, Integral gain.$(br2)$(thing)Disturbance$(): sensor lag: the loop settles 1%·d slower."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): K_p over 12 wears the actuator.$(br2)$(thing)Rate$(): a loop that settles faster, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)ω_n = √(KK_i/τ)$(br)ζ = (1 + KK_p)/(2√(τKK_i))$(br)M = e^(−πζ/√(1−ζ²))"
+   }
+  ]
+ },
+ "operation/reliability_ledger": {
+  "title": "Reliability Ledger",
+  "icon": "theoreticalsciences:reliability_ledger",
+  "category": "operation",
+  "research": "reliability_engineering",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Reach the nines the mission asks, within budget."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Failure rate, Copies, Voting.$(br2)$(thing)Disturbance$(): infant mortality: the nines read 1%·d low."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): over nine units wears it.$(br2)$(thing)Rate$(): cheaper parts, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)R = e^(−λt)$(br)1 − (1 − R)ⁿ$(br)3R² − 2R³"
+   }
+  ]
  }
 }

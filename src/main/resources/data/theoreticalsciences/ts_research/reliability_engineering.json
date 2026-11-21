@@ -1,0 +1,53 @@
+{
+  "title": "Reliability Engineering",
+  "x": 30,
+  "y": 71,
+  "insight": 220,
+  "requires": [
+    "theoreticalsciences:probability_theory",
+    "theoreticalsciences:control_engineering"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:calibration_card",
+      "count": 2
+    },
+    {
+      "item": "minecraft:comparator",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "description": "Parts fail at random, at a steady rate through most of their lives, so the chance one still works falls exponentially. Two in parallel fail only if both do; parts in series fail if any does. Three copies with a vote outlast one only while each is likely to survive: past that point the voter is outvoted by its own broken parts. Spacecraft, aircraft and replicators are designed on this ledger. Unlocks the Reliability Ledger.",
+  "icon": "theoreticalsciences:reliability_ledger",
+  "puzzle": {
+    "goal": "Three identical parts each work with probability R; a voter takes the majority. Write the chance the voted output is right, R_TMR.",
+    "name": "Triple modular redundancy",
+    "lhs": "Q",
+    "form": "3 * R ^ 2 - 2 * R ^ 3",
+    "expr": "3 * R ^ 2 - 2 * R ^ 3",
+    "ask": "Find R_TMR for R = @{R}.",
+    "vars": {
+      "Q": "voted reliability",
+      "R": "one part"
+    },
+    "given": {
+      "R": 0.9
+    },
+    "unit": "",
+    "method": "Add the chance all three work, R³, to the three ways exactly two do, 3R²(1 − R).",
+    "distractors": [
+      "+",
+      "*",
+      "^ 4"
+    ],
+    "vary": {
+      "R": [
+        0.6,
+        0.99,
+        0.01
+      ]
+    }
+  },
+  "category": "engineering"
+}

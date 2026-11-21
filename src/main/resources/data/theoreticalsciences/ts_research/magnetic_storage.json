@@ -1,0 +1,61 @@
+{
+  "title": "Magnetic Storage",
+  "x": 15,
+  "y": 65,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:ferromagnetism",
+    "theoreticalsciences:information_theory"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:fused_silica",
+      "count": 4
+    }
+  ],
+  "time": 420,
+  "description": "A disk stores each bit in a few dozen magnetic grains. Smaller grains pack more bits, but a grain's will to keep its direction is its anisotropy times its volume, and the warmth of the room keeps trying to flip it: shrink it far enough and the data evaporates, the superparamagnetic limit. The way past is a harder magnet, iron platinum, too hard for any head to write until a laser heats each spot near its Curie point. Unlocks the Media Sputter Chamber.",
+  "icon": "theoreticalsciences:media_sputter_chamber",
+  "puzzle": {
+    "goal": "A grain of volume V and anisotropy K must climb an energy barrier K·V to flip, at temperature T. With the attempt time τ₀ and Boltzmann's k, write how long it keeps its bit, t (Néel and Arrhenius).",
+    "name": "Néel relaxation time",
+    "lhs": "t",
+    "form": "τ * exp ( K * V / ( k * T ) )",
+    "expr": "tau * exp ( K * V / ( k * T ) )",
+    "ask": "Find t in seconds for τ₀ = 10⁻⁹ s, K·V = 40kT at T = @{T} K.",
+    "vars": {
+      "t": "retention time",
+      "τ": "attempt time",
+      "K": "anisotropy",
+      "V": "volume",
+      "k": "Boltzmann constant",
+      "T": "temperature"
+    },
+    "given": {
+      "tau": 1e-09,
+      "K": 1.0,
+      "V": 1.656e-19,
+      "k": 1.380649e-23,
+      "T": 300.0
+    },
+    "unit": "s",
+    "method": "The chance each attempt succeeds is the Boltzmann factor e^(−KV/kT); the wait is one attempt time over it.",
+    "distractors": [
+      "*",
+      "-",
+      "ln"
+    ],
+    "vary": {
+      "T": [
+        280.0,
+        320.0,
+        1.0
+      ]
+    }
+  },
+  "category": "engineering"
+}

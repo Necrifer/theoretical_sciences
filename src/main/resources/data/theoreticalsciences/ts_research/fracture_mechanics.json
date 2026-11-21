@@ -1,0 +1,57 @@
+{
+  "title": "Fracture Mechanics",
+  "x": 42,
+  "y": 70,
+  "insight": 200,
+  "requires": [
+    "theoreticalsciences:structural_mechanics",
+    "theoreticalsciences:corrosion_science"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:rated_i_beam",
+      "count": 4
+    },
+    {
+      "item": "theoreticalsciences:strain_sensor",
+      "count": 2
+    }
+  ],
+  "time": 420,
+  "description": "Why do ships snap in half in calm water, and aircraft windows tear at their corners? A crack concentrates stress at its tip, more the longer it is, and when that concentration reaches the metal's toughness the crack runs at the speed of sound. Below it, every load cycle grows the crack a little, by a power of the stress range. Engineers assume the flaw is there and ask how long it takes to grow. Unlocks the Fracture Bench.",
+  "icon": "theoreticalsciences:fracture_bench",
+  "puzzle": {
+    "goal": "A crack of length a under stress σ, with geometry factor Y, has stress intensity K = Yσ√(πa). Setting K equal to the toughness K_Ic, write the critical crack length a_c.",
+    "name": "Critical crack length",
+    "lhs": "a",
+    "form": "( K / ( Y * σ ) ) ^ 2 / π",
+    "expr": "( K / ( Y * s ) ) ^ 2 / π",
+    "ask": "Find a_c in metres for K_Ic = 50 MPa√m, Y = 1.12 and σ = @{s} MPa.",
+    "vars": {
+      "a": "critical crack length",
+      "K": "toughness",
+      "Y": "geometry factor",
+      "σ": "stress"
+    },
+    "given": {
+      "K": 50.0,
+      "Y": 1.12,
+      "s": 200.0
+    },
+    "unit": "m",
+    "method": "Square both sides of K_Ic = Yσ√(πa) and divide by π.",
+    "distractors": [
+      "*",
+      "^ 3",
+      "sqrt"
+    ],
+    "vary": {
+      "s": [
+        100.0,
+        600.0,
+        10.0
+      ]
+    }
+  },
+  "category": "engineering"
+}

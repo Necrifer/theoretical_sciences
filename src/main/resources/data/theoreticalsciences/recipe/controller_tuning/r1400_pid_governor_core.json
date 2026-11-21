@@ -1,0 +1,45 @@
+{
+  "type": "theoreticalsciences:controller_tuning",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:precision_gyroscope",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:strain_sensor",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:neodymium_magnet",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pid_governor_core",
+      "count": 1
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:control_engineering",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Kg": 2,
+      "tau": 1
+    },
+    "windows": [
+      {
+        "q": "Mp",
+        "min": 0,
+        "max": 10
+      },
+      {
+        "q": "ts",
+        "min": 0,
+        "max": 3
+      }
+    ]
+  }
+}

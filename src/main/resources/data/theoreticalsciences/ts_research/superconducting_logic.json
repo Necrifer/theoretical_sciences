@@ -1,0 +1,55 @@
+{
+  "title": "Superconducting Logic",
+  "x": 33,
+  "y": 65,
+  "insight": 240,
+  "requires": [
+    "theoreticalsciences:superconductivity_theory",
+    "theoreticalsciences:algorithms"
+  ],
+  "cost": [
+    {
+      "item": "theoreticalsciences:nbti_wire",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:doped_wafer",
+      "count": 2
+    }
+  ],
+  "time": 480,
+  "description": "A computer's bit can be a single quantum of magnetic flux. In rapid single flux quantum logic a Josephson junction flips and lets one flux quantum through, a picosecond pulse that is the bit; it switches near a hundred gigahertz for a hundred thousandth of a transistor's energy. The catch is the cold: every watt at 4 kelvin costs hundreds at the wall, and too small a junction is flipped by its own warmth. Unlocks the Josephson Logic Bench.",
+  "icon": "theoreticalsciences:josephson_logic_bench",
+  "puzzle": {
+    "goal": "A pair of electrons carries charge 2q; the flux through a superconducting loop comes in quanta Φ₀. From Planck's constant h, write Φ₀.",
+    "name": "Flux quantum",
+    "lhs": "F",
+    "form": "h / ( 2 * q )",
+    "expr": "h / ( 2 * q )",
+    "ask": "Find Φ₀ in webers with h = 6.626×10⁻³⁴ and q = @{q} C.",
+    "vars": {
+      "F": "flux quantum",
+      "h": "Planck constant",
+      "q": "electron charge"
+    },
+    "given": {
+      "h": 6.626e-34,
+      "q": 1.602e-19
+    },
+    "unit": "Wb",
+    "method": "The pair wavefunction must come back to itself round the loop: its phase, 2q·Φ/ħ, is a whole number of 2π.",
+    "distractors": [
+      "*",
+      "+",
+      "^ 2"
+    ],
+    "vary": {
+      "q": [
+        1.5e-19,
+        1.7e-19,
+        1e-21
+      ]
+    }
+  },
+  "category": "engineering"
+}

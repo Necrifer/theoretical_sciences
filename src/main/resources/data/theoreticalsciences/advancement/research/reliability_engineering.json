@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:reliability_ledger"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.reliability_engineering"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.reliability_engineering.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/probability_theory",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

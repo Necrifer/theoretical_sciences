@@ -1031,7 +1031,16 @@ public final class QHContentList {
         new ItemDef("doped_silica_preform", "", 64),
         new ItemDef("single_mode_fibre_spool", "", 64),
         new ItemDef("photonic_interconnect", "", 64),
-        new ItemDef("deep_space_relay", "", 16));
+        new ItemDef("deep_space_relay", "", 16),
+        // 1.4.0 stage 4: materials failure, computer engineering, control and reliability
+        new ItemDef("nickel_superalloy", "", 64),
+        new ItemDef("single_crystal_turbine_blade", "", 64),
+        new ItemDef("josephson_wafer", "", 64),
+        new ItemDef("rsfq_logic_core", "", 64),
+        new ItemDef("sputter_target", "", 64),
+        new ItemDef("magnetic_archive_platter", "", 64),
+        new ItemDef("pid_governor_core", "", 64),
+        new ItemDef("triple_modular_controller", "", 16));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),
@@ -1208,6 +1217,7 @@ public final class QHContentList {
         new BlockDef("tar_sand", "simple", 0, 0.8F, "none", ""),          // 1.4.0 stage 2
         new BlockDef("methane_clathrate", "simple", 1, 1.0F, "none", ""),          // 1.4.0 stage 2
         new BlockDef("overmature_shale", "simple", 0, 3.0F, "none", ""),          // 1.4.0 stage 2
+        new BlockDef("nickel_laterite", "simple", 0, 0.8F, "none", ""),           // 1.4.0 stage 4
         new BlockDef("plume_ice", "simple", 1, 2.5F, "none", ""),          // 1.15.0
         new BlockDef("chondritic_regolith", "simple", 0, 0.8F, "none", ""),          // 1.15.0
         new BlockDef("annihilation_scar", "simple", 6, 3.0F, "iron", ""),          // 1.11.0
@@ -1557,7 +1567,8 @@ public final class QHContentList {
         new BlockDef("bolometer_focal_plane", "casing", 2, 4.0F, "iron", ""),            // 1.15.0
         new BlockDef("fischer_tropsch_tube", "casing", 0, 4.0F, "iron", ""),            // 1.4.0 stage 1
         new BlockDef("cold_box_casing", "casing", 0, 4.0F, "iron", ""),                 // 1.4.0 stage 3
-        new BlockDef("draw_tower_frame", "casing", 0, 4.0F, "iron", ""));
+        new BlockDef("draw_tower_frame", "casing", 0, 4.0F, "iron", ""),
+        new BlockDef("bridgman_furnace_shell", "casing", 0, 4.0F, "iron", ""));         // 1.4.0 stage 4
     public static final List<FluidDef> FLUIDS = List.of(
         new FluidDef("quark_gluon_plasma", false, 15, 2147483647, 3000, 600, 0xFF6A00),
         new FluidDef("bose_einstein_condensate", false, 8, 0, 900, 200, 0x7AD8FF),

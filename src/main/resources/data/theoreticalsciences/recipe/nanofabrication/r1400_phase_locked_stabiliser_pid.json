@@ -1,0 +1,32 @@
+{
+  "type": "theoreticalsciences:nanofabrication",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:pid_governor_core",
+      "count": 2
+    },
+    {
+      "item": "theoreticalsciences:superconducting_coil",
+      "count": 16
+    },
+    {
+      "item": "theoreticalsciences:chronon_capacitor",
+      "count": 1
+    }
+  ],
+  "fluid_inputs": [
+    {
+      "fluid": "theoreticalsciences:warm_helium",
+      "amount": 4000
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:phase_locked_stabiliser",
+      "count": 1
+    }
+  ],
+  "energy": 65536,
+  "duration": 750,
+  "research": "theoreticalsciences:control_engineering"
+}
