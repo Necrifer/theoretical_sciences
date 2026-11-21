@@ -1,270 +1,227 @@
 # Changelog
 
-## 1.4.0: Organic chemistry, petrochemistry and engineering (in progress)
+## 1.4.0: Organic chemistry, petrochemistry and engineering
 
-Built in stages; this section grows with each test build.
+31 new research nodes, each with its derivation puzzle; 30 new machines, four of them multiblocks; a new Codex tab,
+Engineering; five new Tuning Fork games; and the research map and every Codex map redrawn as trees.
 
-### Stage 1: the organic core and the syngas hub
-Six new research nodes in Chemistry, after Petrochemistry, Polymer Chemistry, Organic Synthesis and Asymmetric
-Synthesis, each with its derivation puzzle, and a new Codex region in the Chemistry tab, "Petrochemistry & Organic".
+### Before updating
+* **New routes are cheaper, old ones still work.** Every new route to an existing item costs less than the old one,
+  and no old recipe was removed. One existing recipe changed: **Tomography** in the Connectome Mapper makes four Engrams
+  instead of three, so it stays the cheaper route now that Photonic Neurons cost less.
+* **Codex moves.** Physics' "Engineering of the Large" chapters (structures, composites, tribology, corrosion, the
+  space elevator, rotating habitats, stellar engines) moved to the new Engineering tab.
+* **Item descriptions.** Each item's description now appears once in the Codex (see Codex below).
+
+### Organic chemistry and the syngas hub
+Six research nodes in Chemistry, after Petrochemistry, Polymer Chemistry, Organic Synthesis and Asymmetric Synthesis,
+in a new Codex region, "Petrochemistry & Organic".
 
 * **Syngas and Chain Growth** (ASF distribution). New console, the **Syngas Reformer**: steam reforming, partial
-  oxidation and the water gas shift, each held to its real equilibrium constant (Xu and Froment), so the methane cannot
-  convert past what K allows. Makes **Syngas** (H₂/CO near 2) or hydrogen (plenty of steam, no oxygen). New multiblock,
-  the **Fischer Tropsch Reactor** (341 blocks, with the new Fischer Tropsch Tube Bundle casing): chain growth α from the
-  bed temperature and H₂/CO (Song's correlation) sets the Anderson Schulz Flory spread. Iron makes **Rocket Kerosene**
-  (C10 to C16); the new **Cobalt Chain Growth Catalyst** (wears, poisonable, restored in the Regeneration Kiln) makes
-  **Synthetic Wax** and, from wax, **Monodisperse Paraffin** (C24 to C28).
-* **Polymer Physics** (Carothers with an imbalance). The Polymeriser shows the chain length of two partner monomers
-  and the Mark Houwink viscosity. Makes **Rigid Rod Fibre** and **Conjugated Polymer**.
+  oxidation and the water gas shift, each held to its real equilibrium constant (Xu and Froment). Makes **Syngas**
+  (H₂/CO near 2) or hydrogen. New multiblock, the **Fischer Tropsch Reactor** (341 blocks, with the Fischer Tropsch Tube
+  Bundle casing): chain growth α from the bed temperature and H₂/CO sets the Anderson Schulz Flory spread. Iron makes
+  **Rocket Kerosene** (C10 to C16); the **Cobalt Chain Growth Catalyst** (wears, poisonable, restored in the
+  Regeneration Kiln) makes **Synthetic Wax** and, from wax, **Monodisperse Paraffin** (C24 to C28).
+* **Polymer Physics** (Carothers with an imbalance). The Polymeriser shows the chain length of two partner monomers and
+  the Mark Houwink viscosity. Makes **Rigid Rod Fibre** and **Conjugated Polymer**.
 * **Aromatic Substitution** (Hammett). New console, the **Substituent Bench**: σρ, the acidity function H₀ and the bath
   temperature set the rate. Makes **Aniline**, **Para Phenylenediamine** and **Azo Dye**. **Benzene** comes from the
-  Cracking Tower (pyrolysis gasoline from crude oil).
+  Cracking Tower.
 * **Stereochemistry** (conformer ratio). New console, the **Polarimeter**: Biot's law certifies **Mirror Reagent**;
   cooled, it holds rings in their chairs (A values) for a new Chiral Ligand route.
-* **Aromaticity** (Hückel ring orbitals). New console, the **Hückel Analyser**: the ring's π energy against the open
-  chain's gives 4n + 2, the ring current shift is read by NMR, and the ring must be cold enough (Eyring) for the inner
-  and outer protons to stand apart. Makes **Annulene Lattice**.
+* **Aromaticity** (Hückel). New console, the **Hückel Analyser**: 4n + 2, the ring current shift read by NMR, and a ring
+  cold enough (Eyring) for its inner and outer protons to stand apart. Makes **Annulene Lattice**.
 * **Molecular Machines** (Eyring). New console, the **Molecular Machine Bench**: two photochemical and two thermal steps
-  a turn, with a ratchet bias for direction. Makes **Rotaxane Shuttle**, **Light Driven Rotor** and **Molecular Logic
-  Gate**, and from them Programmable Matter.
-* New fluids, each with a Containment Cell: Syngas, Rocket Kerosene, Benzene (also takes `c:benzene`, so GregTech's
-  benzene works), Aniline.
+  a turn, with a ratchet bias for direction. Makes **Rotaxane Shuttles**, **Light Driven Rotors** and **Molecular Logic
+  Gates**, and from them Programmable Matter.
+* New fluids, each with a Containment Cell: Syngas, Rocket Kerosene, Benzene (also takes `c:benzene`), Aniline.
 
-### Stage 1: new routes to existing items (all cheaper than the old ones, which still work)
-* Tether Spool: Composite Layup Press, 2 Nanotube Composite and 2 Rigid Rod Fibre (was 3 and 2 Aramid Fibre).
-* Shkadov Mirror Film: Composite Layup Press, 1 aluminium ingot and 2 Rigid Rod Fibre for 6 (was 4 Polymer Sheet for 4).
-* Form Tincture: Alkahest Still, Monodisperse Paraffin, Fine Reagent and Balance Tincture (no Structure Card,
-  Quasicrystal Plate or ethylene).
-* Chirality Tincture: Alkahest Still, Mirror Reagent, 2 Tholin and Form Tincture (no Chemical Clock or ammonia buffer).
-* Programmable Matter: Molecular Machine Bench, 2 Light Driven Rotors, 2 Molecular Logic Gates and 2 Rotaxane
-  Shuttles.
-* Chiral Ligand: Polarimeter, 3 Fine Reagent and a Kekulé Ring for 2.
-* Computronium Ingot: Neural Synthesizer, 8 neutronium ingots, Programmable Matter, a Quantum Processor and 1,100 mB
-  synaptic fluid (no Photonic Neuron, Void Essence or photoresist).
-* Weather Satellite and Debris Sweeper launches on kerosene: Rocket Assembly, 5,000 mB Rocket Kerosene and 14,000 mB
-  liquid oxygen in place of 4,000 mB liquid hydrogen and 20,000 mB liquid oxygen (a lower Isp, but no cryogenic fuel).
-* Hydrogen: Syngas Reformer, from methane and steam.
-
-### Stage 2: hydrocarbon systems
-Five new research nodes in Chemistry (each with its derivation puzzle) and four new consoles, a working refinery from
-crude to aromatics, sulfur and coke.
+### Petroleum and the refinery
+Five research nodes in Chemistry and four consoles: a working refinery from crude oil to aromatics, sulfur and coke.
 
 * **Crude Assay and Coking** (API gravity). The Fractionation Spire splits crude oil into **Sour Naphtha**, **Gas Oil**
-  and **Vacuum Residue**. New console, the **Delayed Coker**: residue and Bitumen crack to gas oil and **Petroleum
-  Coke** (keep the drums at low pressure for liquids); slow, pressed cycles grow **Needle Coke** from gas oil; it also
-  retorts Oil Shale and Source Rock Cores to crude oil and Overmature Shale to methane.
+  and **Vacuum Residue**. New console, the **Delayed Coker**: residue and Bitumen to gas oil and **Petroleum Coke**;
+  slow, pressed cycles grow **Needle Coke**; it also retorts Oil Shale and Source Rock Cores to crude oil and
+  Overmature Shale to methane.
 * **Hydrotreating and Reforming** (first order removal). New console, the **Hydrotreater**: sulfur out of Sour Naphtha
-  below one part per million (Arrhenius and hydrogen pressure against the space velocity), giving **Naphtha** and
-  **Hydrogen Sulfide**. New console, the **Catalytic Reformer**: naphthenes to aromatics against their equilibrium
-  constant, with hydrocracking and coke on the platinum, giving **BTX Reformate** of octane 98+ and hydrogen. Two new
+  below one part per million, giving **Naphtha** and **Hydrogen Sulfide**. New console, the **Catalytic Reformer**:
+  naphthenes to aromatics against their equilibrium, giving **BTX Reformate** of octane 98+ and hydrogen. Two new
   catalysts that wear and are poisonable: Cobalt Molybdenum and Platinum Reforming.
 * **Sulfur Recovery** (air for the Claus burner). New console, the **Claus Unit**: burn exactly a third of the hydrogen
   sulfide, then three beds just above the sulfur's dew point; 97% recovery gives **Sulfur** (tagged `c:dusts/sulfur`).
 * **Fluid Catalytic Cracking** (FCC heat balance). The Cracking Tower gains a catalyst to oil setting and the
-  regenerator temperature its coke sets; cracks Gas Oil to Naphtha and Propylene. Older Cracking Tower recipes are
-  unchanged.
-* **Petroleum Geology** (Darcy's law). The Deep Drilling Rig shows Lopatin's maturity index: drill where the rock sits
-  in the oil window for **Source Rock Cores**.
-* New fluids, each with a Containment Cell: Sour Naphtha, Naphtha (also takes `c:naphtha`, so GregTech's and
-  Immersive Petroleum's work), Gas Oil, Vacuum Residue, Bitumen, Hydrogen Sulfide (also `c:hydrogen_sulfide`), BTX
-  Reformate. GregTech's Sulfuric Naphtha works as Sour Naphtha.
-* **The world:** Oil Shale veins under badlands; Tar Sand in deserts and badlands; Asphalt Lakes of Bitumen ringed with
-  Tar Sand in savannas and swamps; Methane Clathrate at cold seeps on the deep ocean floor (all features in vanilla
-  biomes, no new dimension). A new Planetary Interior biome, the **Overcooked Depths**, floored with Overmature Shale.
-  Two new Codex pages in the Dimensions tab.
+  regenerator temperature; cracks Gas Oil to Naphtha and Propylene. Its older recipes are unchanged.
+* **Petroleum Geology** (Darcy's law). The Deep Drilling Rig shows Lopatin's maturity index: drill where the rock sits in
+  the oil window for **Source Rock Cores**.
+* New fluids, each with a Containment Cell: Sour Naphtha (GregTech's Sulfuric Naphtha works as it), Naphtha (also
+  `c:naphtha`, so GregTech's and Immersive Petroleum's work), Gas Oil, Vacuum Residue, Bitumen, Hydrogen Sulfide (also
+  `c:hydrogen_sulfide`), BTX Reformate.
 
-New routes (all cheaper than the old ones): Graphite Moderator from Needle Coke (Sintering Press); Benzene from BTX
-Reformate (Fractionation Spire); Syngas from Petroleum Coke, Bitumen from Tar Sand and methane from Methane Clathrate
-(Chemical Reactor); hydrogen from the Catalytic Reformer; crude oil from Oil Shale and Source Rock Cores.
+### Cryogenics and communications
+Four research nodes in Physics and four machines, two of them multiblocks.
 
-### Stage 3: cryogenics and communications
-Four new research nodes in Physics (each with its derivation puzzle) and four new machines, two of them multiblocks.
-
-* **Refrigeration Cycles** (Carnot refrigerator). New multiblock, the **Helium Liquefier** (253 blocks, with the new
-  Cold Box Casing): Carnot's COP sets the work for each watt of cold, and a gas liquefies only once pre-cooled below its
-  inversion temperature. Makes **Liquid Nitrogen** and **Liquid Helium**, and pumps liquid helium below the λ point into
-  Superfluid Helium (a cheaper route; the old ones still work). Multiblocks now feel the temperature of their
-  surroundings: on Titan (94 K) the liquefier needs a third of the work and runs three times as fast; Venus is worse.
+* **Refrigeration Cycles** (Carnot refrigerator). New multiblock, the **Helium Liquefier** (253 blocks, with the Cold
+  Box Casing): a gas liquefies only once precooled below its inversion temperature. Makes **Liquid Nitrogen** and
+  **Liquid Helium**, and pumps liquid helium below the λ point into Superfluid Helium.
 * **Superconductivity Theory** (BCS critical temperature). New console, the **BCS Cryostat**: Debye temperature,
-  electron phonon coupling, isotope mass and operating temperature give T_c and the critical field margin. It
-  certifies **NbTi Wire**, **Nb₃Sn Strand** and **REBCO Tape**, which the Metamaterial Weaver winds into Superconducting
-  Coils at two, three and four a time (cheaper than the old route).
+  electron phonon coupling, isotope mass and operating temperature give T_c and the critical field margin. Certifies
+  **NbTi Wire**, **Nb₃Sn Strand** and **REBCO Tape**.
 * **Information Channels** (Shannon). New console, the **Deep Space Transceiver**: Friis for the power received, k·T·B
-  for the receiver's noise (other machines nearby add to it), Shannon for the capacity. A link at Titan's distance
-  makes a **Deep Space Relay**.
-* **Fibre Optics** (fibre V number). New multiblock, the **Fibre Draw Tower** (212 blocks, twenty tall, with the new
-  Draw Tower Frame): Rayleigh scattering, infrared absorption and draw defects set the loss; single mode below
-  V = 2.405. The Chemical Reactor makes **Doped Silica Preforms**; the tower draws **Single Mode Fibre**; the Metamaterial
-  Weaver makes **Photonic Interconnects**, and from them Photonic Processors six at a time (cheaper than the old routes).
+  for the noise (machines nearby add to it), Shannon for the capacity. A link at Titan's distance makes a **Deep Space
+  Relay**.
+* **Fibre Optics** (fibre V number). New multiblock, the **Fibre Draw Tower** (212 blocks, twenty tall, with the Draw
+  Tower Frame): Rayleigh scattering, infrared absorption and draw defects set the loss; single mode below V = 2.405. The
+  Chemical Reactor makes **Doped Silica Preforms**; the tower draws **Single Mode Fibre**; the Metamaterial Weaver makes
+  **Photonic Interconnects**.
+* **Multiblocks feel the temperature of their world** (`T_amb` in machine physics): 94 K on Titan, 210 K on Mars, 737 K
+  on Venus, 300 K elsewhere. On Titan the Helium Liquefier needs a third of the work and runs three times as fast.
 
-### Stage 4: materials failure, computer engineering, control and reliability
-Six new research nodes in the Engineering band of the research map (each with its derivation puzzle) and six new
-machines, one of them a multiblock.
+### Engineering
+Eight research nodes and eight machines, one a multiblock, in the Engineering band of the research map.
 
 * **Fracture Mechanics** (critical crack length). New console, the **Fracture Bench**: K = Yσ√(πa) against the
-  toughness, the critical crack, and the Paris law integrated for the fatigue life. A wall whose critical crack is longer
-  than it is thick leaks before it breaks: Nickel Plated Iron and iron certified so make eight **Pressure Vessel
-  Walls** (a cheaper route; the crafted one still works).
+  toughness, the critical crack, and the Paris law for the fatigue life. A wall that leaks before it breaks certifies
+  Pressure Vessel Walls.
 * **Creep and Superalloys** (Larson Miller). **Nickel Superalloy** from the Phase Diagram Kiln. New multiblock, the
-  **Bridgman Furnace** (368 blocks, with the new Bridgman Furnace Shell): keep G/v above the alloy's limit or stray
-  grains form; finer dendrites give a longer creep life at the service temperature. Grows **Single Crystal Turbine
-  Blades**; two of them make a cheaper Nuclear Thermal Core.
-* **Superconducting Logic** (the flux quantum). New console, the **Josephson Logic Bench**: switching energy I_c·Φ₀,
-  the chip's power counted again at the wall through the refrigerator, the junction's stability against its own warmth,
-  and a clock limit set by the gap. The Doping Furnace lays down **Josephson Wafers**; the bench clocks them into **RSFQ
-  Logic Cores**, which drive qubits for a cheaper Error Correction Lattice.
+  **Bridgman Furnace** (368 blocks, with the Bridgman Furnace Shell): keep G/v above the alloy's limit or stray grains
+  form; finer dendrites give a longer creep life. Grows **Single Crystal Turbine Blades**.
+* **Superconducting Logic** (the flux quantum). New console, the **Josephson Logic Bench**: switching energy I_c·Φ₀, the
+  chip's power counted again at the wall through the refrigerator, stability against its own warmth, and a clock limit
+  set by the gap. The Doping Furnace lays down **Josephson Wafers**; the bench clocks them into **RSFQ Logic Cores**.
 * **Magnetic Storage** (Néel relaxation). New console, the **Media Sputter Chamber**: grain size against retention and
-  density (the superparamagnetic limit), and iron platinum so hard it only writes when heated near its Curie point. A
-  crafted **Sputter Target** becomes **Magnetic Archive Platters**, eight of which make a cheaper Holographic Matrix.
+  density (the superparamagnetic limit), and iron platinum that only writes when heated near its Curie point. A crafted
+  **Sputter Target** becomes **Magnetic Archive Platters**.
 * **Control Engineering** (peak overshoot). New console, the **PID Bench**: a PI loop on a lagging plant, its natural
-  frequency, damping, overshoot and settling time. Makes **PID Governor Cores**, two of which make a cheaper Phase Locked
-  Stabiliser.
+  frequency, damping, overshoot and settling time. Makes **PID Governor Cores**.
 * **Reliability Engineering** (triple modular redundancy). New console, the **Reliability Ledger**: failure rate,
-  copies in parallel and majority voting, for the nines a mission needs. Makes **Triple Modular Controllers**, the heart
-  of a cheaper Von Neumann Probe.
-* **The world:** **Nickel Laterite** in jungles, a few blocks under the surface (a feature in vanilla biomes); the
-  Chemical Reactor leaches it with sulfuric acid to Nickel Sulfate Solution.
-* **A new Codex tab, Engineering**, between Mathematics and Dimensions, laid out as a tree like the others: Structures
-  & Megastructures (moved from Physics), Materials Failure, Cryogenics & Communications (moved from Physics), Computer
-  Engineering and Control & Reliability. The Processor Tiers, Feedback, Control Theory and the Governor also appear
-  there, linked to what builds on them.
+  copies in parallel and majority voting, for the nines a mission needs. Makes **Triple Modular Controllers**.
+* **State Estimation** (Kalman gain). New console, the **Kalman Filter Bench**: the noise the filter is told against
+  the true noise, and how many sensors to fuse; only the ratio of the two noises matters. Makes **Kalman Navigation
+  Cores**.
+* **Limits of Computation** (Margolus and Levitin). New console, the **Lloyd Engine**: mass, radius, temperature and
+  the share of operations that erase a bit, against the speed limit 2mc²/(πħ), memory as the entropy of hot radiation,
+  the Bekenstein bound, the black hole radius and Landauer's heat. Seth Lloyd's ultimate laptop makes an **Ultimate
+  Laptop Core**.
 
-### Stage 5: cosmology, deep time, gene pools and blood
-Four new research nodes (each with its derivation puzzle) and four new consoles, one equation set each, from the
-smaller extensions of the expansion study.
+### Science extensions
+Eight research nodes and eight consoles, one equation set each.
 
 * **Friedmann Cosmology** (age of a matter universe). New console, the **Expansion Orrery**: H₀, Ω_m, Ω_Λ and w give the
-  curvature, the age of a flat universe, the deceleration q₀ and how far H₀ sits from Planck's 67.4 (the Hubble tension,
-  shown as unsettled). Fits a Cepheid and redshifts into a **Hubble Constant Plate**; a model flat, 13.6 to 14.0 billion
-  years old and accelerating grows **Scale Factor Crystals**, and one with a Last Scattering Map makes six Inflaton
-  Condensate (four by the old route).
+  curvature, the age, the deceleration q₀ and the Hubble tension (shown as unsettled). Makes **Hubble Constant Plates**
+  and **Scale Factor Crystals**.
 * **Isochron Dating** (age from the slope). New console, the **Isochron Bench**: mineral fractions, rubidium spread and
-  counting time against the age's uncertainty and the MSWD. Dates the new **Lepidolite Pegmatite** into an **Isochron
-  Record**.
-* **Genetic Drift** (loss of heterozygosity). New console, the **Gene Pool Bench**: effective population and migrants
-  against drift, Wright's migration balance and inbreeding depression, over a hundred generations. Makes a **Diverse
-  Gene Pool**, which with an Isochron Record makes a cheaper **Living Archive**.
+  counting time against the age's uncertainty and the MSWD. Dates **Lepidolite Pegmatite** into an **Isochron Record**.
+* **Genetic Drift** (loss of heterozygosity). New console, the **Gene Pool Bench**: herd size and migrants against
+  drift, Wright's migration balance and inbreeding depression. Makes a **Diverse Gene Pool**.
 * **Oxygen Transport** (Hill). New console, the **Oxygen Binding Bench**: P₅₀, cooperativity and the Bohr shift decide
-  how much oxygen a carrier loads in thin air and gives up in working tissue. Makes **Synthetic Haemoglobin**; a
-  Meganeura revived with it gives three capsules from one genome (two by the old route).
-* **The world:** **Lepidolite Pegmatite** veins in mountains, between Y 40 and 160 (a feature in vanilla biomes).
-
-### Stage 6: crystals, plasmas and nerves
-Three new research nodes (each with its derivation puzzle) and three new consoles.
-
-* **Crystal Indexing** (cubic plane spacing). New console, the **Laue Goniometer**: choose the Miller indices (h k l);
-  it gives the plane spacing, the peak's 2θ by Bragg and whether the lattice allows it at all (body centred, face
-  centred and diamond extinction rules). Index silicon's peak at 56.1° for **Indexed Crystals**; one turns into three
-  Symmetry Crystals (two from four Cherenkov Quartz by the old route).
+  how much oxygen a carrier loads in thin air and gives up in working tissue. Makes **Synthetic Haemoglobin**.
+* **Crystal Indexing** (cubic plane spacing). New console, the **Laue Goniometer**: choose the Miller indices; it gives
+  the plane spacing, the peak's 2θ and whether the lattice allows it (body centred, face centred and diamond extinction
+  rules). Indexing silicon makes **Indexed Crystals**.
 * **Plasma Diagnostics** (Debye length). New console, the **Langmuir Probe Station**: density and temperature give the
-  Debye length, the plasma frequency and the plasma parameter. A plasma with the right screening lays down **Debye
-  Sheath Film**, which stands in for the graphite of a Fusion Blanket Tile, four at a time instead of two.
-* **Excitable Membranes** (Nernst). New console, the **Ion Channel Bench**: sodium and chloride permeability against
-  potassium's give the resting voltage by Goldman, Hodgkin and Katz; myelin and diameter give the conduction speed. A
-  neuron resting just under threshold on a fast axon is a **Pacemaker Neuron**; two of them, with Quantum Dots and
-  Theodolite Lenses, make two Photonic Neurons without Lattice Seeds or Cherenkov Quartz.
-* **Changed recipe:** Tomography in the Connectome Mapper now makes four Engrams instead of three, so it stays cheaper
-  than the older route now that Photonic Neurons cost less.
+  Debye length, the plasma frequency and the plasma parameter. Lays down **Debye Sheath Film**.
+* **Excitable Membranes** (Nernst). New console, the **Ion Channel Bench**: permeabilities give the resting voltage by
+  Goldman, Hodgkin and Katz; myelin and diameter give the conduction speed. Makes **Pacemaker Neurons**.
+* **Island Biogeography** (equilibrium species). New console, the **Reef Mesocosm**: reef area and distance set the
+  species it holds (MacArthur and Wilson); water temperature sets degree heating weeks and bleaching; interaction
+  strength must keep May's σ·√(S·C) under 1. Makes a **Reef Keystone**.
 
-### Stage 7: reefs and islands
-* **Island Biogeography** (equilibrium species). New console, the **Reef Mesocosm**: reef area and distance from its
-  source set the species it holds (MacArthur and Wilson); water temperature against the warmest month's mean sets the
-  degree heating weeks and the bleaching, and speeds calcification until then; interaction strength must keep May's
-  σ·√(S·C) under 1. A reef rich, stable, fast growing and unbleached is a **Reef Keystone**; with an algae culture it
-  makes two Stable Ecosystems.
-* **The world:** **Ooid Sand** in patches on the floor of warm and lukewarm oceans (a feature in vanilla biomes).
+### The world
+All new features are in vanilla biomes; there is no new dimension.
+* **Oil Shale** veins under badlands; **Tar Sand** in deserts and badlands (three layouts, picked and turned at random
+  per block, so it never repeats in rows); **Asphalt Lakes** of Bitumen ringed with Tar Sand in savannas and swamps;
+  **Methane Clathrate** at cold seeps on the deep ocean floor.
+* **Nickel Laterite** in jungles, a few blocks under the surface; the Chemical Reactor leaches it to Nickel Sulfate
+  Solution.
+* **Lepidolite Pegmatite** veins in mountains, between Y 40 and 160.
+* **Ooid Sand** in patches on the floor of warm and lukewarm oceans.
+* A new Planetary Interior biome, the **Overcooked Depths**, floored with Overmature Shale.
 
-### Stage 8: state estimation and the limits of computation
-Two new research nodes in Engineering (each with its derivation puzzle) and two new consoles, closing the engineering
-branches of the plan.
+### New routes to existing items
+All cheaper than the old ones, which still work.
+* **Chemistry:** Tether Spool (2 Nanotube Composite and 2 Rigid Rod Fibre); Shkadov Mirror Film (6 from an aluminium
+  ingot and 2 Rigid Rod Fibre); Form Tincture and Chirality Tincture (Alkahest Still, from the new reagents); Chiral
+  Ligand (Polarimeter); Programmable Matter (Molecular Machine Bench); Weather Satellite and Debris Sweeper launches on
+  Rocket Kerosene; hydrogen from the Syngas Reformer and the Catalytic Reformer; Graphite Moderator from Needle Coke;
+  Benzene from BTX Reformate; Syngas from Petroleum Coke; Bitumen from Tar Sand; methane from Methane Clathrate; crude
+  oil from Oil Shale and Source Rock Cores.
+* **Cryogenics and communications:** Superfluid Helium from the Helium Liquefier; Superconducting Coils two, three and
+  four at a time from NbTi Wire, Nb₃Sn Strand and REBCO Tape; Photonic Processors six at a time from Photonic
+  Interconnects.
+* **Engineering:** eight Pressure Vessel Walls from Nickel Plated Iron and iron (Fracture Bench); Nuclear Thermal Core
+  with two Single Crystal Turbine Blades; Error Correction Lattice with RSFQ Logic Cores in place of a Quantum Processor;
+  Holographic Matrix from eight Magnetic Archive Platters; Phase Locked Stabiliser from two PID Governor Cores; Von
+  Neumann Probe with a Triple Modular Controller; Dyson Swarm Satellite with a Kalman Navigation Core in place of three
+  Quantum Processors; Computronium Ingot, three from six Neutronium and an Ultimate Laptop Core (and another from
+  Programmable Matter).
+* **Science extensions:** six Inflaton Condensate from a Last Scattering Map and a Scale Factor Crystal (four before);
+  Living Archive from a Diverse Gene Pool and an Isochron Record; three Meganeura Capsules from one genome with Synthetic
+  Haemoglobin (two before); three Symmetry Crystals from an Indexed Crystal; Fusion Blanket Tiles four at a time with
+  Debye Sheath Film; two Photonic Neurons from two Pacemaker Neurons, without Lattice Seeds or Cherenkov Quartz; two
+  Stable Ecosystems from a Reef Keystone.
 
-* **State Estimation** (Kalman gain). New console, the **Kalman Filter Bench**: tell the filter the noise of its world
-  and its sensors and choose how many sensors to fuse; it shows the steady gain, the real error against the true noise,
-  and how close that is to the best possible (only the ratio of the two noises matters). Makes **Kalman Navigation
-  Cores**, which keep a Dyson Swarm Satellite on station in place of three Quantum Processors.
-* **Limits of Computation** (Margolus and Levitin). New console, the **Lloyd Engine**: mass, radius, temperature and the
-  share of operations that erase a bit, against the speed limit 2mc²/(πħ), memory as the entropy of hot radiation, the
-  Bekenstein bound, the black hole radius, and Landauer's heat radiated by its surface. Seth Lloyd's ultimate laptop
-  (a kilogram, a litre, nearly reversible) makes an **Ultimate Laptop Core**; with six Neutronium it makes three
-  Computronium Ingots.
-* Both appear in the Engineering tab of the Codex, under Control & Reliability and Computer Engineering.
-
-### Polish
-* **Codex: one description per item.** Since descriptions moved from tooltips to the Codex, an item with a node of its
-  own showed its description twice: the rewritten one (from the item description rewrite) and the entry's old page in
-  the old words. The old description pages are gone from 1,176 entries; where one carried a fact the rewrite does not
-  (what a creature drops, where it lives, where something is made or found), that line stays on a short page of its
-  own. Notebook pages, fact pages, structure pages and the plain words pages are untouched. An item's own node now
-  always gets its description page, even where a research node shares its icon.
-* **Codex brought up to date:** Operation pages for the Geothermal Plant, Ice Core Drill, Storm Chamber and Wave
-  Energy Converter; entries for Electric Propulsion, Antimatter Propulsion and Geodesy, which had none; descriptions
-  for the Spacefarer Suit's helmet, leggings and boots.
-* **Tar Sand** has a new texture: rounded pockets of glossy bitumen sunk in sand, each with a soaked brown rim, in
-  place of a scatter of black pixels that read as broken. It comes in three layouts, and each block picks one, turned
-  and flipped at random, so a stretch of tar sand never repeats in rows.
-
-### Research map
-* Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
-  drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;
-  Engineering now holds only engineering.
-
-### Five new Tuning Fork games
+### Tuning Fork: five new games
 The Tuning Fork had fifteen games, and three of them (waves, proof chains, pipe flow) covered over half of the
-machines. Five new ones, each a piece of real science, and 25 machines moved to the one that fits them:
+machines. Five new ones, each a piece of real science, and 25 machines moved to the one that fits them. They grow
+harder on higher tier machines.
 
-* **Wire the logic:** click each gate (AND, OR, XOR, NAND, NOR, and XNOR from stage 3) until the circuit's truth table
-  matches the target. Two to four gates, two or three inputs. The Matrioshka Brain, Reality Compiler, Automaton
-  Lattice, Concept Compressor, Omnilex Engine, Josephson Logic Bench and Reliability Ledger.
-* **Tune the loop:** set Kp and Ki (and Kd from stage 5) so a plant's step response, drawn live, overshoots no more than
-  the red line and settles in the green band before the gold one. One lag, then two from stage 3. The Tokamak,
-  Anomaly Containment Ward, Climate Engine, Warp Field Forge, Helium Liquefier and PID Bench.
-* **Walk the decay chain:** take a heavy nuclide (²³⁸U, ²³²Th, ²⁴¹Am and others) to the target by α and β⁻ decays (β⁺
-  from stage 4), on a chart of protons against neutrons, without passing through the red nuclides that decay too fast.
-  The Nuclide Forge, Molten Salt Reactor, Gas Centrifuge Cascade and Cyclotron.
-* **Write the gene:** scroll each codon until the mRNA codes the peptide by the standard genetic code; from stage 2 it
-  starts with AUG, from stage 3 it ends with a stop codon, and from stage 4 its GC content must fall in a range. The
-  Ancient DNA Lab, Phage Lab, Evolution Engine, Abiogenesis Crucible and Circadian Incubator.
-* **Balance the circuit:** choose standard E12 resistors until the ammeter reads within 2% of the target, first the
-  total current, then one branch of a current divider, with some resistors given. The Tesla Coil, Pulsed Magnet Lab,
-  Microwave Rectenna, Patch Clamp Rig, BCS Cryostat, MHD Generator and Media Sputter Chamber.
+* **Wire the logic:** click each gate (AND, OR, XOR, NAND, NOR, XNOR) until the circuit's truth table matches the
+  target. The Matrioshka Brain, Reality Compiler, Automaton Lattice, Concept Compressor, Omnilex Engine, Josephson
+  Logic Bench and Reliability Ledger.
+* **Tune the loop:** set Kp, Ki and Kd so a plant's step response, drawn live, overshoots no more than the red line and
+  settles in the green band before the gold one. The Tokamak, Anomaly Containment Ward, Climate Engine, Warp Field
+  Forge, Helium Liquefier, PID Bench and Kalman Filter Bench.
+* **Walk the decay chain:** take a heavy nuclide (²³⁸U, ²³²Th, ²⁴¹Am and others) to the target by α, β⁻ and β⁺ decays, on
+  a chart of protons against neutrons, without passing through the red nuclides that decay too fast. The Nuclide Forge,
+  Molten Salt Reactor, Gas Centrifuge Cascade, Cyclotron and Isochron Bench.
+* **Write the gene:** scroll each codon until the mRNA codes the peptide by the standard genetic code, from AUG to a stop
+  codon, within a GC content range. The Ancient DNA Lab, Phage Lab, Evolution Engine, Abiogenesis Crucible, Circadian
+  Incubator, Gene Pool Bench and Oxygen Binding Bench.
+* **Balance the circuit:** choose standard E12 resistors until the ammeter reads within 2% of the target: the total
+  current, or one branch of a current divider, with some resistors given. The Tesla Coil, Pulsed Magnet Lab, Microwave
+  Rectenna, Patch Clamp Rig, BCS Cryostat, MHD Generator, Media Sputter Chamber and Ion Channel Bench.
 
 As with the other games, the server builds the same puzzle from the same seed and checks the answer itself, and the
 Resonant Tuning Fork says how far off a wrong answer is.
 
+### The research map, redrawn as a tech tree
+It had grown to over 400 nodes packed into a 31 by 41 grid, with every prerequisite drawn as a line. Taking after
+Civilization's and Factorio's trees and the chapters of quest book mods:
+* each field has its own band with its name: Mathematics, Physics, Earth and Space, Chemistry, Biology, Engineering and
+  The Anomaly;
+* a node's column is its depth (the longest chain of research it needs), shared by every band like an era, so nothing
+  reachable early sits off to the right;
+* only direct links are drawn (one another prerequisite already implies is left out), as right angled lines through
+  the gaps between columns, never through a node; within a band, nodes sit by what they link to, so lines run short;
+* links between fields, and the whole chain behind any research, light up when you hover over it, with what it
+  unlocks; everything else dims.
+The map opens on the first node. Each research's field is its `category` in the data, so datapacks can place theirs.
+
+### Codex
+* **Every Codex map is laid out the same way as the research tree:** each region is one full width band with its name
+  (the bands had not been drawn since 1.2.0: a datapack merge step dropped them); chapters inside a band form small
+  trees, a column per step; each chapter's items sit in a neat grid under it, like a quest's sub tasks; links are right
+  angled and never cross a node; hovering a node lights the chain behind it, what it leads to and its items. The old
+  Discovery tier legend (I to VI along the top) is gone.
+* **A new tab, Engineering**, between Mathematics and Dimensions: Structures & Megastructures (moved from Physics),
+  Materials Failure, Cryogenics & Communications, Computer Engineering, and Control & Reliability. Processor Tiers,
+  Feedback, Control Theory and the Governor also appear there, linked to what builds on them.
+* **One description per item.** Since descriptions moved from tooltips to the Codex in 1.3.1, an item with a node of
+  its own showed its description twice: the rewritten one, and the entry's old page in the old words. The old pages are
+  gone from 1,176 entries; where one carried a fact the rewrite does not (what a creature drops, where it lives, where
+  something is made or found), that line stays on a short page of its own. Notebook pages, fact pages, structure pages
+  and the plain words are untouched. An item's own node always gets its description page, even where a research node
+  shares its icon.
+* **Brought up to date:** Operation pages for every new machine, and for the Geothermal Plant, Ice Core Drill, Storm
+  Chamber and Wave Energy Converter, which had none; entries for Electric Propulsion and Antimatter Propulsion, which had
+  none; descriptions for the Spacefarer Suit's helmet, leggings and boots.
+
 ### Fixes
 * **Icy Moons' derivation showed "(template error)".** Its formula named the distance `d`, which the equation reader
-  takes for a derivative. The distance is now `a` (and the answer Δg). Photogrammetry had the same fault (its disparity
-  is now `p`); Ground Penetrating Radar and Space Solar Power named their answer `d` and now use `z` and `S`. Every
-  research puzzle is now checked with the mod's own equation code: all 431 parse, fit their template and give an answer.
-* **The research map is now a tech tree.** It had grown to 434 nodes packed into a 31 by 41 grid, with every
-  prerequisite drawn as a line. Taking after Civilization's and Factorio's trees and the chapters of quest book mods:
-  * each field has its own band with its name: Mathematics, Physics, Earth and Space, Chemistry, Biology,
-    Engineering and The Anomaly;
-  * a node's column is its depth (the longest chain of research it needs), shared by every band like an era, so
-    nothing reachable early sits off to the right;
-  * only direct links are drawn (one another prerequisite already implies is left out, 811 down to 713), as right
-    angled lines through the gaps between columns and rows, never through a node; within a band, nodes sit by what
-    they link to, so the lines run short;
-  * links between fields, and the whole chain behind any research, light up when you hover over it, with what it
-    unlocks; everything else dims.
-  The map opens on the first node. Each research's field is its `category` in the data, so datapacks can place theirs.
-* Multiblocks now sense the temperature of their dimension (`T_amb` in machine physics): 94 K on Titan, 210 K on Mars,
-  737 K on Venus, 300 K elsewhere. Only the Solar Furnace and the Pound Rebka Tower used it before, and only slightly.
-* **The Codex maps are laid out the same way as the research tree**, on every tab:
-  * each region is one full width band with its name, stacked in order (several tabs had their bands side by side,
-    with links running diagonally across the whole map); the bands now actually show (a datapack merge step dropped
-    them, so they had not been drawn since 1.2.0);
-  * chapters inside a band are laid out as small trees, a column per step of depth, groups packed left to right;
-  * each chapter's items (the small nodes) sit in a neat grid right under it on a thin spine, like a quest's sub tasks,
-    instead of a cluster round it;
-  * links between chapters are right angled, through the gaps between columns, and a link that skips columns runs
-    along its group's lane at the top, so no line crosses a node; only direct links are drawn;
-  * hovering a node lights the whole chain of chapters behind it, what it leads to, and (for a chapter) its items;
-    links to other bands show only then. Everything else dims.
-  The old Discovery tier legend (I to VI along the top) is gone; its bands remain.
-* **Fluid cells of the 1.4.0 fluids** were drawn in the old cutaway style; they now use the current cell design
-  (painted from an existing cell, so the frame, glint and animation match).
+  takes for a derivative. The distance is now `a`. Photogrammetry had the same fault (its disparity is now `p`); Ground
+  Penetrating Radar and Space Solar Power named their answer `d` and now use `z` and `S`. Every research puzzle is now
+  checked with the mod's own equation code.
 * The Field Calibrator showed raw names for 26 machines' drifting settings; they now have English names.
 
 ## 1.3.1: Recreating Home for modpacks, and the text rework
