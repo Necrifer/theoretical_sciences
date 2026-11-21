@@ -1,0 +1,42 @@
+{
+  "type": "theoreticalsciences:plasma_probing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:polymer_sheet",
+      "count": 2
+    },
+    {
+      "item": "minecraft:copper_ingot",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:debye_sheath_film",
+      "count": 4
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:plasma_diagnostics",
+  "unscaled": true,
+  "physics": {
+    "windows": [
+      {
+        "q": "lamD",
+        "min": 10,
+        "max": 100
+      },
+      {
+        "q": "lgND",
+        "min": 4,
+        "max": 99
+      },
+      {
+        "q": "fp",
+        "min": 10,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

@@ -59961,5 +59961,128 @@
     "text": "$(thing)Equations$()$(br)S = Pⁿ/(P₅₀ⁿ + Pⁿ)$(br)P₅₀ × 10^(Bohr·ΔpH)"
    }
   ]
+ },
+ "optics/r1400_indexing": {
+  "title": "Crystal Indexing",
+  "icon": "theoreticalsciences:indexed_crystal",
+  "category": "optics",
+  "research": "crystal_indexing",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:laue_goniometer",
+     "theoreticalsciences:indexed_crystal"
+    ],
+    "text": "d = a/√(h² + k² + l²); λ = 2d·sin θ. Body centred lattices show only h + k + l even; face centred only unmixed indices; diamond also drops h + k + l = 4n + 2. On the $(thing)Laue Goniometer$(), find which planes of silicon (a = 5.431 Å) reflect copper Kα at 2θ = 56.1°: that indexes a reference, an $(item)Indexed Crystal$(), and one turns into three Symmetry Crystals.",
+    "title": "Laue Goniometer"
+   }
+  ]
+ },
+ "nuclear/r1400_plasma_probe": {
+  "title": "Plasma Diagnostics",
+  "icon": "theoreticalsciences:debye_sheath_film",
+  "category": "nuclear",
+  "research": "plasma_diagnostics",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:langmuir_probe_station",
+     "theoreticalsciences:debye_sheath_film"
+    ],
+    "text": "λ_D ≈ 7434·√(T_eV/n) m; f_p ≈ 8.98·√n Hz; N_D = (4π/3)·n·λ_D³. On the $(thing)Langmuir Probe Station$(), set a plasma whose Debye length is 10 to 100 µm, with at least ten thousand particles in each Debye sphere and a plasma frequency over 10 GHz: it lays down a $(item)Debye Sheath Film$(), which stands in for the graphite of a Fusion Blanket Tile, four at a time.",
+    "title": "Langmuir Probe Station"
+   }
+  ]
+ },
+ "biology/r1400_membranes": {
+  "title": "Excitable Membranes",
+  "icon": "theoreticalsciences:pacemaker_neuron",
+  "category": "biology",
+  "research": "excitable_membranes",
+  "pages": [
+   {
+    "type": "spotlight",
+    "items": [
+     "theoreticalsciences:ion_channel_bench",
+     "theoreticalsciences:pacemaker_neuron"
+    ],
+    "text": "V = (kT/q)·ln((P_K[K]o + P_Na[Na]o + P_Cl[Cl]i)/(P_K[K]i + P_Na[Na]i + P_Cl[Cl]o)). On the $(thing)Ion Channel Bench$(), open sodium channels until a neuron rests between −62 and −52 mV, just under its threshold, and myelinate an axon thick enough for 30 m/s: a $(item)Pacemaker Neuron$(). Two of them, with Quantum Dots and Theodolite Lenses, make two Photonic Neurons without the Lattice Seeds or Cherenkov Quartz.",
+    "title": "Ion Channel Bench"
+   }
+  ]
+ },
+ "operation/laue_goniometer": {
+  "title": "Laue Goniometer",
+  "icon": "theoreticalsciences:laue_goniometer",
+  "category": "operation",
+  "research": "crystal_indexing",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Find the planes that reflect where the recipe asks, and that the lattice allows."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): h, k, l.$(br2)$(thing)Disturbance$(): goniometer offset: 2θ reads 0.1%·d high."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): all indices zero, or planes too close to reflect, stop it.$(br2)$(thing)Rate$(): low orders, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)d = a/√(h² + k² + l²)$(br)λ = 2d·sin θ"
+   }
+  ]
+ },
+ "operation/langmuir_probe_station": {
+  "title": "Langmuir Probe Station",
+  "icon": "theoreticalsciences:langmuir_probe_station",
+  "category": "operation",
+  "research": "plasma_diagnostics",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Set a plasma with the screening the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Density, Temperature.$(br2)$(thing)Disturbance$(): probe contamination: the Debye length reads 1%·d long."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): under 0.5 eV stops it; over 10²⁶ eV/m³ wears it.$(br2)$(thing)Rate$(): denser, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)λ_D = √(ε₀kT/ne²)$(br)f_p = 8.98√n$(br)N_D = (4π/3)nλ_D³"
+   }
+  ]
+ },
+ "operation/ion_channel_bench": {
+  "title": "Ion Channel Bench",
+  "icon": "theoreticalsciences:ion_channel_bench",
+  "category": "operation",
+  "research": "excitable_membranes",
+  "pages": [
+   {
+    "type": "text",
+    "text": "Tune the channels to the resting voltage and speed the recipe asks."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Set$(): Sodium and Chloride permeability, Axon diameter, Myelin.$(br2)$(thing)Disturbance$(): seal leak: the voltage reads 1%·d off."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Limits$(): P_Na over P_K wears it.$(br2)$(thing)Rate$(): a faster axon, sooner."
+   },
+   {
+    "type": "text",
+    "text": "$(thing)Equations$()$(br)V = (kT/q)·ln(ΣP·c_o / ΣP·c_i)$(br)v ≈ 6 m/s per µm"
+   }
+  ]
  }
 }

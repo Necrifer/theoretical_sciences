@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "theoreticalsciences:laue_goniometer"
+    },
+    "title": {
+      "translate": "research.theoreticalsciences.crystal_indexing"
+    },
+    "description": {
+      "translate": "advancements.theoreticalsciences.research.crystal_indexing.short"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "parent": "theoreticalsciences:research/crystallography",
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ]
+}

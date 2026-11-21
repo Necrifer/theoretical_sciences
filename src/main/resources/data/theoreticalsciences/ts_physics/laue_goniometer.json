@@ -1,0 +1,80 @@
+{
+  "params": [
+    {
+      "id": "h",
+      "unit": "",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "id": "k",
+      "unit": "",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "id": "l",
+      "unit": "",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "recipe_vars": {
+    "a": 5.431,
+    "lam": 1.5406,
+    "fb": 0,
+    "ff": 1,
+    "fd": 1
+  },
+  "consts": [],
+  "states": [],
+  "derived": [
+    {
+      "id": "dhkl",
+      "unit": "Å",
+      "expr": "a/sqrt(pos((h^2 + k^2 + l^2)) + 1e-9)",
+      "formula": "d = a/√(h² + k² + l²)"
+    },
+    {
+      "id": "tt",
+      "unit": "°",
+      "expr": "2*atan((lam/(2*(a/sqrt(pos((h^2 + k^2 + l^2)) + 1e-9))))/sqrt(pos(1 - (lam/(2*(a/sqrt(pos((h^2 + k^2 + l^2)) + 1e-9))))^2) + 1e-12))*180/3.14159265*(1 + 0.001*d)",
+      "formula": "2θ from Bragg, λ = 2d·sin θ"
+    },
+    {
+      "id": "F",
+      "unit": "",
+      "expr": "(1 - fb + fb*(1 + cos(3.14159265*(h + k + l)))/2)*(1 - ff + ff*(1 + cos(3.14159265*(h + k)) + cos(3.14159265*(k + l)) + cos(3.14159265*(h + l)))/4)*(1 - fd + fd*(1 + cos(3.14159265*(h + k + l)/2))/2)",
+      "formula": "the structure factor's share: 0 where the lattice's extra atoms cancel the reflection"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "beyond",
+      "kind": "stop",
+      "expr": "1 - (lam/(2*(a/sqrt(pos((h^2 + k^2 + l^2)) + 1e-9))))",
+      "formula": "λ/2d under 1, or the planes are too close to reflect at any angle"
+    },
+    {
+      "id": "origin",
+      "kind": "stop",
+      "expr": "(h^2 + k^2 + l^2) - 0.5",
+      "formula": "not all three indices zero"
+    }
+  ],
+  "rate": "clamp(3/(1 + h + k + l), 0.5, 1.5)",
+  "rate_formula": "a low order reflection is brighter, and counted sooner",
+  "heat": "0",
+  "idle_heat": "0",
+  "quench_energy": "0",
+  "kappa": 40,
+  "heat_capacity": 60,
+  "timescale": 1,
+  "rate_max": 1.5
+}

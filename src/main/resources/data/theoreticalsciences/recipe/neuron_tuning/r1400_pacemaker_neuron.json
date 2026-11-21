@@ -1,0 +1,46 @@
+{
+  "type": "theoreticalsciences:neuron_tuning",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:neuron_soma",
+      "count": 1
+    },
+    {
+      "item": "theoreticalsciences:axon_bundle",
+      "count": 1
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:pacemaker_neuron",
+      "count": 2
+    }
+  ],
+  "energy": 1024,
+  "duration": 300,
+  "research": "theoreticalsciences:excitable_membranes",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "Ko": 5,
+      "Ki": 140,
+      "Nao": 145,
+      "Nai": 12,
+      "Clo": 110,
+      "Cli": 10,
+      "Tb": 310
+    },
+    "windows": [
+      {
+        "q": "V",
+        "min": -62,
+        "max": -52
+      },
+      {
+        "q": "vc",
+        "min": 30,
+        "max": 1000000000.0
+      }
+    ]
+  }
+}

@@ -150,6 +150,23 @@ smaller extensions of the expansion study.
   Meganeura revived with it gives three capsules from one genome (two by the old route).
 * **The world:** **Lepidolite Pegmatite** veins in mountains, between Y 40 and 160 (a feature in vanilla biomes).
 
+### Stage 6: crystals, plasmas and nerves
+Three new research nodes (each with its derivation puzzle) and three new consoles.
+
+* **Crystal Indexing** (cubic plane spacing). New console, the **Laue Goniometer**: choose the Miller indices (h k l);
+  it gives the plane spacing, the peak's 2θ by Bragg and whether the lattice allows it at all (body centred, face
+  centred and diamond extinction rules). Index silicon's peak at 56.1° for **Indexed Crystals**; one turns into three
+  Symmetry Crystals (two from four Cherenkov Quartz by the old route).
+* **Plasma Diagnostics** (Debye length). New console, the **Langmuir Probe Station**: density and temperature give the
+  Debye length, the plasma frequency and the plasma parameter. A plasma with the right screening lays down **Debye
+  Sheath Film**, which stands in for the graphite of a Fusion Blanket Tile, four at a time instead of two.
+* **Excitable Membranes** (Nernst). New console, the **Ion Channel Bench**: sodium and chloride permeability against
+  potassium's give the resting voltage by Goldman, Hodgkin and Katz; myelin and diameter give the conduction speed. A
+  neuron resting just under threshold on a fast axon is a **Pacemaker Neuron**; two of them, with Quantum Dots and
+  Theodolite Lenses, make two Photonic Neurons without Lattice Seeds or Cherenkov Quartz.
+* **Changed recipe:** Tomography in the Connectome Mapper now makes four Engrams instead of three, so it stays cheaper
+  than the older route now that Photonic Neurons cost less.
+
 ### Research map
 * Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
   drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;

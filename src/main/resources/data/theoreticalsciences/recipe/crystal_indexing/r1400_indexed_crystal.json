@@ -1,0 +1,44 @@
+{
+  "type": "theoreticalsciences:crystal_indexing",
+  "item_inputs": [
+    {
+      "item": "theoreticalsciences:doped_wafer",
+      "count": 1
+    },
+    {
+      "item": "minecraft:quartz",
+      "count": 2
+    }
+  ],
+  "item_outputs": [
+    {
+      "id": "theoreticalsciences:indexed_crystal",
+      "count": 2
+    }
+  ],
+  "energy": 512,
+  "duration": 300,
+  "research": "theoreticalsciences:crystal_indexing",
+  "unscaled": true,
+  "physics": {
+    "vars": {
+      "a": 5.431,
+      "lam": 1.5406,
+      "fb": 0,
+      "ff": 1,
+      "fd": 1
+    },
+    "windows": [
+      {
+        "q": "tt",
+        "min": 55.8,
+        "max": 56.4
+      },
+      {
+        "q": "F",
+        "min": 0.4,
+        "max": 9
+      }
+    ]
+  }
+}

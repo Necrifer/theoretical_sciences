@@ -1046,7 +1046,11 @@ public final class QHContentList {
         new ItemDef("scale_factor_crystal", "", 64),
         new ItemDef("isochron_record", "", 64),
         new ItemDef("diverse_gene_pool", "", 64),
-        new ItemDef("synthetic_haemoglobin", "", 64));
+        new ItemDef("synthetic_haemoglobin", "", 64),
+        // 1.4.0 stage 6
+        new ItemDef("indexed_crystal", "", 64),
+        new ItemDef("debye_sheath_film", "", 64),
+        new ItemDef("pacemaker_neuron", "", 64));
     public static final List<BlockDef> BLOCKS = List.of(
         new BlockDef("deepslate_cherenkov_quartz_ore", "ore", 6, 4.5F, "iron", "deepslate"),
         new BlockDef("degenerate_matter_ore", "ore", 3, 6.0F, "diamond", "end_stone"),

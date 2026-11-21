@@ -190,6 +190,9 @@ final class ProcessScenes {
         e("isochron_bench", "isochron dating", V.BENCH, C.GRAPH, C.PARTICLES, 0);
         e("gene_pool_bench", "breeding plan", V.BOARD, C.HELIX, C.BARS, 1);
         e("oxygen_binding_bench", "oxygen binding", V.FLASK, C.CURVE, C.DROPS, 2);
+        e("laue_goniometer", "crystal indexing", V.SCOPE, C.LATTICE, C.PEAKS, 2);           // 1.4.0 stage 6
+        e("langmuir_probe_station", "plasma probing", V.CHAMBER, C.ARCS, C.CURVE, 1);
+        e("ion_channel_bench", "channel tuning", V.PLATE, C.CELLS, C.WAVES, 2);
         e("cmb_bolometer_array", "oldest light", V.DEWAR, C.WAVES, C.GLOW, 4);   // 1.14.0
         e("photogrammetry_gantry", "stereo survey", V.BOARD, C.BANDS, C.BEAM, 5);
         // 1.7.1
