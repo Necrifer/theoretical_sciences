@@ -190,6 +190,19 @@ branches of the plan.
   Computronium Ingots.
 * Both appear in the Engineering tab of the Codex, under Control & Reliability and Computer Engineering.
 
+### Polish
+* **Codex: one description per item.** Since descriptions moved from tooltips to the Codex, an item with a node of its
+  own showed its description twice: the rewritten one (from the item description rewrite) and the entry's old page in
+  the old words. The old description pages are gone from 1,176 entries; where one carried a fact the rewrite does not
+  (what a creature drops, where it lives, where something is made or found), that line stays on a short page of its
+  own. Notebook pages, fact pages, structure pages and the plain words pages are untouched. An item's own node now
+  always gets its description page, even where a research node shares its icon.
+* **Codex brought up to date:** Operation pages for the Geothermal Plant, Ice Core Drill, Storm Chamber and Wave
+  Energy Converter; entries for Electric Propulsion, Antimatter Propulsion and Geodesy, which had none; descriptions
+  for the Spacefarer Suit's helmet, leggings and boots.
+* **Tar Sand** has a new texture: rounded pockets of glossy bitumen sunk in sand, each with a soaked brown rim, in
+  place of a scatter of black pixels that read as broken.
+
 ### Research map
 * Relativity, cosmology and their descendants (about forty nodes, from Special Relativity to the Big Rip) had been
   drawn in the Engineering band, inherited through Metamaterials and Tachyonics. They are back in Physics and Space;

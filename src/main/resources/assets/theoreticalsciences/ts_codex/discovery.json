@@ -576,56 +576,11 @@
     },
     {
       "entry": "basics/assembler",
-      "x": 7,
+      "x": 13,
       "y": 3,
       "parents": [
         "basics/guide_12_multiblocks"
       ],
-      "band": "Foundations",
-      "route": [
-        2,
-        0,
-        -999999997.0,
-        4.5,
-        9.5
-      ]
-    },
-    {
-      "entry": "basics/auto_assembler",
-      "x": 31,
-      "y": 7,
-      "parents": [],
-      "band": "Foundations",
-      "route": [
-        24,
-        0,
-        -999999993.0,
-        28.5,
-        33.5
-      ]
-    },
-    {
-      "entry": "basics/component_tiers",
-      "x": 67,
-      "y": 3,
-      "parents": [
-        "basics/guide_09_press",
-        "basics/guide_10_zpe"
-      ],
-      "band": "Foundations",
-      "route": [
-        12,
-        0,
-        -999999997.0,
-        64.5,
-        69.5
-      ]
-    },
-    {
-      "entry": "basics/containment_cells",
-      "x": 13,
-      "y": 3,
-      "parents": [],
       "band": "Foundations",
       "route": [
         3,
@@ -636,26 +591,55 @@
       ]
     },
     {
-      "entry": "basics/containment_failure",
-      "x": 31,
+      "entry": "basics/auto_assembler",
+      "x": 67,
       "y": 3,
       "parents": [],
       "band": "Foundations",
       "route": [
-        6,
+        12,
         0,
         -999999997.0,
-        28.5,
-        33.5
+        64.5,
+        69.5
       ]
     },
     {
-      "entry": "basics/energy_logistics",
+      "entry": "basics/component_tiers",
+      "x": 7,
+      "y": 7,
+      "parents": [
+        "basics/guide_09_press",
+        "basics/guide_10_zpe"
+      ],
+      "band": "Foundations",
+      "route": [
+        20,
+        0,
+        -999999993.0,
+        4.5,
+        9.5
+      ]
+    },
+    {
+      "entry": "basics/containment_cells",
+      "x": 25,
+      "y": 3,
+      "parents": [],
+      "band": "Foundations",
+      "route": [
+        5,
+        0,
+        -999999997.0,
+        22.5,
+        27.5
+      ]
+    },
+    {
+      "entry": "basics/containment_failure",
       "x": 61,
       "y": 3,
-      "parents": [
-        "basics/guide_08_casimir"
-      ],
+      "parents": [],
       "band": "Foundations",
       "route": [
         11,
@@ -663,6 +647,22 @@
         -999999997.0,
         58.5,
         63.5
+      ]
+    },
+    {
+      "entry": "basics/energy_logistics",
+      "x": 1,
+      "y": 7,
+      "parents": [
+        "basics/guide_08_casimir"
+      ],
+      "band": "Foundations",
+      "route": [
+        19,
+        0,
+        -999999993.0,
+        -1.5,
+        3.5
       ]
     },
     {
@@ -683,7 +683,7 @@
     },
     {
       "entry": "basics/fields",
-      "x": 37,
+      "x": 73,
       "y": 3,
       "parents": [
         "basics/guide_08_casimir",
@@ -691,11 +691,11 @@
       ],
       "band": "Foundations",
       "route": [
-        7,
+        13,
         0,
         -999999997.0,
-        34.5,
-        39.5
+        70.5,
+        75.5
       ]
     },
     {
@@ -922,102 +922,10 @@
     },
     {
       "entry": "basics/insight",
-      "x": 79,
-      "y": 3,
-      "parents": [
-        "basics/guide_06_analyzer"
-      ],
-      "band": "Foundations",
-      "route": [
-        14,
-        0,
-        -999999997.0,
-        76.5,
-        81.5
-      ]
-    },
-    {
-      "entry": "basics/me_ports",
-      "x": 73,
-      "y": 3,
-      "parents": [],
-      "band": "Foundations",
-      "route": [
-        13,
-        0,
-        -999999997.0,
-        70.5,
-        75.5
-      ]
-    },
-    {
-      "entry": "basics/power",
-      "x": 49,
-      "y": 3,
-      "parents": [
-        "basics/guide_03_power"
-      ],
-      "band": "Foundations",
-      "route": [
-        9,
-        0,
-        -999999997.0,
-        46.5,
-        51.5
-      ]
-    },
-    {
-      "entry": "basics/r70_running",
-      "x": 25,
-      "y": 7,
-      "parents": [
-        "basics/guide_08_casimir"
-      ],
-      "band": "Foundations",
-      "route": [
-        23,
-        0,
-        -999999993.0,
-        22.5,
-        27.5
-      ]
-    },
-    {
-      "entry": "basics/r71_tuning",
-      "x": 7,
-      "y": 7,
-      "parents": [],
-      "band": "Foundations",
-      "route": [
-        20,
-        0,
-        -999999993.0,
-        4.5,
-        9.5
-      ]
-    },
-    {
-      "entry": "basics/recipe_cost",
-      "x": 91,
-      "y": 3,
-      "parents": [
-        "basics/guide_12_multiblocks"
-      ],
-      "band": "Foundations",
-      "route": [
-        16,
-        0,
-        -999999997.0,
-        88.5,
-        93.5
-      ]
-    },
-    {
-      "entry": "basics/research",
       "x": 19,
       "y": 7,
       "parents": [
-        "basics/guide_07_research"
+        "basics/guide_06_analyzer"
       ],
       "band": "Foundations",
       "route": [
@@ -1029,73 +937,26 @@
       ]
     },
     {
-      "entry": "basics/research_time",
-      "x": 25,
-      "y": 3,
-      "parents": [
-        "basics/guide_08_casimir",
-        "basics/guide_09_press"
-      ],
-      "band": "Foundations",
-      "route": [
-        5,
-        0,
-        -999999997.0,
-        22.5,
-        27.5
-      ]
-    },
-    {
-      "entry": "basics/stabilisers",
-      "x": 103,
-      "y": 3,
+      "entry": "basics/me_ports",
+      "x": 13,
+      "y": 7,
       "parents": [],
       "band": "Foundations",
       "route": [
-        18,
-        0,
-        -999999997.0,
-        100.5,
-        105.5
-      ]
-    },
-    {
-      "entry": "basics/symbols",
-      "x": 1,
-      "y": 7,
-      "parents": [
-        "basics/guide_07_research"
-      ],
-      "band": "Foundations",
-      "route": [
-        19,
+        21,
         0,
         -999999993.0,
-        -1.5,
-        3.5
+        10.5,
+        15.5
       ]
     },
     {
-      "entry": "basics/thought_experiments",
-      "x": 85,
-      "y": 3,
-      "parents": [
-        "basics/guide_11_paths"
-      ],
-      "band": "Foundations",
-      "route": [
-        15,
-        0,
-        -999999997.0,
-        82.5,
-        87.5
-      ]
-    },
-    {
-      "entry": "basics/tuning",
+      "entry": "basics/power",
       "x": 97,
       "y": 3,
-      "parents": [],
+      "parents": [
+        "basics/guide_03_power"
+      ],
       "band": "Foundations",
       "route": [
         17,
@@ -1106,7 +967,53 @@
       ]
     },
     {
-      "entry": "basics/world_numbers",
+      "entry": "basics/r70_running",
+      "x": 55,
+      "y": 3,
+      "parents": [
+        "basics/guide_08_casimir"
+      ],
+      "band": "Foundations",
+      "route": [
+        10,
+        0,
+        -999999997.0,
+        52.5,
+        57.5
+      ]
+    },
+    {
+      "entry": "basics/r71_tuning",
+      "x": 19,
+      "y": 3,
+      "parents": [],
+      "band": "Foundations",
+      "route": [
+        4,
+        0,
+        -999999997.0,
+        16.5,
+        21.5
+      ]
+    },
+    {
+      "entry": "basics/recipe_cost",
+      "x": 31,
+      "y": 7,
+      "parents": [
+        "basics/guide_12_multiblocks"
+      ],
+      "band": "Foundations",
+      "route": [
+        24,
+        0,
+        -999999993.0,
+        28.5,
+        33.5
+      ]
+    },
+    {
+      "entry": "basics/research",
       "x": 43,
       "y": 3,
       "parents": [
@@ -1119,6 +1026,99 @@
         -999999997.0,
         40.5,
         45.5
+      ]
+    },
+    {
+      "entry": "basics/research_time",
+      "x": 49,
+      "y": 3,
+      "parents": [
+        "basics/guide_08_casimir",
+        "basics/guide_09_press"
+      ],
+      "band": "Foundations",
+      "route": [
+        9,
+        0,
+        -999999997.0,
+        46.5,
+        51.5
+      ]
+    },
+    {
+      "entry": "basics/stabilisers",
+      "x": 43,
+      "y": 7,
+      "parents": [],
+      "band": "Foundations",
+      "route": [
+        26,
+        0,
+        -999999993.0,
+        40.5,
+        45.5
+      ]
+    },
+    {
+      "entry": "basics/symbols",
+      "x": 7,
+      "y": 3,
+      "parents": [
+        "basics/guide_07_research"
+      ],
+      "band": "Foundations",
+      "route": [
+        2,
+        0,
+        -999999997.0,
+        4.5,
+        9.5
+      ]
+    },
+    {
+      "entry": "basics/thought_experiments",
+      "x": 25,
+      "y": 7,
+      "parents": [
+        "basics/guide_11_paths"
+      ],
+      "band": "Foundations",
+      "route": [
+        23,
+        0,
+        -999999993.0,
+        22.5,
+        27.5
+      ]
+    },
+    {
+      "entry": "basics/tuning",
+      "x": 37,
+      "y": 7,
+      "parents": [],
+      "band": "Foundations",
+      "route": [
+        25,
+        0,
+        -999999993.0,
+        34.5,
+        39.5
+      ]
+    },
+    {
+      "entry": "basics/world_numbers",
+      "x": 85,
+      "y": 3,
+      "parents": [
+        "basics/guide_07_research"
+      ],
+      "band": "Foundations",
+      "route": [
+        15,
+        0,
+        -999999997.0,
+        82.5,
+        87.5
       ]
     },
     {
@@ -1320,7 +1320,7 @@
     {
       "entry": "chemistry/intro__bonds",
       "x": 31,
-      "y": 96,
+      "y": 95,
       "parents": [],
       "band": "Chemistry",
       "route": [
@@ -1334,7 +1334,7 @@
     {
       "entry": "chemistry/intro__carbon",
       "x": 36,
-      "y": 89,
+      "y": 88,
       "parents": [
         "chemistry/intro__bonds"
       ],
@@ -1350,7 +1350,7 @@
     {
       "entry": "chemistry/intro__electrochem",
       "x": 36,
-      "y": 92,
+      "y": 91,
       "parents": [
         "chemistry/intro__bonds"
       ],
@@ -1380,7 +1380,7 @@
     {
       "entry": "chemistry/intro__exotic",
       "x": 41,
-      "y": 90,
+      "y": 88,
       "parents": [
         "chemistry/intro__carbon"
       ],
@@ -1396,7 +1396,7 @@
     {
       "entry": "chemistry/intro__island",
       "x": 46,
-      "y": 90,
+      "y": 88,
       "parents": [
         "chemistry/intro__exotic"
       ],
@@ -1482,7 +1482,7 @@
     {
       "entry": "chemistry/intro__r59_contact",
       "x": 46,
-      "y": 93,
+      "y": 92,
       "parents": [
         "chemistry/intro__r59_haber"
       ],
@@ -1498,7 +1498,7 @@
     {
       "entry": "chemistry/intro__r59_haber",
       "x": 41,
-      "y": 96,
+      "y": 95,
       "parents": [
         "chemistry/intro__r59_kinetics"
       ],
@@ -1514,7 +1514,7 @@
     {
       "entry": "chemistry/intro__r59_kinetics",
       "x": 36,
-      "y": 95,
+      "y": 94,
       "parents": [
         "chemistry/intro__bonds"
       ],
@@ -1530,7 +1530,7 @@
     {
       "entry": "chemistry/intro__r59_ostwald",
       "x": 51,
-      "y": 92,
+      "y": 91,
       "parents": [
         "chemistry/intro__r59_haber",
         "chemistry/intro__r59_contact"
@@ -1547,7 +1547,7 @@
     {
       "entry": "chemistry/intro__r60_acids",
       "x": 46,
-      "y": 99,
+      "y": 98,
       "parents": [
         "chemistry/intro__r59_haber"
       ],
@@ -1563,7 +1563,7 @@
     {
       "entry": "chemistry/intro__r60_buffers",
       "x": 51,
-      "y": 101,
+      "y": 100,
       "parents": [
         "chemistry/intro__r60_acids"
       ],
@@ -1595,7 +1595,7 @@
     {
       "entry": "chemistry/intro__r60_solubility",
       "x": 51,
-      "y": 105,
+      "y": 106,
       "parents": [
         "chemistry/intro__r60_acids"
       ],
@@ -1611,7 +1611,7 @@
     {
       "entry": "chemistry/intro__r61_calorimetry",
       "x": 41,
-      "y": 93,
+      "y": 91,
       "parents": [
         "chemistry/intro__r59_kinetics"
       ],
@@ -1627,7 +1627,7 @@
     {
       "entry": "chemistry/intro__r61_heat_packs",
       "x": 56,
-      "y": 92,
+      "y": 91,
       "parents": [
         "chemistry/intro__r61_calorimetry",
         "chemistry/intro__r59_ostwald"
@@ -1644,7 +1644,7 @@
     {
       "entry": "chemistry/intro__r62_cells",
       "x": 46,
-      "y": 96,
+      "y": 95,
       "parents": [
         "chemistry/intro__electrochem",
         "chemistry/intro__r59_haber"
@@ -1661,7 +1661,7 @@
     {
       "entry": "chemistry/intro__r62_plating",
       "x": 51,
-      "y": 89,
+      "y": 88,
       "parents": [
         "chemistry/intro__electrochem",
         "chemistry/intro__r60_acids"
@@ -1678,7 +1678,7 @@
     {
       "entry": "chemistry/intro__r63_chromatography",
       "x": 51,
-      "y": 98,
+      "y": 96,
       "parents": [
         "chemistry/intro__r60_acids"
       ],
@@ -1694,7 +1694,7 @@
     {
       "entry": "chemistry/intro__r63_mass_spec",
       "x": 56,
-      "y": 104,
+      "y": 100,
       "parents": [
         "chemistry/intro__r63_chromatography"
       ],
@@ -1710,7 +1710,7 @@
     {
       "entry": "chemistry/intro__r63_nebula",
       "x": 56,
-      "y": 95,
+      "y": 94,
       "parents": [
         "chemistry/intro__r63_chromatography"
       ],
@@ -1726,7 +1726,7 @@
     {
       "entry": "chemistry/intro__r64_catalysis",
       "x": 56,
-      "y": 89,
+      "y": 88,
       "parents": [
         "chemistry/intro__r59_haber",
         "chemistry/intro__r62_plating"
@@ -1792,7 +1792,7 @@
     {
       "entry": "chemistry/intro__r65_synthesis",
       "x": 66,
-      "y": 95,
+      "y": 94,
       "parents": [
         "chemistry/intro__r60_acids",
         "chemistry/intro__r65_petrochem"
@@ -1809,7 +1809,7 @@
     {
       "entry": "chemistry/intro__r66_coordination",
       "x": 61,
-      "y": 98,
+      "y": 97,
       "parents": [
         "chemistry/intro__r63_nebula",
         "chemistry/intro__r64_catalysis"
@@ -1826,7 +1826,7 @@
     {
       "entry": "chemistry/intro__r66_materials",
       "x": 66,
-      "y": 92,
+      "y": 91,
       "parents": [
         "chemistry/intro__r62_plating",
         "chemistry/intro__r65_frameworks"
@@ -1859,7 +1859,7 @@
     {
       "entry": "chemistry/intro__r67_titan_lakes",
       "x": 56,
-      "y": 101,
+      "y": 103,
       "parents": [
         "chemistry/intro__r60_solubility"
       ],
@@ -1892,7 +1892,7 @@
     {
       "entry": "chemistry/intro__r69_alkahest",
       "x": 66,
-      "y": 98,
+      "y": 97,
       "parents": [
         "chemistry/intro__r69_oscillating",
         "chemistry/intro__r66_coordination"
@@ -1925,7 +1925,7 @@
     {
       "entry": "chemistry/intro__r69_oscillating",
       "x": 56,
-      "y": 98,
+      "y": 97,
       "parents": [
         "chemistry/intro__r59_kinetics",
         "chemistry/intro__r63_chromatography"
@@ -2119,254 +2119,6 @@
     {
       "entry": "endgame/intro__alpha_omega",
       "x": 21,
-      "y": 253,
-      "parents": [
-        "endgame/omnilex_goal",
-        "endgame/omnilex_memory"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        4,
-        244.5,
-        18.5,
-        23.5
-      ]
-    },
-    {
-      "entry": "endgame/intro__beyond",
-      "x": 1,
-      "y": 250,
-      "parents": [
-        "simulation/intro__omega"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        0,
-        244.5,
-        -1.5,
-        3.5
-      ]
-    },
-    {
-      "entry": "endgame/beyond_omnipotence",
-      "x": 49,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        88,
-        0,
-        -999999756.0,
-        46.5,
-        51.5
-      ]
-    },
-    {
-      "entry": "endgame/beyond_the_shutdown",
-      "x": 26,
-      "y": 253,
-      "parents": [
-        "endgame/intro__alpha_omega"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        5,
-        244.5,
-        23.5,
-        28.5
-      ]
-    },
-    {
-      "entry": "endgame/conceptual_singularities",
-      "x": 6,
-      "y": 252,
-      "parents": [
-        "endgame/intro__beyond"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        1,
-        244.5,
-        3.5,
-        8.5
-      ]
-    },
-    {
-      "entry": "endgame/creative_forge",
-      "x": 85,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        94,
-        0,
-        -999999756.0,
-        82.5,
-        87.5
-      ]
-    },
-    {
-      "entry": "endgame/dodecaract_excavator",
-      "x": 31,
-      "y": 255,
-      "parents": [
-        "endgame/transcendental",
-        "endgame/beyond_the_shutdown"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        6,
-        244.5,
-        28.5,
-        33.5
-      ]
-    },
-    {
-      "entry": "endgame/entropy_censer",
-      "x": 91,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        95,
-        0,
-        -999999756.0,
-        88.5,
-        93.5
-      ]
-    },
-    {
-      "entry": "endgame/eschaton_charge",
-      "x": 31,
-      "y": 252,
-      "parents": [
-        "endgame/transcendental",
-        "endgame/beyond_the_shutdown"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        6,
-        244.5,
-        28.5,
-        33.5
-      ]
-    },
-    {
-      "entry": "endgame/euclidean_anchor",
-      "x": 61,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        90,
-        0,
-        -999999756.0,
-        58.5,
-        63.5
-      ]
-    },
-    {
-      "entry": "endgame/forge_terminal",
-      "x": 79,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        93,
-        0,
-        -999999756.0,
-        76.5,
-        81.5
-      ]
-    },
-    {
-      "entry": "endgame/intro__hyperreal",
-      "x": 11,
-      "y": 250,
-      "parents": [
-        "endgame/mass_crafting",
-        "endgame/conceptual_singularities"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        2,
-        244.5,
-        8.5,
-        13.5
-      ]
-    },
-    {
-      "entry": "endgame/mass_crafting",
-      "x": 6,
-      "y": 248,
-      "parents": [
-        "endgame/intro__beyond"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        1,
-        244.5,
-        3.5,
-        8.5
-      ]
-    },
-    {
-      "entry": "endgame/miniatures",
-      "x": 73,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        92,
-        0,
-        -999999756.0,
-        70.5,
-        75.5
-      ]
-    },
-    {
-      "entry": "endgame/omnilex_goal",
-      "x": 16,
-      "y": 248,
-      "parents": [
-        "endgame/intro__hyperreal"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        3,
-        244.5,
-        13.5,
-        18.5
-      ]
-    },
-    {
-      "entry": "endgame/omnilex_memory",
-      "x": 16,
-      "y": 251,
-      "parents": [
-        "endgame/intro__hyperreal"
-      ],
-      "band": "Transcendence",
-      "route": [
-        85,
-        3,
-        244.5,
-        13.5,
-        18.5
-      ]
-    },
-    {
-      "entry": "endgame/pleroma",
-      "x": 21,
       "y": 246,
       "parents": [
         "endgame/omnilex_goal",
@@ -2376,13 +2128,89 @@
       "route": [
         85,
         4,
-        244.5,
+        237.5,
         18.5,
         23.5
       ]
     },
     {
-      "entry": "endgame/r43_foundry",
+      "entry": "endgame/intro__beyond",
+      "x": 1,
+      "y": 243,
+      "parents": [
+        "simulation/intro__omega"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        0,
+        237.5,
+        -1.5,
+        3.5
+      ]
+    },
+    {
+      "entry": "endgame/beyond_omnipotence",
+      "x": 55,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        89,
+        0,
+        -999999763.0,
+        52.5,
+        57.5
+      ]
+    },
+    {
+      "entry": "endgame/beyond_the_shutdown",
+      "x": 26,
+      "y": 246,
+      "parents": [
+        "endgame/intro__alpha_omega"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        5,
+        237.5,
+        23.5,
+        28.5
+      ]
+    },
+    {
+      "entry": "endgame/conceptual_singularities",
+      "x": 6,
+      "y": 245,
+      "parents": [
+        "endgame/intro__beyond"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        1,
+        237.5,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "endgame/creative_forge",
+      "x": 91,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        95,
+        0,
+        -999999763.0,
+        88.5,
+        93.5
+      ]
+    },
+    {
+      "entry": "endgame/dodecaract_excavator",
       "x": 31,
       "y": 248,
       "parents": [
@@ -2393,15 +2221,153 @@
       "route": [
         85,
         6,
-        244.5,
+        237.5,
         28.5,
         33.5
       ]
     },
     {
-      "entry": "endgame/r98_five",
+      "entry": "endgame/entropy_censer",
+      "x": 97,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        96,
+        0,
+        -999999763.0,
+        94.5,
+        99.5
+      ]
+    },
+    {
+      "entry": "endgame/eschaton_charge",
+      "x": 31,
+      "y": 245,
+      "parents": [
+        "endgame/transcendental",
+        "endgame/beyond_the_shutdown"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        6,
+        237.5,
+        28.5,
+        33.5
+      ]
+    },
+    {
+      "entry": "endgame/euclidean_anchor",
+      "x": 67,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        91,
+        0,
+        -999999763.0,
+        64.5,
+        69.5
+      ]
+    },
+    {
+      "entry": "endgame/forge_terminal",
+      "x": 85,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        94,
+        0,
+        -999999763.0,
+        82.5,
+        87.5
+      ]
+    },
+    {
+      "entry": "endgame/intro__hyperreal",
+      "x": 11,
+      "y": 243,
+      "parents": [
+        "endgame/mass_crafting",
+        "endgame/conceptual_singularities"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        2,
+        237.5,
+        8.5,
+        13.5
+      ]
+    },
+    {
+      "entry": "endgame/mass_crafting",
+      "x": 6,
+      "y": 241,
+      "parents": [
+        "endgame/intro__beyond"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        1,
+        237.5,
+        3.5,
+        8.5
+      ]
+    },
+    {
+      "entry": "endgame/miniatures",
+      "x": 79,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        93,
+        0,
+        -999999763.0,
+        76.5,
+        81.5
+      ]
+    },
+    {
+      "entry": "endgame/omnilex_goal",
+      "x": 16,
+      "y": 241,
+      "parents": [
+        "endgame/intro__hyperreal"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        3,
+        237.5,
+        13.5,
+        18.5
+      ]
+    },
+    {
+      "entry": "endgame/omnilex_memory",
+      "x": 16,
+      "y": 244,
+      "parents": [
+        "endgame/intro__hyperreal"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        3,
+        237.5,
+        13.5,
+        18.5
+      ]
+    },
+    {
+      "entry": "endgame/pleroma",
       "x": 21,
-      "y": 250,
+      "y": 239,
       "parents": [
         "endgame/omnilex_goal",
         "endgame/omnilex_memory"
@@ -2410,113 +2376,147 @@
       "route": [
         85,
         4,
-        244.5,
+        237.5,
+        18.5,
+        23.5
+      ]
+    },
+    {
+      "entry": "endgame/r43_foundry",
+      "x": 31,
+      "y": 241,
+      "parents": [
+        "endgame/transcendental",
+        "endgame/beyond_the_shutdown"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        6,
+        237.5,
+        28.5,
+        33.5
+      ]
+    },
+    {
+      "entry": "endgame/r98_five",
+      "x": 21,
+      "y": 243,
+      "parents": [
+        "endgame/omnilex_goal",
+        "endgame/omnilex_memory"
+      ],
+      "band": "Transcendence",
+      "route": [
+        85,
+        4,
+        237.5,
         18.5,
         23.5
       ]
     },
     {
       "entry": "endgame/resolved_endgame",
-      "x": 103,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        97,
-        0,
-        -999999756.0,
-        100.5,
-        105.5
-      ]
-    },
-    {
-      "entry": "endgame/second_core",
-      "x": 55,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        89,
-        0,
-        -999999756.0,
-        52.5,
-        57.5
-      ]
-    },
-    {
-      "entry": "endgame/simulated_universes",
-      "x": 97,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        96,
-        0,
-        -999999756.0,
-        94.5,
-        99.5
-      ]
-    },
-    {
-      "entry": "endgame/the_core_forge",
-      "x": 43,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        87,
-        0,
-        -999999756.0,
-        40.5,
-        45.5
-      ]
-    },
-    {
-      "entry": "endgame/the_rekindling",
-      "x": 67,
-      "y": 244,
-      "parents": [],
-      "band": "Transcendence",
-      "route": [
-        91,
-        0,
-        -999999756.0,
-        64.5,
-        69.5
-      ]
-    },
-    {
-      "entry": "endgame/the_shutdown",
       "x": 1,
-      "y": 259,
+      "y": 252,
       "parents": [],
       "band": "Transcendence",
       "route": [
         98,
         0,
-        -999999741.0,
+        -999999748.0,
         -1.5,
         3.5
       ]
     },
     {
-      "entry": "endgame/the_sundering_materials",
+      "entry": "endgame/second_core",
+      "x": 61,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        90,
+        0,
+        -999999763.0,
+        58.5,
+        63.5
+      ]
+    },
+    {
+      "entry": "endgame/simulated_universes",
+      "x": 103,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        97,
+        0,
+        -999999763.0,
+        100.5,
+        105.5
+      ]
+    },
+    {
+      "entry": "endgame/the_core_forge",
+      "x": 49,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        88,
+        0,
+        -999999763.0,
+        46.5,
+        51.5
+      ]
+    },
+    {
+      "entry": "endgame/the_rekindling",
+      "x": 73,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        92,
+        0,
+        -999999763.0,
+        70.5,
+        75.5
+      ]
+    },
+    {
+      "entry": "endgame/the_shutdown",
       "x": 37,
-      "y": 244,
+      "y": 237,
       "parents": [],
       "band": "Transcendence",
       "route": [
         86,
         0,
-        -999999756.0,
+        -999999763.0,
         34.5,
         39.5
       ]
     },
     {
+      "entry": "endgame/the_sundering_materials",
+      "x": 43,
+      "y": 237,
+      "parents": [],
+      "band": "Transcendence",
+      "route": [
+        87,
+        0,
+        -999999763.0,
+        40.5,
+        45.5
+      ]
+    },
+    {
       "entry": "endgame/transcendental",
       "x": 26,
-      "y": 250,
+      "y": 243,
       "parents": [
         "endgame/intro__alpha_omega"
       ],
@@ -2524,7 +2524,7 @@
       "route": [
         85,
         5,
-        244.5,
+        237.5,
         23.5,
         28.5
       ]
@@ -2545,7 +2545,7 @@
     },
     {
       "entry": "fabrication/byproducts",
-      "x": 55,
+      "x": 103,
       "y": 3,
       "parents": [
         "basics/guide_09_press",
@@ -2553,76 +2553,76 @@
       ],
       "band": "Foundations",
       "route": [
-        10,
+        18,
         0,
         -999999997.0,
-        52.5,
-        57.5
+        100.5,
+        105.5
       ]
     },
     {
       "entry": "fabrication/catalysts",
-      "x": 43,
-      "y": 7,
+      "x": 91,
+      "y": 3,
       "parents": [
         "basics/guide_08_casimir",
         "basics/guide_09_press"
       ],
       "band": "Foundations",
       "route": [
-        26,
+        16,
         0,
-        -999999993.0,
-        40.5,
-        45.5
+        -999999997.0,
+        88.5,
+        93.5
       ]
     },
     {
       "entry": "fabrication/more_singularities",
-      "x": 13,
-      "y": 7,
-      "parents": [],
-      "band": "Foundations",
-      "route": [
-        21,
-        0,
-        -999999993.0,
-        10.5,
-        15.5
-      ]
-    },
-    {
-      "entry": "fabrication/processors",
-      "x": 19,
+      "x": 31,
       "y": 3,
       "parents": [],
       "band": "Foundations",
       "route": [
-        4,
+        6,
         0,
         -999999997.0,
-        16.5,
-        21.5
+        28.5,
+        33.5
       ]
     },
     {
-      "entry": "fabrication/wafers",
+      "entry": "fabrication/processors",
       "x": 37,
-      "y": 7,
+      "y": 3,
       "parents": [],
       "band": "Foundations",
       "route": [
-        25,
+        7,
         0,
-        -999999993.0,
+        -999999997.0,
         34.5,
         39.5
       ]
     },
     {
+      "entry": "fabrication/wafers",
+      "x": 79,
+      "y": 3,
+      "parents": [],
+      "band": "Foundations",
+      "route": [
+        14,
+        0,
+        -999999997.0,
+        76.5,
+        81.5
+      ]
+    },
+    {
       "entry": "geography/intro__r37_ground",
       "x": 6,
-      "y": 214,
+      "y": 213,
       "parents": [
         "geography/intro__r37_mapping",
         "geography/intro__r39_sites"
@@ -2639,7 +2639,7 @@
     {
       "entry": "geography/intro__r37_mapping",
       "x": 1,
-      "y": 216,
+      "y": 215,
       "parents": [],
       "band": "Worlds",
       "route": [
@@ -2653,7 +2653,7 @@
     {
       "entry": "geography/intro__r38_seismology",
       "x": 11,
-      "y": 216,
+      "y": 215,
       "parents": [
         "geography/intro__r37_ground"
       ],
@@ -2669,7 +2669,7 @@
     {
       "entry": "geography/intro__r39_sites",
       "x": 1,
-      "y": 219,
+      "y": 218,
       "parents": [],
       "band": "Worlds",
       "route": [
@@ -2683,7 +2683,7 @@
     {
       "entry": "geography/intro__r40_interior",
       "x": 16,
-      "y": 220,
+      "y": 219,
       "parents": [
         "geography/intro__r37_ground",
         "geography/intro__r38_seismology"
@@ -2785,7 +2785,7 @@
     {
       "entry": "geography/intro__r53_climate",
       "x": 16,
-      "y": 214,
+      "y": 213,
       "parents": [
         "geography/intro__r53_water"
       ],
@@ -2801,7 +2801,7 @@
     {
       "entry": "geography/intro__r53_orbit",
       "x": 16,
-      "y": 217,
+      "y": 216,
       "parents": [
         "geography/intro__r38_seismology"
       ],
@@ -3349,7 +3349,7 @@
     {
       "entry": "optics/intro__r46_diffraction",
       "x": 36,
-      "y": 104,
+      "y": 103,
       "parents": [
         "chemistry/intro__bonds"
       ],
@@ -3365,7 +3365,7 @@
     {
       "entry": "optics/intro__r46_growth",
       "x": 41,
-      "y": 104,
+      "y": 103,
       "parents": [
         "optics/intro__r46_overview",
         "optics/intro__r46_diffraction"
@@ -3382,7 +3382,7 @@
     {
       "entry": "optics/intro__r46_overview",
       "x": 36,
-      "y": 101,
+      "y": 100,
       "parents": [
         "chemistry/intro__bonds"
       ],
@@ -3398,7 +3398,7 @@
     {
       "entry": "optics/intro__r46_workshop",
       "x": 41,
-      "y": 101,
+      "y": 100,
       "parents": [
         "optics/intro__r46_overview",
         "optics/intro__r46_diffraction"
@@ -3415,7 +3415,7 @@
     {
       "entry": "optics/intro__r47_lasers",
       "x": 46,
-      "y": 104,
+      "y": 103,
       "parents": [
         "optics/intro__r46_growth"
       ],
@@ -4173,36 +4173,36 @@
     },
     {
       "entry": "world/intro__arriving_safely",
-      "x": 92,
-      "y": 205,
+      "x": 7,
+      "y": 229,
       "parents": [],
       "band": "Worlds",
       "route": [
-        60,
+        80,
         0,
-        -999999795.0,
-        89.5,
-        94.5
+        -999999771.0,
+        4.5,
+        9.5
       ]
     },
     {
       "entry": "world/intro__attunement_hierarchy",
-      "x": 25,
-      "y": 236,
+      "x": 90,
+      "y": 205,
       "parents": [],
       "band": "Worlds",
       "route": [
-        83,
+        58,
         0,
-        -999999764.0,
-        22.5,
-        27.5
+        -999999795.0,
+        87.5,
+        92.5
       ]
     },
     {
       "entry": "world/intro__bulk",
       "x": 11,
-      "y": 219,
+      "y": 218,
       "parents": [
         "world/intro__r78_elements",
         "geography/intro__r37_mapping"
@@ -4219,7 +4219,7 @@
     {
       "entry": "world/intro__bulk_life",
       "x": 11,
-      "y": 222,
+      "y": 221,
       "parents": [
         "world/intro__r78_elements",
         "geography/intro__r37_mapping"
@@ -4235,7 +4235,35 @@
     },
     {
       "entry": "world/intro__containment_caches",
-      "x": 68,
+      "x": 67,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        72,
+        0,
+        -999999775.0,
+        64.5,
+        69.5
+      ]
+    },
+    {
+      "entry": "world/intro__decor",
+      "x": 25,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        65,
+        0,
+        -999999775.0,
+        22.5,
+        27.5
+      ]
+    },
+    {
+      "entry": "world/intro__dilithium",
+      "x": 73,
       "y": 205,
       "parents": [],
       "band": "Worlds",
@@ -4243,84 +4271,56 @@
         56,
         0,
         -999999795.0,
-        65.5,
-        70.5
-      ]
-    },
-    {
-      "entry": "world/intro__decor",
-      "x": 47,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        69,
-        0,
-        -999999774.0,
-        44.5,
-        49.5
-      ]
-    },
-    {
-      "entry": "world/intro__dilithium",
-      "x": 19,
-      "y": 236,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        82,
-        0,
-        -999999764.0,
-        16.5,
-        21.5
+        70.5,
+        75.5
       ]
     },
     {
       "entry": "world/intro__dimension_laws",
-      "x": 80,
-      "y": 205,
+      "x": 91,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
-        58,
+        76,
         0,
-        -999999795.0,
-        77.5,
-        82.5
+        -999999775.0,
+        88.5,
+        93.5
       ]
     },
     {
       "entry": "world/intro__falling_through",
-      "x": 56,
-      "y": 205,
+      "x": 43,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
-        54,
+        68,
         0,
-        -999999795.0,
-        53.5,
-        58.5
+        -999999775.0,
+        40.5,
+        45.5
       ]
     },
     {
       "entry": "world/intro__impossible_interiors",
-      "x": 32,
+      "x": 102,
       "y": 205,
       "parents": [],
       "band": "Worlds",
       "route": [
-        50,
+        60,
         0,
         -999999795.0,
-        29.5,
-        34.5
+        99.5,
+        104.5
       ]
     },
     {
       "entry": "world/intro__interior_laws",
       "x": 16,
-      "y": 208,
+      "y": 207,
       "parents": [
         "geography/intro__r37_ground",
         "geography/intro__r38_seismology"
@@ -4337,7 +4337,7 @@
     {
       "entry": "world/intro__interior_sites",
       "x": 16,
-      "y": 211,
+      "y": 210,
       "parents": [
         "geography/intro__r37_ground",
         "geography/intro__r38_seismology"
@@ -4353,77 +4353,7 @@
     },
     {
       "entry": "world/intro__ores",
-      "x": 7,
-      "y": 236,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        80,
-        0,
-        -999999764.0,
-        4.5,
-        9.5
-      ]
-    },
-    {
-      "entry": "world/intro__r51_frontier",
-      "x": 86,
-      "y": 205,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        59,
-        0,
-        -999999795.0,
-        83.5,
-        88.5
-      ]
-    },
-    {
-      "entry": "world/intro__r51_frontier_life",
-      "x": 89,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        76,
-        0,
-        -999999774.0,
-        86.5,
-        91.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_accretion_fragment_ore",
-      "x": 83,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        75,
-        0,
-        -999999774.0,
-        80.5,
-        85.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_asteroid_rock",
-      "x": 74,
-      "y": 205,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        57,
-        0,
-        -999999795.0,
-        71.5,
-        76.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_brown_dwarf_ore",
-      "x": 50,
+      "x": 55,
       "y": 205,
       "parents": [],
       "band": "Worlds",
@@ -4431,139 +4361,83 @@
         53,
         0,
         -999999795.0,
-        47.5,
-        52.5
+        52.5,
+        57.5
       ]
     },
     {
-      "entry": "world/intro__r56_block_cosmic_ray_ore",
-      "x": 18,
-      "y": 226,
+      "entry": "world/intro__r51_frontier",
+      "x": 103,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
-        65,
+        78,
         0,
-        -999999774.0,
-        15.5,
-        20.5
+        -999999775.0,
+        100.5,
+        105.5
       ]
     },
     {
-      "entry": "world/intro__r56_block_dust_cloud",
-      "x": 41,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        68,
-        0,
-        -999999774.0,
-        38.5,
-        43.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_dust_ice_ore",
-      "x": 98,
-      "y": 205,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        61,
-        0,
-        -999999795.0,
-        95.5,
-        100.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_einstein_ring_ore",
-      "x": 59,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        71,
-        0,
-        -999999774.0,
-        56.5,
-        61.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_frontier_regolith",
-      "x": 65,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        72,
-        0,
-        -999999774.0,
-        62.5,
-        67.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_hydrogen_cloud",
-      "x": 44,
-      "y": 205,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        52,
-        0,
-        -999999795.0,
-        41.5,
-        46.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_magnetar_crust_ore",
-      "x": 31,
-      "y": 236,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        84,
-        0,
-        -999999764.0,
-        28.5,
-        33.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_nebular_ice",
-      "x": 53,
-      "y": 226,
-      "parents": [],
-      "band": "Worlds",
-      "route": [
-        70,
-        0,
-        -999999774.0,
-        50.5,
-        55.5
-      ]
-    },
-    {
-      "entry": "world/intro__r56_block_oxygen_cloud",
+      "entry": "world/intro__r51_frontier_life",
       "x": 1,
-      "y": 236,
+      "y": 229,
       "parents": [],
       "band": "Worlds",
       "route": [
         79,
         0,
-        -999999764.0,
+        -999999771.0,
         -1.5,
         3.5
       ]
     },
     {
-      "entry": "world/intro__r56_block_planetesimal_core_ore",
-      "x": 62,
+      "entry": "world/intro__r56_block_accretion_fragment_ore",
+      "x": 97,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        77,
+        0,
+        -999999775.0,
+        94.5,
+        99.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_asteroid_rock",
+      "x": 79,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        74,
+        0,
+        -999999775.0,
+        76.5,
+        81.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_brown_dwarf_ore",
+      "x": 31,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        66,
+        0,
+        -999999775.0,
+        28.5,
+        33.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_cosmic_ray_ore",
+      "x": 67,
       "y": 205,
       "parents": [],
       "band": "Worlds",
@@ -4571,26 +4445,110 @@
         55,
         0,
         -999999795.0,
-        59.5,
-        64.5
+        64.5,
+        69.5
       ]
     },
     {
-      "entry": "world/intro__r56_block_protostar_fragment",
+      "entry": "world/intro__r56_block_dust_cloud",
       "x": 13,
-      "y": 236,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
-        81,
+        63,
         0,
-        -999999764.0,
+        -999999775.0,
         10.5,
         15.5
       ]
     },
     {
-      "entry": "world/intro__r56_block_pulsar_crust",
+      "entry": "world/intro__r56_block_dust_ice_ore",
+      "x": 19,
+      "y": 229,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        82,
+        0,
+        -999999771.0,
+        16.5,
+        21.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_einstein_ring_ore",
+      "x": 49,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        69,
+        0,
+        -999999775.0,
+        46.5,
+        51.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_frontier_regolith",
+      "x": 61,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        71,
+        0,
+        -999999775.0,
+        58.5,
+        63.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_hydrogen_cloud",
+      "x": 19,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        64,
+        0,
+        -999999775.0,
+        16.5,
+        21.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_magnetar_crust_ore",
+      "x": 96,
+      "y": 205,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        59,
+        0,
+        -999999795.0,
+        93.5,
+        98.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_nebular_ice",
+      "x": 37,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        67,
+        0,
+        -999999775.0,
+        34.5,
+        39.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_oxygen_cloud",
       "x": 38,
       "y": 205,
       "parents": [],
@@ -4604,134 +4562,176 @@
       ]
     },
     {
-      "entry": "world/intro__r56_block_pulsar_timing_ore",
-      "x": 35,
-      "y": 226,
+      "entry": "world/intro__r56_block_planetesimal_core_ore",
+      "x": 55,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
-        67,
+        70,
         0,
-        -999999774.0,
-        32.5,
-        37.5
+        -999999775.0,
+        52.5,
+        57.5
       ]
     },
     {
-      "entry": "world/intro__r56_block_rim_slag",
-      "x": 1,
-      "y": 226,
+      "entry": "world/intro__r56_block_protostar_fragment",
+      "x": 61,
+      "y": 205,
       "parents": [],
       "band": "Worlds",
       "route": [
-        63,
+        54,
         0,
-        -999999774.0,
+        -999999795.0,
+        58.5,
+        63.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_pulsar_crust",
+      "x": 7,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        62,
+        0,
+        -999999775.0,
+        4.5,
+        9.5
+      ]
+    },
+    {
+      "entry": "world/intro__r56_block_pulsar_timing_ore",
+      "x": 1,
+      "y": 225,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        61,
+        0,
+        -999999775.0,
         -1.5,
         3.5
       ]
     },
     {
+      "entry": "world/intro__r56_block_rim_slag",
+      "x": 32,
+      "y": 205,
+      "parents": [],
+      "band": "Worlds",
+      "route": [
+        50,
+        0,
+        -999999795.0,
+        29.5,
+        34.5
+      ]
+    },
+    {
       "entry": "world/intro__r56_block_station_hull",
-      "x": 71,
-      "y": 226,
+      "x": 73,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
         73,
         0,
-        -999999774.0,
-        68.5,
-        73.5
+        -999999775.0,
+        70.5,
+        75.5
       ]
     },
     {
       "entry": "world/intro__r56_block_void_glass",
-      "x": 95,
-      "y": 226,
+      "x": 13,
+      "y": 229,
       "parents": [],
       "band": "Worlds",
       "route": [
-        77,
+        81,
         0,
-        -999999774.0,
-        92.5,
-        97.5
+        -999999771.0,
+        10.5,
+        15.5
       ]
     },
     {
       "entry": "world/intro__r56_frontier_counters",
-      "x": 77,
-      "y": 226,
+      "x": 85,
+      "y": 225,
       "parents": [],
       "band": "Worlds",
       "route": [
-        74,
+        75,
         0,
-        -999999774.0,
-        74.5,
-        79.5
+        -999999775.0,
+        82.5,
+        87.5
       ]
     },
     {
       "entry": "world/intro__r67_titan",
-      "x": 24,
-      "y": 230,
+      "x": 79,
+      "y": 209,
       "parents": [],
       "band": "Worlds",
       "route": [
-        66,
+        57,
         0,
-        -999999774.0,
-        21.5,
-        26.5
+        -999999795.0,
+        76.5,
+        81.5
       ]
     },
     {
       "entry": "world/intro__r67_titan_survival",
-      "x": 29,
-      "y": 232,
+      "x": 84,
+      "y": 211,
       "parents": [
         "world/intro__r67_titan"
       ],
       "band": "Worlds",
       "route": [
-        66,
+        57,
         1,
-        -999999774.0,
-        26.5,
-        31.5
+        -999999795.0,
+        81.5,
+        86.5
       ]
     },
     {
       "entry": "world/intro__r68_ouroboros",
-      "x": 29,
-      "y": 226,
+      "x": 84,
+      "y": 205,
       "parents": [
         "world/intro__r67_titan",
         "world/intro__r68_titan_life"
       ],
       "band": "Worlds",
       "route": [
-        66,
+        57,
         1,
-        -999999774.0,
-        26.5,
-        31.5
+        -999999795.0,
+        81.5,
+        86.5
       ]
     },
     {
       "entry": "world/intro__r68_titan_life",
-      "x": 24,
-      "y": 227,
+      "x": 79,
+      "y": 206,
       "parents": [],
       "band": "Worlds",
       "route": [
-        66,
+        57,
         0,
-        -999999774.0,
-        21.5,
-        26.5
+        -999999795.0,
+        76.5,
+        81.5
       ]
     },
     {
@@ -4753,40 +4753,40 @@
     },
     {
       "entry": "world/intro__r87_axioms",
-      "x": 7,
-      "y": 229,
+      "x": 44,
+      "y": 208,
       "parents": [
         "mathematics/intro__math_overview"
       ],
       "band": "Worlds",
       "route": [
-        64,
+        52,
         0,
-        -999999774.0,
-        4.5,
-        9.5
+        -999999795.0,
+        41.5,
+        46.5
       ]
     },
     {
       "entry": "world/intro__r87_continuum",
-      "x": 12,
-      "y": 229,
+      "x": 49,
+      "y": 208,
       "parents": [
         "world/intro__r87_axioms"
       ],
       "band": "Worlds",
       "route": [
-        64,
+        52,
         1,
-        -999999774.0,
-        9.5,
-        14.5
+        -999999795.0,
+        46.5,
+        51.5
       ]
     },
     {
       "entry": "world/intro__r87_curved",
       "x": 6,
-      "y": 217,
+      "y": 216,
       "parents": [
         "geography/intro__r37_mapping",
         "geography/intro__r39_sites"
@@ -4802,81 +4802,81 @@
     },
     {
       "entry": "world/intro__r87_layers",
-      "x": 104,
-      "y": 205,
+      "x": 31,
+      "y": 229,
       "parents": [
         "mathematics/intro__math_overview"
       ],
       "band": "Worlds",
       "route": [
-        62,
+        84,
         0,
-        -999999795.0,
-        101.5,
-        106.5
+        -999999771.0,
+        28.5,
+        33.5
       ]
     },
     {
       "entry": "world/intro__r93_inner_life",
-      "x": 12,
-      "y": 232,
+      "x": 49,
+      "y": 211,
       "parents": [
         "world/intro__r87_axioms"
       ],
       "band": "Worlds",
       "route": [
-        64,
+        52,
         1,
-        -999999774.0,
-        9.5,
-        14.5
+        -999999795.0,
+        46.5,
+        51.5
       ]
     },
     {
       "entry": "world/intro__r93_inner_space",
-      "x": 12,
-      "y": 226,
+      "x": 49,
+      "y": 205,
       "parents": [
         "world/intro__r87_axioms"
       ],
       "band": "Worlds",
       "route": [
-        64,
+        52,
         1,
-        -999999774.0,
-        9.5,
-        14.5
+        -999999795.0,
+        46.5,
+        51.5
       ]
     },
     {
       "entry": "world/intro__r94_titan_ocean",
-      "x": 29,
-      "y": 229,
+      "x": 84,
+      "y": 208,
       "parents": [
         "world/intro__r67_titan",
         "world/intro__r68_titan_life"
       ],
       "band": "Worlds",
       "route": [
-        66,
+        57,
         1,
-        -999999774.0,
-        26.5,
-        31.5
+        -999999795.0,
+        81.5,
+        86.5
       ]
     },
     {
       "entry": "world/intro__ruins",
-      "x": 101,
-      "y": 226,
+      "x": 25,
+      "y": 229,
       "parents": [],
       "band": "Worlds",
       "route": [
-        78,
+        83,
         0,
-        -999999774.0,
-        98.5,
-        103.5
+        -999999771.0,
+        22.5,
+        27.5
       ]
     }
   ],
@@ -4886,7 +4886,7 @@
       "label": "Foundations",
       "x0": -1.0,
       "y0": 0.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 9.5
     },
     {
@@ -4894,7 +4894,7 @@
       "label": "Physics \u00b7 Quanta & Matter",
       "x0": -1.0,
       "y0": 12.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 23.5
     },
     {
@@ -4902,7 +4902,7 @@
       "label": "Physics \u00b7 Fields & Nuclei",
       "x0": -1.0,
       "y0": 26.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 49.5
     },
     {
@@ -4910,7 +4910,7 @@
       "label": "Physics \u00b7 Stars & Spacetime",
       "x0": -1.0,
       "y0": 52.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 80.5
     },
     {
@@ -4918,7 +4918,7 @@
       "label": "Chemistry",
       "x0": -1.0,
       "y0": 83.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 110.5
     },
     {
@@ -4926,7 +4926,7 @@
       "label": "Biology",
       "x0": -1.0,
       "y0": 113.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 139.5
     },
     {
@@ -4934,7 +4934,7 @@
       "label": "Getting Started",
       "x0": -1.0,
       "y0": 142.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 149.5
     },
     {
@@ -4942,7 +4942,7 @@
       "label": "Mathematics",
       "x0": -1.0,
       "y0": 152.0,
-      "x1": 106.0,
+      "x1": 105.0,
       "y1": 199.5
     },
     {
@@ -4950,16 +4950,16 @@
       "label": "Worlds",
       "x0": -1.0,
       "y0": 202.0,
-      "x1": 106.0,
-      "y1": 238.5
+      "x1": 105.0,
+      "y1": 231.5
     },
     {
       "tier": 8,
       "label": "Transcendence",
       "x0": -1.0,
-      "y0": 241.0,
-      "x1": 106.0,
-      "y1": 261.5
+      "y0": 234.0,
+      "x1": 105.0,
+      "y1": 254.5
     }
   ],
   "layout": "tree"

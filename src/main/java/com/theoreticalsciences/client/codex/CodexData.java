@@ -321,7 +321,12 @@ public final class CodexData {
         for (Entry e : ents.values()) {
             String k = e.searchTitle;
             if (e.node || !names.containsKey(k)) names.put(k, e.id);
-            if (e.node && !e.icon.isEmpty()) items.put(e.icon, e.id);
+            if (e.node && !e.icon.isEmpty()) {
+                // 1.4.0: an item's own node wins over a research node drawn with the same icon, so its description
+                // page lands on the item's entry (whose old description page was removed) whatever the map order
+                String cur = items.get(e.icon);
+                if (cur == null || (cur.contains("/node_research") && !e.id.contains("/node_research"))) items.put(e.icon, e.id);
+            }
         }
         for (Entry e : ents.values()) {
             if (e.node) continue;

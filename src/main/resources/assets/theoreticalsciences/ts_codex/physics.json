@@ -23,7 +23,7 @@
     {
       "entry": "geography/r37_mapping",
       "x": 1,
-      "y": 396,
+      "y": 399,
       "parents": [],
       "band": "Earth & Mapping",
       "route": [
@@ -37,7 +37,7 @@
     {
       "entry": "geography/r39_sites",
       "x": 1,
-      "y": 399,
+      "y": 396,
       "parents": [],
       "band": "Earth & Mapping",
       "route": [
@@ -189,7 +189,7 @@
     {
       "entry": "geography/r37_ground",
       "x": 6,
-      "y": 397,
+      "y": 396,
       "parents": [
         "geography/r37_mapping",
         "geography/r39_sites"
@@ -206,7 +206,7 @@
     {
       "entry": "nuclear/r37_radioactivity",
       "x": 7,
-      "y": 295,
+      "y": 294,
       "parents": [],
       "band": "Nuclear Science",
       "route": [
@@ -240,7 +240,7 @@
       "route": [
         14,
         0,
-        187.5,
+        188.5,
         -1.5,
         3.5
       ]
@@ -368,7 +368,7 @@
     {
       "entry": "geography/r53_water",
       "x": 11,
-      "y": 396,
+      "y": 395,
       "parents": [
         "geography/r37_ground"
       ],
@@ -384,7 +384,7 @@
     {
       "entry": "geography/aquifer_pump",
       "x": 11,
-      "y": 399,
+      "y": 398,
       "parents": [
         "geography/r37_ground"
       ],
@@ -400,7 +400,7 @@
     {
       "entry": "geography/node_aquifer_sample",
       "x": 11,
-      "y": 401,
+      "y": 400,
       "parents": [
         "geography/aquifer_pump"
       ],
@@ -410,7 +410,7 @@
     {
       "entry": "geography/node_deep_brine",
       "x": 13,
-      "y": 401,
+      "y": 400,
       "parents": [
         "geography/aquifer_pump"
       ],
@@ -420,7 +420,7 @@
     {
       "entry": "geography/node_supercritical_water",
       "x": 15,
-      "y": 401,
+      "y": 400,
       "parents": [
         "geography/aquifer_pump"
       ],
@@ -438,7 +438,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -454,7 +454,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -470,7 +470,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -703,7 +703,7 @@
     {
       "entry": "geography/r38_seismology",
       "x": 11,
-      "y": 389,
+      "y": 388,
       "parents": [
         "geography/r37_ground"
       ],
@@ -719,7 +719,7 @@
     {
       "entry": "geography/seismograph",
       "x": 11,
-      "y": 404,
+      "y": 403,
       "parents": [
         "geography/r37_ground"
       ],
@@ -735,7 +735,7 @@
     {
       "entry": "geography/node_core_drill",
       "x": 13,
-      "y": 406,
+      "y": 405,
       "parents": [
         "geography/seismograph"
       ],
@@ -745,7 +745,7 @@
     {
       "entry": "geography/node_geoid_model",
       "x": 17,
-      "y": 406,
+      "y": 405,
       "parents": [
         "geography/seismograph"
       ],
@@ -755,7 +755,7 @@
     {
       "entry": "geography/node_lithospheric_plate_fragment",
       "x": 11,
-      "y": 410,
+      "y": 409,
       "parents": [
         "geography/seismograph"
       ],
@@ -765,7 +765,7 @@
     {
       "entry": "geography/node_peridotite",
       "x": 17,
-      "y": 408,
+      "y": 407,
       "parents": [
         "geography/seismograph"
       ],
@@ -775,7 +775,7 @@
     {
       "entry": "geography/node_research_mantle_geodynamics",
       "x": 15,
-      "y": 406,
+      "y": 405,
       "parents": [
         "geography/seismograph"
       ],
@@ -785,7 +785,7 @@
     {
       "entry": "geography/node_research_planetary_geology",
       "x": 13,
-      "y": 408,
+      "y": 407,
       "parents": [
         "geography/seismograph"
       ],
@@ -795,7 +795,7 @@
     {
       "entry": "geography/node_research_plate_tectonics",
       "x": 15,
-      "y": 408,
+      "y": 407,
       "parents": [
         "geography/seismograph"
       ],
@@ -805,7 +805,7 @@
     {
       "entry": "geography/node_research_remote_sensing",
       "x": 13,
-      "y": 410,
+      "y": 409,
       "parents": [
         "geography/seismograph"
       ],
@@ -815,7 +815,7 @@
     {
       "entry": "geography/node_satellite_image_plate",
       "x": 15,
-      "y": 410,
+      "y": 409,
       "parents": [
         "geography/seismograph"
       ],
@@ -825,7 +825,7 @@
     {
       "entry": "geography/node_seismic_recorder_drum",
       "x": 11,
-      "y": 406,
+      "y": 405,
       "parents": [
         "geography/seismograph"
       ],
@@ -835,7 +835,7 @@
     {
       "entry": "geography/node_survey_map",
       "x": 11,
-      "y": 408,
+      "y": 407,
       "parents": [
         "geography/seismograph"
       ],
@@ -870,7 +870,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -888,7 +888,7 @@
     {
       "entry": "electromagnetism/r49_tesla",
       "x": 17,
-      "y": 231,
+      "y": 232,
       "parents": [
         "electromagnetism/r37_induction",
         "electromagnetism/r38_generator"
@@ -897,7 +897,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -905,7 +905,7 @@
     {
       "entry": "electromagnetism/node_tesla_toroid",
       "x": 17,
-      "y": 233,
+      "y": 234,
       "parents": [
         "electromagnetism/r49_tesla"
       ],
@@ -923,7 +923,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -1060,7 +1060,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -1532,7 +1532,7 @@
     {
       "entry": "cosmic/annihilation_reactor",
       "x": 1,
-      "y": 418,
+      "y": 417,
       "parents": [
         "exotic/antimatter_penning_trap"
       ],
@@ -1540,7 +1540,7 @@
       "route": [
         26,
         0,
-        -999999582.0,
+        -999999583.0,
         -1.5,
         7.5
       ]
@@ -1548,7 +1548,7 @@
     {
       "entry": "cosmic/node_annihilation_core",
       "x": 1,
-      "y": 420,
+      "y": 419,
       "parents": [
         "cosmic/annihilation_reactor"
       ],
@@ -1780,7 +1780,7 @@
     {
       "entry": "geography/r53_climate",
       "x": 22,
-      "y": 398,
+      "y": 397,
       "parents": [
         "geography/r53_water",
         "geography/aquifer_pump"
@@ -1797,7 +1797,7 @@
     {
       "entry": "geography/r53_orbit",
       "x": 22,
-      "y": 394,
+      "y": 393,
       "parents": [
         "geography/r38_seismology"
       ],
@@ -1813,7 +1813,7 @@
     {
       "entry": "geography/climate_engine",
       "x": 22,
-      "y": 401,
+      "y": 400,
       "parents": [
         "geography/r53_water",
         "geography/aquifer_pump"
@@ -1830,7 +1830,7 @@
     {
       "entry": "geography/node_cloud_seeder_stack",
       "x": 26,
-      "y": 403,
+      "y": 402,
       "parents": [
         "geography/climate_engine"
       ],
@@ -1840,7 +1840,7 @@
     {
       "entry": "geography/node_ice_core",
       "x": 22,
-      "y": 403,
+      "y": 402,
       "parents": [
         "geography/climate_engine"
       ],
@@ -1850,7 +1850,7 @@
     {
       "entry": "geography/node_permafrost_sample",
       "x": 24,
-      "y": 403,
+      "y": 402,
       "parents": [
         "geography/climate_engine"
       ],
@@ -1860,7 +1860,7 @@
     {
       "entry": "geography/node_radiometer_mast",
       "x": 22,
-      "y": 405,
+      "y": 404,
       "parents": [
         "geography/climate_engine"
       ],
@@ -2147,7 +2147,7 @@
     {
       "entry": "optics/r46_diffraction",
       "x": 1,
-      "y": 258,
+      "y": 259,
       "parents": [
         "astrophysics/r37_spectrograph"
       ],
@@ -2490,8 +2490,8 @@
     },
     {
       "entry": "cosmic/neutrino_condenser",
-      "x": 11,
-      "y": 418,
+      "x": 16,
+      "y": 417,
       "parents": [
         "exotic/quark_gluon_collider"
       ],
@@ -2499,15 +2499,15 @@
       "route": [
         27,
         0,
-        -999999582.0,
-        8.5,
-        17.5
+        -999999583.0,
+        13.5,
+        22.5
       ]
     },
     {
       "entry": "cosmic/node_baryon_asymmetry_crystal",
-      "x": 11,
-      "y": 420,
+      "x": 16,
+      "y": 419,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -2516,8 +2516,8 @@
     },
     {
       "entry": "cosmic/node_neutrino_flux",
-      "x": 15,
-      "y": 420,
+      "x": 20,
+      "y": 419,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -2526,8 +2526,8 @@
     },
     {
       "entry": "cosmic/node_sterile_neutrino",
-      "x": 13,
-      "y": 420,
+      "x": 18,
+      "y": 419,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -2993,7 +2993,7 @@
       "route": [
         28,
         0,
-        432.5,
+        431.5,
         -1.5,
         7.5
       ]
@@ -3001,7 +3001,7 @@
     {
       "entry": "singularities/kugelblitz_chamber",
       "x": 1,
-      "y": 434,
+      "y": 433,
       "parents": [
         "exotic/dark_matter_collector"
       ],
@@ -3009,7 +3009,7 @@
       "route": [
         28,
         0,
-        432.5,
+        431.5,
         -1.5,
         7.5
       ]
@@ -3017,7 +3017,7 @@
     {
       "entry": "singularities/node_evaporation_flash",
       "x": 5,
-      "y": 436,
+      "y": 435,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3027,7 +3027,7 @@
     {
       "entry": "singularities/node_gravitic_lens_element",
       "x": 3,
-      "y": 438,
+      "y": 437,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3037,7 +3037,7 @@
     {
       "entry": "singularities/node_graviton_lens_array",
       "x": 5,
-      "y": 440,
+      "y": 439,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3047,7 +3047,7 @@
     {
       "entry": "singularities/node_hawking_absorber_plate",
       "x": 5,
-      "y": 438,
+      "y": 437,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3057,7 +3057,7 @@
     {
       "entry": "singularities/node_hawking_emitter",
       "x": 3,
-      "y": 440,
+      "y": 439,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3067,7 +3067,7 @@
     {
       "entry": "singularities/node_hawking_radiation",
       "x": 1,
-      "y": 440,
+      "y": 439,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3077,7 +3077,7 @@
     {
       "entry": "singularities/node_hawking_radiation_collector",
       "x": 1,
-      "y": 436,
+      "y": 435,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3087,7 +3087,7 @@
     {
       "entry": "singularities/node_kugelblitz_seed",
       "x": 3,
-      "y": 436,
+      "y": 435,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3097,7 +3097,7 @@
     {
       "entry": "singularities/node_metric_tensor",
       "x": 1,
-      "y": 438,
+      "y": 437,
       "parents": [
         "singularities/kugelblitz_chamber"
       ],
@@ -3623,7 +3623,7 @@
       "route": [
         28,
         1,
-        432.5,
+        431.5,
         7.5,
         18.5
       ]
@@ -3631,7 +3631,7 @@
     {
       "entry": "singularities/white_hole_emitter",
       "x": 10,
-      "y": 442,
+      "y": 441,
       "parents": [
         "singularities/lensing"
       ],
@@ -3639,7 +3639,7 @@
       "route": [
         28,
         1,
-        432.5,
+        431.5,
         7.5,
         18.5
       ]
@@ -3647,7 +3647,7 @@
     {
       "entry": "singularities/node_biosphere_compendium",
       "x": 12,
-      "y": 446,
+      "y": 445,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3657,7 +3657,7 @@
     {
       "entry": "singularities/node_cosmic_neutronium_block",
       "x": 10,
-      "y": 444,
+      "y": 443,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3667,7 +3667,7 @@
     {
       "entry": "singularities/node_cosmic_neutronium_ingot",
       "x": 14,
-      "y": 446,
+      "y": 445,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3677,7 +3677,7 @@
     {
       "entry": "singularities/node_cosmic_string_segment",
       "x": 10,
-      "y": 448,
+      "y": 447,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3687,7 +3687,7 @@
     {
       "entry": "singularities/node_exotic_matter",
       "x": 12,
-      "y": 448,
+      "y": 447,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3697,7 +3697,7 @@
     {
       "entry": "singularities/node_primordial_harvest",
       "x": 12,
-      "y": 444,
+      "y": 443,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3707,7 +3707,7 @@
     {
       "entry": "singularities/node_research_stellar_engineering",
       "x": 14,
-      "y": 444,
+      "y": 443,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3717,7 +3717,7 @@
     {
       "entry": "singularities/node_singularity_energy_cell",
       "x": 10,
-      "y": 446,
+      "y": 445,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3727,7 +3727,7 @@
     {
       "entry": "singularities/node_solar_statite",
       "x": 16,
-      "y": 444,
+      "y": 443,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -3737,7 +3737,7 @@
     {
       "entry": "singularities/node_white_hole_fragment",
       "x": 16,
-      "y": 446,
+      "y": 445,
       "parents": [
         "singularities/white_hole_emitter"
       ],
@@ -4265,7 +4265,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -4273,7 +4273,7 @@
     {
       "entry": "electromagnetism/r52_maxwell",
       "x": 17,
-      "y": 215,
+      "y": 214,
       "parents": [
         "electromagnetism/r37_induction",
         "electromagnetism/r38_generator"
@@ -4282,7 +4282,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -4290,7 +4290,7 @@
     {
       "entry": "electromagnetism/node_faraday_cage_mesh",
       "x": 17,
-      "y": 217,
+      "y": 216,
       "parents": [
         "electromagnetism/r52_maxwell"
       ],
@@ -4300,7 +4300,7 @@
     {
       "entry": "electromagnetism/node_mu_metal_shield",
       "x": 19,
-      "y": 217,
+      "y": 216,
       "parents": [
         "electromagnetism/r52_maxwell"
       ],
@@ -4319,7 +4319,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -4336,7 +4336,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -4383,7 +4383,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -4451,7 +4451,7 @@
     {
       "entry": "electromagnetism/laser_cutter",
       "x": 91,
-      "y": 187,
+      "y": 188,
       "parents": [
         "optics/r46_growth"
       ],
@@ -4459,7 +4459,7 @@
       "route": [
         15,
         0,
-        -999999813.0,
+        -999999812.0,
         88.5,
         97.5
       ]
@@ -4467,7 +4467,7 @@
     {
       "entry": "electromagnetism/node_beam_splitter",
       "x": 91,
-      "y": 189,
+      "y": 190,
       "parents": [
         "electromagnetism/laser_cutter"
       ],
@@ -4477,7 +4477,7 @@
     {
       "entry": "electromagnetism/node_laser_rod",
       "x": 93,
-      "y": 189,
+      "y": 190,
       "parents": [
         "electromagnetism/laser_cutter"
       ],
@@ -4487,7 +4487,7 @@
     {
       "entry": "electromagnetism/node_pair_source",
       "x": 95,
-      "y": 189,
+      "y": 190,
       "parents": [
         "electromagnetism/laser_cutter"
       ],
@@ -4497,7 +4497,7 @@
     {
       "entry": "optics/r47_lasers",
       "x": 17,
-      "y": 258,
+      "y": 257,
       "parents": [
         "optics/r46_growth",
         "optics/crystal_growth_furnace"
@@ -4925,8 +4925,8 @@
     },
     {
       "entry": "cosmic/neutron_star_forge",
-      "x": 20,
-      "y": 418,
+      "x": 25,
+      "y": 417,
       "parents": [
         "cosmic/neutrino_condenser"
       ],
@@ -4934,15 +4934,15 @@
       "route": [
         27,
         1,
-        -999999582.0,
-        17.5,
-        28.5
+        -999999583.0,
+        22.5,
+        33.5
       ]
     },
     {
       "entry": "cosmic/node_bounce_core",
-      "x": 22,
-      "y": 422,
+      "x": 27,
+      "y": 421,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -4951,8 +4951,8 @@
     },
     {
       "entry": "cosmic/node_degenerate_armour_plate",
-      "x": 24,
-      "y": 422,
+      "x": 29,
+      "y": 421,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -4961,8 +4961,8 @@
     },
     {
       "entry": "cosmic/node_horizon_containment",
-      "x": 20,
-      "y": 422,
+      "x": 25,
+      "y": 421,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -4971,8 +4971,8 @@
     },
     {
       "entry": "cosmic/node_kilonova_ash",
-      "x": 22,
-      "y": 424,
+      "x": 27,
+      "y": 423,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -4981,8 +4981,8 @@
     },
     {
       "entry": "cosmic/node_magnetar_shard",
-      "x": 22,
-      "y": 420,
+      "x": 27,
+      "y": 419,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -4991,8 +4991,8 @@
     },
     {
       "entry": "cosmic/node_metallic_hydrogen",
-      "x": 20,
-      "y": 420,
+      "x": 25,
+      "y": 419,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -5001,8 +5001,8 @@
     },
     {
       "entry": "cosmic/node_metallic_hydrogen_ingot",
-      "x": 26,
-      "y": 420,
+      "x": 31,
+      "y": 419,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -5011,8 +5011,8 @@
     },
     {
       "entry": "cosmic/node_neutronium_block",
-      "x": 26,
-      "y": 422,
+      "x": 31,
+      "y": 421,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -5021,8 +5021,8 @@
     },
     {
       "entry": "cosmic/node_pulsar_timing_crystal",
-      "x": 20,
-      "y": 424,
+      "x": 25,
+      "y": 423,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -5031,8 +5031,8 @@
     },
     {
       "entry": "cosmic/node_quark_star_core",
-      "x": 24,
-      "y": 424,
+      "x": 29,
+      "y": 423,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -5041,8 +5041,8 @@
     },
     {
       "entry": "cosmic/node_research_kilonovae",
-      "x": 24,
-      "y": 420,
+      "x": 29,
+      "y": 419,
       "parents": [
         "cosmic/neutron_star_forge"
       ],
@@ -5240,7 +5240,7 @@
       "route": [
         14,
         3,
-        187.5,
+        188.5,
         23.5,
         32.5
       ]
@@ -5257,7 +5257,7 @@
       "route": [
         14,
         3,
-        187.5,
+        188.5,
         23.5,
         32.5
       ]
@@ -5295,7 +5295,7 @@
     {
       "entry": "strings/string_resonance_loom",
       "x": 21,
-      "y": 167,
+      "y": 168,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -5311,7 +5311,7 @@
     {
       "entry": "strings/node_grand_unified_core",
       "x": 21,
-      "y": 171,
+      "y": 172,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5321,7 +5321,7 @@
     {
       "entry": "strings/node_m_brane",
       "x": 23,
-      "y": 171,
+      "y": 172,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5331,7 +5331,7 @@
     {
       "entry": "strings/node_m_theory_core",
       "x": 25,
-      "y": 171,
+      "y": 172,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5341,7 +5341,7 @@
     {
       "entry": "strings/node_quantum_string",
       "x": 21,
-      "y": 169,
+      "y": 170,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5351,7 +5351,7 @@
     {
       "entry": "strings/node_research_m_theory",
       "x": 23,
-      "y": 169,
+      "y": 170,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5361,7 +5361,7 @@
     {
       "entry": "strings/node_stabiliser_matrix",
       "x": 25,
-      "y": 169,
+      "y": 170,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5969,7 +5969,7 @@
     {
       "entry": "strings/graviton_condenser",
       "x": 30,
-      "y": 173,
+      "y": 174,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -5985,7 +5985,7 @@
     {
       "entry": "strings/node_anchor_core",
       "x": 34,
-      "y": 177,
+      "y": 178,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -5995,7 +5995,7 @@
     {
       "entry": "strings/node_causal_set_seed",
       "x": 32,
-      "y": 179,
+      "y": 180,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6005,7 +6005,7 @@
     {
       "entry": "strings/node_coherence_stabiliser",
       "x": 32,
-      "y": 175,
+      "y": 176,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6015,7 +6015,7 @@
     {
       "entry": "strings/node_cosmogenic_casing",
       "x": 34,
-      "y": 179,
+      "y": 180,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6025,7 +6025,7 @@
     {
       "entry": "strings/node_no_boundary_seed",
       "x": 30,
-      "y": 177,
+      "y": 178,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6035,7 +6035,7 @@
     {
       "entry": "strings/node_research_causal_set_theory",
       "x": 34,
-      "y": 175,
+      "y": 176,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6045,7 +6045,7 @@
     {
       "entry": "strings/node_research_conformal_cyclic_cosmology",
       "x": 32,
-      "y": 177,
+      "y": 178,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6055,7 +6055,7 @@
     {
       "entry": "strings/node_spacetime_anchor_pylon",
       "x": 30,
-      "y": 175,
+      "y": 176,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6065,7 +6065,7 @@
     {
       "entry": "strings/node_spin_foam_lattice",
       "x": 30,
-      "y": 179,
+      "y": 180,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -6191,7 +6191,7 @@
     {
       "entry": "strings/compactification_lathe",
       "x": 30,
-      "y": 169,
+      "y": 170,
       "parents": [
         "strings/string_resonance_loom"
       ],
@@ -6739,7 +6739,7 @@
     {
       "entry": "electromagnetism/r52_pulsed",
       "x": 26,
-      "y": 207,
+      "y": 206,
       "parents": [
         "electromagnetism/r42_mhd",
         "electromagnetism/mhd_generator"
@@ -6748,7 +6748,7 @@
       "route": [
         14,
         3,
-        187.5,
+        188.5,
         23.5,
         32.5
       ]
@@ -6756,7 +6756,7 @@
     {
       "entry": "electromagnetism/r52_qhe",
       "x": 101,
-      "y": 187,
+      "y": 188,
       "parents": [
         "quantum/topological_transmuter"
       ],
@@ -6764,7 +6764,7 @@
       "route": [
         16,
         0,
-        -999999813.0,
+        -999999812.0,
         98.5,
         103.5
       ]
@@ -6781,7 +6781,7 @@
       "route": [
         14,
         3,
-        187.5,
+        188.5,
         23.5,
         32.5
       ]
@@ -7523,7 +7523,7 @@
     {
       "entry": "strings/multiverse_rift",
       "x": 41,
-      "y": 170,
+      "y": 171,
       "parents": [
         "strings/graviton_condenser"
       ],
@@ -7539,7 +7539,7 @@
     {
       "entry": "strings/node_absolute_pedestal",
       "x": 43,
-      "y": 176,
+      "y": 177,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7549,7 +7549,7 @@
     {
       "entry": "strings/node_cosmic_board",
       "x": 43,
-      "y": 172,
+      "y": 173,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7559,7 +7559,7 @@
     {
       "entry": "strings/node_cosmic_die",
       "x": 41,
-      "y": 174,
+      "y": 175,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7569,7 +7569,7 @@
     {
       "entry": "strings/node_cosmic_lens",
       "x": 43,
-      "y": 174,
+      "y": 175,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7579,7 +7579,7 @@
     {
       "entry": "strings/node_cosmic_logic_wafer",
       "x": 41,
-      "y": 176,
+      "y": 177,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7589,7 +7589,7 @@
     {
       "entry": "strings/node_cosmic_processor",
       "x": 41,
-      "y": 172,
+      "y": 173,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7599,7 +7599,7 @@
     {
       "entry": "strings/node_false_vacuum",
       "x": 45,
-      "y": 174,
+      "y": 175,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7609,7 +7609,7 @@
     {
       "entry": "strings/node_rift_anchor",
       "x": 45,
-      "y": 172,
+      "y": 173,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7779,7 +7779,7 @@
     {
       "entry": "strings/universe_forge",
       "x": 50,
-      "y": 170,
+      "y": 171,
       "parents": [
         "strings/multiverse_rift"
       ],
@@ -7795,7 +7795,7 @@
     {
       "entry": "strings/node_heat_death_remnant",
       "x": 50,
-      "y": 172,
+      "y": 173,
       "parents": [
         "strings/universe_forge"
       ],
@@ -7914,7 +7914,7 @@
     {
       "entry": "strings/origin_ccc",
       "x": 59,
-      "y": 170,
+      "y": 171,
       "parents": [
         "strings/universe_forge"
       ],
@@ -8206,7 +8206,7 @@
     {
       "entry": "anomaly/anomaly_intro",
       "x": 1,
-      "y": 492,
+      "y": 493,
       "parents": [
         "hyperdimensions/tesseract"
       ],
@@ -8247,7 +8247,7 @@
       "route": [
         28,
         2,
-        432.5,
+        431.5,
         18.5,
         31.5
       ]
@@ -8921,7 +8921,7 @@
     {
       "entry": "anomaly/anomaly_extent",
       "x": 34,
-      "y": 492,
+      "y": 493,
       "parents": [
         "anomaly/anomaly_epidemics",
         "anomaly/anomaly_leakage"
@@ -8938,7 +8938,7 @@
     {
       "entry": "anomaly/anomaly_containment",
       "x": 39,
-      "y": 494,
+      "y": 493,
       "parents": [
         "anomaly/anomaly_extent"
       ],
@@ -9025,13 +9025,13 @@
     {
       "entry": "fluids/fluid_dynamics",
       "x": 1,
-      "y": 203,
+      "y": 204,
       "parents": [],
       "band": "Electromagnetism",
       "route": [
         14,
         0,
-        187.5,
+        188.5,
         -1.5,
         3.5
       ]
@@ -9047,7 +9047,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -9063,7 +9063,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -9080,7 +9080,7 @@
       "route": [
         14,
         3,
-        187.5,
+        188.5,
         23.5,
         32.5
       ]
@@ -9088,7 +9088,7 @@
     {
       "entry": "fluids/rocketry",
       "x": 35,
-      "y": 203,
+      "y": 204,
       "parents": [
         "fluids/compressible_flow"
       ],
@@ -9096,7 +9096,7 @@
       "route": [
         14,
         4,
-        187.5,
+        188.5,
         32.5,
         37.5
       ]
@@ -9104,7 +9104,7 @@
     {
       "entry": "fluids/rocket_assembly",
       "x": 40,
-      "y": 205,
+      "y": 206,
       "parents": [
         "fluids/rocketry"
       ],
@@ -9112,7 +9112,7 @@
       "route": [
         14,
         5,
-        187.5,
+        188.5,
         37.5,
         42.5
       ]
@@ -9120,7 +9120,7 @@
     {
       "entry": "fluids/orbital_mechanics",
       "x": 40,
-      "y": 202,
+      "y": 203,
       "parents": [
         "fluids/rocketry"
       ],
@@ -9128,7 +9128,7 @@
       "route": [
         14,
         5,
-        187.5,
+        188.5,
         37.5,
         42.5
       ]
@@ -9136,7 +9136,7 @@
     {
       "entry": "fluids/ramscoops",
       "x": 45,
-      "y": 203,
+      "y": 206,
       "parents": [
         "fluids/orbital_mechanics"
       ],
@@ -9144,7 +9144,7 @@
       "route": [
         14,
         6,
-        187.5,
+        188.5,
         42.5,
         47.5
       ]
@@ -9152,7 +9152,7 @@
     {
       "entry": "fluids/bussard_ramscoop",
       "x": 50,
-      "y": 203,
+      "y": 206,
       "parents": [
         "fluids/ramscoops"
       ],
@@ -9160,7 +9160,7 @@
       "route": [
         14,
         7,
-        187.5,
+        188.5,
         47.5,
         52.5
       ]
@@ -9176,7 +9176,7 @@
       "route": [
         14,
         1,
-        187.5,
+        188.5,
         3.5,
         14.5
       ]
@@ -9192,7 +9192,7 @@
       "route": [
         14,
         2,
-        187.5,
+        188.5,
         14.5,
         23.5
       ]
@@ -9294,7 +9294,7 @@
     {
       "entry": "fluids/rocket_equation",
       "x": 45,
-      "y": 197,
+      "y": 198,
       "parents": [
         "fluids/orbital_mechanics"
       ],
@@ -9302,7 +9302,7 @@
       "route": [
         14,
         6,
-        187.5,
+        188.5,
         42.5,
         47.5
       ]
@@ -9318,7 +9318,7 @@
       "route": [
         14,
         7,
-        187.5,
+        188.5,
         47.5,
         52.5
       ]
@@ -9326,7 +9326,7 @@
     {
       "entry": "fluids/sample_return",
       "x": 55,
-      "y": 199,
+      "y": 200,
       "parents": [
         "fluids/transfer_orbits"
       ],
@@ -9334,7 +9334,7 @@
       "route": [
         14,
         8,
-        187.5,
+        188.5,
         52.5,
         57.5
       ]
@@ -9342,7 +9342,7 @@
     {
       "entry": "fluids/propulsion_tiers",
       "x": 50,
-      "y": 200,
+      "y": 203,
       "parents": [
         "fluids/rocket_equation"
       ],
@@ -9350,7 +9350,7 @@
       "route": [
         14,
         7,
-        187.5,
+        188.5,
         47.5,
         52.5
       ]
@@ -9358,7 +9358,7 @@
     {
       "entry": "fluids/space_radiation",
       "x": 45,
-      "y": 207,
+      "y": 210,
       "parents": [
         "fluids/orbital_mechanics"
       ],
@@ -9366,45 +9366,13 @@
       "route": [
         14,
         6,
-        187.5,
+        188.5,
         42.5,
         47.5
       ]
     },
     {
       "entry": "fluids/suit_line",
-      "x": 50,
-      "y": 206,
-      "parents": [
-        "fluids/space_radiation"
-      ],
-      "band": "Electromagnetism",
-      "route": [
-        14,
-        7,
-        187.5,
-        47.5,
-        52.5
-      ]
-    },
-    {
-      "entry": "fluids/microgravity_processing",
-      "x": 50,
-      "y": 197,
-      "parents": [
-        "fluids/rocket_equation"
-      ],
-      "band": "Electromagnetism",
-      "route": [
-        14,
-        7,
-        187.5,
-        47.5,
-        52.5
-      ]
-    },
-    {
-      "entry": "fluids/station_modules",
       "x": 50,
       "y": 209,
       "parents": [
@@ -9414,7 +9382,39 @@
       "route": [
         14,
         7,
-        187.5,
+        188.5,
+        47.5,
+        52.5
+      ]
+    },
+    {
+      "entry": "fluids/microgravity_processing",
+      "x": 50,
+      "y": 200,
+      "parents": [
+        "fluids/rocket_equation"
+      ],
+      "band": "Electromagnetism",
+      "route": [
+        14,
+        7,
+        188.5,
+        47.5,
+        52.5
+      ]
+    },
+    {
+      "entry": "fluids/station_modules",
+      "x": 50,
+      "y": 212,
+      "parents": [
+        "fluids/space_radiation"
+      ],
+      "band": "Electromagnetism",
+      "route": [
+        14,
+        7,
+        188.5,
         47.5,
         52.5
       ]
@@ -9422,7 +9422,7 @@
     {
       "entry": "fluids/satellite_orbits",
       "x": 55,
-      "y": 192,
+      "y": 193,
       "parents": [
         "fluids/transfer_orbits"
       ],
@@ -9430,7 +9430,7 @@
       "route": [
         14,
         8,
-        187.5,
+        188.5,
         52.5,
         57.5
       ]
@@ -9438,7 +9438,7 @@
     {
       "entry": "fluids/space_solar_power",
       "x": 60,
-      "y": 189,
+      "y": 190,
       "parents": [
         "fluids/satellite_orbits"
       ],
@@ -9446,7 +9446,7 @@
       "route": [
         14,
         9,
-        187.5,
+        188.5,
         57.5,
         62.5
       ]
@@ -9454,7 +9454,7 @@
     {
       "entry": "fluids/orbital_debris",
       "x": 60,
-      "y": 192,
+      "y": 193,
       "parents": [
         "fluids/satellite_orbits"
       ],
@@ -9462,7 +9462,7 @@
       "route": [
         14,
         9,
-        187.5,
+        188.5,
         57.5,
         62.5
       ]
@@ -9470,7 +9470,7 @@
     {
       "entry": "fluids/radiation_pressure",
       "x": 60,
-      "y": 195,
+      "y": 196,
       "parents": [
         "fluids/satellite_orbits"
       ],
@@ -9478,7 +9478,7 @@
       "route": [
         14,
         9,
-        187.5,
+        188.5,
         57.5,
         62.5
       ]
@@ -9486,7 +9486,7 @@
     {
       "entry": "fluids/solar_magnetism",
       "x": 65,
-      "y": 190,
+      "y": 191,
       "parents": [
         "fluids/space_solar_power"
       ],
@@ -9494,7 +9494,7 @@
       "route": [
         14,
         10,
-        187.5,
+        188.5,
         62.5,
         67.5
       ]
@@ -9502,7 +9502,7 @@
     {
       "entry": "fluids/magnetospheres",
       "x": 70,
-      "y": 190,
+      "y": 191,
       "parents": [
         "fluids/solar_magnetism"
       ],
@@ -9510,7 +9510,7 @@
       "route": [
         14,
         11,
-        187.5,
+        188.5,
         67.5,
         72.5
       ]
@@ -9518,7 +9518,7 @@
     {
       "entry": "fluids/asteroid_taxonomy",
       "x": 60,
-      "y": 199,
+      "y": 200,
       "parents": [
         "fluids/sample_return"
       ],
@@ -9526,7 +9526,7 @@
       "route": [
         14,
         9,
-        187.5,
+        188.5,
         57.5,
         62.5
       ]
@@ -9534,7 +9534,7 @@
     {
       "entry": "fluids/comets",
       "x": 65,
-      "y": 197,
+      "y": 198,
       "parents": [
         "fluids/asteroid_taxonomy"
       ],
@@ -9542,7 +9542,7 @@
       "route": [
         14,
         10,
-        187.5,
+        188.5,
         62.5,
         67.5
       ]
@@ -9550,7 +9550,7 @@
     {
       "entry": "fluids/nebular_gases",
       "x": 70,
-      "y": 195,
+      "y": 196,
       "parents": [
         "fluids/comets"
       ],
@@ -9558,7 +9558,7 @@
       "route": [
         14,
         11,
-        187.5,
+        188.5,
         67.5,
         72.5
       ]
@@ -9566,7 +9566,7 @@
     {
       "entry": "fluids/tidal_heating",
       "x": 70,
-      "y": 199,
+      "y": 200,
       "parents": [
         "fluids/comets"
       ],
@@ -9574,7 +9574,7 @@
       "route": [
         14,
         11,
-        187.5,
+        188.5,
         67.5,
         72.5
       ]
@@ -9582,7 +9582,7 @@
     {
       "entry": "fluids/planet_formation",
       "x": 65,
-      "y": 200,
+      "y": 201,
       "parents": [
         "fluids/asteroid_taxonomy"
       ],
@@ -9590,7 +9590,7 @@
       "route": [
         14,
         10,
-        187.5,
+        188.5,
         62.5,
         67.5
       ]
@@ -9598,7 +9598,7 @@
     {
       "entry": "fluids/habitability",
       "x": 75,
-      "y": 199,
+      "y": 200,
       "parents": [
         "fluids/tidal_heating"
       ],
@@ -9606,7 +9606,7 @@
       "route": [
         14,
         12,
-        187.5,
+        188.5,
         72.5,
         77.5
       ]
@@ -9614,7 +9614,7 @@
     {
       "entry": "fluids/cosmic_microwave_background",
       "x": 75,
-      "y": 195,
+      "y": 196,
       "parents": [
         "fluids/nebular_gases"
       ],
@@ -9622,7 +9622,7 @@
       "route": [
         14,
         12,
-        187.5,
+        188.5,
         72.5,
         77.5
       ]
@@ -9630,7 +9630,7 @@
     {
       "entry": "fluids/fast_transients",
       "x": 80,
-      "y": 197,
+      "y": 198,
       "parents": [
         "fluids/cosmic_microwave_background"
       ],
@@ -9638,7 +9638,7 @@
       "route": [
         14,
         13,
-        187.5,
+        188.5,
         77.5,
         82.5
       ]
@@ -9646,7 +9646,7 @@
     {
       "entry": "fluids/search_for_others",
       "x": 85,
-      "y": 197,
+      "y": 198,
       "parents": [
         "fluids/habitability",
         "fluids/fast_transients"
@@ -9655,7 +9655,7 @@
       "route": [
         14,
         14,
-        187.5,
+        188.5,
         82.5,
         87.5
       ]
@@ -9705,6 +9705,56 @@
         -1.5,
         3.5
       ]
+    },
+    {
+      "entry": "fluids/r1400_electric_propulsion",
+      "x": 50,
+      "y": 196,
+      "parents": [
+        "fluids/rocket_equation",
+        "electromagnetism/r37_induction"
+      ],
+      "band": "Electromagnetism",
+      "route": [
+        14,
+        7,
+        188.5,
+        47.5,
+        52.5
+      ]
+    },
+    {
+      "entry": "cosmic/r1400_antimatter_propulsion",
+      "x": 10,
+      "y": 417,
+      "parents": [
+        "cosmic/annihilation_reactor",
+        "fluids/r1400_electric_propulsion"
+      ],
+      "band": "Compact Stars & Annihilation",
+      "route": [
+        26,
+        1,
+        -999999583.0,
+        7.5,
+        12.5
+      ]
+    },
+    {
+      "entry": "geography/r1400_geodesy",
+      "x": 6,
+      "y": 401,
+      "parents": [
+        "geography/r37_mapping"
+      ],
+      "band": "Earth & Mapping",
+      "route": [
+        25,
+        1,
+        372.5,
+        3.5,
+        8.5
+      ]
     }
   ],
   "regions": [
@@ -9746,13 +9796,13 @@
       "x0": -1.0,
       "y0": 155.0,
       "x1": 108.0,
-      "y1": 181.5
+      "y1": 182.5
     },
     {
       "tier": 5,
       "label": "Electromagnetism",
       "x0": -1.0,
-      "y0": 184.0,
+      "y0": 185.0,
       "x1": 108.0,
       "y1": 245.5
     },
@@ -9794,21 +9844,21 @@
       "x0": -1.0,
       "y0": 369.0,
       "x1": 108.0,
-      "y1": 412.5
+      "y1": 411.5
     },
     {
       "tier": 11,
       "label": "Compact Stars & Annihilation",
       "x0": -1.0,
-      "y0": 415.0,
+      "y0": 414.0,
       "x1": 108.0,
-      "y1": 426.5
+      "y1": 425.5
     },
     {
       "tier": 12,
       "label": "Singularities",
       "x0": -1.0,
-      "y0": 429.0,
+      "y0": 428.0,
       "x1": 108.0,
       "y1": 451.5
     },
