@@ -4,9 +4,9 @@ Item art in the Minecraft style: turns the smooth rendered item textures into ro
   * art pixels are doubled: each texture is rebuilt at 16 by 16 (vanilla's item size) and shown at 32 by 32, so
     every art pixel is two by two screen pixels, as chunky as vanilla's; thin lines and highlights are kept;
   * hard edges: every pixel either solid or clear;
-  * six flat shades per item (shared by all its animation frames), so light falls in clear steps;
-  * grain: a fixed, per pixel nudge before the shades are picked, giving the rough, speckled surface of vanilla
-    textures; it is the same in every frame, so animations do not flicker;
+  * eight flat shades per item (shared by all its animation frames), so light falls in clear steps;
+  * light grain: a small, fixed, per pixel nudge before the shades are picked, giving a slightly hand placed
+    surface; it is the same in every frame, so animations do not flicker;
   * a dark outline in each item's own colour.
 
 Usage: python3 tools/pixelate_items.py path/to/item.png [more.png ...]   (edits the files in place)
@@ -92,7 +92,7 @@ def frames_of(im):
     w = im.size[0]
     return [im.crop((0, i*w, w, (i+1)*w)) for i in range(im.size[1]//w)]
 
-def soft(path, im, colours=6):
+def soft(path, im, colours=8):
     """Glows and see through overlays keep their transparency, in four steps instead of a smooth fade: chunky
     pixels and a few shades, no outline."""
     w = im.size[0]
@@ -114,7 +114,7 @@ def soft(path, im, colours=6):
     return small.resize(im.size, Image.NEAREST) if w == 32 else small
 
 
-def process(path, colours=6, amp=13):
+def process(path, colours=8, amp=6):
     im = Image.open(path).convert('RGBA')
     h = im.getchannel('A').histogram()
     if sum(h[1:]) and sum(h[1:224]) / sum(h[1:]) > 0.25:
