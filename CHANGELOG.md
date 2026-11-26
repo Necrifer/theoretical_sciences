@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.4.2: Item art in the Minecraft style
+
+* **Every item texture is redrawn in a pixel art style** (1175 textures). The old art was rendered and looked too
+  smooth and perfect next to vanilla items. Now:
+  * edges are crisp: every pixel is either solid or clear, with no soft, blended rims;
+  * each item is painted in a handful of flat shades (seven at most) instead of smooth gradients, so light and shadow
+    fall in visible steps, the way a pixel artist shades;
+  * shading is slightly uneven, as if placed by hand, and the unevenness is the same in every animation frame, so
+    animated items do not flicker;
+  * every item has a dark outline in its own colour, so it reads clearly in the inventory and the hotbar.
+* Shapes, sizes, colours and animations are unchanged, so every item is still recognisable at a glance.
+* The restyle is done by `tools/pixelate_items.py`, which can be run again on any new item texture.
+
+## 1.4.1: In plain words
+
+* **75 more Codex entries open with "In plain words"**: one plain sentence, an everyday comparison, and where the
+  comparison breaks, in the style of the 44 the author wrote for 1.3.1. They cover the science entries of the Basics
+  guide; the first chapters of the Discovery map (radioactivity, radiation, magnetic fields, induction, telescopes and
+  spectra, the Big Bang and inflation, Maxwell's demon, maps, chance, the foundations of mathematics and more); and every
+  concept added in 1.4.0. Three Discovery summaries of chapters the author already explained reuse those words exactly,
+  and the author's own plain words are never replaced.
+* Geodesy's Codex entry (in Getting Started) is tagged with its research, so the Codex finds it.
+
 ## 1.4.0: Organic chemistry, petrochemistry and engineering
 
 31 new research nodes, each with its derivation puzzle; 30 new machines, four of them multiblocks; a new Codex tab,
