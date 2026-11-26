@@ -2,15 +2,18 @@
 
 ## 1.4.2: Item art in the Minecraft style
 
-* **Every item texture is redrawn in a pixel art style** (1175 textures). The old art was rendered and looked too
-  smooth and perfect next to vanilla items. Now:
+* **Every item texture is redrawn in Minecraft's own pixel art style** (1175 textures). The old art was rendered and
+  looked too smooth and too detailed next to vanilla items. Now:
+  * art pixels are as big as vanilla's: each item is drawn at 16 by 16, vanilla's item size, so every art pixel is a
+    chunky block, while thin lines and highlights are kept;
   * edges are crisp: every pixel is either solid or clear, with no soft, blended rims;
-  * each item is painted in a handful of flat shades (seven at most) instead of smooth gradients, so light and shadow
-    fall in visible steps, the way a pixel artist shades;
-  * shading is slightly uneven, as if placed by hand, and the unevenness is the same in every animation frame, so
-    animated items do not flicker;
+  * each item is painted in six flat shades instead of smooth gradients, so light and shadow fall in clear steps;
+  * surfaces are grainy and slightly rough, like vanilla's stone, ores and tools; the grain is the same in every
+    animation frame, so animated items do not flicker;
   * every item has a dark outline in its own colour, so it reads clearly in the inventory and the hotbar.
-* Shapes, sizes, colours and animations are unchanged, so every item is still recognisable at a glance.
+* Glows and see through layers (the Singularity Cluster glows, the Simulated Universe's glass and galaxy, the quark
+  clouds and a few others) keep their transparency, in a few clear steps instead of a smooth fade.
+* Shapes, colours and animations are unchanged, so every item is still recognisable at a glance.
 * The restyle is done by `tools/pixelate_items.py`, which can be run again on any new item texture.
 
 ## 1.4.1: In plain words
