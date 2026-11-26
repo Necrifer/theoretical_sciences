@@ -1,7 +1,8 @@
 # Changelog
 
-## 1.4.2: Item art in the Minecraft style
+## 1.4.1: In plain words, and item art in the Minecraft style
 
+### Item art
 * **Every item texture is redrawn in a pixel art style closer to Minecraft's** (1175 textures). The old art was
   rendered and looked too smooth and perfect next to vanilla items. Now:
   * edges are crisp: every pixel is either solid or clear, with no soft, blended rims;
@@ -14,8 +15,7 @@
 * Shapes, detail, colours and animations are unchanged, so every item is still recognisable at a glance.
 * The restyle is done by `tools/pixelate_items.py`, which can be run again on any new item texture.
 
-## 1.4.1: In plain words
-
+### In plain words
 * **75 more Codex entries open with "In plain words"**: one plain sentence, an everyday comparison, and where the
   comparison breaks, in the style of the 44 the author wrote for 1.3.1. They cover the science entries of the Basics
   guide; the first chapters of the Discovery map (radioactivity, radiation, magnetic fields, induction, telescopes and
