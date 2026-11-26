@@ -1,13 +1,14 @@
 """
-Item art in the Minecraft style: turns the smooth rendered item textures into rough, hand pixelled looking art.
+Item art in the Minecraft style: turns the smooth rendered item textures into hand pixelled looking art.
 
-  * art pixels are doubled: each texture is rebuilt at 16 by 16 (vanilla's item size) and shown at 32 by 32, so
-    every art pixel is two by two screen pixels, as chunky as vanilla's; thin lines and highlights are kept;
   * hard edges: every pixel either solid or clear;
-  * eight flat shades per item (shared by all its animation frames), so light falls in clear steps;
-  * light grain: a small, fixed, per pixel nudge before the shades are picked, giving a slightly hand placed
-    surface; it is the same in every frame, so animations do not flicker;
-  * a dark outline in each item's own colour.
+  * six flat shades per item (shared by all its animation frames), so light falls in clear steps;
+  * grain: a fixed, per pixel nudge before the shades are picked, so the shading looks placed by hand; it is the
+    same in every frame, so animations do not flicker;
+  * a dark outline in each item's own colour;
+  * glows and see through overlays keep their transparency, in four steps, with no outline.
+  * chunky=True rebuilds each texture at 16 by 16 first (vanilla's size, every art pixel two by two); not used for
+    1.4.2, which keeps the full 32 by 32 detail.
 
 Usage: python3 tools/pixelate_items.py path/to/item.png [more.png ...]   (edits the files in place)
 """
@@ -92,11 +93,11 @@ def frames_of(im):
     w = im.size[0]
     return [im.crop((0, i*w, w, (i+1)*w)) for i in range(im.size[1]//w)]
 
-def soft(path, im, colours=8):
+def soft(path, im, colours=6, chunky=False):
     """Glows and see through overlays keep their transparency, in four steps instead of a smooth fade: chunky
     pixels and a few shades, no outline."""
     w = im.size[0]
-    small = im.resize((w // 2, im.size[1] // 2), Image.BOX) if w == 32 else im.copy()
+    small = im.resize((w // 2, im.size[1] // 2), Image.BOX) if (w == 32 and chunky) else im.copy()
     px = small.load()
     rgb = Image.new('RGB', small.size)
     for y in range(small.size[1]):
@@ -111,14 +112,14 @@ def soft(path, im, colours=8):
         for x in range(small.size[0]):
             a = px[x, y][3]
             px[x, y] = qp[x, y] + (a,) if a else (0, 0, 0, 0)
-    return small.resize(im.size, Image.NEAREST) if w == 32 else small
+    return small.resize(im.size, Image.NEAREST) if small.size != im.size else small
 
 
-def process(path, colours=8, amp=6):
+def process(path, colours=6, amp=10, chunky=False):
     im = Image.open(path).convert('RGBA')
     h = im.getchannel('A').histogram()
     if sum(h[1:]) and sum(h[1:224]) / sum(h[1:]) > 0.25:
-        return soft(path, im, colours)
+        return soft(path, im, colours, chunky)
     fr = frames_of(im)
     for f in fr:
         px = f.load()
@@ -127,7 +128,7 @@ def process(path, colours=8, amp=6):
                 c = px[x, y]; px[x, y] = c[:3] + (255,) if c[3] >= 128 else (0, 0, 0, 0)
     seed = sum(map(ord, path.split('/')[-1]))
     w = fr[0].size[0]
-    if w == 32:
+    if w == 32 and chunky:
         small = stylise([down16(f) for f in fr], colours, seed, amp)
         fr = [f.resize((32, 32), Image.NEAREST) for f in small]
     else:
