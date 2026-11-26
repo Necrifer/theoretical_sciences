@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.2: Item art in the Minecraft style
+
+* **Every item texture is redrawn in a pixel art style** (1175 textures). The old art was rendered and looked too
+  smooth and perfect next to vanilla items. Now:
+  * edges are crisp: every pixel is either solid or clear, with no soft, blended rims;
+  * each item is painted in a handful of flat shades (seven at most) instead of smooth gradients, so light and shadow
+    fall in visible steps, the way a pixel artist shades;
+  * shading is slightly uneven, as if placed by hand, and the unevenness is the same in every animation frame, so
+    animated items do not flicker;
+  * every item has a dark outline in its own colour, so it reads clearly in the inventory and the hotbar.
+* Shapes, sizes, colours and animations are unchanged, so every item is still recognisable at a glance.
+* The restyle is done by `tools/pixelate_items.py`, which can be run again on any new item texture.
+
 ## 1.3.0: the CurseForge release (17 November 2026)
 
 Everything since 1.2.0 (3 Forgotten Memories), in short. The full list, with every recipe change and number, follows
